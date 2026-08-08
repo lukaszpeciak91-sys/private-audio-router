@@ -1,0 +1,59 @@
+# Decision Log
+
+This is a lightweight, append-only log. Do not rewrite accepted history; append a decision that supersedes an earlier entry.
+
+## D-001 — Public Android APIs only
+
+- **Date:** 2026-08-08
+- **Status:** Accepted
+- **Context:** The project needs the least invasive foundation for communication-audio routing.
+- **Decision:** The project begins using only supported public Android APIs.
+- **Consequences:** Unsupported, privileged, root, Shizuku, Accessibility, and MediaProjection mechanisms are outside the approved design. A change requires a new explicit decision.
+
+## D-002 — No audio capture or proxying
+
+- **Date:** 2026-08-08
+- **Status:** Accepted
+- **Context:** The utility should control routing without handling conversation content.
+- **Decision:** The application must not place itself in the audio data path.
+- **Consequences:** It will not record, intercept, capture, decode, forward, or proxy application or microphone audio.
+
+## D-003 — No `AudioManager.MODE` manipulation in M0
+
+- **Date:** 2026-08-08
+- **Status:** Accepted
+- **Context:** We want to determine whether communication-device routing alone is sufficient before touching broader system audio behavior.
+- **Decision:** The first diagnostic prototype must not call `setMode()` or otherwise change `AudioManager.MODE`.
+- **Consequences:** M0 tests communication-device discovery, observation, request, and clear behavior in isolation. Further investigation requires evidence and a separate decision.
+
+## D-004 — Routing must be reversible
+
+- **Date:** 2026-08-08
+- **Status:** Accepted
+- **Context:** A routing utility can disrupt normal device behavior if it leaves influence behind.
+- **Decision:** All routing requests must have a clear restore/clear path.
+- **Consequences:** Disable, process termination, and reboot behavior require validation; failure to restore normal behavior blocks release.
+
+## D-005 — Real phone calls retain priority
+
+- **Date:** 2026-08-08
+- **Status:** Accepted
+- **Context:** Android telephony has safety-critical, system-level routing responsibilities.
+- **Decision:** The utility must never attempt to override Android telephony routing.
+- **Consequences:** Incoming and outgoing phone calls require physical-device tests, and any conflict must fail in favor of telephony.
+
+## D-006 — Provider independence
+
+- **Date:** 2026-08-08
+- **Status:** Accepted
+- **Context:** Routing is an Android system concern, not an AI-provider integration.
+- **Decision:** The project must not depend on ChatGPT, Gemini, OpenAI, Google, or any specific AI application.
+- **Consequences:** No provider authentication, credentials, conversation processing, or provider-specific network dependency is permitted.
+
+## D-007 — Physical-device validation is authoritative
+
+- **Date:** 2026-08-08
+- **Status:** Accepted
+- **Context:** Emulators and automated tests cannot establish real earpiece and OEM routing behavior.
+- **Decision:** Emulator and automated tests may validate code behavior, but real routing compatibility requires testing on physical Android hardware.
+- **Consequences:** Compatibility remains unknown until recorded physical-device tests pass; emulator-only results cannot support compatibility claims.
