@@ -9,16 +9,18 @@ State reflects evidence, not aspiration.
 - Preliminary research completed.
 - Android communication-device APIs identified conceptually.
 - Safety boundaries established.
-- Repository bootstrap started.
+- Repository foundation established.
+- Repository-first documentation ownership and evidence-driven workflow established.
+- Stable AI-session onboarding context added.
 
 ## CURRENT
 
-- Repository foundation and governance.
+- Governance and workflow refinement before Android implementation.
 - **Implementation state: pre-implementation; no Android application exists.**
 
 ## NEXT
 
-- Create a minimal Android diagnostic shell (PR #2).
+- Create a minimal Android diagnostic shell (PR #3).
 - Enumerate available communication devices.
 - Identify the built-in earpiece.
 - Observe the current communication device.
