@@ -18,6 +18,7 @@ This project is not a ChatGPT or Gemini client, AI or voice assistant, audio rec
 
 ## Documentation
 
+- [Project context](docs/PROJECT_CONTEXT.md) — rapid orientation for a fresh AI-assisted development session
 - [Project charter](docs/PROJECT_CHARTER.md)
 - [Architecture](docs/ARCHITECTURE.md)
 - [Decision log](docs/DECISIONS.md)
@@ -26,4 +27,4 @@ This project is not a ChatGPT or Gemini client, AI or voice assistant, audio rec
 - [Test plan](docs/TEST_PLAN.md)
 - [Development workflow](docs/WORKFLOW.md)
 
-Development sequencing and safety boundaries are defined in those documents. The recommended next PR is the minimal diagnostic shell described in the workflow, with no routing changes.
+Development sequencing and safety boundaries are defined in those documents. The recommended next PR is **PR #3 — Minimal Android Diagnostic Shell**, with no routing changes.
