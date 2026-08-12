@@ -6,7 +6,7 @@
 
 ## Status
 
-The project is at **repository foundation / pre-implementation** status. This repository currently contains governance, research, architecture, and testing documentation only; there is no Android application yet. The first milestone is to prove safe, reversible communication-device routing with public Android APIs.
+The project now has a minimal, buildable Android application foundation. Communication-audio functionality has not yet been implemented. See [`docs/PROGRESS.md`](docs/PROGRESS.md) for the authoritative current state and next step.
 
 ## Design and safety
 
@@ -27,4 +27,4 @@ This project is not a ChatGPT or Gemini client, AI or voice assistant, audio rec
 - [Test plan](docs/TEST_PLAN.md)
 - [Development workflow](docs/WORKFLOW.md)
 
-Development sequencing and safety boundaries are defined in those documents. The recommended next PR is **PR #3 — Minimal Android Diagnostic Shell**, with no routing changes.
+Development sequencing and safety boundaries are defined in those documents. The recommended next PR is **PR #4 — Call UI Foundation**, with no routing or diagnostics behavior.

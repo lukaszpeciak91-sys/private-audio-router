@@ -57,3 +57,27 @@ This is a lightweight, append-only log. Do not rewrite accepted history; append 
 - **Context:** Emulators and automated tests cannot establish real earpiece and OEM routing behavior.
 - **Decision:** Emulator and automated tests may validate code behavior, but real routing compatibility requires testing on physical Android hardware.
 - **Consequences:** Compatibility remains unknown until recorded physical-device tests pass; emulator-only results cannot support compatibility claims.
+
+## D-008 — Single-module Compose application foundation
+
+- **Date:** 2026-08-10
+- **Status:** Accepted
+- **Context:** The project needs a maintainable Android foundation before communication-audio experiments begin.
+- **Decision:** Begin with one `app` module using Kotlin, Jetpack Compose, Material 3, AndroidX, and Gradle Kotlin DSL.
+- **Consequences:** The bootstrap has no navigation, dependency injection, persistence, networking, or speculative feature packages. New structure is added only when working code requires it.
+
+## D-009 — Android SDK baseline
+
+- **Date:** 2026-08-10
+- **Status:** Accepted
+- **Context:** The future M0 communication-device APIs are available from Android 12 (API 31), while public distribution requires a current target SDK.
+- **Decision:** Use API 31 as `minSdk` and API 36 as both `compileSdk` and `targetSdk` for the initial application.
+- **Consequences:** M0 can use the public communication-device APIs without compatibility branches. Devices below Android 12 are intentionally unsupported, and SDK levels must be reviewed as tooling and distribution requirements evolve.
+
+## D-010 — Provisional application identity
+
+- **Date:** 2026-08-10
+- **Status:** Accepted
+- **Context:** No organization-owned domain or permanent production application ID has been established.
+- **Decision:** Use `app.privateaudio` as the provisional namespace and application ID.
+- **Consequences:** A globally unique production ID must be selected before public distribution; changing it later may affect upgrades and published identity.
