@@ -157,3 +157,15 @@ Allowed status values are **NOT TESTED**, **PASS**, **FAIL**, and **BLOCKED**. R
 - **Expected result:** The future compatibility test determines whether the browser session respects the request and restores safely.
 - **Observed result:** Not recorded
 - **Notes:** Record browser, browser version, and tested site; do not generalize one result to all browsers.
+
+## T-014 — Observe a cross-application ChatGPT Voice session
+
+- **Status:** NOT TESTED
+- **Device:** Not recorded
+- **Android version:** Not recorded
+- **Build:** Not recorded
+- **Preconditions:** Install the PR #4 diagnostic build and record the ChatGPT Android application version. Disconnect or explicitly record attached audio accessories. Do not terminate Private Audio during the sequence.
+- **Steps:** (1) Open Private Audio and press **Refresh / Record Snapshot** to record BASELINE. (2) Leave Private Audio without force-stopping it. (3) Open ChatGPT and start ChatGPT Voice. (4) Return to Private Audio and press **Refresh / Record Snapshot**; record current state and all retained callback events. (5) Leave Private Audio, end ChatGPT Voice, and return. (6) Press **Refresh / Record Snapshot** again; compare the result with BASELINE. Record whether the process/log survived each background interval.
+- **Expected result:** The test records exactly which mode, current communication device, available communication devices, and speakerphone boolean Android exposes before, during, and after the voice session. It does not assume that any value changes or that temporal correlation establishes causation.
+- **Observed result:** Not recorded
+- **Notes:** Callback observation is best effort while the process lives. A foreground service is deliberately absent; if Android kills the process, record that lifecycle limitation rather than treating missing events as unchanged audio state. This test performs no routing, recording, or audio capture.

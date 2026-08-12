@@ -13,18 +13,16 @@ State reflects evidence, not aspiration.
 - Repository-first documentation ownership and evidence-driven workflow established.
 - Stable AI-session onboarding context added.
 - Android application bootstrap completed with Kotlin, Compose, Material 3, and a reproducible Gradle build.
+- Observe-only audio diagnostic implemented using public Android APIs, with current-state snapshots, device callbacks, an in-memory event log, and plain-text clipboard report copying.
 
 ## CURRENT
 
-- **Implementation state: application foundation exists; no communication-audio functionality has been implemented.**
+- **Implementation state: the diagnostic observer can read communication-audio state but contains no routing request or other audio manipulation. Physical-device behavior is not yet tested.**
 
 ## NEXT
 
-- Create the call UI foundation without audio behavior (PR #4).
-- Enumerate available communication devices.
-- Identify the built-in earpiece.
-- Observe the current communication device.
-- Add communication-device change diagnostics.
+- Run the PR #4 baseline / ChatGPT Voice / recovery experiment on physical Android hardware and record the results.
+- Determine from evidence whether another application's voice session produces observable communication-device, mode, speakerphone, or device-list changes.
 - In a later PR, add explicit built-in-earpiece request and clear operations.
 
 ## UNKNOWN
@@ -36,3 +34,4 @@ State reflects evidence, not aspiration.
 - OEM-specific routing differences.
 - Exact behavior during incoming and outgoing real phone calls.
 - Whether a foreground service will eventually be required.
+- Whether communication-device callbacks are delivered while this application is backgrounded on tested Android/OEM builds, and whether process lifetime interrupts an experiment.
