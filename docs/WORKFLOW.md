@@ -101,10 +101,11 @@ A failed experiment is useful evidence. Failure alone does not authorize escalat
 
 - **PR #1 — Repository foundation:** governance and documentation only.
 - **PR #2 — Governance and workflow refinement:** documentation only.
-- **PR #3 — Minimal Android diagnostic shell:** no routing changes.
-- **PR #4 — Communication-device discovery and observation:** enumerate, identify, read, and observe only.
-- **PR #5 — Safe built-in-earpiece request and clear behavior:** no `AudioManager.MODE` manipulation.
-- **PR #6 — Physical-device compatibility validation:** record results without assuming cross-application support.
+- **PR #3 — Android project bootstrap:** buildable Compose application foundation with no audio behavior.
+- **PR #4 — Call UI foundation:** product UI only, with no routing or diagnostics behavior.
+- **PR #5 — Communication-device discovery and observation:** enumerate, identify, read, and observe only.
+- **PR #6 — Safe built-in-earpiece request and clear behavior:** no `AudioManager.MODE` manipulation.
+- **PR #7 — Physical-device compatibility validation:** record results without assuming cross-application support.
 
 Only after M0 succeeds may later PRs consider a persistent controller, foreground service if needed, floating toggle, cross-app validation, and UX polish.
 

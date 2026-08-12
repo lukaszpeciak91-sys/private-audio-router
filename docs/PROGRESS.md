@@ -12,15 +12,15 @@ State reflects evidence, not aspiration.
 - Repository foundation established.
 - Repository-first documentation ownership and evidence-driven workflow established.
 - Stable AI-session onboarding context added.
+- Android application bootstrap completed with Kotlin, Compose, Material 3, and a reproducible Gradle build.
 
 ## CURRENT
 
-- Governance and workflow refinement before Android implementation.
-- **Implementation state: pre-implementation; no Android application exists.**
+- **Implementation state: application foundation exists; no communication-audio functionality has been implemented.**
 
 ## NEXT
 
-- Create a minimal Android diagnostic shell (PR #3).
+- Create the call UI foundation without audio behavior (PR #4).
 - Enumerate available communication devices.
 - Identify the built-in earpiece.
 - Observe the current communication device.

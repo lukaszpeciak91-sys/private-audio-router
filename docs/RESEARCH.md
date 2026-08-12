@@ -11,8 +11,10 @@ This baseline separates documented platform capabilities from hypotheses and una
 - Android provides communication-device change observation.
 - Communication-device routing requests are intended for communication use cases.
 - Normal telephony has system-level routing responsibilities independent of this project.
+- `AudioManager.setCommunicationDevice()`, `getCommunicationDevice()`, `getAvailableCommunicationDevices()`, and `clearCommunicationDevice()` were added in API level 31.
+- New Google Play submissions and updates must target Android 16 (API level 36) or higher starting August 31, 2026.
 
-**Source baseline:** Add direct references to the relevant official Android `AudioManager` and `AudioDeviceInfo` documentation during implementation research. No application-specific compatibility source has yet been established.
+**Source baseline:** Official Android [`AudioManager`](https://developer.android.com/reference/android/media/AudioManager) API reference and [Google Play target API requirements](https://developer.android.com/google/play/requirements/target-sdk). No application-specific compatibility source has yet been established.
 
 ## INFERENCE
 
