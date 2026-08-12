@@ -6,7 +6,7 @@
 
 ## Status
 
-The project now has a minimal, buildable Android application foundation. Communication-audio functionality has not yet been implemented. See [`docs/PROGRESS.md`](docs/PROGRESS.md) for the authoritative current state and next step.
+The project now has an observe-only Android audio diagnostic for physical-device experiments. It displays public communication-audio state and records best-effort callbacks without requesting or changing routing. Physical-device behavior remains unverified. See [`docs/PROGRESS.md`](docs/PROGRESS.md) for the authoritative current state and next step.
 
 ## Design and safety
 
@@ -27,4 +27,4 @@ This project is not a ChatGPT or Gemini client, AI or voice assistant, audio rec
 - [Test plan](docs/TEST_PLAN.md)
 - [Development workflow](docs/WORKFLOW.md)
 
-Development sequencing and safety boundaries are defined in those documents. The recommended next PR is **PR #4 — Call UI Foundation**, with no routing or diagnostics behavior.
+Development sequencing and safety boundaries are defined in those documents. The next step is the documented physical-device ChatGPT Voice observation experiment; routing behavior is explicitly deferred.

@@ -9,6 +9,9 @@ This baseline separates documented platform capabilities from hypotheses and una
 - Android allows an application to request a communication device and clear that request.
 - Android exposes the currently selected communication device.
 - Android provides communication-device change observation.
+- `AudioManager.getMode()` publicly exposes the mode value visible to this process without changing it.
+- `AudioManager.isSpeakerphoneOn()` is a public read-only observation available across the supported SDK range, although deprecated from API 34; it reports a boolean and does not identify why that state was selected.
+- `AudioDeviceCallback` reports audio-device additions and removals while the callback remains registered and the process remains alive. The diagnostic uses these events only as a signal to take another communication-device snapshot.
 - Communication-device routing requests are intended for communication use cases.
 - Normal telephony has system-level routing responsibilities independent of this project.
 - `AudioManager.setCommunicationDevice()`, `getCommunicationDevice()`, `getAvailableCommunicationDevices()`, and `clearCommunicationDevice()` were added in API level 31.
@@ -31,6 +34,9 @@ These inferences are hypotheses for physical-device testing, not compatibility c
 - Whether an independent process can retain built-in-earpiece routing during current ChatGPT Voice.
 - OEM behavior across Android versions.
 - Behavior in browsers and browser-based realtime voice sessions.
+- Whether a current ChatGPT Voice session changes any state an independent application can observe through these APIs.
+- Whether callback delivery continues while the diagnostic activity is backgrounded on a particular physical device; Android may terminate a background process, and PR #4 uses no service or persistence.
+- Whether an observed mode, device, or speakerphone change was caused by ChatGPT. Temporal correlation in the event log is not proof of causation.
 
 ## Evidence priorities
 
