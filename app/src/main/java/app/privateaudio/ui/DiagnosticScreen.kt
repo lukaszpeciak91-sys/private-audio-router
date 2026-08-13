@@ -54,9 +54,9 @@ fun DiagnosticScreen(
             verticalArrangement = Arrangement.spacedBy(16.dp),
         ) {
             Text("PRIVATE AUDIO", style = MaterialTheme.typography.labelLarge)
-            Text("POC-2 Mode Participation", style = MaterialTheme.typography.headlineMedium)
+            Text("POC-3 Bounded Reassertion", style = MaterialTheme.typography.headlineMedium)
             Text(
-                "Experimental: one explicit arm permits one MODE_IN_COMMUNICATION participation request and at most one earpiece request. Audible success remains unknown until you confirm it.",
+                "Experimental: one explicit arm permits MODE_IN_COMMUNICATION participation and at most three timed earpiece requests. Audible success remains unknown until you confirm it.",
                 style = MaterialTheme.typography.bodyMedium,
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
             )
@@ -69,6 +69,10 @@ fun DiagnosticScreen(
                 StateRow("Mode before", experiment.modeBeforeParticipation ?: "Not attempted")
                 StateRow("Mode after request", experiment.modeAfterParticipation ?: "Not attempted")
                 StateRow("Request accepted", experiment.requestAccepted?.toString() ?: "Not attempted")
+                StateRow("Total attempts", experiment.attempts.size.toString())
+                StateRow("Earpiece reported in session", experiment.earpieceReportedDuringSession.toString())
+                StateRow("First earpiece attempt", experiment.earpieceFirstReportedAfterAttempt?.toString() ?: "None")
+                StateRow("Later reverted to speaker", experiment.revertedToSpeaker.toString())
                 StateRow(
                     "Target",
                     experiment.selectedTarget?.description() ?: "None selected",

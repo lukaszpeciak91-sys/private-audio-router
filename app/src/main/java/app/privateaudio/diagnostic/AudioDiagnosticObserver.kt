@@ -53,6 +53,21 @@ data class EarpieceExperiment(
     val modeBeforeParticipation: String? = null,
     val modeAfterParticipation: String? = null,
     val requestAccepted: Boolean? = null,
+    val attempts: List<RoutingAttempt> = emptyList(),
+    val earpieceReportedDuringSession: Boolean = false,
+    val earpieceFirstReportedAfterAttempt: Int? = null,
+    val revertedToSpeaker: Boolean = false,
+)
+
+data class RoutingAttempt(
+    val number: Int,
+    val timestamp: String,
+    val trigger: String,
+    val mode: String,
+    val deviceBefore: ObservedDevice?,
+    val accepted: Boolean,
+    val deviceImmediatelyAfter: ObservedDevice?,
+    val speakerphoneImmediatelyAfter: String,
 )
 
 class AudioDiagnosticObserver(
@@ -70,6 +85,8 @@ class AudioDiagnosticObserver(
     private var started = false
     private var routingActionInProgress = false
     private var modeParticipationActive = false
+    private val retryHandler = Handler(Looper.getMainLooper())
+    private var pendingRetry: Runnable? = null
     private val communicationDeviceListener = AudioManager.OnCommunicationDeviceChangedListener {
         snapshot("Communication device callback")
     }
@@ -113,6 +130,7 @@ class AudioDiagnosticObserver(
         val changes = describeChanges(snapshot, observed)
         snapshot = observed
         addEvent("$reason — $changes")
+        observeExperimentOutcome(observed, reason)
         if (!routingActionInProgress) evaluateExperimentTrigger()
     }
 
@@ -153,7 +171,7 @@ class AudioDiagnosticObserver(
             return
         }
 
-        if (experiment.requestAttempted && mode != AudioManager.MODE_IN_COMMUNICATION) {
+        if (experiment.attempts.isNotEmpty() && mode != AudioManager.MODE_IN_COMMUNICATION) {
             clearExperiment(
                 reason = "Observed communication session left MODE_IN_COMMUNICATION",
                 finalState = ExperimentState.CLEARED,
@@ -161,7 +179,7 @@ class AudioDiagnosticObserver(
             return
         }
 
-        if (experiment.requestAttempted || mode != AudioManager.MODE_IN_COMMUNICATION) return
+        if (experiment.attempts.isNotEmpty() || mode != AudioManager.MODE_IN_COMMUNICATION) return
         val currentDevice = audioManager.communicationDevice
         if (currentDevice?.type != AudioDeviceInfo.TYPE_BUILTIN_SPEAKER) return
         val earpiece = audioManager.availableCommunicationDevices.firstOrNull {
@@ -189,14 +207,85 @@ class AudioDiagnosticObserver(
             "Post-mode-request state — requested=MODE_IN_COMMUNICATION; " +
                 "Android-reported mode=${audioModeName(modeAfterParticipation)}; ${currentStateDescription()}",
         )
-        val accepted = audioManager.setCommunicationDevice(earpiece)
         routingActionInProgress = false
-        experiment = experiment.copy(requestAccepted = accepted)
-        addEvent("One-shot setCommunicationDevice attempt — request accepted=$accepted; target=${target.shortName()}")
-        snapshot("Post-request observation")
+        performRoutingAttempt(earpiece, "initial qualifying state observed")
+    }
+
+    private fun performRoutingAttempt(earpiece: AudioDeviceInfo, trigger: String) {
+        if (!experiment.armed || experiment.attempts.size >= MAX_ROUTING_ATTEMPTS) return
+        if (audioManager.mode.isTelephonyOrSystemPriorityMode()) {
+            clearExperiment("Routing attempt blocked by system/telephony-priority mode", ExperimentState.BLOCKED)
+            return
+        }
+        if (audioManager.mode != AudioManager.MODE_IN_COMMUNICATION) {
+            clearExperiment("Routing attempt cancelled: communication session ended", ExperimentState.CLEARED)
+            return
+        }
+
+        val number = experiment.attempts.size + 1
+        val before = audioManager.communicationDevice?.toObservedDevice()
+        val mode = audioModeName(audioManager.mode)
+        val timestamp = LocalTime.now().format(TIME_FORMAT)
+        routingActionInProgress = true
+        addEvent("Routing attempt $number/$MAX_ROUTING_ATTEMPTS — trigger=$trigger; mode=$mode; device before=${before.reportDescription()}")
+        val accepted = audioManager.setCommunicationDevice(earpiece)
+        val after = audioManager.communicationDevice?.toObservedDevice()
+        val speakerphone = observedSpeakerphoneState()
+        val attempt = RoutingAttempt(number, timestamp, trigger, mode, before, accepted, after, speakerphone)
+        experiment = experiment.copy(
+            requestAccepted = accepted,
+            attempts = experiment.attempts + attempt,
+        )
+        addEvent("Routing attempt $number result — accepted=$accepted; device immediately after=${after.reportDescription()}; speakerphone=$speakerphone")
+        routingActionInProgress = false
+        snapshot("Post-attempt $number observation")
+
+        if (experiment.armed && audioManager.communicationDevice?.type == AudioDeviceInfo.TYPE_BUILTIN_SPEAKER &&
+            number < MAX_ROUTING_ATTEMPTS
+        ) scheduleRetry(number + 1)
+    }
+
+    private fun scheduleRetry(nextAttempt: Int) {
+        cancelPendingRetry()
+        val runnable = Runnable {
+            pendingRetry = null
+            snapshot("Controlled retry delay elapsed for attempt $nextAttempt")
+            if (!experiment.armed || experiment.attempts.size + 1 != nextAttempt) return@Runnable
+            if (audioManager.communicationDevice?.type != AudioDeviceInfo.TYPE_BUILTIN_SPEAKER) return@Runnable
+            val earpiece = audioManager.availableCommunicationDevices.firstOrNull {
+                it.type == AudioDeviceInfo.TYPE_BUILTIN_EARPIECE
+            }
+            if (earpiece == null) {
+                addEvent("Attempt $nextAttempt cancelled — built-in earpiece is no longer available")
+                return@Runnable
+            }
+            performRoutingAttempt(earpiece, "${RETRY_DELAY_MS} ms elapsed; Android still reports built-in speaker")
+        }
+        pendingRetry = runnable
+        retryHandler.postDelayed(runnable, RETRY_DELAY_MS)
+        addEvent("Attempt $nextAttempt scheduled — controlled ${RETRY_DELAY_MS} ms delay; only runs if session remains eligible and speaker remains reported")
+    }
+
+    private fun observeExperimentOutcome(observed: DiagnosticSnapshot, reason: String) {
+        if (experiment.attempts.isEmpty() || observed.mode != "MODE_IN_COMMUNICATION") return
+        when (observed.communicationDevice?.type) {
+            "Built-in earpiece" -> if (!experiment.earpieceReportedDuringSession) {
+                experiment = experiment.copy(
+                    earpieceReportedDuringSession = true,
+                    earpieceFirstReportedAfterAttempt = experiment.attempts.last().number,
+                )
+                addEvent("Android first reported built-in earpiece during active session after attempt ${experiment.attempts.last().number} — observation=$reason")
+                cancelPendingRetry()
+            }
+            "Built-in speaker" -> if (experiment.earpieceReportedDuringSession && !experiment.revertedToSpeaker) {
+                experiment = experiment.copy(revertedToSpeaker = true)
+                addEvent("Android route reverted to built-in speaker during active session — observation=$reason")
+            }
+        }
     }
 
     private fun clearExperiment(reason: String, finalState: ExperimentState) {
+        cancelPendingRetry()
         routingActionInProgress = true
         audioManager.clearCommunicationDevice()
         addEvent("clearCommunicationDevice called — $reason")
@@ -214,6 +303,11 @@ class AudioDiagnosticObserver(
         routingActionInProgress = false
         experiment = experiment.copy(state = finalState, armed = false)
         snapshot("Post-cleanup observation")
+    }
+
+    private fun cancelPendingRetry() {
+        pendingRetry?.let(retryHandler::removeCallbacks)
+        pendingRetry = null
     }
 
     private fun currentStateDescription() =
@@ -243,7 +337,16 @@ internal fun buildDiagnosticReport(
     appendLine("Mode after participation request: ${experiment.modeAfterParticipation ?: "Not attempted"}")
     appendLine("Selected target: ${experiment.selectedTarget.reportDescription()}")
     appendLine("setCommunicationDevice return value: ${experiment.requestAccepted ?: "Not attempted"}")
+    appendLine("Total routing attempts: ${experiment.attempts.size}")
+    appendLine("Android ever reported built-in earpiece while external communication remained active: ${experiment.earpieceReportedDuringSession}")
+    appendLine("Attempt after which earpiece was first reported: ${experiment.earpieceFirstReportedAfterAttempt ?: "None"}")
+    appendLine("Route later reverted to built-in speaker: ${experiment.revertedToSpeaker}")
     appendLine("Audible ChatGPT audio moved to earpiece: UNKNOWN — requires human physical-device confirmation")
+    appendLine()
+    appendLine("ROUTING ATTEMPTS")
+    if (experiment.attempts.isEmpty()) appendLine("None") else experiment.attempts.forEach { attempt ->
+        appendLine("Attempt ${attempt.number}: timestamp=${attempt.timestamp}; trigger=${attempt.trigger}; mode=${attempt.mode}; device before=${attempt.deviceBefore.reportDescription()}; return=${attempt.accepted}; device immediately after=${attempt.deviceImmediatelyAfter.reportDescription()}; speakerphone immediately after=${attempt.speakerphoneImmediatelyAfter}")
+    }
     appendLine()
     appendLine("CURRENT STATE")
     appendLine("AudioManager mode: ${snapshot.mode}")
@@ -353,3 +456,5 @@ internal fun audioDeviceTypeName(type: Int) = when (type) {
 
 private val TIME_FORMAT = DateTimeFormatter.ofPattern("HH:mm:ss.SSS")
 private const val MAX_EVENTS = 100
+private const val MAX_ROUTING_ATTEMPTS = 3
+private const val RETRY_DELAY_MS = 750L
