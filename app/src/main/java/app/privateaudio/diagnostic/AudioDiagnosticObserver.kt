@@ -49,6 +49,9 @@ data class EarpieceExperiment(
     val armed: Boolean = false,
     val requestAttempted: Boolean = false,
     val selectedTarget: ObservedDevice? = null,
+    val modeParticipationRequested: Boolean = false,
+    val modeBeforeParticipation: String? = null,
+    val modeAfterParticipation: String? = null,
     val requestAccepted: Boolean? = null,
 )
 
@@ -66,6 +69,7 @@ class AudioDiagnosticObserver(
 
     private var started = false
     private var routingActionInProgress = false
+    private var modeParticipationActive = false
     private val communicationDeviceListener = AudioManager.OnCommunicationDeviceChangedListener {
         snapshot("Communication device callback")
     }
@@ -165,14 +169,26 @@ class AudioDiagnosticObserver(
         } ?: return
 
         val target = earpiece.toObservedDevice()
-        addEvent("Qualifying trigger observed — pre-request state: ${snapshot.inlineDescription()}")
-        // Set the guard before calling Android: even a synchronous callback cannot cause a retry.
+        val modeBeforeParticipation = audioManager.mode
+        addEvent("Qualifying trigger observed — complete pre-change state: ${snapshot.inlineDescription()}")
+        // Set both guards before changing Android state: even a synchronous callback cannot cause a retry.
         experiment = experiment.copy(
             state = ExperimentState.REQUEST_ATTEMPTED,
             requestAttempted = true,
             selectedTarget = target,
+            modeParticipationRequested = true,
+            modeBeforeParticipation = audioModeName(modeBeforeParticipation),
         )
         routingActionInProgress = true
+        addEvent("Private Audio mode change requested — AudioManager.mode=MODE_IN_COMMUNICATION")
+        modeParticipationActive = true
+        audioManager.mode = AudioManager.MODE_IN_COMMUNICATION
+        val modeAfterParticipation = audioManager.mode
+        experiment = experiment.copy(modeAfterParticipation = audioModeName(modeAfterParticipation))
+        addEvent(
+            "Post-mode-request state — requested=MODE_IN_COMMUNICATION; " +
+                "Android-reported mode=${audioModeName(modeAfterParticipation)}; ${currentStateDescription()}",
+        )
         val accepted = audioManager.setCommunicationDevice(earpiece)
         routingActionInProgress = false
         experiment = experiment.copy(requestAccepted = accepted)
@@ -183,11 +199,26 @@ class AudioDiagnosticObserver(
     private fun clearExperiment(reason: String, finalState: ExperimentState) {
         routingActionInProgress = true
         audioManager.clearCommunicationDevice()
+        addEvent("clearCommunicationDevice called — $reason")
+        if (modeParticipationActive) {
+            // MODE_NORMAL relinquishes this process's mode ownership. Android may then expose the
+            // mode still owned by an external communication or telephony session.
+            modeParticipationActive = false
+            audioManager.mode = AudioManager.MODE_NORMAL
+            addEvent(
+                "Private Audio mode participation relinquished with MODE_NORMAL — " +
+                    "pre-participation mode=${experiment.modeBeforeParticipation}; " +
+                    "Android-reported mode=${audioModeName(audioManager.mode)}",
+            )
+        }
         routingActionInProgress = false
         experiment = experiment.copy(state = finalState, armed = false)
-        addEvent("clearCommunicationDevice called — $reason")
         snapshot("Post-cleanup observation")
     }
+
+    private fun currentStateDescription() =
+        "communication device=${audioManager.communicationDevice?.toObservedDevice().reportDescription()}; " +
+            "speakerphone=${observedSpeakerphoneState()}"
 
     @Suppress("DEPRECATION")
     private fun observedSpeakerphoneState() =
@@ -207,6 +238,9 @@ internal fun buildDiagnosticReport(
     appendLine("Experiment state: ${experiment.state.label}")
     appendLine("Armed: ${experiment.armed}")
     appendLine("Routing request attempted: ${experiment.requestAttempted}")
+    appendLine("Private Audio mode change requested: ${experiment.modeParticipationRequested}")
+    appendLine("Mode before participation: ${experiment.modeBeforeParticipation ?: "Not attempted"}")
+    appendLine("Mode after participation request: ${experiment.modeAfterParticipation ?: "Not attempted"}")
     appendLine("Selected target: ${experiment.selectedTarget.reportDescription()}")
     appendLine("setCommunicationDevice return value: ${experiment.requestAccepted ?: "Not attempted"}")
     appendLine("Audible ChatGPT audio moved to earpiece: UNKNOWN — requires human physical-device confirmation")

@@ -54,9 +54,9 @@ fun DiagnosticScreen(
             verticalArrangement = Arrangement.spacedBy(16.dp),
         ) {
             Text("PRIVATE AUDIO", style = MaterialTheme.typography.labelLarge)
-            Text("One-Shot Routing Diagnostic", style = MaterialTheme.typography.headlineMedium)
+            Text("POC-2 Mode Participation", style = MaterialTheme.typography.headlineMedium)
             Text(
-                "Experimental: one explicit arm permits at most one earpiece request. Audible success remains unknown until you confirm it.",
+                "Experimental: one explicit arm permits one MODE_IN_COMMUNICATION participation request and at most one earpiece request. Audible success remains unknown until you confirm it.",
                 style = MaterialTheme.typography.bodyMedium,
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
             )
@@ -65,6 +65,9 @@ fun DiagnosticScreen(
                 StateRow("Experiment state", experiment.state.label)
                 StateRow("Armed", experiment.armed.toString())
                 StateRow("Request attempted", experiment.requestAttempted.toString())
+                StateRow("Mode change requested", experiment.modeParticipationRequested.toString())
+                StateRow("Mode before", experiment.modeBeforeParticipation ?: "Not attempted")
+                StateRow("Mode after request", experiment.modeAfterParticipation ?: "Not attempted")
                 StateRow("Request accepted", experiment.requestAccepted?.toString() ?: "Not attempted")
                 StateRow(
                     "Target",

@@ -81,3 +81,11 @@ This is a lightweight, append-only log. Do not rewrite accepted history; append 
 - **Context:** No organization-owned domain or permanent production application ID has been established.
 - **Decision:** Use `app.privateaudio` as the provisional namespace and application ID.
 - **Consequences:** A globally unique production ID must be selected before public distribution; changing it later may affect upgrades and published identity.
+
+## D-011 — Controlled communication-mode participation for POC-2
+
+- **Date:** 2026-08-13
+- **Status:** Accepted; supersedes D-003 for POC-2 only
+- **Context:** POC-1 on device product `2201117TY` found that a one-shot communication-device request returned `true`, but Android continued to report ChatGPT Voice on the built-in speaker. A routing-only request is therefore insufficient evidence of control on this device.
+- **Decision:** POC-2 may explicitly set `AudioManager.mode` to `MODE_IN_COMMUNICATION` after an armed experiment observes an external communication session on the built-in speaker, then issue exactly one built-in-earpiece request.
+- **Consequences:** The diagnostic must record the pre-change mode and post-request state, relinquish its mode participation with `MODE_NORMAL` during every cleanup path, avoid retry loops and services, and yield to telephony/system-priority modes. This authorization does not extend to production behavior or a later persistence experiment.
