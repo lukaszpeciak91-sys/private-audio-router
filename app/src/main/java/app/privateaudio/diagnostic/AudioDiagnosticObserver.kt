@@ -202,7 +202,6 @@ internal fun audioDeviceTypeName(type: Int) = when (type) {
     AudioDeviceInfo.TYPE_BUS -> "Audio bus"
     AudioDeviceInfo.TYPE_REMOTE_SUBMIX -> "Remote submix"
     AudioDeviceInfo.TYPE_TELEPHONY -> "Telephony"
-    AudioDeviceInfo.TYPE_ECHO_REFERENCE -> "Echo reference"
     AudioDeviceInfo.TYPE_FM -> "FM"
     else -> "Unknown type ($type)"
 }
