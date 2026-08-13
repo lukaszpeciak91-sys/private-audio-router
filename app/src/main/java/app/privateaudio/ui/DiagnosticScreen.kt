@@ -23,6 +23,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import app.privateaudio.diagnostic.DiagnosticSnapshot
+import app.privateaudio.diagnostic.EarpieceExperiment
 import app.privateaudio.diagnostic.ObservedDevice
 import app.privateaudio.ui.theme.PrivateAudioTheme
 import kotlinx.coroutines.launch
@@ -30,7 +31,10 @@ import kotlinx.coroutines.launch
 @Composable
 fun DiagnosticScreen(
     snapshot: DiagnosticSnapshot,
+    experiment: EarpieceExperiment,
     events: List<String>,
+    onArm: () -> Unit,
+    onDisarm: () -> Unit,
     onSnapshot: () -> Unit,
     onCopyReport: () -> Unit,
 ) {
@@ -50,12 +54,31 @@ fun DiagnosticScreen(
             verticalArrangement = Arrangement.spacedBy(16.dp),
         ) {
             Text("PRIVATE AUDIO", style = MaterialTheme.typography.labelLarge)
-            Text("Diagnostic Observer", style = MaterialTheme.typography.headlineMedium)
+            Text("One-Shot Routing Diagnostic", style = MaterialTheme.typography.headlineMedium)
             Text(
-                "Observe only — this screen never requests or changes audio routing.",
+                "Experimental: one explicit arm permits at most one earpiece request. Audible success remains unknown until you confirm it.",
                 style = MaterialTheme.typography.bodyMedium,
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
             )
+
+            Section("EARPIECE EXPERIMENT") {
+                StateRow("Experiment state", experiment.state.label)
+                StateRow("Armed", experiment.armed.toString())
+                StateRow("Request attempted", experiment.requestAttempted.toString())
+                StateRow("Request accepted", experiment.requestAccepted?.toString() ?: "Not attempted")
+                StateRow(
+                    "Target",
+                    experiment.selectedTarget?.description() ?: "None selected",
+                )
+            }
+
+            Button(onClick = onArm, modifier = Modifier.fillMaxWidth()) {
+                Text("ARM EARPIECE TEST")
+            }
+
+            Button(onClick = onDisarm, modifier = Modifier.fillMaxWidth()) {
+                Text("DISARM / CLEAR")
+            }
 
             Section("CURRENT STATE") {
                 StateRow("AudioManager mode", snapshot.mode)
@@ -143,7 +166,10 @@ private fun DiagnosticScreenPreview() {
                 ),
                 speakerphoneState = "Off (directly observed)",
             ),
+            experiment = EarpieceExperiment(),
             events = listOf("12:00:00.000  Baseline — state recorded"),
+            onArm = {},
+            onDisarm = {},
             onSnapshot = {},
             onCopyReport = {},
         )

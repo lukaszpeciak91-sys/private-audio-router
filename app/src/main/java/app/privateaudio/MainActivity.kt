@@ -28,7 +28,10 @@ class MainActivity : ComponentActivity() {
             PrivateAudioTheme {
                 DiagnosticScreen(
                     snapshot = observer.snapshot,
+                    experiment = observer.experiment,
                     events = observer.events,
+                    onArm = observer::armEarpieceTest,
+                    onDisarm = observer::disarmAndClear,
                     onSnapshot = { observer.snapshot("Manual snapshot") },
                     onCopyReport = {
                         observer.snapshot("Report snapshot")

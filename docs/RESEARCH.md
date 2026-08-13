@@ -27,6 +27,12 @@ This baseline separates documented platform capabilities from hypotheses and una
 
 These inferences are hypotheses for physical-device testing, not compatibility claims.
 
+## RECORDED PHYSICAL-DEVICE OBSERVATION
+
+- **FACT (single recorded observation; device, Android, build, and ChatGPT versions not yet supplied):** The reported baseline was `MODE_NORMAL`, built-in earpiece, and speakerphone off. Starting ChatGPT Voice was temporally correlated with `MODE_IN_COMMUNICATION`, built-in speaker, and speakerphone on. Ending Voice was temporally correlated with return to the reported baseline values.
+- **UNKNOWN:** Whether ChatGPT caused each transition. Temporal correlation does not establish ownership or causation.
+- **UNKNOWN:** Whether the behavior repeats on the same device or generalizes to any other Android/OEM/application version.
+
 ## UNKNOWN
 
 - The exact low-level audio attributes used by the current ChatGPT Android application.
@@ -34,7 +40,9 @@ These inferences are hypotheses for physical-device testing, not compatibility c
 - Whether an independent process can retain built-in-earpiece routing during current ChatGPT Voice.
 - OEM behavior across Android versions.
 - Behavior in browsers and browser-based realtime voice sessions.
-- Whether a current ChatGPT Voice session changes any state an independent application can observe through these APIs.
+- Whether the recorded ChatGPT Voice-correlated state transition repeats when POC-1 is run with complete test metadata.
+- Whether `setCommunicationDevice()` accepts a request made after Private Audio has been backgrounded while its process remains alive.
+- Whether an accepted request produces a subsequently observed earpiece state, and separately whether a human hears ChatGPT Voice move to the earpiece.
 - Whether callback delivery continues while the diagnostic activity is backgrounded on a particular physical device; Android may terminate a background process, and PR #4 uses no service or persistence.
 - Whether an observed mode, device, or speakerphone change was caused by ChatGPT. Temporal correlation in the event log is not proof of causation.
 

@@ -169,3 +169,16 @@ Allowed status values are **NOT TESTED**, **PASS**, **FAIL**, and **BLOCKED**. R
 - **Expected result:** The test records exactly which mode, current communication device, available communication devices, and speakerphone boolean Android exposes before, during, and after the voice session. It does not assume that any value changes or that temporal correlation establishes causation.
 - **Observed result:** Not recorded
 - **Notes:** Callback observation is best effort while the process lives. A foreground service is deliberately absent; if Android kills the process, record that lifecycle limitation rather than treating missing events as unchanged audio state. This test performs no routing, recording, or audio capture.
+
+## POC-1 — ChatGPT Voice earpiece request
+
+- **Status:** NOT TESTED
+- **Device:** Not recorded
+- **Android version:** Not recorded
+- **Build:** PR #5 build, exact commit not yet recorded
+- **ChatGPT version:** Not recorded
+- **Preconditions:** Disconnect or record audio accessories. Confirm no real phone call is active. Private Audio shows the baseline and an available built-in earpiece.
+- **Steps:** (1) Launch Private Audio. (2) Confirm and record baseline. (3) Press **Arm Earpiece Test**. (4) Switch to ChatGPT. (5) Start Voice. (6) Confirm ChatGPT initially uses the main speaker. (7) Remain in ChatGPT and listen for an automatic transition to the earpiece. (8) Speak with ChatGPT briefly if routing changes. (9) End ChatGPT Voice. (10) Return to Private Audio. (11) Confirm cleanup and state recovery. (12) Press **Copy Report** and retain the complete plain-text report.
+- **Expected result:** The report establishes whether the trigger occurred, whether the single `setCommunicationDevice()` call returned true or false, whether Android subsequently reported the earpiece, whether the human tester audibly confirmed ChatGPT moved to the earpiece, whether ending Voice restored normal state, and whether any abnormal system-audio behavior remained.
+- **Observed result:** Not recorded
+- **Notes:** API acceptance, an observed Android device, and audible cross-application routing are separate evidence. Callbacks are best effort while the process lives; Android may kill the background process. Do not mark PASS without the audible and cleanup checks on physical hardware. A failure is evidence and must not trigger a retry or invasive workaround.
