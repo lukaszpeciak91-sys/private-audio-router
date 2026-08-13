@@ -14,6 +14,7 @@ State reflects evidence, not aspiration.
 - Stable AI-session onboarding context added.
 - Android application bootstrap completed with Kotlin, Compose, Material 3, and a reproducible Gradle build.
 - Observe-only audio diagnostic implemented using public Android APIs, with current-state snapshots, device callbacks, an in-memory event log, and plain-text clipboard report copying.
+- Observe-only audio diagnostic compile failure fixed by removing the unavailable `TYPE_ECHO_REFERENCE` device-type label.
 
 ## CURRENT
 
