@@ -13,7 +13,10 @@ class DiagnosticScreenTest {
 
     @Test
     fun diagnosticSectionsAreDisplayed() {
-        composeRule.onNodeWithText("Diagnostic Observer").assertIsDisplayed()
+        composeRule.onNodeWithText("One-Shot Routing Diagnostic").assertIsDisplayed()
+        composeRule.onNodeWithText("EARPIECE EXPERIMENT").assertIsDisplayed()
+        composeRule.onNodeWithText("ARM EARPIECE TEST").assertIsDisplayed()
+        composeRule.onNodeWithText("DISARM / CLEAR").assertIsDisplayed()
         composeRule.onNodeWithText("CURRENT STATE").assertIsDisplayed()
         composeRule.onNodeWithText("AVAILABLE COMMUNICATION DEVICES").assertIsDisplayed()
         composeRule.onNodeWithText("REFRESH / RECORD SNAPSHOT").assertIsDisplayed()

@@ -36,6 +36,22 @@ data class DiagnosticSnapshot(
     }
 }
 
+enum class ExperimentState(val label: String) {
+    IDLE("IDLE"),
+    ARMED("ARMED"),
+    REQUEST_ATTEMPTED("REQUEST ATTEMPTED"),
+    CLEARED("CLEARED"),
+    BLOCKED("BLOCKED / FAILED"),
+}
+
+data class EarpieceExperiment(
+    val state: ExperimentState = ExperimentState.IDLE,
+    val armed: Boolean = false,
+    val requestAttempted: Boolean = false,
+    val selectedTarget: ObservedDevice? = null,
+    val requestAccepted: Boolean? = null,
+)
+
 class AudioDiagnosticObserver(
     private val audioManager: AudioManager,
     private val callbackExecutor: Executor,
@@ -43,9 +59,13 @@ class AudioDiagnosticObserver(
     var snapshot by mutableStateOf(DiagnosticSnapshot.Empty)
         private set
 
+    var experiment by mutableStateOf(EarpieceExperiment())
+        private set
+
     val events = mutableStateListOf<String>()
 
     private var started = false
+    private var routingActionInProgress = false
     private val communicationDeviceListener = AudioManager.OnCommunicationDeviceChangedListener {
         snapshot("Communication device callback")
     }
@@ -72,6 +92,7 @@ class AudioDiagnosticObserver(
 
     fun stop() {
         if (!started) return
+        clearExperiment("Activity destroyed", ExperimentState.CLEARED)
         audioManager.removeOnCommunicationDeviceChangedListener(communicationDeviceListener)
         audioManager.unregisterAudioDeviceCallback(audioDeviceCallback)
         started = false
@@ -88,10 +109,25 @@ class AudioDiagnosticObserver(
         val changes = describeChanges(snapshot, observed)
         snapshot = observed
         addEvent("$reason — $changes")
+        if (!routingActionInProgress) evaluateExperimentTrigger()
+    }
+
+    fun armEarpieceTest() {
+        if (experiment.requestAttempted || experiment.armed) {
+            clearExperiment("Re-arm requested", ExperimentState.CLEARED)
+        }
+        experiment = EarpieceExperiment(state = ExperimentState.ARMED, armed = true)
+        addEvent("Earpiece test armed — waiting for qualifying Android audio state")
+        snapshot("Arm snapshot")
+    }
+
+    fun disarmAndClear() {
+        clearExperiment("User disarmed experiment", ExperimentState.CLEARED)
     }
 
     fun report(): String = buildDiagnosticReport(
         timestamp = OffsetDateTime.now().format(DateTimeFormatter.ISO_OFFSET_DATE_TIME),
+        experiment = experiment,
         snapshot = snapshot,
         events = events,
     )
@@ -101,6 +137,58 @@ class AudioDiagnosticObserver(
         while (events.size > MAX_EVENTS) events.removeAt(events.lastIndex)
     }
 
+    private fun evaluateExperimentTrigger() {
+        if (!experiment.armed) return
+
+        val mode = audioManager.mode
+        if (mode.isTelephonyOrSystemPriorityMode()) {
+            clearExperiment(
+                reason = "Blocked by system/telephony-priority mode ${audioModeName(mode)}",
+                finalState = ExperimentState.BLOCKED,
+            )
+            return
+        }
+
+        if (experiment.requestAttempted && mode != AudioManager.MODE_IN_COMMUNICATION) {
+            clearExperiment(
+                reason = "Observed communication session left MODE_IN_COMMUNICATION",
+                finalState = ExperimentState.CLEARED,
+            )
+            return
+        }
+
+        if (experiment.requestAttempted || mode != AudioManager.MODE_IN_COMMUNICATION) return
+        val currentDevice = audioManager.communicationDevice
+        if (currentDevice?.type != AudioDeviceInfo.TYPE_BUILTIN_SPEAKER) return
+        val earpiece = audioManager.availableCommunicationDevices.firstOrNull {
+            it.type == AudioDeviceInfo.TYPE_BUILTIN_EARPIECE
+        } ?: return
+
+        val target = earpiece.toObservedDevice()
+        addEvent("Qualifying trigger observed — pre-request state: ${snapshot.inlineDescription()}")
+        // Set the guard before calling Android: even a synchronous callback cannot cause a retry.
+        experiment = experiment.copy(
+            state = ExperimentState.REQUEST_ATTEMPTED,
+            requestAttempted = true,
+            selectedTarget = target,
+        )
+        routingActionInProgress = true
+        val accepted = audioManager.setCommunicationDevice(earpiece)
+        routingActionInProgress = false
+        experiment = experiment.copy(requestAccepted = accepted)
+        addEvent("One-shot setCommunicationDevice attempt — request accepted=$accepted; target=${target.shortName()}")
+        snapshot("Post-request observation")
+    }
+
+    private fun clearExperiment(reason: String, finalState: ExperimentState) {
+        routingActionInProgress = true
+        audioManager.clearCommunicationDevice()
+        routingActionInProgress = false
+        experiment = experiment.copy(state = finalState, armed = false)
+        addEvent("clearCommunicationDevice called — $reason")
+        snapshot("Post-cleanup observation")
+    }
+
     @Suppress("DEPRECATION")
     private fun observedSpeakerphoneState() =
         if (audioManager.isSpeakerphoneOn) "On (directly observed)" else "Off (directly observed)"
@@ -108,11 +196,20 @@ class AudioDiagnosticObserver(
 
 internal fun buildDiagnosticReport(
     timestamp: String,
+    experiment: EarpieceExperiment,
     snapshot: DiagnosticSnapshot,
     events: List<String>,
 ) = buildString {
     appendLine("PRIVATE AUDIO — DIAGNOSTIC REPORT")
     appendLine("Timestamp: $timestamp")
+    appendLine()
+    appendLine("EARPIECE EXPERIMENT")
+    appendLine("Experiment state: ${experiment.state.label}")
+    appendLine("Armed: ${experiment.armed}")
+    appendLine("Routing request attempted: ${experiment.requestAttempted}")
+    appendLine("Selected target: ${experiment.selectedTarget.reportDescription()}")
+    appendLine("setCommunicationDevice return value: ${experiment.requestAccepted ?: "Not attempted"}")
+    appendLine("Audible ChatGPT audio moved to earpiece: UNKNOWN — requires human physical-device confirmation")
     appendLine()
     appendLine("CURRENT STATE")
     appendLine("AudioManager mode: ${snapshot.mode}")
@@ -134,6 +231,20 @@ internal fun buildDiagnosticReport(
     } else {
         append(events.joinToString(separator = "\n"))
     }
+}
+
+private fun DiagnosticSnapshot.inlineDescription() =
+    "mode=$mode; communication device=${communicationDevice.reportDescription()}; " +
+        "speakerphone=$speakerphoneState; available devices=" +
+        availableCommunicationDevices.joinToString(prefix = "[", postfix = "]") { it.reportDescription() }
+
+private fun Int.isTelephonyOrSystemPriorityMode() = when (this) {
+    AudioManager.MODE_RINGTONE,
+    AudioManager.MODE_IN_CALL,
+    AudioManager.MODE_CALL_SCREENING,
+    AudioManager.MODE_CALL_REDIRECT,
+    AudioManager.MODE_COMMUNICATION_REDIRECT -> true
+    else -> false
 }
 
 internal fun describeChanges(previous: DiagnosticSnapshot, current: DiagnosticSnapshot): String {
