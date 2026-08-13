@@ -89,3 +89,11 @@ This is a lightweight, append-only log. Do not rewrite accepted history; append 
 - **Context:** POC-1 on device product `2201117TY` found that a one-shot communication-device request returned `true`, but Android continued to report ChatGPT Voice on the built-in speaker. A routing-only request is therefore insufficient evidence of control on this device.
 - **Decision:** POC-2 may explicitly set `AudioManager.mode` to `MODE_IN_COMMUNICATION` after an armed experiment observes an external communication session on the built-in speaker, then issue exactly one built-in-earpiece request.
 - **Consequences:** The diagnostic must record the pre-change mode and post-request state, relinquish its mode participation with `MODE_NORMAL` during every cleanup path, avoid retry loops and services, and yield to telephony/system-priority modes. This authorization does not extend to production behavior or a later persistence experiment.
+
+## D-012 — Bounded route reassertion for POC-3
+
+- **Date:** 2026-08-13
+- **Status:** Accepted; extends D-011 for POC-3 only
+- **Context:** POC-2 on device product `2201117TY` requested `MODE_IN_COMMUNICATION` and made one accepted earpiece request, but Android continued to report the built-in speaker until ChatGPT Voice ended.
+- **Decision:** One explicitly armed POC-3 run may retain POC-2 mode participation and make at most three `setCommunicationDevice()` calls. After the initial qualifying-state request, each of at most two additional requests must wait for a controlled 750 ms delay and revalidate that the session remains in `MODE_IN_COMMUNICATION` with the built-in speaker reported.
+- **Consequences:** Pending work must be cancelled on every cleanup path; callbacks and delayed work cannot exceed the three-call cap or act after disarm/session exit. This is a bounded diagnostic experiment, not authorization for continuous reassertion, polling, a foreground service, or POC-4.

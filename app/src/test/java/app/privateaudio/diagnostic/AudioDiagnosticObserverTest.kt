@@ -49,6 +49,16 @@ class AudioDiagnosticObserverTest {
                 modeBeforeParticipation = "MODE_IN_COMMUNICATION",
                 modeAfterParticipation = "MODE_IN_COMMUNICATION",
                 requestAccepted = true,
+                attempts = listOf(
+                    RoutingAttempt(
+                        1, "12:34:56.000", "initial qualifying state observed",
+                        "MODE_IN_COMMUNICATION", ObservedDevice(2, "Built-in speaker", "Phone speaker"),
+                        true, ObservedDevice(1, "Built-in earpiece", "Phone earpiece"),
+                        "Off (directly observed)",
+                    ),
+                ),
+                earpieceReportedDuringSession = true,
+                earpieceFirstReportedAfterAttempt = 1,
             ),
             snapshot = snapshot,
             events = listOf("12:34:55.000  Baseline — state recorded", "12:34:56.000  Manual snapshot"),
@@ -61,6 +71,9 @@ class AudioDiagnosticObserverTest {
         assertTrue(report.contains("Mode before participation: MODE_IN_COMMUNICATION"))
         assertTrue(report.contains("Mode after participation request: MODE_IN_COMMUNICATION"))
         assertTrue(report.contains("setCommunicationDevice return value: true"))
+        assertTrue(report.contains("Total routing attempts: 1"))
+        assertTrue(report.contains("Attempt after which earpiece was first reported: 1"))
+        assertTrue(report.contains("Attempt 1: timestamp=12:34:56.000"))
         assertTrue(report.contains("Audible ChatGPT audio moved to earpiece: UNKNOWN"))
         assertTrue(report.contains("AudioManager mode: MODE_IN_COMMUNICATION"))
         assertTrue(report.contains("type=Built-in earpiece; product=Phone earpiece; Android device ID=1"))

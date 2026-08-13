@@ -185,13 +185,26 @@ Allowed status values are **NOT TESTED**, **PASS**, **FAIL**, and **BLOCKED**. R
 
 ## POC-2 — ChatGPT Voice communication-mode participation
 
-- **Status:** NOT TESTED
-- **Device:** Not recorded
+- **Status:** FAIL
+- **Device:** Product `2201117TY`; other device metadata not recorded
 - **Android version:** Not recorded
 - **Build:** POC-2 build, exact commit not yet recorded
 - **ChatGPT version:** Not recorded
 - **Preconditions:** Disconnect or record audio accessories; confirm no real phone call is active; verify Private Audio reports an available built-in earpiece. Prepare to copy the report and manually record audible output.
 - **Steps:** (1) Launch Private Audio and record baseline. (2) Press **Arm Earpiece Test**. (3) Switch to ChatGPT and start Voice. (4) Wait until Android reports `MODE_IN_COMMUNICATION` with the built-in speaker. (5) Allow the armed experiment to record pre-change state, request `MODE_IN_COMMUNICATION`, record the resulting mode/device/speakerphone state and callbacks, and issue its single earpiece request. (6) Record whether Android reports the earpiece and whether ChatGPT is audibly heard through it. (7) End Voice and return to Private Audio. (8) Confirm cleanup, copy the report, and verify normal audio behavior. (9) Repeat separate safety runs using **Disarm / Clear**, activity destruction, and an incoming or outgoing real call; stop immediately if telephony is impaired.
 - **Expected result:** During active ChatGPT Voice, Android changes the reported communication device from the built-in speaker to the built-in earpiece after Private Audio requests communication-mode participation and makes one routing request. The report distinguishes the mode request, mode before/after, routing API result, reported route, speakerphone state, callback transitions, cleanup, and human-confirmed audible route.
+- **Observed result:** Private Audio requested `MODE_IN_COMMUNICATION`, Android reported `MODE_IN_COMMUNICATION`, and the earpiece routing request returned `true`. Android continued to report the built-in speaker throughout active ChatGPT Voice and returned to the built-in earpiece after Voice ended.
+- **Notes:** The unchanged active-session route makes this execution FAIL. Audible output was not recorded. API acceptance, an observed Android device, and audible cross-application routing remain separate evidence. This result authorizes only D-012's bounded POC-3 experiment.
+
+## POC-3 — ChatGPT Voice bounded earpiece reassertion
+
+- **Status:** NOT TESTED
+- **Device:** Not recorded
+- **Android version:** Not recorded
+- **Build:** POC-3 build, exact commit not yet recorded
+- **ChatGPT version:** Not recorded
+- **Preconditions:** Disconnect or record audio accessories; confirm no real phone call is active; verify an available built-in earpiece; prepare to retain the copied report and manually record audible output.
+- **Steps:** (1) Launch Private Audio and record baseline. (2) Press **Arm Earpiece Test**. (3) Start ChatGPT Voice and wait for Android to report `MODE_IN_COMMUNICATION` with the built-in speaker. (4) Allow Private Audio to record complete pre-test state, participate in communication mode, and make its initial earpiece request. (5) If Android still reports the speaker, allow the experiment to make at most two further attempts, each only after its 750 ms controlled delay and eligibility recheck. (6) Keep ChatGPT Voice active while recording whether Android ever reports the earpiece, which attempt preceded that change, whether it reverts to speaker, and whether the tester audibly hears output move to the earpiece. (7) End Voice, return to Private Audio, confirm cleanup, and retain **Copy Report** output. (8) In separate safety executions, disarm while a retry is pending, leave communication mode, destroy the activity, and introduce a real incoming or outgoing call; verify no delayed attempt runs afterward and telephony retains priority.
+- **Expected result:** While ChatGPT Voice remains active, Android reports built-in speaker → built-in earpiece and the human tester confirms ChatGPT audio moved to the phone earpiece. The copied report contains no more than three attempts and records each trigger, timestamp, mode, device before/immediately after, API result, speakerphone state, callbacks, first successful reported attempt, and any later speaker reversion.
 - **Observed result:** Not recorded
-- **Notes:** The POC-2 routing success criterion is physical-device confirmation of the Android-reported route change; audible output is a separate human observation and must never be inferred from it. Safe cleanup must also be confirmed. A false API result, unchanged/reverted reported route, missing audible transition, process loss, or cleanup defect must be recorded precisely; do not retry automatically, add a service, or escalate technique.
+- **Notes:** `setCommunicationDevice()` returning `true` is not success. If all three calls are accepted while Android continues to report the speaker, mark POC-3 **FAIL** and preserve the report for a separately authorized future architectural experiment. Do not proceed to POC-4 as part of this test.
