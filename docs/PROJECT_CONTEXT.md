@@ -10,7 +10,7 @@ An experimental Android utility intended to allow communication audio from compa
 
 The primary use case is a voice conversation with an AI system in a public or shared environment—for example while walking, commuting, waiting at a bus stop, or standing near other people—without forcing nearby people to hear the responses.
 
-Potential compatibility targets include ChatGPT Voice, Gemini voice, browser-based realtime voice applications, and other Android applications using compatible communication-audio routing. Compatibility with any specific application must be physically validated and must not be assumed.
+Potential compatibility targets include ChatGPT Voice, Gemini voice, browser-based realtime voice applications, and other Android applications using compatible communication-audio routing. POC-5 has physically validated ChatGPT Voice on one Xiaomi `2201117TY` running Android 13/API 33; compatibility with other devices, versions, or applications must not be assumed.
 
 ## Architectural idea
 
@@ -27,7 +27,7 @@ Android AudioManager routing
 Built-in earpiece
 ```
 
-`private-audio-router` should act as a control surface for Android routing and remain outside the audio data path. It should not receive, decode, record, capture, proxy, or forward conversation audio.
+`private-audio-router` acts as a control surface for Android routing and remains outside the conversation audio-data path. The current POC actively plays its own locally generated silent communication track to participate in Android arbitration, but does not receive, decode, record, capture, proxy, or forward conversation audio.
 
 ## Hard boundaries
 
@@ -72,7 +72,7 @@ The M0 strategy, without implying implementation status, is to:
 
 > Can an independent Android application, using supported public Android APIs only, request and maintain the built-in earpiece as the communication device while a realtime voice application such as current ChatGPT Voice is active?
 
-This is an experimental question, not an established capability.
+POC-5 answers this question **yes** for the tested Xiaomi `2201117TY` on Android 13/API 33 with ChatGPT Voice: Android reported the earpiece and physical listening confirmed the audible route. Reproducibility across lifecycle conditions and compatibility beyond that configuration remain experimental questions.
 
 ## Authoritative documentation map
 
