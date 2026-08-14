@@ -23,6 +23,7 @@ State reflects evidence, not aspiration.
 - POC-3 bounded route reassertion implemented: an armed run makes no more than three earpiece requests, spaces additional attempts by 750 ms, revalidates eligibility before each attempt, records per-attempt evidence and route outcomes, and cancels delayed work during cleanup.
 - POC-3 executed: all three bounded earpiece requests returned `true`, but Android never reported the built-in earpiece while ChatGPT Voice remained active.
 - POC-4 explicit mode-ownership experiment implemented: an armed run records the qualifying state, briefly transitions through and verifies `MODE_NORMAL`, immediately re-establishes and verifies `MODE_IN_COMMUNICATION`, makes exactly one earpiece request, and records immediate, callback, and one-second observations.
+- POC-4 diagnostics enriched without changing its experiment sequence: the copied report now correlates Private Audio PID/UID/package and process importance with four compact state snapshots, including public active-playback usage/content/capture-policy/session/device fields, plus an explicit external `dumpsys audio` correlation section.
 
 ## CURRENT
 

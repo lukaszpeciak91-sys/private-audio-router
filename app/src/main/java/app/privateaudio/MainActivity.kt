@@ -19,6 +19,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
 
         observer = AudioDiagnosticObserver(
+            context = applicationContext,
             audioManager = getSystemService(AudioManager::class.java),
             callbackExecutor = mainExecutor,
         )

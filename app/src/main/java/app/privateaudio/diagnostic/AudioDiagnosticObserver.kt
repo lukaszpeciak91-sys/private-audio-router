@@ -1,10 +1,15 @@
 package app.privateaudio.diagnostic
 
+import android.app.ActivityManager
+import android.content.Context
+import android.media.AudioAttributes
 import android.media.AudioDeviceCallback
 import android.media.AudioDeviceInfo
 import android.media.AudioManager
+import android.media.AudioPlaybackConfiguration
 import android.os.Handler
 import android.os.Looper
+import android.os.Process
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.mutableStateOf
@@ -25,6 +30,11 @@ data class DiagnosticSnapshot(
     val communicationDevice: ObservedDevice?,
     val availableCommunicationDevices: List<ObservedDevice>,
     val speakerphoneState: String,
+    val timestamp: String = "Unavailable — not observed yet",
+    val processId: Int = Process.myPid(),
+    val userId: Int = Process.myUid(),
+    val lifecycleState: String = "Unknown",
+    val activePlaybackConfigurations: List<ObservedPlayback> = emptyList(),
 ) {
     companion object {
         val Empty = DiagnosticSnapshot(
@@ -35,6 +45,15 @@ data class DiagnosticSnapshot(
         )
     }
 }
+
+data class ObservedPlayback(
+    val playerState: String,
+    val usage: String,
+    val contentType: String,
+    val allowedCapturePolicy: String,
+    val sessionId: Int,
+    val device: ObservedDevice?,
+)
 
 enum class ExperimentState(val label: String) {
     IDLE("IDLE"),
@@ -58,6 +77,9 @@ data class EarpieceExperiment(
     val earpieceReportedDuringSession: Boolean = false,
     val revertedToSpeaker: Boolean = false,
     val shortObservation: DiagnosticSnapshot? = null,
+    val preOwnership: DiagnosticSnapshot? = null,
+    val postModeOwnership: DiagnosticSnapshot? = null,
+    val postRoutingRequest: DiagnosticSnapshot? = null,
 )
 
 data class RoutingAttempt(
@@ -72,6 +94,7 @@ data class RoutingAttempt(
 )
 
 class AudioDiagnosticObserver(
+    private val context: Context,
     private val audioManager: AudioManager,
     private val callbackExecutor: Executor,
 ) {
@@ -88,6 +111,7 @@ class AudioDiagnosticObserver(
     private var modeParticipationActive = false
     private val observationHandler = Handler(Looper.getMainLooper())
     private var pendingObservation: Runnable? = null
+    private var baseline: DiagnosticSnapshot? = null
     private val communicationDeviceListener = AudioManager.OnCommunicationDeviceChangedListener {
         snapshot("Communication device callback")
     }
@@ -110,6 +134,7 @@ class AudioDiagnosticObserver(
         )
         audioManager.registerAudioDeviceCallback(audioDeviceCallback, Handler(Looper.getMainLooper()))
         snapshot("Baseline")
+        baseline = snapshot
     }
 
     fun stop() {
@@ -122,11 +147,14 @@ class AudioDiagnosticObserver(
 
     fun snapshot(reason: String) {
         val observed = DiagnosticSnapshot(
+            timestamp = OffsetDateTime.now().format(DateTimeFormatter.ISO_OFFSET_DATE_TIME),
+            lifecycleState = processLifecycleState(),
             mode = audioModeName(audioManager.mode),
             communicationDevice = audioManager.communicationDevice?.toObservedDevice(),
             availableCommunicationDevices = audioManager.availableCommunicationDevices
                 .map(AudioDeviceInfo::toObservedDevice),
             speakerphoneState = observedSpeakerphoneState(),
+            activePlaybackConfigurations = activePlaybackConfigurations(),
         )
         val changes = describeChanges(snapshot, observed)
         snapshot = observed
@@ -153,6 +181,8 @@ class AudioDiagnosticObserver(
         experiment = experiment,
         snapshot = snapshot,
         events = events,
+        packageName = context.packageName,
+        baseline = baseline,
     )
 
     private fun addEvent(message: String) {
@@ -189,7 +219,8 @@ class AudioDiagnosticObserver(
 
         val target = earpiece.toObservedDevice()
         val modeBeforeParticipation = audioManager.mode
-        addEvent("Qualifying trigger observed — complete pre-change state: ${snapshot.inlineDescription()}")
+        val preOwnership = collectSnapshot()
+        addEvent("Qualifying trigger observed — complete pre-change state: ${preOwnership.inlineDescription()}")
         // Set the guard before changing Android state: even a synchronous callback cannot retrigger.
         experiment = experiment.copy(
             state = ExperimentState.REQUEST_ATTEMPTED,
@@ -197,6 +228,7 @@ class AudioDiagnosticObserver(
             selectedTarget = target,
             explicitModeOwnershipTransitionAttempted = true,
             modeBeforeParticipation = audioModeName(modeBeforeParticipation),
+            preOwnership = preOwnership,
         )
         routingActionInProgress = true
         modeParticipationActive = true
@@ -222,6 +254,7 @@ class AudioDiagnosticObserver(
             "Second transition verified — requested=MODE_IN_COMMUNICATION; " +
                 "Android-reported mode=${audioModeName(modeAfterParticipation)}; ${currentStateDescription()}",
         )
+        experiment = experiment.copy(postModeOwnership = collectSnapshot())
         routingActionInProgress = false
         if (modeAfterParticipation != AudioManager.MODE_IN_COMMUNICATION) {
             clearExperiment("MODE_IN_COMMUNICATION was not re-established", ExperimentState.BLOCKED)
@@ -254,6 +287,7 @@ class AudioDiagnosticObserver(
         experiment = experiment.copy(
             requestAccepted = accepted,
             attempts = experiment.attempts + attempt,
+            postRoutingRequest = collectSnapshot(),
         )
         addEvent("Routing attempt $number result — accepted=$accepted; device immediately after=${after.reportDescription()}; speakerphone=$speakerphone")
         routingActionInProgress = false
@@ -320,6 +354,30 @@ class AudioDiagnosticObserver(
         "communication device=${audioManager.communicationDevice?.toObservedDevice().reportDescription()}; " +
             "speakerphone=${observedSpeakerphoneState()}"
 
+    private fun collectSnapshot() = DiagnosticSnapshot(
+        timestamp = OffsetDateTime.now().format(DateTimeFormatter.ISO_OFFSET_DATE_TIME),
+        lifecycleState = processLifecycleState(),
+        mode = audioModeName(audioManager.mode),
+        communicationDevice = audioManager.communicationDevice?.toObservedDevice(),
+        availableCommunicationDevices = audioManager.availableCommunicationDevices.map(AudioDeviceInfo::toObservedDevice),
+        speakerphoneState = observedSpeakerphoneState(),
+        activePlaybackConfigurations = activePlaybackConfigurations(),
+    )
+
+    private fun activePlaybackConfigurations() = audioManager.activePlaybackConfigurations
+        .filter { it.playerState == AudioPlaybackConfiguration.PLAYER_STATE_STARTED }
+        .map(AudioPlaybackConfiguration::toObservedPlayback)
+
+    private fun processLifecycleState(): String {
+        val state = ActivityManager.RunningAppProcessInfo()
+        ActivityManager.getMyMemoryState(state)
+        return when (state.importance) {
+            ActivityManager.RunningAppProcessInfo.IMPORTANCE_FOREGROUND -> "Foreground"
+            ActivityManager.RunningAppProcessInfo.IMPORTANCE_VISIBLE -> "Visible"
+            else -> "Background (importance=${state.importance})"
+        }
+    }
+
     @Suppress("DEPRECATION")
     private fun observedSpeakerphoneState() =
         if (audioManager.isSpeakerphoneOn) "On (directly observed)" else "Off (directly observed)"
@@ -330,9 +388,20 @@ internal fun buildDiagnosticReport(
     experiment: EarpieceExperiment,
     snapshot: DiagnosticSnapshot,
     events: List<String>,
+    packageName: String = "app.privateaudio",
+    baseline: DiagnosticSnapshot? = null,
 ) = buildString {
     appendLine("PRIVATE AUDIO — DIAGNOSTIC REPORT")
     appendLine("Timestamp: $timestamp")
+    appendLine("Package: $packageName")
+    appendLine("Private Audio PID: ${Process.myPid()}")
+    appendLine("Private Audio UID: ${Process.myUid()}")
+    appendLine()
+    appendLine("PROCESS IDENTITY SNAPSHOTS")
+    appendIdentity("BASELINE", baseline)
+    appendIdentity("QUALIFYING TRIGGER", experiment.preOwnership)
+    appendIdentity("ROUTING REQUEST", experiment.postRoutingRequest)
+    appendIdentity("DELAYED OBSERVATION", experiment.shortObservation)
     appendLine()
     appendLine("EARPIECE EXPERIMENT")
     appendLine("Experiment state: ${experiment.state.label}")
@@ -348,7 +417,13 @@ internal fun buildDiagnosticReport(
     appendLine("Android reported earpiece while ChatGPT Voice still active: ${experiment.earpieceReportedDuringSession}")
     appendLine("ChatGPT/system subsequently reclaimed speaker: ${experiment.revertedToSpeaker}")
     appendLine("Audible result requiring human confirmation: UNKNOWN")
-    appendLine("Communication device after short observation period: ${experiment.shortObservation?.communicationDevice.reportDescription()}")
+    appendLine()
+    appendSnapshot("PRE-OWNERSHIP", experiment.preOwnership ?: baseline)
+    appendSnapshot("POST-MODE-OWNERSHIP", experiment.postModeOwnership)
+    appendSnapshot("POST-ROUTING-REQUEST", experiment.postRoutingRequest, experiment.requestAccepted)
+    appendSnapshot("DELAYED OBSERVATION", experiment.shortObservation)
+    appendLine("Earpiece reported while external communication remained active: ${experiment.earpieceReportedDuringSession}")
+    appendLine("Speaker subsequently reclaimed: ${experiment.revertedToSpeaker}")
     appendLine()
     appendLine("ROUTING ATTEMPTS")
     if (experiment.attempts.isEmpty()) appendLine("None") else experiment.attempts.forEach { attempt ->
@@ -375,6 +450,49 @@ internal fun buildDiagnosticReport(
     } else {
         append(events.joinToString(separator = "\n"))
     }
+    appendLine()
+    appendLine()
+    appendLine("ADB CORRELATION")
+    appendLine("Private Audio PID: ${Process.myPid()}")
+    appendLine("Private Audio UID: ${Process.myUid()}")
+    appendLine("Report timestamp: $timestamp")
+    appendLine("Correlate mode-owner information externally with: adb shell dumpsys audio")
+    append("This report does not claim actual mode ownership; verify it externally.")
+}
+
+private fun StringBuilder.appendIdentity(label: String, snapshot: DiagnosticSnapshot?) {
+    if (snapshot == null) {
+        appendLine("$label: Not recorded")
+    } else {
+        appendLine("$label: timestamp=${snapshot.timestamp}; PID=${snapshot.processId}; UID=${snapshot.userId}; process=${snapshot.lifecycleState}")
+    }
+}
+
+private fun StringBuilder.appendSnapshot(
+    heading: String,
+    snapshot: DiagnosticSnapshot?,
+    requestAccepted: Boolean? = null,
+) {
+    appendLine(heading)
+    if (snapshot == null) {
+        appendLine("Not recorded")
+        appendLine()
+        return
+    }
+    appendLine("Timestamp: ${snapshot.timestamp}")
+    appendLine("PID / UID: ${snapshot.processId} / ${snapshot.userId}")
+    appendLine("Process state: ${snapshot.lifecycleState}")
+    appendLine("AudioManager mode: ${snapshot.mode}")
+    appendLine("Communication device: ${snapshot.communicationDevice.reportDescription()}")
+    appendLine("Speakerphone: ${snapshot.speakerphoneState}")
+    appendLine("Available communication devices: ${snapshot.availableCommunicationDevices.joinToString { it.reportDescription() }}")
+    requestAccepted?.let { appendLine("setCommunicationDevice return value: $it") }
+    appendLine("Active playback configurations:")
+    if (snapshot.activePlaybackConfigurations.isEmpty()) appendLine("  None visible and active")
+    snapshot.activePlaybackConfigurations.forEachIndexed { index, playback ->
+        appendLine("  ${index + 1}. state=${playback.playerState}; usage=${playback.usage}; content=${playback.contentType}; capture policy=${playback.allowedCapturePolicy}; session ID=${playback.sessionId}; device=${playback.device.reportDescription()}")
+    }
+    appendLine()
 }
 
 private fun DiagnosticSnapshot.inlineDescription() =
@@ -413,6 +531,44 @@ private fun AudioDeviceInfo.toObservedDevice() = ObservedDevice(
     type = audioDeviceTypeName(type),
     productName = productName.toString().ifBlank { "Unavailable" },
 )
+
+private fun AudioPlaybackConfiguration.toObservedPlayback() = ObservedPlayback(
+    playerState = when (playerState) {
+        AudioPlaybackConfiguration.PLAYER_STATE_STARTED -> "STARTED"
+        AudioPlaybackConfiguration.PLAYER_STATE_PAUSED -> "PAUSED"
+        AudioPlaybackConfiguration.PLAYER_STATE_STOPPED -> "STOPPED"
+        else -> "State $playerState"
+    },
+    usage = audioUsageName(audioAttributes.usage),
+    contentType = audioContentTypeName(audioAttributes.contentType),
+    allowedCapturePolicy = capturePolicyName(audioAttributes.allowedCapturePolicy),
+    sessionId = audioSessionId,
+    device = audioDeviceInfo?.toObservedDevice(),
+)
+
+internal fun audioUsageName(usage: Int) = when (usage) {
+    AudioAttributes.USAGE_VOICE_COMMUNICATION -> "USAGE_VOICE_COMMUNICATION"
+    AudioAttributes.USAGE_MEDIA -> "USAGE_MEDIA"
+    AudioAttributes.USAGE_ASSISTANT -> "USAGE_ASSISTANT"
+    AudioAttributes.USAGE_UNKNOWN -> "USAGE_UNKNOWN"
+    else -> "Usage $usage"
+}
+
+internal fun audioContentTypeName(contentType: Int) = when (contentType) {
+    AudioAttributes.CONTENT_TYPE_SPEECH -> "CONTENT_TYPE_SPEECH"
+    AudioAttributes.CONTENT_TYPE_MUSIC -> "CONTENT_TYPE_MUSIC"
+    AudioAttributes.CONTENT_TYPE_MOVIE -> "CONTENT_TYPE_MOVIE"
+    AudioAttributes.CONTENT_TYPE_SONIFICATION -> "CONTENT_TYPE_SONIFICATION"
+    AudioAttributes.CONTENT_TYPE_UNKNOWN -> "CONTENT_TYPE_UNKNOWN"
+    else -> "Content type $contentType"
+}
+
+private fun capturePolicyName(policy: Int) = when (policy) {
+    AudioAttributes.ALLOW_CAPTURE_BY_ALL -> "ALLOW_CAPTURE_BY_ALL"
+    AudioAttributes.ALLOW_CAPTURE_BY_SYSTEM -> "ALLOW_CAPTURE_BY_SYSTEM"
+    AudioAttributes.ALLOW_CAPTURE_BY_NONE -> "ALLOW_CAPTURE_BY_NONE"
+    else -> "Policy $policy"
+}
 
 private fun ObservedDevice?.shortName() = this?.let { "${it.type} (${it.productName})" } ?: "None reported"
 
