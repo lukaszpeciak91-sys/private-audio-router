@@ -21,15 +21,17 @@ State reflects evidence, not aspiration.
 - POC-2 communication-mode participation implemented as a bounded experiment: after explicit arming and the qualifying external state, Private Audio records pre-change state, requests `MODE_IN_COMMUNICATION`, makes one earpiece request, and relinquishes both route and mode participation during cleanup.
 - POC-2 executed on device product `2201117TY`: Private Audio successfully requested `MODE_IN_COMMUNICATION` and its single earpiece request returned `true`, but Android continued to report the built-in speaker during ChatGPT Voice; Android returned to the earpiece only after Voice ended.
 - POC-3 bounded route reassertion implemented: an armed run makes no more than three earpiece requests, spaces additional attempts by 750 ms, revalidates eligibility before each attempt, records per-attempt evidence and route outcomes, and cancels delayed work during cleanup.
+- POC-3 executed: all three bounded earpiece requests returned `true`, but Android never reported the built-in earpiece while ChatGPT Voice remained active.
+- POC-4 explicit mode-ownership experiment implemented: an armed run records the qualifying state, briefly transitions through and verifies `MODE_NORMAL`, immediately re-establishes and verifies `MODE_IN_COMMUNICATION`, makes exactly one earpiece request, and records immediate, callback, and one-second observations.
 
 ## CURRENT
 
-- **Implementation state: the diagnostic now contains the deliberately temporary POC-3 bounded-reassertion experiment. POC-1 and POC-2 each produced an accepted request without changing Android's reported active ChatGPT Voice route on the tested device. POC-3 physical-device behavior remains NOT TESTED.**
+- **Implementation state: the diagnostic now contains the deliberately temporary POC-4 explicit mode-ownership experiment. POC-1, POC-2, and all three POC-3 requests were accepted without changing Android's reported active ChatGPT Voice route on the tested device. POC-4 physical-device behavior remains NOT TESTED.**
 
 ## NEXT
 
-- Run POC-3 on physical Android hardware and retain the copied report plus complete device, Android, Private Audio build, and ChatGPT version metadata.
-- Determine whether any of the three bounded attempts changes Android's active-session route and separately record the human-confirmed audible result.
+- Run POC-4 on physical Android hardware and retain the copied report plus complete device, Android, Private Audio build, and ChatGPT version metadata.
+- Determine whether the explicit observable mode transition transfers effective priority and separately record the human-confirmed audible result and any temporary Voice interruption.
 - Validate explicit disarm, session-end, activity destruction, and real-telephony cleanup paths leave no abnormal system-audio behavior.
 
 ## UNKNOWN

@@ -38,6 +38,9 @@ These inferences are hypotheses for physical-device testing, not compatibility c
 - **FACT (POC-2, device product `2201117TY`; Android, Private Audio build, and ChatGPT versions not recorded):** Private Audio explicitly requested `MODE_IN_COMMUNICATION`, Android reported that mode, and `setCommunicationDevice()` returned `true` for the built-in earpiece. Android nevertheless continued to report the built-in speaker during active ChatGPT Voice and returned to the earpiece after Voice ended.
 - **INFERENCE:** On this POC-2 execution, explicit communication-mode participation plus one accepted route request was insufficient to change the Android-reported active-session route.
 - **UNKNOWN:** POC-2 audible routing was not recorded and the result is not evidence about other devices or software versions.
+- **FACT (POC-3; complete device and software metadata not recorded):** Private Audio made three bounded `setCommunicationDevice()` requests for the built-in earpiece. All returned `true`, but Android never reported the built-in earpiece while ChatGPT Voice remained active.
+- **INFERENCE:** Repeating the accepted routing request was insufficient to change the Android-reported route in this POC-3 execution; POC-4 therefore isolates explicit mode-ownership transition rather than adding retries.
+- **UNKNOWN:** Whether selecting `MODE_NORMAL` and then becoming the latest application to select `MODE_IN_COMMUNICATION` transfers effective routing priority to Private Audio.
 
 ## UNKNOWN
 

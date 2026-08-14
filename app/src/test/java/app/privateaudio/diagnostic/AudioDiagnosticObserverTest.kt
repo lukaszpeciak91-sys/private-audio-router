@@ -45,9 +45,10 @@ class AudioDiagnosticObserverTest {
                 armed = true,
                 requestAttempted = true,
                 selectedTarget = ObservedDevice(1, "Built-in earpiece", "Phone earpiece"),
-                modeParticipationRequested = true,
+                explicitModeOwnershipTransitionAttempted = true,
                 modeBeforeParticipation = "MODE_IN_COMMUNICATION",
-                modeAfterParticipation = "MODE_IN_COMMUNICATION",
+                modeNormalObserved = true,
+                modeInCommunicationObserved = true,
                 requestAccepted = true,
                 attempts = listOf(
                     RoutingAttempt(
@@ -58,7 +59,7 @@ class AudioDiagnosticObserverTest {
                     ),
                 ),
                 earpieceReportedDuringSession = true,
-                earpieceFirstReportedAfterAttempt = 1,
+                shortObservation = snapshot,
             ),
             snapshot = snapshot,
             events = listOf("12:34:55.000  Baseline — state recorded", "12:34:56.000  Manual snapshot"),
@@ -67,14 +68,15 @@ class AudioDiagnosticObserverTest {
         assertTrue(report.contains("Timestamp: 2026-08-12T12:34:56Z"))
         assertTrue(report.contains("Experiment state: REQUEST ATTEMPTED"))
         assertTrue(report.contains("Routing request attempted: true"))
-        assertTrue(report.contains("Private Audio mode change requested: true"))
+        assertTrue(report.contains("Explicit mode ownership transition attempted: true"))
         assertTrue(report.contains("Mode before participation: MODE_IN_COMMUNICATION"))
-        assertTrue(report.contains("Mode after participation request: MODE_IN_COMMUNICATION"))
-        assertTrue(report.contains("setCommunicationDevice return value: true"))
+        assertTrue(report.contains("MODE_NORMAL observed after first transition: true"))
+        assertTrue(report.contains("MODE_IN_COMMUNICATION observed after second transition: true"))
+        assertTrue(report.contains("Routing request accepted: true"))
         assertTrue(report.contains("Total routing attempts: 1"))
-        assertTrue(report.contains("Attempt after which earpiece was first reported: 1"))
+        assertTrue(report.contains("Communication device after short observation period: type=Built-in earpiece"))
         assertTrue(report.contains("Attempt 1: timestamp=12:34:56.000"))
-        assertTrue(report.contains("Audible ChatGPT audio moved to earpiece: UNKNOWN"))
+        assertTrue(report.contains("Audible result requiring human confirmation: UNKNOWN"))
         assertTrue(report.contains("AudioManager mode: MODE_IN_COMMUNICATION"))
         assertTrue(report.contains("type=Built-in earpiece; product=Phone earpiece; Android device ID=1"))
         assertTrue(report.contains("type=Built-in speaker; product=Phone speaker; Android device ID=2"))
