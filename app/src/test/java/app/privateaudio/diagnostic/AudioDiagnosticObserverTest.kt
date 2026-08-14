@@ -53,9 +53,14 @@ class AudioDiagnosticObserverTest {
                 armed = true,
                 requestAttempted = true,
                 selectedTarget = ObservedDevice(1, "Built-in earpiece", "Phone earpiece"),
-                explicitModeOwnershipTransitionAttempted = true,
                 modeBeforeParticipation = "MODE_IN_COMMUNICATION",
-                modeNormalObserved = true,
+                silentTrackCreated = true,
+                silentTrackStarted = true,
+                silentTrackSampleRate = 48_000,
+                silentTrackBufferBytes = 1_024,
+                silentTrackPlayState = "PLAYSTATE_PLAYING",
+                activeVoiceCommunicationPlaybackObserved = true,
+                modeRequestIssuedAfterPlaybackActive = true,
                 modeInCommunicationObserved = true,
                 requestAccepted = true,
                 attempts = listOf(
@@ -76,10 +81,12 @@ class AudioDiagnosticObserverTest {
         assertTrue(report.contains("Timestamp: 2026-08-12T12:34:56Z"))
         assertTrue(report.contains("Experiment state: REQUEST ATTEMPTED"))
         assertTrue(report.contains("Routing request attempted: true"))
-        assertTrue(report.contains("Explicit mode ownership transition attempted: true"))
         assertTrue(report.contains("Mode before participation: MODE_IN_COMMUNICATION"))
-        assertTrue(report.contains("MODE_NORMAL observed after first transition: true"))
-        assertTrue(report.contains("MODE_IN_COMMUNICATION observed after second transition: true"))
+        assertTrue(report.contains("Silent communication AudioTrack created: true"))
+        assertTrue(report.contains("Silent AudioTrack started: true"))
+        assertTrue(report.contains("Private Audio active VOICE_COMMUNICATION playback observed: true"))
+        assertTrue(report.contains("Mode request issued after silent playback became active: true"))
+        assertTrue(report.contains("MODE_IN_COMMUNICATION observed after request: true"))
         assertTrue(report.contains("Routing request accepted: true"))
         assertTrue(report.contains("Total routing attempts: 1"))
         assertTrue(report.contains("DELAYED OBSERVATION"))

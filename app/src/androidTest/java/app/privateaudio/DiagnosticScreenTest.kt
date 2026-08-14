@@ -13,7 +13,7 @@ class DiagnosticScreenTest {
 
     @Test
     fun diagnosticSectionsAreDisplayed() {
-        composeRule.onNodeWithText("POC-4 Mode Ownership").assertIsDisplayed()
+        composeRule.onNodeWithText("POC-5 Active Requester").assertIsDisplayed()
         composeRule.onNodeWithText("EARPIECE EXPERIMENT").assertIsDisplayed()
         composeRule.onNodeWithText("ARM EARPIECE TEST").assertIsDisplayed()
         composeRule.onNodeWithText("DISARM / CLEAR").assertIsDisplayed()

@@ -5,8 +5,10 @@ import android.content.Context
 import android.media.AudioAttributes
 import android.media.AudioDeviceCallback
 import android.media.AudioDeviceInfo
+import android.media.AudioFormat
 import android.media.AudioManager
 import android.media.AudioPlaybackConfiguration
+import android.media.AudioTrack
 import android.os.Handler
 import android.os.Looper
 import android.os.Process
@@ -18,6 +20,7 @@ import java.time.LocalTime
 import java.time.OffsetDateTime
 import java.time.format.DateTimeFormatter
 import java.util.concurrent.Executor
+import java.util.concurrent.atomic.AtomicBoolean
 
 data class ObservedDevice(
     val id: Int,
@@ -66,9 +69,14 @@ data class EarpieceExperiment(
     val armed: Boolean = false,
     val requestAttempted: Boolean = false,
     val selectedTarget: ObservedDevice? = null,
-    val explicitModeOwnershipTransitionAttempted: Boolean = false,
     val modeBeforeParticipation: String? = null,
-    val modeNormalObserved: Boolean = false,
+    val silentTrackCreated: Boolean = false,
+    val silentTrackStarted: Boolean = false,
+    val silentTrackSampleRate: Int? = null,
+    val silentTrackBufferBytes: Int? = null,
+    val silentTrackPlayState: String = "Not created",
+    val activeVoiceCommunicationPlaybackObserved: Boolean = false,
+    val modeRequestIssuedAfterPlaybackActive: Boolean = false,
     val modeInCommunicationObserved: Boolean = false,
     val requestAccepted: Boolean? = null,
     val attempts: List<RoutingAttempt> = emptyList(),
@@ -78,6 +86,9 @@ data class EarpieceExperiment(
     val preOwnership: DiagnosticSnapshot? = null,
     val postModeOwnership: DiagnosticSnapshot? = null,
     val postRoutingRequest: DiagnosticSnapshot? = null,
+    val postSilentTrackStart: DiagnosticSnapshot? = null,
+    val silentTrackCleanupCompleted: Boolean = false,
+    val chatGptPlaybackDeviceAfterRequest: ObservedDevice? = null,
 )
 
 data class RoutingAttempt(
@@ -107,6 +118,9 @@ class AudioDiagnosticObserver(
     private var started = false
     private var routingActionInProgress = false
     private var modeParticipationActive = false
+    private var silentTrack: AudioTrack? = null
+    private var silentWriterThread: Thread? = null
+    private val silentWriterRunning = AtomicBoolean(false)
     private val observationHandler = Handler(Looper.getMainLooper())
     private var pendingObservation: Runnable? = null
     private var baseline: DiagnosticSnapshot? = null
@@ -224,32 +238,36 @@ class AudioDiagnosticObserver(
             state = ExperimentState.REQUEST_ATTEMPTED,
             requestAttempted = true,
             selectedTarget = target,
-            explicitModeOwnershipTransitionAttempted = true,
             modeBeforeParticipation = audioModeName(modeBeforeParticipation),
             preOwnership = preOwnership,
         )
         routingActionInProgress = true
-        modeParticipationActive = true
-        addEvent("Explicit mode ownership transition — requesting MODE_NORMAL")
-        audioManager.mode = AudioManager.MODE_NORMAL
-        val modeAfterNormal = audioManager.mode
-        experiment = experiment.copy(modeNormalObserved = modeAfterNormal == AudioManager.MODE_NORMAL)
-        addEvent(
-            "First transition verified — Android-reported mode=${audioModeName(modeAfterNormal)}; ${currentStateDescription()}",
-        )
-        if (modeAfterNormal.isTelephonyOrSystemPriorityMode()) {
+        if (!startSilentCommunicationTrack()) {
             routingActionInProgress = false
-            clearExperiment("Priority mode observed during ownership transition", ExperimentState.BLOCKED)
+            clearExperiment("Silent communication AudioTrack could not be started", ExperimentState.BLOCKED)
             return
         }
-        addEvent("Explicit mode ownership transition — immediately requesting MODE_IN_COMMUNICATION")
+        val postTrackStart = collectSnapshot()
+        val visibleVoicePlayback = postTrackStart.activePlaybackConfigurations.any {
+            it.usage == "USAGE_VOICE_COMMUNICATION" && it.contentType == "CONTENT_TYPE_SPEECH"
+        }
+        experiment = experiment.copy(
+            postSilentTrackStart = postTrackStart,
+            activeVoiceCommunicationPlaybackObserved = visibleVoicePlayback,
+        )
+        addEvent(
+            "Silent track is PLAYING before mode request — visible active VOICE_COMMUNICATION/SPEECH playback=$visibleVoicePlayback",
+        )
+        modeParticipationActive = true
+        experiment = experiment.copy(modeRequestIssuedAfterPlaybackActive = true)
+        addEvent("Requesting MODE_IN_COMMUNICATION after silent playback became active")
         audioManager.mode = AudioManager.MODE_IN_COMMUNICATION
         val modeAfterParticipation = audioManager.mode
         experiment = experiment.copy(
             modeInCommunicationObserved = modeAfterParticipation == AudioManager.MODE_IN_COMMUNICATION,
         )
         addEvent(
-            "Second transition verified — requested=MODE_IN_COMMUNICATION; " +
+            "Mode request verified — requested=MODE_IN_COMMUNICATION; " +
                 "Android-reported mode=${audioModeName(modeAfterParticipation)}; ${currentStateDescription()}",
         )
         experiment = experiment.copy(postModeOwnership = collectSnapshot())
@@ -258,7 +276,84 @@ class AudioDiagnosticObserver(
             clearExperiment("MODE_IN_COMMUNICATION was not re-established", ExperimentState.BLOCKED)
             return
         }
-        performRoutingAttempt(earpiece, "explicit mode ownership transition completed")
+        performRoutingAttempt(earpiece, "silent communication playback active and mode requested")
+    }
+
+    private fun startSilentCommunicationTrack(): Boolean {
+        val sampleRate = AudioTrack.getNativeOutputSampleRate(AudioManager.STREAM_VOICE_CALL)
+            .takeIf { it > 0 } ?: DEFAULT_SAMPLE_RATE
+        val minBuffer = AudioTrack.getMinBufferSize(
+            sampleRate,
+            AudioFormat.CHANNEL_OUT_MONO,
+            AudioFormat.ENCODING_PCM_16BIT,
+        )
+        if (minBuffer <= 0) {
+            addEvent("Silent AudioTrack creation failed — unsupported buffer result=$minBuffer at ${sampleRate}Hz")
+            return false
+        }
+        val bufferBytes = maxOf(minBuffer, MIN_SILENCE_BUFFER_BYTES)
+        val track = runCatching {
+            AudioTrack.Builder()
+                .setAudioAttributes(
+                    AudioAttributes.Builder()
+                        .setUsage(AudioAttributes.USAGE_VOICE_COMMUNICATION)
+                        .setContentType(AudioAttributes.CONTENT_TYPE_SPEECH)
+                        .build(),
+                )
+                .setAudioFormat(
+                    AudioFormat.Builder()
+                        .setEncoding(AudioFormat.ENCODING_PCM_16BIT)
+                        .setSampleRate(sampleRate)
+                        .setChannelMask(AudioFormat.CHANNEL_OUT_MONO)
+                        .build(),
+                )
+                .setBufferSizeInBytes(bufferBytes)
+                .setTransferMode(AudioTrack.MODE_STREAM)
+                .build()
+        }.getOrElse {
+            addEvent("Silent AudioTrack creation failed — ${it.javaClass.simpleName}: ${it.message}")
+            return false
+        }
+        experiment = experiment.copy(
+            silentTrackCreated = true,
+            silentTrackSampleRate = sampleRate,
+            silentTrackBufferBytes = bufferBytes,
+        )
+        if (track.state != AudioTrack.STATE_INITIALIZED) {
+            addEvent("Silent AudioTrack creation produced uninitialized state=${track.state}")
+            track.release()
+            return false
+        }
+        silentTrack = track
+        val silence = ShortArray(bufferBytes / Short.SIZE_BYTES)
+        silentWriterRunning.set(true)
+        silentWriterThread = Thread({
+            Process.setThreadPriority(Process.THREAD_PRIORITY_BACKGROUND)
+            while (silentWriterRunning.get()) {
+                val written = track.write(silence, 0, silence.size, AudioTrack.WRITE_NON_BLOCKING)
+                if (written <= 0) {
+                    try {
+                        Thread.sleep(SILENCE_WRITER_PAUSE_MS)
+                    } catch (_: InterruptedException) {
+                        break
+                    }
+                }
+            }
+        }, "poc5-silence-writer").apply {
+            isDaemon = true
+            start()
+        }
+        val started = runCatching { track.play() }.isSuccess && track.playState == AudioTrack.PLAYSTATE_PLAYING
+        experiment = experiment.copy(
+            silentTrackStarted = started,
+            silentTrackPlayState = audioTrackPlayStateName(track.playState),
+        )
+        addEvent(
+            "Silent AudioTrack creation result — initialized=true; sampleRate=${sampleRate}Hz; " +
+                "buffer=$bufferBytes bytes; attributes=USAGE_VOICE_COMMUNICATION/CONTENT_TYPE_SPEECH; " +
+                "playState=${audioTrackPlayStateName(track.playState)}; audio focus requested=false",
+        )
+        return started
     }
 
     private fun performRoutingAttempt(earpiece: AudioDeviceInfo, trigger: String) {
@@ -286,6 +381,7 @@ class AudioDiagnosticObserver(
             requestAccepted = accepted,
             attempts = experiment.attempts + attempt,
             postRoutingRequest = collectSnapshot(),
+            chatGptPlaybackDeviceAfterRequest = inferExternalVoicePlaybackDevice(collectSnapshot()),
         )
         addEvent("Routing attempt $number result — accepted=$accepted; device immediately after=${after.reportDescription()}; speakerphone=$speakerphone")
         routingActionInProgress = false
@@ -338,9 +434,39 @@ class AudioDiagnosticObserver(
                     "Android-reported mode=${audioModeName(audioManager.mode)}",
             )
         }
+        val trackCleanupCompleted = stopSilentCommunicationTrack()
         routingActionInProgress = false
-        experiment = experiment.copy(state = finalState, armed = false)
+        experiment = experiment.copy(
+            state = finalState,
+            armed = false,
+            silentTrackCleanupCompleted = experiment.silentTrackCreated && trackCleanupCompleted,
+            silentTrackPlayState = if (experiment.silentTrackCreated && trackCleanupCompleted) "Released" else experiment.silentTrackPlayState,
+        )
         snapshot("Post-cleanup observation")
+    }
+
+    private fun stopSilentCommunicationTrack(): Boolean {
+        val track = silentTrack ?: return true
+        silentWriterRunning.set(false)
+        silentWriterThread?.interrupt()
+        runCatching { silentWriterThread?.join(SILENCE_WRITER_JOIN_MS) }
+        val writerStopped = silentWriterThread?.isAlive != true
+        silentWriterThread = null
+        runCatching { track.stop() }
+        runCatching { track.flush() }
+        runCatching { track.release() }
+        silentTrack = null
+        addEvent("Silent AudioTrack cleanup — writer stopped=$writerStopped; track stopped, flushed, and released")
+        return writerStopped
+    }
+
+    private fun inferExternalVoicePlaybackDevice(observed: DiagnosticSnapshot): ObservedDevice? {
+        val matching = observed.activePlaybackConfigurations.filter {
+            it.usage == "USAGE_VOICE_COMMUNICATION" && it.contentType == "CONTENT_TYPE_SPEECH"
+        }
+        // Public playback diagnostics expose no client package/UID here. With both apps using the
+        // same attributes, only a single common reported device can be recorded without claiming identity.
+        return matching.mapNotNull { it.device }.distinct().singleOrNull()
     }
 
     private fun cancelPendingObservation() {
@@ -404,19 +530,27 @@ internal fun buildDiagnosticReport(
     appendLine("Experiment state: ${experiment.state.label}")
     appendLine("Armed: ${experiment.armed}")
     appendLine("Routing request attempted: ${experiment.requestAttempted}")
-    appendLine("Explicit mode ownership transition attempted: ${experiment.explicitModeOwnershipTransitionAttempted}")
     appendLine("Mode before participation: ${experiment.modeBeforeParticipation ?: "Not attempted"}")
-    appendLine("MODE_NORMAL observed after first transition: ${experiment.modeNormalObserved}")
-    appendLine("MODE_IN_COMMUNICATION observed after second transition: ${experiment.modeInCommunicationObserved}")
+    appendLine("Silent communication AudioTrack created: ${experiment.silentTrackCreated}")
+    appendLine("Silent AudioTrack started: ${experiment.silentTrackStarted}")
+    appendLine("Silent AudioTrack configuration: sampleRate=${experiment.silentTrackSampleRate ?: "Not created"}; mono PCM 16-bit; bufferBytes=${experiment.silentTrackBufferBytes ?: "Not created"}")
+    appendLine("Silent AudioTrack play state: ${experiment.silentTrackPlayState}")
+    appendLine("AudioAttributes: USAGE_VOICE_COMMUNICATION + CONTENT_TYPE_SPEECH")
+    appendLine("Private Audio active VOICE_COMMUNICATION playback observed: ${experiment.activeVoiceCommunicationPlaybackObserved} (track PLAYING plus matching public active-playback configuration)")
+    appendLine("Mode request issued after silent playback became active: ${experiment.modeRequestIssuedAfterPlaybackActive}")
+    appendLine("MODE_IN_COMMUNICATION observed after request: ${experiment.modeInCommunicationObserved}")
     appendLine("Selected target: ${experiment.selectedTarget.reportDescription()}")
     appendLine("Routing request accepted: ${experiment.requestAccepted ?: "Not attempted"}")
     appendLine("Total routing attempts: ${experiment.attempts.size}")
     appendLine("Android reported earpiece while ChatGPT Voice still active: ${experiment.earpieceReportedDuringSession}")
     appendLine("ChatGPT/system subsequently reclaimed speaker: ${experiment.revertedToSpeaker}")
+    appendLine("ChatGPT playback device after routing request where observable: ${experiment.chatGptPlaybackDeviceAfterRequest.reportDescription()} (public diagnostics do not identify the client)")
+    appendLine("Silent AudioTrack cleanup completed: ${experiment.silentTrackCleanupCompleted}")
     appendLine("Audible result requiring human confirmation: UNKNOWN")
     appendLine()
-    appendSnapshot("PRE-OWNERSHIP", experiment.preOwnership ?: baseline)
-    appendSnapshot("POST-MODE-OWNERSHIP", experiment.postModeOwnership)
+    appendSnapshot("PRE-POC5", experiment.preOwnership ?: baseline)
+    appendSnapshot("POST-SILENT-TRACK-START", experiment.postSilentTrackStart)
+    appendSnapshot("POST-MODE-REQUEST", experiment.postModeOwnership)
     appendSnapshot("POST-ROUTING-REQUEST", experiment.postRoutingRequest, experiment.requestAccepted)
     appendSnapshot("DELAYED OBSERVATION", experiment.shortObservation)
     appendLine("Earpiece reported while external communication remained active: ${experiment.earpieceReportedDuringSession}")
@@ -453,7 +587,7 @@ internal fun buildDiagnosticReport(
     appendLine("Private Audio PID: ${Process.myPid()}")
     appendLine("Private Audio UID: ${Process.myUid()}")
     appendLine("Report timestamp: $timestamp")
-    appendLine("Correlate mode-owner information externally with: adb shell dumpsys audio")
+    appendLine("Capture before cleanup with: adb shell dumpsys audio > audio-poc5.txt")
     append("This report does not claim actual mode ownership; verify it externally.")
 }
 
@@ -610,3 +744,14 @@ internal fun audioDeviceTypeName(type: Int) = when (type) {
 private val TIME_FORMAT = DateTimeFormatter.ofPattern("HH:mm:ss.SSS")
 private const val MAX_EVENTS = 100
 private const val OBSERVATION_DELAY_MS = 1_000L
+private const val DEFAULT_SAMPLE_RATE = 48_000
+private const val MIN_SILENCE_BUFFER_BYTES = 1_024
+private const val SILENCE_WRITER_PAUSE_MS = 10L
+private const val SILENCE_WRITER_JOIN_MS = 250L
+
+private fun audioTrackPlayStateName(state: Int) = when (state) {
+    AudioTrack.PLAYSTATE_STOPPED -> "PLAYSTATE_STOPPED"
+    AudioTrack.PLAYSTATE_PAUSED -> "PLAYSTATE_PAUSED"
+    AudioTrack.PLAYSTATE_PLAYING -> "PLAYSTATE_PLAYING"
+    else -> "Unknown play state ($state)"
+}
