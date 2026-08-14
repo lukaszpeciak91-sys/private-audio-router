@@ -35,6 +35,8 @@ POC-4 replaces POC-3's bounded retries after all three accepted requests failed 
 
 The experiment does not identify which application caused an observed transition, enter the audio data path, or claim that mode participation or API acceptance proves audible routing. Telephony/system-priority modes block and disarm the experiment; cleanup clears the communication-device request and sets `MODE_NORMAL` to relinquish Private Audio's mode ownership rather than defending it.
 
+The diagnostic evidence model uses public, read-only process identity/importance and active playback configuration APIs at pre-ownership, post-mode-ownership, post-request, and delayed-observation boundaries. Playback entries describe only configurations Android makes visible to this application (state, attributes, capture policy, session, and device); they neither contain audio nor establish application identity. Effective mode ownership remains external evidence that must be correlated by PID/UID with `dumpsys audio`.
+
 ## Diagnostic lifecycle
 
 The callbacks are registered from activity creation until destruction. They can continue to append to the in-memory log after the activity is stopped while the application process remains alive. This is best-effort observation only: Android may kill a background process, no callback delivery is promised while it is gone, and the in-memory log then disappears. Every `onResume` records a fresh snapshot so the before/after experiment remains useful even when no background callback was delivered.
