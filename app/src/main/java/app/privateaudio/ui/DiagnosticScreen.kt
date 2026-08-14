@@ -54,9 +54,9 @@ fun DiagnosticScreen(
             verticalArrangement = Arrangement.spacedBy(16.dp),
         ) {
             Text("PRIVATE AUDIO", style = MaterialTheme.typography.labelLarge)
-            Text("POC-3 Bounded Reassertion", style = MaterialTheme.typography.headlineMedium)
+            Text("POC-4 Mode Ownership", style = MaterialTheme.typography.headlineMedium)
             Text(
-                "Experimental: one explicit arm permits MODE_IN_COMMUNICATION participation and at most three timed earpiece requests. Audible success remains unknown until you confirm it.",
+                "Experimental: one explicit arm permits a short MODE_NORMAL → MODE_IN_COMMUNICATION ownership transition followed by exactly one earpiece request. Audible success remains unknown until you confirm it.",
                 style = MaterialTheme.typography.bodyMedium,
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
             )
@@ -65,14 +65,18 @@ fun DiagnosticScreen(
                 StateRow("Experiment state", experiment.state.label)
                 StateRow("Armed", experiment.armed.toString())
                 StateRow("Request attempted", experiment.requestAttempted.toString())
-                StateRow("Mode change requested", experiment.modeParticipationRequested.toString())
+                StateRow("Ownership transition", experiment.explicitModeOwnershipTransitionAttempted.toString())
                 StateRow("Mode before", experiment.modeBeforeParticipation ?: "Not attempted")
-                StateRow("Mode after request", experiment.modeAfterParticipation ?: "Not attempted")
+                StateRow("MODE_NORMAL observed", experiment.modeNormalObserved.toString())
+                StateRow("Communication mode observed", experiment.modeInCommunicationObserved.toString())
                 StateRow("Request accepted", experiment.requestAccepted?.toString() ?: "Not attempted")
                 StateRow("Total attempts", experiment.attempts.size.toString())
                 StateRow("Earpiece reported in session", experiment.earpieceReportedDuringSession.toString())
-                StateRow("First earpiece attempt", experiment.earpieceFirstReportedAfterAttempt?.toString() ?: "None")
-                StateRow("Later reverted to speaker", experiment.revertedToSpeaker.toString())
+                StateRow("Speaker reclaimed", experiment.revertedToSpeaker.toString())
+                StateRow(
+                    "Device after observation",
+                    experiment.shortObservation?.communicationDevice?.description() ?: "Not observed",
+                )
                 StateRow(
                     "Target",
                     experiment.selectedTarget?.description() ?: "None selected",
