@@ -76,8 +76,16 @@ data class EarpieceExperiment(
     val silentTrackBufferBytes: Int? = null,
     val silentTrackPlayState: String = "Not created",
     val activeVoiceCommunicationPlaybackObserved: Boolean = false,
+    val silentTrackActiveBeforeModeRequest: Boolean = false,
     val modeRequestIssuedAfterPlaybackActive: Boolean = false,
+    val explicitModeRequestInvoked: Boolean = false,
+    val modeRequestTimestamp: String? = null,
+    val modeRequestThread: String? = null,
+    val modeImmediatelyBeforeRequest: String? = null,
+    val modeImmediatelyAfterRequest: String? = null,
+    val modeRequestException: String? = null,
     val modeInCommunicationObserved: Boolean = false,
+    val earpieceRequestAfterExplicitModeRequest: Boolean = false,
     val requestAccepted: Boolean? = null,
     val attempts: List<RoutingAttempt> = emptyList(),
     val earpieceReportedDuringSession: Boolean = false,
@@ -258,20 +266,46 @@ class AudioDiagnosticObserver(
         addEvent(
             "Silent track is PLAYING before mode request — visible active VOICE_COMMUNICATION/SPEECH playback=$visibleVoicePlayback",
         )
+        val trackActiveBeforeModeRequest = silentTrack?.playState == AudioTrack.PLAYSTATE_PLAYING
+        val modeRequestTimestamp = OffsetDateTime.now().format(DateTimeFormatter.ISO_OFFSET_DATE_TIME)
+        val modeBeforeRequest = audioManager.mode
+        val requestThread = "${Thread.currentThread().name} (id=${Thread.currentThread().id})"
         modeParticipationActive = true
-        experiment = experiment.copy(modeRequestIssuedAfterPlaybackActive = true)
-        addEvent("Requesting MODE_IN_COMMUNICATION after silent playback became active")
-        audioManager.mode = AudioManager.MODE_IN_COMMUNICATION
+        experiment = experiment.copy(
+            silentTrackActiveBeforeModeRequest = trackActiveBeforeModeRequest,
+            modeRequestIssuedAfterPlaybackActive = trackActiveBeforeModeRequest,
+            explicitModeRequestInvoked = true,
+            modeRequestTimestamp = modeRequestTimestamp,
+            modeRequestThread = requestThread,
+            modeImmediatelyBeforeRequest = audioModeName(modeBeforeRequest),
+        )
+        addEvent(
+            "Invoking explicit setMode(MODE_IN_COMMUNICATION) — timestamp=$modeRequestTimestamp; " +
+                "thread=$requestThread; mode before=${audioModeName(modeBeforeRequest)}; " +
+                "silent track play state=${experiment.silentTrackPlayState}",
+        )
+        val modeRequestFailure = runCatching {
+            audioManager.mode = AudioManager.MODE_IN_COMMUNICATION
+        }.exceptionOrNull()
         val modeAfterParticipation = audioManager.mode
         experiment = experiment.copy(
+            modeImmediatelyAfterRequest = audioModeName(modeAfterParticipation),
+            modeRequestException = modeRequestFailure?.exactDescription(),
             modeInCommunicationObserved = modeAfterParticipation == AudioManager.MODE_IN_COMMUNICATION,
         )
         addEvent(
-            "Mode request verified — requested=MODE_IN_COMMUNICATION; " +
+            "Explicit setMode returned — requested=MODE_IN_COMMUNICATION; " +
                 "Android-reported mode=${audioModeName(modeAfterParticipation)}; ${currentStateDescription()}",
         )
         experiment = experiment.copy(postModeOwnership = collectSnapshot())
         routingActionInProgress = false
+        if (modeRequestFailure != null) {
+            clearExperiment(
+                "Explicit setMode failed with ${modeRequestFailure.exactDescription()}",
+                ExperimentState.BLOCKED,
+            )
+            return
+        }
         if (modeAfterParticipation != AudioManager.MODE_IN_COMMUNICATION) {
             clearExperiment("MODE_IN_COMMUNICATION was not re-established", ExperimentState.BLOCKED)
             return
@@ -380,6 +414,7 @@ class AudioDiagnosticObserver(
         experiment = experiment.copy(
             requestAccepted = accepted,
             attempts = experiment.attempts + attempt,
+            earpieceRequestAfterExplicitModeRequest = experiment.explicitModeRequestInvoked,
             postRoutingRequest = collectSnapshot(),
             chatGptPlaybackDeviceAfterRequest = inferExternalVoicePlaybackDevice(collectSnapshot()),
         )
@@ -537,8 +572,16 @@ internal fun buildDiagnosticReport(
     appendLine("Silent AudioTrack play state: ${experiment.silentTrackPlayState}")
     appendLine("AudioAttributes: USAGE_VOICE_COMMUNICATION + CONTENT_TYPE_SPEECH")
     appendLine("Private Audio active VOICE_COMMUNICATION playback observed: ${experiment.activeVoiceCommunicationPlaybackObserved} (track PLAYING plus matching public active-playback configuration)")
+    appendLine("Silent VOICE_COMMUNICATION AudioTrack active before mode request: ${experiment.silentTrackActiveBeforeModeRequest}")
     appendLine("Mode request issued after silent playback became active: ${experiment.modeRequestIssuedAfterPlaybackActive}")
+    appendLine("Explicit Private Audio setMode(MODE_IN_COMMUNICATION) invoked: ${experiment.explicitModeRequestInvoked}")
+    appendLine("Mode request timestamp: ${experiment.modeRequestTimestamp ?: "Not invoked"}")
+    appendLine("Mode request thread: ${experiment.modeRequestThread ?: "Not invoked"}")
+    appendLine("Mode immediately before request: ${experiment.modeImmediatelyBeforeRequest ?: "Not invoked"}")
+    appendLine("Mode immediately after request: ${experiment.modeImmediatelyAfterRequest ?: "Not invoked"}")
+    appendLine("Mode request exception: ${experiment.modeRequestException ?: "None"}")
     appendLine("MODE_IN_COMMUNICATION observed after request: ${experiment.modeInCommunicationObserved}")
+    appendLine("Earpiece request occurred after explicit mode request: ${experiment.earpieceRequestAfterExplicitModeRequest}")
     appendLine("Selected target: ${experiment.selectedTarget.reportDescription()}")
     appendLine("Routing request accepted: ${experiment.requestAccepted ?: "Not attempted"}")
     appendLine("Total routing attempts: ${experiment.attempts.size}")
@@ -699,6 +742,9 @@ private fun ObservedDevice?.shortName() = this?.let { "${it.type} (${it.productN
 private fun ObservedDevice?.reportDescription() = this?.let {
     "type=${it.type}; product=${it.productName}; Android device ID=${it.id}"
 } ?: "None reported by Android"
+
+private fun Throwable.exactDescription() =
+    "${javaClass.name}: ${message ?: "No message"}"
 
 internal fun audioModeName(mode: Int) = when (mode) {
     AudioManager.MODE_NORMAL -> "MODE_NORMAL"

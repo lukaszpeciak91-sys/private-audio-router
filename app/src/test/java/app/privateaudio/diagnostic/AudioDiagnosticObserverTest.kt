@@ -60,8 +60,15 @@ class AudioDiagnosticObserverTest {
                 silentTrackBufferBytes = 1_024,
                 silentTrackPlayState = "PLAYSTATE_PLAYING",
                 activeVoiceCommunicationPlaybackObserved = true,
+                silentTrackActiveBeforeModeRequest = true,
                 modeRequestIssuedAfterPlaybackActive = true,
+                explicitModeRequestInvoked = true,
+                modeRequestTimestamp = "2026-08-12T12:34:56Z",
+                modeRequestThread = "main (id=1)",
+                modeImmediatelyBeforeRequest = "MODE_IN_COMMUNICATION",
+                modeImmediatelyAfterRequest = "MODE_IN_COMMUNICATION",
                 modeInCommunicationObserved = true,
+                earpieceRequestAfterExplicitModeRequest = true,
                 requestAccepted = true,
                 attempts = listOf(
                     RoutingAttempt(
@@ -85,8 +92,16 @@ class AudioDiagnosticObserverTest {
         assertTrue(report.contains("Silent communication AudioTrack created: true"))
         assertTrue(report.contains("Silent AudioTrack started: true"))
         assertTrue(report.contains("Private Audio active VOICE_COMMUNICATION playback observed: true"))
+        assertTrue(report.contains("Silent VOICE_COMMUNICATION AudioTrack active before mode request: true"))
         assertTrue(report.contains("Mode request issued after silent playback became active: true"))
+        assertTrue(report.contains("Explicit Private Audio setMode(MODE_IN_COMMUNICATION) invoked: true"))
+        assertTrue(report.contains("Mode request timestamp: 2026-08-12T12:34:56Z"))
+        assertTrue(report.contains("Mode request thread: main (id=1)"))
+        assertTrue(report.contains("Mode immediately before request: MODE_IN_COMMUNICATION"))
+        assertTrue(report.contains("Mode immediately after request: MODE_IN_COMMUNICATION"))
+        assertTrue(report.contains("Mode request exception: None"))
         assertTrue(report.contains("MODE_IN_COMMUNICATION observed after request: true"))
+        assertTrue(report.contains("Earpiece request occurred after explicit mode request: true"))
         assertTrue(report.contains("Routing request accepted: true"))
         assertTrue(report.contains("Total routing attempts: 1"))
         assertTrue(report.contains("DELAYED OBSERVATION"))
