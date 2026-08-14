@@ -211,26 +211,42 @@ Allowed status values are **NOT TESTED**, **PASS**, **FAIL**, and **BLOCKED**. R
 
 ## POC-4 — Explicit communication-mode ownership transition
 
-- **Status:** NOT TESTED
-- **Device:** Not recorded
-- **Android version:** Not recorded
+- **Status:** FAIL
+- **Device:** Xiaomi `2201117TY`
+- **Android version:** Android 13 / API 33
 - **Build:** POC-4 build, exact commit not yet recorded
 - **ChatGPT version:** Not recorded
 - **Preconditions:** Disconnect or record audio accessories; confirm no real phone call is active; verify Android reports an available built-in earpiece; prepare to retain the copied report and manually record both audible output and any temporary interruption.
 - **Steps:** (1) Launch Private Audio, record baseline, and press **Arm Earpiece Test**. (2) Start ChatGPT Voice and wait for `MODE_IN_COMMUNICATION`, built-in speaker, and an available built-in earpiece. (3) Allow Private Audio to record complete state, request `MODE_NORMAL`, verify/log the reported mode, immediately request `MODE_IN_COMMUNICATION`, and verify/log the reported mode. (4) After communication mode is re-established, allow exactly one `setCommunicationDevice(Built-in earpiece)` call. (5) Keep Voice active through the short observation period and record all callbacks, mode/device/speakerphone changes, the API return, immediate device, delayed device, active playback usage/content type, whether speaker is reclaimed, audible route, and any Voice interruption. (6) While ChatGPT Voice remains active and after the POC-4 routing attempt, run `adb shell dumpsys audio > audio-poc4.txt` from the connected computer. (7) End Voice, return to Private Audio, confirm cleanup, and retain **Copy Report** output. (8) Correlate the report's Private Audio PID/UID, Android-reported route and active playback usage/content type, the dump's AudioService mode-owner information, and audible human confirmation. (9) In separate safety executions, disarm during pending observation, destroy the activity, and introduce a real incoming or outgoing call; verify pending work is cancelled and telephony retains priority.
 - **Expected result:** While ChatGPT Voice remains active, Android reports built-in speaker → the explicit `MODE_NORMAL` → `MODE_IN_COMMUNICATION` transition → built-in earpiece. The report explicitly records whether the transition was attempted, whether each requested mode was observed, request acceptance, active-session earpiece observation, later speaker reclamation, and that audible outcome requires human confirmation.
-- **Observed result:** Not recorded
-- **Notes:** This experiment was not physically executed and has been superseded in the current diagnostic by D-014/POC-5. Preserve this historical plan; do not report it as executed.
+- **Observed result:** The explicit mode-transition experiment produced no physical route change while ChatGPT Voice remained active.
+- **Notes:** Preserve this failed historical result. It motivated D-014/POC-5; it does not authorize retries or an invasive workaround.
 
 ## POC-5 — Silent active communication requester
 
-- **Status:** NOT TESTED
-- **Device:** Not recorded
-- **Android version:** Not recorded
+- **Status:** PASS (Android-reported PASS; human-audible PASS)
+- **Device:** Xiaomi `2201117TY`
+- **Android version:** Android 13 / API 33
 - **Build:** POC-5 build, exact commit not yet recorded
 - **ChatGPT version:** Not recorded
 - **Preconditions:** Use physical hardware with a built-in earpiece. Disconnect or record audio accessories; confirm no real phone call is active; verify Private Audio reports an available built-in earpiece. Prepare to retain the copied report, capture `dumpsys audio`, and manually record audible output and any interruption.
 - **Steps:** (1) Launch Private Audio, record the baseline, and press **Arm Earpiece Test**. (2) Start ChatGPT Voice and confirm it remains active while Android reports `MODE_IN_COMMUNICATION`, built-in speaker, and an available built-in earpiece. (3) Allow Private Audio to record PRE-POC5, create and start its silent mono PCM `USAGE_VOICE_COMMUNICATION`/`CONTENT_TYPE_SPEECH` `AudioTrack`, and record the track play state plus visible active playback configurations. (4) After the track is playing, allow the single `MODE_IN_COMMUNICATION` request and exactly one `setCommunicationDevice(Built-in earpiece)` call. (5) Keep ChatGPT Voice active for the approximately one-second observation without making further routing requests. Record the returned boolean, mode, communication device, speakerphone state, playback configurations, whether the earpiece appears, whether the speaker is reclaimed, any observable ChatGPT playback device, any temporary glitch, and whether ChatGPT is actually audible through the phone earpiece. (6) Before cleanup, while Voice and the silent track remain active and after the route request, run `adb shell dumpsys audio > audio-poc5.txt`; correlate mode-owner PID/stack, route clients, active playback configurations, and selected route with the report's Private Audio PID/UID. (7) End Voice or disarm, then verify pending observation is cancelled, the route is cleared, mode participation is relinquished, the writer stops, the track is stopped/flushed/released, and no silent playback remains active. Copy and retain the report. (8) In separate safety runs, disarm promptly, destroy the activity, allow ChatGPT communication to end, induce track failure where practical, and introduce a real incoming or outgoing call; verify no writer or route action survives cleanup and telephony retains priority.
 - **Expected result:** Success requires both (a) Android reports the built-in earpiece while ChatGPT Voice remains active after the one routing request and (b) the human tester confirms ChatGPT audio is actually audible through the phone earpiece. The report records track creation and start, matching public playback visibility, mode-request ordering, route acceptance, active-session earpiece observation, any speaker reclamation, cleanup, and the human result. `setCommunicationDevice()` returning `true` alone is not success.
-- **Observed result:** Not recorded
-- **Notes:** The track must output zeros only and must not use microphone input, capture, proxying, audio focus, retries, a service, or additional routing calls. Public playback diagnostics may not identify a configuration's client; record ambiguity rather than attributing it to ChatGPT. A temporary interruption or a failed route is evidence to preserve, not authorization for POC-6 or another workaround.
+- **Observed result:** The application reported silent track creation and start, visible Private Audio voice-communication playback, the track active before an exception-free explicit mode request, and exactly one later routing attempt returning `true`. Before participation Android reported `MODE_IN_COMMUNICATION`, built-in speaker, and speakerphone on. After participation it reported `MODE_IN_COMMUNICATION`, built-in earpiece, speakerphone off, and active voice-communication playback configurations on built-in earpiece/device ID 2. After a full uninstall and reinstall of the current APK, repeated physical testing confirmed that active ChatGPT Voice was audible through the upper built-in earpiece.
+- **Notes:** Both success criteria are satisfied: (1) Android reported the built-in earpiece while ChatGPT Voice remained active, and (2) the human tester heard ChatGPT Voice through it. API acceptance, Android-reported route, and audible route remain separate evidence. Earlier attempts included a run where Android reported the earpiece but the tester still heard the main speaker. Full uninstall and reinstall preceded the first repeatable physically audible success; causal relationship is not yet established. The track outputs locally generated zeros only and uses no microphone input, capture, proxying, audio focus, retry, service, or additional routing call.
+
+## POC-5 follow-up stability matrix
+
+These are stability and safety follow-ups for the successful POC-5, not a new routing POC. Each remains **NOT TESTED** unless a separately recorded execution establishes otherwise:
+
+- repeated cold-start runs;
+- repeated ChatGPT Voice sessions without reinstall;
+- Private Audio process restart;
+- activity destruction and recreation;
+- explicit disarm cleanup;
+- ChatGPT ending the communication session;
+- incoming and outgoing real telephony, which must retain priority;
+- APK update over the existing installation;
+- full uninstall/reinstall as a comparison baseline;
+- confirmation that no silent `AudioTrack` survives any cleanup path; and
+- confirmation that ordinary audio behavior returns after cleanup.

@@ -110,6 +110,14 @@ This is a lightweight, append-only log. Do not rewrite accepted history; append 
 
 - **Date:** 2026-08-14
 - **Status:** Accepted; supersedes D-013 for the current diagnostic experiment
-- **Context:** External `dumpsys audio` evidence showed ChatGPT as the effective communication-mode owner while Private Audio's accepted earpiece request remained a losing route-client request. Private Audio requested communication mode but had no active communication playback or recording. POC-4 was replaced before physical execution so active communication participation can be tested without a forced mode transition.
+- **Context:** External `dumpsys audio` evidence showed ChatGPT as the effective communication-mode owner while Private Audio's accepted earpiece request remained a losing route-client request. Private Audio requested communication mode but had no active communication playback or recording. The explicit POC-4 mode transition did not physically change the route, so active communication participation can be tested without another forced transition.
 - **Decision:** One explicitly armed POC-5 run may create and continuously feed silence to a minimal public `AudioTrack` configured for `USAGE_VOICE_COMMUNICATION`, `CONTENT_TYPE_SPEECH`, mono PCM 16-bit output. Only after the track reports `PLAYSTATE_PLAYING`, it requests `MODE_IN_COMMUNICATION` and then makes exactly one built-in-earpiece request.
 - **Consequences:** The track contains no captured, forwarded, or externally sourced audio; no microphone or audio-focus request is permitted. The diagnostic records public playback observations and one approximately one-second route observation. Every cleanup path cancels pending work, clears the route, relinquishes mode participation, and stops, flushes, and releases the track. Telephony/system-priority modes remain blocking. This is not authorization for retries, a foreground service, or POC-6.
+
+## D-015 — Harden the physically successful public-API POC-5
+
+- **Date:** 2026-08-14
+- **Status:** Accepted
+- **Context:** On Xiaomi `2201117TY` running Android 13/API 33, POC-5 both produced an Android-reported built-in-earpiece route and made active ChatGPT Voice physically audible through the upper earpiece. This is the project's first confirmed physical routing success.
+- **Decision:** Keep the current public-API POC-5 architecture and prioritize reproducibility, cleanup, lifecycle, update, and telephony-safety testing. Do not pivot to audio capture, an owned AI client, root, Shizuku, privileged APIs, or another routing architecture while this approach is physically working.
+- **Consequences:** The silent local communication track remains outside ChatGPT's audio-data path. No retry loop or POC-6 is authorized. Full uninstall and reinstall preceded the first repeatable physically audible success; its causal relationship is not established and must be investigated through stability testing rather than assumed.
