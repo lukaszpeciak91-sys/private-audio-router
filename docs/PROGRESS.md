@@ -24,15 +24,16 @@ State reflects evidence, not aspiration.
 - POC-3 executed: all three bounded earpiece requests returned `true`, but Android never reported the built-in earpiece while ChatGPT Voice remained active.
 - POC-4 explicit mode-ownership experiment implemented: an armed run records the qualifying state, briefly transitions through and verifies `MODE_NORMAL`, immediately re-establishes and verifies `MODE_IN_COMMUNICATION`, makes exactly one earpiece request, and records immediate, callback, and one-second observations.
 - POC-4 diagnostics enriched without changing its experiment sequence: the copied report now correlates Private Audio PID/UID/package and process importance with four compact state snapshots, including public active-playback usage/content/capture-policy/device fields, plus an explicit external `dumpsys audio` correlation section. An immediate corrective iteration removed unavailable playback-state and session-ID members and treats `getActivePlaybackConfigurations()` as the active snapshot.
+- POC-5 active-requester experiment implemented in place of the unexecuted POC-4 sequence: after explicit arming and the qualifying external state, Private Audio starts a mono PCM silent `USAGE_VOICE_COMMUNICATION`/`CONTENT_TYPE_SPEECH` `AudioTrack`, confirms `PLAYSTATE_PLAYING`, records visible active playback, requests `MODE_IN_COMMUNICATION`, and makes exactly one earpiece request. Cleanup stops the writer, clears routing and mode participation, and stops, flushes, and releases the track.
 
 ## CURRENT
 
-- **Implementation state: the diagnostic now contains the deliberately temporary POC-4 explicit mode-ownership experiment. POC-1, POC-2, and all three POC-3 requests were accepted without changing Android's reported active ChatGPT Voice route on the tested device. POC-4 physical-device behavior remains NOT TESTED.**
+- **Implementation state: the diagnostic now contains the deliberately temporary POC-5 silent active-requester experiment. POC-1, POC-2, and all three POC-3 requests were accepted without changing Android's reported active ChatGPT Voice route on the tested device. POC-4 was not physically executed; POC-5 physical-device behavior remains NOT TESTED.**
 
 ## NEXT
 
-- Run POC-4 on physical Android hardware and retain the copied report plus complete device, Android, Private Audio build, and ChatGPT version metadata.
-- Determine whether the explicit observable mode transition transfers effective priority and separately record the human-confirmed audible result and any temporary Voice interruption.
+- Run POC-5 on physical Android hardware and retain the copied report, `audio-poc5.txt`, and complete device, Android, Private Audio build, and ChatGPT version metadata.
+- Determine whether silent active communication playback changes mode/route arbitration and separately record the Android-reported device, human-confirmed audible result, and any temporary Voice interruption.
 - Validate explicit disarm, session-end, activity destruction, and real-telephony cleanup paths leave no abnormal system-audio behavior.
 
 ## UNKNOWN

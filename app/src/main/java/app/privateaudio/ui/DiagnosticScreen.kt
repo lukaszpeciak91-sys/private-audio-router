@@ -54,9 +54,9 @@ fun DiagnosticScreen(
             verticalArrangement = Arrangement.spacedBy(16.dp),
         ) {
             Text("PRIVATE AUDIO", style = MaterialTheme.typography.labelLarge)
-            Text("POC-4 Mode Ownership", style = MaterialTheme.typography.headlineMedium)
+            Text("POC-5 Active Requester", style = MaterialTheme.typography.headlineMedium)
             Text(
-                "Experimental: one explicit arm permits a short MODE_NORMAL → MODE_IN_COMMUNICATION ownership transition followed by exactly one earpiece request. Audible success remains unknown until you confirm it.",
+                "Experimental: one explicit arm starts a silent communication AudioTrack, requests communication mode, then makes exactly one earpiece request. No microphone, capture, proxy, or audio-focus request is used. Audible success requires your confirmation.",
                 style = MaterialTheme.typography.bodyMedium,
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
             )
@@ -65,14 +65,18 @@ fun DiagnosticScreen(
                 StateRow("Experiment state", experiment.state.label)
                 StateRow("Armed", experiment.armed.toString())
                 StateRow("Request attempted", experiment.requestAttempted.toString())
-                StateRow("Ownership transition", experiment.explicitModeOwnershipTransitionAttempted.toString())
                 StateRow("Mode before", experiment.modeBeforeParticipation ?: "Not attempted")
-                StateRow("MODE_NORMAL observed", experiment.modeNormalObserved.toString())
+                StateRow("Silent track created", experiment.silentTrackCreated.toString())
+                StateRow("Silent track started", experiment.silentTrackStarted.toString())
+                StateRow("Silent track state", experiment.silentTrackPlayState)
+                StateRow("Active voice playback visible", experiment.activeVoiceCommunicationPlaybackObserved.toString())
+                StateRow("Mode requested after playback", experiment.modeRequestIssuedAfterPlaybackActive.toString())
                 StateRow("Communication mode observed", experiment.modeInCommunicationObserved.toString())
                 StateRow("Request accepted", experiment.requestAccepted?.toString() ?: "Not attempted")
                 StateRow("Total attempts", experiment.attempts.size.toString())
                 StateRow("Earpiece reported in session", experiment.earpieceReportedDuringSession.toString())
                 StateRow("Speaker reclaimed", experiment.revertedToSpeaker.toString())
+                StateRow("Silent track cleanup", experiment.silentTrackCleanupCompleted.toString())
                 StateRow(
                     "Device after observation",
                     experiment.shortObservation?.communicationDevice?.description() ?: "Not observed",
