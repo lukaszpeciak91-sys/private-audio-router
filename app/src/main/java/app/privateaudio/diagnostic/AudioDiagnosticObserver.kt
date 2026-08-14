@@ -47,11 +47,9 @@ data class DiagnosticSnapshot(
 }
 
 data class ObservedPlayback(
-    val playerState: String,
     val usage: String,
     val contentType: String,
     val allowedCapturePolicy: String,
-    val sessionId: Int,
     val device: ObservedDevice?,
 )
 
@@ -365,7 +363,6 @@ class AudioDiagnosticObserver(
     )
 
     private fun activePlaybackConfigurations() = audioManager.activePlaybackConfigurations
-        .filter { it.playerState == AudioPlaybackConfiguration.PLAYER_STATE_STARTED }
         .map(AudioPlaybackConfiguration::toObservedPlayback)
 
     private fun processLifecycleState(): String {
@@ -488,9 +485,9 @@ private fun StringBuilder.appendSnapshot(
     appendLine("Available communication devices: ${snapshot.availableCommunicationDevices.joinToString { it.reportDescription() }}")
     requestAccepted?.let { appendLine("setCommunicationDevice return value: $it") }
     appendLine("Active playback configurations:")
-    if (snapshot.activePlaybackConfigurations.isEmpty()) appendLine("  None visible and active")
+    if (snapshot.activePlaybackConfigurations.isEmpty()) appendLine("  None visible")
     snapshot.activePlaybackConfigurations.forEachIndexed { index, playback ->
-        appendLine("  ${index + 1}. state=${playback.playerState}; usage=${playback.usage}; content=${playback.contentType}; capture policy=${playback.allowedCapturePolicy}; session ID=${playback.sessionId}; device=${playback.device.reportDescription()}")
+        appendLine("  ${index + 1}. usage=${playback.usage}; content=${playback.contentType}; capture policy=${playback.allowedCapturePolicy}; device=${playback.device.reportDescription()}")
     }
     appendLine()
 }
@@ -533,16 +530,9 @@ private fun AudioDeviceInfo.toObservedDevice() = ObservedDevice(
 )
 
 private fun AudioPlaybackConfiguration.toObservedPlayback() = ObservedPlayback(
-    playerState = when (playerState) {
-        AudioPlaybackConfiguration.PLAYER_STATE_STARTED -> "STARTED"
-        AudioPlaybackConfiguration.PLAYER_STATE_PAUSED -> "PAUSED"
-        AudioPlaybackConfiguration.PLAYER_STATE_STOPPED -> "STOPPED"
-        else -> "State $playerState"
-    },
     usage = audioUsageName(audioAttributes.usage),
     contentType = audioContentTypeName(audioAttributes.contentType),
     allowedCapturePolicy = capturePolicyName(audioAttributes.allowedCapturePolicy),
-    sessionId = audioSessionId,
     device = audioDeviceInfo?.toObservedDevice(),
 )
 

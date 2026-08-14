@@ -57,7 +57,7 @@ These inferences are hypotheses for physical-device testing, not compatibility c
 
 ## Evidence priorities
 
-**FACT:** Public `AudioManager.getActivePlaybackConfigurations()` observations can expose playback state and public configuration metadata without capturing audio. Visibility may be limited by Android, so an empty or incomplete list is not evidence that no playback exists.
+**FACT:** Public `AudioManager.getActivePlaybackConfigurations()` observations expose an active playback snapshot and public configuration metadata without capturing audio. For this project's public compile-SDK surface, the diagnostic serializes audio usage, content type, allowed capture policy, and device; it does not depend on playback state or session ID. Visibility may be limited by Android, so an empty or incomplete list is not evidence that no playback exists.
 
 **UNKNOWN:** Whether ChatGPT Voice's active playback configuration is visible to Private Audio on the POC-4 device, and which usage/content type Android reports if it is visible.
 
