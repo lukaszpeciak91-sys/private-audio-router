@@ -37,6 +37,14 @@ class AudioDiagnosticObserverTest {
                 ObservedDevice(2, "Built-in speaker", "Phone speaker"),
             ),
             speakerphoneState = "Off (directly observed)",
+            activePlaybackConfigurations = listOf(
+                ObservedPlayback(
+                    usage = "USAGE_VOICE_COMMUNICATION",
+                    contentType = "CONTENT_TYPE_SPEECH",
+                    allowedCapturePolicy = "ALLOW_CAPTURE_BY_ALL",
+                    device = ObservedDevice(2, "Built-in speaker", "Phone speaker"),
+                ),
+            ),
         )
         val report = buildDiagnosticReport(
             timestamp = "2026-08-12T12:34:56Z",
@@ -76,6 +84,7 @@ class AudioDiagnosticObserverTest {
         assertTrue(report.contains("Total routing attempts: 1"))
         assertTrue(report.contains("DELAYED OBSERVATION"))
         assertTrue(report.contains("Active playback configurations:"))
+        assertTrue(report.contains("usage=USAGE_VOICE_COMMUNICATION; content=CONTENT_TYPE_SPEECH"))
         assertTrue(report.contains("ADB CORRELATION"))
         assertTrue(report.contains("This report does not claim actual mode ownership"))
         assertTrue(report.contains("Attempt 1: timestamp=12:34:56.000"))
