@@ -4,6 +4,7 @@ State reflects evidence, not aspiration.
 
 ## DONE
 
+- POC-5 Layer 0 characterization protection added before lifecycle migration: JVM source-contract tests now lock down trigger gating, telephony/system-priority blocking, silent-track and mode/request ordering, the single-request cap, reentrant/delayed no-retry behavior, failure and session-exit cleanup paths, cleanup ordering/idempotence, and the existing report-copy formatter path without changing production routing behavior.
 - Project concept established.
 - Primary use case defined.
 - Preliminary research completed.
