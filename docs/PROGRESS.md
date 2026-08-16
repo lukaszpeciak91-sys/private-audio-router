@@ -4,6 +4,7 @@ State reflects evidence, not aspiration.
 
 ## DONE
 
+- Layer 2 product-state projection implemented: `PrivateAudioService` now exposes one Compose-observable, read-only `privateAudioState` with exactly `READY`, `WAITING`, `ACTIVE`, and `ERROR`. OFF has highest precedence; current protected failure precedes current confirmed participating earpiece routing; all other enabled conditions are normal waiting. The pure mapping ignores historical success/reversion and adds no routing behavior. Physical/UI consumption remains unverified until a later layer.
 - Layer 1.6 permanent controller implemented: Power ON registers provider-independent public playback observation and waits without audio influence; qualifying communication starts one protected POC-5 cycle; stable inferred external-playback end cleans it fully and returns to waiting under the same enabled intent. Cycle generations protect OFF, destruction, and later sessions from stale timers. Layer 1.5 physically failed because its mode-departure completion boundary remained sticky behind the local track. Layer 1.6 physical validation is required.
 
 - Layer 1.5 multi-session lifecycle implemented: `PrivateAudioService` now owns a non-persisted enabled intent distinct from each one-shot observer experiment. Normal completed-run cleanup reaches `CLEARED` before exactly one fresh waiting arm; Disable clears intent before cleanup, while blocked/telephony failures, shutdown, and process death do not auto-rearm. Protected POC-5 routing, one-request, observation, and cleanup semantics remain unchanged. Physical multi-session validation is still required.
@@ -39,10 +40,11 @@ State reflects evidence, not aspiration.
 
 ## CURRENT
 
-- **Layer 1.5 physically failed its multi-session gate; Layer 1.6 supersedes its completion boundary and is implemented but not physically validated. POC-5 remains physically successful on the tested Xiaomi configuration and remains a bounded public-API experiment per voice session; no POC-6, retry, or invasive alternative is authorized.**
+- **Layer 2's four-state service projection is implemented without UI. Layer 1.6 remains implemented but not physically validated. POC-5 remains physically successful on the tested Xiaomi configuration and remains a bounded public-API experiment per voice session; no POC-6, retry, or invasive alternative is authorized.**
 
 ## NEXT
 
+- Consume the service-owned product state in the future Layer 3 UI without duplicating its mapping.
 - Run the Layer 1.6 permanent-controller physical gate in `TEST_PLAN.md`, including two sequential Voice sessions from one Enable and a third session after Disable.
 - Verify no silent `AudioTrack` survives cleanup and ordinary audio behavior returns afterward.
 

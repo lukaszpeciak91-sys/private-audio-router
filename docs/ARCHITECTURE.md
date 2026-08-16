@@ -53,6 +53,12 @@ Disable clears enabled intent first, invalidates delayed work, unregisters playb
 
 The foreground notification is a minimum low-importance lifetime disclosure whose tap returns to `MainActivity`. There is no notification action, media style, runtime notification-permission flow, wake lock, audio-focus request, persistence, boot restart, or background-triggered foreground-service start. The protected POC-5 algorithm and cleanup paths remain unchanged.
 
+## Product state projection
+
+`PrivateAudioService.privateAudioState` is the single read-only product-state source for future UI consumers. It is a pure projection of the observable enabled intent and current observer evidence, with this precedence: OFF is `READY`; a current protected block or rejected routing request is `ERROR`; a currently participating cycle with Android reporting both `MODE_IN_COMMUNICATION` and the built-in earpiece is `ACTIVE`; every other enabled condition is `WAITING`.
+
+The enabled intent, diagnostic snapshot, and experiment evidence use Compose snapshot state. Reading `privateAudioState` from a composition therefore observes controller changes as well as current mode, device, cycle, cleanup, and failure evidence without adding Flow or a parallel lifecycle. Historical earpiece success and route reversion are not projection inputs. Consumers must not reproduce the mapping, and the projection owns no routing API or controller decision.
+
 ## Lifecycle expectations
 
 The permanent controller applies these lifecycle expectations:

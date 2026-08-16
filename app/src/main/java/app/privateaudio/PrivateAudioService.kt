@@ -10,7 +10,11 @@ import android.content.pm.ServiceInfo
 import android.media.AudioManager
 import android.os.Binder
 import android.os.IBinder
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.setValue
 import app.privateaudio.diagnostic.AudioDiagnosticObserver
+import app.privateaudio.diagnostic.ExperimentState
 
 class PrivateAudioService : Service() {
     inner class LocalBinder : Binder() {
@@ -21,8 +25,28 @@ class PrivateAudioService : Service() {
     private val binder = LocalBinder()
     private var shuttingDown = false
 
-    var isPrivateAudioEnabled = false
+    var isPrivateAudioEnabled by mutableStateOf(false)
         private set
+
+    val privateAudioState: PrivateAudioState
+        get() {
+            val currentExperiment = observer.experiment
+            val currentSnapshot = observer.snapshot
+            return projectPrivateAudioState(
+                PrivateAudioStateEvidence(
+                    controllerEnabled = isPrivateAudioEnabled,
+                    currentProtectedFailure = currentExperiment.state == ExperimentState.BLOCKED ||
+                        currentExperiment.requestAccepted == false,
+                    currentCycleParticipating =
+                        currentExperiment.state == ExperimentState.REQUEST_ATTEMPTED &&
+                            currentExperiment.silentTrackStarted &&
+                            !currentExperiment.silentTrackCleanupCompleted,
+                    modeInCommunication = currentSnapshot.mode == "MODE_IN_COMMUNICATION",
+                    builtInEarpieceIsCurrent =
+                        currentSnapshot.communicationDevice?.type == "Built-in earpiece",
+                ),
+            )
+        }
 
     val observer: AudioDiagnosticObserver by lazy(LazyThreadSafetyMode.NONE) {
         AudioDiagnosticObserver(
