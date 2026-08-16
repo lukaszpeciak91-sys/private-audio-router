@@ -4,6 +4,7 @@ State reflects evidence, not aspiration.
 
 ## DONE
 
+- Layer 1.5 multi-session lifecycle implemented: `PrivateAudioService` now owns a non-persisted enabled intent distinct from each one-shot observer experiment. Normal completed-run cleanup reaches `CLEARED` before exactly one fresh waiting arm; Disable clears intent before cleanup, while blocked/telephony failures, shutdown, and process death do not auto-rearm. Protected POC-5 routing, one-request, observation, and cleanup semantics remain unchanged. Physical multi-session validation is still required.
 - Layer 1 lifecycle ownership migration completed: one local non-exported started/bindable `PrivateAudioService` now solely owns the existing observer, diagnostic evidence, and POC-5 experiment. Explicit visible Arm promotes it to a `specialUse` foreground service before arming; Disarm/Clear cleans up and ends foreground/started lifetime; activity recreation only rebinds; restart remains fail-closed with `START_NOT_STICKY` and no persistence or automatic re-arm. The diagnostic UI and protected POC-5 routing semantics remain in place.
 - POC-5 Layer 0 characterization protection added before lifecycle migration: JVM source-contract tests now lock down trigger gating, telephony/system-priority blocking, silent-track and mode/request ordering, the single-request cap, reentrant/delayed no-retry behavior, failure and session-exit cleanup paths, cleanup ordering/idempotence, and the existing report-copy formatter path without changing production routing behavior.
 - Project concept established.
@@ -36,11 +37,11 @@ State reflects evidence, not aspiration.
 
 ## CURRENT
 
-- **POC-5 is physically successful on the tested Xiaomi configuration. The current diagnostic remains a bounded public-API experiment: it generates local silence to participate in communication arbitration but never captures or carries ChatGPT audio. Immediate work is hardening and reproducibility; no POC-6 or invasive alternative is authorized.**
+- **Layer 1.5 is implemented but not physically validated. POC-5 remains physically successful on the tested Xiaomi configuration and remains a bounded public-API experiment per voice session; no POC-6, retry, or invasive alternative is authorized.**
 
 ## NEXT
 
-- Run the POC-5 stability matrix in `TEST_PLAN.md`, including cold starts, repeated Voice sessions without reinstall, process/activity lifecycle, disarm/session-end cleanup, APK update and reinstall baselines, and incoming/outgoing telephony.
+- Run the Layer 1.5 multi-session physical gate in `TEST_PLAN.md`, including two sequential Voice sessions from one Enable and a third session after Disable.
 - Verify no silent `AudioTrack` survives cleanup and ordinary audio behavior returns afterward.
 
 ## UNKNOWN
