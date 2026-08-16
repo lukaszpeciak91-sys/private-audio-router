@@ -1,18 +1,24 @@
 package app.privateaudio.ui.theme
 
-import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.darkColorScheme
-import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.graphics.Color
+
+private val PrivateAudioColorScheme = darkColorScheme(
+    background = Color.Black,
+    surface = Color.Black,
+    surfaceContainer = Color.Black,
+    onBackground = Color(0xFFF5F5F5),
+    onSurface = Color(0xFFF5F5F5),
+)
 
 @Composable
 fun PrivateAudioTheme(
-    darkTheme: Boolean = isSystemInDarkTheme(),
     content: @Composable () -> Unit,
 ) {
     MaterialTheme(
-        colorScheme = if (darkTheme) darkColorScheme() else lightColorScheme(),
+        colorScheme = PrivateAudioColorScheme,
         content = content,
     )
 }

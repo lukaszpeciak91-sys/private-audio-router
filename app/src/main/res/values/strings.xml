@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Private Audio</string>
-    <string name="routing_notification_channel">Private audio routing</string>
-    <string name="routing_notification_title">Private audio routing active</string>
-    <string name="routing_notification_text">Earpiece routing experiment is armed</string>
+    <string name="routing_notification_channel">Private Audio</string>
+    <string name="routing_notification_title">Private Audio is on</string>
+    <string name="routing_notification_text">Waiting for private voice audio</string>
+    <string name="product_title">Private Audio</string>
+    <string name="product_subtitle">Use AI voice privately, like a phone call.</string>
+    <string name="state_ready">Ready</string>
+    <string name="state_waiting">Waiting</string>
+    <string name="state_active">Active</string>
+    <string name="state_error">Error</string>
+    <string name="power_control">Power</string>
+    <string name="floating">Floating</string>
+    <string name="settings">Settings</string>
+    <string name="close">Close</string>
+    <string name="floating_unavailable">Floating, coming later</string>
+    <string name="settings_unavailable">Settings, coming later</string>
 </resources>
