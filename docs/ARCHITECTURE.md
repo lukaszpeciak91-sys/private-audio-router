@@ -45,14 +45,18 @@ One local, non-exported `PrivateAudioService` is the sole production owner of on
 
 Binding alone permits a bound-only service and does not create a notification. The visible UI's explicit Arm action establishes started-service lifetime; `onStartCommand()` immediately promotes the service using the declared `specialUse` foreground-service type before invoking the existing arm operation. Disarm runs the existing cleanup, removes foreground state and notification, and stops the started lifetime. A remaining activity binding may keep the same observer alive for diagnostics. Genuine service destruction stops the observer and unregisters callbacks. Restart is fail-closed (`START_NOT_STICKY`), with no persistence or automatic re-arm; process death can bypass `onDestroy()` and loses in-memory evidence.
 
+Layer 1.5 separates service-owned product intent from observer-owned experiments. Enable records an in-memory enabled intent, retains the started foreground lifetime, and arms one fresh experiment. A completed POC-5 run first performs its unchanged cleanup and establishes `CLEARED`; only then does a structural observer callback allow the service to arm a new experiment if intent is still enabled, shutdown is not underway, the observer is unarmed, and no routing action is in progress. The fresh arm observes the normal post-session state and waits without creating an `AudioTrack` or requesting a route until another qualifying communication session appears.
+
+Disable clears enabled intent before calling protected cleanup, so its completion cannot re-arm. `BLOCKED` or telephony/system-priority terminal states produce no completion re-arm, and service destruction sets the shutdown guard and clears intent before stopping the observer. Process death loses the non-persisted intent. Thus repeated sessions are multiple bounded POC-5 runs, never one continuous run, and no retry, reassertion, polling, or recovery loop is introduced.
+
 The foreground notification is a minimum low-importance lifetime disclosure whose tap returns to `MainActivity`. There is no notification action, media style, runtime notification-permission flow, wake lock, audio-focus request, persistence, boot restart, or background-triggered foreground-service start. The protected POC-5 algorithm and cleanup paths remain unchanged.
 
 ## Lifecycle expectations
 
 The one-shot routing experiment applies these lifecycle expectations:
 
-1. Explicitly arm one silent active-communication playback run followed by one mode request and exactly one routing request.
+1. Product Enable arms a fresh one-shot run; each qualifying external session receives one silent active-communication playback run followed by one mode request and exactly one routing request.
 2. Snapshot before mutation and after track start, mode request, route request, and the short observation; report track creation/configuration/play state, visible playback configurations, request results, callbacks, and the separately recorded human-audible route.
 3. Cancel pending observation, clear the device request, relinquish Private Audio's mode participation, and stop/release silent playback on explicit disarm, observed exit from `MODE_IN_COMMUNICATION`, telephony/system-priority modes, experiment failure, and genuine service destruction; activity destruction alone must not clean up a started run.
-4. Clear or lose influence when the process is gone; unexpected persistence is a failure to investigate.
+4. After normal session-end cleanup, re-arm a track-free waiting experiment only while service-owned enabled intent remains true; clear or lose all influence when disabled, shutting down, or the process is gone.
 5. Never attempt to override real telephony, which retains system priority.

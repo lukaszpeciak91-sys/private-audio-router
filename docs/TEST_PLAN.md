@@ -260,7 +260,15 @@ The following checks validate lifecycle ownership without claiming routing succe
 - Recreate Main while armed and while actively routed; verify the experiment continues, the recreated activity displays the retained state/events, and no second request, observer, track, or writer appears.
 - Leave Main while armed/active; verify the started foreground service continues independently and notification tap returns to the normal diagnostic activity.
 - Return and press **Disarm / Clear**; verify existing cleanup ordering, notification removal, foreground exit, and ended started lifetime while the bound diagnostic remains available.
-- End the external communication session and verify the protected core automatically clears its run. Layer 1 may conservatively retain foreground/started lifetime until explicit **Disarm / Clear**; verify this does not re-arm or issue another route request.
+- End the external communication session and verify the protected core automatically clears its run before Layer 1.5 arms one fresh waiting experiment. Verify waiting creates no silent track and issues no route request before a new qualifying session.
 - Stop the service cleanly while it is genuinely unbound and verify observer callback unregistration and the existing cleanup. Separately kill the process and verify no state is restored, no automatic re-arm occurs, and `START_NOT_STICKY` does not restart the service.
 - Repeat incoming and outgoing real-call safety tests while Main is absent. Telephony must retain priority and the service must not retry or reassert routing.
 - Verify notification behavior on API 31–33 and API 34–36, including `specialUse` foreground type on API 34+, with notification permission both allowed and denied where the OS permits testing it.
+
+## Layer 1.5 multi-session physical gate
+
+- **Status:** NOT TESTED
+- **Device / Android / build / voice-app version:** Not recorded
+- **Steps:** (1) Launch Private Audio. (2) Enable once. (3) Start Voice #1 and confirm output through the built-in earpiece. (4) End Voice #1 and confirm route, mode, writer, and silent-track cleanup followed by a fresh armed Waiting state. (5) Do not press Power/Enable again. (6) Start Voice #2 and confirm a fresh POC-5 run moves output to the earpiece. (7) Inspect the retained report and confirm each session contains exactly one routing request and no request occurred between sessions. (8) Disable and confirm protected cleanup, foreground exit, and Ready behavior. (9) Start Voice #3 and verify Private Audio creates no track, mode request, or routing request.
+- **Expected result:** One activation spans Voice #1 and Voice #2 as two distinct experiments. Each experiment performs its existing cleanup, contains at most one `setCommunicationDevice()` request, and the between-session Waiting period has no `AudioTrack`. Disable prevents any action during Voice #3. A telephony/system-priority block or genuine protected failure remains terminal and requires explicit user reset; it must not re-arm.
+- **Observed result:** Not recorded. Automated tests characterize lifecycle structure but do not establish physical routing or OEM behavior.

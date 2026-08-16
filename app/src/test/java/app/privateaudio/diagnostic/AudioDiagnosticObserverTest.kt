@@ -336,6 +336,88 @@ class AudioDiagnosticObserverTest {
         assertTrue(serviceSource.contains("return START_NOT_STICKY"))
     }
 
+    @Test
+    fun enableRecordsPersistentIntentAndArmsOnlyOneFreshExperiment() {
+        val start = serviceSource.method("override fun onStartCommand(")
+        assertInOrder(
+            start,
+            "isPrivateAudioEnabled = true",
+            "enterForeground()",
+            "armFreshExperimentIfSafe(",
+        )
+        val arm = serviceSource.method("private fun armFreshExperimentIfSafe(")
+        assertInOrder(
+            arm,
+            "if (!isPrivateAudioEnabled || shuttingDown) return",
+            "if (observer.experiment.armed || observer.isRoutingActionInProgress) return",
+            "observer.armEarpieceTest()",
+        )
+        assertEquals(1, start.occurrences("armFreshExperimentIfSafe("))
+    }
+
+    @Test
+    fun normalCompletedExperimentCleanupNotifiesServiceAfterCleanupAndRearmsOnce() {
+        val cleanup = observerSource.method("private fun clearExperiment(")
+        assertInOrder(
+            cleanup,
+            "val completedExperiment = experiment.requestAttempted",
+            "audioManager.clearCommunicationDevice()",
+            "audioManager.mode = AudioManager.MODE_NORMAL",
+            "stopSilentCommunicationTrack()",
+            "armed = false",
+            "snapshot(\"Post-cleanup observation\")",
+            "finalState == ExperimentState.CLEARED && completedExperiment",
+            "onCompletedExperimentCleared()",
+        )
+        val completed = serviceSource.method("private fun onCompletedExperimentCleared()")
+        assertEquals(1, completed.occurrences("armFreshExperimentIfSafe("))
+        assertTrue(completed.contains("persistent Private Audio intent remains enabled"))
+    }
+
+    @Test
+    fun blockedPriorityAndFailureTerminalsCannotRequestAutomaticRearm() {
+        val cleanup = observerSource.method("private fun clearExperiment(")
+        assertTrue(cleanup.contains("finalState == ExperimentState.CLEARED && completedExperiment"))
+        assertFalse(cleanup.contains("finalState == ExperimentState.BLOCKED && completedExperiment"))
+
+        val priority = observerSource.method("private fun evaluateExperimentTrigger()")
+            .substringAfter("if (mode.isTelephonyOrSystemPriorityMode())")
+            .substringBefore("if (experiment.attempts.isNotEmpty() && mode")
+        assertTrue(priority.contains("ExperimentState.BLOCKED"))
+        assertFalse(priority.contains("onCompletedExperimentCleared"))
+    }
+
+    @Test
+    fun disableAndShutdownClearIntentBeforeProtectedCleanupAndCannotRearm() {
+        val disable = serviceSource.method("fun disarmAndStopStartedLifetime()")
+        assertInOrder(
+            disable,
+            "isPrivateAudioEnabled = false",
+            "observer.disarmAndClear()",
+            "stopForeground(STOP_FOREGROUND_REMOVE)",
+            "stopSelf()",
+        )
+        val destroy = serviceSource.method("override fun onDestroy()")
+        assertInOrder(
+            destroy,
+            "shuttingDown = true",
+            "isPrivateAudioEnabled = false",
+            "observer.stop(\"Service destroyed\")",
+        )
+    }
+
+    @Test
+    fun freshWaitingAndSecondSessionRetainOneShotProtectedCore() {
+        val arm = observerSource.method("fun armEarpieceTest()")
+        assertFalse(arm.contains("startSilentCommunicationTrack"))
+        assertFalse(arm.contains("setCommunicationDevice"))
+
+        val route = observerSource.method("private fun performRoutingAttempt(")
+        assertTrue(route.contains("if (!experiment.armed || experiment.attempts.isNotEmpty()) return"))
+        assertEquals(1, observerSource.occurrences("audioManager.setCommunicationDevice(earpiece)"))
+        assertEquals(1, serviceSource.occurrences("onCompletedExperimentCleared = ::onCompletedExperimentCleared"))
+    }
+
     private fun assertInOrder(source: String, vararg fragments: String) {
         var previous = -1
         fragments.forEach { fragment ->

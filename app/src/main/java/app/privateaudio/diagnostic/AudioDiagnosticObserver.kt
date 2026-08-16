@@ -114,6 +114,7 @@ class AudioDiagnosticObserver(
     private val context: Context,
     private val audioManager: AudioManager,
     private val callbackExecutor: Executor,
+    private val onCompletedExperimentCleared: () -> Unit = {},
 ) {
     var snapshot by mutableStateOf(DiagnosticSnapshot.Empty)
         private set
@@ -122,6 +123,9 @@ class AudioDiagnosticObserver(
         private set
 
     val events = mutableStateListOf<String>()
+
+    val isRoutingActionInProgress: Boolean
+        get() = routingActionInProgress
 
     private var started = false
     private var routingActionInProgress = false
@@ -194,6 +198,10 @@ class AudioDiagnosticObserver(
 
     fun disarmAndClear() {
         clearExperiment("User disarmed experiment", ExperimentState.CLEARED)
+    }
+
+    fun recordLifecycleEvent(message: String) {
+        addEvent(message)
     }
 
     fun report(): String = buildDiagnosticReport(
@@ -454,6 +462,7 @@ class AudioDiagnosticObserver(
     }
 
     private fun clearExperiment(reason: String, finalState: ExperimentState) {
+        val completedExperiment = experiment.requestAttempted
         cancelPendingObservation()
         routingActionInProgress = true
         audioManager.clearCommunicationDevice()
@@ -478,6 +487,9 @@ class AudioDiagnosticObserver(
             silentTrackPlayState = if (experiment.silentTrackCreated && trackCleanupCompleted) "Released" else experiment.silentTrackPlayState,
         )
         snapshot("Post-cleanup observation")
+        if (finalState == ExperimentState.CLEARED && completedExperiment) {
+            onCompletedExperimentCleared()
+        }
     }
 
     private fun stopSilentCommunicationTrack(): Boolean {

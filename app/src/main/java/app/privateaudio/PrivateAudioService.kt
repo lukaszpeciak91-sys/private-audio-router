@@ -19,12 +19,17 @@ class PrivateAudioService : Service() {
     }
 
     private val binder = LocalBinder()
+    private var shuttingDown = false
+
+    var isPrivateAudioEnabled = false
+        private set
 
     val observer: AudioDiagnosticObserver by lazy(LazyThreadSafetyMode.NONE) {
         AudioDiagnosticObserver(
             context = applicationContext,
             audioManager = getSystemService(AudioManager::class.java),
             callbackExecutor = mainExecutor,
+            onCompletedExperimentCleared = ::onCompletedExperimentCleared,
         )
     }
 
@@ -37,13 +42,15 @@ class PrivateAudioService : Service() {
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
         if (intent?.action == ACTION_ARM) {
+            isPrivateAudioEnabled = true
             enterForeground()
-            observer.armEarpieceTest()
+            armFreshExperimentIfSafe("Private Audio enabled — persistent intent is waiting for a voice session")
         }
         return START_NOT_STICKY
     }
 
     fun disarmAndStopStartedLifetime() {
+        isPrivateAudioEnabled = false
         observer.disarmAndClear()
         stopForeground(STOP_FOREGROUND_REMOVE)
         stopSelf()
@@ -59,8 +66,23 @@ class PrivateAudioService : Service() {
     }
 
     override fun onDestroy() {
+        shuttingDown = true
+        isPrivateAudioEnabled = false
         observer.stop("Service destroyed")
         super.onDestroy()
+    }
+
+    private fun onCompletedExperimentCleared() {
+        armFreshExperimentIfSafe(
+            "Voice session cleanup completed — persistent Private Audio intent remains enabled",
+        )
+    }
+
+    private fun armFreshExperimentIfSafe(reason: String) {
+        if (!isPrivateAudioEnabled || shuttingDown) return
+        if (observer.experiment.armed || observer.isRoutingActionInProgress) return
+        observer.recordLifecycleEvent(reason)
+        observer.armEarpieceTest()
     }
 
     private fun enterForeground() {
