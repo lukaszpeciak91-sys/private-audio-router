@@ -96,7 +96,7 @@ data class EarpieceExperiment(
     val postRoutingRequest: DiagnosticSnapshot? = null,
     val postSilentTrackStart: DiagnosticSnapshot? = null,
     val silentTrackCleanupCompleted: Boolean = false,
-    val chatGptPlaybackDeviceAfterRequest: ObservedDevice? = null,
+    val externalVoicePlaybackDeviceAfterRequest: ObservedDevice? = null,
 )
 
 data class RoutingAttempt(
@@ -114,7 +114,6 @@ class AudioDiagnosticObserver(
     private val context: Context,
     private val audioManager: AudioManager,
     private val callbackExecutor: Executor,
-    private val onCompletedExperimentCleared: () -> Unit = {},
 ) {
     var snapshot by mutableStateOf(DiagnosticSnapshot.Empty)
         private set
@@ -128,6 +127,10 @@ class AudioDiagnosticObserver(
         get() = routingActionInProgress
 
     private var started = false
+    private var controllerEnabled = false
+    private var playbackCallbackRegistered = false
+    private var cycleGeneration = 0L
+    private var externalContributionEstablished = false
     private var routingActionInProgress = false
     private var modeParticipationActive = false
     private var silentTrack: AudioTrack? = null
@@ -135,6 +138,7 @@ class AudioDiagnosticObserver(
     private val silentWriterRunning = AtomicBoolean(false)
     private val observationHandler = Handler(Looper.getMainLooper())
     private var pendingObservation: Runnable? = null
+    private var pendingEndConfirmation: Runnable? = null
     private var baseline: DiagnosticSnapshot? = null
     private val communicationDeviceListener = AudioManager.OnCommunicationDeviceChangedListener {
         snapshot("Communication device callback")
@@ -146,6 +150,11 @@ class AudioDiagnosticObserver(
 
         override fun onAudioDevicesRemoved(removedDevices: Array<out AudioDeviceInfo>) {
             snapshot("Audio device callback: ${removedDevices.size} removed")
+        }
+    }
+    private val playbackCallback = object : AudioManager.AudioPlaybackCallback() {
+        override fun onPlaybackConfigChanged(configs: MutableList<AudioPlaybackConfiguration>) {
+            handlePlaybackConfigurations(configs)
         }
     }
 
@@ -163,6 +172,9 @@ class AudioDiagnosticObserver(
 
     fun stop(reason: String) {
         if (!started) return
+        controllerEnabled = false
+        invalidatePendingControllerWork()
+        unregisterPlaybackCallback()
         clearExperiment(reason, ExperimentState.CLEARED)
         audioManager.removeOnCommunicationDeviceChangedListener(communicationDeviceListener)
         audioManager.unregisterAudioDeviceCallback(audioDeviceCallback)
@@ -187,17 +199,24 @@ class AudioDiagnosticObserver(
         if (!routingActionInProgress) evaluateExperimentTrigger()
     }
 
-    fun armEarpieceTest() {
-        if (experiment.requestAttempted || experiment.armed) {
-            clearExperiment("Re-arm requested", ExperimentState.CLEARED)
-        }
+    fun enableController() {
+        if (controllerEnabled) return
+        controllerEnabled = true
+        cycleGeneration++
         experiment = EarpieceExperiment(state = ExperimentState.ARMED, armed = true)
-        addEvent("Earpiece test armed — waiting for qualifying Android audio state")
-        snapshot("Arm snapshot")
+        audioManager.registerAudioPlaybackCallback(playbackCallback, observationHandler)
+        playbackCallbackRegistered = true
+        addEvent("Controller ON — clean waiting; playback observation registered")
+        snapshot("Controller waiting snapshot")
+        handlePlaybackConfigurations(audioManager.activePlaybackConfigurations)
     }
 
-    fun disarmAndClear() {
-        clearExperiment("User disarmed experiment", ExperimentState.CLEARED)
+    fun disableController() {
+        controllerEnabled = false
+        invalidatePendingControllerWork()
+        unregisterPlaybackCallback()
+        addEvent("Controller OFF — pending detection invalidated")
+        clearExperiment("Power OFF", ExperimentState.CLEARED)
     }
 
     fun recordLifecycleEvent(message: String) {
@@ -219,7 +238,7 @@ class AudioDiagnosticObserver(
     }
 
     private fun evaluateExperimentTrigger() {
-        if (!experiment.armed) return
+        if (!controllerEnabled || !experiment.armed) return
 
         val mode = audioManager.mode
         if (mode.isTelephonyOrSystemPriorityMode()) {
@@ -230,15 +249,8 @@ class AudioDiagnosticObserver(
             return
         }
 
-        if (experiment.attempts.isNotEmpty() && mode != AudioManager.MODE_IN_COMMUNICATION) {
-            clearExperiment(
-                reason = "Observed communication session left MODE_IN_COMMUNICATION",
-                finalState = ExperimentState.CLEARED,
-            )
-            return
-        }
-
         if (experiment.attempts.isNotEmpty() || mode != AudioManager.MODE_IN_COMMUNICATION) return
+        if (qualifyingPlaybackCount(audioManager.activePlaybackConfigurations) < 1) return
         val currentDevice = audioManager.communicationDevice
         if (currentDevice?.type != AudioDeviceInfo.TYPE_BUILTIN_SPEAKER) return
         val earpiece = audioManager.availableCommunicationDevices.firstOrNull {
@@ -248,7 +260,7 @@ class AudioDiagnosticObserver(
         val target = earpiece.toObservedDevice()
         val modeBeforeParticipation = audioManager.mode
         val preOwnership = collectSnapshot()
-        addEvent("Qualifying trigger observed — complete pre-change state: ${preOwnership.inlineDescription()}")
+        addEvent("Qualifying communication detected — complete pre-change state: ${preOwnership.inlineDescription()}")
         // Set the guard before changing Android state: even a synchronous callback cannot retrigger.
         experiment = experiment.copy(
             state = ExperimentState.REQUEST_ATTEMPTED,
@@ -270,6 +282,11 @@ class AudioDiagnosticObserver(
         experiment = experiment.copy(
             postSilentTrackStart = postTrackStart,
             activeVoiceCommunicationPlaybackObserved = visibleVoicePlayback,
+        )
+        externalContributionEstablished = qualifyingPlaybackCount(audioManager.activePlaybackConfigurations) >= 2
+        addEvent(
+            "Routing cycle $cycleGeneration started — qualifying playback contributions after local start=" +
+                qualifyingPlaybackCount(audioManager.activePlaybackConfigurations),
         )
         addEvent(
             "Silent track is PLAYING before mode request — visible active VOICE_COMMUNICATION/SPEECH playback=$visibleVoicePlayback",
@@ -424,7 +441,7 @@ class AudioDiagnosticObserver(
             attempts = experiment.attempts + attempt,
             earpieceRequestAfterExplicitModeRequest = experiment.explicitModeRequestInvoked,
             postRoutingRequest = collectSnapshot(),
-            chatGptPlaybackDeviceAfterRequest = inferExternalVoicePlaybackDevice(collectSnapshot()),
+            externalVoicePlaybackDeviceAfterRequest = inferExternalVoicePlaybackDevice(collectSnapshot()),
         )
         addEvent("Routing attempt $number result — accepted=$accepted; device immediately after=${after.reportDescription()}; speakerphone=$speakerphone")
         routingActionInProgress = false
@@ -445,6 +462,74 @@ class AudioDiagnosticObserver(
         addEvent("Short ${OBSERVATION_DELAY_MS} ms observation scheduled — no further routing request will be made")
     }
 
+    private fun handlePlaybackConfigurations(configs: List<AudioPlaybackConfiguration>) {
+        if (!controllerEnabled) return
+        val count = qualifyingPlaybackCount(configs)
+        addEvent("Playback callback — qualifying VOICE_COMMUNICATION/SPEECH count=$count")
+        if (experiment.attempts.isEmpty()) {
+            if (!routingActionInProgress && count > 0) evaluateExperimentTrigger()
+            return
+        }
+        if (silentTrack?.playState != AudioTrack.PLAYSTATE_PLAYING) return
+        if (count >= 2) {
+            externalContributionEstablished = true
+            cancelPendingEndConfirmation()
+        } else if (externalContributionEstablished) {
+            scheduleEndConfirmation()
+        }
+    }
+
+    private fun qualifyingPlaybackCount(configs: List<AudioPlaybackConfiguration>) = configs.count {
+        it.isActive && it.audioAttributes.usage == AudioAttributes.USAGE_VOICE_COMMUNICATION &&
+            it.audioAttributes.contentType == AudioAttributes.CONTENT_TYPE_SPEECH
+    }
+
+    private fun scheduleEndConfirmation() {
+        if (pendingEndConfirmation != null) return
+        val generation = cycleGeneration
+        addEvent(
+            "External communication end candidate — only known local contribution remains; " +
+                "confirming for $END_CONFIRMATION_DELAY_MS ms",
+        )
+        val runnable = Runnable {
+            pendingEndConfirmation = null
+            if (!controllerEnabled || generation != cycleGeneration || experiment.attempts.size != 1 ||
+                silentTrack?.playState != AudioTrack.PLAYSTATE_PLAYING
+            ) return@Runnable
+            if (qualifyingPlaybackCount(audioManager.activePlaybackConfigurations) > 1) return@Runnable
+            addEvent("External communication end confirmed for routing cycle $generation")
+            clearExperiment("External communication playback ended", ExperimentState.CLEARED)
+            returnToWaiting()
+        }
+        pendingEndConfirmation = runnable
+        observationHandler.postDelayed(runnable, END_CONFIRMATION_DELAY_MS)
+    }
+
+    private fun returnToWaiting() {
+        if (!controllerEnabled) return
+        cycleGeneration++
+        externalContributionEstablished = false
+        experiment = EarpieceExperiment(state = ExperimentState.ARMED, armed = true)
+        addEvent("Cleanup completed — controller remains ON and returned to clean waiting")
+        handlePlaybackConfigurations(audioManager.activePlaybackConfigurations)
+    }
+
+    private fun unregisterPlaybackCallback() {
+        if (!playbackCallbackRegistered) return
+        audioManager.unregisterAudioPlaybackCallback(playbackCallback)
+        playbackCallbackRegistered = false
+    }
+
+    private fun invalidatePendingControllerWork() {
+        cycleGeneration++
+        cancelPendingEndConfirmation()
+    }
+
+    private fun cancelPendingEndConfirmation() {
+        pendingEndConfirmation?.let(observationHandler::removeCallbacks)
+        pendingEndConfirmation = null
+    }
+
     private fun observeExperimentOutcome(observed: DiagnosticSnapshot, reason: String) {
         if (experiment.attempts.isEmpty() || observed.mode != "MODE_IN_COMMUNICATION") return
         when (observed.communicationDevice?.type) {
@@ -462,7 +547,7 @@ class AudioDiagnosticObserver(
     }
 
     private fun clearExperiment(reason: String, finalState: ExperimentState) {
-        val completedExperiment = experiment.requestAttempted
+        cancelPendingEndConfirmation()
         cancelPendingObservation()
         routingActionInProgress = true
         audioManager.clearCommunicationDevice()
@@ -487,9 +572,6 @@ class AudioDiagnosticObserver(
             silentTrackPlayState = if (experiment.silentTrackCreated && trackCleanupCompleted) "Released" else experiment.silentTrackPlayState,
         )
         snapshot("Post-cleanup observation")
-        if (finalState == ExperimentState.CLEARED && completedExperiment) {
-            onCompletedExperimentCleared()
-        }
     }
 
     private fun stopSilentCommunicationTrack(): Boolean {
@@ -597,9 +679,9 @@ internal fun buildDiagnosticReport(
     appendLine("Selected target: ${experiment.selectedTarget.reportDescription()}")
     appendLine("Routing request accepted: ${experiment.requestAccepted ?: "Not attempted"}")
     appendLine("Total routing attempts: ${experiment.attempts.size}")
-    appendLine("Android reported earpiece while ChatGPT Voice still active: ${experiment.earpieceReportedDuringSession}")
-    appendLine("ChatGPT/system subsequently reclaimed speaker: ${experiment.revertedToSpeaker}")
-    appendLine("ChatGPT playback device after routing request where observable: ${experiment.chatGptPlaybackDeviceAfterRequest.reportDescription()} (public diagnostics do not identify the client)")
+    appendLine("Android reported earpiece while external communication remained active: ${experiment.earpieceReportedDuringSession}")
+    appendLine("External/system playback subsequently reclaimed speaker: ${experiment.revertedToSpeaker}")
+    appendLine("External voice playback device after routing request where observable: ${experiment.externalVoicePlaybackDeviceAfterRequest.reportDescription()} (public diagnostics do not identify the client)")
     appendLine("Silent AudioTrack cleanup completed: ${experiment.silentTrackCleanupCompleted}")
     appendLine("Audible result requiring human confirmation: UNKNOWN")
     appendLine()
@@ -802,6 +884,7 @@ internal fun audioDeviceTypeName(type: Int) = when (type) {
 private val TIME_FORMAT = DateTimeFormatter.ofPattern("HH:mm:ss.SSS")
 private const val MAX_EVENTS = 100
 private const val OBSERVATION_DELAY_MS = 1_000L
+private const val END_CONFIRMATION_DELAY_MS = 1_500L
 private const val DEFAULT_SAMPLE_RATE = 48_000
 private const val MIN_SILENCE_BUFFER_BYTES = 1_024
 private const val SILENCE_WRITER_PAUSE_MS = 10L

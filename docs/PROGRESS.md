@@ -4,6 +4,8 @@ State reflects evidence, not aspiration.
 
 ## DONE
 
+- Layer 1.6 permanent controller implemented: Power ON registers provider-independent public playback observation and waits without audio influence; qualifying communication starts one protected POC-5 cycle; stable inferred external-playback end cleans it fully and returns to waiting under the same enabled intent. Cycle generations protect OFF, destruction, and later sessions from stale timers. Layer 1.5 physically failed because its mode-departure completion boundary remained sticky behind the local track. Layer 1.6 physical validation is required.
+
 - Layer 1.5 multi-session lifecycle implemented: `PrivateAudioService` now owns a non-persisted enabled intent distinct from each one-shot observer experiment. Normal completed-run cleanup reaches `CLEARED` before exactly one fresh waiting arm; Disable clears intent before cleanup, while blocked/telephony failures, shutdown, and process death do not auto-rearm. Protected POC-5 routing, one-request, observation, and cleanup semantics remain unchanged. Physical multi-session validation is still required.
 - Layer 1 lifecycle ownership migration completed: one local non-exported started/bindable `PrivateAudioService` now solely owns the existing observer, diagnostic evidence, and POC-5 experiment. Explicit visible Arm promotes it to a `specialUse` foreground service before arming; Disarm/Clear cleans up and ends foreground/started lifetime; activity recreation only rebinds; restart remains fail-closed with `START_NOT_STICKY` and no persistence or automatic re-arm. The diagnostic UI and protected POC-5 routing semantics remain in place.
 - POC-5 Layer 0 characterization protection added before lifecycle migration: JVM source-contract tests now lock down trigger gating, telephony/system-priority blocking, silent-track and mode/request ordering, the single-request cap, reentrant/delayed no-retry behavior, failure and session-exit cleanup paths, cleanup ordering/idempotence, and the existing report-copy formatter path without changing production routing behavior.
@@ -37,11 +39,11 @@ State reflects evidence, not aspiration.
 
 ## CURRENT
 
-- **Layer 1.5 is implemented but not physically validated. POC-5 remains physically successful on the tested Xiaomi configuration and remains a bounded public-API experiment per voice session; no POC-6, retry, or invasive alternative is authorized.**
+- **Layer 1.5 physically failed its multi-session gate; Layer 1.6 supersedes its completion boundary and is implemented but not physically validated. POC-5 remains physically successful on the tested Xiaomi configuration and remains a bounded public-API experiment per voice session; no POC-6, retry, or invasive alternative is authorized.**
 
 ## NEXT
 
-- Run the Layer 1.5 multi-session physical gate in `TEST_PLAN.md`, including two sequential Voice sessions from one Enable and a third session after Disable.
+- Run the Layer 1.6 permanent-controller physical gate in `TEST_PLAN.md`, including two sequential Voice sessions from one Enable and a third session after Disable.
 - Verify no silent `AudioTrack` survives cleanup and ordinary audio behavior returns afterward.
 
 ## UNKNOWN

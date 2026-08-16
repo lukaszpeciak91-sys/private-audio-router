@@ -77,3 +77,9 @@ Future research should prefer:
 4. community reports only as secondary evidence.
 
 New statements must be labeled **FACT**, **INFERENCE**, or **UNKNOWN**, with sources or test records where appropriate. Do not convert an inference to fact without evidence.
+
+## Layer 1.6 playback-evidence boundary
+
+- **FACT:** Public `AudioManager.AudioPlaybackCallback` reports changes to active playback configurations, including public audio attributes and active state; this implementation does not obtain or use a client package or provider identity.
+- **INFERENCE:** After an external matching communication playback is visible, Private Audio starts its one known matching silent track. Two matching active contributions then establish external-plus-local evidence; a stable fall to one while the known local track remains playing is treated as external communication ending.
+- **UNKNOWN:** OEM callback timing, transient player recreation, whether all compatible providers expose matching configurations, and the reliability of this count boundary across devices remain unverified until physical Layer 1.6 testing. Ambiguous evidence intentionally leaves the active cycle in place rather than escalating.
