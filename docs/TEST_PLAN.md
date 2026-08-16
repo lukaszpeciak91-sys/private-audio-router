@@ -250,3 +250,17 @@ These are stability and safety follow-ups for the successful POC-5, not a new ro
 - full uninstall/reinstall as a comparison baseline;
 - confirmation that no silent `AudioTrack` survives any cleanup path; and
 - confirmation that ordinary audio behavior returns after cleanup.
+
+## Layer 1 service-lifecycle validation
+
+The following checks validate lifecycle ownership without claiming routing success from automation. Record a physical device, Android/build versions, and exact application commit for every execution:
+
+- Bind with Main visible but do not arm; verify diagnostics populate, no foreground notification appears, and no routing mutation occurs.
+- Arm from the visible Main screen; verify the foreground notification appears promptly before starting the external voice-session trigger, then verify the protected POC-5 route and evidence sequence once.
+- Recreate Main while armed and while actively routed; verify the experiment continues, the recreated activity displays the retained state/events, and no second request, observer, track, or writer appears.
+- Leave Main while armed/active; verify the started foreground service continues independently and notification tap returns to the normal diagnostic activity.
+- Return and press **Disarm / Clear**; verify existing cleanup ordering, notification removal, foreground exit, and ended started lifetime while the bound diagnostic remains available.
+- End the external communication session and verify the protected core automatically clears its run. Layer 1 may conservatively retain foreground/started lifetime until explicit **Disarm / Clear**; verify this does not re-arm or issue another route request.
+- Stop the service cleanly while it is genuinely unbound and verify observer callback unregistration and the existing cleanup. Separately kill the process and verify no state is restored, no automatic re-arm occurs, and `START_NOT_STICKY` does not restart the service.
+- Repeat incoming and outgoing real-call safety tests while Main is absent. Telephony must retain priority and the service must not retry or reassert routing.
+- Verify notification behavior on API 31–33 and API 34–36, including `specialUse` foreground type on API 34+, with notification permission both allowed and denied where the OS permits testing it.

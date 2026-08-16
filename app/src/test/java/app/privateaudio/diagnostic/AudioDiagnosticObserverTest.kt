@@ -305,14 +305,35 @@ class AudioDiagnosticObserverTest {
         val report = observerSource.method("fun report(): String")
         assertTrue(report.contains("buildDiagnosticReport("))
 
-        val copyAction = mainActivitySource.substringAfter("onCopyReport = {").substringBefore("},\n                )")
+        val serviceReport = serviceSource.method("fun diagnosticReport(): String")
+        assertInOrder(
+            serviceReport,
+            "observer.snapshot(\"Report snapshot\")",
+            "return observer.report()",
+        )
+        val copyAction = mainActivitySource.substringAfter("onCopyReport = {")
+            .substringBefore("},\n                    )")
         assertInOrder(
             copyAction,
-            "observer.snapshot(\"Report snapshot\")",
-            "ClipData.newPlainText(\"Private Audio diagnostic report\", observer.report())",
+            "val report = connectedService.diagnosticReport()",
+            "ClipData.newPlainText(\"Private Audio diagnostic report\", report)",
         )
         assertEquals(1, observerSource.occurrences("internal fun buildDiagnosticReport("))
         assertEquals(0, mainActivitySource.occurrences("buildDiagnosticReport("))
+        assertEquals(0, serviceSource.occurrences("buildDiagnosticReport("))
+    }
+
+    @Test
+    fun serviceIsTheSoleProductionObserverOwner() {
+        assertEquals(0, mainActivitySource.occurrences("AudioDiagnosticObserver("))
+        assertEquals(1, serviceSource.occurrences("AudioDiagnosticObserver("))
+        assertTrue(serviceSource.contains("observer.start()"))
+        assertTrue(
+            serviceSource.method("override fun onDestroy()")
+                .contains("observer.stop(\"Service destroyed\")"),
+        )
+        assertFalse(mainActivitySource.contains("observer.stop()"))
+        assertTrue(serviceSource.contains("return START_NOT_STICKY"))
     }
 
     private fun assertInOrder(source: String, vararg fragments: String) {
@@ -348,6 +369,9 @@ class AudioDiagnosticObserverTest {
         ).readText()
         val mainActivitySource = projectFile(
             "app/src/main/java/app/privateaudio/MainActivity.kt",
+        ).readText()
+        val serviceSource = projectFile(
+            "app/src/main/java/app/privateaudio/PrivateAudioService.kt",
         ).readText()
 
         fun projectFile(relativePath: String): File {

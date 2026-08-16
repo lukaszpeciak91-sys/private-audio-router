@@ -41,9 +41,11 @@ The diagnostic evidence model uses public, read-only process identity/importance
 
 ## Diagnostic lifecycle
 
-The callbacks are registered from activity creation until destruction. They can continue to append to the in-memory log after the activity is stopped while the application process remains alive. This is best-effort observation only: Android may kill a background process, no callback delivery is promised while it is gone, and the in-memory log then disappears. Every `onResume` records a fresh snapshot so the before/after experiment remains useful even when no background callback was delivered.
+One local, non-exported `PrivateAudioService` is the sole production owner of one `AudioDiagnosticObserver`, its callbacks, in-memory evidence, routing experiment, and indirectly its silent track and writer. `MainActivity` binds while visible and renders the service-owned observable state. Activity destruction only unbinds; it neither disarms nor destroys the observer. Recreated activities bind to the same service instance when it survives.
 
-POC-5 intentionally adds no foreground service, persistent storage, background permission, wake lock, notification, or audio-focus request. Its writer and pending delayed observation are process-local and are stopped on disarm, observed session exit, priority mode, experiment failure, and activity destruction. Android may kill the process, so this PoC does not establish production-grade background reliability.
+Binding alone permits a bound-only service and does not create a notification. The visible UI's explicit Arm action establishes started-service lifetime; `onStartCommand()` immediately promotes the service using the declared `specialUse` foreground-service type before invoking the existing arm operation. Disarm runs the existing cleanup, removes foreground state and notification, and stops the started lifetime. A remaining activity binding may keep the same observer alive for diagnostics. Genuine service destruction stops the observer and unregisters callbacks. Restart is fail-closed (`START_NOT_STICKY`), with no persistence or automatic re-arm; process death can bypass `onDestroy()` and loses in-memory evidence.
+
+The foreground notification is a minimum low-importance lifetime disclosure whose tap returns to `MainActivity`. There is no notification action, media style, runtime notification-permission flow, wake lock, audio-focus request, persistence, boot restart, or background-triggered foreground-service start. The protected POC-5 algorithm and cleanup paths remain unchanged.
 
 ## Lifecycle expectations
 
@@ -51,6 +53,6 @@ The one-shot routing experiment applies these lifecycle expectations:
 
 1. Explicitly arm one silent active-communication playback run followed by one mode request and exactly one routing request.
 2. Snapshot before mutation and after track start, mode request, route request, and the short observation; report track creation/configuration/play state, visible playback configurations, request results, callbacks, and the separately recorded human-audible route.
-3. Cancel pending observation, clear the device request, relinquish Private Audio's mode participation, and stop/release silent playback on explicit disarm, observed exit from `MODE_IN_COMMUNICATION`, telephony/system-priority modes, experiment failure, and clean activity destruction.
+3. Cancel pending observation, clear the device request, relinquish Private Audio's mode participation, and stop/release silent playback on explicit disarm, observed exit from `MODE_IN_COMMUNICATION`, telephony/system-priority modes, experiment failure, and genuine service destruction; activity destruction alone must not clean up a started run.
 4. Clear or lose influence when the process is gone; unexpected persistence is a failure to investigate.
 5. Never attempt to override real telephony, which retains system priority.

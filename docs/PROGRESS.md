@@ -4,6 +4,7 @@ State reflects evidence, not aspiration.
 
 ## DONE
 
+- Layer 1 lifecycle ownership migration completed: one local non-exported started/bindable `PrivateAudioService` now solely owns the existing observer, diagnostic evidence, and POC-5 experiment. Explicit visible Arm promotes it to a `specialUse` foreground service before arming; Disarm/Clear cleans up and ends foreground/started lifetime; activity recreation only rebinds; restart remains fail-closed with `START_NOT_STICKY` and no persistence or automatic re-arm. The diagnostic UI and protected POC-5 routing semantics remain in place.
 - POC-5 Layer 0 characterization protection added before lifecycle migration: JVM source-contract tests now lock down trigger gating, telephony/system-priority blocking, silent-track and mode/request ordering, the single-request cap, reentrant/delayed no-retry behavior, failure and session-exit cleanup paths, cleanup ordering/idempotence, and the existing report-copy formatter path without changing production routing behavior.
 - Project concept established.
 - Primary use case defined.
@@ -51,5 +52,4 @@ State reflects evidence, not aspiration.
 - Whether browser-based voice sessions use compatible communication routing.
 - OEM-specific routing differences.
 - Exact behavior during incoming and outgoing real phone calls.
-- Whether a foreground service will eventually be required.
 - Whether communication-device callbacks are delivered while this application is backgrounded on tested Android/OEM builds, and whether process lifetime interrupts an experiment.

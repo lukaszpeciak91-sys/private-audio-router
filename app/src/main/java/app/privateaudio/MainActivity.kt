@@ -2,56 +2,86 @@ package app.privateaudio
 
 import android.content.ClipData
 import android.content.ClipboardManager
-import android.media.AudioManager
+import android.content.ComponentName
+import android.content.Context
+import android.content.Intent
+import android.content.ServiceConnection
 import android.os.Bundle
+import android.os.IBinder
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import app.privateaudio.diagnostic.AudioDiagnosticObserver
+import androidx.compose.material3.Text
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.setValue
 import app.privateaudio.ui.DiagnosticScreen
 import app.privateaudio.ui.theme.PrivateAudioTheme
 
 class MainActivity : ComponentActivity() {
-    private lateinit var observer: AudioDiagnosticObserver
+    private var service by mutableStateOf<PrivateAudioService?>(null)
+    private var isBound = false
+    private val serviceConnection = object : ServiceConnection {
+        override fun onServiceConnected(name: ComponentName?, binder: IBinder?) {
+            service = (binder as PrivateAudioService.LocalBinder).service
+            isBound = true
+            service?.recordSnapshot("App foregrounded")
+        }
+
+        override fun onServiceDisconnected(name: ComponentName?) {
+            service = null
+        }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
 
-        observer = AudioDiagnosticObserver(
-            context = applicationContext,
-            audioManager = getSystemService(AudioManager::class.java),
-            callbackExecutor = mainExecutor,
-        )
-        observer.start()
-
         setContent {
             PrivateAudioTheme {
-                DiagnosticScreen(
-                    snapshot = observer.snapshot,
-                    experiment = observer.experiment,
-                    events = observer.events,
-                    onArm = observer::armEarpieceTest,
-                    onDisarm = observer::disarmAndClear,
-                    onSnapshot = { observer.snapshot("Manual snapshot") },
-                    onCopyReport = {
-                        observer.snapshot("Report snapshot")
-                        getSystemService(ClipboardManager::class.java).setPrimaryClip(
-                            ClipData.newPlainText("Private Audio diagnostic report", observer.report()),
-                        )
-                    },
-                )
+                val connectedService = service
+                if (connectedService == null) {
+                    Text("Connecting to audio diagnostics…")
+                } else {
+                    DiagnosticScreen(
+                        snapshot = connectedService.observer.snapshot,
+                        experiment = connectedService.observer.experiment,
+                        events = connectedService.observer.events,
+                        onArm = {
+                            startForegroundService(
+                                Intent(this, PrivateAudioService::class.java)
+                                    .setAction(PrivateAudioService.ACTION_ARM),
+                            )
+                        },
+                        onDisarm = connectedService::disarmAndStopStartedLifetime,
+                        onSnapshot = { connectedService.recordSnapshot("Manual snapshot") },
+                        onCopyReport = {
+                            val report = connectedService.diagnosticReport()
+                            getSystemService(ClipboardManager::class.java).setPrimaryClip(
+                                ClipData.newPlainText("Private Audio diagnostic report", report),
+                            )
+                        },
+                    )
+                }
             }
         }
     }
 
-    override fun onResume() {
-        super.onResume()
-        if (::observer.isInitialized) observer.snapshot("App foregrounded")
+    override fun onStart() {
+        super.onStart()
+        isBound = bindService(
+            Intent(this, PrivateAudioService::class.java),
+            serviceConnection,
+            Context.BIND_AUTO_CREATE,
+        )
     }
 
-    override fun onDestroy() {
-        if (::observer.isInitialized) observer.stop()
-        super.onDestroy()
+    override fun onStop() {
+        if (isBound) {
+            unbindService(serviceConnection)
+            isBound = false
+            service = null
+        }
+        super.onStop()
     }
 }
