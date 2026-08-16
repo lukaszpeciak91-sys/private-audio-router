@@ -1,7 +1,5 @@
 package app.privateaudio
 
-import android.content.ClipData
-import android.content.ClipboardManager
 import android.content.ComponentName
 import android.content.Context
 import android.content.Intent
@@ -9,13 +7,13 @@ import android.content.ServiceConnection
 import android.os.Bundle
 import android.os.IBinder
 import androidx.activity.ComponentActivity
+import androidx.activity.SystemBarStyle
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.material3.Text
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
-import app.privateaudio.ui.DiagnosticScreen
+import app.privateaudio.ui.PrivateAudioScreen
 import app.privateaudio.ui.theme.PrivateAudioTheme
 
 class MainActivity : ComponentActivity() {
@@ -35,34 +33,33 @@ class MainActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
+        enableEdgeToEdge(
+            statusBarStyle = SystemBarStyle.dark(android.graphics.Color.TRANSPARENT),
+            navigationBarStyle = SystemBarStyle.dark(android.graphics.Color.TRANSPARENT),
+        )
 
         setContent {
             PrivateAudioTheme {
                 val connectedService = service
-                if (connectedService == null) {
-                    Text("Connecting to audio diagnostics…")
-                } else {
-                    DiagnosticScreen(
-                        snapshot = connectedService.observer.snapshot,
-                        experiment = connectedService.observer.experiment,
-                        events = connectedService.observer.events,
-                        onArm = {
+                val state = connectedService?.privateAudioState ?: PrivateAudioState.READY
+                PrivateAudioScreen(
+                    state = state,
+                    powerEnabled = connectedService != null,
+                    onPowerClick = {
+                        if (state == PrivateAudioState.READY) {
                             startForegroundService(
                                 Intent(this, PrivateAudioService::class.java)
                                     .setAction(PrivateAudioService.ACTION_ARM),
                             )
-                        },
-                        onDisarm = connectedService::disarmAndStopStartedLifetime,
-                        onSnapshot = { connectedService.recordSnapshot("Manual snapshot") },
-                        onCopyReport = {
-                            val report = connectedService.diagnosticReport()
-                            getSystemService(ClipboardManager::class.java).setPrimaryClip(
-                                ClipData.newPlainText("Private Audio diagnostic report", report),
-                            )
-                        },
-                    )
-                }
+                        } else {
+                            connectedService?.disarmAndStopStartedLifetime()
+                        }
+                    },
+                    onCloseClick = {
+                        connectedService?.disarmAndStopStartedLifetime()
+                        finishAndRemoveTask()
+                    },
+                )
             }
         }
     }
