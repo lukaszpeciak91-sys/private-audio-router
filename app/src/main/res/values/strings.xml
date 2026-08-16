@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Private Audio</string>
+    <string name="routing_notification_channel">Private audio routing</string>
+    <string name="routing_notification_title">Private audio routing active</string>
+    <string name="routing_notification_text">Earpiece routing experiment is armed</string>
 </resources>

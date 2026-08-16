@@ -121,3 +121,11 @@ This is a lightweight, append-only log. Do not rewrite accepted history; append 
 - **Context:** On Xiaomi `2201117TY` running Android 13/API 33, POC-5 both produced an Android-reported built-in-earpiece route and made active ChatGPT Voice physically audible through the upper earpiece. This is the project's first confirmed physical routing success.
 - **Decision:** Keep the current public-API POC-5 architecture and prioritize reproducibility, cleanup, lifecycle, update, and telephony-safety testing. Do not pivot to audio capture, an owned AI client, root, Shizuku, privileged APIs, or another routing architecture while this approach is physically working.
 - **Consequences:** The silent local communication track remains outside ChatGPT's audio-data path. No retry loop or POC-6 is authorized. Full uninstall and reinstall preceded the first repeatable physically audible success; its causal relationship is not established and must be investigated through stability testing rather than assumed.
+
+## D-016 — Sole service ownership for POC-5 lifecycle
+
+- **Date:** 2026-08-15
+- **Status:** Accepted
+- **Context:** The physically successful POC-5 was owned by `MainActivity`, so activity destruction necessarily stopped the experiment and could not provide an independent armed lifetime.
+- **Decision:** Exactly one local, non-exported `PrivateAudioService` owns the diagnostic observer and POC-5 state. The service is started and promoted to a `specialUse` foreground service only by the visible activity's explicit Arm action, while binding alone supports the visible diagnostic UI without requiring foreground state. Disarm clears through the existing observer before leaving foreground and stopping the started lifetime. Process restart is fail-closed with `START_NOT_STICKY`, no persistence, and no automatic re-arm.
+- **Consequences:** Activity recreation binds back to the existing service and cannot create a second observer. Unbinding does not disarm a started experiment; genuine service destruction performs existing observer cleanup. Android process death may bypass `onDestroy()` and loses all in-memory state. This lifecycle migration does not alter POC-5 trigger, playback, routing, observation, cleanup, evidence, or safety semantics, and does not introduce the future product-state adapter.

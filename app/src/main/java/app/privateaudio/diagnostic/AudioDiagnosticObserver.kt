@@ -157,9 +157,9 @@ class AudioDiagnosticObserver(
         baseline = snapshot
     }
 
-    fun stop() {
+    fun stop(reason: String) {
         if (!started) return
-        clearExperiment("Activity destroyed", ExperimentState.CLEARED)
+        clearExperiment(reason, ExperimentState.CLEARED)
         audioManager.removeOnCommunicationDeviceChangedListener(communicationDeviceListener)
         audioManager.unregisterAudioDeviceCallback(audioDeviceCallback)
         started = false

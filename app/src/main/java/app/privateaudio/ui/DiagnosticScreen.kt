@@ -131,7 +131,7 @@ fun DiagnosticScreen(
 
             Section("OBSERVATION / EVENT LOG") {
                 Text(
-                    "Callbacks remain registered while this activity's process lives. Android may stop a background process; returning here always records a fresh snapshot. No foreground service is used.",
+                    "Callbacks are owned by the local service. An armed experiment continues when this screen is closed; Disarm / Clear relinquishes routing and removes its foreground notification.",
                     style = MaterialTheme.typography.bodySmall,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                 )
