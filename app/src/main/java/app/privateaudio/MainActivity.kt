@@ -1,11 +1,14 @@
 package app.privateaudio
 
 import android.content.ComponentName
+import android.content.ClipData
+import android.content.ClipboardManager
 import android.content.Context
 import android.content.Intent
 import android.content.ServiceConnection
 import android.os.Bundle
 import android.os.IBinder
+import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.SystemBarStyle
 import androidx.activity.compose.setContent
@@ -59,6 +62,20 @@ class MainActivity : ComponentActivity() {
                         connectedService?.disarmAndStopStartedLifetime()
                         finishAndRemoveTask()
                     },
+                    onCopyDiagnosticReport = {
+                        connectedService?.let { activeService ->
+                            val report = activeService.diagnosticReport()
+                            getSystemService(ClipboardManager::class.java).setPrimaryClip(
+                                ClipData.newPlainText("Private Audio diagnostic report", report),
+                            )
+                            Toast.makeText(
+                                this,
+                                getString(R.string.diagnostic_report_copied),
+                                Toast.LENGTH_SHORT,
+                            ).show()
+                        }
+                    },
+                    versionName = BuildConfig.VERSION_NAME,
                 )
             }
         }

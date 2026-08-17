@@ -4,7 +4,9 @@ State reflects evidence, not aspiration.
 
 ## DONE
 
-- Layer 3 Main product UI implemented: the normal activity now renders one fixed-geometry OLED-black Compose screen directly from the service-owned `READY` / `WAITING` / `ACTIVE` / `ERROR` projection. Power delegates to the existing controller ON/OFF operations, Close performs existing safe shutdown before removing the task, and visually complete Floating/Settings controls deliberately introduce no later-layer behavior. Four production-layout previews and focused UI/source-contract tests were added. Diagnostic collection, report formatting/copy infrastructure, the protected Layer 1.6 controller, and Layer 2 state semantics remain unchanged. Physical visual comparison and combined state/routing validation remain required.
+- Layer 4 Settings implemented as a compact graphite modal over the unchanged Main screen. The supplied reference is now reflected in the lower-centered 88%-width placement, stronger restrained dim, compact rows, section dividers, copy glyph, fine border, and typography. Settings root, minimal in-sheet Language/Advanced/About child pages, outside/Back dismissal, build-derived version display, and clipboard feedback are present. Copy diagnostic report delegates to the existing service report API and formatter. The protected routing/controller and Layer 2 projection are unchanged; physical visual and interaction validation remains required.
+- Layer 3 Main product UI implemented: the normal activity now renders one fixed-geometry OLED-black Compose screen directly from the service-owned `READY` / `WAITING` / `ACTIVE` / `ERROR` projection. Power delegates to the existing controller ON/OFF operations and Close performs existing safe shutdown before removing the task. Four production-layout previews and focused UI/source-contract tests were added. The Settings control is now activated only by Layer 4; the closed Main composition remains unchanged.
+- The combined Layer 1.6 + Layer 2 + Layer 3 flow passed the supplied physical run on Xiaomi `2201117TY`: the first ChatGPT Voice session was audibly routed through the telephone earpiece, a second session after ending/restarting Voice routed through the earpiece without toggling Private Audio, Disable restored normal behavior, Close restored normal behavior, and reopening/re-enabling worked again. No diagnostic report was copied for this run.
 - Layer 2 product-state projection implemented: `PrivateAudioService` now exposes one Compose-observable, read-only `privateAudioState` with exactly `READY`, `WAITING`, `ACTIVE`, and `ERROR`. OFF has highest precedence; current protected failure precedes current confirmed participating earpiece routing; all other enabled conditions are normal waiting. The pure mapping ignores historical success/reversion and adds no routing behavior. Physical/UI consumption remains unverified until a later layer.
 - Layer 1.6 permanent controller implemented: Power ON registers provider-independent public playback observation and waits without audio influence; qualifying communication starts one protected POC-5 cycle; stable inferred external-playback end cleans it fully and returns to waiting under the same enabled intent. Cycle generations protect OFF, destruction, and later sessions from stale timers. Layer 1.5 physically failed because its mode-departure completion boundary remained sticky behind the local track. Layer 1.6 physical validation is required.
 
@@ -41,12 +43,11 @@ State reflects evidence, not aspiration.
 
 ## CURRENT
 
-- **Layer 3 now consumes Layer 2's four-state service projection in the normal product UI. Layer 1.6 and the combined product state/routing flow remain implemented but not physically validated. POC-5 remains physically successful on the tested Xiaomi configuration and remains a bounded public-API experiment per voice session; no POC-6, retry, or invasive alternative is authorized.**
+- **Layer 4 Settings is implemented over the physically successful Layer 1.6 + Layer 2 + Layer 3 foundation. Its modal visuals, navigation, clipboard action, and build-derived version require post-merge physical verification. POC-5 remains a bounded public-API experiment per voice session; no POC-6, retry, or invasive alternative is authorized.**
 
 ## NEXT
 
-- Run the Layer 3 product-screen physical/visual gate in `TEST_PLAN.md` and tune isolated visual constants from screenshots without changing controller or state architecture.
-- Run the Layer 1.6 permanent-controller physical gate in `TEST_PLAN.md`, including two sequential Voice sessions from one Enable and a third session after Disable.
+- Run the Layer 4 Settings physical gate in `TEST_PLAN.md`, including reference-image comparison, Back/outside behavior, clipboard content/feedback, and build version.
 - Verify no silent `AudioTrack` survives cleanup and ordinary audio behavior returns afterward.
 
 ## UNKNOWN

@@ -29,6 +29,9 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
@@ -91,9 +94,12 @@ fun PrivateAudioScreen(
     powerEnabled: Boolean = true,
     onPowerClick: () -> Unit,
     onCloseClick: () -> Unit,
+    onCopyDiagnosticReport: () -> Unit = {},
+    versionName: String = "",
     modifier: Modifier = Modifier,
 ) {
     val visuals = stateVisuals(state)
+    var settingsVisible by rememberSaveable { mutableStateOf(false) }
 
     Box(
         modifier = modifier
@@ -149,9 +155,20 @@ fun PrivateAudioScreen(
                     onClick = onPowerClick,
                 )
                 Spacer(Modifier.weight(1f))
-                BottomControls(onCloseClick = onCloseClick)
+                BottomControls(
+                    onSettingsClick = { settingsVisible = true },
+                    onCloseClick = onCloseClick,
+                )
                 Spacer(Modifier.height(ProductLayout.bottomSpacing))
             }
+        }
+
+        if (settingsVisible) {
+            SettingsSheet(
+                versionName = versionName,
+                onCopyDiagnosticReport = onCopyDiagnosticReport,
+                onDismiss = { settingsVisible = false },
+            )
         }
     }
 }
@@ -260,7 +277,10 @@ private fun PowerControl(
 }
 
 @Composable
-private fun BottomControls(onCloseClick: () -> Unit) {
+private fun BottomControls(
+    onSettingsClick: () -> Unit,
+    onCloseClick: () -> Unit,
+) {
     Row(
         modifier = Modifier
             .fillMaxWidth()
@@ -275,8 +295,9 @@ private fun BottomControls(onCloseClick: () -> Unit) {
         )
         BottomControl(
             label = stringResource(R.string.settings),
-            description = stringResource(R.string.settings_unavailable),
+            description = stringResource(R.string.settings),
             tag = "private_audio_settings",
+            onClick = onSettingsClick,
             icon = { SettingsIcon() },
         )
         BottomControl(
