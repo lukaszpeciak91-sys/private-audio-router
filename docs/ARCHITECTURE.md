@@ -59,6 +59,10 @@ The foreground notification is a minimum low-importance lifetime disclosure whos
 
 The enabled intent, diagnostic snapshot, and experiment evidence use Compose snapshot state. Reading `privateAudioState` from a composition therefore observes controller changes as well as current mode, device, cycle, cleanup, and failure evidence without adding Flow or a parallel lifecycle. Historical earpiece success and route reversion are not projection inputs. Consumers must not reproduce the mapping, and the projection owns no routing API or controller decision.
 
+## Localization
+
+English product copy in `res/values/strings.xml` is the complete default resource set and source of truth. The module declares `en-US` as its unqualified-resource locale and enables Android Gradle Plugin locale-config generation, so Android's standard per-app language infrastructure can discover supported resource locales without a custom translation map or localization framework. The Settings language surface currently presents only **System default**; future languages belong in qualified Android resource directories and can be exposed from that flow when complete translations are added. Diagnostic evidence and report formatting remain stable, English-only technical output rather than product localization content.
+
 ## Lifecycle expectations
 
 The permanent controller applies these lifecycle expectations:

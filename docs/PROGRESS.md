@@ -4,6 +4,7 @@ State reflects evidence, not aspiration.
 
 ## DONE
 
+- Layer 4.1 localization foundation implemented: complete English product UI copy is centralized in the default `values/strings.xml`, the unqualified locale is declared as `en-US`, and Android Gradle Plugin locale-config generation enables the standard per-app language resource architecture. Settings continues to show only `System default`; no translations, custom localization framework, or diagnostic report changes were added.
 - Layer 4 Settings implemented as a compact graphite modal over the unchanged Main screen. The supplied reference is now reflected in the lower-centered 88%-width placement, stronger restrained dim, compact rows, section dividers, copy glyph, fine border, and typography. Settings root, minimal in-sheet Language/Advanced/About child pages, outside/Back dismissal, build-derived version display, and clipboard feedback are present. Copy diagnostic report delegates to the existing service report API and formatter. The protected routing/controller and Layer 2 projection are unchanged; physical visual and interaction validation remains required.
 - Layer 3 Main product UI implemented: the normal activity now renders one fixed-geometry OLED-black Compose screen directly from the service-owned `READY` / `WAITING` / `ACTIVE` / `ERROR` projection. Power delegates to the existing controller ON/OFF operations and Close performs existing safe shutdown before removing the task. Four production-layout previews and focused UI/source-contract tests were added. The Settings control is now activated only by Layer 4; the closed Main composition remains unchanged.
 - The combined Layer 1.6 + Layer 2 + Layer 3 flow passed the supplied physical run on Xiaomi `2201117TY`: the first ChatGPT Voice session was audibly routed through the telephone earpiece, a second session after ending/restarting Voice routed through the earpiece without toggling Private Audio, Disable restored normal behavior, Close restored normal behavior, and reopening/re-enabling worked again. No diagnostic report was copied for this run.
@@ -43,7 +44,7 @@ State reflects evidence, not aspiration.
 
 ## CURRENT
 
-- **Layer 4 Settings is implemented over the physically successful Layer 1.6 + Layer 2 + Layer 3 foundation. Its modal visuals, navigation, clipboard action, and build-derived version require post-merge physical verification. POC-5 remains a bounded public-API experiment per voice session; no POC-6, retry, or invasive alternative is authorized.**
+- **Layer 4.1 localization foundation is implemented over Layer 4 Settings. English remains the only complete locale and Settings remains on `System default`; future translations can use standard qualified Android resources. Layer 4's physical visual/interaction validation remains required. POC-5 remains a bounded public-API experiment per voice session; no POC-6, retry, or invasive alternative is authorized.**
 
 ## NEXT
 

@@ -66,7 +66,10 @@ class MainActivity : ComponentActivity() {
                         connectedService?.let { activeService ->
                             val report = activeService.diagnosticReport()
                             getSystemService(ClipboardManager::class.java).setPrimaryClip(
-                                ClipData.newPlainText("Private Audio diagnostic report", report),
+                                ClipData.newPlainText(
+                                    getString(R.string.diagnostic_report_clip_label),
+                                    report,
+                                ),
                             )
                             Toast.makeText(
                                 this,
