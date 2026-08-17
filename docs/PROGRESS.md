@@ -4,6 +4,7 @@ State reflects evidence, not aspiration.
 
 ## DONE
 
+- Layer 6 final floating controller implemented: the temporary Layer 5 surface is replaced by the approved compact 300 × 62 dp graphite controller in POWER → STATUS → separator → EXPAND → CLOSE order. It reads the service-owned four-state projection, delegates Power to the established controller operations, reuses Main's task on Expand, and makes floating Close overlay-only. Routing, diagnostics, and product-state mapping remain unchanged; emulator/physical visual and behavior validation is required.
 - Layer 5 overlay foundation implemented: Main's Floating control now uses the standard package overlay-permission flow and rechecks the real grant on resume. A separate non-exported, fail-closed overlay service owns one temporary `TYPE_APPLICATION_OVERLAY` test surface across Main backgrounding/recreation and supports overlay-only Close. Main full Close additionally removes the overlay before its established safe controller shutdown/task removal. No overlay-open preference, routing API, playback inspection, diagnostic ownership, or product-state mapping was added; device/emulator validation remains required.
 - Layer 4.1 localization foundation implemented: complete English product UI copy is centralized in the default `values/strings.xml`, the unqualified locale is declared as `en-US`, and Android Gradle Plugin locale-config generation enables the standard per-app language resource architecture. Settings continues to show only `System default`; no translations, custom localization framework, or diagnostic report changes were added.
 - Layer 4 Settings implemented as a compact graphite modal over the unchanged Main screen. The supplied reference is now reflected in the lower-centered 88%-width placement, stronger restrained dim, compact rows, section dividers, copy glyph, fine border, and typography. Settings root, minimal in-sheet Language/Advanced/About child pages, outside/Back dismissal, build-derived version display, and clipboard feedback are present. Copy diagnostic report delegates to the existing service report API and formatter. The protected routing/controller and Layer 2 projection are unchanged; physical visual and interaction validation remains required.
@@ -45,11 +46,11 @@ State reflects evidence, not aspiration.
 
 ## CURRENT
 
-- **Layer 5 overlay foundation is implemented with an intentionally temporary test surface. Permission, cross-activity window lifetime, single-instance behavior, both Close paths, and process-death fail-closed behavior require device/emulator validation. The approved final floating controller remains Layer 6 work. POC-5 remains protected and unchanged.**
+- **Layer 6 final floating controller is implemented over the Layer 5 owner. Reference-image parity, touch behavior, permission flow, cross-application lifetime, state changes, both Close paths, and process-death fail-closed behavior require emulator/physical validation. POC-5 remains protected and unchanged.**
 
 ## NEXT
 
-- Run the Layer 5 overlay physical/emulator gate in `TEST_PLAN.md`.
+- Run the Layer 6 floating-controller physical/emulator gate in `TEST_PLAN.md`.
 - Run the Layer 4 Settings physical gate in `TEST_PLAN.md`, including reference-image comparison, Back/outside behavior, clipboard content/feedback, and build version.
 - Verify no silent `AudioTrack` survives cleanup and ordinary audio behavior returns afterward.
 
