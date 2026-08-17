@@ -5,6 +5,7 @@ State reflects evidence, not aspiration.
 ## DONE
 
 - Enabled app-module `BuildConfig` generation so the existing build-derived version display compiles under AGP 9.3.0; application behavior is unchanged.
+- Layer 6.1 floating interaction refinement implemented: non-control background gestures move the existing 300 × 62 dp window after Android touch slop and clamp it within current window bounds, while Power, Expand, and Close remain tap-only controls. Main moves its existing task to the background only after the overlay service confirms that the window is present; permission denial or a failed add leaves Main visible. Expand and both Close boundaries remain unchanged. Position is in-memory only, and routing, diagnostics, and product-state mapping remain unchanged; emulator/physical interaction and task validation is required.
 - Layer 6 final floating controller implemented: the temporary Layer 5 surface is replaced by the approved compact 300 × 62 dp graphite controller in POWER → STATUS → separator → EXPAND → CLOSE order. It reads the service-owned four-state projection, delegates Power to the established controller operations, reuses Main's task on Expand, and makes floating Close overlay-only. Routing, diagnostics, and product-state mapping remain unchanged; emulator/physical visual and behavior validation is required.
 - Layer 5 overlay foundation implemented: Main's Floating control now uses the standard package overlay-permission flow and rechecks the real grant on resume. A separate non-exported, fail-closed overlay service owns one temporary `TYPE_APPLICATION_OVERLAY` test surface across Main backgrounding/recreation and supports overlay-only Close. Main full Close additionally removes the overlay before its established safe controller shutdown/task removal. No overlay-open preference, routing API, playback inspection, diagnostic ownership, or product-state mapping was added; device/emulator validation remains required.
 - Layer 4.1 localization foundation implemented: complete English product UI copy is centralized in the default `values/strings.xml`, the unqualified locale is declared as `en-US`, and Android Gradle Plugin locale-config generation enables the standard per-app language resource architecture. Settings continues to show only `System default`; no translations, custom localization framework, or diagnostic report changes were added.
@@ -47,11 +48,11 @@ State reflects evidence, not aspiration.
 
 ## CURRENT
 
-- **Layer 6 final floating controller is implemented over the Layer 5 owner. Reference-image parity, touch behavior, permission flow, cross-application lifetime, state changes, both Close paths, and process-death fail-closed behavior require emulator/physical validation. POC-5 remains protected and unchanged.**
+- **Layer 6.1 floating drag and Main-background refinement is implemented over the Layer 6 controller. Bounds/inset behavior across target devices, touch behavior, permission flow, task reuse, cross-application lifetime, state changes, both Close paths, and process-death fail-closed behavior require emulator/physical validation. POC-5 remains protected and unchanged.**
 
 ## NEXT
 
-- Run the Layer 6 floating-controller physical/emulator gate in `TEST_PLAN.md`.
+- Run the Layer 6/6.1 floating-controller physical/emulator gate in `TEST_PLAN.md`.
 - Run the Layer 4 Settings physical gate in `TEST_PLAN.md`, including reference-image comparison, Back/outside behavior, clipboard content/feedback, and build version.
 - Verify no silent `AudioTrack` survives cleanup and ordinary audio behavior returns afterward.
 

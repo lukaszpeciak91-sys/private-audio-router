@@ -12,23 +12,29 @@ import android.graphics.Path
 import android.graphics.PixelFormat
 import android.graphics.RectF
 import android.os.IBinder
+import android.os.ResultReceiver
 import android.provider.Settings
 import android.view.Gravity
 import android.view.MotionEvent
 import android.view.View
+import android.view.ViewConfiguration
 import android.view.WindowManager
 import app.privateaudio.MainActivity
 import app.privateaudio.PrivateAudioService
 import app.privateaudio.PrivateAudioState
 import app.privateaudio.R
+import kotlin.math.hypot
 import kotlin.math.min
 
 /** Owns only the floating window. Routing remains exclusively service-owned elsewhere. */
 class OverlayService : Service() {
+    private enum class Control { NONE, POWER, EXPAND, CLOSE }
+
     private val windowManager by lazy { getSystemService(WindowManager::class.java) }
     private var overlayView: FloatingControllerView? = null
     private var privateAudioService: PrivateAudioService? = null
     private var isBound = false
+    private var overlayPosition: OverlayPosition? = null
     private val serviceConnection = object : ServiceConnection {
         override fun onServiceConnected(name: ComponentName?, binder: IBinder?) {
             privateAudioService = (binder as PrivateAudioService.LocalBinder).service
@@ -44,7 +50,7 @@ class OverlayService : Service() {
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
         when (intent?.action) {
-            ACTION_SHOW -> showOverlay()
+            ACTION_SHOW -> showOverlay(intent.getParcelableExtra(EXTRA_SHOW_RESULT))
             ACTION_HIDE -> closeOverlay()
         }
         return START_NOT_STICKY
@@ -55,8 +61,12 @@ class OverlayService : Service() {
         super.onDestroy()
     }
 
-    private fun showOverlay() {
-        if (overlayView != null || !Settings.canDrawOverlays(this)) return
+    private fun showOverlay(resultReceiver: ResultReceiver?) {
+        if (overlayView != null) {
+            resultReceiver?.send(SHOW_SUCCEEDED, null)
+            return
+        }
+        if (!Settings.canDrawOverlays(this)) return
         bindControllerService()
         val surface = FloatingControllerView(this)
         val density = resources.displayMetrics.density
@@ -67,16 +77,50 @@ class OverlayService : Service() {
             WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE,
             PixelFormat.TRANSLUCENT,
         ).apply {
-            gravity = Gravity.CENTER
+            gravity = Gravity.TOP or Gravity.START
         }
+        val bounds = windowManager.currentWindowMetrics.bounds
+        val initialPosition = overlayPosition ?: OverlayPosition(
+            x = (bounds.width() - layoutParams.width) / 2,
+            y = (bounds.height() - layoutParams.height) / 2,
+        )
+        clampOverlayPosition(initialPosition, layoutParams)
         try {
             windowManager.addView(surface, layoutParams)
             overlayView = surface
             surface.beginStateObservation()
+            resultReceiver?.send(SHOW_SUCCEEDED, null)
         } catch (_: SecurityException) {
             // The user can revoke the grant between the permission check and this call.
             unbindControllerService()
             stopSelf()
+        }
+    }
+
+    private fun moveOverlay(layoutParams: WindowManager.LayoutParams, x: Int, y: Int) {
+        val previousX = layoutParams.x
+        val previousY = layoutParams.y
+        val position = clampOverlayPosition(OverlayPosition(x, y), layoutParams)
+        if (position.x == previousX && position.y == previousY) return
+        overlayView?.let { windowManager.updateViewLayout(it, layoutParams) }
+    }
+
+    private fun clampOverlayPosition(
+        position: OverlayPosition,
+        layoutParams: WindowManager.LayoutParams,
+    ): OverlayPosition {
+        val bounds = windowManager.currentWindowMetrics.bounds
+        return clampOverlayPosition(
+            x = position.x,
+            y = position.y,
+            screenWidth = bounds.width(),
+            screenHeight = bounds.height(),
+            overlayWidth = layoutParams.width,
+            overlayHeight = layoutParams.height,
+        ).also {
+            layoutParams.x = it.x
+            layoutParams.y = it.y
+            overlayPosition = it
         }
     }
 
@@ -225,15 +269,62 @@ class OverlayService : Service() {
             canvas.drawLine(283f, 21f, 263f, 41f, paint)
         }
 
+        private val touchSlop = ViewConfiguration.get(context).scaledTouchSlop.toFloat()
+        private var downRawX = 0f
+        private var downRawY = 0f
+        private var startWindowX = 0
+        private var startWindowY = 0
+        private var touchedControl = Control.NONE
+        private var dragging = false
+
         override fun onTouchEvent(event: MotionEvent): Boolean {
-            if (event.action != MotionEvent.ACTION_UP) return true
-            performClick()
-            when {
-                event.x < width * POWER_END_FRACTION -> togglePower()
-                event.x >= width * CLOSE_START_FRACTION -> closeOverlay()
-                event.x >= width * EXPAND_START_FRACTION -> expandMain()
+            val layoutParams = layoutParams as? WindowManager.LayoutParams ?: return false
+            when (event.actionMasked) {
+                MotionEvent.ACTION_DOWN -> {
+                    downRawX = event.rawX
+                    downRawY = event.rawY
+                    startWindowX = layoutParams.x
+                    startWindowY = layoutParams.y
+                    touchedControl = controlAt(event.x)
+                    dragging = false
+                    return true
+                }
+                MotionEvent.ACTION_MOVE -> {
+                    if (touchedControl != Control.NONE) return true
+                    val dx = event.rawX - downRawX
+                    val dy = event.rawY - downRawY
+                    if (!dragging && hypot(dx, dy) > touchSlop) dragging = true
+                    if (dragging) moveOverlay(layoutParams, startWindowX + dx.toInt(), startWindowY + dy.toInt())
+                    return true
+                }
+                MotionEvent.ACTION_UP -> {
+                    if (!dragging && touchedControl != Control.NONE && touchedControl == controlAt(event.x)) {
+                        performClick()
+                        when (touchedControl) {
+                            Control.POWER -> togglePower()
+                            Control.EXPAND -> expandMain()
+                            Control.CLOSE -> closeOverlay()
+                            Control.NONE -> Unit
+                        }
+                    }
+                    touchedControl = Control.NONE
+                    dragging = false
+                    return true
+                }
+                MotionEvent.ACTION_CANCEL -> {
+                    touchedControl = Control.NONE
+                    dragging = false
+                    return true
+                }
             }
-            return true
+            return super.onTouchEvent(event)
+        }
+
+        private fun controlAt(x: Float) = when {
+            x < width * POWER_END_FRACTION -> Control.POWER
+            x >= width * CLOSE_START_FRACTION -> Control.CLOSE
+            x >= width * EXPAND_START_FRACTION -> Control.EXPAND
+            else -> Control.NONE
         }
 
         override fun performClick(): Boolean {
@@ -272,12 +363,17 @@ class OverlayService : Service() {
     companion object {
         private const val ACTION_SHOW = "app.privateaudio.overlay.SHOW"
         private const val ACTION_HIDE = "app.privateaudio.overlay.HIDE"
+        private const val EXTRA_SHOW_RESULT = "app.privateaudio.overlay.SHOW_RESULT"
+        const val SHOW_SUCCEEDED = 1
         private const val STATE_REFRESH_MILLIS = 200L
         private const val POWER_END_FRACTION = 0.22f
         private const val EXPAND_START_FRACTION = 0.57f
         private const val CLOSE_START_FRACTION = 0.80f
 
-        fun showIntent(context: Context) = Intent(context, OverlayService::class.java).setAction(ACTION_SHOW)
+        fun showIntent(context: Context, resultReceiver: ResultReceiver? = null) =
+            Intent(context, OverlayService::class.java).setAction(ACTION_SHOW).apply {
+                putExtra(EXTRA_SHOW_RESULT, resultReceiver)
+            }
         fun hideIntent(context: Context) = Intent(context, OverlayService::class.java).setAction(ACTION_HIDE)
     }
 }

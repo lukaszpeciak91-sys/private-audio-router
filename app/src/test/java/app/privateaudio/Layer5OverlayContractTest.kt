@@ -31,7 +31,7 @@ class Layer5OverlayContractTest {
     @Test
     fun showHideAndBothClosePathsHaveTheRequiredBoundaries() {
         assertTrue(screenSource.contains("onClick = onFloatingClick"))
-        assertTrue(overlaySource.contains("ACTION_SHOW -> showOverlay()"))
+        assertTrue(overlaySource.contains("ACTION_SHOW -> showOverlay("))
         assertTrue(overlaySource.contains("ACTION_HIDE ->"))
         assertTrue(overlaySource.contains("override fun onDestroy()"))
         assertTrue(overlaySource.contains("overlayView?.let(windowManager::removeView)"))
