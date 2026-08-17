@@ -2,7 +2,6 @@ package app.privateaudio
 
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.test.assertDoesNotExist
-import androidx.compose.ui.test.assertHasNoClickAction
 import androidx.compose.ui.test.assertIsDisplayed
 import androidx.compose.ui.test.junit4.createComposeRule
 import androidx.compose.ui.test.onNodeWithTag
@@ -64,23 +63,28 @@ class PrivateAudioScreenTest {
     }
 
     @Test
-    fun connectingPowerIsUnavailableAndFloatingHasNoAction() {
+    fun connectingPowerIsUnavailableAndFloatingInvokesItsSuppliedAction() {
         var powerClicks = 0
+        var floatingClicks = 0
         composeRule.setContent {
             PrivateAudioTheme {
                 PrivateAudioScreen(
                     state = PrivateAudioState.READY,
                     powerEnabled = false,
                     onPowerClick = { powerClicks++ },
+                    onFloatingClick = { floatingClicks++ },
                     onCloseClick = {},
                 )
             }
         }
 
         composeRule.onNodeWithTag("private_audio_power").performClick()
-        composeRule.onNodeWithTag("private_audio_floating").assertHasNoClickAction()
+        composeRule.onNodeWithTag("private_audio_floating").performClick()
 
-        composeRule.runOnIdle { assertEquals(0, powerClicks) }
+        composeRule.runOnIdle {
+            assertEquals(0, powerClicks)
+            assertEquals(1, floatingClicks)
+        }
     }
 
     @Test

@@ -93,6 +93,7 @@ fun PrivateAudioScreen(
     state: PrivateAudioState,
     powerEnabled: Boolean = true,
     onPowerClick: () -> Unit,
+    onFloatingClick: () -> Unit = {},
     onCloseClick: () -> Unit,
     onCopyDiagnosticReport: () -> Unit = {},
     versionName: String = "",
@@ -156,6 +157,7 @@ fun PrivateAudioScreen(
                 )
                 Spacer(Modifier.weight(1f))
                 BottomControls(
+                    onFloatingClick = onFloatingClick,
                     onSettingsClick = { settingsVisible = true },
                     onCloseClick = onCloseClick,
                 )
@@ -278,6 +280,7 @@ private fun PowerControl(
 
 @Composable
 private fun BottomControls(
+    onFloatingClick: () -> Unit,
     onSettingsClick: () -> Unit,
     onCloseClick: () -> Unit,
 ) {
@@ -289,8 +292,9 @@ private fun BottomControls(
     ) {
         BottomControl(
             label = stringResource(R.string.floating),
-            description = stringResource(R.string.floating_unavailable),
+            description = stringResource(R.string.floating),
             tag = "private_audio_floating",
+            onClick = onFloatingClick,
             icon = { FloatingIcon() },
         )
         BottomControl(

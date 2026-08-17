@@ -63,6 +63,14 @@ The enabled intent, diagnostic snapshot, and experiment evidence use Compose sna
 
 English product copy in `res/values/strings.xml` is the complete default resource set and source of truth. The module declares `en-US` as its unqualified-resource locale and enables Android Gradle Plugin locale-config generation, so Android's standard per-app language infrastructure can discover supported resource locales without a custom translation map or localization framework. The Settings language surface currently presents only **System default**; future languages belong in qualified Android resource directories and can be exposed from that flow when complete translations are added. Diagnostic evidence and report formatting remain stable, English-only technical output rather than product localization content.
 
+## Overlay lifecycle
+
+`OverlayService` is a local, non-exported, `START_NOT_STICKY` owner of at most one `TYPE_APPLICATION_OVERLAY` window. Main checks `Settings.canDrawOverlays()` before showing it; a missing grant opens Android's package-specific overlay-permission screen, and Main checks the actual grant again on resume. Denial or cancellation creates no window. The service also checks permission at the creation boundary.
+
+The temporary Layer 5 surface proves window ownership and removal only; it is not the approved controller UI. Its Close action removes the window and ends only the overlay service. Main's full Close first requests overlay removal, then performs the established controller shutdown and task removal. Activity backgrounding or recreation does not remove or duplicate a window while its service owner remains alive. No desired-open state is persisted and `START_NOT_STICKY` prevents automatic restoration after process death.
+
+Overlay ownership is intentionally separate from `PrivateAudioService`: overlay code has no audio APIs, playback inspection, diagnostic observer, or product-state mapping. A later controller may consume existing product operations, but Layer 5 does not create that coupling.
+
 ## Lifecycle expectations
 
 The permanent controller applies these lifecycle expectations:
