@@ -165,6 +165,7 @@ class OverlayService : Service() {
                     Intent.FLAG_ACTIVITY_SINGLE_TOP
             },
         )
+        closeOverlay()
     }
 
     private fun unbindControllerService() {
@@ -223,17 +224,15 @@ class OverlayService : Service() {
             paint.color = Color.rgb(91, 91, 94)
             canvas.drawRoundRect(RectF(0.75f, 0.75f, 299.25f, 61.25f), 13f, 13f, paint)
 
-            drawPower(canvas, powerColor(state))
             paint.style = Paint.Style.FILL
             paint.color = statusColor(state)
-            canvas.drawCircle(82f, 31f, 5.5f, paint)
+            canvas.drawCircle(20f, 31f, 5.5f, paint)
             paint.color = Color.rgb(238, 238, 240)
             paint.textSize = 16f
             paint.typeface = android.graphics.Typeface.create("sans-serif", android.graphics.Typeface.NORMAL)
-            canvas.drawText(stateLabel(state), 96f, 36.5f, paint)
+            canvas.drawText(stateLabel(state), 34f, 36.5f, paint)
 
-            paint.color = Color.rgb(62, 62, 65)
-            canvas.drawRect(170f, 13f, 171f, 49f, paint)
+            drawPower(canvas, powerColor(state))
             drawExpand(canvas)
             drawClose(canvas)
             canvas.restore()
@@ -243,8 +242,8 @@ class OverlayService : Service() {
             paint.color = color
             paint.style = Paint.Style.STROKE
             paint.strokeWidth = 3.4f
-            canvas.drawArc(RectF(18f, 15f, 50f, 47f), -48f, 276f, false, paint)
-            canvas.drawLine(34f, 10.5f, 34f, 28f, paint)
+            canvas.drawArc(RectF(134f, 15f, 166f, 47f), -48f, 276f, false, paint)
+            canvas.drawLine(150f, 10.5f, 150f, 28f, paint)
         }
 
         private fun drawExpand(canvas: Canvas) {
@@ -321,9 +320,9 @@ class OverlayService : Service() {
         }
 
         private fun controlAt(x: Float) = when {
-            x < width * POWER_END_FRACTION -> Control.POWER
             x >= width * CLOSE_START_FRACTION -> Control.CLOSE
             x >= width * EXPAND_START_FRACTION -> Control.EXPAND
+            x >= width * POWER_START_FRACTION && x < width * POWER_END_FRACTION -> Control.POWER
             else -> Control.NONE
         }
 
@@ -366,8 +365,9 @@ class OverlayService : Service() {
         private const val EXTRA_SHOW_RESULT = "app.privateaudio.overlay.SHOW_RESULT"
         const val SHOW_SUCCEEDED = 1
         private const val STATE_REFRESH_MILLIS = 200L
-        private const val POWER_END_FRACTION = 0.22f
-        private const val EXPAND_START_FRACTION = 0.57f
+        private const val POWER_START_FRACTION = 0.40f
+        private const val POWER_END_FRACTION = 0.60f
+        private const val EXPAND_START_FRACTION = 0.60f
         private const val CLOSE_START_FRACTION = 0.80f
 
         fun showIntent(context: Context, resultReceiver: ResultReceiver? = null) =

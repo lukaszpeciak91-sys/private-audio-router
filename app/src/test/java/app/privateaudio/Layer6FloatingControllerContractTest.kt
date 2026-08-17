@@ -9,10 +9,12 @@ import java.io.File
 class Layer6FloatingControllerContractTest {
     @Test fun finalSurfaceHasApprovedDimensionsOrderAndNoHideControl() {
         assertTrue(overlay.contains("(300 * density).toInt()")); assertTrue(overlay.contains("(62 * density).toInt()"))
-        assertTrue(overlay.indexOf("drawPower(canvas") < overlay.indexOf("canvas.drawCircle(82f"))
-        assertTrue(overlay.indexOf("canvas.drawCircle(82f") < overlay.indexOf("canvas.drawRect(170f"))
-        assertTrue(overlay.indexOf("canvas.drawRect(170f") < overlay.indexOf("drawExpand(canvas)"))
+        assertTrue(overlay.indexOf("canvas.drawCircle(20f") < overlay.indexOf("drawPower(canvas"))
         assertTrue(overlay.indexOf("drawExpand(canvas)") < overlay.indexOf("drawClose(canvas)"))
+        assertTrue(overlay.contains("RectF(134f, 15f, 166f, 47f)"))
+        assertFalse(overlay.contains("canvas.drawRect(170f"))
+        assertTrue(overlay.contains("POWER_START_FRACTION = 0.40f")); assertTrue(overlay.contains("POWER_END_FRACTION = 0.60f"))
+        assertTrue(overlay.contains("EXPAND_START_FRACTION = 0.60f")); assertTrue(overlay.contains("CLOSE_START_FRACTION = 0.80f"))
         assertFalse(overlay.contains("HIDE_START_FRACTION"))
     }
 
@@ -29,7 +31,7 @@ class Layer6FloatingControllerContractTest {
         assertTrue(power.contains("controller.privateAudioState == PrivateAudioState.READY")); assertTrue(power.contains("PrivateAudioService.ACTION_ARM"))
         assertTrue(power.contains("controller.disarmAndStopStartedLifetime()"))
         val expand = overlay.substringAfter("private fun expandMain() {").substringBefore("private fun unbindControllerService()")
-        assertTrue(expand.contains("Intent.FLAG_ACTIVITY_NEW_TASK")); assertTrue(expand.contains("Intent.FLAG_ACTIVITY_CLEAR_TOP")); assertTrue(expand.contains("Intent.FLAG_ACTIVITY_SINGLE_TOP")); assertFalse(expand.contains("disarm"))
+        assertTrue(expand.contains("Intent.FLAG_ACTIVITY_NEW_TASK")); assertTrue(expand.contains("Intent.FLAG_ACTIVITY_CLEAR_TOP")); assertTrue(expand.contains("Intent.FLAG_ACTIVITY_SINGLE_TOP")); assertTrue(expand.contains("closeOverlay()")); assertFalse(expand.contains("disarm"))
         val close = overlay.substringAfter("private fun closeOverlay() {").substringBefore("private fun togglePower()")
         assertTrue(close.contains("hideOverlay()")); assertTrue(close.contains("stopSelf()")); assertFalse(close.contains("disarm")); assertFalse(close.contains("finish"))
     }
