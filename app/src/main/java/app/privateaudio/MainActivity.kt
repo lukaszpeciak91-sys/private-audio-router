@@ -9,6 +9,9 @@ import android.content.ServiceConnection
 import android.net.Uri
 import android.os.Bundle
 import android.os.IBinder
+import android.os.Handler
+import android.os.Looper
+import android.os.ResultReceiver
 import android.provider.Settings
 import android.widget.Toast
 import androidx.activity.ComponentActivity
@@ -26,6 +29,11 @@ class MainActivity : ComponentActivity() {
     private var service by mutableStateOf<PrivateAudioService?>(null)
     private var isBound = false
     private var overlayPermissionRequestPending = false
+    private val overlayShowReceiver = object : ResultReceiver(Handler(Looper.getMainLooper())) {
+        override fun onReceiveResult(resultCode: Int, resultData: Bundle?) {
+            if (resultCode == OverlayService.SHOW_SUCCEEDED) moveTaskToBack(true)
+        }
+    }
     private val serviceConnection = object : ServiceConnection {
         override fun onServiceConnected(name: ComponentName?, binder: IBinder?) {
             service = (binder as PrivateAudioService.LocalBinder).service
@@ -131,7 +139,7 @@ class MainActivity : ComponentActivity() {
     }
 
     private fun showOverlay() {
-        startService(OverlayService.showIntent(this))
+        startService(OverlayService.showIntent(this, overlayShowReceiver))
     }
 
     private fun hideOverlay() {
