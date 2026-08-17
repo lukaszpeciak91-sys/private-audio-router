@@ -4,6 +4,7 @@ State reflects evidence, not aspiration.
 
 ## DONE
 
+- Layer 5 overlay foundation implemented: Main's Floating control now uses the standard package overlay-permission flow and rechecks the real grant on resume. A separate non-exported, fail-closed overlay service owns one temporary `TYPE_APPLICATION_OVERLAY` test surface across Main backgrounding/recreation and supports overlay-only Close. Main full Close additionally removes the overlay before its established safe controller shutdown/task removal. No overlay-open preference, routing API, playback inspection, diagnostic ownership, or product-state mapping was added; device/emulator validation remains required.
 - Layer 4.1 localization foundation implemented: complete English product UI copy is centralized in the default `values/strings.xml`, the unqualified locale is declared as `en-US`, and Android Gradle Plugin locale-config generation enables the standard per-app language resource architecture. Settings continues to show only `System default`; no translations, custom localization framework, or diagnostic report changes were added.
 - Layer 4 Settings implemented as a compact graphite modal over the unchanged Main screen. The supplied reference is now reflected in the lower-centered 88%-width placement, stronger restrained dim, compact rows, section dividers, copy glyph, fine border, and typography. Settings root, minimal in-sheet Language/Advanced/About child pages, outside/Back dismissal, build-derived version display, and clipboard feedback are present. Copy diagnostic report delegates to the existing service report API and formatter. The protected routing/controller and Layer 2 projection are unchanged; physical visual and interaction validation remains required.
 - Layer 3 Main product UI implemented: the normal activity now renders one fixed-geometry OLED-black Compose screen directly from the service-owned `READY` / `WAITING` / `ACTIVE` / `ERROR` projection. Power delegates to the existing controller ON/OFF operations and Close performs existing safe shutdown before removing the task. Four production-layout previews and focused UI/source-contract tests were added. The Settings control is now activated only by Layer 4; the closed Main composition remains unchanged.
@@ -44,10 +45,11 @@ State reflects evidence, not aspiration.
 
 ## CURRENT
 
-- **Layer 4.1 localization foundation is implemented over Layer 4 Settings. English remains the only complete locale and Settings remains on `System default`; future translations can use standard qualified Android resources. Layer 4's physical visual/interaction validation remains required. POC-5 remains a bounded public-API experiment per voice session; no POC-6, retry, or invasive alternative is authorized.**
+- **Layer 5 overlay foundation is implemented with an intentionally temporary test surface. Permission, cross-activity window lifetime, single-instance behavior, both Close paths, and process-death fail-closed behavior require device/emulator validation. The approved final floating controller remains Layer 6 work. POC-5 remains protected and unchanged.**
 
 ## NEXT
 
+- Run the Layer 5 overlay physical/emulator gate in `TEST_PLAN.md`.
 - Run the Layer 4 Settings physical gate in `TEST_PLAN.md`, including reference-image comparison, Back/outside behavior, clipboard content/feedback, and build version.
 - Verify no silent `AudioTrack` survives cleanup and ordinary audio behavior returns afterward.
 
