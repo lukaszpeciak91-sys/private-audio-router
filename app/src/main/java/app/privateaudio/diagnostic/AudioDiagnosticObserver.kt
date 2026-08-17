@@ -480,7 +480,7 @@ class AudioDiagnosticObserver(
     }
 
     private fun qualifyingPlaybackCount(configs: List<AudioPlaybackConfiguration>) = configs.count {
-        it.isActive && it.audioAttributes.usage == AudioAttributes.USAGE_VOICE_COMMUNICATION &&
+        it.audioAttributes.usage == AudioAttributes.USAGE_VOICE_COMMUNICATION &&
             it.audioAttributes.contentType == AudioAttributes.CONTENT_TYPE_SPEECH
     }
 
