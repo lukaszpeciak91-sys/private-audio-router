@@ -14,8 +14,7 @@
     <string name="floating">Floating</string>
     <string name="settings">Settings</string>
     <string name="close">Close</string>
-    <string name="overlay_test_label">Private Audio floating test</string>
-    <string name="overlay_close">Close floating control</string>
+    <string name="overlay_controller_description">Private Audio floating controller. Status: %1$s. Power, expand, and close controls.</string>
     <string name="settings_language">Language</string>
     <string name="settings_system_default">System default</string>
     <string name="settings_copy_diagnostic">Copy diagnostic report</string>

@@ -36,7 +36,7 @@ class Layer5OverlayContractTest {
         assertTrue(overlaySource.contains("override fun onDestroy()"))
         assertTrue(overlaySource.contains("overlayView?.let(windowManager::removeView)"))
 
-        val overlayClose = overlaySource.substringAfter("setOnClickListener {").substringBefore("}")
+        val overlayClose = overlaySource.substringAfter("private fun closeOverlay() {").substringBefore("}")
         assertTrue(overlayClose.contains("hideOverlay()"))
         assertTrue(overlayClose.contains("stopSelf()"))
         assertFalse(overlayClose.contains("disarm"))
@@ -55,7 +55,6 @@ class Layer5OverlayContractTest {
             "setCommunicationDevice(",
             "MODE_IN_COMMUNICATION",
             "playbackConfigurations",
-            "PrivateAudioState",
             "AudioDiagnosticObserver",
         ).forEach { forbidden -> assertFalse(forbidden, overlaySource.contains(forbidden)) }
 
