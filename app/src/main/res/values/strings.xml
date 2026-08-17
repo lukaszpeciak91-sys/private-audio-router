@@ -24,5 +24,6 @@
     <string name="settings_language_body">Private Audio currently follows your device language. System default is selected.</string>
     <string name="settings_advanced_body">No advanced controls are needed for the current Private Audio experience.</string>
     <string name="settings_about_body">Private Audio helps route supported voice audio to your phone’s built-in earpiece.</string>
+    <string name="diagnostic_report_clip_label">Private Audio diagnostic report</string>
     <string name="diagnostic_report_copied">Diagnostic report copied.</string>
 </resources>
