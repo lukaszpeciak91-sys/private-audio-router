@@ -1,11 +1,16 @@
 package app.privateaudio
 
+import androidx.compose.ui.geometry.Offset
+import androidx.compose.ui.test.assertDoesNotExist
 import androidx.compose.ui.test.assertHasNoClickAction
 import androidx.compose.ui.test.assertIsDisplayed
 import androidx.compose.ui.test.junit4.createComposeRule
 import androidx.compose.ui.test.onNodeWithTag
 import androidx.compose.ui.test.onNodeWithText
+import androidx.compose.ui.test.onRoot
 import androidx.compose.ui.test.performClick
+import androidx.compose.ui.test.performTouchInput
+import androidx.compose.ui.test.click
 import app.privateaudio.ui.PrivateAudioScreen
 import app.privateaudio.ui.theme.PrivateAudioTheme
 import org.junit.Assert.assertEquals
@@ -59,7 +64,7 @@ class PrivateAudioScreenTest {
     }
 
     @Test
-    fun connectingPowerIsUnavailableAndFutureControlsHaveNoActions() {
+    fun connectingPowerIsUnavailableAndFloatingHasNoAction() {
         var powerClicks = 0
         composeRule.setContent {
             PrivateAudioTheme {
@@ -74,8 +79,49 @@ class PrivateAudioScreenTest {
 
         composeRule.onNodeWithTag("private_audio_power").performClick()
         composeRule.onNodeWithTag("private_audio_floating").assertHasNoClickAction()
-        composeRule.onNodeWithTag("private_audio_settings").assertHasNoClickAction()
 
         composeRule.runOnIdle { assertEquals(0, powerClicks) }
+    }
+
+    @Test
+    fun settingsOpensAndOutsideTapClosesIt() {
+        composeRule.setContent {
+            PrivateAudioTheme {
+                PrivateAudioScreen(
+                    state = PrivateAudioState.READY,
+                    onPowerClick = {},
+                    onCloseClick = {},
+                    versionName = "9.8.7",
+                )
+            }
+        }
+
+        composeRule.onNodeWithTag("private_audio_settings").performClick()
+        composeRule.onNodeWithTag("settings_sheet").assertIsDisplayed()
+        composeRule.onNodeWithText("Version 9.8.7").assertIsDisplayed()
+        composeRule.onRoot().performTouchInput { click(Offset(1f, 1f)) }
+        composeRule.onNodeWithTag("settings_sheet").assertDoesNotExist()
+    }
+
+    @Test
+    fun copyUsesSuppliedReportActionAndChildBackReturnsToRoot() {
+        var copyClicks = 0
+        composeRule.setContent {
+            PrivateAudioTheme {
+                PrivateAudioScreen(
+                    state = PrivateAudioState.READY,
+                    onPowerClick = {},
+                    onCloseClick = {},
+                    onCopyDiagnosticReport = { copyClicks++ },
+                )
+            }
+        }
+
+        composeRule.onNodeWithTag("private_audio_settings").performClick()
+        composeRule.onNodeWithTag("settings_copy_diagnostic").performClick()
+        composeRule.onNodeWithTag("settings_language").performClick()
+        composeRule.onNodeWithTag("settings_child_back").performClick()
+        composeRule.onNodeWithTag("settings_copy_diagnostic").assertIsDisplayed()
+        composeRule.runOnIdle { assertEquals(1, copyClicks) }
     }
 }

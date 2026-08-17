@@ -29,8 +29,6 @@ class Layer3UiContractTest {
             "finishAndRemoveTask()",
         )
         assertFalse(screenSource.contains("SYSTEM_ALERT_WINDOW"))
-        assertFalse(screenSource.contains("SettingsScreen"))
-        assertFalse(screenSource.contains("Dialog("))
         assertFalse(screenSource.contains("ModalBottomSheet("))
     }
 
