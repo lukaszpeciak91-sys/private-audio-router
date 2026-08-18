@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Private Audio</string>
+    <string name="routing_notification_channel">Private Audio</string>
+    <string name="routing_notification_title">Private Audio가 켜져 있습니다</string>
+    <string name="routing_notification_text">오디오 전환 대기 중</string>
+    <string name="product_title">Private Audio</string>
+    <string name="product_subtitle">전화 통화처럼 AI와 비공개로 대화하세요.</string>
+    <string name="state_ready">준비됨</string>
+    <string name="state_waiting">대기 중</string>
+    <string name="state_active">사용 중</string>
+    <string name="state_error">오류</string>
+    <string name="power_control">켜기</string>
+    <string name="floating">미니</string>
+    <string name="settings">설정</string>
+    <string name="close">닫기</string>
+    <string name="overlay_controller_description">Private Audio 미니 컨트롤러입니다. 상태: %1$s. 켜기, 펼치기, 닫기 버튼이 있습니다.</string>
+    <string name="settings_language">언어</string>
+    <string name="settings_system_default">기본값</string>
+    <string name="settings_copy_diagnostic">진단 보고서 복사</string>
+    <string name="settings_advanced">고급 설정</string>
+    <string name="settings_about">Private Audio 정보</string>
+    <string name="settings_version">버전 %1$s</string>
+    <string name="settings_language_body">Private Audio는 현재 기기 언어를 따릅니다. 기본값이 선택되어 있습니다.</string>
+    <string name="settings_language_android_13_required">앱에서 언어를 선택하려면 Android 13 이상이 필요합니다. 이 기기에서는 시스템 언어를 사용합니다.</string>
+    <string name="settings_advanced_body">Private Audio가 발전함에 따라 여기에 더 많은 옵션이 표시됩니다.</string>
+    <string name="settings_about_body">Private Audio는 음성을 휴대전화의 수화부로 전환하는 데 도움을 줍니다.</string>
+    <string name="diagnostic_report_clip_label">Private Audio 진단 보고서</string>
+    <string name="diagnostic_report_copied">진단 보고서가 복사되었습니다.</string>
+</resources>
