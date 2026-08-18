@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Private Audio</string>
+    <string name="routing_notification_channel">Private Audio</string>
+    <string name="routing_notification_title">Private Audio уключана</string>
+    <string name="routing_notification_text">Чакае на перанакіраванне гуку</string>
+    <string name="product_title">Private Audio</string>
+    <string name="product_subtitle">Размаўляйце з AI прыватна, як падчас тэлефоннай размовы.</string>
+    <string name="state_ready">Гатова</string>
+    <string name="state_waiting">Чакае</string>
+    <string name="state_active">Актыўна</string>
+    <string name="state_error">Памылка</string>
+    <string name="power_control">Уключыць</string>
+    <string name="floating">Міні</string>
+    <string name="settings">Налады</string>
+    <string name="close">Закрыць</string>
+    <string name="overlay_controller_description">Плывучы элемент кіравання Private Audio. Стан: %1$s. Элементы кіравання ўключэннем, разгортваннем і закрыццём.</string>
+    <string name="settings_language">Мова</string>
+    <string name="settings_system_default">Па змаўчанні</string>
+    <string name="settings_copy_diagnostic">Скапіяваць дыягнастычную справаздачу</string>
+    <string name="settings_advanced">Пашыраныя</string>
+    <string name="settings_about">Пра Private Audio</string>
+    <string name="settings_version">Версія %1$s</string>
+    <string name="settings_language_body">Private Audio зараз выкарыстоўвае мову вашай прылады. Выбраны варыянт «Па змаўчанні».</string>
+    <string name="settings_language_android_13_required">Для выбару мовы ў праграме патрэбна Android 13 або навейшая версія. Гэтая прылада выкарыстоўвае сістэмную мову.</string>
+    <string name="settings_advanced_body">З развіццём Private Audio тут з’явяцца дадатковыя параметры.</string>
+    <string name="settings_about_body">Private Audio дапамагае перанакіроўваць галасавы гук на ўбудаваны размоўны дынамік тэлефона.</string>
+    <string name="diagnostic_report_clip_label">Дыягнастычная справаздача Private Audio</string>
+    <string name="diagnostic_report_copied">Дыягнастычная справаздача скапіявана.</string>
+</resources>
