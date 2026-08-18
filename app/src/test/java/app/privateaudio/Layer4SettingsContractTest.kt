@@ -29,6 +29,18 @@ class Layer4SettingsContractTest {
     }
 
     @Test
+    fun languageOptionsScrollWithinTheSheetAndSelectionReturnsToSettings() {
+        assertTrue(settingsSource.contains("LazyColumn("))
+        assertTrue(settingsSource.contains("WindowInsets.safeDrawing.only(WindowInsetsSides.Vertical)"))
+        assertTrue(settingsSource.contains("max = maxHeight - SettingsLayout.verticalOffset * 2"))
+        assertTrue(
+            settingsSource.contains(
+                "AppLanguagePreferences.select(context, it)\n                            page = SettingsPage.ROOT",
+            ),
+        )
+    }
+
+    @Test
     fun diagnosticCopyUsesExistingServiceReportAndAndroidClipboard() {
         assertTrue(mainSource.contains("activeService.diagnosticReport()"))
         assertTrue(mainSource.contains("getSystemService(ClipboardManager::class.java)"))
