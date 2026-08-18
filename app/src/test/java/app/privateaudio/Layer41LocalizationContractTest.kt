@@ -13,11 +13,15 @@ class Layer41LocalizationContractTest {
         assertEquals("unqualifiedResLocale=en-US", resourcesProperties.trim())
         assertTrue(defaultStrings.contains("name=\"settings_system_default\">Default</string>"))
         assertFalse(defaultStrings.contains("translatable=\"false\""))
-        assertEquals(listOf("values-de", "values-pl"), localeDirectories.map { it.name }.sorted())
+        assertEquals(listOf("values-cs", "values-de", "values-pl", "values-sk"), localeDirectories.map { it.name }.sorted())
         assertEquals(stringKeys(defaultStrings), stringKeys(polishStrings))
         assertEquals(placeholders(defaultStrings), placeholders(polishStrings))
         assertEquals(stringKeys(defaultStrings), stringKeys(germanStrings))
         assertEquals(placeholders(defaultStrings), placeholders(germanStrings))
+        assertEquals(stringKeys(defaultStrings), stringKeys(czechStrings))
+        assertEquals(placeholders(defaultStrings), placeholders(czechStrings))
+        assertEquals(stringKeys(defaultStrings), stringKeys(slovakStrings))
+        assertEquals(placeholders(defaultStrings), placeholders(slovakStrings))
     }
 
     @Test
@@ -78,6 +82,8 @@ class Layer41LocalizationContractTest {
         val defaultStrings = projectFile("app/src/main/res/values/strings.xml").readText()
         val polishStrings = projectFile("app/src/main/res/values-pl/strings.xml").readText()
         val germanStrings = projectFile("app/src/main/res/values-de/strings.xml").readText()
+        val czechStrings = projectFile("app/src/main/res/values-cs/strings.xml").readText()
+        val slovakStrings = projectFile("app/src/main/res/values-sk/strings.xml").readText()
         val mainSource = projectFile("app/src/main/java/app/privateaudio/MainActivity.kt").readText()
         val productScreenSource = projectFile("app/src/main/java/app/privateaudio/ui/PrivateAudioScreen.kt").readText()
         val settingsSource = projectFile("app/src/main/java/app/privateaudio/ui/SettingsSheet.kt").readText()
