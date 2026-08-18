@@ -6,6 +6,7 @@ import android.app.NotificationManager
 import android.app.PendingIntent
 import android.app.Service
 import android.content.Intent
+import android.content.res.Configuration
 import android.content.pm.ServiceInfo
 import android.media.AudioManager
 import android.os.Binder
@@ -24,6 +25,7 @@ class PrivateAudioService : Service() {
 
     private val binder = LocalBinder()
     private var shuttingDown = false
+    private var foregroundNotificationActive = false
 
     var isPrivateAudioEnabled by mutableStateOf(false)
         private set
@@ -75,6 +77,7 @@ class PrivateAudioService : Service() {
     fun disarmAndStopStartedLifetime() {
         isPrivateAudioEnabled = false
         observer.disableController()
+        foregroundNotificationActive = false
         stopForeground(STOP_FOREGROUND_REMOVE)
         stopSelf()
     }
@@ -91,8 +94,19 @@ class PrivateAudioService : Service() {
     override fun onDestroy() {
         shuttingDown = true
         isPrivateAudioEnabled = false
+        foregroundNotificationActive = false
         observer.stop("Service destroyed")
         super.onDestroy()
+    }
+
+    override fun onConfigurationChanged(newConfig: Configuration) {
+        super.onConfigurationChanged(newConfig)
+        if (foregroundNotificationActive) {
+            getSystemService(NotificationManager::class.java).notify(
+                NOTIFICATION_ID,
+                buildForegroundNotification(),
+            )
+        }
     }
 
     private fun enterForeground() {
@@ -104,21 +118,7 @@ class PrivateAudioService : Service() {
                 NotificationManager.IMPORTANCE_LOW,
             ),
         )
-        val openMain = PendingIntent.getActivity(
-            this,
-            0,
-            Intent(this, MainActivity::class.java).apply {
-                flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP
-            },
-            PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE,
-        )
-        val notification = Notification.Builder(this, NOTIFICATION_CHANNEL_ID)
-            .setSmallIcon(R.drawable.ic_launcher)
-            .setContentTitle(getString(R.string.routing_notification_title))
-            .setContentText(getString(R.string.routing_notification_text))
-            .setContentIntent(openMain)
-            .setOngoing(true)
-            .build()
+        val notification = buildForegroundNotification()
 
         if (android.os.Build.VERSION.SDK_INT >= 34) {
             startForeground(
@@ -129,6 +129,25 @@ class PrivateAudioService : Service() {
         } else {
             startForeground(NOTIFICATION_ID, notification)
         }
+        foregroundNotificationActive = true
+    }
+
+    private fun buildForegroundNotification(): Notification {
+        val openMain = PendingIntent.getActivity(
+            this,
+            0,
+            Intent(this, MainActivity::class.java).apply {
+                flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP
+            },
+            PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE,
+        )
+        return Notification.Builder(this, NOTIFICATION_CHANNEL_ID)
+            .setSmallIcon(R.drawable.ic_launcher)
+            .setContentTitle(getString(R.string.routing_notification_title))
+            .setContentText(getString(R.string.routing_notification_text))
+            .setContentIntent(openMain)
+            .setOngoing(true)
+            .build()
     }
 
     companion object {

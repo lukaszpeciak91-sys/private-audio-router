@@ -15,6 +15,11 @@ import android.graphics.RectF
 import android.os.IBinder
 import android.os.ResultReceiver
 import android.provider.Settings
+import android.text.Layout
+import android.text.StaticLayout
+import android.text.TextDirectionHeuristics
+import android.text.TextPaint
+import android.text.TextUtils
 import android.view.Gravity
 import android.view.MotionEvent
 import android.view.View
@@ -83,7 +88,7 @@ class OverlayService : Service() {
             WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE,
             PixelFormat.TRANSLUCENT,
         ).apply {
-            gravity = Gravity.TOP or Gravity.START
+            gravity = Gravity.TOP or Gravity.LEFT
         }
         val bounds = windowManager.currentWindowMetrics.bounds
         val initialPosition = overlayPosition ?: OverlayPosition(
@@ -188,6 +193,11 @@ class OverlayService : Service() {
             strokeCap = Paint.Cap.ROUND
             strokeJoin = Paint.Join.ROUND
         }
+        private val statusTextPaint = TextPaint(Paint.ANTI_ALIAS_FLAG).apply {
+            color = Color.rgb(238, 238, 240)
+            textSize = 16f
+            typeface = android.graphics.Typeface.create("sans-serif", android.graphics.Typeface.NORMAL)
+        }
         private val expandPath = Path()
         private var state = PrivateAudioState.READY
         private val refreshState = object : Runnable {
@@ -238,14 +248,26 @@ class OverlayService : Service() {
             paint.style = Paint.Style.FILL
             paint.color = statusColor(state)
             canvas.drawCircle(20f, 31f, 5.5f, paint)
-            paint.color = Color.rgb(238, 238, 240)
-            paint.textSize = 16f
-            paint.typeface = android.graphics.Typeface.create("sans-serif", android.graphics.Typeface.NORMAL)
-            canvas.drawText(stateLabel(state), 34f, 36.5f, paint)
+            drawStatusLabel(canvas, stateLabel(state))
 
             drawPower(canvas, powerColor(state))
             drawExpand(canvas)
             drawClose(canvas)
+            canvas.restore()
+        }
+
+        private fun drawStatusLabel(canvas: Canvas, label: String) {
+            val layout = StaticLayout.Builder.obtain(label, 0, label.length, statusTextPaint, STATUS_TEXT_WIDTH)
+                .setAlignment(Layout.Alignment.ALIGN_NORMAL)
+                .setTextDirection(TextDirectionHeuristics.FIRSTSTRONG_LTR)
+                .setIncludePad(false)
+                .setMaxLines(1)
+                .setEllipsize(TextUtils.TruncateAt.END)
+                .setEllipsizedWidth(STATUS_TEXT_WIDTH)
+                .build()
+            canvas.save()
+            canvas.translate(STATUS_TEXT_LEFT, STATUS_TEXT_BASELINE + statusTextPaint.fontMetrics.ascent)
+            layout.draw(canvas)
             canvas.restore()
         }
 
@@ -376,6 +398,10 @@ class OverlayService : Service() {
         private const val EXTRA_SHOW_RESULT = "app.privateaudio.overlay.SHOW_RESULT"
         const val SHOW_SUCCEEDED = 1
         private const val STATE_REFRESH_MILLIS = 200L
+        private const val STATUS_TEXT_LEFT = 34f
+        private const val STATUS_TEXT_RIGHT = 126f
+        private const val STATUS_TEXT_WIDTH = 92
+        private const val STATUS_TEXT_BASELINE = 36.5f
         private const val POWER_START_FRACTION = 0.40f
         private const val POWER_END_FRACTION = 0.60f
         private const val EXPAND_START_FRACTION = 0.60f
