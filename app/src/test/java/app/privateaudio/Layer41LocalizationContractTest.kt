@@ -14,7 +14,7 @@ class Layer41LocalizationContractTest {
         assertEquals("unqualifiedResLocale=en-US", resourcesProperties.trim())
         assertTrue(defaultStrings.contains("name=\"settings_system_default\">Default</string>"))
         assertFalse(defaultStrings.contains("translatable=\"false\""))
-        assertEquals(listOf("values-be", "values-cs", "values-de", "values-es", "values-fr", "values-lt", "values-pl", "values-ru", "values-sk", "values-uk"), localeDirectories.map { it.name }.sorted())
+        assertEquals(listOf("values-be", "values-cs", "values-de", "values-es", "values-fr", "values-lt", "values-pl", "values-pt-rBR", "values-pt-rPT", "values-ru", "values-sk", "values-uk"), localeDirectories.map { it.name }.sorted())
         assertEquals(stringKeys(defaultStrings), stringKeys(polishStrings))
         assertEquals(placeholders(defaultStrings), placeholders(polishStrings))
         assertEquals(stringKeys(defaultStrings), stringKeys(germanStrings))
@@ -35,6 +35,18 @@ class Layer41LocalizationContractTest {
         assertEquals(placeholders(defaultStrings), placeholders(frenchStrings))
         assertEquals(stringKeys(defaultStrings), stringKeys(spanishStrings))
         assertEquals(placeholders(defaultStrings), placeholders(spanishStrings))
+        assertEquals(stringKeys(defaultStrings), stringKeys(brazilianPortugueseStrings))
+        assertEquals(placeholders(defaultStrings), placeholders(brazilianPortugueseStrings))
+        assertEquals(stringKeys(defaultStrings), stringKeys(europeanPortugueseStrings))
+        assertEquals(placeholders(defaultStrings), placeholders(europeanPortugueseStrings))
+        assertEquals("Português (Brasil)", nativeLocaleName("pt-BR"))
+        assertEquals("Português (Portugal)", nativeLocaleName("pt-PT"))
+        assertTrue(brazilianPortugueseStrings.contains("name=\"state_waiting\">Aguardando</string>"))
+        assertTrue(brazilianPortugueseStrings.contains("name=\"settings\">Configurações</string>"))
+        assertTrue(brazilianPortugueseStrings.contains("alto-falante de chamadas do telefone"))
+        assertTrue(europeanPortugueseStrings.contains("name=\"state_waiting\">A aguardar</string>"))
+        assertTrue(europeanPortugueseStrings.contains("name=\"settings\">Definições</string>"))
+        assertTrue(europeanPortugueseStrings.contains("auricular integrado do telemóvel"))
         val spanishLocale = Locale.forLanguageTag("es")
         val spanishNativeName = spanishLocale.getDisplayName(spanishLocale).replaceFirstChar { first ->
             if (first.isLowerCase()) first.titlecase(spanishLocale) else first.toString()
@@ -141,6 +153,13 @@ class Layer41LocalizationContractTest {
             it.groupValues[1] to Regex("%\\d+\\$[a-z]").findAll(it.groupValues[2]).map { match -> match.value }.toList()
         }
 
+    private fun nativeLocaleName(languageTag: String): String {
+        val locale = Locale.forLanguageTag(languageTag)
+        return locale.getDisplayName(locale).replaceFirstChar { first ->
+            if (first.isLowerCase()) first.titlecase(locale) else first.toString()
+        }
+    }
+
     private companion object {
         val projectRoot = generateSequence(File(System.getProperty("user.dir")).absoluteFile) { it.parentFile }
             .first { File(it, "app/src/main").isDirectory }
@@ -157,6 +176,8 @@ class Layer41LocalizationContractTest {
         val russianStrings = projectFile("app/src/main/res/values-ru/strings.xml").readText()
         val frenchStrings = projectFile("app/src/main/res/values-fr/strings.xml").readText()
         val spanishStrings = projectFile("app/src/main/res/values-es/strings.xml").readText()
+        val brazilianPortugueseStrings = projectFile("app/src/main/res/values-pt-rBR/strings.xml").readText()
+        val europeanPortugueseStrings = projectFile("app/src/main/res/values-pt-rPT/strings.xml").readText()
         val mainSource = projectFile("app/src/main/java/app/privateaudio/MainActivity.kt").readText()
         val productScreenSource = projectFile("app/src/main/java/app/privateaudio/ui/PrivateAudioScreen.kt").readText()
         val settingsSource = projectFile("app/src/main/java/app/privateaudio/ui/SettingsSheet.kt").readText()
