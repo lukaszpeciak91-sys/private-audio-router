@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Private Audio</string>
+    <string name="routing_notification_channel">Private Audio</string>
+    <string name="routing_notification_title">Private Audio ist eingeschaltet</string>
+    <string name="routing_notification_text">Wartet auf Audio zum Weiterleiten</string>
+    <string name="product_title">Private Audio</string>
+    <string name="product_subtitle">Sprich privat mit KI, wie bei einem Telefonat.</string>
+    <string name="state_ready">Bereit</string>
+    <string name="state_waiting">Wartet</string>
+    <string name="state_active">Aktiv</string>
+    <string name="state_error">Fehler</string>
+    <string name="power_control">Einschalten</string>
+    <string name="floating">Mini</string>
+    <string name="settings">Einstellungen</string>
+    <string name="close">Schließen</string>
+    <string name="overlay_controller_description">Schwebende Private Audio-Steuerung. Status: %1$s. Bedienelemente zum Einschalten, Erweitern und Schließen.</string>
+    <string name="settings_language">Sprache</string>
+    <string name="settings_system_default">Standard</string>
+    <string name="settings_copy_diagnostic">Diagnosebericht kopieren</string>
+    <string name="settings_advanced">Erweitert</string>
+    <string name="settings_about">Über Private Audio</string>
+    <string name="settings_version">Version %1$s</string>
+    <string name="settings_language_body">Private Audio verwendet derzeit die Sprache deines Geräts. Standard ist ausgewählt.</string>
+    <string name="settings_language_android_13_required">Die Sprachauswahl in der App erfordert Android 13 oder neuer. Dieses Gerät verwendet die Systemsprache.</string>
+    <string name="settings_advanced_body">Mit der Weiterentwicklung von Private Audio werden hier zusätzliche Optionen verfügbar.</string>
+    <string name="settings_about_body">Private Audio hilft dabei, unterstützte Sprachausgabe an die Hörmuschel deines Smartphones weiterzuleiten.</string>
+    <string name="diagnostic_report_clip_label">Private Audio-Diagnosebericht</string>
+    <string name="diagnostic_report_copied">Diagnosebericht kopiert.</string>
+</resources>
