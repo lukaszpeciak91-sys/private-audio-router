@@ -8,15 +8,25 @@ import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.BoxWithConstraints
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.WindowInsets
+import androidx.compose.foundation.layout.WindowInsetsSides
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.offset
+import androidx.compose.foundation.layout.only
+import androidx.compose.foundation.layout.safeDrawing
+import androidx.compose.foundation.layout.windowInsetsPadding
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -83,9 +93,18 @@ fun SettingsSheet(
         properties = DialogProperties(usePlatformDefaultWidth = false),
     ) {
         val sheetInteraction = remember { MutableInteractionSource() }
-        Box(
+        BoxWithConstraints(
             modifier = Modifier
                 .fillMaxSize()
+                .then(
+                    if (page == SettingsPage.LANGUAGE) {
+                        Modifier.windowInsetsPadding(
+                            WindowInsets.safeDrawing.only(WindowInsetsSides.Vertical),
+                        )
+                    } else {
+                        Modifier
+                    },
+                )
                 .background(SettingsScrim)
                 .clickable(onClick = onDismiss)
                 .testTag("settings_backdrop"),
@@ -94,6 +113,15 @@ fun SettingsSheet(
             Column(
                 modifier = Modifier
                     .fillMaxWidth(SettingsLayout.widthFraction)
+                    .then(
+                        if (page == SettingsPage.LANGUAGE) {
+                            Modifier.heightIn(
+                                max = maxHeight - SettingsLayout.verticalOffset * 2,
+                            )
+                        } else {
+                            Modifier
+                        },
+                    )
                     .offset(y = SettingsLayout.verticalOffset)
                     .background(SettingsSurface, RoundedCornerShape(SettingsLayout.cornerRadius))
                     .border(1.dp, SettingsBorder, RoundedCornerShape(SettingsLayout.cornerRadius))
@@ -121,7 +149,10 @@ fun SettingsSheet(
                     SettingsPage.LANGUAGE -> LanguagePage(
                         selectedLanguageTag = selectedLanguageTag,
                         supportedLanguages = supportedLanguages,
-                        onSelect = { AppLanguagePreferences.select(context, it) },
+                        onSelect = {
+                            AppLanguagePreferences.select(context, it)
+                            page = SettingsPage.ROOT
+                        },
                         onBack = { page = SettingsPage.ROOT },
                     )
                     SettingsPage.ADVANCED -> ChildPage(
@@ -202,43 +233,55 @@ private fun LanguagePage(
     onSelect: (String?) -> Unit,
     onBack: () -> Unit,
 ) {
-    Box(Modifier.fillMaxWidth()) {
-        Box(
-            modifier = Modifier
-                .size(44.dp)
-                .clickable(role = Role.Button, onClick = onBack)
-                .testTag("settings_child_back"),
-            contentAlignment = Alignment.CenterStart,
-        ) { BackChevron() }
-        SheetTitle(stringResource(R.string.settings_language))
-    }
-    Spacer(Modifier.height(14.dp))
-    LanguageChoice(
-        label = stringResource(R.string.settings_system_default),
-        selected = selectedLanguageTag == null,
-        tag = "language_default",
-        onClick = { onSelect(null) },
-    )
-    supportedLanguages.forEach { language ->
-        SettingsDivider()
-        LanguageChoice(
-            label = language.nativeName,
-            selected = language.languageTag == selectedLanguageTag,
-            tag = "language_${language.languageTag}",
-            onClick = { onSelect(language.languageTag) },
-        )
-    }
-    if (!AppLanguagePreferences.isSupported) {
+    Column(Modifier.fillMaxHeight()) {
+        Box(Modifier.fillMaxWidth()) {
+            Box(
+                modifier = Modifier
+                    .size(44.dp)
+                    .clickable(role = Role.Button, onClick = onBack)
+                    .testTag("settings_child_back"),
+                contentAlignment = Alignment.CenterStart,
+            ) { BackChevron() }
+            SheetTitle(stringResource(R.string.settings_language))
+        }
         Spacer(Modifier.height(14.dp))
-        Text(
-            text = stringResource(R.string.settings_language_android_13_required),
-            color = SettingsSecondary,
-            fontSize = 13.sp,
-            lineHeight = 18.sp,
-            textAlign = TextAlign.Center,
-        )
+        LazyColumn(
+            modifier = Modifier
+                .weight(1f)
+                .testTag("language_list"),
+        ) {
+            item {
+                LanguageChoice(
+                    label = stringResource(R.string.settings_system_default),
+                    selected = selectedLanguageTag == null,
+                    tag = "language_default",
+                    onClick = { onSelect(null) },
+                )
+            }
+            items(supportedLanguages, key = { it.languageTag }) { language ->
+                SettingsDivider()
+                LanguageChoice(
+                    label = language.nativeName,
+                    selected = language.languageTag == selectedLanguageTag,
+                    tag = "language_${language.languageTag}",
+                    onClick = { onSelect(language.languageTag) },
+                )
+            }
+            if (!AppLanguagePreferences.isSupported) {
+                item {
+                    Spacer(Modifier.height(14.dp))
+                    Text(
+                        text = stringResource(R.string.settings_language_android_13_required),
+                        color = SettingsSecondary,
+                        fontSize = 13.sp,
+                        lineHeight = 18.sp,
+                        textAlign = TextAlign.Center,
+                    )
+                }
+            }
+            item { Spacer(Modifier.height(16.dp)) }
+        }
     }
-    Spacer(Modifier.height(16.dp))
 }
 
 @Composable
