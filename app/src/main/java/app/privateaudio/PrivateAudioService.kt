@@ -11,6 +11,7 @@ import android.content.pm.ServiceInfo
 import android.media.AudioManager
 import android.os.Binder
 import android.os.IBinder
+import android.os.PowerManager
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
@@ -26,6 +27,12 @@ class PrivateAudioService : Service() {
     private val binder = LocalBinder()
     private var shuttingDown = false
     private var foregroundNotificationActive = false
+
+    private val proximityController: ProximityScreenController by lazy(LazyThreadSafetyMode.NONE) {
+        ProximityScreenController(getSystemService(PowerManager::class.java)) { event ->
+            observer.recordLifecycleEvent(event)
+        }
+    }
 
     var isPrivateAudioEnabled by mutableStateOf(false)
         private set
@@ -55,6 +62,7 @@ class PrivateAudioService : Service() {
             context = applicationContext,
             audioManager = getSystemService(AudioManager::class.java),
             callbackExecutor = mainExecutor,
+            onEvidenceChanged = ::syncProximityBehavior,
         )
     }
 
@@ -70,12 +78,14 @@ class PrivateAudioService : Service() {
             isPrivateAudioEnabled = true
             enterForeground()
             observer.enableController()
+            syncProximityBehavior("Power ON")
         }
         return START_NOT_STICKY
     }
 
     fun disarmAndStopStartedLifetime() {
         isPrivateAudioEnabled = false
+        proximityController.release("Power OFF", privateAudioState, currentRoute())
         observer.disableController()
         foregroundNotificationActive = false
         stopForeground(STOP_FOREGROUND_REMOVE)
@@ -88,16 +98,41 @@ class PrivateAudioService : Service() {
 
     fun diagnosticReport(): String {
         observer.snapshot("Report snapshot")
-        return observer.report()
+        val proximity = proximityController.status()
+        return buildString {
+            append(observer.report())
+            appendLine()
+            appendLine("PROXIMITY SCREEN")
+            appendLine("Wake lock supported: ${proximity.supported}")
+            appendLine("Wake lock currently held: ${proximity.held}")
+            appendLine("Last acquire reason: ${proximity.lastAcquireReason ?: "None"}")
+            appendLine("Last release reason: ${proximity.lastReleaseReason ?: "None"}")
+            appendLine("State at last transition: ${proximity.stateAtLastTransition ?: "None"}")
+            appendLine("Route at last transition: ${proximity.routeAtLastTransition ?: "None"}")
+        }
     }
 
     override fun onDestroy() {
         shuttingDown = true
         isPrivateAudioEnabled = false
         foregroundNotificationActive = false
+        proximityController.release("Service destroyed", privateAudioState, currentRoute())
         observer.stop("Service destroyed")
         super.onDestroy()
     }
+
+    private fun syncProximityBehavior(reason: String) {
+        val state = privateAudioState
+        val route = currentRoute()
+        val supported = proximityController.status().supported
+        if (proximityEligible(isPrivateAudioEnabled, state, observer.snapshot.mode, route, supported)) {
+            proximityController.acquire(reason, state, route ?: "Unknown")
+        } else {
+            proximityController.release(reason, state, route)
+        }
+    }
+
+    private fun currentRoute() = observer.snapshot.communicationDevice?.type
 
     override fun onConfigurationChanged(newConfig: Configuration) {
         super.onConfigurationChanged(newConfig)

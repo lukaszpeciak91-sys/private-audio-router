@@ -83,3 +83,9 @@ New statements must be labeled **FACT**, **INFERENCE**, or **UNKNOWN**, with sou
 - **FACT:** Public `AudioManager.AudioPlaybackCallback` reports changes to active playback configurations, including public audio attributes and active state; this implementation does not obtain or use a client package or provider identity.
 - **INFERENCE:** After an external matching communication playback is visible, Private Audio starts its one known matching silent track. Two matching active contributions then establish external-plus-local evidence; a stable fall to one while the known local track remains playing is treated as external communication ending.
 - **UNKNOWN:** OEM callback timing, transient player recreation, whether all compatible providers expose matching configurations, and the reliability of this count boundary across devices remain unverified until physical Layer 1.6 testing. Ambiguous evidence intentionally leaves the active cycle in place rather than escalating.
+
+## Layer 7A public proximity-screen API boundary
+
+- **FACT:** Android exposes `PowerManager.PROXIMITY_SCREEN_OFF_WAKE_LOCK`, `PowerManager.isWakeLockLevelSupported(int)`, non-reference-counted `WakeLock` ownership, and ordinary immediate `WakeLock.release()` through public APIs. The application declares `android.permission.WAKE_LOCK` and does not use a proximity sensor listener.
+- **INFERENCE:** Bounding one proximity wake lock to the service's current `ACTIVE`/communication-mode/built-in-earpiece evidence should provide call-like repeated acquire/release ownership without coupling behavior to Main or Floating visibility.
+- **UNKNOWN:** Whether Xiaomi `2201117TY` / Android 13 turns the screen off and restores it at the desired physical thresholds, how it behaves when a session ends while near, and how the manual Power button interacts while proximity is near. Automated tests cannot establish these OEM behaviors.
