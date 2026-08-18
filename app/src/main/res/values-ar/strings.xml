@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Private Audio</string>
+    <string name="routing_notification_channel">Private Audio</string>
+    <string name="routing_notification_title">Private Audio قيد التشغيل</string>
+    <string name="routing_notification_text">في انتظار توجيه الصوت</string>
+    <string name="product_title">Private Audio</string>
+    <string name="product_subtitle">تحدّث مع الذكاء الاصطناعي بخصوصية، كما في مكالمة هاتفية.</string>
+    <string name="state_ready">جاهز</string>
+    <string name="state_waiting">في الانتظار</string>
+    <string name="state_active">نشط</string>
+    <string name="state_error">خطأ</string>
+    <string name="power_control">تشغيل</string>
+    <string name="floating">مصغّر</string>
+    <string name="settings">الإعدادات</string>
+    <string name="close">إغلاق</string>
+    <string name="overlay_controller_description">وحدة التحكم المصغّرة العائمة لتطبيق Private Audio. الحالة: %1$s. عناصر التحكم في التشغيل والتوسيع والإغلاق.</string>
+    <string name="settings_language">اللغة</string>
+    <string name="settings_system_default">تلقائي</string>
+    <string name="settings_copy_diagnostic">نسخ تقرير التشخيص</string>
+    <string name="settings_advanced">متقدّم</string>
+    <string name="settings_about">حول Private Audio</string>
+    <string name="settings_version">الإصدار %1$s</string>
+    <string name="settings_language_body">يتبع Private Audio حاليًا لغة جهازك. تم اختيار «تلقائي».</string>
+    <string name="settings_language_android_13_required">يتطلب اختيار اللغة داخل التطبيق Android 13 أو إصدارًا أحدث. يتبع هذا الجهاز لغة النظام.</string>
+    <string name="settings_advanced_body">ستظهر هنا خيارات إضافية مع تطوّر Private Audio.</string>
+    <string name="settings_about_body">يساعد Private Audio على توجيه الصوت إلى سماعة الأذن المدمجة في الهاتف.</string>
+    <string name="diagnostic_report_clip_label">تقرير تشخيص Private Audio</string>
+    <string name="diagnostic_report_copied">تم نسخ تقرير التشخيص.</string>
+</resources>
