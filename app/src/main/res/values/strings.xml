@@ -3,15 +3,15 @@
     <string name="app_name">Private Audio</string>
     <string name="routing_notification_channel">Private Audio</string>
     <string name="routing_notification_title">Private Audio is on</string>
-    <string name="routing_notification_text">Waiting for private voice audio</string>
+    <string name="routing_notification_text">Waiting for voice audio</string>
     <string name="product_title">Private Audio</string>
-    <string name="product_subtitle">Use AI voice privately, like a phone call.</string>
+    <string name="product_subtitle">Hear AI voice privately, like a phone call.</string>
     <string name="state_ready">Ready</string>
     <string name="state_waiting">Waiting</string>
     <string name="state_active">Active</string>
     <string name="state_error">Error</string>
     <string name="power_control">Power</string>
-    <string name="floating">Floating</string>
+    <string name="floating">Mini</string>
     <string name="settings">Settings</string>
     <string name="close">Close</string>
     <string name="overlay_controller_description">Private Audio floating controller. Status: %1$s. Power, expand, and close controls.</string>
@@ -22,7 +22,7 @@
     <string name="settings_about">About Private Audio</string>
     <string name="settings_version">Version %1$s</string>
     <string name="settings_language_body">Private Audio currently follows your device language. System default is selected.</string>
-    <string name="settings_advanced_body">No advanced controls are needed for the current Private Audio experience.</string>
+    <string name="settings_advanced_body">Additional options will appear here as Private Audio evolves.</string>
     <string name="settings_about_body">Private Audio helps route supported voice audio to your phone’s built-in earpiece.</string>
     <string name="diagnostic_report_clip_label">Private Audio diagnostic report</string>
     <string name="diagnostic_report_copied">Diagnostic report copied.</string>
