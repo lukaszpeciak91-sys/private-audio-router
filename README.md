@@ -2,11 +2,11 @@
 
 > **Use AI voice conversations like a private phone call.**
 
-`private-audio-router` is an experimental Android project intended to become a small, provider-independent system control surface that temporarily requests the phone's built-in earpiece for communication audio. Its primary use case is listening to a voice conversation in public without playing responses through the main loudspeaker. Compatibility with ChatGPT Voice, Gemini voice, browsers, and other applications is unverified and will be validated experimentally on physical devices.
+`private-audio-router` (Private Audio) is an Android 12+ experimental, private-call-style audio routing controller. It uses only public Android communication-routing APIs and remains outside other applications' audio-data paths.
 
 ## Status
 
-The project now has an observe-only Android audio diagnostic for physical-device experiments. It displays public communication-audio state and records best-effort callbacks without requesting or changing routing. Physical-device behavior remains unverified. See [`docs/PROGRESS.md`](docs/PROGRESS.md) for the authoritative current state and next step.
+A permanent controller with repeated isolated routing cycles is implemented, and physical earpiece routing has been demonstrated on the project's test device. Main, Settings, and a floating controller are present. See [`docs/PROGRESS.md`](docs/PROGRESS.md) for the authoritative current state, remaining validation, and next work.
 
 ## Design and safety
 
@@ -27,4 +27,4 @@ This project is not a ChatGPT or Gemini client, AI or voice assistant, audio rec
 - [Test plan](docs/TEST_PLAN.md)
 - [Development workflow](docs/WORKFLOW.md)
 
-Development sequencing and safety boundaries are defined in those documents. The next step is the documented physical-device ChatGPT Voice observation experiment; routing behavior is explicitly deferred.
+Development sequencing, current evidence, and safety boundaries are defined in those documents; detailed current status is maintained in `docs/PROGRESS.md`.
