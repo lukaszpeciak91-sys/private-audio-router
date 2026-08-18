@@ -5,6 +5,7 @@ import android.content.ComponentName
 import android.content.Context
 import android.content.Intent
 import android.content.ServiceConnection
+import android.content.res.Configuration
 import android.graphics.Canvas
 import android.graphics.Color
 import android.graphics.Paint
@@ -59,6 +60,11 @@ class OverlayService : Service() {
     override fun onDestroy() {
         hideOverlay()
         super.onDestroy()
+    }
+
+    override fun onConfigurationChanged(newConfig: Configuration) {
+        super.onConfigurationChanged(newConfig)
+        overlayView?.refreshLocalizedPresentation()
     }
 
     private fun showOverlay(resultReceiver: ResultReceiver?) {
@@ -207,6 +213,11 @@ class OverlayService : Service() {
         }
 
         fun stopStateObservation() = removeCallbacks(refreshState)
+
+        fun refreshLocalizedPresentation() {
+            contentDescription = stateDescription(state)
+            invalidate()
+        }
 
         override fun onDraw(canvas: Canvas) {
             super.onDraw(canvas)

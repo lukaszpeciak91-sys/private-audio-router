@@ -25,6 +25,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
@@ -40,6 +41,8 @@ import androidx.compose.ui.unit.sp
 import androidx.compose.ui.window.Dialog
 import androidx.compose.ui.window.DialogProperties
 import app.privateaudio.R
+import app.privateaudio.localization.AppLanguageOption
+import app.privateaudio.localization.AppLanguagePreferences
 
 private object SettingsLayout {
     const val widthFraction = 0.88f
@@ -66,6 +69,11 @@ fun SettingsSheet(
     onDismiss: () -> Unit,
 ) {
     var page by rememberSaveable { mutableStateOf(SettingsPage.ROOT) }
+    val context = LocalContext.current
+    val selectedLanguageTag = AppLanguagePreferences.currentLanguageTag(context)
+    val supportedLanguages = remember(context.resources.configuration) {
+        AppLanguagePreferences.supportedLanguages(context)
+    }
 
     BackHandler(enabled = page != SettingsPage.ROOT) { page = SettingsPage.ROOT }
 
@@ -102,14 +110,17 @@ fun SettingsSheet(
                 when (page) {
                     SettingsPage.ROOT -> SettingsRoot(
                         versionName = versionName,
+                        selectedLanguageTag = selectedLanguageTag,
+                        supportedLanguages = supportedLanguages,
                         onLanguage = { page = SettingsPage.LANGUAGE },
                         onCopyDiagnosticReport = onCopyDiagnosticReport,
                         onAdvanced = { page = SettingsPage.ADVANCED },
                         onAbout = { page = SettingsPage.ABOUT },
                     )
-                    SettingsPage.LANGUAGE -> ChildPage(
-                        title = stringResource(R.string.settings_language),
-                        body = stringResource(R.string.settings_language_body),
+                    SettingsPage.LANGUAGE -> LanguagePage(
+                        selectedLanguageTag = selectedLanguageTag,
+                        supportedLanguages = supportedLanguages,
+                        onSelect = { AppLanguagePreferences.select(context, it) },
                         onBack = { page = SettingsPage.ROOT },
                     )
                     SettingsPage.ADVANCED -> ChildPage(
@@ -131,16 +142,23 @@ fun SettingsSheet(
 @Composable
 private fun SettingsRoot(
     versionName: String,
+    selectedLanguageTag: String?,
+    supportedLanguages: List<AppLanguageOption>,
     onLanguage: () -> Unit,
     onCopyDiagnosticReport: () -> Unit,
     onAdvanced: () -> Unit,
     onAbout: () -> Unit,
 ) {
+    val selectedLanguageName = supportedLanguages
+        .firstOrNull { it.languageTag == selectedLanguageTag }
+        ?.nativeName
+        ?: selectedLanguageTag?.let(AppLanguagePreferences::nativeName)
+        ?: stringResource(R.string.settings_system_default)
     SheetTitle(stringResource(R.string.settings))
     Spacer(Modifier.height(10.dp))
     SettingsRow(
         label = stringResource(R.string.settings_language),
-        value = stringResource(R.string.settings_system_default),
+        value = selectedLanguageName,
         chevron = true,
         tag = "settings_language",
         onClick = onLanguage,
@@ -173,6 +191,62 @@ private fun SettingsRoot(
         fontSize = 12.sp,
         lineHeight = 16.sp,
         textAlign = TextAlign.Center,
+    )
+}
+
+@Composable
+private fun LanguagePage(
+    selectedLanguageTag: String?,
+    supportedLanguages: List<AppLanguageOption>,
+    onSelect: (String?) -> Unit,
+    onBack: () -> Unit,
+) {
+    Box(Modifier.fillMaxWidth()) {
+        Box(
+            modifier = Modifier
+                .size(44.dp)
+                .clickable(role = Role.Button, onClick = onBack)
+                .testTag("settings_child_back"),
+            contentAlignment = Alignment.CenterStart,
+        ) { BackChevron() }
+        SheetTitle(stringResource(R.string.settings_language))
+    }
+    Spacer(Modifier.height(14.dp))
+    LanguageChoice(
+        label = stringResource(R.string.settings_system_default),
+        selected = selectedLanguageTag == null,
+        tag = "language_default",
+        onClick = { onSelect(null) },
+    )
+    supportedLanguages.forEach { language ->
+        SettingsDivider()
+        LanguageChoice(
+            label = language.nativeName,
+            selected = language.languageTag == selectedLanguageTag,
+            tag = "language_${language.languageTag}",
+            onClick = { onSelect(language.languageTag) },
+        )
+    }
+    if (!AppLanguagePreferences.isSupported) {
+        Spacer(Modifier.height(14.dp))
+        Text(
+            text = stringResource(R.string.settings_language_android_13_required),
+            color = SettingsSecondary,
+            fontSize = 13.sp,
+            lineHeight = 18.sp,
+            textAlign = TextAlign.Center,
+        )
+    }
+    Spacer(Modifier.height(16.dp))
+}
+
+@Composable
+private fun LanguageChoice(label: String, selected: Boolean, tag: String, onClick: () -> Unit) {
+    SettingsRow(
+        label = label,
+        value = if (selected) "✓" else null,
+        tag = tag,
+        onClick = onClick,
     )
 }
 

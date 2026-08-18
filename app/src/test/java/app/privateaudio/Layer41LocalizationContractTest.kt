@@ -19,6 +19,27 @@ class Layer41LocalizationContractTest {
     }
 
     @Test
+    fun languageSelectionUsesPlatformConfigurationWithoutAParallelLocaleRegistry() {
+        assertTrue(languagePreferencesSource.contains("LocaleConfig(context).supportedLocales"))
+        assertTrue(languagePreferencesSource.contains("getSystemService(LocaleManager::class.java)"))
+        assertTrue(languagePreferencesSource.contains("LocaleList.getEmptyLocaleList()"))
+        assertTrue(languagePreferencesSource.contains("Build.VERSION_CODES.TIRAMISU"))
+        assertFalse(languagePreferencesSource.contains("listOf(\"en-US\", \"pl\")"))
+        assertFalse(languagePreferencesSource.contains("SharedPreferences"))
+        assertTrue(settingsSource.contains("supportedLanguages.forEach"))
+        assertTrue(settingsSource.contains("selectedLanguageTag == null"))
+    }
+
+    @Test
+    fun existingOverlayRefreshesOnlyLocalizedPresentationOnConfigurationChange() {
+        assertTrue(overlaySource.contains("override fun onConfigurationChanged"))
+        assertTrue(overlaySource.contains("overlayView?.refreshLocalizedPresentation()"))
+        assertTrue(overlaySource.contains("contentDescription = stateDescription(state)"))
+        assertFalse(overlaySource.method("override fun onConfigurationChanged").contains("hideOverlay()"))
+        assertFalse(overlaySource.method("override fun onConfigurationChanged").contains("bindControllerService()"))
+    }
+
+    @Test
     fun productSurfacesUseResourcesWhileDiagnosticsStayOutsideLocalization() {
         assertFalse(mainSource.contains("ClipData.newPlainText(\""))
         assertTrue(mainSource.contains("getString(R.string.diagnostic_report_clip_label)"))
@@ -35,6 +56,9 @@ class Layer41LocalizationContractTest {
     }
 
     private fun String.occurrences(needle: String): Int = windowed(needle.length).count { it == needle }
+
+    private fun String.method(signature: String): String =
+        substring(indexOf(signature)).substringBefore("\n    }")
 
     private fun stringKeys(resources: String) =
         Regex("<string name=\"([^\"]+)\"").findAll(resources).map { it.groupValues[1] }.toList()
@@ -55,6 +79,8 @@ class Layer41LocalizationContractTest {
         val productScreenSource = projectFile("app/src/main/java/app/privateaudio/ui/PrivateAudioScreen.kt").readText()
         val settingsSource = projectFile("app/src/main/java/app/privateaudio/ui/SettingsSheet.kt").readText()
         val diagnosticScreenSource = projectFile("app/src/main/java/app/privateaudio/ui/DiagnosticScreen.kt").readText()
+        val languagePreferencesSource = projectFile("app/src/main/java/app/privateaudio/localization/AppLanguagePreferences.kt").readText()
+        val overlaySource = projectFile("app/src/main/java/app/privateaudio/overlay/OverlayService.kt").readText()
         val observerSource = projectFile("app/src/main/java/app/privateaudio/diagnostic/AudioDiagnosticObserver.kt").readText()
         val productionSources = File(projectRoot, "app/src/main/java")
             .walkTopDown().filter { it.isFile && it.extension == "kt" }.toList()
