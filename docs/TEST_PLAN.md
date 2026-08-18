@@ -335,10 +335,10 @@ The following checks validate lifecycle ownership without claiming routing succe
 - **Expected result:** The Language list remains usable inside visible/system-navigation bounds. Selection applies the existing locale behavior and returns immediately to Settings root; explicit Back without selection also returns to root. API 33+ selection is owned by `LocaleManager` and generated locale configuration, while API 31–32 remain safely system-language-only. Locale changes do not alter floating-controller ownership or audio/controller state.
 - **Observed result:** The user runtime-checked that the Language list scrolls with all locale options reachable and that successful selection returns automatically to root Settings; this behavior works. Device/build metadata and evidence for system-bound insets, explicit Back, persistence, all locale/resource transitions, running-overlay refresh, notification refresh, and routing isolation were not recorded, so those items remain unverified.
 
-## Layer 7A call-like proximity-screen physical gate
+## Layer 7A call-like proximity-screen physical evidence
 
-- **Status:** NOT TESTED
-- **Device / Android:** Xiaomi `2201117TY` / Android 13
+- **Status:** PARTIAL PASS (supplied physical evidence; gate incomplete)
+- **Device / Android:** Xiaomi `2201117TY` / Android 13/API 33
 - **Preconditions:** Install the Layer 7A build, keep the diagnostic report available, and begin without Bluetooth, wired, or USB audio. Do not infer physical screen behavior from automated tests.
 - **Steps and expected results:**
   1. Power ON and remain `WAITING`; cover the proximity sensor. **Expected:** Private Audio does not turn the screen off and reports no held proximity wake lock.
@@ -354,4 +354,23 @@ The following checks validate lifecycle ownership without claiming routing succe
   11. Terminate the process/service. **Expected:** no persistent Private Audio proximity ownership remains.
   12. Run several consecutive routing cycles. **Expected:** acquire/release repeats once per eligible interval with no sticky black screen.
 - **OEM characterization:** While proximity is NEAR during an eligible active cycle, press the physical Power button once and record the screen and diagnostic behavior, then press it again and record recovery. This is characterization only; do not add a workaround from this gate without a new decision.
-- **Observed result:** Not recorded. Physical screen response and OEM Power-button behavior remain **UNKNOWN**.
+- **Observed result (2026-08-18):** During `ACTIVE` with the built-in earpiece current, moving near turned the screen off and moving away restored it automatically. Wake-lock support reported `true`; the supplied post-session report showed held `false`. No other listed boundary was recorded, so those cases remain **NOT TESTED / UNKNOWN** and the overall Layer 7 gate is not PASS.
+
+## Layer 7B proximity hardening physical gate
+
+- **Status:** NOT TESTED
+- **Required tests:**
+  - **A — Session end while near:** End an `ACTIVE` earpiece session while near, then move away. Expect `WAITING`, normal screen return, no sticky black screen, and held `false`.
+  - **B — Successive cycles:** With Power ON, run two complete active near/off, far/on, end cycles. Expect correct acquisition and release in both without toggling Power.
+  - **C — Private Audio Power OFF:** During `ACTIVE`, move away and turn Power OFF. Expect proximity release and unchanged routing cleanup; covering afterward causes no Private Audio screen-off behavior.
+  - **D — Main Close:** During `ACTIVE`, move away and use Main Close. Expect full existing cleanup and no proximity ownership.
+  - **E — Floating:** In valid `ACTIVE` earpiece use with Mini visible, expect the same near/off and far/on response.
+  - **F — Floating Expand to Main:** Expand while `ACTIVE`. Expect the UI transition itself not to interrupt routing or proximity ownership.
+  - **G — Setting OFF:** Disable “Turn screen off near ear” before or during valid `ACTIVE` earpiece communication. Expect private audio and `ACTIVE` unchanged, no proximity screen-off, and diagnostics `Feature enabled=false` and held `false`.
+  - **H — Setting ON:** Re-enable during valid `ACTIVE` earpiece communication. Expect call-like proximity behavior to become eligible immediately.
+  - **I — Setting persistence:** Persist OFF across application/service restart, then repeat with ON.
+  - **J — Bluetooth/non-earpiece:** If available, observe a selected/current non-earpiece route. Expect no Private Audio proximity ownership; do not change routing policy for the test.
+  - **K — Real call:** If practical, introduce a real call. Expect telephony priority, no competition from Private Audio proximity ownership, and safe post-call state.
+  - **L — Physical Power button:** While `ACTIVE`, near, and screen off, press Power once and record Xiaomi/MIUI behavior. Characterization only; do not implement a workaround here.
+  - **M — Process/service termination:** If practical, terminate while proximity ownership is active. Expect no persistent Private Audio screen-off ownership.
+- **Evidence rule:** Record Android-reported state and human-observed screen behavior separately. Do not mark Layer 7 complete until this gate and later Layer 7C closure/regression are executed.

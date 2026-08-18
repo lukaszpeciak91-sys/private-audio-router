@@ -161,3 +161,11 @@ This is a lightweight, append-only log. Do not rewrite accepted history; append 
 - **Context:** Call-like earpiece use needs screen behavior that follows each authoritative routing cycle without UI ownership, polling, sensor interpretation, or changes to the protected routing controller.
 - **Decision:** `PrivateAudioService` owns one non-reference-counted public `PROXIMITY_SCREEN_OFF_WAKE_LOCK` through a mechanics-only helper. It holds the lock only while the controller is enabled, product state is `ACTIVE`, Android reports `MODE_IN_COMMUNICATION`, and the current communication device is the built-in earpiece. Observer evidence changes synchronously notify the service to re-evaluate this predicate idempotently.
 - **Consequences:** Every departure from eligibility releases ownership; Power OFF and service destruction also release fail-safe. Unsupported devices remain routing-capable with no screen influence. Main and Floating own no proximity behavior. OEM screen response, near-release behavior, and manual Power-button interaction remain **UNKNOWN** until the Layer 7A physical gate passes.
+
+## D-021 — Service-owned proximity preference
+
+- **Date:** 2026-08-18
+- **Status:** Accepted; extends D-020 for Layer 7B
+- **Context:** Call-like screen behavior needs a user opt-out without changing Private Audio routing, state, session detection, or UI ownership boundaries.
+- **Decision:** `PrivateAudioService` owns one default-ON boolean in private `SharedPreferences` and includes it in D-020's single eligibility predicate. Main Settings may read and change the value through the service; the mechanics-only controller and Floating UI do not read or store it.
+- **Consequences:** OFF immediately releases eligible proximity ownership and prevents future acquisition while leaving the audio cycle untouched; ON immediately reacquires when all existing evidence qualifies. Repeated writes are inert. Physical Layer 7B lifecycle, accessory, telephony, persistence, and termination validation remains required.

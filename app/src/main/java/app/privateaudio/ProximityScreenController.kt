@@ -103,10 +103,11 @@ internal class ProximityScreenController(
 }
 
 internal fun proximityEligible(
+    featureEnabled: Boolean,
     controllerEnabled: Boolean,
     state: PrivateAudioState,
     mode: String,
     route: String?,
     supported: Boolean,
-) = controllerEnabled && supported && state == PrivateAudioState.ACTIVE &&
+) = featureEnabled && controllerEnabled && supported && state == PrivateAudioState.ACTIVE &&
     mode == "MODE_IN_COMMUNICATION" && route == "Built-in earpiece"

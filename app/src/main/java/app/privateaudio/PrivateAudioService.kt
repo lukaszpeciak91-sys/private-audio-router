@@ -6,6 +6,7 @@ import android.app.NotificationManager
 import android.app.PendingIntent
 import android.app.Service
 import android.content.Intent
+import android.content.Context
 import android.content.res.Configuration
 import android.content.pm.ServiceInfo
 import android.media.AudioManager
@@ -35,6 +36,9 @@ class PrivateAudioService : Service() {
     }
 
     var isPrivateAudioEnabled by mutableStateOf(false)
+        private set
+
+    var isProximityFeatureEnabled by mutableStateOf(true)
         private set
 
     val privateAudioState: PrivateAudioState
@@ -68,6 +72,8 @@ class PrivateAudioService : Service() {
 
     override fun onCreate() {
         super.onCreate()
+        isProximityFeatureEnabled = getSharedPreferences(PREFERENCES_NAME, Context.MODE_PRIVATE)
+            .getBoolean(PROXIMITY_FEATURE_KEY, true)
         observer.start()
     }
 
@@ -96,6 +102,16 @@ class PrivateAudioService : Service() {
         observer.snapshot(reason)
     }
 
+    fun setProximityFeatureEnabled(enabled: Boolean) {
+        if (enabled == isProximityFeatureEnabled) return
+        isProximityFeatureEnabled = enabled
+        getSharedPreferences(PREFERENCES_NAME, Context.MODE_PRIVATE)
+            .edit()
+            .putBoolean(PROXIMITY_FEATURE_KEY, enabled)
+            .apply()
+        syncProximityBehavior(if (enabled) "Preference enabled" else "Preference disabled")
+    }
+
     fun diagnosticReport(): String {
         observer.snapshot("Report snapshot")
         val proximity = proximityController.status()
@@ -103,6 +119,7 @@ class PrivateAudioService : Service() {
             append(observer.report())
             appendLine()
             appendLine("PROXIMITY SCREEN")
+            appendLine("Feature enabled: $isProximityFeatureEnabled")
             appendLine("Wake lock supported: ${proximity.supported}")
             appendLine("Wake lock currently held: ${proximity.held}")
             appendLine("Last acquire reason: ${proximity.lastAcquireReason ?: "None"}")
@@ -125,7 +142,7 @@ class PrivateAudioService : Service() {
         val state = privateAudioState
         val route = currentRoute()
         val supported = proximityController.status().supported
-        if (proximityEligible(isPrivateAudioEnabled, state, observer.snapshot.mode, route, supported)) {
+        if (proximityEligible(isProximityFeatureEnabled, isPrivateAudioEnabled, state, observer.snapshot.mode, route, supported)) {
             proximityController.acquire(reason, state, route ?: "Unknown")
         } else {
             proximityController.release(reason, state, route)
@@ -189,5 +206,7 @@ class PrivateAudioService : Service() {
         const val ACTION_ARM = "app.privateaudio.action.ARM_EARPIECE_TEST"
         private const val NOTIFICATION_CHANNEL_ID = "private_audio_routing"
         private const val NOTIFICATION_ID = 1
+        private const val PREFERENCES_NAME = "private_audio_preferences"
+        private const val PROXIMITY_FEATURE_KEY = "proximity_screen_enabled"
     }
 }

@@ -6,6 +6,7 @@ import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.selection.toggleable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.BoxWithConstraints
@@ -29,6 +30,8 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Text
+import androidx.compose.material3.Switch
+import androidx.compose.material3.SwitchDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -76,6 +79,8 @@ private enum class SettingsPage { ROOT, LANGUAGE, ADVANCED, ABOUT }
 @Composable
 fun SettingsSheet(
     versionName: String,
+    proximityFeatureEnabled: Boolean,
+    onProximityFeatureChange: (Boolean) -> Unit,
     onCopyDiagnosticReport: () -> Unit,
     onDismiss: () -> Unit,
 ) {
@@ -155,9 +160,9 @@ fun SettingsSheet(
                         },
                         onBack = { page = SettingsPage.ROOT },
                     )
-                    SettingsPage.ADVANCED -> ChildPage(
-                        title = stringResource(R.string.settings_advanced),
-                        body = stringResource(R.string.settings_advanced_body),
+                    SettingsPage.ADVANCED -> AdvancedPage(
+                        proximityFeatureEnabled = proximityFeatureEnabled,
+                        onProximityFeatureChange = onProximityFeatureChange,
                         onBack = { page = SettingsPage.ROOT },
                     )
                     SettingsPage.ABOUT -> ChildPage(
@@ -169,6 +174,53 @@ fun SettingsSheet(
             }
         }
     }
+}
+
+@Composable
+private fun AdvancedPage(
+    proximityFeatureEnabled: Boolean,
+    onProximityFeatureChange: (Boolean) -> Unit,
+    onBack: () -> Unit,
+) {
+    Box(Modifier.fillMaxWidth()) {
+        Box(
+            modifier = Modifier.size(44.dp).clickable(role = Role.Button, onClick = onBack)
+                .testTag("settings_child_back"),
+            contentAlignment = Alignment.CenterStart,
+        ) { BackChevron() }
+        SheetTitle(stringResource(R.string.settings_advanced))
+    }
+    Spacer(Modifier.height(14.dp))
+    Row(
+        modifier = Modifier.fillMaxWidth().height(SettingsLayout.rowHeight)
+            .toggleable(
+                value = proximityFeatureEnabled,
+                role = Role.Switch,
+                onValueChange = onProximityFeatureChange,
+            ).testTag("settings_proximity_screen"),
+        verticalAlignment = Alignment.CenterVertically,
+        horizontalArrangement = Arrangement.SpaceBetween,
+    ) {
+        Text(
+            stringResource(R.string.settings_proximity_screen),
+            modifier = Modifier.weight(1f).padding(end = 12.dp),
+            color = SettingsPrimary,
+            fontSize = 15.sp,
+            lineHeight = 21.sp,
+        )
+        Switch(
+            checked = proximityFeatureEnabled,
+            onCheckedChange = null,
+            colors = SwitchDefaults.colors(
+                checkedThumbColor = Color.Black,
+                checkedTrackColor = Color(0xFF22DA70),
+                uncheckedThumbColor = SettingsSecondary,
+                uncheckedTrackColor = SettingsDivider,
+                uncheckedBorderColor = SettingsBorder,
+            ),
+        )
+    }
+    Spacer(Modifier.height(30.dp))
 }
 
 @Composable

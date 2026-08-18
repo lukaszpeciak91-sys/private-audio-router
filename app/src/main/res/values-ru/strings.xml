@@ -23,6 +23,7 @@
     <string name="settings_version">Версия %1$s</string>
     <string name="settings_language_body">Private Audio сейчас использует язык вашего устройства. Выбрано «По умолчанию».</string>
     <string name="settings_language_android_13_required">Для выбора языка в приложении требуется Android 13 или более поздняя версия. Это устройство использует язык системы.</string>
+    <string name="settings_proximity_screen">Выключать экран у уха</string>
     <string name="settings_advanced_body">По мере развития Private Audio здесь появятся дополнительные параметры.</string>
     <string name="settings_about_body">Private Audio помогает направлять голосовой звук на встроенный разговорный динамик телефона.</string>
     <string name="diagnostic_report_clip_label">Диагностический отчёт Private Audio</string>
