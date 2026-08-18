@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Private Audio</string>
+    <string name="routing_notification_channel">Private Audio</string>
+    <string name="routing_notification_title">Private Audio увімкнено</string>
+    <string name="routing_notification_text">Очікує на перенаправлення звуку</string>
+    <string name="product_title">Private Audio</string>
+    <string name="product_subtitle">Спілкуйтеся з ШІ приватно, як під час телефонної розмови.</string>
+    <string name="state_ready">Готово</string>
+    <string name="state_waiting">Очікує</string>
+    <string name="state_active">Активно</string>
+    <string name="state_error">Помилка</string>
+    <string name="power_control">Увімкнути</string>
+    <string name="floating">Міні</string>
+    <string name="settings">Налаштування</string>
+    <string name="close">Закрити</string>
+    <string name="overlay_controller_description">Плаваючий елемент керування Private Audio. Стан: %1$s. Елементи керування ввімкненням, розгортанням і закриттям.</string>
+    <string name="settings_language">Мова</string>
+    <string name="settings_system_default">За замовчуванням</string>
+    <string name="settings_copy_diagnostic">Копіювати діагностичний звіт</string>
+    <string name="settings_advanced">Розширені</string>
+    <string name="settings_about">Про Private Audio</string>
+    <string name="settings_version">Версія %1$s</string>
+    <string name="settings_language_body">Private Audio наразі використовує мову вашого пристрою. Вибрано варіант «За замовчуванням».</string>
+    <string name="settings_language_android_13_required">Для вибору мови в застосунку потрібна версія Android 13 або новіша. Цей пристрій використовує мову системи.</string>
+    <string name="settings_advanced_body">З розвитком Private Audio тут з’являтимуться додаткові параметри.</string>
+    <string name="settings_about_body">Private Audio допомагає перенаправляти підтримуваний голосовий звук на вбудований розмовний динамік телефона.</string>
+    <string name="diagnostic_report_clip_label">Діагностичний звіт Private Audio</string>
+    <string name="diagnostic_report_copied">Діагностичний звіт скопійовано.</string>
+</resources>

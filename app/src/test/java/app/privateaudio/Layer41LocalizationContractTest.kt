@@ -5,6 +5,7 @@ import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue
 import org.junit.Test
 import java.io.File
+import java.util.Locale
 
 class Layer41LocalizationContractTest {
     @Test
@@ -13,7 +14,7 @@ class Layer41LocalizationContractTest {
         assertEquals("unqualifiedResLocale=en-US", resourcesProperties.trim())
         assertTrue(defaultStrings.contains("name=\"settings_system_default\">Default</string>"))
         assertFalse(defaultStrings.contains("translatable=\"false\""))
-        assertEquals(listOf("values-cs", "values-de", "values-pl", "values-sk"), localeDirectories.map { it.name }.sorted())
+        assertEquals(listOf("values-cs", "values-de", "values-pl", "values-sk", "values-uk"), localeDirectories.map { it.name }.sorted())
         assertEquals(stringKeys(defaultStrings), stringKeys(polishStrings))
         assertEquals(placeholders(defaultStrings), placeholders(polishStrings))
         assertEquals(stringKeys(defaultStrings), stringKeys(germanStrings))
@@ -22,6 +23,17 @@ class Layer41LocalizationContractTest {
         assertEquals(placeholders(defaultStrings), placeholders(czechStrings))
         assertEquals(stringKeys(defaultStrings), stringKeys(slovakStrings))
         assertEquals(placeholders(defaultStrings), placeholders(slovakStrings))
+        assertEquals(stringKeys(defaultStrings), stringKeys(ukrainianStrings))
+        assertEquals(placeholders(defaultStrings), placeholders(ukrainianStrings))
+        val ukrainianLocale = Locale.forLanguageTag("uk")
+        val ukrainianNativeName = ukrainianLocale.getDisplayName(ukrainianLocale).replaceFirstChar { first ->
+            if (first.isLowerCase()) first.titlecase(ukrainianLocale) else first.toString()
+        }
+        assertEquals("Українська", ukrainianNativeName)
+        assertTrue(ukrainianStrings.contains("name=\"state_ready\">Готово</string>"))
+        assertTrue(ukrainianStrings.contains("name=\"state_waiting\">Очікує</string>"))
+        assertTrue(ukrainianStrings.contains("name=\"state_active\">Активно</string>"))
+        assertTrue(ukrainianStrings.contains("name=\"state_error\">Помилка</string>"))
     }
 
     @Test
@@ -84,6 +96,7 @@ class Layer41LocalizationContractTest {
         val germanStrings = projectFile("app/src/main/res/values-de/strings.xml").readText()
         val czechStrings = projectFile("app/src/main/res/values-cs/strings.xml").readText()
         val slovakStrings = projectFile("app/src/main/res/values-sk/strings.xml").readText()
+        val ukrainianStrings = projectFile("app/src/main/res/values-uk/strings.xml").readText()
         val mainSource = projectFile("app/src/main/java/app/privateaudio/MainActivity.kt").readText()
         val productScreenSource = projectFile("app/src/main/java/app/privateaudio/ui/PrivateAudioScreen.kt").readText()
         val settingsSource = projectFile("app/src/main/java/app/privateaudio/ui/SettingsSheet.kt").readText()
