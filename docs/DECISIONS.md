@@ -153,3 +153,11 @@ This is a lightweight, append-only log. Do not rewrite accepted history; append 
 - **Context:** Future product surfaces need one stable interpretation of the permanent controller's current evidence without controlling audio or independently interpreting diagnostic history.
 - **Decision:** `PrivateAudioService` exposes one Compose-observable `privateAudioState` projected as exactly `READY`, `WAITING`, `ACTIVE`, or `ERROR`. Precedence is controller OFF → `READY`, current protected failure → `ERROR`, current participating cycle plus Android-reported `MODE_IN_COMMUNICATION` and current built-in earpiece → `ACTIVE`, otherwise enabled → `WAITING`.
 - **Consequences:** `ACTIVE` is a current-evidence claim, never historical success. `WAITING` is the normal enabled state before, between, and after communication sessions. Historical success, failure, or speaker reversion cannot override current evidence, and UI consumers must consume the service-owned state rather than duplicate this mapping. The projection is read-only and adds no routing behavior or API.
+
+## D-020 — Service-owned call-like proximity-screen participation
+
+- **Date:** 2026-08-18
+- **Status:** Accepted; pending physical Layer 7A validation
+- **Context:** Call-like earpiece use needs screen behavior that follows each authoritative routing cycle without UI ownership, polling, sensor interpretation, or changes to the protected routing controller.
+- **Decision:** `PrivateAudioService` owns one non-reference-counted public `PROXIMITY_SCREEN_OFF_WAKE_LOCK` through a mechanics-only helper. It holds the lock only while the controller is enabled, product state is `ACTIVE`, Android reports `MODE_IN_COMMUNICATION`, and the current communication device is the built-in earpiece. Observer evidence changes synchronously notify the service to re-evaluate this predicate idempotently.
+- **Consequences:** Every departure from eligibility releases ownership; Power OFF and service destruction also release fail-safe. Unsupported devices remain routing-capable with no screen influence. Main and Floating own no proximity behavior. OEM screen response, near-release behavior, and manual Power-button interaction remain **UNKNOWN** until the Layer 7A physical gate passes.
