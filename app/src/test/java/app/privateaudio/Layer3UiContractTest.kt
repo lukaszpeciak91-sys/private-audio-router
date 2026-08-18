@@ -41,6 +41,20 @@ class Layer3UiContractTest {
         assertTrue(serviceSource.contains("return observer.report()"))
     }
 
+    @Test
+    fun bottomLabelsUseSharedMeasuredFallbackWithoutChangingTranslations() {
+        assertTrue(screenSource.contains("remember(label) { mutableStateOf(13.sp) }"))
+        assertTrue(screenSource.contains("label.any(Char::isWhitespace)"))
+        assertTrue(screenSource.contains("maxLines = if (isMultiWordLabel) 2 else 1"))
+        assertTrue(screenSource.contains("result.hasVisualOverflow && labelFontSize > 11.sp"))
+        assertTrue(screenSource.contains("modifier = Modifier.requiredWidth(112.dp)"))
+        assertFalse(screenSource.contains("TextOverflow.Ellipsis"))
+        assertTrue(projectFile("app/src/main/res/values-pt-rBR/strings.xml").readText()
+            .contains("name=\"settings\">Configurações</string>"))
+        assertTrue(projectFile("app/src/main/res/values-uk/strings.xml").readText()
+            .contains("name=\"settings\">Налаштування</string>"))
+    }
+
     private fun assertInOrder(source: String, vararg fragments: String) {
         var previous = -1
         fragments.forEach { fragment ->
