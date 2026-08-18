@@ -21,6 +21,7 @@ This project is not a ChatGPT or Gemini client, AI or voice assistant, audio rec
 - [Project context](docs/PROJECT_CONTEXT.md) — rapid orientation for a fresh AI-assisted development session
 - [Project charter](docs/PROJECT_CHARTER.md)
 - [Architecture](docs/ARCHITECTURE.md)
+- [Localization policy](docs/LOCALIZATION.md)
 - [Decision log](docs/DECISIONS.md)
 - [Progress](docs/PROGRESS.md)
 - [Research baseline](docs/RESEARCH.md)

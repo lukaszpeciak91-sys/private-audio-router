@@ -63,6 +63,8 @@ The enabled intent, diagnostic snapshot, and experiment evidence use Compose sna
 
 English product copy in `res/values/strings.xml` is the complete default resource set and source of truth, with translated product resources supplied through standard Android locale directories. The module declares `en-US` as its unqualified-resource locale and enables Android Gradle Plugin locale-config generation, so Android's standard per-app language infrastructure discovers supported resource locales without a custom translation map or localization framework. On API 33 and later, Settings applies per-app language selection through `LocaleManager`; the scrollable language page returns to Settings root after a selection. A running floating controller refreshes its localized state presentation on configuration change without changing window or controller ownership. API 31–32 remain system-language-only. Diagnostic evidence and report formatting remain stable, English-only technical output rather than product localization content.
 
+[`LOCALIZATION.md`](LOCALIZATION.md) is authoritative for product-language policy, locale maintenance, validation evidence levels, and the new/changed-copy workflow. This section owns only the implemented localization architecture.
+
 ## Overlay lifecycle
 
 `OverlayService` is a local, non-exported, `START_NOT_STICKY` owner of at most one `TYPE_APPLICATION_OVERLAY` window. Main checks `Settings.canDrawOverlays()` before showing it; a missing grant opens Android's package-specific overlay-permission screen, and Main checks the actual grant again on resume. Denial or cancellation creates no window. The service also checks permission at the creation boundary.
