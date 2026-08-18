@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Private Audio</string>
+    <string name="routing_notification_channel">Private Audio</string>
+    <string name="routing_notification_title">Private Audio はオンです</string>
+    <string name="routing_notification_text">音声の切り替えを待機中</string>
+    <string name="product_title">Private Audio</string>
+    <string name="product_subtitle">電話のように、AIとプライベートに話せます。</string>
+    <string name="state_ready">準備完了</string>
+    <string name="state_waiting">待機中</string>
+    <string name="state_active">使用中</string>
+    <string name="state_error">エラー</string>
+    <string name="power_control">オンにする</string>
+    <string name="floating">ミニ</string>
+    <string name="settings">設定</string>
+    <string name="close">閉じる</string>
+    <string name="overlay_controller_description">Private Audio のミニコントローラー。ステータス: %1$s。オンにする、展開、閉じるの各操作ができます。</string>
+    <string name="settings_language">言語</string>
+    <string name="settings_system_default">デフォルト</string>
+    <string name="settings_copy_diagnostic">診断レポートをコピー</string>
+    <string name="settings_advanced">詳細設定</string>
+    <string name="settings_about">Private Audio について</string>
+    <string name="settings_version">バージョン %1$s</string>
+    <string name="settings_language_body">Private Audio は現在、端末の言語に従っています。デフォルトが選択されています。</string>
+    <string name="settings_language_android_13_required">アプリ内で言語を選択するには Android 13 以降が必要です。この端末ではシステムの言語が使用されます。</string>
+    <string name="settings_advanced_body">Private Audio の進化に合わせて、ここに追加のオプションが表示されます。</string>
+    <string name="settings_about_body">Private Audio は音声をスマートフォンの受話口スピーカーに切り替えるためのアプリです。</string>
+    <string name="diagnostic_report_clip_label">Private Audio 診断レポート</string>
+    <string name="diagnostic_report_copied">診断レポートをコピーしました。</string>
+</resources>
