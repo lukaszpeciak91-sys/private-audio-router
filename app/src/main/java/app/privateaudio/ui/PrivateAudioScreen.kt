@@ -94,6 +94,8 @@ private data class StateVisuals(
 @Composable
 fun PrivateAudioScreen(
     state: PrivateAudioState,
+    proximityFeatureEnabled: Boolean = true,
+    onProximityFeatureChange: (Boolean) -> Unit = {},
     powerEnabled: Boolean = true,
     onPowerClick: () -> Unit,
     onFloatingClick: () -> Unit = {},
@@ -171,6 +173,8 @@ fun PrivateAudioScreen(
         if (settingsVisible) {
             SettingsSheet(
                 versionName = versionName,
+                proximityFeatureEnabled = proximityFeatureEnabled,
+                onProximityFeatureChange = onProximityFeatureChange,
                 onCopyDiagnosticReport = onCopyDiagnosticReport,
                 onDismiss = { settingsVisible = false },
             )

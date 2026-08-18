@@ -9,14 +9,14 @@ class Layer7AProximityContractTest {
     @Test
     fun onlyActiveCommunicationEarpieceStateIsEligible() {
         listOf(PrivateAudioState.READY, PrivateAudioState.WAITING, PrivateAudioState.ERROR).forEach {
-            assertFalse(proximityEligible(true, it, MODE, EARPIECE, true))
+            assertFalse(proximityEligible(true, true, it, MODE, EARPIECE, true))
         }
-        assertTrue(proximityEligible(true, PrivateAudioState.ACTIVE, MODE, EARPIECE, true))
-        assertFalse(proximityEligible(true, PrivateAudioState.ACTIVE, MODE, EARPIECE, false))
-        assertFalse(proximityEligible(false, PrivateAudioState.ACTIVE, MODE, EARPIECE, true))
-        assertFalse(proximityEligible(true, PrivateAudioState.ACTIVE, "MODE_NORMAL", EARPIECE, true))
-        assertFalse(proximityEligible(true, PrivateAudioState.ACTIVE, MODE, "Built-in speaker", true))
-        assertFalse(proximityEligible(true, PrivateAudioState.ACTIVE, MODE, null, true))
+        assertTrue(proximityEligible(true, true, PrivateAudioState.ACTIVE, MODE, EARPIECE, true))
+        assertFalse(proximityEligible(true, true, PrivateAudioState.ACTIVE, MODE, EARPIECE, false))
+        assertFalse(proximityEligible(true, false, PrivateAudioState.ACTIVE, MODE, EARPIECE, true))
+        assertFalse(proximityEligible(true, true, PrivateAudioState.ACTIVE, "MODE_NORMAL", EARPIECE, true))
+        assertFalse(proximityEligible(true, true, PrivateAudioState.ACTIVE, MODE, "Built-in speaker", true))
+        assertFalse(proximityEligible(true, true, PrivateAudioState.ACTIVE, MODE, null, true))
         assertTrue(helper.contains("route == \"Built-in earpiece\""))
         assertFalse(helper.contains("Built-in earpiece”"))
     }

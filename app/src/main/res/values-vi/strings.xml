@@ -23,6 +23,7 @@
     <string name="settings_version">Phiên bản %1$s</string>
     <string name="settings_language_body">Private Audio hiện đang sử dụng ngôn ngữ của thiết bị. Đã chọn Mặc định.</string>
     <string name="settings_language_android_13_required">Tính năng chọn ngôn ngữ trong ứng dụng yêu cầu Android 13 trở lên. Thiết bị này sử dụng ngôn ngữ hệ thống.</string>
+    <string name="settings_proximity_screen">Tắt màn hình khi đưa gần tai</string>
     <string name="settings_advanced_body">Các tuỳ chọn khác sẽ xuất hiện ở đây khi Private Audio tiếp tục phát triển.</string>
     <string name="settings_about_body">Private Audio giúp chuyển âm thanh sang loa trong của điện thoại.</string>
     <string name="diagnostic_report_clip_label">Báo cáo chẩn đoán Private Audio</string>

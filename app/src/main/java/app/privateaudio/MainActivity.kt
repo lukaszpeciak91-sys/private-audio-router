@@ -59,6 +59,8 @@ class MainActivity : ComponentActivity() {
                 val state = connectedService?.privateAudioState ?: PrivateAudioState.READY
                 PrivateAudioScreen(
                     state = state,
+                    proximityFeatureEnabled = connectedService?.isProximityFeatureEnabled ?: true,
+                    onProximityFeatureChange = { connectedService?.setProximityFeatureEnabled(it) },
                     powerEnabled = connectedService != null,
                     onPowerClick = {
                         if (state == PrivateAudioState.READY) {
