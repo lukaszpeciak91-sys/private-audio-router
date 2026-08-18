@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Private Audio</string>
+    <string name="routing_notification_channel">Private Audio</string>
+    <string name="routing_notification_title">Private Audio روشن است</string>
+    <string name="routing_notification_text">در انتظار هدایت صدا</string>
+    <string name="product_title">Private Audio</string>
+    <string name="product_subtitle">مثل تماس تلفنی، خصوصی با هوش مصنوعی صحبت کنید.</string>
+    <string name="state_ready">آماده</string>
+    <string name="state_waiting">در انتظار</string>
+    <string name="state_active">فعال</string>
+    <string name="state_error">خطا</string>
+    <string name="power_control">روشن کردن</string>
+    <string name="floating">مینی</string>
+    <string name="settings">تنظیمات</string>
+    <string name="close">بستن</string>
+    <string name="overlay_controller_description">کنترل‌کننده شناور مینی Private Audio. وضعیت: %1$s. کنترل‌های روشن کردن، باز کردن و بستن.</string>
+    <string name="settings_language">زبان</string>
+    <string name="settings_system_default">پیش‌فرض</string>
+    <string name="settings_copy_diagnostic">کپی گزارش عیب‌یابی</string>
+    <string name="settings_advanced">پیشرفته</string>
+    <string name="settings_about">درباره Private Audio</string>
+    <string name="settings_version">نسخه %1$s</string>
+    <string name="settings_language_body">Private Audio در حال حاضر از زبان دستگاه شما پیروی می‌کند. پیش‌فرض انتخاب شده است.</string>
+    <string name="settings_language_android_13_required">انتخاب زبان درون‌برنامه‌ای به Android 13 یا بالاتر نیاز دارد. این دستگاه از زبان سیستم پیروی می‌کند.</string>
+    <string name="settings_advanced_body">با توسعه Private Audio، گزینه‌های بیشتری در اینجا نمایش داده می‌شود.</string>
+    <string name="settings_about_body">Private Audio به هدایت صدا به بلندگوی بالای تلفن کمک می‌کند.</string>
+    <string name="diagnostic_report_clip_label">گزارش عیب‌یابی Private Audio</string>
+    <string name="diagnostic_report_copied">گزارش عیب‌یابی کپی شد.</string>
+</resources>
