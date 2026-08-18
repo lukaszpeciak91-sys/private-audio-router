@@ -61,7 +61,7 @@ The enabled intent, diagnostic snapshot, and experiment evidence use Compose sna
 
 ## Localization
 
-English product copy in `res/values/strings.xml` is the complete default resource set and source of truth. The module declares `en-US` as its unqualified-resource locale and enables Android Gradle Plugin locale-config generation, so Android's standard per-app language infrastructure can discover supported resource locales without a custom translation map or localization framework. The Settings language surface currently presents only **System default**; future languages belong in qualified Android resource directories and can be exposed from that flow when complete translations are added. Diagnostic evidence and report formatting remain stable, English-only technical output rather than product localization content.
+English product copy in `res/values/strings.xml` is the complete default resource set and source of truth, with a complete Polish translation in `res/values-pl/strings.xml`. The module declares `en-US` as its unqualified-resource locale and enables Android Gradle Plugin locale-config generation, so Android's standard per-app language infrastructure can discover supported resource locales without a custom translation map or localization framework. The Settings language surface remains informational and presents only **Default**; in-app language selection and Mini-controller locale refresh are deferred. Diagnostic evidence and report formatting remain stable, English-only technical output rather than product localization content.
 
 ## Overlay lifecycle
 

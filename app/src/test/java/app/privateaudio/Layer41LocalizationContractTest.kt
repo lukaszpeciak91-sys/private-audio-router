@@ -11,9 +11,11 @@ class Layer41LocalizationContractTest {
     fun standardAndroidLocaleConfigurationUsesEnglishDefaultResources() {
         assertTrue(appBuildSource.contains("generateLocaleConfig = true"))
         assertEquals("unqualifiedResLocale=en-US", resourcesProperties.trim())
-        assertTrue(defaultStrings.contains("name=\"settings_system_default\">System default</string>"))
+        assertTrue(defaultStrings.contains("name=\"settings_system_default\">Default</string>"))
         assertFalse(defaultStrings.contains("translatable=\"false\""))
-        assertTrue(localeDirectories.isEmpty())
+        assertEquals(listOf("values-pl"), localeDirectories.map { it.name })
+        assertEquals(stringKeys(defaultStrings), stringKeys(polishStrings))
+        assertEquals(placeholders(defaultStrings), placeholders(polishStrings))
     }
 
     @Test
@@ -34,12 +36,21 @@ class Layer41LocalizationContractTest {
 
     private fun String.occurrences(needle: String): Int = windowed(needle.length).count { it == needle }
 
+    private fun stringKeys(resources: String) =
+        Regex("<string name=\"([^\"]+)\"").findAll(resources).map { it.groupValues[1] }.toList()
+
+    private fun placeholders(resources: String) =
+        Regex("<string name=\"([^\"]+)\">([^<]*)</string>").findAll(resources).associate {
+            it.groupValues[1] to Regex("%\\d+\\$[a-z]").findAll(it.groupValues[2]).map { match -> match.value }.toList()
+        }
+
     private companion object {
         val projectRoot = generateSequence(File(System.getProperty("user.dir")).absoluteFile) { it.parentFile }
             .first { File(it, "app/src/main").isDirectory }
         val appBuildSource = projectFile("app/build.gradle.kts").readText()
         val resourcesProperties = projectFile("app/src/main/res/resources.properties").readText()
         val defaultStrings = projectFile("app/src/main/res/values/strings.xml").readText()
+        val polishStrings = projectFile("app/src/main/res/values-pl/strings.xml").readText()
         val mainSource = projectFile("app/src/main/java/app/privateaudio/MainActivity.kt").readText()
         val productScreenSource = projectFile("app/src/main/java/app/privateaudio/ui/PrivateAudioScreen.kt").readText()
         val settingsSource = projectFile("app/src/main/java/app/privateaudio/ui/SettingsSheet.kt").readText()
