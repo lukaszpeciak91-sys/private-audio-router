@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Private Audio</string>
+    <string name="routing_notification_channel">Private Audio</string>
+    <string name="routing_notification_title">Private Audio jest włączone</string>
+    <string name="routing_notification_text">Czeka na przekierowanie dźwięku</string>
+    <string name="product_title">Private Audio</string>
+    <string name="product_subtitle">Rozmawiaj z AI prywatnie, jak podczas rozmowy telefonicznej.</string>
+    <string name="state_ready">Gotowe</string>
+    <string name="state_waiting">Czeka</string>
+    <string name="state_active">Aktywne</string>
+    <string name="state_error">Błąd</string>
+    <string name="power_control">Włącz</string>
+    <string name="floating">Mini</string>
+    <string name="settings">Ustawienia</string>
+    <string name="close">Zamknij</string>
+    <string name="overlay_controller_description">Pływający kontroler Private Audio. Stan: %1$s. Przyciski włączania, rozwijania i zamykania.</string>
+    <string name="settings_language">Język</string>
+    <string name="settings_system_default">Domyślny</string>
+    <string name="settings_copy_diagnostic">Kopiuj raport diagnostyczny</string>
+    <string name="settings_advanced">Zaawansowane</string>
+    <string name="settings_about">O Private Audio</string>
+    <string name="settings_version">Wersja %1$s</string>
+    <string name="settings_language_body">Private Audio obecnie używa języka urządzenia. Wybrano opcję Domyślny.</string>
+    <string name="settings_advanced_body">Wraz z rozwojem Private Audio pojawią się tutaj dodatkowe opcje.</string>
+    <string name="settings_about_body">Private Audio pomaga kierować obsługiwany dźwięk głosowy do górnej słuchawki telefonu.</string>
+    <string name="diagnostic_report_clip_label">Raport diagnostyczny Private Audio</string>
+    <string name="diagnostic_report_copied">Skopiowano raport diagnostyczny.</string>
+</resources>
