@@ -36,6 +36,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.unit.LayoutDirection
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.window.Dialog
@@ -345,12 +346,19 @@ private fun CopyIcon() = Canvas(Modifier.size(22.dp)) {
 @Composable
 private fun ForwardChevron() = Canvas(Modifier.size(16.dp)) {
     val stroke = 1.4.dp.toPx()
-    drawLine(SettingsSecondary, Offset(size.width * .35f, size.height * .2f), Offset(size.width * .65f, size.height * .5f), strokeWidth = stroke, cap = StrokeCap.Round)
-    drawLine(SettingsSecondary, Offset(size.width * .65f, size.height * .5f), Offset(size.width * .35f, size.height * .8f), strokeWidth = stroke, cap = StrokeCap.Round)
+    val tailX = directionalX(.35f)
+    val pointX = directionalX(.65f)
+    drawLine(SettingsSecondary, Offset(tailX, size.height * .2f), Offset(pointX, size.height * .5f), strokeWidth = stroke, cap = StrokeCap.Round)
+    drawLine(SettingsSecondary, Offset(pointX, size.height * .5f), Offset(tailX, size.height * .8f), strokeWidth = stroke, cap = StrokeCap.Round)
 }
 
 @Composable
 private fun BackChevron() = Canvas(Modifier.size(18.dp)) {
-    drawLine(SettingsPrimary, Offset(size.width * .65f, size.height * .18f), Offset(size.width * .32f, size.height * .5f), 1.7.dp.toPx(), StrokeCap.Round)
-    drawLine(SettingsPrimary, Offset(size.width * .32f, size.height * .5f), Offset(size.width * .65f, size.height * .82f), 1.7.dp.toPx(), StrokeCap.Round)
+    val tailX = directionalX(.65f)
+    val pointX = directionalX(.32f)
+    drawLine(SettingsPrimary, Offset(tailX, size.height * .18f), Offset(pointX, size.height * .5f), 1.7.dp.toPx(), StrokeCap.Round)
+    drawLine(SettingsPrimary, Offset(pointX, size.height * .5f), Offset(tailX, size.height * .82f), 1.7.dp.toPx(), StrokeCap.Round)
 }
+
+private fun androidx.compose.ui.graphics.drawscope.DrawScope.directionalX(fraction: Float): Float =
+    size.width * if (layoutDirection == LayoutDirection.Ltr) fraction else 1f - fraction
