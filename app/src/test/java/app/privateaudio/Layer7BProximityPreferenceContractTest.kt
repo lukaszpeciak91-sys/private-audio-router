@@ -21,7 +21,7 @@ class Layer7BProximityPreferenceContractTest {
     fun serviceOwnsDefaultPersistenceAndImmediateIdempotentSynchronization() {
         assertTrue(service.contains("var isProximityFeatureEnabled by mutableStateOf(true)"))
         assertTrue(service.contains(".getBoolean(PROXIMITY_FEATURE_KEY, true)"))
-        val setter = service.method("fun setProximityFeatureEnabled(")
+        val setter = service.method("fun updateProximityFeatureEnabled(")
         assertTrue(setter.contains("if (enabled == isProximityFeatureEnabled) return"))
         assertInOrder(setter, "isProximityFeatureEnabled = enabled", ".putBoolean(", "syncProximityBehavior(")
         assertTrue(setter.contains("\"Preference disabled\""))
@@ -32,7 +32,7 @@ class Layer7BProximityPreferenceContractTest {
 
     @Test
     fun preferenceChangesOnlyProximityAndPreserveProtectedAudioContracts() {
-        val setter = service.method("fun setProximityFeatureEnabled(")
+        val setter = service.method("fun updateProximityFeatureEnabled(")
         listOf("PrivateAudioState", "setCommunicationDevice(", "clearCommunicationDevice(",
             "AudioManager.mode", "MODE_IN_COMMUNICATION", "AudioTrack", "observer.enableController",
             "observer.disableController").forEach { assertFalse(it, setter.contains(it)) }
@@ -45,14 +45,14 @@ class Layer7BProximityPreferenceContractTest {
 
     @Test
     fun uiDelegatesAccessibleSwitchWithoutOwningMechanicsOrFloatingChanges() {
-        assertTrue(main.contains("connectedService?.setProximityFeatureEnabled(it)"))
+        assertTrue(main.contains("connectedService?.updateProximityFeatureEnabled(it)"))
         assertTrue(settings.contains("role = Role.Switch"))
         assertTrue(settings.contains(".toggleable("))
         assertTrue(settings.contains("onCheckedChange = null"))
         assertTrue(settings.contains("SettingsLayout.rowHeight"))
         assertFalse(main.contains("ProximityScreenController"))
         assertFalse(overlay.contains("ProximityScreenController"))
-        assertFalse(overlay.contains("setProximityFeatureEnabled"))
+        assertFalse(overlay.contains("updateProximityFeatureEnabled"))
         assertTrue(overlay.contains("ACTION_HIDE"))
         assertTrue(overlay.contains("ACTION_EXPAND"))
     }

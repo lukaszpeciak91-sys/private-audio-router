@@ -102,7 +102,7 @@ class PrivateAudioService : Service() {
         observer.snapshot(reason)
     }
 
-    fun setProximityFeatureEnabled(enabled: Boolean) {
+    fun updateProximityFeatureEnabled(enabled: Boolean) {
         if (enabled == isProximityFeatureEnabled) return
         isProximityFeatureEnabled = enabled
         getSharedPreferences(PREFERENCES_NAME, Context.MODE_PRIVATE)

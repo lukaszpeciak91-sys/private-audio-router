@@ -4,6 +4,7 @@ State reflects evidence, not aspiration.
 
 ## DONE
 
+- Fixed the Layer 7B Kotlin/JVM signature collision by naming the explicit service operation `updateProximityFeatureEnabled`, while retaining the authoritative readable property, its private setter, persistence, and immediate proximity synchronization. Call sites and focused contracts use the renamed operation; routing and session behavior are unchanged.
 - Implemented Layer 7B proximity hardening and opt-out. The service now owns one persisted, default-ON “Turn screen off near ear” preference, incorporates it into the existing single eligibility decision, synchronizes changed values immediately, and reports it in existing diagnostics. Advanced Settings contains a localized accessible switch across every supported locale. OFF affects only proximity ownership; protected routing, session detection, product state, audio mode, silent track, Main/Floating lifecycle ownership, and cleanup ordering are unchanged. Focused automated contracts are not physical sensor evidence.
 - Recorded partial Layer 7A physical evidence from 2026-08-18 on Xiaomi `2201117TY`, Android 13/API 33: during `ACTIVE` on the built-in earpiece, near turned the screen off and far restored it automatically; wake-lock support reported `true`, and the post-session report reported held `false`. This does not establish any other release boundary or complete the Layer 7 gate.
 

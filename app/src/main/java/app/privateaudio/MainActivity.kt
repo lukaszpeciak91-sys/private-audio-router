@@ -60,7 +60,7 @@ class MainActivity : ComponentActivity() {
                 PrivateAudioScreen(
                     state = state,
                     proximityFeatureEnabled = connectedService?.isProximityFeatureEnabled ?: true,
-                    onProximityFeatureChange = { connectedService?.setProximityFeatureEnabled(it) },
+                    onProximityFeatureChange = { connectedService?.updateProximityFeatureEnabled(it) },
                     powerEnabled = connectedService != null,
                     onPowerClick = {
                         if (state == PrivateAudioState.READY) {
