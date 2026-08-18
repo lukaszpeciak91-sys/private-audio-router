@@ -32,10 +32,47 @@ import app.privateaudio.R
 import kotlin.math.hypot
 import kotlin.math.min
 
+internal enum class MiniControl { NONE, POWER, EXPAND, CLOSE }
+
+internal class MiniGestureArbitrator(private val touchSlop: Float) {
+    var touchedControl = MiniControl.NONE
+        private set
+    var dragging = false
+        private set
+
+    fun down(control: MiniControl) {
+        touchedControl = control
+        dragging = false
+    }
+
+    fun move(dx: Float, dy: Float): Boolean {
+        if (!dragging && hypot(dx, dy) > touchSlop) {
+            dragging = true
+            touchedControl = MiniControl.NONE
+        }
+        return dragging
+    }
+
+    fun up(releasedControl: MiniControl): MiniControl {
+        val activatedControl = if (!dragging && touchedControl == releasedControl) {
+            touchedControl
+        } else {
+            MiniControl.NONE
+        }
+        clear()
+        return activatedControl
+    }
+
+    fun cancel() = clear()
+
+    private fun clear() {
+        touchedControl = MiniControl.NONE
+        dragging = false
+    }
+}
+
 /** Owns only the floating window. Routing remains exclusively service-owned elsewhere. */
 class OverlayService : Service() {
-    private enum class Control { NONE, POWER, EXPAND, CLOSE }
-
     private val windowManager by lazy { getSystemService(WindowManager::class.java) }
     private var overlayView: FloatingControllerView? = null
     private var privateAudioService: PrivateAudioService? = null
@@ -320,13 +357,13 @@ class OverlayService : Service() {
                 bottom,
             )
 
-        private val touchSlop = ViewConfiguration.get(context).scaledTouchSlop.toFloat()
+        private val gesture = MiniGestureArbitrator(
+            ViewConfiguration.get(context).scaledTouchSlop.toFloat(),
+        )
         private var downRawX = 0f
         private var downRawY = 0f
         private var startWindowX = 0
         private var startWindowY = 0
-        private var touchedControl = Control.NONE
-        private var dragging = false
 
         override fun onTouchEvent(event: MotionEvent): Boolean {
             val layoutParams = layoutParams as? WindowManager.LayoutParams ?: return false
@@ -336,49 +373,51 @@ class OverlayService : Service() {
                     downRawY = event.rawY
                     startWindowX = layoutParams.x
                     startWindowY = layoutParams.y
-                    touchedControl = controlAt(event.x)
-                    dragging = false
+                    gesture.down(controlAt(event.x))
                     return true
                 }
                 MotionEvent.ACTION_MOVE -> {
-                    if (touchedControl != Control.NONE) return true
                     val dx = event.rawX - downRawX
                     val dy = event.rawY - downRawY
-                    if (!dragging && hypot(dx, dy) > touchSlop) dragging = true
-                    if (dragging) moveOverlay(layoutParams, startWindowX + dx.toInt(), startWindowY + dy.toInt())
+                    if (gesture.move(dx, dy)) {
+                        moveOverlay(layoutParams, startWindowX + dx.toInt(), startWindowY + dy.toInt())
+                    }
                     return true
                 }
                 MotionEvent.ACTION_UP -> {
-                    if (!dragging && touchedControl != Control.NONE && touchedControl == controlAt(event.x)) {
-                        performClick()
-                        when (touchedControl) {
-                            Control.POWER -> togglePower()
-                            Control.EXPAND -> expandMain()
-                            Control.CLOSE -> closeOverlay()
-                            Control.NONE -> Unit
+                    when (gesture.up(controlAt(event.x))) {
+                        MiniControl.NONE -> Unit
+                        MiniControl.POWER -> {
+                            performClick()
+                            togglePower()
+                        }
+                        MiniControl.EXPAND -> {
+                            performClick()
+                            expandMain()
+                        }
+                        MiniControl.CLOSE -> {
+                            performClick()
+                            closeOverlay()
                         }
                     }
-                    touchedControl = Control.NONE
-                    dragging = false
                     return true
                 }
                 MotionEvent.ACTION_CANCEL -> {
-                    touchedControl = Control.NONE
-                    dragging = false
+                    gesture.cancel()
                     return true
                 }
             }
             return super.onTouchEvent(event)
         }
 
-        private fun controlAt(x: Float): Control {
+        private fun controlAt(x: Float): MiniControl {
             val directionalTouchX = if (isRtlLayout()) width - x else x
             return when {
-                directionalTouchX >= width * CLOSE_START_FRACTION -> Control.CLOSE
-                directionalTouchX >= width * EXPAND_START_FRACTION -> Control.EXPAND
+                directionalTouchX >= width * CLOSE_START_FRACTION -> MiniControl.CLOSE
+                directionalTouchX >= width * EXPAND_START_FRACTION -> MiniControl.EXPAND
                 directionalTouchX >= width * POWER_START_FRACTION &&
-                    directionalTouchX < width * POWER_END_FRACTION -> Control.POWER
-                else -> Control.NONE
+                    directionalTouchX < width * POWER_END_FRACTION -> MiniControl.POWER
+                else -> MiniControl.NONE
             }
         }
 
