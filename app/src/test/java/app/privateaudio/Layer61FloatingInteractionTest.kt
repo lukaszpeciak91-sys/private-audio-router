@@ -1,5 +1,7 @@
 package app.privateaudio
 
+import app.privateaudio.overlay.MiniControl
+import app.privateaudio.overlay.MiniGestureArbitrator
 import app.privateaudio.overlay.OverlayPosition
 import app.privateaudio.overlay.clampOverlayPosition
 import org.junit.Assert.assertEquals
@@ -15,20 +17,80 @@ class Layer61FloatingInteractionTest {
         assertEquals(OverlayPosition(240, 800), clampOverlayPosition(240, 800, 1080, 1920, 600, 124))
     }
 
-    @Test fun backgroundDragUsesTouchSlopAndUpdatesExistingLayoutParams() {
+    @Test fun everyMiniRegionCanStartADrag() {
+        MiniControl.entries.forEach { control ->
+            val gesture = MiniGestureArbitrator(8f)
+            gesture.down(control)
+
+            assertTrue("Expected drag from $control", gesture.move(9f, 0f))
+            assertTrue(gesture.dragging)
+        }
+    }
+
+    @Test fun movementAtOrBelowTouchSlopRemainsATapGesture() {
+        val gesture = MiniGestureArbitrator(8f)
+        gesture.down(MiniControl.POWER)
+
+        assertFalse(gesture.move(8f, 0f))
+        assertFalse(gesture.dragging)
+        assertEquals(MiniControl.POWER, gesture.up(MiniControl.POWER))
+    }
+
+    @Test fun movementBeyondTouchSlopCancelsPendingControlPermanently() {
+        val gesture = MiniGestureArbitrator(8f)
+        gesture.down(MiniControl.POWER)
+
+        assertTrue(gesture.move(9f, 0f))
+        assertEquals(MiniControl.NONE, gesture.touchedControl)
+        assertTrue(gesture.move(0f, 0f))
+        assertEquals(MiniControl.NONE, gesture.up(MiniControl.POWER))
+    }
+
+    @Test fun upAfterDragCannotActivateAnyControl() {
+        listOf(MiniControl.POWER, MiniControl.EXPAND, MiniControl.CLOSE).forEach { control ->
+            val gesture = MiniGestureArbitrator(8f)
+            gesture.down(control)
+            gesture.move(0f, 9f)
+
+            assertEquals("Unexpected activation for $control", MiniControl.NONE, gesture.up(control))
+        }
+    }
+
+    @Test fun cancelCannotActivateAndClearsGestureState() {
+        val gesture = MiniGestureArbitrator(8f)
+        gesture.down(MiniControl.CLOSE)
+        gesture.cancel()
+
+        assertFalse(gesture.dragging)
+        assertEquals(MiniControl.NONE, gesture.touchedControl)
+        assertEquals(MiniControl.NONE, gesture.up(MiniControl.CLOSE))
+    }
+
+    @Test fun ordinaryControlTapsStillActivateOnlyTheIntendedControl() {
+        listOf(MiniControl.POWER, MiniControl.EXPAND, MiniControl.CLOSE).forEach { control ->
+            val gesture = MiniGestureArbitrator(8f)
+            gesture.down(control)
+            assertEquals(control, gesture.up(control))
+
+            gesture.down(control)
+            assertEquals(MiniControl.NONE, gesture.up(MiniControl.NONE))
+        }
+    }
+
+    @Test fun productionTouchFlowUsesAndroidTouchSlopAndExistingWindowMovement() {
         assertTrue(overlay.contains("ViewConfiguration.get(context).scaledTouchSlop"))
-        assertTrue(overlay.contains("touchedControl != Control.NONE"))
         assertTrue(overlay.contains("hypot(dx, dy) > touchSlop"))
+        assertTrue(overlay.contains("if (gesture.move(dx, dy))"))
         assertTrue(overlay.contains("windowManager.updateViewLayout(it, layoutParams)"))
         assertFalse(overlay.contains("SharedPreferences"))
     }
 
-    @Test fun controlsRemainTapOnlyAndIndependentFromDrag() {
-        assertTrue(overlay.contains("!dragging && touchedControl != Control.NONE"))
-        assertTrue(overlay.contains("touchedControl == controlAt(event.x)"))
-        assertTrue(overlay.contains("Control.POWER -> togglePower()"))
-        assertTrue(overlay.contains("Control.EXPAND -> expandMain()"))
-        assertTrue(overlay.contains("Control.CLOSE -> closeOverlay()"))
+    @Test fun productionUpDispatchesOnlyTheArbitratedControl() {
+        assertTrue(overlay.contains("when (gesture.up(controlAt(event.x)))"))
+        assertTrue(overlay.contains("MiniControl.POWER ->"))
+        assertTrue(overlay.contains("MiniControl.EXPAND ->"))
+        assertTrue(overlay.contains("MiniControl.CLOSE ->"))
+        assertTrue(overlay.contains("gesture.cancel()"))
     }
 
     @Test fun hitTestingMirrorsWithTheInternalRtlComposition() {
