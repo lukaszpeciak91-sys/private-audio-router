@@ -97,7 +97,9 @@ run the smallest next experiment
 
 A failed experiment is useful evidence. Failure alone does not authorize escalation to a more invasive Android mechanism.
 
-## PR sequence
+## Historical PR sequence
+
+The following M0/PR sequence is completed planning history, retained for context only. It is not the current execution order and must not be used to describe implemented foreground-service, permanent-controller, or floating-controller work as future work.
 
 - **PR #1 — Repository foundation:** governance and documentation only.
 - **PR #2 — Governance and workflow refinement:** documentation only.
@@ -107,7 +109,15 @@ A failed experiment is useful evidence. Failure alone does not authorize escalat
 - **PR #6 — Safe built-in-earpiece request and clear behavior:** no `AudioManager.MODE` manipulation.
 - **PR #7 — Physical-device compatibility validation:** record results without assuming cross-application support.
 
-Only after M0 succeeds may later PRs consider a persistent controller, foreground service if needed, floating toggle, cross-app validation, and UX polish.
+That sequence led to the now-implemented permanent foreground controller and floating UX. Current work is stage-independent and follows `AUDIT → scoped implementation → validation → audit/iteration if needed`, using `docs/PROGRESS.md` and `docs/TEST_PLAN.md` rather than the historical PR numbers to choose the next scope.
+
+## Pull-request ownership
+
+- Keep one logical implementation in one PR.
+- Update the existing authoritative documents that own changed information rather than creating duplicate plans, summaries, or logs.
+- Codex may commit, push, and create the PR; the user reviews and merges manually.
+- Physical-device evidence remains authoritative for routing behavior. Static checks, JVM tests, emulator UI checks, and cloud builds must retain their distinct evidence levels.
+- Treat cloud build limitations as environment limitations, not source failures; conversely, do not use a cloud build result as proof of physical routing behavior.
 
 ## Documentation requirements
 
