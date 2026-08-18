@@ -247,7 +247,7 @@ class OverlayService : Service() {
 
             paint.style = Paint.Style.FILL
             paint.color = statusColor(state)
-            canvas.drawCircle(20f, 31f, 5.5f, paint)
+            canvas.drawCircle(directionalX(STATUS_DOT_X), 31f, 5.5f, paint)
             drawStatusLabel(canvas, stateLabel(state))
 
             drawPower(canvas, powerColor(state))
@@ -257,16 +257,21 @@ class OverlayService : Service() {
         }
 
         private fun drawStatusLabel(canvas: Canvas, label: String) {
+            val isRtl = isRtlLayout()
             val layout = StaticLayout.Builder.obtain(label, 0, label.length, statusTextPaint, STATUS_TEXT_WIDTH)
                 .setAlignment(Layout.Alignment.ALIGN_NORMAL)
-                .setTextDirection(TextDirectionHeuristics.FIRSTSTRONG_LTR)
+                .setTextDirection(
+                    if (isRtl) TextDirectionHeuristics.FIRSTSTRONG_RTL
+                    else TextDirectionHeuristics.FIRSTSTRONG_LTR,
+                )
                 .setIncludePad(false)
                 .setMaxLines(1)
                 .setEllipsize(TextUtils.TruncateAt.END)
                 .setEllipsizedWidth(STATUS_TEXT_WIDTH)
                 .build()
             canvas.save()
-            canvas.translate(STATUS_TEXT_LEFT, STATUS_TEXT_BASELINE + statusTextPaint.fontMetrics.ascent)
+            val textLeft = if (isRtl) directionalX(STATUS_TEXT_RIGHT) else STATUS_TEXT_LEFT
+            canvas.translate(textLeft, STATUS_TEXT_BASELINE + statusTextPaint.fontMetrics.ascent)
             layout.draw(canvas)
             canvas.restore()
         }
@@ -283,13 +288,13 @@ class OverlayService : Service() {
             paint.color = Color.rgb(238, 238, 240)
             paint.style = Paint.Style.STROKE
             paint.strokeWidth = 2f
-            canvas.drawRoundRect(RectF(196f, 26f, 213f, 43f), 2.5f, 2.5f, paint)
+            canvas.drawRoundRect(directionalRect(196f, 26f, 213f, 43f), 2.5f, 2.5f, paint)
             expandPath.reset()
-            expandPath.moveTo(207f, 26f)
-            expandPath.lineTo(221f, 12f)
-            expandPath.moveTo(211f, 12f)
-            expandPath.lineTo(221f, 12f)
-            expandPath.lineTo(221f, 22f)
+            expandPath.moveTo(directionalX(207f), 26f)
+            expandPath.lineTo(directionalX(221f), 12f)
+            expandPath.moveTo(directionalX(211f), 12f)
+            expandPath.lineTo(directionalX(221f), 12f)
+            expandPath.lineTo(directionalX(221f), 22f)
             canvas.drawPath(expandPath, paint)
         }
 
@@ -297,9 +302,23 @@ class OverlayService : Service() {
             paint.color = Color.rgb(238, 238, 240)
             paint.style = Paint.Style.STROKE
             paint.strokeWidth = 2.2f
-            canvas.drawLine(263f, 21f, 283f, 41f, paint)
-            canvas.drawLine(283f, 21f, 263f, 41f, paint)
+            canvas.drawLine(directionalX(263f), 21f, directionalX(283f), 41f, paint)
+            canvas.drawLine(directionalX(283f), 21f, directionalX(263f), 41f, paint)
         }
+
+        private fun isRtlLayout() =
+            resources.configuration.layoutDirection == View.LAYOUT_DIRECTION_RTL
+
+        private fun directionalX(ltrX: Float) =
+            if (isRtlLayout()) DESIGN_WIDTH - ltrX else ltrX
+
+        private fun directionalRect(left: Float, top: Float, right: Float, bottom: Float): RectF =
+            RectF(
+                minOf(directionalX(left), directionalX(right)),
+                top,
+                maxOf(directionalX(left), directionalX(right)),
+                bottom,
+            )
 
         private val touchSlop = ViewConfiguration.get(context).scaledTouchSlop.toFloat()
         private var downRawX = 0f
@@ -352,11 +371,15 @@ class OverlayService : Service() {
             return super.onTouchEvent(event)
         }
 
-        private fun controlAt(x: Float) = when {
-            x >= width * CLOSE_START_FRACTION -> Control.CLOSE
-            x >= width * EXPAND_START_FRACTION -> Control.EXPAND
-            x >= width * POWER_START_FRACTION && x < width * POWER_END_FRACTION -> Control.POWER
-            else -> Control.NONE
+        private fun controlAt(x: Float): Control {
+            val directionalTouchX = if (isRtlLayout()) width - x else x
+            return when {
+                directionalTouchX >= width * CLOSE_START_FRACTION -> Control.CLOSE
+                directionalTouchX >= width * EXPAND_START_FRACTION -> Control.EXPAND
+                directionalTouchX >= width * POWER_START_FRACTION &&
+                    directionalTouchX < width * POWER_END_FRACTION -> Control.POWER
+                else -> Control.NONE
+            }
         }
 
         override fun performClick(): Boolean {
@@ -398,6 +421,8 @@ class OverlayService : Service() {
         private const val EXTRA_SHOW_RESULT = "app.privateaudio.overlay.SHOW_RESULT"
         const val SHOW_SUCCEEDED = 1
         private const val STATE_REFRESH_MILLIS = 200L
+        private const val DESIGN_WIDTH = 300f
+        private const val STATUS_DOT_X = 20f
         private const val STATUS_TEXT_LEFT = 34f
         private const val STATUS_TEXT_RIGHT = 126f
         private const val STATUS_TEXT_WIDTH = 92

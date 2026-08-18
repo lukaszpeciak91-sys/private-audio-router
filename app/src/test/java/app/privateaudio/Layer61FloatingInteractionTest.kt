@@ -31,6 +31,15 @@ class Layer61FloatingInteractionTest {
         assertTrue(overlay.contains("Control.CLOSE -> closeOverlay()"))
     }
 
+    @Test fun hitTestingMirrorsWithTheInternalRtlComposition() {
+        val hitTesting = overlay.substringAfter("private fun controlAt").substringBefore("override fun performClick")
+        assertTrue(hitTesting.contains("if (isRtlLayout()) width - x else x"))
+        assertTrue(hitTesting.contains("directionalTouchX >= width * CLOSE_START_FRACTION"))
+        assertTrue(hitTesting.contains("directionalTouchX >= width * EXPAND_START_FRACTION"))
+        assertTrue(hitTesting.contains("directionalTouchX >= width * POWER_START_FRACTION"))
+        assertTrue(hitTesting.contains("directionalTouchX < width * POWER_END_FRACTION"))
+    }
+
     @Test fun mainBackgroundsOnlyAfterOverlayReportsSuccess() {
         assertTrue(main.contains("resultCode == OverlayService.SHOW_SUCCEEDED"))
         assertTrue(main.contains("moveTaskToBack(true)"))
