@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Private Audio</string>
+    <string name="routing_notification_channel">Private Audio</string>
+    <string name="routing_notification_title">Private Audio چل رہا ہے</string>
+    <string name="routing_notification_text">آڈیو منتقل ہونے کا انتظار ہے</string>
+    <string name="product_title">Private Audio</string>
+    <string name="product_subtitle">فون کال کی طرح AI سے نجی طور پر بات کریں۔</string>
+    <string name="state_ready">تیار</string>
+    <string name="state_waiting">انتظار میں</string>
+    <string name="state_active">فعال</string>
+    <string name="state_error">خرابی</string>
+    <string name="power_control">چالو کریں</string>
+    <string name="floating">منی</string>
+    <string name="settings">سیٹنگز</string>
+    <string name="close">بند کریں</string>
+    <string name="overlay_controller_description">Private Audio کا فلوٹنگ منی کنٹرولر۔ اسٹیٹس: %1$s۔ چالو کرنے، پھیلانے اور بند کرنے کے کنٹرولز۔</string>
+    <string name="settings_language">زبان</string>
+    <string name="settings_system_default">ڈیفالٹ</string>
+    <string name="settings_copy_diagnostic">تشخیصی رپورٹ کاپی کریں</string>
+    <string name="settings_advanced">ایڈوانسڈ</string>
+    <string name="settings_about">Private Audio کے بارے میں</string>
+    <string name="settings_version">ورژن %1$s</string>
+    <string name="settings_language_body">Private Audio فی الحال آپ کے آلے کی زبان استعمال کر رہا ہے۔ ڈیفالٹ منتخب ہے۔</string>
+    <string name="settings_language_android_13_required">ایپ میں زبان منتخب کرنے کے لیے Android 13 یا اس کے بعد کا ورژن درکار ہے۔ یہ آلہ سسٹم کی زبان استعمال کرتا ہے۔</string>
+    <string name="settings_advanced_body">Private Audio کے بہتر ہونے کے ساتھ یہاں مزید اختیارات ظاہر ہوں گے۔</string>
+    <string name="settings_about_body">Private Audio صوتی آڈیو کو فون کے اندرونی ایئر پیس تک منتقل کرنے میں مدد کرتا ہے۔</string>
+    <string name="diagnostic_report_clip_label">Private Audio کی تشخیصی رپورٹ</string>
+    <string name="diagnostic_report_copied">تشخیصی رپورٹ کاپی ہو گئی۔</string>
+</resources>
