@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Private Audio</string>
+    <string name="routing_notification_channel">Private Audio</string>
+    <string name="routing_notification_title">Private Audio įjungta</string>
+    <string name="routing_notification_text">Laukia garso nukreipimo</string>
+    <string name="product_title">Private Audio</string>
+    <string name="product_subtitle">Kalbėkitės su DI privačiai, kaip telefonu.</string>
+    <string name="state_ready">Paruošta</string>
+    <string name="state_waiting">Laukia</string>
+    <string name="state_active">Aktyvu</string>
+    <string name="state_error">Klaida</string>
+    <string name="power_control">Įjungti</string>
+    <string name="floating">Mini</string>
+    <string name="settings">Nustatymai</string>
+    <string name="close">Uždaryti</string>
+    <string name="overlay_controller_description">Slankusis „Private Audio“ valdiklis. Būsena: %1$s. Įjungimo, išskleidimo ir uždarymo valdikliai.</string>
+    <string name="settings_language">Kalba</string>
+    <string name="settings_system_default">Numatytoji</string>
+    <string name="settings_copy_diagnostic">Kopijuoti diagnostikos ataskaitą</string>
+    <string name="settings_advanced">Išplėstiniai</string>
+    <string name="settings_about">Apie Private Audio</string>
+    <string name="settings_version">Versija %1$s</string>
+    <string name="settings_language_body">Private Audio šiuo metu naudoja jūsų įrenginio kalbą. Pasirinkta numatytoji kalba.</string>
+    <string name="settings_language_android_13_required">Norint pasirinkti kalbą programėlėje, reikia „Android 13“ arba naujesnės versijos. Šiame įrenginyje naudojama sistemos kalba.</string>
+    <string name="settings_advanced_body">Tobulėjant Private Audio, čia atsiras papildomų parinkčių.</string>
+    <string name="settings_about_body">Private Audio padeda nukreipti balso garsą į telefono vidinį pokalbių garsiakalbį.</string>
+    <string name="diagnostic_report_clip_label">Private Audio diagnostikos ataskaita</string>
+    <string name="diagnostic_report_copied">Diagnostikos ataskaita nukopijuota.</string>
+</resources>
