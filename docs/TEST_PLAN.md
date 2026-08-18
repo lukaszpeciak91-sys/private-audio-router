@@ -337,7 +337,7 @@ The following checks validate lifecycle ownership without claiming routing succe
 
 ## Layer 7A call-like proximity-screen physical evidence
 
-- **Status:** PARTIAL PASS (supplied physical evidence; gate incomplete)
+- **Status:** CORE BEHAVIOR PASS; remaining boundary matrix NOT TESTED
 - **Device / Android:** Xiaomi `2201117TY` / Android 13/API 33
 - **Preconditions:** Install the Layer 7A build, keep the diagnostic report available, and begin without Bluetooth, wired, or USB audio. Do not infer physical screen behavior from automated tests.
 - **Steps and expected results:**
@@ -354,11 +354,11 @@ The following checks validate lifecycle ownership without claiming routing succe
   11. Terminate the process/service. **Expected:** no persistent Private Audio proximity ownership remains.
   12. Run several consecutive routing cycles. **Expected:** acquire/release repeats once per eligible interval with no sticky black screen.
 - **OEM characterization:** While proximity is NEAR during an eligible active cycle, press the physical Power button once and record the screen and diagnostic behavior, then press it again and record recovery. This is characterization only; do not add a workaround from this gate without a new decision.
-- **Observed result (2026-08-18):** During `ACTIVE` with the built-in earpiece current, moving near turned the screen off and moving away restored it automatically. Wake-lock support reported `true`; the supplied post-session report showed held `false`. No other listed boundary was recorded, so those cases remain **NOT TESTED / UNKNOWN** and the overall Layer 7 gate is not PASS.
+- **Observed result (2026-08-18):** During `ACTIVE` with the built-in earpiece current, moving near turned the screen off and moving away restored it automatically. Wake-lock support reported `true`; the supplied post-session report showed held `false`. This passes the core call-like screen behavior only. No other listed boundary was recorded, so those cases remain **NOT TESTED / UNKNOWN**.
 
 ## Layer 7B proximity hardening physical gate
 
-- **Status:** NOT TESTED
+- **Status:** GENERAL TESTER CONFIRMATION; individual cases NOT TESTED unless recorded above
 - **Required tests:**
   - **A — Session end while near:** End an `ACTIVE` earpiece session while near, then move away. Expect `WAITING`, normal screen return, no sticky black screen, and held `false`.
   - **B — Successive cycles:** With Power ON, run two complete active near/off, far/on, end cycles. Expect correct acquisition and release in both without toggling Power.
@@ -373,4 +373,13 @@ The following checks validate lifecycle ownership without claiming routing succe
   - **K — Real call:** If practical, introduce a real call. Expect telephony priority, no competition from Private Audio proximity ownership, and safe post-call state.
   - **L — Physical Power button:** While `ACTIVE`, near, and screen off, press Power once and record Xiaomi/MIUI behavior. Characterization only; do not implement a workaround here.
   - **M — Process/service termination:** If practical, terminate while proximity ownership is active. Expect no persistent Private Audio screen-off ownership.
-- **Evidence rule:** Record Android-reported state and human-observed screen behavior separately. Do not mark Layer 7 complete until this gate and later Layer 7C closure/regression are executed.
+- **Observed result (2026-08-18):** After Layer 7B and its compile fix, the tester reported that the implemented behavior worked as intended. Because no case-by-case observations were supplied, A–M remain **NOT TESTED / UNKNOWN** as individual physical cases; in particular this statement is not Bluetooth, telephony, process-death, or Power-button evidence.
+- **Evidence rule:** Record Android-reported state and human-observed screen behavior separately. Layer 7 implementation closure does not convert an unrecorded physical case into PASS.
+
+## Layer 7C final audit and regression closure
+
+- **Status:** IMPLEMENTATION PASS; extended physical matrix remains NOT TESTED / UNKNOWN
+- **Date:** 2026-08-18
+- **Automated scope:** The final repository audit verifies the sole observer → service evidence/state/preference decision → mechanics-only controller chain; all eligibility inputs; immediate synchronization; centralized evidence-departure release; explicit Power OFF and destruction boundaries; successive-cycle re-arming; UI ownership isolation; diagnostic fields; default/persistence wiring; localization parity; and unchanged protected route/mode request counts. Automated evidence remains structural/JVM evidence, not OEM screen behavior.
+- **Physical scope:** Xiaomi `2201117TY` on Android 13/API 33 establishes `ACTIVE` + built-in earpiece + near → screen off, followed by far → screen on. Support was reported `true`, and the post-session diagnostic reported held `false`. The later general Layer 7B confirmation is recorded without assigning it to individual cases.
+- **Remaining regression/characterization:** `WAITING` near behavior, session end while near, successive proximity cycles, preference OFF/ON and recreation persistence, Power OFF, Main Close, Mini/Expand transitions, Bluetooth/wired/USB/other routes, real telephony, process/service termination, and physical Power-button behavior require separately recorded physical execution before any is called PASS.
