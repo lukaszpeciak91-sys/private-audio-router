@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Private Audio</string>
+    <string name="routing_notification_channel">Private Audio</string>
+    <string name="routing_notification_title">Private Audio 已开启</string>
+    <string name="routing_notification_text">正在等待音频重定向</string>
+    <string name="product_title">Private Audio</string>
+    <string name="product_subtitle">像打电话一样私密地与 AI 交谈。</string>
+    <string name="state_ready">就绪</string>
+    <string name="state_waiting">等待中</string>
+    <string name="state_active">已启用</string>
+    <string name="state_error">错误</string>
+    <string name="power_control">开启</string>
+    <string name="floating">迷你</string>
+    <string name="settings">设置</string>
+    <string name="close">关闭</string>
+    <string name="overlay_controller_description">Private Audio 迷你控制器。状态：%1$s。包含开启、展开和关闭控件。</string>
+    <string name="settings_language">语言</string>
+    <string name="settings_system_default">默认</string>
+    <string name="settings_copy_diagnostic">复制诊断报告</string>
+    <string name="settings_advanced">高级</string>
+    <string name="settings_about">关于 Private Audio</string>
+    <string name="settings_version">版本 %1$s</string>
+    <string name="settings_language_body">Private Audio 目前使用设备语言。已选择“默认”。</string>
+    <string name="settings_language_android_13_required">应用内语言选择需要 Android 13 或更高版本。此设备使用系统语言。</string>
+    <string name="settings_advanced_body">随着 Private Audio 的发展，这里将显示更多选项。</string>
+    <string name="settings_about_body">Private Audio 可将语音音频导向手机内置听筒。</string>
+    <string name="diagnostic_report_clip_label">Private Audio 诊断报告</string>
+    <string name="diagnostic_report_copied">诊断报告已复制。</string>
+</resources>
