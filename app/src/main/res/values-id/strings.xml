@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Private Audio</string>
+    <string name="routing_notification_channel">Private Audio</string>
+    <string name="routing_notification_title">Private Audio aktif</string>
+    <string name="routing_notification_text">Menunggu pengalihan audio</string>
+    <string name="product_title">Private Audio</string>
+    <string name="product_subtitle">Bicara dengan AI secara pribadi, seperti saat menelepon.</string>
+    <string name="state_ready">Siap</string>
+    <string name="state_waiting">Menunggu</string>
+    <string name="state_active">Aktif</string>
+    <string name="state_error">Error</string>
+    <string name="power_control">Aktifkan</string>
+    <string name="floating">Mini</string>
+    <string name="settings">Setelan</string>
+    <string name="close">Tutup</string>
+    <string name="overlay_controller_description">Pengontrol mengambang Private Audio. Status: %1$s. Kontrol untuk mengaktifkan, memperluas, dan menutup.</string>
+    <string name="settings_language">Bahasa</string>
+    <string name="settings_system_default">Default</string>
+    <string name="settings_copy_diagnostic">Salin laporan diagnostik</string>
+    <string name="settings_advanced">Lanjutan</string>
+    <string name="settings_about">Tentang Private Audio</string>
+    <string name="settings_version">Versi %1$s</string>
+    <string name="settings_language_body">Private Audio saat ini mengikuti bahasa perangkat Anda. Default dipilih.</string>
+    <string name="settings_language_android_13_required">Pemilihan bahasa dalam aplikasi memerlukan Android 13 atau yang lebih baru. Perangkat ini mengikuti bahasa sistem.</string>
+    <string name="settings_advanced_body">Opsi tambahan akan muncul di sini seiring perkembangan Private Audio.</string>
+    <string name="settings_about_body">Private Audio membantu mengalihkan audio suara ke earpiece bawaan ponsel.</string>
+    <string name="diagnostic_report_clip_label">Laporan diagnostik Private Audio</string>
+    <string name="diagnostic_report_copied">Laporan diagnostik disalin.</string>
+</resources>
