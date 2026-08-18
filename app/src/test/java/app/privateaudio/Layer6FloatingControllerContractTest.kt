@@ -9,12 +9,14 @@ import java.io.File
 class Layer6FloatingControllerContractTest {
     @Test fun finalSurfaceHasApprovedDimensionsOrderAndNoHideControl() {
         assertTrue(overlay.contains("(300 * density).toInt()")); assertTrue(overlay.contains("(62 * density).toInt()"))
-        assertTrue(overlay.indexOf("canvas.drawCircle(20f") < overlay.indexOf("drawPower(canvas"))
+        assertTrue(overlay.indexOf("canvas.drawCircle(directionalX(STATUS_DOT_X)") < overlay.indexOf("drawPower(canvas"))
         assertTrue(overlay.indexOf("drawExpand(canvas)") < overlay.indexOf("drawClose(canvas)"))
         assertTrue(overlay.contains("RectF(134f, 15f, 166f, 47f)"))
         assertFalse(overlay.contains("canvas.drawRect(170f"))
         assertTrue(overlay.contains("POWER_START_FRACTION = 0.40f")); assertTrue(overlay.contains("POWER_END_FRACTION = 0.60f"))
         assertTrue(overlay.contains("EXPAND_START_FRACTION = 0.60f")); assertTrue(overlay.contains("CLOSE_START_FRACTION = 0.80f"))
+        assertTrue(overlay.contains("directionalRect(196f, 26f, 213f, 43f)"))
+        assertTrue(overlay.contains("directionalX(263f)")); assertTrue(overlay.contains("directionalX(283f)"))
         assertFalse(overlay.contains("HIDE_START_FRACTION"))
     }
 

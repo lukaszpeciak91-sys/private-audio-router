@@ -27,9 +27,10 @@ class RtlPreparationContractTest {
     }
 
     @Test
-    fun overlayStatusUsesMeasuredBidiAwareSingleLineLayout() {
+    fun overlayStatusGeometryAndBidiDirectionFollowLayoutDirection() {
         val statusRenderer = overlay.method("private fun drawStatusLabel")
         assertTrue(statusRenderer.contains("StaticLayout.Builder.obtain"))
+        assertTrue(statusRenderer.contains("TextDirectionHeuristics.FIRSTSTRONG_RTL"))
         assertTrue(statusRenderer.contains("TextDirectionHeuristics.FIRSTSTRONG_LTR"))
         assertTrue(statusRenderer.contains("setMaxLines(1)"))
         assertTrue(statusRenderer.contains("setEllipsize(TextUtils.TruncateAt.END)"))
@@ -37,7 +38,23 @@ class RtlPreparationContractTest {
         assertFalse(overlay.contains("canvas.drawText(stateLabel(state)"))
         assertTrue(overlay.contains("STATUS_TEXT_LEFT = 34f"))
         assertTrue(overlay.contains("STATUS_TEXT_RIGHT = 126f"))
+        assertTrue(overlay.contains("STATUS_DOT_X = 20f"))
+        assertTrue(overlay.contains("DESIGN_WIDTH - ltrX"))
+        assertTrue(overlay.contains("directionalX(STATUS_DOT_X)"))
+        assertTrue(overlay.contains("directionalX(STATUS_TEXT_RIGHT)"))
         assertTrue(overlay.contains("RectF(134f, 15f, 166f, 47f)"))
+    }
+
+    @Test
+    fun miniDirectionIsConfigurationDrivenAndFutureRtlSafe() {
+        val direction = overlay.method("private fun isRtlLayout")
+        assertTrue(direction.contains("resources.configuration.layoutDirection"))
+        assertTrue(direction.contains("View.LAYOUT_DIRECTION_RTL"))
+        listOf("\"ar\"", "\"ur\"", "\"fa\"").forEach { assertFalse(overlay.contains(it)) }
+
+        listOf("values", "values-pl", "values-ar", "values-ur").forEach {
+            assertTrue(File(root, "app/src/main/res/$it/strings.xml").isFile)
+        }
     }
 
     @Test
