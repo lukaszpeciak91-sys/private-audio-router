@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Private Audio</string>
+    <string name="routing_notification_channel">Private Audio</string>
+    <string name="routing_notification_title">Private Audio เปิดอยู่</string>
+    <string name="routing_notification_text">กำลังรอสลับเสียง</string>
+    <string name="product_title">Private Audio</string>
+    <string name="product_subtitle">คุยกับ AI แบบเป็นส่วนตัว เหมือนคุยโทรศัพท์</string>
+    <string name="state_ready">พร้อม</string>
+    <string name="state_waiting">กำลังรอ</string>
+    <string name="state_active">กำลังใช้งาน</string>
+    <string name="state_error">ข้อผิดพลาด</string>
+    <string name="power_control">เปิด</string>
+    <string name="floating">มินิ</string>
+    <string name="settings">การตั้งค่า</string>
+    <string name="close">ปิด</string>
+    <string name="overlay_controller_description">ตัวควบคุมแบบลอยของ Private Audio สถานะ: %1$s ปุ่มเปิด ขยาย และปิด</string>
+    <string name="settings_language">ภาษา</string>
+    <string name="settings_system_default">ค่าเริ่มต้น</string>
+    <string name="settings_copy_diagnostic">คัดลอกรายงานการวินิจฉัย</string>
+    <string name="settings_advanced">ขั้นสูง</string>
+    <string name="settings_about">เกี่ยวกับ Private Audio</string>
+    <string name="settings_version">เวอร์ชัน %1$s</string>
+    <string name="settings_language_body">ขณะนี้ Private Audio ใช้ภาษาตามอุปกรณ์ของคุณ โดยเลือกค่าเริ่มต้นอยู่</string>
+    <string name="settings_language_android_13_required">การเลือกภาษาในแอปต้องใช้ Android 13 ขึ้นไป อุปกรณ์นี้ใช้ภาษาของระบบ</string>
+    <string name="settings_proximity_screen">ปิดหน้าจอเมื่ออยู่ใกล้หู</string>
+    <string name="settings_advanced_body">ตัวเลือกเพิ่มเติมจะปรากฏที่นี่เมื่อ Private Audio พัฒนาต่อไป</string>
+    <string name="settings_about_body">Private Audio ช่วยสลับเสียงไปยังหูฟังด้านบนของโทรศัพท์</string>
+    <string name="diagnostic_report_clip_label">รายงานการวินิจฉัย Private Audio</string>
+    <string name="diagnostic_report_copied">คัดลอกรายงานการวินิจฉัยแล้ว</string>
+</resources>
