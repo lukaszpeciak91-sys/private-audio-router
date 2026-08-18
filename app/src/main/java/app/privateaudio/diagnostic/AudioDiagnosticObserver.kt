@@ -114,6 +114,7 @@ class AudioDiagnosticObserver(
     private val context: Context,
     private val audioManager: AudioManager,
     private val callbackExecutor: Executor,
+    private val onEvidenceChanged: (String) -> Unit = {},
 ) {
     var snapshot by mutableStateOf(DiagnosticSnapshot.Empty)
         private set
@@ -197,6 +198,7 @@ class AudioDiagnosticObserver(
         addEvent("$reason — $changes")
         observeExperimentOutcome(observed, reason)
         if (!routingActionInProgress) evaluateExperimentTrigger()
+        onEvidenceChanged(reason)
     }
 
     fun enableController() {

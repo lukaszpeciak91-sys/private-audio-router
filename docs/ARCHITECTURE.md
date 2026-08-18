@@ -79,3 +79,11 @@ The permanent controller applies these lifecycle expectations:
 2. Each qualifying external communication session receives one isolated POC-5 cycle with exactly one route request.
 3. Stable loss of the external contribution, explicit OFF, priority blocking, failure, or service destruction performs complete reversible cleanup.
 4. Confirmed normal end returns to waiting while enabled; OFF and process loss leave no controller influence.
+
+## Layer 7A proximity-screen ownership
+
+`PrivateAudioService` remains the lifecycle authority. The existing observer emits a minimal synchronous evidence-change notification after it refreshes authoritative experiment and Android route/mode evidence. The service then evaluates one predicate: enabled, `ACTIVE`, `MODE_IN_COMMUNICATION`, built-in earpiece, and platform support. This notification does not request routing, retry work, or introduce a second state machine.
+
+`ProximityScreenController` isolates only `PowerManager` mechanics. It creates at most one app-owned `PROXIMITY_SCREEN_OFF_WAKE_LOCK`, makes it non-reference-counted, and provides idempotent acquire/release and transition diagnostics. It knows nothing about playback detection, providers, routing, or UI. Normal release uses no wait-for-proximity flag and no timeout; the authoritative routing-cycle lifetime bounds ownership. Power OFF and service destruction add explicit fail-safe releases after existing audio cleanup calls, without changing that cleanup's internal ordering.
+
+Main and Floating remain consumers/delegates only. Hiding, expanding, recreating, or backgrounding either surface does not itself change proximity ownership.

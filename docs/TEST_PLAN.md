@@ -334,3 +334,24 @@ The following checks validate lifecycle ownership without claiming routing succe
 - **Steps:** (1) Open Settings → Language and verify the list is vertically scrollable, all configured locale options remain reachable, and sheet content stays within visible and system-navigation bounds. (2) On API 33 or later, select English, Polski, another configured locale, and Default in turn; verify each selection applies the existing `LocaleManager` behavior and automatically returns to root Settings, whose Language row reports the actual override. (3) Reopen Language and use explicit Back without selecting; verify it returns to Settings root without changing the locale. (4) Confirm Main and Settings use selected resources, the override survives process restart through Android's system-managed preference, and Default follows device language. (5) With one floating controller visible, repeat locale transitions in Ready, Waiting, Active, and safely induced Error; verify localized state text/accessibility updates in place without moving, duplicating, or closing the window and without changing service binding, controller state, routing, or controls. (6) Confirm a subsequently created or updated foreground notification uses selected resources. (7) On API 31–32, verify the Android 13 requirement, Default selection, safe no-op choices, and system-language behavior without an application override.
 - **Expected result:** The Language list remains usable inside visible/system-navigation bounds. Selection applies the existing locale behavior and returns immediately to Settings root; explicit Back without selection also returns to root. API 33+ selection is owned by `LocaleManager` and generated locale configuration, while API 31–32 remain safely system-language-only. Locale changes do not alter floating-controller ownership or audio/controller state.
 - **Observed result:** The user runtime-checked that the Language list scrolls with all locale options reachable and that successful selection returns automatically to root Settings; this behavior works. Device/build metadata and evidence for system-bound insets, explicit Back, persistence, all locale/resource transitions, running-overlay refresh, notification refresh, and routing isolation were not recorded, so those items remain unverified.
+
+## Layer 7A call-like proximity-screen physical gate
+
+- **Status:** NOT TESTED
+- **Device / Android:** Xiaomi `2201117TY` / Android 13
+- **Preconditions:** Install the Layer 7A build, keep the diagnostic report available, and begin without Bluetooth, wired, or USB audio. Do not infer physical screen behavior from automated tests.
+- **Steps and expected results:**
+  1. Power ON and remain `WAITING`; cover the proximity sensor. **Expected:** Private Audio does not turn the screen off and reports no held proximity wake lock.
+  2. Start ChatGPT Voice and establish `ACTIVE` on the built-in earpiece; move the phone near the ear. **Expected:** the screen turns off and diagnostics report held ownership.
+  3. Move the phone away. **Expected:** Android restores the screen.
+  4. End Voice while proximity is near. **Expected:** Private Audio immediately releases ownership and leaves no stuck screen-off condition.
+  5. During another `ACTIVE` cycle press Private Audio Power OFF. **Expected:** the wake lock releases and existing routing cleanup is unchanged.
+  6. During another `ACTIVE` cycle use Main Close. **Expected:** the wake lock releases and full existing cleanup is unchanged.
+  7. Power ON once, complete one normal Voice cycle, then start another without toggling Power. **Expected:** proximity acquire/release works again.
+  8. Repeat the active near/away/end sequence in Floating mode. **Expected:** behavior is identical.
+  9. While active use Floating Expand → Main. **Expected:** the UI transition causes no proximity or routing ownership change and no release/reacquire.
+  10. Select/use Bluetooth or another non-earpiece communication route. **Expected:** Private Audio holds no proximity wake lock.
+  11. Terminate the process/service. **Expected:** no persistent Private Audio proximity ownership remains.
+  12. Run several consecutive routing cycles. **Expected:** acquire/release repeats once per eligible interval with no sticky black screen.
+- **OEM characterization:** While proximity is NEAR during an eligible active cycle, press the physical Power button once and record the screen and diagnostic behavior, then press it again and record recovery. This is characterization only; do not add a workaround from this gate without a new decision.
+- **Observed result:** Not recorded. Physical screen response and OEM Power-button behavior remain **UNKNOWN**.

@@ -196,7 +196,7 @@ class AudioDiagnosticObserverTest {
     fun reportCopyStillUsesSingleFormatter() {
         assertEquals(1, observerSource.occurrences("internal fun buildDiagnosticReport("))
         assertEquals(0, mainActivitySource.occurrences("buildDiagnosticReport("))
-        assertTrue(serviceSource.method("fun diagnosticReport(): String").contains("return observer.report()"))
+        assertTrue(serviceSource.method("fun diagnosticReport(): String").contains("append(observer.report())"))
     }
 
     private fun assertInOrder(source: String, vararg fragments: String) {
