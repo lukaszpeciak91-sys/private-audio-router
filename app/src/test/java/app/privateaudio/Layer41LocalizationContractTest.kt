@@ -13,9 +13,11 @@ class Layer41LocalizationContractTest {
         assertEquals("unqualifiedResLocale=en-US", resourcesProperties.trim())
         assertTrue(defaultStrings.contains("name=\"settings_system_default\">Default</string>"))
         assertFalse(defaultStrings.contains("translatable=\"false\""))
-        assertEquals(listOf("values-pl"), localeDirectories.map { it.name })
+        assertEquals(listOf("values-de", "values-pl"), localeDirectories.map { it.name }.sorted())
         assertEquals(stringKeys(defaultStrings), stringKeys(polishStrings))
         assertEquals(placeholders(defaultStrings), placeholders(polishStrings))
+        assertEquals(stringKeys(defaultStrings), stringKeys(germanStrings))
+        assertEquals(placeholders(defaultStrings), placeholders(germanStrings))
     }
 
     @Test
@@ -75,6 +77,7 @@ class Layer41LocalizationContractTest {
         val resourcesProperties = projectFile("app/src/main/res/resources.properties").readText()
         val defaultStrings = projectFile("app/src/main/res/values/strings.xml").readText()
         val polishStrings = projectFile("app/src/main/res/values-pl/strings.xml").readText()
+        val germanStrings = projectFile("app/src/main/res/values-de/strings.xml").readText()
         val mainSource = projectFile("app/src/main/java/app/privateaudio/MainActivity.kt").readText()
         val productScreenSource = projectFile("app/src/main/java/app/privateaudio/ui/PrivateAudioScreen.kt").readText()
         val settingsSource = projectFile("app/src/main/java/app/privateaudio/ui/SettingsSheet.kt").readText()
