@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Private Audio</string>
+    <string name="routing_notification_channel">Private Audio</string>
+    <string name="routing_notification_title">Private Audio je uključen</string>
+    <string name="routing_notification_text">Čekanje na prebacivanje zvuka</string>
+    <string name="product_title">Private Audio</string>
+    <string name="product_subtitle">Razgovarajte privatno sa AI-jem, kao tokom telefonskog poziva.</string>
+    <string name="state_ready">Spremno</string>
+    <string name="state_waiting">Čekanje</string>
+    <string name="state_active">Aktivno</string>
+    <string name="state_error">Greška</string>
+    <string name="power_control">Uključivanje/isključivanje</string>
+    <string name="floating">Mini</string>
+    <string name="settings">Podešavanja</string>
+    <string name="close">Zatvori</string>
+    <string name="overlay_controller_description">Plutajući kontroler Private Audio. Status: %1$s. Kontrole za uključivanje/isključivanje, proširivanje i zatvaranje.</string>
+    <string name="settings_language">Jezik</string>
+    <string name="settings_system_default">Podrazumijevano</string>
+    <string name="settings_save_diagnostic">Sačuvaj dijagnostički izvještaj</string>
+    <string name="settings_advanced">Napredno</string>
+    <string name="settings_about">O aplikaciji Private Audio</string>
+    <string name="settings_version">Verzija %1$s</string>
+    <string name="settings_language_body">Private Audio trenutno koristi jezik vašeg uređaja. Izabrana je podrazumijevana postavka.</string>
+    <string name="settings_language_android_13_required">Izbor jezika u aplikaciji zahtijeva Android 13 ili noviji. Ovaj uređaj koristi jezik sistema.</string>
+    <string name="settings_proximity_screen">Isključi ekran blizu uha</string>
+    <string name="settings_advanced_body">Dodatne opcije će se pojavljivati ovdje kako se Private Audio bude razvijao.</string>
+    <string name="settings_about_body">Private Audio pomaže da se podržani glasovni zvuk prebaci na ugrađenu slušalicu telefona.</string>
+    <string name="diagnostic_report_saved">Dijagnostički izvještaj je sačuvan.</string>
+    <string name="diagnostic_report_save_failed">Nije moguće sačuvati dijagnostički izvještaj.</string>
+</resources>
