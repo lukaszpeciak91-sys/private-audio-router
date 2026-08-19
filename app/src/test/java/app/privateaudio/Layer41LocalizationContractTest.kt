@@ -370,6 +370,66 @@ class Layer41LocalizationContractTest {
     }
 
     @Test
+    fun dutchFrozenLocalizationSemanticsRemainIntact() {
+        assertEquals("Nederlands", nativeLocaleName("nl"))
+        assertTrue(dutchStrings.contains("name=\"product_subtitle\">Praat privé met AI, net als tijdens een telefoongesprek.</string>"))
+        assertTrue(dutchStrings.contains("name=\"floating\">Mini</string>"))
+        assertTrue(dutchStrings.contains("name=\"routing_notification_title\">Private Audio staat aan</string>"))
+        assertTrue(dutchStrings.contains("name=\"state_active\">Actief</string>"))
+        assertFalse(dutchStrings.contains("name=\"state_active\">Private Audio staat aan</string>"))
+        assertTrue(dutchStrings.contains("name=\"routing_notification_text\">Wachten om audio om te schakelen</string>"))
+        assertTrue(dutchStrings.contains("name=\"settings_language_body\"") && dutchStrings.contains("taal van je apparaat"))
+        assertTrue(dutchStrings.contains("name=\"settings_language_android_13_required\"") && dutchStrings.contains("Dit apparaat volgt de systeemtaal."))
+        assertTrue(dutchStrings.contains("name=\"settings_proximity_screen\">Scherm uitschakelen bij je oor</string>"))
+        assertTrue(dutchStrings.contains("ingebouwde oorspeaker van je telefoon"))
+        assertTrue(dutchStrings.contains("in-/uitschakelen, uitvouwen en sluiten"))
+        assertTrue(dutchStrings.contains("name=\"state_ready\">Gereed</string>"))
+        assertTrue(dutchStrings.contains("name=\"state_waiting\">Wachten</string>"))
+        assertTrue(dutchStrings.contains("name=\"state_active\">Actief</string>"))
+        assertTrue(dutchStrings.contains("name=\"state_error\">Fout</string>"))
+    }
+
+    @Test
+    fun afrikaansFrozenLocalizationSemanticsRemainIntact() {
+        assertEquals("Afrikaans", nativeLocaleName("af"))
+        assertTrue(afrikaansStrings.contains("name=\"product_subtitle\">Praat privaat met KI, soos tydens \\'n telefoonoproep.</string>"))
+        assertTrue(afrikaansStrings.contains("name=\"floating\">Mini</string>"))
+        assertTrue(afrikaansStrings.contains("name=\"routing_notification_title\">Private Audio is aan</string>"))
+        assertTrue(afrikaansStrings.contains("name=\"state_active\">Aktief</string>"))
+        assertFalse(afrikaansStrings.contains("name=\"state_active\">Private Audio is aan</string>"))
+        assertTrue(afrikaansStrings.contains("name=\"routing_notification_text\">Wag om oudio oor te skakel</string>"))
+        assertTrue(afrikaansStrings.contains("name=\"settings_language_body\"") && afrikaansStrings.contains("jou toestel se taal"))
+        assertTrue(afrikaansStrings.contains("name=\"settings_language_android_13_required\"") && afrikaansStrings.contains("Hierdie toestel volg die stelseltaal."))
+        assertTrue(afrikaansStrings.contains("name=\"settings_proximity_screen\">Skakel die skerm af naby jou oor</string>"))
+        assertTrue(afrikaansStrings.contains("jou foon se ingeboude oorstuk"))
+        assertTrue(afrikaansStrings.contains("aan/af te skakel, uit te vou en toe te maak"))
+        assertTrue(afrikaansStrings.contains("name=\"state_ready\">Gereed</string>"))
+        assertTrue(afrikaansStrings.contains("name=\"state_waiting\">Wag</string>"))
+        assertTrue(afrikaansStrings.contains("name=\"state_active\">Aktief</string>"))
+        assertTrue(afrikaansStrings.contains("name=\"state_error\">Fout</string>"))
+    }
+
+    @Test
+    fun luxembourgishFrozenLocalizationSemanticsRemainIntact() {
+        assertEquals("Lëtzebuergesch", nativeLocaleName("lb"))
+        assertTrue(luxembourgishStrings.contains("name=\"product_subtitle\">Schwätz privat mat der KI, wéi bei engem Telefonsgespréich.</string>"))
+        assertTrue(luxembourgishStrings.contains("name=\"floating\">Mini</string>"))
+        assertTrue(luxembourgishStrings.contains("name=\"routing_notification_title\">Private Audio ass un</string>"))
+        assertTrue(luxembourgishStrings.contains("name=\"state_active\">Aktiv</string>"))
+        assertFalse(luxembourgishStrings.contains("name=\"state_active\">Private Audio ass un</string>"))
+        assertTrue(luxembourgishStrings.contains("name=\"routing_notification_text\">Waart drop, den Audio ëmzeschalten</string>"))
+        assertTrue(luxembourgishStrings.contains("name=\"settings_language_body\"") && luxembourgishStrings.contains("Sprooch vun dengem Apparat"))
+        assertTrue(luxembourgishStrings.contains("name=\"settings_language_android_13_required\"") && luxembourgishStrings.contains("Dësen Apparat riicht sech no der Systemsprooch."))
+        assertTrue(luxembourgishStrings.contains("name=\"settings_proximity_screen\">Écran beim Ouer ausschalten</string>"))
+        assertTrue(luxembourgishStrings.contains("den agebaute Lautsprecher uewen um Telefon ze leeden, deen bei Telefonsgespréicher um Ouer benotzt gëtt"))
+        assertTrue(luxembourgishStrings.contains("un-/auszeschalten, ze vergréisseren an zouzemaachen"))
+        assertTrue(luxembourgishStrings.contains("name=\"state_ready\">Prett</string>"))
+        assertTrue(luxembourgishStrings.contains("name=\"state_waiting\">Waart</string>"))
+        assertTrue(luxembourgishStrings.contains("name=\"state_active\">Aktiv</string>"))
+        assertTrue(luxembourgishStrings.contains("name=\"state_error\">Feeler</string>"))
+    }
+
+    @Test
     fun languageSelectionUsesPlatformConfigurationWithoutAParallelLocaleRegistry() {
         assertTrue(languagePreferencesSource.contains("LocaleConfig(context).supportedLocales"))
         assertTrue(languagePreferencesSource.contains("getSystemService(LocaleManager::class.java)"))
@@ -472,6 +532,9 @@ class Layer41LocalizationContractTest {
         val basqueStrings = projectFile("app/src/main/res/values-eu/strings.xml").readText()
         val albanianStrings = projectFile("app/src/main/res/values-sq/strings.xml").readText()
         val latvianStrings = projectFile("app/src/main/res/values-lv/strings.xml").readText()
+        val dutchStrings = projectFile("app/src/main/res/values-nl/strings.xml").readText()
+        val afrikaansStrings = projectFile("app/src/main/res/values-af/strings.xml").readText()
+        val luxembourgishStrings = projectFile("app/src/main/res/values-lb/strings.xml").readText()
         val mainSource = projectFile("app/src/main/java/app/privateaudio/MainActivity.kt").readText()
         val productScreenSource = projectFile("app/src/main/java/app/privateaudio/ui/PrivateAudioScreen.kt").readText()
         val settingsSource = projectFile("app/src/main/java/app/privateaudio/ui/SettingsSheet.kt").readText()
