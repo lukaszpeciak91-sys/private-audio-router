@@ -14,7 +14,7 @@
     <string name="floating">Mini</string>
     <string name="settings">அமைப்புகள்</string>
     <string name="close">மூடு</string>
-    <string name="overlay_controller_description">Private Audio மிதக்கும் கட்டுப்படுத்தி. நிலை: %1$s. இயக்க, விரிவாக்க மற்றும் மூடும் கட்டுப்பாடுகள்.</string>
+    <string name="overlay_controller_description">Private Audio மிதக்கும் கட்டுப்படுத்தி. நிலை: %1$s. இயக்கு, விரி, மூடு ஆகிய கட்டுப்பாடுகள்.</string>
     <string name="settings_language">மொழி</string>
     <string name="settings_system_default">இயல்பு</string>
     <string name="settings_copy_diagnostic">கண்டறிதல் அறிக்கையை நகலெடு</string>
@@ -22,7 +22,7 @@
     <string name="settings_about">Private Audio பற்றி</string>
     <string name="settings_version">பதிப்பு %1$s</string>
     <string name="settings_language_body">Private Audio தற்போது உங்கள் சாதன மொழியைப் பின்பற்றுகிறது. இயல்பு தேர்ந்தெடுக்கப்பட்டுள்ளது.</string>
-    <string name="settings_language_android_13_required">பயன்பாட்டில் மொழியைத் தேர்ந்தெடுக்க Android 13 அல்லது அதற்குப் பிந்தைய பதிப்பு தேவை. இந்தச் சாதனம் சாதனத்தின் மொழியைப் பின்பற்றுகிறது.</string>
+    <string name="settings_language_android_13_required">பயன்பாட்டில் மொழியைத் தேர்ந்தெடுக்க Android 13 அல்லது அதற்குப் பிந்தைய பதிப்பு தேவை. இந்தச் சாதனம் சிஸ்டம் மொழியைப் பின்பற்றுகிறது.</string>
     <string name="settings_proximity_screen">காதுக்கு அருகில் திரையை அணை</string>
     <string name="settings_advanced_body">Private Audio மேம்படும்போது கூடுதல் விருப்பங்கள் இங்கே தோன்றும்.</string>
     <string name="settings_about_body">தொலைபேசியின் இயர்பீஸுக்கு ஆடியோவை மாற்ற Private Audio உதவுகிறது.</string>
