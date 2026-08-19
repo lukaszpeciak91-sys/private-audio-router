@@ -43,6 +43,7 @@ class AudioDiagnosticObserverTest {
                 ObservedPlayback(
                     usage = "USAGE_VOICE_COMMUNICATION",
                     contentType = "CONTENT_TYPE_SPEECH",
+                    flags = "FLAGS_NONE (0x0)",
                     allowedCapturePolicy = "ALLOW_CAPTURE_BY_ALL",
                     device = ObservedDevice(2, "Built-in speaker", "Phone speaker"),
                 ),
@@ -85,6 +86,10 @@ class AudioDiagnosticObserverTest {
             ),
             snapshot = snapshot,
             events = listOf("12:34:55.000  Baseline — state recorded", "12:34:56.000  Manual snapshot"),
+            startupAudioTrace = listOf(
+                "12:34:55.123  playback callback — previous=0; current=1; added=1; removed=0; unchanged=0",
+                "  playback appeared/started — usage=USAGE_VOICE_COMMUNICATION",
+            ),
         )
 
         assertTrue(report.contains("Timestamp: 2026-08-12T12:34:56Z"))
@@ -109,6 +114,9 @@ class AudioDiagnosticObserverTest {
         assertTrue(report.contains("DELAYED OBSERVATION"))
         assertTrue(report.contains("Active playback configurations:"))
         assertTrue(report.contains("usage=USAGE_VOICE_COMMUNICATION; content=CONTENT_TYPE_SPEECH"))
+        assertTrue(report.contains("STARTUP AUDIO TRACE"))
+        assertTrue(report.contains("12:34:55.123  playback callback"))
+        assertTrue(report.contains("player/session identity=Not exposed by the public AudioPlaybackConfiguration API"))
         assertTrue(report.contains("ADB CORRELATION"))
         assertTrue(report.contains("This report does not claim actual mode ownership"))
         assertTrue(report.contains("Attempt 1: timestamp=12:34:56.000"))
@@ -119,6 +127,29 @@ class AudioDiagnosticObserverTest {
         assertTrue(report.contains("Speakerphone: Off (directly observed)"))
         assertTrue(report.contains("12:34:55.000  Baseline — state recorded"))
         assertTrue(report.contains("12:34:56.000  Manual snapshot"))
+    }
+
+    @Test
+    fun playbackTimelinePreservesOverlapsAndExactPublicValues() {
+        val media = ObservedPlayback(
+            usage = "USAGE_MEDIA",
+            contentType = "CONTENT_TYPE_MUSIC",
+            flags = "0x1",
+            allowedCapturePolicy = "ALLOW_CAPTURE_BY_ALL",
+            device = ObservedDevice(9, "Built-in speaker", "Speaker"),
+        )
+        val voice = media.copy(usage = "USAGE_VOICE_COMMUNICATION", contentType = "CONTENT_TYPE_SPEECH")
+
+        val added = playbackChanges(listOf(media), listOf(media, voice))
+        assertEquals("previous=1; current=2; added=1; removed=0; unchanged=1", added.summary)
+        assertTrue(added.entries.single().contains("playback appeared/started"))
+        assertTrue(added.entries.single().contains("usage=USAGE_VOICE_COMMUNICATION"))
+
+        val removed = playbackChanges(listOf(media, voice), listOf(voice))
+        assertTrue(removed.entries.single().contains("playback disappeared/stopped"))
+        assertTrue(removed.entries.single().contains("usage=USAGE_MEDIA"))
+        assertEquals("USAGE_ASSISTANCE_SONIFICATION", audioUsageName(android.media.AudioAttributes.USAGE_ASSISTANCE_SONIFICATION))
+        assertEquals("FLAGS_NONE (0x0)", audioFlagsName(0))
     }
 
     @Test

@@ -98,6 +98,7 @@ State reflects evidence, not aspiration.
 
 ## CURRENT
 
+- A diagnostics-only startup audio trace is implemented in the existing copied report. While Power is ON, the existing public `AudioPlaybackCallback` now preserves bounded, millisecond-timestamped playback appearance/disappearance snapshots, exact usage/content/flags, active status, output-device metadata, and adjacent mode/communication-device/speakerphone state. Existing controller events share the trace. It does not classify the startup sound, add polling or permissions, or change routing; Xiaomi physical characterization remains pending.
 - **Layer 7 implementation is DONE after the Layer 7C audit. Core Xiaomi near/off and far/on behavior is physically confirmed; the remaining individually unrecorded Layer 7 physical matrix cases stay NOT TESTED / UNKNOWN.**
 
 ## NEXT
@@ -108,6 +109,7 @@ State reflects evidence, not aspiration.
 
 ## UNKNOWN
 
+- Which public playback configuration, if any, corresponds to the audible ChatGPT Voice startup sound on the Xiaomi test device; its usage/content type, overlap with main voice playback, and route relative to Private Audio's mode/device requests require the pending timestamp-correlated physical run.
 - Why full uninstall and reinstall preceded the first repeatable physically audible success; no causal explanation is established.
 - Whether the confirmed POC-5 result remains stable across repeated sessions, lifecycle transitions, APK updates, and other devices or software versions.
 - Whether ChatGPT immediately overrides such a request.
