@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Private Audio</string>
+    <string name="routing_notification_channel">Private Audio</string>
+    <string name="routing_notification_title">Private Audio ચાલુ છે</string>
+    <string name="routing_notification_text">ઑડિયો સ્વિચ થવાની રાહ જોઈ રહ્યું છે</string>
+    <string name="product_title">Private Audio</string>
+    <string name="product_subtitle">ફોન કૉલની જેમ, AI સાથે ખાનગી રીતે વાત કરો.</string>
+    <string name="state_ready">તૈયાર</string>
+    <string name="state_waiting">રાહ જોઈ રહ્યું છે</string>
+    <string name="state_active">સક્રિય</string>
+    <string name="state_error">ભૂલ</string>
+    <string name="power_control">ચાલુ કરો</string>
+    <string name="floating">Mini</string>
+    <string name="settings">સેટિંગ્સ</string>
+    <string name="close">બંધ કરો</string>
+    <string name="overlay_controller_description">Private Audio ફ્લોટિંગ કંટ્રોલર. સ્થિતિ: %1$s. ચાલુ કરવા, વિસ્તૃત કરવા અને બંધ કરવા માટેનાં નિયંત્રણો.</string>
+    <string name="settings_language">ભાષા</string>
+    <string name="settings_system_default">સિસ્ટમ ડિફૉલ્ટ</string>
+    <string name="settings_copy_diagnostic">ડાયગ્નોસ્ટિક રિપોર્ટ કૉપી કરો</string>
+    <string name="settings_advanced">અદ્યતન</string>
+    <string name="settings_about">Private Audio વિશે</string>
+    <string name="settings_version">વર્ઝન %1$s</string>
+    <string name="settings_language_body">Private Audio હાલમાં તમારા ડિવાઇસની ભાષાને અનુસરે છે. સિસ્ટમ ડિફૉલ્ટ પસંદ કરેલું છે.</string>
+    <string name="settings_language_android_13_required">ઍપમાં ભાષા પસંદ કરવા માટે Android 13 અથવા પછીનું વર્ઝન જરૂરી છે. આ ડિવાઇસ સિસ્ટમ ભાષાને અનુસરે છે.</string>
+    <string name="settings_proximity_screen">કાન પાસે સ્ક્રીન બંધ કરો</string>
+    <string name="settings_advanced_body">Private Audio વિકસિત થશે તેમ વધારાના વિકલ્પો અહીં દેખાશે.</string>
+    <string name="settings_about_body">Private Audio ઑડિયોને ફોનના ઇયરપીસ પર સ્વિચ કરવામાં મદદ કરે છે.</string>
+    <string name="diagnostic_report_clip_label">Private Audio ડાયગ્નોસ્ટિક રિપોર્ટ</string>
+    <string name="diagnostic_report_copied">ડાયગ્નોસ્ટિક રિપોર્ટ કૉપી થયો.</string>
+</resources>
