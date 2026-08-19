@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Private Audio</string>
+    <string name="routing_notification_channel">Private Audio</string>
+    <string name="routing_notification_title">Private Audio dihidupkan</string>
+    <string name="routing_notification_text">Menunggu audio dialihkan</string>
+    <string name="product_title">Private Audio</string>
+    <string name="product_subtitle">Bercakap dengan AI secara peribadi, seperti panggilan telefon.</string>
+    <string name="state_ready">Sedia</string>
+    <string name="state_waiting">Menunggu</string>
+    <string name="state_active">Aktif</string>
+    <string name="state_error">Ralat</string>
+    <string name="power_control">Hidupkan</string>
+    <string name="floating">Mini</string>
+    <string name="settings">Tetapan</string>
+    <string name="close">Tutup</string>
+    <string name="overlay_controller_description">Pengawal terapung Private Audio. Status: %1$s. Kawalan untuk hidupkan, kembangkan dan tutup.</string>
+    <string name="settings_language">Bahasa</string>
+    <string name="settings_system_default">Lalai sistem</string>
+    <string name="settings_save_diagnostic">Simpan laporan diagnostik</string>
+    <string name="settings_advanced">Lanjutan</string>
+    <string name="settings_about">Perihal Private Audio</string>
+    <string name="settings_version">Versi %1$s</string>
+    <string name="settings_language_body">Private Audio kini mengikut bahasa peranti anda. Lalai sistem dipilih.</string>
+    <string name="settings_language_android_13_required">Pemilihan bahasa dalam aplikasi memerlukan Android 13 atau lebih baharu. Peranti ini mengikut bahasa sistem.</string>
+    <string name="settings_proximity_screen">Matikan skrin berhampiran telinga anda</string>
+    <string name="settings_advanced_body">Pilihan tambahan akan dipaparkan di sini seiring perkembangan Private Audio.</string>
+    <string name="settings_about_body">Private Audio membantu mengalihkan audio suara yang disokong ke alat dengar terbina dalam telefon anda.</string>
+    <string name="diagnostic_report_saved">Laporan diagnostik disimpan.</string>
+    <string name="diagnostic_report_save_failed">Laporan diagnostik tidak dapat disimpan.</string>
+</resources>
