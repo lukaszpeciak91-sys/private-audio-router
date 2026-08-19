@@ -23,7 +23,7 @@
     <string name="settings_version">Version %1$s</string>
     <string name="settings_language_body">Private Audio currently follows your device language. Default is selected.</string>
     <string name="settings_language_android_13_required">In-app language selection requires Android 13 or later. This device follows the system language.</string>
-    <string name="settings_proximity_screen">Turn screen off near ear</string>
+    <string name="settings_proximity_screen">Turn off screen near your ear</string>
     <string name="settings_advanced_body">Additional options will appear here as Private Audio evolves.</string>
     <string name="settings_about_body">Private Audio helps route supported voice audio to your phone’s built-in earpiece.</string>
     <string name="diagnostic_report_clip_label">Private Audio diagnostic report</string>
