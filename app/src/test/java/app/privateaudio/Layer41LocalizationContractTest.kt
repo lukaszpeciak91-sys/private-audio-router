@@ -726,6 +726,37 @@ class Layer41LocalizationContractTest {
     }
 
     @Test
+    fun bengaliFrozenLocalizationSemanticsRemainIntact() {
+        val localeTag = "bn"
+        val locale = Locale.forLanguageTag(localeTag)
+        assertEquals("bn", locale.toLanguageTag())
+        assertEquals("bn", locale.language)
+        assertEquals("বাংলা", locale.getDisplayLanguage(locale))
+        assertEquals("বাংলা", nativeLocaleName(localeTag))
+        assertTrue(projectFile("app/src/main/res/values-bn/strings.xml").isFile)
+        assertTrue(bengaliStrings.contains("name=\"app_name\">Private Audio</string>"))
+        assertTrue(bengaliStrings.contains("name=\"floating\">Mini</string>"))
+        assertTrue(bengaliStrings.contains("name=\"product_subtitle\">AI-এর সঙ্গে ব্যক্তিগতভাবে কথা বলুন, ঠিক যেন ফোনে কথা বলছেন।</string>"))
+        assertTrue(bengaliStrings.contains("name=\"routing_notification_title\">Private Audio চালু আছে</string>"))
+        assertTrue(bengaliStrings.contains("name=\"state_active\">সক্রিয়</string>"))
+        assertFalse(bengaliStrings.contains("name=\"state_active\">চালু আছে</string>"))
+        assertTrue(bengaliStrings.contains("name=\"routing_notification_text\">অডিও আউটপুট পাল্টানোর জন্য অপেক্ষা করা হচ্ছে</string>"))
+        assertTrue(bengaliStrings.contains("name=\"settings_language_body\"") && bengaliStrings.contains("ডিভাইসের ভাষা"))
+        assertTrue(bengaliStrings.contains("name=\"settings_language_android_13_required\"") && bengaliStrings.contains("সিস্টেমের ভাষা"))
+        assertTrue(bengaliStrings.contains("name=\"settings_system_default\">সিস্টেম ডিফল্ট</string>"))
+        assertTrue(bengaliStrings.contains("name=\"settings_proximity_screen\">কানের কাছে আনলে স্ক্রিন বন্ধ করুন</string>"))
+        assertTrue(bengaliStrings.contains("বিল্ট-ইন হ্যান্ডসেট ইয়ারপিস"))
+        assertTrue(bengaliStrings.contains("পাওয়ার চালু বা বন্ধ করা"))
+        assertTrue(bengaliStrings.contains("বড় করা"))
+        assertTrue(bengaliStrings.contains("কন্ট্রোলার বন্ধ করা"))
+        assertTrue(bengaliStrings.contains("name=\"state_ready\">প্রস্তুত</string>"))
+        assertTrue(bengaliStrings.contains("name=\"state_waiting\">অপেক্ষা</string>"))
+        assertTrue(bengaliStrings.contains("name=\"state_active\">সক্রিয়</string>"))
+        assertTrue(bengaliStrings.contains("name=\"state_error\">ত্রুটি</string>"))
+        assertTrue(bengaliStrings.any { it in '\u0980'..'\u09FF' })
+    }
+
+    @Test
     fun languageSelectionUsesPlatformConfigurationWithoutAParallelLocaleRegistry() {
         assertTrue(languagePreferencesSource.contains("LocaleConfig(context).supportedLocales"))
         assertTrue(languagePreferencesSource.contains("getSystemService(LocaleManager::class.java)"))
@@ -841,6 +872,7 @@ class Layer41LocalizationContractTest {
         val bosnianStrings = projectFile("app/src/main/res/values-bs/strings.xml").readText()
         val malteseStrings = projectFile("app/src/main/res/values-mt/strings.xml").readText()
         val greekStrings = projectFile("app/src/main/res/values-el/strings.xml").readText()
+        val bengaliStrings = projectFile("app/src/main/res/values-bn/strings.xml").readText()
         val mainSource = projectFile("app/src/main/java/app/privateaudio/MainActivity.kt").readText()
         val productScreenSource = projectFile("app/src/main/java/app/privateaudio/ui/PrivateAudioScreen.kt").readText()
         val settingsSource = projectFile("app/src/main/java/app/privateaudio/ui/SettingsSheet.kt").readText()

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Private Audio</string>
+    <string name="routing_notification_channel">Private Audio</string>
+    <string name="routing_notification_title">Private Audio চালু আছে</string>
+    <string name="routing_notification_text">অডিও আউটপুট পাল্টানোর জন্য অপেক্ষা করা হচ্ছে</string>
+    <string name="product_title">Private Audio</string>
+    <string name="product_subtitle">AI-এর সঙ্গে ব্যক্তিগতভাবে কথা বলুন, ঠিক যেন ফোনে কথা বলছেন।</string>
+    <string name="state_ready">প্রস্তুত</string>
+    <string name="state_waiting">অপেক্ষা</string>
+    <string name="state_active">সক্রিয়</string>
+    <string name="state_error">ত্রুটি</string>
+    <string name="power_control">চালু/বন্ধ</string>
+    <string name="floating">Mini</string>
+    <string name="settings">সেটিংস</string>
+    <string name="close">বন্ধ করুন</string>
+    <string name="overlay_controller_description">Private Audio-এর ফ্লোটিং কন্ট্রোলার। স্ট্যাটাস: %1$s। পাওয়ার চালু বা বন্ধ করা, বড় করা এবং কন্ট্রোলার বন্ধ করার কন্ট্রোল।</string>
+    <string name="settings_language">ভাষা</string>
+    <string name="settings_system_default">সিস্টেম ডিফল্ট</string>
+    <string name="settings_save_diagnostic">ডায়াগনস্টিক রিপোর্ট সেভ করুন</string>
+    <string name="settings_advanced">উন্নত সেটিংস</string>
+    <string name="settings_about">Private Audio সম্পর্কে</string>
+    <string name="settings_version">সংস্করণ %1$s</string>
+    <string name="settings_language_body">Private Audio বর্তমানে আপনার ডিভাইসের ভাষা অনুসরণ করে। সিস্টেম ডিফল্ট বেছে নেওয়া আছে।</string>
+    <string name="settings_language_android_13_required">অ্যাপের ভাষা বেছে নিতে Android 13 বা তার পরবর্তী যেকোনও ভার্সন প্রয়োজন। এই ডিভাইসটি সিস্টেমের ভাষা অনুসরণ করে।</string>
+    <string name="settings_proximity_screen">কানের কাছে আনলে স্ক্রিন বন্ধ করুন</string>
+    <string name="settings_advanced_body">Private Audio-এর উন্নয়নের সঙ্গে সঙ্গে এখানে আরও বিকল্প যোগ হবে।</string>
+    <string name="settings_about_body">Private Audio সমর্থিত ভয়েস অডিওকে আপনার ফোনের বিল্ট-ইন হ্যান্ডসেট ইয়ারপিসে পাঠাতে সাহায্য করে।</string>
+    <string name="diagnostic_report_saved">ডায়াগনস্টিক রিপোর্ট সেভ করা হয়েছে।</string>
+    <string name="diagnostic_report_save_failed">ডায়াগনস্টিক রিপোর্ট সেভ করা যায়নি।</string>
+</resources>
