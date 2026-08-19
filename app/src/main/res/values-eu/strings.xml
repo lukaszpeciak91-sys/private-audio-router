@@ -5,7 +5,7 @@
     <string name="routing_notification_title">Private Audio aktibatuta dago</string>
     <string name="routing_notification_text">Audioa bideratzeko zain</string>
     <string name="product_title">Private Audio</string>
-    <string name="product_subtitle">Hitz egin AIarekin modu pribatuan, telefono-dei batean bezala.</string>
+    <string name="product_subtitle">Hitz egin AArekin modu pribatuan, telefono-dei batean bezala.</string>
     <string name="state_ready">Prest</string>
     <string name="state_waiting">Zain</string>
     <string name="state_active">Aktibo</string>

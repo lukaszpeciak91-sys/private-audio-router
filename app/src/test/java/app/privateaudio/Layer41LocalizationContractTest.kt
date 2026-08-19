@@ -324,6 +324,7 @@ class Layer41LocalizationContractTest {
     fun basqueFrozenLocalizationSemanticsRemainIntact() {
         assertEquals("euskara", Locale.forLanguageTag("eu").getDisplayLanguage(Locale.forLanguageTag("eu")))
         assertEquals("Euskara", nativeLocaleName("eu"))
+        assertTrue(basqueStrings.contains("name=\"product_subtitle\">Hitz egin AArekin modu pribatuan, telefono-dei batean bezala.</string>"))
         assertTrue(basqueStrings.contains("name=\"routing_notification_text\">Audioa bideratzeko zain</string>"))
         assertTrue(basqueStrings.contains("name=\"settings_language_body\"") && basqueStrings.contains("zure gailuaren hizkuntza"))
         assertTrue(basqueStrings.contains("name=\"settings_language_android_13_required\"") && basqueStrings.contains("Gailu honek sistemaren hizkuntza erabiltzen du."))
@@ -357,6 +358,7 @@ class Layer41LocalizationContractTest {
     fun latvianFrozenLocalizationSemanticsRemainIntact() {
         assertEquals("latviešu", Locale.forLanguageTag("lv").getDisplayLanguage(Locale.forLanguageTag("lv")))
         assertEquals("Latviešu", nativeLocaleName("lv"))
+        assertTrue(latvianStrings.contains("name=\"product_subtitle\">Runājiet ar MI privāti, gluži kā tālruņa sarunā.</string>"))
         assertTrue(latvianStrings.contains("name=\"routing_notification_text\">Gaida audio pārslēgšanu</string>"))
         assertTrue(latvianStrings.contains("name=\"settings_language_body\"") && latvianStrings.contains("jūsu ierīces valodu"))
         assertTrue(latvianStrings.contains("name=\"settings_language_android_13_required\"") && latvianStrings.contains("Šī ierīce izmanto sistēmas valodu."))

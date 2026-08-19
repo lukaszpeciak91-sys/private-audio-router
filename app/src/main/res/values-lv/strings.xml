@@ -5,7 +5,7 @@
     <string name="routing_notification_title">Private Audio ir ieslēgts</string>
     <string name="routing_notification_text">Gaida audio pārslēgšanu</string>
     <string name="product_title">Private Audio</string>
-    <string name="product_subtitle">Runājiet ar AI privāti, gluži kā tālruņa sarunā.</string>
+    <string name="product_subtitle">Runājiet ar MI privāti, gluži kā tālruņa sarunā.</string>
     <string name="state_ready">Gatavs</string>
     <string name="state_waiting">Gaida</string>
     <string name="state_active">Aktīvs</string>
