@@ -129,6 +129,67 @@ class AudioDiagnosticObserverTest {
         assertTrue(report.contains("Speakerphone: Off (directly observed)"))
         assertTrue(report.contains("12:34:55.000  Baseline — state recorded"))
         assertTrue(report.contains("12:34:56.000  Manual snapshot"))
+        assertTrue(report.contains("LAST COMPLETED ROUTING CYCLE\nNone recorded"))
+    }
+
+    @Test
+    fun completedCycleReportSurvivesFreshArmedExperimentForBothTriggerOrigins() {
+        val finalCleanup = DiagnosticSnapshot(
+            mode = "MODE_NORMAL",
+            communicationDevice = null,
+            availableCommunicationDevices = emptyList(),
+            speakerphoneState = "Off (directly observed)",
+            timestamp = "2026-08-19T12:35:00Z",
+        )
+        TriggerOrigin.entries.forEach { origin ->
+            val completedExperiment = EarpieceExperiment(
+                state = ExperimentState.CLEARED,
+                requestAttempted = true,
+                triggerOrigin = origin,
+                modeBeforeParticipation = "MODE_NORMAL",
+                selectedTarget = ObservedDevice(1, "Built-in earpiece", "Phone earpiece"),
+                requestAccepted = true,
+                attempts = listOf(
+                    RoutingAttempt(
+                        1, "12:34:56.000", "protected POC-5", "MODE_IN_COMMUNICATION",
+                        null, true, ObservedDevice(1, "Built-in earpiece", "Phone earpiece"),
+                        "Off (directly observed)",
+                    ),
+                ),
+                earpieceReportedDuringSession = true,
+                silentTrackCreated = true,
+                silentTrackCleanupCompleted = true,
+                preOwnership = finalCleanup.copy(mode = "MODE_NORMAL"),
+                postSilentTrackStart = finalCleanup.copy(mode = "MODE_NORMAL"),
+                postModeOwnership = finalCleanup.copy(mode = "MODE_IN_COMMUNICATION"),
+                postRoutingRequest = finalCleanup.copy(mode = "MODE_IN_COMMUNICATION"),
+                shortObservation = finalCleanup.copy(mode = "MODE_IN_COMMUNICATION"),
+            )
+            val report = buildDiagnosticReport(
+                timestamp = "2026-08-19T12:36:00Z",
+                experiment = EarpieceExperiment(state = ExperimentState.ARMED, armed = true),
+                lastCompletedExperiment = CompletedRoutingCycle(
+                    experiment = completedExperiment,
+                    finalCleanupObservation = finalCleanup,
+                    completionReason = "External communication playback ended",
+                    completedAt = "2026-08-19T12:35:00Z",
+                ),
+                snapshot = finalCleanup,
+                events = emptyList(),
+            )
+
+            assertTrue(report.contains("Experiment state: ARMED"))
+            assertTrue(report.contains("Armed: true"))
+            assertTrue(report.contains("LAST COMPLETED ROUTING CYCLE"))
+            assertTrue(report.contains("Completion reason: External communication playback ended"))
+            assertTrue(report.contains("Trigger origin: $origin"))
+            assertTrue(report.contains("Routing request attempted: true"))
+            assertTrue(report.contains("Routing request accepted: true"))
+            assertTrue(report.contains("Total routing attempts: 1"))
+            assertTrue(report.contains("Silent AudioTrack cleanup completed: true"))
+            assertTrue(report.contains("Final mode after cleanup: MODE_NORMAL"))
+            assertTrue(report.contains("COMPLETED FINAL CLEANUP OBSERVATION"))
+        }
     }
 
     @Test
@@ -202,7 +263,8 @@ class AudioDiagnosticObserverTest {
     @Test
     fun cleanupReturnsEnabledControllerToFreshWaitingCycle() {
         val cleanup = observerSource.method("private fun clearExperiment(")
-        assertInOrder(cleanup, "cancelPendingEndConfirmation()", "cancelPendingObservation()", "audioManager.clearCommunicationDevice()", "audioManager.mode = AudioManager.MODE_NORMAL", "stopSilentCommunicationTrack()", "armed = false")
+        assertInOrder(cleanup, "cancelPendingEndConfirmation()", "cancelPendingObservation()", "audioManager.clearCommunicationDevice()", "audioManager.mode = AudioManager.MODE_NORMAL", "stopSilentCommunicationTrack()", "armed = false", "snapshot(\"Post-cleanup observation\")", "lastCompletedExperiment = CompletedRoutingCycle(")
+        assertTrue(cleanup.contains("experiment.requestAttempted || experiment.triggerOrigin != null"))
         val waiting = observerSource.method("private fun returnToWaiting()")
         assertInOrder(waiting, "if (!controllerEnabled) return", "cycleGeneration++", "EarpieceExperiment(state = ExperimentState.ARMED, armed = true)", "returned to clean waiting")
         assertFalse(serviceSource.contains("onCompletedExperimentCleared"))

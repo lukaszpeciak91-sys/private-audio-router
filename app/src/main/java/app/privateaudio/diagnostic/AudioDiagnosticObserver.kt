@@ -110,6 +110,13 @@ data class EarpieceExperiment(
     val modeBeforeAssistantParticipation: String? = null,
 )
 
+data class CompletedRoutingCycle(
+    val experiment: EarpieceExperiment,
+    val finalCleanupObservation: DiagnosticSnapshot,
+    val completionReason: String,
+    val completedAt: String,
+)
+
 data class RoutingAttempt(
     val number: Int,
     val timestamp: String,
@@ -131,6 +138,9 @@ class AudioDiagnosticObserver(
         private set
 
     var experiment by mutableStateOf(EarpieceExperiment())
+        private set
+
+    var lastCompletedExperiment by mutableStateOf<CompletedRoutingCycle?>(null)
         private set
 
     val events = mutableStateListOf<String>()
@@ -244,6 +254,7 @@ class AudioDiagnosticObserver(
     fun report(): String = buildDiagnosticReport(
         timestamp = OffsetDateTime.now().format(DateTimeFormatter.ISO_OFFSET_DATE_TIME),
         experiment = experiment,
+        lastCompletedExperiment = lastCompletedExperiment,
         snapshot = snapshot,
         events = events,
         packageName = context.packageName,
@@ -671,6 +682,14 @@ class AudioDiagnosticObserver(
             silentTrackPlayState = if (experiment.silentTrackCreated && trackCleanupCompleted) "Released" else experiment.silentTrackPlayState,
         )
         snapshot("Post-cleanup observation")
+        if (experiment.requestAttempted || experiment.triggerOrigin != null) {
+            lastCompletedExperiment = CompletedRoutingCycle(
+                experiment = experiment,
+                finalCleanupObservation = snapshot,
+                completionReason = reason,
+                completedAt = OffsetDateTime.now().format(DateTimeFormatter.ISO_OFFSET_DATE_TIME),
+            )
+        }
     }
 
     private fun stopSilentCommunicationTrack(): Boolean {
@@ -737,6 +756,7 @@ class AudioDiagnosticObserver(
 internal fun buildDiagnosticReport(
     timestamp: String,
     experiment: EarpieceExperiment,
+    lastCompletedExperiment: CompletedRoutingCycle? = null,
     snapshot: DiagnosticSnapshot,
     events: List<String>,
     packageName: String = "app.privateaudio",
@@ -809,6 +829,8 @@ internal fun buildDiagnosticReport(
         appendLine("Attempt ${attempt.number}: timestamp=${attempt.timestamp}; trigger=${attempt.trigger}; mode=${attempt.mode}; device before=${attempt.deviceBefore.reportDescription()}; return=${attempt.accepted}; device immediately after=${attempt.deviceImmediatelyAfter.reportDescription()}; speakerphone immediately after=${attempt.speakerphoneImmediatelyAfter}")
     }
     appendLine()
+    appendCompletedRoutingCycle(lastCompletedExperiment)
+    appendLine()
     appendLine("CURRENT STATE")
     appendLine("AudioManager mode: ${snapshot.mode}")
     appendLine("Communication device: ${snapshot.communicationDevice.reportDescription()}")
@@ -839,6 +861,43 @@ internal fun buildDiagnosticReport(
     appendLine("Report timestamp: $timestamp")
     appendLine("Capture before cleanup with: adb shell dumpsys audio > audio-poc5.txt")
     append("This report does not claim actual mode ownership; verify it externally.")
+}
+
+private fun StringBuilder.appendCompletedRoutingCycle(cycle: CompletedRoutingCycle?) {
+    appendLine("LAST COMPLETED ROUTING CYCLE")
+    if (cycle == null) {
+        appendLine("None recorded")
+        return
+    }
+
+    val completed = cycle.experiment
+    appendLine("Completed at: ${cycle.completedAt}")
+    appendLine("Completion reason: ${cycle.completionReason}")
+    appendLine("Trigger origin: ${completed.triggerOrigin ?: "Not recorded"}")
+    appendLine("Mode before participation: ${completed.modeBeforeParticipation ?: "Not recorded"}")
+    appendLine("Routing request attempted: ${completed.requestAttempted}")
+    appendLine("Routing request accepted: ${completed.requestAccepted ?: "Not attempted"}")
+    appendLine("Total routing attempts: ${completed.attempts.size}")
+    appendLine("Selected target: ${completed.selectedTarget.reportDescription()}")
+    appendLine("Earpiece reported during session: ${completed.earpieceReportedDuringSession}")
+    appendLine("Speaker subsequently reclaimed: ${completed.revertedToSpeaker}")
+    appendLine("Silent AudioTrack cleanup completed: ${completed.silentTrackCleanupCompleted}")
+    appendLine("Final mode after cleanup: ${cycle.finalCleanupObservation.mode}")
+    appendSnapshot("COMPLETED PRE-POC5", completed.preOwnership)
+    appendSnapshot("COMPLETED POST-SILENT-TRACK-START", completed.postSilentTrackStart)
+    appendSnapshot("COMPLETED POST-MODE-REQUEST", completed.postModeOwnership)
+    appendSnapshot("COMPLETED POST-ROUTING-REQUEST", completed.postRoutingRequest, completed.requestAccepted)
+    appendSnapshot("COMPLETED DELAYED OBSERVATION", completed.shortObservation)
+    appendSnapshot("COMPLETED FINAL CLEANUP OBSERVATION", cycle.finalCleanupObservation)
+    appendLine("COMPLETED ROUTING ATTEMPTS")
+    completed.attempts.forEach { attempt ->
+        appendLine(
+            "Attempt ${attempt.number}: timestamp=${attempt.timestamp}; trigger=${attempt.trigger}; " +
+                "mode=${attempt.mode}; accepted=${attempt.accepted}; " +
+                "device before=${attempt.deviceBefore.reportDescription()}; " +
+                "device immediately after=${attempt.deviceImmediatelyAfter.reportDescription()}",
+        )
+    }
 }
 
 private fun StringBuilder.appendIdentity(label: String, snapshot: DiagnosticSnapshot?) {
