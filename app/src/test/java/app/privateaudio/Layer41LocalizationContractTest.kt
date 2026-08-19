@@ -216,8 +216,9 @@ class Layer41LocalizationContractTest {
 
     @Test
     fun productSurfacesUseResourcesWhileDiagnosticsStayOutsideLocalization() {
-        assertFalse(mainSource.contains("ClipData.newPlainText(\""))
-        assertTrue(mainSource.contains("getString(R.string.diagnostic_report_clip_label)"))
+        assertFalse(mainSource.contains("ClipboardManager"))
+        assertTrue(mainSource.contains("R.string.diagnostic_report_saved"))
+        assertTrue(mainSource.contains("R.string.diagnostic_report_save_failed"))
         assertFalse(productScreenSource.contains("Text(\""))
         assertFalse(settingsSource.contains("Text(\""))
         assertTrue(diagnosticScreenSource.contains("Text(\"PRIVATE AUDIO\""))

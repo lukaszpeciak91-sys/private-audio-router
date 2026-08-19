@@ -17,7 +17,7 @@
     <string name="overlay_controller_description">Plovoucí ovladač Private Audio. Stav: %1$s. Ovládací prvky pro zapnutí, rozbalení a zavření.</string>
     <string name="settings_language">Jazyk</string>
     <string name="settings_system_default">Výchozí</string>
-    <string name="settings_copy_diagnostic">Kopírovat diagnostickou zprávu</string>
+    <string name="settings_save_diagnostic">Uložit diagnostickou zprávu</string>
     <string name="settings_advanced">Pokročilé</string>
     <string name="settings_about">O aplikaci Private Audio</string>
     <string name="settings_version">Verze %1$s</string>
@@ -26,6 +26,6 @@
     <string name="settings_proximity_screen">Vypnout obrazovku u ucha</string>
     <string name="settings_advanced_body">S dalším vývojem Private Audio se zde objeví další možnosti.</string>
     <string name="settings_about_body">Private Audio pomáhá přesměrovat podporovaný hlasový zvuk do sluchátka telefonu.</string>
-    <string name="diagnostic_report_clip_label">Diagnostická zpráva Private Audio</string>
-    <string name="diagnostic_report_copied">Diagnostická zpráva byla zkopírována.</string>
+    <string name="diagnostic_report_saved">Diagnostická zpráva byla uložena.</string>
+    <string name="diagnostic_report_save_failed">Diagnostickou zprávu se nepodařilo uložit.</string>
 </resources>

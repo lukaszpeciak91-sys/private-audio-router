@@ -122,10 +122,10 @@ class PrivateAudioScreenTest {
         }
 
         composeRule.onNodeWithTag("private_audio_settings").performClick()
-        composeRule.onNodeWithTag("settings_copy_diagnostic").performClick()
+        composeRule.onNodeWithTag("settings_save_diagnostic").performClick()
         composeRule.onNodeWithTag("settings_language").performClick()
         composeRule.onNodeWithTag("settings_child_back").performClick()
-        composeRule.onNodeWithTag("settings_copy_diagnostic").assertIsDisplayed()
+        composeRule.onNodeWithTag("settings_save_diagnostic").assertIsDisplayed()
         composeRule.runOnIdle { assertEquals(1, copyClicks) }
     }
 }

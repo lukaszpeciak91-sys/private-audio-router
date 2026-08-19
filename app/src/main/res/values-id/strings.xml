@@ -17,7 +17,7 @@
     <string name="overlay_controller_description">Pengontrol mengambang Private Audio. Status: %1$s. Kontrol untuk mengaktifkan, memperluas, dan menutup.</string>
     <string name="settings_language">Bahasa</string>
     <string name="settings_system_default">Default</string>
-    <string name="settings_copy_diagnostic">Salin laporan diagnostik</string>
+    <string name="settings_save_diagnostic">Simpan laporan diagnostik</string>
     <string name="settings_advanced">Lanjutan</string>
     <string name="settings_about">Tentang Private Audio</string>
     <string name="settings_version">Versi %1$s</string>
@@ -26,6 +26,6 @@
     <string name="settings_proximity_screen">Matikan layar saat dekat telinga</string>
     <string name="settings_advanced_body">Opsi tambahan akan muncul di sini seiring perkembangan Private Audio.</string>
     <string name="settings_about_body">Private Audio membantu mengalihkan audio suara ke earpiece bawaan ponsel.</string>
-    <string name="diagnostic_report_clip_label">Laporan diagnostik Private Audio</string>
-    <string name="diagnostic_report_copied">Laporan diagnostik disalin.</string>
+    <string name="diagnostic_report_saved">Laporan diagnostik disimpan.</string>
+    <string name="diagnostic_report_save_failed">Laporan diagnostik tidak dapat disimpan.</string>
 </resources>

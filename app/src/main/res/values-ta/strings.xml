@@ -17,7 +17,7 @@
     <string name="overlay_controller_description">Private Audio மிதக்கும் கட்டுப்படுத்தி. நிலை: %1$s. இயக்கு, விரி, மூடு ஆகிய கட்டுப்பாடுகள்.</string>
     <string name="settings_language">மொழி</string>
     <string name="settings_system_default">இயல்பு</string>
-    <string name="settings_copy_diagnostic">கண்டறிதல் அறிக்கையை நகலெடு</string>
+    <string name="settings_save_diagnostic">கண்டறிதல் அறிக்கையைச் சேமி</string>
     <string name="settings_advanced">மேம்பட்டவை</string>
     <string name="settings_about">Private Audio பற்றி</string>
     <string name="settings_version">பதிப்பு %1$s</string>
@@ -26,6 +26,6 @@
     <string name="settings_proximity_screen">காதுக்கு அருகில் திரையை அணை</string>
     <string name="settings_advanced_body">Private Audio மேம்படும்போது கூடுதல் விருப்பங்கள் இங்கே தோன்றும்.</string>
     <string name="settings_about_body">தொலைபேசியின் இயர்பீஸுக்கு ஆடியோவை மாற்ற Private Audio உதவுகிறது.</string>
-    <string name="diagnostic_report_clip_label">Private Audio கண்டறிதல் அறிக்கை</string>
-    <string name="diagnostic_report_copied">கண்டறிதல் அறிக்கை நகலெடுக்கப்பட்டது.</string>
+    <string name="diagnostic_report_saved">கண்டறிதல் அறிக்கை சேமிக்கப்பட்டது.</string>
+    <string name="diagnostic_report_save_failed">கண்டறிதல் அறிக்கையைச் சேமிக்க முடியவில்லை.</string>
 </resources>

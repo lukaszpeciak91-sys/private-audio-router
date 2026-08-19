@@ -23,7 +23,7 @@ class Layer4SettingsContractTest {
         assertTrue(settingsSource.contains("const val widthFraction = 0.88f"))
         assertTrue(settingsSource.contains("val verticalOffset = 104.dp"))
         assertTrue(settingsSource.contains("private fun SettingsDivider()"))
-        assertTrue(settingsSource.contains("private fun CopyIcon()"))
+        assertTrue(settingsSource.contains("private fun SaveIcon()"))
         assertTrue(settingsSource.contains("SettingsScrim"))
         assertTrue(settingsSource.contains("RoundedCornerShape(SettingsLayout.cornerRadius)"))
     }
@@ -41,13 +41,25 @@ class Layer4SettingsContractTest {
     }
 
     @Test
-    fun diagnosticCopyUsesExistingServiceReportAndAndroidClipboard() {
-        assertTrue(mainSource.contains("activeService.diagnosticReport()"))
-        assertTrue(mainSource.contains("getSystemService(ClipboardManager::class.java)"))
-        assertTrue(mainSource.contains("ClipData.newPlainText"))
-        assertTrue(serviceSource.method("fun diagnosticReport(): String").contains("return observer.report()"))
+    fun diagnosticSaveUsesCreateDocumentAndUtf8ContentResolver() {
+        assertTrue(mainSource.contains("service?.diagnosticReport()"))
+        assertTrue(mainSource.contains("Intent.ACTION_CREATE_DOCUMENT"))
+        assertTrue(mainSource.contains("Intent.CATEGORY_OPENABLE"))
+        assertTrue(mainSource.contains("setType(\"text/plain\")"))
+        assertTrue(mainSource.contains("contentResolver.openOutputStream"))
+        assertTrue(mainSource.contains("Charsets.UTF_8"))
+        assertFalse(mainSource.contains("ClipboardManager"))
+        assertTrue(serviceSource.method("fun diagnosticReport(): String").contains("observer.report()"))
         assertEquals(1, observerSource.occurrences("internal fun buildDiagnosticReport("))
         assertEquals(0, settingsSource.occurrences("buildDiagnosticReport("))
+    }
+
+    @Test
+    fun saveWorkflowAddsNoBroadStoragePermission() {
+        val manifest = projectFile("app/src/main/AndroidManifest.xml").readText()
+        assertFalse(manifest.contains("READ_EXTERNAL_STORAGE"))
+        assertFalse(manifest.contains("WRITE_EXTERNAL_STORAGE"))
+        assertFalse(manifest.contains("MANAGE_EXTERNAL_STORAGE"))
     }
 
     @Test
@@ -58,6 +70,12 @@ class Layer4SettingsContractTest {
         assertFalse(settingsSource.contains("PrivateAudioState"))
         assertFalse(settingsSource.contains("AudioDiagnosticObserver"))
         assertFalse(settingsSource.contains("MODE_IN_COMMUNICATION"))
+    }
+
+    @Test
+    fun diagnosticFilenameIsTimestampedPlainText() {
+        val filename = diagnosticFilename(java.time.LocalDateTime.of(2026, 8, 19, 7, 5, 9))
+        assertEquals("private-audio-diagnostic-2026-08-19_07-05-09.txt", filename)
     }
 
     private fun String.method(signature: String): String =

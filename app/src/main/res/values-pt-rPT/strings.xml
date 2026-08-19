@@ -17,7 +17,7 @@
     <string name="overlay_controller_description">Controlador flutuante do Private Audio. Estado: %1$s. Controlos para ativar, expandir e fechar.</string>
     <string name="settings_language">Idioma</string>
     <string name="settings_system_default">Predefinido</string>
-    <string name="settings_copy_diagnostic">Copiar relatório de diagnóstico</string>
+    <string name="settings_save_diagnostic">Guardar relatório de diagnóstico</string>
     <string name="settings_advanced">Avançado</string>
     <string name="settings_about">Acerca do Private Audio</string>
     <string name="settings_version">Versão %1$s</string>
@@ -26,6 +26,6 @@
     <string name="settings_proximity_screen">Desligar o ecrã junto ao ouvido</string>
     <string name="settings_advanced_body">Serão apresentadas aqui opções adicionais à medida que o Private Audio evoluir.</string>
     <string name="settings_about_body">O Private Audio ajuda a encaminhar o áudio de voz para o auricular integrado do telemóvel.</string>
-    <string name="diagnostic_report_clip_label">Relatório de diagnóstico do Private Audio</string>
-    <string name="diagnostic_report_copied">Relatório de diagnóstico copiado.</string>
+    <string name="diagnostic_report_saved">Relatório de diagnóstico guardado.</string>
+    <string name="diagnostic_report_save_failed">Não foi possível guardar o relatório de diagnóstico.</string>
 </resources>

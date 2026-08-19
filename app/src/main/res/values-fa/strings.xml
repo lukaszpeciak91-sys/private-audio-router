@@ -17,7 +17,7 @@
     <string name="overlay_controller_description">کنترل‌کننده شناور مینی Private Audio. وضعیت: %1$s. کنترل‌های روشن کردن، باز کردن و بستن.</string>
     <string name="settings_language">زبان</string>
     <string name="settings_system_default">پیش‌فرض</string>
-    <string name="settings_copy_diagnostic">کپی گزارش عیب‌یابی</string>
+    <string name="settings_save_diagnostic">ذخیره گزارش عیب‌یابی</string>
     <string name="settings_advanced">پیشرفته</string>
     <string name="settings_about">درباره Private Audio</string>
     <string name="settings_version">نسخه %1$s</string>
@@ -26,6 +26,6 @@
     <string name="settings_proximity_screen">خاموش کردن صفحه‌نمایش نزدیک گوش</string>
     <string name="settings_advanced_body">با توسعه Private Audio، گزینه‌های بیشتری در اینجا نمایش داده می‌شود.</string>
     <string name="settings_about_body">Private Audio به هدایت صدا به بلندگوی بالای تلفن کمک می‌کند.</string>
-    <string name="diagnostic_report_clip_label">گزارش عیب‌یابی Private Audio</string>
-    <string name="diagnostic_report_copied">گزارش عیب‌یابی کپی شد.</string>
+    <string name="diagnostic_report_saved">گزارش عیب‌یابی ذخیره شد.</string>
+    <string name="diagnostic_report_save_failed">گزارش عیب‌یابی ذخیره نشد.</string>
 </resources>

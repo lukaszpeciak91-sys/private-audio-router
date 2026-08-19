@@ -17,7 +17,7 @@
     <string name="overlay_controller_description">Private Audio फ्लोटिंग कंट्रोलर. स्थिती: %1$s. सुरू करणे, विस्तृत करणे आणि बंद करणे यासाठी नियंत्रणे.</string>
     <string name="settings_language">भाषा</string>
     <string name="settings_system_default">सिस्टीम डीफॉल्ट</string>
-    <string name="settings_copy_diagnostic">डायग्नोस्टिक रिपोर्ट कॉपी करा</string>
+    <string name="settings_save_diagnostic">डायग्नोस्टिक रिपोर्ट सेव्ह करा</string>
     <string name="settings_advanced">प्रगत</string>
     <string name="settings_about">Private Audio बद्दल</string>
     <string name="settings_version">आवृत्ती %1$s</string>
@@ -26,6 +26,6 @@
     <string name="settings_proximity_screen">कानाजवळ स्क्रीन बंद करा</string>
     <string name="settings_advanced_body">Private Audio विकसित होत असताना अतिरिक्त पर्याय येथे दिसतील.</string>
     <string name="settings_about_body">Private Audio ऑडिओ फोनच्या इयरपीसवर स्विच करण्यात मदत करते.</string>
-    <string name="diagnostic_report_clip_label">Private Audio डायग्नोस्टिक रिपोर्ट</string>
-    <string name="diagnostic_report_copied">डायग्नोस्टिक रिपोर्ट कॉपी केला.</string>
+    <string name="diagnostic_report_saved">डायग्नोस्टिक रिपोर्ट सेव्ह झाला.</string>
+    <string name="diagnostic_report_save_failed">डायग्नोस्टिक रिपोर्ट सेव्ह करता आला नाही.</string>
 </resources>

@@ -17,7 +17,7 @@
     <string name="overlay_controller_description">Private Audio のミニコントローラー。ステータス: %1$s。オンにする、展開、閉じるの各操作ができます。</string>
     <string name="settings_language">言語</string>
     <string name="settings_system_default">デフォルト</string>
-    <string name="settings_copy_diagnostic">診断レポートをコピー</string>
+    <string name="settings_save_diagnostic">診断レポートを保存</string>
     <string name="settings_advanced">詳細設定</string>
     <string name="settings_about">Private Audio について</string>
     <string name="settings_version">バージョン %1$s</string>
@@ -26,6 +26,6 @@
     <string name="settings_proximity_screen">耳に近づけたとき画面を消す</string>
     <string name="settings_advanced_body">Private Audio の進化に合わせて、ここに追加のオプションが表示されます。</string>
     <string name="settings_about_body">Private Audio は音声をスマートフォンの受話口スピーカーに切り替えるためのアプリです。</string>
-    <string name="diagnostic_report_clip_label">Private Audio 診断レポート</string>
-    <string name="diagnostic_report_copied">診断レポートをコピーしました。</string>
+    <string name="diagnostic_report_saved">診断レポートを保存しました。</string>
+    <string name="diagnostic_report_save_failed">診断レポートを保存できませんでした。</string>
 </resources>

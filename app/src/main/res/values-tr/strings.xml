@@ -17,7 +17,7 @@
     <string name="overlay_controller_description">Private Audio Mini denetleyicisi. Durum: %1$s. Açma, genişletme ve kapatma denetimleri.</string>
     <string name="settings_language">Dil</string>
     <string name="settings_system_default">Varsayılan</string>
-    <string name="settings_copy_diagnostic">Tanılama raporunu kopyala</string>
+    <string name="settings_save_diagnostic">Tanılama raporunu kaydet</string>
     <string name="settings_advanced">Gelişmiş</string>
     <string name="settings_about">Private Audio hakkında</string>
     <string name="settings_version">Sürüm %1$s</string>
@@ -26,6 +26,6 @@
     <string name="settings_proximity_screen">Kulağa yaklaştırınca ekranı kapat</string>
     <string name="settings_advanced_body">Private Audio geliştikçe burada ek seçenekler görünecek.</string>
     <string name="settings_about_body">Private Audio, sesi telefonun ahizesine yönlendirmeye yardımcı olur.</string>
-    <string name="diagnostic_report_clip_label">Private Audio tanılama raporu</string>
-    <string name="diagnostic_report_copied">Tanılama raporu kopyalandı.</string>
+    <string name="diagnostic_report_saved">Tanılama raporu kaydedildi.</string>
+    <string name="diagnostic_report_save_failed">Tanılama raporu kaydedilemedi.</string>
 </resources>

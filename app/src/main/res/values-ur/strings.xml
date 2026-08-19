@@ -17,7 +17,7 @@
     <string name="overlay_controller_description">Private Audio کا فلوٹنگ منی کنٹرولر۔ اسٹیٹس: %1$s۔ چالو کرنے، پھیلانے اور بند کرنے کے کنٹرولز۔</string>
     <string name="settings_language">زبان</string>
     <string name="settings_system_default">ڈیفالٹ</string>
-    <string name="settings_copy_diagnostic">تشخیصی رپورٹ کاپی کریں</string>
+    <string name="settings_save_diagnostic">تشخیصی رپورٹ محفوظ کریں</string>
     <string name="settings_advanced">ایڈوانسڈ</string>
     <string name="settings_about">Private Audio کے بارے میں</string>
     <string name="settings_version">ورژن %1$s</string>
@@ -26,6 +26,6 @@
     <string name="settings_proximity_screen">کان کے قریب اسکرین بند کریں</string>
     <string name="settings_advanced_body">Private Audio کے بہتر ہونے کے ساتھ یہاں مزید اختیارات ظاہر ہوں گے۔</string>
     <string name="settings_about_body">Private Audio صوتی آڈیو کو فون کے اندرونی ایئر پیس تک منتقل کرنے میں مدد کرتا ہے۔</string>
-    <string name="diagnostic_report_clip_label">Private Audio کی تشخیصی رپورٹ</string>
-    <string name="diagnostic_report_copied">تشخیصی رپورٹ کاپی ہو گئی۔</string>
+    <string name="diagnostic_report_saved">تشخیصی رپورٹ محفوظ ہو گئی۔</string>
+    <string name="diagnostic_report_save_failed">تشخیصی رپورٹ محفوظ نہیں ہو سکی۔</string>
 </resources>

@@ -17,7 +17,7 @@
     <string name="overlay_controller_description">Плаваючий елемент керування Private Audio. Стан: %1$s. Елементи керування ввімкненням, розгортанням і закриттям.</string>
     <string name="settings_language">Мова</string>
     <string name="settings_system_default">За замовчуванням</string>
-    <string name="settings_copy_diagnostic">Копіювати діагностичний звіт</string>
+    <string name="settings_save_diagnostic">Зберегти діагностичний звіт</string>
     <string name="settings_advanced">Розширені</string>
     <string name="settings_about">Про Private Audio</string>
     <string name="settings_version">Версія %1$s</string>
@@ -26,6 +26,6 @@
     <string name="settings_proximity_screen">Вимикати екран біля вуха</string>
     <string name="settings_advanced_body">З розвитком Private Audio тут з’являтимуться додаткові параметри.</string>
     <string name="settings_about_body">Private Audio допомагає перенаправляти підтримуваний голосовий звук на вбудований розмовний динамік телефона.</string>
-    <string name="diagnostic_report_clip_label">Діагностичний звіт Private Audio</string>
-    <string name="diagnostic_report_copied">Діагностичний звіт скопійовано.</string>
+    <string name="diagnostic_report_saved">Діагностичний звіт збережено.</string>
+    <string name="diagnostic_report_save_failed">Не вдалося зберегти діагностичний звіт.</string>
 </resources>

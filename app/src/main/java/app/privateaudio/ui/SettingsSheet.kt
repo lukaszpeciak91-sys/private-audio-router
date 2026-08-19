@@ -81,7 +81,7 @@ fun SettingsSheet(
     versionName: String,
     proximityFeatureEnabled: Boolean,
     onProximityFeatureChange: (Boolean) -> Unit,
-    onCopyDiagnosticReport: () -> Unit,
+    onSaveDiagnosticReport: () -> Unit,
     onDismiss: () -> Unit,
 ) {
     var page by rememberSaveable { mutableStateOf(SettingsPage.ROOT) }
@@ -147,7 +147,7 @@ fun SettingsSheet(
                         selectedLanguageTag = selectedLanguageTag,
                         supportedLanguages = supportedLanguages,
                         onLanguage = { page = SettingsPage.LANGUAGE },
-                        onCopyDiagnosticReport = onCopyDiagnosticReport,
+                        onSaveDiagnosticReport = onSaveDiagnosticReport,
                         onAdvanced = { page = SettingsPage.ADVANCED },
                         onAbout = { page = SettingsPage.ABOUT },
                     )
@@ -229,7 +229,7 @@ private fun SettingsRoot(
     selectedLanguageTag: String?,
     supportedLanguages: List<AppLanguageOption>,
     onLanguage: () -> Unit,
-    onCopyDiagnosticReport: () -> Unit,
+    onSaveDiagnosticReport: () -> Unit,
     onAdvanced: () -> Unit,
     onAbout: () -> Unit,
 ) {
@@ -248,10 +248,10 @@ private fun SettingsRoot(
         onClick = onLanguage,
     )
     SettingsRow(
-        label = stringResource(R.string.settings_copy_diagnostic),
-        tag = "settings_copy_diagnostic",
-        trailing = { CopyIcon() },
-        onClick = onCopyDiagnosticReport,
+        label = stringResource(R.string.settings_save_diagnostic),
+        tag = "settings_save_diagnostic",
+        trailing = { SaveIcon() },
+        onClick = onSaveDiagnosticReport,
     )
     SettingsDivider()
     SettingsRow(
@@ -424,18 +424,18 @@ private fun SettingsDivider() {
 }
 
 @Composable
-private fun CopyIcon() = Canvas(Modifier.size(22.dp)) {
+private fun SaveIcon() = Canvas(Modifier.size(22.dp)) {
     val stroke = 1.35.dp.toPx()
     drawRoundRect(
         color = SettingsPrimary,
-        topLeft = Offset(size.width * 0.10f, size.height * 0.25f),
-        size = androidx.compose.ui.geometry.Size(size.width * 0.64f, size.height * 0.64f),
+        topLeft = Offset(size.width * 0.12f, size.height * 0.58f),
+        size = androidx.compose.ui.geometry.Size(size.width * 0.76f, size.height * 0.28f),
         cornerRadius = androidx.compose.ui.geometry.CornerRadius(2.dp.toPx()),
         style = androidx.compose.ui.graphics.drawscope.Stroke(stroke),
     )
-    drawLine(SettingsPrimary, Offset(size.width * 0.31f, size.height * 0.10f), Offset(size.width * 0.80f, size.height * 0.10f), stroke, StrokeCap.Round)
-    drawLine(SettingsPrimary, Offset(size.width * 0.80f, size.height * 0.10f), Offset(size.width * 0.90f, size.height * 0.20f), stroke, StrokeCap.Round)
-    drawLine(SettingsPrimary, Offset(size.width * 0.90f, size.height * 0.20f), Offset(size.width * 0.90f, size.height * 0.69f), stroke, StrokeCap.Round)
+    drawLine(SettingsPrimary, Offset(size.width * .5f, size.height * .10f), Offset(size.width * .5f, size.height * .62f), stroke, StrokeCap.Round)
+    drawLine(SettingsPrimary, Offset(size.width * .31f, size.height * .43f), Offset(size.width * .5f, size.height * .62f), stroke, StrokeCap.Round)
+    drawLine(SettingsPrimary, Offset(size.width * .69f, size.height * .43f), Offset(size.width * .5f, size.height * .62f), stroke, StrokeCap.Round)
 }
 
 @Composable

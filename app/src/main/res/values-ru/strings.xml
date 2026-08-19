@@ -17,7 +17,7 @@
     <string name="overlay_controller_description">Плавающий элемент управления Private Audio. Состояние: %1$s. Элементы управления включением, разворачиванием и закрытием.</string>
     <string name="settings_language">Язык</string>
     <string name="settings_system_default">По умолчанию</string>
-    <string name="settings_copy_diagnostic">Копировать диагностический отчёт</string>
+    <string name="settings_save_diagnostic">Сохранить диагностический отчёт</string>
     <string name="settings_advanced">Дополнительно</string>
     <string name="settings_about">О Private Audio</string>
     <string name="settings_version">Версия %1$s</string>
@@ -26,6 +26,6 @@
     <string name="settings_proximity_screen">Выключать экран у уха</string>
     <string name="settings_advanced_body">По мере развития Private Audio здесь появятся дополнительные параметры.</string>
     <string name="settings_about_body">Private Audio помогает направлять голосовой звук на встроенный разговорный динамик телефона.</string>
-    <string name="diagnostic_report_clip_label">Диагностический отчёт Private Audio</string>
-    <string name="diagnostic_report_copied">Диагностический отчёт скопирован.</string>
+    <string name="diagnostic_report_saved">Диагностический отчёт сохранён.</string>
+    <string name="diagnostic_report_save_failed">Не удалось сохранить диагностический отчёт.</string>
 </resources>
