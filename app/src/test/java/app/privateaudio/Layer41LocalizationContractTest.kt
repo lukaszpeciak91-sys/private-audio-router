@@ -340,6 +340,7 @@ class Layer41LocalizationContractTest {
     fun albanianFrozenLocalizationSemanticsRemainIntact() {
         assertEquals("shqip", Locale.forLanguageTag("sq").getDisplayLanguage(Locale.forLanguageTag("sq")))
         assertEquals("Shqip", nativeLocaleName("sq"))
+        assertTrue(albanianStrings.contains("name=\"routing_notification_title\">Private Audio është ndezur</string>"))
         assertTrue(albanianStrings.contains("name=\"routing_notification_text\">Në pritje për ndërrimin e audios</string>"))
         assertTrue(albanianStrings.contains("name=\"settings_language_body\"") && albanianStrings.contains("gjuhën e pajisjes sate"))
         assertTrue(albanianStrings.contains("name=\"settings_language_android_13_required\"") && albanianStrings.contains("Kjo pajisje përdor gjuhën e sistemit."))

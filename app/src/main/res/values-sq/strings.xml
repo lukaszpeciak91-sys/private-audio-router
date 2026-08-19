@@ -2,7 +2,7 @@
 <resources>
     <string name="app_name">Private Audio</string>
     <string name="routing_notification_channel">Private Audio</string>
-    <string name="routing_notification_title">Private Audio është aktiv</string>
+    <string name="routing_notification_title">Private Audio është ndezur</string>
     <string name="routing_notification_text">Në pritje për ndërrimin e audios</string>
     <string name="product_title">Private Audio</string>
     <string name="product_subtitle">Fol privatisht me AI, si në një telefonatë.</string>
