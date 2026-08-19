@@ -53,6 +53,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
+import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import app.privateaudio.PrivateAudioState
@@ -330,7 +331,7 @@ private fun BottomControl(
     icon: @Composable () -> Unit,
 ) {
     val interactionModifier = if (onClick == null) Modifier else Modifier.clickable(onClick = onClick)
-    var labelFontSize by remember(label) { mutableStateOf(13.sp) }
+    var labelFontSize by remember(label) { mutableStateOf(bottomLabelInitialFontSize(label)) }
     val isMultiWordLabel = label.any(Char::isWhitespace)
     Column(
         modifier = Modifier
@@ -362,6 +363,19 @@ private fun BottomControl(
             modifier = Modifier.requiredWidth(112.dp),
         )
     }
+}
+
+internal fun bottomLabelInitialFontSize(label: String): TextUnit =
+    if (label.usesArabicScript()) 14.sp else 13.sp
+
+internal fun String.usesArabicScript(): Boolean {
+    var index = 0
+    while (index < length) {
+        val codePoint = Character.codePointAt(this, index)
+        if (Character.UnicodeScript.of(codePoint) == Character.UnicodeScript.ARABIC) return true
+        index += Character.charCount(codePoint)
+    }
+    return false
 }
 
 @Composable
