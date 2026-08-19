@@ -54,7 +54,6 @@ data class ObservedPlayback(
     val contentType: String,
     val flags: String = "FLAGS_NONE (0x0)",
     val allowedCapturePolicy: String,
-    val active: Boolean = true,
     val playerState: String = "Not exposed by the public AudioPlaybackConfiguration API",
     val playerIdentity: String = "Not exposed by the public AudioPlaybackConfiguration API",
     val device: ObservedDevice?,
@@ -807,7 +806,7 @@ private fun StringBuilder.appendSnapshot(
     appendLine("Active playback configurations:")
     if (snapshot.activePlaybackConfigurations.isEmpty()) appendLine("  None visible")
     snapshot.activePlaybackConfigurations.forEachIndexed { index, playback ->
-        appendLine("  ${index + 1}. usage=${playback.usage}; content=${playback.contentType}; flags=${playback.flags}; capture policy=${playback.allowedCapturePolicy}; active=${playback.active}; player state=${playback.playerState}; player/session identity=${playback.playerIdentity}; device=${playback.device.reportDescription()}")
+        appendLine("  ${index + 1}. usage=${playback.usage}; content=${playback.contentType}; flags=${playback.flags}; capture policy=${playback.allowedCapturePolicy}; player state=${playback.playerState}; player/session identity=${playback.playerIdentity}; device=${playback.device.reportDescription()}")
     }
     appendLine()
 }
@@ -854,7 +853,6 @@ private fun AudioPlaybackConfiguration.toObservedPlayback() = ObservedPlayback(
     contentType = audioContentTypeName(audioAttributes.contentType),
     flags = audioFlagsName(audioAttributes.flags),
     allowedCapturePolicy = capturePolicyName(audioAttributes.allowedCapturePolicy),
-    active = isActive,
     device = audioDeviceInfo?.toObservedDevice(),
 )
 
@@ -880,7 +878,7 @@ internal fun playbackChanges(
 }
 
 private fun ObservedPlayback.traceDescription() =
-    "usage=$usage; contentType=$contentType; flags=$flags; active=$active; " +
+    "usage=$usage; contentType=$contentType; flags=$flags; " +
         "playerState=$playerState; player/session=$playerIdentity; device=${device.reportDescription()}"
 
 internal fun audioFlagsName(flags: Int): String =
