@@ -38,6 +38,8 @@ Before finalizing a locale, perform a source-to-target semantic back-check for s
 
 Ask whether the target preserves the same subject, object, referent, and relationship between components; whether it accidentally collapses two distinct source concepts; and whether grammatically natural wording implies different behavior. A target that changes or collapses those semantics is **`FIX`**. Grammatical naturalness never overrides semantic fidelity.
 
+Treat **ON / enabled versus ACTIVE** as a mandatory product-state check whenever the source contains both concepts. Before translating, reconstruct them independently: Power ON or an enabled controller/service means Private Audio is waiting or available, while Active means it is currently participating in a qualifying communication-audio session. Verify that the target does not collapse those meanings; semantic identity is **`FIX`**, although grammatical similarity is acceptable. Power ON, service/controller enabled, waiting/ready, and runtime Active are not interchangeable states. Preserve both concepts independently in reviewed/frozen copy, and add persistent locale-specific contract assertions for both when the distinction is a meaningful regression target.
+
 For a linguistically non-obvious or high-risk string, briefly reconstruct the target meaning in plain English or equivalent source-language semantics. This reverse gloss is a sanity check—not machine back-translation offered as proof of quality—for swapped subjects and objects, lost distinctions, wrong referents, missing triggers, and altered action/state semantics. If the reconstructed meaning differs materially from the source, stop and review. Apply this proportionally; trivial labels such as `Close`, `Error`, and `Settings` do not each require a reverse gloss.
 
 ## Resolve terminology independently
@@ -54,7 +56,7 @@ For a linguistically non-obvious or high-risk string, briefly reconstruct the ta
 ### Add a locale
 
 1. Inspect current English/default strings and derive the current locale/key inventory.
-2. Review core terminology; identify and research uncertainty; then freeze approved copy.
+2. Review core terminology and product states—including an explicit ON/enabled-versus-ACTIVE back-check when both occur—identify and research uncertainty, then freeze approved copy.
 3. Implement standard Android resources without silently rewriting approved copy. Report genuine language problems instead of improvising.
 4. Verify key and placeholder parity, generated discovery, script/orthography, Mini labels, and shared RTL/bidi behavior where applicable.
 5. For each locale, add durable locale-specific assertions to the existing localization contract for FULL/MINI-reviewed or otherwise frozen high-risk terminology, including meaningful reviewed Mini states. Ad-hoc Python, Java, or manual checks and parity alone are not substitutes.

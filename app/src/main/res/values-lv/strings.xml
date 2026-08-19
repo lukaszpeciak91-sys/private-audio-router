@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Private Audio</string>
+    <string name="routing_notification_channel">Private Audio</string>
+    <string name="routing_notification_title">Private Audio ir ieslēgts</string>
+    <string name="routing_notification_text">Gaida audio pārslēgšanu</string>
+    <string name="product_title">Private Audio</string>
+    <string name="product_subtitle">Runājiet ar AI privāti, gluži kā tālruņa sarunā.</string>
+    <string name="state_ready">Gatavs</string>
+    <string name="state_waiting">Gaida</string>
+    <string name="state_active">Aktīvs</string>
+    <string name="state_error">Kļūda</string>
+    <string name="power_control">Ieslēgšana</string>
+    <string name="floating">Mini</string>
+    <string name="settings">Iestatījumi</string>
+    <string name="close">Aizvērt</string>
+    <string name="overlay_controller_description">Private Audio peldošais vadības panelis. Statuss: %1$s. Ieslēgšanas, izvēršanas un aizvēršanas vadīklas.</string>
+    <string name="settings_language">Valoda</string>
+    <string name="settings_system_default">Noklusējums</string>
+    <string name="settings_save_diagnostic">Saglabāt diagnostikas pārskatu</string>
+    <string name="settings_advanced">Papildu</string>
+    <string name="settings_about">Par Private Audio</string>
+    <string name="settings_version">Versija %1$s</string>
+    <string name="settings_language_body">Private Audio pašlaik izmanto jūsu ierīces valodu. Ir atlasīts noklusējums.</string>
+    <string name="settings_language_android_13_required">Valodas atlasei lietotnē ir nepieciešama Android 13 vai jaunāka versija. Šī ierīce izmanto sistēmas valodu.</string>
+    <string name="settings_proximity_screen">Izslēgt ekrānu pie auss</string>
+    <string name="settings_advanced_body">Private Audio attīstības gaitā šeit parādīsies papildu opcijas.</string>
+    <string name="settings_about_body">Private Audio palīdz pārslēgt atbalstīto balss audio uz tālruņa iebūvēto uztvērēju.</string>
+    <string name="diagnostic_report_saved">Diagnostikas pārskats ir saglabāts.</string>
+    <string name="diagnostic_report_save_failed">Neizdevās saglabāt diagnostikas pārskatu.</string>
+</resources>
