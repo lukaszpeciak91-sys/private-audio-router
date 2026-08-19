@@ -9,9 +9,11 @@ import android.media.AudioFormat
 import android.media.AudioManager
 import android.media.AudioPlaybackConfiguration
 import android.media.AudioTrack
+import android.os.Build
 import android.os.Handler
 import android.os.Looper
 import android.os.Process
+import app.privateaudio.BuildConfig
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.mutableStateOf
@@ -27,6 +29,31 @@ data class ObservedDevice(
     val type: String,
     val productName: String,
 )
+
+internal data class DiagnosticEnvironment(
+    val versionName: String,
+    val versionCode: Long,
+    val androidRelease: String,
+    val apiLevel: Int,
+    val manufacturer: String,
+    val model: String,
+    val product: String,
+) {
+    companion object {
+        fun from(context: Context): DiagnosticEnvironment {
+            val info = context.packageManager.getPackageInfo(context.packageName, 0)
+            return DiagnosticEnvironment(
+                versionName = info.versionName ?: BuildConfig.VERSION_NAME,
+                versionCode = info.longVersionCode,
+                androidRelease = Build.VERSION.RELEASE,
+                apiLevel = Build.VERSION.SDK_INT,
+                manufacturer = Build.MANUFACTURER,
+                model = Build.MODEL,
+                product = Build.PRODUCT,
+            )
+        }
+    }
+}
 
 data class DiagnosticSnapshot(
     val mode: String,
@@ -149,6 +176,11 @@ class AudioDiagnosticObserver(
 
     private val startupAudioTrace = ArrayDeque<String>()
     private var previousPlaybackObservation: List<ObservedPlayback> = emptyList()
+    private var previousPlaybackControllerState: String? = null
+    private var previousQualifierCounts: Triple<Int, Int, Int>? = null
+    private var redundantPlaybackCallbacksSuppressed = 0
+    private var eventEntriesDropped = 0
+    private var startupTraceEntriesDropped = 0
 
     val isRoutingActionInProgress: Boolean
         get() = routingActionInProgress
@@ -265,18 +297,28 @@ class AudioDiagnosticObserver(
         startupAudioTrace = startupAudioTrace.toList(),
         assistantQualifyingPlaybackCount = currentAssistantQualifyingPlaybackCount,
         browserQualifyingPlaybackCount = currentBrowserQualifyingPlaybackCount,
+        environment = DiagnosticEnvironment.from(context),
+        eventEntriesDropped = eventEntriesDropped,
+        startupTraceEntriesDropped = startupTraceEntriesDropped,
+        redundantPlaybackCallbacksSuppressed = redundantPlaybackCallbacksSuppressed,
     )
 
     private fun addEvent(message: String) {
         val timestamp = LocalTime.now().format(TIME_FORMAT)
         events.add(0, "$timestamp  $message")
-        while (events.size > MAX_EVENTS) events.removeAt(events.lastIndex)
+        while (events.size > MAX_EVENTS) {
+            events.removeAt(events.lastIndex)
+            eventEntriesDropped++
+        }
         addStartupTrace("$timestamp  $message")
     }
 
     private fun addStartupTrace(entry: String) {
         startupAudioTrace.addLast(entry)
-        while (startupAudioTrace.size > MAX_STARTUP_TRACE_EVENTS) startupAudioTrace.removeFirst()
+        while (startupAudioTrace.size > MAX_STARTUP_TRACE_EVENTS) {
+            startupAudioTrace.removeFirst()
+            startupTraceEntriesDropped++
+        }
     }
 
     private fun evaluateExperimentTrigger() {
@@ -545,17 +587,24 @@ class AudioDiagnosticObserver(
 
     private fun handlePlaybackConfigurations(configs: List<AudioPlaybackConfiguration>) {
         if (!controllerEnabled) return
-        recordPlaybackObservation(configs.map(AudioPlaybackConfiguration::toObservedPlayback))
         val count = qualifyingPlaybackCount(configs)
         val assistantCount = assistantQualifyingPlaybackCount(configs)
         val browserCount = browserQualifyingPlaybackCount(configs)
+        recordPlaybackObservation(
+            configs.map(AudioPlaybackConfiguration::toObservedPlayback),
+            Triple(count, assistantCount, browserCount),
+        )
         currentAssistantQualifyingPlaybackCount = assistantCount
         currentBrowserQualifyingPlaybackCount = browserCount
-        addEvent(
-            "Playback callback — qualifying VOICE_COMMUNICATION/SPEECH count=$count; " +
-                "qualifying ASSISTANT/SPEECH count=$assistantCount; " +
-                "browser qualifying VOICE_COMMUNICATION/UNKNOWN count=$browserCount",
-        )
+        val qualifierCounts = Triple(count, assistantCount, browserCount)
+        if (qualifierCounts != previousQualifierCounts) {
+            addEvent(
+                "Playback callback — qualifying VOICE_COMMUNICATION/SPEECH count=$count; " +
+                    "qualifying ASSISTANT/SPEECH count=$assistantCount; " +
+                    "browser qualifying VOICE_COMMUNICATION/UNKNOWN count=$browserCount",
+            )
+            previousQualifierCounts = qualifierCounts
+        }
         if (experiment.attempts.isEmpty()) {
             if (!routingActionInProgress && (count > 0 || assistantCount > 0 || browserCount > 0)) evaluateExperimentTrigger()
             return
@@ -574,19 +623,25 @@ class AudioDiagnosticObserver(
         }
     }
 
-    private fun recordPlaybackObservation(current: List<ObservedPlayback>) {
+    private fun recordPlaybackObservation(current: List<ObservedPlayback>, counts: Triple<Int, Int, Int>) {
         val timestamp = LocalTime.now().format(TIME_FORMAT)
         val changes = playbackChanges(previousPlaybackObservation, current)
+        val controllerState = "mode=${audioModeName(audioManager.mode)}; " +
+            "communication device=${audioManager.communicationDevice?.toObservedDevice().reportDescription()}; " +
+            "speakerphone=${observedSpeakerphoneState()}; counts=$counts"
+        if (changes.entries.isEmpty() && controllerState == previousPlaybackControllerState) {
+            redundantPlaybackCallbacksSuppressed++
+            return
+        }
         addStartupTrace("$timestamp  playback callback — ${changes.summary}")
         changes.entries.forEach { change ->
             addStartupTrace("  $change")
         }
         addStartupTrace(
-            "  controller: mode=${audioModeName(audioManager.mode)}; " +
-                "communication device=${audioManager.communicationDevice?.toObservedDevice().reportDescription()}; " +
-                "speakerphone=${observedSpeakerphoneState()}",
+            "  controller: $controllerState",
         )
         previousPlaybackObservation = current
+        previousPlaybackControllerState = controllerState
     }
 
     private fun qualifyingPlaybackCount(configs: List<AudioPlaybackConfiguration>) = configs.count {
@@ -786,12 +841,34 @@ internal fun buildDiagnosticReport(
     startupAudioTrace: List<String> = emptyList(),
     assistantQualifyingPlaybackCount: Int = experiment.assistantQualifyingPlaybackCount,
     browserQualifyingPlaybackCount: Int = experiment.browserQualifyingPlaybackCount,
+    environment: DiagnosticEnvironment = DiagnosticEnvironment("Unknown", 0, "Unknown", 0, "Unknown", "Unknown", "Unknown"),
+    eventEntriesDropped: Int = 0,
+    startupTraceEntriesDropped: Int = 0,
+    redundantPlaybackCallbacksSuppressed: Int = 0,
 ) = buildString {
     appendLine("PRIVATE AUDIO — DIAGNOSTIC REPORT")
+    appendLine("Diagnostic report format: $DIAGNOSTIC_REPORT_FORMAT")
     appendLine("Timestamp: $timestamp")
     appendLine("Package: $packageName")
     appendLine("Private Audio PID: ${Process.myPid()}")
     appendLine("Private Audio UID: ${Process.myUid()}")
+    appendLine()
+    appendLine("DIAGNOSTIC ENVIRONMENT")
+    appendLine("Private Audio version: ${environment.versionName} (${environment.versionCode})")
+    appendLine("Android: ${environment.androidRelease}")
+    appendLine("API level: ${environment.apiLevel}")
+    appendLine("Manufacturer: ${environment.manufacturer}")
+    appendLine("Model: ${environment.model}")
+    appendLine("Product: ${environment.product}")
+    appendLine()
+    appendLine("TRACE RETENTION")
+    appendLine("Startup trace entries retained: ${startupAudioTrace.size}")
+    appendLine("Startup trace capacity: $MAX_STARTUP_TRACE_EVENTS")
+    appendLine("Startup trace entries dropped: $startupTraceEntriesDropped")
+    appendLine("Event log entries retained: ${events.size}")
+    appendLine("Event log capacity: $MAX_EVENTS")
+    appendLine("Event log entries dropped: $eventEntriesDropped")
+    appendLine("Redundant playback callbacks suppressed: $redundantPlaybackCallbacksSuppressed")
     appendLine()
     appendLine("STARTUP AUDIO TRACE")
     appendLine("FACT: entries below contain only public Android playback metadata; no audio is captured or recorded.")
@@ -1021,13 +1098,12 @@ internal fun playbackChanges(
     val entries = buildList {
         added.forEach { add("playback appeared/started — ${it.traceDescription()}") }
         removed.forEach { add("playback disappeared/stopped — ${it.traceDescription()}") }
-        if (added.isEmpty() && removed.isEmpty()) add("playback configurations unchanged")
     }
     return PlaybackChanges(summary, entries)
 }
 
 private fun ObservedPlayback.traceDescription() =
-    "usage=$usage; contentType=$contentType; flags=$flags; " +
+    "usage=$usage; contentType=$contentType; flags=$flags; capturePolicy=$allowedCapturePolicy; " +
         "playerState=$playerState; player/session=$playerIdentity; device=${device.reportDescription()}"
 
 internal fun audioFlagsName(flags: Int): String =
@@ -1115,8 +1191,9 @@ internal fun audioDeviceTypeName(type: Int) = when (type) {
 }
 
 private val TIME_FORMAT = DateTimeFormatter.ofPattern("HH:mm:ss.SSS")
-private const val MAX_EVENTS = 100
-private const val MAX_STARTUP_TRACE_EVENTS = 240
+internal const val DIAGNOSTIC_REPORT_FORMAT = 2
+internal const val MAX_EVENTS = 100
+internal const val MAX_STARTUP_TRACE_EVENTS = 240
 private const val OBSERVATION_DELAY_MS = 1_000L
 private const val END_CONFIRMATION_DELAY_MS = 1_500L
 private const val DEFAULT_SAMPLE_RATE = 48_000

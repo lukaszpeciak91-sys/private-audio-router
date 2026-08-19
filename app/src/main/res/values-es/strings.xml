@@ -17,7 +17,7 @@
     <string name="overlay_controller_description">Control flotante de Private Audio. Estado: %1$s. Controles para activar, expandir y cerrar.</string>
     <string name="settings_language">Idioma</string>
     <string name="settings_system_default">Predeterminado</string>
-    <string name="settings_copy_diagnostic">Copiar informe de diagnóstico</string>
+    <string name="settings_save_diagnostic">Guardar informe de diagnóstico</string>
     <string name="settings_advanced">Avanzado</string>
     <string name="settings_about">Acerca de Private Audio</string>
     <string name="settings_version">Versión %1$s</string>
@@ -26,6 +26,6 @@
     <string name="settings_proximity_screen">Apagar la pantalla cerca del oído</string>
     <string name="settings_advanced_body">A medida que Private Audio evolucione, aparecerán aquí opciones adicionales.</string>
     <string name="settings_about_body">Private Audio ayuda a dirigir el audio de voz al auricular integrado del teléfono.</string>
-    <string name="diagnostic_report_clip_label">Informe de diagnóstico de Private Audio</string>
-    <string name="diagnostic_report_copied">Informe de diagnóstico copiado.</string>
+    <string name="diagnostic_report_saved">Informe de diagnóstico guardado.</string>
+    <string name="diagnostic_report_save_failed">No se pudo guardar el informe de diagnóstico.</string>
 </resources>

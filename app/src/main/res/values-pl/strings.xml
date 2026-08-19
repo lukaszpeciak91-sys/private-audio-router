@@ -17,7 +17,7 @@
     <string name="overlay_controller_description">Pływający kontroler Private Audio. Stan: %1$s. Przyciski włączania, rozwijania i zamykania.</string>
     <string name="settings_language">Język</string>
     <string name="settings_system_default">Domyślny</string>
-    <string name="settings_copy_diagnostic">Kopiuj raport diagnostyczny</string>
+    <string name="settings_save_diagnostic">Zapisz raport diagnostyczny</string>
     <string name="settings_advanced">Zaawansowane</string>
     <string name="settings_about">O Private Audio</string>
     <string name="settings_version">Wersja %1$s</string>
@@ -26,6 +26,6 @@
     <string name="settings_proximity_screen">Wyłącz ekran przy uchu</string>
     <string name="settings_advanced_body">Wraz z rozwojem Private Audio pojawią się tutaj dodatkowe opcje.</string>
     <string name="settings_about_body">Private Audio pomaga kierować obsługiwany dźwięk głosowy do górnej słuchawki telefonu.</string>
-    <string name="diagnostic_report_clip_label">Raport diagnostyczny Private Audio</string>
-    <string name="diagnostic_report_copied">Skopiowano raport diagnostyczny.</string>
+    <string name="diagnostic_report_saved">Raport diagnostyczny zapisano.</string>
+    <string name="diagnostic_report_save_failed">Nie udało się zapisać raportu diagnostycznego.</string>
 </resources>

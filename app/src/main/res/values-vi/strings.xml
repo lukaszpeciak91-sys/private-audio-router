@@ -17,7 +17,7 @@
     <string name="overlay_controller_description">Bộ điều khiển nổi của Private Audio. Trạng thái: %1$s. Các nút điều khiển Bật, mở rộng và đóng.</string>
     <string name="settings_language">Ngôn ngữ</string>
     <string name="settings_system_default">Mặc định</string>
-    <string name="settings_copy_diagnostic">Sao chép báo cáo chẩn đoán</string>
+    <string name="settings_save_diagnostic">Lưu báo cáo chẩn đoán</string>
     <string name="settings_advanced">Nâng cao</string>
     <string name="settings_about">Giới thiệu về Private Audio</string>
     <string name="settings_version">Phiên bản %1$s</string>
@@ -26,6 +26,6 @@
     <string name="settings_proximity_screen">Tắt màn hình khi đưa gần tai</string>
     <string name="settings_advanced_body">Các tuỳ chọn khác sẽ xuất hiện ở đây khi Private Audio tiếp tục phát triển.</string>
     <string name="settings_about_body">Private Audio giúp chuyển âm thanh sang loa trong của điện thoại.</string>
-    <string name="diagnostic_report_clip_label">Báo cáo chẩn đoán Private Audio</string>
-    <string name="diagnostic_report_copied">Đã sao chép báo cáo chẩn đoán.</string>
+    <string name="diagnostic_report_saved">Đã lưu báo cáo chẩn đoán.</string>
+    <string name="diagnostic_report_save_failed">Không thể lưu báo cáo chẩn đoán.</string>
 </resources>

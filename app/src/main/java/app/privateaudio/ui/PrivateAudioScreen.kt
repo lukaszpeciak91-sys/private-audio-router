@@ -107,7 +107,7 @@ fun PrivateAudioScreen(
     onPowerClick: () -> Unit,
     onFloatingClick: () -> Unit = {},
     onCloseClick: () -> Unit,
-    onCopyDiagnosticReport: () -> Unit = {},
+    onSaveDiagnosticReport: () -> Unit = {},
     versionName: String = "",
     modifier: Modifier = Modifier,
 ) {
@@ -190,7 +190,7 @@ fun PrivateAudioScreen(
                 versionName = versionName,
                 proximityFeatureEnabled = proximityFeatureEnabled,
                 onProximityFeatureChange = onProximityFeatureChange,
-                onCopyDiagnosticReport = onCopyDiagnosticReport,
+                onSaveDiagnosticReport = onSaveDiagnosticReport,
                 onDismiss = { settingsVisible = false },
             )
         }

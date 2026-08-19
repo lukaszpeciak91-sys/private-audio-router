@@ -17,7 +17,7 @@
     <string name="overlay_controller_description">Private Audio मिनी कंट्रोलर। स्थिति: %1$s। चालू करने, फैलाने और बंद करने के कंट्रोल।</string>
     <string name="settings_language">भाषा</string>
     <string name="settings_system_default">डिफ़ॉल्ट</string>
-    <string name="settings_copy_diagnostic">डायग्नोस्टिक रिपोर्ट कॉपी करें</string>
+    <string name="settings_save_diagnostic">डायग्नोस्टिक रिपोर्ट सेव करें</string>
     <string name="settings_advanced">उन्नत</string>
     <string name="settings_about">Private Audio के बारे में</string>
     <string name="settings_version">वर्शन %1$s</string>
@@ -26,6 +26,6 @@
     <string name="settings_proximity_screen">कान के पास स्क्रीन बंद करें</string>
     <string name="settings_advanced_body">Private Audio के बेहतर होने के साथ, यहां और विकल्प दिखाई देंगे।</string>
     <string name="settings_about_body">Private Audio वॉइस ऑडियो को फ़ोन के अंदरूनी ईयरपीस पर भेजने में मदद करता है।</string>
-    <string name="diagnostic_report_clip_label">Private Audio डायग्नोस्टिक रिपोर्ट</string>
-    <string name="diagnostic_report_copied">डायग्नोस्टिक रिपोर्ट कॉपी हो गई।</string>
+    <string name="diagnostic_report_saved">डायग्नोस्टिक रिपोर्ट सेव हो गई।</string>
+    <string name="diagnostic_report_save_failed">डायग्नोस्टिक रिपोर्ट सेव नहीं हो सकी।</string>
 </resources>

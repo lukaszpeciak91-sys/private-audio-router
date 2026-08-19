@@ -17,7 +17,7 @@
     <string name="overlay_controller_description">Private Audio 迷你控制器。狀態：%1$s。包含開啟、展開和關閉控制項。</string>
     <string name="settings_language">語言</string>
     <string name="settings_system_default">預設</string>
-    <string name="settings_copy_diagnostic">複製診斷報告</string>
+    <string name="settings_save_diagnostic">儲存診斷報告</string>
     <string name="settings_advanced">進階</string>
     <string name="settings_about">關於 Private Audio</string>
     <string name="settings_version">版本 %1$s</string>
@@ -26,6 +26,6 @@
     <string name="settings_proximity_screen">靠近耳朵時關閉螢幕</string>
     <string name="settings_advanced_body">隨著 Private Audio 持續發展，這裡將顯示更多選項。</string>
     <string name="settings_about_body">Private Audio 可將語音音訊導向手機內建聽筒。</string>
-    <string name="diagnostic_report_clip_label">Private Audio 診斷報告</string>
-    <string name="diagnostic_report_copied">診斷報告已複製。</string>
+    <string name="diagnostic_report_saved">診斷報告已儲存。</string>
+    <string name="diagnostic_report_save_failed">無法儲存診斷報告。</string>
 </resources>

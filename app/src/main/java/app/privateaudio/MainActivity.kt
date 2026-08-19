@@ -1,8 +1,6 @@
 package app.privateaudio
 
 import android.content.ComponentName
-import android.content.ClipData
-import android.content.ClipboardManager
 import android.content.Context
 import android.content.Intent
 import android.content.ServiceConnection
@@ -14,6 +12,7 @@ import android.os.Looper
 import android.os.ResultReceiver
 import android.provider.Settings
 import android.widget.Toast
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.ComponentActivity
 import androidx.activity.SystemBarStyle
 import androidx.activity.compose.setContent
@@ -29,6 +28,12 @@ class MainActivity : ComponentActivity() {
     private var service by mutableStateOf<PrivateAudioService?>(null)
     private var isBound = false
     private var overlayPermissionRequestPending = false
+    private val diagnosticDocumentLauncher = registerForActivityResult(
+        ActivityResultContracts.StartActivityForResult(),
+    ) { result ->
+        val destination = result.data?.data
+        if (result.resultCode == RESULT_OK && destination != null) saveDiagnosticReport(destination)
+    }
     private val overlayShowReceiver = object : ResultReceiver(Handler(Looper.getMainLooper())) {
         override fun onReceiveResult(resultCode: Int, resultData: Bundle?) {
             if (resultCode == OverlayService.SHOW_SUCCEEDED) moveTaskToBack(true)
@@ -78,22 +83,7 @@ class MainActivity : ComponentActivity() {
                         connectedService?.disarmAndStopStartedLifetime()
                         finishAndRemoveTask()
                     },
-                    onCopyDiagnosticReport = {
-                        connectedService?.let { activeService ->
-                            val report = activeService.diagnosticReport()
-                            getSystemService(ClipboardManager::class.java).setPrimaryClip(
-                                ClipData.newPlainText(
-                                    getString(R.string.diagnostic_report_clip_label),
-                                    report,
-                                ),
-                            )
-                            Toast.makeText(
-                                this,
-                                getString(R.string.diagnostic_report_copied),
-                                Toast.LENGTH_SHORT,
-                            ).show()
-                        }
-                    },
+                    onSaveDiagnosticReport = { launchDiagnosticDocumentPicker() },
                     versionName = BuildConfig.VERSION_NAME,
                 )
             }
@@ -147,4 +137,30 @@ class MainActivity : ComponentActivity() {
     private fun hideOverlay() {
         startService(OverlayService.hideIntent(this))
     }
+
+    private fun launchDiagnosticDocumentPicker() {
+        diagnosticDocumentLauncher.launch(
+            Intent(Intent.ACTION_CREATE_DOCUMENT)
+                .addCategory(Intent.CATEGORY_OPENABLE)
+                .setType("text/plain")
+                .putExtra(Intent.EXTRA_TITLE, diagnosticFilename()),
+        )
+    }
+
+    private fun saveDiagnosticReport(destination: Uri) {
+        val report = service?.diagnosticReport()
+        val saved = report != null && runCatching {
+            contentResolver.openOutputStream(destination, "w")?.use { output ->
+                output.bufferedWriter(Charsets.UTF_8).use { it.write(report) }
+            } ?: error("Document provider returned no output stream")
+        }.isSuccess
+        Toast.makeText(
+            this,
+            getString(if (saved) R.string.diagnostic_report_saved else R.string.diagnostic_report_save_failed),
+            Toast.LENGTH_SHORT,
+        ).show()
+    }
 }
+
+internal fun diagnosticFilename(now: java.time.LocalDateTime = java.time.LocalDateTime.now()): String =
+    "private-audio-diagnostic-${now.format(java.time.format.DateTimeFormatter.ofPattern("yyyy-MM-dd_HH-mm-ss"))}.txt"

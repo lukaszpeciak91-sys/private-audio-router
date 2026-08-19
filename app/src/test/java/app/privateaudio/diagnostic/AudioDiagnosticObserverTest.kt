@@ -90,9 +90,26 @@ class AudioDiagnosticObserverTest {
                 "12:34:55.123  playback callback — previous=0; current=1; added=1; removed=0; unchanged=0",
                 "  playback appeared/started — usage=USAGE_VOICE_COMMUNICATION",
             ),
+            environment = DiagnosticEnvironment("0.1.0", 1, "13", 33, "Xiaomi", "Test model", "2201117TY"),
+            startupTraceEntriesDropped = 7,
+            eventEntriesDropped = 3,
+            redundantPlaybackCallbacksSuppressed = 11,
         )
 
         assertTrue(report.contains("Timestamp: 2026-08-12T12:34:56Z"))
+        assertTrue(report.contains("Diagnostic report format: 2"))
+        assertTrue(report.contains("DIAGNOSTIC ENVIRONMENT"))
+        assertTrue(report.contains("Private Audio version: 0.1.0 (1)"))
+        assertTrue(report.contains("Android: 13"))
+        assertTrue(report.contains("API level: 33"))
+        assertTrue(report.contains("Manufacturer: Xiaomi"))
+        assertTrue(report.contains("Model: Test model"))
+        assertTrue(report.contains("Product: 2201117TY"))
+        assertTrue(report.contains("Startup trace capacity: 240"))
+        assertTrue(report.contains("Startup trace entries dropped: 7"))
+        assertTrue(report.contains("Event log capacity: 100"))
+        assertTrue(report.contains("Event log entries dropped: 3"))
+        assertTrue(report.contains("Redundant playback callbacks suppressed: 11"))
         assertTrue(report.contains("Experiment state: REQUEST ATTEMPTED"))
         assertTrue(report.contains("Routing request attempted: true"))
         assertTrue(report.contains("Mode before participation: MODE_IN_COMMUNICATION"))
@@ -215,7 +232,7 @@ class AudioDiagnosticObserverTest {
         assertTrue(removed.entries.single().contains("usage=USAGE_MEDIA"))
         val unchanged = playbackChanges(listOf(media, voice), listOf(media, voice))
         assertEquals("previous=2; current=2; added=0; removed=0; unchanged=2", unchanged.summary)
-        assertEquals(listOf("playback configurations unchanged"), unchanged.entries)
+        assertTrue(unchanged.entries.isEmpty())
         assertEquals("USAGE_ASSISTANCE_SONIFICATION", audioUsageName(android.media.AudioAttributes.USAGE_ASSISTANCE_SONIFICATION))
         assertEquals("FLAGS_NONE (0x0)", audioFlagsName(0))
     }

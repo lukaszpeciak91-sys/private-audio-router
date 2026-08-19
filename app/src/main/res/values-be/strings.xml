@@ -17,7 +17,7 @@
     <string name="overlay_controller_description">Плывучы элемент кіравання Private Audio. Стан: %1$s. Элементы кіравання ўключэннем, разгортваннем і закрыццём.</string>
     <string name="settings_language">Мова</string>
     <string name="settings_system_default">Па змаўчанні</string>
-    <string name="settings_copy_diagnostic">Скапіяваць дыягнастычную справаздачу</string>
+    <string name="settings_save_diagnostic">Захаваць дыягнастычную справаздачу</string>
     <string name="settings_advanced">Пашыраныя</string>
     <string name="settings_about">Пра Private Audio</string>
     <string name="settings_version">Версія %1$s</string>
@@ -26,6 +26,6 @@
     <string name="settings_proximity_screen">Выключаць экран каля вуха</string>
     <string name="settings_advanced_body">З развіццём Private Audio тут з’явяцца дадатковыя параметры.</string>
     <string name="settings_about_body">Private Audio дапамагае перанакіроўваць галасавы гук на ўбудаваны размоўны дынамік тэлефона.</string>
-    <string name="diagnostic_report_clip_label">Дыягнастычная справаздача Private Audio</string>
-    <string name="diagnostic_report_copied">Дыягнастычная справаздача скапіявана.</string>
+    <string name="diagnostic_report_saved">Дыягнастычная справаздача захавана.</string>
+    <string name="diagnostic_report_save_failed">Не ўдалося захаваць дыягнастычную справаздачу.</string>
 </resources>

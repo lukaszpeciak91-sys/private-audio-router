@@ -17,7 +17,7 @@
     <string name="overlay_controller_description">Slankusis „Private Audio“ valdiklis. Būsena: %1$s. Įjungimo, išskleidimo ir uždarymo valdikliai.</string>
     <string name="settings_language">Kalba</string>
     <string name="settings_system_default">Numatytoji</string>
-    <string name="settings_copy_diagnostic">Kopijuoti diagnostikos ataskaitą</string>
+    <string name="settings_save_diagnostic">Išsaugoti diagnostikos ataskaitą</string>
     <string name="settings_advanced">Išplėstiniai</string>
     <string name="settings_about">Apie Private Audio</string>
     <string name="settings_version">Versija %1$s</string>
@@ -26,6 +26,6 @@
     <string name="settings_proximity_screen">Išjungti ekraną prie ausies</string>
     <string name="settings_advanced_body">Tobulėjant Private Audio, čia atsiras papildomų parinkčių.</string>
     <string name="settings_about_body">Private Audio padeda nukreipti balso garsą į telefono vidinį pokalbių garsiakalbį.</string>
-    <string name="diagnostic_report_clip_label">Private Audio diagnostikos ataskaita</string>
-    <string name="diagnostic_report_copied">Diagnostikos ataskaita nukopijuota.</string>
+    <string name="diagnostic_report_saved">Diagnostikos ataskaita išsaugota.</string>
+    <string name="diagnostic_report_save_failed">Nepavyko išsaugoti diagnostikos ataskaitos.</string>
 </resources>

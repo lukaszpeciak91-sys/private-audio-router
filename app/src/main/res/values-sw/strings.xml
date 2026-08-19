@@ -17,7 +17,7 @@
     <string name="overlay_controller_description">Kidhibiti kinachoelea cha Private Audio. Hali: %1$s. Vidhibiti vya kuwasha, kupanua na kufunga.</string>
     <string name="settings_language">Lugha</string>
     <string name="settings_system_default">Chaguomsingi</string>
-    <string name="settings_copy_diagnostic">Nakili ripoti ya uchunguzi</string>
+    <string name="settings_save_diagnostic">Hifadhi ripoti ya uchunguzi</string>
     <string name="settings_advanced">Kina</string>
     <string name="settings_about">Kuhusu Private Audio</string>
     <string name="settings_version">Toleo %1$s</string>
@@ -26,6 +26,6 @@
     <string name="settings_proximity_screen">Zima skrini ikiwa karibu na sikio</string>
     <string name="settings_advanced_body">Chaguo zaidi zitaonekana hapa kadiri Private Audio inavyoendelea kuboreshwa.</string>
     <string name="settings_about_body">Private Audio husaidia kuelekeza sauti kwenye kipokea sauti cha ndani cha simu.</string>
-    <string name="diagnostic_report_clip_label">Ripoti ya uchunguzi ya Private Audio</string>
-    <string name="diagnostic_report_copied">Ripoti ya uchunguzi imenakiliwa.</string>
+    <string name="diagnostic_report_saved">Ripoti ya uchunguzi imehifadhiwa.</string>
+    <string name="diagnostic_report_save_failed">Imeshindikana kuhifadhi ripoti ya uchunguzi.</string>
 </resources>

@@ -17,7 +17,7 @@
     <string name="overlay_controller_description">ตัวควบคุมแบบลอยของ Private Audio สถานะ: %1$s ปุ่มเปิด ขยาย และปิด</string>
     <string name="settings_language">ภาษา</string>
     <string name="settings_system_default">ค่าเริ่มต้น</string>
-    <string name="settings_copy_diagnostic">คัดลอกรายงานการวินิจฉัย</string>
+    <string name="settings_save_diagnostic">บันทึกรายงานการวินิจฉัย</string>
     <string name="settings_advanced">ขั้นสูง</string>
     <string name="settings_about">เกี่ยวกับ Private Audio</string>
     <string name="settings_version">เวอร์ชัน %1$s</string>
@@ -26,6 +26,6 @@
     <string name="settings_proximity_screen">ปิดหน้าจอเมื่ออยู่ใกล้หู</string>
     <string name="settings_advanced_body">ตัวเลือกเพิ่มเติมจะปรากฏที่นี่เมื่อ Private Audio พัฒนาต่อไป</string>
     <string name="settings_about_body">Private Audio ช่วยสลับเสียงไปยังหูฟังด้านบนของโทรศัพท์</string>
-    <string name="diagnostic_report_clip_label">รายงานการวินิจฉัย Private Audio</string>
-    <string name="diagnostic_report_copied">คัดลอกรายงานการวินิจฉัยแล้ว</string>
+    <string name="diagnostic_report_saved">บันทึกรายงานการวินิจฉัยแล้ว</string>
+    <string name="diagnostic_report_save_failed">ไม่สามารถบันทึกรายงานการวินิจฉัยได้</string>
 </resources>
