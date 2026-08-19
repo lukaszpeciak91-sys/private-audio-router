@@ -33,6 +33,8 @@ Do not propagate weak prototype copy into every translation. A translation must 
 
 Translate according to natural local UI conventions rather than word for word. “Dictionary-correct” is not automatically “product-correct.” User-facing routing copy should describe the user's perceived action or state. Do not expose networking-style or implementation-heavy routing jargon unless it is the natural local product term; prefer native Android or audio-switching terminology where available.
 
+Resource validity and parity do not make copy localization-complete without product-language review. When batch quality is uncertain, classify each reviewed string as **PASS** (leave unchanged), **POLISH**, **FIX**, or **HOLD** rather than generating edits merely to show activity. A reviewed-no-change locale is a meaningful audit result. For behavioral Settings labels, explicitly separating the object, action/effect, and trigger/condition can prevent a technically plausible translation from blurring the intended behavior.
+
 ### Independent locale terminology
 
 Each locale owns its terminology. Do not normalize international technology terms across languages merely for superficial consistency, and do not derive one language's terminology from a neighboring language. Existing approved copy demonstrates that some locales naturally use `AI`, others use localized abbreviations such as `IA`, `KI`, `DI`, `ИИ`, or `ШІ`, and others use full native artificial-intelligence terms, including Arabic and Persian. For each new language, determine the contemporary consumer/software standard independently.
