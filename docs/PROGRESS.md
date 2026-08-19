@@ -99,7 +99,7 @@ State reflects evidence, not aspiration.
 
 ## CURRENT
 
-- A diagnostics-only startup audio trace is implemented in the existing copied report. While Power is ON, the existing public `AudioPlaybackCallback` now preserves bounded, millisecond-timestamped playback appearance/disappearance snapshots, exact usage/content/flags, active status, output-device metadata, and adjacent mode/communication-device/speakerphone state. Existing controller events share the trace. It does not classify the startup sound, add polling or permissions, or change routing; Xiaomi physical characterization remains pending.
+- A diagnostics-only startup audio trace is implemented in the existing copied report. While Power is ON, the existing public `AudioPlaybackCallback` now preserves bounded, millisecond-timestamped playback appearance/disappearance snapshots, exact usage/content/flags, allowed-capture policy in playback reports, output-device metadata, and adjacent mode/communication-device/speakerphone state. Configuration presence in the callback's active snapshot drives appearance/disappearance; the unavailable per-configuration `AudioPlaybackConfiguration.isActive` claim has been removed. Existing controller events share the trace. It does not classify the startup sound, add polling or permissions, or change routing; Xiaomi physical characterization remains pending.
 - **Layer 7 implementation is DONE after the Layer 7C audit. Core Xiaomi near/off and far/on behavior is physically confirmed; the remaining individually unrecorded Layer 7 physical matrix cases stay NOT TESTED / UNKNOWN.**
 
 ## NEXT

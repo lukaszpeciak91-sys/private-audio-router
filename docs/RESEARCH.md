@@ -4,7 +4,7 @@ This baseline separates documented platform capabilities from hypotheses and una
 
 ## FACT
 
-- `AudioManager.registerAudioPlaybackCallback()` provides callback-based public observation, and `getActivePlaybackConfigurations()` provides a public active snapshot. For each visible configuration the application can read `AudioAttributes` usage, content type, flags and allowed-capture policy, `isActive`, and an `AudioDeviceInfo` (including ID, type, and product name) when Android supplies one. These metadata contain no PCM audio. The ordinary public API available to this application does not expose a safe client package/session identity or exact player-state value, so the diagnostic records those fields as unavailable rather than inferring ownership.
+- `AudioManager.registerAudioPlaybackCallback()` provides callback-based public observation, and `getActivePlaybackConfigurations()` provides a public active snapshot. For each visible configuration the application can read `AudioAttributes` usage, content type, flags and allowed-capture policy, and an `AudioDeviceInfo` (including ID, type, and product name) when Android supplies one. `AudioPlaybackConfiguration` does not publicly expose a per-configuration `isActive` member; configuration presence in the active snapshot is the available observation. These metadata contain no PCM audio. The ordinary public API available to this application does not expose a safe client package/session identity or exact player-state value, so the diagnostic records those fields as unavailable rather than inferring ownership.
 - Android exposes public communication-device routing APIs.
 - Android exposes a built-in earpiece device type on compatible hardware.
 - Android allows an application to request a communication device and clear that request.
@@ -82,7 +82,7 @@ New statements must be labeled **FACT**, **INFERENCE**, or **UNKNOWN**, with sou
 
 ## Layer 1.6 playback-evidence boundary
 
-- **FACT:** Public `AudioManager.AudioPlaybackCallback` reports changes to active playback configurations, including public audio attributes and active state; this implementation does not obtain or use a client package or provider identity.
+- **FACT:** Public `AudioManager.AudioPlaybackCallback` reports changes to the active playback-configuration list, including public audio attributes for configurations present in that list; it does not expose a public per-configuration active-state member, and this implementation does not obtain or use a client package or provider identity.
 - **INFERENCE:** After an external matching communication playback is visible, Private Audio starts its one known matching silent track. Two matching active contributions then establish external-plus-local evidence; a stable fall to one while the known local track remains playing is treated as external communication ending.
 - **UNKNOWN:** OEM callback timing, transient player recreation, whether all compatible providers expose matching configurations, and the reliability of this count boundary across devices remain unverified until physical Layer 1.6 testing. Ambiguous evidence intentionally leaves the active cycle in place rather than escalating.
 
