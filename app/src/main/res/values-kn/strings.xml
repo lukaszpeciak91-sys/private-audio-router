@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Private Audio</string>
+    <string name="routing_notification_channel">Private Audio</string>
+    <string name="routing_notification_title">Private Audio ಆನ್ ಆಗಿದೆ</string>
+    <string name="routing_notification_text">ಆಡಿಯೊ ಸ್ವಿಚ್ ಆಗಲು ಕಾಯುತ್ತಿದೆ</string>
+    <string name="product_title">Private Audio</string>
+    <string name="product_subtitle">ಫೋನ್ ಕಾಲ್‌ನಂತೆ, AI ಜೊತೆ ಖಾಸಗಿಯಾಗಿ ಮಾತನಾಡಿ.</string>
+    <string name="state_ready">ಸಿದ್ಧ</string>
+    <string name="state_waiting">ಕಾಯುತ್ತಿದೆ</string>
+    <string name="state_active">ಸಕ್ರಿಯ</string>
+    <string name="state_error">ದೋಷ</string>
+    <string name="power_control">ಆನ್ ಮಾಡಿ</string>
+    <string name="floating">Mini</string>
+    <string name="settings">ಸೆಟ್ಟಿಂಗ್‌ಗಳು</string>
+    <string name="close">ಮುಚ್ಚಿ</string>
+    <string name="overlay_controller_description">Private Audio ಫ್ಲೋಟಿಂಗ್ ಕಂಟ್ರೋಲರ್. ಸ್ಥಿತಿ: %1$s. ಆನ್ ಮಾಡಲು, ವಿಸ್ತರಿಸಲು ಮತ್ತು ಮುಚ್ಚಲು ನಿಯಂತ್ರಣಗಳು.</string>
+    <string name="settings_language">ಭಾಷೆ</string>
+    <string name="settings_system_default">ಸಿಸ್ಟಮ್ ಡೀಫಾಲ್ಟ್</string>
+    <string name="settings_save_diagnostic">ಡಯಾಗ್ನೋಸ್ಟಿಕ್ ವರದಿಯನ್ನು ಉಳಿಸಿ</string>
+    <string name="settings_advanced">ಸುಧಾರಿತ</string>
+    <string name="settings_about">Private Audio ಕುರಿತು</string>
+    <string name="settings_version">ಆವೃತ್ತಿ %1$s</string>
+    <string name="settings_language_body">Private Audio ಪ್ರಸ್ತುತ ನಿಮ್ಮ ಸಾಧನದ ಭಾಷೆಯನ್ನು ಅನುಸರಿಸುತ್ತದೆ. ಸಿಸ್ಟಮ್ ಡೀಫಾಲ್ಟ್ ಆಯ್ಕೆ ಮಾಡಲಾಗಿದೆ.</string>
+    <string name="settings_language_android_13_required">ಆ್ಯಪ್‌ನಲ್ಲಿ ಭಾಷೆ ಆಯ್ಕೆ ಮಾಡಲು Android 13 ಅಥವಾ ನಂತರದ ಆವೃತ್ತಿ ಅಗತ್ಯವಿದೆ. ಈ ಸಾಧನವು ಸಿಸ್ಟಮ್ ಭಾಷೆಯನ್ನು ಅನುಸರಿಸುತ್ತದೆ.</string>
+    <string name="settings_proximity_screen">ಕಿವಿಯ ಬಳಿ ಸ್ಕ್ರೀನ್ ಆಫ್ ಮಾಡಿ</string>
+    <string name="settings_advanced_body">Private Audio ಅಭಿವೃದ್ಧಿಯಾದಂತೆ ಹೆಚ್ಚುವರಿ ಆಯ್ಕೆಗಳು ಇಲ್ಲಿ ಕಾಣಿಸಿಕೊಳ್ಳುತ್ತವೆ.</string>
+    <string name="settings_about_body">Private Audio ಆಡಿಯೊವನ್ನು ಫೋನ್‌ನ ಇಯರ್‌ಪೀಸ್‌ಗೆ ಸ್ವಿಚ್ ಮಾಡಲು ಸಹಾಯ ಮಾಡುತ್ತದೆ.</string>
+    <string name="diagnostic_report_saved">ಡಯಾಗ್ನೋಸ್ಟಿಕ್ ವರದಿಯನ್ನು ಉಳಿಸಲಾಗಿದೆ.</string>
+    <string name="diagnostic_report_save_failed">ಡಯಾಗ್ನೋಸ್ಟಿಕ್ ವರದಿಯನ್ನು ಉಳಿಸಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ.</string>
+</resources>
