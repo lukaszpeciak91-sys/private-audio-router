@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Private Audio</string>
+    <string name="routing_notification_channel">Private Audio</string>
+    <string name="routing_notification_title">Private Audio је укључен</string>
+    <string name="routing_notification_text">Чекање на пребацивање звука</string>
+    <string name="product_title">Private Audio</string>
+    <string name="product_subtitle">Разговарајте приватно са ВИ, као током телефонског позива.</string>
+    <string name="state_ready">Спремно</string>
+    <string name="state_waiting">Чекање</string>
+    <string name="state_active">Активно</string>
+    <string name="state_error">Грешка</string>
+    <string name="power_control">Укључивање/искључивање</string>
+    <string name="floating">Mini</string>
+    <string name="settings">Подешавања</string>
+    <string name="close">Затвори</string>
+    <string name="overlay_controller_description">Плутајући контролер Private Audio. Статус: %1$s. Контроле за укључивање/искључивање, проширивање и затварање.</string>
+    <string name="settings_language">Језик</string>
+    <string name="settings_system_default">Подразумевано</string>
+    <string name="settings_save_diagnostic">Сачувај дијагностички извештај</string>
+    <string name="settings_advanced">Напредно</string>
+    <string name="settings_about">О апликацији Private Audio</string>
+    <string name="settings_version">Верзија %1$s</string>
+    <string name="settings_language_body">Private Audio тренутно користи језик вашег уређаја. Изабрана је подразумевана поставка.</string>
+    <string name="settings_language_android_13_required">Избор језика у апликацији захтева Android 13 или новији. Овај уређај користи језик система.</string>
+    <string name="settings_proximity_screen">Искључи екран близу уха</string>
+    <string name="settings_advanced_body">Додатне опције ће се појављивати овде како се Private Audio буде развијао.</string>
+    <string name="settings_about_body">Private Audio помаже да се подржани гласовни звук пребаци на уграђену слушалицу телефона.</string>
+    <string name="diagnostic_report_saved">Дијагностички извештај је сачуван.</string>
+    <string name="diagnostic_report_save_failed">Није могуће сачувати дијагностички извештај.</string>
+</resources>

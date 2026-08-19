@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Private Audio</string>
+    <string name="routing_notification_channel">Private Audio</string>
+    <string name="routing_notification_title">Private Audio е вклучено</string>
+    <string name="routing_notification_text">Се чека префрлање на звукот</string>
+    <string name="product_title">Private Audio</string>
+    <string name="product_subtitle">Разговарајте приватно со ВИ, како при телефонски повик.</string>
+    <string name="state_ready">Подготвено</string>
+    <string name="state_waiting">Чекање</string>
+    <string name="state_active">Активно</string>
+    <string name="state_error">Грешка</string>
+    <string name="power_control">Вклучување/исклучување</string>
+    <string name="floating">Mini</string>
+    <string name="settings">Поставки</string>
+    <string name="close">Затвори</string>
+    <string name="overlay_controller_description">Лебдечки контролер на Private Audio. Статус: %1$s. Контроли за вклучување/исклучување, проширување и затворање.</string>
+    <string name="settings_language">Јазик</string>
+    <string name="settings_system_default">Стандардно</string>
+    <string name="settings_save_diagnostic">Зачувај дијагностички извештај</string>
+    <string name="settings_advanced">Напредно</string>
+    <string name="settings_about">За Private Audio</string>
+    <string name="settings_version">Верзија %1$s</string>
+    <string name="settings_language_body">Private Audio моментално го користи јазикот на вашиот уред. Избрана е стандардната поставка.</string>
+    <string name="settings_language_android_13_required">Изборот на јазик во апликацијата бара Android 13 или понова верзија. Овој уред го користи системскиот јазик.</string>
+    <string name="settings_proximity_screen">Исклучи го екранот близу до увото</string>
+    <string name="settings_advanced_body">Дополнителни опции ќе се појавуваат тука како што се развива Private Audio.</string>
+    <string name="settings_about_body">Private Audio помага поддржаното гласовно аудио да се префрли на вградената слушалка на телефонот.</string>
+    <string name="diagnostic_report_saved">Дијагностичкиот извештај е зачуван.</string>
+    <string name="diagnostic_report_save_failed">Дијагностичкиот извештај не може да се зачува.</string>
+</resources>
