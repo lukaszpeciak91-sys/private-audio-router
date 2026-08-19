@@ -217,3 +217,11 @@ This is a lightweight, append-only log. Do not rewrite accepted history; append 
 - **Context:** Supplied physical-device results establish audible Gemini Live speaker-to-earpiece routing from `MODE_NORMAL` with public `USAGE_ASSISTANT` + `CONTENT_TYPE_SPEECH`, proximity behavior, session cleanup, Waiting re-arm, and no regression to the established ChatGPT communication path.
 - **Decision:** While Private Audio is armed, automatically admit exact assistant/speech playback as a second trigger class. Keep the established communication trigger unchanged and separate. Both classes enter the single protected POC-5 execution body; classification remains provider-independent. Remove the experimental preference and UI rather than replace them.
 - **Consequences:** Assistant sonification, ordinary media, and unknown content remain excluded. The existing telephony exclusion, one-attempt-per-cycle guard, POC-5 ordering, session-specific cleanup, and proximity eligibility remain unchanged.
+
+## D-028 — Default-off browser communication POC-5 probe
+
+- **Date:** 2026-08-19
+- **Status:** Accepted; experimental and pending physical validation
+- **Context:** Chrome ChatGPT Voice on the Android 13 test device was observed with `MODE_IN_COMMUNICATION`, public `USAGE_VOICE_COMMUNICATION` + `CONTENT_TYPE_UNKNOWN` playback, and the built-in speaker. The established communication classifier intentionally recognizes speech content and therefore does not admit this signature.
+- **Decision:** Add a service-owned, persisted, default-OFF browser-routing experiment. Only while armed and enabled may the exact voice-communication/unknown signature, communication mode, built-in speaker, telephony exclusion, and untouched cycle guard select `BROWSER_COMMUNICATION` and enter the existing protected POC-5 body. No application, package, process, URL, or activity identity participates.
+- **Consequences:** The communication and assistant classifiers remain unchanged. Browser lifecycle inference follows disappearance of the external voice-communication/unknown contribution, not the communication path's two-speech-contribution rule. The existing 1.5-second confirmation and cleanup apply. Android metadata cannot establish audible earpiece success; physical validation remains required.
