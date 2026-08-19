@@ -23,6 +23,7 @@
     <string name="settings_version">Version %1$s</string>
     <string name="settings_language_body">Private Audio utilise actuellement la langue de votre appareil. L’option Par défaut est sélectionnée.</string>
     <string name="settings_language_android_13_required">La sélection de la langue dans l’application nécessite Android 13 ou une version ultérieure. Cet appareil utilise la langue du système.</string>
+    <string name="settings_gemini_routing_experimental">Routage de Gemini (expérimental)</string>
     <string name="settings_proximity_screen">Éteindre l’écran près de l’oreille</string>
     <string name="settings_advanced_body">Des options supplémentaires apparaîtront ici au fil de l’évolution de Private Audio.</string>
     <string name="settings_about_body">Private Audio aide à diriger l’audio vocal vers l’écouteur intégré du téléphone.</string>

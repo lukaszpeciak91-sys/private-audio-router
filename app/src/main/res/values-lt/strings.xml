@@ -23,6 +23,7 @@
     <string name="settings_version">Versija %1$s</string>
     <string name="settings_language_body">Private Audio šiuo metu naudoja jūsų įrenginio kalbą. Pasirinkta numatytoji kalba.</string>
     <string name="settings_language_android_13_required">Norint pasirinkti kalbą programėlėje, reikia „Android 13“ arba naujesnės versijos. Šiame įrenginyje naudojama sistemos kalba.</string>
+    <string name="settings_gemini_routing_experimental">„Gemini“ garso nukreipimas (eksperimentinis)</string>
     <string name="settings_proximity_screen">Išjungti ekraną prie ausies</string>
     <string name="settings_advanced_body">Tobulėjant Private Audio, čia atsiras papildomų parinkčių.</string>
     <string name="settings_about_body">Private Audio padeda nukreipti balso garsą į telefono vidinį pokalbių garsiakalbį.</string>

@@ -61,6 +61,11 @@ class MainActivity : ComponentActivity() {
                     state = state,
                     proximityFeatureEnabled = connectedService?.isProximityFeatureEnabled ?: true,
                     onProximityFeatureChange = { connectedService?.updateProximityFeatureEnabled(it) },
+                    assistantRoutingExperimentalEnabled =
+                        connectedService?.isAssistantRoutingExperimentalEnabled ?: false,
+                    onAssistantRoutingExperimentalChange = {
+                        connectedService?.updateAssistantRoutingExperimentalEnabled(it)
+                    },
                     powerEnabled = connectedService != null,
                     onPowerClick = {
                         if (state == PrivateAudioState.READY) {
