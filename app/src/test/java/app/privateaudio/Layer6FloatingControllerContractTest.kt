@@ -38,8 +38,30 @@ class Layer6FloatingControllerContractTest {
         assertTrue(close.contains("hideOverlay()")); assertTrue(close.contains("stopSelf()")); assertFalse(close.contains("disarm")); assertFalse(close.contains("finish"))
     }
 
+    @Test fun statusDotAloneAnimatesForWaitingAndActiveAndStopsWithObservation() {
+        val animation = overlay.substringAfter("private fun updateStatusDotAnimation()")
+            .substringBefore("private fun stopStatusDotAnimation()")
+        assertTrue(animation.contains("PrivateAudioState.WAITING -> WAITING_HALF_CYCLE_MILLIS"))
+        assertTrue(animation.contains("PrivateAudioState.ACTIVE -> ACTIVE_HALF_CYCLE_MILLIS"))
+        assertTrue(animation.contains("PrivateAudioState.READY, PrivateAudioState.ERROR -> return"))
+        assertTrue(animation.contains("ValueAnimator.ofFloat(1f, 0.65f)"))
+        assertTrue(overlay.contains("WAITING_HALF_CYCLE_MILLIS = 900L"))
+        assertTrue(overlay.contains("ACTIVE_HALF_CYCLE_MILLIS = 700L"))
+        assertTrue(overlay.contains("paint.alpha = (statusDotAlpha * 255).toInt()"))
+        assertTrue(overlay.contains("paint.alpha = 255"))
+        assertTrue(overlay.contains("state = latest\n                    contentDescription = stateDescription(latest)\n                    updateStatusDotAnimation()"))
+        val stopObservation = overlay.substringAfter("fun stopStateObservation()")
+            .substringBefore("fun refreshLocalizedPresentation()")
+        assertTrue(stopObservation.contains("removeCallbacks(refreshState)"))
+        assertTrue(stopObservation.contains("stopStatusDotAnimation()"))
+        assertFalse(animation.contains("drawPower"))
+        assertFalse(animation.contains("drawExpand"))
+        assertFalse(animation.contains("drawClose"))
+    }
+
     @Test fun isolationSingleInstanceShutdownAndResourcesRemainLocked() {
-        assertTrue(overlay.contains("if (overlayView != null || !Settings.canDrawOverlays(this)) return"))
+        assertTrue(overlay.contains("if (overlayView != null)"))
+        assertTrue(overlay.contains("if (!Settings.canDrawOverlays(this)) return"))
         assertTrue(main.contains("hideOverlay()")); assertTrue(main.contains("disarmAndStopStartedLifetime()")); assertTrue(main.contains("finishAndRemoveTask()"))
         listOf("AudioManager", "setCommunicationDevice(", "MODE_IN_COMMUNICATION", "projectPrivateAudioState(").forEach { assertFalse(it, overlay.contains(it)) }
         assertEquals(1, productionSources.sumOf { it.readText().occurrences("setCommunicationDevice(") })
