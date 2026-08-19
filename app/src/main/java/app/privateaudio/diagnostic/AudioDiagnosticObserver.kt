@@ -70,6 +70,7 @@ enum class ExperimentState(val label: String) {
 enum class TriggerOrigin {
     COMMUNICATION,
     ASSISTANT,
+    BROWSER_COMMUNICATION,
 }
 
 data class EarpieceExperiment(
@@ -106,6 +107,7 @@ data class EarpieceExperiment(
     val silentTrackCleanupCompleted: Boolean = false,
     val externalVoicePlaybackDeviceAfterRequest: ObservedDevice? = null,
     val assistantQualifyingPlaybackCount: Int = 0,
+    val browserQualifyingPlaybackCount: Int = 0,
     val triggerOrigin: TriggerOrigin? = null,
     val modeBeforeAssistantParticipation: String? = null,
 )
@@ -154,6 +156,8 @@ class AudioDiagnosticObserver(
     private var started = false
     private var controllerEnabled = false
     private var currentAssistantQualifyingPlaybackCount = 0
+    private var currentBrowserQualifyingPlaybackCount = 0
+    private var browserRoutingEnabled = false
     private var playbackCallbackRegistered = false
     private var cycleGeneration = 0L
     private var externalContributionEstablished = false
@@ -251,6 +255,12 @@ class AudioDiagnosticObserver(
         addEvent(message)
     }
 
+    fun updateBrowserRoutingEnabled(enabled: Boolean) {
+        browserRoutingEnabled = enabled
+        addEvent("Browser routing experimental ${if (enabled) "enabled" else "disabled"}")
+        if (enabled && controllerEnabled && !routingActionInProgress) evaluateExperimentTrigger()
+    }
+
     fun report(): String = buildDiagnosticReport(
         timestamp = OffsetDateTime.now().format(DateTimeFormatter.ISO_OFFSET_DATE_TIME),
         experiment = experiment,
@@ -261,6 +271,7 @@ class AudioDiagnosticObserver(
         baseline = baseline,
         startupAudioTrace = startupAudioTrace.toList(),
         assistantQualifyingPlaybackCount = currentAssistantQualifyingPlaybackCount,
+        browserQualifyingPlaybackCount = currentBrowserQualifyingPlaybackCount,
     )
 
     private fun addEvent(message: String) {
@@ -295,7 +306,13 @@ class AudioDiagnosticObserver(
         val assistantCount = assistantQualifyingPlaybackCount(configs)
         currentAssistantQualifyingPlaybackCount = assistantCount
         val assistantTrigger = assistantCount > 0
-        if (!normalTrigger && !assistantTrigger) return
+        val browserCount = browserQualifyingPlaybackCount(configs)
+        currentBrowserQualifyingPlaybackCount = browserCount
+        val browserTrigger = browserRoutingEnabled &&
+            mode == AudioManager.MODE_IN_COMMUNICATION &&
+            browserCount > 0 &&
+            audioManager.communicationDevice?.type == AudioDeviceInfo.TYPE_BUILTIN_SPEAKER
+        if (!normalTrigger && !assistantTrigger && !browserTrigger) return
         val earpiece = audioManager.availableCommunicationDevices.firstOrNull {
             it.type == AudioDeviceInfo.TYPE_BUILTIN_EARPIECE
         } ?: return
@@ -303,18 +320,22 @@ class AudioDiagnosticObserver(
         if (assistantTrigger && !normalTrigger) {
             addEvent("Assistant speech detected — starting protected POC-5 route")
         }
-        val triggerOrigin = if (assistantTrigger && !normalTrigger) {
-            TriggerOrigin.ASSISTANT
-        } else {
-            TriggerOrigin.COMMUNICATION
+        val triggerOrigin = when {
+            assistantTrigger && !normalTrigger -> TriggerOrigin.ASSISTANT
+            browserTrigger && !normalTrigger -> TriggerOrigin.BROWSER_COMMUNICATION
+            else -> TriggerOrigin.COMMUNICATION
         }
-        startProtectedPoc5Probe(earpiece, triggerOrigin, assistantCount)
+        if (triggerOrigin == TriggerOrigin.BROWSER_COMMUNICATION) {
+            addEvent("Browser communication detected — starting protected POC-5 route")
+        }
+        startProtectedPoc5Probe(earpiece, triggerOrigin, assistantCount, browserCount)
     }
 
     private fun startProtectedPoc5Probe(
         earpiece: AudioDeviceInfo,
         triggerOrigin: TriggerOrigin,
         assistantCount: Int,
+        browserCount: Int,
     ) {
         val target = earpiece.toObservedDevice()
         val modeBeforeParticipation = audioManager.mode
@@ -328,6 +349,7 @@ class AudioDiagnosticObserver(
             modeBeforeParticipation = audioModeName(modeBeforeParticipation),
             preOwnership = preOwnership,
             assistantQualifyingPlaybackCount = assistantCount,
+            browserQualifyingPlaybackCount = browserCount,
             triggerOrigin = triggerOrigin,
             modeBeforeAssistantParticipation =
                 if (triggerOrigin == TriggerOrigin.ASSISTANT) audioModeName(modeBeforeParticipation) else null,
@@ -346,10 +368,10 @@ class AudioDiagnosticObserver(
             postSilentTrackStart = postTrackStart,
             activeVoiceCommunicationPlaybackObserved = visibleVoicePlayback,
         )
-        externalContributionEstablished = if (triggerOrigin == TriggerOrigin.ASSISTANT) {
-            assistantQualifyingPlaybackCount(audioManager.activePlaybackConfigurations) > 0
-        } else {
-            qualifyingPlaybackCount(audioManager.activePlaybackConfigurations) >= 2
+        externalContributionEstablished = when (triggerOrigin) {
+            TriggerOrigin.ASSISTANT -> assistantQualifyingPlaybackCount(audioManager.activePlaybackConfigurations) > 0
+            TriggerOrigin.BROWSER_COMMUNICATION -> browserQualifyingPlaybackCount(audioManager.activePlaybackConfigurations) > 0
+            TriggerOrigin.COMMUNICATION -> qualifyingPlaybackCount(audioManager.activePlaybackConfigurations) >= 2
         }
         addEvent(
             "Routing cycle $cycleGeneration started — qualifying playback contributions after local start=" +
@@ -534,20 +556,23 @@ class AudioDiagnosticObserver(
         recordPlaybackObservation(configs.map(AudioPlaybackConfiguration::toObservedPlayback))
         val count = qualifyingPlaybackCount(configs)
         val assistantCount = assistantQualifyingPlaybackCount(configs)
+        val browserCount = browserQualifyingPlaybackCount(configs)
         currentAssistantQualifyingPlaybackCount = assistantCount
+        currentBrowserQualifyingPlaybackCount = browserCount
         addEvent(
             "Playback callback — qualifying VOICE_COMMUNICATION/SPEECH count=$count; " +
-                "qualifying ASSISTANT/SPEECH count=$assistantCount",
+                "qualifying ASSISTANT/SPEECH count=$assistantCount; " +
+                "browser qualifying VOICE_COMMUNICATION/UNKNOWN count=$browserCount",
         )
         if (experiment.attempts.isEmpty()) {
-            if (!routingActionInProgress && (count > 0 || assistantCount > 0)) evaluateExperimentTrigger()
+            if (!routingActionInProgress && (count > 0 || assistantCount > 0 || browserCount > 0)) evaluateExperimentTrigger()
             return
         }
         if (silentTrack?.playState != AudioTrack.PLAYSTATE_PLAYING) return
-        val externalPlaybackPresent = if (experiment.triggerOrigin == TriggerOrigin.ASSISTANT) {
-            assistantCount > 0
-        } else {
-            count >= 2
+        val externalPlaybackPresent = when (experiment.triggerOrigin) {
+            TriggerOrigin.ASSISTANT -> assistantCount > 0
+            TriggerOrigin.BROWSER_COMMUNICATION -> browserCount > 0
+            else -> count >= 2
         }
         if (externalPlaybackPresent) {
             externalContributionEstablished = true
@@ -582,6 +607,11 @@ class AudioDiagnosticObserver(
             it.audioAttributes.contentType == AudioAttributes.CONTENT_TYPE_SPEECH
     }
 
+    private fun browserQualifyingPlaybackCount(configs: List<AudioPlaybackConfiguration>) = configs.count {
+        it.audioAttributes.usage == AudioAttributes.USAGE_VOICE_COMMUNICATION &&
+            it.audioAttributes.contentType == AudioAttributes.CONTENT_TYPE_UNKNOWN
+    }
+
     private fun scheduleEndConfirmation() {
         if (pendingEndConfirmation != null) return
         val generation = cycleGeneration
@@ -594,10 +624,10 @@ class AudioDiagnosticObserver(
             if (!controllerEnabled || generation != cycleGeneration || experiment.attempts.size != 1 ||
                 silentTrack?.playState != AudioTrack.PLAYSTATE_PLAYING
             ) return@Runnable
-            val externalPlaybackPresent = if (experiment.triggerOrigin == TriggerOrigin.ASSISTANT) {
-                assistantQualifyingPlaybackCount(audioManager.activePlaybackConfigurations) > 0
-            } else {
-                qualifyingPlaybackCount(audioManager.activePlaybackConfigurations) > 1
+            val externalPlaybackPresent = when (experiment.triggerOrigin) {
+                TriggerOrigin.ASSISTANT -> assistantQualifyingPlaybackCount(audioManager.activePlaybackConfigurations) > 0
+                TriggerOrigin.BROWSER_COMMUNICATION -> browserQualifyingPlaybackCount(audioManager.activePlaybackConfigurations) > 0
+                else -> qualifyingPlaybackCount(audioManager.activePlaybackConfigurations) > 1
             }
             if (externalPlaybackPresent) return@Runnable
             addEvent("External communication end confirmed for routing cycle $generation")
@@ -763,6 +793,7 @@ internal fun buildDiagnosticReport(
     baseline: DiagnosticSnapshot? = null,
     startupAudioTrace: List<String> = emptyList(),
     assistantQualifyingPlaybackCount: Int = experiment.assistantQualifyingPlaybackCount,
+    browserQualifyingPlaybackCount: Int = experiment.browserQualifyingPlaybackCount,
 ) = buildString {
     appendLine("PRIVATE AUDIO — DIAGNOSTIC REPORT")
     appendLine("Timestamp: $timestamp")
@@ -785,6 +816,7 @@ internal fun buildDiagnosticReport(
     appendLine()
     appendLine("EARPIECE EXPERIMENT")
     appendLine("Assistant qualifying playback count: $assistantQualifyingPlaybackCount")
+    appendLine("Browser qualifying VOICE_COMMUNICATION/UNKNOWN count: $browserQualifyingPlaybackCount")
     appendLine("Trigger origin: ${experiment.triggerOrigin ?: "Not attempted"}")
     appendLine("Mode immediately before assistant participation: ${experiment.modeBeforeAssistantParticipation ?: "Not attempted"}")
     appendLine("Experiment state: ${experiment.state.label}")
@@ -874,6 +906,7 @@ private fun StringBuilder.appendCompletedRoutingCycle(cycle: CompletedRoutingCyc
     appendLine("Completed at: ${cycle.completedAt}")
     appendLine("Completion reason: ${cycle.completionReason}")
     appendLine("Trigger origin: ${completed.triggerOrigin ?: "Not recorded"}")
+    appendLine("Browser qualifying VOICE_COMMUNICATION/UNKNOWN count: ${completed.browserQualifyingPlaybackCount}")
     appendLine("Mode before participation: ${completed.modeBeforeParticipation ?: "Not recorded"}")
     appendLine("Routing request attempted: ${completed.requestAttempted}")
     appendLine("Routing request accepted: ${completed.requestAccepted ?: "Not attempted"}")
