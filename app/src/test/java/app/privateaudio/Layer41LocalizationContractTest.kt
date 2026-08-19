@@ -629,6 +629,33 @@ class Layer41LocalizationContractTest {
     }
 
     @Test
+    fun greekFrozenLocalizationSemanticsRemainIntact() {
+        val localeTag = "el"
+        val locale = Locale.forLanguageTag(localeTag)
+        assertEquals("el", locale.language)
+        assertEquals("Ελληνικά", locale.getDisplayLanguage(locale))
+        assertEquals("Ελληνικά", nativeLocaleName(localeTag))
+        assertTrue(projectFile("app/src/main/res/values-el/strings.xml").isFile)
+        assertTrue(greekStrings.contains("name=\"app_name\">Private Audio</string>"))
+        assertTrue(greekStrings.contains("name=\"floating\">Mini</string>"))
+        assertTrue(greekStrings.contains("name=\"product_subtitle\">Μιλήστε ιδιωτικά με AI, σαν να μιλάτε στο τηλέφωνο.</string>"))
+        assertTrue(greekStrings.contains("name=\"routing_notification_title\">Το Private Audio είναι ενεργοποιημένο</string>"))
+        assertTrue(greekStrings.contains("name=\"state_active\">Ενεργό</string>"))
+        assertFalse(greekStrings.contains("name=\"state_active\">Το Private Audio είναι ενεργοποιημένο</string>"))
+        assertTrue(greekStrings.contains("name=\"routing_notification_text\">Αναμονή για αλλαγή εξόδου ήχου</string>"))
+        assertTrue(greekStrings.contains("name=\"settings_language_body\"") && greekStrings.contains("γλώσσα της συσκευής σας"))
+        assertTrue(greekStrings.contains("name=\"settings_language_android_13_required\"") && greekStrings.contains("γλώσσα συστήματος"))
+        assertTrue(greekStrings.contains("name=\"settings_system_default\">Προεπιλογή συστήματος</string>"))
+        assertTrue(greekStrings.contains("name=\"settings_proximity_screen\">Απενεργοποίηση οθόνης κοντά στο αυτί</string>"))
+        assertTrue(greekStrings.contains("ενσωματωμένο ακουστικό του τηλεφώνου σας"))
+        assertTrue(greekStrings.contains("ενεργοποίηση/απενεργοποίηση, ανάπτυξη και κλείσιμο"))
+        assertTrue(greekStrings.contains("name=\"state_ready\">Έτοιμο</string>"))
+        assertTrue(greekStrings.contains("name=\"state_waiting\">Αναμονή</string>"))
+        assertTrue(greekStrings.contains("name=\"state_active\">Ενεργό</string>"))
+        assertTrue(greekStrings.contains("name=\"state_error\">Σφάλμα</string>"))
+    }
+
+    @Test
     fun languageSelectionUsesPlatformConfigurationWithoutAParallelLocaleRegistry() {
         assertTrue(languagePreferencesSource.contains("LocaleConfig(context).supportedLocales"))
         assertTrue(languagePreferencesSource.contains("getSystemService(LocaleManager::class.java)"))
@@ -741,6 +768,7 @@ class Layer41LocalizationContractTest {
         val croatianStrings = projectFile("app/src/main/res/values-hr/strings.xml").readText()
         val serbianLatinStrings = projectFile("app/src/main/res/values-b+sr+Latn/strings.xml").readText()
         val bosnianStrings = projectFile("app/src/main/res/values-bs/strings.xml").readText()
+        val greekStrings = projectFile("app/src/main/res/values-el/strings.xml").readText()
         val mainSource = projectFile("app/src/main/java/app/privateaudio/MainActivity.kt").readText()
         val productScreenSource = projectFile("app/src/main/java/app/privateaudio/ui/PrivateAudioScreen.kt").readText()
         val settingsSource = projectFile("app/src/main/java/app/privateaudio/ui/SettingsSheet.kt").readText()
