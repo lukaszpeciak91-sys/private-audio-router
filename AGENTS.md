@@ -18,6 +18,12 @@ When touching Android audio routing, also read:
 5. `docs/RESEARCH.md`
 6. `docs/TEST_PLAN.md`
 
+When a task adds, changes, audits, translates, or otherwise affects user-facing localized copy, locale resources, language selection, RTL localization, or a new or changed localizable string, also:
+
+1. read `docs/LOCALIZATION.md`;
+2. use the repo-local `private-audio-localization` skill; and
+3. inspect the current English/default strings and current locale inventory before proposing or implementing translations.
+
 ## Repository-first behavior
 
 Inspect the current repository before proposing new files, structures, documentation, or implementation approaches. Preserve the existing document structure, terminology, and writing style unless an explicit restructuring task says otherwise.
