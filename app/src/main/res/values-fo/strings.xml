@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Private Audio</string>
+    <string name="routing_notification_channel">Private Audio</string>
+    <string name="routing_notification_title">Private Audio er tendrað</string>
+    <string name="routing_notification_text">Bíðar eftir at skifta ljóðið</string>
+    <string name="product_title">Private Audio</string>
+    <string name="product_subtitle">Tosa einsliga við AI, sum í einari telefonsamrøðu.</string>
+    <string name="state_ready">Klárt</string>
+    <string name="state_waiting">Bíðar</string>
+    <string name="state_active">Virkið</string>
+    <string name="state_error">Villa</string>
+    <string name="power_control">Streymur</string>
+    <string name="floating">Mini</string>
+    <string name="settings">Stillingar</string>
+    <string name="close">Lat aftur</string>
+    <string name="overlay_controller_description">Flótandi stýring til Private Audio. Støða: %1$s. Stýringar til at tendra, víðka og lata aftur.</string>
+    <string name="settings_language">Mál</string>
+    <string name="settings_system_default">Vanligt</string>
+    <string name="settings_save_diagnostic">Goym greiningarfrágreiðing</string>
+    <string name="settings_advanced">Framkomið</string>
+    <string name="settings_about">Um Private Audio</string>
+    <string name="settings_version">Útgáva %1$s</string>
+    <string name="settings_language_body">Private Audio fylgir í løtuni málinum á tólinum. Vanligt er valt.</string>
+    <string name="settings_language_android_13_required">Málval í appini krevur Android 13 ella nýggjari. Hetta tólið fylgir skipanarmálinum.</string>
+    <string name="settings_proximity_screen">Sløkk skíggjan nær oyranum</string>
+    <string name="settings_advanced_body">Fleiri møguleikar verða vístir her, so hvørt sum Private Audio verður ment.</string>
+    <string name="settings_about_body">Private Audio hjálpir við at skifta stuðlað røddarljóð til innbygda hátalaran ovast á telefonini, sum verður brúktur við oyrað undir telefonsamrøðum.</string>
+    <string name="diagnostic_report_saved">Greiningarfrágreiðingin er goymd.</string>
+    <string name="diagnostic_report_save_failed">Bar ikki til at goyma greiningarfrágreiðingina.</string>
+</resources>
