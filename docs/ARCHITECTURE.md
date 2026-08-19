@@ -98,8 +98,8 @@ Assistant detection is an independent input branch into the existing protected P
 
 Both branches select a small diagnostic trigger origin, capture pre-change evidence, and then share the same ordered silent-track, playing-state confirmation, explicit communication-mode request, mode confirmation, single earpiece request, observation, and cleanup mechanics. Assistant session-end inference follows disappearance of the assistant/speech contribution rather than changing the established voice-communication contribution semantics. Proximity remains downstream of the same ACTIVE evidence and contains no assistant-specific behavior.
 
-## Experimental browser communication trigger
+## Automatic browser communication trigger
 
-The default-off browser experiment is a third independent origin. It requires the armed controller, the persisted experiment preference, `MODE_IN_COMMUNICATION`, a built-in-speaker communication device, and at least one exact public `USAGE_VOICE_COMMUNICATION` + `CONTENT_TYPE_UNKNOWN` playback configuration, while retaining the shared telephony and one-attempt guards. It does not identify a browser or provider. Ordinary media, unknown content alone, and communication mode alone cannot qualify.
+Browser communication detection is a third independent origin available whenever the controller is armed. It requires `MODE_IN_COMMUNICATION`, a built-in-speaker communication device, and at least one exact public `USAGE_VOICE_COMMUNICATION` + `CONTENT_TYPE_UNKNOWN` playback configuration, while retaining the shared telephony and one-attempt guards. It does not identify a browser or provider. Ordinary media, unknown content alone, and communication mode alone cannot qualify.
 
 `BROWSER_COMMUNICATION` enters the same protected POC-5 body. Because Private Audio's local silent contribution remains voice-communication/speech, browser session presence and the delayed end confirmation count only voice-communication/unknown configurations. Communication continues to use its established two-speech-contribution lifecycle, and assistant continues to use assistant/speech disappearance.

@@ -81,8 +81,6 @@ fun SettingsSheet(
     versionName: String,
     proximityFeatureEnabled: Boolean,
     onProximityFeatureChange: (Boolean) -> Unit,
-    browserRoutingEnabled: Boolean,
-    onBrowserRoutingChange: (Boolean) -> Unit,
     onCopyDiagnosticReport: () -> Unit,
     onDismiss: () -> Unit,
 ) {
@@ -165,8 +163,6 @@ fun SettingsSheet(
                     SettingsPage.ADVANCED -> AdvancedPage(
                         proximityFeatureEnabled = proximityFeatureEnabled,
                         onProximityFeatureChange = onProximityFeatureChange,
-                        browserRoutingEnabled = browserRoutingEnabled,
-                        onBrowserRoutingChange = onBrowserRoutingChange,
                         onBack = { page = SettingsPage.ROOT },
                     )
                     SettingsPage.ABOUT -> ChildPage(
@@ -184,8 +180,6 @@ fun SettingsSheet(
 private fun AdvancedPage(
     proximityFeatureEnabled: Boolean,
     onProximityFeatureChange: (Boolean) -> Unit,
-    browserRoutingEnabled: Boolean,
-    onBrowserRoutingChange: (Boolean) -> Unit,
     onBack: () -> Unit,
 ) {
     Box(Modifier.fillMaxWidth()) {
@@ -216,35 +210,6 @@ private fun AdvancedPage(
         )
         Switch(
             checked = proximityFeatureEnabled,
-            onCheckedChange = null,
-            colors = SwitchDefaults.colors(
-                checkedThumbColor = Color.Black,
-                checkedTrackColor = Color(0xFF22DA70),
-                uncheckedThumbColor = SettingsSecondary,
-                uncheckedTrackColor = SettingsDivider,
-                uncheckedBorderColor = SettingsBorder,
-            ),
-        )
-    }
-    Row(
-        modifier = Modifier.fillMaxWidth().height(SettingsLayout.rowHeight)
-            .toggleable(
-                value = browserRoutingEnabled,
-                role = Role.Switch,
-                onValueChange = onBrowserRoutingChange,
-            ).testTag("settings_browser_routing_experimental"),
-        verticalAlignment = Alignment.CenterVertically,
-        horizontalArrangement = Arrangement.SpaceBetween,
-    ) {
-        Text(
-            stringResource(R.string.settings_browser_routing_experimental),
-            modifier = Modifier.weight(1f).padding(end = 12.dp),
-            color = SettingsPrimary,
-            fontSize = 15.sp,
-            lineHeight = 21.sp,
-        )
-        Switch(
-            checked = browserRoutingEnabled,
             onCheckedChange = null,
             colors = SwitchDefaults.colors(
                 checkedThumbColor = Color.Black,

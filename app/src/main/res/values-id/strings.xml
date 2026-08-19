@@ -24,7 +24,6 @@
     <string name="settings_language_body">Private Audio saat ini mengikuti bahasa perangkat Anda. Default dipilih.</string>
     <string name="settings_language_android_13_required">Pemilihan bahasa dalam aplikasi memerlukan Android 13 atau yang lebih baru. Perangkat ini mengikuti bahasa sistem.</string>
     <string name="settings_proximity_screen">Matikan layar saat dekat telinga</string>
-    <string name="settings_browser_routing_experimental">Pengalihan audio browser (eksperimental)</string>
     <string name="settings_advanced_body">Opsi tambahan akan muncul di sini seiring perkembangan Private Audio.</string>
     <string name="settings_about_body">Private Audio membantu mengalihkan audio suara ke earpiece bawaan ponsel.</string>
     <string name="diagnostic_report_clip_label">Laporan diagnostik Private Audio</string>

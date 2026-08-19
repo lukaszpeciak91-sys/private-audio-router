@@ -157,7 +157,6 @@ class AudioDiagnosticObserver(
     private var controllerEnabled = false
     private var currentAssistantQualifyingPlaybackCount = 0
     private var currentBrowserQualifyingPlaybackCount = 0
-    private var browserRoutingEnabled = false
     private var playbackCallbackRegistered = false
     private var cycleGeneration = 0L
     private var externalContributionEstablished = false
@@ -255,12 +254,6 @@ class AudioDiagnosticObserver(
         addEvent(message)
     }
 
-    fun updateBrowserRoutingEnabled(enabled: Boolean) {
-        browserRoutingEnabled = enabled
-        addEvent("Browser routing experimental ${if (enabled) "enabled" else "disabled"}")
-        if (enabled && controllerEnabled && !routingActionInProgress) evaluateExperimentTrigger()
-    }
-
     fun report(): String = buildDiagnosticReport(
         timestamp = OffsetDateTime.now().format(DateTimeFormatter.ISO_OFFSET_DATE_TIME),
         experiment = experiment,
@@ -308,8 +301,7 @@ class AudioDiagnosticObserver(
         val assistantTrigger = assistantCount > 0
         val browserCount = browserQualifyingPlaybackCount(configs)
         currentBrowserQualifyingPlaybackCount = browserCount
-        val browserTrigger = browserRoutingEnabled &&
-            mode == AudioManager.MODE_IN_COMMUNICATION &&
+        val browserTrigger = mode == AudioManager.MODE_IN_COMMUNICATION &&
             browserCount > 0 &&
             audioManager.communicationDevice?.type == AudioDeviceInfo.TYPE_BUILTIN_SPEAKER
         if (!normalTrigger && !assistantTrigger && !browserTrigger) return

@@ -101,3 +101,9 @@ New statements must be labeled **FACT**, **INFERENCE**, or **UNKNOWN**, with sou
 - **FACT (supplied physical result, 2026-08-19):** The established communication path passed with ChatGPT Voice, Grok, Perplexity, and Character.AI. A regression with the assistant experimental option disabled confirmed the existing ChatGPT path still worked before automatic promotion.
 - **INFERENCE:** Exact public usage/content classification provides a provider-independent boundary for the two trigger classes without package, UID, PID, or foreground identity.
 - **UNKNOWN:** The supplied results do not establish physical no-trigger outcomes for YouTube/music/video, NotebookLM Audio Overview, Kimi media-style TTS, or assistant sonification alone; implementation contracts preserve those exclusions pending recorded device runs.
+
+## Browser-communication playback evidence
+
+- **FACT (supplied physical result, 2026-08-19):** ChatGPT Web in Chrome exposed the validated `MODE_IN_COMMUNICATION` + built-in speaker + `USAGE_VOICE_COMMUNICATION`/`CONTENT_TYPE_UNKNOWN` signature, and the protected POC-5 sequence produced human-confirmed audible earpiece routing on the tested device.
+- **FACT (supplied physical result, 2026-08-19):** Browser session end completed the existing 1.5-second confirmation and reversible cleanup, and subsequent browser sessions routed without restarting Private Audio. ChatGPT Android and Gemini Live regressions passed; each cycle made exactly one routing request, ordinary media and assistant sonification remained ignored, and Power OFF cleanup remained unchanged.
+- **INFERENCE:** Exact public mode, route, usage, and content classification provides a provider-independent third trigger boundary without identifying Chrome, a URL, a package, or a client.
