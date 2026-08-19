@@ -32,6 +32,14 @@ Classify audit results without manufacturing edits:
 
 For every proposed language change, record **assessment confidence** and **replacement confidence** as `HIGH`, `MEDIUM`, or `LOW`. A confident diagnosis need not imply a confident replacement. Never silently implement a `LOW`-confidence replacement. Record reviewed-no-change locales as meaningful results.
 
+## Back-check semantic relationships
+
+Before finalizing a locale, perform a source-to-target semantic back-check for strings whose meaning depends on an important relationship or distinction. Scale the check to semantic risk, with particular attention to system versus device, app versus system, screen versus phone/device, enabled versus active, state versus action, source versus destination, built-in earpiece versus loudspeaker/headphones, trigger versus effect, subject/object relationships, and accessibility-control semantics.
+
+Ask whether the target preserves the same subject, object, referent, and relationship between components; whether it accidentally collapses two distinct source concepts; and whether grammatically natural wording implies different behavior. A target that changes or collapses those semantics is **`FIX`**. Grammatical naturalness never overrides semantic fidelity.
+
+For a linguistically non-obvious or high-risk string, briefly reconstruct the target meaning in plain English or equivalent source-language semantics. This reverse gloss is a sanity check—not machine back-translation offered as proof of quality—for swapped subjects and objects, lost distinctions, wrong referents, missing triggers, and altered action/state semantics. If the reconstructed meaning differs materially from the source, stop and review. Apply this proportionally; trivial labels such as `Close`, `Error`, and `Settings` do not each require a reverse gloss.
+
 ## Resolve terminology independently
 
 - Do not infer one locale from a related language or normalize terminology or grammatical aspect across a language family. Treat Polish/Czech/Slovak, Ukrainian/Belarusian/Russian, Arabic/Persian/Urdu, `pt-BR`/`pt-PT`, and `zh-Hans`/`zh-Hant` independently. Related locales are sanity comparisons, not linguistic authorities. A Polish improvement does not invalidate other Slavic recurring-action constructions.
@@ -65,6 +73,14 @@ Use Android `plurals`, follow CLDR categories, and audit every locale rather tha
 ## Keep linguistic and layout review separate
 
 Do not weaken correct language merely to match English length. First seek a naturally shorter equivalent while preserving semantics, then evaluate supported wrapping. Use compact variants only with explicit need and review, ellipsize only where acceptable, never globally shrink typography, and never invent abbreviations solely to fit geometry.
+
+## Review accessibility and control descriptions as spoken language
+
+When an accessibility or control description enumerates controls or actions, verify grammatical parallelism, a consistent action form, clear control semantics, and natural screen-reader phrasing. Do not mix infinitive, imperative, and noun forms unless that pattern is a genuine native convention. A list conceptually equivalent to **Enable / Expand / Close** should use one natural parallel grammatical pattern in the target locale. Review accessibility copy as spoken product language, not merely as a complete set of translated words.
+
+## Apply the final linguistic review gate
+
+Do not award final **PASS** solely because XML is valid, keys and placeholders match, required terminology is present, or individual sentences are grammatical. Before **PASS**, explicitly verify semantic fidelity to the source, native Android/product naturalness, relationship and referent fidelity, action/state fidelity, and—where applicable—accessibility grammar. Scale this gate to semantic risk rather than turning trivial labels into heavy ceremony.
 
 ## Minimize changes and report evidence precisely
 
