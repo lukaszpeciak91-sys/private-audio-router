@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Private Audio</string>
+    <string name="routing_notification_channel">Private Audio</string>
+    <string name="routing_notification_title">Private Audio е включено</string>
+    <string name="routing_notification_text">Изчакване за превключване на звука</string>
+    <string name="product_title">Private Audio</string>
+    <string name="product_subtitle">Разговаряйте насаме с ИИ, както по телефона.</string>
+    <string name="state_ready">Готово</string>
+    <string name="state_waiting">Изчакване</string>
+    <string name="state_active">Активно</string>
+    <string name="state_error">Грешка</string>
+    <string name="power_control">Включване/изключване</string>
+    <string name="floating">Mini</string>
+    <string name="settings">Настройки</string>
+    <string name="close">Затвори</string>
+    <string name="overlay_controller_description">Плаващ контролер на Private Audio. Състояние: %1$s. Контроли за включване/изключване, разгъване и затваряне.</string>
+    <string name="settings_language">Език</string>
+    <string name="settings_system_default">По подразбиране</string>
+    <string name="settings_save_diagnostic">Запазване на диагностичен отчет</string>
+    <string name="settings_advanced">Разширени</string>
+    <string name="settings_about">За Private Audio</string>
+    <string name="settings_version">Версия %1$s</string>
+    <string name="settings_language_body">Private Audio в момента използва езика на устройството ви. Избрана е настройката по подразбиране.</string>
+    <string name="settings_language_android_13_required">Избирането на език в приложението изисква Android 13 или по-нова версия. Това устройство използва системния език.</string>
+    <string name="settings_proximity_screen">Изключване на екрана близо до ухото</string>
+    <string name="settings_advanced_body">Тук ще се появяват допълнителни опции с развитието на Private Audio.</string>
+    <string name="settings_about_body">Private Audio помага за насочването на поддържано гласово аудио към вградената телефонна слушалка.</string>
+    <string name="diagnostic_report_saved">Диагностичният отчет е запазен.</string>
+    <string name="diagnostic_report_save_failed">Диагностичният отчет не можа да бъде запазен.</string>
+</resources>
