@@ -102,6 +102,10 @@ class PrivateAudioService : Service() {
         observer.snapshot(reason)
     }
 
+    fun recordDiagnosticSaveEvent(event: String) {
+        observer.recordLifecycleEvent(event)
+    }
+
     fun updateProximityFeatureEnabled(enabled: Boolean) {
         if (enabled == isProximityFeatureEnabled) return
         isProximityFeatureEnabled = enabled

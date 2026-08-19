@@ -4,7 +4,9 @@ import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue
 import org.junit.Test
+import java.io.ByteArrayOutputStream
 import java.io.File
+import java.io.IOException
 
 class Layer4SettingsContractTest {
     @Test
@@ -42,7 +44,12 @@ class Layer4SettingsContractTest {
 
     @Test
     fun diagnosticSaveUsesCreateDocumentAndUtf8ContentResolver() {
-        assertTrue(mainSource.contains("service?.diagnosticReport()"))
+        val launchMethod = mainSource.method("private fun launchDiagnosticDocumentPicker()")
+        val saveMethod = mainSource.method("private fun saveDiagnosticReport(destination: Uri)")
+        assertTrue(launchMethod.contains("connectedService.diagnosticReport()"))
+        assertTrue(launchMethod.indexOf("connectedService.diagnosticReport()") < launchMethod.indexOf("diagnosticDocumentLauncher.launch("))
+        assertFalse(saveMethod.contains("service?.diagnosticReport()"))
+        assertTrue(saveMethod.contains("pendingDiagnosticReport"))
         assertTrue(mainSource.contains("Intent.ACTION_CREATE_DOCUMENT"))
         assertTrue(mainSource.contains("Intent.CATEGORY_OPENABLE"))
         assertTrue(mainSource.contains("setType(\"text/plain\")"))
@@ -52,6 +59,36 @@ class Layer4SettingsContractTest {
         assertTrue(serviceSource.method("fun diagnosticReport(): String").contains("observer.report()"))
         assertEquals(1, observerSource.occurrences("internal fun buildDiagnosticReport("))
         assertEquals(0, settingsSource.occurrences("buildDiagnosticReport("))
+    }
+
+    @Test
+    fun diagnosticWritePreservesUtf8WithoutAService() {
+        val output = ByteArrayOutputStream()
+        val report = "Private Audio — zażółć 日本語"
+
+        assertEquals(DiagnosticWriteResult.Success, writeDiagnosticReport(report) { output })
+        assertEquals(report, output.toString(Charsets.UTF_8.name()))
+    }
+
+    @Test
+    fun diagnosticWriteReportsNullStreamAndExceptions() {
+        assertEquals(
+            DiagnosticWriteResult.Failure("openOutputStream returned null"),
+            writeDiagnosticReport("report") { null },
+        )
+        assertEquals(
+            DiagnosticWriteResult.Failure("IOException: provider rejected write"),
+            writeDiagnosticReport("report") { throw IOException("provider rejected write") },
+        )
+    }
+
+    @Test
+    fun diagnosticPickerCancellationAndEveryResultClearPendingReport() {
+        assertTrue(mainSource.contains("if (result.resultCode != RESULT_OK)"))
+        assertTrue(mainSource.contains("pendingDiagnosticReport = null\n            return@registerForActivityResult"))
+        assertTrue(mainSource.method("private fun saveDiagnosticReport(destination: Uri)").contains("pendingDiagnosticReport = null"))
+        assertTrue(mainSource.contains("Document Uri unavailable"))
+        assertTrue(mainSource.contains("No connected service when Save was tapped"))
     }
 
     @Test
