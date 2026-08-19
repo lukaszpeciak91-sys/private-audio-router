@@ -276,6 +276,51 @@ class Layer41LocalizationContractTest {
     }
 
     @Test
+    fun finnishFrozenLocalizationSemanticsRemainIntact() {
+        assertEquals("Suomi", nativeLocaleName("fi"))
+        assertTrue(finnishStrings.contains("name=\"routing_notification_text\">Odottaa äänen ohjaamista</string>"))
+        assertTrue(finnishStrings.contains("name=\"settings_language_body\"") && finnishStrings.contains("laitteesi kieltä"))
+        assertTrue(finnishStrings.contains("name=\"settings_language_android_13_required\"") && finnishStrings.contains("Tämä laite käyttää järjestelmän kieltä."))
+        assertTrue(finnishStrings.contains("name=\"settings_proximity_screen\">Sammuta näyttö korvan lähellä</string>"))
+        assertTrue(finnishStrings.contains("puhelimen sisäänrakennettuun kuulokkeeseen"))
+        assertTrue(finnishStrings.contains("Virran kytkemisen, laajentamisen ja sulkemisen säätimet"))
+        assertTrue(finnishStrings.contains("name=\"state_ready\">Valmis</string>"))
+        assertTrue(finnishStrings.contains("name=\"state_waiting\">Odottaa</string>"))
+        assertTrue(finnishStrings.contains("name=\"state_active\">Aktiivinen</string>"))
+        assertTrue(finnishStrings.contains("name=\"state_error\">Virhe</string>"))
+    }
+
+    @Test
+    fun estonianFrozenLocalizationSemanticsRemainIntact() {
+        assertEquals("Eesti", nativeLocaleName("et"))
+        assertTrue(estonianStrings.contains("name=\"routing_notification_text\">Ootab heli suunamist</string>"))
+        assertTrue(estonianStrings.contains("name=\"settings_language_body\"") && estonianStrings.contains("seadme keelt"))
+        assertTrue(estonianStrings.contains("name=\"settings_language_android_13_required\"") && estonianStrings.contains("See seade kasutab süsteemi keelt."))
+        assertTrue(estonianStrings.contains("name=\"settings_proximity_screen\">Lülita ekraan kõrva lähedal välja</string>"))
+        assertTrue(estonianStrings.contains("telefoni sisseehitatud kuular"))
+        assertTrue(estonianStrings.contains("Sisselülitamise, laiendamise ja sulgemise juhtelemendid"))
+        assertTrue(estonianStrings.contains("name=\"state_ready\">Valmis</string>"))
+        assertTrue(estonianStrings.contains("name=\"state_waiting\">Ootab</string>"))
+        assertTrue(estonianStrings.contains("name=\"state_active\">Aktiivne</string>"))
+        assertTrue(estonianStrings.contains("name=\"state_error\">Viga</string>"))
+    }
+
+    @Test
+    fun hungarianFrozenLocalizationSemanticsRemainIntact() {
+        assertEquals("Magyar", nativeLocaleName("hu"))
+        assertTrue(hungarianStrings.contains("name=\"routing_notification_text\">Várakozás a hang átirányítására</string>"))
+        assertTrue(hungarianStrings.contains("name=\"settings_language_body\"") && hungarianStrings.contains("eszközöd nyelvét"))
+        assertTrue(hungarianStrings.contains("name=\"settings_language_android_13_required\"") && hungarianStrings.contains("Ez az eszköz a rendszer nyelvét követi."))
+        assertTrue(hungarianStrings.contains("name=\"settings_proximity_screen\">A képernyő kikapcsolása a fül közelében</string>"))
+        assertTrue(hungarianStrings.contains("telefon beépített fülhallgatójára"))
+        assertTrue(hungarianStrings.contains("A bekapcsolás, a kibontás és a bezárás vezérlői"))
+        assertTrue(hungarianStrings.contains("name=\"state_ready\">Kész</string>"))
+        assertTrue(hungarianStrings.contains("name=\"state_waiting\">Várakozik</string>"))
+        assertTrue(hungarianStrings.contains("name=\"state_active\">Aktív</string>"))
+        assertTrue(hungarianStrings.contains("name=\"state_error\">Hiba</string>"))
+    }
+
+    @Test
     fun languageSelectionUsesPlatformConfigurationWithoutAParallelLocaleRegistry() {
         assertTrue(languagePreferencesSource.contains("LocaleConfig(context).supportedLocales"))
         assertTrue(languagePreferencesSource.contains("getSystemService(LocaleManager::class.java)"))
@@ -372,6 +417,9 @@ class Layer41LocalizationContractTest {
         val nigerianPidginStrings = projectFile("app/src/main/res/values-pcm/strings.xml").readText()
         val japaneseStrings = projectFile("app/src/main/res/values-ja/strings.xml").readText()
         val swahiliStrings = projectFile("app/src/main/res/values-sw/strings.xml").readText()
+        val finnishStrings = projectFile("app/src/main/res/values-fi/strings.xml").readText()
+        val estonianStrings = projectFile("app/src/main/res/values-et/strings.xml").readText()
+        val hungarianStrings = projectFile("app/src/main/res/values-hu/strings.xml").readText()
         val mainSource = projectFile("app/src/main/java/app/privateaudio/MainActivity.kt").readText()
         val productScreenSource = projectFile("app/src/main/java/app/privateaudio/ui/PrivateAudioScreen.kt").readText()
         val settingsSource = projectFile("app/src/main/java/app/privateaudio/ui/SettingsSheet.kt").readText()

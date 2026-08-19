@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Private Audio</string>
+    <string name="routing_notification_channel">Private Audio</string>
+    <string name="routing_notification_title">Private Audio on käytössä</string>
+    <string name="routing_notification_text">Odottaa äänen ohjaamista</string>
+    <string name="product_title">Private Audio</string>
+    <string name="product_subtitle">Puhu AI:n kanssa yksityisesti, aivan kuin puhelussa.</string>
+    <string name="state_ready">Valmis</string>
+    <string name="state_waiting">Odottaa</string>
+    <string name="state_active">Aktiivinen</string>
+    <string name="state_error">Virhe</string>
+    <string name="power_control">Virta</string>
+    <string name="floating">Mini</string>
+    <string name="settings">Asetukset</string>
+    <string name="close">Sulje</string>
+    <string name="overlay_controller_description">Private Audio -kelluva ohjain. Tila: %1$s. Virran kytkemisen, laajentamisen ja sulkemisen säätimet.</string>
+    <string name="settings_language">Kieli</string>
+    <string name="settings_system_default">Oletus</string>
+    <string name="settings_save_diagnostic">Tallenna diagnostiikkaraportti</string>
+    <string name="settings_advanced">Lisäasetukset</string>
+    <string name="settings_about">Tietoja Private Audiosta</string>
+    <string name="settings_version">Versio %1$s</string>
+    <string name="settings_language_body">Private Audio käyttää tällä hetkellä laitteesi kieltä. Oletus on valittu.</string>
+    <string name="settings_language_android_13_required">Sovelluksen kielivalinta vaatii Android 13:n tai uudemman. Tämä laite käyttää järjestelmän kieltä.</string>
+    <string name="settings_proximity_screen">Sammuta näyttö korvan lähellä</string>
+    <string name="settings_advanced_body">Lisää vaihtoehtoja tulee näkyviin tähän Private Audion kehittyessä.</string>
+    <string name="settings_about_body">Private Audio auttaa ohjaamaan tuetun puheäänen puhelimen sisäänrakennettuun kuulokkeeseen.</string>
+    <string name="diagnostic_report_saved">Diagnostiikkaraportti tallennettu.</string>
+    <string name="diagnostic_report_save_failed">Diagnostiikkaraporttia ei voitu tallentaa.</string>
+</resources>
