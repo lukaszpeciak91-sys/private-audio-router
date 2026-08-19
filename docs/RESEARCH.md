@@ -4,6 +4,7 @@ This baseline separates documented platform capabilities from hypotheses and una
 
 ## FACT
 
+- `AudioManager.registerAudioPlaybackCallback()` provides callback-based public observation, and `getActivePlaybackConfigurations()` provides a public active snapshot. For each visible configuration the application can read `AudioAttributes` usage, content type, flags and allowed-capture policy, `isActive`, and an `AudioDeviceInfo` (including ID, type, and product name) when Android supplies one. These metadata contain no PCM audio. The ordinary public API available to this application does not expose a safe client package/session identity or exact player-state value, so the diagnostic records those fields as unavailable rather than inferring ownership.
 - Android exposes public communication-device routing APIs.
 - Android exposes a built-in earpiece device type on compatible hardware.
 - Android allows an application to request a communication device and clear that request.
@@ -24,6 +25,7 @@ This baseline separates documented platform capabilities from hypotheses and una
 - Modern AI voice applications are likely to use communication-oriented audio patterns because they operate as realtime bidirectional voice sessions.
 - ChatGPT Voice appears likely to use communication-style routing based on observed behavior and platform conventions.
 - If the system respects an external application's communication-device request, the approach may work across multiple AI voice applications.
+- A playback configuration that appears only around the audible startup sound may be a candidate for that sound, but attribution requires physical timestamp correlation and cannot be established from usage or timing alone.
 
 These inferences are hypotheses for physical-device testing, not compatibility claims.
 
