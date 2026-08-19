@@ -198,9 +198,9 @@ This is a lightweight, append-only log. Do not rewrite accepted history; append 
 
 - **Date:** 2026-08-19
 - **Status:** Accepted; extends D-024 for Main bottom action labels only
-- **Context:** Physical-device comparison found that Arabic-, Persian-, and Urdu-script Main bottom action labels appeared noticeably smaller and thinner than the approved Latin baseline at the same nominal size.
-- **Decision:** Main bottom action labels whose visible text contains a Unicode Arabic-script code point use a 14 sp optical baseline; other scripts retain the existing 13 sp baseline. Script detection is based on text rather than locale or layout direction, so punctuation, digits, whitespace, and mixed Latin text do not prevent compensation when Arabic-script text is present. Actual rendered fit remains authoritative.
-- **Consequences:** The existing 112 dp safe label width, natural wrapping, 0.5 sp measured fallback, 11 sp minimum, and 16 sp line height remain component-local and unchanged. This does not establish a global Arabic-script typography rule or change other Main, Mini, or Settings typography. Physical-device comparison of Polish, Arabic, Persian, and Urdu remains required.
+- **Context:** Physical-device comparison found that Arabic-, Persian-, and Urdu-script Main bottom action labels appeared noticeably smaller and thinner than the approved Latin baseline at the same nominal size. Follow-up physical-device QA after the initial 14 sp compensation found the labels readable but still optically smaller and lighter than the approved Latin baseline.
+- **Decision:** Main bottom action labels whose visible text contains a Unicode Arabic-script code point use a 15 sp optical baseline; other scripts retain the existing 13 sp baseline. Script detection is based on text rather than locale or layout direction, so punctuation, digits, whitespace, and mixed Latin text do not prevent compensation when Arabic-script text is present. Actual rendered fit remains authoritative.
+- **Consequences:** The existing 112 dp safe label width, natural wrapping, 0.5 sp measured fallback, 11 sp minimum, and 16 sp line height remain component-local and unchanged. This does not establish a global Arabic-script typography rule or change other Main, Mini, or Settings typography. Final physical-device comparison of Polish, Arabic, Persian, and Urdu remains required.
 
 ## D-026 — Default-off assistant-class POC-5 diagnostic probe
 

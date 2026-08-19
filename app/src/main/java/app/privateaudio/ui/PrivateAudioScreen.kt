@@ -395,7 +395,7 @@ private fun BottomControl(
 }
 
 internal fun bottomLabelInitialFontSize(label: String): TextUnit =
-    if (label.usesArabicScript()) 14.sp else 13.sp
+    if (label.usesArabicScript()) 15.sp else 13.sp
 
 internal fun String.usesArabicScript(): Boolean {
     var index = 0

@@ -21,14 +21,14 @@ class BottomLabelTypographyTest {
             "سیٹنگز",
         ).forEach { label ->
             assertTrue(label.usesArabicScript())
-            assertEquals(14.sp, bottomLabelInitialFontSize(label))
+            assertEquals(15.sp, bottomLabelInitialFontSize(label))
         }
     }
 
     @Test
     fun commonCharactersAndMixedLatinTextDoNotHideArabicScript() {
         assertTrue("AI، ترتیبات 2".usesArabicScript())
-        assertEquals(14.sp, bottomLabelInitialFontSize("AI، ترتیبات 2"))
+        assertEquals(15.sp, bottomLabelInitialFontSize("AI، ترتیبات 2"))
     }
 
     @Test

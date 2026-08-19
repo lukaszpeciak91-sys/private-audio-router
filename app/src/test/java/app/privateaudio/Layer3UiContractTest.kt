@@ -44,7 +44,7 @@ class Layer3UiContractTest {
     @Test
     fun bottomLabelsUseSharedMeasuredFallbackWithoutChangingTranslations() {
         assertTrue(screenSource.contains("mutableStateOf(bottomLabelInitialFontSize(label))"))
-        assertTrue(screenSource.contains("if (label.usesArabicScript()) 14.sp else 13.sp"))
+        assertTrue(screenSource.contains("if (label.usesArabicScript()) 15.sp else 13.sp"))
         assertTrue(screenSource.contains("Character.UnicodeScript.ARABIC"))
         assertFalse(screenSource.contains("Locale("))
         assertFalse(screenSource.contains("language == \"ar\""))
@@ -54,6 +54,8 @@ class Layer3UiContractTest {
         assertTrue(screenSource.contains("maxLines = if (isMultiWordLabel) 2 else 1"))
         assertTrue(screenSource.contains("result.hasVisualOverflow && labelFontSize > 11.sp"))
         assertTrue(screenSource.contains("labelFontSize.value - 0.5f"))
+        assertTrue(screenSource.contains(".height(88.dp)"))
+        assertTrue(screenSource.contains("lineHeight = 16.sp"))
         assertTrue(screenSource.contains("modifier = Modifier.requiredWidth(112.dp)"))
         assertFalse(screenSource.contains("TextOverflow.Ellipsis"))
         assertTrue(projectFile("app/src/main/res/values-pt-rBR/strings.xml").readText()
