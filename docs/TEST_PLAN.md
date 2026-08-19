@@ -401,12 +401,11 @@ The following checks validate lifecycle ownership without claiming routing succe
 - **Exclusions:** Verify assistant sonification alone and `USAGE_MEDIA` do not trigger. Exercise YouTube/music/video, NotebookLM Audio Overview, and Kimi TTS/media responses and record each physical result separately.
 - **Observed result (supplied 2026-08-19):** Communication-class ChatGPT Voice, Grok, Perplexity, and Character.AI passed. Gemini Live assistant/speech audibly moved speaker → earpiece; proximity, session cleanup, Active → Waiting, and re-arm passed. The prior experimental-OFF regression confirmed ChatGPT remained correct. No supplied case-by-case result establishes the listed ordinary-media applications, so those remain **NOT TESTED / UNKNOWN** physically.
 
-## Browser communication POC-5 physical gate
+## Automatic browser communication routing regression gate
 
-- **Status:** NOT TESTED / UNKNOWN
-- **Device target:** Android 13 physical test device used for the supplied Chrome ChatGPT Voice metadata.
-- **Regression preconditions:** Confirm ChatGPT Android still selects `COMMUNICATION`, Gemini Live still selects `ASSISTANT`, and ordinary media remains ignored. Record metadata, request count, and audible output separately.
-- **Experimental OFF:** With Private Audio ON and Browser routing (experimental) OFF, start Chrome voice. Expect no `BROWSER_COMMUNICATION` cycle and no browser-origin routing request.
-- **Experimental ON:** Enable the setting, start Chrome ChatGPT Voice, and verify the exact voice-communication/unknown count becomes positive, origin is `BROWSER_COMMUNICATION`, and exactly one protected POC-5 request occurs. Verify the normal silent voice-communication/speech contribution remains separately visible.
-- **Session end:** End browser voice and verify the unknown-content count reaches zero, remains absent for 1.5 seconds, then cleanup clears the communication device, relinquishes mode participation, releases the silent track and proximity ownership, and returns to Waiting/armed.
-- **Evidence rule:** Android-reported mode, route, metadata, or an accepted request does not prove audible output. A human must separately record whether browser voice moved to the physical earpiece.
+- **Status:** CORE BROWSER, COMMUNICATION, AND ASSISTANT PATHS PASS FROM SUPPLIED PHYSICAL RESULTS
+- **Automatic browser path:** With Private Audio ON, Chrome ChatGPT Voice's exact voice-communication/unknown count selects `BROWSER_COMMUNICATION` and enters the protected POC-5 sequence with exactly one routing request.
+- **Session end:** The unknown-content count reaching zero remains absent for 1.5 seconds, then cleanup clears the communication device, relinquishes mode participation, releases the silent track and proximity ownership, and returns to Waiting/armed.
+- **Isolation regressions:** ChatGPT Android continues to select `COMMUNICATION`; Gemini Live continues to select `ASSISTANT`; ordinary `USAGE_MEDIA` and assistant/sonification remain ignored. Power OFF cleanup is unchanged.
+- **Observed result (supplied 2026-08-19):** ChatGPT Web in Chrome passed audible earpiece routing and cleanup. ChatGPT Android and Gemini Live passed regression. Each routing cycle issued exactly one request, and subsequent sessions routed without restarting Private Audio.
+- **Evidence rule:** Continue recording Android metadata, request count, and human-confirmed audible output separately in future device runs.

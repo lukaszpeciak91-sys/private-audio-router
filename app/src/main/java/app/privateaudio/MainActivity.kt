@@ -61,8 +61,6 @@ class MainActivity : ComponentActivity() {
                     state = state,
                     proximityFeatureEnabled = connectedService?.isProximityFeatureEnabled ?: true,
                     onProximityFeatureChange = { connectedService?.updateProximityFeatureEnabled(it) },
-                    browserRoutingEnabled = connectedService?.isBrowserRoutingEnabled ?: false,
-                    onBrowserRoutingChange = { connectedService?.updateBrowserRoutingEnabled(it) },
                     powerEnabled = connectedService != null,
                     onPowerClick = {
                         if (state == PrivateAudioState.READY) {

@@ -24,7 +24,6 @@
     <string name="settings_language_body">Private Audio در حال حاضر از زبان دستگاه شما پیروی می‌کند. پیش‌فرض انتخاب شده است.</string>
     <string name="settings_language_android_13_required">انتخاب زبان درون‌برنامه‌ای به Android 13 یا بالاتر نیاز دارد. این دستگاه از زبان سیستم پیروی می‌کند.</string>
     <string name="settings_proximity_screen">خاموش کردن صفحه‌نمایش نزدیک گوش</string>
-    <string name="settings_browser_routing_experimental">هدایت صدای مرورگر (آزمایشی)</string>
     <string name="settings_advanced_body">با توسعه Private Audio، گزینه‌های بیشتری در اینجا نمایش داده می‌شود.</string>
     <string name="settings_about_body">Private Audio به هدایت صدا به بلندگوی بالای تلفن کمک می‌کند.</string>
     <string name="diagnostic_report_clip_label">گزارش عیب‌یابی Private Audio</string>

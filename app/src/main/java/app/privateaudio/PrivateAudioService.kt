@@ -41,9 +41,6 @@ class PrivateAudioService : Service() {
     var isProximityFeatureEnabled by mutableStateOf(true)
         private set
 
-    var isBrowserRoutingEnabled by mutableStateOf(false)
-        private set
-
     val privateAudioState: PrivateAudioState
         get() {
             val currentExperiment = observer.experiment
@@ -77,10 +74,7 @@ class PrivateAudioService : Service() {
         super.onCreate()
         isProximityFeatureEnabled = getSharedPreferences(PREFERENCES_NAME, Context.MODE_PRIVATE)
             .getBoolean(PROXIMITY_FEATURE_KEY, true)
-        isBrowserRoutingEnabled = getSharedPreferences(PREFERENCES_NAME, Context.MODE_PRIVATE)
-            .getBoolean(BROWSER_ROUTING_KEY, false)
         observer.start()
-        observer.updateBrowserRoutingEnabled(isBrowserRoutingEnabled)
     }
 
     override fun onBind(intent: Intent?): IBinder = binder
@@ -118,16 +112,6 @@ class PrivateAudioService : Service() {
         syncProximityBehavior(if (enabled) "Preference enabled" else "Preference disabled")
     }
 
-    fun updateBrowserRoutingEnabled(enabled: Boolean) {
-        if (enabled == isBrowserRoutingEnabled) return
-        isBrowserRoutingEnabled = enabled
-        getSharedPreferences(PREFERENCES_NAME, Context.MODE_PRIVATE)
-            .edit()
-            .putBoolean(BROWSER_ROUTING_KEY, enabled)
-            .apply()
-        observer.updateBrowserRoutingEnabled(enabled)
-    }
-
     fun diagnosticReport(): String {
         observer.snapshot("Report snapshot")
         val proximity = proximityController.status()
@@ -142,7 +126,6 @@ class PrivateAudioService : Service() {
             appendLine("Last release reason: ${proximity.lastReleaseReason ?: "None"}")
             appendLine("State at last transition: ${proximity.stateAtLastTransition ?: "None"}")
             appendLine("Route at last transition: ${proximity.routeAtLastTransition ?: "None"}")
-            appendLine("Browser routing experimental enabled: $isBrowserRoutingEnabled")
         }
     }
 
@@ -225,6 +208,5 @@ class PrivateAudioService : Service() {
         private const val NOTIFICATION_ID = 1
         private const val PREFERENCES_NAME = "private_audio_preferences"
         private const val PROXIMITY_FEATURE_KEY = "proximity_screen_enabled"
-        private const val BROWSER_ROUTING_KEY = "browser_routing_experimental_enabled"
     }
 }

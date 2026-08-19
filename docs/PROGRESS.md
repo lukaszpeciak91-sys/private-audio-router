@@ -4,7 +4,7 @@ State reflects evidence, not aspiration.
 
 ## DONE
 
-- Added the default-OFF, persisted browser communication POC-5 probe for physical Chrome/WebRTC validation. Its independent, provider-neutral trigger requires the complete `MODE_IN_COMMUNICATION` + built-in speaker + `USAGE_VOICE_COMMUNICATION`/`CONTENT_TYPE_UNKNOWN` signature and enters the single protected POC-5 body. Browser lifecycle tracking uses only the unknown-content external contribution and the existing 1.5-second confirmation before unchanged cleanup and Waiting re-arm. Advanced Settings exposes the experimental switch across all current locales; diagnostics and last-completed evidence preserve the browser count and origin. Automated evidence covers isolation, exclusions, shared sequencing, and the one-request cap; audible browser routing remains **UNKNOWN** pending the requested physical test.
+- Promoted the physically validated browser-communication path to automatic detection whenever Private Audio is ON, removing its Advanced Settings switch, persisted preference, test tag, and localized resource from every locale. The exact `MODE_IN_COMMUNICATION` + built-in speaker + `USAGE_VOICE_COMMUNICATION`/`CONTENT_TYPE_UNKNOWN` trigger remains independent from the unchanged communication and assistant classifiers, and all three distinct origins enter the same protected POC-5 body with exactly one request. Browser lifecycle tracking still uses only the unknown-content contribution and the existing 1.5-second confirmation before unchanged cleanup and Waiting re-arm. Supplied physical results establish ChatGPT Web in Chrome routing, cleanup, and subsequent sessions without restarting Private Audio; ChatGPT Android and Gemini Live regressions pass, ordinary media and assistant sonification remain ignored, and Power OFF cleanup remains unchanged.
 
 - Promoted the physically validated assistant-class path to automatic detection whenever Private Audio is ON, and removed the experimental Gemini setting, persistence, test tag, and localized resource from every locale. The communication trigger remains unchanged and logically separate from the exact `USAGE_ASSISTANT` + `CONTENT_TYPE_SPEECH` trigger; both select an internal origin and enter the same protected POC-5 body with its one-request guard. Supplied physical results establish Gemini Live speaker-to-earpiece routing, proximity, cleanup, Waiting re-arm, and the existing ChatGPT regression path on the tested device. Automated contracts cover media and assistant-sonification exclusion, shared sequencing, one request, and cycle-specific cleanup; unreported YouTube, NotebookLM, and Kimi executions remain physical regression work.
 
@@ -122,7 +122,6 @@ State reflects evidence, not aspiration.
 - Whether the confirmed POC-5 result remains stable across repeated sessions, lifecycle transitions, APK updates, and other devices or software versions.
 - Whether ChatGPT immediately overrides such a request.
 - Whether Gemini behaves similarly.
-- Whether browser-based voice sessions use compatible communication routing.
 - OEM-specific routing differences.
 - Exact behavior during incoming and outgoing real phone calls.
 - Whether communication-device callbacks are delivered while this application is backgrounded on tested Android/OEM builds, and whether process lifetime interrupts an experiment.

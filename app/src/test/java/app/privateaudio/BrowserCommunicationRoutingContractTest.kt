@@ -8,12 +8,14 @@ import java.io.File
 
 class BrowserCommunicationRoutingContractTest {
     @Test
-    fun browserTriggerIsExactDefaultOffAndIndependent() {
+    fun browserTriggerIsExactAutomaticAndIndependent() {
         val trigger = observer.method("private fun evaluateExperimentTrigger()")
         val classifier = observer.method("private fun browserQualifyingPlaybackCount(")
-        assertTrue(service.contains("var isBrowserRoutingEnabled by mutableStateOf(false)"))
-        assertTrue(service.contains(".getBoolean(BROWSER_ROUTING_KEY, false)"))
-        assertTrue(trigger.contains("val browserTrigger = browserRoutingEnabled"))
+        assertFalse(service.contains("browser_routing_experimental_enabled"))
+        assertFalse(service.contains("isBrowserRoutingEnabled"))
+        assertFalse(settings.contains("settings_browser_routing_experimental"))
+        assertFalse(defaultStrings.contains("settings_browser_routing_experimental"))
+        assertTrue(trigger.contains("val browserTrigger = mode == AudioManager.MODE_IN_COMMUNICATION"))
         assertTrue(trigger.contains("mode == AudioManager.MODE_IN_COMMUNICATION"))
         assertTrue(trigger.contains("TYPE_BUILTIN_SPEAKER"))
         assertTrue(classifier.contains("USAGE_VOICE_COMMUNICATION"))
@@ -76,6 +78,8 @@ class BrowserCommunicationRoutingContractTest {
         fun source(path: String) = File(root, path).readText()
         val observer = source("app/src/main/java/app/privateaudio/diagnostic/AudioDiagnosticObserver.kt")
         val service = source("app/src/main/java/app/privateaudio/PrivateAudioService.kt")
+        val settings = source("app/src/main/java/app/privateaudio/ui/SettingsSheet.kt")
+        val defaultStrings = source("app/src/main/res/values/strings.xml")
         val productionSources = File(root, "app/src/main/java").walkTopDown()
             .filter { it.isFile && it.extension == "kt" }.toList()
     }
