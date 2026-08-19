@@ -57,7 +57,8 @@ For a linguistically non-obvious or high-risk string, briefly reconstruct the ta
 2. Review core terminology; identify and research uncertainty; then freeze approved copy.
 3. Implement standard Android resources without silently rewriting approved copy. Report genuine language problems instead of improvising.
 4. Verify key and placeholder parity, generated discovery, script/orthography, Mini labels, and shared RTL/bidi behavior where applicable.
-5. Regress existing locales and update `docs/PROGRESS.md` with accurate evidence levels.
+5. For each locale, add durable locale-specific assertions to the existing localization contract for FULL/MINI-reviewed or otherwise frozen high-risk terminology, including meaningful reviewed Mini states. Ad-hoc Python, Java, or manual checks and parity alone are not substitutes.
+6. Regress existing locales and update `docs/PROGRESS.md` with accurate evidence levels.
 
 ### Add or change a source string
 
@@ -91,4 +92,4 @@ Do not award final **PASS** solely because XML is valid, keys and placeholders m
 
 ## Validate against the current repository
 
-Use the repository's CURRENT test architecture. As applicable, check XML validity, duplicate keys, key parity, placeholder parity, generated locale discovery, relevant localization contracts, and RTL regressions. Also scan conflict markers and run `git diff --check` and `git status --short`. Report Gradle environment/network limitations separately; never change Gradle or Java configuration merely to run localization tests.
+Use the repository's CURRENT test architecture. As applicable, check XML validity, duplicate keys, key parity, placeholder parity, generated locale discovery, relevant localization contracts, and RTL regressions. Before declaring **PASS**, inspect the CURRENT localization contract and confirm durable semantic coverage for every newly added locale in a batch; key/placeholder parity does not protect frozen terminology. Also scan conflict markers and run `git diff --check` and `git status --short`. Report Gradle environment/network limitations separately; never change Gradle or Java configuration merely to run localization tests.
