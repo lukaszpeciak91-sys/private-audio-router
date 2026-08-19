@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Private Audio</string>
+    <string name="routing_notification_channel">Private Audio</string>
+    <string name="routing_notification_title">Private Audio ass un</string>
+    <string name="routing_notification_text">Waart drop, den Audio ëmzeschalten</string>
+    <string name="product_title">Private Audio</string>
+    <string name="product_subtitle">Schwätz privat mat der KI, wéi bei engem Telefonsgespréich.</string>
+    <string name="state_ready">Prett</string>
+    <string name="state_waiting">Waart</string>
+    <string name="state_active">Aktiv</string>
+    <string name="state_error">Feeler</string>
+    <string name="power_control">Un/Aus</string>
+    <string name="floating">Mini</string>
+    <string name="settings">Astellungen</string>
+    <string name="close">Zoumaachen</string>
+    <string name="overlay_controller_description">Schwiewend Steierung vu Private Audio. Status: %1$s. Knäppercher fir un-/auszeschalten, ze vergréisseren an zouzemaachen.</string>
+    <string name="settings_language">Sprooch</string>
+    <string name="settings_system_default">Standard</string>
+    <string name="settings_save_diagnostic">Diagnoserapport späicheren</string>
+    <string name="settings_advanced">Erweidert</string>
+    <string name="settings_about">Iwwer Private Audio</string>
+    <string name="settings_version">Versioun %1$s</string>
+    <string name="settings_language_body">Private Audio riicht sech de Moment no der Sprooch vun dengem Apparat. Standard ass ausgewielt.</string>
+    <string name="settings_language_android_13_required">D\'Sproochauswiel an der App erfuerdert Android 13 oder méi nei. Dësen Apparat riicht sech no der Systemsprooch.</string>
+    <string name="settings_proximity_screen">Écran beim Ouer ausschalten</string>
+    <string name="settings_advanced_body">Zousätzlech Optioune ginn hei ugewisen, wann Private Audio weiderentwéckelt gëtt.</string>
+    <string name="settings_about_body">Private Audio hëlleft, den Audio vu ënnerstëtzte Stëmmfunktiounen op den agebaute Lautsprecher uewen um Telefon ze leeden, deen bei Telefonsgespréicher um Ouer benotzt gëtt.</string>
+    <string name="diagnostic_report_saved">Diagnoserapport gespäichert.</string>
+    <string name="diagnostic_report_save_failed">Diagnoserapport konnt net gespäichert ginn.</string>
+</resources>

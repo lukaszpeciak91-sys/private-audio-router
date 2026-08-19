@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Private Audio</string>
+    <string name="routing_notification_channel">Private Audio</string>
+    <string name="routing_notification_title">Private Audio staat aan</string>
+    <string name="routing_notification_text">Wachten om audio om te schakelen</string>
+    <string name="product_title">Private Audio</string>
+    <string name="product_subtitle">Praat privé met AI, net als tijdens een telefoongesprek.</string>
+    <string name="state_ready">Gereed</string>
+    <string name="state_waiting">Wachten</string>
+    <string name="state_active">Actief</string>
+    <string name="state_error">Fout</string>
+    <string name="power_control">Aan/uit</string>
+    <string name="floating">Mini</string>
+    <string name="settings">Instellingen</string>
+    <string name="close">Sluiten</string>
+    <string name="overlay_controller_description">Zwevende bediening van Private Audio. Status: %1$s. Knoppen voor in-/uitschakelen, uitvouwen en sluiten.</string>
+    <string name="settings_language">Taal</string>
+    <string name="settings_system_default">Standaard</string>
+    <string name="settings_save_diagnostic">Diagnostisch rapport opslaan</string>
+    <string name="settings_advanced">Geavanceerd</string>
+    <string name="settings_about">Over Private Audio</string>
+    <string name="settings_version">Versie %1$s</string>
+    <string name="settings_language_body">Private Audio volgt momenteel de taal van je apparaat. Standaard is geselecteerd.</string>
+    <string name="settings_language_android_13_required">Taalkeuze in de app vereist Android 13 of hoger. Dit apparaat volgt de systeemtaal.</string>
+    <string name="settings_proximity_screen">Scherm uitschakelen bij je oor</string>
+    <string name="settings_advanced_body">Hier verschijnen meer opties naarmate Private Audio zich verder ontwikkelt.</string>
+    <string name="settings_about_body">Private Audio helpt ondersteunde spraakaudio naar de ingebouwde oorspeaker van je telefoon om te schakelen.</string>
+    <string name="diagnostic_report_saved">Diagnostisch rapport opgeslagen.</string>
+    <string name="diagnostic_report_save_failed">Kan diagnostisch rapport niet opslaan.</string>
+</resources>
