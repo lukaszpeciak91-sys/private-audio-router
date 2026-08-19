@@ -44,6 +44,7 @@ import androidx.compose.ui.graphics.Path
 import androidx.compose.ui.graphics.StrokeCap
 import androidx.compose.ui.graphics.StrokeJoin
 import androidx.compose.ui.graphics.drawscope.Stroke
+import androidx.compose.ui.graphics.drawscope.scale
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.contentDescription
@@ -83,6 +84,7 @@ private val ProductAmber = Color(0xFFFFDE00)
 private val ProductRed = Color(0xFFFF1D2D)
 private val ReadyPower = Color(0xFF858585)
 private val PowerBorder = Color(0xFFB3B3B3)
+private const val PowerGlyphScale = 1.04f
 
 private data class StateVisuals(
     @StringRes val label: Int,
@@ -241,48 +243,49 @@ private fun PowerControl(
         val center = this.center
         val glowAlpha = if (pulse) pulseAlpha else 0.78f
 
-        if (glow) {
-            drawArc(
-                color = color.copy(alpha = 0.06f * glowAlpha),
-                startAngle = -42f,
-                sweepAngle = 264f,
-                useCenter = false,
-                topLeft = Offset(size.width * 0.255f, size.height * 0.255f),
-                size = Size(size.width * 0.49f, size.height * 0.49f),
-                style = Stroke(width = 34f * strokeScale, cap = StrokeCap.Round),
-            )
-            drawArc(
-                color = color.copy(alpha = 0.13f * glowAlpha),
-                startAngle = -42f,
-                sweepAngle = 264f,
-                useCenter = false,
-                topLeft = Offset(size.width * 0.255f, size.height * 0.255f),
-                size = Size(size.width * 0.49f, size.height * 0.49f),
-                style = Stroke(width = 22f * strokeScale, cap = StrokeCap.Round),
-            )
-        }
-
         drawCircle(
             color = PowerBorder,
             radius = size.minDimension / 2f - 1.5f * strokeScale,
             style = Stroke(width = 1.5f * strokeScale),
         )
-        drawArc(
-            color = color,
-            startAngle = -42f,
-            sweepAngle = 264f,
-            useCenter = false,
-            topLeft = Offset(size.width * 0.255f, size.height * 0.255f),
-            size = Size(size.width * 0.49f, size.height * 0.49f),
-            style = Stroke(width = 16f * strokeScale, cap = StrokeCap.Round),
-        )
-        drawLine(
-            color = color,
-            start = Offset(center.x, size.height * 0.27f),
-            end = Offset(center.x, size.height * 0.48f),
-            strokeWidth = 16f * strokeScale,
-            cap = StrokeCap.Round,
-        )
+        scale(PowerGlyphScale, pivot = center) {
+            if (glow) {
+                drawArc(
+                    color = color.copy(alpha = 0.06f * glowAlpha),
+                    startAngle = -42f,
+                    sweepAngle = 264f,
+                    useCenter = false,
+                    topLeft = Offset(size.width * 0.255f, size.height * 0.255f),
+                    size = Size(size.width * 0.49f, size.height * 0.49f),
+                    style = Stroke(width = 34f * strokeScale, cap = StrokeCap.Round),
+                )
+                drawArc(
+                    color = color.copy(alpha = 0.13f * glowAlpha),
+                    startAngle = -42f,
+                    sweepAngle = 264f,
+                    useCenter = false,
+                    topLeft = Offset(size.width * 0.255f, size.height * 0.255f),
+                    size = Size(size.width * 0.49f, size.height * 0.49f),
+                    style = Stroke(width = 22f * strokeScale, cap = StrokeCap.Round),
+                )
+            }
+            drawArc(
+                color = color,
+                startAngle = -42f,
+                sweepAngle = 264f,
+                useCenter = false,
+                topLeft = Offset(size.width * 0.255f, size.height * 0.255f),
+                size = Size(size.width * 0.49f, size.height * 0.49f),
+                style = Stroke(width = 16f * strokeScale, cap = StrokeCap.Round),
+            )
+            drawLine(
+                color = color,
+                start = Offset(center.x, size.height * 0.27f),
+                end = Offset(center.x, size.height * 0.48f),
+                strokeWidth = 16f * strokeScale,
+                cap = StrokeCap.Round,
+            )
+        }
     }
 }
 
