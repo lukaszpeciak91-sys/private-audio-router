@@ -629,6 +629,76 @@ class Layer41LocalizationContractTest {
     }
 
     @Test
+    fun serbianLatinMontenegroFrozenLocalizationSemanticsRemainIntact() {
+        val locale = Locale.forLanguageTag("sr-Latn-ME")
+        assertEquals("sr-Latn-ME", locale.toLanguageTag())
+        assertEquals("sr", locale.language)
+        assertEquals("Latn", locale.script)
+        assertEquals("ME", locale.country)
+        assertEquals("srpski (latinica, Crna Gora)", locale.getDisplayName(locale))
+        assertEquals("Srpski (latinica, Crna Gora)", nativeLocaleName("sr-Latn-ME"))
+        assertTrue(projectFile("app/src/main/res/values-b+sr+Latn+ME/strings.xml").isFile)
+        assertTrue(projectFile("app/src/main/res/values-b+sr+Latn/strings.xml").isFile)
+        assertTrue(projectFile("app/src/main/res/values-sr/strings.xml").isFile)
+        assertTrue(serbianLatinMontenegroStrings.contains("name=\"app_name\">Private Audio</string>"))
+        assertTrue(serbianLatinMontenegroStrings.contains("name=\"floating\">Mini</string>"))
+        assertTrue(serbianLatinMontenegroStrings.contains("name=\"product_subtitle\">Razgovarajte privatno sa AI-jem, kao tokom telefonskog poziva.</string>"))
+        assertTrue(serbianLatinMontenegroStrings.contains("name=\"routing_notification_title\">Private Audio je uključen</string>"))
+        assertTrue(serbianLatinMontenegroStrings.contains("name=\"state_active\">Aktivno</string>"))
+        assertFalse(serbianLatinMontenegroStrings.contains("name=\"state_active\">Private Audio je uključen</string>"))
+        assertTrue(serbianLatinMontenegroStrings.contains("name=\"routing_notification_text\">Čekanje na prebacivanje zvuka</string>"))
+        assertTrue(serbianLatinMontenegroStrings.contains("name=\"settings_language_body\"") && serbianLatinMontenegroStrings.contains("jezik vašeg uređaja"))
+        assertTrue(serbianLatinMontenegroStrings.contains("name=\"settings_language_android_13_required\"") && serbianLatinMontenegroStrings.contains("jezik sistema"))
+        assertTrue(serbianLatinMontenegroStrings.contains("name=\"settings_proximity_screen\">Isključi ekran blizu uha</string>"))
+        assertTrue(serbianLatinMontenegroStrings.contains("ugrađenu slušalicu telefona"))
+        assertTrue(serbianLatinMontenegroStrings.contains("uključivanje/isključivanje, proširivanje i zatvaranje"))
+        assertTrue(serbianLatinMontenegroStrings.contains("name=\"state_ready\">Spremno</string>"))
+        assertTrue(serbianLatinMontenegroStrings.contains("name=\"state_waiting\">Čekanje</string>"))
+        assertTrue(serbianLatinMontenegroStrings.contains("name=\"state_active\">Aktivno</string>"))
+        assertTrue(serbianLatinMontenegroStrings.contains("name=\"state_error\">Greška</string>"))
+        listOf("Podrazumijevano", "podrazumijevana", "zahtijeva", "izvještaj", "ovdje").forEach {
+            assertTrue(it, serbianLatinMontenegroStrings.contains(it))
+            assertFalse(it, serbianLatinStrings.contains(it))
+        }
+        listOf("Podrazumevano", "podrazumevana", "zahteva", "izveštaj", "ovde").forEach {
+            assertTrue(it, serbianLatinStrings.contains(it))
+            assertFalse(it, serbianLatinMontenegroStrings.contains(it))
+        }
+        assertFalse(serbianLatinMontenegroStrings == serbianLatinStrings)
+        assertFalse(serbianLatinMontenegroStrings.any { it in '\u0400'..'\u04FF' })
+    }
+
+    @Test
+    fun malteseFrozenLocalizationSemanticsRemainIntact() {
+        val locale = Locale.forLanguageTag("mt")
+        assertEquals("mt", locale.toLanguageTag())
+        assertEquals("mt", locale.language)
+        assertEquals("Malti", nativeLocaleName("mt"))
+        assertTrue(projectFile("app/src/main/res/values-mt/strings.xml").isFile)
+        assertTrue(malteseStrings.contains("name=\"app_name\">Private Audio</string>"))
+        assertTrue(malteseStrings.contains("name=\"floating\">Mini</string>"))
+        assertTrue(malteseStrings.contains("name=\"product_subtitle\">Tkellem mal-AI fil-privat, bħal f\\'telefonata.</string>"))
+        assertTrue(malteseStrings.contains("name=\"routing_notification_title\">Private Audio huwa mixgħul</string>"))
+        assertTrue(malteseStrings.contains("name=\"state_active\">Attiv</string>"))
+        assertFalse(malteseStrings.contains("name=\"state_active\">Private Audio huwa mixgħul</string>"))
+        assertTrue(malteseStrings.contains("name=\"routing_notification_text\">Stennija biex jinbidel l-output tal-awdjo</string>"))
+        assertTrue(malteseStrings.contains("name=\"settings\">Issettjar</string>"))
+        assertFalse(malteseStrings.contains("name=\"settings\">Settings</string>"))
+        assertTrue(malteseStrings.contains("name=\"settings_advanced\">Issettjar avvanzat</string>"))
+        assertTrue(malteseStrings.contains("name=\"settings_system_default\">Default tas-sistema</string>"))
+        assertTrue(malteseStrings.contains("name=\"settings_language_body\"") && malteseStrings.contains("lingwa tal-apparat tiegħek"))
+        assertTrue(malteseStrings.contains("name=\"settings_language_android_13_required\"") && malteseStrings.contains("lingwa tas-sistema"))
+        assertTrue(malteseStrings.contains("name=\"settings_proximity_screen\">Itfi l-iskrin meta jkun qrib widintek</string>"))
+        assertTrue(malteseStrings.contains("riċevitur integrat tat-telefon tiegħek"))
+        assertTrue(malteseStrings.contains("dak ta\\' fuq li tuża ma\\' widintek waqt telefonata"))
+        assertTrue(malteseStrings.contains("tixgħel/titfi, tespandi u tagħlaq"))
+        assertTrue(malteseStrings.contains("name=\"state_ready\">Lest</string>"))
+        assertTrue(malteseStrings.contains("name=\"state_waiting\">Stennija</string>"))
+        assertTrue(malteseStrings.contains("name=\"state_active\">Attiv</string>"))
+        assertTrue(malteseStrings.contains("name=\"state_error\">Żball</string>"))
+    }
+
+    @Test
     fun greekFrozenLocalizationSemanticsRemainIntact() {
         val localeTag = "el"
         val locale = Locale.forLanguageTag(localeTag)
@@ -767,7 +837,9 @@ class Layer41LocalizationContractTest {
         val slovenianStrings = projectFile("app/src/main/res/values-sl/strings.xml").readText()
         val croatianStrings = projectFile("app/src/main/res/values-hr/strings.xml").readText()
         val serbianLatinStrings = projectFile("app/src/main/res/values-b+sr+Latn/strings.xml").readText()
+        val serbianLatinMontenegroStrings = projectFile("app/src/main/res/values-b+sr+Latn+ME/strings.xml").readText()
         val bosnianStrings = projectFile("app/src/main/res/values-bs/strings.xml").readText()
+        val malteseStrings = projectFile("app/src/main/res/values-mt/strings.xml").readText()
         val greekStrings = projectFile("app/src/main/res/values-el/strings.xml").readText()
         val mainSource = projectFile("app/src/main/java/app/privateaudio/MainActivity.kt").readText()
         val productScreenSource = projectFile("app/src/main/java/app/privateaudio/ui/PrivateAudioScreen.kt").readText()

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Private Audio</string>
+    <string name="routing_notification_channel">Private Audio</string>
+    <string name="routing_notification_title">Private Audio huwa mixgħul</string>
+    <string name="routing_notification_text">Stennija biex jinbidel l-output tal-awdjo</string>
+    <string name="product_title">Private Audio</string>
+    <string name="product_subtitle">Tkellem mal-AI fil-privat, bħal f\'telefonata.</string>
+    <string name="state_ready">Lest</string>
+    <string name="state_waiting">Stennija</string>
+    <string name="state_active">Attiv</string>
+    <string name="state_error">Żball</string>
+    <string name="power_control">Ixgħel/itfi</string>
+    <string name="floating">Mini</string>
+    <string name="settings">Issettjar</string>
+    <string name="close">Agħlaq</string>
+    <string name="overlay_controller_description">Kontrollur ta\' Private Audio li jidher fuq apps oħra. Status: %1$s. Kontrolli biex tixgħel/titfi, tespandi u tagħlaq.</string>
+    <string name="settings_language">Lingwa</string>
+    <string name="settings_system_default">Default tas-sistema</string>
+    <string name="settings_save_diagnostic">Issejvja r-rapport dijanjostiku</string>
+    <string name="settings_advanced">Issettjar avvanzat</string>
+    <string name="settings_about">Dwar Private Audio</string>
+    <string name="settings_version">Verżjoni %1$s</string>
+    <string name="settings_language_body">Private Audio bħalissa juża l-lingwa tal-apparat tiegħek. Hija magħżula l-għażla default tas-sistema.</string>
+    <string name="settings_language_android_13_required">L-għażla tal-lingwa fl-app teħtieġ Android 13 jew verżjoni aktar ġdida. Dan l-apparat juża l-lingwa tas-sistema.</string>
+    <string name="settings_proximity_screen">Itfi l-iskrin meta jkun qrib widintek</string>
+    <string name="settings_advanced_body">Għażliet oħra se jidhru hawn hekk kif Private Audio jevolvi.</string>
+    <string name="settings_about_body">Private Audio jgħin biex l-awdjo tal-vuċi appoġġjat jiġi dirett lejn ir-riċevitur integrat tat-telefon tiegħek, dak ta\' fuq li tuża ma\' widintek waqt telefonata.</string>
+    <string name="diagnostic_report_saved">Ir-rapport dijanjostiku ġie ssejvjat.</string>
+    <string name="diagnostic_report_save_failed">Ma setax jiġi ssejvjat ir-rapport dijanjostiku.</string>
+</resources>
