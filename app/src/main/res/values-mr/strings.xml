@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Private Audio</string>
+    <string name="routing_notification_channel">Private Audio</string>
+    <string name="routing_notification_title">Private Audio सुरू आहे</string>
+    <string name="routing_notification_text">ऑडिओ स्विच होण्याची प्रतीक्षा करत आहे</string>
+    <string name="product_title">Private Audio</string>
+    <string name="product_subtitle">फोन कॉलप्रमाणे, AI शी खाजगीपणे बोला.</string>
+    <string name="state_ready">तयार</string>
+    <string name="state_waiting">प्रतीक्षा</string>
+    <string name="state_active">सक्रिय</string>
+    <string name="state_error">त्रुटी</string>
+    <string name="power_control">सुरू करा</string>
+    <string name="floating">Mini</string>
+    <string name="settings">सेटिंग्ज</string>
+    <string name="close">बंद करा</string>
+    <string name="overlay_controller_description">Private Audio फ्लोटिंग कंट्रोलर. स्थिती: %1$s. सुरू करणे, विस्तृत करणे आणि बंद करणे यासाठी नियंत्रणे.</string>
+    <string name="settings_language">भाषा</string>
+    <string name="settings_system_default">सिस्टीम डीफॉल्ट</string>
+    <string name="settings_copy_diagnostic">डायग्नोस्टिक रिपोर्ट कॉपी करा</string>
+    <string name="settings_advanced">प्रगत</string>
+    <string name="settings_about">Private Audio बद्दल</string>
+    <string name="settings_version">आवृत्ती %1$s</string>
+    <string name="settings_language_body">Private Audio सध्या तुमच्या डिव्हाइसची भाषा वापरते. सिस्टीम डीफॉल्ट निवडले आहे.</string>
+    <string name="settings_language_android_13_required">अॅपमध्ये भाषा निवडण्यासाठी Android 13 किंवा त्यानंतरची आवृत्ती आवश्यक आहे. हे डिव्हाइस सिस्टीम भाषा वापरते.</string>
+    <string name="settings_proximity_screen">कानाजवळ स्क्रीन बंद करा</string>
+    <string name="settings_advanced_body">Private Audio विकसित होत असताना अतिरिक्त पर्याय येथे दिसतील.</string>
+    <string name="settings_about_body">Private Audio ऑडिओ फोनच्या इयरपीसवर स्विच करण्यात मदत करते.</string>
+    <string name="diagnostic_report_clip_label">Private Audio डायग्नोस्टिक रिपोर्ट</string>
+    <string name="diagnostic_report_copied">डायग्नोस्टिक रिपोर्ट कॉपी केला.</string>
+</resources>
