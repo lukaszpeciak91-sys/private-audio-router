@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Private Audio</string>
+    <string name="routing_notification_channel">Private Audio</string>
+    <string name="routing_notification_title">Το Private Audio είναι ενεργοποιημένο</string>
+    <string name="routing_notification_text">Αναμονή για αλλαγή εξόδου ήχου</string>
+    <string name="product_title">Private Audio</string>
+    <string name="product_subtitle">Μιλήστε ιδιωτικά με AI, σαν να μιλάτε στο τηλέφωνο.</string>
+    <string name="state_ready">Έτοιμο</string>
+    <string name="state_waiting">Αναμονή</string>
+    <string name="state_active">Ενεργό</string>
+    <string name="state_error">Σφάλμα</string>
+    <string name="power_control">Ενεργοποίηση/απενεργοποίηση</string>
+    <string name="floating">Mini</string>
+    <string name="settings">Ρυθμίσεις</string>
+    <string name="close">Κλείσιμο</string>
+    <string name="overlay_controller_description">Αιωρούμενο χειριστήριο Private Audio. Κατάσταση: %1$s. Στοιχεία ελέγχου για ενεργοποίηση/απενεργοποίηση, ανάπτυξη και κλείσιμο.</string>
+    <string name="settings_language">Γλώσσα</string>
+    <string name="settings_system_default">Προεπιλογή συστήματος</string>
+    <string name="settings_save_diagnostic">Αποθήκευση διαγνωστικής αναφοράς</string>
+    <string name="settings_advanced">Σύνθετες ρυθμίσεις</string>
+    <string name="settings_about">Σχετικά με το Private Audio</string>
+    <string name="settings_version">Έκδοση %1$s</string>
+    <string name="settings_language_body">Το Private Audio ακολουθεί αυτήν τη στιγμή τη γλώσσα της συσκευής σας. Έχει επιλεγεί η προεπιλογή συστήματος.</string>
+    <string name="settings_language_android_13_required">Η επιλογή γλώσσας στην εφαρμογή απαιτεί Android 13 ή νεότερη έκδοση. Αυτή η συσκευή ακολουθεί τη γλώσσα συστήματος.</string>
+    <string name="settings_proximity_screen">Απενεργοποίηση οθόνης κοντά στο αυτί</string>
+    <string name="settings_advanced_body">Καθώς εξελίσσεται το Private Audio, θα εμφανίζονται εδώ πρόσθετες επιλογές.</string>
+    <string name="settings_about_body">Το Private Audio βοηθά να μεταφέρεται ο ήχος υποστηριζόμενων φωνητικών λειτουργιών στο ενσωματωμένο ακουστικό του τηλεφώνου σας.</string>
+    <string name="diagnostic_report_saved">Η διαγνωστική αναφορά αποθηκεύτηκε.</string>
+    <string name="diagnostic_report_save_failed">Δεν ήταν δυνατή η αποθήκευση της διαγνωστικής αναφοράς.</string>
+</resources>
