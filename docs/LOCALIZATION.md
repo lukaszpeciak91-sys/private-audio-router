@@ -115,13 +115,14 @@ Preserve numbered format placeholders and their types across every translation. 
 3. Freeze the approved copy.
 4. Add the standard Android resource locale with the correct qualifier.
 5. Enforce key and placeholder parity.
-6. Perform linguistic and consistency sanity checks.
-7. Check script, glyph, shaping, and layout risks.
-8. Validate generated discovery and the locale selector.
-9. Validate Mini status presentation.
-10. Validate shared RTL behavior when applicable.
-11. Regress existing locales.
-12. Update the authoritative locale/progress record in `PROGRESS.md`, clearly recording the evidence level achieved and validation still pending.
+6. Add locale-specific assertions to the existing localization contract for FULL/MINI-reviewed or otherwise frozen high-risk terminology, including meaningful reviewed Mini states.
+7. Perform linguistic and consistency sanity checks.
+8. Check script, glyph, shaping, and layout risks.
+9. Validate generated discovery and the locale selector.
+10. Validate Mini status presentation.
+11. Validate shared RTL behavior when applicable.
+12. Regress existing locales.
+13. Update the authoritative locale/progress record in `PROGRESS.md`, clearly recording the evidence level achieved and validation still pending.
 
 Codex must not silently rewrite approved terminology during implementation. If implementation reveals a genuine linguistic problem, report it for review rather than substituting new wording without approval.
 
@@ -144,6 +145,8 @@ Localization checks must verify at minimum:
 - XML validity.
 
 Keep generic contracts data-driven where practical to reduce merge conflicts. Retain locale-specific assertions when they protect meaningful terminology, script, or RTL decisions; do not weaken linguistic regression coverage merely to reduce boilerplate.
+
+When the repository's established contract pattern protects frozen high-risk terminology, every new locale with FULL/MINI review or otherwise frozen terminology must add its own durable semantic assertions, including reviewed Mini states when they are meaningful regression targets. Batch work must satisfy this independently for every locale. Key/placeholder parity and ad-hoc Python, Java, or manual checks do not protect approved wording and do not replace persistent contract coverage. Before declaring **PASS**, inspect the CURRENT localization contract and confirm that each newly added locale has that coverage.
 
 ### Documentation
 
@@ -173,6 +176,7 @@ When a locale is added, update the existing authoritative localization/progress 
 - [ ] Locale resource qualifier correct?
 - [ ] Selector discovery verified?
 - [ ] Full string parity checked?
+- [ ] Durable semantic contract coverage confirmed for frozen terminology?
 - [ ] Mini statuses checked?
 - [ ] Earpiece terminology unambiguous?
 - [ ] Routing wording natural?
