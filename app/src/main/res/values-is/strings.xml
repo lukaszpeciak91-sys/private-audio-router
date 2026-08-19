@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Private Audio</string>
+    <string name="routing_notification_channel">Private Audio</string>
+    <string name="routing_notification_title">Kveikt er á Private Audio</string>
+    <string name="routing_notification_text">Bíður eftir að skipta um hljóðúttak</string>
+    <string name="product_title">Private Audio</string>
+    <string name="product_subtitle">Talaðu einslega við AI, eins og í símtali.</string>
+    <string name="state_ready">Tilbúið</string>
+    <string name="state_waiting">Bíður</string>
+    <string name="state_active">Virkt</string>
+    <string name="state_error">Villa</string>
+    <string name="power_control">Afl</string>
+    <string name="floating">Mini</string>
+    <string name="settings">Stillingar</string>
+    <string name="close">Loka</string>
+    <string name="overlay_controller_description">Fljótandi stjórntæki fyrir Private Audio. Staða: %1$s. Stjórntæki til að kveikja, stækka og loka.</string>
+    <string name="settings_language">Tungumál</string>
+    <string name="settings_system_default">Sjálfgefið</string>
+    <string name="settings_save_diagnostic">Vista greiningarskýrslu</string>
+    <string name="settings_advanced">Ítarlegt</string>
+    <string name="settings_about">Um Private Audio</string>
+    <string name="settings_version">Útgáfa %1$s</string>
+    <string name="settings_language_body">Private Audio fylgir nú tungumáli tækisins. Sjálfgefið er valið.</string>
+    <string name="settings_language_android_13_required">Til að velja tungumál í forritinu þarf Android 13 eða nýrra. Þetta tæki fylgir tungumáli kerfisins.</string>
+    <string name="settings_proximity_screen">Slökkva á skjánum nálægt eyranu</string>
+    <string name="settings_advanced_body">Fleiri valkostir munu birtast hér eftir því sem Private Audio þróast.</string>
+    <string name="settings_about_body">Private Audio hjálpar til við að færa studd raddhljóð í innbyggða símahátalarann.</string>
+    <string name="diagnostic_report_saved">Greiningarskýrslan var vistuð.</string>
+    <string name="diagnostic_report_save_failed">Ekki tókst að vista greiningarskýrsluna.</string>
+</resources>

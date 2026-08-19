@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Private Audio</string>
+    <string name="routing_notification_channel">Private Audio</string>
+    <string name="routing_notification_title">Private Audio er på</string>
+    <string name="routing_notification_text">Venter på å bytte lyd</string>
+    <string name="product_title">Private Audio</string>
+    <string name="product_subtitle">Snakk privat med AI, som i en telefonsamtale.</string>
+    <string name="state_ready">Klar</string>
+    <string name="state_waiting">Venter</string>
+    <string name="state_active">Aktiv</string>
+    <string name="state_error">Feil</string>
+    <string name="power_control">Strøm</string>
+    <string name="floating">Mini</string>
+    <string name="settings">Innstillinger</string>
+    <string name="close">Lukk</string>
+    <string name="overlay_controller_description">Flytende kontroll for Private Audio. Status: %1$s. Kontroller for å slå på, utvide og lukke.</string>
+    <string name="settings_language">Språk</string>
+    <string name="settings_system_default">Standard</string>
+    <string name="settings_save_diagnostic">Lagre diagnostikkrapport</string>
+    <string name="settings_advanced">Avansert</string>
+    <string name="settings_about">Om Private Audio</string>
+    <string name="settings_version">Versjon %1$s</string>
+    <string name="settings_language_body">Private Audio følger for øyeblikket språket på enheten. Standard er valgt.</string>
+    <string name="settings_language_android_13_required">Språkvalg i appen krever Android 13 eller nyere. Denne enheten følger systemspråket.</string>
+    <string name="settings_proximity_screen">Slå av skjermen nær øret</string>
+    <string name="settings_advanced_body">Flere alternativer vises her etter hvert som Private Audio utvikles.</string>
+    <string name="settings_about_body">Private Audio hjelper med å bytte støttet talelyd til telefonens innebygde ørehøyttaler.</string>
+    <string name="diagnostic_report_saved">Diagnostikkrapporten er lagret.</string>
+    <string name="diagnostic_report_save_failed">Kunne ikke lagre diagnostikkrapporten.</string>
+</resources>
