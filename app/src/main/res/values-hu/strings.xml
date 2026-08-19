@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Private Audio</string>
+    <string name="routing_notification_channel">Private Audio</string>
+    <string name="routing_notification_title">A Private Audio be van kapcsolva</string>
+    <string name="routing_notification_text">Várakozás a hang átirányítására</string>
+    <string name="product_title">Private Audio</string>
+    <string name="product_subtitle">Beszélgess privát módon az AI-jal, akár egy telefonhívásban.</string>
+    <string name="state_ready">Kész</string>
+    <string name="state_waiting">Várakozik</string>
+    <string name="state_active">Aktív</string>
+    <string name="state_error">Hiba</string>
+    <string name="power_control">Bekapcsolás</string>
+    <string name="floating">Mini</string>
+    <string name="settings">Beállítások</string>
+    <string name="close">Bezárás</string>
+    <string name="overlay_controller_description">A Private Audio lebegő vezérlője. Állapot: %1$s. A bekapcsolás, a kibontás és a bezárás vezérlői.</string>
+    <string name="settings_language">Nyelv</string>
+    <string name="settings_system_default">Alapértelmezett</string>
+    <string name="settings_save_diagnostic">Diagnosztikai jelentés mentése</string>
+    <string name="settings_advanced">Speciális</string>
+    <string name="settings_about">A Private Audio névjegye</string>
+    <string name="settings_version">%1$s verzió</string>
+    <string name="settings_language_body">A Private Audio jelenleg az eszközöd nyelvét követi. Az alapértelmezett van kiválasztva.</string>
+    <string name="settings_language_android_13_required">Az alkalmazáson belüli nyelvválasztáshoz Android 13 vagy újabb verzió szükséges. Ez az eszköz a rendszer nyelvét követi.</string>
+    <string name="settings_proximity_screen">A képernyő kikapcsolása a fül közelében</string>
+    <string name="settings_advanced_body">A Private Audio fejlődésével további lehetőségek jelennek meg itt.</string>
+    <string name="settings_about_body">A Private Audio segít a támogatott beszédhangot a telefon beépített fülhallgatójára átirányítani.</string>
+    <string name="diagnostic_report_saved">A diagnosztikai jelentés mentve.</string>
+    <string name="diagnostic_report_save_failed">Nem sikerült menteni a diagnosztikai jelentést.</string>
+</resources>
