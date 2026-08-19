@@ -312,7 +312,7 @@ class Layer41LocalizationContractTest {
         assertTrue(hungarianStrings.contains("name=\"settings_language_body\"") && hungarianStrings.contains("eszközöd nyelvét"))
         assertTrue(hungarianStrings.contains("name=\"settings_language_android_13_required\"") && hungarianStrings.contains("Ez az eszköz a rendszer nyelvét követi."))
         assertTrue(hungarianStrings.contains("name=\"settings_proximity_screen\">A képernyő kikapcsolása a fül közelében</string>"))
-        assertTrue(hungarianStrings.contains("telefon beépített fülhallgatója"))
+        assertTrue(hungarianStrings.contains("telefon beépített fülhallgatójára"))
         assertTrue(hungarianStrings.contains("A bekapcsolás, a kibontás és a bezárás vezérlői"))
         assertTrue(hungarianStrings.contains("name=\"state_ready\">Kész</string>"))
         assertTrue(hungarianStrings.contains("name=\"state_waiting\">Várakozik</string>"))
