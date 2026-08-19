@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Private Audio</string>
+    <string name="routing_notification_channel">Private Audio</string>
+    <string name="routing_notification_title">Private Audio este activ</string>
+    <string name="routing_notification_text">Se așteaptă redirecționarea sunetului</string>
+    <string name="product_title">Private Audio</string>
+    <string name="product_subtitle">Vorbește în privat cu AI, ca într-un apel telefonic.</string>
+    <string name="state_ready">Pregătit</string>
+    <string name="state_waiting">În așteptare</string>
+    <string name="state_active">Activ</string>
+    <string name="state_error">Eroare</string>
+    <string name="power_control">Activează</string>
+    <string name="floating">Mini</string>
+    <string name="settings">Setări</string>
+    <string name="close">Închide</string>
+    <string name="overlay_controller_description">Controler flotant Private Audio. Stare: %1$s. Comenzi pentru activare, extindere și închidere.</string>
+    <string name="settings_language">Limbă</string>
+    <string name="settings_system_default">Prestabilit de sistem</string>
+    <string name="settings_save_diagnostic">Salvează raportul de diagnosticare</string>
+    <string name="settings_advanced">Avansate</string>
+    <string name="settings_about">Despre Private Audio</string>
+    <string name="settings_version">Versiunea %1$s</string>
+    <string name="settings_language_body">Private Audio folosește în prezent limba dispozitivului. Este selectată opțiunea Prestabilit de sistem.</string>
+    <string name="settings_language_android_13_required">Selectarea limbii în aplicație necesită Android 13 sau o versiune ulterioară. Acest dispozitiv folosește limba sistemului.</string>
+    <string name="settings_proximity_screen">Oprește ecranul lângă ureche</string>
+    <string name="settings_advanced_body">Opțiuni suplimentare vor apărea aici pe măsură ce Private Audio evoluează.</string>
+    <string name="settings_about_body">Private Audio ajută la redirecționarea sunetului vocal acceptat către casca încorporată a telefonului.</string>
+    <string name="diagnostic_report_saved">Raportul de diagnosticare a fost salvat.</string>
+    <string name="diagnostic_report_save_failed">Raportul de diagnosticare nu a putut fi salvat.</string>
+</resources>

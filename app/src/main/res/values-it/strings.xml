@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Private Audio</string>
+    <string name="routing_notification_channel">Private Audio</string>
+    <string name="routing_notification_title">Private Audio è attivo</string>
+    <string name="routing_notification_text">In attesa di reindirizzare l\'audio</string>
+    <string name="product_title">Private Audio</string>
+    <string name="product_subtitle">Parla con l\'AI in privato, come in una telefonata.</string>
+    <string name="state_ready">Pronto</string>
+    <string name="state_waiting">In attesa</string>
+    <string name="state_active">Attivo</string>
+    <string name="state_error">Errore</string>
+    <string name="power_control">Attiva</string>
+    <string name="floating">Mini</string>
+    <string name="settings">Impostazioni</string>
+    <string name="close">Chiudi</string>
+    <string name="overlay_controller_description">Controllo mobile di Private Audio. Stato: %1$s. Controlli per attivare, espandere e chiudere.</string>
+    <string name="settings_language">Lingua</string>
+    <string name="settings_system_default">Predefinito di sistema</string>
+    <string name="settings_save_diagnostic">Salva rapporto diagnostico</string>
+    <string name="settings_advanced">Avanzate</string>
+    <string name="settings_about">Informazioni su Private Audio</string>
+    <string name="settings_version">Versione %1$s</string>
+    <string name="settings_language_body">Private Audio usa attualmente la lingua del dispositivo. È selezionato Predefinito di sistema.</string>
+    <string name="settings_language_android_13_required">La selezione della lingua nell\'app richiede Android 13 o versioni successive. Questo dispositivo usa la lingua di sistema.</string>
+    <string name="settings_proximity_screen">Spegni lo schermo vicino all\'orecchio</string>
+    <string name="settings_advanced_body">Qui verranno visualizzate altre opzioni con l\'evoluzione di Private Audio.</string>
+    <string name="settings_about_body">Private Audio aiuta a reindirizzare l\'audio vocale supportato all\'altoparlante auricolare integrato del telefono.</string>
+    <string name="diagnostic_report_saved">Rapporto diagnostico salvato.</string>
+    <string name="diagnostic_report_save_failed">Impossibile salvare il rapporto diagnostico.</string>
+</resources>
