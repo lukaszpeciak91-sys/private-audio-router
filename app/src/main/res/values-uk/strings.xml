@@ -23,7 +23,6 @@
     <string name="settings_version">Версія %1$s</string>
     <string name="settings_language_body">Private Audio наразі використовує мову вашого пристрою. Вибрано варіант «За замовчуванням».</string>
     <string name="settings_language_android_13_required">Для вибору мови в застосунку потрібна версія Android 13 або новіша. Цей пристрій використовує мову системи.</string>
-    <string name="settings_gemini_routing_experimental">Маршрутизація Gemini (експериментальна)</string>
     <string name="settings_proximity_screen">Вимикати екран біля вуха</string>
     <string name="settings_advanced_body">З розвитком Private Audio тут з’являтимуться додаткові параметри.</string>
     <string name="settings_about_body">Private Audio допомагає перенаправляти підтримуваний голосовий звук на вбудований розмовний динамік телефона.</string>

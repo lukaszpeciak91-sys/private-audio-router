@@ -23,7 +23,6 @@
     <string name="settings_version">Sürüm %1$s</string>
     <string name="settings_language_body">Private Audio şu anda cihazınızın dilini kullanıyor. Varsayılan seçili.</string>
     <string name="settings_language_android_13_required">Uygulama içinden dil seçimi için Android 13 veya sonraki bir sürüm gerekir. Bu cihaz sistem dilini kullanıyor.</string>
-    <string name="settings_gemini_routing_experimental">Gemini ses yönlendirme (deneysel)</string>
     <string name="settings_proximity_screen">Kulağa yaklaştırınca ekranı kapat</string>
     <string name="settings_advanced_body">Private Audio geliştikçe burada ek seçenekler görünecek.</string>
     <string name="settings_about_body">Private Audio, sesi telefonun ahizesine yönlendirmeye yardımcı olur.</string>

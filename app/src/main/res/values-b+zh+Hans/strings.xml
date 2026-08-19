@@ -23,7 +23,6 @@
     <string name="settings_version">版本 %1$s</string>
     <string name="settings_language_body">Private Audio 目前使用设备语言。已选择“默认”。</string>
     <string name="settings_language_android_13_required">应用内语言选择需要 Android 13 或更高版本。此设备使用系统语言。</string>
-    <string name="settings_gemini_routing_experimental">Gemini 音频切换（实验性）</string>
     <string name="settings_proximity_screen">靠近耳朵时关闭屏幕</string>
     <string name="settings_advanced_body">随着 Private Audio 的发展，这里将显示更多选项。</string>
     <string name="settings_about_body">Private Audio 可将语音音频导向手机内置听筒。</string>

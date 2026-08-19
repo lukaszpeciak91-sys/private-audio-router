@@ -23,7 +23,6 @@
     <string name="settings_version">वर्शन %1$s</string>
     <string name="settings_language_body">Private Audio अभी आपके डिवाइस की भाषा का इस्तेमाल करता है। डिफ़ॉल्ट चुना गया है।</string>
     <string name="settings_language_android_13_required">ऐप में भाषा चुनने के लिए Android 13 या इसके बाद का वर्शन चाहिए। यह डिवाइस सिस्टम की भाषा का इस्तेमाल करता है।</string>
-    <string name="settings_gemini_routing_experimental">Gemini ऑडियो रूटिंग (प्रयोगात्मक)</string>
     <string name="settings_proximity_screen">कान के पास स्क्रीन बंद करें</string>
     <string name="settings_advanced_body">Private Audio के बेहतर होने के साथ, यहां और विकल्प दिखाई देंगे।</string>
     <string name="settings_about_body">Private Audio वॉइस ऑडियो को फ़ोन के अंदरूनी ईयरपीस पर भेजने में मदद करता है।</string>

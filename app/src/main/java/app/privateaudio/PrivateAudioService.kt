@@ -41,9 +41,6 @@ class PrivateAudioService : Service() {
     var isProximityFeatureEnabled by mutableStateOf(true)
         private set
 
-    var isAssistantRoutingExperimentalEnabled by mutableStateOf(false)
-        private set
-
     val privateAudioState: PrivateAudioState
         get() {
             val currentExperiment = observer.experiment
@@ -77,9 +74,6 @@ class PrivateAudioService : Service() {
         super.onCreate()
         isProximityFeatureEnabled = getSharedPreferences(PREFERENCES_NAME, Context.MODE_PRIVATE)
             .getBoolean(PROXIMITY_FEATURE_KEY, true)
-        isAssistantRoutingExperimentalEnabled = getSharedPreferences(PREFERENCES_NAME, Context.MODE_PRIVATE)
-            .getBoolean(ASSISTANT_ROUTING_EXPERIMENTAL_KEY, false)
-        observer.updateAssistantExperimentalEnabled(isAssistantRoutingExperimentalEnabled)
         observer.start()
     }
 
@@ -116,16 +110,6 @@ class PrivateAudioService : Service() {
             .putBoolean(PROXIMITY_FEATURE_KEY, enabled)
             .apply()
         syncProximityBehavior(if (enabled) "Preference enabled" else "Preference disabled")
-    }
-
-    fun updateAssistantRoutingExperimentalEnabled(enabled: Boolean) {
-        if (enabled == isAssistantRoutingExperimentalEnabled) return
-        isAssistantRoutingExperimentalEnabled = enabled
-        getSharedPreferences(PREFERENCES_NAME, Context.MODE_PRIVATE)
-            .edit()
-            .putBoolean(ASSISTANT_ROUTING_EXPERIMENTAL_KEY, enabled)
-            .apply()
-        observer.updateAssistantExperimentalEnabled(enabled)
     }
 
     fun diagnosticReport(): String {
@@ -224,6 +208,5 @@ class PrivateAudioService : Service() {
         private const val NOTIFICATION_ID = 1
         private const val PREFERENCES_NAME = "private_audio_preferences"
         private const val PROXIMITY_FEATURE_KEY = "proximity_screen_enabled"
-        private const val ASSISTANT_ROUTING_EXPERIMENTAL_KEY = "assistant_routing_experimental_enabled"
     }
 }

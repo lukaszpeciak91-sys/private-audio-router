@@ -23,7 +23,6 @@
     <string name="settings_version">Bersyon %1$s</string>
     <string name="settings_language_body">Kasalukuyang sinusunod ng Private Audio ang wika ng iyong device. Default ang napili.</string>
     <string name="settings_language_android_13_required">Kailangan ng Android 13 o mas bago para pumili ng wika sa app. Sinusunod ng device na ito ang wika ng system.</string>
-    <string name="settings_gemini_routing_experimental">Pag-route ng Gemini (eksperimental)</string>
     <string name="settings_proximity_screen">I-off ang screen kapag malapit sa tainga</string>
     <string name="settings_advanced_body">Lalabas dito ang iba pang opsyon habang patuloy na nade-develop ang Private Audio.</string>
     <string name="settings_about_body">Tumutulong ang Private Audio na ilipat ang audio sa earpiece ng telepono.</string>

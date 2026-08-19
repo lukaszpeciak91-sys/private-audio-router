@@ -67,6 +67,11 @@ enum class ExperimentState(val label: String) {
     BLOCKED("BLOCKED / FAILED"),
 }
 
+enum class TriggerOrigin {
+    COMMUNICATION,
+    ASSISTANT,
+}
+
 data class EarpieceExperiment(
     val state: ExperimentState = ExperimentState.IDLE,
     val armed: Boolean = false,
@@ -101,8 +106,8 @@ data class EarpieceExperiment(
     val silentTrackCleanupCompleted: Boolean = false,
     val externalVoicePlaybackDeviceAfterRequest: ObservedDevice? = null,
     val assistantQualifyingPlaybackCount: Int = 0,
-    val assistantExperimentalTriggerFired: Boolean = false,
-    val modeBeforeAssistantExperimentalParticipation: String? = null,
+    val triggerOrigin: TriggerOrigin? = null,
+    val modeBeforeAssistantParticipation: String? = null,
 )
 
 data class RoutingAttempt(
@@ -138,7 +143,6 @@ class AudioDiagnosticObserver(
 
     private var started = false
     private var controllerEnabled = false
-    private var assistantExperimentalEnabled = false
     private var currentAssistantQualifyingPlaybackCount = 0
     private var playbackCallbackRegistered = false
     private var cycleGeneration = 0L
@@ -233,17 +237,6 @@ class AudioDiagnosticObserver(
         clearExperiment("Power OFF", ExperimentState.CLEARED)
     }
 
-    fun updateAssistantExperimentalEnabled(enabled: Boolean) {
-        assistantExperimentalEnabled = enabled
-        addEvent("Gemini/assistant experimental routing enabled=$enabled")
-        if (!enabled && experiment.assistantExperimentalTriggerFired && experiment.armed) {
-            clearExperiment("Assistant experimental preference disabled", ExperimentState.CLEARED)
-            returnToWaiting()
-        } else if (enabled && controllerEnabled && experiment.armed && !routingActionInProgress) {
-            evaluateExperimentTrigger()
-        }
-    }
-
     fun recordLifecycleEvent(message: String) {
         addEvent(message)
     }
@@ -256,7 +249,6 @@ class AudioDiagnosticObserver(
         packageName = context.packageName,
         baseline = baseline,
         startupAudioTrace = startupAudioTrace.toList(),
-        assistantExperimentalEnabled = assistantExperimentalEnabled,
         assistantQualifyingPlaybackCount = currentAssistantQualifyingPlaybackCount,
     )
 
@@ -291,21 +283,26 @@ class AudioDiagnosticObserver(
             audioManager.communicationDevice?.type == AudioDeviceInfo.TYPE_BUILTIN_SPEAKER
         val assistantCount = assistantQualifyingPlaybackCount(configs)
         currentAssistantQualifyingPlaybackCount = assistantCount
-        val assistantTrigger = assistantExperimentalEnabled && assistantCount > 0
+        val assistantTrigger = assistantCount > 0
         if (!normalTrigger && !assistantTrigger) return
         val earpiece = audioManager.availableCommunicationDevices.firstOrNull {
             it.type == AudioDeviceInfo.TYPE_BUILTIN_EARPIECE
         } ?: return
 
         if (assistantTrigger && !normalTrigger) {
-            addEvent("Experimental assistant speech detected — starting protected POC-5 probe")
+            addEvent("Assistant speech detected — starting protected POC-5 route")
         }
-        startProtectedPoc5Probe(earpiece, assistantTrigger && !normalTrigger, assistantCount)
+        val triggerOrigin = if (assistantTrigger && !normalTrigger) {
+            TriggerOrigin.ASSISTANT
+        } else {
+            TriggerOrigin.COMMUNICATION
+        }
+        startProtectedPoc5Probe(earpiece, triggerOrigin, assistantCount)
     }
 
     private fun startProtectedPoc5Probe(
         earpiece: AudioDeviceInfo,
-        assistantTrigger: Boolean,
+        triggerOrigin: TriggerOrigin,
         assistantCount: Int,
     ) {
         val target = earpiece.toObservedDevice()
@@ -320,9 +317,9 @@ class AudioDiagnosticObserver(
             modeBeforeParticipation = audioModeName(modeBeforeParticipation),
             preOwnership = preOwnership,
             assistantQualifyingPlaybackCount = assistantCount,
-            assistantExperimentalTriggerFired = assistantTrigger,
-            modeBeforeAssistantExperimentalParticipation =
-                if (assistantTrigger) audioModeName(modeBeforeParticipation) else null,
+            triggerOrigin = triggerOrigin,
+            modeBeforeAssistantParticipation =
+                if (triggerOrigin == TriggerOrigin.ASSISTANT) audioModeName(modeBeforeParticipation) else null,
         )
         routingActionInProgress = true
         if (!startSilentCommunicationTrack()) {
@@ -338,7 +335,7 @@ class AudioDiagnosticObserver(
             postSilentTrackStart = postTrackStart,
             activeVoiceCommunicationPlaybackObserved = visibleVoicePlayback,
         )
-        externalContributionEstablished = if (assistantTrigger) {
+        externalContributionEstablished = if (triggerOrigin == TriggerOrigin.ASSISTANT) {
             assistantQualifyingPlaybackCount(audioManager.activePlaybackConfigurations) > 0
         } else {
             qualifyingPlaybackCount(audioManager.activePlaybackConfigurations) >= 2
@@ -536,7 +533,7 @@ class AudioDiagnosticObserver(
             return
         }
         if (silentTrack?.playState != AudioTrack.PLAYSTATE_PLAYING) return
-        val externalPlaybackPresent = if (experiment.assistantExperimentalTriggerFired) {
+        val externalPlaybackPresent = if (experiment.triggerOrigin == TriggerOrigin.ASSISTANT) {
             assistantCount > 0
         } else {
             count >= 2
@@ -586,7 +583,7 @@ class AudioDiagnosticObserver(
             if (!controllerEnabled || generation != cycleGeneration || experiment.attempts.size != 1 ||
                 silentTrack?.playState != AudioTrack.PLAYSTATE_PLAYING
             ) return@Runnable
-            val externalPlaybackPresent = if (experiment.assistantExperimentalTriggerFired) {
+            val externalPlaybackPresent = if (experiment.triggerOrigin == TriggerOrigin.ASSISTANT) {
                 assistantQualifyingPlaybackCount(audioManager.activePlaybackConfigurations) > 0
             } else {
                 qualifyingPlaybackCount(audioManager.activePlaybackConfigurations) > 1
@@ -745,7 +742,6 @@ internal fun buildDiagnosticReport(
     packageName: String = "app.privateaudio",
     baseline: DiagnosticSnapshot? = null,
     startupAudioTrace: List<String> = emptyList(),
-    assistantExperimentalEnabled: Boolean = false,
     assistantQualifyingPlaybackCount: Int = experiment.assistantQualifyingPlaybackCount,
 ) = buildString {
     appendLine("PRIVATE AUDIO — DIAGNOSTIC REPORT")
@@ -768,10 +764,9 @@ internal fun buildDiagnosticReport(
     appendIdentity("DELAYED OBSERVATION", experiment.shortObservation)
     appendLine()
     appendLine("EARPIECE EXPERIMENT")
-    appendLine("Gemini/assistant experimental routing enabled: $assistantExperimentalEnabled")
     appendLine("Assistant qualifying playback count: $assistantQualifyingPlaybackCount")
-    appendLine("Assistant experimental trigger fired: ${experiment.assistantExperimentalTriggerFired}")
-    appendLine("Mode immediately before experimental participation: ${experiment.modeBeforeAssistantExperimentalParticipation ?: "Not attempted"}")
+    appendLine("Trigger origin: ${experiment.triggerOrigin ?: "Not attempted"}")
+    appendLine("Mode immediately before assistant participation: ${experiment.modeBeforeAssistantParticipation ?: "Not attempted"}")
     appendLine("Experiment state: ${experiment.state.label}")
     appendLine("Armed: ${experiment.armed}")
     appendLine("Routing request attempted: ${experiment.requestAttempted}")

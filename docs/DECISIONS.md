@@ -209,3 +209,11 @@ This is a lightweight, append-only log. Do not rewrite accepted history; append 
 - **Context:** Physical API 33 metadata shows Gemini Live using public `USAGE_ASSISTANT` + `CONTENT_TYPE_SPEECH` while Android remains in `MODE_NORMAL`, so the unchanged production communication trigger cannot start POC-5.
 - **Decision:** Add a service-owned, persisted, default-OFF experimental preference. Only while the controller and preference are enabled may active public assistant/speech playback start the existing protected POC-5 participation body without requiring a pre-trigger communication mode. The normal `MODE_IN_COMMUNICATION` + voice-communication/speech + built-in-speaker trigger remains separate and unchanged. Classification is provider-independent and uses no package, PID, UID, foreground, accessibility, or usage-history identity.
 - **Consequences:** Ordinary media does not qualify. Each experimental cycle retains the one-request guard, telephony/system-priority exclusion, delayed observations, and existing fail-closed cleanup. Turning the preference OFF ends current experimental participation immediately. A successful Android request or reported communication device does not establish audible Gemini routing; physical testing remains required.
+
+## D-027 — Automatic assistant-class detection
+
+- **Date:** 2026-08-19
+- **Status:** Accepted; supersedes the preference and experimental status in D-026
+- **Context:** Supplied physical-device results establish audible Gemini Live speaker-to-earpiece routing from `MODE_NORMAL` with public `USAGE_ASSISTANT` + `CONTENT_TYPE_SPEECH`, proximity behavior, session cleanup, Waiting re-arm, and no regression to the established ChatGPT communication path.
+- **Decision:** While Private Audio is armed, automatically admit exact assistant/speech playback as a second trigger class. Keep the established communication trigger unchanged and separate. Both classes enter the single protected POC-5 execution body; classification remains provider-independent. Remove the experimental preference and UI rather than replace them.
+- **Consequences:** Assistant sonification, ordinary media, and unknown content remain excluded. The existing telephony exclusion, one-attempt-per-cycle guard, POC-5 ordering, session-specific cleanup, and proximity eligibility remain unchanged.
