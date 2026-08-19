@@ -23,7 +23,7 @@
     <string name="settings_version">Version %1$s</string>
     <string name="settings_language_body">Private Audio dey follow your device lángwej now. Default na im dey selected.</string>
     <string name="settings_language_android_13_required">To select lángwej inside app, you need Android 13 or later. Dis device dey follow system lángwej.</string>
-    <string name="settings_proximity_screen">Off screen when e near ear</string>
+    <string name="settings_proximity_screen">Off di screen when phone dey near ear</string>
     <string name="settings_advanced_body">More options go show here as Private Audio dey improve.</string>
     <string name="settings_about_body">Private Audio dey help route voice audio go the phone earpiece.</string>
     <string name="diagnostic_report_clip_label">Private Audio diagnostic report</string>

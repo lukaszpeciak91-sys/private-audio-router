@@ -23,7 +23,7 @@
     <string name="settings_version">Wersja %1$s</string>
     <string name="settings_language_body">Private Audio obecnie używa języka urządzenia. Wybrano opcję Domyślny.</string>
     <string name="settings_language_android_13_required">Wybór języka w aplikacji wymaga Androida 13 lub nowszego. To urządzenie używa języka systemowego.</string>
-    <string name="settings_proximity_screen">Wyłączaj ekran przy uchu</string>
+    <string name="settings_proximity_screen">Wyłącz ekran przy uchu</string>
     <string name="settings_advanced_body">Wraz z rozwojem Private Audio pojawią się tutaj dodatkowe opcje.</string>
     <string name="settings_about_body">Private Audio pomaga kierować obsługiwany dźwięk głosowy do górnej słuchawki telefonu.</string>
     <string name="diagnostic_report_clip_label">Raport diagnostyczny Private Audio</string>
