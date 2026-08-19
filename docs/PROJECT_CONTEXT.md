@@ -10,7 +10,7 @@ An experimental Android utility intended to allow communication audio from compa
 
 The primary use case is a voice conversation with an AI system in a public or shared environment—for example while walking, commuting, waiting at a bus stop, or standing near other people—without forcing nearby people to hear the responses.
 
-Potential compatibility targets include ChatGPT Voice, Gemini voice, browser-based realtime voice applications, and other Android applications using compatible communication-audio routing. POC-5 has physically validated ChatGPT Voice on one Xiaomi `2201117TY` running Android 13/API 33; compatibility with other devices, versions, or applications must not be assumed.
+Potential compatibility targets include ChatGPT Voice, Gemini voice, browser-based realtime voice applications, and other Android applications using compatible communication-audio routing. On the primary Xiaomi `2201117TY` running Android 13/API 33, physical validation now covers communication-class, assistant-class, and browser-communication-class routing through the protected POC-5 path. Cross-device, OEM, Android-version, and broader application/browser compatibility is not established and must not be assumed.
 
 ## Architectural idea
 
@@ -72,7 +72,7 @@ The M0 strategy, without implying implementation status, is to:
 
 > Can an independent Android application, using supported public Android APIs only, request and maintain the built-in earpiece as the communication device while a realtime voice application such as current ChatGPT Voice is active?
 
-POC-5 answers this question **yes** for the tested Xiaomi `2201117TY` on Android 13/API 33 with ChatGPT Voice: Android reported the earpiece and physical listening confirmed the audible route. Reproducibility across lifecycle conditions and compatibility beyond that configuration remain experimental questions.
+POC-5 answers this question **yes** for the tested Xiaomi `2201117TY` on Android 13/API 33 across physically exercised communication, assistant, and browser-communication signatures: Android reported the earpiece and physical listening confirmed audible routes. Compatibility beyond that device and version remains an experimental question.
 
 ## Authoritative documentation map
 

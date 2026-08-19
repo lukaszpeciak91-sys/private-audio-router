@@ -2,6 +2,63 @@
 
 Allowed status values are **NOT TESTED**, **PASS**, **FAIL**, and **BLOCKED**. Record a specific device, Android version, and application build for every execution. Emulator results are insufficient for built-in-earpiece routing or cross-application compatibility; those claims require a physical-device test.
 
+## Current compatibility and remaining validation
+
+Unless a row says otherwise, current PASS evidence is supplied physical testing on the primary Xiaomi product `2201117TY`, Android 13/API 33. It must not be generalized to another device, OEM, Android release, browser engine, or application version. Historical POC-1/2/3/4 failures below remain valid evidence; the later POC-5 PASS and automatic three-class controller supersede those experiments only for the current tested configuration.
+
+### Confirmed compatibility matrix
+
+| Surface | Trigger/evidence | Status | Confirmed scope |
+| --- | --- | --- | --- |
+| ChatGPT Android | `COMMUNICATION` | **PASS** | Automatic detection, audible earpiece route, proximity, Power OFF/cleanup, session end → Waiting, and a later session. Remained working after assistant and browser promotion. |
+| Gemini Live | `ASSISTANT`: `USAGE_ASSISTANT` + `CONTENT_TYPE_SPEECH`, initially `MODE_NORMAL` | **PASS** | Automatic protected POC-5, audible speaker → earpiece, proximity, cleanup, Active → Waiting, re-arm, and later sessions. Remained working after browser promotion. |
+| Grok Android | `COMMUNICATION` | **PASS** | Physically confirmed with the established communication-class route. |
+| Perplexity Android | `COMMUNICATION` | **PASS** | Physically confirmed with the established communication-class route. |
+| Character.AI Calls | `COMMUNICATION` | **PASS** | Physically confirmed with the established communication-class route. |
+| ChatGPT Web in Chrome | `BROWSER_COMMUNICATION`: `MODE_IN_COMMUNICATION` + built-in speaker + `USAGE_VOICE_COMMUNICATION`/`CONTENT_TYPE_UNKNOWN` | **PASS** | Automatic single-request POC-5, audible earpiece, proximity, 1.5-second transient-recreation tolerance, cleanup, `MODE_NORMAL`, Active → Waiting, and later sessions without restarting Private Audio. Remained automatic after removal of the experimental switch. |
+| ChatGPT Web in Mi Browser | Browser communication; exact metadata not supplied | **PASS** | Tester confirmed normal Private Audio behavior and audible earpiece routing. This does not prove all Chromium browsers. |
+| Perplexity Web | No realtime Voice mode on the tested web surface | **BLOCKED** | Not applicable to routing: no routable realtime voice surface was available; this is not a Private Audio failure. |
+| ChatGPT Web Voice in Opera | Realtime Voice session could not be started | **BLOCKED** | Voice could not be loaded during the attempted check, so Private Audio was not exercised and did not fail. Retry only if the surface becomes available. |
+
+Every confirmed routing cycle retains one `setCommunicationDevice(earpiece)` request, reversible cleanup, and Waiting re-arm. Ordinary `USAGE_MEDIA` and assistant `CONTENT_TYPE_SONIFICATION` without speech remain outside the automatic classifiers. The user reported that local `./gradlew testDebugUnitTest lintDebug assembleDebug` passed after the earlier remote Gradle-download limitation; that supplied automated result is not physical OEM evidence and was not executed by Codex for this reconciliation.
+
+### Remaining physical validation priorities
+
+**HIGH — device and release safety**
+
+1. Samsung/One UI: routing, cleanup, proximity, and all three trigger families.
+2. Pixel or another AOSP-like device: separate framework behavior from Xiaomi-specific behavior.
+3. A newer Android release than Android 13, preferably Android 15/16 when available.
+4. Incoming real phone call while armed and while Active: telephony must win immediately.
+5. Outgoing real phone call while armed and while Active: telephony must win immediately.
+
+The two telephony cases are release-safety gates, not optional compatibility polish.
+
+**MEDIUM — accessories and lifecycle**
+
+1. Bluetooth headset/earbuds connected before and during use.
+2. Wired/USB audio where available.
+3. Service/process termination during Active routing.
+4. Device reboot after prior participation.
+5. Session end while proximity screen-off behavior is active/near ear.
+
+**Browser-engine coverage**
+
+- High value: Firefox Android (Gecko) and Samsung Internet (OEM/browser integration).
+- Optional/later: retry Opera after an update if Voice becomes available; Edge, Brave, and other Chromium browsers are lower priority after Chrome and Mi Browser, unless demand or reports justify testing.
+- Chrome plus Mi Browser PASS does not guarantee other Chromium browsers.
+
+**Additional AI application coverage**
+
+- Already confirmed: ChatGPT, Gemini Live, Grok, Perplexity Android, and Character.AI Calls.
+- Future checks only when an actual realtime voice mode is available: Microsoft Copilot, Pi/hands-free conversation, DeepSeek realtime voice, Meta AI voice, and other materially popular applications. Do not buy subscriptions only to expand this matrix; unavailable, paywalled, or region-blocked surfaces are **BLOCKED** or **NOT TESTED**, not Private Audio failures.
+
+**Physical no-trigger obligations**
+
+- **NOT TESTED / UNKNOWN unless a separate execution below records otherwise:** ordinary music/video, YouTube, ordinary browser media, NotebookLM Audio Overview/podcast-style playback, Kimi media-style TTS, and `ASSISTANT` + `CONTENT_TYPE_SONIFICATION` without speech.
+- Automated classifier contracts are useful structural evidence, not physical OEM evidence.
+- T-014A's ChatGPT Voice startup-sound/startup-leak investigation remains unresolved; the bounded STARTUP AUDIO TRACE is diagnostic evidence only and normal routed speech does not establish that the startup sound is fixed.
+
 ## T-001 — Idle state
 
 - **Status:** NOT TESTED
@@ -52,14 +109,14 @@ Allowed status values are **NOT TESTED**, **PASS**, **FAIL**, and **BLOCKED**. R
 
 ## T-005 — ChatGPT Voice active
 
-- **Status:** NOT TESTED
-- **Device:** Not recorded
-- **Android version:** Not recorded
+- **Status:** PASS
+- **Device:** Xiaomi product `2201117TY`
+- **Android version:** Android 13/API 33
 - **Build:** Not recorded
 - **Preconditions:** Current ChatGPT Android application is installed; an active voice session is available; baseline and privacy-safe test content are prepared.
 - **Steps:** Start ChatGPT Voice, issue the routing request, observe the reported communication device, and determine the audible output device.
 - **Expected result:** The test determines—without assuming—whether ChatGPT output uses the built-in earpiece after the request.
-- **Observed result:** Not recorded
+- **Observed result:** Supplied physical results confirm automatic detection, Android-reported and audible built-in-earpiece routing, proximity, cleanup, Waiting re-arm, and a subsequent session. See the current matrix and POC-5 history.
 - **Notes:** Record ChatGPT version. A non-earpiece result is valid evidence, not authorization to escalate.
 
 ## T-006 — ChatGPT background voice
@@ -136,27 +193,27 @@ Allowed status values are **NOT TESTED**, **PASS**, **FAIL**, and **BLOCKED**. R
 
 ## T-012 — Gemini voice
 
-- **Status:** NOT TESTED
-- **Device:** Not recorded
-- **Android version:** Not recorded
+- **Status:** PASS
+- **Device:** Xiaomi product `2201117TY`
+- **Android version:** Android 13/API 33
 - **Build:** Not recorded
-- **Preconditions:** Future M0-capable utility build and current Gemini voice experience are available.
-- **Steps:** Establish a voice session, issue and clear the request, and observe reported and audible routing.
-- **Expected result:** The future compatibility test determines whether Gemini voice respects the request and restores safely.
-- **Observed result:** Not recorded
-- **Notes:** Compatibility is currently unknown; record Gemini version.
+- **Preconditions:** Current Private Audio build and a current Gemini Live voice experience are available.
+- **Steps:** With Private Audio ON, establish a Gemini Live session, observe automatic detection and reported/audible routing, end the session, and verify cleanup and re-arm.
+- **Expected result:** Exact assistant/speech playback enters the protected POC-5 path, routes audibly to the earpiece, and restores safely.
+- **Observed result:** Supplied physical results confirm `USAGE_ASSISTANT` + `CONTENT_TYPE_SPEECH` from initial `MODE_NORMAL`, automatic protected POC-5, audible speaker-to-earpiece routing, proximity, cleanup, Waiting re-arm, and subsequent sessions.
+- **Notes:** Record the Gemini version in future executions; this result is scoped to the tested device/version.
 
 ## T-013 — Browser realtime voice
 
-- **Status:** NOT TESTED
-- **Device:** Not recorded
-- **Android version:** Not recorded
+- **Status:** PASS
+- **Device:** Xiaomi product `2201117TY`
+- **Android version:** Android 13/API 33
 - **Build:** Not recorded
-- **Preconditions:** Future M0-capable utility build and a privacy-safe browser realtime voice session are available.
-- **Steps:** Establish a browser voice session, issue and clear the request, and observe reported and audible routing.
-- **Expected result:** The future compatibility test determines whether the browser session respects the request and restores safely.
-- **Observed result:** Not recorded
-- **Notes:** Record browser, browser version, and tested site; do not generalize one result to all browsers.
+- **Preconditions:** Current Private Audio build and a privacy-safe browser realtime voice session are available.
+- **Steps:** With Private Audio ON, establish a browser voice session, observe automatic detection and reported/audible routing, end the session, and verify cleanup and re-arm.
+- **Expected result:** A supported browser-communication signature enters the protected POC-5 path, routes audibly to the earpiece, and restores safely.
+- **Observed result:** Supplied physical results confirm ChatGPT Web Voice in Chrome automatically used the browser-communication path with audible earpiece routing, proximity, cleanup, Waiting re-arm, and subsequent sessions. Mi Browser separately passed normal behavior and audible earpiece routing. Perplexity Web had no applicable realtime Voice surface, and Opera Voice could not be started; see the current matrix.
+- **Notes:** Browser versions were not supplied. Do not generalize Chrome and Mi Browser to every Chromium browser or to Gecko.
 
 ## T-014 — Observe a cross-application ChatGPT Voice session
 

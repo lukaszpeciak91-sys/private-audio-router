@@ -58,7 +58,9 @@ These inferences are hypotheses for physical-device testing, not compatibility c
 - Whether ChatGPT claims or reclaims routing while active.
 - Whether an independent process can retain built-in-earpiece routing during current ChatGPT Voice across repeated sessions, lifecycle events, APK updates, and configurations beyond the successful test.
 - OEM behavior across Android versions.
-- Behavior in browsers and browser-based realtime voice sessions.
+- Whether the same classifiers and POC-5 behavior generalize across OEMs and Android versions, including newer releases.
+- Whether all Chromium browsers expose the Chrome-tested signature; Chrome and Mi Browser evidence does not establish this.
+- Whether Gecko/Firefox exposes any already supported signature.
 - Whether the recorded ChatGPT Voice-correlated state transition repeats when POC-1 is run with complete test metadata.
 - Whether `setCommunicationDevice()` accepts a request made after Private Audio has been backgrounded while its process remains alive.
 - Why uninstall/reinstall preceded the first reliable audible POC-5 success.
@@ -106,4 +108,6 @@ New statements must be labeled **FACT**, **INFERENCE**, or **UNKNOWN**, with sou
 
 - **FACT (supplied physical result, 2026-08-19):** ChatGPT Web in Chrome exposed the validated `MODE_IN_COMMUNICATION` + built-in speaker + `USAGE_VOICE_COMMUNICATION`/`CONTENT_TYPE_UNKNOWN` signature, and the protected POC-5 sequence produced human-confirmed audible earpiece routing on the tested device.
 - **FACT (supplied physical result, 2026-08-19):** Browser session end completed the existing 1.5-second confirmation and reversible cleanup, and subsequent browser sessions routed without restarting Private Audio. ChatGPT Android and Gemini Live regressions passed; each cycle made exactly one routing request, ordinary media and assistant sonification remained ignored, and Power OFF cleanup remained unchanged.
+- **FACT (supplied physical result, 2026-08-19):** ChatGPT Web in Mi Browser also produced normal Private Audio behavior and human-confirmed earpiece routing on the same Xiaomi Android 13/API 33 device. Exact Mi Browser metadata was not supplied.
 - **INFERENCE:** Exact public mode, route, usage, and content classification provides a provider-independent third trigger boundary without identifying Chrome, a URL, a package, or a client.
+- **UNKNOWN:** These Chrome and Mi Browser results do not establish that every Chromium browser exposes identical metadata, that Gecko/Firefox follows a supported signature, or that another OEM or Android release behaves identically.
