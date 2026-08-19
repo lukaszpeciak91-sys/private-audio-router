@@ -62,6 +62,22 @@ class Layer3UiContractTest {
             .contains("name=\"settings\">Налаштування</string>"))
     }
 
+    @Test
+    fun mainPowerGlyphScalesAroundItsCenterWithoutScalingTheOuterControl() {
+        assertTrue(screenSource.contains("private const val PowerGlyphScale = 1.04f"))
+        val powerControl = screenSource.substringAfter("private fun PowerControl(")
+            .substringBefore("private fun BottomControls(")
+        val outerBorder = powerControl.indexOf("drawCircle(")
+        val glyphScale = powerControl.indexOf("scale(PowerGlyphScale, pivot = center)")
+
+        assertTrue(outerBorder >= 0)
+        assertTrue(glyphScale > outerBorder)
+        assertTrue(powerControl.substring(glyphScale).contains("if (glow)"))
+        assertTrue(powerControl.substring(glyphScale).contains("drawArc("))
+        assertTrue(powerControl.substring(glyphScale).contains("drawLine("))
+        assertTrue(powerControl.contains(".size(diameter)"))
+    }
+
     private fun assertInOrder(source: String, vararg fragments: String) {
         var previous = -1
         fragments.forEach { fragment ->
