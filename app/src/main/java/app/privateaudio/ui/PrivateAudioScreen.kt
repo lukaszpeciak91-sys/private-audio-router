@@ -103,6 +103,8 @@ fun PrivateAudioScreen(
     state: PrivateAudioState,
     proximityFeatureEnabled: Boolean = true,
     onProximityFeatureChange: (Boolean) -> Unit = {},
+    assistantRoutingExperimentalEnabled: Boolean = false,
+    onAssistantRoutingExperimentalChange: (Boolean) -> Unit = {},
     powerEnabled: Boolean = true,
     onPowerClick: () -> Unit,
     onFloatingClick: () -> Unit = {},
@@ -190,6 +192,8 @@ fun PrivateAudioScreen(
                 versionName = versionName,
                 proximityFeatureEnabled = proximityFeatureEnabled,
                 onProximityFeatureChange = onProximityFeatureChange,
+                assistantRoutingExperimentalEnabled = assistantRoutingExperimentalEnabled,
+                onAssistantRoutingExperimentalChange = onAssistantRoutingExperimentalChange,
                 onCopyDiagnosticReport = onCopyDiagnosticReport,
                 onDismiss = { settingsVisible = false },
             )

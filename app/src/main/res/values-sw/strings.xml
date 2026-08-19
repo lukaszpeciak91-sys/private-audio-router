@@ -23,6 +23,7 @@
     <string name="settings_version">Toleo %1$s</string>
     <string name="settings_language_body">Kwa sasa Private Audio inafuata lugha ya kifaa chako. Chaguomsingi limechaguliwa.</string>
     <string name="settings_language_android_13_required">Uteuzi wa lugha ndani ya programu unahitaji Android 13 au toleo jipya zaidi. Kifaa hiki kinafuata lugha ya mfumo.</string>
+    <string name="settings_gemini_routing_experimental">Uelekezaji wa Gemini (wa majaribio)</string>
     <string name="settings_proximity_screen">Zima skrini ikiwa karibu na sikio</string>
     <string name="settings_advanced_body">Chaguo zaidi zitaonekana hapa kadiri Private Audio inavyoendelea kuboreshwa.</string>
     <string name="settings_about_body">Private Audio husaidia kuelekeza sauti kwenye kipokea sauti cha ndani cha simu.</string>

@@ -175,13 +175,13 @@ class AudioDiagnosticObserverTest {
         assertTrue(matcher.contains("USAGE_VOICE_COMMUNICATION"))
         assertTrue(matcher.contains("CONTENT_TYPE_SPEECH"))
         assertFalse(matcher.contains("USAGE_MEDIA"))
-        assertInOrder(callback, "if (!controllerEnabled) return", "count > 0", "evaluateExperimentTrigger()")
+        assertInOrder(callback, "if (!controllerEnabled) return", "count > 0 || assistantCount > 0", "evaluateExperimentTrigger()")
     }
 
     @Test
     fun poc5PlaybackModeAndSingleRouteRequestOrderingRemainsProtected() {
-        val trigger = observerSource.method("private fun evaluateExperimentTrigger()")
-        assertInOrder(trigger, "startSilentCommunicationTrack()", "PLAYSTATE_PLAYING", "audioManager.mode = AudioManager.MODE_IN_COMMUNICATION", "performRoutingAttempt(earpiece")
+        val protectedBody = observerSource.method("private fun startProtectedPoc5Probe(")
+        assertInOrder(protectedBody, "startSilentCommunicationTrack()", "PLAYSTATE_PLAYING", "audioManager.mode = AudioManager.MODE_IN_COMMUNICATION", "performRoutingAttempt(earpiece")
         val track = observerSource.method("private fun startSilentCommunicationTrack(): Boolean")
         assertInOrder(track, ".setUsage(AudioAttributes.USAGE_VOICE_COMMUNICATION)", ".setContentType(AudioAttributes.CONTENT_TYPE_SPEECH)", ".setEncoding(AudioFormat.ENCODING_PCM_16BIT)", ".setChannelMask(AudioFormat.CHANNEL_OUT_MONO)", "track.write(silence", "track.play()")
         assertEquals(1, observerSource.occurrences("audioManager.setCommunicationDevice(earpiece)"))
