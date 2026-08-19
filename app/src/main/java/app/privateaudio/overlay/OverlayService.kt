@@ -1,5 +1,6 @@
 package app.privateaudio.overlay
 
+import android.animation.ValueAnimator
 import android.app.Service
 import android.content.ComponentName
 import android.content.Context
@@ -25,6 +26,7 @@ import android.view.MotionEvent
 import android.view.View
 import android.view.ViewConfiguration
 import android.view.WindowManager
+import android.view.animation.AccelerateDecelerateInterpolator
 import app.privateaudio.MainActivity
 import app.privateaudio.PrivateAudioService
 import app.privateaudio.PrivateAudioState
@@ -237,12 +239,15 @@ class OverlayService : Service() {
         }
         private val expandPath = Path()
         private var state = PrivateAudioState.READY
+        private var statusDotAlpha = 1f
+        private var statusDotAnimator: ValueAnimator? = null
         private val refreshState = object : Runnable {
             override fun run() {
                 val latest = privateAudioService?.privateAudioState ?: PrivateAudioState.READY
                 if (latest != state) {
                     state = latest
                     contentDescription = stateDescription(latest)
+                    updateStatusDotAnimation()
                     invalidate()
                 }
                 postDelayed(this, STATE_REFRESH_MILLIS)
@@ -259,7 +264,10 @@ class OverlayService : Service() {
             post(refreshState)
         }
 
-        fun stopStateObservation() = removeCallbacks(refreshState)
+        fun stopStateObservation() {
+            removeCallbacks(refreshState)
+            stopStatusDotAnimation()
+        }
 
         fun refreshLocalizedPresentation() {
             contentDescription = stateDescription(state)
@@ -284,13 +292,42 @@ class OverlayService : Service() {
 
             paint.style = Paint.Style.FILL
             paint.color = statusColor(state)
+            paint.alpha = (statusDotAlpha * 255).toInt()
             canvas.drawCircle(directionalX(STATUS_DOT_X), 31f, 5.5f, paint)
+            paint.alpha = 255
             drawStatusLabel(canvas, stateLabel(state))
 
             drawPower(canvas, powerColor(state))
             drawExpand(canvas)
             drawClose(canvas)
             canvas.restore()
+        }
+
+        private fun updateStatusDotAnimation() {
+            stopStatusDotAnimation()
+            val halfCycleMillis = when (state) {
+                PrivateAudioState.WAITING -> WAITING_HALF_CYCLE_MILLIS
+                PrivateAudioState.ACTIVE -> ACTIVE_HALF_CYCLE_MILLIS
+                PrivateAudioState.READY, PrivateAudioState.ERROR -> return
+            }
+            statusDotAnimator = ValueAnimator.ofFloat(1f, 0.65f).apply {
+                duration = halfCycleMillis
+                interpolator = AccelerateDecelerateInterpolator()
+                repeatCount = ValueAnimator.INFINITE
+                repeatMode = ValueAnimator.REVERSE
+                addUpdateListener {
+                    statusDotAlpha = it.animatedValue as Float
+                    invalidate()
+                }
+                start()
+            }
+        }
+
+        private fun stopStatusDotAnimation() {
+            statusDotAnimator?.cancel()
+            statusDotAnimator?.removeAllUpdateListeners()
+            statusDotAnimator = null
+            statusDotAlpha = 1f
         }
 
         private fun drawStatusLabel(canvas: Canvas, label: String) {
@@ -460,6 +497,8 @@ class OverlayService : Service() {
         private const val EXTRA_SHOW_RESULT = "app.privateaudio.overlay.SHOW_RESULT"
         const val SHOW_SUCCEEDED = 1
         private const val STATE_REFRESH_MILLIS = 200L
+        private const val WAITING_HALF_CYCLE_MILLIS = 900L
+        private const val ACTIVE_HALF_CYCLE_MILLIS = 700L
         private const val DESIGN_WIDTH = 300f
         private const val STATUS_DOT_X = 20f
         private const val STATUS_TEXT_LEFT = 34f

@@ -78,6 +78,24 @@ class Layer3UiContractTest {
         assertTrue(powerControl.contains(".size(diameter)"))
     }
 
+    @Test
+    fun stateMotionKeepsReadyAndErrorStaticAndSeparatesWaitingFromActive() {
+        val motion = screenSource.substringAfter("private fun stateMotionPhase(")
+            .substringBefore("private fun BottomControls(")
+
+        assertTrue(motion.contains("PrivateAudioState.WAITING -> WaitingHalfCycleMillis"))
+        assertTrue(motion.contains("PrivateAudioState.ACTIVE -> ActiveHalfCycleMillis"))
+        assertTrue(motion.contains("PrivateAudioState.READY, PrivateAudioState.ERROR -> return 1f"))
+        assertTrue(screenSource.contains("private const val WaitingHalfCycleMillis = 900"))
+        assertTrue(screenSource.contains("private const val ActiveHalfCycleMillis = 700"))
+        assertTrue(screenSource.contains("0.65f + 0.35f * motionPhase"))
+        assertTrue(screenSource.contains("0.55f + 0.35f * motionPhase"))
+        assertTrue(screenSource.contains("glowAlpha = if (visuals.pulse)"))
+        assertFalse(screenSource.substringAfter("private fun PowerControl(")
+            .substringBefore("private fun stateMotionPhase(")
+            .contains("rememberInfiniteTransition"))
+    }
+
     private fun assertInOrder(source: String, vararg fragments: String) {
         var previous = -1
         fragments.forEach { fragment ->

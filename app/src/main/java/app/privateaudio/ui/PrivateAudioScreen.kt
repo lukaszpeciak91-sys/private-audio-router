@@ -1,6 +1,7 @@
 package app.privateaudio.ui
 
 import androidx.annotation.StringRes
+import androidx.compose.animation.core.FastOutSlowInEasing
 import androidx.compose.animation.core.RepeatMode
 import androidx.compose.animation.core.animateFloat
 import androidx.compose.animation.core.infiniteRepeatable
@@ -30,6 +31,7 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.key
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.saveable.rememberSaveable
@@ -85,6 +87,8 @@ private val ProductRed = Color(0xFFFF1D2D)
 private val ReadyPower = Color(0xFF858585)
 private val PowerBorder = Color(0xFFB3B3B3)
 private const val PowerGlyphScale = 1.04f
+private const val WaitingHalfCycleMillis = 900
+private const val ActiveHalfCycleMillis = 700
 
 private data class StateVisuals(
     @StringRes val label: Int,
@@ -108,6 +112,7 @@ fun PrivateAudioScreen(
     modifier: Modifier = Modifier,
 ) {
     val visuals = stateVisuals(state)
+    val motionPhase = stateMotionPhase(state)
     var settingsVisible by rememberSaveable { mutableStateOf(false) }
 
     Box(
@@ -153,12 +158,19 @@ fun PrivateAudioScreen(
                     modifier = Modifier.fillMaxWidth(),
                 )
                 Spacer(Modifier.height(ProductLayout.headerStatusSpacing))
-                StatusIndicator(visuals)
+                StatusIndicator(
+                    visuals = visuals,
+                    dotAlpha = when (state) {
+                        PrivateAudioState.WAITING, PrivateAudioState.ACTIVE ->
+                            0.65f + 0.35f * motionPhase
+                        PrivateAudioState.READY, PrivateAudioState.ERROR -> 1f
+                    },
+                )
                 Spacer(Modifier.height(ProductLayout.statusPowerSpacing))
                 PowerControl(
                     color = visuals.powerColor,
                     glow = visuals.glow,
-                    pulse = visuals.pulse,
+                    glowAlpha = if (visuals.pulse) 0.55f + 0.35f * motionPhase else 0.78f,
                     enabled = powerEnabled,
                     diameter = powerDiameter,
                     onClick = onPowerClick,
@@ -186,7 +198,7 @@ fun PrivateAudioScreen(
 }
 
 @Composable
-private fun StatusIndicator(visuals: StateVisuals) {
+private fun StatusIndicator(visuals: StateVisuals, dotAlpha: Float) {
     Row(
         modifier = Modifier
             .height(32.dp)
@@ -197,6 +209,7 @@ private fun StatusIndicator(visuals: StateVisuals) {
         Box(
             Modifier
                 .size(10.dp)
+                .alpha(dotAlpha)
                 .background(visuals.dotColor, CircleShape),
         )
         Spacer(Modifier.width(12.dp))
@@ -214,21 +227,11 @@ private fun StatusIndicator(visuals: StateVisuals) {
 private fun PowerControl(
     color: Color,
     glow: Boolean,
-    pulse: Boolean,
+    glowAlpha: Float,
     enabled: Boolean,
     diameter: Dp,
     onClick: () -> Unit,
 ) {
-    val transition = rememberInfiniteTransition(label = "waiting power pulse")
-    val pulseAlpha by transition.animateFloat(
-        initialValue = 0.55f,
-        targetValue = 0.9f,
-        animationSpec = infiniteRepeatable(
-            animation = tween(durationMillis = 1_600),
-            repeatMode = RepeatMode.Reverse,
-        ),
-        label = "waiting glow alpha",
-    )
     val powerDescription = stringResource(R.string.power_control)
 
     Canvas(
@@ -241,8 +244,6 @@ private fun PowerControl(
     ) {
         val strokeScale = size.minDimension / 300f
         val center = this.center
-        val glowAlpha = if (pulse) pulseAlpha else 0.78f
-
         drawCircle(
             color = PowerBorder,
             radius = size.minDimension / 2f - 1.5f * strokeScale,
@@ -286,6 +287,31 @@ private fun PowerControl(
                 cap = StrokeCap.Round,
             )
         }
+    }
+}
+
+@Composable
+private fun stateMotionPhase(state: PrivateAudioState): Float {
+    val halfCycleMillis = when (state) {
+        PrivateAudioState.WAITING -> WaitingHalfCycleMillis
+        PrivateAudioState.ACTIVE -> ActiveHalfCycleMillis
+        PrivateAudioState.READY, PrivateAudioState.ERROR -> return 1f
+    }
+    return key(state) {
+        val transition = rememberInfiniteTransition(label = "${state.name.lowercase()} status motion")
+        val phase by transition.animateFloat(
+            initialValue = 1f,
+            targetValue = 0f,
+            animationSpec = infiniteRepeatable(
+                animation = tween(
+                    durationMillis = halfCycleMillis,
+                    easing = FastOutSlowInEasing,
+                ),
+                repeatMode = RepeatMode.Reverse,
+            ),
+            label = "${state.name.lowercase()} motion phase",
+        )
+        phase
     }
 }
 
