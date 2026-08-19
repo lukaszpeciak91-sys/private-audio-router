@@ -23,7 +23,6 @@
     <string name="settings_version">バージョン %1$s</string>
     <string name="settings_language_body">Private Audio は現在、端末の言語に従っています。デフォルトが選択されています。</string>
     <string name="settings_language_android_13_required">アプリ内で言語を選択するには Android 13 以降が必要です。この端末ではシステムの言語が使用されます。</string>
-    <string name="settings_gemini_routing_experimental">Gemini の音声ルーティング（試験運用）</string>
     <string name="settings_proximity_screen">耳に近づけたとき画面を消す</string>
     <string name="settings_advanced_body">Private Audio の進化に合わせて、ここに追加のオプションが表示されます。</string>
     <string name="settings_about_body">Private Audio は音声をスマートフォンの受話口スピーカーに切り替えるためのアプリです。</string>
