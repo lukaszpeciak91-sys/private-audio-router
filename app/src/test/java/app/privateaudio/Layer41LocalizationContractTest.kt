@@ -321,6 +321,54 @@ class Layer41LocalizationContractTest {
     }
 
     @Test
+    fun basqueFrozenLocalizationSemanticsRemainIntact() {
+        assertEquals("euskara", Locale.forLanguageTag("eu").getDisplayLanguage(Locale.forLanguageTag("eu")))
+        assertEquals("Euskara", nativeLocaleName("eu"))
+        assertTrue(basqueStrings.contains("name=\"routing_notification_text\">Audioa bideratzeko zain</string>"))
+        assertTrue(basqueStrings.contains("name=\"settings_language_body\"") && basqueStrings.contains("zure gailuaren hizkuntza"))
+        assertTrue(basqueStrings.contains("name=\"settings_language_android_13_required\"") && basqueStrings.contains("Gailu honek sistemaren hizkuntza erabiltzen du."))
+        assertTrue(basqueStrings.contains("name=\"settings_proximity_screen\">Itzali pantaila belarriaren ondoan</string>"))
+        assertTrue(basqueStrings.contains("name=\"settings_about_body\"") && basqueStrings.contains("telefonoaren aurikular integratura"))
+        assertTrue(basqueStrings.contains("Pizteko, zabaltzeko eta ixteko kontrolak"))
+        assertTrue(basqueStrings.contains("name=\"state_ready\">Prest</string>"))
+        assertTrue(basqueStrings.contains("name=\"state_waiting\">Zain</string>"))
+        assertTrue(basqueStrings.contains("name=\"state_active\">Aktibo</string>"))
+        assertTrue(basqueStrings.contains("name=\"state_error\">Errorea</string>"))
+    }
+
+    @Test
+    fun albanianFrozenLocalizationSemanticsRemainIntact() {
+        assertEquals("shqip", Locale.forLanguageTag("sq").getDisplayLanguage(Locale.forLanguageTag("sq")))
+        assertEquals("Shqip", nativeLocaleName("sq"))
+        assertTrue(albanianStrings.contains("name=\"routing_notification_text\">Në pritje për ndërrimin e audios</string>"))
+        assertTrue(albanianStrings.contains("name=\"settings_language_body\"") && albanianStrings.contains("gjuhën e pajisjes sate"))
+        assertTrue(albanianStrings.contains("name=\"settings_language_android_13_required\"") && albanianStrings.contains("Kjo pajisje përdor gjuhën e sistemit."))
+        assertTrue(albanianStrings.contains("name=\"settings_proximity_screen\">Fike ekranin pranë veshit</string>"))
+        assertTrue(albanianStrings.contains("name=\"settings_about_body\"") && albanianStrings.contains("marrësi i integruar i telefonit"))
+        assertTrue(albanianStrings.contains("Kontrollet për ndezjen, zgjerimin dhe mbylljen"))
+        assertTrue(albanianStrings.contains("name=\"state_ready\">Gati</string>"))
+        assertTrue(albanianStrings.contains("name=\"state_waiting\">Në pritje</string>"))
+        assertTrue(albanianStrings.contains("name=\"state_active\">Aktiv</string>"))
+        assertTrue(albanianStrings.contains("name=\"state_error\">Gabim</string>"))
+    }
+
+    @Test
+    fun latvianFrozenLocalizationSemanticsRemainIntact() {
+        assertEquals("latviešu", Locale.forLanguageTag("lv").getDisplayLanguage(Locale.forLanguageTag("lv")))
+        assertEquals("Latviešu", nativeLocaleName("lv"))
+        assertTrue(latvianStrings.contains("name=\"routing_notification_text\">Gaida audio pārslēgšanu</string>"))
+        assertTrue(latvianStrings.contains("name=\"settings_language_body\"") && latvianStrings.contains("jūsu ierīces valodu"))
+        assertTrue(latvianStrings.contains("name=\"settings_language_android_13_required\"") && latvianStrings.contains("Šī ierīce izmanto sistēmas valodu."))
+        assertTrue(latvianStrings.contains("name=\"settings_proximity_screen\">Izslēgt ekrānu pie auss</string>"))
+        assertTrue(latvianStrings.contains("name=\"settings_about_body\"") && latvianStrings.contains("tālruņa iebūvēto uztvērēju"))
+        assertTrue(latvianStrings.contains("Ieslēgšanas, izvēršanas un aizvēršanas vadīklas"))
+        assertTrue(latvianStrings.contains("name=\"state_ready\">Gatavs</string>"))
+        assertTrue(latvianStrings.contains("name=\"state_waiting\">Gaida</string>"))
+        assertTrue(latvianStrings.contains("name=\"state_active\">Aktīvs</string>"))
+        assertTrue(latvianStrings.contains("name=\"state_error\">Kļūda</string>"))
+    }
+
+    @Test
     fun languageSelectionUsesPlatformConfigurationWithoutAParallelLocaleRegistry() {
         assertTrue(languagePreferencesSource.contains("LocaleConfig(context).supportedLocales"))
         assertTrue(languagePreferencesSource.contains("getSystemService(LocaleManager::class.java)"))
@@ -420,6 +468,9 @@ class Layer41LocalizationContractTest {
         val finnishStrings = projectFile("app/src/main/res/values-fi/strings.xml").readText()
         val estonianStrings = projectFile("app/src/main/res/values-et/strings.xml").readText()
         val hungarianStrings = projectFile("app/src/main/res/values-hu/strings.xml").readText()
+        val basqueStrings = projectFile("app/src/main/res/values-eu/strings.xml").readText()
+        val albanianStrings = projectFile("app/src/main/res/values-sq/strings.xml").readText()
+        val latvianStrings = projectFile("app/src/main/res/values-lv/strings.xml").readText()
         val mainSource = projectFile("app/src/main/java/app/privateaudio/MainActivity.kt").readText()
         val productScreenSource = projectFile("app/src/main/java/app/privateaudio/ui/PrivateAudioScreen.kt").readText()
         val settingsSource = projectFile("app/src/main/java/app/privateaudio/ui/SettingsSheet.kt").readText()

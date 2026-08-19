@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Private Audio</string>
+    <string name="routing_notification_channel">Private Audio</string>
+    <string name="routing_notification_title">Private Audio është aktiv</string>
+    <string name="routing_notification_text">Në pritje për ndërrimin e audios</string>
+    <string name="product_title">Private Audio</string>
+    <string name="product_subtitle">Fol privatisht me AI, si në një telefonatë.</string>
+    <string name="state_ready">Gati</string>
+    <string name="state_waiting">Në pritje</string>
+    <string name="state_active">Aktiv</string>
+    <string name="state_error">Gabim</string>
+    <string name="power_control">Ndezja</string>
+    <string name="floating">Mini</string>
+    <string name="settings">Cilësimet</string>
+    <string name="close">Mbyll</string>
+    <string name="overlay_controller_description">Kontrolluesi lundrues i Private Audio. Statusi: %1$s. Kontrollet për ndezjen, zgjerimin dhe mbylljen.</string>
+    <string name="settings_language">Gjuha</string>
+    <string name="settings_system_default">Parazgjedhja</string>
+    <string name="settings_save_diagnostic">Ruaj raportin diagnostikues</string>
+    <string name="settings_advanced">Të avancuara</string>
+    <string name="settings_about">Rreth Private Audio</string>
+    <string name="settings_version">Versioni %1$s</string>
+    <string name="settings_language_body">Private Audio aktualisht ndjek gjuhën e pajisjes sate. Është zgjedhur parazgjedhja.</string>
+    <string name="settings_language_android_13_required">Përzgjedhja e gjuhës brenda aplikacionit kërkon Android 13 ose version më të ri. Kjo pajisje përdor gjuhën e sistemit.</string>
+    <string name="settings_proximity_screen">Fike ekranin pranë veshit</string>
+    <string name="settings_advanced_body">Opsione të tjera do të shfaqen këtu ndërsa Private Audio zhvillohet.</string>
+    <string name="settings_about_body">Private Audio ndihmon në kalimin e audios zanore të mbështetur te marrësi i integruar i telefonit.</string>
+    <string name="diagnostic_report_saved">Raporti diagnostikues u ruajt.</string>
+    <string name="diagnostic_report_save_failed">Raporti diagnostikues nuk mund të ruhej.</string>
+</resources>
