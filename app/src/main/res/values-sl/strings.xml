@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Private Audio</string>
+    <string name="routing_notification_channel">Private Audio</string>
+    <string name="routing_notification_title">Private Audio je vklopljen</string>
+    <string name="routing_notification_text">Čakanje na preklop zvoka</string>
+    <string name="product_title">Private Audio</string>
+    <string name="product_subtitle">Z UI se pogovarjajte zasebno, kot po telefonu.</string>
+    <string name="state_ready">Pripravljeno</string>
+    <string name="state_waiting">Čakanje</string>
+    <string name="state_active">Aktivno</string>
+    <string name="state_error">Napaka</string>
+    <string name="power_control">Vklop/izklop</string>
+    <string name="floating">Mini</string>
+    <string name="settings">Nastavitve</string>
+    <string name="close">Zapri</string>
+    <string name="overlay_controller_description">Lebdeči upravljalnik Private Audio. Stanje: %1$s. Kontrolniki za vklop/izklop, razširitev in zapiranje.</string>
+    <string name="settings_language">Jezik</string>
+    <string name="settings_system_default">Privzeto</string>
+    <string name="settings_save_diagnostic">Shrani diagnostično poročilo</string>
+    <string name="settings_advanced">Napredno</string>
+    <string name="settings_about">O aplikaciji Private Audio</string>
+    <string name="settings_version">Različica %1$s</string>
+    <string name="settings_language_body">Private Audio trenutno uporablja jezik vaše naprave. Izbrana je privzeta nastavitev.</string>
+    <string name="settings_language_android_13_required">Izbira jezika v aplikaciji zahteva Android 13 ali novejši. Ta naprava uporablja sistemski jezik.</string>
+    <string name="settings_proximity_screen">Izklopi zaslon ob ušesu</string>
+    <string name="settings_advanced_body">Z razvojem aplikacije Private Audio bodo tukaj na voljo dodatne možnosti.</string>
+    <string name="settings_about_body">Private Audio pomaga preklopiti podprt glasovni zvok na vgrajeno slušalko telefona.</string>
+    <string name="diagnostic_report_saved">Diagnostično poročilo je shranjeno.</string>
+    <string name="diagnostic_report_save_failed">Diagnostičnega poročila ni bilo mogoče shraniti.</string>
+</resources>
