@@ -8,7 +8,7 @@
     <string name="product_subtitle">像打電話一樣私密地與 AI 對話。</string>
     <string name="state_ready">就緒</string>
     <string name="state_waiting">等待中</string>
-    <string name="state_active">已啟用</string>
+    <string name="state_active">使用中</string>
     <string name="state_error">錯誤</string>
     <string name="power_control">開啟</string>
     <string name="floating">迷你</string>

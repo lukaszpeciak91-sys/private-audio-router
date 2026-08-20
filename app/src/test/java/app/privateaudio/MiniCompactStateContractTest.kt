@@ -46,14 +46,17 @@ class MiniCompactStateContractTest {
         assertTrue(overlay.method("private fun stateDescription").contains("fullStateLabel(value)"))
         assertTrue(overlay.contains("STATUS_TEXT_WIDTH = 100"))
         assertTrue(overlay.contains("DESIGN_WIDTH = 300f"))
-        assertTrue(overlay.contains("textSize = 16f"))
-        assertTrue(overlay.contains("android.graphics.Typeface.create(\"sans-serif\", android.graphics.Typeface.NORMAL)"))
         listOf("Locale", "language ==", "locale ==", "\"ta\"", "\"gu\"").forEach {
             assertFalse("locale branch found: $it", overlay.contains(it))
         }
         localeResourceFiles.filter { it.name != "strings.xml" }.forEach { file ->
             assertFalse("locale-specific geometry resource: $file", file.readText().contains("dimen"))
         }
+    }
+
+    @Test fun miniMeasurementTypographyAssumptionsRemainCoupledToProduction() {
+        assertTrue(overlay.contains("textSize = 16f"))
+        assertTrue(overlay.contains("android.graphics.Typeface.create(\"sans-serif\", android.graphics.Typeface.NORMAL)"))
     }
 
     private fun strings(file: File) = resources(file, "string")

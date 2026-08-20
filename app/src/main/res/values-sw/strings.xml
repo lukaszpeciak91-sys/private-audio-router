@@ -8,7 +8,7 @@
     <string name="product_subtitle">Zungumza na AI kwa faragha, kama kwenye simu.</string>
     <string name="state_ready">Tayari</string>
     <string name="state_waiting">Inasubiri</string>
-    <string name="state_active">Imewashwa</string>
+    <string name="state_active">Inatumika</string>
     <string name="state_error">Hitilafu</string>
     <string name="power_control">Washa</string>
     <string name="floating">Mini</string>
@@ -18,7 +18,7 @@
     <string name="settings_language">Lugha</string>
     <string name="settings_system_default">Chaguomsingi</string>
     <string name="settings_save_diagnostic">Hifadhi ripoti ya uchunguzi</string>
-    <string name="settings_advanced">Kina</string>
+    <string name="settings_advanced">Mipangilio ya kina</string>
     <string name="settings_about">Kuhusu Private Audio</string>
     <string name="settings_version">Toleo %1$s</string>
     <string name="settings_language_body">Kwa sasa Private Audio inafuata lugha ya kifaa chako. Chaguomsingi limechaguliwa.</string>

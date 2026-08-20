@@ -2,7 +2,7 @@
 <resources>
     <string name="app_name">Private Audio</string>
     <string name="routing_notification_channel">Private Audio</string>
-    <string name="routing_notification_title">Private Audio este activ</string>
+    <string name="routing_notification_title">Private Audio este activat</string>
     <string name="routing_notification_text">Se așteaptă redirecționarea sunetului</string>
     <string name="product_title">Private Audio</string>
     <string name="product_subtitle">Vorbește în privat cu AI, ca într-un apel telefonic.</string>
