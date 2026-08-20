@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Private Audio</string>
+    <string name="routing_notification_channel">Private Audio</string>
+    <string name="routing_notification_title">I-Private Audio ivuliwe</string>
+    <string name="routing_notification_text">Iyalinda ukushintsha okukhiphayo komsindo</string>
+    <string name="product_title">Private Audio</string>
+    <string name="product_subtitle">Khuluma ne-AI ngasese, njengokungathi usocingweni.</string>
+    <string name="state_ready">Ilungile</string>
+    <string name="state_waiting">Iyalinda</string>
+    <string name="state_active">Iyasebenza</string>
+    <string name="state_error">Iphutha</string>
+    <string name="power_control">Vula/Cisha</string>
+    <string name="floating">Mini</string>
+    <string name="settings">Izilungiselelo</string>
+    <string name="close">Vala</string>
+    <string name="overlay_controller_description">Isilawuli esintantayo se-Private Audio. Isimo: %1$s. Izilawuli zokuvula/ukucisha, ukunweba nokuvala.</string>
+    <string name="settings_language">Ulimi</string>
+    <string name="settings_system_default">Okuzenzakalelayo</string>
+    <string name="settings_save_diagnostic">Londoloza umbiko wokuxilonga</string>
+    <string name="settings_advanced">Izilungiselelo ezithuthukisiwe</string>
+    <string name="settings_about">Mayelana ne-Private Audio</string>
+    <string name="settings_version">Inguqulo %1$s</string>
+    <string name="settings_language_body">I-Private Audio okwamanje ilandela ulimi lwedivayisi yakho. Kukhethwe Okuzenzakalelayo.</string>
+    <string name="settings_language_android_13_required">Ukukhetha ulimi ngaphakathi kwe-app kudinga i-Android 13 noma inguqulo entsha. Le divayisi ilandela ulimi lwesistimu.</string>
+    <string name="settings_proximity_screen">Cisha isikrini uma ifoni iseduze nendlebe yakho</string>
+    <string name="settings_advanced_body">Ezinye izinketho zizovela lapha njengoba i-Private Audio ithuthuka.</string>
+    <string name="settings_about_body">I-Private Audio isiza ukudlulisela umsindo wezwi osekelwayo esipikheni sendlebe sefoni yakho.</string>
+    <string name="diagnostic_report_saved">Umbiko wokuxilonga ulondoloziwe.</string>
+    <string name="diagnostic_report_save_failed">Umbiko wokuxilonga awukwazanga ukulondolozwa.</string>
+</resources>

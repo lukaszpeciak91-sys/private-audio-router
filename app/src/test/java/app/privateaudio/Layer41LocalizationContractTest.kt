@@ -1033,6 +1033,44 @@ class Layer41LocalizationContractTest {
     }
 
     @Test
+    fun zuluKeepsOneNeutralQualifierAndFrozenLtrSemantics() {
+        val locale = Locale.forLanguageTag("zu")
+        assertEquals("zu", locale.toLanguageTag())
+        assertEquals("isiZulu", nativeLocaleName("zu"))
+        val defaultIdentity = Locale.forLanguageTag("zu-Latn-ZA")
+        assertEquals("zu", defaultIdentity.language)
+        assertEquals("Latn", defaultIdentity.script)
+        assertEquals("ZA", defaultIdentity.country)
+        assertTrue(projectFile("app/src/main/res/values-zu/strings.xml").isFile)
+        listOf("values-zu-rZA", "values-b+zu+Latn", "values-b+zu+Latn+ZA").forEach {
+            assertFalse(projectFile("app/src/main/res/$it").exists())
+        }
+        assertTrue(zuluStrings.filterNot { it.isWhitespace() }.all { it.code < 0x0250 })
+        assertTrue(zuluStrings.contains("name=\"routing_notification_title\">I-Private Audio ivuliwe</string>"))
+        assertTrue(zuluStrings.contains("name=\"state_active\">Iyasebenza</string>"))
+        assertFalse(zuluStrings.contains("name=\"state_active\">ivuliwe</string>"))
+        assertEquals(
+            mapOf("state_ready" to "Ilungile", "state_waiting" to "Iyalinda", "state_active" to "Iyasebenza", "state_error" to "Iphutha"),
+            frozenStates(zuluStrings),
+        )
+        assertTrue(zuluStrings.contains("name=\"routing_notification_text\">Iyalinda ukushintsha okukhiphayo komsindo</string>"))
+        assertFalse(zuluStrings.contains("Iyalinda ukushintsha lapho umsindo uphuma khona"))
+        assertTrue(zuluStrings.contains("Khuluma ne-AI"))
+        assertTrue(zuluStrings.contains("name=\"floating\">Mini</string>"))
+        assertFalse(zuluStrings.contains("name=\"floating\">imini</string>"))
+        assertTrue(zuluStrings.contains("name=\"settings_system_default\">Okuzenzakalelayo</string>"))
+        assertTrue(zuluStrings.contains("name=\"settings_advanced\">Izilungiselelo ezithuthukisiwe</string>"))
+        assertTrue(zuluStrings.contains("ulimi lwedivayisi yakho"))
+        assertTrue(zuluStrings.contains("Le divayisi ilandela ulimi lwesistimu."))
+        assertTrue(zuluStrings.contains("Cisha isikrini uma ifoni iseduze nendlebe yakho"))
+        assertTrue(zuluStrings.contains("isipikha sendlebe"))
+        assertTrue(zuluStrings.contains("esipikheni sendlebe sefoni yakho"))
+        assertFalse(zuluStrings.contains("name=\"settings_about_body\">I-Private Audio isiza ukudlulisela umsindo wezwi osekelwayo esipikheni sefoni yakho.</string>"))
+        assertTrue(zuluStrings.contains("ukuvula/ukucisha, ukunweba nokuvala"))
+        assertFalse(projectFile("app/src/main/res/values-zu/mini_state_strings.xml").exists())
+    }
+
+    @Test
     fun languageSelectionUsesPlatformConfigurationWithoutAParallelLocaleRegistry() {
         assertTrue(languagePreferencesSource.contains("LocaleConfig(context).supportedLocales"))
         assertTrue(languagePreferencesSource.contains("getSystemService(LocaleManager::class.java)"))
@@ -1168,6 +1206,7 @@ class Layer41LocalizationContractTest {
         val shahmukhiPunjabiStrings = projectFile("app/src/main/res/values-b+pa+Arab+PK/strings.xml").readText()
         val pashtoStrings = projectFile("app/src/main/res/values-ps/strings.xml").readText()
         val hausaStrings = projectFile("app/src/main/res/values-ha/strings.xml").readText()
+        val zuluStrings = projectFile("app/src/main/res/values-zu/strings.xml").readText()
         val mainSource = projectFile("app/src/main/java/app/privateaudio/MainActivity.kt").readText()
         val productScreenSource = projectFile("app/src/main/java/app/privateaudio/ui/PrivateAudioScreen.kt").readText()
         val settingsSource = projectFile("app/src/main/java/app/privateaudio/ui/SettingsSheet.kt").readText()
