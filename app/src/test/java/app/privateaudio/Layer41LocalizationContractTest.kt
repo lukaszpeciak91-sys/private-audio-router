@@ -1505,6 +1505,37 @@ class Layer41LocalizationContractTest {
     }
 
     @Test
+    fun catalanKeepsOneLatinQualifierAndFrozenLtrSemantics() {
+        val locale = Locale.forLanguageTag("ca")
+        val defaultIdentity = Locale.forLanguageTag("ca-Latn-ES")
+        assertEquals("ca", locale.toLanguageTag())
+        assertEquals("Latn", defaultIdentity.script)
+        assertEquals("ES", defaultIdentity.country)
+        assertEquals("Català", nativeLocaleName("ca"))
+        assertTrue(projectFile("app/src/main/res/values-ca/strings.xml").isFile)
+        listOf("values-ca-rES", "values-b+ca+Latn", "values-b+ca+Latn+ES", "values-ca-rAD", "values-b+ca+Latn+AD", "values-b+ca+ES+valencia").forEach {
+            assertFalse(projectFile("app/src/main/res/$it").exists())
+        }
+        assertTrue(catalanStrings.contains("name=\"routing_notification_title\">Private Audio està activat</string>"))
+        assertTrue(catalanStrings.contains("name=\"state_active\">Actiu</string>"))
+        assertFalse(catalanStrings.contains("name=\"state_active\">Activat</string>"))
+        assertEquals(
+            mapOf("state_ready" to "A punt", "state_waiting" to "En espera", "state_active" to "Actiu", "state_error" to "Error"),
+            frozenStates(catalanStrings),
+        )
+        assertTrue(catalanStrings.contains("Parla amb la IA en privat"))
+        assertTrue(catalanStrings.contains("name=\"floating\">Mini</string>"))
+        assertTrue(catalanStrings.contains("name=\"settings_system_default\">Predeterminat</string>"))
+        assertTrue(catalanStrings.contains("name=\"settings_advanced\">Configuració avançada</string>"))
+        assertTrue(catalanStrings.contains("sortida d\\'àudio"))
+        assertTrue(catalanStrings.contains("auricular integrat del telèfon"))
+        assertEquals(3, catalanStrings.occurrences("informe de diagnòstic"))
+        assertTrue(catalanStrings.contains("Botons per activar o desactivar Private Audio, ampliar el control i tancar-lo"))
+        assertFalse(catalanStrings.contains("settings_fake_phone_pre_arm"))
+        assertFalse(projectFile("app/src/main/res/values-ca/mini_state_strings.xml").exists())
+    }
+
+    @Test
     fun languageSelectionUsesPlatformConfigurationWithoutAParallelLocaleRegistry() {
         assertTrue(languagePreferencesSource.contains("LocaleConfig(context).supportedLocales"))
         assertTrue(languagePreferencesSource.contains("getSystemService(LocaleManager::class.java)"))
@@ -1652,6 +1683,7 @@ class Layer41LocalizationContractTest {
         val uzbekStrings = projectFile("app/src/main/res/values-uz/strings.xml").readText()
         val khmerStrings = projectFile("app/src/main/res/values-km/strings.xml").readText()
         val assameseStrings = projectFile("app/src/main/res/values-as/strings.xml").readText()
+        val catalanStrings = projectFile("app/src/main/res/values-ca/strings.xml").readText()
         val kazakhStrings = projectFile("app/src/main/res/values-kk/strings.xml").readText()
         val northernAzerbaijaniStrings = projectFile("app/src/main/res/values-az/strings.xml").readText()
         val iranianAzerbaijaniStrings = projectFile("app/src/main/res/values-b+az+Arab+IR/strings.xml").readText()
