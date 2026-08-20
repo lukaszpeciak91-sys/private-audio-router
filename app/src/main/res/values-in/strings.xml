@@ -2,7 +2,7 @@
 <resources>
     <string name="app_name">Private Audio</string>
     <string name="routing_notification_channel">Private Audio</string>
-    <string name="routing_notification_title">Private Audio aktif</string>
+    <string name="routing_notification_title">Private Audio diaktifkan</string>
     <string name="routing_notification_text">Menunggu pengalihan audio</string>
     <string name="product_title">Private Audio</string>
     <string name="product_subtitle">Bicara dengan AI secara pribadi, seperti saat menelepon.</string>

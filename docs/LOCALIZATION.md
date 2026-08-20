@@ -57,6 +57,14 @@ Preserve locale-specific Unicode and orthographic distinctions, including Persia
 
 Create separate regional or script variants only when meaningful vocabulary, grammar, script, or UI-convention differences justify them. Current examples are Brazilian and European Portuguese (`pt-BR`, `pt-PT`) and Simplified and Traditional Chinese (`zh-Hans`, `zh-Hant`). Treat each as an independent product localization: do not create a variant merely because a country exists, and do not mechanically convert one variant into another.
 
+### Android legacy ISO language aliases
+
+A product locale's modern BCP-47 logical language tag and its Android resource qualifier are related but are not always textually identical. Before adding or renaming a locale, inspect Android resource matching across the project's current `minSdk` through `targetSdk` and current Android runtime range. Current compatibility-sensitive mappings are Indonesian `id` → `values-in`, Hebrew `he` → `values-iw`, and Yiddish `yi` → `values-ji`.
+
+Use modern identities (`id`, `he`, and `yi`) in product and application logic, but use the legacy Android-compatible qualifier where the supported runtime range requires it. Do not maintain parallel legacy and modern resource trees without platform evidence that both are required; duplicates create parity and maintenance risks. `generateLocaleConfig = true`, valid XML, key parity, and successful `Locale.forLanguageTag()` canonicalization do not prove that Android will resolve a resource.
+
+For a compatibility-sensitive locale, persistent contracts must independently protect its logical identity, exact resource qualifier, generated discovery where applicable, absence of the unsafe parallel modern directory, and ideally real Android resource resolution from the modern logical tag. A `minSdk`, `targetSdk`, Android Gradle Plugin, or other tooling change does not authorize renaming a legacy directory by itself; first re-evaluate resource behavior across the complete supported runtime range.
+
 ## Product surfaces and compact copy
 
 Do not apply one wording decision mechanically to every surface:
@@ -117,7 +125,7 @@ Preserve numbered format placeholders and their types across every translation. 
 1. Review the language's product terminology.
 2. Identify uncertain terms and perform a targeted mini-review of them.
 3. Freeze the approved copy.
-4. Add the standard Android resource locale with the correct qualifier.
+4. Establish the modern BCP-47 identity, research Android legacy-alias behavior across the supported runtime range, and add the Android resource locale with the proven compatible qualifier.
 5. Enforce key and placeholder parity.
 6. Add locale-specific assertions to the existing localization contract for FULL/MINI-reviewed or otherwise frozen high-risk terminology, including meaningful reviewed Mini states.
 7. Perform linguistic and consistency sanity checks.
@@ -178,6 +186,7 @@ When a locale is added, update the existing authoritative localization/progress 
 - [ ] Uncertain terminology reviewed?
 - [ ] Native script and orthography used?
 - [ ] Locale resource qualifier correct?
+- [ ] Logical tag/resource qualifier compatibility researched across the full supported Android range, with alias-resolution coverage where sensitive?
 - [ ] Selector discovery verified?
 - [ ] Full string parity checked?
 - [ ] Durable semantic contract coverage confirmed for frozen terminology?

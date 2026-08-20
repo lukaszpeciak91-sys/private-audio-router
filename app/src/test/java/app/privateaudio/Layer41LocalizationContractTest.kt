@@ -183,7 +183,7 @@ class Layer41LocalizationContractTest {
         assertTrue(vietnameseStrings.contains("name=\"settings\">Cài đặt</string>"))
         assertTrue(vietnameseStrings.contains("name=\"settings_system_default\">Mặc định</string>"))
         assertTrue(vietnameseStrings.contains("name=\"settings_about_body\">Private Audio giúp chuyển âm thanh sang loa trong của điện thoại.</string>"))
-        assertEquals("Bahasa Indonesia", nativeLocaleName("id"))
+        assertEquals("Indonesia", nativeLocaleLanguage("id"))
         assertTrue(indonesianStrings.contains("name=\"routing_notification_text\">Menunggu pengalihan audio</string>"))
         assertTrue(indonesianStrings.contains("name=\"state_ready\">Siap</string>"))
         assertTrue(indonesianStrings.contains("name=\"state_waiting\">Menunggu</string>"))
@@ -789,6 +789,43 @@ class Layer41LocalizationContractTest {
     }
 
     @Test
+    fun indonesianFrozenLocalizationSemanticsRemainIntact() {
+        val logicalLocale = Locale.forLanguageTag("id")
+        val legacyQualifierLocale = Locale.forLanguageTag("in")
+        assertEquals("id", logicalLocale.language)
+        assertEquals("id", logicalLocale.toLanguageTag())
+        assertEquals(logicalLocale, legacyQualifierLocale)
+        assertEquals("id", legacyQualifierLocale.toLanguageTag())
+        assertEquals("Indonesia", nativeLocaleLanguage("id"))
+        assertTrue(indonesianStrings.contains("name=\"app_name\">Private Audio</string>"))
+        assertTrue(indonesianStrings.contains("name=\"floating\">Mini</string>"))
+        assertTrue(indonesianStrings.contains("Bicara dengan AI secara pribadi"))
+        assertTrue(indonesianStrings.contains("name=\"routing_notification_title\">Private Audio diaktifkan</string>"))
+        assertTrue(indonesianStrings.contains("name=\"state_active\">Aktif</string>"))
+        assertFalse(indonesianStrings.contains("name=\"routing_notification_title\">Private Audio aktif</string>"))
+        assertTrue(indonesianStrings.contains("name=\"routing_notification_text\">Menunggu pengalihan audio</string>"))
+        assertTrue(indonesianStrings.contains("name=\"settings_system_default\">Default</string>"))
+        assertTrue(indonesianStrings.contains("name=\"settings_language_body\"") && indonesianStrings.contains("bahasa perangkat Anda"))
+        assertTrue(indonesianStrings.contains("name=\"settings_language_android_13_required\"") && indonesianStrings.contains("bahasa sistem"))
+        assertTrue(indonesianStrings.contains("name=\"settings_proximity_screen\">Matikan layar saat dekat telinga</string>"))
+        assertTrue(indonesianStrings.contains("earpiece bawaan ponsel"))
+        assertTrue(indonesianStrings.contains("mengaktifkan, memperluas, dan menutup"))
+        assertTrue(indonesianStrings.contains("name=\"state_ready\">Siap</string>"))
+        assertTrue(indonesianStrings.contains("name=\"state_waiting\">Menunggu</string>"))
+        assertTrue(indonesianStrings.contains("name=\"state_error\">Error</string>"))
+    }
+
+    @Test
+    fun modernLogicalLocalesKeepLegacyAndroidResourceQualifiers() {
+        mapOf("id" to "in", "he" to "iw", "yi" to "ji").forEach { (modernTag, legacyQualifier) ->
+            assertEquals(modernTag, Locale.forLanguageTag(modernTag).toLanguageTag())
+            assertEquals(Locale.forLanguageTag(modernTag), Locale.forLanguageTag(legacyQualifier))
+            assertTrue(projectFile("app/src/main/res/values-$legacyQualifier/strings.xml").isFile)
+            assertFalse(projectFile("app/src/main/res/values-$modernTag/strings.xml").exists())
+        }
+    }
+
+    @Test
     fun yiddishFrozenLocalizationSemanticsRemainIntact() {
         val logicalLocale = Locale.forLanguageTag("yi")
         val legacyQualifierLocale = Locale.forLanguageTag("ji")
@@ -882,6 +919,13 @@ class Layer41LocalizationContractTest {
         }
     }
 
+    private fun nativeLocaleLanguage(languageTag: String): String {
+        val locale = Locale.forLanguageTag(languageTag)
+        return locale.getDisplayLanguage(locale).replaceFirstChar { first ->
+            if (first.isLowerCase()) first.titlecase(locale) else first.toString()
+        }
+    }
+
     private companion object {
         val projectRoot = generateSequence(File(System.getProperty("user.dir")).absoluteFile) { it.parentFile }
             .first { File(it, "app/src/main").isDirectory }
@@ -914,7 +958,7 @@ class Layer41LocalizationContractTest {
         val traditionalChineseStrings = projectFile("app/src/main/res/values-b+zh+Hant/strings.xml").readText()
         val hindiStrings = projectFile("app/src/main/res/values-hi/strings.xml").readText()
         val arabicStrings = projectFile("app/src/main/res/values-ar/strings.xml").readText()
-        val indonesianStrings = projectFile("app/src/main/res/values-id/strings.xml").readText()
+        val indonesianStrings = projectFile("app/src/main/res/values-in/strings.xml").readText()
         val urduStrings = projectFile("app/src/main/res/values-ur/strings.xml").readText()
         val persianStrings = projectFile("app/src/main/res/values-fa/strings.xml").readText()
         val vietnameseStrings = projectFile("app/src/main/res/values-vi/strings.xml").readText()
