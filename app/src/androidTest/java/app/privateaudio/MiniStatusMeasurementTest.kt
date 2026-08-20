@@ -82,7 +82,7 @@ class MiniStatusMeasurementTest {
         val paint = TextPaint(Paint.ANTI_ALIAS_FLAG).apply {
             typeface = Typeface.create("sans-serif", Typeface.NORMAL)
         }
-        listOf("en", "ta", "gu", "ml", "pa-Guru-IN", "pa-Arab-PK", "ps", "ha", "am", "zu", "so", "ne", "ne-NP", "ne-Deva-NP", "or", "my", "my-MM", "my-Mymr-MM", "uz", "uz-UZ", "uz-Latn-UZ", "km", "km-KH", "km-Khmr-KH", "as", "as-IN", "as-Beng-IN").forEach { languageTag ->
+        listOf("en", "ta", "gu", "ml", "pa-Guru-IN", "pa-Arab-PK", "ps", "ha", "am", "zu", "so", "ne", "ne-NP", "ne-Deva-NP", "or", "my", "my-MM", "my-Mymr-MM", "uz", "uz-UZ", "uz-Latn-UZ", "km", "km-KH", "km-Khmr-KH", "as", "as-IN", "as-Beng-IN", "kk", "kk-KZ", "kk-Cyrl-KZ").forEach { languageTag ->
             val localized = base.createConfigurationContext(Configuration(base.resources.configuration).apply {
                 setLocales(LocaleList(Locale.forLanguageTag(languageTag)))
             })
@@ -400,6 +400,32 @@ class MiniStatusMeasurementTest {
         }
         println("Odia Mini production-equivalent common size: $selected")
         assertTrue(selected in listOf(16f, 15f, 14f))
+    }
+
+    @Test fun kazakhResolvesItsFullLtrParadigmAndUsesOneMeasuredProductionSize() {
+        val base = InstrumentationRegistry.getInstrumentation().targetContext
+        listOf("kk", "kk-KZ", "kk-Cyrl-KZ").forEach { languageTag ->
+            val localized = base.createConfigurationContext(Configuration(base.resources.configuration).apply {
+                setLocales(LocaleList(Locale.forLanguageTag(languageTag)))
+            })
+            assertEquals(View.LAYOUT_DIRECTION_LTR, localized.resources.configuration.layoutDirection)
+            val labels = listOf(
+                localized.getString(R.string.state_ready_mini),
+                localized.getString(R.string.state_waiting_mini),
+                localized.getString(R.string.state_active_mini),
+                localized.getString(R.string.state_error_mini),
+            )
+            assertEquals(listOf("Дайын", "Күтуде", "Белсенді", "Қате"), labels)
+            val paint = TextPaint(Paint.ANTI_ALIAS_FLAG).apply {
+                typeface = Typeface.create("sans-serif", Typeface.NORMAL)
+            }
+            val selected = selectMiniStatusTextSize(labels) { label, textSize ->
+                paint.textSize = textSize
+                paint.measureText(label)
+            }
+            println("$languageTag Kazakh Mini production-equivalent common size: $selected")
+            assertTrue(selected in listOf(16f, 15f, 14f))
+        }
     }
 
 }

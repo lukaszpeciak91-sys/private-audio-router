@@ -850,6 +850,38 @@ class Layer41LocalizationContractTest {
     }
 
     @Test
+    fun kazakhKeepsOneCyrillicQualifierAndFrozenLtrSemantics() {
+        val locale = Locale.forLanguageTag("kk")
+        val defaultIdentity = Locale.forLanguageTag("kk-Cyrl-KZ")
+        assertEquals("kk", locale.toLanguageTag())
+        assertEquals("kk", locale.language)
+        assertEquals("Cyrl", defaultIdentity.script)
+        assertEquals("KZ", defaultIdentity.country)
+        assertEquals("Қазақ тілі", nativeLocaleName("kk"))
+        assertTrue(projectFile("app/src/main/res/values-kk/strings.xml").isFile)
+        listOf("values-kk-rKZ", "values-b+kk+Cyrl", "values-b+kk+Cyrl+KZ", "values-b+kk+Latn")
+            .forEach { assertFalse(projectFile("app/src/main/res/$it").exists()) }
+        assertTrue(kazakhStrings.any { it in '\u0400'..'\u04FF' })
+        assertTrue(kazakhStrings.contains("name=\"routing_notification_title\">Private Audio қосулы</string>"))
+        assertTrue(kazakhStrings.contains("name=\"state_active\">Белсенді</string>"))
+        assertFalse(kazakhStrings.contains("name=\"state_active\">Қосулы</string>"))
+        assertEquals(
+            mapOf("state_ready" to "Дайын", "state_waiting" to "Күтуде", "state_active" to "Белсенді", "state_error" to "Қате"),
+            frozenStates(kazakhStrings),
+        )
+        assertTrue(kazakhStrings.contains("name=\"product_subtitle\">ЖИ-мен телефон қоңырауындағыдай жеке сөйлесіңіз.</string>"))
+        assertTrue(kazakhStrings.contains("name=\"floating\">Мини</string>"))
+        assertTrue(kazakhStrings.contains("name=\"settings_system_default\">Әдепкі</string>"))
+        assertTrue(kazakhStrings.contains("name=\"settings_advanced\">Қосымша</string>"))
+        assertTrue(kazakhStrings.contains("name=\"routing_notification_text\">Аудио шығысын ауыстыруды күтуде</string>"))
+        assertTrue(kazakhStrings.contains("кірістірілген құлақ динамигіне"))
+        assertTrue(kazakhStrings.contains("Диагностикалық есеп"))
+        assertTrue(kazakhStrings.contains("қосу немесе өшіру, басқару құралын кеңейту және жабу"))
+        assertFalse(kazakhStrings.contains("settings_fake_phone_pre_arm"))
+        assertFalse(projectFile("app/src/main/res/values-kk/mini_state_strings.xml").exists())
+    }
+
+    @Test
     fun nepaliKeepsOneNeutralQualifierAndFrozenLtrSemantics() {
         val locale = Locale.forLanguageTag("ne")
         val defaultIdentity = Locale.forLanguageTag("ne-Deva-NP")
@@ -1452,6 +1484,7 @@ class Layer41LocalizationContractTest {
         val uzbekStrings = projectFile("app/src/main/res/values-uz/strings.xml").readText()
         val khmerStrings = projectFile("app/src/main/res/values-km/strings.xml").readText()
         val assameseStrings = projectFile("app/src/main/res/values-as/strings.xml").readText()
+        val kazakhStrings = projectFile("app/src/main/res/values-kk/strings.xml").readText()
         val mainSource = projectFile("app/src/main/java/app/privateaudio/MainActivity.kt").readText()
         val productScreenSource = projectFile("app/src/main/java/app/privateaudio/ui/PrivateAudioScreen.kt").readText()
         val settingsSource = projectFile("app/src/main/java/app/privateaudio/ui/SettingsSheet.kt").readText()
