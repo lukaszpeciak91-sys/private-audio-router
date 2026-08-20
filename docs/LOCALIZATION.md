@@ -47,6 +47,8 @@ Each locale owns its terminology. Do not normalize international technology term
 
 `Mini` is a product concept, not an untranslated brand token. Preserve the compact or minimized-controller meaning. Latin `Mini` may remain where it is normal and naturally understood; a natural local-script form or transliteration such as `ミニ`, `미니`, or `Мини`, or an established local equivalent such as Chinese `迷你`, is equally valid. Do not force Latin script for visual consistency, and do not replace a familiar concise form with a longer, purist, artificial, or less familiar alternative merely to localize it. Any choice must remain natural and suitable for the constrained Mini surface; script differences alone are not inconsistency.
 
+A transliterated loanword must be checked for lexical collisions in the target language before it is frozen. Phonetic similarity to the source is insufficient when the written target form has an unrelated, inappropriate, misleading, or embarrassing native meaning.
+
 ### Earpiece and routing distinctions
 
 Private Audio distinguishes the built-in call earpiece or receiver from the loudspeaker/speakerphone, headphones, and Bluetooth audio. Every locale must use terminology that preserves this distinction. Do not accept a generic translation of “speaker” when it makes the intended physical output ambiguous.

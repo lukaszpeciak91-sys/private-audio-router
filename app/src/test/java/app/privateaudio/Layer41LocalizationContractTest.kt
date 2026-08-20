@@ -172,6 +172,11 @@ class Layer41LocalizationContractTest {
         assertTrue(urduStrings.contains("name=\"state_waiting\">انتظار میں</string>"))
         assertTrue(urduStrings.contains("name=\"state_active\">فعال</string>"))
         assertTrue(urduStrings.contains("name=\"state_error\">خرابی</string>"))
+        assertTrue(urduStrings.contains("name=\"floating\">کمپیکٹ</string>"))
+        assertTrue(urduStrings.contains("name=\"overlay_controller_description\">Private Audio کا فلوٹنگ کمپیکٹ کنٹرولر۔ اسٹیٹس: %1\$s۔ چالو کرنے، پھیلانے اور بند کرنے کے کنٹرولز۔</string>"))
+        val urduMiniControllerFields = listOf("floating", "overlay_controller_description")
+            .map { key -> Regex("name=\\\"$key\\\">([^<]*)</string>").find(urduStrings)?.groupValues?.get(1).orEmpty() }
+        assertTrue(urduMiniControllerFields.none { it.contains("منی") })
         assertEquals("فارسی", nativeLocaleName("fa"))
         assertTrue(persianStrings.contains("name=\"routing_notification_text\">در انتظار هدایت صدا</string>"))
         assertTrue(persianStrings.contains("name=\"product_subtitle\">مثل تماس تلفنی، خصوصی با هوش مصنوعی صحبت کنید.</string>"))
