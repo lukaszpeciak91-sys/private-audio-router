@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Private Audio</string>
+    <string name="routing_notification_channel">Private Audio</string>
+    <string name="routing_notification_title">Private Audio está activado</string>
+    <string name="routing_notification_text">Á espera de cambiar a saída de audio</string>
+    <string name="product_title">Private Audio</string>
+    <string name="product_subtitle">Fala coa IA en privado, coma se fose unha chamada telefónica.</string>
+    <string name="state_ready">Preparado</string>
+    <string name="state_waiting">En espera</string>
+    <string name="state_active">Activo</string>
+    <string name="state_error">Erro</string>
+    <string name="power_control">Activar/desactivar</string>
+    <string name="floating">Mini</string>
+    <string name="settings">Configuración</string>
+    <string name="close">Pechar</string>
+    <string name="overlay_controller_description">Control flotante de Private Audio. Estado: %1$s. Botóns para activar ou desactivar Private Audio, ampliar o control e pechalo.</string>
+    <string name="settings_language">Idioma</string>
+    <string name="settings_system_default">Predeterminado</string>
+    <string name="settings_save_diagnostic">Gardar o informe de diagnóstico</string>
+    <string name="settings_advanced">Configuración avanzada</string>
+    <string name="settings_about">Acerca de Private Audio</string>
+    <string name="settings_version">Versión %1$s</string>
+    <string name="settings_language_body">Private Audio usa actualmente o idioma do dispositivo. Está seleccionado «Predeterminado».</string>
+    <string name="settings_language_android_13_required">A selección de idioma na aplicación require Android 13 ou unha versión posterior. Este dispositivo usa o idioma do sistema.</string>
+    <string name="settings_proximity_screen">Apaga a pantalla cando achegues o teléfono á orella</string>
+    <string name="settings_advanced_body">Aquí aparecerán opcións adicionais a medida que Private Audio evolucione.</string>
+    <string name="settings_about_body">Private Audio axuda a reproducir o audio de voz compatible polo auricular integrado do teléfono.</string>
+    <string name="diagnostic_report_saved">Gardouse o informe de diagnóstico.</string>
+    <string name="diagnostic_report_save_failed">Non se puido gardar o informe de diagnóstico.</string>
+</resources>
