@@ -26,6 +26,16 @@ class MiniStatusMeasurementTest {
             setLocales(LocaleList(Locale.forLanguageTag("ta")))
         })
         assertEquals("காத்திருப்பு", tamil.getString(R.string.state_waiting_mini))
+
+        val gurmukhiPunjabi = base.createConfigurationContext(Configuration(base.resources.configuration).apply {
+            setLocales(LocaleList(Locale.forLanguageTag("pa-Guru-IN")))
+        })
+        assertEquals("ਉਡੀਕ", gurmukhiPunjabi.getString(R.string.state_waiting_mini))
+
+        val shahmukhiPunjabi = base.createConfigurationContext(Configuration(base.resources.configuration).apply {
+            setLocales(LocaleList(Locale.forLanguageTag("pa-Arab-PK")))
+        })
+        assertEquals("اُڈیک", shahmukhiPunjabi.getString(R.string.state_waiting_mini))
     }
 
     @Test fun approvedTamilWaitingHasNonEllipsisMarginInSharedSlot() {
