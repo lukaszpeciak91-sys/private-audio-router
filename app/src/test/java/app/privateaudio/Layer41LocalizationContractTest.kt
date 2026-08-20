@@ -778,6 +778,28 @@ class Layer41LocalizationContractTest {
     }
 
     @Test
+    fun malayalamFrozenLocalizationSemanticsRemainIntact() {
+        val locale = Locale.forLanguageTag("ml")
+        assertEquals("ml", locale.toLanguageTag())
+        assertEquals("ml", locale.language)
+        assertEquals("മലയാളം", nativeLocaleName("ml"))
+        assertTrue(projectFile("app/src/main/res/values-ml/strings.xml").isFile)
+        assertFalse(projectFile("app/src/main/res/values-b+ml/strings.xml").exists())
+        assertTrue(malayalamStrings.any { it in '\u0D00'..'\u0D7F' })
+        assertTrue(malayalamStrings.contains("name=\"product_subtitle\">ഒരു ഫോൺ കോൾ പോലെ AI-യുമായി സ്വകാര്യമായി സംസാരിക്കൂ.</string>"))
+        assertTrue(malayalamStrings.contains("name=\"routing_notification_title\">Private Audio ഓണാണ്</string>"))
+        assertTrue(malayalamStrings.contains("name=\"state_active\">സജീവം</string>"))
+        assertFalse(malayalamStrings.contains("name=\"state_active\">ഓണാണ്</string>"))
+        assertTrue(malayalamStrings.contains("name=\"floating\">മിനി</string>"))
+        assertTrue(malayalamStrings.contains("name=\"settings_advanced\">വിപുലമായ ക്രമീകരണം</string>"))
+        assertTrue(malayalamStrings.contains("ബിൽറ്റ്-ഇൻ ഇയർപീസ്"))
+        assertEquals(
+            mapOf("state_ready" to "തയ്യാറാണ്", "state_waiting" to "കാത്തിരിക്കുന്നു", "state_active" to "സജീവം", "state_error" to "പിശക്"),
+            frozenStates(malayalamStrings),
+        )
+    }
+
+    @Test
     fun hebrewFrozenLocalizationSemanticsRemainIntact() {
         val logicalLocale = Locale.forLanguageTag("he")
         val legacyQualifierLocale = Locale.forLanguageTag("iw")
@@ -1046,6 +1068,7 @@ class Layer41LocalizationContractTest {
         val malteseStrings = projectFile("app/src/main/res/values-mt/strings.xml").readText()
         val greekStrings = projectFile("app/src/main/res/values-el/strings.xml").readText()
         val bengaliStrings = projectFile("app/src/main/res/values-bn/strings.xml").readText()
+        val malayalamStrings = projectFile("app/src/main/res/values-ml/strings.xml").readText()
         val hebrewStrings = projectFile("app/src/main/res/values-iw/strings.xml").readText()
         val yiddishStrings = projectFile("app/src/main/res/values-ji/strings.xml").readText()
         val gurmukhiPunjabiStrings = projectFile("app/src/main/res/values-b+pa+Guru+IN/strings.xml").readText()
