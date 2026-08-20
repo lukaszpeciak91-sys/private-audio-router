@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Private Audio</string>
+    <string name="routing_notification_channel">Private Audio</string>
+    <string name="routing_notification_title">Private Audio በርቷል</string>
+    <string name="routing_notification_text">የድምፅ ውጽዓትን ለመቀየር በመጠበቅ ላይ</string>
+    <string name="product_title">Private Audio</string>
+    <string name="product_subtitle">ከAI ጋር በግል ይነጋገሩ፣ ልክ እንደ ስልክ ጥሪ።</string>
+    <string name="state_ready">ዝግጁ</string>
+    <string name="state_waiting">በመጠበቅ ላይ</string>
+    <string name="state_active">ገባሪ</string>
+    <string name="state_error">ስህተት</string>
+    <string name="power_control">ኃይል</string>
+    <string name="floating">ሚኒ</string>
+    <string name="settings">ቅንብሮች</string>
+    <string name="close">ዝጋ</string>
+    <string name="overlay_controller_description">የPrivate Audio ሚኒ መቆጣጠሪያ። ሁኔታ፦ %1$s። የማብራት/ማጥፋት፣ የመዘርጋት እና የመዝጋት መቆጣጠሪያዎች።</string>
+    <string name="settings_language">ቋንቋ</string>
+    <string name="settings_system_default">ነባሪ</string>
+    <string name="settings_save_diagnostic">የምርመራ ሪፖርት አስቀምጥ</string>
+    <string name="settings_advanced">የላቁ ቅንብሮች</string>
+    <string name="settings_about">ስለ Private Audio</string>
+    <string name="settings_version">ሥሪት %1$s</string>
+    <string name="settings_language_body">Private Audio አሁን የመሣሪያዎን ቋንቋ ይከተላል። ነባሪ ተመርጧል።</string>
+    <string name="settings_language_android_13_required">በመተግበሪያ ውስጥ ቋንቋ ለመምረጥ Android 13 ወይም ከዚያ በኋላ ያለ ሥሪት ያስፈልጋል። ይህ መሣሪያ የስርዓት ቋንቋን ይከተላል።</string>
+    <string name="settings_proximity_screen">ስልኩ ወደ ጆሮዎ ሲቀርብ ማያ ገጹን ያጥፉ</string>
+    <string name="settings_advanced_body">Private Audio እየተሻሻለ ሲሄድ ተጨማሪ አማራጮች እዚህ ይታያሉ።</string>
+    <string name="settings_about_body">Private Audio የሚደገፍ የድምፅ ኦዲዮን ወደ የስልክዎ አብሮገነብ መስሚያ ለመቀየር ያግዛል።</string>
+    <string name="diagnostic_report_saved">የምርመራ ሪፖርቱ ተቀምጧል።</string>
+    <string name="diagnostic_report_save_failed">የምርመራ ሪፖርቱን ማስቀመጥ አልተቻለም።</string>
+</resources>
