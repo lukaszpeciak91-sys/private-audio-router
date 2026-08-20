@@ -82,6 +82,14 @@ class LegacyLocaleResourceResolutionTest {
                 localizedContext(context, tag).getString(R.string.overlay_controller_description, "Бэлэн"),
             )
         }
+        listOf("ka", "ka-GE", "ka-Geor-GE").forEach { tag ->
+            assertLocalizedSettings(context, modernTag = tag, expected = "პარამეტრები")
+            assertEquals(
+                "Private Audio-ს მცურავი მართვის პანელი. სტატუსი: მზადაა. ჩართვის/გამორთვის, გაშლისა და დახურვის მართვის ელემენტები.",
+                localizedContext(context, tag).getString(R.string.overlay_controller_description, "მზადაა"),
+            )
+            assertEquals("$tag layout direction", android.view.View.LAYOUT_DIRECTION_LTR, localizedContext(context, tag).resources.configuration.layoutDirection)
+        }
         listOf("az", "az-AZ", "az-Latn-AZ").forEach { tag ->
             assertLocalizedSettings(context, modernTag = tag, expected = "Ayarlar")
             assertEquals("Private Audio üzən idarəedicisi. Vəziyyət: Hazır. Yandırıb-söndürmək, genişləndirmək və bağlamaq üçün idarəetmələr.", localizedContext(context, tag).getString(R.string.overlay_controller_description, "Hazır"))
@@ -205,7 +213,7 @@ class LegacyLocaleResourceResolutionTest {
             val discoveredTags = LocaleConfig(context).supportedLocales
                 ?.let { locales -> (0 until locales.size()).map { locales[it].toLanguageTag() } }
                 .orEmpty()
-            assertTrue(discoveredTags.containsAll(listOf("id", "he", "yi", "ml", "pa-Guru-IN", "pa-Arab-PK", "ps", "ha", "am", "zu", "so", "ne", "hy", "or", "my", "uz", "km", "as", "kk", "mn", "az", "az-Arab-IR")))
+            assertTrue(discoveredTags.containsAll(listOf("id", "he", "yi", "ml", "pa-Guru-IN", "pa-Arab-PK", "ps", "ha", "am", "zu", "so", "ne", "hy", "or", "my", "uz", "km", "as", "kk", "mn", "ka", "az", "az-Arab-IR")))
         }
     }
 

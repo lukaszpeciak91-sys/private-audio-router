@@ -980,6 +980,35 @@ class Layer41LocalizationContractTest {
     }
 
     @Test
+    fun georgianKeepsOneNeutralQualifierAndFrozenLtrSemantics() {
+        val locale = Locale.forLanguageTag("ka")
+        val defaultIdentity = Locale.forLanguageTag("ka-Geor-GE")
+        assertEquals("ka", locale.toLanguageTag())
+        assertEquals("ka", locale.language)
+        assertEquals("Geor", defaultIdentity.script)
+        assertEquals("GE", defaultIdentity.country)
+        assertEquals("ქართული", nativeLocaleName("ka"))
+        assertTrue(projectFile("app/src/main/res/values-ka/strings.xml").isFile)
+        listOf("values-ka-rGE", "values-b+ka+Geor", "values-b+ka+Geor+GE").forEach {
+            assertFalse(projectFile("app/src/main/res/$it").exists())
+        }
+        assertTrue(georgianStrings.any { it in '\u10A0'..'\u10FF' })
+        assertTrue(georgianStrings.contains("name=\"routing_notification_title\">Private Audio ჩართულია</string>"))
+        assertTrue(georgianStrings.contains("name=\"state_active\">აქტიურია</string>"))
+        assertFalse(georgianStrings.contains("name=\"state_active\">ჩართულია</string>"))
+        assertEquals(
+            mapOf("state_ready" to "მზადაა", "state_waiting" to "მოლოდინშია", "state_active" to "აქტიურია", "state_error" to "შეცდომა"),
+            frozenStates(georgianStrings),
+        )
+        listOf("AI-სთან", ">მინი</string>", ">პარამეტრები</string>", ">ნაგულისხმევი</string>", ">დამატებითი</string>", "ტელეფონის ჩაშენებულ ყურმილზე", "გამომავალი აუდიო", "გამომავალი აუდიოს გადართვა", "დიაგნოსტიკის ანგარიში").forEach {
+            assertTrue(it, georgianStrings.contains(it))
+        }
+        assertTrue(georgianStrings.contains("ჩართვის/გამორთვის, გაშლისა და დახურვის მართვის ელემენტები"))
+        assertFalse(georgianStrings.contains("settings_fake_phone_pre_arm"))
+        assertFalse(projectFile("app/src/main/res/values-ka/mini_state_strings.xml").exists())
+    }
+
+    @Test
     fun azerbaijaniVariantsKeepDistinctQualifiersScriptsAndFrozenSemantics() {
         val northernIdentity = Locale.forLanguageTag("az-Latn-AZ")
         val iranianIdentity = Locale.forLanguageTag("az-Arab-IR")
@@ -1578,6 +1607,7 @@ class Layer41LocalizationContractTest {
         val nepaliStrings = projectFile("app/src/main/res/values-ne/strings.xml").readText()
         val armenianStrings = projectFile("app/src/main/res/values-hy/strings.xml").readText()
         val mongolianStrings = projectFile("app/src/main/res/values-mn/strings.xml").readText()
+        val georgianStrings = projectFile("app/src/main/res/values-ka/strings.xml").readText()
         val amharicStrings = projectFile("app/src/main/res/values-am/strings.xml").readText()
         val hebrewStrings = projectFile("app/src/main/res/values-iw/strings.xml").readText()
         val yiddishStrings = projectFile("app/src/main/res/values-ji/strings.xml").readText()

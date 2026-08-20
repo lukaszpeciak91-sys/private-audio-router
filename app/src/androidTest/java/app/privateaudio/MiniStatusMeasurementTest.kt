@@ -497,4 +497,30 @@ class MiniStatusMeasurementTest {
         }
     }
 
+    @Test fun georgianResolvesItsFullLtrParadigmAndUsesOneMeasuredProductionSize() {
+        val base = InstrumentationRegistry.getInstrumentation().targetContext
+        listOf("ka", "ka-GE", "ka-Geor-GE").forEach { languageTag ->
+            val localized = base.createConfigurationContext(Configuration(base.resources.configuration).apply {
+                setLocales(LocaleList(Locale.forLanguageTag(languageTag)))
+            })
+            assertEquals(View.LAYOUT_DIRECTION_LTR, localized.resources.configuration.layoutDirection)
+            val labels = listOf(
+                localized.getString(R.string.state_ready_mini),
+                localized.getString(R.string.state_waiting_mini),
+                localized.getString(R.string.state_active_mini),
+                localized.getString(R.string.state_error_mini),
+            )
+            assertEquals(listOf("მზადაა", "მოლოდინშია", "აქტიურია", "შეცდომა"), labels)
+            val paint = TextPaint(Paint.ANTI_ALIAS_FLAG).apply {
+                typeface = Typeface.create("sans-serif", Typeface.NORMAL)
+            }
+            val selected = selectMiniStatusTextSize(labels) { label, textSize ->
+                paint.textSize = textSize
+                paint.measureText(label)
+            }
+            println("$languageTag Georgian Mini production-equivalent common size: $selected")
+            assertTrue(selected in listOf(16f, 15f, 14f))
+        }
+    }
+
 }
