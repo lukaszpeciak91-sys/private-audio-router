@@ -800,6 +800,46 @@ class Layer41LocalizationContractTest {
     }
 
     @Test
+    fun somaliKeepsOneNeutralQualifierAndFrozenLtrSemantics() {
+        val locale = Locale.forLanguageTag("so")
+        val defaultIdentity = Locale.forLanguageTag("so-Latn-SO")
+        assertEquals("so", locale.toLanguageTag())
+        assertEquals("so", locale.language)
+        assertEquals("Latn", defaultIdentity.script)
+        assertEquals("SO", defaultIdentity.country)
+        assertEquals("Soomaali", nativeLocaleName("so"))
+        assertTrue(projectFile("app/src/main/res/values-so/strings.xml").isFile)
+        listOf(
+            "values-so-rSO",
+            "values-so-rDJ",
+            "values-so-rET",
+            "values-so-rKE",
+            "values-b+so+Latn",
+            "values-b+so+Latn+SO",
+        ).forEach { assertFalse(projectFile("app/src/main/res/$it").exists()) }
+        assertTrue(somaliStrings.filterNot(Char::isWhitespace).all { it.code < 0x0250 })
+        assertTrue(somaliStrings.contains("name=\"routing_notification_title\">Private Audio waa daaran yahay</string>"))
+        assertTrue(somaliStrings.contains("name=\"state_active\">Firfircoon</string>"))
+        assertFalse(somaliStrings.contains("name=\"state_active\">daaran</string>"))
+        assertEquals(
+            mapOf("state_ready" to "Diyaar", "state_waiting" to "Sugaya", "state_active" to "Firfircoon", "state_error" to "Khalad"),
+            frozenStates(somaliStrings),
+        )
+        assertTrue(somaliStrings.contains("name=\"routing_notification_text\">Sugaya in la beddelo halka codku ka soo baxayo</string>"))
+        assertTrue(somaliStrings.contains("name=\"product_subtitle\">AI si gaar ah ula hadal, sida adigoo taleefan ku hadlaya.</string>"))
+        assertTrue(somaliStrings.contains("name=\"floating\">Mini</string>"))
+        assertTrue(somaliStrings.contains("name=\"settings_system_default\">Caadi</string>"))
+        assertTrue(somaliStrings.contains("name=\"settings_advanced\">Dejinta horumarsan</string>"))
+        assertTrue(somaliStrings.contains("name=\"power_control\">Daar/Dami</string>"))
+        assertTrue(somaliStrings.contains("sameecadda sare ee taleefankaaga"))
+        assertTrue(somaliStrings.contains("qalabkaaga"))
+        assertTrue(somaliStrings.contains("luqadda nidaamka"))
+        assertTrue(somaliStrings.contains("shaashadda"))
+        assertFalse(somaliStrings.contains("sameecadda dhegta"))
+        assertFalse(projectFile("app/src/main/res/values-so/mini_state_strings.xml").exists())
+    }
+
+    @Test
     fun amharicKeepsOneNeutralQualifierAndFrozenLtrSemantics() {
         val locale = Locale.forLanguageTag("am")
         val defaultIdentity = Locale.forLanguageTag("am-Ethi-ET")
@@ -1199,6 +1239,7 @@ class Layer41LocalizationContractTest {
         val greekStrings = projectFile("app/src/main/res/values-el/strings.xml").readText()
         val bengaliStrings = projectFile("app/src/main/res/values-bn/strings.xml").readText()
         val malayalamStrings = projectFile("app/src/main/res/values-ml/strings.xml").readText()
+        val somaliStrings = projectFile("app/src/main/res/values-so/strings.xml").readText()
         val amharicStrings = projectFile("app/src/main/res/values-am/strings.xml").readText()
         val hebrewStrings = projectFile("app/src/main/res/values-iw/strings.xml").readText()
         val yiddishStrings = projectFile("app/src/main/res/values-ji/strings.xml").readText()
