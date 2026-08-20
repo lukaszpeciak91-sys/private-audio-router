@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Private Audio</string>
+    <string name="routing_notification_channel">Private Audio</string>
+    <string name="routing_notification_title">Private Audio איז אנגעצונדן</string>
+    <string name="routing_notification_text">מען ווארט צו איבערשטעלן דעם אודיא</string>
+    <string name="product_title">Private Audio</string>
+    <string name="product_subtitle">רעדט פריוואט מיט AI, אזוי ווי ביי א טעלעפאן שמועס.</string>
+    <string name="state_ready">גרייט</string>
+    <string name="state_waiting">ווארטנדיג</string>
+    <string name="state_active">אקטיוו</string>
+    <string name="state_error">פעלער</string>
+    <string name="power_control">אנצינדן/אויסלעשן</string>
+    <string name="floating">Mini</string>
+    <string name="settings">סעטינגס</string>
+    <string name="close">פארמאכן</string>
+    <string name="overlay_controller_description">דער שוועבנדיגער קאנטראלער פון Private Audio. סטאטוס: %1$s. קאנטראלן פאר אנצינדן/אויסלעשן, פארגרעסערן און פארמאכן.</string>
+    <string name="settings_language">שפראך</string>
+    <string name="settings_system_default">סיסטעם דיפאלט</string>
+    <string name="settings_save_diagnostic">אויפהיטן דעם דיאגנאסטיק רעפארט</string>
+    <string name="settings_advanced">פארגעשריטענע סעטינגס</string>
+    <string name="settings_about">וועגן Private Audio</string>
+    <string name="settings_version">ווערסיע %1$s</string>
+    <string name="settings_language_body">Private Audio נוצט יעצט די שפראך פונעם מכשיר. סיסטעם דיפאלט איז אויסגעקליבן.</string>
+    <string name="settings_language_android_13_required">די שפראך-אויסוואל אין דער עפפ דארף Android 13 אדער נייער. דער מכשיר נוצט די סיסטעם שפראך.</string>
+    <string name="settings_proximity_screen">אויסלעשן דעם סקרין ווען דער פאון איז נאנט צום אויער</string>
+    <string name="settings_advanced_body">נאך אפציעס וועלן דא צוקומען ווי Private Audio אנטוויקלט זיך ווייטער.</string>
+    <string name="settings_about_body">Private Audio העלפט איבערשטעלן געשטיצטע שטים-אודיא צום איינגעבויטן טרייבל אויבן אויפן פאון, וואס מען האלט צום אויער ביי א טעלעפאן רוף.</string>
+    <string name="diagnostic_report_saved">דער דיאגנאסטיק רעפארט איז אויפגעהיט.</string>
+    <string name="diagnostic_report_save_failed">מען האט נישט געקענט אויפהיטן דעם דיאגנאסטיק רעפארט.</string>
+</resources>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Private Audio</string>
+    <string name="routing_notification_channel">Private Audio</string>
+    <string name="routing_notification_title">Private Audio מופעל</string>
+    <string name="routing_notification_text">בהמתנה להחלפת פלט האודיו</string>
+    <string name="product_title">Private Audio</string>
+    <string name="product_subtitle">דברו עם AI בפרטיות, כמו בשיחת טלפון.</string>
+    <string name="state_ready">מוכן</string>
+    <string name="state_waiting">בהמתנה</string>
+    <string name="state_active">פעיל</string>
+    <string name="state_error">שגיאה</string>
+    <string name="power_control">הפעלה/כיבוי</string>
+    <string name="floating">Mini</string>
+    <string name="settings">הגדרות</string>
+    <string name="close">סגירה</string>
+    <string name="overlay_controller_description">הבקר הצף של Private Audio. מצב: %1$s. פקדים להפעלה/כיבוי, להרחבה ולסגירה.</string>
+    <string name="settings_language">שפה</string>
+    <string name="settings_system_default">ברירת המחדל של המערכת</string>
+    <string name="settings_save_diagnostic">שמירת דוח אבחון</string>
+    <string name="settings_advanced">הגדרות מתקדמות</string>
+    <string name="settings_about">מידע על Private Audio</string>
+    <string name="settings_version">גרסה %1$s</string>
+    <string name="settings_language_body">Private Audio משתמש כרגע בשפת המכשיר. נבחרה ברירת המחדל של המערכת.</string>
+    <string name="settings_language_android_13_required">בחירת שפה באפליקציה דורשת Android 13 ואילך. המכשיר הזה משתמש בשפת המערכת.</string>
+    <string name="settings_proximity_screen">כיבוי המסך כשהטלפון ליד האוזן</string>
+    <string name="settings_advanced_body">אפשרויות נוספות יופיעו כאן בהמשך הפיתוח של Private Audio.</string>
+    <string name="settings_about_body">באמצעות Private Audio ניתן להעביר אודיו קולי נתמך לאוזניה המובנית בחלק העליון של הטלפון, שמשמשת לשיחות ליד האוזן.</string>
+    <string name="diagnostic_report_saved">דוח האבחון נשמר.</string>
+    <string name="diagnostic_report_save_failed">לא ניתן לשמור את דוח האבחון.</string>
+</resources>

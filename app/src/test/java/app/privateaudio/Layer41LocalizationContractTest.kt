@@ -757,6 +757,74 @@ class Layer41LocalizationContractTest {
     }
 
     @Test
+    fun hebrewFrozenLocalizationSemanticsRemainIntact() {
+        val logicalLocale = Locale.forLanguageTag("he")
+        val legacyQualifierLocale = Locale.forLanguageTag("iw")
+        assertEquals("he", logicalLocale.language)
+        assertEquals("he", logicalLocale.toLanguageTag())
+        assertEquals(logicalLocale, legacyQualifierLocale)
+        assertEquals("he", legacyQualifierLocale.toLanguageTag())
+        assertEquals("עברית", nativeLocaleName("he"))
+        // Android's legacy qualifier keeps API 31-34 matching while Locale canonicalization exposes `he`.
+        assertTrue(projectFile("app/src/main/res/values-iw/strings.xml").isFile)
+        assertFalse(projectFile("app/src/main/res/values-he/strings.xml").exists())
+        assertFalse(projectFile("app/src/main/res/values-ji/strings.xml").readText() == hebrewStrings)
+        assertTrue(hebrewStrings.contains("name=\"app_name\">Private Audio</string>"))
+        assertTrue(hebrewStrings.contains("name=\"floating\">Mini</string>"))
+        assertTrue(hebrewStrings.contains("דברו עם AI בפרטיות"))
+        assertTrue(hebrewStrings.contains("name=\"routing_notification_title\">Private Audio מופעל</string>"))
+        assertTrue(hebrewStrings.contains("name=\"state_active\">פעיל</string>"))
+        assertFalse(hebrewStrings.contains("name=\"state_active\">מופעל</string>"))
+        assertTrue(hebrewStrings.contains("name=\"routing_notification_text\">בהמתנה להחלפת פלט האודיו</string>"))
+        assertTrue(hebrewStrings.contains("name=\"settings_language_body\"") && hebrewStrings.contains("שפת המכשיר"))
+        assertTrue(hebrewStrings.contains("name=\"settings_language_android_13_required\"") && hebrewStrings.contains("שפת המערכת"))
+        assertTrue(hebrewStrings.contains("name=\"settings_system_default\">ברירת המחדל של המערכת</string>"))
+        assertTrue(hebrewStrings.contains("name=\"settings_proximity_screen\">כיבוי המסך כשהטלפון ליד האוזן</string>"))
+        assertTrue(hebrewStrings.contains("אוזניה המובנית בחלק העליון של הטלפון"))
+        assertTrue(hebrewStrings.contains("להפעלה/כיבוי, להרחבה ולסגירה"))
+        assertTrue(hebrewStrings.contains("name=\"state_ready\">מוכן</string>"))
+        assertTrue(hebrewStrings.contains("name=\"state_waiting\">בהמתנה</string>"))
+        assertTrue(hebrewStrings.contains("name=\"state_active\">פעיל</string>"))
+        assertTrue(hebrewStrings.contains("name=\"state_error\">שגיאה</string>"))
+    }
+
+    @Test
+    fun yiddishFrozenLocalizationSemanticsRemainIntact() {
+        val logicalLocale = Locale.forLanguageTag("yi")
+        val legacyQualifierLocale = Locale.forLanguageTag("ji")
+        assertEquals("yi", logicalLocale.language)
+        assertEquals("yi", logicalLocale.toLanguageTag())
+        assertEquals(logicalLocale, legacyQualifierLocale)
+        assertEquals("yi", legacyQualifierLocale.toLanguageTag())
+        assertEquals("ייִדיש", nativeLocaleName("yi"))
+        // Android's legacy qualifier keeps API 31-34 matching while Locale canonicalization exposes `yi`.
+        assertTrue(projectFile("app/src/main/res/values-ji/strings.xml").isFile)
+        assertFalse(projectFile("app/src/main/res/values-yi/strings.xml").exists())
+        assertFalse(projectFile("app/src/main/res/values-iw/strings.xml").readText() == yiddishStrings)
+        assertTrue(yiddishStrings.contains("name=\"app_name\">Private Audio</string>"))
+        assertTrue(yiddishStrings.contains("name=\"floating\">Mini</string>"))
+        assertTrue(yiddishStrings.contains("רעדט פריוואט מיט AI"))
+        assertFalse(yiddishStrings.contains("איי־אײַ"))
+        assertTrue(yiddishStrings.contains("name=\"routing_notification_title\">Private Audio איז אנגעצונדן</string>"))
+        assertTrue(yiddishStrings.contains("name=\"state_active\">אקטיוו</string>"))
+        assertFalse(yiddishStrings.contains("name=\"state_active\">אנגעצונדן</string>"))
+        assertTrue(yiddishStrings.contains("name=\"routing_notification_text\">מען ווארט צו איבערשטעלן דעם אודיא</string>"))
+        assertTrue(yiddishStrings.contains("name=\"settings\">סעטינגס</string>"))
+        assertTrue(yiddishStrings.contains("name=\"settings_system_default\">סיסטעם דיפאלט</string>"))
+        assertTrue(yiddishStrings.contains("name=\"settings_language_body\"") && yiddishStrings.contains("שפראך פונעם מכשיר"))
+        assertTrue(yiddishStrings.contains("name=\"settings_language_android_13_required\"") && yiddishStrings.contains("סיסטעם שפראך"))
+        assertTrue(yiddishStrings.contains("name=\"settings_proximity_screen\"") && yiddishStrings.contains("אויסלעשן דעם סקרין"))
+        assertTrue(yiddishStrings.contains("ווען דער פאון איז נאנט צום אויער"))
+        assertTrue(yiddishStrings.contains("איינגעבויטן טרייבל אויבן אויפן פאון"))
+        assertTrue(yiddishStrings.contains("וואס מען האלט צום אויער ביי א טעלעפאן רוף"))
+        assertTrue(yiddishStrings.contains("אנצינדן/אויסלעשן, פארגרעסערן און פארמאכן"))
+        assertTrue(yiddishStrings.contains("name=\"state_ready\">גרייט</string>"))
+        assertTrue(yiddishStrings.contains("name=\"state_waiting\">ווארטנדיג</string>"))
+        assertTrue(yiddishStrings.contains("name=\"state_active\">אקטיוו</string>"))
+        assertTrue(yiddishStrings.contains("name=\"state_error\">פעלער</string>"))
+    }
+
+    @Test
     fun languageSelectionUsesPlatformConfigurationWithoutAParallelLocaleRegistry() {
         assertTrue(languagePreferencesSource.contains("LocaleConfig(context).supportedLocales"))
         assertTrue(languagePreferencesSource.contains("getSystemService(LocaleManager::class.java)"))
@@ -873,6 +941,8 @@ class Layer41LocalizationContractTest {
         val malteseStrings = projectFile("app/src/main/res/values-mt/strings.xml").readText()
         val greekStrings = projectFile("app/src/main/res/values-el/strings.xml").readText()
         val bengaliStrings = projectFile("app/src/main/res/values-bn/strings.xml").readText()
+        val hebrewStrings = projectFile("app/src/main/res/values-iw/strings.xml").readText()
+        val yiddishStrings = projectFile("app/src/main/res/values-ji/strings.xml").readText()
         val mainSource = projectFile("app/src/main/java/app/privateaudio/MainActivity.kt").readText()
         val productScreenSource = projectFile("app/src/main/java/app/privateaudio/ui/PrivateAudioScreen.kt").readText()
         val settingsSource = projectFile("app/src/main/java/app/privateaudio/ui/SettingsSheet.kt").readText()
