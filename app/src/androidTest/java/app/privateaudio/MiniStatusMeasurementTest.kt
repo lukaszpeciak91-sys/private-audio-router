@@ -130,6 +130,25 @@ class MiniStatusMeasurementTest {
         }
     }
 
+    @Test fun azerbaijaniVariantsResolveIndependentParadigmsAndUseMeasuredProductionSizes() {
+        val base = InstrumentationRegistry.getInstrumentation().targetContext
+        listOf(
+            Triple(listOf("az", "az-AZ", "az-Latn-AZ"), listOf("Hazır", "Gözləyir", "Aktiv", "Xəta"), View.LAYOUT_DIRECTION_LTR),
+            Triple(listOf("az-IR", "az-Arab", "az-Arab-IR"), listOf("حاضیر", "گؤزله‌ییر", "فعال", "خطا"), View.LAYOUT_DIRECTION_RTL),
+        ).forEach { (tags, expectedLabels, expectedDirection) ->
+            tags.forEach { languageTag ->
+                val localized = base.createConfigurationContext(Configuration(base.resources.configuration).apply { setLocales(LocaleList(Locale.forLanguageTag(languageTag))) })
+                assertEquals(expectedDirection, localized.resources.configuration.layoutDirection)
+                val labels = listOf(localized.getString(R.string.state_ready_mini), localized.getString(R.string.state_waiting_mini), localized.getString(R.string.state_active_mini), localized.getString(R.string.state_error_mini))
+                assertEquals(expectedLabels, labels)
+                val paint = TextPaint(Paint.ANTI_ALIAS_FLAG).apply { typeface = Typeface.create("sans-serif", Typeface.NORMAL) }
+                val selected = selectMiniStatusTextSize(labels) { label, textSize -> paint.textSize = textSize; paint.measureText(label) }
+                println("$languageTag Azerbaijani Mini production-equivalent common size: $selected")
+                assertTrue(selected in listOf(16f, 15f, 14f))
+            }
+        }
+    }
+
     @Test fun burmeseResolvesItsFullLtrParadigmAndUsesOneMeasuredProductionSize() {
         val base = InstrumentationRegistry.getInstrumentation().targetContext
         listOf("my", "my-MM", "my-Mymr-MM").forEach { languageTag ->

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Private Audio</string>
+    <string name="routing_notification_channel">Private Audio</string>
+    <string name="routing_notification_title">Private Audio آچیقدیر</string>
+    <string name="routing_notification_text">آودیو چیخیشینی دَییشدیرمه‌یی گؤزله‌ییر</string>
+    <string name="product_title">Private Audio</string>
+    <string name="product_subtitle">یاپای ذکاء ایله تلفون زنگی کیمی اؤزل شکیلده دانیشین.</string>
+    <string name="state_ready">حاضیر</string>
+    <string name="state_waiting">گؤزله‌ییر</string>
+    <string name="state_active">فعال</string>
+    <string name="state_error">خطا</string>
+    <string name="power_control">یاندیر/سؤندور</string>
+    <string name="floating">مینی</string>
+    <string name="settings">آیارلار</string>
+    <string name="close">باغلا</string>
+    <string name="overlay_controller_description">Private Audio-نون اۆزن ایداره‌ئدیجی‌سی. دوروم: %1$s. یاندیرماق/سؤندورمک، گئنیشلندیرمک و باغلاماق اۆچون ایداره‌لر.</string>
+    <string name="settings_language">دیل</string>
+    <string name="settings_system_default">فرض ائدیلن</string>
+    <string name="settings_save_diagnostic">دیاقنوستیک حساباتی ذخیره ائت</string>
+    <string name="settings_advanced">گئنیشمیش</string>
+    <string name="settings_about">Private Audio حاقیندا</string>
+    <string name="settings_version">نوسخه %1$s</string>
+    <string name="settings_language_body">Private Audio ایندی جهازینیزین دیلیندن ایستیفاده ائدیر. فرض ائدیلن سئچیلیب.</string>
+    <string name="settings_language_android_13_required">اۇیقولاما ایچینده دیل سئچیمی اۆچون Android 13 یا داها یئنی نوسخه لازیمدیر. بو جهاز سیستئم دیلیندن ایستیفاده ائدیر.</string>
+    <string name="settings_proximity_screen">تلفونو قولاغینیزا یاخینلاشدیراندا اکرانی سؤندورون</string>
+    <string name="settings_advanced_body">Private Audio گلیشدیکجه بورا علاوه سئچیم‌لر گلجک.</string>
+    <string name="settings_about_body">Private Audio دستکلنن سسلی آودیونو تلفونونوزون داخیل قولاق دینامیکینه یؤنلندیرمه‌یه کؤمک ائدیر.</string>
+    <string name="diagnostic_report_saved">دیاقنوستیک حسابات ذخیره ائدیلدی.</string>
+    <string name="diagnostic_report_save_failed">دیاقنوستیک حساباتی ذخیره ائتمک مۆمکون اولمادی.</string>
+</resources>
