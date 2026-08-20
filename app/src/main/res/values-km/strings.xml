@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Private Audio</string>
+    <string name="routing_notification_channel">Private Audio</string>
+    <string name="routing_notification_title">Private Audio បានបើក</string>
+    <string name="routing_notification_text">កំពុងរង់ចាំប្ដូរឧបករណ៍បញ្ចេញសំឡេង</string>
+    <string name="product_title">Private Audio</string>
+    <string name="product_subtitle">និយាយជាមួយ AI ជាលក្ខណៈឯកជន ដូចជាការហៅទូរសព្ទ។</string>
+    <string name="state_ready">ត្រៀមរួចរាល់</string>
+    <string name="state_waiting">កំពុងរង់ចាំ</string>
+    <string name="state_active">សកម្ម</string>
+    <string name="state_error">កំហុស</string>
+    <string name="power_control">ថាមពល</string>
+    <string name="floating">Mini</string>
+    <string name="settings">ការកំណត់</string>
+    <string name="close">បិទ</string>
+    <string name="overlay_controller_description">ឧបករណ៍បញ្ជាអណ្ដែតរបស់ Private Audio។ ស្ថានភាព៖ %1$s។ មានការគ្រប់គ្រងសម្រាប់បើក ឬបិទ Private Audio សម្រាប់ពង្រីកឧបករណ៍បញ្ជា និងសម្រាប់បិទឧបករណ៍បញ្ជា។</string>
+    <string name="settings_language">ភាសា</string>
+    <string name="settings_system_default">លំនាំដើម</string>
+    <string name="settings_save_diagnostic">រក្សាទុករបាយការណ៍វិនិច្ឆ័យ</string>
+    <string name="settings_advanced">កម្រិតខ្ពស់</string>
+    <string name="settings_about">អំពី Private Audio</string>
+    <string name="settings_version">កំណែ %1$s</string>
+    <string name="settings_language_body">បច្ចុប្បន្ន Private Audio ប្រើភាសារបស់ឧបករណ៍អ្នក។ លំនាំដើមត្រូវបានជ្រើសរើស។</string>
+    <string name="settings_language_android_13_required">ការជ្រើសរើសភាសាក្នុងកម្មវិធីតម្រូវឱ្យប្រើ Android 13 ឬកំណែថ្មីជាងនេះ។ ឧបករណ៍នេះប្រើភាសាប្រព័ន្ធ។</string>
+    <string name="settings_proximity_screen">បិទអេក្រង់ពេលទូរសព្ទនៅជិតត្រចៀករបស់អ្នក</string>
+    <string name="settings_advanced_body">ជម្រើសបន្ថែមនឹងបង្ហាញនៅទីនេះ នៅពេល Private Audio បន្តអភិវឌ្ឍ។</string>
+    <string name="settings_about_body">Private Audio ជួយប្ដូរសំឡេងសន្ទនាដែលត្រូវបានគាំទ្រ ទៅឧបករណ៍ស្ដាប់សំឡេងដែលមានស្រាប់ក្នុងទូរសព្ទរបស់អ្នក។</string>
+    <string name="diagnostic_report_saved">បានរក្សាទុករបាយការណ៍វិនិច្ឆ័យ។</string>
+    <string name="diagnostic_report_save_failed">មិនអាចរក្សាទុករបាយការណ៍វិនិច្ឆ័យបានទេ។</string>
+</resources>

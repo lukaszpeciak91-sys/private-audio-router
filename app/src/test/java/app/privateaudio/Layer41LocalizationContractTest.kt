@@ -1238,6 +1238,37 @@ class Layer41LocalizationContractTest {
     }
 
     @Test
+    fun khmerKeepsOneNeutralQualifierAndFrozenLtrSemantics() {
+        val locale = Locale.forLanguageTag("km")
+        val defaultIdentity = Locale.forLanguageTag("km-Khmr-KH")
+        assertEquals("km", locale.toLanguageTag())
+        assertEquals("Khmr", defaultIdentity.script)
+        assertEquals("KH", defaultIdentity.country)
+        assertEquals("ខ្មែរ", nativeLocaleName("km"))
+        assertTrue(projectFile("app/src/main/res/values-km/strings.xml").isFile)
+        listOf("values-km-rKH", "values-b+km+Khmr", "values-b+km+Khmr+KH").forEach {
+            assertFalse(projectFile("app/src/main/res/$it").exists())
+        }
+        assertTrue(khmerStrings.any { it in '\u1780'..'\u17FF' })
+        assertTrue(khmerStrings.contains("name=\"routing_notification_title\">Private Audio បានបើក</string>"))
+        assertTrue(khmerStrings.contains("name=\"state_active\">សកម្ម</string>"))
+        assertFalse(khmerStrings.contains("name=\"state_active\">បានបើក</string>"))
+        assertEquals(
+            mapOf("state_ready" to "ត្រៀមរួចរាល់", "state_waiting" to "កំពុងរង់ចាំ", "state_active" to "សកម្ម", "state_error" to "កំហុស"),
+            frozenStates(khmerStrings),
+        )
+        assertTrue(khmerStrings.contains("name=\"routing_notification_text\">កំពុងរង់ចាំប្ដូរឧបករណ៍បញ្ចេញសំឡេង</string>"))
+        assertTrue(khmerStrings.contains("និយាយជាមួយ AI ជាលក្ខណៈឯកជន"))
+        assertTrue(khmerStrings.contains("name=\"floating\">Mini</string>"))
+        assertTrue(khmerStrings.contains("name=\"settings_system_default\">លំនាំដើម</string>"))
+        assertTrue(khmerStrings.contains("name=\"settings_advanced\">កម្រិតខ្ពស់</string>"))
+        assertTrue(khmerStrings.contains("ឧបករណ៍ស្ដាប់សំឡេងដែលមានស្រាប់ក្នុងទូរសព្ទរបស់អ្នក"))
+        assertEquals(3, khmerStrings.occurrences("របាយការណ៍វិនិច្ឆ័យ"))
+        assertTrue(khmerStrings.contains("សម្រាប់បើក ឬបិទ Private Audio សម្រាប់ពង្រីកឧបករណ៍បញ្ជា និងសម្រាប់បិទឧបករណ៍បញ្ជា"))
+        assertFalse(projectFile("app/src/main/res/values-km/mini_state_strings.xml").exists())
+    }
+
+    @Test
     fun languageSelectionUsesPlatformConfigurationWithoutAParallelLocaleRegistry() {
         assertTrue(languagePreferencesSource.contains("LocaleConfig(context).supportedLocales"))
         assertTrue(languagePreferencesSource.contains("getSystemService(LocaleManager::class.java)"))
@@ -1379,6 +1410,7 @@ class Layer41LocalizationContractTest {
         val odiaStrings = projectFile("app/src/main/res/values-or/strings.xml").readText()
         val burmeseStrings = projectFile("app/src/main/res/values-my/strings.xml").readText()
         val uzbekStrings = projectFile("app/src/main/res/values-uz/strings.xml").readText()
+        val khmerStrings = projectFile("app/src/main/res/values-km/strings.xml").readText()
         val mainSource = projectFile("app/src/main/java/app/privateaudio/MainActivity.kt").readText()
         val productScreenSource = projectFile("app/src/main/java/app/privateaudio/ui/PrivateAudioScreen.kt").readText()
         val settingsSource = projectFile("app/src/main/java/app/privateaudio/ui/SettingsSheet.kt").readText()
