@@ -900,10 +900,12 @@ class Layer41LocalizationContractTest {
         )
         assertFalse(gurmukhiPunjabiStrings.contains("name=\"state_active\">ਚਾਲੂ</string>"))
 
-        assertTrue(shahmukhiPunjabiStrings.contains("name=\"routing_notification_title\">Private Audio چالو ہے</string>"))
+        assertTrue(shahmukhiPunjabiStrings.contains("name=\"routing_notification_title\">Private Audio چالو اے</string>"))
         assertTrue(shahmukhiPunjabiStrings.contains("name=\"product_subtitle\">AI نال"))
         assertTrue(shahmukhiPunjabiStrings.contains("name=\"floating\">کمپیکٹ</string>"))
         assertTrue(shahmukhiPunjabiStrings.contains("بِلٹ اِن ایئر پیس"))
+        assertTrue(shahmukhiPunjabiStrings.contains("name=\"settings_advanced\">ایڈوانسڈ</string>"))
+        assertFalse(shahmukhiPunjabiStrings.contains("ہے"))
         assertEquals(
             mapOf("state_ready" to "تیار", "state_waiting" to "اُڈیک", "state_active" to "فعال", "state_error" to "خرابی"),
             frozenStates(shahmukhiPunjabiStrings),
