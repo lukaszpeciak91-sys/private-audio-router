@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Private Audio</string>
+    <string name="routing_notification_channel">Private Audio</string>
+    <string name="routing_notification_title">Private Audio ଚାଲୁ ଅଛି</string>
+    <string name="routing_notification_text">ଅଡିଓ ଆଉଟପୁଟ ସ୍ୱିଚ୍ କରିବାକୁ ଅପେକ୍ଷା କରାଯାଉଛି</string>
+
+    <string name="product_title">Private Audio</string>
+    <string name="product_subtitle">ଫୋନ୍ କଲ୍ ପରି, ଏଆଇ ସହିତ ବ୍ୟକ୍ତିଗତ ଭାବେ କଥା ହୁଅନ୍ତୁ।</string>
+
+    <string name="state_ready">ପ୍ରସ୍ତୁତ</string>
+    <string name="state_waiting">ଅପେକ୍ଷାରତ</string>
+    <string name="state_active">ସକ୍ରିୟ</string>
+    <string name="state_error">ତ୍ରୁଟି</string>
+
+    <string name="power_control">ପାୱାର</string>
+    <string name="floating">ମିନି</string>
+    <string name="settings">ସେଟିଂସ</string>
+    <string name="close">ବନ୍ଦ କରନ୍ତୁ</string>
+
+    <string name="overlay_controller_description">Private Audio ଫ୍ଲୋଟିଂ କଣ୍ଟ୍ରୋଲର୍। ସ୍ଥିତି: %1$s। ଚାଲୁ/ବନ୍ଦ କରିବା, ବଢ଼ାଇବା ଏବଂ କଣ୍ଟ୍ରୋଲର୍ ବନ୍ଦ କରିବା ପାଇଁ ନିୟନ୍ତ୍ରଣ।</string>
+
+    <string name="settings_language">ଭାଷା</string>
+    <string name="settings_system_default">ଡିଫଲ୍ଟ</string>
+    <string name="settings_save_diagnostic">ଡାଇଗ୍ନୋଷ୍ଟିକ୍ ରିପୋର୍ଟ ସେଭ୍ କରନ୍ତୁ</string>
+    <string name="settings_advanced">ଉନ୍ନତ ସେଟିଂସ</string>
+    <string name="settings_about">Private Audio ବିଷୟରେ</string>
+    <string name="settings_version">ସଂସ୍କରଣ %1$s</string>
+
+    <string name="settings_language_body">Private Audio ବର୍ତ୍ତମାନ ଆପଣଙ୍କ ଡିଭାଇସର ଭାଷାକୁ ଅନୁସରଣ କରେ। ଡିଫଲ୍ଟ ଚୟନ କରାଯାଇଛି।</string>
+
+    <string name="settings_language_android_13_required">ଆପ୍ ଭିତରେ ଭାଷା ଚୟନ ପାଇଁ Android 13 କିମ୍ବା ଏହା ପରବର୍ତ୍ତୀ ସଂସ୍କରଣ ଆବଶ୍ୟକ। ଏହି ଡିଭାଇସ ସିଷ୍ଟମ ଭାଷାକୁ ଅନୁସରଣ କରେ।</string>
+
+    <string name="settings_proximity_screen">ଫୋନ୍‌କୁ କାନ ପାଖକୁ ଆଣିଲେ ସ୍କ୍ରୀନ୍ ବନ୍ଦ କରନ୍ତୁ</string>
+
+    <string name="settings_advanced_body">Private Audio ବିକଶିତ ହେବା ସହିତ ଏଠାରେ ଅଧିକ ବିକଳ୍ପ ଦେଖାଯିବ।</string>
+
+    <string name="settings_about_body">Private Audio ସମର୍ଥିତ ଭଏସ୍ ଅଡିଓକୁ ଆପଣଙ୍କ ଫୋନର ବିଲ୍ଟ-ଇନ୍ ହ୍ୟାଣ୍ଡସେଟ୍ ଇୟରପିସ୍‌କୁ ସ୍ୱିଚ୍ କରିବାରେ ସାହାଯ୍ୟ କରେ।</string>
+
+    <string name="diagnostic_report_saved">ଡାଇଗ୍ନୋଷ୍ଟିକ୍ ରିପୋର୍ଟ ସେଭ୍ ହୋଇଛି।</string>
+    <string name="diagnostic_report_save_failed">ଡାଇଗ୍ନୋଷ୍ଟିକ୍ ରିପୋର୍ଟ ସେଭ୍ କରାଯାଇପାରିଲା ନାହିଁ।</string>
+</resources>

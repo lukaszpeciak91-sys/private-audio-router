@@ -40,6 +40,9 @@ class LegacyLocaleResourceResolutionTest {
         listOf("so", "so-SO", "so-DJ", "so-ET", "so-KE").forEach { tag ->
             assertLocalizedSettings(context, modernTag = tag, expected = "Dejinta")
         }
+        listOf("or", "or-IN", "or-Orya-IN").forEach { tag ->
+            assertLocalizedSettings(context, modernTag = tag, expected = "ସେଟିଂସ")
+        }
 
         assertEquals(
             android.view.View.LAYOUT_DIRECTION_LTR,
@@ -88,12 +91,19 @@ class LegacyLocaleResourceResolutionTest {
                 localizedContext(context, tag).resources.configuration.layoutDirection,
             )
         }
+        listOf("or", "or-IN", "or-Orya-IN").forEach { tag ->
+            assertEquals(
+                "$tag layout direction",
+                android.view.View.LAYOUT_DIRECTION_LTR,
+                localizedContext(context, tag).resources.configuration.layoutDirection,
+            )
+        }
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
             val discoveredTags = LocaleConfig(context).supportedLocales
                 ?.let { locales -> (0 until locales.size()).map { locales[it].toLanguageTag() } }
                 .orEmpty()
-            assertTrue(discoveredTags.containsAll(listOf("id", "he", "yi", "ml", "pa-Guru-IN", "pa-Arab-PK", "ps", "ha", "am", "zu", "so")))
+            assertTrue(discoveredTags.containsAll(listOf("id", "he", "yi", "ml", "pa-Guru-IN", "pa-Arab-PK", "ps", "ha", "am", "zu", "so", "or")))
         }
     }
 

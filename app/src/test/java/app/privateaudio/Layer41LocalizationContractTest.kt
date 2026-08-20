@@ -1111,6 +1111,39 @@ class Layer41LocalizationContractTest {
     }
 
     @Test
+    fun odiaKeepsOneNeutralQualifierAndFrozenLtrSemantics() {
+        val locale = Locale.forLanguageTag("or")
+        val defaultIdentity = Locale.forLanguageTag("or-Orya-IN")
+        assertEquals("or", locale.toLanguageTag())
+        assertEquals("or", locale.language)
+        assertEquals("Orya", defaultIdentity.script)
+        assertEquals("IN", defaultIdentity.country)
+        assertEquals("ଓଡ଼ିଆ", nativeLocaleName("or"))
+        assertTrue(projectFile("app/src/main/res/values-or/strings.xml").isFile)
+        listOf("values-or-rIN", "values-b+or+Orya", "values-b+or+Orya+IN").forEach {
+            assertFalse(projectFile("app/src/main/res/$it").exists())
+        }
+        assertTrue(odiaStrings.any { it in '\u0B00'..'\u0B7F' })
+        assertTrue(odiaStrings.contains("name=\"routing_notification_title\">Private Audio ଚାଲୁ ଅଛି</string>"))
+        assertTrue(odiaStrings.contains("name=\"state_active\">ସକ୍ରିୟ</string>"))
+        assertFalse(odiaStrings.contains("name=\"state_active\">ଚାଲୁ ଅଛି</string>"))
+        assertEquals(
+            mapOf("state_ready" to "ପ୍ରସ୍ତୁତ", "state_waiting" to "ଅପେକ୍ଷାରତ", "state_active" to "ସକ୍ରିୟ", "state_error" to "ତ୍ରୁଟି"),
+            frozenStates(odiaStrings),
+        )
+        assertTrue(odiaStrings.contains("name=\"routing_notification_text\">ଅଡିଓ ଆଉଟପୁଟ ସ୍ୱିଚ୍ କରିବାକୁ ଅପେକ୍ଷା କରାଯାଉଛି</string>"))
+        assertTrue(odiaStrings.contains("name=\"product_subtitle\">ଫୋନ୍ କଲ୍ ପରି, ଏଆଇ ସହିତ ବ୍ୟକ୍ତିଗତ ଭାବେ କଥା ହୁଅନ୍ତୁ।</string>"))
+        assertFalse(odiaStrings.contains("ଗୋପନୀୟ ଭାବେ"))
+        assertTrue(odiaStrings.contains("name=\"floating\">ମିନି</string>"))
+        assertTrue(odiaStrings.contains("name=\"settings_system_default\">ଡିଫଲ୍ଟ</string>"))
+        assertTrue(odiaStrings.contains("name=\"settings_advanced\">ଉନ୍ନତ ସେଟିଂସ</string>"))
+        assertTrue(odiaStrings.contains("ଆପଣଙ୍କ ଫୋନର ବିଲ୍ଟ-ଇନ୍ ହ୍ୟାଣ୍ଡସେଟ୍ ଇୟରପିସ୍"))
+        assertFalse(odiaStrings.contains("ଫୋନର ବିଲ୍ଟ-ଇନ୍ ଇୟରପିସ୍"))
+        assertTrue(odiaStrings.contains("ଚାଲୁ/ବନ୍ଦ କରିବା, ବଢ଼ାଇବା ଏବଂ କଣ୍ଟ୍ରୋଲର୍ ବନ୍ଦ କରିବା"))
+        assertFalse(projectFile("app/src/main/res/values-or/mini_state_strings.xml").exists())
+    }
+
+    @Test
     fun languageSelectionUsesPlatformConfigurationWithoutAParallelLocaleRegistry() {
         assertTrue(languagePreferencesSource.contains("LocaleConfig(context).supportedLocales"))
         assertTrue(languagePreferencesSource.contains("getSystemService(LocaleManager::class.java)"))
@@ -1248,6 +1281,7 @@ class Layer41LocalizationContractTest {
         val pashtoStrings = projectFile("app/src/main/res/values-ps/strings.xml").readText()
         val hausaStrings = projectFile("app/src/main/res/values-ha/strings.xml").readText()
         val zuluStrings = projectFile("app/src/main/res/values-zu/strings.xml").readText()
+        val odiaStrings = projectFile("app/src/main/res/values-or/strings.xml").readText()
         val mainSource = projectFile("app/src/main/java/app/privateaudio/MainActivity.kt").readText()
         val productScreenSource = projectFile("app/src/main/java/app/privateaudio/ui/PrivateAudioScreen.kt").readText()
         val settingsSource = projectFile("app/src/main/java/app/privateaudio/ui/SettingsSheet.kt").readText()

@@ -82,7 +82,7 @@ class MiniStatusMeasurementTest {
         val paint = TextPaint(Paint.ANTI_ALIAS_FLAG).apply {
             typeface = Typeface.create("sans-serif", Typeface.NORMAL)
         }
-        listOf("en", "ta", "gu", "ml", "pa-Guru-IN", "pa-Arab-PK", "ps", "ha", "am", "zu", "so").forEach { languageTag ->
+        listOf("en", "ta", "gu", "ml", "pa-Guru-IN", "pa-Arab-PK", "ps", "ha", "am", "zu", "so", "or").forEach { languageTag ->
             val localized = base.createConfigurationContext(Configuration(base.resources.configuration).apply {
                 setLocales(LocaleList(Locale.forLanguageTag(languageTag)))
             })
@@ -245,6 +245,30 @@ class MiniStatusMeasurementTest {
             paint.measureText(label)
         }
         println("Zulu Mini production-equivalent common size: $selected")
+        assertTrue(selected in listOf(16f, 15f, 14f))
+    }
+
+    @Test fun odiaResolvesItsFullLtrParadigmAndUsesOneMeasuredProductionSize() {
+        val base = InstrumentationRegistry.getInstrumentation().targetContext
+        val localized = base.createConfigurationContext(Configuration(base.resources.configuration).apply {
+            setLocales(LocaleList(Locale.forLanguageTag("or")))
+        })
+        assertEquals(View.LAYOUT_DIRECTION_LTR, localized.resources.configuration.layoutDirection)
+        val labels = listOf(
+            localized.getString(R.string.state_ready_mini),
+            localized.getString(R.string.state_waiting_mini),
+            localized.getString(R.string.state_active_mini),
+            localized.getString(R.string.state_error_mini),
+        )
+        assertEquals(listOf("ପ୍ରସ୍ତୁତ", "ଅପେକ୍ଷାରତ", "ସକ୍ରିୟ", "ତ୍ରୁଟି"), labels)
+        val paint = TextPaint(Paint.ANTI_ALIAS_FLAG).apply {
+            typeface = Typeface.create("sans-serif", Typeface.NORMAL)
+        }
+        val selected = selectMiniStatusTextSize(labels) { label, textSize ->
+            paint.textSize = textSize
+            paint.measureText(label)
+        }
+        println("Odia Mini production-equivalent common size: $selected")
         assertTrue(selected in listOf(16f, 15f, 14f))
     }
 
