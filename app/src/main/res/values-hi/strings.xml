@@ -8,7 +8,7 @@
     <string name="product_subtitle">फ़ोन कॉल की तरह, एआई से निजी तौर पर बात करें।</string>
     <string name="state_ready">तैयार</string>
     <string name="state_waiting">इंतज़ार में</string>
-    <string name="state_active">चालू</string>
+    <string name="state_active">सक्रिय</string>
     <string name="state_error">गड़बड़ी</string>
     <string name="power_control">चालू करें</string>
     <string name="floating">मिनी</string>

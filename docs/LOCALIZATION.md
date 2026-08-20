@@ -12,6 +12,8 @@ Keep these evidence levels distinct:
 - **Source-contract tested** means repository checks establish such properties as XML validity and key/placeholder parity. It does not establish rendering quality.
 - **Runtime/emulator/device validated** means the specifically recorded presentation or interaction was observed in that environment. Emulator evidence is not physical-device evidence, and validation of one locale or surface is not validation of every translation.
 
+First-party Android, Google, and product terminology is strong evidence of real platform usage and should remain preferred for Settings when it is semantically correct, natural, current, and appropriate to the locale and surface. It is not unquestionable linguistic authority. For non-obvious or high-risk terminology, triangulate platform wording with contemporary native professional or consumer usage. Do not freeze a platform term solely because it exists when evidence shows it is isolated, outdated, regionally mismatched, misleading, or broadly unnatural. Community complaints may trigger review, but require corroboration and cannot override product semantics.
+
 Do not claim all existing translations have been runtime-validated unless repository evidence establishes that fact.
 
 ## Product copy and translation quality
@@ -42,6 +44,8 @@ Private Audio distinguishes **ON / enabled**—the controller or service is enab
 Each locale owns its terminology. Do not normalize international technology terms across languages merely for superficial consistency, and do not derive one language's terminology from a neighboring language. Existing approved copy demonstrates that some locales naturally use `AI`, others use localized abbreviations such as `IA`, `KI`, `DI`, `ИИ`, or `ШІ`, and others use full native artificial-intelligence terms, including Arabic and Persian. For each new language, determine the contemporary consumer/software standard independently.
 
 `Private Audio` remains untranslated unless a future explicit branding decision changes it.
+
+`Mini` is a product concept, not an untranslated brand token. Preserve the compact or minimized-controller meaning. Latin `Mini` may remain where it is normal and naturally understood; a natural local-script form or transliteration such as `ミニ`, `미니`, or `Мини`, or an established local equivalent such as Chinese `迷你`, is equally valid. Do not force Latin script for visual consistency, and do not replace a familiar concise form with a longer, purist, artificial, or less familiar alternative merely to localize it. Any choice must remain natural and suitable for the constrained Mini surface; script differences alone are not inconsistency.
 
 ### Earpiece and routing distinctions
 

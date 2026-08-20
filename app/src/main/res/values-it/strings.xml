@@ -2,7 +2,7 @@
 <resources>
     <string name="app_name">Private Audio</string>
     <string name="routing_notification_channel">Private Audio</string>
-    <string name="routing_notification_title">Private Audio è attivo</string>
+    <string name="routing_notification_title">Private Audio è attivato</string>
     <string name="routing_notification_text">In attesa di reindirizzare l\'audio</string>
     <string name="product_title">Private Audio</string>
     <string name="product_subtitle">Parla con l\'AI in privato, come in una telefonata.</string>
