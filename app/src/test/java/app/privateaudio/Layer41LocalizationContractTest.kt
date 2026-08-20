@@ -840,6 +840,37 @@ class Layer41LocalizationContractTest {
     }
 
     @Test
+    fun nepaliKeepsOneNeutralQualifierAndFrozenLtrSemantics() {
+        val locale = Locale.forLanguageTag("ne")
+        val defaultIdentity = Locale.forLanguageTag("ne-Deva-NP")
+        assertEquals("ne", locale.toLanguageTag())
+        assertEquals("ne", locale.language)
+        assertEquals("Deva", defaultIdentity.script)
+        assertEquals("NP", defaultIdentity.country)
+        assertEquals("नेपाली", nativeLocaleName("ne"))
+        assertTrue(projectFile("app/src/main/res/values-ne/strings.xml").isFile)
+        listOf("values-ne-rNP", "values-b+ne+Deva", "values-b+ne+Deva+NP").forEach {
+            assertFalse(projectFile("app/src/main/res/$it").exists())
+        }
+        assertTrue(nepaliStrings.any { it in '\u0900'..'\u097F' })
+        assertTrue(nepaliStrings.contains("name=\"routing_notification_title\">Private Audio अन छ</string>"))
+        assertTrue(nepaliStrings.contains("name=\"state_active\">सक्रिय</string>"))
+        assertFalse(nepaliStrings.contains("name=\"state_active\">अन छ</string>"))
+        assertEquals(
+            mapOf("state_ready" to "तयार", "state_waiting" to "पर्खँदै", "state_active" to "सक्रिय", "state_error" to "त्रुटि"),
+            frozenStates(nepaliStrings),
+        )
+        assertTrue(nepaliStrings.contains("name=\"routing_notification_text\">अडियो आउटपुट बदल्न पर्खँदै</string>"))
+        assertTrue(nepaliStrings.contains("name=\"product_subtitle\">फोन कल गरेजस्तै, एआईसँग निजी रूपमा कुरा गर्नुहोस्।</string>"))
+        assertTrue(nepaliStrings.contains("name=\"floating\">मिनी</string>"))
+        assertTrue(nepaliStrings.contains("name=\"settings_system_default\">डिफल्ट</string>"))
+        assertTrue(nepaliStrings.contains("name=\"settings_advanced\">उन्नत</string>"))
+        assertTrue(nepaliStrings.contains("ह्यान्डसेट इयरपिस"))
+        assertTrue(nepaliStrings.contains("पावर अन वा अफ गर्ने, विस्तृत गर्ने र बन्द गर्ने नियन्त्रणहरू"))
+        assertFalse(projectFile("app/src/main/res/values-ne/mini_state_strings.xml").exists())
+    }
+
+    @Test
     fun amharicKeepsOneNeutralQualifierAndFrozenLtrSemantics() {
         val locale = Locale.forLanguageTag("am")
         val defaultIdentity = Locale.forLanguageTag("am-Ethi-ET")
@@ -1336,6 +1367,7 @@ class Layer41LocalizationContractTest {
         val bengaliStrings = projectFile("app/src/main/res/values-bn/strings.xml").readText()
         val malayalamStrings = projectFile("app/src/main/res/values-ml/strings.xml").readText()
         val somaliStrings = projectFile("app/src/main/res/values-so/strings.xml").readText()
+        val nepaliStrings = projectFile("app/src/main/res/values-ne/strings.xml").readText()
         val amharicStrings = projectFile("app/src/main/res/values-am/strings.xml").readText()
         val hebrewStrings = projectFile("app/src/main/res/values-iw/strings.xml").readText()
         val yiddishStrings = projectFile("app/src/main/res/values-ji/strings.xml").readText()

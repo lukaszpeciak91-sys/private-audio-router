@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Private Audio</string>
+    <string name="routing_notification_channel">Private Audio</string>
+    <string name="routing_notification_title">Private Audio अन छ</string>
+    <string name="routing_notification_text">अडियो आउटपुट बदल्न पर्खँदै</string>
+    <string name="product_title">Private Audio</string>
+    <string name="product_subtitle">फोन कल गरेजस्तै, एआईसँग निजी रूपमा कुरा गर्नुहोस्।</string>
+    <string name="state_ready">तयार</string>
+    <string name="state_waiting">पर्खँदै</string>
+    <string name="state_active">सक्रिय</string>
+    <string name="state_error">त्रुटि</string>
+    <string name="power_control">पावर</string>
+    <string name="floating">मिनी</string>
+    <string name="settings">सेटिङहरू</string>
+    <string name="close">बन्द गर्नुहोस्</string>
+    <string name="overlay_controller_description">Private Audio को फ्लोटिङ कन्ट्रोलर। स्थिति: %1$s। पावर अन वा अफ गर्ने, विस्तृत गर्ने र बन्द गर्ने नियन्त्रणहरू।</string>
+    <string name="settings_language">भाषा</string>
+    <string name="settings_system_default">डिफल्ट</string>
+    <string name="settings_save_diagnostic">निदानसम्बन्धी रिपोर्ट सेभ गर्नुहोस्</string>
+    <string name="settings_advanced">उन्नत</string>
+    <string name="settings_about">Private Audio का बारेमा</string>
+    <string name="settings_version">संस्करण %1$s</string>
+    <string name="settings_language_body">Private Audio अहिले तपाईंको डिभाइसको भाषाअनुसार चल्छ। डिफल्ट चयन गरिएको छ।</string>
+    <string name="settings_language_android_13_required">एपभित्र भाषा चयन गर्न Android 13 वा त्यसपछिको संस्करण चाहिन्छ। यो डिभाइसले सिस्टमको भाषा प्रयोग गर्छ।</string>
+    <string name="settings_proximity_screen">फोन कान नजिक ल्याउँदा स्क्रिन बन्द गर्नुहोस्</string>
+    <string name="settings_advanced_body">Private Audio विकसित हुँदै जाँदा यहाँ थप विकल्पहरू देखिनेछन्।</string>
+    <string name="settings_about_body">Private Audio ले समर्थित भ्वाइस अडियो तपाईंको फोनमा निर्मित ह्यान्डसेट इयरपिसबाट सुन्न मद्दत गर्छ।</string>
+    <string name="diagnostic_report_saved">निदानसम्बन्धी रिपोर्ट सेभ गरियो।</string>
+    <string name="diagnostic_report_save_failed">निदानसम्बन्धी रिपोर्ट सेभ गर्न सकिएन।</string>
+</resources>
