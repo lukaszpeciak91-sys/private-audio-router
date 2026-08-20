@@ -1266,6 +1266,9 @@ class Layer41LocalizationContractTest {
         assertEquals(3, khmerStrings.occurrences("របាយការណ៍វិនិច្ឆ័យ"))
         assertTrue(khmerStrings.contains("សម្រាប់បើក ឬបិទ Private Audio សម្រាប់ពង្រីកឧបករណ៍បញ្ជា និងសម្រាប់បិទឧបករណ៍បញ្ជា"))
         assertFalse(projectFile("app/src/main/res/values-km/mini_state_strings.xml").exists())
+    }
+
+    @Test
     fun assameseKeepsOneBengaliScriptQualifierAndFrozenLtrSemantics() {
         val locale = Locale.forLanguageTag("as")
         val defaultIdentity = Locale.forLanguageTag("as-Beng-IN")
