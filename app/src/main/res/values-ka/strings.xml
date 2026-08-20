@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Private Audio</string>
+    <string name="routing_notification_channel">Private Audio</string>
+    <string name="routing_notification_title">Private Audio ჩართულია</string>
+    <string name="routing_notification_text">ელოდება გამომავალი აუდიოს გადართვას</string>
+    <string name="product_title">Private Audio</string>
+    <string name="product_subtitle">AI-სთან პირადად ისაუბრეთ, როგორც სატელეფონო ზარის დროს.</string>
+    <string name="state_ready">მზადაა</string>
+    <string name="state_waiting">მოლოდინშია</string>
+    <string name="state_active">აქტიურია</string>
+    <string name="state_error">შეცდომა</string>
+    <string name="power_control">ჩართვა/გამორთვა</string>
+    <string name="floating">მინი</string>
+    <string name="settings">პარამეტრები</string>
+    <string name="close">დახურვა</string>
+    <string name="overlay_controller_description">Private Audio-ს მცურავი მართვის პანელი. სტატუსი: %1$s. ჩართვის/გამორთვის, გაშლისა და დახურვის მართვის ელემენტები.</string>
+    <string name="settings_language">ენა</string>
+    <string name="settings_system_default">ნაგულისხმევი</string>
+    <string name="settings_save_diagnostic">დიაგნოსტიკის ანგარიშის შენახვა</string>
+    <string name="settings_advanced">დამატებითი</string>
+    <string name="settings_about">Private Audio-ს შესახებ</string>
+    <string name="settings_version">ვერსია %1$s</string>
+    <string name="settings_language_body">Private Audio ამჟამად თქვენი მოწყობილობის ენას იყენებს. არჩეულია „ნაგულისხმევი“.</string>
+    <string name="settings_language_android_13_required">აპში ენის არჩევისთვის საჭიროა Android 13 ან უფრო ახალი ვერსია. ეს მოწყობილობა სისტემის ენას იყენებს.</string>
+    <string name="settings_proximity_screen">ეკრანის გამორთვა ტელეფონის ყურთან მიტანისას</string>
+    <string name="settings_advanced_body">Private Audio-ს განვითარებასთან ერთად აქ დამატებითი პარამეტრები გამოჩნდება.</string>
+    <string name="settings_about_body">Private Audio გეხმარებათ, მხარდაჭერილი ხმოვანი აუდიო თქვენი ტელეფონის ჩაშენებულ ყურმილზე გადართოთ.</string>
+    <string name="diagnostic_report_saved">დიაგნოსტიკის ანგარიში შენახულია.</string>
+    <string name="diagnostic_report_save_failed">დიაგნოსტიკის ანგარიშის შენახვა ვერ მოხერხდა.</string>
+</resources>
