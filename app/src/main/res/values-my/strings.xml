@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Private Audio</string>
+    <string name="routing_notification_channel">Private Audio</string>
+    <string name="routing_notification_title">Private Audio ဖွင့်ထားသည်</string>
+    <string name="routing_notification_text">အသံအထွက် ပြောင်းရန် စောင့်နေသည်</string>
+
+    <string name="product_title">Private Audio</string>
+    <string name="product_subtitle">ဖုန်းပြောသလို အေအိုင်နှင့် သီးသန့် စကားပြောပါ။</string>
+
+    <string name="state_ready">အဆင်သင့်</string>
+    <string name="state_waiting">စောင့်နေသည်</string>
+    <string name="state_active">အသုံးပြုနေသည်</string>
+    <string name="state_error">အမှား</string>
+
+    <string name="power_control">ဖွင့်/ပိတ်</string>
+    <string name="floating">မီနီ</string>
+    <string name="settings">ဆက်တင်များ</string>
+    <string name="close">ပိတ်</string>
+
+    <string name="overlay_controller_description">Private Audio ၏ လွင့်နေသော ထိန်းချုပ်ကိရိယာ။ အခြေအနေ- %1$s။ ပါဝါဖွင့်/ပိတ်ရန်၊ တိုးချဲ့ရန်နှင့် ထိန်းချုပ်ကိရိယာကို ပိတ်ရန် ထိန်းချုပ်မှုများ။</string>
+
+    <string name="settings_language">ဘာသာစကား</string>
+    <string name="settings_system_default">မူရင်း</string>
+    <string name="settings_save_diagnostic">ချို့ယွင်းချက်ရှာဖွေမှု အစီရင်ခံစာကို သိမ်းပါ</string>
+    <string name="settings_advanced">အဆင့်မြင့်အပြင်အဆင်များ</string>
+    <string name="settings_about">Private Audio အကြောင်း</string>
+    <string name="settings_version">ဗားရှင်း %1$s</string>
+
+    <string name="settings_language_body">Private Audio သည် လက်ရှိ သင့်စက်၏ ဘာသာစကားကို အသုံးပြုသည်။ မူရင်းကို ရွေးထားသည်။</string>
+
+    <string name="settings_language_android_13_required">အက်ပ်အတွင်း ဘာသာစကားရွေးချယ်ရန် Android 13 သို့မဟုတ် နောက်ပိုင်းဗားရှင်း လိုအပ်သည်။ ဤစက်သည် စနစ်ဘာသာစကားကို အသုံးပြုသည်။</string>
+
+    <string name="settings_proximity_screen">ဖုန်းကို သင့်နားနား ကပ်သောအခါ မျက်နှာပြင်ကို ပိတ်ပါ</string>
+
+    <string name="settings_advanced_body">Private Audio တိုးတက်လာသည်နှင့်အမျှ နောက်ထပ်ရွေးချယ်စရာများကို ဤနေရာတွင် ပြသပါမည်။</string>
+
+    <string name="settings_about_body">Private Audio သည် ပံ့ပိုးထားသော စကားပြောအသံကို သင့်ဖုန်း၏ တယ်လီဖုန်းနားခွက်သို့ ပြောင်းပေးရန် ကူညီသည်။</string>
+
+    <string name="diagnostic_report_saved">ချို့ယွင်းချက်ရှာဖွေမှု အစီရင်ခံစာကို သိမ်းပြီးပါပြီ။</string>
+    <string name="diagnostic_report_save_failed">ချို့ယွင်းချက်ရှာဖွေမှု အစီရင်ခံစာကို မသိမ်းနိုင်ပါ။</string>
+</resources>

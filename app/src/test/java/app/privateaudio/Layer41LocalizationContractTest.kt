@@ -1144,6 +1144,37 @@ class Layer41LocalizationContractTest {
     }
 
     @Test
+    fun burmeseKeepsOneNeutralQualifierAndFrozenLtrSemantics() {
+        val locale = Locale.forLanguageTag("my")
+        val defaultIdentity = Locale.forLanguageTag("my-Mymr-MM")
+        assertEquals("my", locale.toLanguageTag())
+        assertEquals("Mymr", defaultIdentity.script)
+        assertEquals("MM", defaultIdentity.country)
+        assertEquals("မြန်မာ", nativeLocaleName("my"))
+        assertTrue(projectFile("app/src/main/res/values-my/strings.xml").isFile)
+        listOf("values-my-rMM", "values-b+my+Mymr", "values-b+my+Mymr+MM").forEach {
+            assertFalse(projectFile("app/src/main/res/$it").exists())
+        }
+        assertTrue(burmeseStrings.any { it in '\u1000'..'\u109F' })
+        assertTrue(burmeseStrings.contains("name=\"routing_notification_title\">Private Audio ဖွင့်ထားသည်</string>"))
+        assertTrue(burmeseStrings.contains("name=\"state_active\">အသုံးပြုနေသည်</string>"))
+        assertFalse(burmeseStrings.contains("name=\"state_active\">ဖွင့်ထားသည်</string>"))
+        assertEquals(
+            mapOf("state_ready" to "အဆင်သင့်", "state_waiting" to "စောင့်နေသည်", "state_active" to "အသုံးပြုနေသည်", "state_error" to "အမှား"),
+            frozenStates(burmeseStrings),
+        )
+        assertTrue(burmeseStrings.contains("name=\"routing_notification_text\">အသံအထွက် ပြောင်းရန် စောင့်နေသည်</string>"))
+        assertTrue(burmeseStrings.contains("name=\"product_subtitle\">ဖုန်းပြောသလို အေအိုင်နှင့် သီးသန့် စကားပြောပါ။</string>"))
+        assertTrue(burmeseStrings.contains("name=\"floating\">မီနီ</string>"))
+        assertTrue(burmeseStrings.contains("name=\"settings_system_default\">မူရင်း</string>"))
+        assertTrue(burmeseStrings.contains("name=\"settings_advanced\">အဆင့်မြင့်အပြင်အဆင်များ</string>"))
+        assertTrue(burmeseStrings.contains("တယ်လီဖုန်းနားခွက်သို့"))
+        assertTrue(burmeseStrings.contains("ပါဝါဖွင့်/ပိတ်ရန်၊ တိုးချဲ့ရန်နှင့် ထိန်းချုပ်ကိရိယာကို ပိတ်ရန်"))
+        assertEquals(3, burmeseStrings.occurrences("ချို့ယွင်းချက်ရှာဖွေမှု အစီရင်ခံစာ"))
+        assertFalse(projectFile("app/src/main/res/values-my/mini_state_strings.xml").exists())
+    }
+
+    @Test
     fun languageSelectionUsesPlatformConfigurationWithoutAParallelLocaleRegistry() {
         assertTrue(languagePreferencesSource.contains("LocaleConfig(context).supportedLocales"))
         assertTrue(languagePreferencesSource.contains("getSystemService(LocaleManager::class.java)"))
@@ -1282,6 +1313,7 @@ class Layer41LocalizationContractTest {
         val hausaStrings = projectFile("app/src/main/res/values-ha/strings.xml").readText()
         val zuluStrings = projectFile("app/src/main/res/values-zu/strings.xml").readText()
         val odiaStrings = projectFile("app/src/main/res/values-or/strings.xml").readText()
+        val burmeseStrings = projectFile("app/src/main/res/values-my/strings.xml").readText()
         val mainSource = projectFile("app/src/main/java/app/privateaudio/MainActivity.kt").readText()
         val productScreenSource = projectFile("app/src/main/java/app/privateaudio/ui/PrivateAudioScreen.kt").readText()
         val settingsSource = projectFile("app/src/main/java/app/privateaudio/ui/SettingsSheet.kt").readText()
