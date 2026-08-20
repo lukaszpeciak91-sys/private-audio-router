@@ -68,6 +68,14 @@ class LegacyLocaleResourceResolutionTest {
                 localizedContext(context, tag).getString(R.string.overlay_controller_description, "Бэлэн"),
             )
         }
+        listOf("az", "az-AZ", "az-Latn-AZ").forEach { tag ->
+            assertLocalizedSettings(context, modernTag = tag, expected = "Ayarlar")
+            assertEquals("Private Audio üzən idarəedicisi. Vəziyyət: Hazır. Yandırıb-söndürmək, genişləndirmək və bağlamaq üçün idarəetmələr.", localizedContext(context, tag).getString(R.string.overlay_controller_description, "Hazır"))
+        }
+        listOf("az-IR", "az-Arab", "az-Arab-IR").forEach { tag ->
+            assertLocalizedSettings(context, modernTag = tag, expected = "آیارلار")
+            assertEquals("Private Audio-نون اۆزن ایداره‌ئدیجی‌سی. دوروم: حاضیر. یاندیرماق/سؤندورمک، گئنیشلندیرمک و باغلاماق اۆچون ایداره‌لر.", localizedContext(context, tag).getString(R.string.overlay_controller_description, "حاضیر"))
+        }
 
         assertEquals(
             android.view.View.LAYOUT_DIRECTION_LTR,
@@ -172,12 +180,18 @@ class LegacyLocaleResourceResolutionTest {
                 localizedContext(context, tag).resources.configuration.layoutDirection,
             )
         }
+        listOf("az", "az-AZ", "az-Latn-AZ").forEach { tag ->
+            assertEquals("$tag layout direction", android.view.View.LAYOUT_DIRECTION_LTR, localizedContext(context, tag).resources.configuration.layoutDirection)
+        }
+        listOf("az-IR", "az-Arab", "az-Arab-IR").forEach { tag ->
+            assertEquals("$tag layout direction", android.view.View.LAYOUT_DIRECTION_RTL, localizedContext(context, tag).resources.configuration.layoutDirection)
+        }
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
             val discoveredTags = LocaleConfig(context).supportedLocales
                 ?.let { locales -> (0 until locales.size()).map { locales[it].toLanguageTag() } }
                 .orEmpty()
-            assertTrue(discoveredTags.containsAll(listOf("id", "he", "yi", "ml", "pa-Guru-IN", "pa-Arab-PK", "ps", "ha", "am", "zu", "so", "ne", "or", "my", "uz", "km", "as", "kk", "mn")))
+            assertTrue(discoveredTags.containsAll(listOf("id", "he", "yi", "ml", "pa-Guru-IN", "pa-Arab-PK", "ps", "ha", "am", "zu", "so", "ne", "or", "my", "uz", "km", "as", "kk", "mn", "az", "az-Arab-IR")))
         }
     }
 

@@ -946,6 +946,44 @@ class Layer41LocalizationContractTest {
     }
 
     @Test
+    fun azerbaijaniVariantsKeepDistinctQualifiersScriptsAndFrozenSemantics() {
+        val northernIdentity = Locale.forLanguageTag("az-Latn-AZ")
+        val iranianIdentity = Locale.forLanguageTag("az-Arab-IR")
+        assertEquals("Latn", northernIdentity.script)
+        assertEquals("AZ", northernIdentity.country)
+        assertEquals("Arab", iranianIdentity.script)
+        assertEquals("IR", iranianIdentity.country)
+        assertTrue(projectFile("app/src/main/res/values-az/strings.xml").isFile)
+        assertTrue(projectFile("app/src/main/res/values-b+az+Arab+IR/strings.xml").isFile)
+        listOf(
+            "values-az-rAZ", "values-b+az+Latn", "values-b+az+Latn+AZ",
+            "values-az-rIR", "values-b+az+Arab", "values-azb", "values-az-rRU",
+            "values-b+az+Cyrl", "values-b+az+Cyrl+RU",
+        ).forEach { assertFalse(projectFile("app/src/main/res/$it").exists()) }
+
+        assertTrue(northernAzerbaijaniStrings.contains("name=\"routing_notification_title\">Private Audio açıqdır</string>"))
+        assertTrue(northernAzerbaijaniStrings.contains("name=\"state_active\">Aktiv</string>"))
+        assertFalse(northernAzerbaijaniStrings.contains("name=\"state_active\">Açıq</string>"))
+        assertEquals(mapOf("state_ready" to "Hazır", "state_waiting" to "Gözləyir", "state_active" to "Aktiv", "state_error" to "Xəta"), frozenStates(northernAzerbaijaniStrings))
+        listOf("Sİ ilə", ">Mini</string>", ">Ayarlar</string>", ">Defolt</string>", ">Qabaqcıl</string>", "daxili qulaq dinamiki", "Audio çıxışını", "Diaqnostik hesabat").forEach {
+            assertTrue(it, northernAzerbaijaniStrings.contains(it))
+        }
+
+        assertTrue(iranianAzerbaijaniStrings.any { it in '\u0600'..'\u06FF' })
+        assertTrue(iranianAzerbaijaniStrings.contains("name=\"routing_notification_title\">Private Audio آچیقدیر</string>"))
+        assertTrue(iranianAzerbaijaniStrings.contains("name=\"state_active\">فعال</string>"))
+        assertFalse(iranianAzerbaijaniStrings.contains("name=\"state_active\">آچیق</string>"))
+        assertEquals(mapOf("state_ready" to "حاضیر", "state_waiting" to "گؤزله‌ییر", "state_active" to "فعال", "state_error" to "خطا"), frozenStates(iranianAzerbaijaniStrings))
+        listOf("یاپای ذکاء", ">مینی</string>", ">آیارلار</string>", ">فرض ائدیلن</string>", ">گئنیشمیش</string>", "داخیل قولاق دینامیکی", "آودیو چیخیشی", "دیاقنوستیک حسابات").forEach {
+            assertTrue(it, iranianAzerbaijaniStrings.contains(it))
+        }
+        assertFalse(northernAzerbaijaniStrings.contains("settings_fake_phone_pre_arm"))
+        assertFalse(iranianAzerbaijaniStrings.contains("settings_fake_phone_pre_arm"))
+        assertFalse(projectFile("app/src/main/res/values-az/mini_state_strings.xml").exists())
+        assertFalse(projectFile("app/src/main/res/values-b+az+Arab+IR/mini_state_strings.xml").exists())
+    }
+
+    @Test
     fun amharicKeepsOneNeutralQualifierAndFrozenLtrSemantics() {
         val locale = Locale.forLanguageTag("am")
         val defaultIdentity = Locale.forLanguageTag("am-Ethi-ET")
@@ -1519,6 +1557,8 @@ class Layer41LocalizationContractTest {
         val khmerStrings = projectFile("app/src/main/res/values-km/strings.xml").readText()
         val assameseStrings = projectFile("app/src/main/res/values-as/strings.xml").readText()
         val kazakhStrings = projectFile("app/src/main/res/values-kk/strings.xml").readText()
+        val northernAzerbaijaniStrings = projectFile("app/src/main/res/values-az/strings.xml").readText()
+        val iranianAzerbaijaniStrings = projectFile("app/src/main/res/values-b+az+Arab+IR/strings.xml").readText()
         val mainSource = projectFile("app/src/main/java/app/privateaudio/MainActivity.kt").readText()
         val productScreenSource = projectFile("app/src/main/java/app/privateaudio/ui/PrivateAudioScreen.kt").readText()
         val settingsSource = projectFile("app/src/main/java/app/privateaudio/ui/SettingsSheet.kt").readText()
