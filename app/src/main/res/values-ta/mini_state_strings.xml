@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="state_ready_mini">தயார்</string>
+    <string name="state_waiting_mini">காத்திருப்பு</string>
+    <string name="state_active_mini">செயலில்</string>
+    <string name="state_error_mini">பிழை</string>
+</resources>

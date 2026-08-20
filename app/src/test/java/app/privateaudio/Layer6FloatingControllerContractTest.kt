@@ -66,6 +66,12 @@ class Layer6FloatingControllerContractTest {
         listOf("AudioManager", "setCommunicationDevice(", "MODE_IN_COMMUNICATION", "projectPrivateAudioState(").forEach { assertFalse(it, overlay.contains(it)) }
         assertEquals(1, productionSources.sumOf { it.readText().occurrences("setCommunicationDevice(") })
         listOf("state_ready", "state_waiting", "state_active", "state_error", "overlay_controller_description").forEach { assertTrue(it, strings.contains("name=\"$it\"")) }
+        listOf("state_ready_mini", "state_waiting_mini", "state_active_mini", "state_error_mini").forEach {
+            assertTrue(it, miniAliases.contains("name=\"$it\""))
+        }
+        assertTrue(overlay.contains("drawStatusLabel(canvas, miniStateLabel(state))"))
+        assertTrue(overlay.contains("stateDescription(value)") || overlay.contains("contentDescription = stateDescription"))
+        assertTrue(overlay.method("private fun stateDescription").contains("fullStateLabel(value)"))
         listOf("\"Ready\"", "\"Waiting\"", "\"Active\"", "\"Error\"").forEach { assertFalse(overlay.contains(it)) }
     }
 
@@ -75,6 +81,10 @@ class Layer6FloatingControllerContractTest {
         val overlay = File(root, "app/src/main/java/app/privateaudio/overlay/OverlayService.kt").readText()
         val main = File(root, "app/src/main/java/app/privateaudio/MainActivity.kt").readText()
         val strings = File(root, "app/src/main/res/values/strings.xml").readText()
+        val miniAliases = File(root, "app/src/main/res/values/mini_state_aliases.xml").readText()
         val productionSources = File(root, "app/src/main/java").walkTopDown().filter { it.isFile && it.extension == "kt" }.toList()
     }
+
+    private fun String.method(signature: String): String =
+        substring(indexOf(signature)).substringBefore("\n        }")
 }

@@ -77,6 +77,8 @@ Correct native wording is not shortened merely because English is shorter. When 
 
 Accessibility text may be fuller than a compact visible label when their semantics remain aligned. Detailed layout refinement belongs to the localization UI-polishing workflow and must preserve the accepted component-local fitting rules in D-024.
 
+Compact state variants require demonstrated presentation need and must be reviewed as a complete locale-specific Ready / Waiting / Active / Error status-label system, never as one shortened label in isolation. Exact part-of-speech equality is not required, but the four labels must form one natural grammatical and stylistic paradigm without collapsing their distinct meanings. When natural compact language still narrowly misses measured fit, prefer a small shared geometry accommodation over degrading the translation.
+
 ## RTL, fonts, and glyphs
 
 RTL support is shared, direction-driven infrastructure, not locale-specific code. Preserve the established architecture:

@@ -295,7 +295,7 @@ class OverlayService : Service() {
             paint.alpha = (statusDotAlpha * 255).toInt()
             canvas.drawCircle(directionalX(STATUS_DOT_X), 31f, 5.5f, paint)
             paint.alpha = 255
-            drawStatusLabel(canvas, stateLabel(state))
+            drawStatusLabel(canvas, miniStateLabel(state))
 
             drawPower(canvas, powerColor(state))
             drawExpand(canvas)
@@ -463,7 +463,16 @@ class OverlayService : Service() {
             return true
         }
 
-        private fun stateLabel(value: PrivateAudioState) = getString(
+        private fun miniStateLabel(value: PrivateAudioState) = getString(
+            when (value) {
+                PrivateAudioState.READY -> R.string.state_ready_mini
+                PrivateAudioState.WAITING -> R.string.state_waiting_mini
+                PrivateAudioState.ACTIVE -> R.string.state_active_mini
+                PrivateAudioState.ERROR -> R.string.state_error_mini
+            },
+        )
+
+        private fun fullStateLabel(value: PrivateAudioState) = getString(
             when (value) {
                 PrivateAudioState.READY -> R.string.state_ready
                 PrivateAudioState.WAITING -> R.string.state_waiting
@@ -474,7 +483,7 @@ class OverlayService : Service() {
 
         private fun stateDescription(value: PrivateAudioState) = getString(
             R.string.overlay_controller_description,
-            stateLabel(value),
+            fullStateLabel(value),
         )
 
         private fun statusColor(value: PrivateAudioState) = when (value) {
@@ -502,8 +511,8 @@ class OverlayService : Service() {
         private const val DESIGN_WIDTH = 300f
         private const val STATUS_DOT_X = 20f
         private const val STATUS_TEXT_LEFT = 34f
-        private const val STATUS_TEXT_RIGHT = 126f
-        private const val STATUS_TEXT_WIDTH = 92
+        private const val STATUS_TEXT_RIGHT = 134f
+        private const val STATUS_TEXT_WIDTH = 100
         private const val STATUS_TEXT_BASELINE = 36.5f
         private const val POWER_START_FRACTION = 0.40f
         private const val POWER_END_FRACTION = 0.60f

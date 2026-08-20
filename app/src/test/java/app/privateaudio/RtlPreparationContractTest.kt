@@ -37,7 +37,7 @@ class RtlPreparationContractTest {
         assertTrue(statusRenderer.contains("STATUS_TEXT_WIDTH"))
         assertFalse(overlay.contains("canvas.drawText(stateLabel(state)"))
         assertTrue(overlay.contains("STATUS_TEXT_LEFT = 34f"))
-        assertTrue(overlay.contains("STATUS_TEXT_RIGHT = 126f"))
+        assertTrue(overlay.contains("STATUS_TEXT_RIGHT = 134f"))
         assertTrue(overlay.contains("STATUS_DOT_X = 20f"))
         assertTrue(overlay.contains("DESIGN_WIDTH - ltrX"))
         assertTrue(overlay.contains("directionalX(STATUS_DOT_X)"))
