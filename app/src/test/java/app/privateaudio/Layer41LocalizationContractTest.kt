@@ -1009,6 +1009,36 @@ class Layer41LocalizationContractTest {
     }
 
     @Test
+    fun laoKeepsOneNeutralQualifierAndFrozenLtrSemantics() {
+        val locale = Locale.forLanguageTag("lo")
+        val defaultIdentity = Locale.forLanguageTag("lo-Laoo-LA")
+        assertEquals("lo", locale.toLanguageTag())
+        assertEquals("lo", locale.language)
+        assertEquals("Laoo", defaultIdentity.script)
+        assertEquals("LA", defaultIdentity.country)
+        assertEquals("ລາວ", nativeLocaleName("lo"))
+        assertTrue(projectFile("app/src/main/res/values-lo/strings.xml").isFile)
+        listOf("values-lo-rLA", "values-b+lo+Laoo", "values-b+lo+Laoo+LA").forEach {
+            assertFalse(projectFile("app/src/main/res/$it").exists())
+        }
+        assertTrue(laoStrings.any { it in '\u0E80'..'\u0EFF' })
+        assertTrue(laoStrings.contains("name=\"routing_notification_title\">Private Audio ເປີດຢູ່</string>"))
+        assertTrue(laoStrings.contains("name=\"state_active\">ກຳລັງໃຊ້ງານ</string>"))
+        assertFalse(laoStrings.contains("name=\"state_active\">ເປີດ</string>"))
+        assertEquals(
+            mapOf("state_ready" to "ພ້ອມ", "state_waiting" to "ກຳລັງລໍຖ້າ", "state_active" to "ກຳລັງໃຊ້ງານ", "state_error" to "ຂໍ້ຜິດພາດ"),
+            frozenStates(laoStrings),
+        )
+        listOf("ກັບ AI", ">ມິນິ</string>", ">ການຕັ້ງຄ່າ</string>", ">ຄ່າເລີ່ມຕົ້ນ</string>", ">ຂັ້ນສູງ</string>", "ຊຸດຫູຟັງໃນຕົວໂທລະສັບ", "ອຸປະກອນສຽງອອກ", "ປ່ຽນອຸປະກອນສຽງອອກ", "ລາຍງານການວິນິດໄສ").forEach {
+            assertTrue(it, laoStrings.contains(it))
+        }
+        assertTrue(laoStrings.contains("ປຸ່ມສຳລັບເປີດ/ປິດ Private Audio, ຂະຫຍາຍແຜງຄວບຄຸມ ແລະ ປິດແຜງຄວບຄຸມ"))
+        assertTrue(laoStrings.contains("Private Audio") && laoStrings.contains("Android 13"))
+        assertFalse(laoStrings.contains("settings_fake_phone_pre_arm"))
+        assertFalse(projectFile("app/src/main/res/values-lo/mini_state_strings.xml").exists())
+    }
+
+    @Test
     fun azerbaijaniVariantsKeepDistinctQualifiersScriptsAndFrozenSemantics() {
         val northernIdentity = Locale.forLanguageTag("az-Latn-AZ")
         val iranianIdentity = Locale.forLanguageTag("az-Arab-IR")
@@ -1608,6 +1638,7 @@ class Layer41LocalizationContractTest {
         val armenianStrings = projectFile("app/src/main/res/values-hy/strings.xml").readText()
         val mongolianStrings = projectFile("app/src/main/res/values-mn/strings.xml").readText()
         val georgianStrings = projectFile("app/src/main/res/values-ka/strings.xml").readText()
+        val laoStrings = projectFile("app/src/main/res/values-lo/strings.xml").readText()
         val amharicStrings = projectFile("app/src/main/res/values-am/strings.xml").readText()
         val hebrewStrings = projectFile("app/src/main/res/values-iw/strings.xml").readText()
         val yiddishStrings = projectFile("app/src/main/res/values-ji/strings.xml").readText()
