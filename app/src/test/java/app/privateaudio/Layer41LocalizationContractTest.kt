@@ -967,6 +967,41 @@ class Layer41LocalizationContractTest {
     }
 
     @Test
+    fun hausaKeepsOneNeutralQualifierAndFrozenLtrSemantics() {
+        val locale = Locale.forLanguageTag("ha")
+        assertEquals("ha", locale.toLanguageTag())
+        assertEquals("Hausa", nativeLocaleName("ha"))
+        assertTrue(projectFile("app/src/main/res/values-ha/strings.xml").isFile)
+        listOf(
+            "values-ha-rNG", "values-ha-rNE", "values-ha-rGH",
+            "values-b+ha+Latn+NG", "values-b+ha+Latn+NE", "values-b+ha+Latn+GH",
+            "values-b+ha+Arab", "values-b+ha+Arab+NG",
+        ).forEach { assertFalse(projectFile("app/src/main/res/$it").exists()) }
+        assertTrue(hausaStrings.contains('ƙ') && hausaStrings.contains('ɗ'))
+        assertFalse(hausaStrings.any { it in '\u0600'..'\u06FF' })
+        assertTrue(hausaStrings.contains("name=\"routing_notification_title\">An kunna Private Audio</string>"))
+        assertTrue(hausaStrings.contains("name=\"state_active\">Ana aiki</string>"))
+        assertFalse(hausaStrings.contains("name=\"state_active\">An kunna</string>"))
+        assertEquals(
+            mapOf("state_ready" to "A shirye", "state_waiting" to "Ana jira", "state_active" to "Ana aiki", "state_error" to "Kuskure"),
+            frozenStates(hausaStrings),
+        )
+        assertTrue(hausaStrings.contains("magana da AI"))
+        assertTrue(hausaStrings.contains("name=\"floating\">Ƙarami</string>"))
+        assertFalse(hausaStrings.contains("name=\"floating\">Mini</string>"))
+        assertFalse(hausaStrings.contains("name=\"floating\">mini</string>"))
+        assertTrue(hausaStrings.contains("Ƙaramin mai sarrafa Private Audio"))
+        assertFalse(hausaStrings.contains("Mini mai sarrafa Private Audio"))
+        assertTrue(hausaStrings.contains("name=\"settings_advanced\">Ci gaba</string>"))
+        assertTrue(hausaStrings.contains("name=\"settings_system_default\">Na asali</string>"))
+        assertTrue(hausaStrings.contains("lasifikar kunne da ke cikin wayarka"))
+        listOf("loudspeaker", "speakerphone", "headphones", "earbuds", "Bluetooth").forEach {
+            assertFalse(hausaStrings.contains(it, ignoreCase = true))
+        }
+        assertFalse(projectFile("app/src/main/res/values-ha/mini_state_strings.xml").exists())
+    }
+
+    @Test
     fun languageSelectionUsesPlatformConfigurationWithoutAParallelLocaleRegistry() {
         assertTrue(languagePreferencesSource.contains("LocaleConfig(context).supportedLocales"))
         assertTrue(languagePreferencesSource.contains("getSystemService(LocaleManager::class.java)"))
@@ -1100,6 +1135,7 @@ class Layer41LocalizationContractTest {
         val gurmukhiPunjabiStrings = projectFile("app/src/main/res/values-b+pa+Guru+IN/strings.xml").readText()
         val shahmukhiPunjabiStrings = projectFile("app/src/main/res/values-b+pa+Arab+PK/strings.xml").readText()
         val pashtoStrings = projectFile("app/src/main/res/values-ps/strings.xml").readText()
+        val hausaStrings = projectFile("app/src/main/res/values-ha/strings.xml").readText()
         val mainSource = projectFile("app/src/main/java/app/privateaudio/MainActivity.kt").readText()
         val productScreenSource = projectFile("app/src/main/java/app/privateaudio/ui/PrivateAudioScreen.kt").readText()
         val settingsSource = projectFile("app/src/main/java/app/privateaudio/ui/SettingsSheet.kt").readText()

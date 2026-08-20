@@ -82,7 +82,7 @@ class MiniStatusMeasurementTest {
         val paint = TextPaint(Paint.ANTI_ALIAS_FLAG).apply {
             typeface = Typeface.create("sans-serif", Typeface.NORMAL)
         }
-        listOf("en", "ta", "gu", "ml", "pa-Guru-IN", "pa-Arab-PK", "ps").forEach { languageTag ->
+        listOf("en", "ta", "gu", "ml", "pa-Guru-IN", "pa-Arab-PK", "ps", "ha").forEach { languageTag ->
             val localized = base.createConfigurationContext(Configuration(base.resources.configuration).apply {
                 setLocales(LocaleList(Locale.forLanguageTag(languageTag)))
             })
@@ -102,6 +102,30 @@ class MiniStatusMeasurementTest {
                 assertTrue(labels.all { paint.measureText(it) <= MINI_STATUS_NON_ELLIPSIS_WIDTH })
             }
         }
+    }
+
+    @Test fun hausaResolvesItsFullLtrParadigmAndUsesOneMeasuredProductionSize() {
+        val base = InstrumentationRegistry.getInstrumentation().targetContext
+        val localized = base.createConfigurationContext(Configuration(base.resources.configuration).apply {
+            setLocales(LocaleList(Locale.forLanguageTag("ha")))
+        })
+        assertEquals(View.LAYOUT_DIRECTION_LTR, localized.resources.configuration.layoutDirection)
+        val labels = listOf(
+            localized.getString(R.string.state_ready_mini),
+            localized.getString(R.string.state_waiting_mini),
+            localized.getString(R.string.state_active_mini),
+            localized.getString(R.string.state_error_mini),
+        )
+        assertEquals(listOf("A shirye", "Ana jira", "Ana aiki", "Kuskure"), labels)
+        val paint = TextPaint(Paint.ANTI_ALIAS_FLAG).apply {
+            typeface = Typeface.create("sans-serif", Typeface.NORMAL)
+        }
+        val selected = selectMiniStatusTextSize(labels) { label, textSize ->
+            paint.textSize = textSize
+            paint.measureText(label)
+        }
+        println("Hausa Mini production-equivalent common size: $selected")
+        assertTrue(selected in listOf(16f, 15f, 14f))
     }
 
     @Test fun pashtoResolvesItsFullRtlParadigmAndUsesOneMeasuredProductionSize() {
