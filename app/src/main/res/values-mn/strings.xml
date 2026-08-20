@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Private Audio</string>
+    <string name="routing_notification_channel">Private Audio</string>
+    <string name="routing_notification_title">Private Audio асаалттай</string>
+    <string name="routing_notification_text">Аудио гаралтыг солихыг хүлээж байна</string>
+    <string name="product_title">Private Audio</string>
+    <string name="product_subtitle">ХОУ-тай утсаар ярьж байгаа мэт хувийн байдлаар ярилцаарай.</string>
+    <string name="state_ready">Бэлэн</string>
+    <string name="state_waiting">Хүлээж байна</string>
+    <string name="state_active">Идэвхтэй</string>
+    <string name="state_error">Алдаа</string>
+    <string name="power_control">Асаах/унтраах</string>
+    <string name="floating">Мини</string>
+    <string name="settings">Тохиргоо</string>
+    <string name="close">Хаах</string>
+    <string name="overlay_controller_description">Private Audio-н хөвөгч удирдлага. Төлөв: %1$s. Асаах/унтраах, дэлгэх, хаах товчлуурууд.</string>
+    <string name="settings_language">Хэл</string>
+    <string name="settings_system_default">Өгөгдмөл</string>
+    <string name="settings_save_diagnostic">Оношилгооны тайланг хадгалах</string>
+    <string name="settings_advanced">Нарийвчилсан</string>
+    <string name="settings_about">Private Audio-н тухай</string>
+    <string name="settings_version">Хувилбар %1$s</string>
+    <string name="settings_language_body">Private Audio одоогоор таны төхөөрөмжийн хэлийг ашиглаж байна. Өгөгдмөл тохиргоог сонгосон.</string>
+    <string name="settings_language_android_13_required">Апп дотор хэл сонгоход Android 13 эсвэл түүнээс хойших хувилбар шаардлагатай. Энэ төхөөрөмж системийн хэлийг ашиглаж байна.</string>
+    <string name="settings_proximity_screen">Утсаа чихэндээ ойртуулахад дэлгэцийг унтраах</string>
+    <string name="settings_advanced_body">Private Audio хөгжихийн хэрээр нэмэлт сонголтууд энд гарч ирнэ.</string>
+    <string name="settings_about_body">Private Audio нь дэмжигдсэн ярианы аудиог таны утсанд суурилуулсан чихний чанга яригч руу шилжүүлэхэд тусална.</string>
+    <string name="diagnostic_report_saved">Оношилгооны тайлан хадгалагдлаа.</string>
+    <string name="diagnostic_report_save_failed">Оношилгооны тайланг хадгалж чадсангүй.</string>
+</resources>

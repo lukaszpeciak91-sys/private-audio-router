@@ -913,6 +913,39 @@ class Layer41LocalizationContractTest {
     }
 
     @Test
+    fun mongolianKeepsOneNeutralCyrillicQualifierAndFrozenLtrSemantics() {
+        val locale = Locale.forLanguageTag("mn")
+        val defaultIdentity = Locale.forLanguageTag("mn-Cyrl-MN")
+        assertEquals("mn", locale.toLanguageTag())
+        assertEquals("mn", locale.language)
+        assertEquals("Cyrl", defaultIdentity.script)
+        assertEquals("MN", defaultIdentity.country)
+        assertEquals("монгол", nativeLocaleName("mn"))
+        assertTrue(projectFile("app/src/main/res/values-mn/strings.xml").isFile)
+        listOf("values-mn-rMN", "values-b+mn+Cyrl", "values-b+mn+Cyrl+MN", "values-mn-rCN", "values-b+mn+Mong", "values-b+mn+Mong+CN", "values-b+mn+Latn").forEach {
+            assertFalse(projectFile("app/src/main/res/$it").exists())
+        }
+        assertTrue(mongolianStrings.any { it in '\u0400'..'\u04FF' })
+        assertTrue(mongolianStrings.contains("name=\"routing_notification_title\">Private Audio асаалттай</string>"))
+        assertTrue(mongolianStrings.contains("name=\"state_active\">Идэвхтэй</string>"))
+        assertFalse(mongolianStrings.contains("name=\"state_active\">Асаалттай</string>"))
+        assertEquals(
+            mapOf("state_ready" to "Бэлэн", "state_waiting" to "Хүлээж байна", "state_active" to "Идэвхтэй", "state_error" to "Алдаа"),
+            frozenStates(mongolianStrings),
+        )
+        assertTrue(mongolianStrings.contains("name=\"product_subtitle\">ХОУ-тай утсаар ярьж байгаа мэт хувийн байдлаар ярилцаарай.</string>"))
+        assertTrue(mongolianStrings.contains("name=\"floating\">Мини</string>"))
+        assertTrue(mongolianStrings.contains("name=\"settings_system_default\">Өгөгдмөл</string>"))
+        assertTrue(mongolianStrings.contains("name=\"settings_advanced\">Нарийвчилсан</string>"))
+        assertTrue(mongolianStrings.contains("name=\"routing_notification_text\">Аудио гаралтыг солихыг хүлээж байна</string>"))
+        assertTrue(mongolianStrings.contains("утсанд суурилуулсан чихний чанга яригч"))
+        assertTrue(mongolianStrings.contains("Оношилгооны тайлан"))
+        assertTrue(mongolianStrings.contains("Асаах/унтраах, дэлгэх, хаах товчлуурууд"))
+        assertFalse(mongolianStrings.contains("settings_fake_phone_pre_arm"))
+        assertFalse(projectFile("app/src/main/res/values-mn/mini_state_strings.xml").exists())
+    }
+
+    @Test
     fun amharicKeepsOneNeutralQualifierAndFrozenLtrSemantics() {
         val locale = Locale.forLanguageTag("am")
         val defaultIdentity = Locale.forLanguageTag("am-Ethi-ET")
@@ -1471,6 +1504,7 @@ class Layer41LocalizationContractTest {
         val malayalamStrings = projectFile("app/src/main/res/values-ml/strings.xml").readText()
         val somaliStrings = projectFile("app/src/main/res/values-so/strings.xml").readText()
         val nepaliStrings = projectFile("app/src/main/res/values-ne/strings.xml").readText()
+        val mongolianStrings = projectFile("app/src/main/res/values-mn/strings.xml").readText()
         val amharicStrings = projectFile("app/src/main/res/values-am/strings.xml").readText()
         val hebrewStrings = projectFile("app/src/main/res/values-iw/strings.xml").readText()
         val yiddishStrings = projectFile("app/src/main/res/values-ji/strings.xml").readText()
