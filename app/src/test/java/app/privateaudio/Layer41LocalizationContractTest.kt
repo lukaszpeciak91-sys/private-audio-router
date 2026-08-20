@@ -1175,6 +1175,38 @@ class Layer41LocalizationContractTest {
     }
 
     @Test
+    fun uzbekKeepsOneLatinQualifierAndFrozenLtrSemantics() {
+        val locale = Locale.forLanguageTag("uz")
+        val defaultIdentity = Locale.forLanguageTag("uz-Latn-UZ")
+        assertEquals("uz", locale.toLanguageTag())
+        assertEquals("Latn", defaultIdentity.script)
+        assertEquals("UZ", defaultIdentity.country)
+        assertEquals("O‘zbek", nativeLocaleName("uz"))
+        assertTrue(projectFile("app/src/main/res/values-uz/strings.xml").isFile)
+        listOf("values-uz-rUZ", "values-b+uz+Latn", "values-b+uz+Latn+UZ", "values-b+uz+Cyrl", "values-b+uz+Cyrl+UZ").forEach {
+            assertFalse(projectFile("app/src/main/res/$it").exists())
+        }
+        assertFalse(uzbekStrings.any { it in '\u0400'..'\u04FF' })
+        assertTrue(uzbekStrings.contains("name=\"routing_notification_title\">Private Audio yoniq</string>"))
+        assertTrue(uzbekStrings.contains("name=\"state_active\">Faol</string>"))
+        assertFalse(uzbekStrings.contains("name=\"state_active\">Yoniq</string>"))
+        assertEquals(
+            mapOf("state_ready" to "Tayyor", "state_waiting" to "Kutilmoqda", "state_active" to "Faol", "state_error" to "Xatolik"),
+            frozenStates(uzbekStrings),
+        )
+        assertTrue(uzbekStrings.contains("name=\"routing_notification_text\">Audio chiqishini almashtirish kutilmoqda</string>"))
+        assertTrue(uzbekStrings.contains("AI bilan xuddi telefon qo‘ng‘irog‘idek, boshqalarga eshittirmay gaplashing."))
+        assertTrue(uzbekStrings.contains("name=\"floating\">Mini</string>"))
+        assertTrue(uzbekStrings.contains("name=\"settings_system_default\">Birlamchi</string>"))
+        assertTrue(uzbekStrings.contains("name=\"settings_advanced\">Kengaytirilgan sozlamalar</string>"))
+        assertTrue(uzbekStrings.contains("telefoningizning ichki quloq karnaychasiga"))
+        assertTrue(uzbekStrings.contains("nutq audiosini"))
+        assertFalse(uzbekStrings.contains("ovozli audioni"))
+        assertTrue(uzbekStrings.contains("Yoqish/o‘chirish, kengaytirish va yopish boshqaruvlari"))
+        assertFalse(projectFile("app/src/main/res/values-uz/mini_state_strings.xml").exists())
+    }
+
+    @Test
     fun languageSelectionUsesPlatformConfigurationWithoutAParallelLocaleRegistry() {
         assertTrue(languagePreferencesSource.contains("LocaleConfig(context).supportedLocales"))
         assertTrue(languagePreferencesSource.contains("getSystemService(LocaleManager::class.java)"))
@@ -1314,6 +1346,7 @@ class Layer41LocalizationContractTest {
         val zuluStrings = projectFile("app/src/main/res/values-zu/strings.xml").readText()
         val odiaStrings = projectFile("app/src/main/res/values-or/strings.xml").readText()
         val burmeseStrings = projectFile("app/src/main/res/values-my/strings.xml").readText()
+        val uzbekStrings = projectFile("app/src/main/res/values-uz/strings.xml").readText()
         val mainSource = projectFile("app/src/main/java/app/privateaudio/MainActivity.kt").readText()
         val productScreenSource = projectFile("app/src/main/java/app/privateaudio/ui/PrivateAudioScreen.kt").readText()
         val settingsSource = projectFile("app/src/main/java/app/privateaudio/ui/SettingsSheet.kt").readText()

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Private Audio</string>
+    <string name="routing_notification_channel">Private Audio</string>
+    <string name="routing_notification_title">Private Audio yoniq</string>
+    <string name="routing_notification_text">Audio chiqishini almashtirish kutilmoqda</string>
+
+    <string name="product_title">Private Audio</string>
+    <string name="product_subtitle">AI bilan xuddi telefon qo‘ng‘irog‘idek, boshqalarga eshittirmay gaplashing.</string>
+
+    <string name="state_ready">Tayyor</string>
+    <string name="state_waiting">Kutilmoqda</string>
+    <string name="state_active">Faol</string>
+    <string name="state_error">Xatolik</string>
+
+    <string name="power_control">Yoqish/O‘chirish</string>
+    <string name="floating">Mini</string>
+    <string name="settings">Sozlamalar</string>
+    <string name="close">Yopish</string>
+
+    <string name="overlay_controller_description">Private Audio suzuvchi boshqaruv paneli. Holat: %1$s. Yoqish/o‘chirish, kengaytirish va yopish boshqaruvlari.</string>
+
+    <string name="settings_language">Til</string>
+    <string name="settings_system_default">Birlamchi</string>
+    <string name="settings_save_diagnostic">Diagnostika hisobotini saqlash</string>
+    <string name="settings_advanced">Kengaytirilgan sozlamalar</string>
+    <string name="settings_about">Private Audio haqida</string>
+    <string name="settings_version">Versiya %1$s</string>
+
+    <string name="settings_language_body">Private Audio hozir qurilmangiz tilidan foydalanadi. Birlamchi variant tanlangan.</string>
+
+    <string name="settings_language_android_13_required">Ilova ichida til tanlash uchun Android 13 yoki undan keyingi versiya kerak. Bu qurilma tizim tilidan foydalanadi.</string>
+
+    <string name="settings_proximity_screen">Telefon qulog‘ingizga yaqinlashganda ekranni o‘chirish</string>
+
+    <string name="settings_advanced_body">Private Audio rivojlangani sari bu yerda qo‘shimcha parametrlar paydo bo‘ladi.</string>
+
+    <string name="settings_about_body">Private Audio qo‘llab-quvvatlanadigan nutq audiosini telefoningizning ichki quloq karnaychasiga o‘tkazishga yordam beradi.</string>
+
+    <string name="diagnostic_report_saved">Diagnostika hisoboti saqlandi.</string>
+    <string name="diagnostic_report_save_failed">Diagnostika hisobotini saqlab bo‘lmadi.</string>
+</resources>
