@@ -941,6 +941,32 @@ class Layer41LocalizationContractTest {
     }
 
     @Test
+    fun pashtoKeepsOneNeutralQualifierAndFrozenRtlSemantics() {
+        val locale = Locale.forLanguageTag("ps")
+        assertEquals("ps", locale.toLanguageTag())
+        assertEquals("پښتو", nativeLocaleName("ps"))
+        assertTrue(projectFile("app/src/main/res/values-ps/strings.xml").isFile)
+        listOf("values-ps-rAF", "values-ps-rPK", "values-b+ps+Arab+AF", "values-b+ps+Arab+PK").forEach {
+            assertFalse(projectFile("app/src/main/res/$it").exists())
+        }
+        assertTrue(pashtoStrings.any { it in '\u0750'..'\u077F' } || pashtoStrings.contains('ښ'))
+        assertTrue(pashtoStrings.contains("name=\"routing_notification_title\">Private Audio چالان دی</string>"))
+        assertTrue(pashtoStrings.contains("name=\"state_active\">فعال</string>"))
+        assertFalse(pashtoStrings.contains("name=\"state_active\">چالان</string>"))
+        assertEquals(
+            mapOf("state_ready" to "چمتو", "state_waiting" to "په تمه", "state_active" to "فعال", "state_error" to "تېروتنه"),
+            frozenStates(pashtoStrings),
+        )
+        assertTrue(pashtoStrings.contains("له AI سره"))
+        assertTrue(pashtoStrings.contains("name=\"floating\">مینی</string>"))
+        assertTrue(pashtoStrings.contains("name=\"settings_advanced\">پرمختللی</string>"))
+        assertTrue(pashtoStrings.contains("د تلیفون رسیدونکي ته"))
+        assertFalse(pashtoStrings.contains("سپیکر"))
+        assertFalse(pashtoStrings.contains("غوږۍ"))
+        assertFalse(projectFile("app/src/main/res/values-ps/mini_state_strings.xml").exists())
+    }
+
+    @Test
     fun languageSelectionUsesPlatformConfigurationWithoutAParallelLocaleRegistry() {
         assertTrue(languagePreferencesSource.contains("LocaleConfig(context).supportedLocales"))
         assertTrue(languagePreferencesSource.contains("getSystemService(LocaleManager::class.java)"))
@@ -1073,6 +1099,7 @@ class Layer41LocalizationContractTest {
         val yiddishStrings = projectFile("app/src/main/res/values-ji/strings.xml").readText()
         val gurmukhiPunjabiStrings = projectFile("app/src/main/res/values-b+pa+Guru+IN/strings.xml").readText()
         val shahmukhiPunjabiStrings = projectFile("app/src/main/res/values-b+pa+Arab+PK/strings.xml").readText()
+        val pashtoStrings = projectFile("app/src/main/res/values-ps/strings.xml").readText()
         val mainSource = projectFile("app/src/main/java/app/privateaudio/MainActivity.kt").readText()
         val productScreenSource = projectFile("app/src/main/java/app/privateaudio/ui/PrivateAudioScreen.kt").readText()
         val settingsSource = projectFile("app/src/main/java/app/privateaudio/ui/SettingsSheet.kt").readText()
