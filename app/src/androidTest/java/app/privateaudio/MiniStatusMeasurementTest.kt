@@ -83,6 +83,7 @@ class MiniStatusMeasurementTest {
             typeface = Typeface.create("sans-serif", Typeface.NORMAL)
         }
         listOf("en", "ta", "gu", "ml", "pa-Guru-IN", "pa-Arab-PK", "ps", "ha", "am", "zu", "so", "ne", "ne-NP", "ne-Deva-NP", "or", "my", "my-MM", "my-Mymr-MM", "uz", "uz-UZ", "uz-Latn-UZ", "km", "km-KH", "km-Khmr-KH").forEach { languageTag ->
+        listOf("en", "ta", "gu", "ml", "pa-Guru-IN", "pa-Arab-PK", "ps", "ha", "am", "zu", "so", "ne", "ne-NP", "ne-Deva-NP", "or", "my", "my-MM", "my-Mymr-MM", "uz", "uz-UZ", "uz-Latn-UZ", "as", "as-IN", "as-Beng-IN").forEach { languageTag ->
             val localized = base.createConfigurationContext(Configuration(base.resources.configuration).apply {
                 setLocales(LocaleList(Locale.forLanguageTag(languageTag)))
             })
@@ -159,6 +160,9 @@ class MiniStatusMeasurementTest {
     @Test fun khmerResolvesItsFullLtrParadigmAndUsesOneMeasuredProductionSize() {
         val base = InstrumentationRegistry.getInstrumentation().targetContext
         listOf("km", "km-KH", "km-Khmr-KH").forEach { languageTag ->
+    @Test fun assameseResolvesItsFullLtrParadigmAndUsesOneMeasuredProductionSize() {
+        val base = InstrumentationRegistry.getInstrumentation().targetContext
+        listOf("as", "as-IN", "as-Beng-IN").forEach { languageTag ->
             val localized = base.createConfigurationContext(Configuration(base.resources.configuration).apply {
                 setLocales(LocaleList(Locale.forLanguageTag(languageTag)))
             })
@@ -170,6 +174,7 @@ class MiniStatusMeasurementTest {
                 localized.getString(R.string.state_error_mini),
             )
             assertEquals(listOf("ត្រៀមរួចរាល់", "កំពុងរង់ចាំ", "សកម្ម", "កំហុស"), labels)
+            assertEquals(listOf("সাজু", "অপেক্ষাৰত", "সক্ৰিয়", "ত্ৰুটি"), labels)
             val paint = TextPaint(Paint.ANTI_ALIAS_FLAG).apply {
                 typeface = Typeface.create("sans-serif", Typeface.NORMAL)
             }
@@ -178,6 +183,7 @@ class MiniStatusMeasurementTest {
                 paint.measureText(label)
             }
             println("$languageTag Khmer Mini production-equivalent common size: $selected")
+            println("$languageTag Assamese Mini production-equivalent common size: $selected")
             assertTrue(selected in listOf(16f, 15f, 14f))
         }
     }

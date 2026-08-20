@@ -54,6 +54,8 @@ class LegacyLocaleResourceResolutionTest {
         }
         listOf("km", "km-KH", "km-Khmr-KH").forEach { tag ->
             assertLocalizedSettings(context, modernTag = tag, expected = "ការកំណត់")
+        listOf("as", "as-IN", "as-Beng-IN").forEach { tag ->
+            assertLocalizedSettings(context, modernTag = tag, expected = "ছেটিং")
         }
 
         assertEquals(
@@ -132,6 +134,7 @@ class LegacyLocaleResourceResolutionTest {
             )
         }
         listOf("km", "km-KH", "km-Khmr-KH").forEach { tag ->
+        listOf("as", "as-IN", "as-Beng-IN").forEach { tag ->
             assertEquals(
                 "$tag layout direction",
                 android.view.View.LAYOUT_DIRECTION_LTR,
@@ -144,6 +147,7 @@ class LegacyLocaleResourceResolutionTest {
                 ?.let { locales -> (0 until locales.size()).map { locales[it].toLanguageTag() } }
                 .orEmpty()
             assertTrue(discoveredTags.containsAll(listOf("id", "he", "yi", "ml", "pa-Guru-IN", "pa-Arab-PK", "ps", "ha", "am", "zu", "so", "ne", "or", "my", "uz", "km")))
+            assertTrue(discoveredTags.containsAll(listOf("id", "he", "yi", "ml", "pa-Guru-IN", "pa-Arab-PK", "ps", "ha", "am", "zu", "so", "ne", "or", "my", "uz", "as")))
         }
     }
 

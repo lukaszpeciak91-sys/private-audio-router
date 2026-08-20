@@ -1266,6 +1266,33 @@ class Layer41LocalizationContractTest {
         assertEquals(3, khmerStrings.occurrences("របាយការណ៍វិនិច្ឆ័យ"))
         assertTrue(khmerStrings.contains("សម្រាប់បើក ឬបិទ Private Audio សម្រាប់ពង្រីកឧបករណ៍បញ្ជា និងសម្រាប់បិទឧបករណ៍បញ្ជា"))
         assertFalse(projectFile("app/src/main/res/values-km/mini_state_strings.xml").exists())
+    fun assameseKeepsOneBengaliScriptQualifierAndFrozenLtrSemantics() {
+        val locale = Locale.forLanguageTag("as")
+        val defaultIdentity = Locale.forLanguageTag("as-Beng-IN")
+        assertEquals("as", locale.toLanguageTag())
+        assertEquals("Beng", defaultIdentity.script)
+        assertEquals("IN", defaultIdentity.country)
+        assertEquals("অসমীয়া", nativeLocaleName("as"))
+        assertTrue(projectFile("app/src/main/res/values-as/strings.xml").isFile)
+        listOf("values-as-rIN", "values-b+as+Beng", "values-b+as+Beng+IN").forEach {
+            assertFalse(projectFile("app/src/main/res/$it").exists())
+        }
+        assertTrue(assameseStrings.contains("name=\"routing_notification_title\">Private Audio অন আছে</string>"))
+        assertTrue(assameseStrings.contains("name=\"state_active\">সক্ৰিয়</string>"))
+        assertFalse(assameseStrings.contains("name=\"state_active\">অন আছে</string>"))
+        assertEquals(
+            mapOf("state_ready" to "সাজু", "state_waiting" to "অপেক্ষাৰত", "state_active" to "সক্ৰিয়", "state_error" to "ত্ৰুটি"),
+            frozenStates(assameseStrings),
+        )
+        assertTrue(assameseStrings.contains("name=\"routing_notification_text\">অডিঅ’ আউটপুট সলনি কৰিবলৈ অপেক্ষা কৰি আছে</string>"))
+        assertTrue(assameseStrings.contains("name=\"product_subtitle\">ফ’ন কলৰ দৰে AIৰ সৈতে ব্যক্তিগতভাৱে কথা পাতক।</string>"))
+        assertTrue(assameseStrings.contains("name=\"floating\">মিনি</string>"))
+        assertTrue(assameseStrings.contains("name=\"settings_system_default\">ডিফ’ল্ট</string>"))
+        assertTrue(assameseStrings.contains("name=\"settings_advanced\">উচ্চখাপৰ</string>"))
+        assertTrue(assameseStrings.contains("বিল্ট-ইন ইয়েৰপিচলৈ"))
+        assertEquals(3, assameseStrings.occurrences("ডায়েগন’ষ্টিক ৰিপ’ৰ্ট"))
+        assertTrue(assameseStrings.contains("পাৱাৰ অন বা অফ কৰিবলৈ, বিস্তাৰ কৰিবলৈ আৰু বন্ধ কৰিবলৈ"))
+        assertFalse(projectFile("app/src/main/res/values-as/mini_state_strings.xml").exists())
     }
 
     @Test
@@ -1411,6 +1438,7 @@ class Layer41LocalizationContractTest {
         val burmeseStrings = projectFile("app/src/main/res/values-my/strings.xml").readText()
         val uzbekStrings = projectFile("app/src/main/res/values-uz/strings.xml").readText()
         val khmerStrings = projectFile("app/src/main/res/values-km/strings.xml").readText()
+        val assameseStrings = projectFile("app/src/main/res/values-as/strings.xml").readText()
         val mainSource = projectFile("app/src/main/java/app/privateaudio/MainActivity.kt").readText()
         val productScreenSource = projectFile("app/src/main/java/app/privateaudio/ui/PrivateAudioScreen.kt").readText()
         val settingsSource = projectFile("app/src/main/java/app/privateaudio/ui/SettingsSheet.kt").readText()
