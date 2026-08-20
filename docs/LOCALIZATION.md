@@ -79,19 +79,27 @@ Do not apply one wording decision mechanically to every surface:
 - **Settings:** prefer standard platform terminology.
 - **Mini:** status labels face strict space constraints. The existing measured, single-line, ellipsized rendering is the layout safeguard; do not silently invent shorter status semantics.
 
-Correct native wording is not shortened merely because English is shorter. When a translation creates layout pressure:
+Correct native wording is not shortened merely because English is shorter. Mini follows this language-independent sequence:
+
+**NATURAL LANGUAGE → MEASURE THE FULL FOUR-STATE PARADIGM → SHARED 16f / 15f / 14f FONT FIT → COMPACT COPY ONLY IF NATURAL COPY STILL FAILS AT 14f → ELLIPSIS AS FINAL SAFETY.**
+
+Resolve Ready, Waiting, Active, and Error for the current locale, measure their actual rendered widths with Mini's production typeface, and select the largest of 16f, 15f, and 14f at which all four fit the established 96-unit non-ellipsis target inside the unchanged 100-unit status slot. Apply that one size to every state so typography does not jump during state transitions. Recalculate the shared size when localized resources/configuration change, not independently on each state transition. Fourteen is the automatic minimum; if any natural label still exceeds the target, keep 14f and the existing ellipsis safety and flag the complete paradigm for targeted compact-copy linguistic review.
+
+Never substitute character count for measured width, and never add runtime branches for a locale, language, script, translated word, or text length. Do not add locale-specific geometry. Visual fitting does not change the full state labels used for accessibility speech. Existing explicitly reviewed compact overrides remain approved and are not automatically invalidated by this default policy.
+
+Only after measured fitting demonstrates layout pressure:
 
 1. verify that it is naturally concise;
 2. prefer a shorter native synonym only when semantics remain correct;
 3. allow wrapping where the component supports it;
 4. introduce a dedicated compact resource only when a component truly requires distinct presentation and after explicit review;
 5. use ellipsizing only where acceptable;
-6. never reduce typography globally because of one locale; and
+6. never reduce typography or geometry globally because of one locale; and
 7. never replace correct terminology with an inferior abbreviation solely to fit geometry.
 
 Accessibility text may be fuller than a compact visible label when their semantics remain aligned. Detailed layout refinement belongs to the localization UI-polishing workflow and must preserve the accepted component-local fitting rules in D-024.
 
-Compact state variants require demonstrated presentation need and must be reviewed as a complete locale-specific Ready / Waiting / Active / Error status-label system, never as one shortened label in isolation. Exact part-of-speech equality is not required, but the four labels must form one natural grammatical and stylistic paradigm without collapsing their distinct meanings. When natural compact language still narrowly misses measured fit, prefer a small shared geometry accommodation over degrading the translation.
+Compact state variants require demonstrated measured failure at 14f and must be reviewed as a complete locale-specific Ready / Waiting / Active / Error status-label system, never as one shortened label in isolation. Exact part-of-speech equality is not required, but the four labels must form one natural grammatical and stylistic paradigm without collapsing their distinct meanings. Existing approved Tamil and Gujarati compact paradigms are retained unless an explicit targeted linguistic review reopens them.
 
 ## RTL, fonts, and glyphs
 

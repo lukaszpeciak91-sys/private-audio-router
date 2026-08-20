@@ -256,6 +256,7 @@ class OverlayService : Service() {
 
         init {
             isClickable = true
+            refreshMiniStatusTextSize()
             contentDescription = stateDescription(state)
         }
 
@@ -270,8 +271,17 @@ class OverlayService : Service() {
         }
 
         fun refreshLocalizedPresentation() {
+            refreshMiniStatusTextSize()
             contentDescription = stateDescription(state)
             invalidate()
+        }
+
+        private fun refreshMiniStatusTextSize() {
+            val labels = PrivateAudioState.entries.map(::miniStateLabel)
+            statusTextPaint.textSize = selectMiniStatusTextSize(labels) { label, textSize ->
+                statusTextPaint.textSize = textSize
+                statusTextPaint.measureText(label)
+            }
         }
 
         override fun onDraw(canvas: Canvas) {
