@@ -111,3 +111,10 @@ New statements must be labeled **FACT**, **INFERENCE**, or **UNKNOWN**, with sou
 - **FACT (supplied physical result, 2026-08-19):** ChatGPT Web in Mi Browser also produced normal Private Audio behavior and human-confirmed earpiece routing on the same Xiaomi Android 13/API 33 device. Exact Mi Browser metadata was not supplied.
 - **INFERENCE:** Exact public mode, route, usage, and content classification provides a provider-independent third trigger boundary without identifying Chrome, a URL, a package, or a client.
 - **UNKNOWN:** These Chrome and Mi Browser results do not establish that every Chromium browser exposes identical metadata, that Gecko/Firefox follows a supported signature, or that another OEM or Android release behaves identically.
+
+## Fake Phone pre-arm experimental basis
+
+- **FACT:** Repeated supplied Xiaomi Android 13 diagnostics report `USAGE_ASSISTANT` + `CONTENT_TYPE_SONIFICATION` on the built-in speaker before later `USAGE_ASSISTANT` + `CONTENT_TYPE_SPEECH` evidence begins protected routing.
+- **FACT:** Public `AudioPlaybackConfiguration` metadata used here does not identify that playback as owned by ChatGPT, Gemini, or another particular application.
+- **INFERENCE:** Preparing the proven public communication context and earpiece route while `WAITING` may influence the later sonification route; the default-OFF experiment records the public device/mode observations without muting or changing global volume.
+- **UNKNOWN:** Whether the observed event is the audible startup ping and whether it is physically heard from the earpiece while pre-armed. Android metadata and `setCommunicationDevice(true)` are insufficient; Xiaomi physical listening confirmation is required.

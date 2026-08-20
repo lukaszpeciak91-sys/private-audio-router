@@ -103,6 +103,8 @@ fun PrivateAudioScreen(
     state: PrivateAudioState,
     proximityFeatureEnabled: Boolean = true,
     onProximityFeatureChange: (Boolean) -> Unit = {},
+    fakePhonePreArmEnabled: Boolean = false,
+    onFakePhonePreArmChange: (Boolean) -> Unit = {},
     powerEnabled: Boolean = true,
     onPowerClick: () -> Unit,
     onFloatingClick: () -> Unit = {},
@@ -190,6 +192,8 @@ fun PrivateAudioScreen(
                 versionName = versionName,
                 proximityFeatureEnabled = proximityFeatureEnabled,
                 onProximityFeatureChange = onProximityFeatureChange,
+                fakePhonePreArmEnabled = fakePhonePreArmEnabled,
+                onFakePhonePreArmChange = onFakePhonePreArmChange,
                 onSaveDiagnosticReport = onSaveDiagnosticReport,
                 onDismiss = { settingsVisible = false },
             )

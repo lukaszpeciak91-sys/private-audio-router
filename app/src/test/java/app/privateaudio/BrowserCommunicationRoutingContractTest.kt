@@ -38,7 +38,7 @@ class BrowserCommunicationRoutingContractTest {
             "collectSnapshot()",
             "startSilentCommunicationTrack()",
             "PLAYSTATE_PLAYING",
-            "audioManager.mode = AudioManager.MODE_IN_COMMUNICATION",
+            "requestCommunicationMode()",
             "performRoutingAttempt(earpiece",
         )
     }
