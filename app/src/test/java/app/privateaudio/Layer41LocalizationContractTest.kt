@@ -824,7 +824,8 @@ class Layer41LocalizationContractTest {
         assertTrue(amharicStrings.contains("name=\"floating\">ሚኒ</string>"))
         assertTrue(amharicStrings.contains("name=\"settings_advanced\">የላቁ ቅንብሮች</string>"))
         assertTrue(amharicStrings.contains("name=\"settings_system_default\">ነባሪ</string>"))
-        assertTrue(amharicStrings.contains("ወደ የስልክዎ መስሚያ"))
+        assertTrue(amharicStrings.contains("name=\"settings_about_body\">Private Audio የሚደገፍ የድምፅ ኦዲዮን ወደ የስልክዎ አብሮገነብ መስሚያ ለመቀየር ያግዛል።</string>"))
+        assertTrue(amharicStrings.contains("የስልክዎ አብሮገነብ መስሚያ"))
         assertFalse(amharicStrings.contains("የጆሮ ማዳመጫ"))
         assertFalse(projectFile("app/src/main/res/values-am/mini_state_strings.xml").exists())
     }
