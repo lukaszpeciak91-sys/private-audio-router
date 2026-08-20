@@ -1536,6 +1536,37 @@ class Layer41LocalizationContractTest {
     }
 
     @Test
+    fun galicianKeepsOneLatinQualifierAndFrozenLtrSemantics() {
+        val locale = Locale.forLanguageTag("gl")
+        val defaultIdentity = Locale.forLanguageTag("gl-Latn-ES")
+        assertEquals("gl", locale.toLanguageTag())
+        assertEquals("Latn", defaultIdentity.script)
+        assertEquals("ES", defaultIdentity.country)
+        assertEquals("Galego", nativeLocaleName("gl"))
+        assertTrue(projectFile("app/src/main/res/values-gl/strings.xml").isFile)
+        listOf("values-gl-rES", "values-b+gl+Latn", "values-b+gl+Latn+ES").forEach {
+            assertFalse(projectFile("app/src/main/res/$it").exists())
+        }
+        assertTrue(galicianStrings.contains("name=\"routing_notification_title\">Private Audio está activado</string>"))
+        assertTrue(galicianStrings.contains("name=\"state_active\">Activo</string>"))
+        assertFalse(galicianStrings.contains("name=\"state_active\">Activado</string>"))
+        assertEquals(
+            mapOf("state_ready" to "Preparado", "state_waiting" to "En espera", "state_active" to "Activo", "state_error" to "Erro"),
+            frozenStates(galicianStrings),
+        )
+        assertTrue(galicianStrings.contains("Fala coa IA en privado"))
+        assertTrue(galicianStrings.contains("name=\"floating\">Mini</string>"))
+        assertTrue(galicianStrings.contains("name=\"settings_system_default\">Predeterminado</string>"))
+        assertTrue(galicianStrings.contains("name=\"settings_advanced\">Configuración avanzada</string>"))
+        assertTrue(galicianStrings.contains("saída de audio"))
+        assertTrue(galicianStrings.contains("auricular integrado do teléfono"))
+        assertEquals(3, galicianStrings.occurrences("informe de diagnóstico"))
+        assertTrue(galicianStrings.contains("Botóns para activar ou desactivar Private Audio, ampliar o control e pechalo"))
+        assertFalse(galicianStrings.contains("settings_fake_phone_pre_arm"))
+        assertFalse(projectFile("app/src/main/res/values-gl/mini_state_strings.xml").exists())
+    }
+
+    @Test
     fun languageSelectionUsesPlatformConfigurationWithoutAParallelLocaleRegistry() {
         assertTrue(languagePreferencesSource.contains("LocaleConfig(context).supportedLocales"))
         assertTrue(languagePreferencesSource.contains("getSystemService(LocaleManager::class.java)"))
@@ -1684,6 +1715,7 @@ class Layer41LocalizationContractTest {
         val khmerStrings = projectFile("app/src/main/res/values-km/strings.xml").readText()
         val assameseStrings = projectFile("app/src/main/res/values-as/strings.xml").readText()
         val catalanStrings = projectFile("app/src/main/res/values-ca/strings.xml").readText()
+        val galicianStrings = projectFile("app/src/main/res/values-gl/strings.xml").readText()
         val kazakhStrings = projectFile("app/src/main/res/values-kk/strings.xml").readText()
         val northernAzerbaijaniStrings = projectFile("app/src/main/res/values-az/strings.xml").readText()
         val iranianAzerbaijaniStrings = projectFile("app/src/main/res/values-b+az+Arab+IR/strings.xml").readText()
