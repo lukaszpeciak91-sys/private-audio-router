@@ -11,10 +11,10 @@
     <string name="state_active">فعال</string>
     <string name="state_error">خرابی</string>
     <string name="power_control">چالو کریں</string>
-    <string name="floating">منی</string>
+    <string name="floating">کمپیکٹ</string>
     <string name="settings">سیٹنگز</string>
     <string name="close">بند کریں</string>
-    <string name="overlay_controller_description">Private Audio کا فلوٹنگ منی کنٹرولر۔ اسٹیٹس: %1$s۔ چالو کرنے، پھیلانے اور بند کرنے کے کنٹرولز۔</string>
+    <string name="overlay_controller_description">Private Audio کا فلوٹنگ کمپیکٹ کنٹرولر۔ اسٹیٹس: %1$s۔ چالو کرنے، پھیلانے اور بند کرنے کے کنٹرولز۔</string>
     <string name="settings_language">زبان</string>
     <string name="settings_system_default">ڈیفالٹ</string>
     <string name="settings_save_diagnostic">تشخیصی رپورٹ محفوظ کریں</string>
