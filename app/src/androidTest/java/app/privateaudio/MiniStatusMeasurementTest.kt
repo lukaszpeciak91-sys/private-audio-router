@@ -5,6 +5,8 @@ import android.graphics.Typeface
 import android.content.res.Configuration
 import android.os.LocaleList
 import android.text.TextPaint
+import app.privateaudio.overlay.MINI_STATUS_NON_ELLIPSIS_WIDTH
+import app.privateaudio.overlay.selectMiniStatusTextSize
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
 import org.junit.Assert.assertEquals
@@ -70,6 +72,33 @@ class MiniStatusMeasurementTest {
             resolvedStates.forEach { state ->
                 val measuredWidth = paint.measureText(state)
                 assertTrue("$languageTag Mini state '$state' measured $measuredWidth in the 100-unit slot", measuredWidth <= 100f)
+            }
+        }
+    }
+
+    @Test fun resolvedLocaleParadigmSelectsOneMeasuredProductionSize() {
+        val base = InstrumentationRegistry.getInstrumentation().targetContext
+        val paint = TextPaint(Paint.ANTI_ALIAS_FLAG).apply {
+            typeface = Typeface.create("sans-serif", Typeface.NORMAL)
+        }
+        listOf("en", "ta", "gu", "pa-Guru-IN", "pa-Arab-PK").forEach { languageTag ->
+            val localized = base.createConfigurationContext(Configuration(base.resources.configuration).apply {
+                setLocales(LocaleList(Locale.forLanguageTag(languageTag)))
+            })
+            val labels = listOf(
+                localized.getString(R.string.state_ready_mini),
+                localized.getString(R.string.state_waiting_mini),
+                localized.getString(R.string.state_active_mini),
+                localized.getString(R.string.state_error_mini),
+            )
+            val selected = selectMiniStatusTextSize(labels) { label, textSize ->
+                paint.textSize = textSize
+                paint.measureText(label)
+            }
+            assertTrue(selected in listOf(16f, 15f, 14f))
+            paint.textSize = selected
+            if (selected > 14f) {
+                assertTrue(labels.all { paint.measureText(it) <= MINI_STATUS_NON_ELLIPSIS_WIDTH })
             }
         }
     }

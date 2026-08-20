@@ -1,5 +1,7 @@
 package app.privateaudio
 
+import app.privateaudio.overlay.MINI_STATUS_NON_ELLIPSIS_WIDTH
+import app.privateaudio.overlay.selectMiniStatusTextSize
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue
@@ -57,7 +59,33 @@ class MiniCompactStateContractTest {
     @Test fun miniMeasurementTypographyAssumptionsRemainCoupledToProduction() {
         assertTrue(overlay.contains("textSize = 16f"))
         assertTrue(overlay.contains("android.graphics.Typeface.create(\"sans-serif\", android.graphics.Typeface.NORMAL)"))
+        assertTrue(overlay.contains("PrivateAudioState.entries.map(::miniStateLabel)"))
+        assertTrue(overlay.contains("statusTextPaint.measureText(label)"))
+        assertTrue(overlay.method("private fun refreshLocalizedPresentation").contains("refreshMiniStatusTextSize()"))
+        assertFalse(overlay.method("private val refreshState").contains("refreshMiniStatusTextSize()"))
     }
+
+    @Test fun measuredSelectionUsesLargestSharedCandidateAndHardMinimum() {
+        assertEquals(16f, selected(mapOf("ready" to 80f, "waiting" to 96f, "active" to 70f, "error" to 50f)))
+        assertEquals(15f, selected(mapOf("ready" to 80f, "waiting" to 97f, "active" to 70f, "error" to 50f)))
+        assertEquals(14f, selected(mapOf("ready" to 80f, "waiting" to 103f, "active" to 70f, "error" to 50f)))
+        assertEquals(14f, selected(mapOf("ready" to 80f, "waiting" to 120f, "active" to 70f, "error" to 50f)))
+    }
+
+    @Test fun measuredSelectionConsidersEveryStateRatherThanStringLength() {
+        val equalLengthLabels = listOf("aaaa", "bbbb", "cccc", "dddd")
+        val measuredWidthsAt16 = mapOf("aaaa" to 40f, "bbbb" to 40f, "cccc" to 97f, "dddd" to 40f)
+        val chosen = selectMiniStatusTextSize(equalLengthLabels) { label, size ->
+            measuredWidthsAt16.getValue(label) * size / 16f
+        }
+        assertEquals(15f, chosen)
+        assertEquals(4, equalLengthLabels.map(String::length).distinct().single())
+    }
+
+    private fun selected(widthsAt16: Map<String, Float>) =
+        selectMiniStatusTextSize(listOf("ready", "waiting", "active", "error")) { label, size ->
+            widthsAt16.getValue(label) * size / 16f
+        }.also { assertEquals(96f, MINI_STATUS_NON_ELLIPSIS_WIDTH) }
 
     private fun strings(file: File) = resources(file, "string")
     private fun fullStates(file: File) = strings(file).filterKeys {
