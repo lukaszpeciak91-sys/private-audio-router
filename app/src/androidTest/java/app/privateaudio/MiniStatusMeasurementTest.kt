@@ -26,6 +26,16 @@ class MiniStatusMeasurementTest {
             setLocales(LocaleList(Locale.forLanguageTag("ta")))
         })
         assertEquals("காத்திருப்பு", tamil.getString(R.string.state_waiting_mini))
+
+        val gurmukhiPunjabi = base.createConfigurationContext(Configuration(base.resources.configuration).apply {
+            setLocales(LocaleList(Locale.forLanguageTag("pa-Guru-IN")))
+        })
+        assertEquals("ਉਡੀਕ", gurmukhiPunjabi.getString(R.string.state_waiting_mini))
+
+        val shahmukhiPunjabi = base.createConfigurationContext(Configuration(base.resources.configuration).apply {
+            setLocales(LocaleList(Locale.forLanguageTag("pa-Arab-PK")))
+        })
+        assertEquals("اُڈیک", shahmukhiPunjabi.getString(R.string.state_waiting_mini))
     }
 
     @Test fun approvedTamilWaitingHasNonEllipsisMarginInSharedSlot() {
@@ -35,5 +45,32 @@ class MiniStatusMeasurementTest {
         }
         val measuredWidth = currentMiniPaint.measureText("காத்திருப்பு")
         assertTrue("Tamil Mini WAITING measured $measuredWidth in the 100-unit slot", measuredWidth <= 96f)
+    }
+
+    @Test fun reviewedPunjabiParadigmsResolveAndFitTheSharedSlot() {
+        val base = InstrumentationRegistry.getInstrumentation().targetContext
+        val paint = TextPaint(Paint.ANTI_ALIAS_FLAG).apply {
+            textSize = 16f
+            typeface = Typeface.create("sans-serif", Typeface.NORMAL)
+        }
+        mapOf(
+            "pa-Guru-IN" to listOf("ਤਿਆਰ", "ਉਡੀਕ", "ਸਰਗਰਮ", "ਤਰੁੱਟੀ"),
+            "pa-Arab-PK" to listOf("تیار", "اُڈیک", "فعال", "خرابی"),
+        ).forEach { (languageTag, expectedStates) ->
+            val localized = base.createConfigurationContext(Configuration(base.resources.configuration).apply {
+                setLocales(LocaleList(Locale.forLanguageTag(languageTag)))
+            })
+            val resolvedStates = listOf(
+                localized.getString(R.string.state_ready_mini),
+                localized.getString(R.string.state_waiting_mini),
+                localized.getString(R.string.state_active_mini),
+                localized.getString(R.string.state_error_mini),
+            )
+            assertEquals(expectedStates, resolvedStates)
+            resolvedStates.forEach { state ->
+                val measuredWidth = paint.measureText(state)
+                assertTrue("$languageTag Mini state '$state' measured $measuredWidth in the 100-unit slot", measuredWidth <= 100f)
+            }
+        }
     }
 }

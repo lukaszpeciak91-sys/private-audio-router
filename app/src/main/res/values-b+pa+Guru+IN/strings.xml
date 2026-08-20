@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Private Audio</string>
+    <string name="routing_notification_channel">Private Audio</string>
+    <string name="routing_notification_title">Private Audio ਚਾਲੂ ਹੈ</string>
+    <string name="routing_notification_text">ਆਡੀਓ ਬਦਲਣ ਦੀ ਉਡੀਕ</string>
+    <string name="product_title">Private Audio</string>
+    <string name="product_subtitle">AI ਨਾਲ ਨਿੱਜੀ ਤੌਰ ’ਤੇ ਗੱਲ ਕਰੋ, ਬਿਲਕੁਲ ਫ਼ੋਨ ਕਾਲ ਵਾਂਗ।</string>
+    <string name="state_ready">ਤਿਆਰ</string>
+    <string name="state_waiting">ਉਡੀਕ</string>
+    <string name="state_active">ਸਰਗਰਮ</string>
+    <string name="state_error">ਤਰੁੱਟੀ</string>
+    <string name="power_control">ਪਾਵਰ</string>
+    <string name="floating">ਕੰਪੈਕਟ</string>
+    <string name="settings">ਸੈਟਿੰਗਾਂ</string>
+    <string name="close">ਬੰਦ ਕਰੋ</string>
+    <string name="overlay_controller_description">Private Audio ਕੰਪੈਕਟ ਕੰਟਰੋਲਰ। ਸਥਿਤੀ: %1$s। ਪਾਵਰ ਚਾਲੂ ਜਾਂ ਬੰਦ ਕਰਨ, ਫੈਲਾਉਣ ਅਤੇ ਬੰਦ ਕਰਨ ਲਈ ਕੰਟਰੋਲ।</string>
+    <string name="settings_language">ਭਾਸ਼ਾ</string>
+    <string name="settings_system_default">ਡਿਫੌਲਟ</string>
+    <string name="settings_save_diagnostic">ਡਾਇਗਨੌਸਟਿਕ ਰਿਪੋਰਟ ਸੰਭਾਲੋ</string>
+    <string name="settings_advanced">ਉੱਨਤ</string>
+    <string name="settings_about">Private Audio ਬਾਰੇ</string>
+    <string name="settings_version">ਵਰਜਨ %1$s</string>
+    <string name="settings_language_body">Private Audio ਇਸ ਵੇਲੇ ਤੁਹਾਡੇ ਡਿਵਾਈਸ ਦੀ ਭਾਸ਼ਾ ਵਰਤਦਾ ਹੈ। ਡਿਫੌਲਟ ਚੁਣਿਆ ਹੋਇਆ ਹੈ।</string>
+    <string name="settings_language_android_13_required">ਐਪ ਵਿੱਚ ਭਾਸ਼ਾ ਚੁਣਨ ਲਈ Android 13 ਜਾਂ ਇਸ ਤੋਂ ਨਵਾਂ ਵਰਜਨ ਲੋੜੀਂਦਾ ਹੈ। ਇਹ ਡਿਵਾਈਸ ਸਿਸਟਮ ਦੀ ਭਾਸ਼ਾ ਵਰਤਦਾ ਹੈ।</string>
+    <string name="settings_proximity_screen">ਕੰਨ ਦੇ ਨੇੜੇ ਸਕ੍ਰੀਨ ਬੰਦ ਕਰੋ</string>
+    <string name="settings_advanced_body">Private Audio ਦੇ ਵਿਕਸਿਤ ਹੋਣ ਨਾਲ ਹੋਰ ਵਿਕਲਪ ਇੱਥੇ ਦਿਖਾਈ ਦੇਣਗੇ।</string>
+    <string name="settings_about_body">Private Audio ਸਮਰਥਿਤ ਵੌਇਸ ਆਡੀਓ ਨੂੰ ਤੁਹਾਡੇ ਫ਼ੋਨ ਦੇ ਬਿਲਟ-ਇਨ ਈਅਰਪੀਸ ’ਤੇ ਬਦਲਣ ਵਿੱਚ ਮਦਦ ਕਰਦਾ ਹੈ।</string>
+    <string name="diagnostic_report_saved">ਡਾਇਗਨੌਸਟਿਕ ਰਿਪੋਰਟ ਸੰਭਾਲੀ ਗਈ।</string>
+    <string name="diagnostic_report_save_failed">ਡਾਇਗਨੌਸਟਿਕ ਰਿਪੋਰਟ ਸੰਭਾਲੀ ਨਹੀਂ ਜਾ ਸਕੀ।</string>
+</resources>

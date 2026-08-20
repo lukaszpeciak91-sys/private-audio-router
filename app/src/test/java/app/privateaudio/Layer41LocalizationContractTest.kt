@@ -878,6 +878,42 @@ class Layer41LocalizationContractTest {
     }
 
     @Test
+    fun punjabiScriptLocalesKeepExactQualifiersAndFrozenSemantics() {
+        val gurmukhiLocale = Locale.forLanguageTag("pa-Guru-IN")
+        val shahmukhiLocale = Locale.forLanguageTag("pa-Arab-PK")
+        assertEquals("pa-Guru-IN", gurmukhiLocale.toLanguageTag())
+        assertEquals("Guru", gurmukhiLocale.script)
+        assertEquals("IN", gurmukhiLocale.country)
+        assertEquals("pa-Arab-PK", shahmukhiLocale.toLanguageTag())
+        assertEquals("Arab", shahmukhiLocale.script)
+        assertEquals("PK", shahmukhiLocale.country)
+        assertTrue(projectFile("app/src/main/res/values-b+pa+Guru+IN/strings.xml").isFile)
+        assertTrue(projectFile("app/src/main/res/values-b+pa+Arab+PK/strings.xml").isFile)
+
+        assertTrue(gurmukhiPunjabiStrings.contains("name=\"routing_notification_title\">Private Audio ਚਾਲੂ ਹੈ</string>"))
+        assertTrue(gurmukhiPunjabiStrings.contains("name=\"product_subtitle\">AI ਨਾਲ"))
+        assertTrue(gurmukhiPunjabiStrings.contains("name=\"floating\">ਕੰਪੈਕਟ</string>"))
+        assertTrue(gurmukhiPunjabiStrings.contains("ਬਿਲਟ-ਇਨ ਈਅਰਪੀਸ"))
+        assertEquals(
+            mapOf("state_ready" to "ਤਿਆਰ", "state_waiting" to "ਉਡੀਕ", "state_active" to "ਸਰਗਰਮ", "state_error" to "ਤਰੁੱਟੀ"),
+            frozenStates(gurmukhiPunjabiStrings),
+        )
+        assertFalse(gurmukhiPunjabiStrings.contains("name=\"state_active\">ਚਾਲੂ</string>"))
+
+        assertTrue(shahmukhiPunjabiStrings.contains("name=\"routing_notification_title\">Private Audio چالو اے</string>"))
+        assertTrue(shahmukhiPunjabiStrings.contains("name=\"product_subtitle\">AI نال"))
+        assertTrue(shahmukhiPunjabiStrings.contains("name=\"floating\">کمپیکٹ</string>"))
+        assertTrue(shahmukhiPunjabiStrings.contains("بِلٹ اِن ایئر پیس"))
+        assertTrue(shahmukhiPunjabiStrings.contains("name=\"settings_advanced\">ایڈوانسڈ</string>"))
+        assertFalse(shahmukhiPunjabiStrings.contains("ہے"))
+        assertEquals(
+            mapOf("state_ready" to "تیار", "state_waiting" to "اُڈیک", "state_active" to "فعال", "state_error" to "خرابی"),
+            frozenStates(shahmukhiPunjabiStrings),
+        )
+        assertFalse(shahmukhiPunjabiStrings.contains("name=\"state_active\">چالو</string>"))
+    }
+
+    @Test
     fun languageSelectionUsesPlatformConfigurationWithoutAParallelLocaleRegistry() {
         assertTrue(languagePreferencesSource.contains("LocaleConfig(context).supportedLocales"))
         assertTrue(languagePreferencesSource.contains("getSystemService(LocaleManager::class.java)"))
@@ -927,6 +963,10 @@ class Layer41LocalizationContractTest {
         Regex("<string name=\"([^\"]+)\">([^<]*)</string>").findAll(resources).associate {
             it.groupValues[1] to Regex("%\\d+\\$[a-z]").findAll(it.groupValues[2]).map { match -> match.value }.toList()
         }
+
+    private fun frozenStates(resources: String) =
+        Regex("<string name=\"(state_(?:ready|waiting|active|error))\">([^<]*)</string>")
+            .findAll(resources).associate { it.groupValues[1] to it.groupValues[2] }
 
     private fun nativeLocaleName(languageTag: String): String {
         val locale = Locale.forLanguageTag(languageTag)
@@ -1003,6 +1043,8 @@ class Layer41LocalizationContractTest {
         val bengaliStrings = projectFile("app/src/main/res/values-bn/strings.xml").readText()
         val hebrewStrings = projectFile("app/src/main/res/values-iw/strings.xml").readText()
         val yiddishStrings = projectFile("app/src/main/res/values-ji/strings.xml").readText()
+        val gurmukhiPunjabiStrings = projectFile("app/src/main/res/values-b+pa+Guru+IN/strings.xml").readText()
+        val shahmukhiPunjabiStrings = projectFile("app/src/main/res/values-b+pa+Arab+PK/strings.xml").readText()
         val mainSource = projectFile("app/src/main/java/app/privateaudio/MainActivity.kt").readText()
         val productScreenSource = projectFile("app/src/main/java/app/privateaudio/ui/PrivateAudioScreen.kt").readText()
         val settingsSource = projectFile("app/src/main/java/app/privateaudio/ui/SettingsSheet.kt").readText()

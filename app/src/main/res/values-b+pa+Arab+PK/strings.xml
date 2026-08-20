@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Private Audio</string>
+    <string name="routing_notification_channel">Private Audio</string>
+    <string name="routing_notification_title">Private Audio چالو اے</string>
+    <string name="routing_notification_text">آڈیو بدلݨ دی اُڈیک</string>
+    <string name="product_title">Private Audio</string>
+    <string name="product_subtitle">AI نال نجی طور تے گل کرو، بالکل فون کال وانگ۔</string>
+    <string name="state_ready">تیار</string>
+    <string name="state_waiting">اُڈیک</string>
+    <string name="state_active">فعال</string>
+    <string name="state_error">خرابی</string>
+    <string name="power_control">پاور</string>
+    <string name="floating">کمپیکٹ</string>
+    <string name="settings">سیٹنگاں</string>
+    <string name="close">بند کرو</string>
+    <string name="overlay_controller_description">Private Audio کمپیکٹ کنٹرولر۔ حالت: %1$s۔ پاور چالو یا بند کرن، پھیلاون تے بند کرن لئی کنٹرول۔</string>
+    <string name="settings_language">زبان</string>
+    <string name="settings_system_default">طے شدہ</string>
+    <string name="settings_save_diagnostic">تشخیصی رپورٹ محفوظ کرو</string>
+    <string name="settings_advanced">ایڈوانسڈ</string>
+    <string name="settings_about">Private Audio بارے</string>
+    <string name="settings_version">ورژن %1$s</string>
+    <string name="settings_language_body">Private Audio ہن تہاڈی ڈیوائس دی زبان ورتدا اے۔ طے شدہ چݨیا ہویا اے۔</string>
+    <string name="settings_language_android_13_required">ایپ وچ زبان چُنݨ لئی Android 13 یا اوس توں نواں ورژن لوڑیں دا اے۔ ایہہ ڈیوائس سسٹم دی زبان ورتدی اے۔</string>
+    <string name="settings_proximity_screen">کن دے نیڑے سکرین بند کرو</string>
+    <string name="settings_advanced_body">Private Audio دے ودھݨ نال ہور اختیارات ایتھے نظر آون گے۔</string>
+    <string name="settings_about_body">Private Audio معاون وائس آڈیو نوں تہاڈے فون دے بِلٹ اِن ایئر پیس ول بدلݨ وچ مدد کردا اے۔</string>
+    <string name="diagnostic_report_saved">تشخیصی رپورٹ محفوظ ہو گئی۔</string>
+    <string name="diagnostic_report_save_failed">تشخیصی رپورٹ محفوظ نہیں ہو سکی۔</string>
+</resources>
