@@ -57,11 +57,21 @@ For a linguistically non-obvious or high-risk string, briefly reconstruct the ta
 ### Add a locale
 
 1. Inspect current English/default strings and derive the current locale/key inventory.
-2. Review core terminology and product states—including an explicit ON/enabled-versus-ACTIVE back-check when both occur—identify and research uncertainty, then freeze approved copy.
-3. Implement standard Android resources without silently rewriting approved copy. Report genuine language problems instead of improvising.
-4. Verify key and placeholder parity, generated discovery, script/orthography, Mini labels, and shared RTL/bidi behavior where applicable.
-5. For each locale, add durable locale-specific assertions to the existing localization contract for FULL/MINI-reviewed or otherwise frozen high-risk terminology, including meaningful reviewed Mini states. Ad-hoc Python, Java, or manual checks and parity alone are not substitutes.
-6. Regress existing locales and update `docs/PROGRESS.md` with accurate evidence levels.
+2. Pass the mandatory Android qualifier-compatibility gate before creating a resource directory:
+   - establish the modern BCP-47 logical tag;
+   - research whether Android/Java has a legacy alias relevant across the project's current supported runtime range;
+   - inspect current `minSdk`, `targetSdk`, `generateLocaleConfig`, and generated-locale discovery behavior;
+   - determine the resource qualifier from current Android matching behavior, not merely the modern ISO code;
+   - keep logical locale identity distinct from resource-directory identity;
+   - do not create duplicate legacy and modern locale trees without proven platform need; and
+   - add durable qualifier, discovery, unsafe-folder-absence, and real resource-resolution coverage when compatibility-sensitive.
+
+   Known current examples are modern Indonesian `id` / legacy qualifier `in`, Hebrew `he` / `iw`, and Yiddish `yi` / `ji`. These illustrate a general Android rule, not an exhaustive alias list; research this boundary before implementing every new language.
+3. Review core terminology and product states—including an explicit ON/enabled-versus-ACTIVE back-check when both occur—identify and research uncertainty, then freeze approved copy.
+4. Implement standard Android resources without silently rewriting approved copy. Report genuine language problems instead of improvising.
+5. Verify key and placeholder parity, generated discovery, script/orthography, Mini labels, and shared RTL/bidi behavior where applicable.
+6. For each locale, add durable locale-specific assertions to the existing localization contract for FULL/MINI-reviewed or otherwise frozen high-risk terminology, including meaningful reviewed Mini states. Ad-hoc Python, Java, or manual checks and parity alone are not substitutes.
+7. Regress existing locales and update `docs/PROGRESS.md` with accurate evidence levels.
 
 ### Add or change a source string
 
