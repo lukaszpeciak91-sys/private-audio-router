@@ -800,6 +800,36 @@ class Layer41LocalizationContractTest {
     }
 
     @Test
+    fun amharicKeepsOneNeutralQualifierAndFrozenLtrSemantics() {
+        val locale = Locale.forLanguageTag("am")
+        val defaultIdentity = Locale.forLanguageTag("am-Ethi-ET")
+        assertEquals("am", locale.toLanguageTag())
+        assertEquals("am", locale.language)
+        assertEquals("Ethi", defaultIdentity.script)
+        assertEquals("ET", defaultIdentity.country)
+        assertEquals("አማርኛ", nativeLocaleName("am"))
+        assertTrue(projectFile("app/src/main/res/values-am/strings.xml").isFile)
+        listOf("values-am-rET", "values-b+am+Ethi", "values-b+am+Ethi+ET").forEach {
+            assertFalse(projectFile("app/src/main/res/$it").exists())
+        }
+        assertTrue(amharicStrings.any { it in '\u1200'..'\u137F' })
+        assertTrue(amharicStrings.contains("name=\"routing_notification_title\">Private Audio በርቷል</string>"))
+        assertTrue(amharicStrings.contains("name=\"state_active\">ገባሪ</string>"))
+        assertFalse(amharicStrings.contains("name=\"state_active\">በርቷል</string>"))
+        assertEquals(
+            mapOf("state_ready" to "ዝግጁ", "state_waiting" to "በመጠበቅ ላይ", "state_active" to "ገባሪ", "state_error" to "ስህተት"),
+            frozenStates(amharicStrings),
+        )
+        assertTrue(amharicStrings.contains("name=\"product_subtitle\">ከAI ጋር"))
+        assertTrue(amharicStrings.contains("name=\"floating\">ሚኒ</string>"))
+        assertTrue(amharicStrings.contains("name=\"settings_advanced\">የላቁ ቅንብሮች</string>"))
+        assertTrue(amharicStrings.contains("name=\"settings_system_default\">ነባሪ</string>"))
+        assertTrue(amharicStrings.contains("ወደ የስልክዎ መስሚያ"))
+        assertFalse(amharicStrings.contains("የጆሮ ማዳመጫ"))
+        assertFalse(projectFile("app/src/main/res/values-am/mini_state_strings.xml").exists())
+    }
+
+    @Test
     fun hebrewFrozenLocalizationSemanticsRemainIntact() {
         val logicalLocale = Locale.forLanguageTag("he")
         val legacyQualifierLocale = Locale.forLanguageTag("iw")
@@ -1130,6 +1160,7 @@ class Layer41LocalizationContractTest {
         val greekStrings = projectFile("app/src/main/res/values-el/strings.xml").readText()
         val bengaliStrings = projectFile("app/src/main/res/values-bn/strings.xml").readText()
         val malayalamStrings = projectFile("app/src/main/res/values-ml/strings.xml").readText()
+        val amharicStrings = projectFile("app/src/main/res/values-am/strings.xml").readText()
         val hebrewStrings = projectFile("app/src/main/res/values-iw/strings.xml").readText()
         val yiddishStrings = projectFile("app/src/main/res/values-ji/strings.xml").readText()
         val gurmukhiPunjabiStrings = projectFile("app/src/main/res/values-b+pa+Guru+IN/strings.xml").readText()

@@ -82,7 +82,7 @@ class MiniStatusMeasurementTest {
         val paint = TextPaint(Paint.ANTI_ALIAS_FLAG).apply {
             typeface = Typeface.create("sans-serif", Typeface.NORMAL)
         }
-        listOf("en", "ta", "gu", "ml", "pa-Guru-IN", "pa-Arab-PK", "ps", "ha").forEach { languageTag ->
+        listOf("en", "ta", "gu", "ml", "pa-Guru-IN", "pa-Arab-PK", "ps", "ha", "am").forEach { languageTag ->
             val localized = base.createConfigurationContext(Configuration(base.resources.configuration).apply {
                 setLocales(LocaleList(Locale.forLanguageTag(languageTag)))
             })
@@ -175,4 +175,29 @@ class MiniStatusMeasurementTest {
         println("Malayalam Mini production-equivalent common size: $selected")
         assertTrue(selected in listOf(16f, 15f, 14f))
     }
+
+    @Test fun amharicResolvesItsFullLtrParadigmAndUsesOneMeasuredProductionSize() {
+        val base = InstrumentationRegistry.getInstrumentation().targetContext
+        val localized = base.createConfigurationContext(Configuration(base.resources.configuration).apply {
+            setLocales(LocaleList(Locale.forLanguageTag("am")))
+        })
+        assertEquals(View.LAYOUT_DIRECTION_LTR, localized.resources.configuration.layoutDirection)
+        val labels = listOf(
+            localized.getString(R.string.state_ready_mini),
+            localized.getString(R.string.state_waiting_mini),
+            localized.getString(R.string.state_active_mini),
+            localized.getString(R.string.state_error_mini),
+        )
+        assertEquals(listOf("ዝግጁ", "በመጠበቅ ላይ", "ገባሪ", "ስህተት"), labels)
+        val paint = TextPaint(Paint.ANTI_ALIAS_FLAG).apply {
+            typeface = Typeface.create("sans-serif", Typeface.NORMAL)
+        }
+        val selected = selectMiniStatusTextSize(labels) { label, textSize ->
+            paint.textSize = textSize
+            paint.measureText(label)
+        }
+        println("Amharic Mini production-equivalent common size: $selected")
+        assertTrue(selected in listOf(16f, 15f, 14f))
+    }
+
 }
