@@ -72,6 +72,13 @@ class LegacyLocaleResourceResolutionTest {
         listOf("as", "as-IN", "as-Beng-IN").forEach { tag ->
             assertLocalizedSettings(context, modernTag = tag, expected = "ছেটিং")
         }
+        listOf("ca", "ca-ES", "ca-Latn-ES").forEach { tag ->
+            assertLocalizedSettings(context, modernTag = tag, expected = "Configuració")
+            assertEquals(
+                "Control flotant de Private Audio. Estat: A punt. Botons per activar o desactivar Private Audio, ampliar el control i tancar-lo.",
+                localizedContext(context, tag).getString(R.string.overlay_controller_description, "A punt"),
+            )
+        }
         listOf("kk", "kk-KZ", "kk-Cyrl-KZ").forEach { tag ->
             assertLocalizedSettings(context, modernTag = tag, expected = "Параметрлер")
         }
@@ -196,6 +203,13 @@ class LegacyLocaleResourceResolutionTest {
                 localizedContext(context, tag).resources.configuration.layoutDirection,
             )
         }
+        listOf("ca", "ca-ES", "ca-Latn-ES").forEach { tag ->
+            assertEquals(
+                "$tag layout direction",
+                android.view.View.LAYOUT_DIRECTION_LTR,
+                localizedContext(context, tag).resources.configuration.layoutDirection,
+            )
+        }
         listOf("kk", "kk-KZ", "kk-Cyrl-KZ").forEach { tag ->
             assertEquals(
                 "$tag layout direction",
@@ -221,7 +235,7 @@ class LegacyLocaleResourceResolutionTest {
             val discoveredTags = LocaleConfig(context).supportedLocales
                 ?.let { locales -> (0 until locales.size()).map { locales[it].toLanguageTag() } }
                 .orEmpty()
-            assertTrue(discoveredTags.containsAll(listOf("id", "he", "yi", "ml", "pa-Guru-IN", "pa-Arab-PK", "ps", "ha", "am", "zu", "so", "ne", "hy", "or", "my", "uz", "km", "as", "kk", "mn", "ka", "lo", "az", "az-Arab-IR")))
+            assertTrue(discoveredTags.containsAll(listOf("id", "he", "yi", "ml", "pa-Guru-IN", "pa-Arab-PK", "ps", "ha", "am", "zu", "so", "ne", "hy", "or", "my", "uz", "km", "as", "ca", "kk", "mn", "ka", "lo", "az", "az-Arab-IR")))
         }
     }
 

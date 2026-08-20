@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Private Audio</string>
+    <string name="routing_notification_channel">Private Audio</string>
+    <string name="routing_notification_title">Private Audio està activat</string>
+    <string name="routing_notification_text">En espera de canviar la sortida d\'àudio</string>
+    <string name="product_title">Private Audio</string>
+    <string name="product_subtitle">Parla amb la IA en privat, com si fos una trucada telefònica.</string>
+    <string name="state_ready">A punt</string>
+    <string name="state_waiting">En espera</string>
+    <string name="state_active">Actiu</string>
+    <string name="state_error">Error</string>
+    <string name="power_control">Activar/desactivar</string>
+    <string name="floating">Mini</string>
+    <string name="settings">Configuració</string>
+    <string name="close">Tanca</string>
+    <string name="overlay_controller_description">Control flotant de Private Audio. Estat: %1$s. Botons per activar o desactivar Private Audio, ampliar el control i tancar-lo.</string>
+    <string name="settings_language">Idioma</string>
+    <string name="settings_system_default">Predeterminat</string>
+    <string name="settings_save_diagnostic">Desa l\'informe de diagnòstic</string>
+    <string name="settings_advanced">Configuració avançada</string>
+    <string name="settings_about">Sobre Private Audio</string>
+    <string name="settings_version">Versió %1$s</string>
+    <string name="settings_language_body">Private Audio utilitza actualment l\'idioma del dispositiu. S\'ha seleccionat «Predeterminat».</string>
+    <string name="settings_language_android_13_required">Per seleccionar l\'idioma dins de l\'aplicació cal Android 13 o una versió posterior. Aquest dispositiu utilitza l\'idioma del sistema.</string>
+    <string name="settings_proximity_screen">Apaga la pantalla quan acostis el telèfon a l\'orella</string>
+    <string name="settings_advanced_body">A mesura que Private Audio evolucioni, aquí apareixeran opcions addicionals.</string>
+    <string name="settings_about_body">Private Audio ajuda a reproduir l\'àudio de veu compatible per l\'auricular integrat del telèfon.</string>
+    <string name="diagnostic_report_saved">S\'ha desat l\'informe de diagnòstic.</string>
+    <string name="diagnostic_report_save_failed">No s\'ha pogut desar l\'informe de diagnòstic.</string>
+</resources>
