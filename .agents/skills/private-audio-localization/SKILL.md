@@ -63,22 +63,37 @@ Before a corpus-wide re-audit, inspect the latest localization audit baseline in
 
 ### Add a locale
 
-1. Inspect current English/default strings and derive the current locale/key inventory.
-2. Pass the mandatory Android qualifier-compatibility gate before creating a resource directory:
-   - establish the modern BCP-47 logical tag;
-   - research whether Android/Java has a legacy alias relevant across the project's current supported runtime range;
-   - inspect current `minSdk`, `targetSdk`, `generateLocaleConfig`, and generated-locale discovery behavior;
-   - determine the resource qualifier from current Android matching behavior, not merely the modern ISO code;
-   - keep logical locale identity distinct from resource-directory identity;
-   - do not create duplicate legacy and modern locale trees without proven platform need; and
-   - add durable qualifier, discovery, unsafe-folder-absence, and real resource-resolution coverage when compatibility-sensitive.
+#### Short-task input contract
 
-   Known current examples are modern Indonesian `id` / legacy qualifier `in`, Hebrew `he` / `iw`, and Yiddish `yi` / `ji`. These illustrate a general Android rule, not an exhaustive alias list; research this boundary before implementing every new language.
-3. Review core terminology and product states—including an explicit ON/enabled-versus-ACTIVE back-check when both occur—identify and research uncertainty, then freeze approved copy.
-4. Implement standard Android resources without silently rewriting approved copy. Report genuine language problems instead of improvising.
-5. Verify key and placeholder parity, generated discovery, script/orthography, Mini labels, and shared RTL/bidi behavior where applicable.
-6. For each locale, add durable locale-specific assertions to the existing localization contract for FULL/MINI-reviewed or otherwise frozen high-risk terminology, including meaningful reviewed Mini states. Ad-hoc Python, Java, or manual checks and parity alone are not substitutes.
-7. Regress existing locales and update `docs/PROGRESS.md` with accurate evidence levels.
+A short task such as “Implement locale X according to the current Private Audio localization skill” invokes this **complete** ADD LOCALE workflow when it supplies the locale-specific frozen data:
+
+1. logical locale identity;
+2. expected Android qualifier/resource directory, if already reviewed;
+3. script and direction;
+4. intended language, region, and script tags that must resolve the locale;
+5. the final frozen translated resource set or exact key/value mapping;
+6. locale-specific terminology decisions and known exceptions; and
+7. remaining **HOLD** / `MEDIUM`-confidence items or explicit implementation warnings.
+
+Derive everything else from the CURRENT repository, `docs/LOCALIZATION.md`, and this skill. Do not require implementation prompts to repeat stable rules from either authority. Once linguistic review is frozen, prefer the short locale-specific prompt. Policy belongs in `docs/LOCALIZATION.md`, execution belongs here, and locale facts belong in the task, final resources, durable tests, and `docs/PROGRESS.md`; do not create per-language workflow documents.
+
+#### Default execution contract
+
+Unless the CURRENT architecture has changed, automatically:
+
+1. Inspect the CURRENT English/default source, keys, locale inventory, contracts, and relevant surfaces; stop with **`SOURCE COPY REVIEW REQUIRED`** if the source-copy gate fails.
+2. Pass the Android qualifier gate before creating the correct resource tree: establish the logical BCP-47 identity; inspect the supported runtime range, `minSdk`, `targetSdk`, generated LocaleConfig behavior, and legacy aliases; derive the qualifier from actual Android matching; and avoid unsafe parallel legacy/modern trees. Current `id`/`in`, `he`/`iw`, and `yi`/`ji` mappings are examples, not an eternal list.
+3. Preserve the task-supplied frozen copy exactly and enforce exact key and placeholder parity, native script/orthography, and meaningful accessibility/control-description parallelism. Do **not** independently retranslate, shorten, normalize, “improve,” harmonize with a related language, or replace a reviewed loanword or hardware term. If implementation exposes a contextual grammar or platform problem, report its exact **PASS / POLISH / FIX / HOLD** status; never silently rewrite the copy.
+4. Extend the CURRENT durable semantic-contract architecture with meaningful regression targets rather than mechanically asserting every translated word. For a normal FULL-reviewed locale, protect as applicable: ON/enabled versus ACTIVE; the full Ready / Waiting / Active / Error paradigm; reviewed AI and Mini choices (including lexical-collision decisions); specifically reviewed Default and Advanced terms; built-in call-earpiece distinction; final user-facing routing wording; script/orthography-sensitive terms; risky accessibility grammar; qualifier/resource identity; and absence of unsafe duplicate qualifiers. Exact literals must come from the FINAL resource text.
+5. Cover generated LocaleConfig discovery and exercise every task-supplied intended tag through **actual Android resource resolution** when the CURRENT instrumentation architecture supports it, asserting localized resource retrieval and correct LTR/RTL layout direction. Folder presence, `Locale.forLanguageTag()` canonicalization, and LocaleConfig alone do not prove resource resolution.
+6. Apply the standard Mini contract automatically: resolve all four natural state aliases through Android resources; run the existing production-equivalent shared selector; and assert one common candidate selected from 16f / 15f / 14f. Do not hard-code the selected size unless instrumentation actually measured it, and do not add a locale-specific compact override because a label merely looks long. Only measured failure at 14f opens compact-copy review.
+7. Regress the CURRENT localization contracts, including scope and accessibility sanity checks; update `docs/PROGRESS.md` with precise evidence levels; run `git diff --check`, scan conflict markers, and inspect `git status --short`. Distinguish static/source-contract, JVM, instrumentation, runtime/emulator, and physical-device evidence accurately.
+
+Use the CURRENT established test architecture rather than treating filenames as permanent. Today, examples include the Layer 4.1 semantic contract, Android resource-resolution instrumentation, and production-equivalent Mini measurement coverage. The typical current change shape is one locale strings resource, locale-specific durable contract coverage, Android resource-resolution coverage, Mini measurement coverage, and the progress update. This is guidance, not an immutable five-file prescription; follow the CURRENT architecture if it evolves.
+
+#### ADD LOCALE final report
+
+Report the files changed; logical locale and resource qualifier; intended tags and actual resource-resolution coverage; confirmation that final frozen copy was preserved; semantic contracts added; LocaleConfig and direction coverage; Mini selected size **only if actually measured**; checks executed and checks not executed with reasons; all **PASS / POLISH / FIX / HOLD** findings; and confirmation that no unrelated production behavior changed. A future task need not restate this reporting contract.
 
 ### Add or change a source string
 
