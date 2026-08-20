@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Private Audio</string>
+    <string name="routing_notification_channel">Private Audio</string>
+    <string name="routing_notification_title">Private Audio ഓണാണ്</string>
+    <string name="routing_notification_text">ഓഡിയോ ഔട്ട്‌പുട്ട് മാറ്റാൻ കാത്തിരിക്കുന്നു</string>
+    <string name="product_title">Private Audio</string>
+    <string name="product_subtitle">ഒരു ഫോൺ കോൾ പോലെ AI-യുമായി സ്വകാര്യമായി സംസാരിക്കൂ.</string>
+    <string name="state_ready">തയ്യാറാണ്</string>
+    <string name="state_waiting">കാത്തിരിക്കുന്നു</string>
+    <string name="state_active">സജീവം</string>
+    <string name="state_error">പിശക്</string>
+    <string name="power_control">പവർ</string>
+    <string name="floating">മിനി</string>
+    <string name="settings">ക്രമീകരണം</string>
+    <string name="close">അടയ്ക്കുക</string>
+    <string name="overlay_controller_description">Private Audio മിനി കൺട്രോളർ. നില: %1$s. പവർ ഓണാക്കാനോ ഓഫാക്കാനോ, വികസിപ്പിക്കാനോ, അടയ്ക്കാനോ ഉള്ള നിയന്ത്രണങ്ങൾ.</string>
+    <string name="settings_language">ഭാഷ</string>
+    <string name="settings_system_default">ഡിഫോൾട്ട്</string>
+    <string name="settings_save_diagnostic">ഡയഗ്നോസ്റ്റിക് റിപ്പോർട്ട് സംരക്ഷിക്കുക</string>
+    <string name="settings_advanced">വിപുലമായ ക്രമീകരണം</string>
+    <string name="settings_about">Private Audio-നെ കുറിച്ച്</string>
+    <string name="settings_version">പതിപ്പ് %1$s</string>
+    <string name="settings_language_body">Private Audio ഇപ്പോൾ നിങ്ങളുടെ ഉപകരണത്തിന്റെ ഭാഷ പിന്തുടരുന്നു. ഡിഫോൾട്ട് തിരഞ്ഞെടുത്തിരിക്കുന്നു.</string>
+    <string name="settings_language_android_13_required">ആപ്പിനുള്ളിലെ ഭാഷ തിരഞ്ഞെടുക്കാൻ Android 13 അല്ലെങ്കിൽ അതിന് ശേഷമുള്ള പതിപ്പ് ആവശ്യമാണ്. ഈ ഉപകരണം സിസ്റ്റം ഭാഷ പിന്തുടരുന്നു.</string>
+    <string name="settings_proximity_screen">ചെവിക്കടുത്ത് വരുമ്പോൾ സ്‌ക്രീൻ ഓഫാക്കുക</string>
+    <string name="settings_advanced_body">Private Audio വികസിക്കുന്നതനുസരിച്ച് കൂടുതൽ ഓപ്ഷനുകൾ ഇവിടെ ലഭ്യമാകും.</string>
+    <string name="settings_about_body">പിന്തുണയ്ക്കുന്ന വോയ്‌സ് ഓഡിയോ നിങ്ങളുടെ ഫോണിലെ ബിൽറ്റ്-ഇൻ ഇയർപീസിലേക്ക് മാറ്റാൻ Private Audio സഹായിക്കുന്നു.</string>
+    <string name="diagnostic_report_saved">ഡയഗ്നോസ്റ്റിക് റിപ്പോർട്ട് സംരക്ഷിച്ചു.</string>
+    <string name="diagnostic_report_save_failed">ഡയഗ്നോസ്റ്റിക് റിപ്പോർട്ട് സംരക്ഷിക്കാനായില്ല.</string>
+</resources>
