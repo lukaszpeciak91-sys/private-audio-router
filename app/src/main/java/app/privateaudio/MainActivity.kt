@@ -79,6 +79,8 @@ class MainActivity : ComponentActivity() {
                     state = state,
                     proximityFeatureEnabled = connectedService?.isProximityFeatureEnabled ?: true,
                     onProximityFeatureChange = { connectedService?.updateProximityFeatureEnabled(it) },
+                    fakePhonePreArmEnabled = connectedService?.isFakePhonePreArmEnabled ?: false,
+                    onFakePhonePreArmChange = { connectedService?.updateFakePhonePreArmEnabled(it) },
                     powerEnabled = connectedService != null,
                     onPowerClick = {
                         if (state == PrivateAudioState.READY) {

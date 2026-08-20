@@ -157,6 +157,25 @@ data class RoutingAttempt(
     val speakerphoneImmediatelyAfter: String,
 )
 
+data class FakePhonePreArmStatus(
+    val featureEnabled: Boolean = false,
+    val active: Boolean = false,
+    val startedAt: String? = null,
+    val modeBeforeParticipation: String? = null,
+    val silentTrackCreated: Boolean = false,
+    val silentTrackStarted: Boolean = false,
+    val modeRequestAttempted: Boolean = false,
+    val modeAfterRequest: String? = null,
+    val targetEarpiece: ObservedDevice? = null,
+    val routeRequestAttempted: Boolean = false,
+    val routeRequestAccepted: Boolean? = null,
+    val reportedDeviceAfterRequest: ObservedDevice? = null,
+    val assistantSonificationObservedAt: String? = null,
+    val assistantSonificationDevice: ObservedDevice? = null,
+    val cleanupCompleted: Boolean = false,
+    val lastCleanupReason: String? = null,
+)
+
 class AudioDiagnosticObserver(
     private val context: Context,
     private val audioManager: AudioManager,
@@ -170,6 +189,9 @@ class AudioDiagnosticObserver(
         private set
 
     var lastCompletedExperiment by mutableStateOf<CompletedRoutingCycle?>(null)
+        private set
+
+    var fakePhonePreArm by mutableStateOf(FakePhonePreArmStatus())
         private set
 
     val events = mutableStateListOf<String>()
@@ -237,7 +259,8 @@ class AudioDiagnosticObserver(
         controllerEnabled = false
         invalidatePendingControllerWork()
         unregisterPlaybackCallback()
-        clearExperiment(reason, ExperimentState.CLEARED)
+        if (experiment.requestAttempted) clearExperiment(reason, ExperimentState.CLEARED)
+        else cleanupFakePhonePreArm(reason)
         audioManager.removeOnCommunicationDeviceChangedListener(communicationDeviceListener)
         audioManager.unregisterAudioDeviceCallback(audioDeviceCallback)
         started = false
@@ -257,6 +280,11 @@ class AudioDiagnosticObserver(
         val changes = describeChanges(snapshot, observed)
         snapshot = observed
         addEvent("$reason — $changes")
+        if (fakePhonePreArm.active && (
+                audioManager.mode.isTelephonyOrSystemPriorityMode() ||
+                    audioManager.availableCommunicationDevices.none { it.type == AudioDeviceInfo.TYPE_BUILTIN_EARPIECE }
+                )
+        ) cleanupFakePhonePreArm("Pre-arm eligibility lost: $reason")
         observeExperimentOutcome(observed, reason)
         if (!routingActionInProgress) evaluateExperimentTrigger()
         onEvidenceChanged(reason)
@@ -272,6 +300,7 @@ class AudioDiagnosticObserver(
         addEvent("Controller ON — clean waiting; playback observation registered")
         snapshot("Controller waiting snapshot")
         handlePlaybackConfigurations(audioManager.activePlaybackConfigurations)
+        maybeStartFakePhonePreArm()
     }
 
     fun disableController() {
@@ -279,7 +308,17 @@ class AudioDiagnosticObserver(
         invalidatePendingControllerWork()
         unregisterPlaybackCallback()
         addEvent("Controller OFF — pending detection invalidated")
-        clearExperiment("Power OFF", ExperimentState.CLEARED)
+        if (experiment.requestAttempted) clearExperiment("Power OFF", ExperimentState.CLEARED)
+        else cleanupFakePhonePreArm("Power OFF")
+    }
+
+    fun updateFakePhonePreArmEnabled(enabled: Boolean) {
+        if (fakePhonePreArm.featureEnabled == enabled) return
+        fakePhonePreArm = fakePhonePreArm.copy(featureEnabled = enabled)
+        addEvent("Fake Phone pre-arm preference ${if (enabled) "enabled" else "disabled"}")
+        if (!controllerEnabled || experiment.requestAttempted) return
+        if (enabled) maybeStartFakePhonePreArm() else cleanupFakePhonePreArm("Preference disabled")
+        onEvidenceChanged("Fake Phone pre-arm preference changed")
     }
 
     fun recordLifecycleEvent(message: String) {
@@ -301,6 +340,7 @@ class AudioDiagnosticObserver(
         eventEntriesDropped = eventEntriesDropped,
         startupTraceEntriesDropped = startupTraceEntriesDropped,
         redundantPlaybackCallbacksSuppressed = redundantPlaybackCallbacksSuppressed,
+        fakePhonePreArm = fakePhonePreArm,
     )
 
     private fun addEvent(message: String) {
@@ -326,6 +366,10 @@ class AudioDiagnosticObserver(
 
         val mode = audioManager.mode
         if (mode.isTelephonyOrSystemPriorityMode()) {
+            if (fakePhonePreArm.active) {
+                cleanupFakePhonePreArm("Blocked by system/telephony-priority mode ${audioModeName(mode)}")
+                return
+            }
             clearExperiment(
                 reason = "Blocked by system/telephony-priority mode ${audioModeName(mode)}",
                 finalState = ExperimentState.BLOCKED,
@@ -336,8 +380,8 @@ class AudioDiagnosticObserver(
         if (experiment.attempts.isNotEmpty()) return
         val configs = audioManager.activePlaybackConfigurations
         val normalTrigger = mode == AudioManager.MODE_IN_COMMUNICATION &&
-            qualifyingPlaybackCount(configs) > 0 &&
-            audioManager.communicationDevice?.type == AudioDeviceInfo.TYPE_BUILTIN_SPEAKER
+            qualifyingPlaybackCount(configs) > (if (fakePhonePreArm.active) 1 else 0) &&
+            (fakePhonePreArm.active || audioManager.communicationDevice?.type == AudioDeviceInfo.TYPE_BUILTIN_SPEAKER)
         val assistantCount = assistantQualifyingPlaybackCount(configs)
         currentAssistantQualifyingPlaybackCount = assistantCount
         val assistantTrigger = assistantCount > 0
@@ -345,7 +389,7 @@ class AudioDiagnosticObserver(
         currentBrowserQualifyingPlaybackCount = browserCount
         val browserTrigger = mode == AudioManager.MODE_IN_COMMUNICATION &&
             browserCount > 0 &&
-            audioManager.communicationDevice?.type == AudioDeviceInfo.TYPE_BUILTIN_SPEAKER
+            (fakePhonePreArm.active || audioManager.communicationDevice?.type == AudioDeviceInfo.TYPE_BUILTIN_SPEAKER)
         if (!normalTrigger && !assistantTrigger && !browserTrigger) return
         val earpiece = audioManager.availableCommunicationDevices.firstOrNull {
             it.type == AudioDeviceInfo.TYPE_BUILTIN_EARPIECE
@@ -389,6 +433,13 @@ class AudioDiagnosticObserver(
                 if (triggerOrigin == TriggerOrigin.ASSISTANT) audioModeName(modeBeforeParticipation) else null,
         )
         routingActionInProgress = true
+        if (fakePhonePreArm.active) {
+            promoteFakePhonePreArm(triggerOrigin, assistantCount, browserCount)
+            routingActionInProgress = false
+            snapshot("Pre-arm promoted to protected routing cycle")
+            scheduleShortObservation()
+            return
+        }
         if (!startSilentCommunicationTrack()) {
             routingActionInProgress = false
             clearExperiment("Silent communication AudioTrack could not be started", ExperimentState.BLOCKED)
@@ -433,7 +484,7 @@ class AudioDiagnosticObserver(
                 "silent track play state=${experiment.silentTrackPlayState}",
         )
         val modeRequestFailure = runCatching {
-            audioManager.mode = AudioManager.MODE_IN_COMMUNICATION
+            requestCommunicationMode()
         }.exceptionOrNull()
         val modeAfterParticipation = audioManager.mode
         experiment = experiment.copy(
@@ -538,6 +589,130 @@ class AudioDiagnosticObserver(
         return started
     }
 
+    private fun maybeStartFakePhonePreArm() {
+        if (!controllerEnabled || !fakePhonePreArm.featureEnabled || fakePhonePreArm.active ||
+            experiment.requestAttempted || routingActionInProgress
+        ) return
+        val mode = audioManager.mode
+        if (mode.isTelephonyOrSystemPriorityMode()) {
+            cleanupFakePhonePreArm("Blocked by system/telephony-priority mode ${audioModeName(mode)}")
+            return
+        }
+        val earpiece = audioManager.availableCommunicationDevices.firstOrNull {
+            it.type == AudioDeviceInfo.TYPE_BUILTIN_EARPIECE
+        } ?: run {
+            cleanupFakePhonePreArm("Built-in earpiece unavailable")
+            return
+        }
+        routingActionInProgress = true
+        val startedAt = OffsetDateTime.now().format(DateTimeFormatter.ISO_OFFSET_DATE_TIME)
+        val modeBefore = audioModeName(mode)
+        fakePhonePreArm = FakePhonePreArmStatus(
+            featureEnabled = true,
+            startedAt = startedAt,
+            modeBeforeParticipation = modeBefore,
+            targetEarpiece = earpiece.toObservedDevice(),
+        )
+        addEvent("Fake Phone pre-arm starting while controller remains WAITING")
+        if (!startSilentCommunicationTrack()) {
+            routingActionInProgress = false
+            cleanupFakePhonePreArm("Silent communication AudioTrack could not be started")
+            return
+        }
+        fakePhonePreArm = fakePhonePreArm.copy(
+            silentTrackCreated = experiment.silentTrackCreated,
+            silentTrackStarted = experiment.silentTrackStarted,
+            modeRequestAttempted = true,
+        )
+        modeParticipationActive = true
+        val modeFailure = runCatching { requestCommunicationMode() }.exceptionOrNull()
+        val modeAfter = audioManager.mode
+        fakePhonePreArm = fakePhonePreArm.copy(modeAfterRequest = audioModeName(modeAfter))
+        if (modeFailure != null || modeAfter != AudioManager.MODE_IN_COMMUNICATION) {
+            routingActionInProgress = false
+            cleanupFakePhonePreArm("MODE_IN_COMMUNICATION pre-arm request failed")
+            return
+        }
+        val accepted = requestCommunicationDevice(earpiece)
+        fakePhonePreArm = fakePhonePreArm.copy(
+            active = accepted,
+            routeRequestAttempted = true,
+            routeRequestAccepted = accepted,
+            reportedDeviceAfterRequest = audioManager.communicationDevice?.toObservedDevice(),
+        )
+        routingActionInProgress = false
+        if (!fakePhonePreArm.active) {
+            cleanupFakePhonePreArm("Built-in earpiece was not established")
+            return
+        }
+        addEvent("Fake Phone pre-arm active — protected context prepared; public state remains WAITING")
+        snapshot("Fake Phone pre-arm established")
+    }
+
+    private fun promoteFakePhonePreArm(origin: TriggerOrigin, assistantCount: Int, browserCount: Int) {
+        val now = LocalTime.now().format(TIME_FORMAT)
+        val target = fakePhonePreArm.targetEarpiece
+        val attempt = RoutingAttempt(
+            number = 1,
+            timestamp = now,
+            trigger = "healthy Fake Phone pre-arm promoted; no duplicate route request",
+            mode = audioModeName(audioManager.mode),
+            deviceBefore = audioManager.communicationDevice?.toObservedDevice(),
+            accepted = fakePhonePreArm.routeRequestAccepted == true,
+            deviceImmediatelyAfter = audioManager.communicationDevice?.toObservedDevice(),
+            speakerphoneImmediatelyAfter = observedSpeakerphoneState(),
+        )
+        experiment = experiment.copy(
+            state = ExperimentState.REQUEST_ATTEMPTED,
+            requestAttempted = true,
+            selectedTarget = target,
+            modeBeforeParticipation = fakePhonePreArm.modeBeforeParticipation,
+            silentTrackCreated = true,
+            silentTrackStarted = true,
+            silentTrackPlayState = audioTrackPlayStateName(silentTrack?.playState ?: AudioTrack.PLAYSTATE_STOPPED),
+            explicitModeRequestInvoked = true,
+            modeInCommunicationObserved = true,
+            requestAccepted = fakePhonePreArm.routeRequestAccepted,
+            attempts = listOf(attempt),
+            postRoutingRequest = collectSnapshot(),
+            assistantQualifyingPlaybackCount = assistantCount,
+            browserQualifyingPlaybackCount = browserCount,
+            triggerOrigin = origin,
+        )
+        externalContributionEstablished = true
+        fakePhonePreArm = fakePhonePreArm.copy(active = false)
+        addEvent("Healthy Fake Phone pre-arm promoted into real external communication cycle — silent track and earpiece request reused")
+    }
+
+    private fun cleanupFakePhonePreArm(reason: String) {
+        if (!fakePhonePreArm.active && silentTrack == null && !modeParticipationActive) {
+            fakePhonePreArm = fakePhonePreArm.copy(cleanupCompleted = true, lastCleanupReason = reason)
+            return
+        }
+        cancelPendingObservation()
+        cancelPendingEndConfirmation()
+        audioManager.clearCommunicationDevice()
+        if (modeParticipationActive) {
+            modeParticipationActive = false
+            audioManager.mode = AudioManager.MODE_NORMAL
+        }
+        val cleaned = stopSilentCommunicationTrack()
+        fakePhonePreArm = fakePhonePreArm.copy(
+            active = false,
+            cleanupCompleted = cleaned,
+            lastCleanupReason = reason,
+        )
+        experiment = EarpieceExperiment(state = ExperimentState.ARMED, armed = controllerEnabled)
+        addEvent("Fake Phone pre-arm cleanup completed=$cleaned — $reason")
+    }
+
+    private fun requestCommunicationMode() {
+        audioManager.mode = AudioManager.MODE_IN_COMMUNICATION
+    }
+
+    private fun requestCommunicationDevice(earpiece: AudioDeviceInfo): Boolean =
+        audioManager.setCommunicationDevice(earpiece)
+
     private fun performRoutingAttempt(earpiece: AudioDeviceInfo, trigger: String) {
         if (!experiment.armed || experiment.attempts.isNotEmpty()) return
         if (audioManager.mode.isTelephonyOrSystemPriorityMode()) {
@@ -555,7 +730,7 @@ class AudioDiagnosticObserver(
         val timestamp = LocalTime.now().format(TIME_FORMAT)
         routingActionInProgress = true
         addEvent("Single routing request — trigger=$trigger; mode=$mode; device before=${before.reportDescription()}")
-        val accepted = audioManager.setCommunicationDevice(earpiece)
+        val accepted = requestCommunicationDevice(earpiece)
         val after = audioManager.communicationDevice?.toObservedDevice()
         val speakerphone = observedSpeakerphoneState()
         val attempt = RoutingAttempt(number, timestamp, trigger, mode, before, accepted, after, speakerphone)
@@ -596,6 +771,22 @@ class AudioDiagnosticObserver(
         )
         currentAssistantQualifyingPlaybackCount = assistantCount
         currentBrowserQualifyingPlaybackCount = browserCount
+        configs.firstOrNull {
+            it.audioAttributes.usage == AudioAttributes.USAGE_ASSISTANT &&
+                it.audioAttributes.contentType == AudioAttributes.CONTENT_TYPE_SONIFICATION
+        }?.takeIf { fakePhonePreArm.active }?.let { config ->
+            val observedAt = OffsetDateTime.now().format(DateTimeFormatter.ISO_OFFSET_DATE_TIME)
+            fakePhonePreArm = fakePhonePreArm.copy(
+                assistantSonificationObservedAt = observedAt,
+                assistantSonificationDevice = config.audioDeviceInfo?.toObservedDevice(),
+            )
+            addEvent(
+                "ASSISTANT/SONIFICATION observed during pre-arm — timestamp=$observedAt; " +
+                    "device=${config.audioDeviceInfo?.toObservedDevice().reportDescription()}; " +
+                    "mode=${audioModeName(audioManager.mode)}; communication device=" +
+                    audioManager.communicationDevice?.toObservedDevice().reportDescription(),
+            )
+        }
         val qualifierCounts = Triple(count, assistantCount, browserCount)
         if (qualifierCounts != previousQualifierCounts) {
             addEvent(
@@ -693,6 +884,7 @@ class AudioDiagnosticObserver(
         experiment = EarpieceExperiment(state = ExperimentState.ARMED, armed = true)
         addEvent("Cleanup completed — controller remains ON and returned to clean waiting")
         handlePlaybackConfigurations(audioManager.activePlaybackConfigurations)
+        maybeStartFakePhonePreArm()
     }
 
     private fun unregisterPlaybackCallback() {
@@ -758,6 +950,13 @@ class AudioDiagnosticObserver(
             silentTrackCleanupCompleted = experiment.silentTrackCreated && trackCleanupCompleted,
             silentTrackPlayState = if (experiment.silentTrackCreated && trackCleanupCompleted) "Released" else experiment.silentTrackPlayState,
         )
+        if (fakePhonePreArm.startedAt != null) {
+            fakePhonePreArm = fakePhonePreArm.copy(
+                active = false,
+                cleanupCompleted = trackCleanupCompleted,
+                lastCleanupReason = reason,
+            )
+        }
         snapshot("Post-cleanup observation")
         if (experiment.requestAttempted || experiment.triggerOrigin != null) {
             lastCompletedExperiment = CompletedRoutingCycle(
@@ -845,6 +1044,7 @@ internal fun buildDiagnosticReport(
     eventEntriesDropped: Int = 0,
     startupTraceEntriesDropped: Int = 0,
     redundantPlaybackCallbacksSuppressed: Int = 0,
+    fakePhonePreArm: FakePhonePreArmStatus = FakePhonePreArmStatus(),
 ) = buildString {
     appendLine("PRIVATE AUDIO — DIAGNOSTIC REPORT")
     appendLine("Diagnostic report format: $DIAGNOSTIC_REPORT_FORMAT")
@@ -869,6 +1069,25 @@ internal fun buildDiagnosticReport(
     appendLine("Event log capacity: $MAX_EVENTS")
     appendLine("Event log entries dropped: $eventEntriesDropped")
     appendLine("Redundant playback callbacks suppressed: $redundantPlaybackCallbacksSuppressed")
+    appendLine()
+    appendLine("FAKE PHONE PRE-ARM EXPERIMENT")
+    appendLine("Feature enabled: ${fakePhonePreArm.featureEnabled}")
+    appendLine("Pre-arm currently active: ${fakePhonePreArm.active}")
+    appendLine("Pre-arm start timestamp: ${fakePhonePreArm.startedAt ?: "Not started"}")
+    appendLine("Mode before participation: ${fakePhonePreArm.modeBeforeParticipation ?: "Not attempted"}")
+    appendLine("Silent communication track created: ${fakePhonePreArm.silentTrackCreated}")
+    appendLine("Silent track started: ${fakePhonePreArm.silentTrackStarted}")
+    appendLine("Mode request attempted: ${fakePhonePreArm.modeRequestAttempted}")
+    appendLine("Mode after request: ${fakePhonePreArm.modeAfterRequest ?: "Not attempted"}")
+    appendLine("Target earpiece: ${fakePhonePreArm.targetEarpiece.reportDescription()}")
+    appendLine("setCommunicationDevice attempted: ${fakePhonePreArm.routeRequestAttempted}")
+    appendLine("setCommunicationDevice return value: ${fakePhonePreArm.routeRequestAccepted ?: "Not attempted"}")
+    appendLine("Android-reported communication device after request: ${fakePhonePreArm.reportedDeviceAfterRequest.reportDescription()}")
+    appendLine("ASSISTANT/SONIFICATION observed at: ${fakePhonePreArm.assistantSonificationObservedAt ?: "Not observed"}")
+    appendLine("ASSISTANT/SONIFICATION device observed during pre-arm: ${fakePhonePreArm.assistantSonificationDevice.reportDescription()}")
+    appendLine("Cleanup completed: ${fakePhonePreArm.cleanupCompleted}")
+    appendLine("Last cleanup reason: ${fakePhonePreArm.lastCleanupReason ?: "None"}")
+    appendLine("Audible result: Requires physical confirmation")
     appendLine()
     appendLine("STARTUP AUDIO TRACE")
     appendLine("FACT: entries below contain only public Android playback metadata; no audio is captured or recorded.")

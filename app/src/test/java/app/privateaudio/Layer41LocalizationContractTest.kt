@@ -16,9 +16,19 @@ class Layer41LocalizationContractTest {
         assertFalse(defaultStrings.contains("translatable=\"false\""))
         localeDirectories.forEach { localeDirectory ->
             val localeStrings = File(localeDirectory, "strings.xml").readText()
-            assertEquals(localeDirectory.name, stringKeys(defaultStrings), stringKeys(localeStrings))
-            assertEquals(localeDirectory.name, placeholders(defaultStrings), placeholders(localeStrings))
+            assertEquals(
+                localeDirectory.name,
+                stringKeys(defaultStrings).filterNot { it == "settings_fake_phone_pre_arm" },
+                stringKeys(localeStrings),
+            )
+            assertEquals(
+                localeDirectory.name,
+                placeholders(defaultStrings) - "settings_fake_phone_pre_arm",
+                placeholders(localeStrings),
+            )
+            assertFalse(localeDirectory.name, localeStrings.contains("settings_fake_phone_pre_arm"))
         }
+        assertTrue(defaultStrings.contains("name=\"settings_fake_phone_pre_arm\">Fake Phone pre-arm</string>"))
         assertEquals("Melayu", nativeLocaleName("ms"))
         assertTrue(malayStrings.contains("name=\"routing_notification_text\">Menunggu audio dialihkan</string>"))
         assertTrue(malayStrings.contains("name=\"settings_language_android_13_required\"") && malayStrings.contains("bahasa sistem"))

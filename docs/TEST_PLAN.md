@@ -466,3 +466,11 @@ The following checks validate lifecycle ownership without claiming routing succe
 - **Isolation regressions:** ChatGPT Android continues to select `COMMUNICATION`; Gemini Live continues to select `ASSISTANT`; ordinary `USAGE_MEDIA` and assistant/sonification remain ignored. Power OFF cleanup is unchanged.
 - **Observed result (supplied 2026-08-19):** ChatGPT Web in Chrome passed audible earpiece routing and cleanup. ChatGPT Android and Gemini Live passed regression. Each routing cycle issued exactly one request, and subsequent sessions routed without restarting Private Audio.
 - **Evidence rule:** Continue recording Android metadata, request count, and human-confirmed audible output separately in future device runs.
+
+## Fake Phone pre-arm controlled physical gate
+
+- **Status:** NOT TESTED / UNKNOWN
+- **Device:** Xiaomi Android 13.
+- **Experiment ON:** Run at least three ChatGPT Voice starts and three Gemini Voice starts. For each, record whether the startup ping was audible and from speaker or earpiece, confirm Private Audio remained `WAITING` before qualifying speech, then record normal `ACTIVE` transition, audible voice routing, and end cleanup back to `WAITING`.
+- **Control OFF:** Repeat starts with Fake Phone pre-arm disabled and verify the established clean waiting architecture and protected POC-5 lifecycle are unchanged; the expected current observation is assistant/sonification on the speaker.
+- **Evidence rule:** Correlate the neutral `ASSISTANT/SONIFICATION observed during pre-arm` entry with human listening. A reported earpiece, communication mode, or accepted route request alone is not audible success, and public metadata must not be used to claim application ownership.

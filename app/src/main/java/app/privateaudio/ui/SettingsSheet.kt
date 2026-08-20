@@ -81,6 +81,8 @@ fun SettingsSheet(
     versionName: String,
     proximityFeatureEnabled: Boolean,
     onProximityFeatureChange: (Boolean) -> Unit,
+    fakePhonePreArmEnabled: Boolean,
+    onFakePhonePreArmChange: (Boolean) -> Unit,
     onSaveDiagnosticReport: () -> Unit,
     onDismiss: () -> Unit,
 ) {
@@ -163,6 +165,8 @@ fun SettingsSheet(
                     SettingsPage.ADVANCED -> AdvancedPage(
                         proximityFeatureEnabled = proximityFeatureEnabled,
                         onProximityFeatureChange = onProximityFeatureChange,
+                        fakePhonePreArmEnabled = fakePhonePreArmEnabled,
+                        onFakePhonePreArmChange = onFakePhonePreArmChange,
                         onBack = { page = SettingsPage.ROOT },
                     )
                     SettingsPage.ABOUT -> ChildPage(
@@ -180,6 +184,8 @@ fun SettingsSheet(
 private fun AdvancedPage(
     proximityFeatureEnabled: Boolean,
     onProximityFeatureChange: (Boolean) -> Unit,
+    fakePhonePreArmEnabled: Boolean,
+    onFakePhonePreArmChange: (Boolean) -> Unit,
     onBack: () -> Unit,
 ) {
     Box(Modifier.fillMaxWidth()) {
@@ -210,6 +216,36 @@ private fun AdvancedPage(
         )
         Switch(
             checked = proximityFeatureEnabled,
+            onCheckedChange = null,
+            colors = SwitchDefaults.colors(
+                checkedThumbColor = Color.Black,
+                checkedTrackColor = Color(0xFF22DA70),
+                uncheckedThumbColor = SettingsSecondary,
+                uncheckedTrackColor = SettingsDivider,
+                uncheckedBorderColor = SettingsBorder,
+            ),
+        )
+    }
+    Spacer(Modifier.height(30.dp))
+    Row(
+        modifier = Modifier.fillMaxWidth().height(SettingsLayout.rowHeight)
+            .toggleable(
+                value = fakePhonePreArmEnabled,
+                role = Role.Switch,
+                onValueChange = onFakePhonePreArmChange,
+            ).testTag("settings_fake_phone_pre_arm"),
+        verticalAlignment = Alignment.CenterVertically,
+        horizontalArrangement = Arrangement.SpaceBetween,
+    ) {
+        Text(
+            stringResource(R.string.settings_fake_phone_pre_arm),
+            modifier = Modifier.weight(1f).padding(end = 12.dp),
+            color = SettingsPrimary,
+            fontSize = 15.sp,
+            lineHeight = 21.sp,
+        )
+        Switch(
+            checked = fakePhonePreArmEnabled,
             onCheckedChange = null,
             colors = SwitchDefaults.colors(
                 checkedThumbColor = Color.Black,

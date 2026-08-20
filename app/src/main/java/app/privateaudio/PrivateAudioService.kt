@@ -41,6 +41,9 @@ class PrivateAudioService : Service() {
     var isProximityFeatureEnabled by mutableStateOf(true)
         private set
 
+    var isFakePhonePreArmEnabled by mutableStateOf(false)
+        private set
+
     val privateAudioState: PrivateAudioState
         get() {
             val currentExperiment = observer.experiment
@@ -74,7 +77,10 @@ class PrivateAudioService : Service() {
         super.onCreate()
         isProximityFeatureEnabled = getSharedPreferences(PREFERENCES_NAME, Context.MODE_PRIVATE)
             .getBoolean(PROXIMITY_FEATURE_KEY, true)
+        isFakePhonePreArmEnabled = getSharedPreferences(PREFERENCES_NAME, Context.MODE_PRIVATE)
+            .getBoolean(FAKE_PHONE_PRE_ARM_KEY, false)
         observer.start()
+        observer.updateFakePhonePreArmEnabled(isFakePhonePreArmEnabled)
     }
 
     override fun onBind(intent: Intent?): IBinder = binder
@@ -114,6 +120,16 @@ class PrivateAudioService : Service() {
             .putBoolean(PROXIMITY_FEATURE_KEY, enabled)
             .apply()
         syncProximityBehavior(if (enabled) "Preference enabled" else "Preference disabled")
+    }
+
+    fun updateFakePhonePreArmEnabled(enabled: Boolean) {
+        if (enabled == isFakePhonePreArmEnabled) return
+        isFakePhonePreArmEnabled = enabled
+        getSharedPreferences(PREFERENCES_NAME, Context.MODE_PRIVATE)
+            .edit()
+            .putBoolean(FAKE_PHONE_PRE_ARM_KEY, enabled)
+            .apply()
+        observer.updateFakePhonePreArmEnabled(enabled)
     }
 
     fun diagnosticReport(): String {
@@ -212,5 +228,6 @@ class PrivateAudioService : Service() {
         private const val NOTIFICATION_ID = 1
         private const val PREFERENCES_NAME = "private_audio_preferences"
         private const val PROXIMITY_FEATURE_KEY = "proximity_screen_enabled"
+        private const val FAKE_PHONE_PRE_ARM_KEY = "fake_phone_pre_arm_enabled"
     }
 }

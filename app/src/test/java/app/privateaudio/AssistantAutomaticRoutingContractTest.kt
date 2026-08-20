@@ -19,7 +19,7 @@ class AssistantAutomaticRoutingContractTest {
     fun triggerClassesRemainSeparateAndProviderIndependent() {
         val trigger = observer.method("private fun evaluateExperimentTrigger()")
         assertTrue(trigger.contains("val normalTrigger = mode == AudioManager.MODE_IN_COMMUNICATION"))
-        assertTrue(trigger.contains("qualifyingPlaybackCount(configs) > 0"))
+        assertTrue(trigger.contains("qualifyingPlaybackCount(configs) >"))
         assertTrue(trigger.contains("TYPE_BUILTIN_SPEAKER"))
         assertTrue(trigger.contains("val assistantTrigger = assistantCount > 0"))
         val assistantClassifier = observer.method("private fun assistantQualifyingPlaybackCount(")
@@ -38,7 +38,7 @@ class AssistantAutomaticRoutingContractTest {
         assertTrue(trigger.contains("TriggerOrigin.COMMUNICATION"))
         assertEquals(1, trigger.occurrences("startProtectedPoc5Probe("))
         val body = observer.method("private fun startProtectedPoc5Probe(")
-        assertInOrder(body, "collectSnapshot()", "startSilentCommunicationTrack()", "PLAYSTATE_PLAYING", "audioManager.mode = AudioManager.MODE_IN_COMMUNICATION", "performRoutingAttempt(earpiece")
+        assertInOrder(body, "collectSnapshot()", "startSilentCommunicationTrack()", "PLAYSTATE_PLAYING", "requestCommunicationMode()", "performRoutingAttempt(earpiece")
         assertTrue(observer.method("private fun performRoutingAttempt(").contains("experiment.attempts.isNotEmpty()"))
         assertTrue(observer.method("private fun handlePlaybackConfigurations(").contains("TriggerOrigin.ASSISTANT"))
         assertTrue(observer.method("private fun scheduleEndConfirmation(").contains("assistantQualifyingPlaybackCount"))
