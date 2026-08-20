@@ -913,6 +913,40 @@ class Layer41LocalizationContractTest {
     }
 
     @Test
+    fun armenianKeepsOneNeutralQualifierAndFrozenLtrSemantics() {
+        val locale = Locale.forLanguageTag("hy")
+        val defaultIdentity = Locale.forLanguageTag("hy-Armn-AM")
+        assertEquals("hy", locale.toLanguageTag())
+        assertEquals("hy", locale.language)
+        assertEquals("Armn", defaultIdentity.script)
+        assertEquals("AM", defaultIdentity.country)
+        assertEquals("Հայերեն", nativeLocaleName("hy"))
+        assertTrue(projectFile("app/src/main/res/values-hy/strings.xml").isFile)
+        listOf("values-hy-rAM", "values-b+hy+Armn", "values-b+hy+Armn+AM").forEach {
+            assertFalse(projectFile("app/src/main/res/$it").exists())
+        }
+        assertTrue(armenianStrings.any { it in '\u0530'..'\u058F' })
+        assertTrue(armenianStrings.contains("name=\"routing_notification_title\">Private Audio-ն միացված է</string>"))
+        assertTrue(armenianStrings.contains("name=\"state_active\">Ակտիվ</string>"))
+        assertFalse(armenianStrings.contains("name=\"state_active\">Միացված է</string>"))
+        assertEquals(
+            mapOf("state_ready" to "Պատրաստ է", "state_waiting" to "Սպասում է", "state_active" to "Ակտիվ", "state_error" to "Սխալ"),
+            frozenStates(armenianStrings),
+        )
+        assertTrue(armenianStrings.contains("name=\"product_subtitle\">ԱԲ-ի հետ խոսեք"))
+        assertTrue(armenianStrings.contains("name=\"floating\">Մինի</string>"))
+        assertTrue(armenianStrings.contains("name=\"settings\">Կարգավորումներ</string>"))
+        assertTrue(armenianStrings.contains("name=\"settings_system_default\">Կանխադրված</string>"))
+        assertTrue(armenianStrings.contains("name=\"settings_advanced\">Ընդլայնված</string>"))
+        assertTrue(armenianStrings.contains("հեռախոսի ներկառուցված լսափող"))
+        assertTrue(armenianStrings.contains("աուդիո ելքի փոխարկման"))
+        assertTrue(armenianStrings.contains("ախտորոշման հաշվետվություն"))
+        assertTrue(armenianStrings.contains("Private Audio-ն միացնելու կամ անջատելու, կառավարիչն ընդարձակելու և փակելու կառավարման տարրեր"))
+        assertFalse(armenianStrings.contains("settings_fake_phone_pre_arm"))
+        assertFalse(projectFile("app/src/main/res/values-hy/mini_state_strings.xml").exists())
+    }
+
+    @Test
     fun mongolianKeepsOneNeutralCyrillicQualifierAndFrozenLtrSemantics() {
         val locale = Locale.forLanguageTag("mn")
         val defaultIdentity = Locale.forLanguageTag("mn-Cyrl-MN")
@@ -1542,6 +1576,7 @@ class Layer41LocalizationContractTest {
         val malayalamStrings = projectFile("app/src/main/res/values-ml/strings.xml").readText()
         val somaliStrings = projectFile("app/src/main/res/values-so/strings.xml").readText()
         val nepaliStrings = projectFile("app/src/main/res/values-ne/strings.xml").readText()
+        val armenianStrings = projectFile("app/src/main/res/values-hy/strings.xml").readText()
         val mongolianStrings = projectFile("app/src/main/res/values-mn/strings.xml").readText()
         val amharicStrings = projectFile("app/src/main/res/values-am/strings.xml").readText()
         val hebrewStrings = projectFile("app/src/main/res/values-iw/strings.xml").readText()

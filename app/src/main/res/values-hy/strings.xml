@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Private Audio</string>
+    <string name="routing_notification_channel">Private Audio</string>
+    <string name="routing_notification_title">Private Audio-ն միացված է</string>
+    <string name="routing_notification_text">Սպասում է աուդիո ելքի փոխարկման</string>
+    <string name="product_title">Private Audio</string>
+    <string name="product_subtitle">ԱԲ-ի հետ խոսեք մասնավոր կերպով՝ ինչպես հեռախոսազանգի ժամանակ։</string>
+    <string name="state_ready">Պատրաստ է</string>
+    <string name="state_waiting">Սպասում է</string>
+    <string name="state_active">Ակտիվ</string>
+    <string name="state_error">Սխալ</string>
+    <string name="power_control">Միացնել/անջատել</string>
+    <string name="floating">Մինի</string>
+    <string name="settings">Կարգավորումներ</string>
+    <string name="close">Փակել</string>
+    <string name="overlay_controller_description">Private Audio-ի լողացող կառավարիչ։ Կարգավիճակ՝ %1$s։ Private Audio-ն միացնելու կամ անջատելու, կառավարիչն ընդարձակելու և փակելու կառավարման տարրեր։</string>
+    <string name="settings_language">Լեզու</string>
+    <string name="settings_system_default">Կանխադրված</string>
+    <string name="settings_save_diagnostic">Պահել ախտորոշման հաշվետվությունը</string>
+    <string name="settings_advanced">Ընդլայնված</string>
+    <string name="settings_about">Private Audio-ի մասին</string>
+    <string name="settings_version">Տարբերակ %1$s</string>
+    <string name="settings_language_body">Private Audio-ն այժմ օգտագործում է ձեր սարքի լեզուն։ Ընտրված է «Կանխադրված» տարբերակը։</string>
+    <string name="settings_language_android_13_required">Հավելվածում լեզու ընտրելու համար պահանջվում է Android 13 կամ ավելի նոր տարբերակ։ Այս սարքն օգտագործում է համակարգի լեզուն։</string>
+    <string name="settings_proximity_screen">Անջատել էկրանը, երբ հեռախոսը մոտեցնում եք ականջին</string>
+    <string name="settings_advanced_body">Private Audio-ի զարգացմանը զուգահեռ այստեղ կհայտնվեն լրացուցիչ ընտրանքներ։</string>
+    <string name="settings_about_body">Private Audio-ն օգնում է աջակցվող ձայնային աուդիոն ուղղել ձեր հեռախոսի ներկառուցված լսափողին։</string>
+    <string name="diagnostic_report_saved">Ախտորոշման հաշվետվությունը պահվեց։</string>
+    <string name="diagnostic_report_save_failed">Չհաջողվեց պահել ախտորոշման հաշվետվությունը։</string>
+</resources>
