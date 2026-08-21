@@ -87,10 +87,14 @@ physical test records remain in [`DECISIONS.md`](DECISIONS.md),
 - Private Audio does not collect, record, or transmit conversation/audio content.
   It locally observes technical Android audio-system metadata and state needed for
   routing and diagnostics; that metadata is distinct from conversation content.
-- The user-facing Diagnostics screen projects a concise immutable summary of the
-  device/environment, observed routing capabilities and route, controller evidence,
-  trigger origin, and last completed routing cycle. It is distinct from the detailed
-  English-only technical diagnostic report.
+- The user-facing Diagnostics screen is a concise product-health summary: System
+  Check shows earpiece, proximity-sensor, and floating-control availability; Private
+  Audio shows routing intent, product state, and current route; Last Routing appears
+  only after a completed cycle and shows a result plus a concise error only on
+  failure. Device/environment and classifier details are intentionally omitted.
+- The English-only saved technical report begins with a stable support summary and
+  retains the complete device/environment, Android/API/version, TriggerOrigin,
+  playback, routing-attempt, snapshot, completed-cycle, and proximity evidence.
 - Diagnostic data is generated and processed locally. Saving the detailed UTF-8
   report occurs only after a user action through Android's Storage Access Framework,
   requires no storage permission, and uses a frozen snapshot so service unbinding

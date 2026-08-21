@@ -62,19 +62,6 @@ class DiagnosticsSummaryTest {
     }
 
     @Test
-    fun triggerOriginsMapWithoutParsingLogs() {
-        val expected = mapOf(
-            TriggerOrigin.COMMUNICATION to DiagnosticsDetectedAudio.COMMUNICATION,
-            TriggerOrigin.ASSISTANT to DiagnosticsDetectedAudio.ASSISTANT,
-            TriggerOrigin.BROWSER_COMMUNICATION to DiagnosticsDetectedAudio.BROWSER_COMMUNICATION,
-        )
-
-        expected.forEach { (origin, display) ->
-            assertEquals(display, summary(current = EarpieceExperiment(triggerOrigin = origin)).detectedAudio)
-        }
-    }
-
-    @Test
     fun currentRouteMapsReportedAndroidDeviceAndDoesNotInventUnknownRoute() {
         assertEquals(DiagnosticsRoute.EARPIECE, summary(deviceType = "Built-in earpiece").audioRoute)
         assertEquals(DiagnosticsRoute.SPEAKER, summary(deviceType = "Built-in speaker").audioRoute)
@@ -83,19 +70,43 @@ class DiagnosticsSummaryTest {
         assertEquals(DiagnosticsRoute.UNKNOWN, summary(deviceType = null).audioRoute)
     }
 
+    @Test
+    fun supportSummaryUsesTheReleaseFacingProjectionAndStableValues() {
+        val summary = summary(
+            completed = cycle(
+                EarpieceExperiment(
+                    state = ExperimentState.CLEARED,
+                    requestAccepted = true,
+                    earpieceReportedDuringSession = true,
+                ),
+            ),
+            deviceType = "Built-in earpiece",
+        )
+
+        assertEquals(
+            """SUPPORT SUMMARY
+Private Audio enabled: true
+Private Audio state: WAITING
+Built-in earpiece available: true
+Current audio route: EARPIECE
+Proximity supported: true
+Floating control permission: not granted
+Last routing result: SUCCESS
+Last routing error: NONE""",
+            summary.supportSummary(),
+        )
+    }
+
     private fun summary(
-        current: EarpieceExperiment = EarpieceExperiment(),
         completed: CompletedRoutingCycle? = null,
         deviceType: String? = null,
     ) = projectDiagnosticsSummary(
-        environment = DiagnosticEnvironment("0.1.0", 1, "13", 33, "Xiaomi", "2201117TY", "veux"),
         snapshot = DiagnosticSnapshot(
             mode = "MODE_NORMAL",
             communicationDevice = deviceType?.let { ObservedDevice(1, it, "Test") },
             availableCommunicationDevices = listOf(ObservedDevice(2, "Built-in earpiece", "Test")),
             speakerphoneState = "Off",
         ),
-        currentExperiment = current,
         lastCompletedCycle = completed,
         privateAudioEnabled = true,
         privateAudioState = PrivateAudioState.WAITING,
