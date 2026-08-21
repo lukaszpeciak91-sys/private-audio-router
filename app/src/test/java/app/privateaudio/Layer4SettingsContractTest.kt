@@ -46,7 +46,10 @@ class Layer4SettingsContractTest {
     @Test
     fun privacyPolicyUsesTheSingleSettingsModalAndAuthoritativeEnglishClaims() {
         assertTrue(settingsSource.contains("tag = \"settings_privacy_policy\""))
-        assertTrue(settingsSource.contains("SettingsPage.PRIVACY_POLICY -> PrivacyPolicyPage()"))
+        assertTrue(settingsSource.contains("SettingsPage.PRIVACY_POLICY -> PrivacyPolicyPage("))
+        val privacyPolicyPage = settingsSource.method("private fun PrivacyPolicyPage(onBack: () -> Unit)")
+        assertTrue(privacyPolicyPage.contains("testTag(\"settings_child_back\")"))
+        assertTrue(privacyPolicyPage.contains("BackChevron()"))
         assertTrue(settingsSource.contains("BackHandler(enabled = page != SettingsPage.ROOT) { page = SettingsPage.ROOT }"))
         assertTrue(settingsSource.contains("testTag(\"privacy_policy_body\")"))
         assertEquals(1, settingsSource.occurrences("Dialog("))

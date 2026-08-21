@@ -151,6 +151,26 @@ class PrivateAudioScreenTest {
     }
 
     @Test
+    fun privacyPolicyVisibleBackReturnsToSettingsRoot() {
+        composeRule.setContent {
+            PrivateAudioTheme {
+                PrivateAudioScreen(
+                    state = PrivateAudioState.READY,
+                    onPowerClick = {},
+                    onCloseClick = {},
+                )
+            }
+        }
+
+        composeRule.onNodeWithTag("private_audio_settings").performClick()
+        composeRule.onNodeWithTag("settings_privacy_policy").performClick()
+        composeRule.onNodeWithTag("settings_child_back").assertIsDisplayed().performClick()
+        composeRule.onNodeWithTag("privacy_policy_panel").assertDoesNotExist()
+        composeRule.onNodeWithTag("settings_privacy_policy").assertIsDisplayed()
+        composeRule.onNodeWithTag("settings_sheet").assertIsDisplayed()
+    }
+
+    @Test
     fun diagnosticsMovesReportActionOutOfSettingsAndBackReturnsToMainScreen() {
         var saveClicks = 0
         composeRule.setContent {

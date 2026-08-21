@@ -170,7 +170,9 @@ fun SettingsSheet(
                         onFakePhonePreArmChange = onFakePhonePreArmChange,
                         onBack = { page = SettingsPage.ROOT },
                     )
-                    SettingsPage.PRIVACY_POLICY -> PrivacyPolicyPage()
+                    SettingsPage.PRIVACY_POLICY -> PrivacyPolicyPage(
+                        onBack = { page = SettingsPage.ROOT },
+                    )
                     SettingsPage.ABOUT -> ChildPage(
                         title = stringResource(R.string.settings_about),
                         body = stringResource(R.string.settings_about_body),
@@ -393,13 +395,22 @@ private fun LanguageChoice(label: String, selected: Boolean, tag: String, onClic
 }
 
 @Composable
-private fun PrivacyPolicyPage() {
+private fun PrivacyPolicyPage(onBack: () -> Unit) {
     Column(
         modifier = Modifier
             .fillMaxWidth()
             .testTag("privacy_policy_panel"),
     ) {
-        SheetTitle(stringResource(R.string.settings_privacy_policy))
+        Box(Modifier.fillMaxWidth()) {
+            Box(
+                modifier = Modifier
+                    .size(44.dp)
+                    .clickable(role = Role.Button, onClick = onBack)
+                    .testTag("settings_child_back"),
+                contentAlignment = Alignment.CenterStart,
+            ) { BackChevron() }
+            SheetTitle(stringResource(R.string.settings_privacy_policy))
+        }
         Spacer(Modifier.height(22.dp))
         LazyColumn(
             modifier = Modifier
