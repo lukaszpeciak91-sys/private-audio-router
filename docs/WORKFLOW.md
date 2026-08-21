@@ -125,7 +125,7 @@ That sequence led to the now-implemented permanent foreground controller and flo
 - Architectural or safety changes append to `DECISIONS.md`.
 - New physical behaviors to validate update `TEST_PLAN.md`.
 - Research records preserve **FACT**, **INFERENCE**, and **UNKNOWN** distinctions.
-- Localization work follows the authoritative policy in [`LOCALIZATION.md`](LOCALIZATION.md) through the repo-local `private-audio-localization` skill; keep the general workflow here free of duplicated localization rules.
+- Localization work follows the authoritative policy in [`LOCALIZATION.md`](LOCALIZATION.md). Translation production and audit findings delegated for correction use `private-audio-translation`; independent verification and quality classification use the read-only-by-default `private-audio-localization-audit`. Keep the general workflow here free of duplicated localization rules.
 
 ## Stop condition
 
