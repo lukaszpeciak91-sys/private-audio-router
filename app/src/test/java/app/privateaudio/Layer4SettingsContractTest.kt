@@ -25,7 +25,8 @@ class Layer4SettingsContractTest {
         assertTrue(settingsSource.contains("const val widthFraction = 0.88f"))
         assertTrue(settingsSource.contains("val verticalOffset = 104.dp"))
         assertTrue(settingsSource.contains("private fun SettingsDivider()"))
-        assertTrue(settingsSource.contains("private fun SaveIcon()"))
+        assertTrue(settingsSource.contains("tag = \"settings_diagnostics\""))
+        assertFalse(settingsSource.contains("private fun SaveIcon()"))
         assertTrue(settingsSource.contains("SettingsScrim"))
         assertTrue(settingsSource.contains("RoundedCornerShape(SettingsLayout.cornerRadius)"))
     }
@@ -59,6 +60,7 @@ class Layer4SettingsContractTest {
         assertTrue(serviceSource.method("fun diagnosticReport(): String").contains("observer.report()"))
         assertEquals(1, observerSource.occurrences("internal fun buildDiagnosticReport("))
         assertEquals(0, settingsSource.occurrences("buildDiagnosticReport("))
+        assertFalse(settingsSource.contains("settings_save_diagnostic"))
     }
 
     @Test

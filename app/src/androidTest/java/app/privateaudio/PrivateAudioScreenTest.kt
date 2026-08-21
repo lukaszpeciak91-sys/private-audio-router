@@ -108,24 +108,25 @@ class PrivateAudioScreenTest {
     }
 
     @Test
-    fun copyUsesSuppliedReportActionAndChildBackReturnsToRoot() {
-        var copyClicks = 0
+    fun diagnosticsMovesReportActionOutOfSettingsAndBackReturnsToMainScreen() {
+        var saveClicks = 0
         composeRule.setContent {
             PrivateAudioTheme {
                 PrivateAudioScreen(
                     state = PrivateAudioState.READY,
                     onPowerClick = {},
                     onCloseClick = {},
-                    onCopyDiagnosticReport = { copyClicks++ },
+                    onSaveDiagnosticReport = { saveClicks++ },
                 )
             }
         }
 
         composeRule.onNodeWithTag("private_audio_settings").performClick()
-        composeRule.onNodeWithTag("settings_save_diagnostic").performClick()
-        composeRule.onNodeWithTag("settings_language").performClick()
-        composeRule.onNodeWithTag("settings_child_back").performClick()
-        composeRule.onNodeWithTag("settings_save_diagnostic").assertIsDisplayed()
-        composeRule.runOnIdle { assertEquals(1, copyClicks) }
+        composeRule.onNodeWithTag("settings_diagnostics").performClick()
+        composeRule.onNodeWithTag("settings_sheet").assertDoesNotExist()
+        composeRule.onNodeWithTag("diagnostics_save_report").performClick()
+        composeRule.runOnIdle { assertEquals(1, saveClicks) }
+        composeRule.onNodeWithTag("diagnostics_back").performClick()
+        composeRule.onNodeWithTag("private_audio_power").assertIsDisplayed()
     }
 }

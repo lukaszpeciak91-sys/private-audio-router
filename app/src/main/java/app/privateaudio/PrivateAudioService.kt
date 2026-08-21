@@ -18,6 +18,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import app.privateaudio.diagnostic.AudioDiagnosticObserver
 import app.privateaudio.diagnostic.ExperimentState
+import app.privateaudio.diagnostic.DiagnosticsSummary
 
 class PrivateAudioService : Service() {
     inner class LocalBinder : Binder() {
@@ -148,6 +149,14 @@ class PrivateAudioService : Service() {
             appendLine("Route at last transition: ${proximity.routeAtLastTransition ?: "None"}")
         }
     }
+
+    internal fun diagnosticsSummary(overlayPermissionGranted: Boolean): DiagnosticsSummary =
+        observer.diagnosticsSummary(
+            privateAudioEnabled = isPrivateAudioEnabled,
+            privateAudioState = privateAudioState,
+            proximitySupported = proximityController.status().supported,
+            overlayPermissionGranted = overlayPermissionGranted,
+        )
 
     override fun onDestroy() {
         shuttingDown = true
