@@ -36,12 +36,11 @@
     <string name="diagnostics_system_check">SYSTEMPRÜFUNG</string>
     <string name="diagnostics_earpiece">Hörmuschel</string>
     <string name="diagnostics_proximity_sensor">Näherungssensor</string>
-    <string name="diagnostics_floating_control">Mini</string>
     <string name="diagnostics_private_audio">Private Audio</string>
     <string name="diagnostics_routing">Weiterleitung</string>
     <string name="diagnostics_status">Status</string>
     <string name="diagnostics_audio_route">Audioausgabe</string>
-    <string name="diagnostics_last_routing">LETZTE WEITERLEITUNG</string>
+    <string name="diagnostics_last_routing">LETZTER WEITERLEITUNGSVERSUCH</string>
     <string name="diagnostics_result">Ergebnis</string>
     <string name="diagnostics_error">Fehler</string>
     <string name="diagnostics_available">Verfügbar</string>

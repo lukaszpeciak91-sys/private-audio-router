@@ -36,12 +36,11 @@
     <string name="diagnostics_system_check">SKIPANARKANNING</string>
     <string name="diagnostics_earpiece">Oyrahátalari</string>
     <string name="diagnostics_proximity_sensor">Nærleikaskynjari</string>
-    <string name="diagnostics_floating_control">Mini</string>
     <string name="diagnostics_private_audio">PRIVATE AUDIO</string>
     <string name="diagnostics_routing">Ljóðbeining</string>
     <string name="diagnostics_status">Støða</string>
-    <string name="diagnostics_audio_route">Ljóðleið</string>
-    <string name="diagnostics_last_routing">SEINASTA LJÓÐBEINING</string>
+    <string name="diagnostics_audio_route">Ljóðúttak</string>
+    <string name="diagnostics_last_routing">SEINASTA ROYNDIN AT BEINA LJÓÐIÐ</string>
     <string name="diagnostics_result">Úrslit</string>
     <string name="diagnostics_error">Villa</string>
     <string name="diagnostics_available">Tøkt</string>

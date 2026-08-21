@@ -308,8 +308,9 @@ class Layer41LocalizationContractTest {
 
     @Test
     fun diagnosticsLocalesFollowCurrentSourceContract() {
+        val polishStrings = projectFile("app/src/main/res/values-pl/strings.xml").readText()
         val diagnosticsKeys = stringKeys(defaultStrings).filter { it == "settings_diagnostics" || it.startsWith("diagnostics_") }
-        assertEquals(31, diagnosticsKeys.size)
+        assertEquals(30, diagnosticsKeys.size)
         val obsoleteKeys = setOf(
             "diagnostics_device", "diagnostics_device_model", "diagnostics_android_version",
             "diagnostics_android_value", "diagnostics_private_audio_version", "diagnostics_version_value",
@@ -319,8 +320,7 @@ class Layer41LocalizationContractTest {
             "diagnostics_audio_browser_communication",
         )
         val introducedKeys = setOf(
-            "diagnostics_floating_control", "diagnostics_permission_required",
-            "diagnostics_last_routing", "diagnostics_error",
+            "diagnostics_permission_required", "diagnostics_last_routing", "diagnostics_error",
         )
         localeDirectories.forEach { localeDirectory ->
             val keys = stringKeys(File(localeDirectory, "strings.xml").readText()).toSet()
@@ -334,6 +334,9 @@ class Layer41LocalizationContractTest {
         assertFalse(javaneseStrings.contains("name=\"diagnostics_earpiece\">Speaker"))
         assertFalse(javaneseStrings.contains("name=\"diagnostics_route_earpiece\">Speaker"))
         assertFalse(resourceValue(zuluStrings, "diagnostics_routing") == resourceValue(zuluStrings, "diagnostics_audio_route"))
+        assertEquals("Przekierowanie dźwięku", resourceValue(polishStrings, "diagnostics_routing"))
+        assertEquals("Wyjście audio", resourceValue(polishStrings, "diagnostics_audio_route"))
+        assertEquals("OSTATNIA PRÓBA PRZEKIEROWANIA", resourceValue(polishStrings, "diagnostics_last_routing"))
     }
 
     private fun isEnglishFallbackOnlyKey(key: String): Boolean =

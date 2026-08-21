@@ -36,12 +36,11 @@
     <string name="diagnostics_system_check">సిస్టమ్ తనిఖీ</string>
     <string name="diagnostics_earpiece">ఇయర్‌పీస్</string>
     <string name="diagnostics_proximity_sensor">ప్రాక్సిమిటీ సెన్సార్</string>
-    <string name="diagnostics_floating_control">Mini</string>
     <string name="diagnostics_private_audio">Private Audio</string>
     <string name="diagnostics_routing">ఆడియో రూటింగ్</string>
     <string name="diagnostics_status">స్థితి</string>
-    <string name="diagnostics_audio_route">ఆడియో అవుట్‌పుట్ మార్గం</string>
-    <string name="diagnostics_last_routing">చివరి ఆడియో రూటింగ్</string>
+    <string name="diagnostics_audio_route">ఆడియో అవుట్‌పుట్</string>
+    <string name="diagnostics_last_routing">చివరి ఆడియో రూటింగ్ ప్రయత్నం</string>
     <string name="diagnostics_result">ఫలితం</string>
     <string name="diagnostics_error">ఎర్రర్</string>
     <string name="diagnostics_available">అందుబాటులో ఉంది</string>

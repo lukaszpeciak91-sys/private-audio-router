@@ -36,12 +36,11 @@
     <string name="diagnostics_system_check">ການກວດສອບລະບົບ</string>
     <string name="diagnostics_earpiece">ຫູຟັງໃນຕົວໂທລະສັບ</string>
     <string name="diagnostics_proximity_sensor">ເຊັນເຊີກວດຈັບໄລຍະໃກ້</string>
-    <string name="diagnostics_floating_control">ມິນິ</string>
     <string name="diagnostics_private_audio">Private Audio</string>
     <string name="diagnostics_routing">ການກຳນົດເສັ້ນທາງສຽງ</string>
     <string name="diagnostics_status">ສະຖານະ</string>
-    <string name="diagnostics_audio_route">ເສັ້ນທາງສຽງ</string>
-    <string name="diagnostics_last_routing">ການກຳນົດເສັ້ນທາງສຽງຄັ້ງຫຼ້າສຸດ</string>
+    <string name="diagnostics_audio_route">ສຽງອອກ</string>
+    <string name="diagnostics_last_routing">ການພະຍາຍາມກຳນົດເສັ້ນທາງສຽງຄັ້ງຫຼ້າສຸດ</string>
     <string name="diagnostics_result">ຜົນລັບ</string>
     <string name="diagnostics_error">ຂໍ້ຜິດພາດ</string>
     <string name="diagnostics_available">ມີໃຫ້ໃຊ້</string>

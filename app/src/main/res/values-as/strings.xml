@@ -36,12 +36,11 @@
     <string name="diagnostics_system_check">ছিষ্টেম পৰীক্ষা</string>
     <string name="diagnostics_earpiece">ইয়েৰপিচ</string>
     <string name="diagnostics_proximity_sensor">প্ৰক্সিমিটি ছেন্সৰ</string>
-    <string name="diagnostics_floating_control">মিনি</string>
     <string name="diagnostics_private_audio">Private Audio</string>
     <string name="diagnostics_routing">অডিঅ’ ৰাউটিং</string>
     <string name="diagnostics_status">স্থিতি</string>
-    <string name="diagnostics_audio_route">অডিঅ’ ৰুট</string>
-    <string name="diagnostics_last_routing">শেষ অডিঅ’ ৰাউটিং</string>
+    <string name="diagnostics_audio_route">অডিঅ’ আউটপুট</string>
+    <string name="diagnostics_last_routing">অডিঅ’ ৰাউটিঙৰ শেহতীয়া চেষ্টা</string>
     <string name="diagnostics_result">ফলাফল</string>
     <string name="diagnostics_error">ত্ৰুটি</string>
     <string name="diagnostics_available">উপলব্ধ</string>

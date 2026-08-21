@@ -36,12 +36,11 @@
     <string name="diagnostics_system_check">ПЕРЕВІРКА СИСТЕМИ</string>
     <string name="diagnostics_earpiece">Розмовний динамік</string>
     <string name="diagnostics_proximity_sensor">Датчик наближення</string>
-    <string name="diagnostics_floating_control">Міні</string>
     <string name="diagnostics_private_audio">PRIVATE AUDIO</string>
     <string name="diagnostics_routing">Перенаправлення звуку</string>
     <string name="diagnostics_status">Стан</string>
-    <string name="diagnostics_audio_route">Маршрут аудіо</string>
-    <string name="diagnostics_last_routing">ОСТАННЄ ПЕРЕНАПРАВЛЕННЯ</string>
+    <string name="diagnostics_audio_route">Аудіовихід</string>
+    <string name="diagnostics_last_routing">ОСТАННЯ СПРОБА ПЕРЕНАПРАВЛЕННЯ</string>
     <string name="diagnostics_result">Результат</string>
     <string name="diagnostics_error">Помилка</string>
     <string name="diagnostics_available">Доступно</string>

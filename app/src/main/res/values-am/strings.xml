@@ -36,12 +36,11 @@
     <string name="diagnostics_system_check">የስርዓት ፍተሻ</string>
     <string name="diagnostics_earpiece">የስልኩ አብሮገነብ መስሚያ</string>
     <string name="diagnostics_proximity_sensor">የቅርበት ዳሳሽ</string>
-    <string name="diagnostics_floating_control">ሚኒ</string>
     <string name="diagnostics_private_audio">Private Audio</string>
     <string name="diagnostics_routing">የድምፅ መውጫ ማዘዋወር</string>
     <string name="diagnostics_status">ሁኔታ</string>
     <string name="diagnostics_audio_route">የድምፅ መውጫ</string>
-    <string name="diagnostics_last_routing">የመጨረሻው የድምፅ መውጫ ማዘዋወር</string>
+    <string name="diagnostics_last_routing">የመጨረሻው የድምፅ ማዘዋወር ሙከራ</string>
     <string name="diagnostics_result">ውጤት</string>
     <string name="diagnostics_error">ስህተት</string>
     <string name="diagnostics_available">ይገኛል</string>

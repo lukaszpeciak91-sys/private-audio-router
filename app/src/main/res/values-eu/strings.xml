@@ -36,12 +36,11 @@
     <string name="diagnostics_system_check">SISTEMAREN EGIAZTAPENA</string>
     <string name="diagnostics_earpiece">Aurikularra</string>
     <string name="diagnostics_proximity_sensor">Hurbiltasun-sentsorea</string>
-    <string name="diagnostics_floating_control">Mini</string>
     <string name="diagnostics_private_audio">PRIVATE AUDIO</string>
     <string name="diagnostics_routing">Bideratzea</string>
     <string name="diagnostics_status">Egoera</string>
-    <string name="diagnostics_audio_route">Audioaren bidea</string>
-    <string name="diagnostics_last_routing">AZKEN BIDERATZEA</string>
+    <string name="diagnostics_audio_route">Audio-irteera</string>
+    <string name="diagnostics_last_routing">AZKEN BIDERATZE-SAIAKERA</string>
     <string name="diagnostics_result">Emaitza</string>
     <string name="diagnostics_error">Errorea</string>
     <string name="diagnostics_available">Erabilgarri</string>

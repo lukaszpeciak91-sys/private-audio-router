@@ -36,12 +36,11 @@
     <string name="diagnostics_system_check">การตรวจสอบระบบ</string>
     <string name="diagnostics_earpiece">ลำโพงสนทนา</string>
     <string name="diagnostics_proximity_sensor">เซ็นเซอร์ตรวจจับระยะใกล้</string>
-    <string name="diagnostics_floating_control">มินิ</string>
     <string name="diagnostics_private_audio">Private Audio</string>
     <string name="diagnostics_routing">การกำหนดเส้นทางเสียง</string>
     <string name="diagnostics_status">สถานะ</string>
-    <string name="diagnostics_audio_route">เส้นทางเสียง</string>
-    <string name="diagnostics_last_routing">การกำหนดเส้นทางเสียงครั้งล่าสุด</string>
+    <string name="diagnostics_audio_route">เอาต์พุตเสียง</string>
+    <string name="diagnostics_last_routing">การพยายามกำหนดเส้นทางเสียงครั้งล่าสุด</string>
     <string name="diagnostics_result">ผลลัพธ์</string>
     <string name="diagnostics_error">ข้อผิดพลาด</string>
     <string name="diagnostics_available">พร้อมใช้งาน</string>

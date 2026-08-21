@@ -36,12 +36,11 @@
     <string name="diagnostics_system_check">系統檢查</string>
     <string name="diagnostics_earpiece">聽筒</string>
     <string name="diagnostics_proximity_sensor">距離感應器</string>
-    <string name="diagnostics_floating_control">迷你</string>
     <string name="diagnostics_private_audio">PRIVATE AUDIO</string>
     <string name="diagnostics_routing">音訊導向</string>
     <string name="diagnostics_status">狀態</string>
-    <string name="diagnostics_audio_route">音訊輸出路徑</string>
-    <string name="diagnostics_last_routing">上次音訊導向</string>
+    <string name="diagnostics_audio_route">音訊輸出</string>
+    <string name="diagnostics_last_routing">上次音訊導向嘗試</string>
     <string name="diagnostics_result">結果</string>
     <string name="diagnostics_error">錯誤</string>
     <string name="diagnostics_available">可用</string>

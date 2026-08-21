@@ -36,12 +36,11 @@
     <string name="diagnostics_system_check">KERFISATHUGUN</string>
     <string name="diagnostics_earpiece">Eyrnarhátalari</string>
     <string name="diagnostics_proximity_sensor">Nálægðarskynjari</string>
-    <string name="diagnostics_floating_control">Mini</string>
     <string name="diagnostics_private_audio">PRIVATE AUDIO</string>
     <string name="diagnostics_routing">Hljóðbeining</string>
     <string name="diagnostics_status">Staða</string>
-    <string name="diagnostics_audio_route">Hljóðleið</string>
-    <string name="diagnostics_last_routing">SÍÐASTA HLJÓÐBEINING</string>
+    <string name="diagnostics_audio_route">Hljóðúttak</string>
+    <string name="diagnostics_last_routing">SÍÐASTA TILRAUN TIL HLJÓÐBEININGAR</string>
     <string name="diagnostics_result">Niðurstaða</string>
     <string name="diagnostics_error">Villa</string>
     <string name="diagnostics_available">Tiltækt</string>

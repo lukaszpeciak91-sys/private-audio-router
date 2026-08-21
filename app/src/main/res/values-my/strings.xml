@@ -47,12 +47,11 @@
     <string name="diagnostics_system_check">စနစ် စစ်ဆေးမှု</string>
     <string name="diagnostics_earpiece">တယ်လီဖုန်းနားခွက်</string>
     <string name="diagnostics_proximity_sensor">အနီးကပ်အာရုံခံကိရိယာ</string>
-    <string name="diagnostics_floating_control">မီနီ</string>
     <string name="diagnostics_private_audio">Private Audio</string>
     <string name="diagnostics_routing">အသံလမ်းကြောင်းပြောင်းခြင်း</string>
     <string name="diagnostics_status">အခြေအနေ</string>
-    <string name="diagnostics_audio_route">အသံထွက်လမ်းကြောင်း</string>
-    <string name="diagnostics_last_routing">နောက်ဆုံး အသံလမ်းကြောင်းပြောင်းခြင်း</string>
+    <string name="diagnostics_audio_route">အသံအထွက်</string>
+    <string name="diagnostics_last_routing">နောက်ဆုံး အသံလမ်းကြောင်းပြောင်းရန် ကြိုးပမ်းမှု</string>
     <string name="diagnostics_result">ရလဒ်</string>
     <string name="diagnostics_error">အမှား</string>
     <string name="diagnostics_available">ရရှိနိုင်သည်</string>

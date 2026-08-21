@@ -75,9 +75,11 @@ physical test records remain in [`DECISIONS.md`](DECISIONS.md),
   supported non-English resource sets. Candidates were produced and semantically
   self-checked with the Translation Skill; an independent audit identified targeted
   Javanese earpiece and Zulu audio-route terminology defects, and corrective
-  candidates were applied. A final natural-UI pass then replaced overly literal or
-  implementation-heavy wording for the Mini control, required-permission status,
-  and last-routing heading in every non-English set. Final independent re-audit
+  candidates were applied. A Translation Skill natural-UI self-review aligned the
+  final source terminology with the concise product-health UI: current physical
+  output is distinct from routing, the last section identifies a routing attempt,
+  and Diagnostics reuses each locale's established `Mini` product label instead of
+  maintaining a second floating-control term. Independent linguistic re-audit
   remains pending. The detailed
   technical diagnostic report and SUPPORT SUMMARY remain intentionally English-only,
   as does the default-OFF Fake Phone experiment label.
@@ -95,8 +97,8 @@ physical test records remain in [`DECISIONS.md`](DECISIONS.md),
   It locally observes technical Android audio-system metadata and state needed for
   routing and diagnostics; that metadata is distinct from conversation content.
 - The user-facing Diagnostics screen is a concise product-health summary: System
-  Check shows earpiece, proximity-sensor, and floating-control availability; Private
-  Audio shows routing intent, product state, and current route; Last Routing appears
+  Check shows earpiece, proximity-sensor, and Mini availability; Private Audio shows
+  routing intent, product state, and current audio output; Last Routing Attempt appears
   only after a completed cycle and shows a result plus a concise error only on
   failure. Device/environment and classifier details are intentionally omitted.
 - The English-only saved technical report begins with a stable support summary and

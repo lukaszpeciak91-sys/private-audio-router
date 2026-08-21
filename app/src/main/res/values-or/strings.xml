@@ -47,12 +47,11 @@
     <string name="diagnostics_system_check">ସିଷ୍ଟମ୍ ଯାଞ୍ଚ</string>
     <string name="diagnostics_earpiece">ଇୟରପିସ୍</string>
     <string name="diagnostics_proximity_sensor">ନିକଟତା ସେନ୍ସର୍</string>
-    <string name="diagnostics_floating_control">ମିନି</string>
     <string name="diagnostics_private_audio">Private Audio</string>
     <string name="diagnostics_routing">ରୂଟିଂ</string>
     <string name="diagnostics_status">ସ୍ଥିତି</string>
-    <string name="diagnostics_audio_route">ଅଡିଓ ରୁଟ୍</string>
-    <string name="diagnostics_last_routing">ଶେଷ ରୂଟିଂ</string>
+    <string name="diagnostics_audio_route">ଅଡିଓ ଆଉଟପୁଟ୍</string>
+    <string name="diagnostics_last_routing">ଶେଷ ରୂଟିଂ ପ୍ରୟାସ</string>
     <string name="diagnostics_result">ଫଳାଫଳ</string>
     <string name="diagnostics_error">ତ୍ରୁଟି</string>
     <string name="diagnostics_available">ଉପଲବ୍ଧ</string>

@@ -36,12 +36,11 @@
     <string name="diagnostics_system_check">RENDSZERELLENŐRZÉS</string>
     <string name="diagnostics_earpiece">Beépített fülhallgató</string>
     <string name="diagnostics_proximity_sensor">Közelségérzékelő</string>
-    <string name="diagnostics_floating_control">Mini</string>
     <string name="diagnostics_private_audio">PRIVATE AUDIO</string>
     <string name="diagnostics_routing">Átirányítás</string>
     <string name="diagnostics_status">Állapot</string>
     <string name="diagnostics_audio_route">Hangkimenet</string>
-    <string name="diagnostics_last_routing">LEGUTÓBBI ÁTIRÁNYÍTÁS</string>
+    <string name="diagnostics_last_routing">LEGUTÓBBI ÁTIRÁNYÍTÁSI KÍSÉRLET</string>
     <string name="diagnostics_result">Eredmény</string>
     <string name="diagnostics_error">Hiba</string>
     <string name="diagnostics_available">Elérhető</string>

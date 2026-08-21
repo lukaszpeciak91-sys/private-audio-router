@@ -85,7 +85,7 @@ internal fun UserDiagnosticsScreen(
         DiagnosticsSection(R.string.diagnostics_system_check) {
             DiagnosticsRow(R.string.diagnostics_earpiece, availability(summary?.earpiece))
             DiagnosticsRow(R.string.diagnostics_proximity_sensor, availability(summary?.proximitySensor))
-            DiagnosticsRow(R.string.diagnostics_floating_control, permission(summary?.floatingControlPermission))
+            DiagnosticsRow(R.string.floating, permission(summary?.floatingControlPermission))
         }
         DiagnosticsSection(R.string.diagnostics_private_audio) {
             DiagnosticsRow(R.string.diagnostics_routing, routing(summary?.routing))

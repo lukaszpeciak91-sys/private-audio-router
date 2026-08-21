@@ -36,12 +36,11 @@
     <string name="diagnostics_system_check">سیستم یوخلاماسی</string>
     <string name="diagnostics_earpiece">داخیل قولاق دینامیکی</string>
     <string name="diagnostics_proximity_sensor">یاخینلیق سنسورو</string>
-    <string name="diagnostics_floating_control">مینی</string>
     <string name="diagnostics_private_audio">Private Audio</string>
     <string name="diagnostics_routing">سس یؤنلندیرمه‌سی</string>
     <string name="diagnostics_status">دوروم</string>
-    <string name="diagnostics_audio_route">سس چیخیش یولو</string>
-    <string name="diagnostics_last_routing">سون یؤنلندیرمه</string>
+    <string name="diagnostics_audio_route">سس چیخیشی</string>
+    <string name="diagnostics_last_routing">سون یؤنلندیرمه جهدی</string>
     <string name="diagnostics_result">نتیجه</string>
     <string name="diagnostics_error">خطا</string>
     <string name="diagnostics_available">موجود</string>

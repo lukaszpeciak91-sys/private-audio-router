@@ -36,12 +36,11 @@
     <string name="diagnostics_system_check">بررسی سیستم</string>
     <string name="diagnostics_earpiece">بلندگوی مکالمه</string>
     <string name="diagnostics_proximity_sensor">حسگر مجاورت</string>
-    <string name="diagnostics_floating_control">مینی</string>
     <string name="diagnostics_private_audio">Private Audio</string>
     <string name="diagnostics_routing">هدایت صدا</string>
     <string name="diagnostics_status">وضعیت</string>
-    <string name="diagnostics_audio_route">مسیر صدا</string>
-    <string name="diagnostics_last_routing">آخرین هدایت صدا</string>
+    <string name="diagnostics_audio_route">خروجی صدا</string>
+    <string name="diagnostics_last_routing">آخرین تلاش برای هدایت صدا</string>
     <string name="diagnostics_result">نتیجه</string>
     <string name="diagnostics_error">خطا</string>
     <string name="diagnostics_available">در دسترس</string>

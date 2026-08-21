@@ -36,12 +36,11 @@
     <string name="diagnostics_system_check">SYSTEM CHECK</string>
     <string name="diagnostics_earpiece">Earpiece</string>
     <string name="diagnostics_proximity_sensor">Proximity sensor</string>
-    <string name="diagnostics_floating_control">Mini</string>
     <string name="diagnostics_private_audio">PRIVATE AUDIO</string>
     <string name="diagnostics_routing">Audio routing</string>
     <string name="diagnostics_status">Status</string>
-    <string name="diagnostics_audio_route">Audio route</string>
-    <string name="diagnostics_last_routing">LAST ROUTING</string>
+    <string name="diagnostics_audio_route">Audio output</string>
+    <string name="diagnostics_last_routing">LAST ROUTING ATTEMPT</string>
     <string name="diagnostics_result">Result</string>
     <string name="diagnostics_error">Error</string>
     <string name="diagnostics_available">Dey available</string>

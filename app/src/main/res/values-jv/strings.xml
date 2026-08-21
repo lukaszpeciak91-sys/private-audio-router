@@ -36,12 +36,11 @@
     <string name="diagnostics_system_check">PAMRIKSA SISTEM</string>
     <string name="diagnostics_earpiece">Earpiece gawan telpon</string>
     <string name="diagnostics_proximity_sensor">Sensor jarak</string>
-    <string name="diagnostics_floating_control">Mini</string>
     <string name="diagnostics_private_audio">PRIVATE AUDIO</string>
     <string name="diagnostics_routing">Pangalihan audio</string>
     <string name="diagnostics_status">Status</string>
-    <string name="diagnostics_audio_route">Tujuan output audio</string>
-    <string name="diagnostics_last_routing">PANGALIHAN PUNGKASAN</string>
+    <string name="diagnostics_audio_route">Output audio</string>
+    <string name="diagnostics_last_routing">UPAYA PANGALIHAN PUNGKASAN</string>
     <string name="diagnostics_result">Asil</string>
     <string name="diagnostics_error">Kesalahan</string>
     <string name="diagnostics_available">Kasedhiya</string>

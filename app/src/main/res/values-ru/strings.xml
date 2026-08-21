@@ -36,12 +36,11 @@
     <string name="diagnostics_system_check">ПРОВЕРКА СИСТЕМЫ</string>
     <string name="diagnostics_earpiece">Разговорный динамик</string>
     <string name="diagnostics_proximity_sensor">Датчик приближения</string>
-    <string name="diagnostics_floating_control">Мини</string>
     <string name="diagnostics_private_audio">PRIVATE AUDIO</string>
     <string name="diagnostics_routing">Маршрутизация</string>
     <string name="diagnostics_status">Состояние</string>
-    <string name="diagnostics_audio_route">Маршрут звука</string>
-    <string name="diagnostics_last_routing">ПОСЛЕДНЯЯ МАРШРУТИЗАЦИЯ</string>
+    <string name="diagnostics_audio_route">Аудиовыход</string>
+    <string name="diagnostics_last_routing">ПОСЛЕДНЯЯ ПОПЫТКА МАРШРУТИЗАЦИИ</string>
     <string name="diagnostics_result">Результат</string>
     <string name="diagnostics_error">Ошибка</string>
     <string name="diagnostics_available">Доступно</string>

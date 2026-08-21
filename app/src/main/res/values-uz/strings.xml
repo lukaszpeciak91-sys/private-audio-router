@@ -47,12 +47,11 @@
     <string name="diagnostics_system_check">TIZIM TEKSHIRUVI</string>
     <string name="diagnostics_earpiece">Quloq karnaychasi</string>
     <string name="diagnostics_proximity_sensor">Yaqinlik sensori</string>
-    <string name="diagnostics_floating_control">Mini</string>
     <string name="diagnostics_private_audio">Private Audio</string>
     <string name="diagnostics_routing">Yo‘naltirish</string>
     <string name="diagnostics_status">Holat</string>
-    <string name="diagnostics_audio_route">Audio chiqish yo‘li</string>
-    <string name="diagnostics_last_routing">OXIRGI YO‘NALTIRISH</string>
+    <string name="diagnostics_audio_route">Audio chiqishi</string>
+    <string name="diagnostics_last_routing">OXIRGI YO‘NALTIRISH URINISHI</string>
     <string name="diagnostics_result">Natija</string>
     <string name="diagnostics_error">Xatolik</string>
     <string name="diagnostics_available">Mavjud</string>

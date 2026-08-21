@@ -36,12 +36,11 @@
     <string name="diagnostics_system_check">د سیسټم ارزونه</string>
     <string name="diagnostics_earpiece">د تلیفون رسیدونکی</string>
     <string name="diagnostics_proximity_sensor">د نږدېوالي حسګر</string>
-    <string name="diagnostics_floating_control">مینی</string>
     <string name="diagnostics_private_audio">Private Audio</string>
     <string name="diagnostics_routing">د غږ لېږد</string>
     <string name="diagnostics_status">حالت</string>
     <string name="diagnostics_audio_route">د غږ وتۍ</string>
-    <string name="diagnostics_last_routing">د غږ وروستی لېږد</string>
+    <string name="diagnostics_last_routing">د غږ لېږد وروستۍ هڅه</string>
     <string name="diagnostics_result">پایله</string>
     <string name="diagnostics_error">تېروتنه</string>
     <string name="diagnostics_available">شته</string>

@@ -36,12 +36,11 @@
     <string name="diagnostics_system_check">SYSTEMKONTROL</string>
     <string name="diagnostics_earpiece">Ørestykke</string>
     <string name="diagnostics_proximity_sensor">Nærhedssensor</string>
-    <string name="diagnostics_floating_control">Mini</string>
     <string name="diagnostics_private_audio">PRIVATE AUDIO</string>
     <string name="diagnostics_routing">Lydrouting</string>
     <string name="diagnostics_status">Status</string>
-    <string name="diagnostics_audio_route">Lydrute</string>
-    <string name="diagnostics_last_routing">SENESTE LYDROUTING</string>
+    <string name="diagnostics_audio_route">Lydudgang</string>
+    <string name="diagnostics_last_routing">SENESTE FORSØG PÅ LYDROUTING</string>
     <string name="diagnostics_result">Resultat</string>
     <string name="diagnostics_error">Fejl</string>
     <string name="diagnostics_available">Tilgængelig</string>

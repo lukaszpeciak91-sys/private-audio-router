@@ -36,12 +36,11 @@
     <string name="diagnostics_system_check">KIỂM TRA HỆ THỐNG</string>
     <string name="diagnostics_earpiece">Loa thoại</string>
     <string name="diagnostics_proximity_sensor">Cảm biến tiệm cận</string>
-    <string name="diagnostics_floating_control">Mini</string>
     <string name="diagnostics_private_audio">PRIVATE AUDIO</string>
     <string name="diagnostics_routing">Định tuyến</string>
     <string name="diagnostics_status">Trạng thái</string>
-    <string name="diagnostics_audio_route">Tuyến âm thanh</string>
-    <string name="diagnostics_last_routing">ĐỊNH TUYẾN GẦN NHẤT</string>
+    <string name="diagnostics_audio_route">Đầu ra âm thanh</string>
+    <string name="diagnostics_last_routing">LẦN THỬ ĐỊNH TUYẾN GẦN NHẤT</string>
     <string name="diagnostics_result">Kết quả</string>
     <string name="diagnostics_error">Lỗi</string>
     <string name="diagnostics_available">Có sẵn</string>
