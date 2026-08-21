@@ -37,6 +37,21 @@ Translate according to natural local UI conventions rather than word for word. �
 
 Resource validity and parity do not make copy localization-complete without product-language review. When batch quality is uncertain, classify each reviewed string as **PASS** (leave unchanged), **POLISH**, **FIX**, or **HOLD** rather than generating edits merely to show activity. A reviewed-no-change locale is a meaningful audit result. For behavioral Settings labels, explicitly separating the object, action/effect, and trigger/condition can prevent a technically plausible translation from blurring the intended behavior.
 
+### High-risk factual claims
+
+Privacy, security, permissions, account, diagnostics, backup, data-handling, and similar factual product statements require exact claim-scope and claim-strength fidelity. The English source must first be sufficiently bounded and supportable: prefer a statement of current behavior such as `does not request microphone access` over an unsupported technical incapability such as `cannot access the microphone`, and prefer a specific content-handling claim over `does not process any data` when technical metadata is processed locally. If the source overclaims or its factual scope is ambiguous, stop propagation and report **`SOURCE COPY REVIEW REQUIRED`**.
+
+As applicable, translations must preserve the actor, action, object or data category, destination or location, trigger or condition, negation, qualifiers, claim scope, and claim strength. A translation **must not strengthen** its source claim, and it must not weaken a clear source guarantee without genuine linguistic necessity. Before **PASS**, every high-risk factual claim requires a reverse semantic gloss that confirms those applicable elements. When the available linguistic evidence cannot confidently preserve exact factual scope, use **HOLD** rather than guessing. In particular, preserve these distinctions:
+
+- conversation or audio content is not audio-system metadata or state;
+- recording microphone input is not observing audio-system state;
+- local processing is not collection or transmission;
+- requesting a permission is not technical capability;
+- saving or exporting a diagnostic report is not generating diagnostic data; and
+- app-data backup being disabled does not mean data can never be copied by any mechanism.
+
+When related statements jointly define product behavior, review the complete claim set rather than treating each sentence in isolation. The translation must remain internally consistent and must not create a broader promise than the source. For example, claims that Private Audio neither collects, records, nor transmits conversation/audio content and that it locally observes technical audio-system metadata/state can both be true; translating the first as “Private Audio does not process any data” contradicts the set and is semantically wrong. Natural restructuring across sentences is acceptable when the complete factual meaning remains equivalent. This is a translation-semantic fidelity rule, not legal advice, and it applies proportionally to high-risk factual copy rather than ordinary labels such as `Close`, `Settings`, `Error`, or `Mini` in isolation.
+
 Private Audio distinguishes **ON / enabled**—the controller or service is enabled and waiting or available—from **ACTIVE**—Private Audio is currently participating in a qualifying communication-audio session. Translations must preserve both product states: an ON/enabled notification or Power state must not use wording with the same meaning as the runtime Active state. During FULL/MINI review, back-check both concepts whenever both occur. Grammatical similarity is acceptable, but semantic identity is not; when a newly reviewed/frozen locale could plausibly collapse the terms, persistent locale-specific regression assertions must protect both sides.
 
 ### Independent locale terminology
@@ -183,6 +198,7 @@ When a locale is added, update the existing authoritative localization/progress 
 ### New or changed user-facing string
 
 - [ ] English copy reviewed?
+- [ ] High-risk factual source claim bounded and supportable, with claim set identified where applicable?
 - [ ] Resource-based?
 - [ ] All supported locales updated or explicitly batched?
 - [ ] Key parity checked?
