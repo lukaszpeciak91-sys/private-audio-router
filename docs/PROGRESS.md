@@ -42,9 +42,10 @@ physical test records remain in [`DECISIONS.md`](DECISIONS.md),
 - Main provides Power, current four-state status, Settings, Mini launch, and full
   Close. Main and Mini consume the same service-owned state projection.
 - Settings provides language selection, proximity preference, Advanced experiments,
-  Diagnostics, About, and Privacy Policy. Child pages reuse the existing single
-  Settings dialog family and return to the Settings root rather than stacking
-  dialogs.
+  Diagnostics, About, and Privacy Policy. Settings-modal child pages such as
+  Language, Advanced, About, and Privacy Policy reuse the existing single-dialog
+  family and return to the Settings root; Diagnostics opens its dedicated
+  release-facing screen.
 - Mini is a service-owned overlay with status, Power, Expand, drag, and overlay-only
   Close. Its shared measured typography and direction-driven layout avoid
   locale-specific geometry.
