@@ -104,7 +104,7 @@ Correct native wording is not shortened merely because English is shorter. Mini 
 
 Resolve Ready, Waiting, Active, and Error for the current locale, measure their actual rendered widths with Mini's production typeface, and select the largest of 16f, 15f, and 14f at which all four fit the established 96-unit non-ellipsis target inside the unchanged 100-unit status slot. Apply that one size to every state so typography does not jump during state transitions. Recalculate the shared size when localized resources/configuration change, not independently on each state transition. Fourteen is the automatic minimum; if any natural label still exceeds the target, keep 14f and the existing ellipsis safety and flag the complete paradigm for targeted compact-copy linguistic review.
 
-Never substitute character count for measured width, and never add runtime branches for a locale, language, script, translated word, or text length. Do not add locale-specific geometry. Visual fitting does not change the full state labels used for accessibility speech. Existing explicitly reviewed compact overrides remain approved and are not automatically invalidated by this default policy.
+Never substitute character count for measured width, and never add runtime branches for a locale, language, script, translated word, or text length. Do not add locale-specific geometry. Visual fitting does not change the full state labels used for accessibility speech. Existing explicitly reviewed compact overrides are not automatically invalidated by this default policy, but a targeted linguistic and layout re-review may remove one when natural full copy is preferable and the current measured fitting makes the override unnecessary.
 
 Only after measured fitting demonstrates layout pressure:
 
@@ -118,7 +118,7 @@ Only after measured fitting demonstrates layout pressure:
 
 Accessibility text may be fuller than a compact visible label when their semantics remain aligned. Detailed layout refinement belongs to the localization UI-polishing workflow and must preserve the accepted component-local fitting rules in D-024.
 
-Compact state variants require demonstrated measured failure at 14f and must be reviewed as a complete locale-specific Ready / Waiting / Active / Error status-label system, never as one shortened label in isolation. Exact part-of-speech equality is not required, but the four labels must form one natural grammatical and stylistic paradigm without collapsing their distinct meanings. Existing approved Tamil and Gujarati compact paradigms are retained unless an explicit targeted linguistic review reopens them.
+Compact state variants require demonstrated measured failure at 14f and must be reviewed as a complete locale-specific Ready / Waiting / Active / Error status-label system, never as one shortened label in isolation. Exact part-of-speech equality is not required, but the four labels must form one natural grammatical and stylistic paradigm without collapsing their distinct meanings. Tamil currently retains its explicitly reviewed compact paradigm. Gujarati uses its natural full state copy through the default Mini aliases and shared measured-fit path after targeted review found that its former compact override was no longer preferable or necessary.
 
 ## RTL, fonts, and glyphs
 

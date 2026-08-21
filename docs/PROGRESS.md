@@ -47,8 +47,10 @@ physical test records remain in [`DECISIONS.md`](DECISIONS.md),
   family and return to the Settings root; Diagnostics opens its dedicated
   release-facing screen.
 - Mini is a service-owned overlay with status, Power, Expand, drag, and overlay-only
-  Close. Its shared measured typography and direction-driven layout avoid
-  locale-specific geometry.
+  Close. It normally resolves full localized states through aliases and applies one
+  shared measured 16f / 15f / 14f size without locale-specific geometry. Tamil is
+  the current explicit compact-state exception; Gujarati uses the natural full-state
+  path after targeted review.
 - The dedicated Privacy Policy page is resource-backed, scrollable within its
   bounded sheet, dismissible from outside, and has visible and Android Back paths to
   Settings. Source and Compose contracts cover its structure and navigation;
