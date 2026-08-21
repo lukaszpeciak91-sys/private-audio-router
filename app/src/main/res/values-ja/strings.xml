@@ -20,8 +20,8 @@
     <string name="settings_save_diagnostic">診断レポートを保存</string>
     <string name="settings_advanced">詳細設定</string>
     <string name="settings_about">Private Audio について</string>
-    <string name="settings_privacy_policy">Privacy Policy</string>
-    <string name="settings_privacy_policy_body">Private Audio does not collect, record, or transmit your conversations or audio content.\n\nThe app does not require an account or sign-in. It does not request microphone access and does not use analytics, advertising, or crash-reporting services. Private Audio does not request Android’s Internet permission and does not send data to a server.\n\nPrivate Audio observes only the technical state and metadata of Android’s audio system as needed for audio routing and diagnostics. It does not access the content of your conversations.\n\nApp settings are stored locally on your device. Diagnostic data is generated and processed locally, and a diagnostic report is saved only when you choose to save it. A report may contain technical information about your device, Android version, audio routing, and audio-system state, but it does not contain conversation or audio content.\n\nAndroid app-data backup is disabled.</string>
+    <string name="settings_privacy_policy">プライバシーポリシー</string>
+    <string name="settings_privacy_policy_body">Private Audio は、会話や音声コンテンツを収集、録音、送信しません。\n\n本アプリはアカウントやログインを必要としません。マイクへのアクセスを要求せず、分析、広告、クラッシュ報告のサービスも使用しません。Private Audio は Android のインターネット権限を要求せず、サーバーにデータを送信しません。\n\nPrivate Audio が確認するのは、音声ルーティングと診断に必要な Android オーディオシステムの技術的な状態とメタデータだけです。会話の内容にはアクセスしません。\n\nアプリの設定は端末内に保存されます。診断データは端末内で生成および処理され、診断レポートはユーザーが保存を選択した場合にのみ保存されます。レポートには、端末、Android のバージョン、音声ルーティング、オーディオシステムの状態に関する技術情報が含まれることがありますが、会話や音声コンテンツは含まれません。\n\nAndroid のアプリデータのバックアップは無効です。</string>
     <string name="settings_version">バージョン %1$s</string>
     <string name="settings_language_body">Private Audio は現在、端末の言語に従っています。デフォルトが選択されています。</string>
     <string name="settings_language_android_13_required">アプリ内で言語を選択するには Android 13 以降が必要です。この端末ではシステムの言語が使用されます。</string>
