@@ -467,13 +467,14 @@ The following checks validate lifecycle ownership without claiming routing succe
 - **Observed result (supplied 2026-08-19):** ChatGPT Web in Chrome passed audible earpiece routing and cleanup. ChatGPT Android and Gemini Live passed regression. Each routing cycle issued exactly one request, and subsequent sessions routed without restarting Private Audio.
 - **Evidence rule:** Continue recording Android metadata, request count, and human-confirmed audible output separately in future device runs.
 
-## Fake Phone pre-arm controlled physical gate
+## Fake Phone sonification micro-route controlled physical gate
 
 - **Status:** NOT TESTED / UNKNOWN
-- **Device:** Xiaomi Android 13.
-- **Experiment ON:** Run at least three ChatGPT Voice starts and three Gemini Voice starts. For each, record whether the startup ping was audible and from speaker or earpiece, confirm Private Audio remained `WAITING` before qualifying speech, then record normal `ACTIVE` transition, audible voice routing, and end cleanup back to `WAITING`.
-- **Control OFF:** Repeat starts with Fake Phone pre-arm disabled and verify the established clean waiting architecture and protected POC-5 lifecycle are unchanged; the expected current observation is assistant/sonification on the speaker.
-- **Evidence rule:** Correlate the neutral `ASSISTANT/SONIFICATION observed during pre-arm` entry with human listening. A reported earpiece, communication mode, or accepted route request alone is not audible success, and public metadata must not be used to claim application ownership.
+- **Device:** Xiaomi Android 13 plus a second OEM when available.
+- **Experiment ON:** Confirm clean `WAITING` reports `MODE_NORMAL`, no Fake Phone silent track, and no owned communication device. Produce exact assistant/sonification and verify one track → mode → earpiece sequence while state stays `WAITING`; verify disappearance cleanup after 100 ms, reappearance within grace cancellation, and cleanup no later than the fixed 2,000 ms deadline.
+- **Promotion:** Introduce genuine communication for each established classifier where practical. Verify healthy promotion reaches `ACTIVE` with the same track, mode participation, and single request; verify assistant session linger subsequently behaves unchanged. Induce partial setup/resource loss and verify immediate cleanup followed by ordinary POC-5 rather than `ERROR`.
+- **Safety/control:** Repeat with preference OFF, Power OFF, shutdown, telephony priority, and earpiece loss. Verify immediate cleanup and that later normal communication remains usable. Confirm returning to `WAITING` does not recreate resources.
+- **Evidence rule:** Correlate neutral public metadata and generation/deadline diagnostics with human listening. Neither an accepted request nor a reported earpiece proves audible success, and metadata must not be attributed to a named application.
 
 ## Bounded assistant protected-session linger physical gate
 

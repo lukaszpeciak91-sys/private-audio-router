@@ -265,3 +265,11 @@ This is a lightweight, append-only log. Do not rewrite accepted history; append 
 - **Context:** Physical Gemini testing confirmed that assistant/speech resumption during the 5-second linger reuses the established protected cycle without another track, mode request, device request, or routing attempt. Several earlier turns missed that deadline narrowly: cleanup completed only about 0.6–0.7 seconds before the next assistant/speech contribution appeared.
 - **Decision:** Increase the bounded `ASSISTANT` conversation linger from 5 seconds to 7 seconds. Preserve the preceding 1.5-second playback-loss confirmation and every other D-031 lifecycle, scope, reuse, cleanup, and safety rule.
 - **Consequences:** Ordinary cleanup now occurs approximately 8.5 seconds after assistant/speech disappearance when no exact assistant/speech contribution resumes. This evidence-based margin remains substantially shorter than 15 seconds; adaptive and provider-specific timing remains unauthorized.
+
+## D-034 — Sonification-triggered Fake Phone micro-route
+
+- **Date:** 2026-08-21
+- **Status:** Accepted; supersedes D-030's persistent waiting ownership
+- **Context:** Persistent Fake Phone participation helped the startup-sonification experiment but could compete with a separate voice client throughout `WAITING`.
+- **Decision:** The existing default-OFF preference now permits one provider-neutral micro-route only on exact external `USAGE_ASSISTANT` + `CONTENT_TYPE_SONIFICATION`. Clean waiting owns no track, mode, or device request. Disappearance has a 100 ms grace and every attempt has a non-extending 2,000 ms cap. Healthy resources transfer to a genuine existing-classifier protected cycle; unhealthy setup cleans and fails open to ordinary POC-5.
+- **Consequences:** Micro-route-only activity remains `WAITING`, never creates `ERROR`, uses no retries/focus/volume changes, and is cleaned immediately on safety or lifecycle loss. Public metadata does not establish application identity or audible routing; physical confirmation remains required.
