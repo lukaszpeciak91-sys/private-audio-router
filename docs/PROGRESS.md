@@ -130,7 +130,7 @@ physical test records remain in [`DECISIONS.md`](DECISIONS.md),
 
 - **Assistant protected-session linger — implemented, not physically validated.**
   After the existing 1.5-second assistant playback-loss confirmation, an established
-  cycle retains its track, mode, route, and proximity eligibility for at most 15
+  cycle retains its track, mode, route, and proximity eligibility for at most 5
   seconds. Exact assistant/speech resumption reuses the cycle without another route
   attempt; expiry and safety/lifecycle overrides use protected cleanup. Focused JVM
   contract coverage exists, but execution evidence is not recorded here and the

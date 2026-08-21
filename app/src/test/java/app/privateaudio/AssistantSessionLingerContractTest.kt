@@ -10,7 +10,7 @@ class AssistantSessionLingerContractTest {
     @Test
     fun assistantEndUsesTwoSeparateBoundedStages() {
         assertTrue(observer.contains("private const val END_CONFIRMATION_DELAY_MS = 1_500L"))
-        assertTrue(observer.contains("private const val ASSISTANT_SESSION_LINGER_MS = 15_000L"))
+        assertTrue(observer.contains("private const val ASSISTANT_SESSION_LINGER_MS = 5_000L"))
         val confirmation = observer.method("private fun scheduleEndConfirmation(")
         assertInOrder(
             confirmation,
