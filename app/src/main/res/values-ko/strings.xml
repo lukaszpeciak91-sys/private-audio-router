@@ -20,6 +20,8 @@
     <string name="settings_save_diagnostic">진단 보고서 저장</string>
     <string name="settings_advanced">고급 설정</string>
     <string name="settings_about">Private Audio 정보</string>
+    <string name="settings_privacy_policy">Privacy Policy</string>
+    <string name="settings_privacy_policy_body">Private Audio does not collect, record, or transmit your conversations or audio content.\n\nThe app does not require an account or sign-in. It does not request microphone access and does not use analytics, advertising, or crash-reporting services. Private Audio does not request Android’s Internet permission and does not send data to a server.\n\nPrivate Audio observes only the technical state and metadata of Android’s audio system as needed for audio routing and diagnostics. It does not access the content of your conversations.\n\nApp settings are stored locally on your device. Diagnostic data is generated and processed locally, and a diagnostic report is saved only when you choose to save it. A report may contain technical information about your device, Android version, audio routing, and audio-system state, but it does not contain conversation or audio content.\n\nAndroid app-data backup is disabled.</string>
     <string name="settings_version">버전 %1$s</string>
     <string name="settings_language_body">Private Audio는 현재 기기 언어를 따릅니다. 기본값이 선택되어 있습니다.</string>
     <string name="settings_language_android_13_required">앱에서 언어를 선택하려면 Android 13 이상이 필요합니다. 이 기기에서는 시스템 언어를 사용합니다.</string>

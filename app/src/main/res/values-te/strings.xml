@@ -20,6 +20,8 @@
     <string name="settings_save_diagnostic">డయాగ్నస్టిక్ రిపోర్ట్‌ను సేవ్ చేయండి</string>
     <string name="settings_advanced">అధునాతన</string>
     <string name="settings_about">Private Audio గురించి</string>
+    <string name="settings_privacy_policy">Privacy Policy</string>
+    <string name="settings_privacy_policy_body">Private Audio does not collect, record, or transmit your conversations or audio content.\n\nThe app does not require an account or sign-in. It does not request microphone access and does not use analytics, advertising, or crash-reporting services. Private Audio does not request Android’s Internet permission and does not send data to a server.\n\nPrivate Audio observes only the technical state and metadata of Android’s audio system as needed for audio routing and diagnostics. It does not access the content of your conversations.\n\nApp settings are stored locally on your device. Diagnostic data is generated and processed locally, and a diagnostic report is saved only when you choose to save it. A report may contain technical information about your device, Android version, audio routing, and audio-system state, but it does not contain conversation or audio content.\n\nAndroid app-data backup is disabled.</string>
     <string name="settings_version">వెర్షన్ %1$s</string>
     <string name="settings_language_body">Private Audio ప్రస్తుతం మీ పరికర భాషను అనుసరిస్తోంది. ఆటోమేటిక్ ఎంపిక చేయబడింది.</string>
     <string name="settings_language_android_13_required">యాప్‌లో భాషను ఎంచుకోవడానికి Android 13 లేదా ఆ తర్వాతి వెర్షన్ అవసరం. ఈ పరికరం సిస్టమ్ భాషను అనుసరిస్తుంది.</string>

@@ -20,6 +20,8 @@
     <string name="settings_save_diagnostic">Պահել ախտորոշման հաշվետվությունը</string>
     <string name="settings_advanced">Ընդլայնված</string>
     <string name="settings_about">Private Audio-ի մասին</string>
+    <string name="settings_privacy_policy">Privacy Policy</string>
+    <string name="settings_privacy_policy_body">Private Audio does not collect, record, or transmit your conversations or audio content.\n\nThe app does not require an account or sign-in. It does not request microphone access and does not use analytics, advertising, or crash-reporting services. Private Audio does not request Android’s Internet permission and does not send data to a server.\n\nPrivate Audio observes only the technical state and metadata of Android’s audio system as needed for audio routing and diagnostics. It does not access the content of your conversations.\n\nApp settings are stored locally on your device. Diagnostic data is generated and processed locally, and a diagnostic report is saved only when you choose to save it. A report may contain technical information about your device, Android version, audio routing, and audio-system state, but it does not contain conversation or audio content.\n\nAndroid app-data backup is disabled.</string>
     <string name="settings_version">Տարբերակ %1$s</string>
     <string name="settings_language_body">Private Audio-ն այժմ օգտագործում է ձեր սարքի լեզուն։ Ընտրված է «Կանխադրված» տարբերակը։</string>
     <string name="settings_language_android_13_required">Հավելվածում լեզու ընտրելու համար պահանջվում է Android 13 կամ ավելի նոր տարբերակ։ Այս սարքն օգտագործում է համակարգի լեզուն։</string>

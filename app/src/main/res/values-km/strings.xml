@@ -20,6 +20,8 @@
     <string name="settings_save_diagnostic">រក្សាទុករបាយការណ៍វិនិច្ឆ័យ</string>
     <string name="settings_advanced">កម្រិតខ្ពស់</string>
     <string name="settings_about">អំពី Private Audio</string>
+    <string name="settings_privacy_policy">Privacy Policy</string>
+    <string name="settings_privacy_policy_body">Private Audio does not collect, record, or transmit your conversations or audio content.\n\nThe app does not require an account or sign-in. It does not request microphone access and does not use analytics, advertising, or crash-reporting services. Private Audio does not request Android’s Internet permission and does not send data to a server.\n\nPrivate Audio observes only the technical state and metadata of Android’s audio system as needed for audio routing and diagnostics. It does not access the content of your conversations.\n\nApp settings are stored locally on your device. Diagnostic data is generated and processed locally, and a diagnostic report is saved only when you choose to save it. A report may contain technical information about your device, Android version, audio routing, and audio-system state, but it does not contain conversation or audio content.\n\nAndroid app-data backup is disabled.</string>
     <string name="settings_version">កំណែ %1$s</string>
     <string name="settings_language_body">បច្ចុប្បន្ន Private Audio ប្រើភាសារបស់ឧបករណ៍អ្នក។ លំនាំដើមត្រូវបានជ្រើសរើស។</string>
     <string name="settings_language_android_13_required">ការជ្រើសរើសភាសាក្នុងកម្មវិធីតម្រូវឱ្យប្រើ Android 13 ឬកំណែថ្មីជាងនេះ។ ឧបករណ៍នេះប្រើភាសាប្រព័ន្ធ។</string>

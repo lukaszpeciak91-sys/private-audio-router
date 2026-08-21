@@ -20,6 +20,8 @@
     <string name="settings_save_diagnostic">ডায়েগন’ষ্টিক ৰিপ’ৰ্ট ছেভ কৰক</string>
     <string name="settings_advanced">উচ্চখাপৰ</string>
     <string name="settings_about">Private Audioৰ বিষয়ে</string>
+    <string name="settings_privacy_policy">Privacy Policy</string>
+    <string name="settings_privacy_policy_body">Private Audio does not collect, record, or transmit your conversations or audio content.\n\nThe app does not require an account or sign-in. It does not request microphone access and does not use analytics, advertising, or crash-reporting services. Private Audio does not request Android’s Internet permission and does not send data to a server.\n\nPrivate Audio observes only the technical state and metadata of Android’s audio system as needed for audio routing and diagnostics. It does not access the content of your conversations.\n\nApp settings are stored locally on your device. Diagnostic data is generated and processed locally, and a diagnostic report is saved only when you choose to save it. A report may contain technical information about your device, Android version, audio routing, and audio-system state, but it does not contain conversation or audio content.\n\nAndroid app-data backup is disabled.</string>
     <string name="settings_version">সংস্কৰণ %1$s</string>
     <string name="settings_language_body">Private Audio বৰ্তমান আপোনাৰ ডিভাইচৰ ভাষা ব্যৱহাৰ কৰে। ডিফ’ল্ট বাছনি কৰা হৈছে।</string>
     <string name="settings_language_android_13_required">এপৰ ভিতৰত ভাষা বাছনি কৰিবলৈ Android 13 বা তাৰ পাছৰ সংস্কৰণৰ প্ৰয়োজন। এই ডিভাইচে ছিষ্টেমৰ ভাষা ব্যৱহাৰ কৰে।</string>

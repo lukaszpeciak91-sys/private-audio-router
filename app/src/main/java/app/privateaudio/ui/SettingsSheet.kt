@@ -74,7 +74,7 @@ private val SettingsDivider = Color(0xFF292A2C)
 private val SettingsPrimary = Color(0xFFF2F2F2)
 private val SettingsSecondary = Color(0xFFA6A6A8)
 
-private enum class SettingsPage { ROOT, LANGUAGE, ADVANCED, ABOUT }
+private enum class SettingsPage { ROOT, LANGUAGE, ADVANCED, PRIVACY_POLICY, ABOUT }
 
 @Composable
 fun SettingsSheet(
@@ -93,7 +93,9 @@ fun SettingsSheet(
         AppLanguagePreferences.supportedLanguages(context)
     }
 
-    BackHandler(enabled = page != SettingsPage.ROOT) { page = SettingsPage.ROOT }
+    BackHandler(enabled = page != SettingsPage.ROOT) {
+        if (page == SettingsPage.PRIVACY_POLICY) onDismiss() else page = SettingsPage.ROOT
+    }
 
     Dialog(
         onDismissRequest = onDismiss,
@@ -104,7 +106,7 @@ fun SettingsSheet(
             modifier = Modifier
                 .fillMaxSize()
                 .then(
-                    if (page == SettingsPage.LANGUAGE) {
+                    if (page == SettingsPage.LANGUAGE || page == SettingsPage.PRIVACY_POLICY) {
                         Modifier.windowInsetsPadding(
                             WindowInsets.safeDrawing.only(WindowInsetsSides.Vertical),
                         )
@@ -121,7 +123,7 @@ fun SettingsSheet(
                 modifier = Modifier
                     .fillMaxWidth(SettingsLayout.widthFraction)
                     .then(
-                        if (page == SettingsPage.LANGUAGE) {
+                        if (page == SettingsPage.LANGUAGE || page == SettingsPage.PRIVACY_POLICY) {
                             Modifier.heightIn(
                                 max = maxHeight - SettingsLayout.verticalOffset * 2,
                             )
@@ -151,6 +153,7 @@ fun SettingsSheet(
                         onLanguage = { page = SettingsPage.LANGUAGE },
                         onDiagnostics = onDiagnostics,
                         onAdvanced = { page = SettingsPage.ADVANCED },
+                        onPrivacyPolicy = { page = SettingsPage.PRIVACY_POLICY },
                         onAbout = { page = SettingsPage.ABOUT },
                     )
                     SettingsPage.LANGUAGE -> LanguagePage(
@@ -169,6 +172,7 @@ fun SettingsSheet(
                         onFakePhonePreArmChange = onFakePhonePreArmChange,
                         onBack = { page = SettingsPage.ROOT },
                     )
+                    SettingsPage.PRIVACY_POLICY -> PrivacyPolicyPage()
                     SettingsPage.ABOUT -> ChildPage(
                         title = stringResource(R.string.settings_about),
                         body = stringResource(R.string.settings_about_body),
@@ -267,6 +271,7 @@ private fun SettingsRoot(
     onLanguage: () -> Unit,
     onDiagnostics: () -> Unit,
     onAdvanced: () -> Unit,
+    onPrivacyPolicy: () -> Unit,
     onAbout: () -> Unit,
 ) {
     val selectedLanguageName = supportedLanguages
@@ -295,6 +300,13 @@ private fun SettingsRoot(
         chevron = true,
         tag = "settings_advanced",
         onClick = onAdvanced,
+    )
+    SettingsDivider()
+    SettingsRow(
+        label = stringResource(R.string.settings_privacy_policy),
+        chevron = true,
+        tag = "settings_privacy_policy",
+        onClick = onPrivacyPolicy,
     )
     SettingsDivider()
     SettingsRow(
@@ -380,6 +392,35 @@ private fun LanguageChoice(label: String, selected: Boolean, tag: String, onClic
         tag = tag,
         onClick = onClick,
     )
+}
+
+@Composable
+private fun PrivacyPolicyPage() {
+    Column(
+        modifier = Modifier
+            .fillMaxWidth()
+            .testTag("privacy_policy_panel"),
+    ) {
+        SheetTitle(stringResource(R.string.settings_privacy_policy))
+        Spacer(Modifier.height(22.dp))
+        LazyColumn(
+            modifier = Modifier
+                .fillMaxWidth()
+                .weight(1f)
+                .testTag("privacy_policy_body"),
+        ) {
+            item {
+                Text(
+                    text = stringResource(R.string.settings_privacy_policy_body),
+                    modifier = Modifier.fillMaxWidth().padding(horizontal = 8.dp),
+                    color = SettingsSecondary,
+                    fontSize = 15.sp,
+                    lineHeight = 22.sp,
+                )
+                Spacer(Modifier.height(12.dp))
+            }
+        }
+    }
 }
 
 @Composable
