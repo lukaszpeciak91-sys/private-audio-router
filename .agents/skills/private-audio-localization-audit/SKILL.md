@@ -37,6 +37,8 @@ Preserve these high-risk distinctions: requesting microphone access versus techn
 
 ## Apply product and locale gates
 
+- Apply terminology evidence in this order: exact Private Audio product semantics; established Android or first-party platform terminology when semantically correct for the locale and surface; established terminology already used consistently in that Private Audio locale; then natural contemporary native-language software/UI wording.
+- Treat first-party localized Android/Google wording as strong evidence for non-obvious Android-facing terms, not automatic `PASS` proof. Verify the exact physical/product referent, compare existing locale terminology, and reject platform wording that collapses a protected distinction or is clearly unnatural or outdated for the surface. Do not replace a more precise Private Audio term merely to match an imperfect platform translation.
 - Keep ON/enabled distinct from runtime ACTIVE.
 - Distinguish built-in call earpiece/receiver from loudspeaker, speakerphone, headphones, earbuds, and Bluetooth.
 - Preserve source/destination, action/state, trigger/effect, and screen/phone/device referents.
@@ -48,6 +50,12 @@ Preserve these high-risk distinctions: requesting microphone access versus techn
 Natural language comes before geometry. Audit Mini Ready / Waiting / Active / Error as one semantic and stylistic paradigm. Keep linguistic correctness separate from the existing measured 16f / 15f / 14f fit; character count proves nothing. Compact copy may not silently alter semantics, and full accessibility text requires separate review.
 
 Retain Android compatibility checks where relevant: BCP-47 identity, resource qualifiers and legacy aliases, XML/placeholder/plural integrity, direction-driven RTL, glyph/shaping risks, generated locale discovery, and real resource resolution. These checks support an audit but never substitute for it.
+
+## Audit contextual resource grammar
+
+For localized status/value resources, inspect production call sites rather than the string alone. When one translation is reused beside multiple nouns or objects, determine whether its grammar and meaning remain valid in every rendered context, including agreement or formulation changes required by the target language. An individually correct translation may still expose locale-unsafe resource architecture.
+
+Classify **FIX** when the shared resource necessarily produces ungrammatical or semantically wrong UI in a supported locale, and **POLISH** when every context remains correct but a contextual formulation would materially improve native product language. Report whether the defect is in translation wording, source copy, or localization/resource architecture. When architecture is defective, do not ask the translator to find one “universal” wording.
 
 ## Return exactly one conceptual verdict per finding
 
