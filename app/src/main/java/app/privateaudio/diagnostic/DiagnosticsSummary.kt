@@ -6,7 +6,6 @@ internal enum class DiagnosticsAvailability { AVAILABLE, NOT_AVAILABLE }
 internal enum class DiagnosticsPermission { GRANTED, NOT_GRANTED }
 internal enum class DiagnosticsRouting { ON, OFF }
 internal enum class DiagnosticsRoute { EARPIECE, SPEAKER, BLUETOOTH, OTHER, UNKNOWN }
-internal enum class DiagnosticsDetectedAudio { COMMUNICATION, ASSISTANT, BROWSER_COMMUNICATION, NONE }
 internal enum class DiagnosticsRoutingResult { SUCCESS, FAILED, NONE }
 internal enum class DiagnosticsError {
     NONE,
@@ -19,25 +18,18 @@ internal enum class DiagnosticsError {
 }
 
 internal data class DiagnosticsSummary(
-    val manufacturerAndModel: String,
-    val androidRelease: String,
-    val apiLevel: Int,
-    val privateAudioVersion: String,
     val earpiece: DiagnosticsAvailability,
     val proximitySensor: DiagnosticsAvailability,
-    val overlayPermission: DiagnosticsPermission,
+    val floatingControlPermission: DiagnosticsPermission,
     val routing: DiagnosticsRouting,
     val status: PrivateAudioState,
     val audioRoute: DiagnosticsRoute,
-    val detectedAudio: DiagnosticsDetectedAudio,
     val lastRoutingResult: DiagnosticsRoutingResult,
     val lastError: DiagnosticsError,
 )
 
 internal fun projectDiagnosticsSummary(
-    environment: DiagnosticEnvironment,
     snapshot: DiagnosticSnapshot,
-    currentExperiment: EarpieceExperiment,
     lastCompletedCycle: CompletedRoutingCycle?,
     privateAudioEnabled: Boolean,
     privateAudioState: PrivateAudioState,
@@ -55,23 +47,16 @@ internal fun projectDiagnosticsSummary(
         else -> DiagnosticsRoutingResult.FAILED
     }
     return DiagnosticsSummary(
-        manufacturerAndModel = listOf(environment.manufacturer, environment.model)
-            .filter(String::isNotBlank)
-            .joinToString(" "),
-        androidRelease = environment.androidRelease,
-        apiLevel = environment.apiLevel,
-        privateAudioVersion = environment.versionName,
         earpiece = if (snapshot.availableCommunicationDevices.any { it.type == "Built-in earpiece" }) {
             DiagnosticsAvailability.AVAILABLE
         } else {
             DiagnosticsAvailability.NOT_AVAILABLE
         },
         proximitySensor = if (proximitySupported) DiagnosticsAvailability.AVAILABLE else DiagnosticsAvailability.NOT_AVAILABLE,
-        overlayPermission = if (overlayPermissionGranted) DiagnosticsPermission.GRANTED else DiagnosticsPermission.NOT_GRANTED,
+        floatingControlPermission = if (overlayPermissionGranted) DiagnosticsPermission.GRANTED else DiagnosticsPermission.NOT_GRANTED,
         routing = if (privateAudioEnabled) DiagnosticsRouting.ON else DiagnosticsRouting.OFF,
         status = privateAudioState,
         audioRoute = snapshot.communicationDevice.toDiagnosticsRoute(),
-        detectedAudio = (currentExperiment.triggerOrigin ?: completedExperiment?.triggerOrigin).toDetectedAudio(),
         lastRoutingResult = result,
         lastError = if (result == DiagnosticsRoutingResult.FAILED) {
             projectDiagnosticsError(lastCompletedCycle, completedExperiment)
@@ -90,13 +75,6 @@ private fun ObservedDevice?.toDiagnosticsRoute(): DiagnosticsRoute = when (this?
     else -> DiagnosticsRoute.OTHER
 }
 
-private fun TriggerOrigin?.toDetectedAudio(): DiagnosticsDetectedAudio = when (this) {
-    TriggerOrigin.COMMUNICATION -> DiagnosticsDetectedAudio.COMMUNICATION
-    TriggerOrigin.ASSISTANT -> DiagnosticsDetectedAudio.ASSISTANT
-    TriggerOrigin.BROWSER_COMMUNICATION -> DiagnosticsDetectedAudio.BROWSER_COMMUNICATION
-    null -> DiagnosticsDetectedAudio.NONE
-}
-
 private fun projectDiagnosticsError(
     cycle: CompletedRoutingCycle?,
     experiment: EarpieceExperiment?,
@@ -112,4 +90,16 @@ private fun projectDiagnosticsError(
         experiment?.requestAccepted == false -> DiagnosticsError.EARPIECE_REQUEST_REJECTED
         else -> DiagnosticsError.ROUTING_NOT_COMPLETED
     }
+}
+
+internal fun DiagnosticsSummary.supportSummary(): String = buildString {
+    appendLine("SUPPORT SUMMARY")
+    appendLine("Private Audio enabled: ${routing == DiagnosticsRouting.ON}")
+    appendLine("Private Audio state: ${status.name}")
+    appendLine("Built-in earpiece available: ${earpiece == DiagnosticsAvailability.AVAILABLE}")
+    appendLine("Current audio route: ${audioRoute.name}")
+    appendLine("Proximity supported: ${proximitySensor == DiagnosticsAvailability.AVAILABLE}")
+    appendLine("Floating control permission: ${if (floatingControlPermission == DiagnosticsPermission.GRANTED) "granted" else "not granted"}")
+    appendLine("Last routing result: ${lastRoutingResult.name}")
+    append("Last routing error: ${lastError.name}")
 }

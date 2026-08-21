@@ -12,7 +12,15 @@ import androidx.compose.ui.test.performTouchInput
 import androidx.test.espresso.Espresso.pressBack
 import androidx.compose.ui.test.click
 import app.privateaudio.ui.PrivateAudioScreen
+import app.privateaudio.ui.UserDiagnosticsScreen
 import app.privateaudio.ui.theme.PrivateAudioTheme
+import app.privateaudio.diagnostic.DiagnosticsAvailability
+import app.privateaudio.diagnostic.DiagnosticsError
+import app.privateaudio.diagnostic.DiagnosticsPermission
+import app.privateaudio.diagnostic.DiagnosticsRoute
+import app.privateaudio.diagnostic.DiagnosticsRouting
+import app.privateaudio.diagnostic.DiagnosticsRoutingResult
+import app.privateaudio.diagnostic.DiagnosticsSummary
 import org.junit.Assert.assertEquals
 import org.junit.Rule
 import org.junit.Test
@@ -192,4 +200,66 @@ class PrivateAudioScreenTest {
         composeRule.onNodeWithTag("diagnostics_back").performClick()
         composeRule.onNodeWithTag("private_audio_power").assertIsDisplayed()
     }
+
+    @Test
+    fun diagnosticsBaseScreenContainsOnlyProductHealthSectionsAndRows() {
+        showDiagnostics(diagnosticsSummary())
+
+        listOf(
+            "SYSTEM CHECK", "PRIVATE AUDIO", "Earpiece", "Proximity sensor", "Floating control",
+            "Routing", "Status", "Audio route", "Save diagnostic report",
+        ).forEach { composeRule.onNodeWithText(it).assertIsDisplayed() }
+        listOf("DEVICE", "Device", "Android", "Private Audio version", "Detected audio", "LAST ROUTING")
+            .forEach { composeRule.onNodeWithText(it).assertDoesNotExist() }
+    }
+
+    @Test
+    fun diagnosticsSuccessShowsResultWithoutError() {
+        showDiagnostics(diagnosticsSummary(result = DiagnosticsRoutingResult.SUCCESS))
+
+        composeRule.onNodeWithText("LAST ROUTING").assertIsDisplayed()
+        composeRule.onNodeWithText("Result").assertIsDisplayed()
+        composeRule.onNodeWithText("Success").assertIsDisplayed()
+        composeRule.onNodeWithText("Error").assertDoesNotExist()
+    }
+
+    @Test
+    fun diagnosticsFailureShowsMappedErrorAndFloatingPermissionLanguage() {
+        showDiagnostics(
+            diagnosticsSummary(
+                permission = DiagnosticsPermission.NOT_GRANTED,
+                result = DiagnosticsRoutingResult.FAILED,
+                error = DiagnosticsError.BLOCKED_BY_SYSTEM,
+            ),
+        )
+
+        composeRule.onNodeWithText("Permission required").assertIsDisplayed()
+        composeRule.onNodeWithText("Failed").assertIsDisplayed()
+        composeRule.onNodeWithText("Error").assertIsDisplayed()
+        composeRule.onNodeWithText("Routing was blocked by the system.").assertIsDisplayed()
+        composeRule.onNodeWithText("Overlay permission").assertDoesNotExist()
+    }
+
+    private fun showDiagnostics(summary: DiagnosticsSummary) {
+        composeRule.setContent {
+            PrivateAudioTheme {
+                UserDiagnosticsScreen(summary, onBack = {}, onSaveDiagnosticReport = {})
+            }
+        }
+    }
+
+    private fun diagnosticsSummary(
+        permission: DiagnosticsPermission = DiagnosticsPermission.GRANTED,
+        result: DiagnosticsRoutingResult = DiagnosticsRoutingResult.NONE,
+        error: DiagnosticsError = DiagnosticsError.NONE,
+    ) = DiagnosticsSummary(
+        earpiece = DiagnosticsAvailability.AVAILABLE,
+        proximitySensor = DiagnosticsAvailability.AVAILABLE,
+        floatingControlPermission = permission,
+        routing = DiagnosticsRouting.ON,
+        status = PrivateAudioState.WAITING,
+        audioRoute = DiagnosticsRoute.SPEAKER,
+        lastRoutingResult = result,
+        lastError = error,
+    )
 }

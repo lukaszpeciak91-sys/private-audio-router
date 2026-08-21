@@ -84,7 +84,7 @@ class Layer4SettingsContractTest {
         assertTrue(mainSource.contains("contentResolver.openOutputStream"))
         assertTrue(mainSource.contains("Charsets.UTF_8"))
         assertFalse(mainSource.contains("ClipboardManager"))
-        assertTrue(serviceSource.method("fun diagnosticReport(): String").contains("observer.report()"))
+        assertTrue(serviceSource.method("fun diagnosticReport(): String").contains("observer.report(supportSummary)"))
         assertEquals(1, observerSource.occurrences("internal fun buildDiagnosticReport("))
         assertEquals(0, settingsSource.occurrences("buildDiagnosticReport("))
         assertFalse(settingsSource.contains("settings_save_diagnostic"))

@@ -13,6 +13,7 @@ import android.media.AudioManager
 import android.os.Binder
 import android.os.IBinder
 import android.os.PowerManager
+import android.provider.Settings
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
@@ -136,8 +137,9 @@ class PrivateAudioService : Service() {
     fun diagnosticReport(): String {
         observer.snapshot("Report snapshot")
         val proximity = proximityController.status()
+        val supportSummary = diagnosticsSummary(Settings.canDrawOverlays(this))
         return buildString {
-            append(observer.report())
+            append(observer.report(supportSummary))
             appendLine()
             appendLine("PROXIMITY SCREEN")
             appendLine("Feature enabled: $isProximityFeatureEnabled")
