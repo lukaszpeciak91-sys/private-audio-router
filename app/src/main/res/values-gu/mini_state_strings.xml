@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="state_ready_mini">તૈયાર</string>
-    <string name="state_waiting_mini">પ્રતીક્ષા</string>
-    <string name="state_active_mini">સક્રિય</string>
-    <string name="state_error_mini">ભૂલ</string>
-</resources>

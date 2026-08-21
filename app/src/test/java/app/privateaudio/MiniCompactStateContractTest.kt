@@ -10,7 +10,7 @@ import java.io.File
 import javax.xml.parsers.DocumentBuilderFactory
 
 class MiniCompactStateContractTest {
-    @Test fun reviewedTamilAndGujaratiParadigmsRemainFrozenBesideUnchangedFullStates() {
+    @Test fun tamilCompactParadigmRemainsFrozenAndGujaratiUsesUnchangedFullStates() {
         assertEquals(
             mapOf("state_ready" to "தயார்", "state_waiting" to "காத்திருக்கிறது", "state_active" to "செயலில் உள்ளது", "state_error" to "பிழை"),
             fullStates(tamilFull),
@@ -23,10 +23,8 @@ class MiniCompactStateContractTest {
             mapOf("state_ready_mini" to "தயார்", "state_waiting_mini" to "காத்திருப்பு", "state_active_mini" to "செயலில்", "state_error_mini" to "பிழை"),
             strings(tamilMini),
         )
-        assertEquals(
-            mapOf("state_ready_mini" to "તૈયાર", "state_waiting_mini" to "પ્રતીક્ષા", "state_active_mini" to "સક્રિય", "state_error_mini" to "ભૂલ"),
-            strings(gujaratiMini),
-        )
+        assertTrue(tamilMini.isFile)
+        assertFalse(gujaratiMini.exists())
     }
 
     @Test fun defaultMiniResourcesAliasLocalizedFullResources() {
@@ -48,8 +46,8 @@ class MiniCompactStateContractTest {
         assertTrue(overlay.method("private fun stateDescription").contains("fullStateLabel(value)"))
         assertTrue(overlay.contains("STATUS_TEXT_WIDTH = 100"))
         assertTrue(overlay.contains("DESIGN_WIDTH = 300f"))
-        listOf("Locale", "language ==", "locale ==", "\"ta\"", "\"gu\"").forEach {
-            assertFalse("locale branch found: $it", overlay.contains(it))
+        listOf("language ==", "locale ==", "\"ta\"", "\"gu\"").forEach {
+            assertFalse("locale branch found: $it", productionKotlin.contains(it))
         }
         localeResourceFiles.filter { it.name != "strings.xml" }.forEach { file ->
             assertFalse("locale-specific geometry resource: $file", file.readText().contains("dimen"))
@@ -106,6 +104,8 @@ class MiniCompactStateContractTest {
         val root = generateSequence(File(System.getProperty("user.dir")).absoluteFile) { it.parentFile }
             .first { File(it, "app/src/main").isDirectory }
         val res = File(root, "app/src/main/res")
+        val productionKotlinFiles = File(root, "app/src/main/java").walkTopDown().filter { it.extension == "kt" }.toList()
+        val productionKotlin = productionKotlinFiles.joinToString("\n") { it.readText() }
         val overlay = File(root, "app/src/main/java/app/privateaudio/overlay/OverlayService.kt").readText()
         val aliasFile = File(res, "values/mini_state_aliases.xml")
         val tamilFull = File(res, "values-ta/strings.xml")

@@ -50,6 +50,32 @@ class MiniStatusMeasurementTest {
         assertTrue("Tamil Mini WAITING measured $measuredWidth in the 100-unit slot", measuredWidth <= 96f)
     }
 
+    @Test fun gujaratiResolvesFullParadigmAndUsesOneMeasuredProductionSize() {
+        val base = InstrumentationRegistry.getInstrumentation().targetContext
+        val gujarati = base.createConfigurationContext(Configuration(base.resources.configuration).apply {
+            setLocales(LocaleList(Locale.forLanguageTag("gu")))
+        })
+        val labels = listOf(
+            gujarati.getString(R.string.state_ready_mini),
+            gujarati.getString(R.string.state_waiting_mini),
+            gujarati.getString(R.string.state_active_mini),
+            gujarati.getString(R.string.state_error_mini),
+        )
+        assertEquals(listOf("તૈયાર", "રાહ જોઈ રહ્યું છે", "સક્રિય", "ભૂલ"), labels)
+
+        val paint = TextPaint(Paint.ANTI_ALIAS_FLAG).apply {
+            typeface = Typeface.create("sans-serif", Typeface.NORMAL)
+        }
+        val selected = selectMiniStatusTextSize(labels) { label, textSize ->
+            paint.textSize = textSize
+            paint.measureText(label)
+        }
+        println("Gujarati Mini production-equivalent common size: $selected")
+        assertTrue(selected in listOf(16f, 15f, 14f))
+        paint.textSize = selected
+        assertTrue(labels.all { paint.measureText(it) <= MINI_STATUS_NON_ELLIPSIS_WIDTH })
+    }
+
     @Test fun reviewedPunjabiParadigmsResolveAndFitTheSharedSlot() {
         val base = InstrumentationRegistry.getInstrumentation().targetContext
         val paint = TextPaint(Paint.ANTI_ALIAS_FLAG).apply {
