@@ -75,7 +75,10 @@ physical test records remain in [`DECISIONS.md`](DECISIONS.md),
   supported non-English resource sets. Candidates were produced and semantically
   self-checked with the Translation Skill; an independent audit identified targeted
   Javanese earpiece and Zulu audio-route terminology defects, and corrective
-  candidates were applied. Final independent re-audit remains pending. The detailed
+  candidates were applied. A final natural-UI pass then replaced overly literal or
+  implementation-heavy wording for the Mini control, required-permission status,
+  and last-routing heading in every non-English set. Final independent re-audit
+  remains pending. The detailed
   technical diagnostic report and SUPPORT SUMMARY remain intentionally English-only,
   as does the default-OFF Fake Phone experiment label.
 - Durable terminology, evidence semantics, Mini fitting, RTL behavior, factual-claim
