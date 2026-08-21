@@ -20,6 +20,8 @@
     <string name="settings_save_diagnostic">Diagnoserapport späicheren</string>
     <string name="settings_advanced">Erweidert</string>
     <string name="settings_about">Iwwer Private Audio</string>
+    <string name="settings_privacy_policy">Dateschutzrichtlinn</string>
+    <string name="settings_privacy_policy_body">Private Audio sammelt, hëlt oder iwwerdréit Är Gespréicher oder Audioinhalter net op.\n\nD\'App erfuerdert kee Kont an keng Umeldung. Si freet keen Zougrëff op de Mikro un a benotzt keng Analyse-, Reklamm- oder Ofstuerzrapportservicer. Private Audio freet d\'Internetautorisatioun vun Android net un a schéckt keng Daten un e Server.\n\nPrivate Audio observéiert nëmmen den techneschen Zoustand an d\'Metadate vum Android-Audiosystem, wéi néideg fir Audioroutage an Diagnostik. Si gräift net op den Inhalt vun Äre Gespréicher zou.\n\nApp-Astellunge ginn lokal um Apparat gespäichert. Diagnosdate ginn lokal erstallt a verschafft; e Rapport gëtt nëmme gespäichert wann Dir dat wielt. E ka technesch Informatioun iwwer Apparat, Android-Versioun, Audioroutage an Audiosystemzoustand enthalen, awer keng Gespréicher oder Audioinhalter.\n\nDen Android-Backup vun App-Date ass deaktivéiert.</string>
     <string name="settings_version">Versioun %1$s</string>
     <string name="settings_language_body">Private Audio riicht sech de Moment no der Sprooch vun dengem Apparat. Standard ass ausgewielt.</string>
     <string name="settings_language_android_13_required">D\'Sproochauswiel an der App erfuerdert Android 13 oder méi nei. Dësen Apparat riicht sech no der Systemsprooch.</string>

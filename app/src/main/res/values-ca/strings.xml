@@ -20,6 +20,8 @@
     <string name="settings_save_diagnostic">Desa l\'informe de diagnòstic</string>
     <string name="settings_advanced">Configuració avançada</string>
     <string name="settings_about">Sobre Private Audio</string>
+    <string name="settings_privacy_policy">Política de privadesa</string>
+    <string name="settings_privacy_policy_body">Private Audio no recopila, grava ni transmet les teves converses ni contingut d’àudio.\n\nL’aplicació no requereix cap compte ni iniciar sessió. No sol·licita accés al micròfon ni utilitza serveis d’anàlisi, publicitat o generació d’informes de bloquejos. Private Audio no sol·licita el permís d’Internet d’Android ni envia dades a cap servidor.\n\nPrivate Audio només observa l’estat tècnic i les metadades del sistema d’àudio d’Android quan cal per a l’encaminament d’àudio i els diagnòstics. No accedeix al contingut de les teves converses.\n\nLa configuració de l’aplicació s’emmagatzema localment al dispositiu. Les dades de diagnòstic es generen i processen localment, i només es desa un informe de diagnòstic quan decideixes desar-lo. L’informe pot contenir informació tècnica sobre el dispositiu, la versió d’Android, l’encaminament d’àudio i l’estat del sistema d’àudio, però no conté converses ni contingut d’àudio.\n\nLa còpia de seguretat de dades d’aplicacions d’Android està desactivada.</string>
     <string name="settings_version">Versió %1$s</string>
     <string name="settings_language_body">Private Audio utilitza actualment l\'idioma del dispositiu. S\'ha seleccionat «Predeterminat».</string>
     <string name="settings_language_android_13_required">Per seleccionar l\'idioma dins de l\'aplicació cal Android 13 o una versió posterior. Aquest dispositiu utilitza l\'idioma del sistema.</string>

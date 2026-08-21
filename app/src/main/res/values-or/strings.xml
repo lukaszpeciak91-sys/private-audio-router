@@ -25,6 +25,8 @@
     <string name="settings_save_diagnostic">ଡାଇଗ୍ନୋଷ୍ଟିକ୍ ରିପୋର୍ଟ ସେଭ୍ କରନ୍ତୁ</string>
     <string name="settings_advanced">ଉନ୍ନତ ସେଟିଂସ</string>
     <string name="settings_about">Private Audio ବିଷୟରେ</string>
+    <string name="settings_privacy_policy">ଗୋପନୀୟତା ନୀତି</string>
+    <string name="settings_privacy_policy_body">Private Audio ଆପଣଙ୍କ କଥାବାର୍ତ୍ତା କିମ୍ବା ଅଡିଓ ବିଷୟବସ୍ତୁ ସଂଗ୍ରହ, ରେକର୍ଡ କିମ୍ବା ପ୍ରେରଣ କରେ ନାହିଁ।\n\nଆପ୍‌କୁ ଆକାଉଣ୍ଟ କିମ୍ବା ସାଇନ୍-ଇନ୍ ଦରକାର ନାହିଁ। ଏହା ମାଇକ୍ରୋଫୋନ୍ ଅନୁମତି ମାଗେ ନାହିଁ ଏବଂ ବିଶ୍ଳେଷଣ, ବିଜ୍ଞାପନ କିମ୍ବା କ୍ରାଶ୍ ରିପୋର୍ଟ ସେବା ବ୍ୟବହାର କରେ ନାହିଁ। Private Audio Android ଇଣ୍ଟରନେଟ୍ ଅନୁମତି ମାଗେ ନାହିଁ ଏବଂ ସର୍ଭରକୁ ଡାଟା ପଠାଏ ନାହିଁ।\n\nPrivate Audio କେବଳ ଅଡିଓ ରାଉଟିଂ ଓ ନିଦାନ ପାଇଁ ଆବଶ୍ୟକ Android ଅଡିଓ ସିଷ୍ଟମର ପ୍ରାୟୋଗିକ ସ୍ଥିତି ଓ ମେଟାଡାଟା ଦେଖେ; କଥାବାର୍ତ୍ତାର ବିଷୟବସ୍ତୁ ଦେଖେ ନାହିଁ।\n\nଆପ୍ ସେଟିଂ ଡିଭାଇସରେ ସ୍ଥାନୀୟ ଭାବେ ରହେ। ନିଦାନ ଡାଟା ସ୍ଥାନୀୟ ଭାବେ ତିଆରି ଓ ପ୍ରକ୍ରିୟା ହୁଏ; ଆପଣ ବାଛିଲେ ମାତ୍ର ରିପୋର୍ଟ ସେଭ୍ ହୁଏ। ଏଥିରେ ଡିଭାଇସ, Android ସଂସ୍କରଣ, ଅଡିଓ ରାଉଟିଂ ଓ ସିଷ୍ଟମ ସ୍ଥିତିର ପ୍ରାୟୋଗିକ ସୂଚନା ରହିପାରେ, କିନ୍ତୁ କଥାବାର୍ତ୍ତା କିମ୍ବା ଅଡିଓ ବିଷୟବସ୍ତୁ ନୁହେଁ।\n\nAndroid ଆପ୍-ଡାଟା ବ୍ୟାକଅପ୍ ବନ୍ଦ ଅଛି।</string>
     <string name="settings_version">ସଂସ୍କରଣ %1$s</string>
 
     <string name="settings_language_body">Private Audio ବର୍ତ୍ତମାନ ଆପଣଙ୍କ ଡିଭାଇସର ଭାଷାକୁ ଅନୁସରଣ କରେ। ଡିଫଲ୍ଟ ଚୟନ କରାଯାଇଛି।</string>

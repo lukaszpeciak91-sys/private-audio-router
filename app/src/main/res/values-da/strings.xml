@@ -20,6 +20,8 @@
     <string name="settings_save_diagnostic">Gem diagnosticeringsrapport</string>
     <string name="settings_advanced">Avanceret</string>
     <string name="settings_about">Om Private Audio</string>
+    <string name="settings_privacy_policy">Privatlivspolitik</string>
+    <string name="settings_privacy_policy_body">Private Audio indsamler, optager eller overfører ikke dine samtaler eller dit lydindhold.\n\nAppen kræver ikke en konto eller login. Den anmoder ikke om mikrofonadgang og bruger ikke analyse-, annonce- eller nedbrudsrapporteringstjenester. Private Audio anmoder ikke om Androids internettilladelse og sender ikke data til en server.\n\nPrivate Audio observerer kun Android-lydsystemets tekniske tilstand og metadata efter behov for lydrouting og diagnosticering. Appen tilgår ikke indholdet af dine samtaler.\n\nAppindstillinger gemmes lokalt på din enhed. Diagnosedata genereres og behandles lokalt, og en diagnoserapport gemmes kun, når du vælger at gemme den. Rapporten kan indeholde tekniske oplysninger om din enhed, Android-version, lydrouting og lydsystemets tilstand, men ikke samtaler eller lydindhold.\n\nAndroid-sikkerhedskopiering af appdata er deaktiveret.</string>
     <string name="settings_version">Version %1$s</string>
     <string name="settings_language_body">Private Audio følger i øjeblikket enhedens sprog. Standard er valgt.</string>
     <string name="settings_language_android_13_required">Sprogvalg i appen kræver Android 13 eller nyere. Denne enhed følger systemsproget.</string>

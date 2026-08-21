@@ -20,6 +20,8 @@
     <string name="settings_save_diagnostic">دیاقنوستیک حساباتی ذخیره ائت</string>
     <string name="settings_advanced">گئنیشمیش</string>
     <string name="settings_about">Private Audio حاقیندا</string>
+    <string name="settings_privacy_policy">گئزلیلیک سیاستی</string>
+    <string name="settings_privacy_policy_body">Private Audio سیزین دانیشیقلارینیزی یا سس محتواسینی توپلامیر، یازمیر و گؤندرمیر.\n\nاوْیغولاما حساب یا گیریش ایسته‌میر. میکروفونا گیریش ایجازه‌سی ایسته‌میر و تحلیل، تبلیغات یا خطا راپور خیدمتلریندن ایستیفاده ائتمیر. Private Audio، Android اینترنت ایجازه‌سینی ایسته‌میر و سروره وئری گؤندرمیر.\n\nPrivate Audio یالنیز سس یؤنلندیرمه‌سی و دیاگنوستیک اوچون لازیم اولان Android سس سیستمی‌نین تکنیکی دورومونو و متادیتاسینی گؤزله‌ییر. دانیشیقلارین محتواسینا گیریش ائتمیر.\n\nاوْیغولاما تنظیملری دستگاهدا یئرلی ساخlanır. دیاگنوستیک وئریلری یئرلی یارادیلیر و ایشلنیر، راپور یالنیز سیز ساخلاغی سئچنده ساخlanır. راپور دستگاه، Android نسخه‌سی، سس یؤنلندیرمه‌سی و سس سیستمی دورومو باره‌ده تکنیکی معلومات داخیل ائده بیلر، آمما دانیشیق یا سس محتواسی یوخدور.\n\nAndroid اوْیغولاما وئری‌لری‌نین یئدکلمه‌سی سؤندورولوب.</string>
     <string name="settings_version">نوسخه %1$s</string>
     <string name="settings_language_body">Private Audio ایندی جهازینیزین دیلیندن ایستیفاده ائدیر. فرض ائدیلن سئچیلیب.</string>
     <string name="settings_language_android_13_required">اۇیقولاما ایچینده دیل سئچیمی اۆچون Android 13 یا داها یئنی نوسخه لازیمدیر. بو جهاز سیستئم دیلیندن ایستیفاده ائدیر.</string>

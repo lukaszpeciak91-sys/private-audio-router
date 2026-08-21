@@ -20,6 +20,8 @@
     <string name="settings_save_diagnostic">تشخیصی رپورٹ محفوظ کریں</string>
     <string name="settings_advanced">ایڈوانسڈ</string>
     <string name="settings_about">Private Audio کے بارے میں</string>
+    <string name="settings_privacy_policy">رازداری کی پالیسی</string>
+    <string name="settings_privacy_policy_body">Private Audio آپ کی گفتگو یا آڈیو مواد کو جمع، ریکارڈ یا منتقل نہیں کرتا۔\n\nایپ کو اکاؤنٹ یا سائن ان درکار نہیں ہے۔ یہ مائیکروفون تک رسائی کی درخواست نہیں کرتی اور تجزیات، اشتہارات یا کریش رپورٹنگ کی خدمات استعمال نہیں کرتی۔ Private Audio، Android کی انٹرنیٹ اجازت کی درخواست نہیں کرتا اور سرور کو ڈیٹا نہیں بھیجتا۔\n\nPrivate Audio صرف آڈیو روٹنگ اور تشخیص کے لیے درکار Android آڈیو سسٹم کی تکنیکی حالت اور میٹا ڈیٹا کا مشاہدہ کرتا ہے۔ یہ آپ کی گفتگو کے مواد تک رسائی نہیں کرتا۔\n\nایپ کی ترتیبات آپ کے آلے پر مقامی طور پر محفوظ ہوتی ہیں۔ تشخیصی ڈیٹا مقامی طور پر تیار اور پراسیس ہوتا ہے، اور تشخیصی رپورٹ صرف اس وقت محفوظ ہوتی ہے جب آپ اسے محفوظ کرنے کا انتخاب کریں۔ رپورٹ میں آلے، Android ورژن، آڈیو روٹنگ اور آڈیو سسٹم کی حالت کی تکنیکی معلومات ہو سکتی ہیں، لیکن گفتگو یا آڈیو مواد نہیں ہوتا۔\n\nAndroid ایپ ڈیٹا بیک اپ غیر فعال ہے۔</string>
     <string name="settings_version">ورژن %1$s</string>
     <string name="settings_language_body">Private Audio فی الحال آپ کے آلے کی زبان استعمال کر رہا ہے۔ ڈیفالٹ منتخب ہے۔</string>
     <string name="settings_language_android_13_required">ایپ میں زبان منتخب کرنے کے لیے Android 13 یا اس کے بعد کا ورژن درکار ہے۔ یہ آلہ سسٹم کی زبان استعمال کرتا ہے۔</string>

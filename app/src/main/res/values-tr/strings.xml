@@ -20,6 +20,8 @@
     <string name="settings_save_diagnostic">Tanılama raporunu kaydet</string>
     <string name="settings_advanced">Gelişmiş</string>
     <string name="settings_about">Private Audio hakkında</string>
+    <string name="settings_privacy_policy">Gizlilik Politikası</string>
+    <string name="settings_privacy_policy_body">Private Audio konuşmalarınızı veya ses içeriğinizi toplamaz, kaydetmez ya da iletmez.\n\nUygulama hesap veya oturum açma gerektirmez. Mikrofon erişimi istemez; analiz, reklam veya kilitlenme raporlama hizmetlerini kullanmaz. Private Audio, Android\'in İnternet iznini istemez ve bir sunucuya veri göndermez.\n\nPrivate Audio yalnızca ses yönlendirme ve tanılama için gereken Android ses sisteminin teknik durumunu ve meta verilerini gözlemler. Konuşmalarınızın içeriğine erişmez.\n\nUygulama ayarları cihazınızda yerel olarak saklanır. Tanılama verileri yerel olarak oluşturulur ve işlenir; tanılama raporu yalnızca kaydetmeyi seçtiğinizde kaydedilir. Rapor cihazınız, Android sürümü, ses yönlendirme ve ses sisteminin durumu hakkında teknik bilgiler içerebilir ancak konuşma veya ses içeriği içermez.\n\nAndroid uygulama verisi yedekleme devre dışıdır.</string>
     <string name="settings_version">Sürüm %1$s</string>
     <string name="settings_language_body">Private Audio şu anda cihazınızın dilini kullanıyor. Varsayılan seçili.</string>
     <string name="settings_language_android_13_required">Uygulama içinden dil seçimi için Android 13 veya sonraki bir sürüm gerekir. Bu cihaz sistem dilini kullanıyor.</string>

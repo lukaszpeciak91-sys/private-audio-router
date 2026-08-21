@@ -20,6 +20,8 @@
     <string name="settings_save_diagnostic">שמירת דוח אבחון</string>
     <string name="settings_advanced">הגדרות מתקדמות</string>
     <string name="settings_about">מידע על Private Audio</string>
+    <string name="settings_privacy_policy">מדיניות פרטיות</string>
+    <string name="settings_privacy_policy_body">Private Audio אינו אוסף, מקליט או מעביר את השיחות או את תוכן השמע שלך.\n\nהאפליקציה אינה דורשת חשבון או כניסה. היא אינה מבקשת גישה למיקרופון ואינה משתמשת בשירותי ניתוח, פרסום או דיווח על קריסות. Private Audio אינו מבקש את הרשאת האינטרנט של Android ואינו שולח נתונים לשרת.\n\nPrivate Audio עוקב רק אחר המצב הטכני והמטא-נתונים של מערכת השמע של Android, לפי הנדרש לניתוב שמע ולאבחון. הוא אינו ניגש לתוכן השיחות שלך.\n\nהגדרות האפליקציה נשמרות באופן מקומי במכשיר. נתוני אבחון נוצרים ומעובדים באופן מקומי, ודוח אבחון נשמר רק אם בחרת לשמור אותו. הדוח עשוי להכיל מידע טכני על המכשיר, גרסת Android, ניתוב השמע ומצב מערכת השמע, אך אינו מכיל שיחות או תוכן שמע.\n\nגיבוי נתוני האפליקציה של Android מושבת.</string>
     <string name="settings_version">גרסה %1$s</string>
     <string name="settings_language_body">Private Audio משתמש כרגע בשפת המכשיר. נבחרה ברירת המחדל של המערכת.</string>
     <string name="settings_language_android_13_required">בחירת שפה באפליקציה דורשת Android 13 ואילך. המכשיר הזה משתמש בשפת המערכת.</string>

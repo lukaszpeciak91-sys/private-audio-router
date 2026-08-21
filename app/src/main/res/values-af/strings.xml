@@ -20,6 +20,8 @@
     <string name="settings_save_diagnostic">Stoor diagnostiese verslag</string>
     <string name="settings_advanced">Gevorderd</string>
     <string name="settings_about">Meer oor Private Audio</string>
+    <string name="settings_privacy_policy">Privaatheidsbeleid</string>
+    <string name="settings_privacy_policy_body">Private Audio versamel, neem of stuur nie jou gesprekke of oudio-inhoud nie.\n\nDie program vereis geen rekening of aanmelding nie. Dit versoek nie mikrofoontoegang nie en gebruik geen ontleding-, advertensie- of omvalverslagdienste nie. Private Audio versoek nie Android se internettoestemming nie en stuur geen data na ’n bediener nie.\n\nPrivate Audio neem slegs die tegniese toestand en metadata van Android se oudiostelsel waar soos nodig vir oudioroetering en diagnostiek. Dit verkry nie toegang tot die inhoud van jou gesprekke nie.\n\nPrograminstellings word plaaslik op jou toestel gestoor. Diagnostiese data word plaaslik geskep en verwerk, en ’n diagnostiese verslag word slegs gestoor wanneer jy kies om dit te stoor. ’n Verslag kan tegniese inligting oor jou toestel, Android-weergawe, oudioroetering en oudiostelseltoestand bevat, maar bevat geen gesprek- of oudio-inhoud nie.\n\nAndroid-rugsteun van programdata is gedeaktiveer.</string>
     <string name="settings_version">Weergawe %1$s</string>
     <string name="settings_language_body">Private Audio volg tans jou toestel se taal. Verstek is gekies.</string>
     <string name="settings_language_android_13_required">Taalkeuse in die app vereis Android 13 of nuwer. Hierdie toestel volg die stelseltaal.</string>

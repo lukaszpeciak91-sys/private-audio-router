@@ -44,6 +44,33 @@ class Layer4SettingsContractTest {
     }
 
     @Test
+    fun privacyPolicyUsesTheSingleSettingsModalAndAuthoritativeEnglishClaims() {
+        assertTrue(settingsSource.contains("tag = \"settings_privacy_policy\""))
+        assertTrue(settingsSource.contains("SettingsPage.PRIVACY_POLICY -> PrivacyPolicyPage("))
+        val privacyPolicyPage = settingsSource.method("private fun PrivacyPolicyPage(onBack: () -> Unit)")
+        assertTrue(privacyPolicyPage.contains("testTag(\"settings_child_back\")"))
+        assertTrue(privacyPolicyPage.contains("BackChevron()"))
+        assertTrue(settingsSource.contains("BackHandler(enabled = page != SettingsPage.ROOT) { page = SettingsPage.ROOT }"))
+        assertTrue(settingsSource.contains("testTag(\"privacy_policy_body\")"))
+        assertEquals(1, settingsSource.occurrences("Dialog("))
+
+        val strings = projectFile("app/src/main/res/values/strings.xml").readText()
+        listOf(
+            "does not collect, record, or transmit your conversations or audio content",
+            "does not require an account or sign-in",
+            "does not request microphone access",
+            "does not use analytics, advertising, or crash-reporting services",
+            "does not request Android’s Internet permission",
+            "does not send data to a server",
+            "observes only the technical state and metadata",
+            "does not access the content of your conversations",
+            "saved only when you choose to save it",
+            "does not contain conversation or audio content",
+            "Android app-data backup is disabled",
+        ).forEach { claim -> assertTrue(claim, strings.contains(claim)) }
+    }
+
+    @Test
     fun diagnosticSaveUsesCreateDocumentAndUtf8ContentResolver() {
         val launchMethod = mainSource.method("private fun launchDiagnosticDocumentPicker()")
         val saveMethod = mainSource.method("private fun saveDiagnosticReport(destination: Uri)")

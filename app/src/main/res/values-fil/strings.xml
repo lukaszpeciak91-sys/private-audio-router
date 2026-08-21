@@ -20,6 +20,8 @@
     <string name="settings_save_diagnostic">I-save ang diagnostic report</string>
     <string name="settings_advanced">Advanced</string>
     <string name="settings_about">Tungkol sa Private Audio</string>
+    <string name="settings_privacy_policy">Patakaran sa Privacy</string>
+    <string name="settings_privacy_policy_body">Hindi kinokolekta, nire-record, o ipinapadala ng Private Audio ang iyong mga pag-uusap o nilalamang audio.\n\nHindi kailangan ng app ng account o pag-sign in. Hindi ito humihingi ng access sa mikropono at hindi gumagamit ng mga serbisyo para sa analytics, advertising, o pag-uulat ng pag-crash. Hindi hinihingi ng Private Audio ang pahintulot sa Internet ng Android at hindi ito nagpapadala ng data sa server.\n\nAng teknikal na kalagayan at metadata lamang ng audio system ng Android ang inoobserbahan ng Private Audio kung kinakailangan para sa pagruruta ng audio at diagnostics. Hindi nito ina-access ang nilalaman ng iyong mga pag-uusap.\n\nLokal na sine-save sa iyong device ang mga setting ng app. Lokal na binubuo at pinoproseso ang diagnostic data, at sine-save lamang ang diagnostic report kapag pinili mong i-save ito. Maaaring may teknikal na impormasyon ang ulat tungkol sa device, bersyon ng Android, pagruruta ng audio, at kalagayan ng audio system, ngunit wala itong pag-uusap o nilalamang audio.\n\nNaka-disable ang pag-backup ng Android app data.</string>
     <string name="settings_version">Bersyon %1$s</string>
     <string name="settings_language_body">Kasalukuyang sinusunod ng Private Audio ang wika ng iyong device. Default ang napili.</string>
     <string name="settings_language_android_13_required">Kailangan ng Android 13 o mas bago para pumili ng wika sa app. Sinusunod ng device na ito ang wika ng system.</string>

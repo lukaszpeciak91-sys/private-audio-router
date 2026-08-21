@@ -20,6 +20,8 @@
     <string name="settings_save_diagnostic">Goym greiningarfrágreiðing</string>
     <string name="settings_advanced">Framkomið</string>
     <string name="settings_about">Um Private Audio</string>
+    <string name="settings_privacy_policy">Persónsupolitikkur</string>
+    <string name="settings_privacy_policy_body">Private Audio savnar ikki, tekur ikki upp og sendir ikki samrøður tínar ella ljóðinnihald.\n\nForritið krevur onga kontu ella innritan. Tað biður ikki um atgongd til mikrofonina og brúkar ongar tænastur til greining, lýsingar ella fráboðan um brek. Private Audio biður ikki um internetloyvi Android og sendir eingi dátur til ein ambætara.\n\nPrivate Audio eygleiðir bert tøkniligu støðuna og metadáturnar hjá ljóðskipanini í Android, tá tað er neyðugt til ljóðleiðing og greining. Tað fær ikki atgongd til innihaldið í samrøðum tínum.\n\nForritsstillingar verða goymdar lokalt á tólinum. Greiningardátur verða gjørdar og viðgjørdar lokalt, og ein greiningarfrágreiðing verður bert goymd, tá tú velur tað. Hon kann innihalda tøkniligar upplýsingar um tólið, Android-útgávu, ljóðleiðing og støðu ljóðskipanarinnar, men ikki samrøður ella ljóðinnihald.\n\nAndroid-trygdaravrit av forritsdátum er óvirkið.</string>
     <string name="settings_version">Útgáva %1$s</string>
     <string name="settings_language_body">Private Audio fylgir í løtuni málinum á tólinum. Vanligt er valt.</string>
     <string name="settings_language_android_13_required">Málval í appini krevur Android 13 ella nýggjari. Hetta tólið fylgir skipanarmálinum.</string>

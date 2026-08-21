@@ -20,6 +20,8 @@
     <string name="settings_save_diagnostic">Diagnosztikai jelentés mentése</string>
     <string name="settings_advanced">Speciális</string>
     <string name="settings_about">A Private Audio névjegye</string>
+    <string name="settings_privacy_policy">Adatvédelmi irányelvek</string>
+    <string name="settings_privacy_policy_body">A Private Audio nem gyűjti, nem rögzíti és nem továbbítja az Ön beszélgetéseit vagy hangtartalmát.\n\nAz alkalmazás használatához nincs szükség fiókra vagy bejelentkezésre. Nem kér hozzáférést a mikrofonhoz, és nem használ elemzési, hirdetési vagy összeomlás-jelentési szolgáltatásokat. A Private Audio nem kéri az Android internetengedélyét, és nem küld adatokat szerverre.\n\nA Private Audio kizárólag az Android hangrendszerének műszaki állapotát és metaadatait figyeli a hangirányításhoz és diagnosztikához szükséges mértékben. Nem fér hozzá a beszélgetések tartalmához.\n\nAz alkalmazás beállításai helyben, az eszközön tárolódnak. A diagnosztikai adatok helyben jönnek létre és kerülnek feldolgozásra; diagnosztikai jelentés csak akkor lesz mentve, ha Ön ezt választja. A jelentés műszaki információkat tartalmazhat az eszközről, az Android-verzióról, a hangirányításról és a hangrendszer állapotáról, de beszélgetést vagy hangtartalmat nem.\n\nAz alkalmazásadatok androidos biztonsági mentése ki van kapcsolva.</string>
     <string name="settings_version">%1$s verzió</string>
     <string name="settings_language_body">A Private Audio jelenleg az eszközöd nyelvét követi. Az alapértelmezett van kiválasztva.</string>
     <string name="settings_language_android_13_required">Az alkalmazáson belüli nyelvválasztáshoz Android 13 vagy újabb verzió szükséges. Ez az eszköz a rendszer nyelvét követi.</string>

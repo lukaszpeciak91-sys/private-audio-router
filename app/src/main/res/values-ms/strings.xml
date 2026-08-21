@@ -20,6 +20,8 @@
     <string name="settings_save_diagnostic">Simpan laporan diagnostik</string>
     <string name="settings_advanced">Lanjutan</string>
     <string name="settings_about">Perihal Private Audio</string>
+    <string name="settings_privacy_policy">Dasar Privasi</string>
+    <string name="settings_privacy_policy_body">Private Audio tidak mengumpul, merakam atau menghantar perbualan atau kandungan audio anda.\n\nAplikasi ini tidak memerlukan akaun atau log masuk. Aplikasi tidak meminta akses mikrofon dan tidak menggunakan perkhidmatan analitis, pengiklanan atau pelaporan ranap. Private Audio tidak meminta kebenaran Internet Android dan tidak menghantar data ke pelayan.\n\nPrivate Audio hanya memerhatikan keadaan teknikal dan metadata sistem audio Android sebagaimana diperlukan untuk penghalaan audio dan diagnostik. Aplikasi tidak mengakses kandungan perbualan anda.\n\nTetapan aplikasi disimpan secara setempat pada peranti anda. Data diagnostik dijana dan diproses secara setempat, dan laporan diagnostik hanya disimpan apabila anda memilih untuk menyimpannya. Laporan mungkin mengandungi maklumat teknikal tentang peranti, versi Android, penghalaan audio dan keadaan sistem audio, tetapi tidak mengandungi perbualan atau kandungan audio.\n\nSandaran data aplikasi Android dilumpuhkan.</string>
     <string name="settings_version">Versi %1$s</string>
     <string name="settings_language_body">Private Audio kini mengikut bahasa peranti anda. Lalai sistem dipilih.</string>
     <string name="settings_language_android_13_required">Pemilihan bahasa dalam aplikasi memerlukan Android 13 atau lebih baharu. Peranti ini mengikut bahasa sistem.</string>

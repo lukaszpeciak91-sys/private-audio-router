@@ -20,6 +20,8 @@
     <string name="settings_save_diagnostic">Zapisz raport diagnostyczny</string>
     <string name="settings_advanced">Zaawansowane</string>
     <string name="settings_about">O Private Audio</string>
+    <string name="settings_privacy_policy">Polityka prywatności</string>
+    <string name="settings_privacy_policy_body">Private Audio nie gromadzi, nie nagrywa ani nie przesyła Twoich rozmów ani treści dźwiękowych.\n\nAplikacja nie wymaga konta ani logowania. Nie prosi o dostęp do mikrofonu i nie korzysta z usług analitycznych, reklamowych ani raportowania awarii. Private Audio nie prosi o uprawnienie Androida do Internetu i nie wysyła danych na serwer.\n\nPrivate Audio obserwuje wyłącznie stan techniczny i metadane systemu audio Androida w zakresie potrzebnym do kierowania dźwięku i diagnostyki. Nie uzyskuje dostępu do treści Twoich rozmów.\n\nUstawienia aplikacji są przechowywane lokalnie na urządzeniu. Dane diagnostyczne są generowane i przetwarzane lokalnie, a raport diagnostyczny zostaje zapisany tylko wtedy, gdy zdecydujesz się go zapisać. Raport może zawierać informacje techniczne o urządzeniu, wersji Androida, kierowaniu dźwięku i stanie systemu audio, ale nie zawiera rozmów ani treści dźwiękowych.\n\nKopia zapasowa danych aplikacji w Androidzie jest wyłączona.</string>
     <string name="settings_version">Wersja %1$s</string>
     <string name="settings_language_body">Private Audio obecnie używa języka urządzenia. Wybrano opcję Domyślny.</string>
     <string name="settings_language_android_13_required">Wybór języka w aplikacji wymaga Androida 13 lub nowszego. To urządzenie używa języka systemowego.</string>

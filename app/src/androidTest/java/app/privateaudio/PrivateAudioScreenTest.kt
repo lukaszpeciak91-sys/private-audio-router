@@ -9,6 +9,7 @@ import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.onRoot
 import androidx.compose.ui.test.performClick
 import androidx.compose.ui.test.performTouchInput
+import androidx.test.espresso.Espresso.pressBack
 import androidx.compose.ui.test.click
 import app.privateaudio.ui.PrivateAudioScreen
 import app.privateaudio.ui.theme.PrivateAudioTheme
@@ -105,6 +106,68 @@ class PrivateAudioScreenTest {
         composeRule.onNodeWithText("Version 9.8.7").assertIsDisplayed()
         composeRule.onRoot().performTouchInput { click(Offset(1f, 1f)) }
         composeRule.onNodeWithTag("settings_sheet").assertDoesNotExist()
+    }
+
+    @Test
+    fun privacyPolicyOpensWithoutStackingAndOutsideTapClosesIt() {
+        composeRule.setContent {
+            PrivateAudioTheme {
+                PrivateAudioScreen(
+                    state = PrivateAudioState.READY,
+                    onPowerClick = {},
+                    onCloseClick = {},
+                )
+            }
+        }
+
+        composeRule.onNodeWithTag("private_audio_settings").performClick()
+        composeRule.onNodeWithTag("settings_privacy_policy").assertIsDisplayed().performClick()
+        composeRule.onNodeWithTag("privacy_policy_panel").assertIsDisplayed()
+        composeRule.onNodeWithText("Privacy Policy").assertIsDisplayed()
+        composeRule.onNodeWithTag("settings_privacy_policy").assertDoesNotExist()
+        composeRule.onRoot().performTouchInput { click(Offset(1f, 1f)) }
+        composeRule.onNodeWithTag("privacy_policy_panel").assertDoesNotExist()
+        composeRule.onNodeWithTag("private_audio_power").assertIsDisplayed()
+    }
+
+    @Test
+    fun privacyPolicyBackReturnsToSettingsRoot() {
+        composeRule.setContent {
+            PrivateAudioTheme {
+                PrivateAudioScreen(
+                    state = PrivateAudioState.READY,
+                    onPowerClick = {},
+                    onCloseClick = {},
+                )
+            }
+        }
+
+        composeRule.onNodeWithTag("private_audio_settings").performClick()
+        composeRule.onNodeWithTag("settings_privacy_policy").performClick()
+        pressBack()
+        composeRule.onNodeWithTag("privacy_policy_panel").assertDoesNotExist()
+        composeRule.onNodeWithTag("settings_privacy_policy").assertIsDisplayed()
+        composeRule.onNodeWithTag("settings_sheet").assertIsDisplayed()
+    }
+
+    @Test
+    fun privacyPolicyVisibleBackReturnsToSettingsRoot() {
+        composeRule.setContent {
+            PrivateAudioTheme {
+                PrivateAudioScreen(
+                    state = PrivateAudioState.READY,
+                    onPowerClick = {},
+                    onCloseClick = {},
+                )
+            }
+        }
+
+        composeRule.onNodeWithTag("private_audio_settings").performClick()
+        composeRule.onNodeWithTag("settings_privacy_policy").performClick()
+        composeRule.onNodeWithTag("settings_child_back").assertIsDisplayed().performClick()
+        composeRule.onNodeWithTag("privacy_policy_panel").assertDoesNotExist()
+        composeRule.onNodeWithTag("settings_privacy_policy").assertIsDisplayed()
+        composeRule.onNodeWithTag("settings_sheet").assertIsDisplayed()
     }
 
     @Test

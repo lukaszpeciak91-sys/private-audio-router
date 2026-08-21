@@ -20,6 +20,8 @@
     <string name="settings_save_diagnostic">Issejvja r-rapport dijanjostiku</string>
     <string name="settings_advanced">Issettjar avvanzat</string>
     <string name="settings_about">Dwar Private Audio</string>
+    <string name="settings_privacy_policy">Politika tal-Privatezza</string>
+    <string name="settings_privacy_policy_body">Private Audio ma jiġborx, jirreġistrax jew jittrażmettix il-konversazzjonijiet jew il-kontenut awdjo tiegħek.\n\nL-app ma teħtieġx kont jew dħul. Ma titlobx aċċess għall-mikrofonu u ma tużax servizzi ta\' analitika, reklamar jew rapportar ta\' ħsarat. Private Audio ma jitlobx il-permess tal-Internet ta\' Android u ma jibgħatx data lil server.\n\nPrivate Audio josserva biss l-istat tekniku u l-metadata tas-sistema awdjo ta\' Android kif meħtieġ għar-rotta tal-awdjo u d-dijanjostika. Ma jaċċessax il-kontenut tal-konversazzjonijiet tiegħek.\n\nIs-settings jinħażnu lokalment fuq it-tagħmir. Id-data dijanjostika tinħoloq u tiġi pproċessata lokalment; rapport jinħażen biss meta tagħżel li tissejvjah. Jista\' jkun fih tagħrif tekniku dwar it-tagħmir, il-verżjoni Android, ir-rotta tal-awdjo u l-istat tas-sistema awdjo, iżda mhux konversazzjonijiet jew kontenut awdjo.\n\nIl-backup Android tad-data tal-app huwa diżattivat.</string>
     <string name="settings_version">Verżjoni %1$s</string>
     <string name="settings_language_body">Private Audio bħalissa juża l-lingwa tal-apparat tiegħek. Hija magħżula l-għażla default tas-sistema.</string>
     <string name="settings_language_android_13_required">L-għażla tal-lingwa fl-app teħtieġ Android 13 jew verżjoni aktar ġdida. Dan l-apparat juża l-lingwa tas-sistema.</string>

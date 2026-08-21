@@ -20,6 +20,8 @@
     <string name="settings_save_diagnostic">تشخیصي راپور خوندي کړئ</string>
     <string name="settings_advanced">پرمختللی</string>
     <string name="settings_about">د Private Audio په اړه</string>
+    <string name="settings_privacy_policy">د محرمیت تګلاره</string>
+    <string name="settings_privacy_policy_body">Private Audio ستاسو خبرې یا غږیز منځپانګه نه راټولوي، نه یې ثبتوي او نه یې لېږي.\n\nاپلېکېشن حساب یا ننوتلو ته اړتیا نه لري. د مایکروفون لاسرسی نه غواړي او د شننې، اعلانونو یا خرابۍ راپورولو خدمتونه نه کاروي. Private Audio د Android د انټرنېټ اجازه نه غواړي او سرور ته معلومات نه لېږي.\n\nPrivate Audio یوازې د غږ د مسیریابۍ او تشخیص لپاره د اړتیا په کچه د Android غږیز سیسټم تخنیکي حالت او مېټاډاټا ګوري. ستاسو د خبرو منځپانګې ته لاسرسی نه کوي.\n\nد اپلېکېشن امستنې ستاسو پر وسیله په محلي ډول ساتل کېږي. تشخیصي معلومات په محلي ډول جوړېږي او پروسس کېږي، او تشخیصي راپور یوازې هغه وخت ساتل کېږي چې تاسو یې ساتل وټاکئ. راپور کېدای شي د وسیلې، Android نسخې، غږ مسیریابۍ او غږیز سیسټم د حالت تخنیکي معلومات ولري، خو خبرې یا غږیز منځپانګه نه لري.\n\nد Android اپلېکېشن د معلوماتو شاتړ غیرفعال دی.</string>
     <string name="settings_version">نسخه %1$s</string>
     <string name="settings_language_body">Private Audio اوس ستاسو د وسیلې ژبه کاروي. ډیفالټ ټاکل شوی دی.</string>
     <string name="settings_language_android_13_required">په اپلیکیشن کې د ژبې ټاکلو لپاره Android 13 یا تر هغې نوې نسخه اړینه ده. دا وسیله د سیسټم ژبه کاروي.</string>

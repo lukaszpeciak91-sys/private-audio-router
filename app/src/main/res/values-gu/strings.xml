@@ -20,6 +20,8 @@
     <string name="settings_save_diagnostic">ડાયગ્નોસ્ટિક રિપોર્ટ સાચવો</string>
     <string name="settings_advanced">અદ્યતન</string>
     <string name="settings_about">Private Audio વિશે</string>
+    <string name="settings_privacy_policy">ગોપનીયતા નીતિ</string>
+    <string name="settings_privacy_policy_body">Private Audio તમારી વાતચીત અથવા ઑડિયો સામગ્રી એકત્ર, રેકોર્ડ કે મોકલતું નથી.\n\nઍપને ખાતા અથવા સાઇન-ઇનની જરૂર નથી. તે માઇક્રોફોન ઍક્સેસ માંગતી નથી અને વિશ્લેષણ, જાહેરાત કે ક્રૅશ-રિપોર્ટિંગ સેવાઓ વાપરતી નથી. Private Audio Androidની ઇન્ટરનેટ પરવાનગી માંગતું નથી અને સર્વરને ડેટા મોકલતું નથી.\n\nPrivate Audio ઑડિયો રૂટિંગ અને નિદાન માટે જરૂરી Android ઑડિયો સિસ્ટમની માત્ર તકનીકી સ્થિતિ અને મેટાડેટા જુએ છે. તે વાતચીતની સામગ્રીને ઍક્સેસ કરતું નથી.\n\nઍપ સેટિંગ્સ ઉપકરણ પર સ્થાનિક રીતે સંગ્રહાય છે. નિદાન ડેટા સ્થાનિક રીતે બને અને પ્રક્રિયા થાય છે; રિપોર્ટ તમે સાચવવાનું પસંદ કરો ત્યારે જ સાચવાય છે. તેમાં ઉપકરણ, Android વર્ઝન, ઑડિયો રૂટિંગ અને સિસ્ટમની સ્થિતિની તકનીકી માહિતી હોઈ શકે છે, પરંતુ વાતચીત કે ઑડિયો સામગ્રી નહીં.\n\nAndroid ઍપ-ડેટા બૅકઅપ બંધ છે.</string>
     <string name="settings_version">વર્ઝન %1$s</string>
     <string name="settings_language_body">Private Audio હાલમાં તમારા ડિવાઇસની ભાષાને અનુસરે છે. સિસ્ટમ ડિફૉલ્ટ પસંદ કરેલું છે.</string>
     <string name="settings_language_android_13_required">ઍપમાં ભાષા પસંદ કરવા માટે Android 13 અથવા પછીનું વર્ઝન જરૂરી છે. આ ડિવાઇસ સિસ્ટમ ભાષાને અનુસરે છે.</string>

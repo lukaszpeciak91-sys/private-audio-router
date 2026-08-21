@@ -20,6 +20,8 @@
     <string name="settings_save_diagnostic">Londoloza umbiko wokuxilonga</string>
     <string name="settings_advanced">Izilungiselelo ezithuthukisiwe</string>
     <string name="settings_about">Mayelana ne-Private Audio</string>
+    <string name="settings_privacy_policy">Inqubomgomo Yobumfihlo</string>
+    <string name="settings_privacy_policy_body">I-Private Audio ayiqoqi, ayirekhodi noma idlulise izingxoxo zakho noma okuqukethwe komsindo.\n\nUhlelo aludingi i-akhawunti noma ukungena ngemvume. Aluceli ukufinyelela kumakrofoni futhi alusebenzisi ukuhlaziya, ukukhangisa noma izinsiza zokubika ukuphahlazeka. I-Private Audio ayiceli imvume ye-Inthanethi ye-Android futhi ayithumeli idatha kuseva.\n\nI-Private Audio ibheka kuphela isimo sobuchwepheshe nemethadatha yesistimu yomsindo ye-Android njengoba kudingeka ekuqondiseni umsindo nasekuhloleni. Ayifinyeleli okuqukethwe kwezingxoxo zakho.\n\nIzilungiselelo zigcinwa kudivayisi yakho. Idatha yokuhlola yenziwa futhi icutshungulwe kudivayisi, futhi umbiko ugcinwa kuphela uma ukhetha ukuwugcina. Ungaba nolwazi lobuchwepheshe lwedivayisi, inguqulo ye-Android, ukuqondiswa komsindo nesimo sesistimu yomsindo, kodwa awunazingxoxo noma okuqukethwe komsindo.\n\nIsipele sedatha yohlelo lwe-Android sivaliwe.</string>
     <string name="settings_version">Inguqulo %1$s</string>
     <string name="settings_language_body">I-Private Audio okwamanje ilandela ulimi lwedivayisi yakho. Kukhethwe Okuzenzakalelayo.</string>
     <string name="settings_language_android_13_required">Ukukhetha ulimi ngaphakathi kwe-app kudinga i-Android 13 noma inguqulo entsha. Le divayisi ilandela ulimi lwesistimu.</string>

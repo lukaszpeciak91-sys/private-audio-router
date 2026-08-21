@@ -20,6 +20,8 @@
     <string name="settings_save_diagnostic">የምርመራ ሪፖርት አስቀምጥ</string>
     <string name="settings_advanced">የላቁ ቅንብሮች</string>
     <string name="settings_about">ስለ Private Audio</string>
+    <string name="settings_privacy_policy">የግላዊነት ፖሊሲ</string>
+    <string name="settings_privacy_policy_body">Private Audio ውይይቶችዎን ወይም የድምፅ ይዘትዎን አይሰበስብም፣ አይቀዳም ወይም አያስተላልፍም።\n\nመተግበሪያው መለያ ወይም መግባት አይፈልግም። የማይክሮፎን ፈቃድ አይጠይቅም፣ የትንታኔ፣ የማስታወቂያ ወይም የብልሽት ሪፖርት አገልግሎቶችን አይጠቀምም። Private Audio የAndroid የበይነመረብ ፈቃድ አይጠይቅም እና ወደ አገልጋይ ውሂብ አይልክም።\n\nPrivate Audio ለድምፅ ማዘዋወርና ምርመራ የሚያስፈልገውን የAndroid ድምፅ ስርዓት ቴክኒካዊ ሁኔታና ሜታዳታ ብቻ ይመለከታል፤ የውይይት ይዘትን አያገኝም።\n\nቅንብሮች በመሣሪያዎ ላይ ይቀመጣሉ። የምርመራ ውሂብ በመሣሪያው ይፈጠራልና ይካሄዳል፣ ሪፖርትም እርስዎ ሲመርጡ ብቻ ይቀመጣል። ሪፖርቱ ስለ መሣሪያ፣ Android ስሪት፣ ድምፅ ማዘዋወርና የድምፅ ስርዓት ሁኔታ ቴክኒካዊ መረጃ ሊኖረው ይችላል፣ ግን ውይይት ወይም የድምፅ ይዘት የለውም።\n\nየAndroid መተግበሪያ ውሂብ ምትኬ ተሰናክሏል።</string>
     <string name="settings_version">ሥሪት %1$s</string>
     <string name="settings_language_body">Private Audio አሁን የመሣሪያዎን ቋንቋ ይከተላል። ነባሪ ተመርጧል።</string>
     <string name="settings_language_android_13_required">በመተግበሪያ ውስጥ ቋንቋ ለመምረጥ Android 13 ወይም ከዚያ በኋላ ያለ ሥሪት ያስፈልጋል። ይህ መሣሪያ የስርዓት ቋንቋን ይከተላል።</string>
