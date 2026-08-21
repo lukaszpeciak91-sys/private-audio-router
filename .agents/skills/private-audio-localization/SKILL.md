@@ -16,8 +16,9 @@ description: Apply Private Audio's localization-quality workflow when adding a l
    - Which hardware component and user-perceived behavior does it describe?
    - Is it overly technical, telegraphic, or prototype copy?
    - Would propagation create a poor translation baseline?
+   - For privacy, security, permissions, account, diagnostics, backup, data-handling, or similar factual copy, is each claim sufficiently bounded and supportable rather than an ambiguous absolute or unsupported technical incapability?
 3. For behavioral or Settings copy, explicitly decompose subject/object, action/effect, trigger/condition, state versus action, hardware component, and user-perceived behavior where relevant. In particular, do not blur the screen, phone, proximity trigger, or screen power-off behavior.
-4. If source copy is materially weak or ambiguous, stop propagation and report **`SOURCE COPY REVIEW REQUIRED`** with the problem. Correct a small obvious defect only when the task explicitly authorizes changing English copy. Technical validity alone is not localization readiness.
+4. If source copy is materially weak, ambiguous, or factually overbroad, stop propagation and report **`SOURCE COPY REVIEW REQUIRED`** with the problem. For example, prefer `does not request microphone access` to unsupported `cannot access the microphone`, and prefer `does not collect, record, or transmit your conversations or audio content` to `does not process any data` when technical metadata is processed locally. Correct a small obvious defect only when the task explicitly authorizes changing English copy. Technical validity alone is not localization readiness.
 
 ## Assess language quality
 
@@ -30,6 +31,8 @@ Classify audit results without manufacturing edits:
 - **FIX:** misleading, semantically wrong, substantially unnatural, or clearly poor product copy.
 - **HOLD:** insufficient evidence to choose responsibly among plausible alternatives.
 
+For high-risk factual claims, **FIX** includes a stronger claim than the source; a weaker, materially different guarantee; a changed actor, data category, or destination; lost negation or user-action condition; collapsed content and metadata; implied technical incapability where the source states only behavior or permission state; or contradiction within the translated claim set. Use **HOLD** when available linguistic evidence cannot confidently preserve exact factual scope. Do not mark natural stylistic or cross-sentence restructuring as **FIX** when the complete factual meaning remains equivalent.
+
 For every proposed language change, record **assessment confidence** and **replacement confidence** as `HIGH`, `MEDIUM`, or `LOW`. A confident diagnosis need not imply a confident replacement. Never silently implement a `LOW`-confidence replacement. Record reviewed-no-change locales as meaningful results.
 
 ## Back-check semantic relationships
@@ -41,6 +44,31 @@ Ask whether the target preserves the same subject, object, referent, and relatio
 Treat **ON / enabled versus ACTIVE** as a mandatory product-state check whenever the source contains both concepts. Before translating, reconstruct them independently: Power ON or an enabled controller/service means Private Audio is waiting or available, while Active means it is currently participating in a qualifying communication-audio session. Verify that the target does not collapse those meanings; semantic identity is **`FIX`**, although grammatical similarity is acceptable. Power ON, service/controller enabled, waiting/ready, and runtime Active are not interchangeable states. Preserve both concepts independently in reviewed/frozen copy, and add persistent locale-specific contract assertions for both when the distinction is a meaningful regression target.
 
 For a linguistically non-obvious or high-risk string, briefly reconstruct the target meaning in plain English or equivalent source-language semantics. This reverse gloss is a sanity check—not machine back-translation offered as proof of quality—for swapped subjects and objects, lost distinctions, wrong referents, missing triggers, and altered action/state semantics. If the reconstructed meaning differs materially from the source, stop and review. Apply this proportionally; trivial labels such as `Close`, `Error`, and `Settings` do not each require a reverse gloss.
+
+## Translate high-risk factual claims conservatively
+
+Treat privacy, security, permissions, data-handling, account, backup, diagnostics, and similar factual product statements as one high-risk semantic-copy class. Before translating each statement, identify as applicable:
+
+- **actor:** Private Audio, Android, the user, a server, or another service;
+- **action:** collect, access, record, store, process, transmit, request permission, save, generate, or back up;
+- **object/data category:** conversation or audio content, microphone input, metadata, technical state, settings, or diagnostic data;
+- **location/destination:** locally on device, Android, a backup system, a server, or elsewhere;
+- **trigger/condition:** automatically, as needed, only after user action, or never; and
+- **negation and qualifiers:** only, may, does not, does not request, does not contain, and other limitations.
+
+Preserve the exact claim scope and strength. Never strengthen the source, weaken an explicit guarantee without genuine linguistic necessity, or add a privacy promise, legal guarantee, disclaimer, permission, data category, technical capability, or restriction absent from the frozen source. In particular:
+
+- `does not request microphone access` must not become `cannot access the microphone`;
+- `does not send data to a server` must not become `no data ever leaves the device`;
+- `does not contain conversation or audio content` must not become `contains no audio-related data`;
+- `Android app-data backup is disabled` must not become `the data can never be backed up or copied`; and
+- a report saved only when the user chooses to save it must retain that user-initiated condition.
+
+Keep conversation/audio content distinct from audio-system metadata/state; recording microphone input from observing audio-system state; local processing from collection or transmission; requesting permission from technical capability; and saving/exporting a report from generating diagnostic data.
+
+When multiple statements jointly describe actual product behavior, review them as a semantic **CLAIM SET**, not as independent sentences. The translated set must be internally consistent and must not create a broader promise than the frozen source. If the target language restructures meaning across sentences, evaluate the complete set.
+
+For every high-risk factual claim, a reverse semantic gloss is mandatory before **PASS**. Confirm the actor, action, object/data category, destination/location, condition/trigger, negation, qualifier, and claim strength wherever applicable. When linguistic evidence cannot confidently reconcile natural wording with exact factual scope, use **HOLD** rather than guessing. This additional decomposition is proportional: ordinary labels such as `Close`, `Settings`, `Error`, and `Mini` do not require it unless they materially participate in a factual claim.
 
 ## Resolve terminology independently
 

@@ -1,5 +1,7 @@
 # Progress
 
+- Upgraded the localization policy and repo-local workflow with one proportional high-risk factual-claim guardrail for privacy, security, permissions, accounts, diagnostics, backup, data handling, and similar copy. It requires bounded English source claims, semantic decomposition that preserves claim scope and strength, complete claim-set consistency, a mandatory reverse semantic gloss before PASS, and conservative HOLD treatment when exact factual scope lacks sufficient linguistic evidence.
+
 - Implemented the focused `ASSISTANT` protected-session linger experiment: the unchanged 1.5-second playback-loss confirmation now begins one generation-safe 15-second retained-context window, exact assistant/speech resumption reuses the same track/mode/earpiece cycle without another routing attempt, and expiry or safety/lifecycle overrides use existing ordered cleanup. Communication/browser classifiers and end behavior, Fake Phone, UI/locales, service state projection, and proximity mechanics are unchanged. Automated and physical validation remain to be recorded.
 
 - Disabled Android application-data backup at the sole application-level manifest declaration. This privacy hardening changes no routing, protected POC-5, diagnostics, settings, About, localization, overlay, proximity, permissions, services, network, or dependency behavior.
