@@ -36,12 +36,11 @@
     <string name="diagnostics_system_check">HUBINTA NIDAAMKA</string>
     <string name="diagnostics_earpiece">Sameecadda sare</string>
     <string name="diagnostics_proximity_sensor">Dareemaha u dhawaanshaha</string>
-    <string name="diagnostics_floating_control">Mini</string>
     <string name="diagnostics_private_audio">PRIVATE AUDIO</string>
     <string name="diagnostics_routing">Wareejinta codka</string>
     <string name="diagnostics_status">Xaaladda</string>
-    <string name="diagnostics_audio_route">Meesha codka loo dirayo</string>
-    <string name="diagnostics_last_routing">WAREEJINTII CODKA EE U DAMBAYSAY</string>
+    <string name="diagnostics_audio_route">Meesha codku ka baxayo</string>
+    <string name="diagnostics_last_routing">ISKUDAYGII U DAMBEEYAY EE WAREEJINTA CODKA</string>
     <string name="diagnostics_result">Natiijada</string>
     <string name="diagnostics_error">Khalad</string>
     <string name="diagnostics_available">La heli karo</string>

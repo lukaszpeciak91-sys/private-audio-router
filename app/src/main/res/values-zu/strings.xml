@@ -36,12 +36,11 @@
     <string name="diagnostics_system_check">UKUHLOLA UHLELO</string>
     <string name="diagnostics_earpiece">Isipikha sendlebe</string>
     <string name="diagnostics_proximity_sensor">Inzwa yokusondela</string>
-    <string name="diagnostics_floating_control">Mini</string>
     <string name="diagnostics_private_audio">PRIVATE AUDIO</string>
     <string name="diagnostics_routing">Ukuqondiswa komsindo</string>
     <string name="diagnostics_status">Isimo</string>
-    <string name="diagnostics_audio_route">Indlela yokuphuma komsindo</string>
-    <string name="diagnostics_last_routing">UKUQONDISWA KOMSONDO KOKUGCINA</string>
+    <string name="diagnostics_audio_route">Okukhipha umsindo</string>
+    <string name="diagnostics_last_routing">UMZAMO WOKUGCINA WOKUQONDISA UMSINDO</string>
     <string name="diagnostics_result">Umphumela</string>
     <string name="diagnostics_error">Iphutha</string>
     <string name="diagnostics_available">Kuyatholakala</string>

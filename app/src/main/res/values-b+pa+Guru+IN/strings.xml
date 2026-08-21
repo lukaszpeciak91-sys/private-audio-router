@@ -36,12 +36,11 @@
     <string name="diagnostics_system_check">ਸਿਸਟਮ ਜਾਂਚ</string>
     <string name="diagnostics_earpiece">ਈਅਰਪੀਸ</string>
     <string name="diagnostics_proximity_sensor">ਨੇੜਤਾ ਸੈਂਸਰ</string>
-    <string name="diagnostics_floating_control">ਕੰਪੈਕਟ</string>
     <string name="diagnostics_private_audio">Private Audio</string>
     <string name="diagnostics_routing">ਆਡੀਓ ਰੂਟਿੰਗ</string>
     <string name="diagnostics_status">ਸਥਿਤੀ</string>
-    <string name="diagnostics_audio_route">ਆਡੀਓ ਰੂਟ</string>
-    <string name="diagnostics_last_routing">ਪਿਛਲੀ ਰੂਟਿੰਗ</string>
+    <string name="diagnostics_audio_route">ਆਡੀਓ ਆਉਟਪੁੱਟ</string>
+    <string name="diagnostics_last_routing">ਆਡੀਓ ਰੂਟਿੰਗ ਦੀ ਪਿਛਲੀ ਕੋਸ਼ਿਸ਼</string>
     <string name="diagnostics_result">ਨਤੀਜਾ</string>
     <string name="diagnostics_error">ਤਰੁੱਟੀ</string>
     <string name="diagnostics_available">ਉਪਲਬਧ</string>

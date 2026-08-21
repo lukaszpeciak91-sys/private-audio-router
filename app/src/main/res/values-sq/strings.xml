@@ -36,12 +36,11 @@
     <string name="diagnostics_system_check">KONTROLLI I SISTEMIT</string>
     <string name="diagnostics_earpiece">Marrësi</string>
     <string name="diagnostics_proximity_sensor">Sensori i afërsisë</string>
-    <string name="diagnostics_floating_control">Mini</string>
     <string name="diagnostics_private_audio">PRIVATE AUDIO</string>
     <string name="diagnostics_routing">Drejtimi i audios</string>
     <string name="diagnostics_status">Statusi</string>
     <string name="diagnostics_audio_route">Dalja e audios</string>
-    <string name="diagnostics_last_routing">DREJTIMI I FUNDIT</string>
+    <string name="diagnostics_last_routing">PËRPJEKJA E FUNDIT PËR DREJTIM</string>
     <string name="diagnostics_result">Rezultati</string>
     <string name="diagnostics_error">Gabim</string>
     <string name="diagnostics_available">I disponueshëm</string>

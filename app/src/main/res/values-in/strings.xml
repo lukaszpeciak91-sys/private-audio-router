@@ -36,12 +36,11 @@
     <string name="diagnostics_system_check">PEMERIKSAAN SISTEM</string>
     <string name="diagnostics_earpiece">Speaker telinga</string>
     <string name="diagnostics_proximity_sensor">Sensor kedekatan</string>
-    <string name="diagnostics_floating_control">Mini</string>
     <string name="diagnostics_private_audio">PRIVATE AUDIO</string>
     <string name="diagnostics_routing">Pengalihan audio</string>
     <string name="diagnostics_status">Status</string>
-    <string name="diagnostics_audio_route">Rute audio</string>
-    <string name="diagnostics_last_routing">PENGALIHAN TERAKHIR</string>
+    <string name="diagnostics_audio_route">Output audio</string>
+    <string name="diagnostics_last_routing">UPAYA PENGALIHAN TERAKHIR</string>
     <string name="diagnostics_result">Hasil</string>
     <string name="diagnostics_error">Error</string>
     <string name="diagnostics_available">Tersedia</string>

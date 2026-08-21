@@ -36,12 +36,11 @@
     <string name="diagnostics_system_check">ការត្រួតពិនិត្យប្រព័ន្ធ</string>
     <string name="diagnostics_earpiece">ឧបករណ៍ស្ដាប់សំឡេងក្នុងទូរសព្ទ</string>
     <string name="diagnostics_proximity_sensor">ឧបករណ៍ចាប់សញ្ញាជិត</string>
-    <string name="diagnostics_floating_control">Mini</string>
     <string name="diagnostics_private_audio">Private Audio</string>
     <string name="diagnostics_routing">ការកំណត់ទិសដៅសំឡេង</string>
     <string name="diagnostics_status">ស្ថានភាព</string>
-    <string name="diagnostics_audio_route">ទិសដៅសំឡេង</string>
-    <string name="diagnostics_last_routing">ការកំណត់ទិសដៅសំឡេងចុងក្រោយ</string>
+    <string name="diagnostics_audio_route">លទ្ធផលសំឡេង</string>
+    <string name="diagnostics_last_routing">ការព្យាយាមកំណត់ទិសដៅសំឡេងចុងក្រោយ</string>
     <string name="diagnostics_result">លទ្ធផល</string>
     <string name="diagnostics_error">កំហុស</string>
     <string name="diagnostics_available">អាចប្រើបាន</string>

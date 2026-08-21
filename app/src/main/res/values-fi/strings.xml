@@ -36,12 +36,11 @@
     <string name="diagnostics_system_check">JÄRJESTELMÄN TARKISTUS</string>
     <string name="diagnostics_earpiece">Kuuloke</string>
     <string name="diagnostics_proximity_sensor">Lähestymisanturi</string>
-    <string name="diagnostics_floating_control">Mini</string>
     <string name="diagnostics_private_audio">PRIVATE AUDIO</string>
     <string name="diagnostics_routing">Äänen reititys</string>
     <string name="diagnostics_status">Tila</string>
-    <string name="diagnostics_audio_route">Äänireitti</string>
-    <string name="diagnostics_last_routing">VIIMEISIN ÄÄNEN REITITYS</string>
+    <string name="diagnostics_audio_route">Äänilähtö</string>
+    <string name="diagnostics_last_routing">VIIMEISIN ÄÄNEN REITITYSYRITYS</string>
     <string name="diagnostics_result">Tulos</string>
     <string name="diagnostics_error">Virhe</string>
     <string name="diagnostics_available">Käytettävissä</string>

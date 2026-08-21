@@ -36,12 +36,11 @@
     <string name="diagnostics_system_check">SİSTEM KONTROLÜ</string>
     <string name="diagnostics_earpiece">Ahize</string>
     <string name="diagnostics_proximity_sensor">Yakınlık sensörü</string>
-    <string name="diagnostics_floating_control">Mini</string>
     <string name="diagnostics_private_audio">PRIVATE AUDIO</string>
     <string name="diagnostics_routing">Yönlendirme</string>
     <string name="diagnostics_status">Durum</string>
-    <string name="diagnostics_audio_route">Ses yönlendirmesi</string>
-    <string name="diagnostics_last_routing">SON YÖNLENDİRME</string>
+    <string name="diagnostics_audio_route">Ses çıkışı</string>
+    <string name="diagnostics_last_routing">SON YÖNLENDİRME DENEMESİ</string>
     <string name="diagnostics_result">Sonuç</string>
     <string name="diagnostics_error">Hata</string>
     <string name="diagnostics_available">Kullanılabilir</string>

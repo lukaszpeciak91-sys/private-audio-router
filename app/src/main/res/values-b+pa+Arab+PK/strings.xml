@@ -36,12 +36,11 @@
     <string name="diagnostics_system_check">سسٹم دی جانچ</string>
     <string name="diagnostics_earpiece">ایئر پیس</string>
     <string name="diagnostics_proximity_sensor">نیڑے ہوݨ دا سینسر</string>
-    <string name="diagnostics_floating_control">کمپیکٹ</string>
     <string name="diagnostics_private_audio">Private Audio</string>
     <string name="diagnostics_routing">آڈیو روٹنگ</string>
     <string name="diagnostics_status">حالت</string>
-    <string name="diagnostics_audio_route">آڈیو دا رستہ</string>
-    <string name="diagnostics_last_routing">پچھلی آڈیو روٹنگ</string>
+    <string name="diagnostics_audio_route">آڈیو آؤٹ پٹ</string>
+    <string name="diagnostics_last_routing">آڈیو روٹنگ دی پچھلی کوشش</string>
     <string name="diagnostics_result">نتیجہ</string>
     <string name="diagnostics_error">خرابی</string>
     <string name="diagnostics_available">دستیاب</string>

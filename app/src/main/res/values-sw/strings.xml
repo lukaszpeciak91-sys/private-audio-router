@@ -36,12 +36,11 @@
     <string name="diagnostics_system_check">UKAGUZI WA MFUMO</string>
     <string name="diagnostics_earpiece">Kipokea sauti cha sikioni</string>
     <string name="diagnostics_proximity_sensor">Kihisi cha ukaribu</string>
-    <string name="diagnostics_floating_control">Mini</string>
     <string name="diagnostics_private_audio">PRIVATE AUDIO</string>
     <string name="diagnostics_routing">Uelekezaji wa sauti</string>
     <string name="diagnostics_status">Hali</string>
-    <string name="diagnostics_audio_route">Njia ya kutoa sauti</string>
-    <string name="diagnostics_last_routing">UELEKEZAJI WA MWISHO</string>
+    <string name="diagnostics_audio_route">Tokeo la sauti</string>
+    <string name="diagnostics_last_routing">JARIBIO LA MWISHO LA KUELEKEZA SAUTI</string>
     <string name="diagnostics_result">Tokeo</string>
     <string name="diagnostics_error">Hitilafu</string>
     <string name="diagnostics_available">Inapatikana</string>

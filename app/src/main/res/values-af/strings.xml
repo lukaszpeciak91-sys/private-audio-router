@@ -36,12 +36,11 @@
     <string name="diagnostics_system_check">STELSELKONTROLE</string>
     <string name="diagnostics_earpiece">Oorstuk</string>
     <string name="diagnostics_proximity_sensor">Nabyheidsensor</string>
-    <string name="diagnostics_floating_control">Mini</string>
     <string name="diagnostics_private_audio">PRIVATE AUDIO</string>
     <string name="diagnostics_routing">Roetering</string>
     <string name="diagnostics_status">Status</string>
-    <string name="diagnostics_audio_route">Oudioroete</string>
-    <string name="diagnostics_last_routing">LAASTE ROETERING</string>
+    <string name="diagnostics_audio_route">Oudio-uitvoer</string>
+    <string name="diagnostics_last_routing">LAASTE ROETERINGSPROBEERSLAG</string>
     <string name="diagnostics_result">Resultaat</string>
     <string name="diagnostics_error">Fout</string>
     <string name="diagnostics_available">Beskikbaar</string>

@@ -36,12 +36,11 @@
     <string name="diagnostics_system_check">ПРОВЕРКА НА СИСТЕМОТ</string>
     <string name="diagnostics_earpiece">Слушалка</string>
     <string name="diagnostics_proximity_sensor">Сензор за близина</string>
-    <string name="diagnostics_floating_control">Mini</string>
     <string name="diagnostics_private_audio">PRIVATE AUDIO</string>
     <string name="diagnostics_routing">Насочување на аудиото</string>
     <string name="diagnostics_status">Статус</string>
     <string name="diagnostics_audio_route">Аудиоизлез</string>
-    <string name="diagnostics_last_routing">ПОСЛЕДНО НАСОЧУВАЊЕ</string>
+    <string name="diagnostics_last_routing">ПОСЛЕДЕН ОБИД ЗА НАСОЧУВАЊЕ</string>
     <string name="diagnostics_result">Резултат</string>
     <string name="diagnostics_error">Грешка</string>
     <string name="diagnostics_available">Достапно</string>

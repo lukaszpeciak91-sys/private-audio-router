@@ -36,12 +36,11 @@
     <string name="diagnostics_system_check">SÜSTEEMIKONTROLL</string>
     <string name="diagnostics_earpiece">Kuular</string>
     <string name="diagnostics_proximity_sensor">Lähedusandur</string>
-    <string name="diagnostics_floating_control">Mini</string>
     <string name="diagnostics_private_audio">PRIVATE AUDIO</string>
     <string name="diagnostics_routing">Heli suunamine</string>
     <string name="diagnostics_status">Olek</string>
     <string name="diagnostics_audio_route">Heliväljund</string>
-    <string name="diagnostics_last_routing">VIIMANE SUUNAMINE</string>
+    <string name="diagnostics_last_routing">VIIMANE SUUNAMISKATSE</string>
     <string name="diagnostics_result">Tulemus</string>
     <string name="diagnostics_error">Viga</string>
     <string name="diagnostics_available">Saadaval</string>

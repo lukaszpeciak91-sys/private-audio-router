@@ -36,12 +36,11 @@
     <string name="diagnostics_system_check">სისტემის შემოწმება</string>
     <string name="diagnostics_earpiece">ყურმილი</string>
     <string name="diagnostics_proximity_sensor">სიახლოვის სენსორი</string>
-    <string name="diagnostics_floating_control">მინი</string>
     <string name="diagnostics_private_audio">Private Audio</string>
     <string name="diagnostics_routing">აუდიოს გადართვა</string>
     <string name="diagnostics_status">სტატუსი</string>
-    <string name="diagnostics_audio_route">აუდიოს გამომავალი</string>
-    <string name="diagnostics_last_routing">ბოლო გადართვა</string>
+    <string name="diagnostics_audio_route">აუდიოგამომავალი</string>
+    <string name="diagnostics_last_routing">გადართვის ბოლო მცდელობა</string>
     <string name="diagnostics_result">შედეგი</string>
     <string name="diagnostics_error">შეცდომა</string>
     <string name="diagnostics_available">ხელმისაწვდომია</string>

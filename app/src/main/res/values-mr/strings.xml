@@ -36,12 +36,11 @@
     <string name="diagnostics_system_check">सिस्टम तपासणी</string>
     <string name="diagnostics_earpiece">इयरपीस</string>
     <string name="diagnostics_proximity_sensor">प्रॉक्सिमिटी सेन्सर</string>
-    <string name="diagnostics_floating_control">Mini</string>
     <string name="diagnostics_private_audio">Private Audio</string>
     <string name="diagnostics_routing">ऑडिओ रूटिंग</string>
     <string name="diagnostics_status">स्थिती</string>
-    <string name="diagnostics_audio_route">ऑडिओ आउटपुट मार्ग</string>
-    <string name="diagnostics_last_routing">मागील ऑडिओ रूटिंग</string>
+    <string name="diagnostics_audio_route">ऑडिओ आउटपुट</string>
+    <string name="diagnostics_last_routing">मागील ऑडिओ रूटिंग प्रयत्न</string>
     <string name="diagnostics_result">निकाल</string>
     <string name="diagnostics_error">त्रुटी</string>
     <string name="diagnostics_available">उपलब्ध</string>

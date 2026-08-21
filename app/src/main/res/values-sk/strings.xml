@@ -36,12 +36,11 @@
     <string name="diagnostics_system_check">KONTROLA SYSTÉMU</string>
     <string name="diagnostics_earpiece">Slúchadlo telefónu</string>
     <string name="diagnostics_proximity_sensor">Snímač priblíženia</string>
-    <string name="diagnostics_floating_control">Mini</string>
     <string name="diagnostics_private_audio">PRIVATE AUDIO</string>
     <string name="diagnostics_routing">Smerovanie</string>
     <string name="diagnostics_status">Stav</string>
     <string name="diagnostics_audio_route">Zvukový výstup</string>
-    <string name="diagnostics_last_routing">POSLEDNÉ SMEROVANIE</string>
+    <string name="diagnostics_last_routing">POSLEDNÝ POKUS O SMEROVANIE</string>
     <string name="diagnostics_result">Výsledok</string>
     <string name="diagnostics_error">Chyba</string>
     <string name="diagnostics_available">Dostupné</string>

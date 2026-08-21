@@ -36,12 +36,11 @@
     <string name="diagnostics_system_check">VÉRIFICATION DU SYSTÈME</string>
     <string name="diagnostics_earpiece">Écouteur</string>
     <string name="diagnostics_proximity_sensor">Capteur de proximité</string>
-    <string name="diagnostics_floating_control">Mini</string>
     <string name="diagnostics_private_audio">PRIVATE AUDIO</string>
     <string name="diagnostics_routing">Routage</string>
     <string name="diagnostics_status">État</string>
     <string name="diagnostics_audio_route">Sortie audio</string>
-    <string name="diagnostics_last_routing">DERNIER ROUTAGE</string>
+    <string name="diagnostics_last_routing">DERNIÈRE TENTATIVE DE ROUTAGE</string>
     <string name="diagnostics_result">Résultat</string>
     <string name="diagnostics_error">Erreur</string>
     <string name="diagnostics_available">Disponible</string>

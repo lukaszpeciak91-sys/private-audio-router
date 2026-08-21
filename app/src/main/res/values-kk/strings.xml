@@ -36,12 +36,11 @@
     <string name="diagnostics_system_check">ЖҮЙЕНІ ТЕКСЕРУ</string>
     <string name="diagnostics_earpiece">Құлақ динамигі</string>
     <string name="diagnostics_proximity_sensor">Жақындық датчигі</string>
-    <string name="diagnostics_floating_control">Мини</string>
     <string name="diagnostics_private_audio">PRIVATE AUDIO</string>
     <string name="diagnostics_routing">Бағыттау</string>
     <string name="diagnostics_status">Күйі</string>
-    <string name="diagnostics_audio_route">Аудио бағыты</string>
-    <string name="diagnostics_last_routing">АУДИОНЫ СОҢҒЫ БАҒЫТТАУ</string>
+    <string name="diagnostics_audio_route">Аудио шығысы</string>
+    <string name="diagnostics_last_routing">АУДИОНЫ БАҒЫТТАУДЫҢ СОҢҒЫ ӘРЕКЕТІ</string>
     <string name="diagnostics_result">Нәтиже</string>
     <string name="diagnostics_error">Қате</string>
     <string name="diagnostics_available">Қолжетімді</string>

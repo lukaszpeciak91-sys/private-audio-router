@@ -36,12 +36,11 @@
     <string name="diagnostics_system_check">סיסטעם־קאנטראל</string>
     <string name="diagnostics_earpiece">אויער־טרייבל</string>
     <string name="diagnostics_proximity_sensor">נאנטקייט־סענסאר</string>
-    <string name="diagnostics_floating_control">Mini</string>
     <string name="diagnostics_private_audio">Private Audio</string>
     <string name="diagnostics_routing">אודיא־איבערשטעלונג</string>
     <string name="diagnostics_status">צושטאנד</string>
     <string name="diagnostics_audio_route">אודיא־אויסגאנג</string>
-    <string name="diagnostics_last_routing">לעצטע אודיא־איבערשטעלונג</string>
+    <string name="diagnostics_last_routing">לעצטער פרווו פון אודיא־איבערשטעלונג</string>
     <string name="diagnostics_result">רעזולטאט</string>
     <string name="diagnostics_error">פעלער</string>
     <string name="diagnostics_available">פאראן</string>

@@ -36,12 +36,11 @@
     <string name="diagnostics_system_check">SPRAWDZENIE SYSTEMU</string>
     <string name="diagnostics_earpiece">Słuchawka</string>
     <string name="diagnostics_proximity_sensor">Czujnik zbliżeniowy</string>
-    <string name="diagnostics_floating_control">Panel Mini</string>
     <string name="diagnostics_private_audio">PRIVATE AUDIO</string>
-    <string name="diagnostics_routing">Kierowanie dźwięku</string>
+    <string name="diagnostics_routing">Przekierowanie dźwięku</string>
     <string name="diagnostics_status">Stan</string>
-    <string name="diagnostics_audio_route">Wyjście dźwięku</string>
-    <string name="diagnostics_last_routing">OSTATNIE KIEROWANIE DŹWIĘKU</string>
+    <string name="diagnostics_audio_route">Wyjście audio</string>
+    <string name="diagnostics_last_routing">OSTATNIA PRÓBA PRZEKIEROWANIA</string>
     <string name="diagnostics_result">Wynik</string>
     <string name="diagnostics_error">Błąd</string>
     <string name="diagnostics_available">Dostępne</string>

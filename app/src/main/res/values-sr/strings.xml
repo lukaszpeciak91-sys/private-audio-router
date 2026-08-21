@@ -36,12 +36,11 @@
     <string name="diagnostics_system_check">ПРОВЕРА СИСТЕМА</string>
     <string name="diagnostics_earpiece">Слушалица</string>
     <string name="diagnostics_proximity_sensor">Сензор близине</string>
-    <string name="diagnostics_floating_control">Mini</string>
     <string name="diagnostics_private_audio">Private Audio</string>
     <string name="diagnostics_routing">Усмеравање звука</string>
     <string name="diagnostics_status">Статус</string>
-    <string name="diagnostics_audio_route">Излаз за звук</string>
-    <string name="diagnostics_last_routing">ПОСЛЕДЊЕ УСМЕРАВАЊЕ</string>
+    <string name="diagnostics_audio_route">Излаз звука</string>
+    <string name="diagnostics_last_routing">ПОСЛЕДЊИ ПОКУШАЈ УСМЕРАВАЊА</string>
     <string name="diagnostics_result">Резултат</string>
     <string name="diagnostics_error">Грешка</string>
     <string name="diagnostics_available">Доступно</string>

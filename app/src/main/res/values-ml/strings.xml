@@ -36,12 +36,11 @@
     <string name="diagnostics_system_check">സിസ്റ്റം പരിശോധന</string>
     <string name="diagnostics_earpiece">ഇയർപീസ്</string>
     <string name="diagnostics_proximity_sensor">സാമീപ്യ സെൻസർ</string>
-    <string name="diagnostics_floating_control">മിനി</string>
     <string name="diagnostics_private_audio">Private Audio</string>
     <string name="diagnostics_routing">ഓഡിയോ റൂട്ടിംഗ്</string>
     <string name="diagnostics_status">നില</string>
-    <string name="diagnostics_audio_route">ഓഡിയോ റൂട്ട്</string>
-    <string name="diagnostics_last_routing">അവസാന ഓഡിയോ റൂട്ടിംഗ്</string>
+    <string name="diagnostics_audio_route">ഓഡിയോ ഔട്ട്‌പുട്ട്</string>
+    <string name="diagnostics_last_routing">അവസാന ഓഡിയോ റൂട്ടിംഗ് ശ്രമം</string>
     <string name="diagnostics_result">ഫലം</string>
     <string name="diagnostics_error">പിശക്</string>
     <string name="diagnostics_available">ലഭ്യമാണ്</string>

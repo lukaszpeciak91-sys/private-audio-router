@@ -36,12 +36,11 @@
     <string name="diagnostics_system_check">SISTEMOS PATIKRA</string>
     <string name="diagnostics_earpiece">Pokalbių garsiakalbis</string>
     <string name="diagnostics_proximity_sensor">Artumo jutiklis</string>
-    <string name="diagnostics_floating_control">Mini</string>
     <string name="diagnostics_private_audio">Private Audio</string>
     <string name="diagnostics_routing">Garso nukreipimas</string>
     <string name="diagnostics_status">Būsena</string>
     <string name="diagnostics_audio_route">Garso išvestis</string>
-    <string name="diagnostics_last_routing">PASKUTINIS GARSO NUKREIPIMAS</string>
+    <string name="diagnostics_last_routing">PASKUTINIS BANDYMAS NUKREIPTI GARSĄ</string>
     <string name="diagnostics_result">Rezultatas</string>
     <string name="diagnostics_error">Klaida</string>
     <string name="diagnostics_available">Pasiekiama</string>

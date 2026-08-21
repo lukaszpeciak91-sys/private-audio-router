@@ -36,12 +36,11 @@
     <string name="diagnostics_system_check">PROVJERA SUSTAVA</string>
     <string name="diagnostics_earpiece">Slušalica telefona</string>
     <string name="diagnostics_proximity_sensor">Senzor blizine</string>
-    <string name="diagnostics_floating_control">Mini</string>
     <string name="diagnostics_private_audio">Private Audio</string>
     <string name="diagnostics_routing">Usmjeravanje zvuka</string>
     <string name="diagnostics_status">Status</string>
     <string name="diagnostics_audio_route">Izlaz zvuka</string>
-    <string name="diagnostics_last_routing">POSLJEDNJE USMJERAVANJE</string>
+    <string name="diagnostics_last_routing">POSLJEDNJI POKUŠAJ USMJERAVANJA</string>
     <string name="diagnostics_result">Rezultat</string>
     <string name="diagnostics_error">Pogreška</string>
     <string name="diagnostics_available">Dostupno</string>

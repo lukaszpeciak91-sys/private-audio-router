@@ -36,12 +36,11 @@
     <string name="diagnostics_system_check">시스템 점검</string>
     <string name="diagnostics_earpiece">수화부</string>
     <string name="diagnostics_proximity_sensor">근접 센서</string>
-    <string name="diagnostics_floating_control">미니</string>
     <string name="diagnostics_private_audio">PRIVATE AUDIO</string>
     <string name="diagnostics_routing">오디오 전환</string>
     <string name="diagnostics_status">상태</string>
-    <string name="diagnostics_audio_route">오디오 경로</string>
-    <string name="diagnostics_last_routing">최근 오디오 전환</string>
+    <string name="diagnostics_audio_route">오디오 출력</string>
+    <string name="diagnostics_last_routing">최근 오디오 전환 시도</string>
     <string name="diagnostics_result">결과</string>
     <string name="diagnostics_error">오류</string>
     <string name="diagnostics_available">사용 가능</string>

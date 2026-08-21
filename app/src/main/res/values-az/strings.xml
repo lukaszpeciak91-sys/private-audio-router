@@ -36,12 +36,11 @@
     <string name="diagnostics_system_check">SİSTEM YOXLAMASI</string>
     <string name="diagnostics_earpiece">Qulaq dinamiki</string>
     <string name="diagnostics_proximity_sensor">Yaxınlıq sensoru</string>
-    <string name="diagnostics_floating_control">Mini</string>
     <string name="diagnostics_private_audio">PRIVATE AUDIO</string>
     <string name="diagnostics_routing">Səsin yönləndirilməsi</string>
     <string name="diagnostics_status">Vəziyyət</string>
     <string name="diagnostics_audio_route">Səs çıxışı</string>
-    <string name="diagnostics_last_routing">SON YÖNLƏNDİRMƏ</string>
+    <string name="diagnostics_last_routing">SON YÖNLƏNDİRMƏ CƏHDİ</string>
     <string name="diagnostics_result">Nəticə</string>
     <string name="diagnostics_error">Xəta</string>
     <string name="diagnostics_available">Mövcuddur</string>

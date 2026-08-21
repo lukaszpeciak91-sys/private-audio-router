@@ -36,12 +36,11 @@
     <string name="diagnostics_system_check">COMPROBACIÓN DEL SISTEMA</string>
     <string name="diagnostics_earpiece">Auricular</string>
     <string name="diagnostics_proximity_sensor">Sensor de proximidad</string>
-    <string name="diagnostics_floating_control">Mini</string>
     <string name="diagnostics_private_audio">PRIVATE AUDIO</string>
     <string name="diagnostics_routing">Enrutamiento</string>
     <string name="diagnostics_status">Estado</string>
-    <string name="diagnostics_audio_route">Ruta de audio</string>
-    <string name="diagnostics_last_routing">ÚLTIMO ENRUTAMIENTO</string>
+    <string name="diagnostics_audio_route">Salida de audio</string>
+    <string name="diagnostics_last_routing">ÚLTIMO INTENTO DE ENRUTAMIENTO</string>
     <string name="diagnostics_result">Resultado</string>
     <string name="diagnostics_error">Error</string>
     <string name="diagnostics_available">Disponible</string>

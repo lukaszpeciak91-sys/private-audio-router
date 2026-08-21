@@ -36,12 +36,11 @@
     <string name="diagnostics_system_check">СИСТЕМИЙН ШАЛГАЛТ</string>
     <string name="diagnostics_earpiece">Чихний чанга яригч</string>
     <string name="diagnostics_proximity_sensor">Ойртолтын мэдрэгч</string>
-    <string name="diagnostics_floating_control">Мини</string>
     <string name="diagnostics_private_audio">PRIVATE AUDIO</string>
     <string name="diagnostics_routing">Аудио чиглүүлэлт</string>
     <string name="diagnostics_status">Төлөв</string>
-    <string name="diagnostics_audio_route">Аудионы гаралт</string>
-    <string name="diagnostics_last_routing">СҮҮЛИЙН ЧИГЛҮҮЛЭЛТ</string>
+    <string name="diagnostics_audio_route">Аудио гаралт</string>
+    <string name="diagnostics_last_routing">АУДИО ЧИГЛҮҮЛЭХ СҮҮЛИЙН ОРОЛДЛОГО</string>
     <string name="diagnostics_result">Үр дүн</string>
     <string name="diagnostics_error">Алдаа</string>
     <string name="diagnostics_available">Боломжтой</string>

@@ -36,12 +36,11 @@
     <string name="diagnostics_system_check">VERIFICAREA SISTEMULUI</string>
     <string name="diagnostics_earpiece">Casca telefonului</string>
     <string name="diagnostics_proximity_sensor">Senzor de proximitate</string>
-    <string name="diagnostics_floating_control">Mini</string>
     <string name="diagnostics_private_audio">Private Audio</string>
     <string name="diagnostics_routing">Redirecționare audio</string>
     <string name="diagnostics_status">Stare</string>
     <string name="diagnostics_audio_route">Ieșire audio</string>
-    <string name="diagnostics_last_routing">ULTIMA REDIRECȚIONARE</string>
+    <string name="diagnostics_last_routing">ULTIMA ÎNCERCARE DE REDIRECȚIONARE</string>
     <string name="diagnostics_result">Rezultat</string>
     <string name="diagnostics_error">Eroare</string>
     <string name="diagnostics_available">Disponibil</string>

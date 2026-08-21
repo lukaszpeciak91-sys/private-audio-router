@@ -36,12 +36,11 @@
     <string name="diagnostics_system_check">KONTROLL TAS-SISTEMA</string>
     <string name="diagnostics_earpiece">Riċevitur</string>
     <string name="diagnostics_proximity_sensor">Senser tal-prossimità</string>
-    <string name="diagnostics_floating_control">Mini</string>
     <string name="diagnostics_private_audio">Private Audio</string>
     <string name="diagnostics_routing">Direzzjoni tal-awdjo</string>
     <string name="diagnostics_status">Status</string>
     <string name="diagnostics_audio_route">Ħruġ tal-awdjo</string>
-    <string name="diagnostics_last_routing">L-AĦĦAR DIREZZJONI</string>
+    <string name="diagnostics_last_routing">L-AĦĦAR TENTATTIV TA’ DIREZZJONI</string>
     <string name="diagnostics_result">Riżultat</string>
     <string name="diagnostics_error">Żball</string>
     <string name="diagnostics_available">Disponibbli</string>
