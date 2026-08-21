@@ -20,8 +20,8 @@
     <string name="settings_save_diagnostic">保存诊断报告</string>
     <string name="settings_advanced">高级</string>
     <string name="settings_about">关于 Private Audio</string>
-    <string name="settings_privacy_policy">Privacy Policy</string>
-    <string name="settings_privacy_policy_body">Private Audio does not collect, record, or transmit your conversations or audio content.\n\nThe app does not require an account or sign-in. It does not request microphone access and does not use analytics, advertising, or crash-reporting services. Private Audio does not request Android’s Internet permission and does not send data to a server.\n\nPrivate Audio observes only the technical state and metadata of Android’s audio system as needed for audio routing and diagnostics. It does not access the content of your conversations.\n\nApp settings are stored locally on your device. Diagnostic data is generated and processed locally, and a diagnostic report is saved only when you choose to save it. A report may contain technical information about your device, Android version, audio routing, and audio-system state, but it does not contain conversation or audio content.\n\nAndroid app-data backup is disabled.</string>
+    <string name="settings_privacy_policy">隐私政策</string>
+    <string name="settings_privacy_policy_body">Private Audio 不会收集、录制或传输您的通话或音频内容。\n\n本应用不要求创建账号或登录。它不会请求麦克风访问权限，也不使用分析、广告或崩溃报告服务。Private Audio 不会请求 Android 的互联网权限，也不会向服务器发送数据。\n\nPrivate Audio 仅在音频路由和诊断所需的范围内观察 Android 音频系统的技术状态和元数据。它不会访问您的通话内容。\n\n应用设置保存在您的设备本地。诊断数据在本地生成和处理，只有当您选择保存诊断报告时才会保存报告。报告可能包含有关设备、Android 版本、音频路由和音频系统状态的技术信息，但不包含通话或音频内容。\n\nAndroid 应用数据备份已停用。</string>
     <string name="settings_version">版本 %1$s</string>
     <string name="settings_language_body">Private Audio 目前使用设备语言。已选择“默认”。</string>
     <string name="settings_language_android_13_required">应用内语言选择需要 Android 13 或更高版本。此设备使用系统语言。</string>
