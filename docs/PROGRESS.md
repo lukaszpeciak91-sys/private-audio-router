@@ -136,11 +136,13 @@ physical test records remain in [`DECISIONS.md`](DECISIONS.md),
   contract coverage exists. Physical Gemini evidence confirms same-cycle resource
   reuse within the linger and shows that 5 seconds narrowly missed some later turns;
   the tuned 7-second duration and full multi-turn regression gate remain pending.
-- **Fake Phone pre-arm — implemented, default OFF, not physically validated.** While
-  eligible and waiting, it may prepare a silent communication context and one route
-  request without changing `WAITING`; qualifying playback may promote those
-  resources. It does not establish application ownership or audible success, and
-  the controlled Xiaomi gate remains `NOT TESTED / UNKNOWN`.
+- **Fake Phone sonification micro-route — implemented, default OFF, not physically validated.**
+  Persistent waiting pre-arm has been replaced: clean `WAITING` owns no Fake Phone
+  track, mode, or route. Exact assistant/sonification starts a bounded `WAITING`
+  micro-route with 100 ms disappearance grace and a fixed 2,000 ms cap. Genuine
+  classifier evidence promotes healthy resources without duplicate setup; unhealthy
+  setup fails open. Application ownership and audible success remain unproven, and
+  the revised physical gate is `NOT TESTED / UNKNOWN`.
 - The ChatGPT startup-sound signature and route remain unresolved. Diagnostics can
   record bounded playback metadata, but the trace neither classifies nor reroutes
   the sound by itself.
