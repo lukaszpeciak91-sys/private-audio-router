@@ -64,6 +64,12 @@ When a phrase creates a specific linguistic uncertainty:
 
 ## Preserve product terminology
 
+- Apply terminology in this order:
+  1. exact Private Audio product semantics;
+  2. established Android or first-party platform terminology when semantically correct for that locale and surface;
+  3. established terminology already used consistently in that Private Audio locale; and
+  4. natural contemporary native-language software/UI wording.
+- Treat platform terminology as evidence, not authority. Never adopt a platform term that collapses a protected distinction such as earpiece versus loudspeaker/speakerphone, headphones/headset, or Bluetooth, and do not replace a more precise existing Private Audio term merely to match an imperfect platform translation.
 - Keep **ON/enabled** (waiting or available) distinct from runtime **ACTIVE**.
 - Distinguish the built-in call earpiece/receiver from loudspeaker, speakerphone, headphones, earbuds, and Bluetooth.
 - Preserve source versus destination, action versus state, trigger versus effect, and screen versus phone/device.
@@ -71,7 +77,13 @@ When a phrase creates a specific linguistic uncertainty:
 - Keep `Private Audio` untranslated. Treat `Mini` as a compact-controller concept, not necessarily a Latin-script brand token.
 - Check transliterated/international terms for misleading, offensive, embarrassing, or concept-colliding target-language meanings.
 - Use the normal native script and orthography, including locale-specific Unicode distinctions and the correct CJK variant.
-- Prefer natural contemporary Android/product language; research non-obvious terms when tools are available without fabricating evidence when they are not.
+- Research non-obvious terms when tools are available without fabricating evidence when they are not.
+
+## Check contextual grammar before propagation
+
+Before translating or reusing one value/status resource across UI objects or call sites, inspect every semantic context where it renders. Do not assume a source-language invariant such as Available, Not available, Unknown, Enabled, Disabled, Connected, Selected, or Ready has one safe target-language form. Check agreement for grammatical gender, noun class, number, case, animacy, other relevant morphology, and materially different natural formulations required by different UI objects.
+
+If one shared resource would force ungrammatical or misleading wording, prefer a natural context-neutral state when it accurately expresses the product state (for example, a loading/progress phrase); otherwise use context-specific localized resources. Do not hide a source/resource-contract defect behind an awkward “universal” translation. Complete this check before broad locale propagation.
 
 ## Preserve Android resources and surfaces
 
