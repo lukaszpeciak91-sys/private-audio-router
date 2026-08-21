@@ -50,6 +50,14 @@ class LegacyLocaleResourceResolutionTest {
                 localizedContext(context, tag).getString(R.string.overlay_controller_description, "Պատրաստ է"),
             )
         }
+        listOf("jv", "jv-ID", "jv-Latn-ID").forEach { tag ->
+            assertLocalizedSettings(context, modernTag = tag, expected = "Setelan")
+            assertEquals(
+                "Kontrol ngambang Private Audio. Status: Siyap. Tombol kanggo nguripake utawa mateni Private Audio, nggedhekake kontrol, lan nutup.",
+                localizedContext(context, tag).getString(R.string.overlay_controller_description, "Siyap"),
+            )
+            assertEquals("$tag layout direction", android.view.View.LAYOUT_DIRECTION_LTR, localizedContext(context, tag).resources.configuration.layoutDirection)
+        }
         listOf("hy", "hy-AM", "hy-Armn-AM").forEach { tag ->
             assertEquals(
                 "$tag layout direction",
@@ -243,7 +251,7 @@ class LegacyLocaleResourceResolutionTest {
             val discoveredTags = LocaleConfig(context).supportedLocales
                 ?.let { locales -> (0 until locales.size()).map { locales[it].toLanguageTag() } }
                 .orEmpty()
-            assertTrue(discoveredTags.containsAll(listOf("id", "he", "yi", "ml", "pa-Guru-IN", "pa-Arab-PK", "ps", "ha", "am", "zu", "so", "ne", "hy", "or", "my", "uz", "km", "as", "ca", "gl", "kk", "mn", "ka", "lo", "az", "az-Arab-IR")))
+            assertTrue(discoveredTags.containsAll(listOf("id", "he", "yi", "ml", "pa-Guru-IN", "pa-Arab-PK", "ps", "ha", "am", "zu", "so", "ne", "hy", "jv", "or", "my", "uz", "km", "as", "ca", "gl", "kk", "mn", "ka", "lo", "az", "az-Arab-IR")))
         }
     }
 

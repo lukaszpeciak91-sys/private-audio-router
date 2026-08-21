@@ -1579,6 +1579,36 @@ class Layer41LocalizationContractTest {
     }
 
     @Test
+    fun javaneseKeepsOneNeutralQualifierAndFrozenLtrSemantics() {
+        val locale = Locale.forLanguageTag("jv")
+        val defaultIdentity = Locale.forLanguageTag("jv-Latn-ID")
+        assertEquals("jv", locale.toLanguageTag())
+        assertEquals("jv", locale.language)
+        assertEquals("Latn", defaultIdentity.script)
+        assertEquals("ID", defaultIdentity.country)
+        assertEquals("Jawa", nativeLocaleName("jv"))
+        assertTrue(projectFile("app/src/main/res/values-jv/strings.xml").isFile)
+        listOf("values-jw", "values-jv-rID", "values-b+jv+Latn", "values-b+jv+Latn+ID", "values-b+jv+Java")
+            .forEach { assertFalse(projectFile("app/src/main/res/$it").exists()) }
+        assertTrue(javaneseStrings.contains("name=\"routing_notification_title\">Private Audio urip</string>"))
+        assertTrue(javaneseStrings.contains("name=\"power_control\">Urip/mati</string>"))
+        assertTrue(javaneseStrings.contains("name=\"state_active\">Aktif</string>"))
+        assertFalse(javaneseStrings.contains("name=\"state_active\">Urip</string>"))
+        assertEquals(mapOf("state_ready" to "Siyap", "state_waiting" to "Ngenteni", "state_active" to "Aktif", "state_error" to "Kesalahan"), frozenStates(javaneseStrings))
+        assertTrue(javaneseStrings.contains("Ngobrol karo AI"))
+        assertTrue(javaneseStrings.contains("name=\"floating\">Mini</string>"))
+        assertTrue(javaneseStrings.contains("name=\"settings\">Setelan</string>"))
+        assertTrue(javaneseStrings.contains("name=\"settings_system_default\">Gawan</string>"))
+        assertTrue(javaneseStrings.contains("name=\"settings_advanced\">Setelan lanjut</string>"))
+        assertTrue(javaneseStrings.contains("ngalihake audio"))
+        assertTrue(javaneseStrings.contains("earpiece gawan telpon"))
+        assertTrue(javaneseStrings.contains("laporan diagnostik"))
+        assertTrue(javaneseStrings.contains("nguripake utawa mateni Private Audio, nggedhekake kontrol, lan nutup"))
+        assertFalse(javaneseStrings.contains("settings_fake_phone_pre_arm"))
+        assertFalse(projectFile("app/src/main/res/values-jv/mini_state_strings.xml").exists())
+    }
+
+    @Test
     fun existingOverlayRefreshesOnlyLocalizedPresentationOnConfigurationChange() {
         assertTrue(overlaySource.contains("override fun onConfigurationChanged"))
         assertTrue(overlaySource.contains("overlayView?.refreshLocalizedPresentation()"))
@@ -1716,6 +1746,7 @@ class Layer41LocalizationContractTest {
         val assameseStrings = projectFile("app/src/main/res/values-as/strings.xml").readText()
         val catalanStrings = projectFile("app/src/main/res/values-ca/strings.xml").readText()
         val galicianStrings = projectFile("app/src/main/res/values-gl/strings.xml").readText()
+        val javaneseStrings = projectFile("app/src/main/res/values-jv/strings.xml").readText()
         val kazakhStrings = projectFile("app/src/main/res/values-kk/strings.xml").readText()
         val northernAzerbaijaniStrings = projectFile("app/src/main/res/values-az/strings.xml").readText()
         val iranianAzerbaijaniStrings = projectFile("app/src/main/res/values-b+az+Arab+IR/strings.xml").readText()
