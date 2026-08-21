@@ -58,7 +58,7 @@ physical test records remain in [`DECISIONS.md`](DECISIONS.md),
 
 ## Localization state
 
-- Resources currently provide **87 product locales: English plus 86 non-English
+- Resources currently provide **88 product locales: English plus 87 non-English
   resource sets**. This count is derived from the current `values*` resource
   inventory, excluding non-locale `values-night`; supported variants include the
   intentional Portuguese, Chinese, Serbian, Punjabi, and Azerbaijani script or
@@ -68,13 +68,15 @@ physical test records remain in [`DECISIONS.md`](DECISIONS.md),
   in repository history; broad runtime, emulator, glyph, Mini-presentation, and
   physical-device validation is not implied.
 - The Privacy Policy title and complete factual claim set are translated and
-  semantically self-checked across all 86 non-English sets. A targeted independent
+  semantically self-checked across all 87 non-English sets. A targeted independent
   audit found ten claim-scope or terminology defects, and reviewed replacements were
   applied. This is neither human/native-speaker validation nor legal certification.
-- The current user-facing Diagnostics key inventory is localized across all 86
+- The current user-facing Diagnostics key inventory is localized across all 87
   supported non-English resource sets. Candidates were produced and semantically
-  self-checked with the Translation Skill. An independent linguistic audit of all 86
-  sets identified targeted defects in Polish, Indonesian, Khmer, Swahili, and
+  self-checked with the Translation Skill. Malagasy is translated and self-checked,
+  but is not yet independently audited or human/native-speaker validated. An
+  independent linguistic audit of the 86 previously supported non-English sets
+  identified targeted defects in Polish, Indonesian, Khmer, Swahili, and
   Afrikaans, as well as a locale-unsafe shared grammatical-status contract; the
   corrective candidates and context-specific status resources were applied through
   the Translation Skill, using Android terminology as evidence where semantically

@@ -1626,6 +1626,35 @@ class Layer41LocalizationContractTest {
     }
 
     @Test
+    fun malagasyLocalePreservesReviewedIdentityAndProductSemantics() {
+        val locale = Locale.forLanguageTag("mg")
+        assertEquals("mg", locale.toLanguageTag())
+        assertEquals("mg", locale.language)
+        assertEquals("Malagasy", nativeLocaleName("mg"))
+
+        assertTrue(projectFile("app/src/main/res/values-mg/strings.xml").isFile)
+        listOf("values-mg-rMG", "values-b+mg+Latn", "values-b+mg+Latn+MG").forEach {
+            assertFalse(projectFile("app/src/main/res/$it").exists())
+        }
+        assertEquals(
+            mapOf(
+                "state_ready" to "Vonona",
+                "state_waiting" to "Miandry",
+                "state_active" to "Miasa",
+                "state_error" to "Hadisoana",
+            ),
+            frozenStates(malagasyStrings),
+        )
+        assertTrue(malagasyStrings.contains("name=\"routing_notification_title\">Mandeha ny Private Audio</string>"))
+        assertFalse(malagasyStrings.contains("name=\"state_active\">Mandeha</string>"))
+        assertTrue(malagasyStrings.contains("fanamafisam-peo anatiny eo amin’ny sofina"))
+        assertTrue(malagasyStrings.contains("name=\"diagnostics_route_speaker\">Fanamafisam-peo</string>"))
+        assertTrue(malagasyStrings.contains("Tsy mangataka fahazoan-dalana hampiasa mikrô"))
+        assertTrue(malagasyStrings.contains("rehefa misafidy ny hitahiry azy ihany ianao vao voatahiry"))
+        assertFalse(projectFile("app/src/main/res/values-mg/mini_state_strings.xml").exists())
+    }
+
+    @Test
     fun languageSelectionUsesPlatformConfigurationWithoutAParallelLocaleRegistry() {
         assertTrue(languagePreferencesSource.contains("LocaleConfig(context).supportedLocales"))
         assertTrue(languagePreferencesSource.contains("getSystemService(LocaleManager::class.java)"))
@@ -1812,6 +1841,7 @@ class Layer41LocalizationContractTest {
         val kazakhStrings = projectFile("app/src/main/res/values-kk/strings.xml").readText()
         val northernAzerbaijaniStrings = projectFile("app/src/main/res/values-az/strings.xml").readText()
         val iranianAzerbaijaniStrings = projectFile("app/src/main/res/values-b+az+Arab+IR/strings.xml").readText()
+        val malagasyStrings = projectFile("app/src/main/res/values-mg/strings.xml").readText()
         val mainSource = projectFile("app/src/main/java/app/privateaudio/MainActivity.kt").readText()
         val productScreenSource = projectFile("app/src/main/java/app/privateaudio/ui/PrivateAudioScreen.kt").readText()
         val settingsSource = projectFile("app/src/main/java/app/privateaudio/ui/SettingsSheet.kt").readText()
