@@ -37,7 +37,6 @@ import androidx.compose.ui.unit.sp
 import app.privateaudio.PrivateAudioState
 import app.privateaudio.R
 import app.privateaudio.diagnostic.DiagnosticsAvailability
-import app.privateaudio.diagnostic.DiagnosticsDetectedAudio
 import app.privateaudio.diagnostic.DiagnosticsError
 import app.privateaudio.diagnostic.DiagnosticsPermission
 import app.privateaudio.diagnostic.DiagnosticsRoute
@@ -83,31 +82,23 @@ internal fun UserDiagnosticsScreen(
             )
         }
 
-        DiagnosticsSection(R.string.diagnostics_device) {
-            DiagnosticsRow(R.string.diagnostics_device_model, summary?.manufacturerAndModel ?: unknown())
-            DiagnosticsRow(
-                R.string.diagnostics_android_version,
-                summary?.let { stringResource(R.string.diagnostics_android_value, it.androidRelease, it.apiLevel) } ?: unknown(),
-            )
-            DiagnosticsRow(
-                R.string.diagnostics_private_audio_version,
-                summary?.let { stringResource(R.string.diagnostics_version_value, it.privateAudioVersion) } ?: unknown(),
-            )
-        }
         DiagnosticsSection(R.string.diagnostics_system_check) {
             DiagnosticsRow(R.string.diagnostics_earpiece, availability(summary?.earpiece))
             DiagnosticsRow(R.string.diagnostics_proximity_sensor, availability(summary?.proximitySensor))
-            DiagnosticsRow(R.string.diagnostics_overlay_permission, permission(summary?.overlayPermission))
+            DiagnosticsRow(R.string.diagnostics_floating_control, permission(summary?.floatingControlPermission))
         }
         DiagnosticsSection(R.string.diagnostics_private_audio) {
             DiagnosticsRow(R.string.diagnostics_routing, routing(summary?.routing))
             DiagnosticsRow(R.string.diagnostics_status, status(summary?.status))
             DiagnosticsRow(R.string.diagnostics_audio_route, route(summary?.audioRoute))
-            DiagnosticsRow(R.string.diagnostics_detected_audio, detectedAudio(summary?.detectedAudio))
         }
-        DiagnosticsSection(R.string.diagnostics_last_routing_result) {
-            DiagnosticsRow(R.string.diagnostics_result, result(summary?.lastRoutingResult))
-            DiagnosticsRow(R.string.diagnostics_last_error, error(summary?.lastError))
+        if (summary != null && summary.lastRoutingResult != DiagnosticsRoutingResult.NONE) {
+            DiagnosticsSection(R.string.diagnostics_last_routing) {
+                DiagnosticsRow(R.string.diagnostics_result, result(summary.lastRoutingResult))
+                if (summary.lastRoutingResult == DiagnosticsRoutingResult.FAILED) {
+                    DiagnosticsRow(R.string.diagnostics_error, error(summary.lastError))
+                }
+            }
         }
 
         Spacer(Modifier.height(24.dp))
@@ -164,8 +155,8 @@ private fun DiagnosticsRow(@StringRes label: Int, value: String) {
     null -> R.string.diagnostics_unknown
 })
 @Composable private fun permission(value: DiagnosticsPermission?) = stringResource(when (value) {
-    DiagnosticsPermission.GRANTED -> R.string.diagnostics_granted
-    DiagnosticsPermission.NOT_GRANTED -> R.string.diagnostics_not_granted
+    DiagnosticsPermission.GRANTED -> R.string.diagnostics_available
+    DiagnosticsPermission.NOT_GRANTED -> R.string.diagnostics_permission_required
     null -> R.string.diagnostics_unknown
 })
 @Composable private fun routing(value: DiagnosticsRouting?) = stringResource(when (value) {
@@ -187,16 +178,10 @@ private fun DiagnosticsRow(@StringRes label: Int, value: String) {
     DiagnosticsRoute.OTHER -> R.string.diagnostics_route_other
     DiagnosticsRoute.UNKNOWN, null -> R.string.diagnostics_unknown
 })
-@Composable private fun detectedAudio(value: DiagnosticsDetectedAudio?) = stringResource(when (value) {
-    DiagnosticsDetectedAudio.COMMUNICATION -> R.string.diagnostics_audio_communication
-    DiagnosticsDetectedAudio.ASSISTANT -> R.string.diagnostics_audio_assistant
-    DiagnosticsDetectedAudio.BROWSER_COMMUNICATION -> R.string.diagnostics_audio_browser_communication
-    DiagnosticsDetectedAudio.NONE, null -> R.string.diagnostics_none
-})
 @Composable private fun result(value: DiagnosticsRoutingResult?) = stringResource(when (value) {
     DiagnosticsRoutingResult.SUCCESS -> R.string.diagnostics_success
     DiagnosticsRoutingResult.FAILED -> R.string.diagnostics_failed
-    DiagnosticsRoutingResult.NONE, null -> R.string.diagnostics_none
+    DiagnosticsRoutingResult.NONE, null -> R.string.diagnostics_unknown
 })
 @Composable private fun error(value: DiagnosticsError?) = stringResource(when (value) {
     DiagnosticsError.BLOCKED_BY_SYSTEM -> R.string.diagnostics_error_blocked_by_system
@@ -205,7 +190,7 @@ private fun DiagnosticsRow(@StringRes label: Int, value: String) {
     DiagnosticsError.COMMUNICATION_AUDIO_PREPARATION_FAILED -> R.string.diagnostics_error_audio_preparation
     DiagnosticsError.EARPIECE_REQUEST_REJECTED -> R.string.diagnostics_error_request_rejected
     DiagnosticsError.ROUTING_NOT_COMPLETED -> R.string.diagnostics_error_not_completed
-    DiagnosticsError.NONE, null -> R.string.diagnostics_none
+    DiagnosticsError.NONE, null -> R.string.diagnostics_unknown
 })
 
 @Composable

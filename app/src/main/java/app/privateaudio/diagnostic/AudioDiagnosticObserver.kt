@@ -329,7 +329,7 @@ class AudioDiagnosticObserver(
         addEvent(message)
     }
 
-    fun report(): String = buildDiagnosticReport(
+    fun report(supportSummary: DiagnosticsSummary): String = buildDiagnosticReport(
         timestamp = OffsetDateTime.now().format(DateTimeFormatter.ISO_OFFSET_DATE_TIME),
         experiment = experiment,
         lastCompletedExperiment = lastCompletedExperiment,
@@ -345,6 +345,7 @@ class AudioDiagnosticObserver(
         startupTraceEntriesDropped = startupTraceEntriesDropped,
         redundantPlaybackCallbacksSuppressed = redundantPlaybackCallbacksSuppressed,
         fakePhonePreArm = fakePhonePreArm,
+        supportSummary = supportSummary,
     )
 
     internal fun diagnosticsSummary(
@@ -353,9 +354,7 @@ class AudioDiagnosticObserver(
         proximitySupported: Boolean,
         overlayPermissionGranted: Boolean,
     ): DiagnosticsSummary = projectDiagnosticsSummary(
-        environment = DiagnosticEnvironment.from(context),
         snapshot = snapshot,
-        currentExperiment = experiment,
         lastCompletedCycle = lastCompletedExperiment,
         privateAudioEnabled = privateAudioEnabled,
         privateAudioState = privateAudioState,
@@ -1143,6 +1142,7 @@ internal fun buildDiagnosticReport(
     startupTraceEntriesDropped: Int = 0,
     redundantPlaybackCallbacksSuppressed: Int = 0,
     fakePhonePreArm: FakePhonePreArmStatus = FakePhonePreArmStatus(),
+    supportSummary: DiagnosticsSummary? = null,
 ) = buildString {
     appendLine("PRIVATE AUDIO — DIAGNOSTIC REPORT")
     appendLine("Diagnostic report format: $DIAGNOSTIC_REPORT_FORMAT")
@@ -1151,6 +1151,10 @@ internal fun buildDiagnosticReport(
     appendLine("Private Audio PID: ${Process.myPid()}")
     appendLine("Private Audio UID: ${Process.myUid()}")
     appendLine()
+    supportSummary?.let {
+        appendLine(it.supportSummary())
+        appendLine()
+    }
     appendLine("DIAGNOSTIC ENVIRONMENT")
     appendLine("Private Audio version: ${environment.versionName} (${environment.versionCode})")
     appendLine("Android: ${environment.androidRelease}")

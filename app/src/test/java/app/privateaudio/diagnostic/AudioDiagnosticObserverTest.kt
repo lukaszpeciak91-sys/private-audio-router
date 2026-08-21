@@ -94,17 +94,28 @@ class AudioDiagnosticObserverTest {
             startupTraceEntriesDropped = 7,
             eventEntriesDropped = 3,
             redundantPlaybackCallbacksSuppressed = 11,
+            supportSummary = supportSummary(),
         )
 
         assertTrue(report.contains("Timestamp: 2026-08-12T12:34:56Z"))
         assertTrue(report.contains("Diagnostic report format: 2"))
         assertTrue(report.contains("DIAGNOSTIC ENVIRONMENT"))
+        assertTrue(report.contains("SUPPORT SUMMARY"))
+        assertTrue(report.indexOf("SUPPORT SUMMARY") < report.indexOf("DIAGNOSTIC ENVIRONMENT"))
         assertTrue(report.contains("Private Audio version: 0.1.0 (1)"))
         assertTrue(report.contains("Android: 13"))
         assertTrue(report.contains("API level: 33"))
         assertTrue(report.contains("Manufacturer: Xiaomi"))
         assertTrue(report.contains("Model: Test model"))
         assertTrue(report.contains("Product: 2201117TY"))
+        assertTrue(report.contains("Private Audio enabled: true"))
+        assertTrue(report.contains("Private Audio state: ACTIVE"))
+        assertTrue(report.contains("Built-in earpiece available: true"))
+        assertTrue(report.contains("Current audio route: EARPIECE"))
+        assertTrue(report.contains("Proximity supported: true"))
+        assertTrue(report.contains("Floating control permission: granted"))
+        assertTrue(report.contains("Last routing result: SUCCESS"))
+        assertTrue(report.contains("Last routing error: NONE"))
         assertTrue(report.contains("Startup trace capacity: 240"))
         assertTrue(report.contains("Startup trace entries dropped: 7"))
         assertTrue(report.contains("Event log capacity: 100"))
@@ -313,8 +324,19 @@ class AudioDiagnosticObserverTest {
     fun reportCopyStillUsesSingleFormatter() {
         assertEquals(1, observerSource.occurrences("internal fun buildDiagnosticReport("))
         assertEquals(0, mainActivitySource.occurrences("buildDiagnosticReport("))
-        assertTrue(serviceSource.method("fun diagnosticReport(): String").contains("append(observer.report())"))
+        assertTrue(serviceSource.method("fun diagnosticReport(): String").contains("append(observer.report(supportSummary))"))
     }
+
+    private fun supportSummary() = DiagnosticsSummary(
+        earpiece = DiagnosticsAvailability.AVAILABLE,
+        proximitySensor = DiagnosticsAvailability.AVAILABLE,
+        floatingControlPermission = DiagnosticsPermission.GRANTED,
+        routing = DiagnosticsRouting.ON,
+        status = app.privateaudio.PrivateAudioState.ACTIVE,
+        audioRoute = DiagnosticsRoute.EARPIECE,
+        lastRoutingResult = DiagnosticsRoutingResult.SUCCESS,
+        lastError = DiagnosticsError.NONE,
+    )
 
     private fun assertInOrder(source: String, vararg fragments: String) {
         var previous = -1
