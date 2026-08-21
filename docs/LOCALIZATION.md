@@ -8,7 +8,9 @@ Android resources are authoritative. The default, unqualified `app/src/main/res/
 
 Keep these evidence levels distinct:
 
-- **Linguistically reviewed** means wording, terminology, script, and orthography have been reviewed for the locale.
+- **Translated and self-checked** means the Translation Skill produced, checked, and wrote its best defensible candidate. It is not independent acceptance evidence.
+- **Independently audited** means the separate Localization Audit Skill compared existing target copy against the source and assigned an audit verdict. It is not human/native validation.
+- **Human/native validated** means an actual qualified human or native-language reviewer validated the copy and that evidence is recorded. Never infer this level from agent review.
 - **Source-contract tested** means repository checks establish such properties as XML validity and key/placeholder parity. It does not establish rendering quality.
 - **Runtime/emulator/device validated** means the specifically recorded presentation or interaction was observed in that environment. Emulator evidence is not physical-device evidence, and validation of one locale or surface is not validation of every translation.
 
@@ -35,13 +37,15 @@ Do not propagate weak prototype copy into every translation. A translation must 
 
 Translate according to natural local UI conventions rather than word for word. “Dictionary-correct” is not automatically “product-correct.” User-facing routing copy should describe the user's perceived action or state. Do not expose networking-style or implementation-heavy routing jargon unless it is the natural local product term; prefer native Android or audio-switching terminology where available.
 
-Resource validity and parity do not make copy localization-complete without product-language review. When batch quality is uncertain, classify each reviewed string as **PASS** (leave unchanged), **POLISH**, **FIX**, or **HOLD** rather than generating edits merely to show activity. A reviewed-no-change locale is a meaningful audit result. For behavioral Settings labels, explicitly separating the object, action/effect, and trigger/condition can prevent a technically plausible translation from blurring the intended behavior.
+Resource validity and parity do not make copy localization-complete without product-language review. Keep four stages distinct: translation production, the Translator's semantic self-check and repair, an independent localization audit, and human/native validation when that evidence actually exists. The Translation Skill writes candidates and reports `TRANSLATED`, `TRANSLATED_WITH_REVIEW_RECOMMENDED`, or narrowly scoped `SOURCE COPY REVIEW REQUIRED`; none is an audit or human-validation verdict. The read-only-by-default Audit Skill alone classifies existing copy as **PASS**, **POLISH**, **FIX**, or **HOLD**. A reviewed-no-change locale is a meaningful audit result. For behavioral Settings labels, explicitly separating the object, action/effect, and trigger/condition can prevent technically plausible wording from blurring intended behavior.
+
+**HOLD is an audit acceptance verdict, not a prohibition on producing a translation candidate.** Target-language uncertainty requires the Translator to compare plausible formulations, test their semantics, select and write the best defensible candidate, and optionally report `REVIEW_RECOMMENDED` for the exact locale/key/reason. Missing native-speaker review, external linguistic evidence, or web access alone must not cause refusal or blanket HOLD. Translation stops only for the affected source item when authoritative English is materially ambiguous, contradictory, factually unsafe, or insufficiently defined; report `SOURCE COPY REVIEW REQUIRED` rather than inventing product meaning.
 
 ### High-risk factual claims
 
 Privacy, security, permissions, account, diagnostics, backup, data-handling, and similar factual product statements require exact claim-scope and claim-strength fidelity. The English source must first be sufficiently bounded and supportable: prefer a statement of current behavior such as `does not request microphone access` over an unsupported technical incapability such as `cannot access the microphone`, and prefer a specific content-handling claim over `does not process any data` when technical metadata is processed locally. If the source overclaims or its factual scope is ambiguous, stop propagation and report **`SOURCE COPY REVIEW REQUIRED`**.
 
-As applicable, translations must preserve the actor, action, object or data category, destination or location, trigger or condition, negation, qualifiers, claim scope, and claim strength. A translation **must not strengthen** its source claim, and it must not weaken a clear source guarantee without genuine linguistic necessity. Before **PASS**, every high-risk factual claim requires a reverse semantic gloss that confirms those applicable elements. When the available linguistic evidence cannot confidently preserve exact factual scope, use **HOLD** rather than guessing. In particular, preserve these distinctions:
+As applicable, translations must preserve the actor, action, object or data category, destination or location, trigger or condition, negation, qualifiers, claim scope, and claim strength. A translation **must not strengthen** its source claim, and it must not weaken a clear source guarantee without genuine linguistic necessity. The Translator must model these elements, reverse-check the candidate, repair detected drift, and write the best result. Independently, before **PASS**, the Auditor must reconstruct source and target meaning separately and require a reverse semantic gloss confirming those applicable elements. If concrete evidence still cannot establish acceptance, the Auditor may use **HOLD** and identify the unresolved uncertainty; lack of a native reviewer alone is insufficient. In particular, preserve these distinctions:
 
 - conversation or audio content is not audio-system metadata or state;
 - recording microphone input is not observing audio-system state;
@@ -152,8 +156,8 @@ Preserve numbered format placeholders and their types across every translation. 
 ### Add a locale
 
 1. Review the language's product terminology.
-2. Identify uncertain terms and perform a targeted mini-review of them.
-3. Freeze the approved copy.
+2. Identify uncertain terms and perform a Targeted Self-Review: compare plausible formulations, test them against source semantics, and write the best defensible candidate, optionally with a specific `REVIEW_RECOMMENDED` note.
+3. Self-check and write the resulting copy without representing it as independently or human/native validated.
 4. Establish the modern BCP-47 identity, research Android legacy-alias behavior across the supported runtime range, and add the Android resource locale with the proven compatible qualifier.
 5. Enforce key and placeholder parity.
 6. Add locale-specific assertions to the existing localization contract for FULL/MINI-reviewed or otherwise frozen high-risk terminology, including meaningful reviewed Mini states.
@@ -165,7 +169,7 @@ Preserve numbered format placeholders and their types across every translation. 
 12. Regress existing locales.
 13. Update the authoritative locale/progress record in `PROGRESS.md`, clearly recording the evidence level achieved and validation still pending.
 
-Codex must not silently rewrite approved terminology during implementation. If implementation reveals a genuine linguistic problem, report it for review rather than substituting new wording without approval.
+The Translator may repair detected semantic drift within the authorized translation scope. An audit remains read-only by default: it reports defects and normally delegates any later correction to the Translation Skill, followed by re-audit. Neither role may represent its own work as human/native validation.
 
 ### Change English or add a string
 

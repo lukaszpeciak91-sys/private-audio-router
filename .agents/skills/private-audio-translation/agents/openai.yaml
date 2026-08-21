@@ -1,0 +1,4 @@
+interface:
+  display_name: "Private Audio Translation"
+  short_description: "Translate and write Private Audio localized copy"
+  default_prompt: "Translate the requested Private Audio copy, self-check semantic fidelity, and write the best defensible candidate."

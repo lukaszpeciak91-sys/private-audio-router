@@ -1,0 +1,4 @@
+interface:
+  display_name: "Private Audio Localization Audit"
+  short_description: "Independently audit Private Audio translations"
+  default_prompt: "Audit the requested existing Private Audio translations independently and report PASS, POLISH, FIX, or HOLD without editing them."
