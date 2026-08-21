@@ -131,7 +131,7 @@ class PrivateAudioScreenTest {
     }
 
     @Test
-    fun privacyPolicyBackClosesToMainScreen() {
+    fun privacyPolicyBackReturnsToSettingsRoot() {
         composeRule.setContent {
             PrivateAudioTheme {
                 PrivateAudioScreen(
@@ -146,7 +146,8 @@ class PrivateAudioScreenTest {
         composeRule.onNodeWithTag("settings_privacy_policy").performClick()
         pressBack()
         composeRule.onNodeWithTag("privacy_policy_panel").assertDoesNotExist()
-        composeRule.onNodeWithTag("private_audio_power").assertIsDisplayed()
+        composeRule.onNodeWithTag("settings_privacy_policy").assertIsDisplayed()
+        composeRule.onNodeWithTag("settings_sheet").assertIsDisplayed()
     }
 
     @Test

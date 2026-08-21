@@ -47,7 +47,7 @@ class Layer4SettingsContractTest {
     fun privacyPolicyUsesTheSingleSettingsModalAndAuthoritativeEnglishClaims() {
         assertTrue(settingsSource.contains("tag = \"settings_privacy_policy\""))
         assertTrue(settingsSource.contains("SettingsPage.PRIVACY_POLICY -> PrivacyPolicyPage()"))
-        assertTrue(settingsSource.contains("if (page == SettingsPage.PRIVACY_POLICY) onDismiss()"))
+        assertTrue(settingsSource.contains("BackHandler(enabled = page != SettingsPage.ROOT) { page = SettingsPage.ROOT }"))
         assertTrue(settingsSource.contains("testTag(\"privacy_policy_body\")"))
         assertEquals(1, settingsSource.occurrences("Dialog("))
 

@@ -93,9 +93,7 @@ fun SettingsSheet(
         AppLanguagePreferences.supportedLanguages(context)
     }
 
-    BackHandler(enabled = page != SettingsPage.ROOT) {
-        if (page == SettingsPage.PRIVACY_POLICY) onDismiss() else page = SettingsPage.ROOT
-    }
+    BackHandler(enabled = page != SettingsPage.ROOT) { page = SettingsPage.ROOT }
 
     Dialog(
         onDismissRequest = onDismiss,
