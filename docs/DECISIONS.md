@@ -257,3 +257,11 @@ This is a lightweight, append-only log. Do not rewrite accepted history; append 
 - **Context:** There is no physical evidence that the first experiment needs a 15-second conversational gap. Retaining communication mode, earpiece routing, the silent track, `ACTIVE`, and proximity eligibility that long after Voice ends is unnecessary for testing immediate conversational turns.
 - **Decision:** Reduce the bounded `ASSISTANT` conversation linger from 15 seconds to 5 seconds. Preserve the preceding 1.5-second playback-loss confirmation and every other D-031 lifecycle, scope, reuse, cleanup, and safety rule.
 - **Consequences:** Ordinary cleanup now occurs approximately 6.5 seconds after assistant/speech disappearance when no exact assistant/speech contribution resumes. Physical five-turn Gemini and ChatGPT validation remains required; adaptive and provider-specific timing remains unauthorized.
+
+## D-033 — Evidence-tuned assistant protected-session linger
+
+- **Date:** 2026-08-21
+- **Status:** Accepted; supersedes only the timeout selected in D-032
+- **Context:** Physical Gemini testing confirmed that assistant/speech resumption during the 5-second linger reuses the established protected cycle without another track, mode request, device request, or routing attempt. Several earlier turns missed that deadline narrowly: cleanup completed only about 0.6–0.7 seconds before the next assistant/speech contribution appeared.
+- **Decision:** Increase the bounded `ASSISTANT` conversation linger from 5 seconds to 7 seconds. Preserve the preceding 1.5-second playback-loss confirmation and every other D-031 lifecycle, scope, reuse, cleanup, and safety rule.
+- **Consequences:** Ordinary cleanup now occurs approximately 8.5 seconds after assistant/speech disappearance when no exact assistant/speech contribution resumes. This evidence-based margin remains substantially shorter than 15 seconds; adaptive and provider-specific timing remains unauthorized.

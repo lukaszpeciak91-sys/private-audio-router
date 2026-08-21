@@ -10,7 +10,7 @@ class AssistantSessionLingerContractTest {
     @Test
     fun assistantEndUsesTwoSeparateBoundedStages() {
         assertTrue(observer.contains("private const val END_CONFIRMATION_DELAY_MS = 1_500L"))
-        assertTrue(observer.contains("private const val ASSISTANT_SESSION_LINGER_MS = 5_000L"))
+        assertTrue(observer.contains("private const val ASSISTANT_SESSION_LINGER_MS = 7_000L"))
         val confirmation = observer.method("private fun scheduleEndConfirmation(")
         assertInOrder(
             confirmation,
@@ -22,6 +22,8 @@ class AssistantSessionLingerContractTest {
         val linger = observer.method("private fun startAssistantSessionLinger(")
         assertTrue(linger.contains("postDelayed(runnable, ASSISTANT_SESSION_LINGER_MS)"))
         assertInOrder(linger, "Protected session linger expired", "clearExperiment", "returnToWaiting()")
+        assertEquals(1, linger.occurrences("clearExperiment("))
+        assertEquals(1, linger.occurrences("returnToWaiting()"))
     }
 
     @Test
