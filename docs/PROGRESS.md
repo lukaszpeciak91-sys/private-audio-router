@@ -128,13 +128,14 @@ physical test records remain in [`DECISIONS.md`](DECISIONS.md),
 
 ## Active experiments and unresolved items
 
-- **Assistant protected-session linger — implemented, not physically validated.**
+- **Assistant protected-session linger — implemented and physically exercised; final gate pending.**
   After the existing 1.5-second assistant playback-loss confirmation, an established
-  cycle retains its track, mode, route, and proximity eligibility for at most 5
+  cycle retains its track, mode, route, and proximity eligibility for at most 7
   seconds. Exact assistant/speech resumption reuses the cycle without another route
   attempt; expiry and safety/lifecycle overrides use protected cleanup. Focused JVM
-  contract coverage exists, but execution evidence is not recorded here and the
-  multi-turn physical gate remains `NOT TESTED / UNKNOWN`.
+  contract coverage exists. Physical Gemini evidence confirms same-cycle resource
+  reuse within the linger and shows that 5 seconds narrowly missed some later turns;
+  the tuned 7-second duration and full multi-turn regression gate remain pending.
 - **Fake Phone pre-arm — implemented, default OFF, not physically validated.** While
   eligible and waiting, it may prepare a silent communication context and one route
   request without changing `WAITING`; qualifying playback may promote those
