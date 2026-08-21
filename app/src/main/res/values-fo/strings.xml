@@ -44,11 +44,15 @@
     <string name="diagnostics_result">Úrslit</string>
     <string name="diagnostics_error">Villa</string>
     <string name="diagnostics_available">Tøkt</string>
-    <string name="diagnostics_not_available">Ikki tøkt</string>
+    <string name="diagnostics_earpiece_available">Tøkt</string>
+    <string name="diagnostics_earpiece_not_available">Ikki tøkt</string>
+    <string name="diagnostics_proximity_available">Tøkt</string>
+    <string name="diagnostics_proximity_not_available">Ikki tøkt</string>
+    <string name="diagnostics_checking">Kann’ar…</string>
+    <string name="diagnostics_audio_output_unknown">Ókent</string>
     <string name="diagnostics_permission_required">Loyvi krevst</string>
     <string name="diagnostics_on">Tendrað</string>
     <string name="diagnostics_off">Sløkt</string>
-    <string name="diagnostics_unknown">Ókent</string>
     <string name="diagnostics_success">Eydnaðist</string>
     <string name="diagnostics_failed">Miseydnaðist</string>
     <string name="diagnostics_route_earpiece">Oyrahátalari</string>

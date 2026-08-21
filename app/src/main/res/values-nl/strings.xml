@@ -44,11 +44,15 @@
     <string name="diagnostics_result">Resultaat</string>
     <string name="diagnostics_error">Fout</string>
     <string name="diagnostics_available">Beschikbaar</string>
-    <string name="diagnostics_not_available">Niet beschikbaar</string>
+    <string name="diagnostics_earpiece_available">Beschikbaar</string>
+    <string name="diagnostics_earpiece_not_available">Niet beschikbaar</string>
+    <string name="diagnostics_proximity_available">Beschikbaar</string>
+    <string name="diagnostics_proximity_not_available">Niet beschikbaar</string>
+    <string name="diagnostics_checking">Controleren…</string>
+    <string name="diagnostics_audio_output_unknown">Onbekend</string>
     <string name="diagnostics_permission_required">Toestemming vereist</string>
     <string name="diagnostics_on">Aan</string>
     <string name="diagnostics_off">Uit</string>
-    <string name="diagnostics_unknown">Onbekend</string>
     <string name="diagnostics_success">Geslaagd</string>
     <string name="diagnostics_failed">Mislukt</string>
     <string name="diagnostics_route_earpiece">Oorspeaker</string>

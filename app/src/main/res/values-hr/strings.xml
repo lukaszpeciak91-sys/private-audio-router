@@ -44,11 +44,15 @@
     <string name="diagnostics_result">Rezultat</string>
     <string name="diagnostics_error">Pogreška</string>
     <string name="diagnostics_available">Dostupno</string>
-    <string name="diagnostics_not_available">Nije dostupno</string>
+    <string name="diagnostics_earpiece_available">Dostupna</string>
+    <string name="diagnostics_earpiece_not_available">Nije dostupna</string>
+    <string name="diagnostics_proximity_available">Dostupan</string>
+    <string name="diagnostics_proximity_not_available">Nije dostupan</string>
+    <string name="diagnostics_checking">Provjera…</string>
+    <string name="diagnostics_audio_output_unknown">Nepoznat</string>
     <string name="diagnostics_permission_required">Potrebno je dopuštenje</string>
     <string name="diagnostics_on">Uključeno</string>
     <string name="diagnostics_off">Isključeno</string>
-    <string name="diagnostics_unknown">Nepoznato</string>
     <string name="diagnostics_success">Uspješno</string>
     <string name="diagnostics_failed">Neuspješno</string>
     <string name="diagnostics_route_earpiece">Slušalica telefona</string>

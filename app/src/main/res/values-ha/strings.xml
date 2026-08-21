@@ -44,11 +44,15 @@
     <string name="diagnostics_result">Sakamako</string>
     <string name="diagnostics_error">Kuskure</string>
     <string name="diagnostics_available">Akwai</string>
-    <string name="diagnostics_not_available">Babu</string>
+    <string name="diagnostics_earpiece_available">Akwai</string>
+    <string name="diagnostics_earpiece_not_available">Babu</string>
+    <string name="diagnostics_proximity_available">Akwai</string>
+    <string name="diagnostics_proximity_not_available">Babu</string>
+    <string name="diagnostics_checking">Ana dubawa…</string>
+    <string name="diagnostics_audio_output_unknown">Ba a sani ba</string>
     <string name="diagnostics_permission_required">Ana buƙatar izini</string>
     <string name="diagnostics_on">A kunne</string>
     <string name="diagnostics_off">A kashe</string>
-    <string name="diagnostics_unknown">Ba a sani ba</string>
     <string name="diagnostics_success">An yi nasara</string>
     <string name="diagnostics_failed">An gaza</string>
     <string name="diagnostics_route_earpiece">Lasifikar kunne</string>

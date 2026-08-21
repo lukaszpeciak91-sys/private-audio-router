@@ -34,7 +34,7 @@
     <string name="settings_diagnostics">Diagnostik</string>
     <string name="diagnostics_title">Diagnostik</string>
     <string name="diagnostics_system_check">PEMERIKSAAN SISTEM</string>
-    <string name="diagnostics_earpiece">Speaker telinga</string>
+    <string name="diagnostics_earpiece">Earpiece</string>
     <string name="diagnostics_proximity_sensor">Sensor kedekatan</string>
     <string name="diagnostics_private_audio">PRIVATE AUDIO</string>
     <string name="diagnostics_routing">Pengalihan audio</string>
@@ -44,14 +44,18 @@
     <string name="diagnostics_result">Hasil</string>
     <string name="diagnostics_error">Error</string>
     <string name="diagnostics_available">Tersedia</string>
-    <string name="diagnostics_not_available">Tidak tersedia</string>
+    <string name="diagnostics_earpiece_available">Tersedia</string>
+    <string name="diagnostics_earpiece_not_available">Tidak tersedia</string>
+    <string name="diagnostics_proximity_available">Tersedia</string>
+    <string name="diagnostics_proximity_not_available">Tidak tersedia</string>
+    <string name="diagnostics_checking">Memeriksa…</string>
+    <string name="diagnostics_audio_output_unknown">Tidak diketahui</string>
     <string name="diagnostics_permission_required">Izin diperlukan</string>
     <string name="diagnostics_on">Nyala</string>
     <string name="diagnostics_off">Mati</string>
-    <string name="diagnostics_unknown">Tidak diketahui</string>
     <string name="diagnostics_success">Berhasil</string>
     <string name="diagnostics_failed">Gagal</string>
-    <string name="diagnostics_route_earpiece">Speaker telinga</string>
+    <string name="diagnostics_route_earpiece">Earpiece</string>
     <string name="diagnostics_route_speaker">Speaker</string>
     <string name="diagnostics_route_bluetooth">Bluetooth</string>
     <string name="diagnostics_route_other">Lainnya</string>
@@ -59,6 +63,6 @@
     <string name="diagnostics_error_session_ended">Sesi audio berakhir sebelum pengalihan selesai.</string>
     <string name="diagnostics_error_audio_start">Private Audio tidak dapat memulai pengalihan audio.</string>
     <string name="diagnostics_error_audio_preparation">Private Audio tidak dapat menyiapkan audio komunikasi.</string>
-    <string name="diagnostics_error_request_rejected">Permintaan pengalihan ke speaker telinga tidak diterima.</string>
+    <string name="diagnostics_error_request_rejected">Permintaan pengalihan ke earpiece bawaan ponsel tidak diterima.</string>
     <string name="diagnostics_error_not_completed">Pengalihan audio tidak dapat diselesaikan.</string>
 </resources>

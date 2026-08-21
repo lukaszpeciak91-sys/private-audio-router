@@ -44,11 +44,15 @@
     <string name="diagnostics_result">תוצאה</string>
     <string name="diagnostics_error">שגיאה</string>
     <string name="diagnostics_available">זמין</string>
-    <string name="diagnostics_not_available">לא זמין</string>
+    <string name="diagnostics_earpiece_available">זמין</string>
+    <string name="diagnostics_earpiece_not_available">לא זמין</string>
+    <string name="diagnostics_proximity_available">זמין</string>
+    <string name="diagnostics_proximity_not_available">לא זמין</string>
+    <string name="diagnostics_checking">מתבצעת בדיקה…</string>
+    <string name="diagnostics_audio_output_unknown">לא ידוע</string>
     <string name="diagnostics_permission_required">נדרשת הרשאה</string>
     <string name="diagnostics_on">מופעל</string>
     <string name="diagnostics_off">כבוי</string>
-    <string name="diagnostics_unknown">לא ידוע</string>
     <string name="diagnostics_success">הצלחה</string>
     <string name="diagnostics_failed">כישלון</string>
     <string name="diagnostics_route_earpiece">אפרכסת</string>

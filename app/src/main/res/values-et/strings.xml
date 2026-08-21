@@ -44,11 +44,15 @@
     <string name="diagnostics_result">Tulemus</string>
     <string name="diagnostics_error">Viga</string>
     <string name="diagnostics_available">Saadaval</string>
-    <string name="diagnostics_not_available">Pole saadaval</string>
+    <string name="diagnostics_earpiece_available">Saadaval</string>
+    <string name="diagnostics_earpiece_not_available">Pole saadaval</string>
+    <string name="diagnostics_proximity_available">Saadaval</string>
+    <string name="diagnostics_proximity_not_available">Pole saadaval</string>
+    <string name="diagnostics_checking">Kontrollimine…</string>
+    <string name="diagnostics_audio_output_unknown">Teadmata</string>
     <string name="diagnostics_permission_required">Luba on vajalik</string>
     <string name="diagnostics_on">Sees</string>
     <string name="diagnostics_off">Väljas</string>
-    <string name="diagnostics_unknown">Teadmata</string>
     <string name="diagnostics_success">Õnnestus</string>
     <string name="diagnostics_failed">Ebaõnnestus</string>
     <string name="diagnostics_route_earpiece">Kuular</string>

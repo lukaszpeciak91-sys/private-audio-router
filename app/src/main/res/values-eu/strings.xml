@@ -44,11 +44,15 @@
     <string name="diagnostics_result">Emaitza</string>
     <string name="diagnostics_error">Errorea</string>
     <string name="diagnostics_available">Erabilgarri</string>
-    <string name="diagnostics_not_available">Ez dago erabilgarri</string>
+    <string name="diagnostics_earpiece_available">Erabilgarri</string>
+    <string name="diagnostics_earpiece_not_available">Ez dago erabilgarri</string>
+    <string name="diagnostics_proximity_available">Erabilgarri</string>
+    <string name="diagnostics_proximity_not_available">Ez dago erabilgarri</string>
+    <string name="diagnostics_checking">Egiaztatzen…</string>
+    <string name="diagnostics_audio_output_unknown">Ezezaguna</string>
     <string name="diagnostics_permission_required">Baimena behar da</string>
     <string name="diagnostics_on">Aktibatuta</string>
     <string name="diagnostics_off">Desaktibatuta</string>
-    <string name="diagnostics_unknown">Ezezaguna</string>
     <string name="diagnostics_success">Behar bezala</string>
     <string name="diagnostics_failed">Huts egin du</string>
     <string name="diagnostics_route_earpiece">Aurikularra</string>

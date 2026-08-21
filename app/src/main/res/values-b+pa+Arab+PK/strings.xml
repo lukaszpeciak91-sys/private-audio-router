@@ -44,11 +44,15 @@
     <string name="diagnostics_result">نتیجہ</string>
     <string name="diagnostics_error">خرابی</string>
     <string name="diagnostics_available">دستیاب</string>
-    <string name="diagnostics_not_available">دستیاب نئیں</string>
+    <string name="diagnostics_earpiece_available">دستیاب</string>
+    <string name="diagnostics_earpiece_not_available">دستیاب نئیں</string>
+    <string name="diagnostics_proximity_available">دستیاب</string>
+    <string name="diagnostics_proximity_not_available">دستیاب نئیں</string>
+    <string name="diagnostics_checking">جانچ جاری اے…</string>
+    <string name="diagnostics_audio_output_unknown">نامعلوم</string>
     <string name="diagnostics_permission_required">اجازت دی لوڑ اے</string>
     <string name="diagnostics_on">چالو</string>
     <string name="diagnostics_off">بند</string>
-    <string name="diagnostics_unknown">نامعلوم</string>
     <string name="diagnostics_success">کامیاب</string>
     <string name="diagnostics_failed">ناکام</string>
     <string name="diagnostics_route_earpiece">ایئر پیس</string>

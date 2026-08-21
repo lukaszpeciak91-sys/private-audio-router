@@ -73,14 +73,14 @@ physical test records remain in [`DECISIONS.md`](DECISIONS.md),
   applied. This is neither human/native-speaker validation nor legal certification.
 - The current user-facing Diagnostics key inventory is localized across all 86
   supported non-English resource sets. Candidates were produced and semantically
-  self-checked with the Translation Skill; an independent audit identified targeted
-  Javanese earpiece and Zulu audio-route terminology defects, and corrective
-  candidates were applied. A Translation Skill natural-UI self-review aligned the
-  final source terminology with the concise product-health UI: current physical
-  output is distinct from routing, the last section identifies a routing attempt,
-  and Diagnostics reuses each locale's established `Mini` product label instead of
-  maintaining a second floating-control term. Independent linguistic re-audit
-  remains pending. The detailed
+  self-checked with the Translation Skill. An independent linguistic audit of all 86
+  sets identified targeted defects in Polish, Indonesian, Khmer, Swahili, and
+  Afrikaans, as well as a locale-unsafe shared grammatical-status contract; the
+  corrective candidates and context-specific status resources were applied through
+  the Translation Skill, using Android terminology as evidence where semantically
+  appropriate. The previously corrected Javanese and Zulu distinctions remain
+  protected. Final independent delta re-audit remains pending, and no human or
+  native-speaker validation is claimed. The detailed
   technical diagnostic report and SUPPORT SUMMARY remain intentionally English-only,
   as does the default-OFF Fake Phone experiment label.
 - Durable terminology, evidence semantics, Mini fitting, RTL behavior, factual-claim

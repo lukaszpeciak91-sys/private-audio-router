@@ -44,11 +44,15 @@
     <string name="diagnostics_result">Natiijada</string>
     <string name="diagnostics_error">Khalad</string>
     <string name="diagnostics_available">La heli karo</string>
-    <string name="diagnostics_not_available">Lama heli karo</string>
+    <string name="diagnostics_earpiece_available">La heli karo</string>
+    <string name="diagnostics_earpiece_not_available">Lama heli karo</string>
+    <string name="diagnostics_proximity_available">La heli karo</string>
+    <string name="diagnostics_proximity_not_available">Lama heli karo</string>
+    <string name="diagnostics_checking">Waa la hubinayaa…</string>
+    <string name="diagnostics_audio_output_unknown">Lama yaqaan</string>
     <string name="diagnostics_permission_required">Oggolaansho ayaa loo baahan yahay</string>
     <string name="diagnostics_on">Daaran</string>
     <string name="diagnostics_off">Dansan</string>
-    <string name="diagnostics_unknown">Lama yaqaan</string>
     <string name="diagnostics_success">Waa lagu guulaystay</string>
     <string name="diagnostics_failed">Waa fashilmay</string>
     <string name="diagnostics_route_earpiece">Sameecadda sare</string>

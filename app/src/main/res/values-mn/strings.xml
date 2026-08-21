@@ -44,11 +44,15 @@
     <string name="diagnostics_result">Үр дүн</string>
     <string name="diagnostics_error">Алдаа</string>
     <string name="diagnostics_available">Боломжтой</string>
-    <string name="diagnostics_not_available">Боломжгүй</string>
+    <string name="diagnostics_earpiece_available">Боломжтой</string>
+    <string name="diagnostics_earpiece_not_available">Боломжгүй</string>
+    <string name="diagnostics_proximity_available">Боломжтой</string>
+    <string name="diagnostics_proximity_not_available">Боломжгүй</string>
+    <string name="diagnostics_checking">Шалгаж байна…</string>
+    <string name="diagnostics_audio_output_unknown">Тодорхойгүй</string>
     <string name="diagnostics_permission_required">Зөвшөөрөл шаардлагатай</string>
     <string name="diagnostics_on">Асаалттай</string>
     <string name="diagnostics_off">Унтраалттай</string>
-    <string name="diagnostics_unknown">Тодорхойгүй</string>
     <string name="diagnostics_success">Амжилттай</string>
     <string name="diagnostics_failed">Амжилтгүй</string>
     <string name="diagnostics_route_earpiece">Чихний чанга яригч</string>

@@ -44,11 +44,15 @@
     <string name="diagnostics_result">შედეგი</string>
     <string name="diagnostics_error">შეცდომა</string>
     <string name="diagnostics_available">ხელმისაწვდომია</string>
-    <string name="diagnostics_not_available">მიუწვდომელია</string>
+    <string name="diagnostics_earpiece_available">ხელმისაწვდომია</string>
+    <string name="diagnostics_earpiece_not_available">მიუწვდომელია</string>
+    <string name="diagnostics_proximity_available">ხელმისაწვდომია</string>
+    <string name="diagnostics_proximity_not_available">მიუწვდომელია</string>
+    <string name="diagnostics_checking">მოწმდება…</string>
+    <string name="diagnostics_audio_output_unknown">უცნობია</string>
     <string name="diagnostics_permission_required">საჭიროა ნებართვა</string>
     <string name="diagnostics_on">ჩართულია</string>
     <string name="diagnostics_off">გამორთულია</string>
-    <string name="diagnostics_unknown">უცნობია</string>
     <string name="diagnostics_success">წარმატებით დასრულდა</string>
     <string name="diagnostics_failed">ვერ შესრულდა</string>
     <string name="diagnostics_route_earpiece">ყურმილი</string>

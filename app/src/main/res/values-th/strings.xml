@@ -44,11 +44,15 @@
     <string name="diagnostics_result">ผลลัพธ์</string>
     <string name="diagnostics_error">ข้อผิดพลาด</string>
     <string name="diagnostics_available">พร้อมใช้งาน</string>
-    <string name="diagnostics_not_available">ไม่พร้อมใช้งาน</string>
+    <string name="diagnostics_earpiece_available">พร้อมใช้งาน</string>
+    <string name="diagnostics_earpiece_not_available">ไม่พร้อมใช้งาน</string>
+    <string name="diagnostics_proximity_available">พร้อมใช้งาน</string>
+    <string name="diagnostics_proximity_not_available">ไม่พร้อมใช้งาน</string>
+    <string name="diagnostics_checking">กำลังตรวจสอบ…</string>
+    <string name="diagnostics_audio_output_unknown">ไม่ทราบ</string>
     <string name="diagnostics_permission_required">ต้องให้สิทธิ์</string>
     <string name="diagnostics_on">เปิด</string>
     <string name="diagnostics_off">ปิด</string>
-    <string name="diagnostics_unknown">ไม่ทราบ</string>
     <string name="diagnostics_success">สำเร็จ</string>
     <string name="diagnostics_failed">ล้มเหลว</string>
     <string name="diagnostics_route_earpiece">ลำโพงสนทนา</string>

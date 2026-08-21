@@ -44,11 +44,15 @@
     <string name="diagnostics_result">Asil</string>
     <string name="diagnostics_error">Kesalahan</string>
     <string name="diagnostics_available">Kasedhiya</string>
-    <string name="diagnostics_not_available">Ora kasedhiya</string>
+    <string name="diagnostics_earpiece_available">Kasedhiya</string>
+    <string name="diagnostics_earpiece_not_available">Ora kasedhiya</string>
+    <string name="diagnostics_proximity_available">Kasedhiya</string>
+    <string name="diagnostics_proximity_not_available">Ora kasedhiya</string>
+    <string name="diagnostics_checking">Mriksa…</string>
+    <string name="diagnostics_audio_output_unknown">Ora dingerteni</string>
     <string name="diagnostics_permission_required">Idin dibutuhake</string>
     <string name="diagnostics_on">Diuripake</string>
     <string name="diagnostics_off">Dipatheni</string>
-    <string name="diagnostics_unknown">Ora dingerteni</string>
     <string name="diagnostics_success">Kasil</string>
     <string name="diagnostics_failed">Gagal</string>
     <string name="diagnostics_route_earpiece">Earpiece gawan telpon</string>

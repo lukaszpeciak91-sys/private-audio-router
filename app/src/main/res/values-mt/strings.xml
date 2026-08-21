@@ -44,11 +44,15 @@
     <string name="diagnostics_result">Riżultat</string>
     <string name="diagnostics_error">Żball</string>
     <string name="diagnostics_available">Disponibbli</string>
-    <string name="diagnostics_not_available">Mhux disponibbli</string>
+    <string name="diagnostics_earpiece_available">Disponibbli</string>
+    <string name="diagnostics_earpiece_not_available">Mhux disponibbli</string>
+    <string name="diagnostics_proximity_available">Disponibbli</string>
+    <string name="diagnostics_proximity_not_available">Mhux disponibbli</string>
+    <string name="diagnostics_checking">Qed jiġi ċċekkjat…</string>
+    <string name="diagnostics_audio_output_unknown">Mhux magħruf</string>
     <string name="diagnostics_permission_required">Permess meħtieġ</string>
     <string name="diagnostics_on">Mixgħul</string>
     <string name="diagnostics_off">Mitfi</string>
-    <string name="diagnostics_unknown">Mhux magħruf</string>
     <string name="diagnostics_success">Suċċess</string>
     <string name="diagnostics_failed">Falliment</string>
     <string name="diagnostics_route_earpiece">Riċevitur</string>

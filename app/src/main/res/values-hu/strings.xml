@@ -44,11 +44,15 @@
     <string name="diagnostics_result">Eredmény</string>
     <string name="diagnostics_error">Hiba</string>
     <string name="diagnostics_available">Elérhető</string>
-    <string name="diagnostics_not_available">Nem érhető el</string>
+    <string name="diagnostics_earpiece_available">Elérhető</string>
+    <string name="diagnostics_earpiece_not_available">Nem érhető el</string>
+    <string name="diagnostics_proximity_available">Elérhető</string>
+    <string name="diagnostics_proximity_not_available">Nem érhető el</string>
+    <string name="diagnostics_checking">Ellenőrzés…</string>
+    <string name="diagnostics_audio_output_unknown">Ismeretlen</string>
     <string name="diagnostics_permission_required">Engedély szükséges</string>
     <string name="diagnostics_on">Be</string>
     <string name="diagnostics_off">Ki</string>
-    <string name="diagnostics_unknown">Ismeretlen</string>
     <string name="diagnostics_success">Sikeres</string>
     <string name="diagnostics_failed">Sikertelen</string>
     <string name="diagnostics_route_earpiece">Beépített fülhallgató</string>

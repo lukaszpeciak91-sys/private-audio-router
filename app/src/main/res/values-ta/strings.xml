@@ -44,11 +44,15 @@
     <string name="diagnostics_result">முடிவு</string>
     <string name="diagnostics_error">பிழை</string>
     <string name="diagnostics_available">கிடைக்கிறது</string>
-    <string name="diagnostics_not_available">கிடைக்கவில்லை</string>
+    <string name="diagnostics_earpiece_available">கிடைக்கிறது</string>
+    <string name="diagnostics_earpiece_not_available">கிடைக்கவில்லை</string>
+    <string name="diagnostics_proximity_available">கிடைக்கிறது</string>
+    <string name="diagnostics_proximity_not_available">கிடைக்கவில்லை</string>
+    <string name="diagnostics_checking">சரிபார்க்கிறது…</string>
+    <string name="diagnostics_audio_output_unknown">தெரியவில்லை</string>
     <string name="diagnostics_permission_required">அனுமதி தேவை</string>
     <string name="diagnostics_on">இயக்கப்பட்டது</string>
     <string name="diagnostics_off">முடக்கப்பட்டது</string>
-    <string name="diagnostics_unknown">தெரியவில்லை</string>
     <string name="diagnostics_success">வெற்றி</string>
     <string name="diagnostics_failed">தோல்வி</string>
     <string name="diagnostics_route_earpiece">இயர்பீஸ்</string>

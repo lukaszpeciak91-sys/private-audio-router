@@ -44,11 +44,15 @@
     <string name="diagnostics_result">Tulos</string>
     <string name="diagnostics_error">Virhe</string>
     <string name="diagnostics_available">Käytettävissä</string>
-    <string name="diagnostics_not_available">Ei käytettävissä</string>
+    <string name="diagnostics_earpiece_available">Käytettävissä</string>
+    <string name="diagnostics_earpiece_not_available">Ei käytettävissä</string>
+    <string name="diagnostics_proximity_available">Käytettävissä</string>
+    <string name="diagnostics_proximity_not_available">Ei käytettävissä</string>
+    <string name="diagnostics_checking">Tarkistetaan…</string>
+    <string name="diagnostics_audio_output_unknown">Tuntematon</string>
     <string name="diagnostics_permission_required">Lupa tarvitaan</string>
     <string name="diagnostics_on">Käytössä</string>
     <string name="diagnostics_off">Pois käytöstä</string>
-    <string name="diagnostics_unknown">Tuntematon</string>
     <string name="diagnostics_success">Onnistui</string>
     <string name="diagnostics_failed">Epäonnistui</string>
     <string name="diagnostics_route_earpiece">Kuuloke</string>

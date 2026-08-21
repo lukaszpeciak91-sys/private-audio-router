@@ -44,11 +44,15 @@
     <string name="diagnostics_result">Resultat</string>
     <string name="diagnostics_error">Feeler</string>
     <string name="diagnostics_available">Verfügbar</string>
-    <string name="diagnostics_not_available">Net verfügbar</string>
+    <string name="diagnostics_earpiece_available">Verfügbar</string>
+    <string name="diagnostics_earpiece_not_available">Net verfügbar</string>
+    <string name="diagnostics_proximity_available">Verfügbar</string>
+    <string name="diagnostics_proximity_not_available">Net verfügbar</string>
+    <string name="diagnostics_checking">Iwwerpréiwung…</string>
+    <string name="diagnostics_audio_output_unknown">Onbekannt</string>
     <string name="diagnostics_permission_required">Autorisatioun erfuerderlech</string>
     <string name="diagnostics_on">Ugeschalt</string>
     <string name="diagnostics_off">Ausgeschalt</string>
-    <string name="diagnostics_unknown">Onbekannt</string>
     <string name="diagnostics_success">Erfollegräich</string>
     <string name="diagnostics_failed">Mësslongen</string>
     <string name="diagnostics_route_earpiece">Ouer-Lautsprecher</string>

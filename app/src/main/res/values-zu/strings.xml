@@ -44,11 +44,15 @@
     <string name="diagnostics_result">Umphumela</string>
     <string name="diagnostics_error">Iphutha</string>
     <string name="diagnostics_available">Kuyatholakala</string>
-    <string name="diagnostics_not_available">Akutholakali</string>
+    <string name="diagnostics_earpiece_available">Kuyatholakala</string>
+    <string name="diagnostics_earpiece_not_available">Akutholakali</string>
+    <string name="diagnostics_proximity_available">Kuyatholakala</string>
+    <string name="diagnostics_proximity_not_available">Akutholakali</string>
+    <string name="diagnostics_checking">Iyahlola…</string>
+    <string name="diagnostics_audio_output_unknown">Akwaziwa</string>
     <string name="diagnostics_permission_required">Kudingeka imvume</string>
     <string name="diagnostics_on">Kuvuliwe</string>
     <string name="diagnostics_off">Kuvaliwe</string>
-    <string name="diagnostics_unknown">Akwaziwa</string>
     <string name="diagnostics_success">Kuphumelele</string>
     <string name="diagnostics_failed">Kuhlulekile</string>
     <string name="diagnostics_route_earpiece">Isipikha sendlebe</string>

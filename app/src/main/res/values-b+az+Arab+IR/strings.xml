@@ -44,11 +44,15 @@
     <string name="diagnostics_result">نتیجه</string>
     <string name="diagnostics_error">خطا</string>
     <string name="diagnostics_available">موجود</string>
-    <string name="diagnostics_not_available">موجود دئییل</string>
+    <string name="diagnostics_earpiece_available">موجود</string>
+    <string name="diagnostics_earpiece_not_available">موجود دئییل</string>
+    <string name="diagnostics_proximity_available">موجود</string>
+    <string name="diagnostics_proximity_not_available">موجود دئییل</string>
+    <string name="diagnostics_checking">یوخلانیر…</string>
+    <string name="diagnostics_audio_output_unknown">نامعلوم</string>
     <string name="diagnostics_permission_required">ایجازه لازیمدیر</string>
     <string name="diagnostics_on">آچیق</string>
     <string name="diagnostics_off">سؤنلو</string>
-    <string name="diagnostics_unknown">نامعلوم</string>
     <string name="diagnostics_success">اوغورلو</string>
     <string name="diagnostics_failed">اوغورسوز</string>
     <string name="diagnostics_route_earpiece">داخیل قولاق دینامیکی</string>

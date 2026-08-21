@@ -44,11 +44,15 @@
     <string name="diagnostics_result">Rezultati</string>
     <string name="diagnostics_error">Gabim</string>
     <string name="diagnostics_available">I disponueshëm</string>
-    <string name="diagnostics_not_available">I padisponueshëm</string>
+    <string name="diagnostics_earpiece_available">E disponueshme</string>
+    <string name="diagnostics_earpiece_not_available">Nuk disponohet</string>
+    <string name="diagnostics_proximity_available">I disponueshëm</string>
+    <string name="diagnostics_proximity_not_available">Nuk disponohet</string>
+    <string name="diagnostics_checking">Po kontrollohet…</string>
+    <string name="diagnostics_audio_output_unknown">E panjohur</string>
     <string name="diagnostics_permission_required">Kërkohet leje</string>
     <string name="diagnostics_on">Aktivizuar</string>
     <string name="diagnostics_off">Çaktivizuar</string>
-    <string name="diagnostics_unknown">E panjohur</string>
     <string name="diagnostics_success">Me sukses</string>
     <string name="diagnostics_failed">Dështoi</string>
     <string name="diagnostics_route_earpiece">Marrësi</string>

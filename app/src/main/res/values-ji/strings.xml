@@ -44,11 +44,15 @@
     <string name="diagnostics_result">רעזולטאט</string>
     <string name="diagnostics_error">פעלער</string>
     <string name="diagnostics_available">פאראן</string>
-    <string name="diagnostics_not_available">נישט פאראן</string>
+    <string name="diagnostics_earpiece_available">פאראן</string>
+    <string name="diagnostics_earpiece_not_available">נישט פאראן</string>
+    <string name="diagnostics_proximity_available">פאראן</string>
+    <string name="diagnostics_proximity_not_available">נישט פאראן</string>
+    <string name="diagnostics_checking">מען קאָנטראָלירט…</string>
+    <string name="diagnostics_audio_output_unknown">אומבאקאנט</string>
     <string name="diagnostics_permission_required">דערלויבעניש פארלאנגט</string>
     <string name="diagnostics_on">איינגעשאלטן</string>
     <string name="diagnostics_off">אויסגעשאלטן</string>
-    <string name="diagnostics_unknown">אומבאקאנט</string>
     <string name="diagnostics_success">געלונגען</string>
     <string name="diagnostics_failed">דורכגעפאלן</string>
     <string name="diagnostics_route_earpiece">אויער־טרייבל</string>

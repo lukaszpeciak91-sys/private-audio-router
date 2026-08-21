@@ -44,11 +44,15 @@
     <string name="diagnostics_result">پایله</string>
     <string name="diagnostics_error">تېروتنه</string>
     <string name="diagnostics_available">شته</string>
-    <string name="diagnostics_not_available">نشته</string>
+    <string name="diagnostics_earpiece_available">شته</string>
+    <string name="diagnostics_earpiece_not_available">نشته</string>
+    <string name="diagnostics_proximity_available">شته</string>
+    <string name="diagnostics_proximity_not_available">نشته</string>
+    <string name="diagnostics_checking">کتل کېږي…</string>
+    <string name="diagnostics_audio_output_unknown">نامعلوم</string>
     <string name="diagnostics_permission_required">اجازې ته اړتیا ده</string>
     <string name="diagnostics_on">چالان</string>
     <string name="diagnostics_off">بند</string>
-    <string name="diagnostics_unknown">نامعلوم</string>
     <string name="diagnostics_success">بریالی</string>
     <string name="diagnostics_failed">ناکام</string>
     <string name="diagnostics_route_earpiece">د تلیفون رسیدونکی</string>

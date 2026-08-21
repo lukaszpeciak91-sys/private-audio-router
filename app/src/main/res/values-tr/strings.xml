@@ -44,11 +44,15 @@
     <string name="diagnostics_result">Sonuç</string>
     <string name="diagnostics_error">Hata</string>
     <string name="diagnostics_available">Kullanılabilir</string>
-    <string name="diagnostics_not_available">Kullanılamıyor</string>
+    <string name="diagnostics_earpiece_available">Kullanılabilir</string>
+    <string name="diagnostics_earpiece_not_available">Kullanılamıyor</string>
+    <string name="diagnostics_proximity_available">Kullanılabilir</string>
+    <string name="diagnostics_proximity_not_available">Kullanılamıyor</string>
+    <string name="diagnostics_checking">Kontrol ediliyor…</string>
+    <string name="diagnostics_audio_output_unknown">Bilinmiyor</string>
     <string name="diagnostics_permission_required">İzin gerekli</string>
     <string name="diagnostics_on">Açık</string>
     <string name="diagnostics_off">Kapalı</string>
-    <string name="diagnostics_unknown">Bilinmiyor</string>
     <string name="diagnostics_success">Başarılı</string>
     <string name="diagnostics_failed">Başarısız</string>
     <string name="diagnostics_route_earpiece">Ahize</string>

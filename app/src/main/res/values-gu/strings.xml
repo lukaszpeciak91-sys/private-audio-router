@@ -44,11 +44,15 @@
     <string name="diagnostics_result">પરિણામ</string>
     <string name="diagnostics_error">ભૂલ</string>
     <string name="diagnostics_available">ઉપલબ્ધ</string>
-    <string name="diagnostics_not_available">ઉપલબ્ધ નથી</string>
+    <string name="diagnostics_earpiece_available">ઉપલબ્ધ</string>
+    <string name="diagnostics_earpiece_not_available">ઉપલબ્ધ નથી</string>
+    <string name="diagnostics_proximity_available">ઉપલબ્ધ</string>
+    <string name="diagnostics_proximity_not_available">ઉપલબ્ધ નથી</string>
+    <string name="diagnostics_checking">તપાસી રહ્યું છે…</string>
+    <string name="diagnostics_audio_output_unknown">અજ્ઞાત</string>
     <string name="diagnostics_permission_required">પરવાનગી જરૂરી છે</string>
     <string name="diagnostics_on">ચાલુ</string>
     <string name="diagnostics_off">બંધ</string>
-    <string name="diagnostics_unknown">અજ્ઞાત</string>
     <string name="diagnostics_success">સફળ</string>
     <string name="diagnostics_failed">નિષ્ફળ</string>
     <string name="diagnostics_route_earpiece">ઇયરપીસ</string>

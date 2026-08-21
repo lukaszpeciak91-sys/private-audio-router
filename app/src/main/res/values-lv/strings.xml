@@ -44,11 +44,15 @@
     <string name="diagnostics_result">Rezultāts</string>
     <string name="diagnostics_error">Kļūda</string>
     <string name="diagnostics_available">Pieejams</string>
-    <string name="diagnostics_not_available">Nav pieejams</string>
+    <string name="diagnostics_earpiece_available">Pieejama</string>
+    <string name="diagnostics_earpiece_not_available">Nav pieejama</string>
+    <string name="diagnostics_proximity_available">Pieejams</string>
+    <string name="diagnostics_proximity_not_available">Nav pieejams</string>
+    <string name="diagnostics_checking">Notiek pārbaude…</string>
+    <string name="diagnostics_audio_output_unknown">Nezināma</string>
     <string name="diagnostics_permission_required">Nepieciešama atļauja</string>
     <string name="diagnostics_on">Ieslēgts</string>
     <string name="diagnostics_off">Izslēgts</string>
-    <string name="diagnostics_unknown">Nezināms</string>
     <string name="diagnostics_success">Izdevās</string>
     <string name="diagnostics_failed">Neizdevās</string>
     <string name="diagnostics_route_earpiece">Tālruņa uztvērējs</string>

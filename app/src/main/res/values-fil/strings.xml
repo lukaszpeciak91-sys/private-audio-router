@@ -44,11 +44,15 @@
     <string name="diagnostics_result">Resulta</string>
     <string name="diagnostics_error">Error</string>
     <string name="diagnostics_available">Magagamit</string>
-    <string name="diagnostics_not_available">Hindi magagamit</string>
+    <string name="diagnostics_earpiece_available">Magagamit</string>
+    <string name="diagnostics_earpiece_not_available">Hindi magagamit</string>
+    <string name="diagnostics_proximity_available">Magagamit</string>
+    <string name="diagnostics_proximity_not_available">Hindi magagamit</string>
+    <string name="diagnostics_checking">Sinusuri…</string>
+    <string name="diagnostics_audio_output_unknown">Hindi alam</string>
     <string name="diagnostics_permission_required">Kailangan ng pahintulot</string>
     <string name="diagnostics_on">Naka-on</string>
     <string name="diagnostics_off">Naka-off</string>
-    <string name="diagnostics_unknown">Hindi alam</string>
     <string name="diagnostics_success">Matagumpay</string>
     <string name="diagnostics_failed">Nabigo</string>
     <string name="diagnostics_route_earpiece">Earpiece</string>

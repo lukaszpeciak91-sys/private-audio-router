@@ -44,11 +44,15 @@
     <string name="diagnostics_result">Rezultat</string>
     <string name="diagnostics_error">Eroare</string>
     <string name="diagnostics_available">Disponibil</string>
-    <string name="diagnostics_not_available">Indisponibil</string>
+    <string name="diagnostics_earpiece_available">Disponibilă</string>
+    <string name="diagnostics_earpiece_not_available">Indisponibilă</string>
+    <string name="diagnostics_proximity_available">Disponibil</string>
+    <string name="diagnostics_proximity_not_available">Indisponibil</string>
+    <string name="diagnostics_checking">Se verifică…</string>
+    <string name="diagnostics_audio_output_unknown">Necunoscută</string>
     <string name="diagnostics_permission_required">Permisiune necesară</string>
     <string name="diagnostics_on">Activat</string>
     <string name="diagnostics_off">Dezactivat</string>
-    <string name="diagnostics_unknown">Necunoscut</string>
     <string name="diagnostics_success">Reușit</string>
     <string name="diagnostics_failed">Eșuat</string>
     <string name="diagnostics_route_earpiece">Casca telefonului</string>

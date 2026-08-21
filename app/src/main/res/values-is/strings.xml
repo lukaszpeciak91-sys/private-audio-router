@@ -44,11 +44,15 @@
     <string name="diagnostics_result">Niðurstaða</string>
     <string name="diagnostics_error">Villa</string>
     <string name="diagnostics_available">Tiltækt</string>
-    <string name="diagnostics_not_available">Ekki tiltækt</string>
+    <string name="diagnostics_earpiece_available">Tiltækt</string>
+    <string name="diagnostics_earpiece_not_available">Ekki tiltækt</string>
+    <string name="diagnostics_proximity_available">Tiltækt</string>
+    <string name="diagnostics_proximity_not_available">Ekki tiltækt</string>
+    <string name="diagnostics_checking">Athugar…</string>
+    <string name="diagnostics_audio_output_unknown">Óþekkt</string>
     <string name="diagnostics_permission_required">Heimildar er krafist</string>
     <string name="diagnostics_on">Kveikt</string>
     <string name="diagnostics_off">Slökkt</string>
-    <string name="diagnostics_unknown">Óþekkt</string>
     <string name="diagnostics_success">Tókst</string>
     <string name="diagnostics_failed">Mistókst</string>
     <string name="diagnostics_route_earpiece">Eyrnarhátalari</string>

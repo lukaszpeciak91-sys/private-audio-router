@@ -44,11 +44,15 @@
     <string name="diagnostics_result">Rezultatas</string>
     <string name="diagnostics_error">Klaida</string>
     <string name="diagnostics_available">Pasiekiama</string>
-    <string name="diagnostics_not_available">Nepasiekiama</string>
+    <string name="diagnostics_earpiece_available">Pasiekiama</string>
+    <string name="diagnostics_earpiece_not_available">Nepasiekiama</string>
+    <string name="diagnostics_proximity_available">Pasiekiamas</string>
+    <string name="diagnostics_proximity_not_available">Nepasiekiamas</string>
+    <string name="diagnostics_checking">Tikrinama…</string>
+    <string name="diagnostics_audio_output_unknown">Nežinoma</string>
     <string name="diagnostics_permission_required">Reikalingas leidimas</string>
     <string name="diagnostics_on">Įjungta</string>
     <string name="diagnostics_off">Išjungta</string>
-    <string name="diagnostics_unknown">Nežinoma</string>
     <string name="diagnostics_success">Pavyko</string>
     <string name="diagnostics_failed">Nepavyko</string>
     <string name="diagnostics_route_earpiece">Pokalbių garsiakalbis</string>

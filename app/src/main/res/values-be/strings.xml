@@ -44,11 +44,15 @@
     <string name="diagnostics_result">Вынік</string>
     <string name="diagnostics_error">Памылка</string>
     <string name="diagnostics_available">Даступна</string>
-    <string name="diagnostics_not_available">Недаступна</string>
+    <string name="diagnostics_earpiece_available">Даступны</string>
+    <string name="diagnostics_earpiece_not_available">Недаступны</string>
+    <string name="diagnostics_proximity_available">Даступны</string>
+    <string name="diagnostics_proximity_not_available">Недаступны</string>
+    <string name="diagnostics_checking">Праверка…</string>
+    <string name="diagnostics_audio_output_unknown">Невядомы</string>
     <string name="diagnostics_permission_required">Патрабуецца дазвол</string>
     <string name="diagnostics_on">Уключана</string>
     <string name="diagnostics_off">Выключана</string>
-    <string name="diagnostics_unknown">Невядома</string>
     <string name="diagnostics_success">Паспяхова</string>
     <string name="diagnostics_failed">Няўдала</string>
     <string name="diagnostics_route_earpiece">Размоўны дынамік</string>

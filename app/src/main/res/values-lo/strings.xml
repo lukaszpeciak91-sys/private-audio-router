@@ -44,11 +44,15 @@
     <string name="diagnostics_result">ຜົນລັບ</string>
     <string name="diagnostics_error">ຂໍ້ຜິດພາດ</string>
     <string name="diagnostics_available">ມີໃຫ້ໃຊ້</string>
-    <string name="diagnostics_not_available">ບໍ່ມີໃຫ້ໃຊ້</string>
+    <string name="diagnostics_earpiece_available">ມີໃຫ້ໃຊ້</string>
+    <string name="diagnostics_earpiece_not_available">ບໍ່ມີໃຫ້ໃຊ້</string>
+    <string name="diagnostics_proximity_available">ມີໃຫ້ໃຊ້</string>
+    <string name="diagnostics_proximity_not_available">ບໍ່ມີໃຫ້ໃຊ້</string>
+    <string name="diagnostics_checking">ກຳລັງກວດສອບ…</string>
+    <string name="diagnostics_audio_output_unknown">ບໍ່ຮູ້</string>
     <string name="diagnostics_permission_required">ຕ້ອງມີສິດ</string>
     <string name="diagnostics_on">ເປີດ</string>
     <string name="diagnostics_off">ປິດ</string>
-    <string name="diagnostics_unknown">ບໍ່ຮູ້</string>
     <string name="diagnostics_success">ສຳເລັດ</string>
     <string name="diagnostics_failed">ລົ້ມເຫຼວ</string>
     <string name="diagnostics_route_earpiece">ຫູຟັງໃນຕົວໂທລະສັບ</string>

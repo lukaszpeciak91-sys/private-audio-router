@@ -55,11 +55,15 @@
     <string name="diagnostics_result">ရလဒ်</string>
     <string name="diagnostics_error">အမှား</string>
     <string name="diagnostics_available">ရရှိနိုင်သည်</string>
-    <string name="diagnostics_not_available">မရရှိနိုင်ပါ</string>
+    <string name="diagnostics_earpiece_available">ရရှိနိုင်သည်</string>
+    <string name="diagnostics_earpiece_not_available">မရရှိနိုင်ပါ</string>
+    <string name="diagnostics_proximity_available">ရရှိနိုင်သည်</string>
+    <string name="diagnostics_proximity_not_available">မရရှိနိုင်ပါ</string>
+    <string name="diagnostics_checking">စစ်ဆေးနေသည်…</string>
+    <string name="diagnostics_audio_output_unknown">မသိရပါ</string>
     <string name="diagnostics_permission_required">ခွင့်ပြုချက် လိုအပ်သည်</string>
     <string name="diagnostics_on">ဖွင့်ထားသည်</string>
     <string name="diagnostics_off">ပိတ်ထားသည်</string>
-    <string name="diagnostics_unknown">မသိရပါ</string>
     <string name="diagnostics_success">အောင်မြင်သည်</string>
     <string name="diagnostics_failed">မအောင်မြင်ပါ</string>
     <string name="diagnostics_route_earpiece">တယ်လီဖုန်းနားခွက်</string>
