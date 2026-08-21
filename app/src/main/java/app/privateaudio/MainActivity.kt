@@ -29,6 +29,7 @@ class MainActivity : ComponentActivity() {
     private var service by mutableStateOf<PrivateAudioService?>(null)
     private var isBound = false
     private var overlayPermissionRequestPending = false
+    private var overlayPermissionGranted by mutableStateOf(false)
     private var pendingDiagnosticReport: String? = null
     private var lastDiagnosticSaveFailureReason: String? = null
     private val diagnosticDocumentLauncher = registerForActivityResult(
@@ -70,6 +71,7 @@ class MainActivity : ComponentActivity() {
             statusBarStyle = SystemBarStyle.dark(android.graphics.Color.TRANSPARENT),
             navigationBarStyle = SystemBarStyle.dark(android.graphics.Color.TRANSPARENT),
         )
+        overlayPermissionGranted = Settings.canDrawOverlays(this)
 
         setContent {
             PrivateAudioTheme {
@@ -99,6 +101,7 @@ class MainActivity : ComponentActivity() {
                         finishAndRemoveTask()
                     },
                     onSaveDiagnosticReport = { launchDiagnosticDocumentPicker() },
+                    diagnosticsSummary = connectedService?.diagnosticsSummary(overlayPermissionGranted),
                     versionName = BuildConfig.VERSION_NAME,
                 )
             }
@@ -116,6 +119,7 @@ class MainActivity : ComponentActivity() {
 
     override fun onResume() {
         super.onResume()
+        overlayPermissionGranted = Settings.canDrawOverlays(this)
         if (overlayPermissionRequestPending) {
             overlayPermissionRequestPending = false
             if (Settings.canDrawOverlays(this)) showOverlay()

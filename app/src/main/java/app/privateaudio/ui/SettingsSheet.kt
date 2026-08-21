@@ -83,7 +83,7 @@ fun SettingsSheet(
     onProximityFeatureChange: (Boolean) -> Unit,
     fakePhonePreArmEnabled: Boolean,
     onFakePhonePreArmChange: (Boolean) -> Unit,
-    onSaveDiagnosticReport: () -> Unit,
+    onDiagnostics: () -> Unit,
     onDismiss: () -> Unit,
 ) {
     var page by rememberSaveable { mutableStateOf(SettingsPage.ROOT) }
@@ -149,7 +149,7 @@ fun SettingsSheet(
                         selectedLanguageTag = selectedLanguageTag,
                         supportedLanguages = supportedLanguages,
                         onLanguage = { page = SettingsPage.LANGUAGE },
-                        onSaveDiagnosticReport = onSaveDiagnosticReport,
+                        onDiagnostics = onDiagnostics,
                         onAdvanced = { page = SettingsPage.ADVANCED },
                         onAbout = { page = SettingsPage.ABOUT },
                     )
@@ -265,7 +265,7 @@ private fun SettingsRoot(
     selectedLanguageTag: String?,
     supportedLanguages: List<AppLanguageOption>,
     onLanguage: () -> Unit,
-    onSaveDiagnosticReport: () -> Unit,
+    onDiagnostics: () -> Unit,
     onAdvanced: () -> Unit,
     onAbout: () -> Unit,
 ) {
@@ -284,10 +284,10 @@ private fun SettingsRoot(
         onClick = onLanguage,
     )
     SettingsRow(
-        label = stringResource(R.string.settings_save_diagnostic),
-        tag = "settings_save_diagnostic",
-        trailing = { SaveIcon() },
-        onClick = onSaveDiagnosticReport,
+        label = stringResource(R.string.settings_diagnostics),
+        chevron = true,
+        tag = "settings_diagnostics",
+        onClick = onDiagnostics,
     )
     SettingsDivider()
     SettingsRow(
@@ -457,21 +457,6 @@ private fun SettingsDivider() {
             .height(1.dp)
             .background(SettingsDivider),
     )
-}
-
-@Composable
-private fun SaveIcon() = Canvas(Modifier.size(22.dp)) {
-    val stroke = 1.35.dp.toPx()
-    drawRoundRect(
-        color = SettingsPrimary,
-        topLeft = Offset(size.width * 0.12f, size.height * 0.58f),
-        size = androidx.compose.ui.geometry.Size(size.width * 0.76f, size.height * 0.28f),
-        cornerRadius = androidx.compose.ui.geometry.CornerRadius(2.dp.toPx()),
-        style = androidx.compose.ui.graphics.drawscope.Stroke(stroke),
-    )
-    drawLine(SettingsPrimary, Offset(size.width * .5f, size.height * .10f), Offset(size.width * .5f, size.height * .62f), stroke, StrokeCap.Round)
-    drawLine(SettingsPrimary, Offset(size.width * .31f, size.height * .43f), Offset(size.width * .5f, size.height * .62f), stroke, StrokeCap.Round)
-    drawLine(SettingsPrimary, Offset(size.width * .69f, size.height * .43f), Offset(size.width * .5f, size.height * .62f), stroke, StrokeCap.Round)
 }
 
 @Composable

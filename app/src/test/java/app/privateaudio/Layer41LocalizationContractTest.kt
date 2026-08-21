@@ -18,12 +18,12 @@ class Layer41LocalizationContractTest {
             val localeStrings = File(localeDirectory, "strings.xml").readText()
             assertEquals(
                 localeDirectory.name,
-                stringKeys(defaultStrings).filterNot { it == "settings_fake_phone_pre_arm" },
+                stringKeys(defaultStrings).filterNot(::isEnglishFallbackOnlyKey),
                 stringKeys(localeStrings),
             )
             assertEquals(
                 localeDirectory.name,
-                placeholders(defaultStrings) - "settings_fake_phone_pre_arm",
+                placeholders(defaultStrings).filterNot(::isEnglishFallbackOnlyKey).toSet(),
                 placeholders(localeStrings),
             )
             assertFalse(localeDirectory.name, localeStrings.contains("settings_fake_phone_pre_arm"))
@@ -305,6 +305,9 @@ class Layer41LocalizationContractTest {
         assertTrue(ukrainianStrings.contains("name=\"state_active\">Активно</string>"))
         assertTrue(ukrainianStrings.contains("name=\"state_error\">Помилка</string>"))
     }
+
+    private fun isEnglishFallbackOnlyKey(key: String): Boolean =
+        key == "settings_fake_phone_pre_arm" || key == "settings_diagnostics" || key.startsWith("diagnostics_")
 
     @Test
     fun finnishFrozenLocalizationSemanticsRemainIntact() {

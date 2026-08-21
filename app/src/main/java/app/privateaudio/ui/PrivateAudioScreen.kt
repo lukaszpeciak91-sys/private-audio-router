@@ -61,6 +61,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import app.privateaudio.PrivateAudioState
 import app.privateaudio.R
+import app.privateaudio.diagnostic.DiagnosticsSummary
 import app.privateaudio.ui.theme.PrivateAudioTheme
 import kotlin.math.cos
 import kotlin.math.min
@@ -99,7 +100,7 @@ private data class StateVisuals(
 )
 
 @Composable
-fun PrivateAudioScreen(
+internal fun PrivateAudioScreen(
     state: PrivateAudioState,
     proximityFeatureEnabled: Boolean = true,
     onProximityFeatureChange: (Boolean) -> Unit = {},
@@ -109,6 +110,7 @@ fun PrivateAudioScreen(
     onPowerClick: () -> Unit,
     onFloatingClick: () -> Unit = {},
     onCloseClick: () -> Unit,
+    diagnosticsSummary: DiagnosticsSummary? = null,
     onSaveDiagnosticReport: () -> Unit = {},
     versionName: String = "",
     modifier: Modifier = Modifier,
@@ -116,6 +118,17 @@ fun PrivateAudioScreen(
     val visuals = stateVisuals(state)
     val motionPhase = stateMotionPhase(state)
     var settingsVisible by rememberSaveable { mutableStateOf(false) }
+    var diagnosticsVisible by rememberSaveable { mutableStateOf(false) }
+
+    if (diagnosticsVisible) {
+        UserDiagnosticsScreen(
+            summary = diagnosticsSummary,
+            onBack = { diagnosticsVisible = false },
+            onSaveDiagnosticReport = onSaveDiagnosticReport,
+            modifier = modifier,
+        )
+        return
+    }
 
     Box(
         modifier = modifier
@@ -194,7 +207,10 @@ fun PrivateAudioScreen(
                 onProximityFeatureChange = onProximityFeatureChange,
                 fakePhonePreArmEnabled = fakePhonePreArmEnabled,
                 onFakePhonePreArmChange = onFakePhonePreArmChange,
-                onSaveDiagnosticReport = onSaveDiagnosticReport,
+                onDiagnostics = {
+                    settingsVisible = false
+                    diagnosticsVisible = true
+                },
                 onDismiss = { settingsVisible = false },
             )
         }

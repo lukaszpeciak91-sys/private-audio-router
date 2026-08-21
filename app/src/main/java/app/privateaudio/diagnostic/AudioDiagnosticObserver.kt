@@ -14,6 +14,7 @@ import android.os.Handler
 import android.os.Looper
 import android.os.Process
 import app.privateaudio.BuildConfig
+import app.privateaudio.PrivateAudioState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.mutableStateOf
@@ -341,6 +342,22 @@ class AudioDiagnosticObserver(
         startupTraceEntriesDropped = startupTraceEntriesDropped,
         redundantPlaybackCallbacksSuppressed = redundantPlaybackCallbacksSuppressed,
         fakePhonePreArm = fakePhonePreArm,
+    )
+
+    internal fun diagnosticsSummary(
+        privateAudioEnabled: Boolean,
+        privateAudioState: PrivateAudioState,
+        proximitySupported: Boolean,
+        overlayPermissionGranted: Boolean,
+    ): DiagnosticsSummary = projectDiagnosticsSummary(
+        environment = DiagnosticEnvironment.from(context),
+        snapshot = snapshot,
+        currentExperiment = experiment,
+        lastCompletedCycle = lastCompletedExperiment,
+        privateAudioEnabled = privateAudioEnabled,
+        privateAudioState = privateAudioState,
+        proximitySupported = proximitySupported,
+        overlayPermissionGranted = overlayPermissionGranted,
     )
 
     private fun addEvent(message: String) {
