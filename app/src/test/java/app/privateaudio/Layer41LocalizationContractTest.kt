@@ -307,7 +307,7 @@ class Layer41LocalizationContractTest {
     }
 
     private fun isEnglishFallbackOnlyKey(key: String): Boolean =
-        key == "settings_fake_phone_pre_arm" || key == "settings_diagnostics" || key.startsWith("diagnostics_")
+        key == "settings_fake_phone_pre_arm"
 
     @Test
     fun finnishFrozenLocalizationSemanticsRemainIntact() {
