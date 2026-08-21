@@ -103,6 +103,9 @@ New statements must be labeled **FACT**, **INFERENCE**, or **UNKNOWN**, with sou
 - **FACT (supplied physical result, 2026-08-19):** The established communication path passed with ChatGPT Voice, Grok, Perplexity, and Character.AI. A regression with the assistant experimental option disabled confirmed the existing ChatGPT path still worked before automatic promotion.
 - **INFERENCE:** Exact public usage/content classification provides a provider-independent boundary for the two trigger classes without package, UID, PID, or foreground identity.
 - **UNKNOWN:** The supplied results do not establish physical no-trigger outcomes for YouTube/music/video, NotebookLM Audio Overview, Kimi media-style TTS, or assistant sonification alone; implementation contracts preserve those exclusions pending recorded device runs.
+- **FACT (supplied physical diagnostic, 2026-08-21):** With Fake Phone pre-arm OFF, one Gemini assistant/speech cycle established `MODE_IN_COMMUNICATION`, the built-in earpiece, `ACTIVE`, and proximity. After assistant/speech disappeared, the 1.5-second confirmation completed and Private Audio cleared the device, relinquished mode, released its silent track, returned to `WAITING`, and released proximity. No later qualifying assistant/speech playback appeared before the report was captured during the failed next turn; the post-cleanup state was otherwise clean.
+- **INFERENCE:** Retaining the already-established protected communication context across a bounded conversational gap may avoid destabilization associated with teardown and reacquisition.
+- **UNKNOWN:** The observed ordering does not prove cleanup caused the failed later Gemini turn. Five-turn Gemini and ChatGPT physical runs with the 15-second linger, plus unchanged browser and immediate-cleanup checks, are required before assessing the hypothesis.
 
 ## Browser-communication playback evidence
 

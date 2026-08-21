@@ -224,6 +224,8 @@ class AudioDiagnosticObserver(
     private val observationHandler = Handler(Looper.getMainLooper())
     private var pendingObservation: Runnable? = null
     private var pendingEndConfirmation: Runnable? = null
+    private var pendingSessionLinger: Runnable? = null
+    private var lingerGeneration = 0L
     private var baseline: DiagnosticSnapshot? = null
     private val communicationDeviceListener = AudioManager.OnCommunicationDeviceChangedListener {
         snapshot("Communication device callback")
@@ -286,6 +288,7 @@ class AudioDiagnosticObserver(
                     audioManager.availableCommunicationDevices.none { it.type == AudioDeviceInfo.TYPE_BUILTIN_EARPIECE }
                 )
         ) cleanupFakePhonePreArm("Pre-arm eligibility lost: $reason")
+        if (abortAssistantLingerIfContextLost(reason)) return
         observeExperimentOutcome(observed, reason)
         if (!routingActionInProgress) evaluateExperimentTrigger()
         onEvidenceChanged(reason)
@@ -826,6 +829,7 @@ class AudioDiagnosticObserver(
         if (externalPlaybackPresent) {
             externalContributionEstablished = true
             cancelPendingEndConfirmation()
+            if (pendingSessionLinger != null) resumeAssistantDuringLinger()
         } else if (externalContributionEstablished) {
             scheduleEndConfirmation()
         }
@@ -886,12 +890,78 @@ class AudioDiagnosticObserver(
             }
             if (externalPlaybackPresent) return@Runnable
             addEvent("External communication end confirmed for routing cycle $generation")
-            clearExperiment("External communication playback ended", ExperimentState.CLEARED)
-            returnToWaiting()
+            if (experiment.triggerOrigin == TriggerOrigin.ASSISTANT) {
+                addEvent("ASSISTANT playback-loss confirmation completed for routing cycle $generation")
+                startAssistantSessionLinger(generation)
+            } else {
+                clearExperiment("External communication playback ended", ExperimentState.CLEARED)
+                returnToWaiting()
+            }
         }
         pendingEndConfirmation = runnable
         observationHandler.postDelayed(runnable, END_CONFIRMATION_DELAY_MS)
     }
+
+    private fun startAssistantSessionLinger(generation: Long) {
+        cancelPendingSessionLinger()
+        // The confirmed contribution is absent. Only a genuinely resumed ASSISTANT/SPEECH
+        // callback may establish it again and make a later disappearance eligible for stage 1.
+        externalContributionEstablished = false
+        val token = ++lingerGeneration
+        val deadline = OffsetDateTime.now().plusNanos(ASSISTANT_SESSION_LINGER_MS * 1_000_000)
+            .format(DateTimeFormatter.ISO_OFFSET_DATE_TIME)
+        addEvent(
+            "Protected session linger started — routing cycle=$generation; trigger=ASSISTANT; " +
+                "deadline=$deadline; ${protectedContextDescription()}",
+        )
+        val runnable = object : Runnable {
+            override fun run() {
+                if (pendingSessionLinger !== this || token != lingerGeneration ||
+                    generation != cycleGeneration || !controllerEnabled ||
+                    experiment.triggerOrigin != TriggerOrigin.ASSISTANT || experiment.attempts.size != 1
+                ) return
+                pendingSessionLinger = null
+                addEvent("Protected session linger expired — routing cycle=$generation; ${protectedContextDescription()}")
+                addEvent("Cleanup started because linger expired — routing cycle=$generation; trigger=ASSISTANT")
+                clearExperiment("ASSISTANT protected session linger expired", ExperimentState.CLEARED)
+                returnToWaiting()
+            }
+        }
+        pendingSessionLinger = runnable
+        observationHandler.postDelayed(runnable, ASSISTANT_SESSION_LINGER_MS)
+    }
+
+    private fun resumeAssistantDuringLinger() {
+        val generation = cycleGeneration
+        addEvent("ASSISTANT/SPEECH resumed during linger — routing cycle=$generation; ${protectedContextDescription()}")
+        cancelPendingSessionLinger()
+        addEvent("Linger cancelled because external contribution resumed — routing cycle=$generation")
+        addEvent("Protected context reused without new routing attempt — routing cycle=$generation; ${protectedContextDescription()}")
+    }
+
+    private fun abortAssistantLingerIfContextLost(reason: String): Boolean {
+        if (pendingSessionLinger == null) return false
+        val failure = when {
+            audioManager.mode.isTelephonyOrSystemPriorityMode() ->
+                "system/telephony-priority mode ${audioModeName(audioManager.mode)}"
+            silentTrack?.playState != AudioTrack.PLAYSTATE_PLAYING -> "silent track failure"
+            audioManager.availableCommunicationDevices.none { it.type == AudioDeviceInfo.TYPE_BUILTIN_EARPIECE } ->
+                "required earpiece unavailable"
+            audioManager.mode != AudioManager.MODE_IN_COMMUNICATION -> "communication mode ownership lost"
+            audioManager.communicationDevice?.type != AudioDeviceInfo.TYPE_BUILTIN_EARPIECE ->
+                "protected earpiece route lost"
+            else -> return false
+        }
+        addEvent("Immediate cleanup bypassed linger because $failure — observation=$reason; routing cycle=$cycleGeneration")
+        clearExperiment("Assistant linger aborted: $failure", ExperimentState.BLOCKED)
+        return true
+    }
+
+    private fun protectedContextDescription(): String =
+        "mode=${audioModeName(audioManager.mode)}; " +
+            "communication device=${audioManager.communicationDevice?.toObservedDevice().reportDescription()}; " +
+            "silent track=${audioTrackPlayStateName(silentTrack?.playState ?: AudioTrack.PLAYSTATE_STOPPED)}; " +
+            "public state=ACTIVE; routing attempts=${experiment.attempts.size}"
 
     private fun returnToWaiting() {
         if (!controllerEnabled) return
@@ -913,11 +983,18 @@ class AudioDiagnosticObserver(
     private fun invalidatePendingControllerWork() {
         cycleGeneration++
         cancelPendingEndConfirmation()
+        cancelPendingSessionLinger()
     }
 
     private fun cancelPendingEndConfirmation() {
         pendingEndConfirmation?.let(observationHandler::removeCallbacks)
         pendingEndConfirmation = null
+    }
+
+    private fun cancelPendingSessionLinger() {
+        lingerGeneration++
+        pendingSessionLinger?.let(observationHandler::removeCallbacks)
+        pendingSessionLinger = null
     }
 
     private fun observeExperimentOutcome(observed: DiagnosticSnapshot, reason: String) {
@@ -944,6 +1021,10 @@ class AudioDiagnosticObserver(
 
     private fun clearExperiment(reason: String, finalState: ExperimentState) {
         cancelPendingEndConfirmation()
+        if (pendingSessionLinger != null && !reason.contains("linger expired")) {
+            addEvent("Immediate cleanup bypassed linger because $reason — routing cycle=$cycleGeneration")
+        }
+        cancelPendingSessionLinger()
         cancelPendingObservation()
         routingActionInProgress = true
         audioManager.clearCommunicationDevice()
@@ -1432,6 +1513,7 @@ internal const val MAX_EVENTS = 100
 internal const val MAX_STARTUP_TRACE_EVENTS = 240
 private const val OBSERVATION_DELAY_MS = 1_000L
 private const val END_CONFIRMATION_DELAY_MS = 1_500L
+private const val ASSISTANT_SESSION_LINGER_MS = 15_000L
 private const val DEFAULT_SAMPLE_RATE = 48_000
 private const val MIN_SILENCE_BUFFER_BYTES = 1_024
 private const val SILENCE_WRITER_PAUSE_MS = 10L
