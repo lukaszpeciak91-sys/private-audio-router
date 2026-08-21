@@ -44,11 +44,15 @@
     <string name="diagnostics_result">ಫಲಿತಾಂಶ</string>
     <string name="diagnostics_error">ದೋಷ</string>
     <string name="diagnostics_available">ಲಭ್ಯವಿದೆ</string>
-    <string name="diagnostics_not_available">ಲಭ್ಯವಿಲ್ಲ</string>
+    <string name="diagnostics_earpiece_available">ಲಭ್ಯವಿದೆ</string>
+    <string name="diagnostics_earpiece_not_available">ಲಭ್ಯವಿಲ್ಲ</string>
+    <string name="diagnostics_proximity_available">ಲಭ್ಯವಿದೆ</string>
+    <string name="diagnostics_proximity_not_available">ಲಭ್ಯವಿಲ್ಲ</string>
+    <string name="diagnostics_checking">ಪರಿಶೀಲಿಸಲಾಗುತ್ತಿದೆ…</string>
+    <string name="diagnostics_audio_output_unknown">ತಿಳಿದಿಲ್ಲ</string>
     <string name="diagnostics_permission_required">ಅನುಮತಿ ಅಗತ್ಯವಿದೆ</string>
     <string name="diagnostics_on">ಆನ್</string>
     <string name="diagnostics_off">ಆಫ್</string>
-    <string name="diagnostics_unknown">ತಿಳಿದಿಲ್ಲ</string>
     <string name="diagnostics_success">ಯಶಸ್ವಿಯಾಗಿದೆ</string>
     <string name="diagnostics_failed">ವಿಫಲವಾಗಿದೆ</string>
     <string name="diagnostics_route_earpiece">ಇಯರ್‌ಪೀಸ್</string>

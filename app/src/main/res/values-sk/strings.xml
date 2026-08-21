@@ -44,11 +44,15 @@
     <string name="diagnostics_result">Výsledok</string>
     <string name="diagnostics_error">Chyba</string>
     <string name="diagnostics_available">Dostupné</string>
-    <string name="diagnostics_not_available">Nedostupné</string>
+    <string name="diagnostics_earpiece_available">Dostupné</string>
+    <string name="diagnostics_earpiece_not_available">Nedostupné</string>
+    <string name="diagnostics_proximity_available">Dostupný</string>
+    <string name="diagnostics_proximity_not_available">Nedostupný</string>
+    <string name="diagnostics_checking">Prebieha kontrola…</string>
+    <string name="diagnostics_audio_output_unknown">Neznámy</string>
     <string name="diagnostics_permission_required">Vyžaduje sa povolenie</string>
     <string name="diagnostics_on">Zapnuté</string>
     <string name="diagnostics_off">Vypnuté</string>
-    <string name="diagnostics_unknown">Neznáme</string>
     <string name="diagnostics_success">Úspech</string>
     <string name="diagnostics_failed">Zlyhanie</string>
     <string name="diagnostics_route_earpiece">Slúchadlo telefónu</string>

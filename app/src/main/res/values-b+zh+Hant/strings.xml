@@ -44,11 +44,15 @@
     <string name="diagnostics_result">結果</string>
     <string name="diagnostics_error">錯誤</string>
     <string name="diagnostics_available">可用</string>
-    <string name="diagnostics_not_available">不可用</string>
+    <string name="diagnostics_earpiece_available">可用</string>
+    <string name="diagnostics_earpiece_not_available">不可用</string>
+    <string name="diagnostics_proximity_available">可用</string>
+    <string name="diagnostics_proximity_not_available">不可用</string>
+    <string name="diagnostics_checking">正在檢查…</string>
+    <string name="diagnostics_audio_output_unknown">不明</string>
     <string name="diagnostics_permission_required">需要權限</string>
     <string name="diagnostics_on">開啟</string>
     <string name="diagnostics_off">關閉</string>
-    <string name="diagnostics_unknown">不明</string>
     <string name="diagnostics_success">成功</string>
     <string name="diagnostics_failed">失敗</string>
     <string name="diagnostics_route_earpiece">聽筒</string>

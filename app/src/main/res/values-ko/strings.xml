@@ -44,11 +44,15 @@
     <string name="diagnostics_result">결과</string>
     <string name="diagnostics_error">오류</string>
     <string name="diagnostics_available">사용 가능</string>
-    <string name="diagnostics_not_available">사용 불가</string>
+    <string name="diagnostics_earpiece_available">사용 가능</string>
+    <string name="diagnostics_earpiece_not_available">사용 불가</string>
+    <string name="diagnostics_proximity_available">사용 가능</string>
+    <string name="diagnostics_proximity_not_available">사용 불가</string>
+    <string name="diagnostics_checking">확인 중…</string>
+    <string name="diagnostics_audio_output_unknown">알 수 없음</string>
     <string name="diagnostics_permission_required">권한 필요</string>
     <string name="diagnostics_on">켜짐</string>
     <string name="diagnostics_off">꺼짐</string>
-    <string name="diagnostics_unknown">알 수 없음</string>
     <string name="diagnostics_success">성공</string>
     <string name="diagnostics_failed">실패</string>
     <string name="diagnostics_route_earpiece">수화부</string>

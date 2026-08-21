@@ -44,11 +44,15 @@
     <string name="diagnostics_result">Hasil</string>
     <string name="diagnostics_error">Ralat</string>
     <string name="diagnostics_available">Tersedia</string>
-    <string name="diagnostics_not_available">Tidak tersedia</string>
+    <string name="diagnostics_earpiece_available">Tersedia</string>
+    <string name="diagnostics_earpiece_not_available">Tidak tersedia</string>
+    <string name="diagnostics_proximity_available">Tersedia</string>
+    <string name="diagnostics_proximity_not_available">Tidak tersedia</string>
+    <string name="diagnostics_checking">Menyemak…</string>
+    <string name="diagnostics_audio_output_unknown">Tidak diketahui</string>
     <string name="diagnostics_permission_required">Kebenaran diperlukan</string>
     <string name="diagnostics_on">Dihidupkan</string>
     <string name="diagnostics_off">Dimatikan</string>
-    <string name="diagnostics_unknown">Tidak diketahui</string>
     <string name="diagnostics_success">Berjaya</string>
     <string name="diagnostics_failed">Gagal</string>
     <string name="diagnostics_route_earpiece">Alat dengar</string>

@@ -44,11 +44,15 @@
     <string name="diagnostics_result">ውጤት</string>
     <string name="diagnostics_error">ስህተት</string>
     <string name="diagnostics_available">ይገኛል</string>
-    <string name="diagnostics_not_available">አይገኝም</string>
+    <string name="diagnostics_earpiece_available">ይገኛል</string>
+    <string name="diagnostics_earpiece_not_available">አይገኝም</string>
+    <string name="diagnostics_proximity_available">ይገኛል</string>
+    <string name="diagnostics_proximity_not_available">አይገኝም</string>
+    <string name="diagnostics_checking">በመፈተሽ ላይ…</string>
+    <string name="diagnostics_audio_output_unknown">ያልታወቀ</string>
     <string name="diagnostics_permission_required">ፈቃድ ያስፈልጋል</string>
     <string name="diagnostics_on">በርቷል</string>
     <string name="diagnostics_off">ጠፍቷል</string>
-    <string name="diagnostics_unknown">ያልታወቀ</string>
     <string name="diagnostics_success">ተሳክቷል</string>
     <string name="diagnostics_failed">አልተሳካም</string>
     <string name="diagnostics_route_earpiece">የስልኩ አብሮገነብ መስሚያ</string>

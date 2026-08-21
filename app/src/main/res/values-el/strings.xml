@@ -44,11 +44,15 @@
     <string name="diagnostics_result">Αποτέλεσμα</string>
     <string name="diagnostics_error">Σφάλμα</string>
     <string name="diagnostics_available">Διαθέσιμο</string>
-    <string name="diagnostics_not_available">Μη διαθέσιμο</string>
+    <string name="diagnostics_earpiece_available">Διαθέσιμο</string>
+    <string name="diagnostics_earpiece_not_available">Μη διαθέσιμο</string>
+    <string name="diagnostics_proximity_available">Διαθέσιμος</string>
+    <string name="diagnostics_proximity_not_available">Μη διαθέσιμος</string>
+    <string name="diagnostics_checking">Γίνεται έλεγχος…</string>
+    <string name="diagnostics_audio_output_unknown">Άγνωστη</string>
     <string name="diagnostics_permission_required">Απαιτείται άδεια</string>
     <string name="diagnostics_on">Ενεργοποιημένο</string>
     <string name="diagnostics_off">Απενεργοποιημένο</string>
-    <string name="diagnostics_unknown">Άγνωστο</string>
     <string name="diagnostics_success">Επιτυχία</string>
     <string name="diagnostics_failed">Αποτυχία</string>
     <string name="diagnostics_route_earpiece">Ακουστικό</string>

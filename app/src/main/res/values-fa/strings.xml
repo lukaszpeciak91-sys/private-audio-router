@@ -44,11 +44,15 @@
     <string name="diagnostics_result">نتیجه</string>
     <string name="diagnostics_error">خطا</string>
     <string name="diagnostics_available">در دسترس</string>
-    <string name="diagnostics_not_available">در دسترس نیست</string>
+    <string name="diagnostics_earpiece_available">در دسترس</string>
+    <string name="diagnostics_earpiece_not_available">در دسترس نیست</string>
+    <string name="diagnostics_proximity_available">در دسترس</string>
+    <string name="diagnostics_proximity_not_available">در دسترس نیست</string>
+    <string name="diagnostics_checking">در حال بررسی…</string>
+    <string name="diagnostics_audio_output_unknown">نامشخص</string>
     <string name="diagnostics_permission_required">مجوز لازم است</string>
     <string name="diagnostics_on">روشن</string>
     <string name="diagnostics_off">خاموش</string>
-    <string name="diagnostics_unknown">نامشخص</string>
     <string name="diagnostics_success">موفق</string>
     <string name="diagnostics_failed">ناموفق</string>
     <string name="diagnostics_route_earpiece">بلندگوی مکالمه</string>

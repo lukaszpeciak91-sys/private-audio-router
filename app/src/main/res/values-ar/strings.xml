@@ -44,11 +44,15 @@
     <string name="diagnostics_result">النتيجة</string>
     <string name="diagnostics_error">خطأ</string>
     <string name="diagnostics_available">متاح</string>
-    <string name="diagnostics_not_available">غير متاح</string>
+    <string name="diagnostics_earpiece_available">متاح</string>
+    <string name="diagnostics_earpiece_not_available">غير متاح</string>
+    <string name="diagnostics_proximity_available">متاح</string>
+    <string name="diagnostics_proximity_not_available">غير متاح</string>
+    <string name="diagnostics_checking">جارٍ التحقق…</string>
+    <string name="diagnostics_audio_output_unknown">غير معروف</string>
     <string name="diagnostics_permission_required">الإذن مطلوب</string>
     <string name="diagnostics_on">مفعّل</string>
     <string name="diagnostics_off">غير مفعّل</string>
-    <string name="diagnostics_unknown">غير معروف</string>
     <string name="diagnostics_success">نجاح</string>
     <string name="diagnostics_failed">فشل</string>
     <string name="diagnostics_route_earpiece">سماعة الأذن</string>

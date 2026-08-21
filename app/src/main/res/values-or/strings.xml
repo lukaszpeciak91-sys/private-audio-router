@@ -55,11 +55,15 @@
     <string name="diagnostics_result">ଫଳାଫଳ</string>
     <string name="diagnostics_error">ତ୍ରୁଟି</string>
     <string name="diagnostics_available">ଉପଲବ୍ଧ</string>
-    <string name="diagnostics_not_available">ଉପଲବ୍ଧ ନାହିଁ</string>
+    <string name="diagnostics_earpiece_available">ଉପଲବ୍ଧ</string>
+    <string name="diagnostics_earpiece_not_available">ଉପଲବ୍ଧ ନାହିଁ</string>
+    <string name="diagnostics_proximity_available">ଉପଲବ୍ଧ</string>
+    <string name="diagnostics_proximity_not_available">ଉପଲବ୍ଧ ନାହିଁ</string>
+    <string name="diagnostics_checking">ଯାଞ୍ଚ କରାଯାଉଛି…</string>
+    <string name="diagnostics_audio_output_unknown">ଅଜଣା</string>
     <string name="diagnostics_permission_required">ଅନୁମତି ଆବଶ୍ୟକ</string>
     <string name="diagnostics_on">ଚାଲୁ</string>
     <string name="diagnostics_off">ବନ୍ଦ</string>
-    <string name="diagnostics_unknown">ଅଜଣା</string>
     <string name="diagnostics_success">ସଫଳ</string>
     <string name="diagnostics_failed">ବିଫଳ</string>
     <string name="diagnostics_route_earpiece">ଇୟରପିସ୍</string>

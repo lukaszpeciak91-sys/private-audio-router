@@ -44,11 +44,15 @@
     <string name="diagnostics_result">Resultat</string>
     <string name="diagnostics_error">Fel</string>
     <string name="diagnostics_available">Tillgänglig</string>
-    <string name="diagnostics_not_available">Inte tillgänglig</string>
+    <string name="diagnostics_earpiece_available">Tillgänglig</string>
+    <string name="diagnostics_earpiece_not_available">Inte tillgänglig</string>
+    <string name="diagnostics_proximity_available">Tillgänglig</string>
+    <string name="diagnostics_proximity_not_available">Inte tillgänglig</string>
+    <string name="diagnostics_checking">Kontrollerar…</string>
+    <string name="diagnostics_audio_output_unknown">Okänd</string>
     <string name="diagnostics_permission_required">Behörighet krävs</string>
     <string name="diagnostics_on">På</string>
     <string name="diagnostics_off">Av</string>
-    <string name="diagnostics_unknown">Okänd</string>
     <string name="diagnostics_success">Lyckades</string>
     <string name="diagnostics_failed">Misslyckades</string>
     <string name="diagnostics_route_earpiece">Samtalslur</string>

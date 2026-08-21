@@ -44,11 +44,15 @@
     <string name="diagnostics_result">Result</string>
     <string name="diagnostics_error">Error</string>
     <string name="diagnostics_available">Dey available</string>
-    <string name="diagnostics_not_available">E no dey available</string>
+    <string name="diagnostics_earpiece_available">Dey available</string>
+    <string name="diagnostics_earpiece_not_available">E no dey available</string>
+    <string name="diagnostics_proximity_available">Dey available</string>
+    <string name="diagnostics_proximity_not_available">E no dey available</string>
+    <string name="diagnostics_checking">Dey check…</string>
+    <string name="diagnostics_audio_output_unknown">No clear</string>
     <string name="diagnostics_permission_required">Permission required</string>
     <string name="diagnostics_on">Dey on</string>
     <string name="diagnostics_off">Dey off</string>
-    <string name="diagnostics_unknown">No clear</string>
     <string name="diagnostics_success">Successful</string>
     <string name="diagnostics_failed">Fail</string>
     <string name="diagnostics_route_earpiece">Earpiece</string>

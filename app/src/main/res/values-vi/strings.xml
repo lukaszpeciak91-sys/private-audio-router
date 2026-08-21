@@ -44,11 +44,15 @@
     <string name="diagnostics_result">Kết quả</string>
     <string name="diagnostics_error">Lỗi</string>
     <string name="diagnostics_available">Có sẵn</string>
-    <string name="diagnostics_not_available">Không có sẵn</string>
+    <string name="diagnostics_earpiece_available">Có sẵn</string>
+    <string name="diagnostics_earpiece_not_available">Không có sẵn</string>
+    <string name="diagnostics_proximity_available">Có sẵn</string>
+    <string name="diagnostics_proximity_not_available">Không có sẵn</string>
+    <string name="diagnostics_checking">Đang kiểm tra…</string>
+    <string name="diagnostics_audio_output_unknown">Không xác định</string>
     <string name="diagnostics_permission_required">Cần cấp quyền</string>
     <string name="diagnostics_on">Bật</string>
     <string name="diagnostics_off">Tắt</string>
-    <string name="diagnostics_unknown">Không xác định</string>
     <string name="diagnostics_success">Thành công</string>
     <string name="diagnostics_failed">Thất bại</string>
     <string name="diagnostics_route_earpiece">Loa thoại</string>

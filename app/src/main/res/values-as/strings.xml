@@ -44,11 +44,15 @@
     <string name="diagnostics_result">ফলাফল</string>
     <string name="diagnostics_error">ত্ৰুটি</string>
     <string name="diagnostics_available">উপলব্ধ</string>
-    <string name="diagnostics_not_available">উপলব্ধ নহয়</string>
+    <string name="diagnostics_earpiece_available">উপলব্ধ</string>
+    <string name="diagnostics_earpiece_not_available">উপলব্ধ নহয়</string>
+    <string name="diagnostics_proximity_available">উপলব্ধ</string>
+    <string name="diagnostics_proximity_not_available">উপলব্ধ নহয়</string>
+    <string name="diagnostics_checking">পৰীক্ষা কৰা হৈছে…</string>
+    <string name="diagnostics_audio_output_unknown">অজ্ঞাত</string>
     <string name="diagnostics_permission_required">অনুমতিৰ প্ৰয়োজন</string>
     <string name="diagnostics_on">চালু</string>
     <string name="diagnostics_off">বন্ধ</string>
-    <string name="diagnostics_unknown">অজ্ঞাত</string>
     <string name="diagnostics_success">সফল</string>
     <string name="diagnostics_failed">বিফল</string>
     <string name="diagnostics_route_earpiece">ইয়েৰপিচ</string>

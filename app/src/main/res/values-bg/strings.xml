@@ -44,11 +44,15 @@
     <string name="diagnostics_result">Резултат</string>
     <string name="diagnostics_error">Грешка</string>
     <string name="diagnostics_available">Налично</string>
-    <string name="diagnostics_not_available">Не е налично</string>
+    <string name="diagnostics_earpiece_available">Налична</string>
+    <string name="diagnostics_earpiece_not_available">Не е налична</string>
+    <string name="diagnostics_proximity_available">Наличен</string>
+    <string name="diagnostics_proximity_not_available">Не е наличен</string>
+    <string name="diagnostics_checking">Проверява се…</string>
+    <string name="diagnostics_audio_output_unknown">Неизвестен</string>
     <string name="diagnostics_permission_required">Изисква се разрешение</string>
     <string name="diagnostics_on">Включено</string>
     <string name="diagnostics_off">Изключено</string>
-    <string name="diagnostics_unknown">Неизвестно</string>
     <string name="diagnostics_success">Успешно</string>
     <string name="diagnostics_failed">Неуспешно</string>
     <string name="diagnostics_route_earpiece">Телефонна слушалка</string>

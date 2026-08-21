@@ -44,11 +44,15 @@
     <string name="diagnostics_result">ഫലം</string>
     <string name="diagnostics_error">പിശക്</string>
     <string name="diagnostics_available">ലഭ്യമാണ്</string>
-    <string name="diagnostics_not_available">ലഭ്യമല്ല</string>
+    <string name="diagnostics_earpiece_available">ലഭ്യമാണ്</string>
+    <string name="diagnostics_earpiece_not_available">ലഭ്യമല്ല</string>
+    <string name="diagnostics_proximity_available">ലഭ്യമാണ്</string>
+    <string name="diagnostics_proximity_not_available">ലഭ്യമല്ല</string>
+    <string name="diagnostics_checking">പരിശോധിക്കുന്നു…</string>
+    <string name="diagnostics_audio_output_unknown">അജ്ഞാതം</string>
     <string name="diagnostics_permission_required">അനുമതി ആവശ്യമാണ്</string>
     <string name="diagnostics_on">ഓൺ</string>
     <string name="diagnostics_off">ഓഫ്</string>
-    <string name="diagnostics_unknown">അജ്ഞാതം</string>
     <string name="diagnostics_success">വിജയിച്ചു</string>
     <string name="diagnostics_failed">പരാജയപ്പെട്ടു</string>
     <string name="diagnostics_route_earpiece">ഇയർപീസ്</string>

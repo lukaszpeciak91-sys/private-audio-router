@@ -44,11 +44,15 @@
     <string name="diagnostics_result">Нәтиже</string>
     <string name="diagnostics_error">Қате</string>
     <string name="diagnostics_available">Қолжетімді</string>
-    <string name="diagnostics_not_available">Қолжетімді емес</string>
+    <string name="diagnostics_earpiece_available">Қолжетімді</string>
+    <string name="diagnostics_earpiece_not_available">Қолжетімді емес</string>
+    <string name="diagnostics_proximity_available">Қолжетімді</string>
+    <string name="diagnostics_proximity_not_available">Қолжетімді емес</string>
+    <string name="diagnostics_checking">Тексерілуде…</string>
+    <string name="diagnostics_audio_output_unknown">Белгісіз</string>
     <string name="diagnostics_permission_required">Рұқсат қажет</string>
     <string name="diagnostics_on">Қосулы</string>
     <string name="diagnostics_off">Өшірулі</string>
-    <string name="diagnostics_unknown">Белгісіз</string>
     <string name="diagnostics_success">Сәтті</string>
     <string name="diagnostics_failed">Сәтсіз</string>
     <string name="diagnostics_route_earpiece">Құлақ динамигі</string>

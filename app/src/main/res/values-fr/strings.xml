@@ -44,11 +44,15 @@
     <string name="diagnostics_result">Résultat</string>
     <string name="diagnostics_error">Erreur</string>
     <string name="diagnostics_available">Disponible</string>
-    <string name="diagnostics_not_available">Non disponible</string>
+    <string name="diagnostics_earpiece_available">Disponible</string>
+    <string name="diagnostics_earpiece_not_available">Non disponible</string>
+    <string name="diagnostics_proximity_available">Disponible</string>
+    <string name="diagnostics_proximity_not_available">Non disponible</string>
+    <string name="diagnostics_checking">Vérification…</string>
+    <string name="diagnostics_audio_output_unknown">Inconnue</string>
     <string name="diagnostics_permission_required">Autorisation requise</string>
     <string name="diagnostics_on">Activé</string>
     <string name="diagnostics_off">Désactivé</string>
-    <string name="diagnostics_unknown">Inconnu</string>
     <string name="diagnostics_success">Réussite</string>
     <string name="diagnostics_failed">Échec</string>
     <string name="diagnostics_route_earpiece">Écouteur</string>
