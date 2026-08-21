@@ -48,25 +48,17 @@ Built-in earpiece
 
 ## Repository state and freshness
 
-This document provides stable project context and is intentionally not the authoritative source for current implementation status. For current state, always inspect the repository, `docs/PROGRESS.md`, `docs/DECISIONS.md`, and relevant repository history.
+This document provides stable project context, not current implementation status.
+The early M0 observer/request sequence is completed planning history and has been
+superseded by the protected POC-5 architecture and permanent controller. Current
+work must be selected from the repository, `docs/PROGRESS.md`, and
+`docs/TEST_PLAN.md`, subject to the accepted history in `docs/DECISIONS.md`.
 
-Do not infer completed implementation or milestones, physical test results, current blockers, or the next implementation task solely from this file. When this context was introduced, the project was pursuing **M0 — Prove the route**, but milestone status may change. `docs/PROGRESS.md` remains authoritative for current state.
-
-## Current technical strategy
-
-The M0 strategy, without implying implementation status, is to:
-
-1. establish a minimal Android diagnostic environment;
-2. inspect available communication devices;
-3. identify the built-in earpiece;
-4. observe the current communication device;
-5. observe communication-device changes;
-6. test explicit earpiece request and clear behavior;
-7. validate behavior on physical Android hardware;
-8. compare results with the hypothesis; and
-9. decide the next step from evidence.
-
-`AudioManager.MODE` manipulation is not part of the initial M0 approach unless a future explicit decision changes that.
+The current architecture recognizes bounded, provider-independent public playback
+signatures, participates in Android communication routing with a locally generated
+silent track, requests the built-in earpiece once per protected cycle, observes the
+result, and performs reversible cleanup. Some optional behavior remains experimental;
+consult current state rather than generalizing from this stable summary.
 
 ## Critical technical question
 

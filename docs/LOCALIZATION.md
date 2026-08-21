@@ -1,6 +1,6 @@
 # Localization Policy
 
-This document is the authoritative localization policy and maintenance workflow for Private Audio. It records the product-language rules established by the existing localization work; individual locale additions remain recorded in `PROGRESS.md`, and presentation architecture remains described in `ARCHITECTURE.md` and decisions D-023 and D-024.
+This document is the authoritative localization policy and maintenance workflow for Private Audio. It records the product-language rules established by the existing localization work. `PROGRESS.md` records the current locale inventory, evidence level, and meaningful unresolved localization issues; Git history preserves individual locale additions. Presentation architecture remains described in `ARCHITECTURE.md` and decisions D-023 and D-024.
 
 ## Authority and evidence
 
@@ -167,7 +167,7 @@ Preserve numbered format placeholders and their types across every translation. 
 10. Validate Mini status presentation.
 11. Validate shared RTL behavior when applicable.
 12. Regress existing locales.
-13. Update the authoritative locale/progress record in `PROGRESS.md`, clearly recording the evidence level achieved and validation still pending.
+13. Update the concise current localization state in `PROGRESS.md` when the inventory, overall evidence level, or a meaningful unresolved issue changes. Do not add a permanent per-locale PR narrative.
 
 The Translator may repair detected semantic drift within the authorized translation scope. An audit remains read-only by default: it reports defects and normally delegates any later correction to the Translation Skill, followed by re-audit. Neither role may represent its own work as human/native validation.
 
@@ -195,7 +195,7 @@ When the repository's established contract pattern protects frozen high-risk ter
 
 ### Documentation
 
-When a locale is added, update the existing authoritative localization/progress record. When a localization rule changes, update this policy. Do not create one-off documents for individual languages; this repository has one localization policy.
+When a locale is added, update the current inventory and relevant evidence or unresolved issues in `PROGRESS.md`; detailed change history remains in Git. When a localization rule changes, update this policy. Do not create one-off documents or prose archives for individual languages; this repository has one localization policy.
 
 ## Codex maintenance checklist
 

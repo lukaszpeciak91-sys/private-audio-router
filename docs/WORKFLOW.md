@@ -97,19 +97,17 @@ run the smallest next experiment
 
 A failed experiment is useful evidence. Failure alone does not authorize escalation to a more invasive Android mechanism.
 
-## Historical PR sequence
+## Historical M0 sequence
 
-The following M0/PR sequence is completed planning history, retained for context only. It is not the current execution order and must not be used to describe implemented foreground-service, permanent-controller, or floating-controller work as future work.
+The completed early sequence established repository governance, bootstrapped the
+Compose application, progressed from read-only routing observation through bounded
+earpiece experiments, and required physical validation before broader claims. It led
+to the protected POC-5 path, permanent foreground controller, and floating UX now in
+the repository. Historical PR numbers and superseded experiments remain available in
+Git and the decision/evidence documents; they do not define current execution order.
 
-- **PR #1 — Repository foundation:** governance and documentation only.
-- **PR #2 — Governance and workflow refinement:** documentation only.
-- **PR #3 — Android project bootstrap:** buildable Compose application foundation with no audio behavior.
-- **PR #4 — Audio Routing Diagnostic Observer:** temporary physical-device experiment UI; enumerate, identify, read, and observe only, with no routing behavior.
-- **PR #5 — Next evidence-driven step:** decide only after the PR #4 physical-device experiment; actual routing is not part of PR #4.
-- **PR #6 — Safe built-in-earpiece request and clear behavior:** no `AudioManager.MODE` manipulation.
-- **PR #7 — Physical-device compatibility validation:** record results without assuming cross-application support.
-
-That sequence led to the now-implemented permanent foreground controller and floating UX. Current work is stage-independent and follows `AUDIT → scoped implementation → validation → audit/iteration if needed`, using `docs/PROGRESS.md` and `docs/TEST_PLAN.md` rather than the historical PR numbers to choose the next scope.
+Choose current work from `PROGRESS.md` and `TEST_PLAN.md`, then follow
+`AUDIT → scoped implementation → validation → audit/iteration if needed`.
 
 ## Pull-request ownership
 
