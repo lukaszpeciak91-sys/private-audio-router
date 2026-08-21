@@ -83,9 +83,9 @@ internal fun UserDiagnosticsScreen(
         }
 
         DiagnosticsSection(R.string.diagnostics_system_check) {
-            DiagnosticsRow(R.string.diagnostics_earpiece, availability(summary?.earpiece))
-            DiagnosticsRow(R.string.diagnostics_proximity_sensor, availability(summary?.proximitySensor))
-            DiagnosticsRow(R.string.diagnostics_floating_control, permission(summary?.floatingControlPermission))
+            DiagnosticsRow(R.string.diagnostics_earpiece, earpieceAvailability(summary?.earpiece))
+            DiagnosticsRow(R.string.diagnostics_proximity_sensor, proximityAvailability(summary?.proximitySensor))
+            DiagnosticsRow(R.string.floating, permission(summary?.floatingControlPermission))
         }
         DiagnosticsSection(R.string.diagnostics_private_audio) {
             DiagnosticsRow(R.string.diagnostics_routing, routing(summary?.routing))
@@ -148,40 +148,45 @@ private fun DiagnosticsRow(@StringRes label: Int, value: String) {
     }
 }
 
-@Composable private fun unknown() = stringResource(R.string.diagnostics_unknown)
-@Composable private fun availability(value: DiagnosticsAvailability?) = stringResource(when (value) {
-    DiagnosticsAvailability.AVAILABLE -> R.string.diagnostics_available
-    DiagnosticsAvailability.NOT_AVAILABLE -> R.string.diagnostics_not_available
-    null -> R.string.diagnostics_unknown
+@Composable private fun earpieceAvailability(value: DiagnosticsAvailability?) = stringResource(when (value) {
+    DiagnosticsAvailability.AVAILABLE -> R.string.diagnostics_earpiece_available
+    DiagnosticsAvailability.NOT_AVAILABLE -> R.string.diagnostics_earpiece_not_available
+    null -> R.string.diagnostics_checking
+})
+@Composable private fun proximityAvailability(value: DiagnosticsAvailability?) = stringResource(when (value) {
+    DiagnosticsAvailability.AVAILABLE -> R.string.diagnostics_proximity_available
+    DiagnosticsAvailability.NOT_AVAILABLE -> R.string.diagnostics_proximity_not_available
+    null -> R.string.diagnostics_checking
 })
 @Composable private fun permission(value: DiagnosticsPermission?) = stringResource(when (value) {
     DiagnosticsPermission.GRANTED -> R.string.diagnostics_available
     DiagnosticsPermission.NOT_GRANTED -> R.string.diagnostics_permission_required
-    null -> R.string.diagnostics_unknown
+    null -> R.string.diagnostics_checking
 })
 @Composable private fun routing(value: DiagnosticsRouting?) = stringResource(when (value) {
     DiagnosticsRouting.ON -> R.string.diagnostics_on
     DiagnosticsRouting.OFF -> R.string.diagnostics_off
-    null -> R.string.diagnostics_unknown
+    null -> R.string.diagnostics_checking
 })
 @Composable private fun status(value: PrivateAudioState?) = stringResource(when (value) {
     PrivateAudioState.READY -> R.string.state_ready
     PrivateAudioState.WAITING -> R.string.state_waiting
     PrivateAudioState.ACTIVE -> R.string.state_active
     PrivateAudioState.ERROR -> R.string.state_error
-    null -> R.string.diagnostics_unknown
+    null -> R.string.diagnostics_checking
 })
 @Composable private fun route(value: DiagnosticsRoute?) = stringResource(when (value) {
     DiagnosticsRoute.EARPIECE -> R.string.diagnostics_route_earpiece
     DiagnosticsRoute.SPEAKER -> R.string.diagnostics_route_speaker
     DiagnosticsRoute.BLUETOOTH -> R.string.diagnostics_route_bluetooth
     DiagnosticsRoute.OTHER -> R.string.diagnostics_route_other
-    DiagnosticsRoute.UNKNOWN, null -> R.string.diagnostics_unknown
+    DiagnosticsRoute.UNKNOWN -> R.string.diagnostics_audio_output_unknown
+    null -> R.string.diagnostics_checking
 })
 @Composable private fun result(value: DiagnosticsRoutingResult?) = stringResource(when (value) {
     DiagnosticsRoutingResult.SUCCESS -> R.string.diagnostics_success
     DiagnosticsRoutingResult.FAILED -> R.string.diagnostics_failed
-    DiagnosticsRoutingResult.NONE, null -> R.string.diagnostics_unknown
+    DiagnosticsRoutingResult.NONE, null -> R.string.diagnostics_checking
 })
 @Composable private fun error(value: DiagnosticsError?) = stringResource(when (value) {
     DiagnosticsError.BLOCKED_BY_SYSTEM -> R.string.diagnostics_error_blocked_by_system
@@ -190,7 +195,7 @@ private fun DiagnosticsRow(@StringRes label: Int, value: String) {
     DiagnosticsError.COMMUNICATION_AUDIO_PREPARATION_FAILED -> R.string.diagnostics_error_audio_preparation
     DiagnosticsError.EARPIECE_REQUEST_REJECTED -> R.string.diagnostics_error_request_rejected
     DiagnosticsError.ROUTING_NOT_COMPLETED -> R.string.diagnostics_error_not_completed
-    DiagnosticsError.NONE, null -> R.string.diagnostics_unknown
+    DiagnosticsError.NONE, null -> R.string.diagnostics_checking
 })
 
 @Composable

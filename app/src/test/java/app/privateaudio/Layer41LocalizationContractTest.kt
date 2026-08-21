@@ -306,8 +306,64 @@ class Layer41LocalizationContractTest {
         assertTrue(ukrainianStrings.contains("name=\"state_error\">Помилка</string>"))
     }
 
+    @Test
+    fun diagnosticsLocalesFollowCurrentSourceContract() {
+        val polishStrings = projectFile("app/src/main/res/values-pl/strings.xml").readText()
+        val indonesianStrings = projectFile("app/src/main/res/values-in/strings.xml").readText()
+        val khmerStrings = projectFile("app/src/main/res/values-km/strings.xml").readText()
+        val swahiliStrings = projectFile("app/src/main/res/values-sw/strings.xml").readText()
+        val afrikaansStrings = projectFile("app/src/main/res/values-af/strings.xml").readText()
+        val diagnosticsKeys = stringKeys(defaultStrings).filter { it == "settings_diagnostics" || it.startsWith("diagnostics_") }
+        assertEquals(34, diagnosticsKeys.size)
+        val obsoleteKeys = setOf(
+            "diagnostics_device", "diagnostics_device_model", "diagnostics_android_version",
+            "diagnostics_android_value", "diagnostics_private_audio_version", "diagnostics_version_value",
+            "diagnostics_overlay_permission", "diagnostics_detected_audio", "diagnostics_last_routing_result",
+            "diagnostics_last_error", "diagnostics_granted", "diagnostics_not_granted", "diagnostics_none",
+            "diagnostics_audio_communication", "diagnostics_audio_assistant",
+            "diagnostics_audio_browser_communication",
+            "diagnostics_not_available", "diagnostics_unknown",
+        )
+        val introducedKeys = setOf(
+            "diagnostics_permission_required", "diagnostics_last_routing", "diagnostics_error",
+            "diagnostics_earpiece_available", "diagnostics_earpiece_not_available",
+            "diagnostics_proximity_available", "diagnostics_proximity_not_available",
+            "diagnostics_checking", "diagnostics_audio_output_unknown",
+        )
+        localeDirectories.forEach { localeDirectory ->
+            val keys = stringKeys(File(localeDirectory, "strings.xml").readText()).toSet()
+            assertTrue(localeDirectory.name, keys.containsAll(diagnosticsKeys))
+            assertTrue(localeDirectory.name, keys.containsAll(introducedKeys))
+            assertTrue(localeDirectory.name, keys.intersect(obsoleteKeys).isEmpty())
+        }
+        assertTrue(javaneseStrings.contains("name=\"diagnostics_earpiece\">Earpiece gawan telpon</string>"))
+        assertTrue(javaneseStrings.contains("name=\"diagnostics_route_earpiece\">Earpiece gawan telpon</string>"))
+        assertTrue(javaneseStrings.contains("menyang earpiece gawan telpon ora ditampa"))
+        assertFalse(javaneseStrings.contains("name=\"diagnostics_earpiece\">Speaker"))
+        assertFalse(javaneseStrings.contains("name=\"diagnostics_route_earpiece\">Speaker"))
+        assertFalse(resourceValue(zuluStrings, "diagnostics_routing") == resourceValue(zuluStrings, "diagnostics_audio_route"))
+        assertEquals("Earpiece", resourceValue(indonesianStrings, "diagnostics_earpiece"))
+        assertEquals("Earpiece", resourceValue(indonesianStrings, "diagnostics_route_earpiece"))
+        assertFalse(indonesianStrings.contains("Speaker telinga", ignoreCase = true))
+        assertFalse(resourceValue(khmerStrings, "diagnostics_result") == resourceValue(khmerStrings, "diagnostics_audio_route"))
+        assertEquals("ការនាំផ្លូវសំឡេង", resourceValue(khmerStrings, "diagnostics_routing"))
+        assertFalse(resourceValue(swahiliStrings, "diagnostics_result") == resourceValue(swahiliStrings, "diagnostics_audio_route"))
+        assertEquals("Utumaji wa sauti", resourceValue(swahiliStrings, "diagnostics_routing"))
+        assertEquals("LAASTE ROETERINGSPOGING", resourceValue(afrikaansStrings, "diagnostics_last_routing"))
+        assertEquals("Przekierowanie dźwięku", resourceValue(polishStrings, "diagnostics_routing"))
+        assertEquals("Wyjście audio", resourceValue(polishStrings, "diagnostics_audio_route"))
+        assertEquals("OSTATNIA PRÓBA PRZEKIEROWANIA", resourceValue(polishStrings, "diagnostics_last_routing"))
+        listOf(
+            "diagnostics_error_blocked_by_system", "diagnostics_error_session_ended",
+            "diagnostics_error_audio_start", "diagnostics_error_request_rejected",
+            "diagnostics_error_not_completed",
+        ).forEach { key ->
+            assertTrue(key, resourceValue(polishStrings, key).contains("przekier", ignoreCase = true))
+        }
+    }
+
     private fun isEnglishFallbackOnlyKey(key: String): Boolean =
-        key == "settings_fake_phone_pre_arm" || key == "settings_diagnostics" || key.startsWith("diagnostics_")
+        key == "settings_fake_phone_pre_arm"
 
     @Test
     fun finnishFrozenLocalizationSemanticsRemainIntact() {
@@ -1649,6 +1705,9 @@ class Layer41LocalizationContractTest {
         Regex("<string name=\"([^\"]+)\">([^<]*)</string>").findAll(resources).associate {
             it.groupValues[1] to Regex("%\\d+\\$[a-z]").findAll(it.groupValues[2]).map { match -> match.value }.toList()
         }
+
+    private fun resourceValue(resources: String, key: String) =
+        Regex("<string name=\"$key\">([^<]*)</string>").find(resources)?.groupValues?.get(1).orEmpty()
 
     private fun frozenStates(resources: String) =
         Regex("<string name=\"(state_(?:ready|waiting|active|error))\">([^<]*)</string>")

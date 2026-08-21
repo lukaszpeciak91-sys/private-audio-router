@@ -71,9 +71,18 @@ physical test records remain in [`DECISIONS.md`](DECISIONS.md),
   semantically self-checked across all 86 non-English sets. A targeted independent
   audit found ten claim-scope or terminology defects, and reviewed replacements were
   applied. This is neither human/native-speaker validation nor legal certification.
-- The newer user-facing Diagnostics strings intentionally fall back to authoritative
-  English outside the default resources pending reviewed localization. The
-  default-OFF Fake Phone experiment label is likewise intentionally English-only.
+- The current user-facing Diagnostics key inventory is localized across all 86
+  supported non-English resource sets. Candidates were produced and semantically
+  self-checked with the Translation Skill. An independent linguistic audit of all 86
+  sets identified targeted defects in Polish, Indonesian, Khmer, Swahili, and
+  Afrikaans, as well as a locale-unsafe shared grammatical-status contract; the
+  corrective candidates and context-specific status resources were applied through
+  the Translation Skill, using Android terminology as evidence where semantically
+  appropriate. The previously corrected Javanese and Zulu distinctions remain
+  protected. Final independent delta re-audit remains pending, and no human or
+  native-speaker validation is claimed. The detailed
+  technical diagnostic report and SUPPORT SUMMARY remain intentionally English-only,
+  as does the default-OFF Fake Phone experiment label.
 - Durable terminology, evidence semantics, Mini fitting, RTL behavior, factual-claim
   safeguards, and locale maintenance rules belong to
   [`LOCALIZATION.md`](LOCALIZATION.md); this document records only current coverage
@@ -88,8 +97,8 @@ physical test records remain in [`DECISIONS.md`](DECISIONS.md),
   It locally observes technical Android audio-system metadata and state needed for
   routing and diagnostics; that metadata is distinct from conversation content.
 - The user-facing Diagnostics screen is a concise product-health summary: System
-  Check shows earpiece, proximity-sensor, and floating-control availability; Private
-  Audio shows routing intent, product state, and current route; Last Routing appears
+  Check shows earpiece, proximity-sensor, and Mini availability; Private Audio shows
+  routing intent, product state, and current audio output; Last Routing Attempt appears
   only after a completed cycle and shows a result plus a concise error only on
   failure. Device/environment and classifier details are intentionally omitted.
 - The English-only saved technical report begins with a stable support summary and

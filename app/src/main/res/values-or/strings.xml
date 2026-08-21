@@ -41,4 +41,39 @@
 
     <string name="diagnostic_report_saved">ଡାଇଗ୍ନୋଷ୍ଟିକ୍ ରିପୋର୍ଟ ସେଭ୍ ହୋଇଛି।</string>
     <string name="diagnostic_report_save_failed">ଡାଇଗ୍ନୋଷ୍ଟିକ୍ ରିପୋର୍ଟ ସେଭ୍ କରାଯାଇପାରିଲା ନାହିଁ।</string>
+
+    <string name="settings_diagnostics">ଡାଇଗ୍ନୋଷ୍ଟିକ୍ସ</string>
+    <string name="diagnostics_title">ଡାଇଗ୍ନୋଷ୍ଟିକ୍ସ</string>
+    <string name="diagnostics_system_check">ସିଷ୍ଟମ୍ ଯାଞ୍ଚ</string>
+    <string name="diagnostics_earpiece">ଇୟରପିସ୍</string>
+    <string name="diagnostics_proximity_sensor">ନିକଟତା ସେନ୍ସର୍</string>
+    <string name="diagnostics_private_audio">Private Audio</string>
+    <string name="diagnostics_routing">ରୂଟିଂ</string>
+    <string name="diagnostics_status">ସ୍ଥିତି</string>
+    <string name="diagnostics_audio_route">ଅଡିଓ ଆଉଟପୁଟ୍</string>
+    <string name="diagnostics_last_routing">ଶେଷ ରୂଟିଂ ପ୍ରୟାସ</string>
+    <string name="diagnostics_result">ଫଳାଫଳ</string>
+    <string name="diagnostics_error">ତ୍ରୁଟି</string>
+    <string name="diagnostics_available">ଉପଲବ୍ଧ</string>
+    <string name="diagnostics_earpiece_available">ଉପଲବ୍ଧ</string>
+    <string name="diagnostics_earpiece_not_available">ଉପଲବ୍ଧ ନାହିଁ</string>
+    <string name="diagnostics_proximity_available">ଉପଲବ୍ଧ</string>
+    <string name="diagnostics_proximity_not_available">ଉପଲବ୍ଧ ନାହିଁ</string>
+    <string name="diagnostics_checking">ଯାଞ୍ଚ କରାଯାଉଛି…</string>
+    <string name="diagnostics_audio_output_unknown">ଅଜଣା</string>
+    <string name="diagnostics_permission_required">ଅନୁମତି ଆବଶ୍ୟକ</string>
+    <string name="diagnostics_on">ଚାଲୁ</string>
+    <string name="diagnostics_off">ବନ୍ଦ</string>
+    <string name="diagnostics_success">ସଫଳ</string>
+    <string name="diagnostics_failed">ବିଫଳ</string>
+    <string name="diagnostics_route_earpiece">ଇୟରପିସ୍</string>
+    <string name="diagnostics_route_speaker">ସ୍ପିକର୍</string>
+    <string name="diagnostics_route_bluetooth">Bluetooth</string>
+    <string name="diagnostics_route_other">ଅନ୍ୟ</string>
+    <string name="diagnostics_error_blocked_by_system">ସିଷ୍ଟମ୍ ରୂଟିଂକୁ ଅବରୋଧ କରିଥିଲା।</string>
+    <string name="diagnostics_error_session_ended">ରୂଟିଂ ସମ୍ପୂର୍ଣ୍ଣ ହେବା ପୂର୍ବରୁ ଅଡିଓ ସେସନ୍ ଶେଷ ହୋଇଯାଇଥିଲା।</string>
+    <string name="diagnostics_error_audio_start">Private Audio ଅଡିଓ ରୂଟିଂ ଆରମ୍ଭ କରିପାରିଲା ନାହିଁ।</string>
+    <string name="diagnostics_error_audio_preparation">Private Audio ଯୋଗାଯୋଗ ଅଡିଓ ପ୍ରସ୍ତୁତ କରିପାରିଲା ନାହିଁ।</string>
+    <string name="diagnostics_error_request_rejected">ଇୟରପିସ୍‌କୁ ରୂଟିଂ କରିବାର ଅନୁରୋଧ ଗ୍ରହଣ କରାଯାଇନଥିଲା।</string>
+    <string name="diagnostics_error_not_completed">ରୂଟିଂ ସମ୍ପୂର୍ଣ୍ଣ କରାଯାଇପାରିଲା ନାହିଁ।</string>
 </resources>
