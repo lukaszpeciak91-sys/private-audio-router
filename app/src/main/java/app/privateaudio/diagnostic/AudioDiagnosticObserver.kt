@@ -329,7 +329,7 @@ class AudioDiagnosticObserver(
         addEvent(message)
     }
 
-    fun report(supportSummary: DiagnosticsSummary): String = buildDiagnosticReport(
+    internal fun report(supportSummary: DiagnosticsSummary): String = buildDiagnosticReport(
         timestamp = OffsetDateTime.now().format(DateTimeFormatter.ISO_OFFSET_DATE_TIME),
         experiment = experiment,
         lastCompletedExperiment = lastCompletedExperiment,
