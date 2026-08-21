@@ -306,6 +306,36 @@ class Layer41LocalizationContractTest {
         assertTrue(ukrainianStrings.contains("name=\"state_error\">Помилка</string>"))
     }
 
+    @Test
+    fun diagnosticsLocalesFollowCurrentSourceContract() {
+        val diagnosticsKeys = stringKeys(defaultStrings).filter { it == "settings_diagnostics" || it.startsWith("diagnostics_") }
+        assertEquals(31, diagnosticsKeys.size)
+        val obsoleteKeys = setOf(
+            "diagnostics_device", "diagnostics_device_model", "diagnostics_android_version",
+            "diagnostics_android_value", "diagnostics_private_audio_version", "diagnostics_version_value",
+            "diagnostics_overlay_permission", "diagnostics_detected_audio", "diagnostics_last_routing_result",
+            "diagnostics_last_error", "diagnostics_granted", "diagnostics_not_granted", "diagnostics_none",
+            "diagnostics_audio_communication", "diagnostics_audio_assistant",
+            "diagnostics_audio_browser_communication",
+        )
+        val introducedKeys = setOf(
+            "diagnostics_floating_control", "diagnostics_permission_required",
+            "diagnostics_last_routing", "diagnostics_error",
+        )
+        localeDirectories.forEach { localeDirectory ->
+            val keys = stringKeys(File(localeDirectory, "strings.xml").readText()).toSet()
+            assertTrue(localeDirectory.name, keys.containsAll(diagnosticsKeys))
+            assertTrue(localeDirectory.name, keys.containsAll(introducedKeys))
+            assertTrue(localeDirectory.name, keys.intersect(obsoleteKeys).isEmpty())
+        }
+        assertTrue(javaneseStrings.contains("name=\"diagnostics_earpiece\">Earpiece gawan telpon</string>"))
+        assertTrue(javaneseStrings.contains("name=\"diagnostics_route_earpiece\">Earpiece gawan telpon</string>"))
+        assertTrue(javaneseStrings.contains("menyang earpiece gawan telpon ora ditampa"))
+        assertFalse(javaneseStrings.contains("name=\"diagnostics_earpiece\">Speaker"))
+        assertFalse(javaneseStrings.contains("name=\"diagnostics_route_earpiece\">Speaker"))
+        assertFalse(resourceValue(zuluStrings, "diagnostics_routing") == resourceValue(zuluStrings, "diagnostics_audio_route"))
+    }
+
     private fun isEnglishFallbackOnlyKey(key: String): Boolean =
         key == "settings_fake_phone_pre_arm"
 
@@ -1649,6 +1679,9 @@ class Layer41LocalizationContractTest {
         Regex("<string name=\"([^\"]+)\">([^<]*)</string>").findAll(resources).associate {
             it.groupValues[1] to Regex("%\\d+\\$[a-z]").findAll(it.groupValues[2]).map { match -> match.value }.toList()
         }
+
+    private fun resourceValue(resources: String, key: String) =
+        Regex("<string name=\"$key\">([^<]*)</string>").find(resources)?.groupValues?.get(1).orEmpty()
 
     private fun frozenStates(resources: String) =
         Regex("<string name=\"(state_(?:ready|waiting|active|error))\">([^<]*)</string>")

@@ -71,11 +71,13 @@ physical test records remain in [`DECISIONS.md`](DECISIONS.md),
   semantically self-checked across all 86 non-English sets. A targeted independent
   audit found ten claim-scope or terminology defects, and reviewed replacements were
   applied. This is neither human/native-speaker validation nor legal certification.
-- User-facing Diagnostics localization candidates now cover the complete supported
-  locale inventory. They were produced and semantically self-checked with the
-  Translation Skill; an independent audit remains pending. The detailed technical
-  diagnostic report and the default-OFF Fake Phone experiment label remain
-  intentionally English-only.
+- The current user-facing Diagnostics key inventory is localized across all 86
+  supported non-English resource sets. Candidates were produced and semantically
+  self-checked with the Translation Skill; an independent audit identified targeted
+  Javanese earpiece and Zulu audio-route terminology defects, and corrective
+  candidates were applied. Final independent re-audit remains pending. The detailed
+  technical diagnostic report and SUPPORT SUMMARY remain intentionally English-only,
+  as does the default-OFF Fake Phone experiment label.
 - Durable terminology, evidence semantics, Mini fitting, RTL behavior, factual-claim
   safeguards, and locale maintenance rules belong to
   [`LOCALIZATION.md`](LOCALIZATION.md); this document records only current coverage
