@@ -1,6 +1,9 @@
 package app.privateaudio
 
+import android.app.LocaleManager
 import android.content.res.Configuration
+import android.os.Build
+import android.os.LocaleList
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.platform.LocalContext
@@ -15,6 +18,7 @@ import androidx.compose.ui.test.performTouchInput
 import androidx.test.espresso.Espresso.pressBack
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.compose.ui.test.click
+import app.privateaudio.localization.AppLanguagePreferences
 import app.privateaudio.ui.PrivateAudioScreen
 import app.privateaudio.ui.UserDiagnosticsScreen
 import app.privateaudio.ui.theme.PrivateAudioTheme
@@ -35,15 +39,45 @@ class PrivateAudioScreenTest {
     val composeRule = createComposeRule()
 
     @Test
-    fun bottomControlsFollowEffectiveYiddishAndPolishPresentationDirection() {
+    fun yiddishBottomControlsAreRtl() {
         assertBottomControlOrder(
             "yi",
             listOf("private_audio_close", "private_audio_settings", "private_audio_floating"),
         )
+    }
+
+    @Test
+    fun polishBottomControlsAreLtr() {
         assertBottomControlOrder(
             "pl",
             listOf("private_audio_floating", "private_audio_settings", "private_audio_close"),
         )
+    }
+
+    @Test
+    fun selectingModernYiddishKeepsYiddishResourcesAndRtl() {
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.TIRAMISU) return
+        val context = InstrumentationRegistry.getInstrumentation().targetContext
+        val localeManager = context.getSystemService(LocaleManager::class.java)
+        val original = localeManager.applicationLocales
+        try {
+            AppLanguagePreferences.select(context, "yi")
+
+            assertEquals("yi", AppLanguagePreferences.currentLanguageTag(context))
+            assertEquals(
+                android.view.View.LAYOUT_DIRECTION_RTL,
+                AppLanguagePreferences.presentationLayoutDirection(context),
+            )
+            val selectedTag = AppLanguagePreferences.currentLanguageTag(context)!!
+            val localizedContext = context.createConfigurationContext(
+                Configuration(context.resources.configuration).apply {
+                    setLocale(Locale.forLanguageTag(selectedTag))
+                },
+            )
+            assertEquals("סעטינגס", localizedContext.getString(R.string.settings))
+        } finally {
+            localeManager.applicationLocales = original
+        }
     }
 
     @Test
@@ -267,27 +301,40 @@ class PrivateAudioScreenTest {
 
     private fun assertBottomControlOrder(languageTag: String, expectedLeftToRight: List<String>) {
         val targetContext = InstrumentationRegistry.getInstrumentation().targetContext
-        val localizedContext = targetContext.createConfigurationContext(
-            Configuration(targetContext.resources.configuration).apply {
-                setLocale(Locale.forLanguageTag(languageTag))
-            },
-        )
-        composeRule.setContent {
-            CompositionLocalProvider(LocalContext provides localizedContext) {
-                PrivateAudioTheme {
-                    PrivateAudioScreen(
-                        state = PrivateAudioState.READY,
-                        onPowerClick = {},
-                        onCloseClick = {},
-                    )
+        val localeManager = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            targetContext.getSystemService(LocaleManager::class.java)
+        } else {
+            null
+        }
+        val original = localeManager?.applicationLocales
+        try {
+            localeManager?.applicationLocales = LocaleList.forLanguageTags(languageTag)
+            val localizedContext = targetContext.createConfigurationContext(
+                Configuration(targetContext.resources.configuration).apply {
+                    setLocale(Locale.forLanguageTag(languageTag))
+                },
+            )
+            composeRule.setContent {
+                CompositionLocalProvider(LocalContext provides localizedContext) {
+                    PrivateAudioTheme {
+                        PrivateAudioScreen(
+                            state = PrivateAudioState.READY,
+                            onPowerClick = {},
+                            onCloseClick = {},
+                        )
+                    }
                 }
             }
-        }
 
-        val actual = expectedLeftToRight.sortedBy { tag ->
-            composeRule.onNodeWithTag(tag).fetchSemanticsNode().boundsInRoot.left
+            val actual = expectedLeftToRight.sortedBy { tag ->
+                composeRule.onNodeWithTag(tag).fetchSemanticsNode().boundsInRoot.left
+            }
+            assertEquals(languageTag, expectedLeftToRight, actual)
+        } finally {
+            if (localeManager != null && original != null) {
+                localeManager.applicationLocales = original
+            }
         }
-        assertEquals(languageTag, expectedLeftToRight, actual)
     }
 
     private fun diagnosticsSummary(
