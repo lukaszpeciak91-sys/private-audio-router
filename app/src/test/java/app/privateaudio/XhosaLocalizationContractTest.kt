@@ -28,6 +28,7 @@ class XhosaLocalizationContractTest {
         assertEquals("Ilindile", resourceValue("state_waiting"))
         assertEquals("Iyasebenza", resourceValue("state_active"))
         assertEquals("Impazamo", resourceValue("state_error"))
+        assertEquals("Ilindile ukuhambisa iaudio", resourceValue("routing_notification_text"))
         assertFalse(resourceValue("state_active") == resourceValue("diagnostics_on"))
 
         assertEquals("Private Audio", resourceValue("app_name"))
@@ -49,6 +50,7 @@ class XhosaLocalizationContractTest {
         assertTrue(strings.contains("ayiqokeleli, ayirekhodi, okanye ayithumeli"))
         assertTrue(strings.contains("Ayifikeleli kumxholo weencoko zakho"))
         assertTrue(strings.contains("ukunika ingxelo xa iapp ima ngokungalindelekanga"))
+        assertTrue(strings.contains("Idatha yoxilongo yenziwa ize isetyenzwe kwisixhobo sakho"))
         assertTrue(strings.contains("igcinwa kuphela xa ukhetha ukuyigcina"))
         assertFalse(projectFile("app/src/main/res/values-xh/mini_state_strings.xml").exists())
     }
