@@ -45,6 +45,40 @@ class AssistantEarlyRouteContractTest {
         assertEquals(1, observer.method("private fun requestCommunicationDevice(").occurrences("setCommunicationDevice(earpiece)"))
     }
 
+    @Test fun modeNormalDuringCurrentRequestIsNotOwnershipLossAndTrackStaysAlive() {
+        val abort = observer.method("private fun abortAssistantEarlyPreArmIfContextLost(")
+        assertTrue(abort.contains("AssistantEarlyRoutePhase.MODE_REQUEST_IN_FLIGHT"))
+        assertTrue(abort.contains("Assistant early MODE_NORMAL ignored while request IN_FLIGHT"))
+        assertInOrder(abort, "MODE_REQUEST_IN_FLIGHT", "audioManager.mode == AudioManager.MODE_NORMAL", "return")
+        assertFalse(abort.substringBefore("MODE_REQUEST_IN_FLIGHT").contains("early communication mode ownership lost"))
+        val start = observer.method("private fun startAssistantEarlyPreArm(")
+        assertInOrder(start, "phase = AssistantEarlyRoutePhase.MODE_REQUEST_IN_FLIGHT", "requestCommunicationMode()")
+        assertFalse(start.substringAfter("phase = AssistantEarlyRoutePhase.MODE_REQUEST_IN_FLIGHT")
+            .substringBefore("requestCommunicationMode()").contains("stopSilentCommunicationTrack"))
+    }
+
+    @Test fun currentCompletionAloneBecomesModeReadyAndPromotionRequiresIt() {
+        val start = observer.method("private fun startAssistantEarlyPreArm(")
+        assertTrue(start.contains("generation == assistantEarlyRouteGeneration"))
+        assertTrue(start.contains("assistantEarlyRoute.generation == generation"))
+        assertInOrder(start, "generationStillCurrent", "if (!generationStillCurrent)", "MODE_READY")
+        val healthy = observer.method("private fun isAssistantEarlyPreArmHealthy(")
+        assertTrue(healthy.contains("AssistantEarlyRoutePhase.MODE_READY"))
+        assertTrue(healthy.contains("AudioTrack.PLAYSTATE_PLAYING"))
+    }
+
+    @Test fun cancellationInvalidatesInflightGenerationAndStaleCompletionCannotTouchANewerOne() {
+        val cleanup = observer.method("private fun cleanupAssistantEarlyPreArm(")
+        assertInOrder(cleanup, "cancelledWhileModeInFlight", "invalidateAssistantEarlyRouteDelayedWork()", "stopSilentCommunicationTrack()")
+        assertTrue(cleanup.contains("abortRequestedWhileModeInFlight = cancelledWhileModeInFlight"))
+        assertTrue(cleanup.contains("modeParticipationActive && !cancelledWhileModeInFlight"))
+        val reconcile = observer.method("private fun reconcileModeAfterStaleAssistantEarlyCompletion(")
+        assertTrue(reconcile.contains("if (assistantEarlyRoute.generation == generation)"))
+        assertTrue(reconcile.contains("!experiment.requestAttempted && !assistantEarlyRoute.active"))
+        assertFalse(reconcile.contains("requestCommunicationDevice"))
+        assertFalse(reconcile.contains("stopSilentCommunicationTrack"))
+    }
+
     @Test fun communicationAndBrowserCancelRatherThanPromoteEarlyPreArm() {
         val callback = observer.method("private fun handlePlaybackConfigurations(")
         assertTrue(callback.contains("qualifyingPlaybackCount(configs) >= 2 || browserCount > 0"))
