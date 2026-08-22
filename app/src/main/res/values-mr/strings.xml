@@ -11,7 +11,7 @@
     <string name="state_active">सक्रिय</string>
     <string name="state_error">त्रुटी</string>
     <string name="power_control">सुरू करा</string>
-    <string name="floating">Mini</string>
+    <string name="floating">मिनी</string>
     <string name="settings">सेटिंग्ज</string>
     <string name="close">बंद करा</string>
     <string name="overlay_controller_description">Private Audio फ्लोटिंग कंट्रोलर. स्थिती: %1$s. सुरू करणे, विस्तृत करणे आणि बंद करणे यासाठी नियंत्रणे.</string>

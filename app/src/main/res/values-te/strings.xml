@@ -11,7 +11,7 @@
     <string name="state_active">యాక్టివ్</string>
     <string name="state_error">ఎర్రర్</string>
     <string name="power_control">ఆన్ చేయండి</string>
-    <string name="floating">Mini</string>
+    <string name="floating">మినీ</string>
     <string name="settings">సెట్టింగ్‌లు</string>
     <string name="close">మూసివేయండి</string>
     <string name="overlay_controller_description">Private Audio ఫ్లోటింగ్ కంట్రోలర్. స్థితి: %1$s. ఆన్ చేయడం, విస్తరించడం, మూసివేయడం కోసం కంట్రోల్‌లు.</string>

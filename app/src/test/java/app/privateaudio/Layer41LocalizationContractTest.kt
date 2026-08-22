@@ -9,6 +9,29 @@ import java.util.Locale
 
 class Layer41LocalizationContractTest {
     @Test
+    fun reviewedMiniLabelsRemainLocalizedAndDoNotRegressToLatinEnglish() {
+        mapOf(
+            "values-bg" to "Мини",
+            "values-bn" to "মিনি",
+            "values-el" to "Μίνι",
+            "values-gu" to "મિની",
+            "values-iw" to "מיני",
+            "values-ji" to "מיני",
+            "values-km" to "ខ្នាតតូច",
+            "values-kn" to "ಮಿನಿ",
+            "values-mk" to "Мини",
+            "values-mr" to "मिनी",
+            "values-sr" to "Мини",
+            "values-ta" to "மினி",
+            "values-te" to "మినీ",
+        ).forEach { (resourceDirectory, reviewedLabel) ->
+            val strings = projectFile("app/src/main/res/$resourceDirectory/strings.xml").readText()
+            assertTrue(resourceDirectory, strings.contains("name=\"floating\">$reviewedLabel</string>"))
+            assertFalse(resourceDirectory, strings.contains("name=\"floating\">Mini</string>"))
+        }
+    }
+
+    @Test
     fun standardAndroidLocaleConfigurationUsesEnglishDefaultResources() {
         assertTrue(appBuildSource.contains("generateLocaleConfig = true"))
         assertEquals("unqualifiedResLocale=en-US", resourcesProperties.trim())
@@ -530,7 +553,7 @@ class Layer41LocalizationContractTest {
         assertEquals("Български", nativeLocaleName("bg"))
         assertTrue(projectFile("app/src/main/res/values-bg/strings.xml").isFile)
         assertTrue(bulgarianStrings.contains("name=\"app_name\">Private Audio</string>"))
-        assertTrue(bulgarianStrings.contains("name=\"floating\">Mini</string>"))
+        assertTrue(bulgarianStrings.contains("name=\"floating\">Мини</string>"))
         assertTrue(bulgarianStrings.contains("name=\"product_subtitle\">Разговаряйте насаме с ИИ, както по телефона.</string>"))
         assertTrue(bulgarianStrings.contains("name=\"routing_notification_title\">Private Audio е включено</string>"))
         assertTrue(bulgarianStrings.contains("name=\"state_active\">Активно</string>"))
@@ -558,7 +581,7 @@ class Layer41LocalizationContractTest {
         assertTrue(projectFile("app/src/main/res/values-sr/strings.xml").isFile)
         assertTrue(projectFile("app/src/main/res/values-b+sr+Latn/strings.xml").isFile)
         assertTrue(serbianCyrillicStrings.contains("name=\"app_name\">Private Audio</string>"))
-        assertTrue(serbianCyrillicStrings.contains("name=\"floating\">Mini</string>"))
+        assertTrue(serbianCyrillicStrings.contains("name=\"floating\">Мини</string>"))
         assertTrue(serbianCyrillicStrings.contains("name=\"product_subtitle\">Разговарајте приватно са ВИ, као током телефонског позива.</string>"))
         assertTrue(serbianLatinStrings.contains("name=\"product_subtitle\">Razgovarajte privatno sa AI-jem, kao tokom telefonskog poziva.</string>"))
         assertFalse(serbianCyrillicStrings == serbianLatinStrings)
@@ -592,7 +615,7 @@ class Layer41LocalizationContractTest {
         assertEquals("Македонски", nativeLocaleName("mk"))
         assertTrue(projectFile("app/src/main/res/values-mk/strings.xml").isFile)
         assertTrue(macedonianStrings.contains("name=\"app_name\">Private Audio</string>"))
-        assertTrue(macedonianStrings.contains("name=\"floating\">Mini</string>"))
+        assertTrue(macedonianStrings.contains("name=\"floating\">Мини</string>"))
         assertTrue(macedonianStrings.contains("name=\"product_subtitle\">Разговарајте приватно со ВИ, како при телефонски повик.</string>"))
         assertTrue(macedonianStrings.contains("name=\"routing_notification_title\">Private Audio е вклучено</string>"))
         assertTrue(macedonianStrings.contains("name=\"state_active\">Активно</string>"))
@@ -797,7 +820,7 @@ class Layer41LocalizationContractTest {
         assertEquals("Ελληνικά", nativeLocaleName(localeTag))
         assertTrue(projectFile("app/src/main/res/values-el/strings.xml").isFile)
         assertTrue(greekStrings.contains("name=\"app_name\">Private Audio</string>"))
-        assertTrue(greekStrings.contains("name=\"floating\">Mini</string>"))
+        assertTrue(greekStrings.contains("name=\"floating\">Μίνι</string>"))
         assertTrue(greekStrings.contains("name=\"product_subtitle\">Μιλήστε ιδιωτικά με AI, σαν να μιλάτε στο τηλέφωνο.</string>"))
         assertTrue(greekStrings.contains("name=\"routing_notification_title\">Το Private Audio είναι ενεργοποιημένο</string>"))
         assertTrue(greekStrings.contains("name=\"state_active\">Ενεργό</string>"))
@@ -825,7 +848,7 @@ class Layer41LocalizationContractTest {
         assertEquals("বাংলা", nativeLocaleName(localeTag))
         assertTrue(projectFile("app/src/main/res/values-bn/strings.xml").isFile)
         assertTrue(bengaliStrings.contains("name=\"app_name\">Private Audio</string>"))
-        assertTrue(bengaliStrings.contains("name=\"floating\">Mini</string>"))
+        assertTrue(bengaliStrings.contains("name=\"floating\">মিনি</string>"))
         assertTrue(bengaliStrings.contains("name=\"product_subtitle\">AI-এর সঙ্গে ব্যক্তিগতভাবে কথা বলুন, ঠিক যেন ফোনে কথা বলছেন।</string>"))
         assertTrue(bengaliStrings.contains("name=\"routing_notification_title\">Private Audio চালু আছে</string>"))
         assertTrue(bengaliStrings.contains("name=\"state_active\">সক্রিয়</string>"))
@@ -1180,7 +1203,7 @@ class Layer41LocalizationContractTest {
         assertFalse(projectFile("app/src/main/res/values-he/strings.xml").exists())
         assertFalse(projectFile("app/src/main/res/values-ji/strings.xml").readText() == hebrewStrings)
         assertTrue(hebrewStrings.contains("name=\"app_name\">Private Audio</string>"))
-        assertTrue(hebrewStrings.contains("name=\"floating\">Mini</string>"))
+        assertTrue(hebrewStrings.contains("name=\"floating\">מיני</string>"))
         assertTrue(hebrewStrings.contains("דברו עם AI בפרטיות"))
         assertTrue(hebrewStrings.contains("name=\"routing_notification_title\">Private Audio מופעל</string>"))
         assertTrue(hebrewStrings.contains("name=\"state_active\">פעיל</string>"))
@@ -1249,7 +1272,7 @@ class Layer41LocalizationContractTest {
         assertFalse(projectFile("app/src/main/res/values-yi/strings.xml").exists())
         assertFalse(projectFile("app/src/main/res/values-iw/strings.xml").readText() == yiddishStrings)
         assertTrue(yiddishStrings.contains("name=\"app_name\">Private Audio</string>"))
-        assertTrue(yiddishStrings.contains("name=\"floating\">Mini</string>"))
+        assertTrue(yiddishStrings.contains("name=\"floating\">מיני</string>"))
         assertTrue(yiddishStrings.contains("רעדט פריוואט מיט AI"))
         assertFalse(yiddishStrings.contains("איי־אײַ"))
         assertTrue(yiddishStrings.contains("name=\"routing_notification_title\">Private Audio איז אנגעצונדן</string>"))
@@ -1524,7 +1547,7 @@ class Layer41LocalizationContractTest {
         )
         assertTrue(khmerStrings.contains("name=\"routing_notification_text\">កំពុងរង់ចាំប្ដូរឧបករណ៍បញ្ចេញសំឡេង</string>"))
         assertTrue(khmerStrings.contains("និយាយជាមួយ AI ជាលក្ខណៈឯកជន"))
-        assertTrue(khmerStrings.contains("name=\"floating\">Mini</string>"))
+        assertTrue(khmerStrings.contains("name=\"floating\">ខ្នាតតូច</string>"))
         assertTrue(khmerStrings.contains("name=\"settings_system_default\">លំនាំដើម</string>"))
         assertTrue(khmerStrings.contains("name=\"settings_advanced\">កម្រិតខ្ពស់</string>"))
         assertTrue(khmerStrings.contains("ឧបករណ៍ស្ដាប់សំឡេងដែលមានស្រាប់ក្នុងទូរសព្ទរបស់អ្នក"))

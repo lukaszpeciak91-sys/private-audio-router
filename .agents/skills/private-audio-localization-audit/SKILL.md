@@ -45,7 +45,13 @@ Preserve these high-risk distinctions: requesting microphone access versus techn
 - Evaluate AI terminology independently for each locale and inspect native script, orthography, Unicode, and CJK variant requirements.
 - Check transliterated and international terms for lexical collisions, including offensive, embarrassing, humorous, or misleading meanings.
 - Treat `Private Audio` as the brand token and `Mini` as the compact-controller concept.
-- Audit accessibility copy separately as spoken language.
+- Audit accessibility copy separately as spoken language. Before judging a compact resource, inspect production call sites and verify every visible-label and TalkBack/content-description use. Report a shared-resource problem separately; do not propose silently lengthening the visible label or redesigning accessibility architecture as part of a wording audit.
+
+### Audit concise international-looking UI terms
+
+Do not assume terms such as `Mini`, `Compact`, `Pro`, `Default`, or `Advanced` are untranslated technical tokens. Confirm whether each is a brand token or localizable UI concept: `Private Audio` is currently a brand token, while `Mini` is currently localizable. For the exact Private Audio meaning and surface, independently compare first-party terminology where available with contemporary target-language software/product usage. Check for accidental English fallback, unnecessary Latin retention, artificial or unattested transliteration, mismatch with normal target-language script, lexical collision, an unnecessarily long or unnatural semantic term where an established concise form exists, and replacement of an established native form solely for superficial cross-locale consistency.
+
+Latin `Mini` in a non-Latin locale is a **review signal, not an automatic failure**: determine whether it is genuinely normal contemporary UI usage. Local-script loanwords such as `Мини`, `ミニ`, and `미니`; established equivalents such as `迷你`, `مصغّر`, and `කුඩා`; and Latin `Mini` can all be valid in different locales. Judge naturalness and semantics independently, without imposing one lexical strategy. Check that evidence for a full component name such as `Miniplayer` fits the actual compact one-word surface rather than copying a longer phrase blindly. Apply `PASS`, `POLISH`, `FIX`, or `HOLD` according to evidence, not script alone.
 
 Natural language comes before geometry. Audit Mini Ready / Waiting / Active / Error as one semantic and stylistic paradigm. Keep linguistic correctness separate from the existing measured 16f / 15f / 14f fit; character count proves nothing. Compact copy may not silently alter semantics, and full accessibility text requires separate review.
 

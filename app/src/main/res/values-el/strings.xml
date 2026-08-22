@@ -11,7 +11,7 @@
     <string name="state_active">Ενεργό</string>
     <string name="state_error">Σφάλμα</string>
     <string name="power_control">Ενεργοποίηση/απενεργοποίηση</string>
-    <string name="floating">Mini</string>
+    <string name="floating">Μίνι</string>
     <string name="settings">Ρυθμίσεις</string>
     <string name="close">Κλείσιμο</string>
     <string name="overlay_controller_description">Αιωρούμενο χειριστήριο Private Audio. Κατάσταση: %1$s. Στοιχεία ελέγχου για ενεργοποίηση/απενεργοποίηση, ανάπτυξη και κλείσιμο.</string>
