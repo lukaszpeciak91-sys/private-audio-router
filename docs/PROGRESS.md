@@ -73,18 +73,19 @@ physical test records remain in [`DECISIONS.md`](DECISIONS.md),
   applied. This is neither human/native-speaker validation nor legal certification.
 - The current user-facing Diagnostics key inventory is localized across all 87
   supported non-English resource sets. Candidates were produced and semantically
-  self-checked with the Translation Skill. Malagasy is translated and self-checked,
-  but is not yet independently audited or human/native-speaker validated. An
-  independent linguistic audit of the 86 previously supported non-English sets
-  identified targeted defects in Polish, Indonesian, Khmer, Swahili, and
-  Afrikaans, as well as a locale-unsafe shared grammatical-status contract; the
-  corrective candidates and context-specific status resources were applied through
-  the Translation Skill, using Android terminology as evidence where semantically
-  appropriate. The previously corrected Javanese and Zulu distinctions remain
-  protected. Final independent delta re-audit remains pending, and no human or
-  native-speaker validation is claimed. The detailed
-  technical diagnostic report and SUPPORT SUMMARY remain intentionally English-only,
-  as does the default-OFF Fake Phone experiment label.
+  self-checked with the Translation Skill. Malagasy received an independent
+  linguistic audit that identified targeted corrections for the `ACTIVE` state,
+  the About description's voice-audio scope, and the Privacy Policy title; corrective
+  candidates were applied, with final independent delta re-audit still pending and
+  no human/native-speaker validation claimed. The prior independent audit of the 86
+  previously supported non-English sets identified targeted defects in Polish,
+  Indonesian, Khmer, Swahili, and Afrikaans, as well as a locale-unsafe shared
+  grammatical-status contract; those corrective candidates and context-specific
+  status resources were applied through the Translation Skill, using Android
+  terminology as evidence where semantically appropriate. The previously corrected
+  Javanese and Zulu distinctions remain protected. The detailed technical diagnostic
+  report and SUPPORT SUMMARY remain intentionally English-only, as does the
+  default-OFF Fake Phone experiment label.
 - Durable terminology, evidence semantics, Mini fitting, RTL behavior, factual-claim
   safeguards, and locale maintenance rules belong to
   [`LOCALIZATION.md`](LOCALIZATION.md); this document records only current coverage
