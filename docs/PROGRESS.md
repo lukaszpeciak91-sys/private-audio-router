@@ -131,12 +131,17 @@ physical test records remain in [`DECISIONS.md`](DECISIONS.md),
 
 ## Active experiments and unresolved items
 
-- **Prepared silent-track startup optimization — implemented; physical gate pending.**
-  Clean enabled `WAITING` now owns one initialized but stopped POC-5 track with no
-  writer, playback, mode, route, `ACTIVE`, or proximity influence. Genuine routing
-  reuses it before the unchanged mode → single-earpiece sequence, with fail-open
-  on-demand creation. Fake Phone and the 7-second assistant linger were not
-  redesigned. First-response clipping improvement remains physically unverified.
+- **Prepared silent-track prefill and startup timing — implemented; physical gate pending.**
+  Clean enabled `WAITING` now gives its one initialized, stopped POC-5 track a
+  bounded one-shot non-blocking zero-PCM prefill. It still has no continuous writer,
+  playback, mode, route, `ACTIVE`, or proximity influence. Genuine routing calls
+  `play()` before starting the maintenance writer and preserves the unchanged
+  PLAYING → mode → single-earpiece sequence; prefill failure remains fail-open.
+  Generation-scoped monotonic diagnostics cover trigger through the first observed
+  earpiece and report unavailable cross-generation values rather than reusing a
+  Fake Phone or earlier genuine trigger. Fake Phone and the 7-second assistant
+  linger were not redesigned. Startup improvement and absence of OEM-visible active
+  playback from prefill remain physically unverified.
 - **Assistant protected-session linger — implemented and physically exercised; final gate pending.**
   After the existing 1.5-second assistant playback-loss confirmation, an established
   cycle retains its track, mode, route, and proximity eligibility for at most 7
