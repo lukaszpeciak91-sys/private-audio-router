@@ -157,12 +157,13 @@ physical test records remain in [`DECISIONS.md`](DECISIONS.md),
   the tuned 7-second duration and full multi-turn regression gate remain pending.
 - **Assistant early silent-track pre-arm — implemented, default OFF, not physically validated.**
   Fake Phone was replaced rather than duplicated. Exact `VOICE_RECOGNITION` plus
-  assistant/sonification may start only the prepared silent track during `WAITING`.
-  It makes no early mode/device request, attempt, `ACTIVE` transition, or proximity
-  acquisition. Healthy assistant/speech reuses the playing track before the normal
-  protected mode and single-device request; other origins cancel and use their
-  unchanged paths. Cleanup is generation-safe and bounded at 10 seconds. Physical
-  clipping reduction and recording stability remain `NOT TESTED / UNKNOWN`.
+  assistant/sonification may start the prepared silent track during `WAITING`, then
+  establish `MODE_IN_COMMUNICATION` only after `PLAYSTATE_PLAYING`. It makes no early
+  device request, attempt, `ACTIVE` transition, or proximity acquisition. Healthy
+  assistant/speech reuses the playing track and established mode before the single
+  protected device request; other origins cancel and use their unchanged paths.
+  Cleanup is generation-safe and bounded at 10 seconds. Physical clipping reduction
+  and recording stability with the early mode remain `NOT TESTED / UNKNOWN`.
 - The ChatGPT startup-sound signature and route remain unresolved. Diagnostics can
   record bounded playback metadata, but the trace neither classifies nor reroutes
   the sound by itself.

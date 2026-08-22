@@ -22,10 +22,12 @@ class AssistantEarlyRouteContractTest {
         assertFalse(observer.method("private fun assistantQualifyingPlaybackCount(").contains("SONIFICATION"))
     }
 
-    @Test fun earlyPhaseStartsOnlyPreparedSilentTrackAndLeavesProtectedStateUntouched() {
+    @Test fun earlyPhaseStartsTrackThenModeAndLeavesProtectedStateUntouched() {
         val start = observer.method("private fun startAssistantEarlyPreArm(")
         assertTrue(start.contains("startSilentCommunicationTrack()"))
-        listOf("requestCommunicationMode", "requestCommunicationDevice", "clearCommunicationDevice", "MODE_IN_COMMUNICATION", "ExperimentState.REQUEST_ATTEMPTED").forEach {
+        assertInOrder(start, "startSilentCommunicationTrack()", "PLAYSTATE_PLAYING", "requestCommunicationMode()")
+        assertEquals(1, start.occurrences("requestCommunicationMode()"))
+        listOf("requestCommunicationDevice", "clearCommunicationDevice", "ExperimentState.REQUEST_ATTEMPTED").forEach {
             assertFalse("Early start contains $it", start.contains(it))
         }
         assertFalse(start.contains("proximity"))
@@ -36,8 +38,10 @@ class AssistantEarlyRouteContractTest {
         val promote = observer.method("private fun promoteAssistantEarlyPreArm(")
         assertFalse(promote.contains("startSilentCommunicationTrack"))
         assertFalse(promote.contains("play()"))
+        assertFalse(promote.contains("requestCommunicationMode"))
         val probe = observer.method("private fun startProtectedPoc5Probe(")
-        assertInOrder(probe, "if (reuseEarlyTrack) promoteAssistantEarlyPreArm()", "requestCommunicationMode()", "performRoutingAttempt(earpiece")
+        assertTrue(probe.contains("if (!reuseEarlyTrack) {"))
+        assertInOrder(probe, "if (reuseEarlyTrack) promoteAssistantEarlyPreArm()", "if (!reuseEarlyTrack) {", "performRoutingAttempt(earpiece")
         assertEquals(1, observer.method("private fun requestCommunicationDevice(").occurrences("setCommunicationDevice(earpiece)"))
     }
 
@@ -49,7 +53,7 @@ class AssistantEarlyRouteContractTest {
         assertTrue(probe.contains("triggerOrigin == TriggerOrigin.ASSISTANT && isAssistantEarlyPreArmHealthy()"))
     }
 
-    @Test fun cleanupIsBoundedGenerationSafeAndNeverClearsModeOrDevice() {
+    @Test fun cleanupIsBoundedGenerationSafeAndRelinquishesOnlyOwnedMode() {
         assertTrue(observer.contains("private const val ASSISTANT_EARLY_ROUTE_TIMEOUT_MS = 10_000L"))
         val timeout = observer.method("private fun scheduleAssistantEarlyRouteTimeout(")
         assertTrue(timeout.contains("generation != assistantEarlyRouteGeneration"))
@@ -58,14 +62,15 @@ class AssistantEarlyRouteContractTest {
         assertTrue(cleanup.contains("stopSilentCommunicationTrack()"))
         assertTrue(cleanup.contains("prepareSilentCommunicationTrack()"))
         assertFalse(cleanup.contains("clearCommunicationDevice"))
-        assertFalse(cleanup.contains("MODE_NORMAL"))
+        assertTrue(cleanup.contains("if (modeParticipationActive)"))
+        assertTrue(cleanup.contains("audioManager.mode = AudioManager.MODE_NORMAL"))
     }
 
     @Test fun allAbortInputsAndFailOpenFallbackRemainConnected() {
         assertTrue(observer.method("fun disableController()").contains("cleanupAssistantEarlyPreArm(\"Power OFF\")"))
         assertTrue(observer.method("fun stop(reason: String)").contains("cleanupAssistantEarlyPreArm(reason)"))
         assertTrue(observer.method("fun updateAssistantEarlyRouteEnabled(").contains("cleanupAssistantEarlyPreArm(\"Preference disabled\")"))
-        assertTrue(observer.method("private fun handleRecordingConfigurations(").contains("VOICE_RECOGNITION disappeared"))
+        assertTrue(observer.method("private fun handleRecordingConfigurations(").contains("VOICE_RECOGNITION disappeared, silenced, or changed"))
         assertTrue(observer.method("private fun abortAssistantEarlyPreArmIfContextLost(").contains("system/telephony-priority"))
         assertTrue(observer.method("private fun startProtectedPoc5Probe(").contains("!reuseEarlyTrack && !startSilentCommunicationTrack()"))
     }
@@ -75,6 +80,7 @@ class AssistantEarlyRouteContractTest {
         assertTrue(observer.contains("private const val ASSISTANT_SESSION_LINGER_MS = 7_000L"))
         assertTrue(observer.method("private fun startAssistantSessionLinger(").contains("ASSISTANT_SESSION_LINGER_MS"))
         assertFalse(observer.method("private fun startAssistantEarlyPreArm(").contains("onEvidenceChanged"))
+        assertFalse(observer.method("private fun startAssistantEarlyPreArm(").contains("proximity"))
     }
 
     @Test fun noCapturePermissionOrAudioCaptureWasAdded() {
