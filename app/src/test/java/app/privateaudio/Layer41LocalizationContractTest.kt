@@ -26,9 +26,9 @@ class Layer41LocalizationContractTest {
                 placeholders(defaultStrings).filterNot(::isEnglishFallbackOnlyKey).toSet(),
                 placeholders(localeStrings),
             )
-            assertFalse(localeDirectory.name, localeStrings.contains("settings_fake_phone_pre_arm"))
+            assertFalse(localeDirectory.name, localeStrings.contains("settings_assistant_early_route"))
         }
-        assertTrue(defaultStrings.contains("name=\"settings_fake_phone_pre_arm\">Fake Phone pre-arm</string>"))
+        assertTrue(defaultStrings.contains("name=\"settings_assistant_early_route\">Assistant early route</string>"))
         assertEquals("Melayu", nativeLocaleName("ms"))
         assertTrue(malayStrings.contains("name=\"routing_notification_text\">Menunggu audio dialihkan</string>"))
         assertTrue(malayStrings.contains("name=\"settings_language_android_13_required\"") && malayStrings.contains("bahasa sistem"))
@@ -363,7 +363,7 @@ class Layer41LocalizationContractTest {
     }
 
     private fun isEnglishFallbackOnlyKey(key: String): Boolean =
-        key == "settings_fake_phone_pre_arm"
+        key == "settings_assistant_early_route" || key == "settings_assistant_early_route_description"
 
     @Test
     fun finnishFrozenLocalizationSemanticsRemainIntact() {
@@ -936,7 +936,7 @@ class Layer41LocalizationContractTest {
         assertTrue(kazakhStrings.contains("кірістірілген құлақ динамигіне"))
         assertTrue(kazakhStrings.contains("Диагностикалық есеп"))
         assertTrue(kazakhStrings.contains("қосу немесе өшіру, басқару құралын кеңейту және жабу"))
-        assertFalse(kazakhStrings.contains("settings_fake_phone_pre_arm"))
+        assertFalse(kazakhStrings.contains("settings_assistant_early_route"))
         assertFalse(projectFile("app/src/main/res/values-kk/mini_state_strings.xml").exists())
     }
 
@@ -1001,7 +1001,7 @@ class Layer41LocalizationContractTest {
         assertTrue(armenianStrings.contains("աուդիո ելքի փոխարկման"))
         assertTrue(armenianStrings.contains("ախտորոշման հաշվետվություն"))
         assertTrue(armenianStrings.contains("Private Audio-ն միացնելու կամ անջատելու, կառավարիչն ընդարձակելու և փակելու կառավարման տարրեր"))
-        assertFalse(armenianStrings.contains("settings_fake_phone_pre_arm"))
+        assertFalse(armenianStrings.contains("settings_assistant_early_route"))
         assertFalse(projectFile("app/src/main/res/values-hy/mini_state_strings.xml").exists())
     }
 
@@ -1034,7 +1034,7 @@ class Layer41LocalizationContractTest {
         assertTrue(mongolianStrings.contains("утсанд суурилуулсан чихний чанга яригч"))
         assertTrue(mongolianStrings.contains("Оношилгооны тайлан"))
         assertTrue(mongolianStrings.contains("Асаах/унтраах, дэлгэх, хаах товчлуурууд"))
-        assertFalse(mongolianStrings.contains("settings_fake_phone_pre_arm"))
+        assertFalse(mongolianStrings.contains("settings_assistant_early_route"))
         assertFalse(projectFile("app/src/main/res/values-mn/mini_state_strings.xml").exists())
     }
 
@@ -1063,7 +1063,7 @@ class Layer41LocalizationContractTest {
             assertTrue(it, georgianStrings.contains(it))
         }
         assertTrue(georgianStrings.contains("ჩართვის/გამორთვის, გაშლისა და დახურვის მართვის ელემენტები"))
-        assertFalse(georgianStrings.contains("settings_fake_phone_pre_arm"))
+        assertFalse(georgianStrings.contains("settings_assistant_early_route"))
         assertFalse(projectFile("app/src/main/res/values-ka/mini_state_strings.xml").exists())
     }
 
@@ -1093,7 +1093,7 @@ class Layer41LocalizationContractTest {
         }
         assertTrue(laoStrings.contains("ປຸ່ມສຳລັບເປີດ/ປິດ Private Audio, ຂະຫຍາຍແຜງຄວບຄຸມ ແລະ ປິດແຜງຄວບຄຸມ"))
         assertTrue(laoStrings.contains("Private Audio") && laoStrings.contains("Android 13"))
-        assertFalse(laoStrings.contains("settings_fake_phone_pre_arm"))
+        assertFalse(laoStrings.contains("settings_assistant_early_route"))
         assertFalse(projectFile("app/src/main/res/values-lo/mini_state_strings.xml").exists())
     }
 
@@ -1129,8 +1129,8 @@ class Layer41LocalizationContractTest {
         listOf("یاپای ذکاء", ">مینی</string>", ">آیارلار</string>", ">فرض ائدیلن</string>", ">گئنیشمیش</string>", "داخیل قولاق دینامیکی", "آودیو چیخیشی", "دیاقنوستیک حسابات").forEach {
             assertTrue(it, iranianAzerbaijaniStrings.contains(it))
         }
-        assertFalse(northernAzerbaijaniStrings.contains("settings_fake_phone_pre_arm"))
-        assertFalse(iranianAzerbaijaniStrings.contains("settings_fake_phone_pre_arm"))
+        assertFalse(northernAzerbaijaniStrings.contains("settings_assistant_early_route"))
+        assertFalse(iranianAzerbaijaniStrings.contains("settings_assistant_early_route"))
         assertFalse(projectFile("app/src/main/res/values-az/mini_state_strings.xml").exists())
         assertFalse(projectFile("app/src/main/res/values-b+az+Arab+IR/mini_state_strings.xml").exists())
     }
@@ -1590,7 +1590,7 @@ class Layer41LocalizationContractTest {
         assertTrue(catalanStrings.contains("auricular integrat del telèfon"))
         assertEquals(3, catalanStrings.occurrences("informe de diagnòstic"))
         assertTrue(catalanStrings.contains("Botons per activar o desactivar Private Audio, ampliar el control i tancar-lo"))
-        assertFalse(catalanStrings.contains("settings_fake_phone_pre_arm"))
+        assertFalse(catalanStrings.contains("settings_assistant_early_route"))
         assertFalse(projectFile("app/src/main/res/values-ca/mini_state_strings.xml").exists())
     }
 
@@ -1621,7 +1621,7 @@ class Layer41LocalizationContractTest {
         assertTrue(galicianStrings.contains("auricular integrado do teléfono"))
         assertEquals(3, galicianStrings.occurrences("informe de diagnóstico"))
         assertTrue(galicianStrings.contains("Botóns para activar ou desactivar Private Audio, ampliar o control e pechalo"))
-        assertFalse(galicianStrings.contains("settings_fake_phone_pre_arm"))
+        assertFalse(galicianStrings.contains("settings_assistant_early_route"))
         assertFalse(projectFile("app/src/main/res/values-gl/mini_state_strings.xml").exists())
     }
 
@@ -1663,7 +1663,7 @@ class Layer41LocalizationContractTest {
         assertTrue(javaneseStrings.contains("earpiece gawan telpon"))
         assertTrue(javaneseStrings.contains("laporan diagnostik"))
         assertTrue(javaneseStrings.contains("nguripake utawa mateni Private Audio, nggedhekake kontrol, lan nutup"))
-        assertFalse(javaneseStrings.contains("settings_fake_phone_pre_arm"))
+        assertFalse(javaneseStrings.contains("settings_assistant_early_route"))
         assertFalse(projectFile("app/src/main/res/values-jv/mini_state_strings.xml").exists())
     }
 

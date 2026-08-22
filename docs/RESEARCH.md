@@ -124,3 +124,10 @@ New statements must be labeled **FACT**, **INFERENCE**, or **UNKNOWN**, with sou
 - **FACT:** Public `AudioPlaybackConfiguration` metadata used here does not identify that playback as owned by ChatGPT, Gemini, or another particular application.
 - **INFERENCE:** Preparing the proven public communication context and earpiece route while `WAITING` may influence the later sonification route; the default-OFF experiment records the public device/mode observations without muting or changing global volume.
 - **UNKNOWN:** Whether the observed event is the audible startup ping and whether it is physically heard from the earpiece while pre-armed. Android metadata and `setCommunicationDevice(true)` are insufficient; Xiaomi physical listening confirmation is required.
+
+## Assistant early silent-track experimental basis
+
+- **FACT (supplied physical diagnostic, 2026-08-22):** On the Xiaomi test device, `VOICE_RECOGNITION` appeared at 09:37:41.093, assistant/sonification at 09:37:41.302, assistant/speech at 09:37:48.568, the protected trigger at 09:37:48.664, `play()` at 09:37:48.673, and `PLAYSTATE_PLAYING` at 09:37:49.023.
+- **FACT (supplied physical diagnostic, 2026-08-22):** After the local track became active, public post-track-start playback already reported assistant/speech on the earpiece while `AudioManager` still reported `MODE_NORMAL`.
+- **INFERENCE:** On this OEM, active local voice-communication/speech playback may influence output policy before Private Audio explicitly requests mode or a communication device. That policy response is not itself a Private Audio route request.
+- **UNKNOWN:** Whether starting only the local silent track during the earlier recording-plus-sonification window preserves recognition stability and materially reduces first-response clipping. The default-OFF experiment requires the controlled physical gate in `TEST_PLAN.md`.

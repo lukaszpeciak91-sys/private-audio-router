@@ -81,8 +81,8 @@ fun SettingsSheet(
     versionName: String,
     proximityFeatureEnabled: Boolean,
     onProximityFeatureChange: (Boolean) -> Unit,
-    fakePhonePreArmEnabled: Boolean,
-    onFakePhonePreArmChange: (Boolean) -> Unit,
+    assistantEarlyRouteEnabled: Boolean,
+    onAssistantEarlyRouteChange: (Boolean) -> Unit,
     onDiagnostics: () -> Unit,
     onDismiss: () -> Unit,
 ) {
@@ -166,8 +166,8 @@ fun SettingsSheet(
                     SettingsPage.ADVANCED -> AdvancedPage(
                         proximityFeatureEnabled = proximityFeatureEnabled,
                         onProximityFeatureChange = onProximityFeatureChange,
-                        fakePhonePreArmEnabled = fakePhonePreArmEnabled,
-                        onFakePhonePreArmChange = onFakePhonePreArmChange,
+                        assistantEarlyRouteEnabled = assistantEarlyRouteEnabled,
+                        onAssistantEarlyRouteChange = onAssistantEarlyRouteChange,
                         onBack = { page = SettingsPage.ROOT },
                     )
                     SettingsPage.PRIVACY_POLICY -> PrivacyPolicyPage(
@@ -188,8 +188,8 @@ fun SettingsSheet(
 private fun AdvancedPage(
     proximityFeatureEnabled: Boolean,
     onProximityFeatureChange: (Boolean) -> Unit,
-    fakePhonePreArmEnabled: Boolean,
-    onFakePhonePreArmChange: (Boolean) -> Unit,
+    assistantEarlyRouteEnabled: Boolean,
+    onAssistantEarlyRouteChange: (Boolean) -> Unit,
     onBack: () -> Unit,
 ) {
     Box(Modifier.fillMaxWidth()) {
@@ -232,24 +232,31 @@ private fun AdvancedPage(
     }
     Spacer(Modifier.height(30.dp))
     Row(
-        modifier = Modifier.fillMaxWidth().height(SettingsLayout.rowHeight)
+        modifier = Modifier.fillMaxWidth().height(72.dp)
             .toggleable(
-                value = fakePhonePreArmEnabled,
+                value = assistantEarlyRouteEnabled,
                 role = Role.Switch,
-                onValueChange = onFakePhonePreArmChange,
-            ).testTag("settings_fake_phone_pre_arm"),
+                onValueChange = onAssistantEarlyRouteChange,
+            ).testTag("settings_assistant_early_route"),
         verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.SpaceBetween,
     ) {
-        Text(
-            stringResource(R.string.settings_fake_phone_pre_arm),
-            modifier = Modifier.weight(1f).padding(end = 12.dp),
-            color = SettingsPrimary,
-            fontSize = 15.sp,
-            lineHeight = 21.sp,
-        )
+        Column(modifier = Modifier.weight(1f).padding(end = 12.dp)) {
+            Text(
+                stringResource(R.string.settings_assistant_early_route),
+                color = SettingsPrimary,
+                fontSize = 15.sp,
+                lineHeight = 21.sp,
+            )
+            Text(
+                stringResource(R.string.settings_assistant_early_route_description),
+                color = SettingsSecondary,
+                fontSize = 12.sp,
+                lineHeight = 16.sp,
+            )
+        }
         Switch(
-            checked = fakePhonePreArmEnabled,
+            checked = assistantEarlyRouteEnabled,
             onCheckedChange = null,
             colors = SwitchDefaults.colors(
                 checkedThumbColor = Color.Black,
