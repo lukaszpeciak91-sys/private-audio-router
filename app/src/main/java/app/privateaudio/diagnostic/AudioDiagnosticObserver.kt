@@ -284,8 +284,10 @@ data class AssistantEarlyRouteStatus(
     val modeRequestGeneration: Long? = null,
     val modeRequestInFlight: Boolean = false,
     val earlyModeRequestInvocationAt: String? = null,
+    val earlyModeRequestThread: String? = null,
     val earlyModeRequestReturnedAt: String? = null,
     val earlyModeRequestDurationMs: Long? = null,
+    val earlyModeReturnToConfirmedObservationMs: Long? = null,
     val modeBeforeEarlyRequest: String? = null,
     val modeAfterEarlyRequest: String? = null,
     val modeInCommunicationConfirmedAt: String? = null,
@@ -727,6 +729,7 @@ class AudioDiagnosticObserver(
                 if (triggerOrigin == TriggerOrigin.ASSISTANT) audioModeName(modeBeforeParticipation) else null,
             explicitModeRequestInvoked = reuseEarlyTrack,
             modeRequestTimestamp = if (reuseEarlyTrack) assistantEarlyRoute.earlyModeRequestInvocationAt else null,
+            modeRequestThread = if (reuseEarlyTrack) assistantEarlyRoute.earlyModeRequestThread else null,
             modeImmediatelyBeforeRequest = if (reuseEarlyTrack) assistantEarlyRoute.modeBeforeEarlyRequest else null,
             modeImmediatelyAfterRequest = if (reuseEarlyTrack) assistantEarlyRoute.modeAfterEarlyRequest else null,
             modeInCommunicationObserved = reuseEarlyTrack,
@@ -1060,24 +1063,31 @@ class AudioDiagnosticObserver(
         }
         val requestAt = OffsetDateTime.now().format(DateTimeFormatter.ISO_OFFSET_DATE_TIME)
         val requestStartedNanos = SystemClock.elapsedRealtimeNanos()
+        val requestThread = "${Thread.currentThread().name} (id=${Thread.currentThread().id})"
         assistantEarlyRoute = assistantEarlyRoute.copy(
             phase = AssistantEarlyRoutePhase.MODE_REQUEST_IN_FLIGHT,
             earlyModeRequestAttempted = true,
             modeRequestGeneration = generation,
             modeRequestInFlight = true,
             earlyModeRequestInvocationAt = requestAt,
+            earlyModeRequestThread = requestThread,
             modeBeforeEarlyRequest = audioModeName(modeBefore),
             recordingBeforeEarlyMode = beforeMode,
             trackStateDuringModeRequest = audioTrackPlayStateName(silentTrack?.playState ?: AudioTrack.PLAYSTATE_STOPPED),
         )
-        addEvent("Assistant early mode request entered IN_FLIGHT — generation=$generation")
+        addEvent(
+            "Assistant early mode request entered IN_FLIGHT — generation=$generation; " +
+                "thread=$requestThread",
+        )
         modeParticipationActive = true
         routingActionInProgress = true
         val failure = runCatching { requestCommunicationMode() }.exceptionOrNull()
         val returnedNanos = SystemClock.elapsedRealtimeNanos()
         val returnedAt = OffsetDateTime.now().format(DateTimeFormatter.ISO_OFFSET_DATE_TIME)
         val modeAfter = audioManager.mode
-        val confirmedAt = returnedAt.takeIf { failure == null && modeAfter == AudioManager.MODE_IN_COMMUNICATION }
+        val modeObservedNanos = SystemClock.elapsedRealtimeNanos()
+        val modeObservedAt = OffsetDateTime.now().format(DateTimeFormatter.ISO_OFFSET_DATE_TIME)
+        val confirmedAt = modeObservedAt.takeIf { failure == null && modeAfter == AudioManager.MODE_IN_COMMUNICATION }
         val generationStillCurrent = generation == assistantEarlyRouteGeneration &&
             assistantEarlyRoute.active && assistantEarlyRoute.generation == generation &&
             assistantEarlyRoute.phase == AssistantEarlyRoutePhase.MODE_REQUEST_IN_FLIGHT
@@ -1104,9 +1114,11 @@ class AudioDiagnosticObserver(
             modeRequestInFlight = false,
             earlyModeRequestReturnedAt = returnedAt,
             earlyModeRequestDurationMs = startupDurationMs(requestStartedNanos, returnedNanos),
+            earlyModeReturnToConfirmedObservationMs = startupDurationMs(returnedNanos, modeObservedNanos)
+                .takeIf { confirmedAt != null },
             modeAfterEarlyRequest = audioModeName(modeAfter),
             modeInCommunicationConfirmedAt = confirmedAt,
-            modeConfirmedElapsedRealtimeNanos = returnedNanos.takeIf { confirmedAt != null },
+            modeConfirmedElapsedRealtimeNanos = modeObservedNanos.takeIf { confirmedAt != null },
             recordingAfterEarlyMode = currentRecordingConfigurations,
             modeRequestCompletionGenerationStillCurrent = true,
         )
@@ -1846,8 +1858,10 @@ internal fun buildDiagnosticReport(
     appendLine("Mode request generation: ${assistantEarlyRoute.modeRequestGeneration ?: "Not attempted"}")
     appendLine("Mode request in flight: ${assistantEarlyRoute.modeRequestInFlight}")
     appendLine("Early mode request invocation timestamp: ${assistantEarlyRoute.earlyModeRequestInvocationAt ?: "Not attempted"}")
+    appendLine("Early mode request thread: ${assistantEarlyRoute.earlyModeRequestThread ?: "Not invoked"}")
     appendLine("Early mode request returned timestamp: ${assistantEarlyRoute.earlyModeRequestReturnedAt ?: "Not attempted"}")
     appendLine("Early mode request duration ms: ${assistantEarlyRoute.earlyModeRequestDurationMs ?: "Not available"}")
+    appendLine("Early mode return → confirmed observation elapsed ms: ${assistantEarlyRoute.earlyModeReturnToConfirmedObservationMs ?: "Not available"}")
     appendLine("Mode before early request: ${assistantEarlyRoute.modeBeforeEarlyRequest ?: "Not observed"}")
     appendLine("Mode after early request: ${assistantEarlyRoute.modeAfterEarlyRequest ?: "Not observed"}")
     appendLine("MODE_IN_COMMUNICATION confirmed timestamp: ${assistantEarlyRoute.modeInCommunicationConfirmedAt ?: "Not confirmed"}")

@@ -13,7 +13,14 @@
 - Assistant qualification, early track/mode ordering, the absence of an early device
   request, normal Assistant fallback, Communication and browser paths, the 10-second
   pre-arm timeout, the 1.5-second end confirmation, and the 7-second Assistant linger are
-  unchanged. Corrected physical comparison remains required.
+  unchanged.
+- Supplied physical/runtime evidence from Private Audio 0.1.0 (1) on Xiaomi `2201117TY`,
+  Android 13/API 33, exercised the corrected sequence: stable, unsilenced
+  `VOICE_RECOGNITION`; assistant/sonification; early silent-track `PLAYING`; early
+  `MODE_IN_COMMUNICATION`; assistant/speech several seconds later; one post-speech device
+  request; and `ACTIVE`. No early device request occurred, and human listening reported
+  that the response beginning was no longer clipped. This result is specific to the tested
+  Xiaomi configuration; broader OEM and Android-release compatibility remains unknown.
 
 ## Public recording-session metadata diagnostics
 
