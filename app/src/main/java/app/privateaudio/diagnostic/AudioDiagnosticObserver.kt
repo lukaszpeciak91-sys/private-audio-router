@@ -140,14 +140,31 @@ data class EarpieceExperiment(
     val triggerOrigin: TriggerOrigin? = null,
     val modeBeforeAssistantParticipation: String? = null,
     val preparedTrackCreated: Boolean = false,
+    val preparedTrackPrefilled: Boolean = false,
+    val prefillBytesWritten: Int? = null,
+    val prefillCompletedTimestamp: String? = null,
     val preparationCompletedTimestamp: String? = null,
     val preparedTrackState: String = "Not prepared",
     val preparedTrackActivePlaybackWhileWaiting: Boolean = false,
     val routingTriggerTimestamp: String? = null,
     val preparedTrackReused: Boolean = false,
     val playInvocationTimestamp: String? = null,
+    val playReturnedTimestamp: String? = null,
+    val writerStartRequestedTimestamp: String? = null,
+    val firstSuccessfulWriteTimestamp: String? = null,
     val playingTimestamp: String? = null,
+    val modeObservedTimestamp: String? = null,
+    val deviceRequestStartedTimestamp: String? = null,
+    val deviceRequestReturnedTimestamp: String? = null,
+    val earpieceFirstObservedTimestamp: String? = null,
     val triggerToPlayingElapsedMs: Long? = null,
+    val triggerToPlayInvocationElapsedMs: Long? = null,
+    val playCallDurationMs: Long? = null,
+    val playingToModeObservedElapsedMs: Long? = null,
+    val modeObservedToDeviceRequestReturnElapsedMs: Long? = null,
+    val deviceRequestToEarpieceObservedElapsedMs: Long? = null,
+    val triggerToEarpieceObservedElapsedMs: Long? = null,
+    val startupTimingGeneration: Long? = null,
     val fallbackCreationUsed: Boolean = false,
 )
 
@@ -189,6 +206,19 @@ data class FakePhonePreArmStatus(
     val generation: Long = 0,
     val disappearanceCleanupScheduled: Boolean = false,
     val hardDeadlineAt: String? = null,
+)
+
+private data class StartupTiming(
+    val generation: Long,
+    val triggerNanos: Long,
+    var playInvocationNanos: Long? = null,
+    var playReturnedNanos: Long? = null,
+    var playingObservedNanos: Long? = null,
+    var modeRequestStartedNanos: Long? = null,
+    var modeObservedNanos: Long? = null,
+    var deviceRequestStartedNanos: Long? = null,
+    var deviceRequestReturnedNanos: Long? = null,
+    var earpieceObservedNanos: Long? = null,
 )
 
 class AudioDiagnosticObserver(
@@ -234,9 +264,10 @@ class AudioDiagnosticObserver(
     private var modeParticipationActive = false
     private var silentTrack: AudioTrack? = null
     private var preparedSilentTrack = false
-    private var routingTriggerElapsedRealtime: Long? = null
+    private var startupTiming: StartupTiming? = null
     private var silentWriterThread: Thread? = null
     private val silentWriterRunning = AtomicBoolean(false)
+    private val firstWriterWriteRecorded = AtomicBoolean(false)
     private val observationHandler = Handler(Looper.getMainLooper())
     private var pendingObservation: Runnable? = null
     private var pendingEndConfirmation: Runnable? = null
@@ -465,7 +496,8 @@ class AudioDiagnosticObserver(
         browserCount: Int,
     ) {
         val routingTriggerTimestamp = OffsetDateTime.now().format(DateTimeFormatter.ISO_OFFSET_DATE_TIME)
-        routingTriggerElapsedRealtime = SystemClock.elapsedRealtime()
+        val timingGeneration = cycleGeneration
+        startupTiming = StartupTiming(timingGeneration, SystemClock.elapsedRealtimeNanos())
         val target = earpiece.toObservedDevice()
         val modeBeforeParticipation = audioManager.mode
         val preOwnership = collectSnapshot()
@@ -487,8 +519,13 @@ class AudioDiagnosticObserver(
             modeBeforeAssistantParticipation =
                 if (triggerOrigin == TriggerOrigin.ASSISTANT) audioModeName(modeBeforeParticipation) else null,
             routingTriggerTimestamp = routingTriggerTimestamp,
+            startupTimingGeneration = timingGeneration,
         )
-        addEvent("Routing trigger timestamp=$routingTriggerTimestamp")
+        addEvent(
+            "Routing trigger received — timestamp=$routingTriggerTimestamp; startup generation=$timingGeneration; " +
+                "prepared track available=${preparedSilentTrack && silentTrack?.state == AudioTrack.STATE_INITIALIZED}; " +
+                "prefill completed=${experiment.preparedTrackPrefilled}",
+        )
         routingActionInProgress = true
         if (fakePhonePreArm.active) {
             promoteFakePhonePreArm(triggerOrigin, assistantCount, browserCount)
@@ -524,6 +561,7 @@ class AudioDiagnosticObserver(
         )
         val trackActiveBeforeModeRequest = silentTrack?.playState == AudioTrack.PLAYSTATE_PLAYING
         val modeRequestTimestamp = OffsetDateTime.now().format(DateTimeFormatter.ISO_OFFSET_DATE_TIME)
+        matchingStartupTiming()?.modeRequestStartedNanos = SystemClock.elapsedRealtimeNanos()
         val modeBeforeRequest = audioManager.mode
         val requestThread = "${Thread.currentThread().name} (id=${Thread.currentThread().id})"
         modeParticipationActive = true
@@ -544,10 +582,16 @@ class AudioDiagnosticObserver(
             requestCommunicationMode()
         }.exceptionOrNull()
         val modeAfterParticipation = audioManager.mode
+        matchingStartupTiming()?.modeObservedNanos = SystemClock.elapsedRealtimeNanos()
         experiment = experiment.copy(
             modeImmediatelyAfterRequest = audioModeName(modeAfterParticipation),
             modeRequestException = modeRequestFailure?.exactDescription(),
             modeInCommunicationObserved = modeAfterParticipation == AudioManager.MODE_IN_COMMUNICATION,
+            modeObservedTimestamp = OffsetDateTime.now().format(DateTimeFormatter.ISO_OFFSET_DATE_TIME),
+            playingToModeObservedElapsedMs = startupDurationMs(
+                matchingStartupTiming()?.playingObservedNanos,
+                matchingStartupTiming()?.modeObservedNanos,
+            ),
         )
         addEvent(
             "Explicit setMode returned — requested=MODE_IN_COMMUNICATION; " +
@@ -628,18 +672,36 @@ class AudioDiagnosticObserver(
         }
         silentTrack = track
         preparedSilentTrack = true
+        val silence = ShortArray((experiment.silentTrackBufferBytes ?: MIN_SILENCE_BUFFER_BYTES) / Short.SIZE_BYTES)
+        val prefillResult = runCatching {
+            track.write(silence, 0, silence.size, AudioTrack.WRITE_NON_BLOCKING)
+        }.onFailure {
+            addEvent("Prepared silent AudioTrack prefill failed open — ${it.exactDescription()}")
+        }.getOrDefault(AudioTrack.ERROR_INVALID_OPERATION)
+        val prefilled = prefillResult > 0
+        if (!prefilled) {
+            addEvent("Prepared silent AudioTrack prefill failed open — non-blocking write result=$prefillResult")
+        }
         val completedAt = OffsetDateTime.now().format(DateTimeFormatter.ISO_OFFSET_DATE_TIME)
-        val activeWhileWaiting = track.playState == AudioTrack.PLAYSTATE_PLAYING
+        val activeWhileWaiting = track.playState == AudioTrack.PLAYSTATE_PLAYING ||
+            activePlaybackConfigurations().any {
+                it.usage == "USAGE_VOICE_COMMUNICATION" && it.contentType == "CONTENT_TYPE_SPEECH"
+            }
         experiment = experiment.copy(
             preparedTrackCreated = true,
+            preparedTrackPrefilled = prefilled,
+            prefillBytesWritten = prefillResult.takeIf { it > 0 }?.times(Short.SIZE_BYTES),
+            prefillCompletedTimestamp = completedAt.takeIf { prefilled },
+            firstSuccessfulWriteTimestamp = completedAt.takeIf { prefilled },
             preparationCompletedTimestamp = completedAt,
             preparedTrackState = "STATE_INITIALIZED / ${audioTrackPlayStateName(track.playState)}",
             preparedTrackActivePlaybackWhileWaiting = activeWhileWaiting,
             silentTrackPlayState = audioTrackPlayStateName(track.playState),
         )
         addEvent(
-            "Prepared silent AudioTrack created — completed=$completedAt; state=${track.state}; " +
-                "playState=${audioTrackPlayStateName(track.playState)}; active playback while WAITING=$activeWhileWaiting",
+            "Prepared silent AudioTrack created and bounded prefill completed=$prefilled — completed=$completedAt; " +
+                "zero PCM bytes=${experiment.prefillBytesWritten ?: 0}; writes attempted=1; state=${track.state}; " +
+                "playState=${audioTrackPlayStateName(track.playState)}; public active playback while WAITING=$activeWhileWaiting",
         )
     }
 
@@ -653,11 +715,58 @@ class AudioDiagnosticObserver(
         preparedSilentTrack = false
         val bufferBytes = experiment.silentTrackBufferBytes ?: MIN_SILENCE_BUFFER_BYTES
         val silence = ShortArray(bufferBytes / Short.SIZE_BYTES)
+        val playInvocationTimestamp = OffsetDateTime.now().format(DateTimeFormatter.ISO_OFFSET_DATE_TIME)
+        matchingStartupTiming()?.playInvocationNanos = SystemClock.elapsedRealtimeNanos()
+        addEvent("Silent AudioTrack play() invocation timestamp=$playInvocationTimestamp; prepared track reused=$reused")
+        val playSucceeded = runCatching { track.play() }.isSuccess
+        matchingStartupTiming()?.playReturnedNanos = SystemClock.elapsedRealtimeNanos()
+        val playReturnedTimestamp = OffsetDateTime.now().format(DateTimeFormatter.ISO_OFFSET_DATE_TIME)
+        val started = playSucceeded && track.playState == AudioTrack.PLAYSTATE_PLAYING
+        if (started) matchingStartupTiming()?.playingObservedNanos = SystemClock.elapsedRealtimeNanos()
+        val playingTimestamp = if (started) OffsetDateTime.now().format(DateTimeFormatter.ISO_OFFSET_DATE_TIME) else null
+        val timing = matchingStartupTiming()
+        val elapsed = startupDurationMs(timing?.triggerNanos, timing?.playingObservedNanos)
+        val writerStartRequestedTimestamp = OffsetDateTime.now().format(DateTimeFormatter.ISO_OFFSET_DATE_TIME)
+        experiment = experiment.copy(
+            silentTrackStarted = started,
+            silentTrackPlayState = audioTrackPlayStateName(track.playState),
+            preparedTrackReused = reused,
+            playInvocationTimestamp = playInvocationTimestamp,
+            playReturnedTimestamp = playReturnedTimestamp,
+            writerStartRequestedTimestamp = writerStartRequestedTimestamp.takeIf { started },
+            playingTimestamp = playingTimestamp,
+            triggerToPlayingElapsedMs = elapsed,
+            triggerToPlayInvocationElapsedMs = startupDurationMs(timing?.triggerNanos, timing?.playInvocationNanos),
+            playCallDurationMs = startupDurationMs(timing?.playInvocationNanos, timing?.playReturnedNanos),
+            fallbackCreationUsed = fallbackUsed,
+        )
+        if (started) startSilenceWriter(track, silence)
+        addEvent(
+            "Silent AudioTrack creation result — initialized=true; sampleRate=${experiment.silentTrackSampleRate}Hz; " +
+                "buffer=$bufferBytes bytes; attributes=USAGE_VOICE_COMMUNICATION/CONTENT_TYPE_SPEECH; " +
+                "playState=${audioTrackPlayStateName(track.playState)}; audio focus requested=false; " +
+                "PLAYSTATE_PLAYING timestamp=${playingTimestamp ?: "not observed"}; trigger to PLAYING=${elapsed ?: "unknown"} ms; " +
+                "fallback creation used=$fallbackUsed",
+        )
+        return started
+    }
+
+    private fun startSilenceWriter(track: AudioTrack, silence: ShortArray) {
         silentWriterRunning.set(true)
+        firstWriterWriteRecorded.set(experiment.firstSuccessfulWriteTimestamp != null)
+        addEvent("Silence writer thread start requested after PLAYSTATE_PLAYING")
         silentWriterThread = Thread({
             Process.setThreadPriority(Process.THREAD_PRIORITY_BACKGROUND)
             while (silentWriterRunning.get()) {
                 val written = track.write(silence, 0, silence.size, AudioTrack.WRITE_NON_BLOCKING)
+                if (written > 0 && firstWriterWriteRecorded.compareAndSet(false, true)) {
+                    val timestamp = OffsetDateTime.now().format(DateTimeFormatter.ISO_OFFSET_DATE_TIME)
+                    observationHandler.post {
+                        if (experiment.firstSuccessfulWriteTimestamp == null) {
+                            experiment = experiment.copy(firstSuccessfulWriteTimestamp = timestamp)
+                        }
+                    }
+                }
                 if (written <= 0) {
                     try {
                         Thread.sleep(SILENCE_WRITER_PAUSE_MS)
@@ -670,28 +779,6 @@ class AudioDiagnosticObserver(
             isDaemon = true
             start()
         }
-        val playInvocationTimestamp = OffsetDateTime.now().format(DateTimeFormatter.ISO_OFFSET_DATE_TIME)
-        addEvent("Silent AudioTrack play() invocation timestamp=$playInvocationTimestamp; prepared track reused=$reused")
-        val started = runCatching { track.play() }.isSuccess && track.playState == AudioTrack.PLAYSTATE_PLAYING
-        val playingTimestamp = if (started) OffsetDateTime.now().format(DateTimeFormatter.ISO_OFFSET_DATE_TIME) else null
-        val elapsed = if (started) routingTriggerElapsedRealtime?.let { SystemClock.elapsedRealtime() - it } else null
-        experiment = experiment.copy(
-            silentTrackStarted = started,
-            silentTrackPlayState = audioTrackPlayStateName(track.playState),
-            preparedTrackReused = reused,
-            playInvocationTimestamp = playInvocationTimestamp,
-            playingTimestamp = playingTimestamp,
-            triggerToPlayingElapsedMs = elapsed,
-            fallbackCreationUsed = fallbackUsed,
-        )
-        addEvent(
-            "Silent AudioTrack creation result — initialized=true; sampleRate=${experiment.silentTrackSampleRate}Hz; " +
-                "buffer=$bufferBytes bytes; attributes=USAGE_VOICE_COMMUNICATION/CONTENT_TYPE_SPEECH; " +
-                "playState=${audioTrackPlayStateName(track.playState)}; audio focus requested=false; " +
-                "PLAYSTATE_PLAYING timestamp=${playingTimestamp ?: "not observed"}; trigger to PLAYING=${elapsed ?: "unknown"} ms; " +
-                "fallback creation used=$fallbackUsed",
-        )
-        return started
     }
 
     private fun startFakePhoneMicroRoute(sonification: AudioPlaybackConfiguration) {
@@ -942,7 +1029,11 @@ class AudioDiagnosticObserver(
         val timestamp = LocalTime.now().format(TIME_FORMAT)
         routingActionInProgress = true
         addEvent("Single routing request — trigger=$trigger; mode=$mode; device before=${before.reportDescription()}")
+        matchingStartupTiming()?.deviceRequestStartedNanos = SystemClock.elapsedRealtimeNanos()
+        val deviceRequestStartedTimestamp = OffsetDateTime.now().format(DateTimeFormatter.ISO_OFFSET_DATE_TIME)
         val accepted = requestCommunicationDevice(earpiece)
+        matchingStartupTiming()?.deviceRequestReturnedNanos = SystemClock.elapsedRealtimeNanos()
+        val deviceRequestReturnedTimestamp = OffsetDateTime.now().format(DateTimeFormatter.ISO_OFFSET_DATE_TIME)
         val after = audioManager.communicationDevice?.toObservedDevice()
         val speakerphone = observedSpeakerphoneState()
         val attempt = RoutingAttempt(number, timestamp, trigger, mode, before, accepted, after, speakerphone)
@@ -952,6 +1043,12 @@ class AudioDiagnosticObserver(
             earpieceRequestAfterExplicitModeRequest = experiment.explicitModeRequestInvoked,
             postRoutingRequest = collectSnapshot(),
             externalVoicePlaybackDeviceAfterRequest = inferExternalVoicePlaybackDevice(collectSnapshot()),
+            deviceRequestStartedTimestamp = deviceRequestStartedTimestamp,
+            deviceRequestReturnedTimestamp = deviceRequestReturnedTimestamp,
+            modeObservedToDeviceRequestReturnElapsedMs = startupDurationMs(
+                matchingStartupTiming()?.modeObservedNanos,
+                matchingStartupTiming()?.deviceRequestReturnedNanos,
+            ),
         )
         addEvent("Routing attempt $number result — accepted=$accepted; device immediately after=${after.reportDescription()}; speakerphone=$speakerphone")
         routingActionInProgress = false
@@ -1195,8 +1292,19 @@ class AudioDiagnosticObserver(
         if (experiment.attempts.isEmpty() || observed.mode != "MODE_IN_COMMUNICATION") return
         when (observed.communicationDevice?.type) {
             "Built-in earpiece" -> if (!experiment.earpieceReportedDuringSession) {
+                val timing = matchingStartupTiming()
+                timing?.earpieceObservedNanos = SystemClock.elapsedRealtimeNanos()
                 experiment = experiment.copy(
                     earpieceReportedDuringSession = true,
+                    earpieceFirstObservedTimestamp = OffsetDateTime.now().format(DateTimeFormatter.ISO_OFFSET_DATE_TIME),
+                    deviceRequestToEarpieceObservedElapsedMs = startupDurationMs(
+                        timing?.deviceRequestStartedNanos,
+                        timing?.earpieceObservedNanos,
+                    ),
+                    triggerToEarpieceObservedElapsedMs = startupDurationMs(
+                        timing?.triggerNanos,
+                        timing?.earpieceObservedNanos,
+                    ),
                 )
                 addEvent("Android reported built-in earpiece while external communication remained active — observation=$reason")
             }
@@ -1302,6 +1410,19 @@ class AudioDiagnosticObserver(
     private fun currentStateDescription() =
         "communication device=${audioManager.communicationDevice?.toObservedDevice().reportDescription()}; " +
             "speakerphone=${observedSpeakerphoneState()}"
+
+    private fun matchingStartupTiming(): StartupTiming? =
+        startupTiming?.takeIf {
+            it.generation == cycleGeneration && experiment.startupTimingGeneration == it.generation &&
+                experiment.triggerOrigin != null
+        }
+
+    private fun startupDurationMs(startNanos: Long?, endNanos: Long?): Long? =
+        if (startNanos != null && endNanos != null && endNanos >= startNanos) {
+            (endNanos - startNanos) / 1_000_000L
+        } else {
+            null
+        }
 
     private fun collectSnapshot() = DiagnosticSnapshot(
         timestamp = OffsetDateTime.now().format(DateTimeFormatter.ISO_OFFSET_DATE_TIME),
@@ -1426,14 +1547,31 @@ internal fun buildDiagnosticReport(
     appendLine("Silent AudioTrack configuration: sampleRate=${experiment.silentTrackSampleRate ?: "Not created"}; mono PCM 16-bit; bufferBytes=${experiment.silentTrackBufferBytes ?: "Not created"}")
     appendLine("Silent AudioTrack play state: ${experiment.silentTrackPlayState}")
     appendLine("Prepared silent track created: ${experiment.preparedTrackCreated}")
+    appendLine("Prepared track bounded zero-PCM prefill completed: ${experiment.preparedTrackPrefilled}")
+    appendLine("Prepared track zero-PCM prefill bytes: ${experiment.prefillBytesWritten ?: "unknown / not applicable"}")
+    appendLine("Prefill completed timestamp: ${experiment.prefillCompletedTimestamp ?: "unknown / not applicable"}")
     appendLine("Preparation completed timestamp: ${experiment.preparationCompletedTimestamp ?: "Not prepared"}")
     appendLine("Prepared track state: ${experiment.preparedTrackState}")
     appendLine("Prepared track active playback observed while WAITING: ${experiment.preparedTrackActivePlaybackWhileWaiting} (expected false)")
     appendLine("Routing trigger timestamp: ${experiment.routingTriggerTimestamp ?: "Not triggered"}")
     appendLine("Prepared track reused: ${experiment.preparedTrackReused}")
     appendLine("play() invocation timestamp: ${experiment.playInvocationTimestamp ?: "Not invoked"}")
+    appendLine("play() returned timestamp: ${experiment.playReturnedTimestamp ?: "unknown / not applicable"}")
+    appendLine("Writer thread start requested timestamp: ${experiment.writerStartRequestedTimestamp ?: "unknown / not applicable"}")
+    appendLine("First successful AudioTrack.write() timestamp: ${experiment.firstSuccessfulWriteTimestamp ?: "unknown / not applicable"}")
     appendLine("PLAYSTATE_PLAYING timestamp: ${experiment.playingTimestamp ?: "Not observed"}")
-    appendLine("Trigger to PLAYSTATE_PLAYING elapsed ms: ${experiment.triggerToPlayingElapsedMs ?: "Not observed"}")
+    appendLine("Startup timing attempt/generation: ${experiment.startupTimingGeneration ?: "unknown / not applicable"}")
+    appendLine("Trigger to play() invocation elapsed ms: ${experiment.triggerToPlayInvocationElapsedMs ?: "unknown / not applicable"}")
+    appendLine("play() call duration ms: ${experiment.playCallDurationMs ?: "unknown / not applicable"}")
+    appendLine("Trigger to PLAYSTATE_PLAYING elapsed ms: ${experiment.triggerToPlayingElapsedMs ?: "unknown / not applicable"}")
+    appendLine("MODE_IN_COMMUNICATION observed timestamp: ${experiment.modeObservedTimestamp ?: "unknown / not applicable"}")
+    appendLine("PLAYSTATE_PLAYING to mode observed elapsed ms: ${experiment.playingToModeObservedElapsedMs ?: "unknown / not applicable"}")
+    appendLine("setCommunicationDevice() started timestamp: ${experiment.deviceRequestStartedTimestamp ?: "unknown / not applicable"}")
+    appendLine("setCommunicationDevice() returned timestamp: ${experiment.deviceRequestReturnedTimestamp ?: "unknown / not applicable"}")
+    appendLine("Mode observed to device request return elapsed ms: ${experiment.modeObservedToDeviceRequestReturnElapsedMs ?: "unknown / not applicable"}")
+    appendLine("Earpiece first observed timestamp: ${experiment.earpieceFirstObservedTimestamp ?: "unknown / not applicable"}")
+    appendLine("Device request start to earpiece first observed elapsed ms: ${experiment.deviceRequestToEarpieceObservedElapsedMs ?: "unknown / not applicable"}")
+    appendLine("Trigger to earpiece first observed elapsed ms: ${experiment.triggerToEarpieceObservedElapsedMs ?: "unknown / not applicable"}")
     appendLine("Fallback AudioTrack creation used: ${experiment.fallbackCreationUsed}")
     appendLine("AudioAttributes: USAGE_VOICE_COMMUNICATION + CONTENT_TYPE_SPEECH")
     appendLine("Private Audio active VOICE_COMMUNICATION playback observed: ${experiment.activeVoiceCommunicationPlaybackObserved} (track PLAYING plus matching public active-playback configuration)")
