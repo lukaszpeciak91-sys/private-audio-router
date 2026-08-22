@@ -1,13 +1,21 @@
 package app.privateaudio.overlay
 
 import android.content.Context
-import android.text.TextUtils
 import app.privateaudio.localization.AppLanguagePreferences
-import java.util.Locale
 
 internal fun miniLayoutDirection(context: Context): Int {
-    val applicationLocale = AppLanguagePreferences.currentLanguageTag(context)
-        ?.let(Locale::forLanguageTag)
-    val effectiveLocale = applicationLocale ?: context.resources.configuration.locales[0]
-    return TextUtils.getLayoutDirectionFromLocale(effectiveLocale)
+    return AppLanguagePreferences.presentationLayoutDirection(context)
+}
+
+internal fun miniDirectionalX(ltrX: Float, width: Float, rtl: Boolean): Float =
+    if (rtl) width - ltrX else ltrX
+
+internal fun miniControlAt(x: Float, width: Float, rtl: Boolean): MiniControl {
+    val directionalTouchX = miniDirectionalX(x, width, rtl)
+    return when {
+        directionalTouchX >= width * 0.80f -> MiniControl.CLOSE
+        directionalTouchX >= width * 0.60f -> MiniControl.EXPAND
+        directionalTouchX >= width * 0.40f && directionalTouchX < width * 0.60f -> MiniControl.POWER
+        else -> MiniControl.NONE
+    }
 }

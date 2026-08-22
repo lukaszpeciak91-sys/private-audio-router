@@ -1,6 +1,7 @@
 package app.privateaudio
 
 import android.app.LocaleConfig
+import android.app.LocaleManager
 import android.content.Context
 import android.content.res.Configuration
 import android.os.Build
@@ -13,9 +14,41 @@ import org.junit.Assert.assertTrue
 import org.junit.Test
 import org.junit.runner.RunWith
 import java.util.Locale
+import app.privateaudio.localization.AppLanguagePreferences
 
 @RunWith(AndroidJUnit4::class)
 class LegacyLocaleResourceResolutionTest {
+    @Test
+    fun generatedLegacyAliasesAreCanonicalizedForApplicationLanguageOptions() {
+        val context = InstrumentationRegistry.getInstrumentation().targetContext
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.TIRAMISU) return
+        val generatedTags = LocaleConfig(context).supportedLocales
+            ?.let { locales -> (0 until locales.size()).map { locales[it].toLanguageTag() } }
+            .orEmpty()
+        val optionTags = AppLanguagePreferences.supportedLanguages(context).map { it.languageTag }
+
+        assertTrue("generated LocaleConfig=$generatedTags", generatedTags.any { it == "ji" || it == "yi" })
+        assertEquals(1, optionTags.count { it == "yi" })
+        assertEquals(1, optionTags.count { it == "he" })
+        assertEquals(1, optionTags.count { it == "id" })
+        assertTrue(optionTags.none { it == "ji" || it == "iw" || it == "in" })
+    }
+
+    @Test
+    fun legacyStoredSelectionHasCanonicalLogicalIdentityAndDirection() {
+        val context = InstrumentationRegistry.getInstrumentation().targetContext
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.TIRAMISU) return
+        val localeManager = context.getSystemService(LocaleManager::class.java)
+        val original = localeManager.applicationLocales
+        try {
+            localeManager.applicationLocales = android.os.LocaleList.forLanguageTags("ji")
+            assertEquals("yi", AppLanguagePreferences.currentLanguageTag(context))
+            assertEquals(android.view.View.LAYOUT_DIRECTION_RTL, AppLanguagePreferences.presentationLayoutDirection(context))
+        } finally {
+            localeManager.applicationLocales = original
+        }
+    }
+
     @Test
     fun logicalApplicationLocaleIdentitiesProvideMiniDirectionIndependentlyOfResourceAliases() {
         listOf("yi", "he", "ar", "fa", "ur").forEach { tag ->
@@ -25,7 +58,7 @@ class LegacyLocaleResourceResolutionTest {
                 TextUtils.getLayoutDirectionFromLocale(Locale.forLanguageTag(tag)),
             )
         }
-        listOf("en", "pl").forEach { tag ->
+        listOf("en", "pl", "id").forEach { tag ->
             assertEquals(
                 "$tag Mini direction",
                 android.view.View.LAYOUT_DIRECTION_LTR,
