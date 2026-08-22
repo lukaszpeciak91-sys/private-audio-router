@@ -21,7 +21,7 @@
     <string name="settings_diagnostics">Nnyocha</string>
     <string name="settings_advanced">Nke dị elu</string>
     <string name="settings_about">Banyere Private Audio</string>
-    <string name="settings_privacy_policy">Iwu Nzuzo</string>
+    <string name="settings_privacy_policy">Amụma Nzuzo</string>
     <string name="settings_privacy_policy_body">Private Audio anaghị anakọta, edekọ, ma ọ bụ zipụ mkparịta ụka gị ma ọ bụ ọdịnaya ọdịyo.
 
 Ngwa ahụ anaghị achọ akaụntụ ma ọ bụ nbanye. Ọ naghị arịọ ikike iji igwe okwu ma ọ naghị eji ọrụ nyocha ojiji, mgbasa ozi, ma ọ bụ ọrụ na-akọ mgbe ngwa kwụsịrị na mberede. Private Audio anaghị arịọ ikike Ịntanetị nke Android ma ọ naghị eziga data na sava.
@@ -58,12 +58,12 @@ Agbanyụrụ nkwado ndabere data ngwa Android.</string>
     <string name="diagnostics_checking">Na-enyocha…</string>
     <string name="diagnostics_audio_output_unknown">Amaghị</string>
     <string name="diagnostics_permission_required">Achọrọ ikike</string>
-    <string name="diagnostics_on">Agbanye</string>
-    <string name="diagnostics_off">Gbanyụọ</string>
+    <string name="diagnostics_on">Agbanyere</string>
+    <string name="diagnostics_off">Agbanyụrụ</string>
     <string name="diagnostics_success">Ọ gara nke ọma</string>
     <string name="diagnostics_failed">Ọ dara</string>
     <string name="diagnostics_route_earpiece">Igwe nnata ụda ntị</string>
-    <string name="diagnostics_route_speaker">Igwe okwu dara ụda</string>
+    <string name="diagnostics_route_speaker">Spika</string>
     <string name="diagnostics_route_bluetooth">Bluetooth</string>
     <string name="diagnostics_route_other">Ndị ọzọ</string>
     <string name="diagnostics_error_blocked_by_system">Sistemụ gbochiri ibugharị ọdịyo.</string>

@@ -35,13 +35,16 @@ class IgboLocalizationContractTest {
         assertEquals("Ntọala", resourceValue("settings"))
         assertEquals("Nke ndabara", resourceValue("settings_system_default"))
         assertEquals("Nke dị elu", resourceValue("settings_advanced"))
+        assertEquals("Amụma Nzuzo", resourceValue("settings_privacy_policy"))
         assertEquals("Mmepụta ọdịyo", resourceValue("diagnostics_audio_route"))
+        assertEquals("Agbanyere", resourceValue("diagnostics_on"))
+        assertEquals("Agbanyụrụ", resourceValue("diagnostics_off"))
 
         assertTrue(resourceValue("settings_about_body").contains("ọdịyo olu akwadoro"))
         assertTrue(resourceValue("settings_about_body").contains("igwe nnata ụda dị n’ime ekwentị"))
         assertFalse(resourceValue("settings_about_body").contains("oku"))
         assertEquals("Igwe nnata ụda ntị", resourceValue("diagnostics_route_earpiece"))
-        assertEquals("Igwe okwu dara ụda", resourceValue("diagnostics_route_speaker"))
+        assertEquals("Spika", resourceValue("diagnostics_route_speaker"))
         assertFalse(resourceValue("diagnostics_route_earpiece") == resourceValue("diagnostics_route_speaker"))
 
         assertTrue(strings.contains("anaghị anakọta, edekọ, ma ọ bụ zipụ"))
