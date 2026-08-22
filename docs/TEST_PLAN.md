@@ -1,5 +1,11 @@
 # Hardware-in-the-Loop Test Plan
 
+## Public recording/input observation gate
+
+- With Fake Phone OFF, alternate approximately three fresh ChatGPT Voice starts with Private Audio OFF and ON, asking the same short question immediately; save the diagnostic report after every ON run where the first input is missed.
+- With Private Audio ON and Fake Phone OFF, run two or three fresh Gemini starts. Compare public recording appearance, disappearance, source, input-device, and silenced transitions against the protected routing generation, silent-track start, mode request, device request, and first earpiece observation.
+- Treat redacted or absent cross-application fields as unknown. A continuously visible configuration does not establish that speech was recognized or processed, and these metadata-only diagnostics do not capture microphone audio.
+
 Allowed status values are **NOT TESTED**, **PASS**, **FAIL**, and **BLOCKED**. Record a specific device, Android version, and application build for every execution. Emulator results are insufficient for built-in-earpiece routing or cross-application compatibility; those claims require a physical-device test.
 
 ## Current compatibility and remaining validation

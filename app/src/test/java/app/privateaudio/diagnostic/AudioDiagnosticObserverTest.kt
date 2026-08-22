@@ -19,6 +19,44 @@ class AudioDiagnosticObserverTest {
     fun unknownPlatformValuesAreNotInferred() {
         assertEquals("Unknown value (999)", audioModeName(999))
         assertEquals("Unknown type (999)", audioDeviceTypeName(999))
+        assertTrue(audioSourceName(999).startsWith("Unknown / redacted / not exposed"))
+    }
+
+    @Test
+    fun recordingTransitionsSuppressIdenticalAndDistinguishMeaningfulChanges() {
+        val initial = ObservedRecording("VOICE_RECOGNITION", "Unknown / redacted / not exposed", "Unknown", null, null)
+        assertTrue(recordingChanges(emptyList(), emptyList()).descriptions.isEmpty())
+        assertEquals(listOf("RECORDING appeared", "recording count changed 0 → 1"), recordingChanges(emptyList(), listOf(initial)).descriptions)
+        assertTrue(recordingChanges(listOf(initial), listOf(initial)).descriptions.isEmpty())
+        assertTrue(recordingChanges(listOf(initial), listOf(initial.copy(audioSource = "VOICE_COMMUNICATION"))).descriptions.contains("audio source changed"))
+        assertEquals(listOf("RECORDING disappeared", "recording count changed 1 → 0"), recordingChanges(listOf(initial), emptyList()).descriptions)
+    }
+
+    @Test
+    fun recordingObservationLifecycleIsIndependentFromControllerAndCannotRoute() {
+        val start = observerSource.method("fun start()")
+        val stop = observerSource.method("fun stop(reason: String)")
+        val disable = observerSource.method("fun disableController()")
+        val callback = observerSource.method("private fun handleRecordingConfigurations(")
+        assertTrue(start.contains("registerRecordingCallback()"))
+        assertTrue(stop.contains("unregisterRecordingCallback()"))
+        assertFalse(disable.contains("unregisterRecordingCallback"))
+        assertFalse(callback.contains("evaluateExperimentTrigger"))
+        assertFalse(callback.contains("setCommunicationDevice"))
+        assertFalse(callback.contains("experiment ="))
+        assertTrue(observerSource.method("private fun registerRecordingCallback()").contains("if (recordingCallbackRegistered) return"))
+        assertTrue(observerSource.method("private fun unregisterRecordingCallback()").contains("if (!recordingCallbackRegistered) return"))
+    }
+
+    @Test
+    fun recordingDiagnosticsRemainMetadataOnlyAndGenerationScoped() {
+        assertFalse(observerSource.contains("AudioRecord("))
+        assertFalse(observerSource.contains("RECORD_AUDIO"))
+        assertTrue(observerSource.contains("AudioManager.AudioRecordingCallback"))
+        assertTrue(observerSource.contains("activeRecordingConfigurations"))
+        assertTrue(observerSource.contains("it.generation == cycleGeneration"))
+        val manifest = File("src/main/AndroidManifest.xml").readText()
+        assertFalse(manifest.contains("android.permission.RECORD_AUDIO"))
     }
 
     @Test

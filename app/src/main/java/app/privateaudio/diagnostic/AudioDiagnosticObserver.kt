@@ -8,6 +8,7 @@ import android.media.AudioDeviceInfo
 import android.media.AudioFormat
 import android.media.AudioManager
 import android.media.AudioPlaybackConfiguration
+import android.media.AudioRecordingConfiguration
 import android.media.AudioTrack
 import android.os.Build
 import android.os.Handler
@@ -86,6 +87,73 @@ data class ObservedPlayback(
     val playerState: String = "Not exposed by the public AudioPlaybackConfiguration API",
     val playerIdentity: String = "Not exposed by the public AudioPlaybackConfiguration API",
     val device: ObservedDevice?,
+)
+
+data class ObservedRecording(
+    val audioSource: String,
+    val clientSessionId: String,
+    val clientFormat: String,
+    val device: ObservedDevice?,
+    val clientSilenced: Boolean?,
+) {
+    internal fun reportDescription() =
+        "source=$audioSource; client session ID=$clientSessionId; client format=$clientFormat; " +
+            "input device=${device.reportDescription()}; client silenced=${clientSilenced?.toString() ?: "Not exposed"}"
+}
+
+data class RecordingContext(
+    val controllerEnabled: Boolean,
+    val mode: String,
+    val communicationDevice: ObservedDevice?,
+    val speakerphoneState: String,
+    val protectedCycleRequested: Boolean,
+    val triggerOrigin: TriggerOrigin?,
+    val silentTrackPlayState: String,
+    val routingGeneration: Long?,
+)
+
+data class RecordingTraceEntry(
+    val timestamp: String,
+    val elapsedRealtimeNanos: Long,
+    val description: String,
+    val recordings: List<ObservedRecording>,
+    val context: RecordingContext,
+)
+
+internal data class RecordingChanges(val descriptions: List<String>)
+
+internal fun recordingChanges(
+    previous: List<ObservedRecording>,
+    current: List<ObservedRecording>,
+): RecordingChanges {
+    if (previous == current) return RecordingChanges(emptyList())
+    val descriptions = mutableListOf<String>()
+    if (previous.isEmpty() && current.isNotEmpty()) descriptions += "RECORDING appeared"
+    if (previous.isNotEmpty() && current.isEmpty()) descriptions += "RECORDING disappeared"
+    if (previous.size != current.size) descriptions += "recording count changed ${previous.size} → ${current.size}"
+    if (previous.isNotEmpty() && current.isNotEmpty()) {
+        descriptions += "RECORDING configuration changed"
+        if (previous.map { it.audioSource } != current.map { it.audioSource }) descriptions += "audio source changed"
+        if (previous.map { it.device } != current.map { it.device }) descriptions += "input device changed"
+        if (previous.map { it.clientSilenced } != current.map { it.clientSilenced }) descriptions += "client silenced changed"
+    }
+    return RecordingChanges(descriptions)
+}
+
+data class RecordingStartupObservation(
+    val generation: Long,
+    val routingTriggerElapsedRealtimeNanos: Long,
+    val atRoutingTrigger: List<ObservedRecording>,
+    var atPostSilentTrackStart: List<ObservedRecording>? = null,
+    var atPostModeRequest: List<ObservedRecording>? = null,
+    var atPostRoutingRequest: List<ObservedRecording>? = null,
+    var atFirstEarpiece: List<ObservedRecording>? = null,
+    var firstEarpieceElapsedRealtimeNanos: Long? = null,
+    var transitionObserved: Boolean = false,
+    var disappearanceObserved: Boolean = false,
+    var reappearanceObserved: Boolean = false,
+    var silencedTransitionObserved: Boolean = false,
+    var inputDeviceTransitionObserved: Boolean = false,
 )
 
 enum class ExperimentState(val label: String) {
@@ -257,6 +325,13 @@ class AudioDiagnosticObserver(
     private var currentAssistantQualifyingPlaybackCount = 0
     private var currentBrowserQualifyingPlaybackCount = 0
     private var playbackCallbackRegistered = false
+    private var recordingCallbackRegistered = false
+    private var currentRecordingConfigurations: List<ObservedRecording> = emptyList()
+    private val recordingTrace = ArrayDeque<RecordingTraceEntry>()
+    private var recordingTraceEntriesDropped = 0
+    private var redundantRecordingCallbacksSuppressed = 0
+    private var recordingStartupObservation: RecordingStartupObservation? = null
+    private var lastRecordingStartupObservation: RecordingStartupObservation? = null
     private var cycleGeneration = 0L
     private var externalContributionEstablished = false
     private var activeEvidenceRecorded = false
@@ -295,10 +370,16 @@ class AudioDiagnosticObserver(
             handlePlaybackConfigurations(configs)
         }
     }
+    private val recordingCallback = object : AudioManager.AudioRecordingCallback() {
+        override fun onRecordingConfigChanged(configs: MutableList<AudioRecordingConfiguration>) {
+            handleRecordingConfigurations(configs.map(AudioRecordingConfiguration::toObservedRecording))
+        }
+    }
 
     fun start() {
         if (started) return
         started = true
+        registerRecordingCallback()
         audioManager.addOnCommunicationDeviceChangedListener(
             callbackExecutor,
             communicationDeviceListener,
@@ -306,12 +387,14 @@ class AudioDiagnosticObserver(
         audioManager.registerAudioDeviceCallback(audioDeviceCallback, Handler(Looper.getMainLooper()))
         snapshot("Baseline")
         baseline = snapshot
+        handleRecordingConfigurations(readActiveRecordingConfigurations())
     }
 
     fun stop(reason: String) {
         if (!started) return
         controllerEnabled = false
         invalidatePendingControllerWork()
+        unregisterRecordingCallback()
         unregisterPlaybackCallback()
         if (experiment.requestAttempted) clearExperiment(reason, ExperimentState.CLEARED)
         else {
@@ -403,7 +486,75 @@ class AudioDiagnosticObserver(
         startupTraceEntriesDropped = startupTraceEntriesDropped,
         redundantPlaybackCallbacksSuppressed = redundantPlaybackCallbacksSuppressed,
         fakePhonePreArm = fakePhonePreArm,
+        recordingCallbackRegistered = recordingCallbackRegistered,
+        currentRecordingConfigurations = currentRecordingConfigurations,
+        recordingTrace = recordingTrace.toList(),
+        recordingTraceEntriesDropped = recordingTraceEntriesDropped,
+        redundantRecordingCallbacksSuppressed = redundantRecordingCallbacksSuppressed,
+        recordingStartupObservation = recordingStartupObservation ?: lastRecordingStartupObservation,
         supportSummary = supportSummary,
+    )
+
+    private fun registerRecordingCallback() {
+        if (recordingCallbackRegistered) return
+        audioManager.registerAudioRecordingCallback(recordingCallback, observationHandler)
+        recordingCallbackRegistered = true
+    }
+
+    private fun unregisterRecordingCallback() {
+        if (!recordingCallbackRegistered) return
+        audioManager.unregisterAudioRecordingCallback(recordingCallback)
+        recordingCallbackRegistered = false
+    }
+
+    private fun readActiveRecordingConfigurations(): List<ObservedRecording> =
+        runCatching { audioManager.activeRecordingConfigurations.map(AudioRecordingConfiguration::toObservedRecording) }
+            .getOrDefault(emptyList())
+
+    private fun handleRecordingConfigurations(current: List<ObservedRecording>) {
+        val changes = recordingChanges(currentRecordingConfigurations, current)
+        if (changes.descriptions.isEmpty()) {
+            redundantRecordingCallbacksSuppressed++
+            return
+        }
+        val previous = currentRecordingConfigurations
+        currentRecordingConfigurations = current
+        val startup = recordingStartupObservation?.takeIf { it.generation == cycleGeneration }
+        if (startup != null) {
+            startup.transitionObserved = true
+            startup.disappearanceObserved = startup.disappearanceObserved || (previous.isNotEmpty() && current.isEmpty())
+            startup.reappearanceObserved = startup.reappearanceObserved || (previous.isEmpty() && current.isNotEmpty() &&
+                startup.atRoutingTrigger.isNotEmpty())
+            startup.silencedTransitionObserved = startup.silencedTransitionObserved ||
+                changes.descriptions.contains("client silenced changed")
+            startup.inputDeviceTransitionObserved = startup.inputDeviceTransitionObserved ||
+                changes.descriptions.contains("input device changed")
+        }
+        recordingTrace.addLast(
+            RecordingTraceEntry(
+                timestamp = OffsetDateTime.now().format(DateTimeFormatter.ISO_OFFSET_DATE_TIME),
+                elapsedRealtimeNanos = SystemClock.elapsedRealtimeNanos(),
+                description = changes.descriptions.joinToString("; "),
+                recordings = current,
+                context = recordingContext(),
+            ),
+        )
+        while (recordingTrace.size > MAX_RECORDING_TRACE_EVENTS) {
+            recordingTrace.removeFirst()
+            recordingTraceEntriesDropped++
+        }
+        onEvidenceChanged("Public recording configuration changed")
+    }
+
+    private fun recordingContext() = RecordingContext(
+        controllerEnabled = controllerEnabled,
+        mode = audioModeName(audioManager.mode),
+        communicationDevice = audioManager.communicationDevice?.toObservedDevice(),
+        speakerphoneState = observedSpeakerphoneState(),
+        protectedCycleRequested = experiment.requestAttempted,
+        triggerOrigin = experiment.triggerOrigin,
+        silentTrackPlayState = audioTrackPlayStateName(silentTrack?.playState ?: AudioTrack.PLAYSTATE_STOPPED),
+        routingGeneration = experiment.startupTimingGeneration,
     )
 
     internal fun diagnosticsSummary(
@@ -498,6 +649,11 @@ class AudioDiagnosticObserver(
         val routingTriggerTimestamp = OffsetDateTime.now().format(DateTimeFormatter.ISO_OFFSET_DATE_TIME)
         val timingGeneration = cycleGeneration
         startupTiming = StartupTiming(timingGeneration, SystemClock.elapsedRealtimeNanos())
+        recordingStartupObservation = RecordingStartupObservation(
+            generation = timingGeneration,
+            routingTriggerElapsedRealtimeNanos = startupTiming!!.triggerNanos,
+            atRoutingTrigger = currentRecordingConfigurations,
+        )
         val target = earpiece.toObservedDevice()
         val modeBeforeParticipation = audioManager.mode
         val preOwnership = collectSnapshot()
@@ -540,6 +696,8 @@ class AudioDiagnosticObserver(
             return
         }
         val postTrackStart = collectSnapshot()
+        recordingStartupObservation?.takeIf { it.generation == timingGeneration }?.atPostSilentTrackStart =
+            currentRecordingConfigurations
         val visibleVoicePlayback = postTrackStart.activePlaybackConfigurations.any {
             it.usage == "USAGE_VOICE_COMMUNICATION" && it.contentType == "CONTENT_TYPE_SPEECH"
         }
@@ -598,6 +756,8 @@ class AudioDiagnosticObserver(
                 "Android-reported mode=${audioModeName(modeAfterParticipation)}; ${currentStateDescription()}",
         )
         experiment = experiment.copy(postModeOwnership = collectSnapshot())
+        recordingStartupObservation?.takeIf { it.generation == timingGeneration }?.atPostModeRequest =
+            currentRecordingConfigurations
         routingActionInProgress = false
         if (modeRequestFailure != null) {
             clearExperiment(
@@ -1050,6 +1210,8 @@ class AudioDiagnosticObserver(
                 matchingStartupTiming()?.deviceRequestReturnedNanos,
             ),
         )
+        recordingStartupObservation?.takeIf { it.generation == cycleGeneration }?.atPostRoutingRequest =
+            currentRecordingConfigurations
         addEvent("Routing attempt $number result — accepted=$accepted; device immediately after=${after.reportDescription()}; speakerphone=$speakerphone")
         routingActionInProgress = false
         snapshot("Immediate post-request observation")
@@ -1255,7 +1417,9 @@ class AudioDiagnosticObserver(
 
     private fun returnToWaiting() {
         if (!controllerEnabled) return
+        lastRecordingStartupObservation = recordingStartupObservation
         cycleGeneration++
+        recordingStartupObservation = null
         externalContributionEstablished = false
         activeEvidenceRecorded = false
         experiment = EarpieceExperiment(state = ExperimentState.ARMED, armed = true)
@@ -1306,6 +1470,10 @@ class AudioDiagnosticObserver(
                         timing?.earpieceObservedNanos,
                     ),
                 )
+                recordingStartupObservation?.takeIf { it.generation == cycleGeneration }?.atFirstEarpiece =
+                    currentRecordingConfigurations
+                recordingStartupObservation?.takeIf { it.generation == cycleGeneration }?.firstEarpieceElapsedRealtimeNanos =
+                    timing?.earpieceObservedNanos
                 addEvent("Android reported built-in earpiece while external communication remained active — observation=$reason")
             }
             "Built-in speaker" -> if (experiment.earpieceReportedDuringSession && !experiment.revertedToSpeaker) {
@@ -1468,6 +1636,12 @@ internal fun buildDiagnosticReport(
     startupTraceEntriesDropped: Int = 0,
     redundantPlaybackCallbacksSuppressed: Int = 0,
     fakePhonePreArm: FakePhonePreArmStatus = FakePhonePreArmStatus(),
+    recordingCallbackRegistered: Boolean = false,
+    currentRecordingConfigurations: List<ObservedRecording> = emptyList(),
+    recordingTrace: List<RecordingTraceEntry> = emptyList(),
+    recordingTraceEntriesDropped: Int = 0,
+    redundantRecordingCallbacksSuppressed: Int = 0,
+    recordingStartupObservation: RecordingStartupObservation? = null,
     supportSummary: DiagnosticsSummary? = null,
 ) = buildString {
     appendLine("PRIVATE AUDIO — DIAGNOSTIC REPORT")
@@ -1488,6 +1662,46 @@ internal fun buildDiagnosticReport(
     appendLine("Manufacturer: ${environment.manufacturer}")
     appendLine("Model: ${environment.model}")
     appendLine("Product: ${environment.product}")
+    appendLine()
+    appendLine("RECORDING / INPUT OBSERVATION")
+    appendLine("Recording callback registered: $recordingCallbackRegistered")
+    appendLine("Current active recording configuration count: ${currentRecordingConfigurations.size}")
+    appendLine("Current public recording configurations:")
+    if (currentRecordingConfigurations.isEmpty()) appendLine("None reported by Android")
+    else currentRecordingConfigurations.forEachIndexed { index, recording ->
+        appendLine("${index + 1}. ${recording.reportDescription()}")
+    }
+    appendLine("Recording trace retained/dropped/suppressed: ${recordingTrace.size}/$recordingTraceEntriesDropped/$redundantRecordingCallbacksSuppressed")
+    appendLine("Recording state at routing trigger: ${recordingStartupObservation?.atRoutingTrigger.recordingDescription()}")
+    appendLine("Recording state at POST-SILENT-TRACK-START: ${recordingStartupObservation?.atPostSilentTrackStart.recordingDescription()}")
+    appendLine("Recording state at POST-MODE-REQUEST: ${recordingStartupObservation?.atPostModeRequest.recordingDescription()}")
+    appendLine("Recording state at POST-ROUTING-REQUEST: ${recordingStartupObservation?.atPostRoutingRequest.recordingDescription()}")
+    appendLine("Recording state at first earpiece observation: ${recordingStartupObservation?.atFirstEarpiece.recordingDescription()}")
+    appendLine("Recording transition observed during startup: ${recordingStartupObservation?.transitionObserved.yesNoUnavailable()}")
+    appendLine("Recording disappearance/reappearance during startup: ${recordingStartupObservation?.let { it.disappearanceObserved || it.reappearanceObserved }.yesNoUnavailable()}")
+    val silencedExposed = currentRecordingConfigurations.any { it.clientSilenced != null } ||
+        recordingTrace.any { entry -> entry.recordings.any { it.clientSilenced != null } }
+    val deviceExposed = currentRecordingConfigurations.any { it.device != null } ||
+        recordingTrace.any { entry -> entry.recordings.any { it.device != null } }
+    appendLine("Client silenced transition observed: ${if (!silencedExposed) "Not exposed" else recordingStartupObservation?.silencedTransitionObserved.yesNoUnavailable()}")
+    appendLine("Input-device transition observed: ${if (!deviceExposed) "Not exposed" else recordingStartupObservation?.inputDeviceTransitionObserved.yesNoUnavailable()}")
+    appendLine("Recording appeared → routing trigger elapsed ms: ${recordingAppearanceToTriggerMs(recordingStartupObservation, recordingTrace) ?: "Not available"}")
+    appendLine("Routing trigger → recording disappeared/changed elapsed ms: ${recordingTransitionAfterTriggerMs(recordingStartupObservation, recordingTrace, "RECORDING") ?: "Not available"}")
+    appendLine("Routing trigger → client silenced change elapsed ms: ${recordingTransitionAfterTriggerMs(recordingStartupObservation, recordingTrace, "client silenced changed") ?: "Not available"}")
+    appendLine("Routing trigger → input device change elapsed ms: ${recordingTransitionAfterTriggerMs(recordingStartupObservation, recordingTrace, "input device changed") ?: "Not available"}")
+    appendLine("Routing trigger → first earpiece observation elapsed ms: ${recordingStartupObservation?.let { startupDurationForReport(it.routingTriggerElapsedRealtimeNanos, it.firstEarpieceElapsedRealtimeNanos) } ?: "Not available"}")
+    appendLine("FACT: These diagnostics use only public Android recording metadata.")
+    appendLine("No microphone audio is captured or recorded.")
+    appendLine("UNKNOWN: Public Android APIs may redact information about recording sessions owned by other applications.")
+    appendLine("UNKNOWN: A continuously visible recording configuration does not prove that the external application recognized or processed the user's speech.")
+    appendLine("RECORDING / INPUT TRACE")
+    if (recordingTrace.isEmpty()) appendLine("No meaningful recording transitions observed") else recordingTrace.forEach { entry ->
+        appendLine("${entry.timestamp} elapsedRealtimeNanos=${entry.elapsedRealtimeNanos}; ${entry.description}; count=${entry.recordings.size}; " +
+            "controllerEnabled=${entry.context.controllerEnabled}; mode=${entry.context.mode}; communicationDevice=${entry.context.communicationDevice.reportDescription()}; " +
+            "speakerphone=${entry.context.speakerphoneState}; protectedCycleRequested=${entry.context.protectedCycleRequested}; " +
+            "triggerOrigin=${entry.context.triggerOrigin ?: "None"}; silentTrack=${entry.context.silentTrackPlayState}; generation=${entry.context.routingGeneration ?: "Not available"}")
+        entry.recordings.forEach { appendLine("  ${it.reportDescription()}") }
+    }
     appendLine()
     appendLine("TRACE RETENTION")
     appendLine("Startup trace entries retained: ${startupAudioTrace.size}")
@@ -1759,6 +1973,74 @@ private fun AudioPlaybackConfiguration.toObservedPlayback() = ObservedPlayback(
     device = audioDeviceInfo?.toObservedDevice(),
 )
 
+private fun AudioRecordingConfiguration.toObservedRecording() = ObservedRecording(
+    audioSource = audioSourceName(clientAudioSource),
+    clientSessionId = clientAudioSessionId.takeIf { it > 0 }?.toString() ?: "Unknown / redacted / not exposed",
+    clientFormat = clientFormat.let {
+        "encoding=${it.encoding}; sampleRate=${it.sampleRate}; channelMask=0x${it.channelMask.toUInt().toString(16)}"
+    },
+    device = audioDevice?.toObservedDevice(),
+    clientSilenced = isClientSilenced,
+)
+
+internal fun audioSourceName(source: Int) = when (source) {
+    android.media.MediaRecorder.AudioSource.DEFAULT -> "DEFAULT"
+    android.media.MediaRecorder.AudioSource.MIC -> "MIC"
+    android.media.MediaRecorder.AudioSource.VOICE_UPLINK -> "VOICE_UPLINK"
+    android.media.MediaRecorder.AudioSource.VOICE_DOWNLINK -> "VOICE_DOWNLINK"
+    android.media.MediaRecorder.AudioSource.VOICE_CALL -> "VOICE_CALL"
+    android.media.MediaRecorder.AudioSource.CAMCORDER -> "CAMCORDER"
+    android.media.MediaRecorder.AudioSource.VOICE_RECOGNITION -> "VOICE_RECOGNITION"
+    android.media.MediaRecorder.AudioSource.VOICE_COMMUNICATION -> "VOICE_COMMUNICATION"
+    android.media.MediaRecorder.AudioSource.UNPROCESSED -> "UNPROCESSED"
+    else -> "Unknown / redacted / not exposed ($source)"
+}
+
+private fun List<ObservedRecording>?.recordingDescription(): String = when {
+    this == null -> "Not available"
+    isEmpty() -> "None reported by Android"
+    else -> joinToString(" | ") { it.reportDescription() }
+}
+
+private fun Boolean?.yesNoUnavailable(): String = when (this) {
+    true -> "yes"
+    false -> "no"
+    null -> "Not available"
+}
+
+private fun recordingAppearanceToTriggerMs(
+    startup: RecordingStartupObservation?,
+    trace: List<RecordingTraceEntry>,
+): Long? {
+    if (startup == null || startup.atRoutingTrigger.isEmpty()) return null
+    val appeared = trace.lastOrNull {
+        it.elapsedRealtimeNanos <= startup.routingTriggerElapsedRealtimeNanos &&
+            it.description.contains("RECORDING appeared")
+    } ?: return null
+    val invalidated = trace.any {
+        it.elapsedRealtimeNanos in (appeared.elapsedRealtimeNanos + 1)..startup.routingTriggerElapsedRealtimeNanos &&
+            it.description.contains("RECORDING disappeared")
+    }
+    return if (invalidated) null else startupDurationForReport(appeared.elapsedRealtimeNanos, startup.routingTriggerElapsedRealtimeNanos)
+}
+
+private fun recordingTransitionAfterTriggerMs(
+    startup: RecordingStartupObservation?,
+    trace: List<RecordingTraceEntry>,
+    marker: String,
+): Long? {
+    if (startup == null) return null
+    val event = trace.firstOrNull {
+        it.context.routingGeneration == startup.generation &&
+            it.elapsedRealtimeNanos >= startup.routingTriggerElapsedRealtimeNanos &&
+            it.description.contains(marker)
+    } ?: return null
+    return startupDurationForReport(startup.routingTriggerElapsedRealtimeNanos, event.elapsedRealtimeNanos)
+}
+
+private fun startupDurationForReport(startNanos: Long, endNanos: Long?): Long? =
+    endNanos?.takeIf { it >= startNanos }?.let { (it - startNanos) / 1_000_000L }
+
 internal data class PlaybackChanges(val summary: String, val entries: List<String>)
 
 internal fun playbackChanges(
@@ -1871,6 +2153,7 @@ private val TIME_FORMAT = DateTimeFormatter.ofPattern("HH:mm:ss.SSS")
 internal const val DIAGNOSTIC_REPORT_FORMAT = 2
 internal const val MAX_EVENTS = 100
 internal const val MAX_STARTUP_TRACE_EVENTS = 240
+internal const val MAX_RECORDING_TRACE_EVENTS = 80
 private const val OBSERVATION_DELAY_MS = 1_000L
 private const val END_CONFIRMATION_DELAY_MS = 1_500L
 private const val ASSISTANT_SESSION_LINGER_MS = 7_000L

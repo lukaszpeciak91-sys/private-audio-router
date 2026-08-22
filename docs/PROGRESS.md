@@ -1,5 +1,11 @@
 # Progress
 
+## Public recording-session metadata diagnostics
+
+- The diagnostic observer now registers a public `AudioManager.AudioRecordingCallback` for its full started lifetime, independently of the Private Audio controller setting, and reports bounded meaningful active-recording metadata transitions without microphone permission or audio capture.
+- Routing-start markers correlate public recording state with the existing protected-cycle generation and PRE-POC5, silent-track, mode, routing-request, and first-earpiece observations. This is diagnostic-only; classifier, routing, prepared-track/prefill, and assistant-linger behavior are unchanged.
+- Physical comparison of controller-OFF and controller-ON sessions remains required.
+
 This document summarizes the **current** repository state. Git history preserves the
 per-PR implementation narrative. Accepted decisions, technical evidence, and exact
 physical test records remain in [`DECISIONS.md`](DECISIONS.md),
