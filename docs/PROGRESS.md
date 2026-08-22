@@ -91,7 +91,7 @@ physical test records remain in [`DECISIONS.md`](DECISIONS.md),
   terminology as evidence where semantically appropriate. The previously corrected
   Javanese and Zulu distinctions remain protected. The detailed technical diagnostic
   report and SUPPORT SUMMARY remain intentionally English-only, as does the
-  default-OFF Fake Phone experiment label.
+  default-OFF Assistant early route experiment copy.
 - Durable terminology, evidence semantics, Mini fitting, RTL behavior, factual-claim
   safeguards, and locale maintenance rules belong to
   [`LOCALIZATION.md`](LOCALIZATION.md); this document records only current coverage
@@ -144,9 +144,8 @@ physical test records remain in [`DECISIONS.md`](DECISIONS.md),
   `play()` before starting the maintenance writer and preserves the unchanged
   PLAYING → mode → single-earpiece sequence; prefill failure remains fail-open.
   Generation-scoped monotonic diagnostics cover trigger through the first observed
-  earpiece and report unavailable cross-generation values rather than reusing a
-  Fake Phone or earlier genuine trigger. Fake Phone and the 7-second assistant
-  linger were not redesigned. Startup improvement and absence of OEM-visible active
+  earpiece and report unavailable cross-generation values. The 7-second assistant
+  linger was not redesigned. Startup improvement and absence of OEM-visible active
   playback from prefill remain physically unverified.
 - **Assistant protected-session linger — implemented and physically exercised; final gate pending.**
   After the existing 1.5-second assistant playback-loss confirmation, an established
@@ -156,13 +155,14 @@ physical test records remain in [`DECISIONS.md`](DECISIONS.md),
   contract coverage exists. Physical Gemini evidence confirms same-cycle resource
   reuse within the linger and shows that 5 seconds narrowly missed some later turns;
   the tuned 7-second duration and full multi-turn regression gate remain pending.
-- **Fake Phone sonification micro-route — implemented, default OFF, not physically validated.**
-  Persistent waiting pre-arm has been replaced: clean `WAITING` owns no Fake Phone
-  track, mode, or route. Exact assistant/sonification starts a bounded `WAITING`
-  micro-route with 100 ms disappearance grace and a fixed 2,000 ms cap. Genuine
-  classifier evidence promotes healthy resources without duplicate setup; unhealthy
-  setup fails open. Application ownership and audible success remain unproven, and
-  the revised physical gate is `NOT TESTED / UNKNOWN`.
+- **Assistant early silent-track pre-arm — implemented, default OFF, not physically validated.**
+  Fake Phone was replaced rather than duplicated. Exact `VOICE_RECOGNITION` plus
+  assistant/sonification may start only the prepared silent track during `WAITING`.
+  It makes no early mode/device request, attempt, `ACTIVE` transition, or proximity
+  acquisition. Healthy assistant/speech reuses the playing track before the normal
+  protected mode and single-device request; other origins cancel and use their
+  unchanged paths. Cleanup is generation-safe and bounded at 10 seconds. Physical
+  clipping reduction and recording stability remain `NOT TESTED / UNKNOWN`.
 - The ChatGPT startup-sound signature and route remain unresolved. Diagnostics can
   record bounded playback metadata, but the trace neither classifies nor reroutes
   the sound by itself.

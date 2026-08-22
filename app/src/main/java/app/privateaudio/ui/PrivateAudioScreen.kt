@@ -104,8 +104,8 @@ internal fun PrivateAudioScreen(
     state: PrivateAudioState,
     proximityFeatureEnabled: Boolean = true,
     onProximityFeatureChange: (Boolean) -> Unit = {},
-    fakePhonePreArmEnabled: Boolean = false,
-    onFakePhonePreArmChange: (Boolean) -> Unit = {},
+    assistantEarlyRouteEnabled: Boolean = false,
+    onAssistantEarlyRouteChange: (Boolean) -> Unit = {},
     powerEnabled: Boolean = true,
     onPowerClick: () -> Unit,
     onFloatingClick: () -> Unit = {},
@@ -205,8 +205,8 @@ internal fun PrivateAudioScreen(
                 versionName = versionName,
                 proximityFeatureEnabled = proximityFeatureEnabled,
                 onProximityFeatureChange = onProximityFeatureChange,
-                fakePhonePreArmEnabled = fakePhonePreArmEnabled,
-                onFakePhonePreArmChange = onFakePhonePreArmChange,
+                assistantEarlyRouteEnabled = assistantEarlyRouteEnabled,
+                onAssistantEarlyRouteChange = onAssistantEarlyRouteChange,
                 onDiagnostics = {
                     settingsVisible = false
                     diagnosticsVisible = true

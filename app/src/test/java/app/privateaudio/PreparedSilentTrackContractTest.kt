@@ -45,7 +45,7 @@ class PreparedSilentTrackContractTest {
         assertTrue(source.method("fun disableController()").contains("releasePreparedSilentTrack"))
         assertTrue(source.method("fun stop(reason: String)").contains("releasePreparedSilentTrack"))
         assertInOrder(source.method("private fun returnToWaiting()"), "returned to clean waiting", "prepareSilentCommunicationTrack()")
-        assertTrue(source.method("private fun startFakePhoneMicroRoute(").contains("releasePreparedSilentTrack"))
+        assertTrue(source.method("private fun startAssistantEarlyPreArm(").contains("startSilentCommunicationTrack"))
         assertTrue(source.method("private fun releasePreparedSilentTrack(").contains("no route or mode cleanup required"))
         assertTrue(source.contains("private const val ASSISTANT_SESSION_LINGER_MS = 7_000L"))
         assertTrue(source.contains("private const val END_CONFIRMATION_DELAY_MS = 1_500L"))
@@ -68,15 +68,15 @@ class PreparedSilentTrackContractTest {
     }
 
     @Test
-    fun startupTimingIsMonotonicGenerationScopedAndFakePhoneCannotReuseIt() {
+    fun startupTimingIsMonotonicGenerationScopedAndEarlyPreArmHasIndependentTiming() {
         assertTrue(source.contains("SystemClock.elapsedRealtimeNanos()"))
         val matching = source.method("private fun matchingStartupTiming()")
         assertTrue(matching.contains("it.generation == cycleGeneration"))
         assertTrue(matching.contains("experiment.startupTimingGeneration == it.generation"))
         assertTrue(matching.contains("experiment.triggerOrigin != null"))
         assertTrue(source.contains("unknown / not applicable"))
-        val fakePhone = source.method("private fun startFakePhoneMicroRoute(")
-        assertFalse(fakePhone.contains("startupTiming ="))
+        val earlyPreArm = source.method("private fun startAssistantEarlyPreArm(")
+        assertFalse(earlyPreArm.contains("startupTiming ="))
     }
 
     private fun assertInOrder(text: String, vararg parts: String) {
