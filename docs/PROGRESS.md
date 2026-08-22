@@ -131,6 +131,12 @@ physical test records remain in [`DECISIONS.md`](DECISIONS.md),
 
 ## Active experiments and unresolved items
 
+- **Prepared silent-track startup optimization — implemented; physical gate pending.**
+  Clean enabled `WAITING` now owns one initialized but stopped POC-5 track with no
+  writer, playback, mode, route, `ACTIVE`, or proximity influence. Genuine routing
+  reuses it before the unchanged mode → single-earpiece sequence, with fail-open
+  on-demand creation. Fake Phone and the 7-second assistant linger were not
+  redesigned. First-response clipping improvement remains physically unverified.
 - **Assistant protected-session linger — implemented and physically exercised; final gate pending.**
   After the existing 1.5-second assistant playback-loss confirmation, an established
   cycle retains its track, mode, route, and proximity eligibility for at most 7

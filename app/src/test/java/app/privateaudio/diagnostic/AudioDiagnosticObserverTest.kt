@@ -252,7 +252,7 @@ class AudioDiagnosticObserverTest {
     fun controllerEnableWaitsAndRegistersPublicPlaybackObservation() {
         val enable = observerSource.method("fun enableController()")
         assertInOrder(enable, "controllerEnabled = true", "registerAudioPlaybackCallback", "Controller ON", "handlePlaybackConfigurations")
-        assertFalse(enable.contains("startSilentCommunicationTrack"))
+        assertTrue(enable.contains("prepareSilentCommunicationTrack()"))
         assertFalse(enable.contains("setCommunicationDevice"))
         assertFalse(enable.contains("AudioManager.MODE_IN_COMMUNICATION"))
     }
@@ -271,8 +271,10 @@ class AudioDiagnosticObserverTest {
     fun poc5PlaybackModeAndSingleRouteRequestOrderingRemainsProtected() {
         val protectedBody = observerSource.method("private fun startProtectedPoc5Probe(")
         assertInOrder(protectedBody, "startSilentCommunicationTrack()", "PLAYSTATE_PLAYING", "requestCommunicationMode()", "performRoutingAttempt(earpiece")
+        val creation = observerSource.method("private fun createSilentCommunicationTrack(): AudioTrack?")
         val track = observerSource.method("private fun startSilentCommunicationTrack(): Boolean")
-        assertInOrder(track, ".setUsage(AudioAttributes.USAGE_VOICE_COMMUNICATION)", ".setContentType(AudioAttributes.CONTENT_TYPE_SPEECH)", ".setEncoding(AudioFormat.ENCODING_PCM_16BIT)", ".setChannelMask(AudioFormat.CHANNEL_OUT_MONO)", "track.write(silence", "track.play()")
+        assertInOrder(creation, ".setUsage(AudioAttributes.USAGE_VOICE_COMMUNICATION)", ".setContentType(AudioAttributes.CONTENT_TYPE_SPEECH)", ".setEncoding(AudioFormat.ENCODING_PCM_16BIT)", ".setChannelMask(AudioFormat.CHANNEL_OUT_MONO)")
+        assertInOrder(track, "track.write(silence", "track.play()")
         assertEquals(1, observerSource.occurrences("audioManager.setCommunicationDevice(earpiece)"))
         assertTrue(observerSource.method("private fun performRoutingAttempt(").contains("experiment.attempts.isNotEmpty()"))
     }
