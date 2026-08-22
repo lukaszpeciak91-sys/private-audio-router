@@ -64,7 +64,7 @@ physical test records remain in [`DECISIONS.md`](DECISIONS.md),
 
 ## Localization state
 
-- Resources currently provide **88 product locales: English plus 87 non-English
+- Resources currently provide **89 product locales: English plus 88 non-English
   resource sets**. This count is derived from the current `values*` resource
   inventory, excluding non-locale `values-night`; supported variants include the
   intentional Portuguese, Chinese, Serbian, Punjabi, and Azerbaijani script or
@@ -74,10 +74,10 @@ physical test records remain in [`DECISIONS.md`](DECISIONS.md),
   in repository history; broad runtime, emulator, glyph, Mini-presentation, and
   physical-device validation is not implied.
 - The Privacy Policy title and complete factual claim set are translated and
-  semantically self-checked across all 87 non-English sets. A targeted independent
+  semantically self-checked across all 88 non-English sets. A targeted independent
   audit found ten claim-scope or terminology defects, and reviewed replacements were
   applied. This is neither human/native-speaker validation nor legal certification.
-- The current user-facing Diagnostics key inventory is localized across all 87
+- The current user-facing Diagnostics key inventory is localized across all 88
   supported non-English resource sets. Candidates were produced and semantically
   self-checked with the Translation Skill. Malagasy received an independent
   linguistic audit that identified targeted corrections for the `ACTIVE` state,

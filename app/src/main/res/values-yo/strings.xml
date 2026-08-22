@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Private Audio</string>
+    <string name="routing_notification_channel">Private Audio</string>
+    <string name="routing_notification_title">Private Audio ti wa ni titan</string>
+    <string name="routing_notification_text">N dúró láti darí ohùn</string>
+    <string name="product_title">Private Audio</string>
+    <string name="product_subtitle">Bá AI sọ̀rọ̀ ní ìkọ̀kọ̀, bí ìpè tẹlifóònù.</string>
+    <string name="state_ready">Ṣetán</string>
+    <string name="state_waiting">N dúró</string>
+    <string name="state_active">N ṣiṣẹ́ lọ́wọ́</string>
+    <string name="state_error">Àṣìṣe</string>
+    <string name="power_control">Agbára</string>
+    <string name="floating">Kékeré</string>
+    <string name="settings">Àwọn ààtò</string>
+    <string name="close">Tì í</string>
+    <string name="overlay_controller_description">Ohun ìṣàkóso lílefo ti Private Audio. Ipò: %1$s. Àwọn ìṣàkóso agbára, fífẹ̀ àti títì.</string>
+    <string name="settings_language">Èdè</string>
+    <string name="settings_system_default">Àìyípadà ẹ̀rọ</string>
+    <string name="settings_save_diagnostic">Fi ìjábọ̀ àyẹ̀wò pamọ́</string>
+    <string name="settings_diagnostics">Àyẹ̀wò</string>
+    <string name="settings_advanced">Àgbà</string>
+    <string name="settings_about">Nípa Private Audio</string>
+    <string name="settings_privacy_policy">Ìlànà Ìpamọ́</string>
+    <string name="settings_privacy_policy_body">Private Audio kì í gba, kì í ká, bẹ́ẹ̀ ni kì í fi àwọn ìjíròrò tàbí àkóónú ohùn rẹ ránṣẹ́.
+
+Ìṣàfilọ́lẹ̀ náà kò béèrè àkọọ́lẹ̀ tàbí wíwọlé. Kò béèrè àṣẹ láti lo gbohùngbohùn, kò sì lo iṣẹ́ ìtúpalẹ̀, ìpolówó tàbí ìjábọ̀ ìkọlù. Private Audio kò béèrè àṣẹ Íńtánẹ́ẹ̀tì Android, kò sì fi dátà ránṣẹ́ sí ẹ̀rọ apínṣẹ́.
+
+Private Audio ń wo ipò ìmọ̀ ẹ̀rọ àti metadata ètò ohùn Android nìkan bí ó ṣe yẹ fún dídarí ohùn àti àyẹ̀wò. Kò ráyè sí àkóónú àwọn ìjíròrò rẹ.
+
+Àwọn ààtò ìṣàfilọ́lẹ̀ wà ní ìpamọ́ lórí ẹ̀rọ rẹ nìkan. Dátà àyẹ̀wò ni a ń ṣẹ̀dá tí a sì ń ṣiṣẹ́ lé lórí ẹ̀rọ rẹ nìkan, ìjábọ̀ àyẹ̀wò sì máa ń wà ní ìpamọ́ nígbà tí o bá yàn láti fi í pamọ́ nìkan. Ìjábọ̀ kan lè ní ìwífún ìmọ̀ ẹ̀rọ nípa ẹ̀rọ rẹ, ẹ̀yà Android, dídarí ohùn àti ipò ètò ohùn, ṣùgbọ́n kò ní ìjíròrò tàbí àkóónú ohùn.
+
+Afẹ́yinti dátà ìṣàfilọ́lẹ̀ Android ti wa ni pipa.</string>
+    <string name="settings_version">Ẹ̀yà %1$s</string>
+    <string name="settings_language_body">Private Audio ń tẹ̀lé èdè ẹ̀rọ rẹ lọ́wọ́lọ́wọ́. A yan Àìyípadà ẹ̀rọ.</string>
+    <string name="settings_language_android_13_required">Yíyan èdè nínú ìṣàfilọ́lẹ̀ nílò Android 13 tàbí èyí tó tuntun jù. Ẹ̀rọ yìí ń tẹ̀lé èdè ètò.</string>
+    <string name="settings_proximity_screen">Pa ojú-ìbojú nígbà tó bá sún mọ́ etí rẹ</string>
+    <string name="settings_advanced_body">Àwọn àṣàyàn míì yóò hàn níbí bí Private Audio ṣe ń dàgbà.</string>
+    <string name="settings_about_body">Private Audio ń ṣèrànwọ́ láti darí ohùn ìpè tí a ṣe àtìlẹ́yìn fún sí agbohùnsókè etí inú foonu rẹ.</string>
+    <string name="diagnostic_report_saved">A ti fi ìjábọ̀ àyẹ̀wò pamọ́.</string>
+    <string name="diagnostic_report_save_failed">A kò lè fi ìjábọ̀ àyẹ̀wò pamọ́.</string>
+    <string name="diagnostics_title">Àyẹ̀wò</string>
+    <string name="diagnostics_system_check">ÀYẸ̀WÒ ÈTÒ</string>
+    <string name="diagnostics_earpiece">Agbohùnsókè etí inú foonu</string>
+    <string name="diagnostics_proximity_sensor">Ẹ̀rọ amóye ìsúnmọ́</string>
+    <string name="diagnostics_private_audio">PRIVATE AUDIO</string>
+    <string name="diagnostics_routing">Dídarí</string>
+    <string name="diagnostics_status">Ipò</string>
+    <string name="diagnostics_audio_route">Ibi tí ohùn ti ń jáde</string>
+    <string name="diagnostics_last_routing">ÌGBÌYÀNJÚ DÍDARÍ TÓ KẸ́YÌN</string>
+    <string name="diagnostics_result">Àbájáde</string>
+    <string name="diagnostics_error">Àṣìṣe</string>
+    <string name="diagnostics_available">Wà</string>
+    <string name="diagnostics_earpiece_available">Wà</string>
+    <string name="diagnostics_earpiece_not_available">Kò sí</string>
+    <string name="diagnostics_proximity_available">Wà</string>
+    <string name="diagnostics_proximity_not_available">Kò sí</string>
+    <string name="diagnostics_checking">Ń yẹ̀ wò…</string>
+    <string name="diagnostics_audio_output_unknown">A kò mọ̀</string>
+    <string name="diagnostics_permission_required">A nílò àṣẹ</string>
+    <string name="diagnostics_on">Titan</string>
+    <string name="diagnostics_off">Pipa</string>
+    <string name="diagnostics_success">Ó ṣàṣeyọrí</string>
+    <string name="diagnostics_failed">Ó kùnà</string>
+    <string name="diagnostics_route_earpiece">Agbohùnsókè etí inú foonu</string>
+    <string name="diagnostics_route_speaker">Agbohùnsókè</string>
+    <string name="diagnostics_route_bluetooth">Bluetooth</string>
+    <string name="diagnostics_route_other">Míràn</string>
+    <string name="diagnostics_error_blocked_by_system">Ètò náà dí dídarí ohùn lọ́wọ́.</string>
+    <string name="diagnostics_error_session_ended">Àkókò ohùn parí kí dídarí tó pé.</string>
+    <string name="diagnostics_error_audio_start">Private Audio kò lè bẹ̀rẹ̀ dídarí ohùn.</string>
+    <string name="diagnostics_error_audio_preparation">Private Audio kò lè pèsè ohùn ìbánisọ̀rọ̀.</string>
+    <string name="diagnostics_error_request_rejected">A kò gba ìbéèrè láti darí ohùn sí agbohùnsókè etí inú foonu.</string>
+    <string name="diagnostics_error_not_completed">A kò lè parí dídarí ohùn.</string>
+</resources>
