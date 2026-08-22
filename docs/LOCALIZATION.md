@@ -130,7 +130,8 @@ RTL support is shared, direction-driven infrastructure, not locale-specific code
 - Mini window and drag positioning use physical screen coordinates;
 - Mini content mirrors by layout direction and its status uses bidi-aware measured rendering;
 - active notification presentation refreshes after a localization configuration change; and
-- Compose uses its normally inherited `LayoutDirection`.
+- the Private Audio Compose root explicitly provides the shared effective logical-locale
+  direction rather than trusting a legacy-alias configuration direction.
 
 Resource selection and presentation direction are separate platform results. A modern logical application locale such as Yiddish `yi` or Hebrew `he` can resolve a legacy-compatible `values-ji` or `values-iw` tree while a configuration-derived direction still reflects the legacy alias incorrectly. Direction-sensitive custom presentation must use the active logical application locale with Android's locale-direction API, falling back to the effective configuration locale when no application override exists. Never reverse localized text to compensate for a direction-resolution defect.
 

@@ -14,7 +14,7 @@ class RtlPreparationContractTest {
         assertTrue(settings.contains("layoutDirection == LayoutDirection.Ltr"))
         assertTrue(forwardChevron.contains("directionalX"))
         assertTrue(backChevron.contains("directionalX"))
-        assertFalse(productScreen.contains("LayoutDirection"))
+        assertTrue(productScreen.contains("LocalLayoutDirection provides presentationDirection"))
         assertFalse(copyIcon.contains("directionalX"))
     }
 
@@ -51,10 +51,9 @@ class RtlPreparationContractTest {
         assertTrue(direction.contains("rtlLayout"))
         assertTrue(overlay.contains("rtlLayout = miniLayoutDirection(context) == View.LAYOUT_DIRECTION_RTL"))
         assertTrue(overlay.method("fun refreshLocalizedPresentation").contains("rtlLayout = miniLayoutDirection(context)"))
-        assertTrue(layoutDirection.contains("AppLanguagePreferences.currentLanguageTag(context)"))
-        assertTrue(layoutDirection.contains("TextUtils.getLayoutDirectionFromLocale(effectiveLocale)"))
+        assertTrue(layoutDirection.contains("AppLanguagePreferences.presentationLayoutDirection(context)"))
         listOf("\"yi\"", "\"he\"", "\"ar\"", "\"ur\"", "\"fa\"").forEach {
-            assertFalse(productionKotlin.contains(it))
+            assertFalse(presentationKotlin.contains(it))
         }
 
         listOf("values", "values-pl", "values-ar", "values-ur").forEach {
@@ -87,8 +86,7 @@ class RtlPreparationContractTest {
         val productScreen = projectFile("app/src/main/java/app/privateaudio/ui/PrivateAudioScreen.kt").readText()
         val overlay = projectFile("app/src/main/java/app/privateaudio/overlay/OverlayService.kt").readText()
         val layoutDirection = projectFile("app/src/main/java/app/privateaudio/overlay/MiniLayoutDirection.kt").readText()
-        val productionKotlin = File(root, "app/src/main/java").walkTopDown()
-            .filter { it.extension == "kt" }.joinToString("\n") { it.readText() }
+        val presentationKotlin = listOf(productScreen, settings, overlay, layoutDirection).joinToString("\n")
         val position = projectFile("app/src/main/java/app/privateaudio/overlay/OverlayPosition.kt").readText()
         val service = projectFile("app/src/main/java/app/privateaudio/PrivateAudioService.kt").readText()
 

@@ -395,7 +395,7 @@ class OverlayService : Service() {
         private fun isRtlLayout() = rtlLayout
 
         private fun directionalX(ltrX: Float) =
-            if (isRtlLayout()) DESIGN_WIDTH - ltrX else ltrX
+            miniDirectionalX(ltrX, DESIGN_WIDTH, isRtlLayout())
 
         private fun directionalRect(left: Float, top: Float, right: Float, bottom: Float): RectF =
             RectF(
@@ -459,14 +459,7 @@ class OverlayService : Service() {
         }
 
         private fun controlAt(x: Float): MiniControl {
-            val directionalTouchX = if (isRtlLayout()) width - x else x
-            return when {
-                directionalTouchX >= width * CLOSE_START_FRACTION -> MiniControl.CLOSE
-                directionalTouchX >= width * EXPAND_START_FRACTION -> MiniControl.EXPAND
-                directionalTouchX >= width * POWER_START_FRACTION &&
-                    directionalTouchX < width * POWER_END_FRACTION -> MiniControl.POWER
-                else -> MiniControl.NONE
-            }
+            return miniControlAt(x, width.toFloat(), isRtlLayout())
         }
 
         override fun performClick(): Boolean {
@@ -525,10 +518,6 @@ class OverlayService : Service() {
         private const val STATUS_TEXT_RIGHT = 134f
         private const val STATUS_TEXT_WIDTH = 100
         private const val STATUS_TEXT_BASELINE = 36.5f
-        private const val POWER_START_FRACTION = 0.40f
-        private const val POWER_END_FRACTION = 0.60f
-        private const val EXPAND_START_FRACTION = 0.60f
-        private const val CLOSE_START_FRACTION = 0.80f
 
         fun showIntent(context: Context, resultReceiver: ResultReceiver? = null) =
             Intent(context, OverlayService::class.java).setAction(ACTION_SHOW).apply {

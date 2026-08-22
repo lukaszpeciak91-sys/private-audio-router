@@ -79,8 +79,12 @@ physical test records remain in [`DECISIONS.md`](DECISIONS.md),
   shared measured 16f / 15f / 14f size without locale-specific geometry. Tamil is
   an explicit compact-state exception; Malayalam now has a physical-failure-driven,
   reviewed compact Waiting override, while Gujarati uses the natural full-state path after targeted
-  review. Custom Mini direction resolves from the logical application locale rather
-  than relying on a legacy resource alias's configuration direction.
+  review. PR #173's direction resolver remained a **PHYSICAL FAIL** on Xiaomi
+  `2201117TY`, Android 13/API 33: Yiddish resources resolved, but both Main and Mini
+  still presented in LTR; the Malayalam compact Waiting label physically fit. The
+  current fix canonicalizes Android/Java legacy locale identities in the localization
+  layer and shares that effective presentation direction with the Compose root and Mini.
+  Correct Yiddish RTL presentation from the new build remains physically unverified.
 - The dedicated Privacy Policy page is resource-backed, scrollable within its
   bounded sheet, dismissible from outside, and has visible and Android Back paths to
   Settings. Source and Compose contracts cover its structure and navigation;
