@@ -64,7 +64,7 @@ physical test records remain in [`DECISIONS.md`](DECISIONS.md),
 
 ## Localization state
 
-- Resources currently provide **91 product locales: English plus 90 non-English
+- Resources currently provide **92 product locales: English plus 91 non-English
   resource sets**. This count is derived from the current `values*` resource
   inventory, excluding non-locale `values-night`; supported variants include the
   intentional Portuguese, Chinese, Serbian, Punjabi, and Azerbaijani script or
@@ -73,11 +73,16 @@ physical test records remain in [`DECISIONS.md`](DECISIONS.md),
   product surface has locale-specific review and source-contract evidence recorded
   in repository history; broad runtime, emulator, glyph, Mini-presentation, and
   physical-device validation is not implied.
+- Sinhala (`si`) now has a complete natural-script product localization, including
+  reviewed distinctions for controller ON versus runtime ACTIVE, built-in earpiece
+  versus loudspeaker, and the high-risk Privacy Policy claims. The translation was
+  semantically self-checked; independent audit, human/native review, and runtime
+  Sinhala rendering validation remain pending.
 - The Privacy Policy title and complete factual claim set are translated and
-  semantically self-checked across all 90 non-English sets. A targeted independent
+  semantically self-checked across all 91 non-English sets. A targeted independent
   audit found ten claim-scope or terminology defects, and reviewed replacements were
   applied. This is neither human/native-speaker validation nor legal certification.
-- The current user-facing Diagnostics key inventory is localized across all 90
+- The current user-facing Diagnostics key inventory is localized across all 91
   supported non-English resource sets. Candidates were produced and semantically
   self-checked with the Translation Skill. Malagasy received an independent
   linguistic audit that identified targeted corrections for the `ACTIVE` state,
