@@ -238,6 +238,7 @@ class OverlayService : Service() {
             typeface = android.graphics.Typeface.create("sans-serif", android.graphics.Typeface.NORMAL)
         }
         private val expandPath = Path()
+        private var rtlLayout = miniLayoutDirection(context) == View.LAYOUT_DIRECTION_RTL
         private var state = PrivateAudioState.READY
         private var statusDotAlpha = 1f
         private var statusDotAnimator: ValueAnimator? = null
@@ -271,6 +272,7 @@ class OverlayService : Service() {
         }
 
         fun refreshLocalizedPresentation() {
+            rtlLayout = miniLayoutDirection(context) == View.LAYOUT_DIRECTION_RTL
             refreshMiniStatusTextSize()
             contentDescription = stateDescription(state)
             invalidate()
@@ -390,8 +392,7 @@ class OverlayService : Service() {
             canvas.drawLine(directionalX(283f), 21f, directionalX(263f), 41f, paint)
         }
 
-        private fun isRtlLayout() =
-            resources.configuration.layoutDirection == View.LAYOUT_DIRECTION_RTL
+        private fun isRtlLayout() = rtlLayout
 
         private fun directionalX(ltrX: Float) =
             if (isRtlLayout()) DESIGN_WIDTH - ltrX else ltrX

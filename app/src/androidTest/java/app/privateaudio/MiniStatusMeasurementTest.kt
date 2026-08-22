@@ -453,7 +453,7 @@ class MiniStatusMeasurementTest {
         assertTrue(selected in listOf(16f, 15f, 14f))
     }
 
-    @Test fun malayalamResolvesItsFullLtrParadigmAndUsesOneMeasuredProductionSize() {
+    @Test fun malayalamCompactWaitingFitsWithItsCompleteParadigmAtOneMeasuredProductionSize() {
         val base = InstrumentationRegistry.getInstrumentation().targetContext
         val localized = base.createConfigurationContext(Configuration(base.resources.configuration).apply {
             setLocales(LocaleList(Locale.forLanguageTag("ml")))
@@ -465,7 +465,7 @@ class MiniStatusMeasurementTest {
             localized.getString(R.string.state_active_mini),
             localized.getString(R.string.state_error_mini),
         )
-        assertEquals(listOf("തയ്യാറാണ്", "കാത്തിരിക്കുന്നു", "സജീവം", "പിശക്"), labels)
+        assertEquals(listOf("തയ്യാറാണ്", "കാത്തിരിപ്പ്", "സജീവം", "പിശക്"), labels)
         val paint = TextPaint(Paint.ANTI_ALIAS_FLAG).apply {
             typeface = Typeface.create("sans-serif", Typeface.NORMAL)
         }
@@ -473,8 +473,12 @@ class MiniStatusMeasurementTest {
             paint.textSize = textSize
             paint.measureText(label)
         }
-        println("Malayalam Mini production-equivalent common size: $selected")
-        assertTrue(selected in listOf(16f, 15f, 14f))
+        val widths = labels.map { label ->
+            paint.textSize = selected
+            paint.measureText(label)
+        }
+        println("Malayalam Mini production-equivalent common size: $selected; widths: $widths")
+        assertTrue(widths.all { it <= MINI_STATUS_NON_ELLIPSIS_WIDTH })
     }
 
     @Test fun amharicResolvesItsFullLtrParadigmAndUsesOneMeasuredProductionSize() {
