@@ -67,6 +67,39 @@ class AssistantEarlyRouteContractTest {
         assertTrue(healthy.contains("AudioTrack.PLAYSTATE_PLAYING"))
     }
 
+    @Test fun earlyModeReturnAndPostReadConfirmationTimingRemainDistinct() {
+        val start = observer.method("private fun startAssistantEarlyPreArm(")
+        assertInOrder(
+            start,
+            "requestCommunicationMode()",
+            "val returnedNanos = SystemClock.elapsedRealtimeNanos()",
+            "val returnedAt = OffsetDateTime.now()",
+            "val modeAfter = audioManager.mode",
+            "val modeObservedNanos = SystemClock.elapsedRealtimeNanos()",
+            "val modeObservedAt = OffsetDateTime.now()",
+        )
+        assertTrue(start.contains("val confirmedAt = modeObservedAt.takeIf"))
+        assertTrue(start.contains("modeConfirmedElapsedRealtimeNanos = modeObservedNanos.takeIf"))
+        assertFalse(start.contains("modeConfirmedElapsedRealtimeNanos = returnedNanos"))
+        assertTrue(start.contains("startupDurationMs(returnedNanos, modeObservedNanos)"))
+
+        val promote = observer.method("private fun promoteAssistantEarlyPreArm(")
+        assertTrue(promote.contains("assistantEarlyRoute.modeConfirmedElapsedRealtimeNanos"))
+    }
+
+    @Test fun promotedEarlyModePropagatesItsActualRequestThreadWithoutAnotherRequest() {
+        val start = observer.method("private fun startAssistantEarlyPreArm(")
+        assertInOrder(start, "val requestThread =", "earlyModeRequestThread = requestThread", "requestCommunicationMode()")
+        assertTrue(start.contains("Thread.currentThread().name"))
+        assertTrue(start.contains("Thread.currentThread().id"))
+
+        val probe = observer.method("private fun startProtectedPoc5Probe(")
+        assertTrue(probe.contains("modeRequestThread = if (reuseEarlyTrack) assistantEarlyRoute.earlyModeRequestThread else null"))
+        assertTrue(observer.contains("Mode request thread: ${'$'}{experiment.modeRequestThread ?: \"Not invoked\"}"))
+        assertEquals(1, start.occurrences("requestCommunicationMode()"))
+        assertFalse(start.contains("requestCommunicationDevice"))
+    }
+
     @Test fun cancellationInvalidatesInflightGenerationAndStaleCompletionCannotTouchANewerOne() {
         val cleanup = observer.method("private fun cleanupAssistantEarlyPreArm(")
         assertInOrder(cleanup, "cancelledWhileModeInFlight", "invalidateAssistantEarlyRouteDelayedWork()", "stopSilentCommunicationTrack()")

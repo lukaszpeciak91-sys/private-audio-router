@@ -297,3 +297,11 @@ This is a lightweight, append-only log. Do not rewrite accepted history; append 
 - **Context:** Supplied physical testing found that the early silent track could remain playing for approximately 5–6 seconds before assistant/speech while recognition stayed stable, but approximately the first two spoken words were still clipped.
 - **Decision:** After the qualified early track reports `PLAYSTATE_PLAYING`, establish and confirm `MODE_IN_COMMUNICATION` while public state remains `WAITING`. Do not request a communication device until genuine assistant/speech promotes the healthy pre-arm. Promotion reuses both track and mode and performs the protected cycle's single earpiece request.
 - **Consequences:** Early cleanup now relinquishes this experiment's mode participation but never clears a device because none was requested. Recording disappearance, silencing, or unexpected configuration change aborts the pre-arm. Communication/browser classifiers and paths, toggle-OFF assistant routing, the 10-second bound, and the 7-second assistant linger remain unchanged.
+
+## D-038 — Retain the physically successful Assistant early-mode strategy
+
+- **Date:** 2026-08-22
+- **Status:** Accepted; experimental and device-scoped
+- **Context:** Supplied physical/runtime evidence from Xiaomi `2201117TY` on Android 13/API 33 successfully exercised the corrected early track plus early `MODE_IN_COMMUNICATION` sequence while recognition remained present and unsilenced. Assistant/speech promotion made one device request, and human listening reported no beginning clipping in the successful corrected run.
+- **Decision:** Retain the current experimental Assistant strategy: prepared silent track, early communication-mode participation, and exactly one post-speech communication-device request. There is currently no evidence-based justification for escalating to an early `setCommunicationDevice()` request.
+- **Consequences:** Keep Assistant early route default OFF while broader device, OEM, Android-release, accessory, and telephony compatibility remains untested. The successful result is evidence for the tested Xiaomi configuration only.
