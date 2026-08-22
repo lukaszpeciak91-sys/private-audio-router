@@ -1,5 +1,20 @@
 # Progress
 
+## Assistant early-mode generation-race correction
+
+- The default-OFF Assistant early-route experiment now models track startup, mode-request
+  in-flight, mode-ready, promotion, and cancellation explicitly. `MODE_NORMAL` callbacks
+  cannot be treated as lost ownership while the current generation's own
+  `MODE_IN_COMMUNICATION` request is still in flight.
+- Mode completion revalidates its generation before establishing readiness. Cancellation
+  invalidates the generation immediately, releases its track, and reconciles a later stale
+  mode completion through the existing owned-mode relinquishment guard without mutating a
+  newer generation.
+- Assistant qualification, early track/mode ordering, the absence of an early device
+  request, normal Assistant fallback, Communication and browser paths, the 10-second
+  pre-arm timeout, the 1.5-second end confirmation, and the 7-second Assistant linger are
+  unchanged. Corrected physical comparison remains required.
+
 ## Public recording-session metadata diagnostics
 
 - The diagnostic observer now registers a public `AudioManager.AudioRecordingCallback` for its full started lifetime, independently of the Private Audio controller setting, and reports bounded meaningful active-recording metadata transitions without microphone permission or audio capture.

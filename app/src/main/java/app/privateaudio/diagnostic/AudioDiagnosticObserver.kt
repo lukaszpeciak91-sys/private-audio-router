@@ -254,8 +254,20 @@ data class RoutingAttempt(
     val speakerphoneImmediatelyAfter: String,
 )
 
+enum class AssistantEarlyRoutePhase {
+    IDLE,
+    TRACK_STARTING,
+    TRACK_PLAYING,
+    MODE_REQUEST_IN_FLIGHT,
+    MODE_READY,
+    PROMOTED,
+    CANCELLING,
+    CANCELLED,
+}
+
 data class AssistantEarlyRouteStatus(
     val featureEnabled: Boolean = false,
+    val phase: AssistantEarlyRoutePhase = AssistantEarlyRoutePhase.IDLE,
     val active: Boolean = false,
     val voiceRecognitionPresent: Boolean = false,
     val assistantSonificationObserved: Boolean = false,
@@ -269,6 +281,8 @@ data class AssistantEarlyRouteStatus(
     val modeDuringEarlyPlaying: String? = null,
     val communicationDeviceDuringEarlyPlaying: ObservedDevice? = null,
     val earlyModeRequestAttempted: Boolean = false,
+    val modeRequestGeneration: Long? = null,
+    val modeRequestInFlight: Boolean = false,
     val earlyModeRequestInvocationAt: String? = null,
     val earlyModeRequestReturnedAt: String? = null,
     val earlyModeRequestDurationMs: Long? = null,
@@ -296,6 +310,15 @@ data class AssistantEarlyRouteStatus(
     val modeConfirmedElapsedRealtimeNanos: Long? = null,
     val recordingBeforeEarlyMode: List<ObservedRecording>? = null,
     val recordingAfterEarlyMode: List<ObservedRecording>? = null,
+    val modeRequestCompletionGenerationStillCurrent: Boolean? = null,
+    val abortRequestedWhileModeInFlight: Boolean = false,
+    val abortGeneration: Long? = null,
+    val abortReason: String? = null,
+    val staleModeCompletionIgnored: Boolean = false,
+    val staleCompletionGeneration: Long? = null,
+    val currentGenerationAtStaleCompletion: Long? = null,
+    val modeReconciliationAfterStaleCompletion: String? = null,
+    val trackStateDuringModeRequest: String? = null,
 )
 
 private data class StartupTiming(
@@ -990,6 +1013,7 @@ class AudioDiagnosticObserver(
             .format(DateTimeFormatter.ISO_OFFSET_DATE_TIME)
         assistantEarlyRoute = AssistantEarlyRouteStatus(
             featureEnabled = true,
+            phase = AssistantEarlyRoutePhase.TRACK_STARTING,
             active = true,
             voiceRecognitionPresent = true,
             assistantSonificationObserved = true,
@@ -1009,6 +1033,7 @@ class AudioDiagnosticObserver(
             return
         }
         assistantEarlyRoute = assistantEarlyRoute.copy(
+            phase = AssistantEarlyRoutePhase.TRACK_PLAYING,
             preparedTrackReused = experiment.preparedTrackReused,
             prefillCompleted = experiment.preparedTrackPrefilled,
             playInvocationAt = experiment.playInvocationTimestamp,
@@ -1036,30 +1061,61 @@ class AudioDiagnosticObserver(
         val requestAt = OffsetDateTime.now().format(DateTimeFormatter.ISO_OFFSET_DATE_TIME)
         val requestStartedNanos = SystemClock.elapsedRealtimeNanos()
         assistantEarlyRoute = assistantEarlyRoute.copy(
+            phase = AssistantEarlyRoutePhase.MODE_REQUEST_IN_FLIGHT,
             earlyModeRequestAttempted = true,
+            modeRequestGeneration = generation,
+            modeRequestInFlight = true,
             earlyModeRequestInvocationAt = requestAt,
             modeBeforeEarlyRequest = audioModeName(modeBefore),
             recordingBeforeEarlyMode = beforeMode,
+            trackStateDuringModeRequest = audioTrackPlayStateName(silentTrack?.playState ?: AudioTrack.PLAYSTATE_STOPPED),
         )
+        addEvent("Assistant early mode request entered IN_FLIGHT — generation=$generation")
         modeParticipationActive = true
+        routingActionInProgress = true
         val failure = runCatching { requestCommunicationMode() }.exceptionOrNull()
         val returnedNanos = SystemClock.elapsedRealtimeNanos()
         val returnedAt = OffsetDateTime.now().format(DateTimeFormatter.ISO_OFFSET_DATE_TIME)
         val modeAfter = audioManager.mode
         val confirmedAt = returnedAt.takeIf { failure == null && modeAfter == AudioManager.MODE_IN_COMMUNICATION }
+        val generationStillCurrent = generation == assistantEarlyRouteGeneration &&
+            assistantEarlyRoute.active && assistantEarlyRoute.generation == generation &&
+            assistantEarlyRoute.phase == AssistantEarlyRoutePhase.MODE_REQUEST_IN_FLIGHT
+        routingActionInProgress = false
+        if (!generationStillCurrent) {
+            addEvent(
+                "Assistant early mode request completed for stale generation — ignored; " +
+                    "completion generation=$generation; current generation=$assistantEarlyRouteGeneration",
+            )
+            reconcileModeAfterStaleAssistantEarlyCompletion(
+                generation = generation,
+                completedMode = modeAfter,
+                returnedAt = returnedAt,
+                durationMs = startupDurationMs(requestStartedNanos, returnedNanos),
+            )
+            if (controllerEnabled && !experiment.requestAttempted) {
+                prepareSilentCommunicationTrack()
+                handlePlaybackConfigurations(audioManager.activePlaybackConfigurations)
+            }
+            return
+        }
         assistantEarlyRoute = assistantEarlyRoute.copy(
+            phase = if (confirmedAt != null) AssistantEarlyRoutePhase.MODE_READY else AssistantEarlyRoutePhase.CANCELLING,
+            modeRequestInFlight = false,
             earlyModeRequestReturnedAt = returnedAt,
             earlyModeRequestDurationMs = startupDurationMs(requestStartedNanos, returnedNanos),
             modeAfterEarlyRequest = audioModeName(modeAfter),
             modeInCommunicationConfirmedAt = confirmedAt,
             modeConfirmedElapsedRealtimeNanos = returnedNanos.takeIf { confirmedAt != null },
             recordingAfterEarlyMode = currentRecordingConfigurations,
+            modeRequestCompletionGenerationStillCurrent = true,
         )
-        addEvent("Assistant early mode request returned — confirmed=${confirmedAt != null}")
+        addEvent("Assistant early mode request completed for current generation — generation=$generation; confirmed=${confirmedAt != null}")
         if (failure != null || confirmedAt == null || !assistantEarlyRecordingHealthy()) {
             cleanupAssistantEarlyPreArm("early MODE_IN_COMMUNICATION preparation failed", reEvaluatePlayback = false)
             return
         }
+        addEvent("Assistant early MODE_READY established — generation=$generation")
         snapshot("Assistant early MODE_IN_COMMUNICATION confirmed")
     }
 
@@ -1071,6 +1127,7 @@ class AudioDiagnosticObserver(
         invalidateAssistantEarlyRouteDelayedWork()
         assistantEarlyRoute = assistantEarlyRoute.copy(
             active = false,
+            phase = AssistantEarlyRoutePhase.PROMOTED,
             assistantSpeechArrivalAt = assistantEarlyRoute.assistantSpeechArrivalAt ?: arrivalAt,
             playingToAssistantSpeechHeadStartMs = headStart,
             modeToAssistantSpeechHeadStartMs = modeHeadStart,
@@ -1085,16 +1142,29 @@ class AudioDiagnosticObserver(
     }
 
     private fun cleanupAssistantEarlyPreArm(reason: String, reEvaluatePlayback: Boolean = true) {
-        invalidateAssistantEarlyRouteDelayedWork()
         if (!assistantEarlyRoute.active) return
+        val cancelledGeneration = assistantEarlyRoute.generation
+        val cancelledWhileModeInFlight = assistantEarlyRoute.phase == AssistantEarlyRoutePhase.MODE_REQUEST_IN_FLIGHT
+        assistantEarlyRoute = assistantEarlyRoute.copy(
+            phase = AssistantEarlyRoutePhase.CANCELLING,
+            abortRequestedWhileModeInFlight = cancelledWhileModeInFlight,
+            abortGeneration = cancelledGeneration,
+            abortReason = reason,
+        )
+        invalidateAssistantEarlyRouteDelayedWork()
+        if (cancelledWhileModeInFlight) {
+            addEvent("Assistant early pre-arm cancelled while mode request IN_FLIGHT — generation=$cancelledGeneration; reason=$reason")
+        }
         val cleaned = stopSilentCommunicationTrack()
-        if (modeParticipationActive) {
+        if (modeParticipationActive && !cancelledWhileModeInFlight) {
             modeParticipationActive = false
             audioManager.mode = AudioManager.MODE_NORMAL
             addEvent("Assistant early mode participation relinquished")
         }
         assistantEarlyRoute = assistantEarlyRoute.copy(
             active = false,
+            phase = AssistantEarlyRoutePhase.CANCELLED,
+            modeRequestInFlight = false,
             cleanupCompleted = cleaned,
             cleanupReason = reason,
         )
@@ -1107,7 +1177,8 @@ class AudioDiagnosticObserver(
     }
 
     private fun isAssistantEarlyPreArmHealthy(): Boolean =
-        assistantEarlyRoute.active && assistantEarlyRecordingHealthy() &&
+        assistantEarlyRoute.active && assistantEarlyRoute.phase == AssistantEarlyRoutePhase.MODE_READY &&
+            assistantEarlyRecordingHealthy() &&
             silentTrack?.state == AudioTrack.STATE_INITIALIZED &&
             silentTrack?.playState == AudioTrack.PLAYSTATE_PLAYING &&
             modeParticipationActive && audioManager.mode == AudioManager.MODE_IN_COMMUNICATION
@@ -1155,11 +1226,48 @@ class AudioDiagnosticObserver(
                 "system/telephony-priority mode ${audioModeName(audioManager.mode)}"
             silentTrack?.state != AudioTrack.STATE_INITIALIZED ||
                 silentTrack?.playState != AudioTrack.PLAYSTATE_PLAYING -> "silent track unhealthy"
-            !modeParticipationActive || audioManager.mode != AudioManager.MODE_IN_COMMUNICATION ->
+            assistantEarlyRoute.phase == AssistantEarlyRoutePhase.MODE_REQUEST_IN_FLIGHT &&
+                audioManager.mode == AudioManager.MODE_NORMAL -> {
+                addEvent("Assistant early MODE_NORMAL ignored while request IN_FLIGHT — generation=${assistantEarlyRoute.generation}")
+                return
+            }
+            assistantEarlyRoute.phase == AssistantEarlyRoutePhase.MODE_READY &&
+                (!modeParticipationActive || audioManager.mode != AudioManager.MODE_IN_COMMUNICATION) ->
                 "early communication mode ownership lost"
             else -> return
         }
         cleanupAssistantEarlyPreArm("$failure ($reason)")
+    }
+
+    private fun reconcileModeAfterStaleAssistantEarlyCompletion(
+        generation: Long,
+        completedMode: Int,
+        returnedAt: String,
+        durationMs: Long?,
+    ) {
+        val currentGeneration = assistantEarlyRouteGeneration
+        var reconciliation = "No mode change required"
+        if (modeParticipationActive && !experiment.requestAttempted && !assistantEarlyRoute.active &&
+            !completedMode.isTelephonyOrSystemPriorityMode()
+        ) {
+            modeParticipationActive = false
+            audioManager.mode = AudioManager.MODE_NORMAL
+            reconciliation = "Relinquished stale Private Audio mode participation with MODE_NORMAL; " +
+                "Android-reported mode=${audioModeName(audioManager.mode)}"
+        }
+        if (assistantEarlyRoute.generation == generation) {
+            assistantEarlyRoute = assistantEarlyRoute.copy(
+                staleModeCompletionIgnored = true,
+                staleCompletionGeneration = generation,
+                currentGenerationAtStaleCompletion = currentGeneration,
+                modeRequestCompletionGenerationStillCurrent = false,
+                modeReconciliationAfterStaleCompletion = reconciliation,
+                earlyModeRequestReturnedAt = returnedAt,
+                earlyModeRequestDurationMs = durationMs,
+                modeAfterEarlyRequest = audioModeName(completedMode),
+            )
+        }
+        addEvent("Mode reconciliation after stale completion — generation=$generation; $reconciliation")
     }
 
     private fun requestCommunicationMode() {
@@ -1720,8 +1828,9 @@ internal fun buildDiagnosticReport(
     appendLine()
     appendLine("ASSISTANT EARLY SILENT-TRACK EXPERIMENT")
     appendLine("Feature enabled: ${assistantEarlyRoute.featureEnabled}")
+    appendLine("Assistant early phase: ${assistantEarlyRoute.phase}")
     appendLine("Early pre-arm active: ${assistantEarlyRoute.active}")
-    appendLine("Generation: ${assistantEarlyRoute.generation}")
+    appendLine("Assistant early generation: ${assistantEarlyRoute.generation}")
     appendLine("VOICE_RECOGNITION present: ${assistantEarlyRoute.voiceRecognitionPresent}")
     appendLine("ASSISTANT/SONIFICATION observed: ${assistantEarlyRoute.assistantSonificationObserved}")
     appendLine("Pre-arm start timestamp: ${assistantEarlyRoute.startedAt ?: "Not started"}")
@@ -1734,6 +1843,8 @@ internal fun buildDiagnosticReport(
     appendLine("Mode during early PLAYING phase: ${assistantEarlyRoute.modeDuringEarlyPlaying ?: "Not observed"}")
     appendLine("Communication device during early PLAYING phase: ${assistantEarlyRoute.communicationDeviceDuringEarlyPlaying.reportDescription()}")
     appendLine("Early mode request attempted: ${assistantEarlyRoute.earlyModeRequestAttempted}")
+    appendLine("Mode request generation: ${assistantEarlyRoute.modeRequestGeneration ?: "Not attempted"}")
+    appendLine("Mode request in flight: ${assistantEarlyRoute.modeRequestInFlight}")
     appendLine("Early mode request invocation timestamp: ${assistantEarlyRoute.earlyModeRequestInvocationAt ?: "Not attempted"}")
     appendLine("Early mode request returned timestamp: ${assistantEarlyRoute.earlyModeRequestReturnedAt ?: "Not attempted"}")
     appendLine("Early mode request duration ms: ${assistantEarlyRoute.earlyModeRequestDurationMs ?: "Not available"}")
@@ -1742,6 +1853,15 @@ internal fun buildDiagnosticReport(
     appendLine("MODE_IN_COMMUNICATION confirmed timestamp: ${assistantEarlyRoute.modeInCommunicationConfirmedAt ?: "Not confirmed"}")
     appendLine("Recording config before early mode: ${assistantEarlyRoute.recordingBeforeEarlyMode.recordingDescription()}")
     appendLine("Recording config after early mode: ${assistantEarlyRoute.recordingAfterEarlyMode.recordingDescription()}")
+    appendLine("Mode request completion generation still current: ${assistantEarlyRoute.modeRequestCompletionGenerationStillCurrent ?: "Not completed"}")
+    appendLine("Abort requested while mode in flight: ${assistantEarlyRoute.abortRequestedWhileModeInFlight}")
+    appendLine("Abort generation: ${assistantEarlyRoute.abortGeneration ?: "None"}")
+    appendLine("Abort reason: ${assistantEarlyRoute.abortReason ?: "None"}")
+    appendLine("Stale mode completion ignored: ${assistantEarlyRoute.staleModeCompletionIgnored}")
+    appendLine("Stale completion generation: ${assistantEarlyRoute.staleCompletionGeneration ?: "None"}")
+    appendLine("Current generation at stale completion: ${assistantEarlyRoute.currentGenerationAtStaleCompletion ?: "None"}")
+    appendLine("Mode reconciliation after stale completion: ${assistantEarlyRoute.modeReconciliationAfterStaleCompletion ?: "Not required"}")
+    appendLine("Track state during mode request: ${assistantEarlyRoute.trackStateDuringModeRequest ?: "Not attempted"}")
     appendLine("Early setCommunicationDevice attempted: ${assistantEarlyRoute.explicitEarlySetCommunicationDeviceAttempted}")
     appendLine("ASSISTANT/SPEECH arrival timestamp: ${assistantEarlyRoute.assistantSpeechArrivalAt ?: "Not observed"}")
     appendLine("Early track head-start before ASSISTANT/SPEECH: ${assistantEarlyRoute.playingToAssistantSpeechHeadStartMs ?: "Not available"} ms")
