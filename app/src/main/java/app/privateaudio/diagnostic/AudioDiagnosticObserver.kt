@@ -268,10 +268,21 @@ data class AssistantEarlyRouteStatus(
     val playDurationMs: Long? = null,
     val modeDuringEarlyPlaying: String? = null,
     val communicationDeviceDuringEarlyPlaying: ObservedDevice? = null,
-    val explicitEarlySetModeAttempted: Boolean = false,
+    val earlyModeRequestAttempted: Boolean = false,
+    val earlyModeRequestInvocationAt: String? = null,
+    val earlyModeRequestReturnedAt: String? = null,
+    val earlyModeRequestDurationMs: Long? = null,
+    val modeBeforeEarlyRequest: String? = null,
+    val modeAfterEarlyRequest: String? = null,
+    val modeInCommunicationConfirmedAt: String? = null,
     val explicitEarlySetCommunicationDeviceAttempted: Boolean = false,
     val assistantSpeechArrivalAt: String? = null,
     val playingToAssistantSpeechHeadStartMs: Long? = null,
+    val modeToAssistantSpeechHeadStartMs: Long? = null,
+    val modeAlreadyEstablishedBeforeSpeech: Boolean = false,
+    val promotionDeviceRequestAt: String? = null,
+    val promotionDeviceRequestReturn: Boolean? = null,
+    val firstEarpieceObservationAt: String? = null,
     val promoted: Boolean = false,
     val promotionAt: String? = null,
     val recordingBeforePreArm: List<ObservedRecording>? = null,
@@ -282,6 +293,9 @@ data class AssistantEarlyRouteStatus(
     val generation: Long = 0,
     val timeoutDeadline: String? = null,
     val playingElapsedRealtimeNanos: Long? = null,
+    val modeConfirmedElapsedRealtimeNanos: Long? = null,
+    val recordingBeforeEarlyMode: List<ObservedRecording>? = null,
+    val recordingAfterEarlyMode: List<ObservedRecording>? = null,
 )
 
 private data class StartupTiming(
@@ -522,8 +536,8 @@ class AudioDiagnosticObserver(
         }
         val previous = currentRecordingConfigurations
         currentRecordingConfigurations = current
-        if (assistantEarlyRoute.active && !voiceRecognitionPresent()) {
-            cleanupAssistantEarlyPreArm("VOICE_RECOGNITION disappeared")
+        if (assistantEarlyRoute.active && !assistantEarlyRecordingHealthy()) {
+            cleanupAssistantEarlyPreArm("VOICE_RECOGNITION disappeared, silenced, or changed")
         } else if (controllerEnabled && assistantEarlyRoute.featureEnabled && !routingActionInProgress) {
             handlePlaybackConfigurations(audioManager.activePlaybackConfigurations)
         }
@@ -654,6 +668,12 @@ class AudioDiagnosticObserver(
         assistantCount: Int,
         browserCount: Int,
     ) {
+        if (triggerOrigin == TriggerOrigin.ASSISTANT && assistantEarlyRoute.active) {
+            assistantEarlyRoute = assistantEarlyRoute.copy(
+                assistantSpeechArrivalAt = OffsetDateTime.now().format(DateTimeFormatter.ISO_OFFSET_DATE_TIME),
+                recordingAtAssistantSpeech = currentRecordingConfigurations,
+            )
+        }
         val reuseEarlyTrack = triggerOrigin == TriggerOrigin.ASSISTANT && isAssistantEarlyPreArmHealthy()
         if (assistantEarlyRoute.active && !reuseEarlyTrack) {
             cleanupAssistantEarlyPreArm("incompatible or unhealthy protected trigger", reEvaluatePlayback = false)
@@ -682,6 +702,12 @@ class AudioDiagnosticObserver(
             triggerOrigin = triggerOrigin,
             modeBeforeAssistantParticipation =
                 if (triggerOrigin == TriggerOrigin.ASSISTANT) audioModeName(modeBeforeParticipation) else null,
+            explicitModeRequestInvoked = reuseEarlyTrack,
+            modeRequestTimestamp = if (reuseEarlyTrack) assistantEarlyRoute.earlyModeRequestInvocationAt else null,
+            modeImmediatelyBeforeRequest = if (reuseEarlyTrack) assistantEarlyRoute.modeBeforeEarlyRequest else null,
+            modeImmediatelyAfterRequest = if (reuseEarlyTrack) assistantEarlyRoute.modeAfterEarlyRequest else null,
+            modeInCommunicationObserved = reuseEarlyTrack,
+            modeObservedTimestamp = if (reuseEarlyTrack) assistantEarlyRoute.modeInCommunicationConfirmedAt else null,
             routingTriggerTimestamp = routingTriggerTimestamp,
             startupTimingGeneration = timingGeneration,
         )
@@ -720,57 +746,65 @@ class AudioDiagnosticObserver(
             "Silent track is PLAYING before mode request — visible active VOICE_COMMUNICATION/SPEECH playback=$visibleVoicePlayback",
         )
         val trackActiveBeforeModeRequest = silentTrack?.playState == AudioTrack.PLAYSTATE_PLAYING
-        val modeRequestTimestamp = OffsetDateTime.now().format(DateTimeFormatter.ISO_OFFSET_DATE_TIME)
-        matchingStartupTiming()?.modeRequestStartedNanos = SystemClock.elapsedRealtimeNanos()
-        val modeBeforeRequest = audioManager.mode
-        val requestThread = "${Thread.currentThread().name} (id=${Thread.currentThread().id})"
-        modeParticipationActive = true
-        experiment = experiment.copy(
-            silentTrackActiveBeforeModeRequest = trackActiveBeforeModeRequest,
-            modeRequestIssuedAfterPlaybackActive = trackActiveBeforeModeRequest,
-            explicitModeRequestInvoked = true,
-            modeRequestTimestamp = modeRequestTimestamp,
-            modeRequestThread = requestThread,
-            modeImmediatelyBeforeRequest = audioModeName(modeBeforeRequest),
-        )
-        addEvent(
-            "Invoking explicit setMode(MODE_IN_COMMUNICATION) — timestamp=$modeRequestTimestamp; " +
-                "thread=$requestThread; mode before=${audioModeName(modeBeforeRequest)}; " +
-                "silent track play state=${experiment.silentTrackPlayState}",
-        )
-        val modeRequestFailure = runCatching {
-            requestCommunicationMode()
-        }.exceptionOrNull()
-        val modeAfterParticipation = audioManager.mode
-        matchingStartupTiming()?.modeObservedNanos = SystemClock.elapsedRealtimeNanos()
-        experiment = experiment.copy(
-            modeImmediatelyAfterRequest = audioModeName(modeAfterParticipation),
-            modeRequestException = modeRequestFailure?.exactDescription(),
-            modeInCommunicationObserved = modeAfterParticipation == AudioManager.MODE_IN_COMMUNICATION,
-            modeObservedTimestamp = OffsetDateTime.now().format(DateTimeFormatter.ISO_OFFSET_DATE_TIME),
-            playingToModeObservedElapsedMs = startupDurationMs(
-                matchingStartupTiming()?.playingObservedNanos,
-                matchingStartupTiming()?.modeObservedNanos,
-            ),
-        )
-        addEvent(
-            "Explicit setMode returned — requested=MODE_IN_COMMUNICATION; " +
-                "Android-reported mode=${audioModeName(modeAfterParticipation)}; ${currentStateDescription()}",
-        )
-        experiment = experiment.copy(postModeOwnership = collectSnapshot())
-        recordingStartupObservation?.takeIf { it.generation == timingGeneration }?.atPostModeRequest =
-            currentRecordingConfigurations
-        routingActionInProgress = false
-        if (modeRequestFailure != null) {
-            clearExperiment(
-                "Explicit setMode failed with ${modeRequestFailure.exactDescription()}",
-                ExperimentState.BLOCKED,
+        if (reuseEarlyTrack) {
+            experiment = experiment.copy(
+                silentTrackActiveBeforeModeRequest = trackActiveBeforeModeRequest,
+                modeRequestIssuedAfterPlaybackActive = trackActiveBeforeModeRequest,
             )
-            return
         }
-        if (modeAfterParticipation != AudioManager.MODE_IN_COMMUNICATION) {
-            clearExperiment("MODE_IN_COMMUNICATION was not re-established", ExperimentState.BLOCKED)
-            return
+        if (!reuseEarlyTrack) {
+            val modeRequestTimestamp = OffsetDateTime.now().format(DateTimeFormatter.ISO_OFFSET_DATE_TIME)
+            matchingStartupTiming()?.modeRequestStartedNanos = SystemClock.elapsedRealtimeNanos()
+            val modeBeforeRequest = audioManager.mode
+            val requestThread = "${Thread.currentThread().name} (id=${Thread.currentThread().id})"
+            modeParticipationActive = true
+            experiment = experiment.copy(
+                silentTrackActiveBeforeModeRequest = trackActiveBeforeModeRequest,
+                modeRequestIssuedAfterPlaybackActive = trackActiveBeforeModeRequest,
+                explicitModeRequestInvoked = true,
+                modeRequestTimestamp = modeRequestTimestamp,
+                modeRequestThread = requestThread,
+                modeImmediatelyBeforeRequest = audioModeName(modeBeforeRequest),
+            )
+            addEvent(
+                "Invoking explicit setMode(MODE_IN_COMMUNICATION) — timestamp=$modeRequestTimestamp; " +
+                    "thread=$requestThread; mode before=${audioModeName(modeBeforeRequest)}; " +
+                    "silent track play state=${experiment.silentTrackPlayState}",
+            )
+            val modeRequestFailure = runCatching {
+                requestCommunicationMode()
+            }.exceptionOrNull()
+            val modeAfterParticipation = audioManager.mode
+            matchingStartupTiming()?.modeObservedNanos = SystemClock.elapsedRealtimeNanos()
+            experiment = experiment.copy(
+                modeImmediatelyAfterRequest = audioModeName(modeAfterParticipation),
+                modeRequestException = modeRequestFailure?.exactDescription(),
+                modeInCommunicationObserved = modeAfterParticipation == AudioManager.MODE_IN_COMMUNICATION,
+                modeObservedTimestamp = OffsetDateTime.now().format(DateTimeFormatter.ISO_OFFSET_DATE_TIME),
+                playingToModeObservedElapsedMs = startupDurationMs(
+                    matchingStartupTiming()?.playingObservedNanos,
+                    matchingStartupTiming()?.modeObservedNanos,
+                ),
+            )
+            addEvent(
+                "Explicit setMode returned — requested=MODE_IN_COMMUNICATION; " +
+                    "Android-reported mode=${audioModeName(modeAfterParticipation)}; ${currentStateDescription()}",
+            )
+            experiment = experiment.copy(postModeOwnership = collectSnapshot())
+            recordingStartupObservation?.takeIf { it.generation == timingGeneration }?.atPostModeRequest =
+                currentRecordingConfigurations
+            routingActionInProgress = false
+            if (modeRequestFailure != null) {
+                clearExperiment(
+                    "Explicit setMode failed with ${modeRequestFailure.exactDescription()}",
+                    ExperimentState.BLOCKED,
+                )
+                return
+            }
+            if (modeAfterParticipation != AudioManager.MODE_IN_COMMUNICATION) {
+                clearExperiment("MODE_IN_COMMUNICATION was not re-established", ExperimentState.BLOCKED)
+                return
+            }
         }
         performRoutingAttempt(earpiece, "silent communication playback active and mode requested")
     }
@@ -988,22 +1022,62 @@ class AudioDiagnosticObserver(
         )
         addEvent("Assistant early silent track play invoked — returned=${experiment.playReturnedTimestamp}")
         addEvent("Assistant early silent track PLAYING — generation=$generation")
-        if (audioManager.mode == AudioManager.MODE_NORMAL) addEvent("Assistant early track active while MODE_NORMAL")
         snapshot("Assistant early silent track PLAYING")
+        if (!assistantEarlyRecordingHealthy()) {
+            cleanupAssistantEarlyPreArm("VOICE_RECOGNITION changed after track PLAYING", reEvaluatePlayback = false)
+            return
+        }
+        val beforeMode = currentRecordingConfigurations
+        val modeBefore = audioManager.mode
+        if (modeBefore != AudioManager.MODE_NORMAL) {
+            cleanupAssistantEarlyPreArm("mode changed before early request", reEvaluatePlayback = false)
+            return
+        }
+        val requestAt = OffsetDateTime.now().format(DateTimeFormatter.ISO_OFFSET_DATE_TIME)
+        val requestStartedNanos = SystemClock.elapsedRealtimeNanos()
+        assistantEarlyRoute = assistantEarlyRoute.copy(
+            earlyModeRequestAttempted = true,
+            earlyModeRequestInvocationAt = requestAt,
+            modeBeforeEarlyRequest = audioModeName(modeBefore),
+            recordingBeforeEarlyMode = beforeMode,
+        )
+        modeParticipationActive = true
+        val failure = runCatching { requestCommunicationMode() }.exceptionOrNull()
+        val returnedNanos = SystemClock.elapsedRealtimeNanos()
+        val returnedAt = OffsetDateTime.now().format(DateTimeFormatter.ISO_OFFSET_DATE_TIME)
+        val modeAfter = audioManager.mode
+        val confirmedAt = returnedAt.takeIf { failure == null && modeAfter == AudioManager.MODE_IN_COMMUNICATION }
+        assistantEarlyRoute = assistantEarlyRoute.copy(
+            earlyModeRequestReturnedAt = returnedAt,
+            earlyModeRequestDurationMs = startupDurationMs(requestStartedNanos, returnedNanos),
+            modeAfterEarlyRequest = audioModeName(modeAfter),
+            modeInCommunicationConfirmedAt = confirmedAt,
+            modeConfirmedElapsedRealtimeNanos = returnedNanos.takeIf { confirmedAt != null },
+            recordingAfterEarlyMode = currentRecordingConfigurations,
+        )
+        addEvent("Assistant early mode request returned — confirmed=${confirmedAt != null}")
+        if (failure != null || confirmedAt == null || !assistantEarlyRecordingHealthy()) {
+            cleanupAssistantEarlyPreArm("early MODE_IN_COMMUNICATION preparation failed", reEvaluatePlayback = false)
+            return
+        }
+        snapshot("Assistant early MODE_IN_COMMUNICATION confirmed")
     }
 
     private fun promoteAssistantEarlyPreArm() {
         val arrivalNanos = SystemClock.elapsedRealtimeNanos()
         val arrivalAt = OffsetDateTime.now().format(DateTimeFormatter.ISO_OFFSET_DATE_TIME)
         val headStart = startupDurationMs(assistantEarlyRoute.playingElapsedRealtimeNanos, arrivalNanos)
+        val modeHeadStart = startupDurationMs(assistantEarlyRoute.modeConfirmedElapsedRealtimeNanos, arrivalNanos)
         invalidateAssistantEarlyRouteDelayedWork()
         assistantEarlyRoute = assistantEarlyRoute.copy(
             active = false,
-            assistantSpeechArrivalAt = arrivalAt,
+            assistantSpeechArrivalAt = assistantEarlyRoute.assistantSpeechArrivalAt ?: arrivalAt,
             playingToAssistantSpeechHeadStartMs = headStart,
+            modeToAssistantSpeechHeadStartMs = modeHeadStart,
+            modeAlreadyEstablishedBeforeSpeech = audioManager.mode == AudioManager.MODE_IN_COMMUNICATION,
             promoted = true,
             promotionAt = arrivalAt,
-            recordingAtAssistantSpeech = currentRecordingConfigurations,
+            recordingAtAssistantSpeech = assistantEarlyRoute.recordingAtAssistantSpeech ?: currentRecordingConfigurations,
         )
         addEvent("ASSISTANT/SPEECH arrived with early track already PLAYING")
         addEvent("Early track head-start before ASSISTANT/SPEECH: ${headStart ?: "unknown"} ms")
@@ -1014,6 +1088,11 @@ class AudioDiagnosticObserver(
         invalidateAssistantEarlyRouteDelayedWork()
         if (!assistantEarlyRoute.active) return
         val cleaned = stopSilentCommunicationTrack()
+        if (modeParticipationActive) {
+            modeParticipationActive = false
+            audioManager.mode = AudioManager.MODE_NORMAL
+            addEvent("Assistant early mode participation relinquished")
+        }
         assistantEarlyRoute = assistantEarlyRoute.copy(
             active = false,
             cleanupCompleted = cleaned,
@@ -1028,10 +1107,18 @@ class AudioDiagnosticObserver(
     }
 
     private fun isAssistantEarlyPreArmHealthy(): Boolean =
-        assistantEarlyRoute.active && voiceRecognitionPresent() &&
+        assistantEarlyRoute.active && assistantEarlyRecordingHealthy() &&
             silentTrack?.state == AudioTrack.STATE_INITIALIZED &&
             silentTrack?.playState == AudioTrack.PLAYSTATE_PLAYING &&
-            !modeParticipationActive
+            modeParticipationActive && audioManager.mode == AudioManager.MODE_IN_COMMUNICATION
+
+    private fun assistantEarlyRecordingHealthy(): Boolean {
+        val baselineVoiceRecognition = assistantEarlyRoute.recordingBeforePreArm.orEmpty()
+            .filter { it.audioSource == "VOICE_RECOGNITION" }
+        val currentVoiceRecognition = currentRecordingConfigurations.filter { it.audioSource == "VOICE_RECOGNITION" }
+        return baselineVoiceRecognition.isNotEmpty() && currentVoiceRecognition == baselineVoiceRecognition &&
+            currentVoiceRecognition.none { it.clientSilenced == true }
+    }
 
     private fun scheduleAssistantEarlyRouteTimeout(generation: Long) {
         val runnable = object : Runnable {
@@ -1063,11 +1150,13 @@ class AudioDiagnosticObserver(
         val failure = when {
             !controllerEnabled -> "controller OFF"
             !assistantEarlyRoute.featureEnabled -> "feature disabled"
-            !voiceRecognitionPresent() -> "VOICE_RECOGNITION disappeared"
+            !assistantEarlyRecordingHealthy() -> "VOICE_RECOGNITION disappeared, silenced, or changed"
             audioManager.mode.isTelephonyOrSystemPriorityMode() ->
                 "system/telephony-priority mode ${audioModeName(audioManager.mode)}"
             silentTrack?.state != AudioTrack.STATE_INITIALIZED ||
                 silentTrack?.playState != AudioTrack.PLAYSTATE_PLAYING -> "silent track unhealthy"
+            !modeParticipationActive || audioManager.mode != AudioManager.MODE_IN_COMMUNICATION ->
+                "early communication mode ownership lost"
             else -> return
         }
         cleanupAssistantEarlyPreArm("$failure ($reason)")
@@ -1118,6 +1207,12 @@ class AudioDiagnosticObserver(
                 matchingStartupTiming()?.deviceRequestReturnedNanos,
             ),
         )
+        if (assistantEarlyRoute.promoted) {
+            assistantEarlyRoute = assistantEarlyRoute.copy(
+                promotionDeviceRequestAt = deviceRequestStartedTimestamp,
+                promotionDeviceRequestReturn = accepted,
+            )
+        }
         recordingStartupObservation?.takeIf { it.generation == cycleGeneration }?.atPostRoutingRequest =
             currentRecordingConfigurations
         addEvent("Routing attempt $number result — accepted=$accepted; device immediately after=${after.reportDescription()}; speakerphone=$speakerphone")
@@ -1378,6 +1473,9 @@ class AudioDiagnosticObserver(
                         timing?.earpieceObservedNanos,
                     ),
                 )
+                if (assistantEarlyRoute.promoted) {
+                    assistantEarlyRoute = assistantEarlyRoute.copy(firstEarpieceObservationAt = experiment.earpieceFirstObservedTimestamp)
+                }
                 recordingStartupObservation?.takeIf { it.generation == cycleGeneration }?.atFirstEarpiece =
                     currentRecordingConfigurations
                 recordingStartupObservation?.takeIf { it.generation == cycleGeneration }?.firstEarpieceElapsedRealtimeNanos =
@@ -1635,10 +1733,23 @@ internal fun buildDiagnosticReport(
     appendLine("play() duration ms: ${assistantEarlyRoute.playDurationMs ?: "Not available"}")
     appendLine("Mode during early PLAYING phase: ${assistantEarlyRoute.modeDuringEarlyPlaying ?: "Not observed"}")
     appendLine("Communication device during early PLAYING phase: ${assistantEarlyRoute.communicationDeviceDuringEarlyPlaying.reportDescription()}")
-    appendLine("Explicit early setMode attempted: ${assistantEarlyRoute.explicitEarlySetModeAttempted}")
-    appendLine("Explicit early setCommunicationDevice attempted: ${assistantEarlyRoute.explicitEarlySetCommunicationDeviceAttempted}")
+    appendLine("Early mode request attempted: ${assistantEarlyRoute.earlyModeRequestAttempted}")
+    appendLine("Early mode request invocation timestamp: ${assistantEarlyRoute.earlyModeRequestInvocationAt ?: "Not attempted"}")
+    appendLine("Early mode request returned timestamp: ${assistantEarlyRoute.earlyModeRequestReturnedAt ?: "Not attempted"}")
+    appendLine("Early mode request duration ms: ${assistantEarlyRoute.earlyModeRequestDurationMs ?: "Not available"}")
+    appendLine("Mode before early request: ${assistantEarlyRoute.modeBeforeEarlyRequest ?: "Not observed"}")
+    appendLine("Mode after early request: ${assistantEarlyRoute.modeAfterEarlyRequest ?: "Not observed"}")
+    appendLine("MODE_IN_COMMUNICATION confirmed timestamp: ${assistantEarlyRoute.modeInCommunicationConfirmedAt ?: "Not confirmed"}")
+    appendLine("Recording config before early mode: ${assistantEarlyRoute.recordingBeforeEarlyMode.recordingDescription()}")
+    appendLine("Recording config after early mode: ${assistantEarlyRoute.recordingAfterEarlyMode.recordingDescription()}")
+    appendLine("Early setCommunicationDevice attempted: ${assistantEarlyRoute.explicitEarlySetCommunicationDeviceAttempted}")
     appendLine("ASSISTANT/SPEECH arrival timestamp: ${assistantEarlyRoute.assistantSpeechArrivalAt ?: "Not observed"}")
     appendLine("Early track head-start before ASSISTANT/SPEECH: ${assistantEarlyRoute.playingToAssistantSpeechHeadStartMs ?: "Not available"} ms")
+    appendLine("Early MODE_IN_COMMUNICATION head-start before ASSISTANT/SPEECH ms: ${assistantEarlyRoute.modeToAssistantSpeechHeadStartMs ?: "Not available"}")
+    appendLine("Mode already established before speech: ${assistantEarlyRoute.modeAlreadyEstablishedBeforeSpeech}")
+    appendLine("Promotion device request timestamp: ${assistantEarlyRoute.promotionDeviceRequestAt ?: "Not attempted"}")
+    appendLine("Device request return: ${assistantEarlyRoute.promotionDeviceRequestReturn ?: "Not attempted"}")
+    appendLine("First earpiece observation: ${assistantEarlyRoute.firstEarpieceObservationAt ?: "Not observed"}")
     appendLine("Promoted to protected ASSISTANT POC-5: ${assistantEarlyRoute.promoted}")
     appendLine("Promotion timestamp: ${assistantEarlyRoute.promotionAt ?: "Not promoted"}")
     appendLine("Recording configuration before pre-arm: ${assistantEarlyRoute.recordingBeforePreArm.recordingDescription()}")
