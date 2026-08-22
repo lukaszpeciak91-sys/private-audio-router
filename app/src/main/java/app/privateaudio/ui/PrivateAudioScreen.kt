@@ -30,6 +30,7 @@ import androidx.compose.foundation.layout.wrapContentWidth
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.key
 import androidx.compose.runtime.mutableStateOf
@@ -48,6 +49,8 @@ import androidx.compose.ui.graphics.StrokeJoin
 import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.graphics.drawscope.scale
 import androidx.compose.ui.platform.testTag
+import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.LocalLayoutDirection
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
@@ -59,9 +62,11 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.compose.ui.unit.LayoutDirection
 import app.privateaudio.PrivateAudioState
 import app.privateaudio.R
 import app.privateaudio.diagnostic.DiagnosticsSummary
+import app.privateaudio.localization.AppLanguagePreferences
 import app.privateaudio.ui.theme.PrivateAudioTheme
 import kotlin.math.cos
 import kotlin.math.min
@@ -114,6 +119,45 @@ internal fun PrivateAudioScreen(
     onSaveDiagnosticReport: () -> Unit = {},
     versionName: String = "",
     modifier: Modifier = Modifier,
+) {
+    val context = LocalContext.current
+    val presentationDirection = if (
+        AppLanguagePreferences.presentationLayoutDirection(context) == android.view.View.LAYOUT_DIRECTION_RTL
+    ) LayoutDirection.Rtl else LayoutDirection.Ltr
+    CompositionLocalProvider(LocalLayoutDirection provides presentationDirection) {
+        PrivateAudioScreenContent(
+            state = state,
+            proximityFeatureEnabled = proximityFeatureEnabled,
+            onProximityFeatureChange = onProximityFeatureChange,
+            assistantEarlyRouteEnabled = assistantEarlyRouteEnabled,
+            onAssistantEarlyRouteChange = onAssistantEarlyRouteChange,
+            powerEnabled = powerEnabled,
+            onPowerClick = onPowerClick,
+            onFloatingClick = onFloatingClick,
+            onCloseClick = onCloseClick,
+            diagnosticsSummary = diagnosticsSummary,
+            onSaveDiagnosticReport = onSaveDiagnosticReport,
+            versionName = versionName,
+            modifier = modifier,
+        )
+    }
+}
+
+@Composable
+private fun PrivateAudioScreenContent(
+    state: PrivateAudioState,
+    proximityFeatureEnabled: Boolean,
+    onProximityFeatureChange: (Boolean) -> Unit,
+    assistantEarlyRouteEnabled: Boolean,
+    onAssistantEarlyRouteChange: (Boolean) -> Unit,
+    powerEnabled: Boolean,
+    onPowerClick: () -> Unit,
+    onFloatingClick: () -> Unit,
+    onCloseClick: () -> Unit,
+    diagnosticsSummary: DiagnosticsSummary?,
+    onSaveDiagnosticReport: () -> Unit,
+    versionName: String,
+    modifier: Modifier,
 ) {
     val visuals = stateVisuals(state)
     val motionPhase = stateMotionPhase(state)
