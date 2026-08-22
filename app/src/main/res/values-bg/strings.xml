@@ -11,7 +11,7 @@
     <string name="state_active">Активно</string>
     <string name="state_error">Грешка</string>
     <string name="power_control">Включване/изключване</string>
-    <string name="floating">Mini</string>
+    <string name="floating">Мини</string>
     <string name="settings">Настройки</string>
     <string name="close">Затвори</string>
     <string name="overlay_controller_description">Плаващ контролер на Private Audio. Състояние: %1$s. Контроли за включване/изключване, разгъване и затваряне.</string>

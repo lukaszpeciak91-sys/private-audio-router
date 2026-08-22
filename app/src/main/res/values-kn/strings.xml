@@ -11,7 +11,7 @@
     <string name="state_active">ಸಕ್ರಿಯ</string>
     <string name="state_error">ದೋಷ</string>
     <string name="power_control">ಆನ್ ಮಾಡಿ</string>
-    <string name="floating">Mini</string>
+    <string name="floating">ಮಿನಿ</string>
     <string name="settings">ಸೆಟ್ಟಿಂಗ್‌ಗಳು</string>
     <string name="close">ಮುಚ್ಚಿ</string>
     <string name="overlay_controller_description">Private Audio ಫ್ಲೋಟಿಂಗ್ ಕಂಟ್ರೋಲರ್. ಸ್ಥಿತಿ: %1$s. ಆನ್ ಮಾಡಲು, ವಿಸ್ತರಿಸಲು ಮತ್ತು ಮುಚ್ಚಲು ನಿಯಂತ್ರಣಗಳು.</string>

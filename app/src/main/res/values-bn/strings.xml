@@ -11,7 +11,7 @@
     <string name="state_active">সক্রিয়</string>
     <string name="state_error">ত্রুটি</string>
     <string name="power_control">চালু/বন্ধ</string>
-    <string name="floating">Mini</string>
+    <string name="floating">মিনি</string>
     <string name="settings">সেটিংস</string>
     <string name="close">বন্ধ করুন</string>
     <string name="overlay_controller_description">Private Audio-এর ফ্লোটিং কন্ট্রোলার। স্ট্যাটাস: %1$s। পাওয়ার চালু বা বন্ধ করা, বড় করা এবং কন্ট্রোলার বন্ধ করার কন্ট্রোল।</string>

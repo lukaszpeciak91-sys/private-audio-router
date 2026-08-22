@@ -11,7 +11,7 @@
     <string name="state_active">Активно</string>
     <string name="state_error">Грешка</string>
     <string name="power_control">Вклучување/исклучување</string>
-    <string name="floating">Mini</string>
+    <string name="floating">Мини</string>
     <string name="settings">Поставки</string>
     <string name="close">Затвори</string>
     <string name="overlay_controller_description">Лебдечки контролер на Private Audio. Статус: %1$s. Контроли за вклучување/исклучување, проширување и затворање.</string>

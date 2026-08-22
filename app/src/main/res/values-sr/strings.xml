@@ -11,7 +11,7 @@
     <string name="state_active">Активно</string>
     <string name="state_error">Грешка</string>
     <string name="power_control">Укључивање/искључивање</string>
-    <string name="floating">Mini</string>
+    <string name="floating">Мини</string>
     <string name="settings">Подешавања</string>
     <string name="close">Затвори</string>
     <string name="overlay_controller_description">Плутајући контролер Private Audio. Статус: %1$s. Контроле за укључивање/искључивање, проширивање и затварање.</string>

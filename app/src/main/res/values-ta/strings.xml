@@ -11,7 +11,7 @@
     <string name="state_active">செயலில் உள்ளது</string>
     <string name="state_error">பிழை</string>
     <string name="power_control">இயக்கு</string>
-    <string name="floating">Mini</string>
+    <string name="floating">மினி</string>
     <string name="settings">அமைப்புகள்</string>
     <string name="close">மூடு</string>
     <string name="overlay_controller_description">Private Audio மிதக்கும் கட்டுப்படுத்தி. நிலை: %1$s. இயக்கு, விரி, மூடு ஆகிய கட்டுப்பாடுகள்.</string>

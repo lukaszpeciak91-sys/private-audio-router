@@ -11,7 +11,7 @@
     <string name="state_active">אקטיוו</string>
     <string name="state_error">פעלער</string>
     <string name="power_control">אנצינדן/אויסלעשן</string>
-    <string name="floating">Mini</string>
+    <string name="floating">מיני</string>
     <string name="settings">סעטינגס</string>
     <string name="close">פארמאכן</string>
     <string name="overlay_controller_description">דער שוועבנדיגער קאנטראלער פון Private Audio. סטאטוס: %1$s. קאנטראלן פאר אנצינדן/אויסלעשן, פארגרעסערן און פארמאכן.</string>

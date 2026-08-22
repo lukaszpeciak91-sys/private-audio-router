@@ -88,6 +88,10 @@ physical test records remain in [`DECISIONS.md`](DECISIONS.md),
   product surface has locale-specific review and source-contract evidence recorded
   in repository history; broad runtime, emulator, glyph, Mini-presentation, and
   physical-device validation is not implied.
+- The reviewed Mini label now uses established local-script or semantic forms in
+  Bulgarian, Bengali, Greek, Gujarati, Hebrew, Yiddish, Khmer, Kannada, Macedonian,
+  Marathi, Serbian Cyrillic, Tamil, and Telugu. Other locales retain their independently
+  appropriate strategies; this wording maintenance does not add runtime or device evidence.
 - Sinhala (`si`) now has a complete natural-script product localization, including
   reviewed distinctions for controller ON versus runtime ACTIVE, built-in earpiece
   versus loudspeaker, and the high-risk Privacy Policy claims. The translation was

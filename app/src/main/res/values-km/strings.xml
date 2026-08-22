@@ -11,7 +11,7 @@
     <string name="state_active">សកម្ម</string>
     <string name="state_error">កំហុស</string>
     <string name="power_control">ថាមពល</string>
-    <string name="floating">Mini</string>
+    <string name="floating">ខ្នាតតូច</string>
     <string name="settings">ការកំណត់</string>
     <string name="close">បិទ</string>
     <string name="overlay_controller_description">ឧបករណ៍បញ្ជាអណ្ដែតរបស់ Private Audio។ ស្ថានភាព៖ %1$s។ មានការគ្រប់គ្រងសម្រាប់បើក ឬបិទ Private Audio សម្រាប់ពង្រីកឧបករណ៍បញ្ជា និងសម្រាប់បិទឧបករណ៍បញ្ជា។</string>

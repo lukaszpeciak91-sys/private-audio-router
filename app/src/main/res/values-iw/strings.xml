@@ -11,7 +11,7 @@
     <string name="state_active">פעיל</string>
     <string name="state_error">שגיאה</string>
     <string name="power_control">הפעלה/כיבוי</string>
-    <string name="floating">Mini</string>
+    <string name="floating">מיני</string>
     <string name="settings">הגדרות</string>
     <string name="close">סגירה</string>
     <string name="overlay_controller_description">הבקר הצף של Private Audio. מצב: %1$s. פקדים להפעלה/כיבוי, להרחבה ולסגירה.</string>

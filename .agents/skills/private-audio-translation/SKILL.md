@@ -79,6 +79,14 @@ When a phrase creates a specific linguistic uncertainty:
 - Use the normal native script and orthography, including locale-specific Unicode distinctions and the correct CJK variant.
 - Research non-obvious terms when tools are available without fabricating evidence when they are not.
 
+### Classify short international-looking UI terms
+
+Do not automatically freeze concise terms such as `Mini`, `Compact`, `Pro`, `Default`, or `Advanced` as untranslated technical tokens. First distinguish a **brand token** from a **localizable UI concept**: `Private Audio` is currently a brand token, while `Mini` is currently a localizable compact-controller concept. Script is not a reason to keep English, and ASCII/Latin wording inside otherwise non-Latin UI is a review signal rather than a default strategy.
+
+For each concept, establish its exact Private Audio meaning and surface, then research first-party Android/Google/Microsoft or equivalent terminology where available and contemporary target-language software/product usage. Determine whether users normally expect an established native UI term, an attested target-script transliteration or loanword, a concise semantic equivalent, or the Latin original. Prefer established target-language product terminology, then an established target-script loanword, then a concise established semantic equivalent, and use the Latin original only when it is genuinely normal target-language UI usage; this order is evidence-guided, not rigid. Do not invent a phonetic spelling mechanically. Check every candidate for unrelated, offensive, embarrassing, misleading, technical, or grammatical lexical collisions. Khmer `ខ្នាតតូច` illustrates a natural semantic equivalent that is preferable to an invented transliteration.
+
+Surface constraints affect the decision: a first-party phrase for a full component such as `Miniplayer` may be unsuitable for a standalone one-word button. Adapt evidence to the actual Private Audio surface instead of copying a long component name. Script consistency is evidence, not a hard cross-locale uniformity rule; never replace an established native form merely to make locales look alike. Visual fit does not authorize inferior language: follow **NATURAL LANGUAGE → MEASURE → 16f / 15f / 14f → compact linguistic review → ellipsis safety**.
+
 ## Check contextual grammar before propagation
 
 Before translating or reusing one value/status resource across UI objects or call sites, inspect every semantic context where it renders. Do not assume a source-language invariant such as Available, Not available, Unknown, Enabled, Disabled, Connected, Selected, or Ready has one safe target-language form. Check agreement for grammatical gender, noun class, number, case, animacy, other relevant morphology, and materially different natural formulations required by different UI objects.
@@ -90,6 +98,7 @@ If one shared resource would force ungrammatical or misleading wording, prefer a
 - Preserve XML, escaping, markup, keys, numbered placeholder types, and locale-correct plurals; enforce key and placeholder parity.
 - Establish the logical BCP-47 identity and compatible Android resource qualifier before adding a locale. Retain current legacy-alias rules and avoid duplicate modern/legacy resource trees.
 - Preserve shared direction-driven RTL behavior; do not add locale-specific runtime logic or manual bidi marks without demonstrated need.
+- Before changing a compact label, inspect its production call sites to determine whether the same resource is also used for TalkBack or another content description. Verify both the visible and spoken contexts; do not silently lengthen visible `Mini` copy for accessibility. If one resource cannot naturally serve both, report the resource/call-site issue separately rather than redesigning accessibility architecture inside a translation task.
 - Review accessibility text as natural spoken language and separately from compact visual labels.
 - Keep diagnostic-core output English-only; only its user-facing actions/messages are localizable.
 
