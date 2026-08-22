@@ -46,11 +46,16 @@ class RtlPreparationContractTest {
     }
 
     @Test
-    fun miniDirectionIsConfigurationDrivenAndFutureRtlSafe() {
+    fun miniDirectionUsesTheLogicalApplicationLocaleAndFutureRtlSafePlatformResolution() {
         val direction = overlay.method("private fun isRtlLayout")
-        assertTrue(direction.contains("resources.configuration.layoutDirection"))
-        assertTrue(direction.contains("View.LAYOUT_DIRECTION_RTL"))
-        listOf("\"ar\"", "\"ur\"", "\"fa\"").forEach { assertFalse(overlay.contains(it)) }
+        assertTrue(direction.contains("rtlLayout"))
+        assertTrue(overlay.contains("rtlLayout = miniLayoutDirection(context) == View.LAYOUT_DIRECTION_RTL"))
+        assertTrue(overlay.method("fun refreshLocalizedPresentation").contains("rtlLayout = miniLayoutDirection(context)"))
+        assertTrue(layoutDirection.contains("AppLanguagePreferences.currentLanguageTag(context)"))
+        assertTrue(layoutDirection.contains("TextUtils.getLayoutDirectionFromLocale(effectiveLocale)"))
+        listOf("\"yi\"", "\"he\"", "\"ar\"", "\"ur\"", "\"fa\"").forEach {
+            assertFalse(productionKotlin.contains(it))
+        }
 
         listOf("values", "values-pl", "values-ar", "values-ur").forEach {
             assertTrue(File(root, "app/src/main/res/$it/strings.xml").isFile)
@@ -81,6 +86,9 @@ class RtlPreparationContractTest {
         val settings = projectFile("app/src/main/java/app/privateaudio/ui/SettingsSheet.kt").readText()
         val productScreen = projectFile("app/src/main/java/app/privateaudio/ui/PrivateAudioScreen.kt").readText()
         val overlay = projectFile("app/src/main/java/app/privateaudio/overlay/OverlayService.kt").readText()
+        val layoutDirection = projectFile("app/src/main/java/app/privateaudio/overlay/MiniLayoutDirection.kt").readText()
+        val productionKotlin = File(root, "app/src/main/java").walkTopDown()
+            .filter { it.extension == "kt" }.joinToString("\n") { it.readText() }
         val position = projectFile("app/src/main/java/app/privateaudio/overlay/OverlayPosition.kt").readText()
         val service = projectFile("app/src/main/java/app/privateaudio/PrivateAudioService.kt").readText()
 

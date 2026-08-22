@@ -120,6 +120,8 @@ Accessibility text may be fuller than a compact visible label when their semanti
 
 Compact state variants require demonstrated measured failure at 14f and must be reviewed as a complete locale-specific Ready / Waiting / Active / Error status-label system, never as one shortened label in isolation. Exact part-of-speech equality is not required, but the four labels must form one natural grammatical and stylistic paradigm without collapsing their distinct meanings. Tamil currently retains its explicitly reviewed compact paradigm. Gujarati uses its natural full state copy through the default Mini aliases and shared measured-fit path after targeted review found that its former compact override was no longer preferable or necessary.
 
+Malayalam records the concrete threshold example: full `കാത്തിരിക്കുന്നു` still failed at 14f on the physical Mini, so the complete paradigm was reviewed and only visible Mini Waiting received the compact status noun `കാത്തിരിപ്പ്`. The full state remains the accessibility and Main wording. This is evidence for that override, not permission to shorten another locale before measurement.
+
 ## RTL, fonts, and glyphs
 
 RTL support is shared, direction-driven infrastructure, not locale-specific code. Preserve the established architecture:
@@ -129,6 +131,8 @@ RTL support is shared, direction-driven infrastructure, not locale-specific code
 - Mini content mirrors by layout direction and its status uses bidi-aware measured rendering;
 - active notification presentation refreshes after a localization configuration change; and
 - Compose uses its normally inherited `LayoutDirection`.
+
+Resource selection and presentation direction are separate platform results. A modern logical application locale such as Yiddish `yi` or Hebrew `he` can resolve a legacy-compatible `values-ji` or `values-iw` tree while a configuration-derived direction still reflects the legacy alias incorrectly. Direction-sensitive custom presentation must use the active logical application locale with Android's locale-direction API, falling back to the effective configuration locale when no application override exists. Never reverse localized text to compensate for a direction-resolution defect.
 
 Do not create separate RTL logic for Arabic, Urdu, Persian, Hebrew, or another RTL locale. Rely on standard Android bidi handling first for mixed RTL/LTR text, and do not insert manual bidi markers without demonstrated need.
 

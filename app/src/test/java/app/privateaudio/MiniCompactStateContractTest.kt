@@ -10,7 +10,7 @@ import java.io.File
 import javax.xml.parsers.DocumentBuilderFactory
 
 class MiniCompactStateContractTest {
-    @Test fun tamilCompactParadigmRemainsFrozenAndGujaratiUsesUnchangedFullStates() {
+    @Test fun reviewedCompactParadigmsRemainNarrowAndGujaratiUsesUnchangedFullStates() {
         assertEquals(
             mapOf("state_ready" to "தயார்", "state_waiting" to "காத்திருக்கிறது", "state_active" to "செயலில் உள்ளது", "state_error" to "பிழை"),
             fullStates(tamilFull),
@@ -25,6 +25,12 @@ class MiniCompactStateContractTest {
         )
         assertTrue(tamilMini.isFile)
         assertFalse(gujaratiMini.exists())
+        assertEquals(
+            mapOf("state_ready" to "തയ്യാറാണ്", "state_waiting" to "കാത്തിരിക്കുന്നു", "state_active" to "സജീവം", "state_error" to "പിശക്"),
+            fullStates(malayalamFull),
+        )
+        assertEquals(mapOf("state_waiting_mini" to "കാത്തിരിപ്പ്"), strings(malayalamMini))
+        assertFalse(strings(malayalamMini)["state_waiting_mini"] == fullStates(malayalamFull)["state_waiting"])
     }
 
     @Test fun defaultMiniResourcesAliasLocalizedFullResources() {
@@ -112,6 +118,8 @@ class MiniCompactStateContractTest {
         val gujaratiFull = File(res, "values-gu/strings.xml")
         val tamilMini = File(res, "values-ta/mini_state_strings.xml")
         val gujaratiMini = File(res, "values-gu/mini_state_strings.xml")
+        val malayalamFull = File(res, "values-ml/strings.xml")
+        val malayalamMini = File(res, "values-ml/mini_state_strings.xml")
         val localeStringFiles = res.listFiles()!!.filter { it.name.startsWith("values-") }
             .map { File(it, "strings.xml") }.filter(File::isFile)
         val localeResourceFiles = res.listFiles()!!.filter { it.name.startsWith("values-") }

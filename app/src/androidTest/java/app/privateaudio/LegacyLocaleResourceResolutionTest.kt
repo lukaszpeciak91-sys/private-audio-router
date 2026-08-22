@@ -4,6 +4,7 @@ import android.app.LocaleConfig
 import android.content.Context
 import android.content.res.Configuration
 import android.os.Build
+import android.text.TextUtils
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
 import org.junit.Assert.assertEquals
@@ -15,6 +16,24 @@ import java.util.Locale
 
 @RunWith(AndroidJUnit4::class)
 class LegacyLocaleResourceResolutionTest {
+    @Test
+    fun logicalApplicationLocaleIdentitiesProvideMiniDirectionIndependentlyOfResourceAliases() {
+        listOf("yi", "he", "ar", "fa", "ur").forEach { tag ->
+            assertEquals(
+                "$tag Mini direction",
+                android.view.View.LAYOUT_DIRECTION_RTL,
+                TextUtils.getLayoutDirectionFromLocale(Locale.forLanguageTag(tag)),
+            )
+        }
+        listOf("en", "pl").forEach { tag ->
+            assertEquals(
+                "$tag Mini direction",
+                android.view.View.LAYOUT_DIRECTION_LTR,
+                TextUtils.getLayoutDirectionFromLocale(Locale.forLanguageTag(tag)),
+            )
+        }
+    }
+
     @Test
     fun modernLocaleTagsResolveLegacyQualifiedResources() {
         val context = InstrumentationRegistry.getInstrumentation().targetContext
