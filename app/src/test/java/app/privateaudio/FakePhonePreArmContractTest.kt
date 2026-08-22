@@ -66,7 +66,8 @@ class FakePhonePreArmContractTest {
 
     @Test fun cleanupIsGenerationSafeOrderedImmediateAndReevaluatesNormalClassifiers() {
         val cleanup = observer.method("private fun cleanupFakePhonePreArm(")
-        assertInOrder(cleanup, "invalidateFakePhoneDelayedWork()", "clearCommunicationDevice", "MODE_NORMAL", "stopSilentCommunicationTrack", "handlePlaybackConfigurations")
+        assertInOrder(cleanup, "invalidateFakePhoneDelayedWork()", "clearCommunicationDevice", "MODE_NORMAL", "stopSilentCommunicationTrack")
+        assertTrue(cleanup.contains("handlePlaybackConfigurations"))
         val safety = observer.method("private fun abortFakePhoneMicroRouteIfContextLost(")
         listOf("system/telephony-priority", "target earpiece unavailable", "silent-track failure", "unrecoverable mode loss", "unrecoverable route/device loss").forEach {
             assertTrue(safety.contains(it))

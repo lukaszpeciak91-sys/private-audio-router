@@ -13,6 +13,7 @@ import android.os.Build
 import android.os.Handler
 import android.os.Looper
 import android.os.Process
+import android.os.SystemClock
 import app.privateaudio.BuildConfig
 import app.privateaudio.PrivateAudioState
 import androidx.compose.runtime.getValue
@@ -138,6 +139,16 @@ data class EarpieceExperiment(
     val browserQualifyingPlaybackCount: Int = 0,
     val triggerOrigin: TriggerOrigin? = null,
     val modeBeforeAssistantParticipation: String? = null,
+    val preparedTrackCreated: Boolean = false,
+    val preparationCompletedTimestamp: String? = null,
+    val preparedTrackState: String = "Not prepared",
+    val preparedTrackActivePlaybackWhileWaiting: Boolean = false,
+    val routingTriggerTimestamp: String? = null,
+    val preparedTrackReused: Boolean = false,
+    val playInvocationTimestamp: String? = null,
+    val playingTimestamp: String? = null,
+    val triggerToPlayingElapsedMs: Long? = null,
+    val fallbackCreationUsed: Boolean = false,
 )
 
 data class CompletedRoutingCycle(
@@ -222,6 +233,8 @@ class AudioDiagnosticObserver(
     private var routingActionInProgress = false
     private var modeParticipationActive = false
     private var silentTrack: AudioTrack? = null
+    private var preparedSilentTrack = false
+    private var routingTriggerElapsedRealtime: Long? = null
     private var silentWriterThread: Thread? = null
     private val silentWriterRunning = AtomicBoolean(false)
     private val observationHandler = Handler(Looper.getMainLooper())
@@ -270,7 +283,10 @@ class AudioDiagnosticObserver(
         invalidatePendingControllerWork()
         unregisterPlaybackCallback()
         if (experiment.requestAttempted) clearExperiment(reason, ExperimentState.CLEARED)
-        else cleanupFakePhonePreArm(reason)
+        else {
+            cleanupFakePhonePreArm(reason)
+            releasePreparedSilentTrack(reason)
+        }
         audioManager.removeOnCommunicationDeviceChangedListener(communicationDeviceListener)
         audioManager.unregisterAudioDeviceCallback(audioDeviceCallback)
         started = false
@@ -293,6 +309,7 @@ class AudioDiagnosticObserver(
         if (fakePhonePreArm.active) abortFakePhoneMicroRouteIfContextLost(reason)
         if (abortAssistantLingerIfContextLost(reason)) return
         observeExperimentOutcome(observed, reason)
+        if (!routingActionInProgress) prepareSilentCommunicationTrack()
         if (!routingActionInProgress) evaluateExperimentTrigger()
         onEvidenceChanged(reason)
     }
@@ -306,6 +323,7 @@ class AudioDiagnosticObserver(
         playbackCallbackRegistered = true
         addEvent("Controller ON — clean waiting; playback observation registered")
         snapshot("Controller waiting snapshot")
+        prepareSilentCommunicationTrack()
         handlePlaybackConfigurations(audioManager.activePlaybackConfigurations)
     }
 
@@ -315,7 +333,10 @@ class AudioDiagnosticObserver(
         unregisterPlaybackCallback()
         addEvent("Controller OFF — pending detection invalidated")
         if (experiment.requestAttempted) clearExperiment("Power OFF", ExperimentState.CLEARED)
-        else cleanupFakePhonePreArm("Power OFF")
+        else {
+            cleanupFakePhonePreArm("Power OFF")
+            releasePreparedSilentTrack("Power OFF")
+        }
     }
 
     fun updateFakePhonePreArmEnabled(enabled: Boolean) {
@@ -391,6 +412,9 @@ class AudioDiagnosticObserver(
 
         val mode = audioManager.mode
         if (mode.isTelephonyOrSystemPriorityMode()) {
+            if (preparedSilentTrack) {
+                releasePreparedSilentTrack("System/telephony-priority takeover")
+            }
             if (fakePhonePreArm.active) {
                 cleanupFakePhonePreArm("Blocked by system/telephony-priority mode ${audioModeName(mode)}")
                 return
@@ -440,6 +464,8 @@ class AudioDiagnosticObserver(
         assistantCount: Int,
         browserCount: Int,
     ) {
+        val routingTriggerTimestamp = OffsetDateTime.now().format(DateTimeFormatter.ISO_OFFSET_DATE_TIME)
+        routingTriggerElapsedRealtime = SystemClock.elapsedRealtime()
         val target = earpiece.toObservedDevice()
         val modeBeforeParticipation = audioManager.mode
         val preOwnership = collectSnapshot()
@@ -460,7 +486,9 @@ class AudioDiagnosticObserver(
             triggerOrigin = triggerOrigin,
             modeBeforeAssistantParticipation =
                 if (triggerOrigin == TriggerOrigin.ASSISTANT) audioModeName(modeBeforeParticipation) else null,
+            routingTriggerTimestamp = routingTriggerTimestamp,
         )
+        addEvent("Routing trigger timestamp=$routingTriggerTimestamp")
         routingActionInProgress = true
         if (fakePhonePreArm.active) {
             promoteFakePhonePreArm(triggerOrigin, assistantCount, browserCount)
@@ -541,7 +569,7 @@ class AudioDiagnosticObserver(
         performRoutingAttempt(earpiece, "silent communication playback active and mode requested")
     }
 
-    private fun startSilentCommunicationTrack(): Boolean {
+    private fun createSilentCommunicationTrack(): AudioTrack? {
         val sampleRate = AudioTrack.getNativeOutputSampleRate(AudioManager.STREAM_VOICE_CALL)
             .takeIf { it > 0 } ?: DEFAULT_SAMPLE_RATE
         val minBuffer = AudioTrack.getMinBufferSize(
@@ -551,7 +579,7 @@ class AudioDiagnosticObserver(
         )
         if (minBuffer <= 0) {
             addEvent("Silent AudioTrack creation failed — unsupported buffer result=$minBuffer at ${sampleRate}Hz")
-            return false
+            return null
         }
         val bufferBytes = maxOf(minBuffer, MIN_SILENCE_BUFFER_BYTES)
         val track = runCatching {
@@ -574,19 +602,56 @@ class AudioDiagnosticObserver(
                 .build()
         }.getOrElse {
             addEvent("Silent AudioTrack creation failed — ${it.javaClass.simpleName}: ${it.message}")
-            return false
+            return null
+        }
+        if (track.state != AudioTrack.STATE_INITIALIZED) {
+            addEvent("Silent AudioTrack creation produced uninitialized state=${track.state}")
+            track.release()
+            return null
         }
         experiment = experiment.copy(
             silentTrackCreated = true,
             silentTrackSampleRate = sampleRate,
             silentTrackBufferBytes = bufferBytes,
         )
-        if (track.state != AudioTrack.STATE_INITIALIZED) {
-            addEvent("Silent AudioTrack creation produced uninitialized state=${track.state}")
-            track.release()
-            return false
+        return track
+    }
+
+    private fun prepareSilentCommunicationTrack() {
+        if (!controllerEnabled || experiment.requestAttempted || routingActionInProgress ||
+            fakePhonePreArm.active || silentTrack != null ||
+            audioManager.mode != AudioManager.MODE_NORMAL
+        ) return
+        val track = createSilentCommunicationTrack() ?: run {
+            addEvent("Silent AudioTrack preparation failed open — normal trigger fallback remains available")
+            return
         }
         silentTrack = track
+        preparedSilentTrack = true
+        val completedAt = OffsetDateTime.now().format(DateTimeFormatter.ISO_OFFSET_DATE_TIME)
+        val activeWhileWaiting = track.playState == AudioTrack.PLAYSTATE_PLAYING
+        experiment = experiment.copy(
+            preparedTrackCreated = true,
+            preparationCompletedTimestamp = completedAt,
+            preparedTrackState = "STATE_INITIALIZED / ${audioTrackPlayStateName(track.playState)}",
+            preparedTrackActivePlaybackWhileWaiting = activeWhileWaiting,
+            silentTrackPlayState = audioTrackPlayStateName(track.playState),
+        )
+        addEvent(
+            "Prepared silent AudioTrack created — completed=$completedAt; state=${track.state}; " +
+                "playState=${audioTrackPlayStateName(track.playState)}; active playback while WAITING=$activeWhileWaiting",
+        )
+    }
+
+    private fun startSilentCommunicationTrack(): Boolean {
+        val reused = preparedSilentTrack && silentTrack?.state == AudioTrack.STATE_INITIALIZED
+        if (preparedSilentTrack && !reused) releasePreparedSilentTrack("Prepared track validation failed")
+        val fallbackUsed = silentTrack == null
+        val track = silentTrack ?: (createSilentCommunicationTrack() ?: return false).also {
+            silentTrack = it
+        }
+        preparedSilentTrack = false
+        val bufferBytes = experiment.silentTrackBufferBytes ?: MIN_SILENCE_BUFFER_BYTES
         val silence = ShortArray(bufferBytes / Short.SIZE_BYTES)
         silentWriterRunning.set(true)
         silentWriterThread = Thread({
@@ -605,15 +670,26 @@ class AudioDiagnosticObserver(
             isDaemon = true
             start()
         }
+        val playInvocationTimestamp = OffsetDateTime.now().format(DateTimeFormatter.ISO_OFFSET_DATE_TIME)
+        addEvent("Silent AudioTrack play() invocation timestamp=$playInvocationTimestamp; prepared track reused=$reused")
         val started = runCatching { track.play() }.isSuccess && track.playState == AudioTrack.PLAYSTATE_PLAYING
+        val playingTimestamp = if (started) OffsetDateTime.now().format(DateTimeFormatter.ISO_OFFSET_DATE_TIME) else null
+        val elapsed = if (started) routingTriggerElapsedRealtime?.let { SystemClock.elapsedRealtime() - it } else null
         experiment = experiment.copy(
             silentTrackStarted = started,
             silentTrackPlayState = audioTrackPlayStateName(track.playState),
+            preparedTrackReused = reused,
+            playInvocationTimestamp = playInvocationTimestamp,
+            playingTimestamp = playingTimestamp,
+            triggerToPlayingElapsedMs = elapsed,
+            fallbackCreationUsed = fallbackUsed,
         )
         addEvent(
-            "Silent AudioTrack creation result — initialized=true; sampleRate=${sampleRate}Hz; " +
+            "Silent AudioTrack creation result — initialized=true; sampleRate=${experiment.silentTrackSampleRate}Hz; " +
                 "buffer=$bufferBytes bytes; attributes=USAGE_VOICE_COMMUNICATION/CONTENT_TYPE_SPEECH; " +
-                "playState=${audioTrackPlayStateName(track.playState)}; audio focus requested=false",
+                "playState=${audioTrackPlayStateName(track.playState)}; audio focus requested=false; " +
+                "PLAYSTATE_PLAYING timestamp=${playingTimestamp ?: "not observed"}; trigger to PLAYING=${elapsed ?: "unknown"} ms; " +
+                "fallback creation used=$fallbackUsed",
         )
         return started
     }
@@ -633,6 +709,7 @@ class AudioDiagnosticObserver(
             cleanupFakePhonePreArm("Built-in earpiece unavailable")
             return
         }
+        releasePreparedSilentTrack("Fake Phone micro-route taking shared track ownership")
         routingActionInProgress = true
         val generation = ++fakePhoneGeneration
         val startedAt = OffsetDateTime.now().format(DateTimeFormatter.ISO_OFFSET_DATE_TIME)
@@ -737,6 +814,14 @@ class AudioDiagnosticObserver(
 
     private fun cleanupFakePhonePreArm(reason: String, reEvaluatePlayback: Boolean = true) {
         invalidateFakePhoneDelayedWork()
+        if (preparedSilentTrack) {
+            releasePreparedSilentTrack(reason)
+            if (controllerEnabled && reEvaluatePlayback && !routingActionInProgress) {
+                prepareSilentCommunicationTrack()
+                handlePlaybackConfigurations(audioManager.activePlaybackConfigurations)
+            }
+            return
+        }
         if (!fakePhonePreArm.active && silentTrack == null && !modeParticipationActive) {
             fakePhonePreArm = fakePhonePreArm.copy(cleanupCompleted = true, lastCleanupReason = reason)
             return
@@ -757,6 +842,7 @@ class AudioDiagnosticObserver(
         experiment = EarpieceExperiment(state = ExperimentState.ARMED, armed = controllerEnabled)
         addEvent("Fake Phone micro-route cleanup completed=$cleaned — reason=$reason")
         if (controllerEnabled && reEvaluatePlayback && !routingActionInProgress) {
+            prepareSilentCommunicationTrack()
             handlePlaybackConfigurations(audioManager.activePlaybackConfigurations)
         }
     }
@@ -1077,6 +1163,7 @@ class AudioDiagnosticObserver(
         activeEvidenceRecorded = false
         experiment = EarpieceExperiment(state = ExperimentState.ARMED, armed = true)
         addEvent("Cleanup completed — controller remains ON and returned to clean waiting")
+        prepareSilentCommunicationTrack()
         handlePlaybackConfigurations(audioManager.activePlaybackConfigurations)
     }
 
@@ -1184,8 +1271,18 @@ class AudioDiagnosticObserver(
         runCatching { track.flush() }
         runCatching { track.release() }
         silentTrack = null
+        preparedSilentTrack = false
         addEvent("Silent AudioTrack cleanup — writer stopped=$writerStopped; track stopped, flushed, and released")
         return writerStopped
+    }
+
+    private fun releasePreparedSilentTrack(reason: String) {
+        if (!preparedSilentTrack) return
+        val track = silentTrack
+        preparedSilentTrack = false
+        silentTrack = null
+        runCatching { track?.release() }
+        addEvent("Unused prepared silent AudioTrack released — reason=$reason; no route or mode cleanup required")
     }
 
     private fun inferExternalVoicePlaybackDevice(observed: DiagnosticSnapshot): ObservedDevice? {
@@ -1328,6 +1425,16 @@ internal fun buildDiagnosticReport(
     appendLine("Silent AudioTrack started: ${experiment.silentTrackStarted}")
     appendLine("Silent AudioTrack configuration: sampleRate=${experiment.silentTrackSampleRate ?: "Not created"}; mono PCM 16-bit; bufferBytes=${experiment.silentTrackBufferBytes ?: "Not created"}")
     appendLine("Silent AudioTrack play state: ${experiment.silentTrackPlayState}")
+    appendLine("Prepared silent track created: ${experiment.preparedTrackCreated}")
+    appendLine("Preparation completed timestamp: ${experiment.preparationCompletedTimestamp ?: "Not prepared"}")
+    appendLine("Prepared track state: ${experiment.preparedTrackState}")
+    appendLine("Prepared track active playback observed while WAITING: ${experiment.preparedTrackActivePlaybackWhileWaiting} (expected false)")
+    appendLine("Routing trigger timestamp: ${experiment.routingTriggerTimestamp ?: "Not triggered"}")
+    appendLine("Prepared track reused: ${experiment.preparedTrackReused}")
+    appendLine("play() invocation timestamp: ${experiment.playInvocationTimestamp ?: "Not invoked"}")
+    appendLine("PLAYSTATE_PLAYING timestamp: ${experiment.playingTimestamp ?: "Not observed"}")
+    appendLine("Trigger to PLAYSTATE_PLAYING elapsed ms: ${experiment.triggerToPlayingElapsedMs ?: "Not observed"}")
+    appendLine("Fallback AudioTrack creation used: ${experiment.fallbackCreationUsed}")
     appendLine("AudioAttributes: USAGE_VOICE_COMMUNICATION + CONTENT_TYPE_SPEECH")
     appendLine("Private Audio active VOICE_COMMUNICATION playback observed: ${experiment.activeVoiceCommunicationPlaybackObserved} (track PLAYING plus matching public active-playback configuration)")
     appendLine("Silent VOICE_COMMUNICATION AudioTrack active before mode request: ${experiment.silentTrackActiveBeforeModeRequest}")

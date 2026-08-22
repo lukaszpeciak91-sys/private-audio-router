@@ -273,3 +273,11 @@ This is a lightweight, append-only log. Do not rewrite accepted history; append 
 - **Context:** Persistent Fake Phone participation helped the startup-sonification experiment but could compete with a separate voice client throughout `WAITING`.
 - **Decision:** The existing default-OFF preference now permits one provider-neutral micro-route only on exact external `USAGE_ASSISTANT` + `CONTENT_TYPE_SONIFICATION`. Clean waiting owns no track, mode, or device request. Disappearance has a 100 ms grace and every attempt has a non-extending 2,000 ms cap. Healthy resources transfer to a genuine existing-classifier protected cycle; unhealthy setup cleans and fails open to ordinary POC-5.
 - **Consequences:** Micro-route-only activity remains `WAITING`, never creates `ERROR`, uses no retries/focus/volume changes, and is cleaned immediately on safety or lifecycle loss. Public metadata does not establish application identity or audible routing; physical confirmation remains required.
+
+## D-035 — Prepared stopped POC-5 silent track while waiting
+
+- **Date:** 2026-08-22
+- **Status:** Accepted; startup optimization only
+- **Context:** Physical diagnostics with Fake Phone both OFF and ON show qualifying assistant/speech already playing roughly 450–480 ms before on-demand silent-track playback becomes active. Once that playback is active, external assistant/speech can already be reported on the earpiece before the remaining protected setup completes.
+- **Decision:** In clean enabled `WAITING`, construct one initialized but stopped silent communication `AudioTrack` using the proven POC-5 format. A genuine unchanged classifier reuses it by starting the existing writer and playback before mode participation and the single earpiece request. Missing, invalid, or failed preparation falls back to proven on-demand construction.
+- **Consequences:** Preparation owns no playback, writer, focus, communication mode, route, `ACTIVE`, or proximity. Unused preparation is released without route/mode cleanup at lifecycle, telephony, Fake Phone ownership, and replacement boundaries. Protected cleanup still completes before a fresh stopped track is prepared. Fake Phone behavior, classifiers, attempt semantics, 1.5-second confirmation, and 7-second assistant linger are unchanged. Reduced first-response clipping remains **UNKNOWN** until physical QA.
