@@ -11,7 +11,7 @@
     <string name="state_active">Aktip</string>
     <string name="state_error">Kasalahan</string>
     <string name="power_control">Hurung/pareum</string>
-    <string name="floating">Leutik</string>
+    <string name="floating">Mini</string>
     <string name="settings">Setélan</string>
     <string name="close">Tutup</string>
     <string name="overlay_controller_description">Kadali ngambang Private Audio. Status: %1$s. Kadali pikeun ngahurungkeun atawa mareuman, ngagedéan, jeung nutup.</string>
