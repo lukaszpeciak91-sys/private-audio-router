@@ -46,6 +46,12 @@ Built-in earpiece
 
 **Audit → implement → test → audit → iterate.** Inspect before changing and understand before guessing. Make the smallest useful experiment, test uncertain Android behavior on physical hardware, and treat failures as evidence rather than stacking speculative workarounds. Update existing authoritative documentation instead of creating documentation clutter.
 
+### Planning note
+
+The current milestone order is a direction, not a rigid implementation lock. As the project develops, research, physical testing, platform or privacy constraints, release requirements, architectural discoveries, or implementation experience may show that a small part of a later feature is worth researching or establishing earlier—especially when doing so would avoid significant rework or provide useful technical understanding.
+
+In that situation, prefer the smallest sensible foundation or research step rather than blindly following the roadmap or prematurely implementing the entire future feature. The roadmap exists to preserve direction and prevent unnecessary scope drift, not to prevent useful learning or evidence-based changes in sequencing.
+
 ## Repository state and freshness
 
 This document provides stable project context, not current implementation status.
