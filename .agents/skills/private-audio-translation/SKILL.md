@@ -102,6 +102,12 @@ If one shared resource would force ungrammatical or misleading wording, prefer a
 - Review accessibility text as natural spoken language and separately from compact visual labels.
 - Keep diagnostic-core output English-only; only its user-facing actions/messages are localizable.
 
+### Semantic text structure and whitespace contract
+
+Paragraph boundaries can be part of the source's semantic structure. Treat intentional line breaks and list boundaries as localizable content structure, not disposable formatting, and inspect source escapes such as `\n` and `\n\n` before translating. When `\n\n` separates semantic source paragraphs, the target should normally preserve equivalent functional paragraph boundaries unless a reviewed locale-specific exception exists.
+
+Pretty XML formatting is not a substitute for Android runtime escape sequences: Android tooling may normalize raw physical newlines inside a resource value. Use explicit Android resource escapes when a runtime line or paragraph break is intended, and verify both the raw resource representation and, where available, the Android-resolved string.
+
 Natural language comes before geometry. For Mini, keep Ready / Waiting / Active / Error as one semantic paradigm, then measure the full set using the existing shared 16f / 15f / 14f fitting path. Character count is not layout measurement. Only demonstrated failure at 14f opens compact-copy review; never silently alter semantics or full accessibility wording to fit. Preserve existing component geometry and approved overrides unless explicitly reopened.
 
 ## Complete implementation

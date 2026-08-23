@@ -22,15 +22,7 @@
     <string name="settings_advanced">Tó ti ní ìlọsíwájú</string>
     <string name="settings_about">Nípa Private Audio</string>
     <string name="settings_privacy_policy">Ìlànà Ìpamọ́</string>
-    <string name="settings_privacy_policy_body">Private Audio kì í gba, kì í ṣe ìgbàsílẹ̀, bẹ́ẹ̀ ni kì í fi àwọn ìjíròrò tàbí àkóónú ohùn rẹ ránṣẹ́.
-
-Ìṣàfilọ́lẹ̀ náà kò béèrè àkọọ́lẹ̀ tàbí wíwọlé. Kò béèrè àṣẹ láti lo gbohùngbohùn, kò sì lo ìtúpalẹ̀, ìpolówó, tàbí iṣẹ́ ìjábọ̀ nígbà tí ìṣàfilọ́lẹ̀ bá dá dúró lójijì. Private Audio kò béèrè àṣẹ Íńtánẹ́ẹ̀tì Android, kò sì fi dátà ránṣẹ́ sí ẹ̀rọ apínṣẹ́.
-
-Private Audio ń wo ipò ìmọ̀ ẹ̀rọ àti metadata ètò ohùn Android nìkan bí ó ṣe yẹ fún dídarí ohùn àti àyẹ̀wò. Kì í wọlé sí àkóónú àwọn ìjíròrò rẹ.
-
-Àwọn ààtò ìṣàfilọ́lẹ̀ wà ní ìpamọ́ lórí ẹ̀rọ rẹ nìkan. Dátà àyẹ̀wò ni a ń ṣẹ̀dá tí a sì ń ṣiṣẹ́ lé lórí ẹ̀rọ rẹ nìkan, ìjábọ̀ àyẹ̀wò sì máa ń wà ní ìpamọ́ nígbà tí o bá yàn láti fi í pamọ́ nìkan. Ìjábọ̀ kan lè ní ìwífún ìmọ̀ ẹ̀rọ nípa ẹ̀rọ rẹ, ẹ̀yà Android, dídarí ohùn àti ipò ètò ohùn, ṣùgbọ́n kò ní ìjíròrò tàbí àkóónú ohùn.
-
-Afẹ́yinti dátà ìṣàfilọ́lẹ̀ Android ti wa ni pipa.</string>
+    <string name="settings_privacy_policy_body">Private Audio kì í gba, kì í ṣe ìgbàsílẹ̀, bẹ́ẹ̀ ni kì í fi àwọn ìjíròrò tàbí àkóónú ohùn rẹ ránṣẹ́.\n\nÌṣàfilọ́lẹ̀ náà kò béèrè àkọọ́lẹ̀ tàbí wíwọlé. Kò béèrè àṣẹ láti lo gbohùngbohùn, kò sì lo ìtúpalẹ̀, ìpolówó, tàbí iṣẹ́ ìjábọ̀ nígbà tí ìṣàfilọ́lẹ̀ bá dá dúró lójijì. Private Audio kò béèrè àṣẹ Íńtánẹ́ẹ̀tì Android, kò sì fi dátà ránṣẹ́ sí ẹ̀rọ apínṣẹ́.\n\nPrivate Audio ń wo ipò ìmọ̀ ẹ̀rọ àti metadata ètò ohùn Android nìkan bí ó ṣe yẹ fún dídarí ohùn àti àyẹ̀wò. Kì í wọlé sí àkóónú àwọn ìjíròrò rẹ.\n\nÀwọn ààtò ìṣàfilọ́lẹ̀ wà ní ìpamọ́ lórí ẹ̀rọ rẹ nìkan. Dátà àyẹ̀wò ni a ń ṣẹ̀dá tí a sì ń ṣiṣẹ́ lé lórí ẹ̀rọ rẹ nìkan, ìjábọ̀ àyẹ̀wò sì máa ń wà ní ìpamọ́ nígbà tí o bá yàn láti fi í pamọ́ nìkan. Ìjábọ̀ kan lè ní ìwífún ìmọ̀ ẹ̀rọ nípa ẹ̀rọ rẹ, ẹ̀yà Android, dídarí ohùn àti ipò ètò ohùn, ṣùgbọ́n kò ní ìjíròrò tàbí àkóónú ohùn.\n\nAfẹ́yinti dátà ìṣàfilọ́lẹ̀ Android ti wa ni pipa.</string>
     <string name="settings_version">Ẹ̀yà %1$s</string>
     <string name="settings_language_body">Private Audio ń tẹ̀lé èdè ẹ̀rọ rẹ lọ́wọ́lọ́wọ́. A yan Àìyípadà.</string>
     <string name="settings_language_android_13_required">Yíyan èdè nínú ìṣàfilọ́lẹ̀ nílò Android 13 tàbí èyí tó tuntun jù. Ẹ̀rọ yìí ń tẹ̀lé èdè ètò.</string>

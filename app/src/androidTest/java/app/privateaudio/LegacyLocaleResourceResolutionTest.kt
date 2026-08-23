@@ -19,6 +19,19 @@ import app.privateaudio.localization.AppLanguagePreferences
 @RunWith(AndroidJUnit4::class)
 class LegacyLocaleResourceResolutionTest {
     @Test
+    fun representativePrivacyPoliciesResolveFiveSemanticParagraphs() {
+        val context = InstrumentationRegistry.getInstrumentation().targetContext
+
+        listOf("en", "lv", "yo", "ig").forEach { tag ->
+            val body = localizedContext(context, tag).getString(R.string.settings_privacy_policy_body)
+
+            assertEquals("$tag resolved paragraph separators", 4, body.windowed(2).count { it == "\n\n" })
+            assertEquals("$tag resolved semantic paragraphs", 5, body.split("\n\n").size)
+            assertTrue("$tag empty semantic paragraph", body.split("\n\n").all { it.isNotBlank() })
+        }
+    }
+
+    @Test
     fun generatedLegacyAliasesAreCanonicalizedForApplicationLanguageOptions() {
         val context = InstrumentationRegistry.getInstrumentation().targetContext
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.TIRAMISU) return
