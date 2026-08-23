@@ -113,7 +113,11 @@ physical test records remain in [`DECISIONS.md`](DECISIONS.md),
 - The Privacy Policy title and complete factual claim set are translated and
   semantically self-checked across all 91 non-English sets. A targeted independent
   audit found ten claim-scope or terminology defects, and reviewed replacements were
-  applied. This is neither human/native-speaker validation nor legal certification.
+  applied. All 92 product resource sets now preserve its five semantic paragraphs
+  with functional Android escapes; the Yoruba and Igbo corrections changed only
+  paragraph encoding, not lexical content. Shared source and representative Android
+  resource-resolution contracts protect that structure. This is neither
+  human/native-speaker validation nor legal certification.
 - The current user-facing Diagnostics key inventory is localized across all 91
   supported non-English resource sets. Candidates were produced and semantically
   self-checked with the Translation Skill. Malagasy received an independent

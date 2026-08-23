@@ -5,9 +5,41 @@ import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue
 import org.junit.Test
 import java.io.File
+import java.security.MessageDigest
 import java.util.Locale
 
 class Layer41LocalizationContractTest {
+    @Test
+    fun privacyPolicyBodiesUseFunctionalAndroidParagraphSeparators() {
+        (listOf(File(projectRoot, "app/src/main/res/values")) + localeDirectories).forEach { resourceDirectory ->
+            val rawResources = File(resourceDirectory, "strings.xml").readText()
+            val body = resourceValue(rawResources, "settings_privacy_policy_body")
+
+            assertTrue("${resourceDirectory.name}: missing privacy body", body.isNotEmpty())
+            assertEquals("${resourceDirectory.name}: Android paragraph separators", 4, body.occurrences("\\n\\n"))
+            assertEquals("${resourceDirectory.name}: semantic paragraphs", 5, body.split("\\n\\n").size)
+            assertTrue("${resourceDirectory.name}: empty semantic paragraph", body.split("\\n\\n").all { it.isNotBlank() })
+            assertFalse("${resourceDirectory.name}: raw XML newline", body.contains('\n'))
+        }
+    }
+
+    @Test
+    fun yorubaAndIgboPrivacyPolicyTextRemainsFormattingOnly() {
+        mapOf(
+            "values-yo" to "c5d7882f9e0f0c026ad2ffe5bf8850915f421523cd978a85ab77fa93082635b3",
+            "values-ig" to "8672914b22660182b74b877add0f4cdaf7152612b83bd702e4e297d4f39a60aa",
+        ).forEach { (resourceDirectory, expectedDigest) ->
+            val resources = projectFile("app/src/main/res/$resourceDirectory/strings.xml").readText()
+            val body = resourceValue(resources, "settings_privacy_policy_body")
+            val lexicalContent = body.replace("\\n\\n", " ").replace(Regex("\\s+"), " ").trim()
+            val digest = MessageDigest.getInstance("SHA-256")
+                .digest(lexicalContent.toByteArray(Charsets.UTF_8))
+                .joinToString("") { byte -> "%02x".format(byte) }
+
+            assertEquals("$resourceDirectory lexical content changed", expectedDigest, digest)
+        }
+    }
+
     @Test
     fun reviewedMiniLabelsRemainLocalizedAndDoNotRegressToLatinEnglish() {
         mapOf(
