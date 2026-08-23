@@ -60,6 +60,27 @@ class PrivateAudioScreenTest {
     }
 
     @Test
+    fun narrowPortraitPreservesCanonicalPowerSizing() {
+        composeRule.setContent {
+            PrivateAudioTheme {
+                PrivateAudioScreen(
+                    state = PrivateAudioState.READY,
+                    onPowerClick = {},
+                    onCloseClick = {},
+                    modifier = Modifier.width(360.dp).height(800.dp),
+                )
+            }
+        }
+
+        val rootBounds = composeRule.onRoot().fetchSemanticsNode().boundsInRoot
+        val powerBounds = composeRule.onNodeWithTag("private_audio_power").fetchSemanticsNode().boundsInRoot
+        assertTrue(
+            "narrow portrait Power keeps the pre-landscape padded-width sizing contract",
+            powerBounds.width < rootBounds.width * 0.80f,
+        )
+    }
+
+    @Test
     fun compactLandscapeKeepsThreeAreaContentInsideUsableBoundsAndActionsConnected() {
         var powerClicks = 0
         var floatingClicks = 0

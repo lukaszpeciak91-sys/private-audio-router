@@ -224,7 +224,10 @@ private fun PrivateAudioScreenContent(
                         onFloatingClick = onFloatingClick,
                         onSettingsClick = { settingsVisible = true },
                         onCloseClick = onCloseClick,
-                        availableWidth = min(maxWidth.value, ProductLayout.maximumContentWidth.value).dp,
+                        availableWidth = (
+                            min(maxWidth.value, ProductLayout.maximumContentWidth.value) -
+                                ProductLayout.horizontalPadding.value * 2
+                            ).coerceAtLeast(0f).dp,
                     )
                 }
             }
