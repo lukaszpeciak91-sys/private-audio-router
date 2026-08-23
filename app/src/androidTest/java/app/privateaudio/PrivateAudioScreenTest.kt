@@ -5,6 +5,9 @@ import android.content.res.Configuration
 import android.os.Build
 import android.os.LocaleList
 import androidx.compose.runtime.CompositionLocalProvider
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.width
+import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.test.assertDoesNotExist
@@ -15,6 +18,7 @@ import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.onRoot
 import androidx.compose.ui.test.performClick
 import androidx.compose.ui.test.performTouchInput
+import androidx.compose.ui.unit.dp
 import androidx.test.espresso.Espresso.pressBack
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.compose.ui.test.click
@@ -30,6 +34,7 @@ import app.privateaudio.diagnostic.DiagnosticsRouting
 import app.privateaudio.diagnostic.DiagnosticsRoutingResult
 import app.privateaudio.diagnostic.DiagnosticsSummary
 import org.junit.Assert.assertEquals
+import org.junit.Assert.assertTrue
 import org.junit.Rule
 import org.junit.Test
 import java.util.Locale
@@ -37,6 +42,64 @@ import java.util.Locale
 class PrivateAudioScreenTest {
     @get:Rule
     val composeRule = createComposeRule()
+
+    @Test
+    fun portraitMainKeepsEveryPrimaryAndSecondaryControlVisible() {
+        composeRule.setContent {
+            PrivateAudioTheme {
+                PrivateAudioScreen(
+                    state = PrivateAudioState.READY,
+                    onPowerClick = {},
+                    onCloseClick = {},
+                    modifier = Modifier.width(393.dp).height(852.dp),
+                )
+            }
+        }
+
+        mainControlTags.forEach { composeRule.onNodeWithTag(it).assertIsDisplayed() }
+    }
+
+    @Test
+    fun compactLandscapeKeepsThreeAreaContentInsideUsableBoundsAndActionsConnected() {
+        var powerClicks = 0
+        var floatingClicks = 0
+        var closeClicks = 0
+        composeRule.setContent {
+            PrivateAudioTheme {
+                PrivateAudioScreen(
+                    state = PrivateAudioState.WAITING,
+                    onPowerClick = { powerClicks++ },
+                    onFloatingClick = { floatingClicks++ },
+                    onCloseClick = { closeClicks++ },
+                    modifier = Modifier.width(720.dp).height(360.dp),
+                )
+            }
+        }
+
+        val rootBounds = composeRule.onRoot().fetchSemanticsNode().boundsInRoot
+        mainControlTags.forEach { tag ->
+            composeRule.onNodeWithTag(tag).assertIsDisplayed()
+            val bounds = composeRule.onNodeWithTag(tag).fetchSemanticsNode().boundsInRoot
+            assertTrue("$tag starts inside the window", bounds.left >= 0f && bounds.top >= 0f)
+            assertTrue("$tag ends inside the window", bounds.right <= rootBounds.right && bounds.bottom <= rootBounds.bottom)
+        }
+        val floatingBounds = composeRule.onNodeWithTag("private_audio_floating").fetchSemanticsNode().boundsInRoot
+        val settingsBounds = composeRule.onNodeWithTag("private_audio_settings").fetchSemanticsNode().boundsInRoot
+        val closeBounds = composeRule.onNodeWithTag("private_audio_close").fetchSemanticsNode().boundsInRoot
+        assertTrue(floatingBounds.center.y < settingsBounds.center.y)
+        assertTrue(settingsBounds.center.y < closeBounds.center.y)
+        assertTrue(floatingBounds.width > floatingBounds.height)
+        composeRule.onNodeWithTag("private_audio_power").performClick()
+        composeRule.onNodeWithTag("private_audio_floating").performClick()
+        composeRule.onNodeWithTag("private_audio_close").performClick()
+        composeRule.onNodeWithTag("private_audio_settings").performClick()
+        composeRule.onNodeWithTag("settings_sheet").assertIsDisplayed()
+        composeRule.runOnIdle {
+            assertEquals(1, powerClicks)
+            assertEquals(1, floatingClicks)
+            assertEquals(1, closeClicks)
+        }
+    }
 
     @Test
     fun yiddishBottomControlsAreRtl() {
@@ -52,6 +115,12 @@ class PrivateAudioScreenTest {
             "pl",
             listOf("private_audio_floating", "private_audio_settings", "private_audio_close"),
         )
+    }
+
+    @Test
+    fun compactLandscapeMirrorsItsThreeLogicalAreasForRtl() {
+        assertLandscapeAreaDirection("pl", rtl = false)
+        assertLandscapeAreaDirection("yi", rtl = true)
     }
 
     @Test
@@ -335,6 +404,57 @@ class PrivateAudioScreenTest {
                 localeManager.applicationLocales = original
             }
         }
+    }
+
+    private fun assertLandscapeAreaDirection(languageTag: String, rtl: Boolean) {
+        val targetContext = InstrumentationRegistry.getInstrumentation().targetContext
+        val localeManager = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            targetContext.getSystemService(LocaleManager::class.java)
+        } else null
+        val original = localeManager?.applicationLocales
+        try {
+            localeManager?.applicationLocales = LocaleList.forLanguageTags(languageTag)
+            val localizedContext = targetContext.createConfigurationContext(
+                Configuration(targetContext.resources.configuration).apply {
+                    setLocale(Locale.forLanguageTag(languageTag))
+                },
+            )
+            composeRule.setContent {
+                CompositionLocalProvider(LocalContext provides localizedContext) {
+                    PrivateAudioTheme {
+                        PrivateAudioScreen(
+                            state = PrivateAudioState.READY,
+                            onPowerClick = {},
+                            onCloseClick = {},
+                            modifier = Modifier.width(720.dp).height(360.dp),
+                        )
+                    }
+                }
+            }
+            val statusCenter = composeRule.onNodeWithTag("private_audio_status")
+                .fetchSemanticsNode().boundsInRoot.center.x
+            val powerCenter = composeRule.onNodeWithTag("private_audio_power")
+                .fetchSemanticsNode().boundsInRoot.center.x
+            val actionsCenter = composeRule.onNodeWithTag("private_audio_floating")
+                .fetchSemanticsNode().boundsInRoot.center.x
+            if (rtl) {
+                assertTrue(statusCenter > powerCenter && powerCenter > actionsCenter)
+            } else {
+                assertTrue(statusCenter < powerCenter && powerCenter < actionsCenter)
+            }
+        } finally {
+            if (localeManager != null && original != null) localeManager.applicationLocales = original
+        }
+    }
+
+    private companion object {
+        val mainControlTags = listOf(
+            "private_audio_power",
+            "private_audio_status",
+            "private_audio_floating",
+            "private_audio_settings",
+            "private_audio_close",
+        )
     }
 
     private fun diagnosticsSummary(

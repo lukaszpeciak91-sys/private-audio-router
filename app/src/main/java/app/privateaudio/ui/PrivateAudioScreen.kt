@@ -17,6 +17,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.navigationBarsPadding
@@ -83,6 +84,18 @@ private object ProductLayout {
     val maximumContentWidth = 440.dp
     const val powerWidthFraction = 0.88f
     val maximumPowerDiameter = 304.dp
+}
+
+private object LandscapeProductLayout {
+    val horizontalPadding = 20.dp
+    val verticalPadding = 12.dp
+    val informationWidth = 220.dp
+    val informationStatusSpacing = 28.dp
+    val actionsWidth = 184.dp
+    val maximumPowerDiameter = 260.dp
+    val powerWidthFraction = 0.38f
+    val powerEdgeSpacing = 16.dp
+    val compactHeightThreshold = 600.dp
 }
 
 private val ProductWhite = Color(0xFFF5F5F5)
@@ -183,64 +196,37 @@ private fun PrivateAudioScreenContent(
         contentAlignment = Alignment.TopCenter,
     ) {
         BoxWithConstraints(
-            modifier = Modifier
-                .fillMaxSize()
-                .widthIn(max = ProductLayout.maximumContentWidth)
-                .padding(horizontal = ProductLayout.horizontalPadding),
+            modifier = Modifier.fillMaxSize(),
         ) {
-            val powerDiameter = min(
-                maxWidth.value * ProductLayout.powerWidthFraction,
-                ProductLayout.maximumPowerDiameter.value,
-            ).dp
-
-            Column(
-                modifier = Modifier.fillMaxSize(),
-                horizontalAlignment = Alignment.CenterHorizontally,
-            ) {
-                Spacer(Modifier.height(ProductLayout.titleTopSpacing))
-                Text(
-                    text = stringResource(R.string.product_title),
-                    color = ProductWhite,
-                    fontSize = 30.sp,
-                    lineHeight = 36.sp,
-                    fontWeight = FontWeight.Normal,
-                    textAlign = TextAlign.Center,
-                )
-                Spacer(Modifier.height(ProductLayout.titleSubtitleSpacing))
-                Text(
-                    text = stringResource(R.string.product_subtitle),
-                    color = ProductSecondary,
-                    fontSize = 16.sp,
-                    lineHeight = 22.sp,
-                    fontWeight = FontWeight.Normal,
-                    textAlign = TextAlign.Center,
-                    modifier = Modifier.fillMaxWidth(),
-                )
-                Spacer(Modifier.height(ProductLayout.headerStatusSpacing))
-                StatusIndicator(
+            val compactLandscape = maxWidth > maxHeight &&
+                maxHeight < LandscapeProductLayout.compactHeightThreshold
+            if (compactLandscape) {
+                LandscapeMainContent(
                     visuals = visuals,
-                    dotAlpha = when (state) {
-                        PrivateAudioState.WAITING, PrivateAudioState.ACTIVE ->
-                            0.65f + 0.35f * motionPhase
-                        PrivateAudioState.READY, PrivateAudioState.ERROR -> 1f
-                    },
-                )
-                Spacer(Modifier.height(ProductLayout.statusPowerSpacing))
-                PowerControl(
-                    color = visuals.powerColor,
-                    glow = visuals.glow,
+                    dotAlpha = statusDotAlpha(state, motionPhase),
                     glowAlpha = if (visuals.pulse) 0.55f + 0.35f * motionPhase else 0.78f,
-                    enabled = powerEnabled,
-                    diameter = powerDiameter,
-                    onClick = onPowerClick,
-                )
-                Spacer(Modifier.weight(1f))
-                BottomControls(
+                    powerEnabled = powerEnabled,
+                    onPowerClick = onPowerClick,
                     onFloatingClick = onFloatingClick,
                     onSettingsClick = { settingsVisible = true },
                     onCloseClick = onCloseClick,
+                    availableWidth = maxWidth,
+                    availableHeight = maxHeight,
                 )
-                Spacer(Modifier.height(ProductLayout.bottomSpacing))
+            } else {
+                Box(Modifier.fillMaxSize(), contentAlignment = Alignment.TopCenter) {
+                    PortraitMainContent(
+                        visuals = visuals,
+                        dotAlpha = statusDotAlpha(state, motionPhase),
+                        glowAlpha = if (visuals.pulse) 0.55f + 0.35f * motionPhase else 0.78f,
+                        powerEnabled = powerEnabled,
+                        onPowerClick = onPowerClick,
+                        onFloatingClick = onFloatingClick,
+                        onSettingsClick = { settingsVisible = true },
+                        onCloseClick = onCloseClick,
+                        availableWidth = min(maxWidth.value, ProductLayout.maximumContentWidth.value).dp,
+                    )
+                }
             }
         }
 
@@ -258,6 +244,126 @@ private fun PrivateAudioScreenContent(
                 onDismiss = { settingsVisible = false },
             )
         }
+    }
+}
+
+private fun statusDotAlpha(state: PrivateAudioState, motionPhase: Float): Float = when (state) {
+    PrivateAudioState.WAITING, PrivateAudioState.ACTIVE -> 0.65f + 0.35f * motionPhase
+    PrivateAudioState.READY, PrivateAudioState.ERROR -> 1f
+}
+
+@Composable
+private fun PortraitMainContent(
+    visuals: StateVisuals,
+    dotAlpha: Float,
+    glowAlpha: Float,
+    powerEnabled: Boolean,
+    onPowerClick: () -> Unit,
+    onFloatingClick: () -> Unit,
+    onSettingsClick: () -> Unit,
+    onCloseClick: () -> Unit,
+    availableWidth: Dp,
+) {
+    val powerDiameter = min(
+        availableWidth.value * ProductLayout.powerWidthFraction,
+        ProductLayout.maximumPowerDiameter.value,
+    ).dp
+    Column(
+        modifier = Modifier
+            .widthIn(max = ProductLayout.maximumContentWidth)
+            .fillMaxSize()
+            .padding(horizontal = ProductLayout.horizontalPadding),
+        horizontalAlignment = Alignment.CenterHorizontally,
+    ) {
+        Spacer(Modifier.height(ProductLayout.titleTopSpacing))
+        ProductInformation(visuals, dotAlpha)
+        Spacer(Modifier.height(ProductLayout.statusPowerSpacing))
+        PowerControl(visuals.powerColor, visuals.glow, glowAlpha, powerEnabled, powerDiameter, onPowerClick)
+        Spacer(Modifier.weight(1f))
+        BottomControls(onFloatingClick, onSettingsClick, onCloseClick)
+        Spacer(Modifier.height(ProductLayout.bottomSpacing))
+    }
+}
+
+@Composable
+private fun LandscapeMainContent(
+    visuals: StateVisuals,
+    dotAlpha: Float,
+    glowAlpha: Float,
+    powerEnabled: Boolean,
+    onPowerClick: () -> Unit,
+    onFloatingClick: () -> Unit,
+    onSettingsClick: () -> Unit,
+    onCloseClick: () -> Unit,
+    availableWidth: Dp,
+    availableHeight: Dp,
+) {
+    val powerDiameter = min(
+        min(
+            availableHeight.value - LandscapeProductLayout.verticalPadding.value * 2 -
+                LandscapeProductLayout.powerEdgeSpacing.value * 2,
+            availableWidth.value * LandscapeProductLayout.powerWidthFraction,
+        ),
+        LandscapeProductLayout.maximumPowerDiameter.value,
+    ).coerceAtLeast(0f).dp
+    Row(
+        modifier = Modifier.fillMaxSize().padding(
+            horizontal = LandscapeProductLayout.horizontalPadding,
+            vertical = LandscapeProductLayout.verticalPadding,
+        ),
+        verticalAlignment = Alignment.CenterVertically,
+    ) {
+        Box(
+            modifier = Modifier.weight(1f).fillMaxHeight(),
+            contentAlignment = Alignment.Center,
+        ) {
+            ProductInformation(
+                visuals = visuals,
+                dotAlpha = dotAlpha,
+                modifier = Modifier.widthIn(max = LandscapeProductLayout.informationWidth),
+                statusSpacing = LandscapeProductLayout.informationStatusSpacing,
+            )
+        }
+        Box(
+            modifier = Modifier.width(powerDiameter).fillMaxHeight(),
+            contentAlignment = Alignment.Center,
+        ) {
+            PowerControl(visuals.powerColor, visuals.glow, glowAlpha, powerEnabled, powerDiameter, onPowerClick)
+        }
+        Box(
+            modifier = Modifier.weight(1f).fillMaxHeight(),
+            contentAlignment = Alignment.CenterEnd,
+        ) {
+            LandscapeControls(
+                onFloatingClick = onFloatingClick,
+                onSettingsClick = onSettingsClick,
+                onCloseClick = onCloseClick,
+            )
+        }
+    }
+}
+
+@Composable
+private fun ProductInformation(
+    visuals: StateVisuals,
+    dotAlpha: Float,
+    modifier: Modifier = Modifier,
+    statusSpacing: Dp = ProductLayout.headerStatusSpacing,
+) {
+    Column(modifier = modifier, horizontalAlignment = Alignment.CenterHorizontally) {
+        Text(
+            text = stringResource(R.string.product_title), color = ProductWhite,
+            fontSize = 30.sp, lineHeight = 36.sp, fontWeight = FontWeight.Normal,
+            textAlign = TextAlign.Center,
+        )
+        Spacer(Modifier.height(ProductLayout.titleSubtitleSpacing))
+        Text(
+            text = stringResource(R.string.product_subtitle), color = ProductSecondary,
+            fontSize = 16.sp, lineHeight = 22.sp, fontWeight = FontWeight.Normal,
+            textAlign = TextAlign.Center, modifier = Modifier.fillMaxWidth(),
+        )
+        Spacer(Modifier.height(statusSpacing))
+        StatusIndicator(visuals, dotAlpha)
     }
 }
 
@@ -416,6 +522,81 @@ private fun BottomControls(
 }
 
 @Composable
+private fun LandscapeControls(
+    onFloatingClick: () -> Unit,
+    onSettingsClick: () -> Unit,
+    onCloseClick: () -> Unit,
+) {
+    Column(
+        modifier = Modifier
+            .widthIn(max = LandscapeProductLayout.actionsWidth)
+            .fillMaxWidth()
+            .fillMaxHeight(),
+        verticalArrangement = Arrangement.SpaceEvenly,
+    ) {
+        LandscapeControl(
+            label = stringResource(R.string.floating),
+            description = stringResource(R.string.floating),
+            tag = "private_audio_floating",
+            onClick = onFloatingClick,
+            icon = { FloatingIcon() },
+        )
+        LandscapeControl(
+            label = stringResource(R.string.settings),
+            description = stringResource(R.string.settings),
+            tag = "private_audio_settings",
+            onClick = onSettingsClick,
+            icon = { SettingsIcon() },
+        )
+        LandscapeControl(
+            label = stringResource(R.string.close),
+            description = stringResource(R.string.close),
+            tag = "private_audio_close",
+            onClick = onCloseClick,
+            icon = { CloseIcon() },
+        )
+    }
+}
+
+@Composable
+private fun LandscapeControl(
+    label: String,
+    description: String,
+    tag: String,
+    onClick: () -> Unit,
+    icon: @Composable () -> Unit,
+) {
+    var labelFontSize by remember(label) { mutableStateOf(bottomLabelInitialFontSize(label)) }
+    Row(
+        modifier = Modifier
+            .fillMaxWidth()
+            .height(88.dp)
+            .clickable(onClick = onClick)
+            .semantics { contentDescription = description }
+            .testTag(tag),
+        verticalAlignment = Alignment.CenterVertically,
+    ) {
+        Box(Modifier.size(48.dp), contentAlignment = Alignment.Center) { icon() }
+        Spacer(Modifier.width(8.dp))
+        Text(
+            text = label,
+            color = ProductWhite,
+            fontSize = labelFontSize,
+            lineHeight = 16.sp,
+            fontWeight = FontWeight.Normal,
+            maxLines = 2,
+            overflow = TextOverflow.Clip,
+            onTextLayout = { result ->
+                if (result.hasVisualOverflow && labelFontSize > 11.sp) {
+                    labelFontSize = (labelFontSize.value - 0.5f).coerceAtLeast(11f).sp
+                }
+            },
+            modifier = Modifier.weight(1f),
+        )
+    }
+}
+
+@Composable
 private fun BottomControl(
     label: String,
     description: String,
@@ -564,6 +745,14 @@ private fun ActivePreview() = ProductPreview(PrivateAudioState.ACTIVE)
 @Preview(name = "Error", showBackground = true, backgroundColor = 0xFF000000, widthDp = 393, heightDp = 852)
 @Composable
 private fun ErrorPreview() = ProductPreview(PrivateAudioState.ERROR)
+
+@Preview(name = "Landscape Waiting", showBackground = true, backgroundColor = 0xFF000000, widthDp = 780, heightDp = 360)
+@Composable
+private fun LandscapeWaitingPreview() = ProductPreview(PrivateAudioState.WAITING)
+
+@Preview(name = "Landscape Active RTL", showBackground = true, backgroundColor = 0xFF000000, widthDp = 780, heightDp = 360, locale = "yi")
+@Composable
+private fun LandscapeActiveRtlPreview() = ProductPreview(PrivateAudioState.ACTIVE)
 
 @Composable
 private fun ProductPreview(state: PrivateAudioState) {

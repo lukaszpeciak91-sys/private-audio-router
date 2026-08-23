@@ -68,7 +68,10 @@ physical test records remain in [`DECISIONS.md`](DECISIONS.md),
 ## Current UI and product surfaces
 
 - Main provides Power, current four-state status, Settings, Mini launch, and full
-  Close. Main and Mini consume the same service-owned state projection.
+  Close. Portrait remains the canonical Main visual layout; compact-height landscape
+  phones now use an intentional three-area composition with product information at
+  logical start, the existing Power control centered, and secondary actions at
+  logical end. Main and Mini consume the same service-owned state projection.
 - Settings provides language selection, proximity preference, Advanced experiments,
   Diagnostics, About, and Privacy Policy. Settings-modal child pages such as
   Language, Advanced, About, and Privacy Policy reuse the existing single-dialog
