@@ -369,6 +369,13 @@ The following checks validate lifecycle ownership without claiming routing succe
 - **Expected result:** The product UI follows `READY` → `WAITING` → `ACTIVE` → `WAITING` → `ACTIVE` → `READY` solely from the service projection, with `ERROR` → `READY` after Power OFF when safely testable. Ordinary media remains normally routed, every communication session retains the protected one-request/cleanup behavior, Close fails closed, and Floating/Settings perform no action. All four screenshots retain identical geometry on a pure-black surface; only the approved dot, label, Power color, and restrained glow/pulse change.
 - **Observed result:** The first ChatGPT Voice session was audibly routed through the telephone earpiece, and a second session after ending/restarting Voice routed through the earpiece without toggling Private Audio. Disable and Close each restored normal behavior, and reopening/re-enabling worked again. No diagnostic report was copied. Exact screenshot parity and the remaining ERROR/telephony checks were not recorded.
 
+### Main portrait/landscape rotation gate
+
+- **Status:** NOT TESTED / UNKNOWN on physical hardware
+- **Steps:** (1) Open Main in portrait and verify the approved canonical appearance is unchanged. (2) Rotate to landscape and verify the compact three-area composition: localized product information and status at logical start, Power centered, and Floating/Settings/Close vertically at logical end. (3) Verify content clears status, navigation, cutout, and physical edges without clipping or overlap. (4) Tap Power and verify Floating, Settings, and Close remain usable. (5) Rotate landscape → portrait and verify service-owned state and routing behavior remain intact. (6) Repeat in `READY` and `WAITING`, and preferably during an established `ACTIVE` session; repeat with an RTL presentation language where practical.
+- **Expected result:** Rotation changes only Main composition. Portrait remains visually equivalent to the approved reference; landscape remains bounded and usable; logical areas mirror for RTL; activity recreation binds back to the existing service-owned state without changing routing requests, session boundaries, or cleanup.
+- **Evidence rule:** Compose previews and automated UI tests establish structural layout and callbacks only. Do not mark system-inset rendering, physical touch usability, rotation lifecycle, or routing continuity PASS until recorded on a physical phone.
+
 ## Layer 4 Settings physical gate
 
 - **Status:** NOT TESTED
