@@ -34,7 +34,7 @@ class SundaneseLocalizationContractTest {
 
         assertEquals("Private Audio", resourceValue("app_name"))
         assertEquals("Private Audio", resourceValue("product_title"))
-        assertEquals("Leutik", resourceValue("floating"))
+        assertEquals("Mini", resourceValue("floating"))
         assertEquals("Kaluaran audio", resourceValue("diagnostics_audio_route"))
         assertEquals("Pangarahan audio", resourceValue("diagnostics_routing"))
         assertEquals("Spéker ceuli bawaan telepon", resourceValue("diagnostics_route_earpiece"))
