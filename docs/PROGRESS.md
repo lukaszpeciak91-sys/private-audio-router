@@ -95,7 +95,7 @@ physical test records remain in [`DECISIONS.md`](DECISIONS.md),
 
 ## Localization state
 
-- Resources currently provide **93 product locales: English plus 92 non-English
+- Resources currently provide **94 product locales: English plus 93 non-English
   resource sets**. This count is derived from the current `values*` resource
   inventory, excluding non-locale `values-night`; supported variants include the
   intentional Portuguese, Chinese, Serbian, Punjabi, and Azerbaijani script or
@@ -109,6 +109,15 @@ physical test records remain in [`DECISIONS.md`](DECISIONS.md),
   human/native-speaker review, and Sundanese runtime, glyph, Mini-presentation,
   emulator, and physical-device validation remain pending. Broad runtime and
   physical-device validation is not implied.
+- Cantonese for Hong Kong (`yue-Hant-HK`, `values-b+yue+Hant+HK`) covers the
+  complete localizable product surface in professional Hong Kong Written Cantonese.
+  Translation-production semantic self-checks preserve controller ON `開啟` versus
+  runtime ACTIVE `使用中`, built-in earpiece `聽筒` versus loudspeaker `喇叭`, and
+  all five Privacy Policy paragraphs, including `咪高風`, `互聯網`, `元數據`, and
+  the distinction between App unexpected-termination reporting and a user-saved
+  diagnostic report. The natural full Mini state paradigm is retained without a
+  compact override. Independent audit, human/native-speaker review, and runtime,
+  glyph, Mini-presentation, emulator, and physical-device validation remain pending.
 - The reviewed Mini label now uses established local-script or semantic forms in
   Bulgarian, Bengali, Greek, Gujarati, Hebrew, Yiddish, Khmer, Kannada, Macedonian,
   Marathi, Serbian Cyrillic, Tamil, and Telugu. Other locales retain their independently
@@ -119,14 +128,14 @@ physical test records remain in [`DECISIONS.md`](DECISIONS.md),
   semantically self-checked; independent audit, human/native review, and runtime
   Sinhala rendering validation remain pending.
 - The Privacy Policy title and complete factual claim set are translated and
-  semantically self-checked across all 92 non-English sets. A targeted independent
+  semantically self-checked across all 93 non-English sets. A targeted independent
   audit found ten claim-scope or terminology defects, and reviewed replacements were
-  applied. All 93 product resource sets now preserve its five semantic paragraphs
+  applied. All 94 product resource sets now preserve its five semantic paragraphs
   with functional Android escapes; the Yoruba and Igbo corrections changed only
   paragraph encoding, not lexical content. Shared source and representative Android
   resource-resolution contracts protect that structure. This is neither
   human/native-speaker validation nor legal certification.
-- The current user-facing Diagnostics key inventory is localized across all 92
+- The current user-facing Diagnostics key inventory is localized across all 93
   supported non-English resource sets. Candidates were produced and semantically
   self-checked with the Translation Skill. Malagasy received an independent
   linguistic audit that identified targeted corrections for the `ACTIVE` state,
