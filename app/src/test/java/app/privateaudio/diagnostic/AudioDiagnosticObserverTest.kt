@@ -1,6 +1,7 @@
 package app.privateaudio.diagnostic
 
 import app.privateaudio.kotlinDeclaration
+import app.privateaudio.kotlinMemberCallSites
 import android.media.AudioDeviceInfo
 import android.media.AudioManager
 import org.junit.Assert.assertEquals
@@ -374,10 +375,24 @@ class AudioDiagnosticObserverTest {
     fun serviceIsSoleOwnerAndDetectionIsProviderIndependent() {
         assertEquals(0, mainActivitySource.occurrences("AudioDiagnosticObserver("))
         assertEquals(1, serviceSource.occurrences("AudioDiagnosticObserver("))
-        assertFalse(observerSource.contains("ChatGPT"))
-        assertFalse(observerSource.contains("Gemini"))
-        assertFalse(observerSource.contains("packageName =="))
-        assertEquals(1, observerSource.occurrences("audioManager.setCommunicationDevice(earpiece)"))
+        val routingAndClassification = listOf(
+            "private fun handlePlaybackConfigurations(",
+            "private fun qualifyingPlaybackCount(",
+            "private fun assistantQualifyingPlaybackCount(",
+            "private fun browserQualifyingPlaybackCount(",
+            "private fun evaluateExperimentTrigger()",
+            "private fun startProtectedPoc5Probe(",
+        ).joinToString("\n") { observerSource.method(it) }
+        listOf("ChatGPT", "Gemini", "packageName").forEach {
+            assertFalse(it, routingAndClassification.contains(it))
+        }
+        assertTrue(routingAndClassification.contains("AudioAttributes.USAGE_VOICE_COMMUNICATION"))
+        assertTrue(routingAndClassification.contains("AudioAttributes.USAGE_ASSISTANT"))
+        assertTrue(routingAndClassification.contains("startProtectedPoc5Probe(earpiece, triggerOrigin"))
+        assertEquals(
+            listOf(observerSourceFile),
+            productionSources.kotlinMemberCallSites("setCommunicationDevice").map { it.file },
+        )
     }
 
     @Test
@@ -416,6 +431,11 @@ class AudioDiagnosticObserverTest {
         val observerSource = projectFile(
             "app/src/main/java/app/privateaudio/diagnostic/AudioDiagnosticObserver.kt",
         ).readText()
+        val observerSourceFile = projectFile(
+            "app/src/main/java/app/privateaudio/diagnostic/AudioDiagnosticObserver.kt",
+        )
+        val productionSources = observerSourceFile.parentFile.parentFile.parentFile.walkTopDown()
+            .filter { it.isFile && it.extension == "kt" }.toList()
         val mainActivitySource = projectFile(
             "app/src/main/java/app/privateaudio/MainActivity.kt",
         ).readText()

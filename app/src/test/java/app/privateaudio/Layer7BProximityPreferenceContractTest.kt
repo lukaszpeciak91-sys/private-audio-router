@@ -33,14 +33,23 @@ class Layer7BProximityPreferenceContractTest {
     @Test
     fun preferenceChangesOnlyProximityAndPreserveProtectedAudioContracts() {
         val setter = service.method("fun updateProximityFeatureEnabled(")
+        val sync = service.method("private fun syncProximityBehavior(")
         listOf("PrivateAudioState", "setCommunicationDevice(", "clearCommunicationDevice(",
             "AudioManager.mode", "MODE_IN_COMMUNICATION", "AudioTrack", "observer.enableController",
             "observer.disableController").forEach { assertFalse(it, setter.contains(it)) }
-        assertTrue(service.method("private fun syncProximityBehavior(").contains("isProximityFeatureEnabled"))
+        assertTrue(sync.contains("isProximityFeatureEnabled"))
+        listOf("setCommunicationDevice(", "clearCommunicationDevice(", "audioManager.mode =",
+            "startProtectedPoc5Probe(", "observer.enableController", "observer.disableController")
+            .forEach { assertFalse(it, sync.contains(it)) }
         assertTrue(service.contains("Feature enabled: ${'$'}isProximityFeatureEnabled"))
-        assertEquals(1, productionSources.sumOf { it.readText().occurrences("setCommunicationDevice(") })
-        assertEquals(1, observer.occurrences("clearCommunicationDevice("))
-        assertEquals(2, observer.occurrences("audioManager.mode ="))
+        assertEquals(
+            listOf(observerSourceFile),
+            productionSources.kotlinMemberCallSites("setCommunicationDevice").map(KotlinCallSite::file),
+        )
+        assertEquals(
+            listOf(observerSourceFile),
+            productionSources.kotlinMemberCallSites("clearCommunicationDevice").map(KotlinCallSite::file),
+        )
     }
 
     @Test
@@ -84,6 +93,7 @@ class Layer7BProximityPreferenceContractTest {
         val settings = source("app/src/main/java/app/privateaudio/ui/SettingsSheet.kt")
         val overlay = source("app/src/main/java/app/privateaudio/overlay/OverlayService.kt")
         val observer = source("app/src/main/java/app/privateaudio/diagnostic/AudioDiagnosticObserver.kt")
+        val observerSourceFile = File(root, "app/src/main/java/app/privateaudio/diagnostic/AudioDiagnosticObserver.kt")
         val productionSources = File(root, "app/src/main/java").walkTopDown()
             .filter { it.isFile && it.extension == "kt" }.toList()
     }
