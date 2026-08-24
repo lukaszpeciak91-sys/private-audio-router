@@ -65,6 +65,13 @@ class KurmanjiLocalizationContractTest {
     fun productStatesBrandAndAudioReferentsRemainDistinct() {
         assertEquals("Private Audio", resourceValue("app_name"))
         assertEquals("Private Audio", resourceValue("product_title"))
+        assertEquals("Wekî heyî", resourceValue("settings_system_default"))
+        assertTrue(resourceValue("settings_language_body").contains("Wekî heyî"))
+
+        val overlay = resourceValue("overlay_controller_description")
+        assertTrue(overlay.contains("li ser sepanên din"))
+        assertFalse(overlay.contains("biçûk", ignoreCase = true))
+
         val states = listOf("state_ready", "state_waiting", "state_active", "state_error").map(::resourceValue)
         assertEquals(4, states.toSet().size)
         assertTrue(resourceValue("state_active").contains("Niha di rêkirinê de"))
@@ -104,8 +111,9 @@ class KurmanjiLocalizationContractTest {
             "analîtîk", "reklam", "raporkirina têkçûna sepanê", "destûra Înternetê ya Androidê naxwaze",
             "daneyan naşîne serverekê", "rewşa teknîkî", "metadaneyên", "xwe nagihîne naveroka axaftinên",
             "bi awayekî herêmî tên çêkirin û pêvajokirin", "hûn tomar kirina wê hilbijêrin",
-            "naveroka axaftinê an dengê nahewîne", "Paşvekişandina daneyên sepana Androidê neçalak e",
+            "naveroka axaftinê an dengê nahewîne", "Çêkirina paşnusxeya daneyên sepana Androidê neçalak e",
         ).forEach { guard -> assertTrue("Missing privacy guard: $guard", privacy.contains(guard)) }
+        assertFalse(privacy.contains("Paşvekişandina"))
         assertTrue(paragraphs[2].contains("rêkirina deng"))
         assertTrue(paragraphs[3].contains("rêkirina deng"))
         assertTrue(paragraphs[3].contains("guhertoya Androidê"))
