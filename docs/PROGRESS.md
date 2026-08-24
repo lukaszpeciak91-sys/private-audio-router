@@ -99,7 +99,7 @@ physical test records remain in [`DECISIONS.md`](DECISIONS.md),
 
 ## Localization state
 
-- Resources currently provide **97 product locales: English plus 96 non-English
+- Resources currently provide **98 product locales: English plus 97 non-English
   resource sets**. This count is derived from the current `values*` resource
   inventory, excluding non-locale `values-night`; supported variants include the
   intentional Portuguese, Chinese, Serbian, Punjabi, and Azerbaijani script or
@@ -154,6 +154,20 @@ physical test records remain in [`DECISIONS.md`](DECISIONS.md),
   retained without a compact override. Independent audit, human/native-speaker review,
   and runtime, glyph, Mini-presentation, emulator, and physical-device validation
   remain pending.
+- Kurmanji / Northern Kurdish (`ku`, canonical `ku-Latn`,
+  `values-b+ku+Latn`) now covers the complete current localizable product surface in
+  contemporary Latin/Hawar orthography with LTR presentation, intentionally separate
+  from Sorani (`ckb`) and Arabic-script Kurdish. The region-neutral script-qualified
+  tree targets Android's standard Kurdish user locale `ku-TR`; locale identity and the
+  expected likely-script target are contract-checked, and host ICU maximizes `ku-TR` to
+  `ku-Latn-TR`, while direct Android runtime resource resolution remains unexecuted. Translation-production
+  semantic self-checks, the terminology evidence gate, and a Targeted Terminology Ledger
+  preserve controller ON versus current routing-cycle ACTIVE, the built-in upper call
+  receiver versus loudspeaker, audio-output routing versus transmission, communication
+  audio versus conversation content, and all five Privacy Policy paragraphs. The natural
+  full four-state Mini wording is retained without a compact override. Independent audit,
+  human/native-speaker review, generated LocaleConfig inspection, and runtime, glyph,
+  Mini-presentation, emulator, and physical-device validation remain pending.
 - The reviewed Mini label now uses established local-script or semantic forms in
   Bulgarian, Bengali, Greek, Gujarati, Hebrew, Yiddish, Khmer, Kannada, Macedonian,
   Marathi, Serbian Cyrillic, Tamil, and Telugu. Other locales retain their independently
@@ -164,14 +178,14 @@ physical test records remain in [`DECISIONS.md`](DECISIONS.md),
   semantically self-checked; independent audit, human/native review, and runtime
   Sinhala rendering validation remain pending.
 - The Privacy Policy title and complete factual claim set are translated and
-  semantically self-checked across all 96 non-English sets. A targeted independent
+  semantically self-checked across all 97 non-English sets. A targeted independent
   audit found ten claim-scope or terminology defects, and reviewed replacements were
-  applied. All 97 product resource sets now preserve its five semantic paragraphs
+  applied. All 98 product resource sets now preserve its five semantic paragraphs
   with functional Android escapes; the Yoruba and Igbo corrections changed only
   paragraph encoding, not lexical content. Shared source and representative Android
   resource-resolution contracts protect that structure. This is neither
   human/native-speaker validation nor legal certification.
-- The current user-facing Diagnostics key inventory is localized across all 96
+- The current user-facing Diagnostics key inventory is localized across all 97
   supported non-English resource sets. Candidates were produced and semantically
   self-checked with the Translation Skill. Malagasy received an independent
   linguistic audit that identified targeted corrections for the `ACTIVE` state,
