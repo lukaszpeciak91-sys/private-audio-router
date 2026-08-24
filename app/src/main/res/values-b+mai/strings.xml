@@ -11,7 +11,7 @@
     <string name="state_active">रूटिंगमे सक्रिय</string>
     <string name="state_error">त्रुटि</string>
     <string name="power_control">पावर</string>
-    <string name="floating">लघु</string>
+    <string name="floating">मिनी</string>
     <string name="settings">सेटिंग्स</string>
     <string name="close">बन्न करू</string>
     <string name="overlay_controller_description">Private Audio केर फ्लोटिंग नियंत्रक। स्थिति: %1$s। पावर, विस्तृत करबाक आ बन्न करबाक नियंत्रण।</string>
