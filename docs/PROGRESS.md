@@ -119,9 +119,9 @@ physical test records remain in [`DECISIONS.md`](DECISIONS.md),
   compact override. An independent Cantonese audit identified an invented `system`
   actor in the rejected-routing-request error and an extra local/on-device location
   qualifier in Privacy Policy paragraph 3; corrective candidates were applied through
-  the Translation Skill. Final independent delta re-audit, human/native-speaker review,
-  and runtime, glyph, Mini-presentation, emulator, and physical-device validation remain
-  pending.
+  the Translation Skill and passed final independent delta re-audit. Human/native-speaker
+  review and runtime, glyph, Mini-presentation, emulator, and physical-device validation
+  remain pending.
 - The reviewed Mini label now uses established local-script or semantic forms in
   Bulgarian, Bengali, Greek, Gujarati, Hebrew, Yiddish, Khmer, Kannada, Macedonian,
   Marathi, Serbian Cyrillic, Tamil, and Telugu. Other locales retain their independently
