@@ -214,6 +214,10 @@ private fun PrivateAudioScreenContent(
                     availableHeight = maxHeight,
                 )
             } else {
+                val portraitAvailableWidth = (
+                    min(maxWidth.value, ProductLayout.maximumContentWidth.value) -
+                        ProductLayout.horizontalPadding.value * 2
+                    ).coerceAtLeast(0f).dp
                 Box(Modifier.fillMaxSize(), contentAlignment = Alignment.TopCenter) {
                     PortraitMainContent(
                         visuals = visuals,
@@ -224,10 +228,7 @@ private fun PrivateAudioScreenContent(
                         onFloatingClick = onFloatingClick,
                         onSettingsClick = { settingsVisible = true },
                         onCloseClick = onCloseClick,
-                        availableWidth = (
-                            min(maxWidth.value, ProductLayout.maximumContentWidth.value) -
-                                ProductLayout.horizontalPadding.value * 2
-                            ).coerceAtLeast(0f).dp,
+                        availableWidth = portraitAvailableWidth,
                     )
                 }
             }
