@@ -99,7 +99,7 @@ physical test records remain in [`DECISIONS.md`](DECISIONS.md),
 
 ## Localization state
 
-- Resources currently provide **96 product locales: English plus 95 non-English
+- Resources currently provide **97 product locales: English plus 96 non-English
   resource sets**. This count is derived from the current `values*` resource
   inventory, excluding non-locale `values-night`; supported variants include the
   intentional Portuguese, Chinese, Serbian, Punjabi, and Azerbaijani script or
@@ -143,6 +143,17 @@ physical test records remain in [`DECISIONS.md`](DECISIONS.md),
   Mini path is retained without a compact override. Independent audit,
   human/native-speaker review, and runtime, glyph, Mini-presentation, emulator, and
   physical-device validation remain pending.
+- Maithili (`mai`, `values-b+mai`) now covers the complete current localizable
+  product surface in contemporary professional Maithili, using Devanagari and LTR
+  presentation. The generic BCP-47 tree serves the primary Android `mai-IN` identity
+  without a duplicate regional tree. Translation-production semantic self-checks,
+  the terminology evidence gate, and a Targeted Terminology Ledger preserve controller
+  ON versus routing-cycle ACTIVE, the built-in upper call earpiece versus loudspeaker,
+  audio routing versus transmission, communication audio versus conversation content,
+  and all five Privacy Policy paragraphs. The natural full four-state Mini path is
+  retained without a compact override. Independent audit, human/native-speaker review,
+  and runtime, glyph, Mini-presentation, emulator, and physical-device validation
+  remain pending.
 - The reviewed Mini label now uses established local-script or semantic forms in
   Bulgarian, Bengali, Greek, Gujarati, Hebrew, Yiddish, Khmer, Kannada, Macedonian,
   Marathi, Serbian Cyrillic, Tamil, and Telugu. Other locales retain their independently
@@ -153,14 +164,14 @@ physical test records remain in [`DECISIONS.md`](DECISIONS.md),
   semantically self-checked; independent audit, human/native review, and runtime
   Sinhala rendering validation remain pending.
 - The Privacy Policy title and complete factual claim set are translated and
-  semantically self-checked across all 95 non-English sets. A targeted independent
+  semantically self-checked across all 96 non-English sets. A targeted independent
   audit found ten claim-scope or terminology defects, and reviewed replacements were
-  applied. All 96 product resource sets now preserve its five semantic paragraphs
+  applied. All 97 product resource sets now preserve its five semantic paragraphs
   with functional Android escapes; the Yoruba and Igbo corrections changed only
   paragraph encoding, not lexical content. Shared source and representative Android
   resource-resolution contracts protect that structure. This is neither
   human/native-speaker validation nor legal certification.
-- The current user-facing Diagnostics key inventory is localized across all 95
+- The current user-facing Diagnostics key inventory is localized across all 96
   supported non-English resource sets. Candidates were produced and semantically
   self-checked with the Translation Skill. Malagasy received an independent
   linguistic audit that identified targeted corrections for the `ACTIVE` state,
