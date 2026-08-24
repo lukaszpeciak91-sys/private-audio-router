@@ -46,6 +46,7 @@ class MaithiliLocalizationContractTest {
     fun productStatesBrandAndAudioConceptsRemainDistinct() {
         assertEquals("Private Audio", resourceValue("app_name"))
         assertEquals("Private Audio", resourceValue("product_title"))
+        assertEquals("मिनी", resourceValue("floating"))
 
         val runtimeStates = listOf("state_ready", "state_waiting", "state_active", "state_error")
             .map(::resourceValue)
