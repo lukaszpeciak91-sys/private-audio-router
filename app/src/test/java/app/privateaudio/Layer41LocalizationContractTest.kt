@@ -78,7 +78,7 @@ class Layer41LocalizationContractTest {
             )
             assertEquals(
                 localeDirectory.name,
-                placeholders(defaultStrings).filterNot(::isEnglishFallbackOnlyKey).toSet(),
+                placeholders(defaultStrings).filterKeys { key -> !isEnglishFallbackOnlyKey(key) },
                 placeholders(localeStrings),
             )
             assertFalse(localeDirectory.name, localeStrings.contains("settings_assistant_early_route"))

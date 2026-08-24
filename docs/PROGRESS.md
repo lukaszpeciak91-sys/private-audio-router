@@ -424,6 +424,9 @@ this summary intentionally does not duplicate its test matrix.
 
 ## Recently completed significant changes
 
+- Corrected the Layer41 localization placeholder contract’s Map-key filtering compile
+  regression while preserving the resource-key-to-ordered-placeholder association. No
+  translations, product behavior, or routing behavior changed.
 - Strengthened the repository Translation Skill with technical-sense reconstruction,
   proportional terminology evidence, reverse-referent checks, uncertainty handling,
   and safeguards against self-confirming lexical regression tests.
