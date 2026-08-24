@@ -226,7 +226,7 @@ this summary intentionally does not duplicate its test matrix.
 
 ## Localization state
 
-- Resources currently provide **102 product locales: English plus 101 non-English
+- Resources currently provide **103 product locales: English plus 102 non-English
   resource sets**. This count is derived from the current `values*` resource
   inventory, excluding non-locale `values-night`; supported variants include the
   intentional Portuguese, Chinese, Serbian, Punjabi, Azerbaijani, and Uzbek script or
@@ -270,6 +270,19 @@ this summary intentionally does not duplicate its test matrix.
   the Translation Skill and passed final independent delta re-audit. Human/native-speaker
   review and runtime, glyph, Mini-presentation, emulator, and physical-device validation
   remain pending.
+- Simplified-script Cantonese for mainland China (`yue-Hans-CN`,
+  `values-b+yue+Hans+CN`) is now a separate LTR product localization rather than a
+  conversion or fallback from Hong Kong Cantonese. Its independently produced
+  candidate uses contemporary Simplified Written Cantonese with mainland software
+  terminology and preserves controller ON `开启` versus runtime ACTIVE `使用紧`,
+  built-in earpiece `听筒` versus loudspeaker `扬声器`, audio-output switching versus
+  transmission, `通信音频`, local diagnostics and report-saving scope, disabled
+  Android app-data backup, the five-paragraph Privacy claim set, the `Private Audio`
+  brand, and localizable `迷你`. Source contracts cover keys, placeholders, NFC,
+  protected semantics, script-specific locale identities, LTR direction, generated
+  locale discovery, picker distinction, and independent Android resource resolution.
+  Independent linguistic audit, human/native-speaker review, and runtime, glyph,
+  Mini-presentation, emulator, and physical-device validation remain pending.
 - Oromo (`om`, `values-om`) now covers the complete localizable product surface in
   Qubee/Latin and uses the generic LTR resource tree for Oromo regional fallback.
   Translation-production semantic self-checks preserve controller ON versus runtime

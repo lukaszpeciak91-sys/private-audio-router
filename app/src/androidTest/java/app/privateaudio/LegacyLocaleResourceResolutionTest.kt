@@ -378,13 +378,38 @@ class LegacyLocaleResourceResolutionTest {
             "az-Cyrl-AZ",
             "bs-Cyrl-BA",
             "hi-Latn-IN",
-            "yue-Hans-CN",
         ).forEach { unsupportedTag ->
             assertEquals(
                 "$unsupportedTag must not silently use a supported different-script tree",
                 english,
                 localizedContext(context, unsupportedTag).getString(R.string.settings),
             )
+        }
+    }
+
+    @Test
+    fun cantoneseScriptVariantsResolveIndependentlyAndRemainDistinctInDiscoveryAndPicker() {
+        val context = InstrumentationRegistry.getInstrumentation().targetContext
+        val traditionalTag = "yue-Hant-HK"
+        val simplifiedTag = "yue-Hans-CN"
+        val traditionalSettings = localizedContext(context, traditionalTag).getString(R.string.settings)
+        val simplifiedSettings = localizedContext(context, simplifiedTag).getString(R.string.settings)
+
+        assertEquals("設定", traditionalSettings)
+        assertEquals("设置", simplifiedSettings)
+        assertNotEquals(traditionalSettings, simplifiedSettings)
+        listOf(traditionalTag, simplifiedTag).forEach { tag ->
+            assertEquals(android.view.View.LAYOUT_DIRECTION_LTR, localizedContext(context, tag).resources.configuration.layoutDirection)
+        }
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            val discovered = LocaleConfig(context).supportedLocales
+                ?.let { locales -> (0 until locales.size()).map { locales[it].toLanguageTag() } }
+                .orEmpty()
+            assertTrue(discovered.containsAll(listOf(traditionalTag, simplifiedTag)))
+            val options = AppLanguagePreferences.supportedLanguages(context).filter { it.languageTag.startsWith("yue-") }
+            assertEquals(setOf(traditionalTag, simplifiedTag), options.map { it.languageTag }.toSet())
+            assertEquals(2, options.map { it.nativeName }.toSet().size)
         }
     }
 
