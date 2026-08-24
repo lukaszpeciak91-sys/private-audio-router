@@ -323,7 +323,16 @@ class AudioDiagnosticObserverTest {
         val creation = observerSource.method("private fun createSilentCommunicationTrack(): AudioTrack?")
         val track = observerSource.method("private fun startSilentCommunicationTrack(): Boolean")
         assertInOrder(creation, ".setUsage(AudioAttributes.USAGE_VOICE_COMMUNICATION)", ".setContentType(AudioAttributes.CONTENT_TYPE_SPEECH)", ".setEncoding(AudioFormat.ENCODING_PCM_16BIT)", ".setChannelMask(AudioFormat.CHANNEL_OUT_MONO)")
-        assertInOrder(track, "track.write(silence", "track.play()")
+        assertInOrder(
+            track,
+            "val silence = ShortArray(",
+            "track.play()",
+            "track.playState == AudioTrack.PLAYSTATE_PLAYING",
+            "if (started) startSilenceWriter(track, silence)",
+            "return started",
+        )
+        val writer = observerSource.method("private fun startSilenceWriter(")
+        assertTrue(writer.contains("track.write(silence"))
         assertEquals(1, observerSource.occurrences("audioManager.setCommunicationDevice(earpiece)"))
         assertTrue(observerSource.method("private fun performRoutingAttempt(").contains("experiment.attempts.isNotEmpty()"))
     }
