@@ -1,5 +1,7 @@
 package app.privateaudio
 
+import app.privateaudio.overlay.MiniControl
+import app.privateaudio.overlay.miniControlAt
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue
@@ -13,8 +15,10 @@ class Layer6FloatingControllerContractTest {
         assertTrue(overlay.indexOf("drawExpand(canvas)") < overlay.indexOf("drawClose(canvas)"))
         assertTrue(overlay.contains("RectF(134f, 15f, 166f, 47f)"))
         assertFalse(overlay.contains("canvas.drawRect(170f"))
-        assertTrue(overlay.contains("POWER_START_FRACTION = 0.40f")); assertTrue(overlay.contains("POWER_END_FRACTION = 0.60f"))
-        assertTrue(overlay.contains("EXPAND_START_FRACTION = 0.60f")); assertTrue(overlay.contains("CLOSE_START_FRACTION = 0.80f"))
+        assertEquals(MiniControl.NONE, miniControlAt(119.9f, 300f, rtl = false))
+        assertEquals(MiniControl.POWER, miniControlAt(120f, 300f, rtl = false))
+        assertEquals(MiniControl.EXPAND, miniControlAt(180f, 300f, rtl = false))
+        assertEquals(MiniControl.CLOSE, miniControlAt(240f, 300f, rtl = false))
         assertTrue(overlay.contains("directionalRect(196f, 26f, 213f, 43f)"))
         assertTrue(overlay.contains("directionalX(263f)")); assertTrue(overlay.contains("directionalX(283f)"))
         assertFalse(overlay.contains("HIDE_START_FRACTION"))

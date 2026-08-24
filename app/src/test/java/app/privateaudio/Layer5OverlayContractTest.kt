@@ -20,9 +20,12 @@ class Layer5OverlayContractTest {
 
     @Test
     fun overlayServiceOwnsOneFailClosedApplicationOverlay() {
+        val showOverlay = overlaySource.kotlinDeclaration("private fun showOverlay(")
         assertTrue(manifest.contains("android:name=\".overlay.OverlayService\""))
-        assertTrue(overlaySource.contains("WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY"))
-        assertTrue(overlaySource.contains("if (overlayView != null || !Settings.canDrawOverlays(this)) return"))
+        assertTrue(showOverlay.contains("if (overlayView != null)"))
+        assertTrue(showOverlay.contains("resultReceiver?.send(SHOW_SUCCEEDED, null)"))
+        assertTrue(showOverlay.indexOf("if (overlayView != null)") < showOverlay.indexOf("if (!Settings.canDrawOverlays(this)) return"))
+        assertTrue(showOverlay.indexOf("if (!Settings.canDrawOverlays(this)) return") < showOverlay.indexOf("WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY"))
         assertTrue(overlaySource.contains("return START_NOT_STICKY"))
         assertFalse(overlaySource.contains("SharedPreferences"))
         assertFalse(overlaySource.contains("onTaskRemoved"))

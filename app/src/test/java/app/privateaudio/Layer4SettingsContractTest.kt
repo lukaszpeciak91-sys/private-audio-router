@@ -36,11 +36,11 @@ class Layer4SettingsContractTest {
         assertTrue(settingsSource.contains("LazyColumn("))
         assertTrue(settingsSource.contains("WindowInsets.safeDrawing.only(WindowInsetsSides.Vertical)"))
         assertTrue(settingsSource.contains("max = maxHeight - SettingsLayout.verticalOffset * 2"))
-        assertTrue(
-            settingsSource.contains(
-                "AppLanguagePreferences.select(context, it)\n                            page = SettingsPage.ROOT",
-            ),
-        )
+        val settingsSheet = settingsSource.kotlinDeclaration("fun SettingsSheet(")
+        val select = settingsSheet.indexOf("AppLanguagePreferences.select(context, it)")
+        val returnToRoot = settingsSheet.indexOf("page = SettingsPage.ROOT", select)
+        assertTrue("Language selection must be present", select >= 0)
+        assertTrue("Language selection must return to Settings root", returnToRoot > select)
     }
 
     @Test

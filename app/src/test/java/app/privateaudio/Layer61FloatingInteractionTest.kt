@@ -4,6 +4,7 @@ import app.privateaudio.overlay.MiniControl
 import app.privateaudio.overlay.MiniGestureArbitrator
 import app.privateaudio.overlay.OverlayPosition
 import app.privateaudio.overlay.clampOverlayPosition
+import app.privateaudio.overlay.miniControlAt
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue
@@ -94,12 +95,24 @@ class Layer61FloatingInteractionTest {
     }
 
     @Test fun hitTestingMirrorsWithTheInternalRtlComposition() {
-        val hitTesting = overlay.substringAfter("private fun controlAt").substringBefore("override fun performClick")
-        assertTrue(hitTesting.contains("if (isRtlLayout()) width - x else x"))
-        assertTrue(hitTesting.contains("directionalTouchX >= width * CLOSE_START_FRACTION"))
-        assertTrue(hitTesting.contains("directionalTouchX >= width * EXPAND_START_FRACTION"))
-        assertTrue(hitTesting.contains("directionalTouchX >= width * POWER_START_FRACTION"))
-        assertTrue(hitTesting.contains("directionalTouchX < width * POWER_END_FRACTION"))
+        val width = 100f
+        val logicalCases = listOf(
+            0f to MiniControl.NONE,
+            39.99f to MiniControl.NONE,
+            40f to MiniControl.POWER,
+            59.99f to MiniControl.POWER,
+            60f to MiniControl.EXPAND,
+            79.99f to MiniControl.EXPAND,
+            80f to MiniControl.CLOSE,
+            100f to MiniControl.CLOSE,
+        )
+        logicalCases.forEach { (logicalX, expected) ->
+            assertEquals("LTR at $logicalX", expected, miniControlAt(logicalX, width, rtl = false))
+            assertEquals("RTL at $logicalX", expected, miniControlAt(width - logicalX, width, rtl = true))
+        }
+
+        val controlAt = overlay.kotlinDeclaration("private fun controlAt(")
+        assertTrue(controlAt.contains("miniControlAt(x, width.toFloat(), isRtlLayout())"))
     }
 
     @Test fun mainBackgroundsOnlyAfterOverlayReportsSuccess() {

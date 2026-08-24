@@ -453,6 +453,12 @@ this summary intentionally does not duplicate its test matrix.
 
 ## Recently completed significant changes
 
+- Reconciled the remaining non-localization UI, Mini, and RTL source contracts with
+  the approved implementation shape. Mini control regions and RTL mirroring are now
+  covered semantically through their pure helpers rather than historical inline
+  implementation text; Settings language-selection navigation and Overlay reuse and
+  fail-closed lifecycle semantics remain unchanged. No production routing behavior
+  changed, and broader JVM baseline reconciliation remains in progress.
 - Decoupled diagnostic snapshot data from Android process observation: PID and UID
   are captured explicitly at the observer boundary and preserved in real diagnostic
   evidence, while empty and synthetic snapshots remain explicitly unobserved and
