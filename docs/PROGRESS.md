@@ -116,8 +116,12 @@ physical test records remain in [`DECISIONS.md`](DECISIONS.md),
   all five Privacy Policy paragraphs, including `咪高風`, `互聯網`, `元數據`, and
   the distinction between App unexpected-termination reporting and a user-saved
   diagnostic report. The natural full Mini state paradigm is retained without a
-  compact override. Independent audit, human/native-speaker review, and runtime,
-  glyph, Mini-presentation, emulator, and physical-device validation remain pending.
+  compact override. An independent Cantonese audit identified an invented `system`
+  actor in the rejected-routing-request error and an extra local/on-device location
+  qualifier in Privacy Policy paragraph 3; corrective candidates were applied through
+  the Translation Skill and passed final independent delta re-audit. Human/native-speaker
+  review and runtime, glyph, Mini-presentation, emulator, and physical-device validation
+  remain pending.
 - The reviewed Mini label now uses established local-script or semantic forms in
   Bulgarian, Bengali, Greek, Gujarati, Hebrew, Yiddish, Khmer, Kannada, Macedonian,
   Marathi, Serbian Cyrillic, Tamil, and Telugu. Other locales retain their independently
