@@ -62,6 +62,11 @@ class OromoLocalizationContractTest {
         assertTrue(resourceValue("settings_about_body").contains("bilbilaa keessaa kan gubbaa"))
         assertTrue(resourceValue("settings_about_body").contains("gurra biratti"))
         assertFalse(resourceValue("settings_about_body").contains("Sagalee guddiftuu", ignoreCase = true))
+
+        assertEquals("Fooyya\\'aa %1\$s", resourceValue("settings_version"))
+        val sessionEnded = resourceValue("diagnostics_error_session_ended")
+        assertTrue(sessionEnded.startsWith("Tursi sagalee"))
+        assertFalse(sessionEnded.startsWith("Kutaan sagalee"))
     }
 
     @Test
@@ -73,15 +78,17 @@ class OromoLocalizationContractTest {
         listOf(
             "hin walitti qabu", "hin waraabu", "hin dabarsus",
             "Maayikiroofonii argachuuf hayyama hin gaafatu",
-            "tajaajiloota xiinxalaa, beeksisaa yookiin gabaasa caccabuu hin fayyadamu",
+            "tajaajiloota xiinxalaa, beeksisaa yookiin gabaasa halakuu hin fayyadamu",
             "hayyama Intarneetii Android hin gaafatu", "gara sarvarii hin ergu",
             "haala teeknikaa fi meetadaataa sirna sagalee Android",
-            "Qabiyyee haasawa kee hin argatu",
+            "Qabiyyee haasawa keetti hin gahu",
             "naannoodhuma keessatti uumamee adeemsifama",
             "yeroo ati kuusuuf filattu qofa kuufama",
+            "fooyya\\'aa Android",
             "haasawa yookiin qabiyyee sagalee hin qabu",
             "Kuusni duubaa daataa appii Android dhaamsameera",
         ).forEach { guard -> assertTrue("Missing privacy guard: $guard", privacy.contains(guard)) }
+        assertFalse(privacy.contains("gosa Android", ignoreCase = true))
 
         val rejected = resourceValue("diagnostics_error_request_rejected")
         assertTrue(rejected.contains("fudhatama hin arganne"))
