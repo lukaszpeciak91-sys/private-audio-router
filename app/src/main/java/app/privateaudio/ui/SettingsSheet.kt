@@ -41,6 +41,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
@@ -91,8 +92,9 @@ fun SettingsSheet(
 ) {
     var page by rememberSaveable { mutableStateOf(SettingsPage.ROOT) }
     val context = LocalContext.current
+    val configuration = LocalConfiguration.current
     val selectedLanguageTag = AppLanguagePreferences.currentLanguageTag(context)
-    val supportedLanguages = remember(context.resources.configuration) {
+    val supportedLanguages = remember(configuration) {
         AppLanguagePreferences.supportedLanguages(context)
     }
 

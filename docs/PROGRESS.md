@@ -1,5 +1,20 @@
 # Progress
 
+## Android notification and Compose configuration lint corrections
+
+- The foreground notification's optional configuration-change refresh now checks
+  `POST_NOTIFICATIONS` on Android 13 and newer, while older Android versions retain
+  their existing refresh. The permission is declared without runtime request UX;
+  foreground-service startup and Private Audio routing remain independent of whether
+  notification permission is unavailable or denied.
+- Settings language presentation now observes configuration changes through
+  Compose's `LocalConfiguration`, while platform locale discovery and selection
+  semantics remain owned by `AppLanguagePreferences`.
+- These corrections address the real `NotificationPermission` and
+  `LocalContextConfigurationRead` lint errors without changing protected routing
+  behavior or adding physical-device evidence. Remaining lint errors belong to the
+  separate resource-contract cluster.
+
 ## Android lint CI visibility audit
 
 - Android CI now runs the existing JVM and assembly gates separately from Android

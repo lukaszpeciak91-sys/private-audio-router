@@ -49,6 +49,29 @@ class Layer4SettingsContractTest {
     }
 
     @Test
+    fun languageOptionsObserveComposeConfigurationChanges() {
+        val settingsSheet = settingsSource.kotlinDeclaration("fun SettingsSheet(")
+        assertTrue(settingsSheet.contains("val configuration = LocalConfiguration.current"))
+        assertTrue(settingsSheet.contains("remember(configuration)"))
+        assertFalse(settingsSheet.contains("remember(context.resources.configuration)"))
+    }
+
+    @Test
+    fun notificationRefreshPermissionIsOptionalAndDoesNotGuardForegroundEntry() {
+        val manifest = projectFile("app/src/main/AndroidManifest.xml").readText()
+        val configurationRefresh = serviceSource.kotlinDeclaration("override fun onConfigurationChanged(")
+        val foregroundEntry = serviceSource.kotlinDeclaration("fun enterForeground()")
+
+        assertTrue(manifest.contains("android.permission.POST_NOTIFICATIONS"))
+        assertTrue(configurationRefresh.contains("Build.VERSION.SDK_INT < Build.VERSION_CODES.TIRAMISU"))
+        assertTrue(configurationRefresh.contains("Manifest.permission.POST_NOTIFICATIONS"))
+        assertTrue(configurationRefresh.contains("PackageManager.PERMISSION_GRANTED"))
+        assertTrue(foregroundEntry.contains("startForeground("))
+        assertFalse(foregroundEntry.contains("POST_NOTIFICATIONS"))
+        assertFalse(mainSource.contains("ActivityResultContracts.RequestPermission"))
+    }
+
+    @Test
     fun privacyPolicyUsesTheSingleSettingsModalAndAuthoritativeEnglishClaims() {
         assertTrue(settingsSource.contains("tag = \"settings_privacy_policy\""))
         assertTrue(settingsSource.contains("SettingsPage.PRIVACY_POLICY -> PrivacyPolicyPage("))
