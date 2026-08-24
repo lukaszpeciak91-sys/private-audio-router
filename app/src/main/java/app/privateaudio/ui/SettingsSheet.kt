@@ -7,6 +7,8 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.selection.toggleable
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.BoxWithConstraints
@@ -85,6 +87,7 @@ fun SettingsSheet(
     onAssistantEarlyRouteChange: (Boolean) -> Unit,
     onDiagnostics: () -> Unit,
     onDismiss: () -> Unit,
+    modifier: Modifier = Modifier,
 ) {
     var page by rememberSaveable { mutableStateOf(SettingsPage.ROOT) }
     val context = LocalContext.current
@@ -101,83 +104,91 @@ fun SettingsSheet(
     ) {
         val sheetInteraction = remember { MutableInteractionSource() }
         BoxWithConstraints(
-            modifier = Modifier
-                .fillMaxSize()
-                .then(
-                    if (page == SettingsPage.LANGUAGE || page == SettingsPage.PRIVACY_POLICY) {
-                        Modifier.windowInsetsPadding(
-                            WindowInsets.safeDrawing.only(WindowInsetsSides.Vertical),
-                        )
-                    } else {
-                        Modifier
-                    },
-                )
-                .background(SettingsScrim)
-                .clickable(onClick = onDismiss)
-                .testTag("settings_backdrop"),
-            contentAlignment = Alignment.Center,
+            modifier = modifier.fillMaxSize(),
         ) {
-            Column(
+            val compactHeight = maxHeight < 600.dp
+            val portraitInsetPage = page == SettingsPage.LANGUAGE || page == SettingsPage.PRIVACY_POLICY
+            BoxWithConstraints(
                 modifier = Modifier
-                    .fillMaxWidth(SettingsLayout.widthFraction)
+                    .fillMaxSize()
                     .then(
-                        if (page == SettingsPage.LANGUAGE || page == SettingsPage.PRIVACY_POLICY) {
-                            Modifier.heightIn(
-                                max = maxHeight - SettingsLayout.verticalOffset * 2,
+                        if (compactHeight) {
+                            Modifier.windowInsetsPadding(WindowInsets.safeDrawing)
+                        } else if (portraitInsetPage) {
+                            Modifier.windowInsetsPadding(
+                                WindowInsets.safeDrawing.only(WindowInsetsSides.Vertical),
                             )
                         } else {
                             Modifier
                         },
                     )
-                    .offset(y = SettingsLayout.verticalOffset)
-                    .background(SettingsSurface, RoundedCornerShape(SettingsLayout.cornerRadius))
-                    .border(1.dp, SettingsBorder, RoundedCornerShape(SettingsLayout.cornerRadius))
-                    .clickable(
-                        interactionSource = sheetInteraction,
-                        indication = null,
-                        onClick = {},
-                    )
-                    .padding(
-                        horizontal = SettingsLayout.horizontalPadding,
-                        vertical = SettingsLayout.verticalPadding,
-                    )
-                    .testTag("settings_sheet"),
+                    .background(SettingsScrim)
+                    .clickable(onClick = onDismiss)
+                    .testTag("settings_backdrop"),
+                contentAlignment = Alignment.Center,
             ) {
-                when (page) {
-                    SettingsPage.ROOT -> SettingsRoot(
-                        versionName = versionName,
-                        selectedLanguageTag = selectedLanguageTag,
-                        supportedLanguages = supportedLanguages,
-                        onLanguage = { page = SettingsPage.LANGUAGE },
-                        onDiagnostics = onDiagnostics,
-                        onAdvanced = { page = SettingsPage.ADVANCED },
-                        onPrivacyPolicy = { page = SettingsPage.PRIVACY_POLICY },
-                        onAbout = { page = SettingsPage.ABOUT },
-                    )
-                    SettingsPage.LANGUAGE -> LanguagePage(
-                        selectedLanguageTag = selectedLanguageTag,
-                        supportedLanguages = supportedLanguages,
-                        onSelect = {
-                            AppLanguagePreferences.select(context, it)
-                            page = SettingsPage.ROOT
-                        },
-                        onBack = { page = SettingsPage.ROOT },
-                    )
-                    SettingsPage.ADVANCED -> AdvancedPage(
-                        proximityFeatureEnabled = proximityFeatureEnabled,
-                        onProximityFeatureChange = onProximityFeatureChange,
-                        assistantEarlyRouteEnabled = assistantEarlyRouteEnabled,
-                        onAssistantEarlyRouteChange = onAssistantEarlyRouteChange,
-                        onBack = { page = SettingsPage.ROOT },
-                    )
-                    SettingsPage.PRIVACY_POLICY -> PrivacyPolicyPage(
-                        onBack = { page = SettingsPage.ROOT },
-                    )
-                    SettingsPage.ABOUT -> ChildPage(
-                        title = stringResource(R.string.settings_about),
-                        body = stringResource(R.string.settings_about_body),
-                        onBack = { page = SettingsPage.ROOT },
-                    )
+                Column(
+                    modifier = Modifier
+                        .fillMaxWidth(SettingsLayout.widthFraction)
+                        .heightIn(
+                            max = if (compactHeight) {
+                                maxHeight
+                            } else if (portraitInsetPage) {
+                                maxHeight - SettingsLayout.verticalOffset * 2
+                            } else {
+                                maxHeight
+                            },
+                        )
+                        .offset(y = if (compactHeight) 0.dp else SettingsLayout.verticalOffset)
+                        .background(SettingsSurface, RoundedCornerShape(SettingsLayout.cornerRadius))
+                        .border(1.dp, SettingsBorder, RoundedCornerShape(SettingsLayout.cornerRadius))
+                        .clickable(
+                            interactionSource = sheetInteraction,
+                            indication = null,
+                            onClick = {},
+                        )
+                        .padding(
+                            horizontal = SettingsLayout.horizontalPadding,
+                            vertical = SettingsLayout.verticalPadding,
+                        )
+                        .testTag("settings_sheet"),
+                ) {
+                    when (page) {
+                        SettingsPage.ROOT -> SettingsRoot(
+                            versionName = versionName,
+                            selectedLanguageTag = selectedLanguageTag,
+                            supportedLanguages = supportedLanguages,
+                            onLanguage = { page = SettingsPage.LANGUAGE },
+                            onDiagnostics = onDiagnostics,
+                            onAdvanced = { page = SettingsPage.ADVANCED },
+                            onPrivacyPolicy = { page = SettingsPage.PRIVACY_POLICY },
+                            onAbout = { page = SettingsPage.ABOUT },
+                        )
+                        SettingsPage.LANGUAGE -> LanguagePage(
+                            selectedLanguageTag = selectedLanguageTag,
+                            supportedLanguages = supportedLanguages,
+                            onSelect = {
+                                AppLanguagePreferences.select(context, it)
+                                page = SettingsPage.ROOT
+                            },
+                            onBack = { page = SettingsPage.ROOT },
+                        )
+                        SettingsPage.ADVANCED -> AdvancedPage(
+                            proximityFeatureEnabled = proximityFeatureEnabled,
+                            onProximityFeatureChange = onProximityFeatureChange,
+                            assistantEarlyRouteEnabled = assistantEarlyRouteEnabled,
+                            onAssistantEarlyRouteChange = onAssistantEarlyRouteChange,
+                            onBack = { page = SettingsPage.ROOT },
+                        )
+                        SettingsPage.PRIVACY_POLICY -> PrivacyPolicyPage(
+                            onBack = { page = SettingsPage.ROOT },
+                        )
+                        SettingsPage.ABOUT -> ChildPage(
+                            title = stringResource(R.string.settings_about),
+                            body = stringResource(R.string.settings_about_body),
+                            onBack = { page = SettingsPage.ROOT },
+                        )
+                    }
                 }
             }
         }
@@ -192,6 +203,12 @@ private fun AdvancedPage(
     onAssistantEarlyRouteChange: (Boolean) -> Unit,
     onBack: () -> Unit,
 ) {
+    Column(
+        modifier = Modifier
+            .fillMaxWidth()
+            .verticalScroll(rememberScrollState())
+            .testTag("settings_advanced_page"),
+    ) {
     Box(Modifier.fillMaxWidth()) {
         Box(
             modifier = Modifier.size(44.dp).clickable(role = Role.Button, onClick = onBack)
@@ -268,6 +285,7 @@ private fun AdvancedPage(
         )
     }
     Spacer(Modifier.height(30.dp))
+    }
 }
 
 @Composable
@@ -281,6 +299,12 @@ private fun SettingsRoot(
     onPrivacyPolicy: () -> Unit,
     onAbout: () -> Unit,
 ) {
+    Column(
+        modifier = Modifier
+            .fillMaxWidth()
+            .verticalScroll(rememberScrollState())
+            .testTag("settings_root_page"),
+    ) {
     val selectedLanguageName = supportedLanguages
         .firstOrNull { it.languageTag == selectedLanguageTag }
         ?.nativeName
@@ -331,6 +355,7 @@ private fun SettingsRoot(
         lineHeight = 16.sp,
         textAlign = TextAlign.Center,
     )
+    }
 }
 
 @Composable
@@ -441,6 +466,12 @@ private fun PrivacyPolicyPage(onBack: () -> Unit) {
 
 @Composable
 private fun ChildPage(title: String, body: String, onBack: () -> Unit) {
+    Column(
+        modifier = Modifier
+            .fillMaxWidth()
+            .verticalScroll(rememberScrollState())
+            .testTag("settings_child_page"),
+    ) {
     Box(Modifier.fillMaxWidth()) {
         Box(
             modifier = Modifier
@@ -461,6 +492,7 @@ private fun ChildPage(title: String, body: String, onBack: () -> Unit) {
         textAlign = TextAlign.Center,
     )
     Spacer(Modifier.height(30.dp))
+    }
 }
 
 @Composable

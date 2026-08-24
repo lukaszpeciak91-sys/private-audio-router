@@ -76,7 +76,11 @@ physical test records remain in [`DECISIONS.md`](DECISIONS.md),
   Diagnostics, About, and Privacy Policy. Settings-modal child pages such as
   Language, Advanced, About, and Privacy Policy reuse the existing single-dialog
   family and return to the Settings root; Diagnostics opens its dedicated
-  release-facing screen.
+  release-facing screen. The sheet now removes its portrait-only vertical offset
+  when height is compact, remains inside safe-drawing vertical bounds, and gives
+  Root, Advanced, and generic child content a scroll fallback. Normal-height
+  portrait geometry remains unchanged; Language and Privacy Policy retain their
+  existing bounded lazy lists, and Diagnostics retains its full-screen scroll.
 - Mini is a service-owned overlay with status, Power, Expand, drag, and overlay-only
   Close. It normally resolves full localized states through aliases and applies one
   shared measured 16f / 15f / 14f size without locale-specific geometry. Tamil is
@@ -198,7 +202,7 @@ physical test records remain in [`DECISIONS.md`](DECISIONS.md),
   plus routing/cleanup/proximity coverage on Samsung, an AOSP-like device, and a
   newer Android release. Accessory, service/process-loss, reboot, and remaining UI
   lifecycle cases are also pending.
-- Runtime checks remain pending for portions of Settings/Privacy scrolling,
+- Runtime checks remain pending for compact-height Settings/Privacy scrolling,
   diagnostic report saving, overlay permission and recreation, Mini drag/bounds and
   task reuse, Close boundaries, and process death. See
   [`TEST_PLAN.md`](TEST_PLAN.md) for exact statuses rather than inferring completion

@@ -11,12 +11,14 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.test.assertDoesNotExist
+import androidx.compose.ui.test.assertExists
 import androidx.compose.ui.test.assertIsDisplayed
 import androidx.compose.ui.test.junit4.createComposeRule
 import androidx.compose.ui.test.onNodeWithTag
 import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.onRoot
 import androidx.compose.ui.test.performClick
+import androidx.compose.ui.test.performScrollTo
 import androidx.compose.ui.test.performTouchInput
 import androidx.compose.ui.unit.dp
 import androidx.test.espresso.Espresso.pressBack
@@ -24,6 +26,7 @@ import androidx.test.platform.app.InstrumentationRegistry
 import androidx.compose.ui.test.click
 import app.privateaudio.localization.AppLanguagePreferences
 import app.privateaudio.ui.PrivateAudioScreen
+import app.privateaudio.ui.SettingsSheet
 import app.privateaudio.ui.UserDiagnosticsScreen
 import app.privateaudio.ui.theme.PrivateAudioTheme
 import app.privateaudio.diagnostic.DiagnosticsAvailability
@@ -258,6 +261,74 @@ class PrivateAudioScreenTest {
     }
 
     @Test
+    fun compactHeightSettingsStaysBoundedAndScrollsToEveryDestination() {
+        var diagnosticsClicks = 0
+        showCompactSettings(onDiagnostics = { diagnosticsClicks++ })
+
+        val backdrop = composeRule.onNodeWithTag("settings_backdrop").fetchSemanticsNode().boundsInRoot
+        val sheet = composeRule.onNodeWithTag("settings_sheet").fetchSemanticsNode().boundsInRoot
+        assertTrue("sheet starts inside compact safe content", sheet.top >= backdrop.top)
+        assertTrue("sheet ends inside compact safe content", sheet.bottom <= backdrop.bottom)
+
+        composeRule.onNodeWithTag("settings_version").performScrollTo().assertIsDisplayed()
+        composeRule.onNodeWithTag("settings_about").performScrollTo().performClick()
+        composeRule.onNodeWithTag("settings_child_back").assertIsDisplayed().performClick()
+        composeRule.onNodeWithTag("settings_diagnostics").performScrollTo().performClick()
+        composeRule.runOnIdle { assertEquals(1, diagnosticsClicks) }
+    }
+
+    @Test
+    fun compactHeightAdvancedKeepsBothSwitchesReachableAndConnected() {
+        var proximityEnabled = true
+        var assistantEnabled = false
+        showCompactSettings(
+            onProximityFeatureChange = { proximityEnabled = it },
+            onAssistantEarlyRouteChange = { assistantEnabled = it },
+        )
+
+        composeRule.onNodeWithTag("settings_advanced").performScrollTo().performClick()
+        composeRule.onNodeWithTag("settings_proximity_screen").performClick()
+        composeRule.onNodeWithTag("settings_assistant_early_route")
+            .performScrollTo().assertIsDisplayed().performClick()
+        composeRule.runOnIdle {
+            assertEquals(false, proximityEnabled)
+            assertEquals(true, assistantEnabled)
+        }
+    }
+
+    @Test
+    fun compactHeightAboutBodyAndBackRemainReachable() {
+        showCompactSettings()
+
+        composeRule.onNodeWithTag("settings_about").performScrollTo().performClick()
+        composeRule.onNodeWithText(
+            InstrumentationRegistry.getInstrumentation().targetContext
+                .getString(R.string.settings_about_body),
+        ).performScrollTo().assertIsDisplayed()
+        composeRule.onNodeWithTag("settings_child_back").performScrollTo().performClick()
+        composeRule.onNodeWithTag("settings_root_page").assertExists()
+    }
+
+    @Test
+    fun compactHeightDiagnosticsScrollsToSaveReport() {
+        var saveClicks = 0
+        composeRule.setContent {
+            PrivateAudioTheme {
+                UserDiagnosticsScreen(
+                    diagnosticsSummary(),
+                    onBack = {},
+                    onSaveDiagnosticReport = { saveClicks++ },
+                    modifier = Modifier.width(720.dp).height(300.dp),
+                )
+            }
+        }
+
+        composeRule.onNodeWithTag("diagnostics_save_report")
+            .performScrollTo().assertIsDisplayed().performClick()
+        composeRule.runOnIdle { assertEquals(1, saveClicks) }
+    }
+
+    @Test
     fun privacyPolicyOpensWithoutStackingAndOutsideTapClosesIt() {
         composeRule.setContent {
             PrivateAudioTheme {
@@ -385,6 +456,27 @@ class PrivateAudioScreenTest {
         composeRule.setContent {
             PrivateAudioTheme {
                 UserDiagnosticsScreen(summary, onBack = {}, onSaveDiagnosticReport = {})
+            }
+        }
+    }
+
+    private fun showCompactSettings(
+        onProximityFeatureChange: (Boolean) -> Unit = {},
+        onAssistantEarlyRouteChange: (Boolean) -> Unit = {},
+        onDiagnostics: () -> Unit = {},
+    ) {
+        composeRule.setContent {
+            PrivateAudioTheme {
+                SettingsSheet(
+                    versionName = "9.8.7",
+                    proximityFeatureEnabled = true,
+                    onProximityFeatureChange = onProximityFeatureChange,
+                    assistantEarlyRouteEnabled = false,
+                    onAssistantEarlyRouteChange = onAssistantEarlyRouteChange,
+                    onDiagnostics = onDiagnostics,
+                    onDismiss = {},
+                    modifier = Modifier.width(720.dp).height(300.dp),
+                )
             }
         }
     }
