@@ -19,11 +19,16 @@ class CebuanoLocalizationContractTest {
     fun cebuanoUsesOneCanonicalGenericResourceForCebPh() {
         val generic = Locale.forLanguageTag("ceb")
         val philippines = Locale.forLanguageTag("ceb-PH")
+        val latinPhilippines = Locale.forLanguageTag("ceb-Latn-PH")
 
         assertEquals("ceb", generic.toLanguageTag())
         assertEquals("ceb", philippines.language)
         assertEquals("PH", philippines.country)
         assertEquals("ceb-PH", philippines.toLanguageTag())
+        assertEquals("ceb", latinPhilippines.language)
+        assertEquals("Latn", latinPhilippines.script)
+        assertEquals("PH", latinPhilippines.country)
+        assertEquals("ceb-Latn-PH", latinPhilippines.toLanguageTag())
         assertEquals("values-b+ceb", resourceDirectory.name)
         assertTrue(stringsFile.isFile)
 
