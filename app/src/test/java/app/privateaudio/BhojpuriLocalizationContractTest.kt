@@ -52,6 +52,7 @@ class BhojpuriLocalizationContractTest {
             .map(::resourceValue)
         assertTrue(runtimeStates.all { it.isNotBlank() })
         assertEquals(runtimeStates.size, runtimeStates.toSet().size)
+        assertEquals("सक्रिय बा", resourceValue("state_active"))
         assertFalse(resourceValue("diagnostics_on") == resourceValue("state_active"))
 
         val earpiece = resourceValue("diagnostics_route_earpiece")
@@ -63,13 +64,31 @@ class BhojpuriLocalizationContractTest {
         assertTrue(about.contains("फोन में लागल ऊपरी"))
         assertTrue(about.contains("कान वाला स्पीकर"))
         assertFalse(about.contains("लाउडस्पीकर"))
+
+        val routingCopy = listOf(
+            "routing_notification_text",
+            "diagnostics_routing",
+            "diagnostics_last_routing",
+            "diagnostics_error_blocked_by_system",
+            "diagnostics_error_session_ended",
+            "diagnostics_error_audio_start",
+            "diagnostics_error_request_rejected",
+            "diagnostics_error_not_completed",
+        ).map(::resourceValue)
+        assertTrue(routingCopy.all { it.contains("रूट") })
+        assertTrue(routingCopy.none { it.contains("भेज") })
+
+        val communicationAudioError = resourceValue("diagnostics_error_audio_preparation")
+        assertTrue(communicationAudioError.contains("कम्युनिकेशन ऑडियो"))
+        assertFalse(communicationAudioError.contains("बातचीत के ऑडियो"))
     }
 
     @Test
     fun privacyClaimSetAndRoutingActorsRemainProtected() {
         val privacy = resourceValue("settings_privacy_policy_body")
         assertEquals(4, Regex(Regex.escape("\\n\\n")).findAll(privacy).count())
-        assertEquals(5, privacy.split("\\n\\n").size)
+        val privacyParagraphs = privacy.split("\\n\\n")
+        assertEquals(5, privacyParagraphs.size)
 
         listOf(
             "ना एकट्ठा करेला", "ना रिकॉर्ड करेला", "ना कहीं भेजेला",
@@ -80,6 +99,10 @@ class BhojpuriLocalizationContractTest {
             "जब रउआ एकरा के सेव करे के चुनीं", "बातचीत भा ऑडियो सामग्री ना होला",
             "Android ऐप-डेटा बैकअप बंद बा",
         ).forEach { guard -> assertTrue("Missing privacy guard: $guard", privacy.contains(guard)) }
+        assertTrue(privacyParagraphs[2].contains("ऑडियो रूटिंग"))
+        assertTrue(privacyParagraphs[3].contains("ऑडियो रूटिंग"))
+        assertFalse(privacyParagraphs[2].contains("सही जगह भेजे"))
+        assertFalse(privacyParagraphs[3].contains("ऑडियो आउटपुट कहाँ भेजल गइल"))
 
         val rejected = resourceValue("diagnostics_error_request_rejected")
         assertTrue(rejected.contains("अनुरोध स्वीकार ना भइल"))
