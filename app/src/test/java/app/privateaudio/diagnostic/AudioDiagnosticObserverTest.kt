@@ -68,6 +68,16 @@ class AudioDiagnosticObserverTest {
     }
 
     @Test
+    fun syntheticSnapshotsDoNotPretendToHaveObservedProcessIdentity() {
+        val synthetic = DiagnosticSnapshot("MODE_NORMAL", null, emptyList(), "Off (directly observed)")
+
+        assertEquals(null, synthetic.processId)
+        assertEquals(null, synthetic.userId)
+        assertEquals(null, DiagnosticSnapshot.Empty.processId)
+        assertEquals(null, DiagnosticSnapshot.Empty.userId)
+    }
+
+    @Test
     fun reportContainsCompleteStructuredEvidence() {
         val snapshot = DiagnosticSnapshot(
             mode = "MODE_IN_COMMUNICATION",
