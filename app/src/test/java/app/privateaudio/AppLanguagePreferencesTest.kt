@@ -3,6 +3,7 @@ package app.privateaudio
 import app.privateaudio.localization.AppLanguagePreferences
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
+import org.junit.Assert.assertNotEquals
 import org.junit.Assert.assertTrue
 import org.junit.Test
 import java.util.Locale
@@ -29,12 +30,15 @@ class AppLanguagePreferencesTest {
         val polish = AppLanguagePreferences.pickerDisplayName(Locale.forLanguageTag("pl"), 1)
         val kurmanjiLatin = AppLanguagePreferences.pickerDisplayName(Locale.forLanguageTag("ku-Latn"), 1)
         val cantoneseHongKong = AppLanguagePreferences.pickerDisplayName(Locale.forLanguageTag("yue-Hant-HK"), 1)
+        val cantoneseMainland = AppLanguagePreferences.pickerDisplayName(Locale.forLanguageTag("yue-Hans-CN"), 1)
         val portuguesePortugal = AppLanguagePreferences.pickerDisplayName(Locale.forLanguageTag("pt-PT"), 2)
 
         assertEquals(Locale.forLanguageTag("pl").getDisplayLanguage(Locale.forLanguageTag("pl")).titlecased(Locale.forLanguageTag("pl")), polish)
         assertFalse(polish.contains('('))
         assertTrue(kurmanjiLatin.contains(Locale.forLanguageTag("ku-Latn").getDisplayScript(Locale.forLanguageTag("ku-Latn"))))
         assertEquals(Locale.forLanguageTag("yue-Hant-HK").getDisplayName(Locale.forLanguageTag("yue-Hant-HK")).titlecased(Locale.forLanguageTag("yue-Hant-HK")), cantoneseHongKong)
+        assertEquals(Locale.forLanguageTag("yue-Hans-CN").getDisplayName(Locale.forLanguageTag("yue-Hans-CN")).titlecased(Locale.forLanguageTag("yue-Hans-CN")), cantoneseMainland)
+        assertNotEquals(cantoneseHongKong, cantoneseMainland)
         assertEquals(Locale.forLanguageTag("pt-PT").getDisplayName(Locale.forLanguageTag("pt-PT")).titlecased(Locale.forLanguageTag("pt-PT")), portuguesePortugal)
     }
 

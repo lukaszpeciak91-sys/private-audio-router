@@ -6,12 +6,15 @@ import org.junit.Assert.assertNotEquals
 import org.junit.Assert.assertTrue
 import org.junit.Test
 import java.io.File
+import java.text.Normalizer
 import java.util.Locale
+import javax.xml.parsers.DocumentBuilderFactory
 
 class CantoneseHongKongLocalizationContractTest {
     private val projectRoot = generateSequence(File(System.getProperty("user.dir")).absoluteFile) { it.parentFile }
         .first { File(it, "app/src/main").isDirectory }
     private val resourcePath = "app/src/main/res/values-b+yue+Hant+HK/strings.xml"
+    private val simplifiedResourcePath = "app/src/main/res/values-b+yue+Hans+CN/strings.xml"
     private val strings = projectFile(resourcePath).readText()
 
     @Test
@@ -66,8 +69,71 @@ class CantoneseHongKongLocalizationContractTest {
         assertFalse(projectFile("app/src/main/res/values-b+yue+Hant+HK/mini_state_strings.xml").exists())
     }
 
+    @Test
+    fun simplifiedCantoneseIsAnIndependentMainlandProductLocale() {
+        val locale = Locale.forLanguageTag("yue-Hans-CN")
+        assertEquals("yue-Hans-CN", locale.toLanguageTag())
+        assertEquals("yue", locale.language)
+        assertEquals("Hans", locale.script)
+        assertEquals("CN", locale.country)
+
+        val traditionalFile = projectFile(resourcePath)
+        val simplifiedFile = projectFile(simplifiedResourcePath)
+        assertTrue(simplifiedFile.isFile)
+        assertEquals(values(traditionalFile).keys, values(simplifiedFile).keys)
+        values(traditionalFile).forEach { (key, traditionalValue) ->
+            assertEquals("$key placeholders", placeholders(traditionalValue), placeholders(values(simplifiedFile).getValue(key)))
+        }
+        assertTrue(Normalizer.isNormalized(simplifiedFile.readText(), Normalizer.Form.NFC))
+        assertFalse(projectFile("app/src/main/res/values-b+yue+Hans").exists())
+        assertFalse(projectFile("app/src/main/res/values-yue-rCN").exists())
+
+        assertEquals("设置", simplifiedValue("settings"))
+        assertEquals("听筒", simplifiedValue("diagnostics_route_earpiece"))
+        assertEquals("扬声器", simplifiedValue("diagnostics_route_speaker"))
+        assertNotEquals(simplifiedValue("diagnostics_route_earpiece"), simplifiedValue("diagnostics_route_speaker"))
+        assertEquals("迷你", simplifiedValue("floating"))
+        assertEquals("开启", simplifiedValue("diagnostics_on"))
+        assertEquals("使用紧", simplifiedValue("state_active"))
+        assertNotEquals(simplifiedValue("diagnostics_on"), simplifiedValue("state_active"))
+        assertTrue(simplifiedValue("diagnostics_error_audio_preparation").contains("通信音频"))
+        assertTrue(simplifiedValue("settings_about_body").contains("内置听筒"))
+        assertTrue(simplifiedValue("diagnostics_error_request_rejected").contains("听筒"))
+        assertFalse(simplifiedValue("diagnostics_error_request_rejected").contains("扬声器"))
+        assertEquals(Character.DIRECTIONALITY_LEFT_TO_RIGHT, Character.getDirectionality(simplifiedValue("settings").first()))
+        assertNotEquals(resourceValue("settings"), simplifiedValue("settings"))
+        assertNotEquals(resourceValue("diagnostics_route_speaker"), simplifiedValue("diagnostics_route_speaker"))
+    }
+
+    @Test
+    fun simplifiedCantonesePrivacyClaimsRetainSourceStructureAndScope() {
+        val privacy = simplifiedValue("settings_privacy_policy_body")
+        val paragraphs = privacy.split("\\n\\n")
+        assertEquals(5, paragraphs.size)
+        listOf("唔会收集、录制或传输", "唔会请求麦克风访问权限", "崩溃报告服务", "互联网权限", "向服务器发送数据")
+            .forEach { assertTrue("Missing privacy action: $it", privacy.contains(it)) }
+        assertTrue(paragraphs[2].contains("音频系统技术状态同元数据"))
+        assertTrue(paragraphs[2].contains("唔会访问你嘅对话内容"))
+        assertTrue(paragraphs[3].contains("喺本地产生同处理"))
+        assertTrue(paragraphs[3].contains("只有你选择保存诊断报告时先会保存报告"))
+        assertTrue(paragraphs[3].contains("唔会包含对话或音频内容"))
+        assertEquals("Android 应用数据备份已停用。", paragraphs[4])
+    }
+
     private fun resourceValue(key: String): String =
         Regex("<string name=\"$key\">([^<]*)</string>").find(strings)?.groupValues?.get(1).orEmpty()
+
+    private fun simplifiedValue(key: String): String = values(projectFile(simplifiedResourcePath)).getValue(key)
+
+    private fun values(file: File): Map<String, String> {
+        val strings = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(file).getElementsByTagName("string")
+        return (0 until strings.length).associate { index ->
+            val element = strings.item(index)
+            element.attributes.getNamedItem("name").nodeValue to element.textContent
+        }
+    }
+
+    private fun placeholders(text: String): List<String> = Regex("%\\d+\\$[a-zA-Z]").findAll(text).map { it.value }.toList()
 
     private fun projectFile(relativePath: String) = File(projectRoot, relativePath)
 }
