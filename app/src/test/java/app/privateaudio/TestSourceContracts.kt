@@ -22,11 +22,29 @@ private fun String.withoutKotlinCommentsAndStrings(): String {
         val next = getOrNull(index + 1)
         when (state) {
             ScanState.CODE -> when {
-                this[index] == '/' && next == '/' -> state = ScanState.LINE_COMMENT
-                this[index] == '/' && next == '*' -> state = ScanState.BLOCK_COMMENT
-                this[index] == '"' && substring(index).startsWith("\"\"\"") -> state = ScanState.RAW_STRING
-                this[index] == '"' -> state = ScanState.STRING
-                this[index] == '\'' -> state = ScanState.CHAR
+                this[index] == '/' && next == '/' -> {
+                    result.blank(index, 2)
+                    index += 2
+                    state = ScanState.LINE_COMMENT
+                }
+                this[index] == '/' && next == '*' -> {
+                    result.blank(index, 2)
+                    index += 2
+                    state = ScanState.BLOCK_COMMENT
+                }
+                startsWith("\"\"\"", index) -> {
+                    result.blank(index, 3)
+                    index += 3
+                    state = ScanState.RAW_STRING
+                }
+                this[index] == '"' -> {
+                    result.setCharAt(index++, ' ')
+                    state = ScanState.STRING
+                }
+                this[index] == '\'' -> {
+                    result.setCharAt(index++, ' ')
+                    state = ScanState.CHAR
+                }
                 else -> index++
             }
             ScanState.LINE_COMMENT -> if (this[index] == '\n') state = ScanState.CODE else result.setCharAt(index++, ' ')
@@ -47,16 +65,21 @@ private fun String.withoutKotlinCommentsAndStrings(): String {
                 } else if (this[index++] == terminator) state = ScanState.CODE
             }
             ScanState.RAW_STRING -> {
-                result.setCharAt(index, ' ')
-                if (substring(index).startsWith("\"\"\"")) {
-                    repeat(2) { result.setCharAt(++index, ' ') }
-                    index++
+                if (startsWith("\"\"\"", index)) {
+                    result.blank(index, 3)
+                    index += 3
                     state = ScanState.CODE
-                } else index++
+                } else {
+                    result.setCharAt(index++, ' ')
+                }
             }
         }
     }
     return result.toString()
+}
+
+private fun StringBuilder.blank(start: Int, count: Int) {
+    repeat(count) { offset -> setCharAt(start + offset, ' ') }
 }
 
 private enum class ScanState { CODE, LINE_COMMENT, BLOCK_COMMENT, STRING, RAW_STRING, CHAR }
