@@ -226,10 +226,10 @@ this summary intentionally does not duplicate its test matrix.
 
 ## Localization state
 
-- Resources currently provide **100 product locales: English plus 99 non-English
+- Resources currently provide **102 product locales: English plus 101 non-English
   resource sets**. This count is derived from the current `values*` resource
   inventory, excluding non-locale `values-night`; supported variants include the
-  intentional Portuguese, Chinese, Serbian, Punjabi, and Azerbaijani script or
+  intentional Portuguese, Chinese, Serbian, Punjabi, Azerbaijani, and Uzbek script or
   regional distinctions and Android-compatible legacy qualifiers.
 - Generated locale discovery is filtered from that app-owned resource inventory,
   preventing dependency-only translations from being advertised as product
@@ -247,6 +247,16 @@ this summary intentionally does not duplicate its test matrix.
   human/native-speaker review, and Sundanese runtime, glyph, Mini-presentation,
   emulator, and physical-device validation remain pending. Broad runtime and
   physical-device validation is not implied.
+- Uzbek now has three distinct product identities: the existing Latin `uz` resource
+  continues to serve `uz-Latn-UZ`, while `uz-Cyrl-UZ` and `uz-Arab-AF` have exact
+  Cyrillic/LTR and Arabic/RTL resource trees. The two new candidates cover the same
+  localizable keys as existing Uzbek and preserve the reviewed product-state,
+  earpiece/loudspeaker, routing/transmission, communication-audio, Mini, and
+  five-paragraph Privacy distinctions. Translation-production semantic self-checks
+  include targeted Afghan Uzbek corrections for artificial intelligence and the
+  Privacy Policy title. Independent audit, human/native review, runtime glyph and
+  shaping, picker, Mini-presentation, emulator, and physical-device validation remain
+  pending.
 - Cantonese for Hong Kong (`yue-Hant-HK`, `values-b+yue+Hant+HK`) covers the
   complete localizable product surface in professional Hong Kong Written Cantonese.
   Translation-production semantic self-checks preserve controller ON `開啟` versus
