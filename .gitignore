@@ -8,6 +8,12 @@ local.properties
 .env
 .env.*
 
+# Local Android signing material and credentials
+*.jks
+*.keystore
+keystore.properties
+signing.properties
+
 # Build artifacts
 .gradle/
 build/

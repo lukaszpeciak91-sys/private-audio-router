@@ -1,5 +1,21 @@
 # Progress
 
+## Android CI and release-engineering foundation
+
+- GitHub Actions now validates pull requests targeting `main` and pushes to `main`
+  on one Linux/JDK 17 environment using the checked-in Gradle Wrapper. The gate runs
+  debug JVM unit tests, Android lint, a debug build, and an unsigned release-bundle
+  build.
+- These automated checks establish source/build health only. They do not run
+  instrumentation or device tests and do not establish physical routing, audible
+  output, OEM, accessory, telephony, or lifecycle evidence.
+- Repository ignore rules now protect common local Android keystores and signing
+  property files. Real release signing, signed AAB generation/upload, and publishing
+  remain unconfigured; branch protection remains a separate repository setting after
+  the new check has run successfully.
+- This completes the initial CI/release-engineering-foundation stage of the current
+  release-readiness sequence without changing the V1/public-beta product baseline.
+
 ## Assistant early-mode generation-race correction
 
 - The default-OFF Assistant early-route experiment now models track startup, mode-request
