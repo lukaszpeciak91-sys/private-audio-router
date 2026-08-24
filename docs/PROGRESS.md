@@ -16,6 +16,13 @@
 - This completes the initial CI/release-engineering-foundation stage of the current
   release-readiness sequence without changing the V1/public-beta product baseline.
 
+## Portrait Main compile correction
+
+- A Compose receiver-scope compile regression in portrait Main is corrected by
+  capturing the `BoxWithConstraints` width before entering its nested `Box`. The
+  existing width calculation and approved portrait and landscape visual behavior
+  are unchanged, and no routing behavior changed.
+
 ## Assistant early-mode generation-race correction
 
 - The default-OFF Assistant early-route experiment now models track startup, mode-request
