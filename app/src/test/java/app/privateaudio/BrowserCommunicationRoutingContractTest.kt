@@ -31,7 +31,10 @@ class BrowserCommunicationRoutingContractTest {
             assertTrue(trigger.contains("TriggerOrigin.$it"))
         }
         assertEquals(1, trigger.occurrences("startProtectedPoc5Probe("))
-        assertEquals(1, productionSources.sumOf { it.readText().occurrences("setCommunicationDevice(") })
+        assertEquals(
+            listOf(observerFile),
+            productionSources.kotlinMemberCallSites("setCommunicationDevice").map(KotlinCallSite::file),
+        )
         val probe = observer.method("private fun startProtectedPoc5Probe(")
         assertInOrder(
             probe,
@@ -76,7 +79,8 @@ class BrowserCommunicationRoutingContractTest {
         val root = generateSequence(File(System.getProperty("user.dir")).absoluteFile) { it.parentFile }
             .first { File(it, "app/src/main").isDirectory }
         fun source(path: String) = File(root, path).readText()
-        val observer = source("app/src/main/java/app/privateaudio/diagnostic/AudioDiagnosticObserver.kt")
+        val observerFile = File(root, "app/src/main/java/app/privateaudio/diagnostic/AudioDiagnosticObserver.kt")
+        val observer = observerFile.readText()
         val service = source("app/src/main/java/app/privateaudio/PrivateAudioService.kt")
         val settings = source("app/src/main/java/app/privateaudio/ui/SettingsSheet.kt")
         val defaultStrings = source("app/src/main/res/values/strings.xml")

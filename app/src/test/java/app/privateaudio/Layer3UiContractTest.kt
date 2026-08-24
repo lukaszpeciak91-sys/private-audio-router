@@ -34,7 +34,10 @@ class Layer3UiContractTest {
 
     @Test
     fun protectedRoutingAndDiagnosticsRemainSingleAndPresent() {
-        assertEquals(1, productionSources.sumOf { it.readText().occurrences("setCommunicationDevice(") })
+        assertEquals(
+            listOf(observerFile),
+            productionSources.kotlinMemberCallSites("setCommunicationDevice").map(KotlinCallSite::file),
+        )
         assertTrue(diagnosticScreen.isFile)
         assertTrue(observerSource.contains("internal fun buildDiagnosticReport("))
         assertTrue(serviceSource.contains("fun diagnosticReport(): String"))
@@ -115,9 +118,8 @@ class Layer3UiContractTest {
         val mainSource = projectFile("app/src/main/java/app/privateaudio/MainActivity.kt").readText()
         val screenSource = projectFile("app/src/main/java/app/privateaudio/ui/PrivateAudioScreen.kt").readText()
         val serviceSource = projectFile("app/src/main/java/app/privateaudio/PrivateAudioService.kt").readText()
-        val observerSource = projectFile(
-            "app/src/main/java/app/privateaudio/diagnostic/AudioDiagnosticObserver.kt",
-        ).readText()
+        val observerFile = projectFile("app/src/main/java/app/privateaudio/diagnostic/AudioDiagnosticObserver.kt")
+        val observerSource = observerFile.readText()
         val diagnosticScreen = projectFile("app/src/main/java/app/privateaudio/ui/DiagnosticScreen.kt")
         val productionSources = File(projectRoot, "app/src/main/java")
             .walkTopDown()

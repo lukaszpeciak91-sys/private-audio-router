@@ -28,7 +28,10 @@ class AssistantAutomaticRoutingContractTest {
         assertFalse(assistantClassifier.contains("USAGE_MEDIA"))
         assertFalse(assistantClassifier.contains("CONTENT_TYPE_SONIFICATION"))
         assertFalse(trigger.contains("packageName"))
-        assertEquals(1, productionSources.sumOf { it.readText().occurrences("setCommunicationDevice(") })
+        assertEquals(
+            listOf(observerFile),
+            productionSources.kotlinMemberCallSites("setCommunicationDevice").map(KotlinCallSite::file),
+        )
     }
 
     @Test
@@ -81,7 +84,8 @@ class AssistantAutomaticRoutingContractTest {
         fun source(path: String) = File(root, path).readText()
         val service = source("app/src/main/java/app/privateaudio/PrivateAudioService.kt")
         val settings = source("app/src/main/java/app/privateaudio/ui/SettingsSheet.kt")
-        val observer = source("app/src/main/java/app/privateaudio/diagnostic/AudioDiagnosticObserver.kt")
+        val observerFile = File(root, "app/src/main/java/app/privateaudio/diagnostic/AudioDiagnosticObserver.kt")
+        val observer = observerFile.readText()
         val defaultStrings = source("app/src/main/res/values/strings.xml")
         val productionSources = File(root, "app/src/main/java").walkTopDown()
             .filter { it.isFile && it.extension == "kt" }.toList()

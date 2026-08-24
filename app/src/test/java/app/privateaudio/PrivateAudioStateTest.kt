@@ -115,7 +115,10 @@ class PrivateAudioStateTest {
         assertFalse(stateSource.contains("AudioManager"))
         assertFalse(serviceSource.contains("var privateAudioState"))
         assertEquals(1, serviceSource.occurrences("val privateAudioState: PrivateAudioState"))
-        assertEquals(1, productionSources.sumOf { it.readText().occurrences("setCommunicationDevice(") })
+        assertEquals(
+            listOf(observerFile),
+            productionSources.kotlinMemberCallSites("setCommunicationDevice").map(KotlinCallSite::file),
+        )
     }
 
     private fun project(
@@ -147,6 +150,10 @@ class PrivateAudioStateTest {
             projectRoot,
             "app/src/main/java/app/privateaudio/PrivateAudioService.kt",
         ).readText()
+        val observerFile = File(
+            projectRoot,
+            "app/src/main/java/app/privateaudio/diagnostic/AudioDiagnosticObserver.kt",
+        )
         val productionSources = File(projectRoot, "app/src/main/java")
             .walkTopDown()
             .filter { it.isFile && it.extension == "kt" }

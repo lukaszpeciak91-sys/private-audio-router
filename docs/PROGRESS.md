@@ -1,5 +1,14 @@
 # Progress
 
+## JVM source-contract ownership reconciliation
+
+- Source-contract tests now distinguish the single executable communication-device
+  request owner from diagnostic prose and other harmless textual references. The
+  declaration and ownership semantics remain protected without requiring a symbol
+  name to appear only once across all production text.
+- This test-harness correction changes no routing or product behavior. Reconciliation
+  of the broader failing JVM baseline remains in progress.
+
 ## Android CI and release-engineering foundation
 
 - GitHub Actions now validates pull requests targeting `main` and pushes to `main`

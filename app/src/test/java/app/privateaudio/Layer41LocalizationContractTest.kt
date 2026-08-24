@@ -1743,7 +1743,10 @@ class Layer41LocalizationContractTest {
 
     @Test
     fun protectedRoutingAndReportFormatterRemainSingleAndUnchangedInOwnership() {
-        assertEquals(1, productionSources.sumOf { it.readText().occurrences("setCommunicationDevice(") })
+        assertEquals(
+            listOf(observerFile),
+            productionSources.kotlinMemberCallSites("setCommunicationDevice").map(KotlinCallSite::file),
+        )
         assertEquals(1, observerSource.occurrences("internal fun buildDiagnosticReport("))
         assertFalse(defaultStrings.contains("PRIVATE AUDIO DIAGNOSTIC REPORT"))
     }
@@ -1873,7 +1876,8 @@ class Layer41LocalizationContractTest {
         val diagnosticScreenSource = projectFile("app/src/main/java/app/privateaudio/ui/DiagnosticScreen.kt").readText()
         val languagePreferencesSource = projectFile("app/src/main/java/app/privateaudio/localization/AppLanguagePreferences.kt").readText()
         val overlaySource = projectFile("app/src/main/java/app/privateaudio/overlay/OverlayService.kt").readText()
-        val observerSource = projectFile("app/src/main/java/app/privateaudio/diagnostic/AudioDiagnosticObserver.kt").readText()
+        val observerFile = projectFile("app/src/main/java/app/privateaudio/diagnostic/AudioDiagnosticObserver.kt")
+        val observerSource = observerFile.readText()
         val productionSources = File(projectRoot, "app/src/main/java")
             .walkTopDown().filter { it.isFile && it.extension == "kt" }.toList()
         val localeDirectories = File(projectRoot, "app/src/main/res")

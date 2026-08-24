@@ -58,7 +58,10 @@ class Layer5OverlayContractTest {
             "AudioDiagnosticObserver",
         ).forEach { forbidden -> assertFalse(forbidden, overlaySource.contains(forbidden)) }
 
-        assertEquals(1, productionSources.sumOf { it.readText().occurrences("setCommunicationDevice(") })
+        assertEquals(
+            listOf(observerFile),
+            productionSources.kotlinMemberCallSites("setCommunicationDevice").map(KotlinCallSite::file),
+        )
     }
 
     private fun String.occurrences(needle: String): Int = windowed(needle.length).count { it == needle }
@@ -67,6 +70,7 @@ class Layer5OverlayContractTest {
         val projectRoot = generateSequence(File(System.getProperty("user.dir")).absoluteFile) { it.parentFile }
             .first { File(it, "app/src/main").isDirectory }
         fun projectFile(relativePath: String) = File(projectRoot, relativePath)
+        val observerFile = projectFile("app/src/main/java/app/privateaudio/diagnostic/AudioDiagnosticObserver.kt")
         val manifest = projectFile("app/src/main/AndroidManifest.xml").readText()
         val mainSource = projectFile("app/src/main/java/app/privateaudio/MainActivity.kt").readText()
         val screenSource = projectFile("app/src/main/java/app/privateaudio/ui/PrivateAudioScreen.kt").readText()
