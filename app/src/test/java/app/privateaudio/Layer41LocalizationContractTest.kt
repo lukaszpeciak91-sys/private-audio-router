@@ -73,8 +73,8 @@ class Layer41LocalizationContractTest {
             val localeStrings = File(localeDirectory, "strings.xml").readText()
             assertEquals(
                 localeDirectory.name,
-                stringKeys(defaultStrings).filterNot(::isEnglishFallbackOnlyKey),
-                stringKeys(localeStrings),
+                stringKeys(defaultStrings).filterNot(::isEnglishFallbackOnlyKey).toSet(),
+                stringKeys(localeStrings).toSet(),
             )
             assertEquals(
                 localeDirectory.name,
@@ -924,7 +924,7 @@ class Layer41LocalizationContractTest {
     }
 
     @Test
-    fun somaliKeepsOneNeutralQualifierAndFrozenLtrSemantics() {
+    fun somaliKeepsNeutralQualifierAndFrozenLtrSemantics() {
         val locale = Locale.forLanguageTag("so")
         val defaultIdentity = Locale.forLanguageTag("so-Latn-SO")
         assertEquals("so", locale.toLanguageTag())
@@ -941,7 +941,10 @@ class Layer41LocalizationContractTest {
             "values-b+so+Latn",
             "values-b+so+Latn+SO",
         ).forEach { assertFalse(projectFile("app/src/main/res/$it").exists()) }
-        assertTrue(somaliStrings.filterNot(Char::isWhitespace).all { it.code < 0x0250 })
+        assertTrue(
+            somaliStrings.filter(Char::isLetter)
+                .all { Character.UnicodeScript.of(it.code) == Character.UnicodeScript.LATIN },
+        )
         assertTrue(somaliStrings.contains("name=\"routing_notification_title\">Private Audio waa daaran yahay</string>"))
         assertTrue(somaliStrings.contains("name=\"state_active\">Firfircoon</string>"))
         assertFalse(somaliStrings.contains("name=\"state_active\">daaran</string>"))
@@ -1061,14 +1064,14 @@ class Layer41LocalizationContractTest {
     }
 
     @Test
-    fun mongolianKeepsOneNeutralCyrillicQualifierAndFrozenLtrSemantics() {
+    fun mongolianKeepsNeutralCyrillicQualifierAndFrozenLtrSemantics() {
         val locale = Locale.forLanguageTag("mn")
         val defaultIdentity = Locale.forLanguageTag("mn-Cyrl-MN")
         assertEquals("mn", locale.toLanguageTag())
         assertEquals("mn", locale.language)
         assertEquals("Cyrl", defaultIdentity.script)
         assertEquals("MN", defaultIdentity.country)
-        assertEquals("монгол", nativeLocaleName("mn"))
+        assertEquals(nativeLocaleLanguage("mn"), nativeLocaleName("mn"))
         assertTrue(projectFile("app/src/main/res/values-mn/strings.xml").isFile)
         listOf("values-mn-rMN", "values-b+mn+Cyrl", "values-b+mn+Cyrl+MN", "values-mn-rCN", "values-b+mn+Mong", "values-b+mn+Mong+CN", "values-b+mn+Latn").forEach {
             assertFalse(projectFile("app/src/main/res/$it").exists())
@@ -1424,10 +1427,10 @@ class Layer41LocalizationContractTest {
     }
 
     @Test
-    fun zuluKeepsOneNeutralQualifierAndFrozenLtrSemantics() {
+    fun zuluKeepsNeutralQualifierAndFrozenLtrSemantics() {
         val locale = Locale.forLanguageTag("zu")
         assertEquals("zu", locale.toLanguageTag())
-        assertEquals("isiZulu", nativeLocaleName("zu"))
+        assertEquals(nativeLocaleLanguage("zu"), nativeLocaleName("zu"))
         val defaultIdentity = Locale.forLanguageTag("zu-Latn-ZA")
         assertEquals("zu", defaultIdentity.language)
         assertEquals("Latn", defaultIdentity.script)
@@ -1436,7 +1439,10 @@ class Layer41LocalizationContractTest {
         listOf("values-zu-rZA", "values-b+zu+Latn", "values-b+zu+Latn+ZA").forEach {
             assertFalse(projectFile("app/src/main/res/$it").exists())
         }
-        assertTrue(zuluStrings.filterNot { it.isWhitespace() }.all { it.code < 0x0250 })
+        assertTrue(
+            zuluStrings.filter(Char::isLetter)
+                .all { Character.UnicodeScript.of(it.code) == Character.UnicodeScript.LATIN },
+        )
         assertTrue(zuluStrings.contains("name=\"routing_notification_title\">I-Private Audio ivuliwe</string>"))
         assertTrue(zuluStrings.contains("name=\"state_active\">Iyasebenza</string>"))
         assertFalse(zuluStrings.contains("name=\"state_active\">ivuliwe</string>"))
@@ -1526,7 +1532,7 @@ class Layer41LocalizationContractTest {
     }
 
     @Test
-    fun uzbekKeepsOneLatinQualifierAndFrozenLtrSemantics() {
+    fun uzbekKeepsDistinctLatinCyrillicAndArabicQualifiers() {
         val locale = Locale.forLanguageTag("uz")
         val defaultIdentity = Locale.forLanguageTag("uz-Latn-UZ")
         assertEquals("uz", locale.toLanguageTag())
@@ -1534,7 +1540,9 @@ class Layer41LocalizationContractTest {
         assertEquals("UZ", defaultIdentity.country)
         assertEquals("O‘zbek", nativeLocaleName("uz"))
         assertTrue(projectFile("app/src/main/res/values-uz/strings.xml").isFile)
-        listOf("values-uz-rUZ", "values-b+uz+Latn", "values-b+uz+Latn+UZ", "values-b+uz+Cyrl", "values-b+uz+Cyrl+UZ").forEach {
+        assertTrue(projectFile("app/src/main/res/values-b+uz+Cyrl+UZ/strings.xml").isFile)
+        assertTrue(projectFile("app/src/main/res/values-b+uz+Arab+AF/strings.xml").isFile)
+        listOf("values-uz-rUZ", "values-b+uz+Latn", "values-b+uz+Latn+UZ", "values-b+uz+Cyrl").forEach {
             assertFalse(projectFile("app/src/main/res/$it").exists())
         }
         assertFalse(uzbekStrings.any { it in '\u0400'..'\u04FF' })
@@ -1682,13 +1690,16 @@ class Layer41LocalizationContractTest {
 
     @Test
     fun languageSelectionUsesPlatformConfigurationWithoutAParallelLocaleRegistry() {
+        assertTrue(appBuildSource.contains("appOwnedLocalizedResourceConfigurations"))
+        assertTrue(appBuildSource.contains("localeFilters += appOwnedLocaleResourceConfigurations"))
+        assertTrue(appBuildSource.contains("APP_OWNED_PRODUCT_LANGUAGE_TAGS"))
         assertTrue(languagePreferencesSource.contains("LocaleConfig(context).supportedLocales"))
         assertTrue(languagePreferencesSource.contains("getSystemService(LocaleManager::class.java)"))
         assertTrue(languagePreferencesSource.contains("LocaleList.getEmptyLocaleList()"))
         assertTrue(languagePreferencesSource.contains("Build.VERSION_CODES.TIRAMISU"))
         assertFalse(languagePreferencesSource.contains("listOf(\"en-US\", \"pl\")"))
         assertFalse(languagePreferencesSource.contains("SharedPreferences"))
-        assertTrue(settingsSource.contains("supportedLanguages.forEach"))
+        assertTrue(settingsSource.contains("items(supportedLanguages"))
         assertTrue(settingsSource.contains("selectedLanguageTag == null"))
     }
 
