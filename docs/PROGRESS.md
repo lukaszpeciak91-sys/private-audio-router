@@ -99,7 +99,7 @@ physical test records remain in [`DECISIONS.md`](DECISIONS.md),
 
 ## Localization state
 
-- Resources currently provide **98 product locales: English plus 97 non-English
+- Resources currently provide **99 product locales: English plus 98 non-English
   resource sets**. This count is derived from the current `values*` resource
   inventory, excluding non-locale `values-night`; supported variants include the
   intentional Portuguese, Chinese, Serbian, Punjabi, and Azerbaijani script or
@@ -168,6 +168,15 @@ physical test records remain in [`DECISIONS.md`](DECISIONS.md),
   full four-state Mini wording is retained without a compact override. Independent audit,
   human/native-speaker review, generated LocaleConfig inspection, and runtime, glyph,
   Mini-presentation, emulator, and physical-device validation remain pending.
+- Cebuano (`ceb`, `values-b+ceb`) now covers the complete current localizable
+  product surface in contemporary Latin-script Cebuano with LTR presentation. The
+  generic BCP-47 resource tree serves the primary Android `ceb-PH` identity without
+  a duplicate regional tree. Translation-production semantic self-checks preserve
+  controller ON versus runtime ACTIVE, the built-in phone earpiece versus
+  loudspeaker, audio routing versus data transmission, communication audio versus
+  conversation content, and the complete five-paragraph Privacy Policy claim set.
+  Independent audit, human/native-speaker review, and runtime, Mini-presentation,
+  emulator, and physical-device validation remain pending.
 - The reviewed Mini label now uses established local-script or semantic forms in
   Bulgarian, Bengali, Greek, Gujarati, Hebrew, Yiddish, Khmer, Kannada, Macedonian,
   Marathi, Serbian Cyrillic, Tamil, and Telugu. Other locales retain their independently
