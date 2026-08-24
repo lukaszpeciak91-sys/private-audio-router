@@ -499,6 +499,17 @@ this summary intentionally does not duplicate its test matrix.
 
 ## Recently completed significant changes
 
+- Reviewed the final 12 historical localization JVM findings across Cebuano,
+  Lingala, Malagasy, Xhosa, Yoruba, Catalan, Galician, Malayalam, Zulu, Hausa,
+  and Pashto. Xhosa and Zulu required targeted routing-language corrections;
+  the other findings were stale or overly broad frozen linguistic expectations,
+  including Privacy guard boundaries, diagnostic-report occurrence counts, and
+  a Pashto earpiece check that accidentally rejected the distinct loudspeaker
+  label. Locale qualifiers, discovery, and resource inventory were unchanged.
+  Evidence is source/target semantic reconstruction and model linguistic
+  self-review only, not human or native-speaker validation. The canonical JVM
+  baseline remains to be rerun in an Android-SDK-equipped environment.
+
 - Reconciled the remaining non-localization UI, Mini, and RTL source contracts with
   the approved implementation shape. Mini control regions and RTL mirroring are now
   covered semantically through their pure helpers rather than historical inline

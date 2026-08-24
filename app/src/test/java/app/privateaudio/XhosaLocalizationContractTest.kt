@@ -17,7 +17,9 @@ class XhosaLocalizationContractTest {
         val locale = Locale.forLanguageTag("xh")
         assertEquals("xh", locale.toLanguageTag())
         assertEquals("xh", locale.language)
-        assertEquals("IsiXhosa", locale.getDisplayLanguage(locale))
+        assertEquals("IsiXhosa", locale.getDisplayLanguage(locale).replaceFirstChar { first ->
+            if (first.isLowerCase()) first.titlecase(locale) else first.toString()
+        })
 
         assertTrue(projectFile("app/src/main/res/values-xh/strings.xml").isFile)
         listOf("values-xh-rZA", "values-b+xh+Latn", "values-b+xh+Latn+ZA").forEach {
@@ -28,7 +30,7 @@ class XhosaLocalizationContractTest {
         assertEquals("Ilindile", resourceValue("state_waiting"))
         assertEquals("Iyasebenza", resourceValue("state_active"))
         assertEquals("Impazamo", resourceValue("state_error"))
-        assertEquals("Ilindile ukuhambisa iaudio", resourceValue("routing_notification_text"))
+        assertEquals("Ilindile ukuqondisa iaudio", resourceValue("routing_notification_text"))
         assertFalse(resourceValue("state_active") == resourceValue("diagnostics_on"))
 
         assertEquals("Private Audio", resourceValue("app_name"))

@@ -3,7 +3,7 @@
     <string name="app_name">Private Audio</string>
     <string name="routing_notification_channel">Private Audio</string>
     <string name="routing_notification_title">I-Private Audio ivuliwe</string>
-    <string name="routing_notification_text">Ilindile ukuhambisa iaudio</string>
+    <string name="routing_notification_text">Ilindile ukuqondisa iaudio</string>
     <string name="product_title">Private Audio</string>
     <string name="product_subtitle">Thetha ne-AI ngasese, ngokungathi usefowunini.</string>
     <string name="state_ready">Ilungile</string>
@@ -22,13 +22,13 @@
     <string name="settings_advanced">Ezihambele phambili</string>
     <string name="settings_about">Malunga ne-Private Audio</string>
     <string name="settings_privacy_policy">Umgaqo-nkqubo wabucala</string>
-    <string name="settings_privacy_policy_body">I-Private Audio ayiqokeleli, ayirekhodi, okanye ayithumeli iincoko zakho okanye umxholo weaudio.\n\nLe app ayifuni akhawunti okanye ungene ngemvume. Ayiceli imvume yokusebenzisa imayikrofoni kwaye ayisebenzisi uhlalutyo losetyenziso, iintengiso, okanye iinkonzo zokunika ingxelo xa iapp ima ngokungalindelekanga. I-Private Audio ayiceli imvume ye-Intanethi ye-Android kwaye ayithumeli datha kwiseva.\n\nI-Private Audio iqwalasela kuphela isimo sobugcisa kunye nemethadatha yesistim yeaudio ye-Android njengoko kuyimfuneko ekuhambiseni iaudio nakuxilongo. Ayifikeleli kumxholo weencoko zakho.\n\nIisetingi zeapp zigcinwa kwisixhobo sakho kuphela. Idatha yoxilongo yenziwa ize isetyenzwe kwisixhobo sakho, kwaye ingxelo yoxilongo igcinwa kuphela xa ukhetha ukuyigcina. Ingxelo isenokuquka iinkcukacha zobugcisa ngesixhobo sakho, uhlobo lwe-Android, ukuhanjiswa kweaudio, kunye nesimo sesistim yeaudio, kodwa ayiqulathanga ncoko okanye umxholo weaudio.\n\nUgcino lwedatha yeapp ye-Android luvaliwe.</string>
+    <string name="settings_privacy_policy_body">I-Private Audio ayiqokeleli, ayirekhodi, okanye ayithumeli iincoko zakho okanye umxholo weaudio.\n\nLe app ayifuni akhawunti okanye ungene ngemvume. Ayiceli imvume yokusebenzisa imayikrofoni kwaye ayisebenzisi uhlalutyo losetyenziso, iintengiso, okanye iinkonzo zokunika ingxelo xa iapp ima ngokungalindelekanga. I-Private Audio ayiceli imvume ye-Intanethi ye-Android kwaye ayithumeli datha kwiseva.\n\nI-Private Audio iqwalasela kuphela isimo sobugcisa kunye nemethadatha yesistim yeaudio ye-Android njengoko kuyimfuneko ekuqondiseni iaudio nakuxilongo. Ayifikeleli kumxholo weencoko zakho.\n\nIisetingi zeapp zigcinwa kwisixhobo sakho kuphela. Idatha yoxilongo yenziwa ize isetyenzwe kwisixhobo sakho, kwaye ingxelo yoxilongo igcinwa kuphela xa ukhetha ukuyigcina. Ingxelo isenokuquka iinkcukacha zobugcisa ngesixhobo sakho, uhlobo lwe-Android, ukuqondiswa kweaudio, kunye nesimo sesistim yeaudio, kodwa ayiqulathanga ncoko okanye umxholo weaudio.\n\nUgcino lwedatha yeapp ye-Android luvaliwe.</string>
     <string name="settings_version">Uhlobo %1$s</string>
     <string name="settings_language_body">I-Private Audio ngoku ilandela ulwimi lwesixhobo sakho. Kukhethwe Okumiselweyo.</string>
     <string name="settings_language_android_13_required">Ukukhetha ulwimi ngaphakathi kwiapp kufuna i-Android 13 okanye entsha. Esi sixhobo silandela ulwimi lwesistim.</string>
     <string name="settings_proximity_screen">Cima isikrini xa ifowuni ikufutshane nendlebe yakho</string>
     <string name="settings_advanced_body">Iinketho ezongezelelekileyo ziza kuvela apha njengoko i-Private Audio iphucuka.</string>
-    <string name="settings_about_body">I-Private Audio inceda ukuhambisa iaudio yelizwi exhaswayo kwisamkeli sendlebe esakhelwe ngaphakathi kwifowuni yakho.</string>
+    <string name="settings_about_body">I-Private Audio inceda ukuqondisa iaudio yelizwi exhaswayo kwisamkeli sendlebe esakhelwe ngaphakathi kwifowuni yakho.</string>
     <string name="diagnostic_report_saved">Ingxelo yoxilongo igciniwe.</string>
     <string name="diagnostic_report_save_failed">Ayikwazanga ukugcina ingxelo yoxilongo.</string>
     <string name="diagnostics_title">Uxilongo</string>
@@ -36,10 +36,10 @@
     <string name="diagnostics_earpiece">Isamkeli sendlebe</string>
     <string name="diagnostics_proximity_sensor">Isivamvo sokusondela</string>
     <string name="diagnostics_private_audio">PRIVATE AUDIO</string>
-    <string name="diagnostics_routing">Ukuhambisa iaudio</string>
+    <string name="diagnostics_routing">Ukuqondisa iaudio</string>
     <string name="diagnostics_status">Isimo</string>
     <string name="diagnostics_audio_route">Indawo ephuma kuyo iaudio</string>
-    <string name="diagnostics_last_routing">UMZAMO WOKUGQIBELA WOKUHAMBISA IAUDIO</string>
+    <string name="diagnostics_last_routing">UMZAMO WOKUGQIBELA WOKUQONDISA IAUDIO</string>
     <string name="diagnostics_result">Isiphumo</string>
     <string name="diagnostics_error">Impazamo</string>
     <string name="diagnostics_available">Iyafumaneka</string>
@@ -58,10 +58,10 @@
     <string name="diagnostics_route_speaker">Isipikha</string>
     <string name="diagnostics_route_bluetooth">IBluetooth</string>
     <string name="diagnostics_route_other">Enye</string>
-    <string name="diagnostics_error_blocked_by_system">Ukuhanjiswa kweaudio kuthintelwe yisistim.</string>
-    <string name="diagnostics_error_session_ended">Iseshoni yeaudio iphele ngaphambi kokuba ukuhanjiswa kwayo kugqitywe.</string>
-    <string name="diagnostics_error_audio_start">I-Private Audio ayikwazanga ukuqalisa ukuhambisa iaudio.</string>
+    <string name="diagnostics_error_blocked_by_system">Ukuqondiswa kweaudio kuthintelwe yisistim.</string>
+    <string name="diagnostics_error_session_ended">Iseshoni yeaudio iphele ngaphambi kokuba ukuqondiswa kwayo kugqitywe.</string>
+    <string name="diagnostics_error_audio_start">I-Private Audio ayikwazanga ukuqalisa ukuqondisa iaudio.</string>
     <string name="diagnostics_error_audio_preparation">I-Private Audio ayikwazanga ukulungiselela iaudio yonxibelelwano.</string>
-    <string name="diagnostics_error_request_rejected">Isicelo sokuhambisa iaudio kwisamkeli sendlebe asamkelwanga.</string>
-    <string name="diagnostics_error_not_completed">Ukuhanjiswa kweaudio akukwazanga kugqitywa.</string>
+    <string name="diagnostics_error_request_rejected">Isicelo sokuqondisa iaudio kwisamkeli sendlebe asamkelwanga.</string>
+    <string name="diagnostics_error_not_completed">Ukuqondiswa kweaudio akukwazanga kugqitywa.</string>
 </resources>

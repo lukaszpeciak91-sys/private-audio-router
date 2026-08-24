@@ -85,7 +85,7 @@ class LingalaLocalizationContractTest {
         assertEquals(4, Regex(Regex.escape("\\n\\n")).findAll(privacy).count())
         assertEquals(5, privacy.split("\\n\\n").size)
         listOf(
-            "esangisaka", "ekangaka", "etindaka", "esɛngaka ndingisa ya kosalela mikrofɔ te",
+            "esangisaka", "ekangaka", "etindaka", "Esɛngaka ndingisa ya kosalela mikrofɔ te",
             "esɛngaka ndingisa ya Internet ya Android te", "etindaka ba données na serveur te",
             "ezalela ya tekiniki mpe metadata", "Ekɔtaka na makambo ya masolo na yo te",
             "Mabongisi ya aplikasio ebombamaka na aparɛyi na yo",
