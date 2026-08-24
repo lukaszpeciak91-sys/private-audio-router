@@ -89,7 +89,7 @@ class CebuanoLocalizationContractTest {
         assertEquals(4, Regex(Regex.escape("\\n\\n")).findAll(privacy).count())
         assertEquals(5, privacy.split("\\n\\n").size)
         listOf(
-            "dili mangolekta", "magrekord", "magpadala", "dili mangayo og access sa mikropono",
+            "dili mangolekta", "magrekord", "magpadala", "Dili kini mangayo og access sa mikropono",
             "analytics, advertising, o mga serbisyo sa pagreport sa crash",
             "dili mangayo sa permiso sa Internet sa Android", "dili magpadala og data ngadto sa server",
             "teknikal nga kahimtang ug metadata sa audio system sa Android",

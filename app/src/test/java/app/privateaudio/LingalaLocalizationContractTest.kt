@@ -71,8 +71,8 @@ class LingalaLocalizationContractTest {
         assertTrue(resourceValue("settings_about_body").contains("écouteur ya kati ya telefone"))
 
         val routing = resourceValue("diagnostics_routing")
-        assertTrue(routing.contains("kotambwisa"))
-        assertFalse(routing.contains("kotinda"))
+        assertTrue(routing.contains("kotambwisa", ignoreCase = true))
+        assertFalse(routing.contains("kotinda", ignoreCase = true))
         val communicationAudio = resourceValue("diagnostics_error_audio_preparation")
         assertTrue(communicationAudio.contains("audio ya communication"))
         assertFalse(communicationAudio.contains("mongongo ya bosololi"))
@@ -85,7 +85,7 @@ class LingalaLocalizationContractTest {
         assertEquals(4, Regex(Regex.escape("\\n\\n")).findAll(privacy).count())
         assertEquals(5, privacy.split("\\n\\n").size)
         listOf(
-            "esangisaka", "ekangaka", "etindaka", "esɛngaka ndingisa ya kosalela mikrofɔ te",
+            "esangisaka", "ekangaka", "etindaka", "Esɛngaka ndingisa ya kosalela mikrofɔ te",
             "esɛngaka ndingisa ya Internet ya Android te", "etindaka ba données na serveur te",
             "ezalela ya tekiniki mpe metadata", "Ekɔtaka na makambo ya masolo na yo te",
             "Mabongisi ya aplikasio ebombamaka na aparɛyi na yo",

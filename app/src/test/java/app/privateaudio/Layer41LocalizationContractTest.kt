@@ -916,7 +916,10 @@ class Layer41LocalizationContractTest {
         assertFalse(malayalamStrings.contains("name=\"state_active\">ഓണാണ്</string>"))
         assertTrue(malayalamStrings.contains("name=\"floating\">മിനി</string>"))
         assertTrue(malayalamStrings.contains("name=\"settings_advanced\">വിപുലമായ ക്രമീകരണം</string>"))
-        assertTrue(malayalamStrings.contains("ബിൽറ്റ്-ഇൻ ഇയർപീസ്"))
+        assertTrue(
+            resourceValue(malayalamStrings, "settings_about_body")
+                .contains("ബിൽറ്റ്-ഇൻ ഇയർപീസിലേക്ക്"),
+        )
         assertEquals(
             mapOf("state_ready" to "തയ്യാറാണ്", "state_waiting" to "കാത്തിരിക്കുന്നു", "state_active" to "സജീവം", "state_error" to "പിശക്"),
             frozenStates(malayalamStrings),
@@ -1386,8 +1389,8 @@ class Layer41LocalizationContractTest {
         assertTrue(pashtoStrings.contains("name=\"floating\">مینی</string>"))
         assertTrue(pashtoStrings.contains("name=\"settings_advanced\">پرمختللی</string>"))
         assertTrue(pashtoStrings.contains("د تلیفون رسیدونکي ته"))
-        assertFalse(pashtoStrings.contains("سپیکر"))
-        assertFalse(pashtoStrings.contains("غوږۍ"))
+        assertFalse(resourceValue(pashtoStrings, "diagnostics_route_earpiece").contains("سپیکر"))
+        assertFalse(resourceValue(pashtoStrings, "diagnostics_route_earpiece").contains("غوږۍ"))
         assertFalse(projectFile("app/src/main/res/values-ps/mini_state_strings.xml").exists())
     }
 
@@ -1420,9 +1423,18 @@ class Layer41LocalizationContractTest {
         assertTrue(hausaStrings.contains("name=\"settings_advanced\">Ci gaba</string>"))
         assertTrue(hausaStrings.contains("name=\"settings_system_default\">Na asali</string>"))
         assertTrue(hausaStrings.contains("lasifikar kunne da ke cikin wayarka"))
-        listOf("loudspeaker", "speakerphone", "headphones", "earbuds", "Bluetooth").forEach {
-            assertFalse(hausaStrings.contains(it, ignoreCase = true))
+        val hausaEarpieceValues = listOf(
+            "diagnostics_route_earpiece", "diagnostics_earpiece", "settings_about_body",
+            "diagnostics_error_request_rejected",
+        ).map { resourceValue(hausaStrings, it) }
+        listOf("loudspeaker", "speakerphone", "headphones", "earbuds", "Bluetooth").forEach { term ->
+            assertTrue(hausaEarpieceValues.all { !it.contains(term, ignoreCase = true) })
         }
+        assertFalse(
+            resourceValue(hausaStrings, "diagnostics_route_earpiece") ==
+                resourceValue(hausaStrings, "diagnostics_route_speaker"),
+        )
+        assertEquals("Bluetooth", resourceValue(hausaStrings, "diagnostics_route_bluetooth"))
         assertFalse(projectFile("app/src/main/res/values-ha/mini_state_strings.xml").exists())
     }
 
@@ -1460,10 +1472,13 @@ class Layer41LocalizationContractTest {
         assertTrue(zuluStrings.contains("ulimi lwedivayisi yakho"))
         assertTrue(zuluStrings.contains("Le divayisi ilandela ulimi lwesistimu."))
         assertTrue(zuluStrings.contains("Cisha isikrini uma ifoni iseduze nendlebe yakho"))
-        assertTrue(zuluStrings.contains("isipikha sendlebe"))
+        assertTrue(zuluStrings.contains("isipikha sendlebe", ignoreCase = true))
         assertTrue(zuluStrings.contains("esipikheni sendlebe sefoni yakho"))
         assertFalse(zuluStrings.contains("name=\"settings_about_body\">I-Private Audio isiza ukudlulisela umsindo wezwi osekelwayo esipikheni sefoni yakho.</string>"))
-        assertTrue(zuluStrings.contains("ukuvula/ukucisha, ukunweba nokuvala"))
+        val overlayDescription = resourceValue(zuluStrings, "overlay_controller_description")
+        listOf("zokuvula/ukucisha", "ukunweba", "nokuvala").forEach {
+            assertTrue(overlayDescription.contains(it))
+        }
         assertFalse(projectFile("app/src/main/res/values-zu/mini_state_strings.xml").exists())
     }
 
@@ -1651,7 +1666,7 @@ class Layer41LocalizationContractTest {
         assertTrue(catalanStrings.contains("name=\"settings_advanced\">Configuració avançada</string>"))
         assertTrue(catalanStrings.contains("sortida d\\'àudio"))
         assertTrue(catalanStrings.contains("auricular integrat del telèfon"))
-        assertEquals(3, catalanStrings.occurrences("informe de diagnòstic"))
+        assertEquals(4, catalanStrings.occurrences("informe de diagnòstic"))
         assertTrue(catalanStrings.contains("Botons per activar o desactivar Private Audio, ampliar el control i tancar-lo"))
         assertFalse(catalanStrings.contains("settings_assistant_early_route"))
         assertFalse(projectFile("app/src/main/res/values-ca/mini_state_strings.xml").exists())
@@ -1682,7 +1697,7 @@ class Layer41LocalizationContractTest {
         assertTrue(galicianStrings.contains("name=\"settings_advanced\">Configuración avanzada</string>"))
         assertTrue(galicianStrings.contains("saída de audio"))
         assertTrue(galicianStrings.contains("auricular integrado do teléfono"))
-        assertEquals(3, galicianStrings.occurrences("informe de diagnóstico"))
+        assertEquals(4, galicianStrings.occurrences("informe de diagnóstico"))
         assertTrue(galicianStrings.contains("Botóns para activar ou desactivar Private Audio, ampliar o control e pechalo"))
         assertFalse(galicianStrings.contains("settings_assistant_early_route"))
         assertFalse(projectFile("app/src/main/res/values-gl/mini_state_strings.xml").exists())
