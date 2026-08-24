@@ -1,5 +1,19 @@
 # Progress
 
+## Localization inventory contract reconciliation
+
+- Localization architecture contracts now follow the current app-owned Android
+  resource inventory, including the intentional Latin, Cyrillic, and Arabic Uzbek
+  variants. Qualifier tests protect exact Android locale identities rather than
+  obsolete language-wide directory counts.
+- Generated platform locale configuration remains authoritative from build-time
+  resource discovery through the language picker; no parallel language registry was
+  introduced. Platform-derived names are tested for identity instead of incidental
+  JVM capitalization.
+- Lexical translation findings remain separate and have not been silently
+  normalized. Translated resources, production routing, and unrelated application
+  behavior are unchanged.
+
 ## Non-localization JVM baseline reconciliation
 
 - The RTL source contract now scopes its hardcoded-language-registry protection to
