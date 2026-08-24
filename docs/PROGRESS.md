@@ -1,5 +1,16 @@
 # Progress
 
+## Final Android lint localization-metadata corrections
+
+- The four default Mini state aliases retain locale-selected full-state resolution,
+  with `MissingTranslation` suppressed only on those alias declarations. Tamil's
+  reviewed compact paradigm and Malayalam's reviewed compact Waiting override remain
+  unchanged and continue to take precedence.
+- The two experimental Assistant early-route resources are now explicitly
+  non-translatable, matching their existing intentional English-fallback scope.
+  No English or translated wording, locale inventory, production Kotlin, or routing
+  behavior changed.
+
 ## Android notification and Compose configuration lint corrections
 
 - The foreground notification's optional configuration-change refresh now checks

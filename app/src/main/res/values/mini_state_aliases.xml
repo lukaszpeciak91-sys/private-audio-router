@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <!-- Aliases are resolved after locale selection, so each locale inherits its own full state copy. -->
-    <item name="state_ready_mini" type="string">@string/state_ready</item>
-    <item name="state_waiting_mini" type="string">@string/state_waiting</item>
-    <item name="state_active_mini" type="string">@string/state_active</item>
-    <item name="state_error_mini" type="string">@string/state_error</item>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Aliases resolve after locale selection, so each locale inherits its own full state copy.
+         The element-scoped suppressions prevent lint from treating these aliases as translation units. -->
+    <item name="state_ready_mini" type="string" tools:ignore="MissingTranslation">@string/state_ready</item>
+    <item name="state_waiting_mini" type="string" tools:ignore="MissingTranslation">@string/state_waiting</item>
+    <item name="state_active_mini" type="string" tools:ignore="MissingTranslation">@string/state_active</item>
+    <item name="state_error_mini" type="string" tools:ignore="MissingTranslation">@string/state_error</item>
 </resources>

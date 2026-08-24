@@ -47,6 +47,20 @@ class MiniCompactStateContractTest {
         }
     }
 
+    @Test fun missingTranslationSuppressionIsScopedToTheFourDefaultAliases() {
+        val source = aliasFile.readText()
+        assertTrue(source.contains("xmlns:tools=\"http://schemas.android.com/tools\""))
+        assertEquals(4, Regex("tools:ignore=\"MissingTranslation\"").findAll(source).count())
+        assertFalse(source.contains("tools:ignore=\"all\""))
+        listOf("ready", "waiting", "active", "error").forEach { state ->
+            assertTrue(
+                state,
+                Regex("<item name=\"state_${state}_mini\" type=\"string\" tools:ignore=\"MissingTranslation\">")
+                    .containsMatchIn(source),
+            )
+        }
+    }
+
     @Test fun miniUsesCompactVisualCopyButFullSpokenCopyAndOneSharedGeometry() {
         assertTrue(overlay.contains("drawStatusLabel(canvas, miniStateLabel(state))"))
         assertTrue(overlay.method("private fun stateDescription").contains("fullStateLabel(value)"))

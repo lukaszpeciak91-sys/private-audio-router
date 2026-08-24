@@ -146,7 +146,17 @@ Accessibility text may be fuller than a compact visible label when their semanti
 
 Compact state variants require demonstrated measured failure at 14f and must be reviewed as a complete locale-specific Ready / Waiting / Active / Error status-label system, never as one shortened label in isolation. Exact part-of-speech equality is not required, but the four labels must form one natural grammatical and stylistic paradigm without collapsing their distinct meanings. Tamil currently retains its explicitly reviewed compact paradigm. Gujarati uses its natural full state copy through the default Mini aliases and shared measured-fit path after targeted review found that its former compact override was no longer preferable or necessary.
 
+The default `state_*_mini` resources are localization-indirect aliases to the full
+localized state resources, not independent translation units. Locale-specific Mini
+resources may replace an alias only after explicit compact-copy review; the existing
+Tamil paradigm and Malayalam Waiting override remain the current exceptions.
+
 Malayalam records the concrete threshold example: full `കാത്തിരിക്കുന്നു` still failed at 14f on the physical Mini, so the complete paradigm was reviewed and only visible Mini Waiting received the compact status noun `കാത്തിരിപ്പ്`. The full state remains the accessibility and Main wording. This is evidence for that override, not permission to shorten another locale before measurement.
+
+The experimental Assistant early-route label and description currently use their
+default English copy in every locale and are explicitly non-translatable. This is a
+current scope boundary, not a permanent product decision: making that experiment a
+fully localized surface requires a future explicit localization-production task.
 
 ## RTL, fonts, and glyphs
 
