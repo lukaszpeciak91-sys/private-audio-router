@@ -68,7 +68,11 @@ class Layer41LocalizationContractTest {
         assertTrue(appBuildSource.contains("generateLocaleConfig = true"))
         assertEquals("unqualifiedResLocale=en-US", resourcesProperties.trim())
         assertTrue(defaultStrings.contains("name=\"settings_system_default\">Default</string>"))
-        assertFalse(defaultStrings.contains("translatable=\"false\""))
+        assertEquals(
+            setOf("settings_assistant_early_route", "settings_assistant_early_route_description"),
+            Regex("<string name=\"([^\"]+)\" translatable=\"false\"")
+                .findAll(defaultStrings).map { it.groupValues[1] }.toSet(),
+        )
         localeDirectories.forEach { localeDirectory ->
             val localeStrings = File(localeDirectory, "strings.xml").readText()
             assertEquals(
@@ -83,7 +87,8 @@ class Layer41LocalizationContractTest {
             )
             assertFalse(localeDirectory.name, localeStrings.contains("settings_assistant_early_route"))
         }
-        assertTrue(defaultStrings.contains("name=\"settings_assistant_early_route\">Assistant early route</string>"))
+        assertTrue(defaultStrings.contains("name=\"settings_assistant_early_route\" translatable=\"false\">Assistant early route</string>"))
+        assertTrue(defaultStrings.contains("name=\"settings_assistant_early_route_description\" translatable=\"false\">Experimental. Primes private audio before assistant speech.</string>"))
         assertEquals("Melayu", nativeLocaleName("ms"))
         assertTrue(malayStrings.contains("name=\"routing_notification_text\">Menunggu audio dialihkan</string>"))
         assertTrue(malayStrings.contains("name=\"settings_language_android_13_required\"") && malayStrings.contains("bahasa sistem"))
