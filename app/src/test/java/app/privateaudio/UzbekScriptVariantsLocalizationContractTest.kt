@@ -65,6 +65,10 @@ class UzbekScriptVariantsLocalizationContractTest {
         }
         assertTrue(value(cyrillicFile, "diagnostics_error_audio_preparation").contains("алоқа аудиосини"))
         assertTrue(value(arabicFile, "diagnostics_error_audio_preparation").contains("آلاقه آدیوسینی"))
+        assertTrue(value(arabicFile, "product_subtitle").contains("صنعي عقل"))
+        assertFalse(value(arabicFile, "product_subtitle").contains("مصنوعی اقل"))
+        assertEquals("مخفی‌لیک سیاستی", value(arabicFile, "settings_privacy_policy"))
+        assertFalse(value(arabicFile, "settings_privacy_policy").contains("محرم"))
     }
 
     @Test

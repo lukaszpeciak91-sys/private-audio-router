@@ -242,8 +242,10 @@ this summary intentionally does not duplicate its test matrix.
   localizable keys as existing Uzbek and preserve the reviewed product-state,
   earpiece/loudspeaker, routing/transmission, communication-audio, Mini, and
   five-paragraph Privacy distinctions. Translation-production semantic self-checks
-  are complete; independent audit, human/native review, and runtime glyph, shaping,
-  picker, Mini-presentation, emulator, and physical-device validation remain pending.
+  include targeted Afghan Uzbek corrections for artificial intelligence and the
+  Privacy Policy title. Independent audit, human/native review, runtime glyph and
+  shaping, picker, Mini-presentation, emulator, and physical-device validation remain
+  pending.
 - Cantonese for Hong Kong (`yue-Hant-HK`, `values-b+yue+Hant+HK`) covers the
   complete localizable product surface in professional Hong Kong Written Cantonese.
   Translation-production semantic self-checks preserve controller ON `開啟` versus
