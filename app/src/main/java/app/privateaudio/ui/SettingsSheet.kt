@@ -7,6 +7,8 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.selection.toggleable
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.BoxWithConstraints
@@ -85,6 +87,7 @@ fun SettingsSheet(
     onAssistantEarlyRouteChange: (Boolean) -> Unit,
     onDiagnostics: () -> Unit,
     onDismiss: () -> Unit,
+    modifier: Modifier = Modifier,
 ) {
     var page by rememberSaveable { mutableStateOf(SettingsPage.ROOT) }
     val context = LocalContext.current
@@ -101,35 +104,30 @@ fun SettingsSheet(
     ) {
         val sheetInteraction = remember { MutableInteractionSource() }
         BoxWithConstraints(
-            modifier = Modifier
+            modifier = modifier
                 .fillMaxSize()
-                .then(
-                    if (page == SettingsPage.LANGUAGE || page == SettingsPage.PRIVACY_POLICY) {
-                        Modifier.windowInsetsPadding(
-                            WindowInsets.safeDrawing.only(WindowInsetsSides.Vertical),
-                        )
-                    } else {
-                        Modifier
-                    },
+                .windowInsetsPadding(
+                    WindowInsets.safeDrawing.only(WindowInsetsSides.Vertical),
                 )
                 .background(SettingsScrim)
                 .clickable(onClick = onDismiss)
                 .testTag("settings_backdrop"),
             contentAlignment = Alignment.Center,
         ) {
+            val compactHeight = maxHeight < 600.dp
             Column(
                 modifier = Modifier
                     .fillMaxWidth(SettingsLayout.widthFraction)
-                    .then(
-                        if (page == SettingsPage.LANGUAGE || page == SettingsPage.PRIVACY_POLICY) {
-                            Modifier.heightIn(
-                                max = maxHeight - SettingsLayout.verticalOffset * 2,
-                            )
+                    .heightIn(
+                        max = if (compactHeight) {
+                            maxHeight
+                        } else if (page == SettingsPage.LANGUAGE || page == SettingsPage.PRIVACY_POLICY) {
+                            maxHeight - SettingsLayout.verticalOffset * 2
                         } else {
-                            Modifier
+                            maxHeight
                         },
                     )
-                    .offset(y = SettingsLayout.verticalOffset)
+                    .offset(y = if (compactHeight) 0.dp else SettingsLayout.verticalOffset)
                     .background(SettingsSurface, RoundedCornerShape(SettingsLayout.cornerRadius))
                     .border(1.dp, SettingsBorder, RoundedCornerShape(SettingsLayout.cornerRadius))
                     .clickable(
@@ -192,6 +190,12 @@ private fun AdvancedPage(
     onAssistantEarlyRouteChange: (Boolean) -> Unit,
     onBack: () -> Unit,
 ) {
+    Column(
+        modifier = Modifier
+            .fillMaxWidth()
+            .verticalScroll(rememberScrollState())
+            .testTag("settings_advanced_page"),
+    ) {
     Box(Modifier.fillMaxWidth()) {
         Box(
             modifier = Modifier.size(44.dp).clickable(role = Role.Button, onClick = onBack)
@@ -268,6 +272,7 @@ private fun AdvancedPage(
         )
     }
     Spacer(Modifier.height(30.dp))
+    }
 }
 
 @Composable
@@ -281,6 +286,12 @@ private fun SettingsRoot(
     onPrivacyPolicy: () -> Unit,
     onAbout: () -> Unit,
 ) {
+    Column(
+        modifier = Modifier
+            .fillMaxWidth()
+            .verticalScroll(rememberScrollState())
+            .testTag("settings_root_page"),
+    ) {
     val selectedLanguageName = supportedLanguages
         .firstOrNull { it.languageTag == selectedLanguageTag }
         ?.nativeName
@@ -331,6 +342,7 @@ private fun SettingsRoot(
         lineHeight = 16.sp,
         textAlign = TextAlign.Center,
     )
+    }
 }
 
 @Composable
@@ -441,6 +453,12 @@ private fun PrivacyPolicyPage(onBack: () -> Unit) {
 
 @Composable
 private fun ChildPage(title: String, body: String, onBack: () -> Unit) {
+    Column(
+        modifier = Modifier
+            .fillMaxWidth()
+            .verticalScroll(rememberScrollState())
+            .testTag("settings_child_page"),
+    ) {
     Box(Modifier.fillMaxWidth()) {
         Box(
             modifier = Modifier
@@ -461,6 +479,7 @@ private fun ChildPage(title: String, body: String, onBack: () -> Unit) {
         textAlign = TextAlign.Center,
     )
     Spacer(Modifier.height(30.dp))
+    }
 }
 
 @Composable
