@@ -1,5 +1,14 @@
 # Progress
 
+## Non-localization JVM baseline reconciliation
+
+- The RTL source contract now scopes its hardcoded-language-registry protection to
+  the declarations that resolve Main and Mini presentation direction through the
+  platform locale-direction API. Incidental locale tokens elsewhere in UI source no
+  longer produce unrelated failures, while the architecture chain remains covered.
+- The remaining known JVM baseline failures are localization-contract findings;
+  production code, resources, and runtime behavior are unchanged.
+
 ## Remaining protected-audio test-contract reconciliation
 
 - Remaining protected-audio ownership assertions now distinguish executable calls

@@ -51,14 +51,26 @@ class RtlPreparationContractTest {
 
     @Test
     fun miniDirectionUsesTheLogicalApplicationLocaleAndFutureRtlSafePlatformResolution() {
+        val mainDirectionResolution = productScreen.kotlinDeclaration("fun PrivateAudioScreen(")
+        val miniDirectionResolution = layoutDirection.kotlinDeclaration("fun miniLayoutDirection(")
+        val platformDirectionResolution = languagePreferences
+            .kotlinDeclaration("object AppLanguagePreferences")
+            .substringAfter("fun presentationLayoutDirection(")
+            .substringBefore("\n\n    private fun")
+        val directionResolutionPath = listOf(
+            mainDirectionResolution,
+            miniDirectionResolution,
+            platformDirectionResolution,
+        ).joinToString("\n")
+
         assertTrue(overlay.contains("private fun isRtlLayout() = rtlLayout"))
         assertTrue(overlay.contains("rtlLayout = miniLayoutDirection(context) == View.LAYOUT_DIRECTION_RTL"))
         assertTrue(overlay.kotlinDeclaration("fun refreshLocalizedPresentation").contains("rtlLayout = miniLayoutDirection(context)"))
-        assertTrue(layoutDirection.kotlinDeclaration("internal fun miniLayoutDirection(").contains("AppLanguagePreferences.presentationLayoutDirection(context)"))
-        assertTrue(productScreen.kotlinDeclaration("fun PrivateAudioScreen(").contains("AppLanguagePreferences.presentationLayoutDirection(context)"))
-        assertTrue(languagePreferences.contains("TextUtils.getLayoutDirectionFromLocale(effectivePresentationLocale(context))"))
+        assertTrue(miniDirectionResolution.contains("AppLanguagePreferences.presentationLayoutDirection(context)"))
+        assertTrue(mainDirectionResolution.contains("AppLanguagePreferences.presentationLayoutDirection(context)"))
+        assertTrue(platformDirectionResolution.contains("TextUtils.getLayoutDirectionFromLocale(effectivePresentationLocale(context))"))
         listOf("\"yi\"", "\"he\"", "\"ar\"", "\"ur\"", "\"fa\"").forEach {
-            assertFalse(presentationKotlin.contains(it))
+            assertFalse(directionResolutionPath.contains(it))
         }
 
         listOf("values", "values-pl", "values-ar", "values-ur").forEach {
@@ -91,7 +103,6 @@ class RtlPreparationContractTest {
         val productScreen = projectFile("app/src/main/java/app/privateaudio/ui/PrivateAudioScreen.kt").readText()
         val overlay = projectFile("app/src/main/java/app/privateaudio/overlay/OverlayService.kt").readText()
         val layoutDirection = projectFile("app/src/main/java/app/privateaudio/overlay/MiniLayoutDirection.kt").readText()
-        val presentationKotlin = listOf(productScreen, settings, overlay, layoutDirection).joinToString("\n")
         val position = projectFile("app/src/main/java/app/privateaudio/overlay/OverlayPosition.kt").readText()
         val service = projectFile("app/src/main/java/app/privateaudio/PrivateAudioService.kt").readText()
         val languagePreferences = projectFile("app/src/main/java/app/privateaudio/localization/AppLanguagePreferences.kt").readText()
