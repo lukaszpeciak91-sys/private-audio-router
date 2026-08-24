@@ -23,10 +23,8 @@
     <string name="settings_privacy_policy">Politika e privatësisë</string>
     <string name="settings_privacy_policy_body">Private Audio nuk i mbledh, regjistron apo transmeton bisedat ose përmbajtjen tuaj audio.\n\nAplikacioni nuk kërkon llogari apo identifikim. Nuk kërkon qasje në mikrofon dhe nuk përdor shërbime analitike, reklamimi apo raportimi të ndërprerjeve. Private Audio nuk kërkon lejen e internetit të Android dhe nuk dërgon të dhëna në server.\n\nPrivate Audio vëzhgon vetëm gjendjen teknike dhe metadatat e sistemit audio Android, sipas nevojës për drejtimin e audios dhe diagnostikimin. Nuk hyn në përmbajtjen e bisedave tuaja.\n\nCilësimet e aplikacionit ruhen lokalisht në pajisje. Të dhënat diagnostikuese krijohen e përpunohen lokalisht dhe raporti ruhet vetëm kur zgjidhni ta ruani. Raporti mund të përmbajë të dhëna teknike për pajisjen, versionin Android, drejtimin e audios dhe gjendjen e sistemit audio, por jo biseda ose përmbajtje audio.\n\nRezervimi Android i të dhënave të aplikacionit është çaktivizuar.</string>
     <string name="settings_version">Versioni %1$s</string>
-    <string name="settings_language_body">Private Audio aktualisht ndjek gjuhën e pajisjes sate. Është zgjedhur parazgjedhja.</string>
     <string name="settings_language_android_13_required">Përzgjedhja e gjuhës brenda aplikacionit kërkon Android 13 ose version më të ri. Kjo pajisje përdor gjuhën e sistemit.</string>
     <string name="settings_proximity_screen">Fike ekranin pranë veshit</string>
-    <string name="settings_advanced_body">Opsione të tjera do të shfaqen këtu ndërsa Private Audio zhvillohet.</string>
     <string name="settings_about_body">Private Audio ndihmon në kalimin e audios zanore të mbështetur te marrësi i integruar i telefonit.</string>
     <string name="diagnostic_report_saved">Raporti diagnostikues u ruajt.</string>
     <string name="diagnostic_report_save_failed">Raporti diagnostikues nuk mund të ruhej.</string>

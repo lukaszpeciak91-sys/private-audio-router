@@ -7,8 +7,30 @@ import org.junit.Test
 import java.io.ByteArrayOutputStream
 import java.io.File
 import java.io.IOException
+import javax.xml.parsers.DocumentBuilderFactory
 
 class Layer4SettingsContractTest {
+    @Test
+    fun appDataBackupAndDeviceTransferExcludeEveryAppOwnedDomain() {
+        val manifest = projectFile("app/src/main/AndroidManifest.xml").readText()
+        assertTrue(manifest.contains("android:allowBackup=\"false\""))
+        assertTrue(manifest.contains("android:dataExtractionRules=\"@xml/data_extraction_rules\""))
+
+        val rules = DocumentBuilderFactory.newInstance().newDocumentBuilder()
+            .parse(projectFile("app/src/main/res/xml/data_extraction_rules.xml"))
+        val expectedDomains = setOf(
+            "root", "file", "database", "sharedpref", "external",
+            "device_root", "device_file", "device_database", "device_sharedpref",
+        )
+        listOf("cloud-backup", "device-transfer").forEach { destination ->
+            val exclusions = rules.getElementsByTagName(destination).item(0).childNodes
+            val domains = (0 until exclusions.length).mapNotNull { index ->
+                exclusions.item(index).attributes?.getNamedItem("domain")?.nodeValue
+            }.toSet()
+            assertEquals(destination, expectedDomains, domains)
+        }
+    }
+
     @Test
     fun settingsNavigationUsesOneDismissibleModalWithChildBack() {
         assertTrue(screenSource.contains("onSettingsClick = { settingsVisible = true }"))

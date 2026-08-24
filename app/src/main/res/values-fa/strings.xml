@@ -23,10 +23,8 @@
     <string name="settings_privacy_policy">سیاست حفظ حریم خصوصی</string>
     <string name="settings_privacy_policy_body">Private Audio مکالمات یا محتوای صوتی شما را جمع‌آوری، ضبط یا ارسال نمی‌کند.\n\nاین برنامه به حساب یا ورود نیاز ندارد. دسترسی به میکروفون را درخواست نمی‌کند و از خدمات تحلیل، تبلیغات یا گزارش خرابی استفاده نمی‌کند. Private Audio مجوز اینترنت Android را درخواست نمی‌کند و داده‌ای به سرور نمی‌فرستد.\n\nPrivate Audio فقط وضعیت فنی و فراداده‌های سامانه صوتی Android را در حد لازم برای مسیریابی صدا و عیب‌یابی مشاهده می‌کند. به محتوای مکالمات شما دسترسی ندارد.\n\nتنظیمات برنامه به‌صورت محلی در دستگاه شما ذخیره می‌شود. داده‌های عیب‌یابی به‌صورت محلی تولید و پردازش می‌شوند و گزارش عیب‌یابی فقط هنگامی ذخیره می‌شود که شما ذخیره آن را انتخاب کنید. گزارش ممکن است شامل اطلاعات فنی دستگاه، نسخه Android، مسیریابی صدا و وضعیت سامانه صوتی باشد، اما شامل مکالمات یا محتوای صوتی نیست.\n\nپشتیبان‌گیری Android از داده‌های برنامه غیرفعال است.</string>
     <string name="settings_version">نسخه %1$s</string>
-    <string name="settings_language_body">Private Audio در حال حاضر از زبان دستگاه شما پیروی می‌کند. پیش‌فرض انتخاب شده است.</string>
     <string name="settings_language_android_13_required">انتخاب زبان درون‌برنامه‌ای به Android 13 یا بالاتر نیاز دارد. این دستگاه از زبان سیستم پیروی می‌کند.</string>
     <string name="settings_proximity_screen">خاموش کردن صفحه‌نمایش نزدیک گوش</string>
-    <string name="settings_advanced_body">با توسعه Private Audio، گزینه‌های بیشتری در اینجا نمایش داده می‌شود.</string>
     <string name="settings_about_body">Private Audio به هدایت صدا به بلندگوی بالای تلفن کمک می‌کند.</string>
     <string name="diagnostic_report_saved">گزارش عیب‌یابی ذخیره شد.</string>
     <string name="diagnostic_report_save_failed">گزارش عیب‌یابی ذخیره نشد.</string>

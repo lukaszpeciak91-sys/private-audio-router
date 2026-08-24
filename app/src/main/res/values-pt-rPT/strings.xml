@@ -23,10 +23,8 @@
     <string name="settings_privacy_policy">Política de Privacidade</string>
     <string name="settings_privacy_policy_body">O Private Audio não recolhe, grava nem transmite as suas conversas ou conteúdo de áudio.\n\nA aplicação não requer uma conta nem início de sessão. Não solicita acesso ao microfone nem utiliza serviços de análise, publicidade ou relatórios de falhas. O Private Audio não solicita a permissão de Internet do Android e não envia dados para um servidor.\n\nO Private Audio observa apenas o estado técnico e os metadados do sistema de áudio do Android, conforme necessário para o encaminhamento de áudio e diagnóstico. Não acede ao conteúdo das suas conversas.\n\nAs definições da aplicação são guardadas localmente no seu dispositivo. Os dados de diagnóstico são gerados e processados localmente, e um relatório de diagnóstico só é guardado quando optar por guardá-lo. Um relatório pode conter informações técnicas sobre o dispositivo, a versão do Android, o encaminhamento de áudio e o estado do sistema de áudio, mas não contém conversas nem conteúdo de áudio.\n\nA cópia de segurança de dados de aplicações do Android está desativada.</string>
     <string name="settings_version">Versão %1$s</string>
-    <string name="settings_language_body">Atualmente, o Private Audio segue o idioma do dispositivo. A opção Predefinido está selecionada.</string>
     <string name="settings_language_android_13_required">A seleção do idioma na aplicação requer o Android 13 ou posterior. Este dispositivo segue o idioma do sistema.</string>
     <string name="settings_proximity_screen">Desligar o ecrã junto ao ouvido</string>
-    <string name="settings_advanced_body">Serão apresentadas aqui opções adicionais à medida que o Private Audio evoluir.</string>
     <string name="settings_about_body">O Private Audio ajuda a encaminhar o áudio de voz para o auricular integrado do telemóvel.</string>
     <string name="diagnostic_report_saved">Relatório de diagnóstico guardado.</string>
     <string name="diagnostic_report_save_failed">Não foi possível guardar o relatório de diagnóstico.</string>

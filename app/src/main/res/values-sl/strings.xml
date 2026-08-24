@@ -23,10 +23,8 @@
     <string name="settings_privacy_policy">Pravilnik o zasebnosti</string>
     <string name="settings_privacy_policy_body">Private Audio ne zbira, snema ali prenaša vaših pogovorov ali zvočne vsebine.\n\nAplikacija ne zahteva računa ali prijave. Ne zahteva dostopa do mikrofona ter ne uporablja storitev analitike, oglaševanja ali poročanja o zrušitvah. Private Audio ne zahteva Androidovega dovoljenja za internet in ne pošilja podatkov strežniku.\n\nPrivate Audio spremlja samo tehnično stanje in metapodatke zvočnega sistema Android, kolikor je potrebno za usmerjanje zvoka in diagnostiko. Ne dostopa do vsebine vaših pogovorov.\n\nNastavitve aplikacije so shranjene lokalno v napravi. Diagnostični podatki se ustvarijo in obdelajo lokalno, diagnostično poročilo pa se shrani samo, ko ga sami izberete shraniti. Poročilo lahko vsebuje tehnične podatke o napravi, različici Androida, usmerjanju zvoka in stanju zvočnega sistema, vendar ne vsebuje pogovorov ali zvočne vsebine.\n\nVarnostno kopiranje podatkov aplikacije v Androidu je onemogočeno.</string>
     <string name="settings_version">Različica %1$s</string>
-    <string name="settings_language_body">Private Audio trenutno uporablja jezik vaše naprave. Izbrana je privzeta nastavitev.</string>
     <string name="settings_language_android_13_required">Izbira jezika v aplikaciji zahteva Android 13 ali novejši. Ta naprava uporablja sistemski jezik.</string>
     <string name="settings_proximity_screen">Izklopi zaslon ob ušesu</string>
-    <string name="settings_advanced_body">Z razvojem aplikacije Private Audio bodo tukaj na voljo dodatne možnosti.</string>
     <string name="settings_about_body">Private Audio pomaga preklopiti podprt glasovni zvok na vgrajeno slušalko telefona.</string>
     <string name="diagnostic_report_saved">Diagnostično poročilo je shranjeno.</string>
     <string name="diagnostic_report_save_failed">Diagnostičnega poročila ni bilo mogoče shraniti.</string>

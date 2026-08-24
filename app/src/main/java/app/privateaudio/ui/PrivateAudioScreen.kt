@@ -120,6 +120,7 @@ private data class StateVisuals(
 @Composable
 internal fun PrivateAudioScreen(
     state: PrivateAudioState,
+    modifier: Modifier = Modifier,
     proximityFeatureEnabled: Boolean = true,
     onProximityFeatureChange: (Boolean) -> Unit = {},
     assistantEarlyRouteEnabled: Boolean = false,
@@ -131,7 +132,6 @@ internal fun PrivateAudioScreen(
     diagnosticsSummary: DiagnosticsSummary? = null,
     onSaveDiagnosticReport: () -> Unit = {},
     versionName: String = "",
-    modifier: Modifier = Modifier,
 ) {
     val context = LocalContext.current
     val presentationDirection = if (

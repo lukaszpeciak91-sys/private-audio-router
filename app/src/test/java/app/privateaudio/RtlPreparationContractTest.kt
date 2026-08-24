@@ -22,6 +22,9 @@ class RtlPreparationContractTest {
 
     @Test
     fun overlayUsesPhysicalLeftOriginCoordinatesInEveryLayoutDirection() {
+        val showOverlay = overlay.kotlinDeclaration("private fun showOverlay(")
+        assertTrue(overlay.contains("@SuppressLint(\"RtlHardcoded\")\n    private fun showOverlay("))
+        assertTrue(showOverlay.contains("Window x/y are physical coordinates; Mini content mirrors RTL separately"))
         assertTrue(overlay.contains("gravity = Gravity.TOP or Gravity.LEFT"))
         assertFalse(overlay.contains("Gravity.START"))
         assertTrue(overlay.contains("startWindowX + dx.toInt()"))

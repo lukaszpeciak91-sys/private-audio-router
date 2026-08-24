@@ -23,10 +23,8 @@
     <string name="settings_privacy_policy">गोपनीयता नीति</string>
     <string name="settings_privacy_policy_body">Private Audio ले तपाईंका कुराकानी वा अडियो सामग्री सङ्कलन, रेकर्ड वा प्रसारण गर्दैन।\n\nएपलाई खाता वा साइन-इन आवश्यक पर्दैन। यसले माइक्रोफोन पहुँच माग्दैन र विश्लेषण, विज्ञापन वा क्र्यास-रिपोर्टिङ सेवा प्रयोग गर्दैन। Private Audio ले Android को इन्टरनेट अनुमति माग्दैन र सर्भरमा डेटा पठाउँदैन।\n\nPrivate Audio ले अडियो राउटिङ र निदानका लागि आवश्यक Android अडियो प्रणालीको प्राविधिक अवस्था र मेटाडेटा मात्र हेर्छ। यसले कुराकानीको सामग्री पहुँच गर्दैन।\n\nएप सेटिङ उपकरणमा स्थानीय रूपमा भण्डारण हुन्छन्। निदान डेटा स्थानीय रूपमा बनाइन्छ र प्रशोधन हुन्छ; तपाईंले रोज्दा मात्र रिपोर्ट सुरक्षित हुन्छ। रिपोर्टमा उपकरण, Android संस्करण, अडियो राउटिङ र अडियो प्रणालीको अवस्थाबारे प्राविधिक जानकारी हुन सक्छ, तर कुराकानी वा अडियो सामग्री हुँदैन।\n\nAndroid एप-डेटा ब्याकअप अक्षम छ।</string>
     <string name="settings_version">संस्करण %1$s</string>
-    <string name="settings_language_body">Private Audio अहिले तपाईंको डिभाइसको भाषाअनुसार चल्छ। डिफल्ट चयन गरिएको छ।</string>
     <string name="settings_language_android_13_required">एपभित्र भाषा चयन गर्न Android 13 वा त्यसपछिको संस्करण चाहिन्छ। यो डिभाइसले सिस्टमको भाषा प्रयोग गर्छ।</string>
     <string name="settings_proximity_screen">फोन कान नजिक ल्याउँदा स्क्रिन बन्द गर्नुहोस्</string>
-    <string name="settings_advanced_body">Private Audio विकसित हुँदै जाँदा यहाँ थप विकल्पहरू देखिनेछन्।</string>
     <string name="settings_about_body">Private Audio ले समर्थित भ्वाइस अडियो तपाईंको फोनमा निर्मित ह्यान्डसेट इयरपिसबाट सुन्न मद्दत गर्छ।</string>
     <string name="diagnostic_report_saved">निदानसम्बन्धी रिपोर्ट सेभ गरियो।</string>
     <string name="diagnostic_report_save_failed">निदानसम्बन्धी रिपोर्ट सेभ गर्न सकिएन।</string>

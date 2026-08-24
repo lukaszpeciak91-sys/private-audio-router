@@ -1,5 +1,6 @@
 package app.privateaudio.overlay
 
+import android.annotation.SuppressLint
 import android.animation.ValueAnimator
 import android.app.Service
 import android.content.ComponentName
@@ -111,6 +112,7 @@ class OverlayService : Service() {
         overlayView?.refreshLocalizedPresentation()
     }
 
+    @SuppressLint("RtlHardcoded")
     private fun showOverlay(resultReceiver: ResultReceiver?) {
         if (overlayView != null) {
             resultReceiver?.send(SHOW_SUCCEEDED, null)
@@ -127,6 +129,7 @@ class OverlayService : Service() {
             WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE,
             PixelFormat.TRANSLUCENT,
         ).apply {
+            // Window x/y are physical coordinates; Mini content mirrors RTL separately.
             gravity = Gravity.TOP or Gravity.LEFT
         }
         val bounds = windowManager.currentWindowMetrics.bounds
@@ -227,6 +230,7 @@ class OverlayService : Service() {
     }
 
     private inner class FloatingControllerView(context: Context) : View(context) {
+        private val controllerSurface = RectF(0.75f, 0.75f, 299.25f, 61.25f)
         private val density = resources.displayMetrics.density
         private val paint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
             strokeCap = Paint.Cap.ROUND
@@ -296,11 +300,11 @@ class OverlayService : Service() {
 
             paint.style = Paint.Style.FILL
             paint.color = Color.rgb(15, 15, 16)
-            canvas.drawRoundRect(RectF(0.75f, 0.75f, 299.25f, 61.25f), 13f, 13f, paint)
+            canvas.drawRoundRect(controllerSurface, 13f, 13f, paint)
             paint.style = Paint.Style.STROKE
             paint.strokeWidth = 1f
             paint.color = Color.rgb(91, 91, 94)
-            canvas.drawRoundRect(RectF(0.75f, 0.75f, 299.25f, 61.25f), 13f, 13f, paint)
+            canvas.drawRoundRect(controllerSurface, 13f, 13f, paint)
 
             paint.style = Paint.Style.FILL
             paint.color = statusColor(state)

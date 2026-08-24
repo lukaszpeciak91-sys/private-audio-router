@@ -23,10 +23,8 @@
     <string name="settings_privacy_policy">Tietosuojakäytäntö</string>
     <string name="settings_privacy_policy_body">Private Audio ei kerää, tallenna eikä lähetä keskustelujasi tai äänisisältöä.\n\nSovellus ei vaadi tiliä tai kirjautumista. Se ei pyydä mikrofonin käyttöoikeutta eikä käytä analytiikka-, mainonta- tai kaatumisraportointipalveluja. Private Audio ei pyydä Androidin internetkäyttöoikeutta eikä lähetä tietoja palvelimelle.\n\nPrivate Audio tarkkailee vain Androidin äänijärjestelmän teknistä tilaa ja metatietoja äänen reitityksen ja diagnostiikan edellyttämässä laajuudessa. Se ei pääse käsiksi keskustelujesi sisältöön.\n\nSovelluksen asetukset tallennetaan paikallisesti laitteellesi. Diagnostiikkatiedot luodaan ja käsitellään paikallisesti, ja diagnostiikkaraportti tallennetaan vain, kun päätät tallentaa sen. Raportti voi sisältää teknisiä tietoja laitteesta, Android-versiosta, äänen reitityksestä ja äänijärjestelmän tilasta, mutta ei keskusteluja tai äänisisältöä.\n\nAndroidin sovellustietojen varmuuskopiointi on poistettu käytöstä.</string>
     <string name="settings_version">Versio %1$s</string>
-    <string name="settings_language_body">Private Audio käyttää tällä hetkellä laitteesi kieltä. Oletus on valittu.</string>
     <string name="settings_language_android_13_required">Sovelluksen kielivalinta vaatii Android 13:n tai uudemman. Tämä laite käyttää järjestelmän kieltä.</string>
     <string name="settings_proximity_screen">Sammuta näyttö korvan lähellä</string>
-    <string name="settings_advanced_body">Lisää vaihtoehtoja tulee näkyviin tähän Private Audion kehittyessä.</string>
     <string name="settings_about_body">Private Audio auttaa ohjaamaan tuetun puheäänen puhelimen sisäänrakennettuun kuulokkeeseen.</string>
     <string name="diagnostic_report_saved">Diagnostiikkaraportti tallennettu.</string>
     <string name="diagnostic_report_save_failed">Diagnostiikkaraporttia ei voitu tallentaa.</string>

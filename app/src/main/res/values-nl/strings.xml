@@ -23,10 +23,8 @@
     <string name="settings_privacy_policy">Privacybeleid</string>
     <string name="settings_privacy_policy_body">Private Audio verzamelt, neemt of verzendt je gesprekken of audio-inhoud niet.\n\nDe app vereist geen account of aanmelding. De app vraagt geen microfoontoegang en gebruikt geen diensten voor analyse, advertenties of crashrapportage. Private Audio vraagt Androids internettoestemming niet en stuurt geen gegevens naar een server.\n\nPrivate Audio neemt alleen de technische status en metagegevens van Androids audiosysteem waar die nodig zijn voor audioroutering en diagnostiek. De app heeft geen toegang tot de inhoud van je gesprekken.\n\nAppinstellingen worden lokaal op je apparaat opgeslagen. Diagnostische gegevens worden lokaal gegenereerd en verwerkt, en een diagnostisch rapport wordt alleen opgeslagen wanneer je daarvoor kiest. Een rapport kan technische informatie bevatten over je apparaat, Android-versie, audioroutering en de status van het audiosysteem, maar bevat geen gesprekken of audio-inhoud.\n\nAndroid-back-up van appgegevens is uitgeschakeld.</string>
     <string name="settings_version">Versie %1$s</string>
-    <string name="settings_language_body">Private Audio volgt momenteel de taal van je apparaat. Standaard is geselecteerd.</string>
     <string name="settings_language_android_13_required">Taalkeuze in de app vereist Android 13 of hoger. Dit apparaat volgt de systeemtaal.</string>
     <string name="settings_proximity_screen">Scherm uitschakelen bij je oor</string>
-    <string name="settings_advanced_body">Hier verschijnen meer opties naarmate Private Audio zich verder ontwikkelt.</string>
     <string name="settings_about_body">Private Audio helpt ondersteunde spraakaudio naar de ingebouwde oorspeaker van je telefoon om te schakelen.</string>
     <string name="diagnostic_report_saved">Diagnostisch rapport opgeslagen.</string>
     <string name="diagnostic_report_save_failed">Kan diagnostisch rapport niet opslaan.</string>

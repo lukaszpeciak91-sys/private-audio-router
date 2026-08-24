@@ -23,10 +23,8 @@
     <string name="settings_privacy_policy">Privaatsuspoliitika</string>
     <string name="settings_privacy_policy_body">Private Audio ei kogu, salvesta ega edasta teie vestlusi või helisisu.\n\nRakendus ei nõua kontot ega sisselogimist. See ei taotle juurdepääsu mikrofonile ega kasuta analüütika-, reklaami- või krahhiaruandlusteenuseid. Private Audio ei taotle Androidi internetiluba ega saada andmeid serverisse.\n\nPrivate Audio jälgib ainult Androidi helisüsteemi tehnilist olekut ja metaandmeid, mida on vaja heli suunamiseks ja diagnostikaks. See ei pääse juurde teie vestluste sisule.\n\nRakenduse seaded salvestatakse kohalikult teie seadmesse. Diagnostikaandmed luuakse ja töödeldakse kohalikult ning diagnostikaaruanne salvestatakse ainult teie valikul. Aruanne võib sisaldada tehnilist teavet seadme, Androidi versiooni, heli suunamise ja helisüsteemi oleku kohta, kuid ei sisalda vestlusi ega helisisu.\n\nAndroidi rakenduseandmete varundamine on keelatud.</string>
     <string name="settings_version">Versioon %1$s</string>
-    <string name="settings_language_body">Private Audio kasutab praegu sinu seadme keelt. Valitud on vaikeseade.</string>
     <string name="settings_language_android_13_required">Rakenduses keele valimiseks on vaja Android 13 või uuemat. See seade kasutab süsteemi keelt.</string>
     <string name="settings_proximity_screen">Lülita ekraan kõrva lähedal välja</string>
-    <string name="settings_advanced_body">Private Audio arenedes kuvatakse siin lisavalikud.</string>
     <string name="settings_about_body">Private Audio aitab suunata toetatud kõneheli telefoni sisseehitatud kuularisse.</string>
     <string name="diagnostic_report_saved">Diagnostikaaruanne on salvestatud.</string>
     <string name="diagnostic_report_save_failed">Diagnostikaaruannet ei saanud salvestada.</string>

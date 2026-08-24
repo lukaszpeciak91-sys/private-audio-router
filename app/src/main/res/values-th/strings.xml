@@ -23,10 +23,8 @@
     <string name="settings_privacy_policy">นโยบายความเป็นส่วนตัว</string>
     <string name="settings_privacy_policy_body">Private Audio ไม่เก็บรวบรวม บันทึก หรือส่งต่อบทสนทนาหรือเนื้อหาเสียงของคุณ\n\nแอปไม่ต้องใช้บัญชีหรือการลงชื่อเข้าใช้ ไม่ขอสิทธิ์เข้าถึงไมโครโฟน และไม่ใช้บริการวิเคราะห์ โฆษณา หรือรายงานข้อขัดข้อง Private Audio ไม่ขอสิทธิ์อินเทอร์เน็ตของ Android และไม่ส่งข้อมูลไปยังเซิร์ฟเวอร์\n\nPrivate Audio ตรวจสอบเฉพาะสถานะทางเทคนิคและข้อมูลเมตาของระบบเสียง Android เท่าที่จำเป็นสำหรับการกำหนดเส้นทางเสียงและการวินิจฉัย โดยไม่เข้าถึงเนื้อหาบทสนทนาของคุณ\n\nการตั้งค่าแอปจัดเก็บไว้ในอุปกรณ์ ข้อมูลวินิจฉัยสร้างและประมวลผลในอุปกรณ์ และจะบันทึกรายงานเมื่อคุณเลือกบันทึกเท่านั้น รายงานอาจมีข้อมูลทางเทคนิคเกี่ยวกับอุปกรณ์ เวอร์ชัน Android การกำหนดเส้นทางเสียง และสถานะระบบเสียง แต่ไม่มีบทสนทนาหรือเนื้อหาเสียง\n\nการสำรองข้อมูลแอปของ Android ถูกปิดใช้งาน</string>
     <string name="settings_version">เวอร์ชัน %1$s</string>
-    <string name="settings_language_body">ขณะนี้ Private Audio ใช้ภาษาตามอุปกรณ์ของคุณ โดยเลือกค่าเริ่มต้นอยู่</string>
     <string name="settings_language_android_13_required">การเลือกภาษาในแอปต้องใช้ Android 13 ขึ้นไป อุปกรณ์นี้ใช้ภาษาของระบบ</string>
     <string name="settings_proximity_screen">ปิดหน้าจอเมื่ออยู่ใกล้หู</string>
-    <string name="settings_advanced_body">ตัวเลือกเพิ่มเติมจะปรากฏที่นี่เมื่อ Private Audio พัฒนาต่อไป</string>
     <string name="settings_about_body">Private Audio ช่วยสลับเสียงไปยังหูฟังด้านบนของโทรศัพท์</string>
     <string name="diagnostic_report_saved">บันทึกรายงานการวินิจฉัยแล้ว</string>
     <string name="diagnostic_report_save_failed">ไม่สามารถบันทึกรายงานการวินิจฉัยได้</string>

@@ -23,10 +23,8 @@
     <string name="settings_privacy_policy">Zásady ochrany soukromí</string>
     <string name="settings_privacy_policy_body">Private Audio neshromažďuje, nenahrává ani nepřenáší vaše hovory ani zvukový obsah.\n\nAplikace nevyžaduje účet ani přihlášení. Nežádá o přístup k mikrofonu a nepoužívá analytické, reklamní ani služby pro hlášení selhání. Private Audio nežádá o oprávnění Androidu k internetu a neposílá data na server.\n\nPrivate Audio sleduje pouze technický stav a metadata zvukového systému Androidu v rozsahu potřebném pro směrování zvuku a diagnostiku. K obsahu vašich hovorů nepřistupuje.\n\nNastavení aplikace se ukládá místně ve vašem zařízení. Diagnostická data se vytvářejí a zpracovávají místně a diagnostická zpráva se uloží pouze tehdy, když ji sami uložíte. Zpráva může obsahovat technické informace o zařízení, verzi Androidu, směrování zvuku a stavu zvukového systému, neobsahuje však hovory ani zvukový obsah.\n\nZálohování dat aplikace v Androidu je vypnuto.</string>
     <string name="settings_version">Verze %1$s</string>
-    <string name="settings_language_body">Private Audio aktuálně používá jazyk vašeho zařízení. Je vybrána možnost Výchozí.</string>
     <string name="settings_language_android_13_required">Výběr jazyka v aplikaci vyžaduje Android 13 nebo novější. Toto zařízení používá jazyk systému.</string>
     <string name="settings_proximity_screen">Vypnout obrazovku u ucha</string>
-    <string name="settings_advanced_body">S dalším vývojem Private Audio se zde objeví další možnosti.</string>
     <string name="settings_about_body">Private Audio pomáhá přesměrovat podporovaný hlasový zvuk do sluchátka telefonu.</string>
     <string name="diagnostic_report_saved">Diagnostická zpráva byla uložena.</string>
     <string name="diagnostic_report_save_failed">Diagnostickou zprávu se nepodařilo uložit.</string>

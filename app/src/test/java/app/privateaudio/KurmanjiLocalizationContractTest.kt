@@ -66,7 +66,6 @@ class KurmanjiLocalizationContractTest {
         assertEquals("Private Audio", resourceValue("app_name"))
         assertEquals("Private Audio", resourceValue("product_title"))
         assertEquals("Wekî heyî", resourceValue("settings_system_default"))
-        assertTrue(resourceValue("settings_language_body").contains("Wekî heyî"))
 
         val overlay = resourceValue("overlay_controller_description")
         assertTrue(overlay.contains("li ser sepanên din"))

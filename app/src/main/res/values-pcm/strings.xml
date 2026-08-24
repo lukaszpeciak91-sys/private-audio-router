@@ -23,10 +23,8 @@
     <string name="settings_privacy_policy">Praivesi Polisi</string>
     <string name="settings_privacy_policy_body">Private Audio no dey collect, record or send your conversation or audio content.\n\nDi app no need account or sign-in. E no dey ask for microphone access and e no dey use analytics, advert or crash-report service. Private Audio no dey ask for Android Internet permission and e no dey send data go server.\n\nPrivate Audio dey observe only di technical state and metadata of Android audio system as audio routing and diagnostics need am. E no dey access wetin dey inside your conversation.\n\nApp settings dey store for your device locally. Diagnostic data dey generated and processed locally, and diagnostic report dey save only when you choose to save am. Report fit contain technical information about your device, Android version, audio routing and audio-system state, but e no contain conversation or audio content.\n\nAndroid app-data backup dey disabled.</string>
     <string name="settings_version">Version %1$s</string>
-    <string name="settings_language_body">Private Audio dey follow your device lángwej now. Default na im dey selected.</string>
     <string name="settings_language_android_13_required">To select lángwej inside app, you need Android 13 or later. Dis device dey follow system lángwej.</string>
     <string name="settings_proximity_screen">Off di screen when phone dey near ear</string>
-    <string name="settings_advanced_body">More options go show here as Private Audio dey improve.</string>
     <string name="settings_about_body">Private Audio dey help route voice audio go the phone earpiece.</string>
     <string name="diagnostic_report_saved">Diagnostic report don save.</string>
     <string name="diagnostic_report_save_failed">Diagnostic report no fit save.</string>
