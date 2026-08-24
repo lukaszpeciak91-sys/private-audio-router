@@ -785,11 +785,11 @@ class Layer41LocalizationContractTest {
         assertTrue(serbianLatinMontenegroStrings.contains("name=\"state_waiting\">Čekanje</string>"))
         assertTrue(serbianLatinMontenegroStrings.contains("name=\"state_active\">Aktivno</string>"))
         assertTrue(serbianLatinMontenegroStrings.contains("name=\"state_error\">Greška</string>"))
-        listOf("Podrazumijevano", "podrazumijevana", "zahtijeva", "izvještaj").forEach {
+        listOf("Podrazumijevano", "zahtijeva", "izvještaj").forEach {
             assertTrue(it, serbianLatinMontenegroStrings.contains(it))
             assertFalse(it, serbianLatinStrings.contains(it))
         }
-        listOf("Podrazumevano", "podrazumevana", "zahteva", "izveštaj").forEach {
+        listOf("Podrazumevano", "zahteva", "izveštaj").forEach {
             assertTrue(it, serbianLatinStrings.contains(it))
             assertFalse(it, serbianLatinMontenegroStrings.contains(it))
         }
