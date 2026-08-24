@@ -174,7 +174,7 @@ this summary intentionally does not duplicate its test matrix.
 
 ## Localization state
 
-- Resources currently provide **99 product locales: English plus 98 non-English
+- Resources currently provide **100 product locales: English plus 99 non-English
   resource sets**. This count is derived from the current `values*` resource
   inventory, excluding non-locale `values-night`; supported variants include the
   intentional Portuguese, Chinese, Serbian, Punjabi, and Azerbaijani script or
@@ -252,6 +252,17 @@ this summary intentionally does not duplicate its test matrix.
   conversation content, and the complete five-paragraph Privacy Policy claim set.
   Independent audit, human/native-speaker review, and runtime, Mini-presentation,
   emulator, and physical-device validation remain pending.
+- Lingala (`ln`, `values-ln`) now covers the complete current localizable product
+  surface in contemporary Latin-script Lingala with LTR presentation. One generic
+  resource tree serves Android's `ln-CD`, `ln-CG`, `ln-AO`, and `ln-CF` regional
+  identities; the likely CLDR identity is `ln-Latn-CD`, and no duplicate regional
+  tree is maintained. Translation-production semantic self-checks preserve
+  controller ON versus runtime ACTIVE, the built-in phone earpiece versus the
+  loudspeaker, audio-output routing versus transmission, communication audio versus
+  conversation content, and all five Privacy Policy paragraphs. The natural full
+  four-state Mini path is retained without a compact override. Independent audit,
+  human/native-speaker review, generated LocaleConfig inspection, and runtime,
+  glyph, Mini-presentation, emulator, and physical-device validation remain pending.
 - The reviewed Mini label now uses established local-script or semantic forms in
   Bulgarian, Bengali, Greek, Gujarati, Hebrew, Yiddish, Khmer, Kannada, Macedonian,
   Marathi, Serbian Cyrillic, Tamil, and Telugu. Other locales retain their independently
