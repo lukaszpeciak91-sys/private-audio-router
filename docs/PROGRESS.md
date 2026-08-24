@@ -1,5 +1,16 @@
 # Progress
 
+## Remaining protected-audio test-contract reconciliation
+
+- Remaining protected-audio ownership assertions now distinguish executable calls
+  from comments and diagnostic text. Provider independence is checked against the
+  routing and public-audio-metadata classification path rather than diagnostic prose.
+- Proximity isolation now verifies that its preference and synchronization paths do
+  not route, clear routes, change communication mode, or start protected routing,
+  without freezing unrelated historical routing-operation totals.
+- Production routing behavior is unchanged. Reconciliation of the broader failing
+  JVM baseline remains in progress.
+
 ## Kotlin source-contract extraction reconciliation
 
 - Brittle raw-brace Kotlin source extraction in the affected contract tests has been

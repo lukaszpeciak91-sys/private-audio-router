@@ -131,7 +131,10 @@ class Layer4SettingsContractTest {
     @Test
     fun versionIsBuildMetadataAndSettingsAddNoProtectedBehavior() {
         assertTrue(mainSource.contains("versionName = BuildConfig.VERSION_NAME"))
-        assertEquals(1, productionSources.sumOf { it.readText().occurrences("setCommunicationDevice(") })
+        assertEquals(
+            listOf(observerSourceFile),
+            productionSources.kotlinMemberCallSites("setCommunicationDevice").map(KotlinCallSite::file),
+        )
         assertFalse(settingsSource.contains("AudioManager"))
         assertFalse(settingsSource.contains("PrivateAudioState"))
         assertFalse(settingsSource.contains("AudioDiagnosticObserver"))
@@ -158,6 +161,7 @@ class Layer4SettingsContractTest {
         val settingsSource = projectFile("app/src/main/java/app/privateaudio/ui/SettingsSheet.kt").readText()
         val serviceSource = projectFile("app/src/main/java/app/privateaudio/PrivateAudioService.kt").readText()
         val observerSource = projectFile("app/src/main/java/app/privateaudio/diagnostic/AudioDiagnosticObserver.kt").readText()
+        val observerSourceFile = projectFile("app/src/main/java/app/privateaudio/diagnostic/AudioDiagnosticObserver.kt")
         val productionSources = File(projectRoot, "app/src/main/java")
             .walkTopDown().filter { it.isFile && it.extension == "kt" }.toList()
     }
