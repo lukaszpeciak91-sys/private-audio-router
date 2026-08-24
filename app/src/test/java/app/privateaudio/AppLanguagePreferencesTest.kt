@@ -38,6 +38,17 @@ class AppLanguagePreferencesTest {
         assertEquals(Locale.forLanguageTag("pt-PT").getDisplayName(Locale.forLanguageTag("pt-PT")).titlecased(Locale.forLanguageTag("pt-PT")), portuguesePortugal)
     }
 
+    @Test
+    fun pickerKeepsAllThreeUzbekScriptVariantsDistinct() {
+        val variants = listOf("uz-Latn-UZ", "uz-Cyrl-UZ", "uz-Arab-AF").map(Locale::forLanguageTag)
+        val names = variants.map { AppLanguagePreferences.pickerDisplayName(it, variants.size) }
+
+        assertEquals(3, names.toSet().size)
+        variants.zip(names).forEach { (locale, name) ->
+            assertTrue("$name must expose ${locale.script}", name.contains(locale.getDisplayScript(locale)))
+        }
+    }
+
     private fun String.titlecased(locale: Locale): String = replaceFirstChar {
         if (it.isLowerCase()) it.titlecase(locale) else it.toString()
     }

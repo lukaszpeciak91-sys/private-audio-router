@@ -97,8 +97,8 @@ locales remain language-name-only. Names come from Android/Java locale display-n
 data rather than a product-maintained list.
 
 Known future expansion candidates, and **not currently supported**, are Azerbaijani
-Cyrillic, Bosnian Cyrillic, Hindi Latin, Uzbek Cyrillic, Uzbek Arabic, and Cantonese
-Simplified. Android resource-resolution tests protect these gaps from silently
+Cyrillic, Bosnian Cyrillic, Hindi Latin, and Cantonese Simplified. Android
+resource-resolution tests protect these gaps from silently
 presenting a supported resource tree written in a different script.
 
 OEMs may expose different sets of system languages, but this does not normally
