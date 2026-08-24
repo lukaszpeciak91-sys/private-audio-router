@@ -1,5 +1,14 @@
 # Progress
 
+## Kotlin source-contract extraction reconciliation
+
+- Brittle raw-brace Kotlin source extraction in the affected contract tests has been
+  replaced with shared, offset-preserving structural extraction that ignores braces
+  in strings and comments. Declaration matching now avoids freezing irrelevant
+  visibility where the behavior is the contract.
+- Protected routing semantics and Mini behavior remain unchanged. Reconciliation of
+  the broader failing JVM baseline remains in progress.
+
 ## JVM source-contract ownership reconciliation
 
 - Source-contract tests now distinguish the single executable communication-device

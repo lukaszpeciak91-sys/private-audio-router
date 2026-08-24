@@ -65,7 +65,7 @@ class MiniCompactStateContractTest {
         assertTrue(overlay.contains("android.graphics.Typeface.create(\"sans-serif\", android.graphics.Typeface.NORMAL)"))
         assertTrue(overlay.contains("PrivateAudioState.entries.map(::miniStateLabel)"))
         assertTrue(overlay.contains("statusTextPaint.measureText(label)"))
-        assertTrue(overlay.method("private fun refreshLocalizedPresentation").contains("refreshMiniStatusTextSize()"))
+        assertTrue(overlay.method("fun refreshLocalizedPresentation()").contains("refreshMiniStatusTextSize()"))
         assertFalse(overlay.method("private val refreshState").contains("refreshMiniStatusTextSize()"))
     }
 
@@ -104,7 +104,7 @@ class MiniCompactStateContractTest {
         }
     }
 
-    private fun String.method(signature: String) = substring(indexOf(signature)).substringBefore("\n        }")
+    private fun String.method(signature: String) = kotlinDeclaration(signature)
 
     private companion object {
         val root = generateSequence(File(System.getProperty("user.dir")).absoluteFile) { it.parentFile }

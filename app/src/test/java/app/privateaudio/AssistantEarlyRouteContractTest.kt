@@ -25,7 +25,19 @@ class AssistantEarlyRouteContractTest {
     @Test fun earlyPhaseStartsTrackThenModeAndLeavesProtectedStateUntouched() {
         val start = observer.method("private fun startAssistantEarlyPreArm(")
         assertTrue(start.contains("startSilentCommunicationTrack()"))
-        assertInOrder(start, "startSilentCommunicationTrack()", "PLAYSTATE_PLAYING", "requestCommunicationMode()")
+        assertInOrder(
+            start,
+            "startSilentCommunicationTrack()",
+            "Assistant early silent track PLAYING",
+            "requestCommunicationMode()",
+        )
+        val trackStart = observer.method("private fun startSilentCommunicationTrack(): Boolean")
+        assertInOrder(
+            trackStart,
+            "track.play()",
+            "track.playState == AudioTrack.PLAYSTATE_PLAYING",
+            "return started",
+        )
         assertEquals(1, start.occurrences("requestCommunicationMode()"))
         listOf("requestCommunicationDevice", "clearCommunicationDevice", "ExperimentState.REQUEST_ATTEMPTED").forEach {
             assertFalse("Early start contains $it", start.contains(it))
@@ -49,7 +61,15 @@ class AssistantEarlyRouteContractTest {
         val abort = observer.method("private fun abortAssistantEarlyPreArmIfContextLost(")
         assertTrue(abort.contains("AssistantEarlyRoutePhase.MODE_REQUEST_IN_FLIGHT"))
         assertTrue(abort.contains("Assistant early MODE_NORMAL ignored while request IN_FLIGHT"))
-        assertInOrder(abort, "MODE_REQUEST_IN_FLIGHT", "audioManager.mode == AudioManager.MODE_NORMAL", "return")
+        val inFlightModeNormalBranch = abort.substringAfter(
+            "assistantEarlyRoute.phase == AssistantEarlyRoutePhase.MODE_REQUEST_IN_FLIGHT",
+        )
+        assertInOrder(
+            inFlightModeNormalBranch,
+            "audioManager.mode == AudioManager.MODE_NORMAL",
+            "Assistant early MODE_NORMAL ignored while request IN_FLIGHT",
+            "return",
+        )
         assertFalse(abort.substringBefore("MODE_REQUEST_IN_FLIGHT").contains("early communication mode ownership lost"))
         val start = observer.method("private fun startAssistantEarlyPreArm(")
         assertInOrder(start, "phase = AssistantEarlyRoutePhase.MODE_REQUEST_IN_FLIGHT", "requestCommunicationMode()")
@@ -129,7 +149,7 @@ class AssistantEarlyRouteContractTest {
         assertTrue(cleanup.contains("stopSilentCommunicationTrack()"))
         assertTrue(cleanup.contains("prepareSilentCommunicationTrack()"))
         assertFalse(cleanup.contains("clearCommunicationDevice"))
-        assertTrue(cleanup.contains("if (modeParticipationActive)"))
+        assertTrue(cleanup.contains("if (modeParticipationActive && !cancelledWhileModeInFlight)"))
         assertTrue(cleanup.contains("audioManager.mode = AudioManager.MODE_NORMAL"))
     }
 
@@ -156,16 +176,7 @@ class AssistantEarlyRouteContractTest {
     }
 
     private fun String.occurrences(needle: String) = windowed(needle.length).count { it == needle }
-    private fun String.method(signature: String): String {
-        val start = indexOf(signature).also { check(it >= 0) { "Missing $signature" } }
-        val opening = indexOf('{', start)
-        var depth = 0
-        for (index in opening until length) when (this[index]) {
-            '{' -> depth++
-            '}' -> if (--depth == 0) return substring(start, index + 1)
-        }
-        error("Unterminated $signature")
-    }
+    private fun String.method(signature: String) = kotlinDeclaration(signature)
     private fun assertInOrder(source: String, vararg fragments: String) {
         var previous = -1
         fragments.forEach { fragment -> previous = source.indexOf(fragment).also { assertTrue("Missing/out of order: $fragment", it > previous) } }

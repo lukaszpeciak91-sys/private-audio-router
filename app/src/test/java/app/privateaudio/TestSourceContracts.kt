@@ -14,6 +14,30 @@ internal fun Iterable<File>.kotlinMemberCallSites(function: String): List<Kotlin
     }
 }
 
+/**
+ * Returns a Kotlin declaration and its body while ignoring non-structural braces.
+ *
+ * [declaration] should identify the meaningful declaration shape (for example,
+ * `fun refresh()`) rather than incidental modifiers such as visibility.
+ */
+internal fun String.kotlinDeclaration(declaration: String): String {
+    val sanitized = withoutKotlinCommentsAndStrings()
+    val start = sanitized.indexOf(declaration)
+    check(start >= 0) { "Missing Kotlin declaration: $declaration" }
+
+    val openingBrace = sanitized.indexOf('{', start)
+    check(openingBrace >= 0) { "Missing body for Kotlin declaration: $declaration" }
+
+    var depth = 0
+    for (index in openingBrace until sanitized.length) {
+        when (sanitized[index]) {
+            '{' -> depth++
+            '}' -> if (--depth == 0) return substring(start, index + 1)
+        }
+    }
+    error("Unterminated body for Kotlin declaration: $declaration")
+}
+
 private fun String.withoutKotlinCommentsAndStrings(): String {
     val result = StringBuilder(this)
     var index = 0

@@ -1,5 +1,6 @@
 package app.privateaudio.diagnostic
 
+import app.privateaudio.kotlinDeclaration
 import android.media.AudioDeviceInfo
 import android.media.AudioManager
 import org.junit.Assert.assertEquals
@@ -322,7 +323,16 @@ class AudioDiagnosticObserverTest {
         val creation = observerSource.method("private fun createSilentCommunicationTrack(): AudioTrack?")
         val track = observerSource.method("private fun startSilentCommunicationTrack(): Boolean")
         assertInOrder(creation, ".setUsage(AudioAttributes.USAGE_VOICE_COMMUNICATION)", ".setContentType(AudioAttributes.CONTENT_TYPE_SPEECH)", ".setEncoding(AudioFormat.ENCODING_PCM_16BIT)", ".setChannelMask(AudioFormat.CHANNEL_OUT_MONO)")
-        assertInOrder(track, "track.write(silence", "track.play()")
+        assertInOrder(
+            track,
+            "val silence = ShortArray(",
+            "track.play()",
+            "track.playState == AudioTrack.PLAYSTATE_PLAYING",
+            "if (started) startSilenceWriter(track, silence)",
+            "return started",
+        )
+        val writer = observerSource.method("private fun startSilenceWriter(")
+        assertTrue(writer.contains("track.write(silence"))
         assertEquals(1, observerSource.occurrences("audioManager.setCommunicationDevice(earpiece)"))
         assertTrue(observerSource.method("private fun performRoutingAttempt(").contains("experiment.attempts.isNotEmpty()"))
     }
@@ -398,20 +408,7 @@ class AudioDiagnosticObserverTest {
         }
     }
 
-    private fun String.method(signature: String): String {
-        val start = indexOf(signature)
-        check(start >= 0) { "Missing method signature: $signature" }
-        val openingBrace = indexOf('{', start)
-        check(openingBrace >= 0) { "Missing method body: $signature" }
-        var depth = 0
-        for (index in openingBrace until length) {
-            when (this[index]) {
-                '{' -> depth++
-                '}' -> if (--depth == 0) return substring(start, index + 1)
-            }
-        }
-        error("Unterminated method body: $signature")
-    }
+    private fun String.method(signature: String) = kotlinDeclaration(signature)
 
     private fun String.occurrences(needle: String): Int = windowed(needle.length).count { it == needle }
 
