@@ -18,6 +18,8 @@ First-party Android, Google, and product terminology is strong evidence of real 
 
 Do not claim all existing translations have been runtime-validated unless repository evidence establishes that fact.
 
+Resolve a technical term's exact product/software sense before selecting target wording; an everyday dictionary equivalent is not sufficient when it changes the referent or action. Seek terminology evidence in proportion to semantic risk, with Private Audio semantics first and semantically appropriate first-party or established target-language technology usage as supporting evidence. Localization contracts protect justified terminology and semantic distinctions, but a Translator-authored passing assertion does not establish linguistic correctness.
+
 ## Product copy and translation quality
 
 English source strings are product copy, not merely source text. Before translating a new or changed string:

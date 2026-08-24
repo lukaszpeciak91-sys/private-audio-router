@@ -255,6 +255,9 @@ physical test records remain in [`DECISIONS.md`](DECISIONS.md),
 
 ## Recently completed significant changes
 
+- Strengthened the repository Translation Skill with technical-sense reconstruction,
+  proportional terminology evidence, reverse-referent checks, uncertainty handling,
+  and safeguards against self-confirming lexical regression tests.
 - Added the localized Privacy Policy Settings surface and corrected targeted
   high-risk translation defects.
 - Strengthened localization handling for privacy, security, permission, account,

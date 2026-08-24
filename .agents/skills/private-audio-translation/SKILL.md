@@ -26,7 +26,7 @@ Report one of:
 
 For ordinary copy:
 
-1. Reconstruct the source meaning and surface context.
+1. Reconstruct the source meaning, technical referent, and surface context.
 2. Generate natural contemporary product language using locale-appropriate terminology.
 3. Check naturalness, grammar, script, orthography, and consistency with neighboring target strings.
 4. Reconstruct the candidate's meaning independently of its wording.
@@ -40,7 +40,7 @@ For privacy, permissions, security, diagnostics, backup, account, data-handling,
 4. Compare the reconstructed target model against the source model and the complete **CLAIM SET** when related statements depend on one another.
 5. Correct detected drift, then write the best resulting candidate.
 
-Never strengthen or weaken the factual guarantee. Preserve these distinctions:
+Never strengthen or weaken the factual guarantee. Preserve the actual action expressed by high-risk verbs such as collect, record, transmit/send, access, observe, process, generate, save, request, use, and disable. An approximately related outcome is not equivalent. Preserve these distinctions:
 
 - `does not request microphone access` is not `cannot access the microphone`;
 - local processing is not collection or transmission;
@@ -49,18 +49,55 @@ Never strengthen or weaken the factual guarantee. Preserve these distinctions:
 - generating diagnostic information is not saving/exporting it; and
 - app-data backup being disabled does not mean data can never be copied.
 
+### Resolve technical sense before choosing words
+
+Do not translate an isolated English token when its everyday and software/product senses can differ. Before selecting target wording for a non-obvious or polysemous term, state a short conceptual reconstruction:
+
+```text
+SOURCE TERM: Version
+SOURCE SENSE: software/application release version, not type, kind, or category
+SURFACE: Settings version label
+```
+
+Apply this proportionally to terms such as version, session, access, crash, route/routing, output, active, available, permission, metadata, backup, server, analytics, diagnostics, report, account, sign-in, built-in, receiver/earpiece, speaker, and proximity sensor. This is a trigger list, not a fixed glossary. Product semantics come first: a generic ICT translation of `Active`, for example, must not replace Private Audio's state meaning—current participation in an established qualifying communication-audio routing cycle—with merely enabled/ON.
+
+For every materially uncertain term, maintain a lightweight **Targeted Terminology Ledger** in working analysis rather than a new repository file:
+
+**source concept → source sense/referent → candidate → evidence → reverse gloss → rejected alternative(s), when relevant → decision → confidence/review need**
+
+The entries must contain the actual reasoning, not merely “self-checked.” Report only meaningful decisions and unresolved uncertainty rather than dumping the whole ledger. A dictionary-correct equivalent is insufficient when an established software or Android sense applies; choose wording that denotes the exact product concept. Conversely, do not blindly adopt glossary wording that is obsolete, unnatural, or semantically wrong for the Private Audio surface.
+
+When research tools are available, actively seek terminology evidence for a term that is technical or software-specific; concerns privacy, security, or data; is semantically overloaded or unfamiliar; looks like a literal calque; becomes uncertain under reverse gloss; or is likely to differ from ordinary dictionary meaning. Use this evidence hierarchy contextually:
+
+1. exact Private Audio semantics;
+2. first-party Android, Google, or platform terminology for the target locale when semantically correct;
+3. official or institutional target-language technology terminology;
+4. established software localization or mature localized software documentation;
+5. reputable technical glossaries or dictionaries;
+6. contemporary professional target-language technology usage; and
+7. general dictionaries as supporting evidence, never automatic authority.
+
+The gate is proportional: ordinary, clearly established labels such as `Close` or `Error` normally need no terminology dossier, while `audio session`, `metadata`, `crash reporting`, or Privacy `access` often do. State evidence limitations honestly; never fabricate first-party usage, Android terminology, native-speaker validation, or consensus. A related or neighboring language may reveal questions to investigate, but its cognate, loanword, or vocabulary is not target-language evidence and must not be copied mechanically.
+
+Reverse gloss must test whether the target denotes the same technical **object, action, state, or relationship**, not merely whether the sentence sounds broadly equivalent. Reject shifts such as software version → type/kind, audio session → section/part, access → receive/get, software crash → physical breakage, earpiece → generic speaker, audio routing → networking route, ACTIVE → enabled/ON, report generation → report saving, or permission request → technical capability. For high-risk copy, add this technical-referent check to—never replace—the actor/action/object/destination/location/condition/negation/qualifier/scope/strength model above.
+
 ## Perform Targeted Self-Review
 
-When a phrase creates a specific linguistic uncertainty:
+Targeted Self-Review triggers automatically when a reverse gloss changes the noun class or referent; multiple technical equivalents are plausible; only a generic dictionary candidate exists; a candidate looks like a literal calque; first-party and glossary terminology disagree; an international loanword competes with a native technical term; a related-language form is tempting to copy; a choice changes state or action semantics; a privacy/security verb can drift in scope; or an exact test would freeze the candidate.
+
+When triggered:
 
 1. Name the exact ambiguity.
 2. Compare plausible formulations.
 3. Test each against source semantics and target-language usage.
 4. Choose the best defensible candidate.
 5. Write it.
-6. Optionally report `REVIEW_RECOMMENDED: <locale/key/reason>` and use `TRANSLATED_WITH_REVIEW_RECOMMENDED`.
+6. Classify terminology confidence and report a narrow review need where applicable:
+   - **HIGH-CONFIDENCE / FROZEN** — strong evidence and the exact referent are established; an exact lexical regression assertion may be used when valuable.
+   - **DEFENSIBLE BUT REVIEW-WORTHY** — the best available written candidate preserves source semantics, but evidence is incomplete or usage genuinely varies; report `REVIEW_RECOMMENDED: <locale/key/reason>` and use `TRANSLATED_WITH_REVIEW_RECOMMENDED`.
+   - **UNSUPPORTED / SEMANTICALLY UNRESOLVED** — continue targeted research and self-review because the candidate's technical sense is not established; do not freeze it in an exact lexical assertion merely to finish.
 
-`REVIEW_RECOMMENDED` is informational and never means that no translation was produced. Never blanket-block locales because native-speaker verification is unavailable. Stop only the affected item with `SOURCE COPY REVIEW REQUIRED` when the source meaning itself is unknowable; do not invent whether an ambiguous verb such as “use” means collect, record, process, access, or transmit.
+`REVIEW_RECOMMENDED` is informational and never means that no translation was produced. Weak evidence does not by itself prevent writing the best defensible candidate, and missing native-speaker verification must not blanket-block a locale. Stop only the affected item with `SOURCE COPY REVIEW REQUIRED` when the source meaning itself is unknowable; do not invent whether an ambiguous verb such as “use” means collect, record, process, access, or transmit. These confidence labels are Translator working outcomes, not Audit verdicts or independent acceptance.
 
 ## Preserve product terminology
 
@@ -73,11 +110,11 @@ When a phrase creates a specific linguistic uncertainty:
 - Keep **ON/enabled** (waiting or available) distinct from runtime **ACTIVE**.
 - Distinguish the built-in call earpiece/receiver from loudspeaker, speakerphone, headphones, earbuds, and Bluetooth.
 - Preserve source versus destination, action versus state, trigger versus effect, and screen versus phone/device.
-- Resolve AI terminology independently for each locale. Do not infer terminology from a related language.
+- Resolve terminology independently for each locale, including AI terminology. Related Oromo/Somali/Amharic, Slavic, Indic, Malay/Indonesian, African regional, Romance, or other language-group copy is not lexical evidence for the target locale.
 - Keep `Private Audio` untranslated. Treat `Mini` as a compact-controller concept, not necessarily a Latin-script brand token.
 - Check transliterated/international terms for misleading, offensive, embarrassing, or concept-colliding target-language meanings.
 - Use the normal native script and orthography, including locale-specific Unicode distinctions and the correct CJK variant.
-- Research non-obvious terms when tools are available without fabricating evidence when they are not.
+- Apply the technical-sense and terminology-evidence gate above rather than relying on plausibility or a general dictionary gloss.
 
 ### Classify short international-looking UI terms
 
@@ -112,4 +149,11 @@ Natural language comes before geometry. For Mini, keep Ready / Waiting / Active 
 
 ## Complete implementation
 
-Inspect and follow the repository's current localization contracts rather than assuming fixed filenames. As applicable, update locale resources, meaningful semantic regression assertions, Android resource-resolution/direction coverage, Mini measurement coverage, and `docs/PROGRESS.md`. Run current XML, duplicate-key, key/placeholder parity, discovery, contract, RTL, conflict-marker, and whitespace checks. Report static, linguistic self-check, runtime, emulator, physical-device, independent-audit, and human/native evidence separately.
+Inspect and follow the repository's current localization contracts rather than assuming fixed filenames. Tests protect previously justified decisions; they do not justify a Translator's candidate. A passing localization contract is source-contract evidence, not linguistic acceptance evidence.
+
+- Prefer semantic invariants and protected distinctions over exact full-string assertions.
+- Use exact lexical assertions only for deliberately reviewed/frozen terminology with adequate evidence, or to protect exact wording required by a known regression.
+- Never invent a candidate, assert that same candidate, and cite the passing test as evidence for its correctness.
+- Do not freeze a materially uncertain candidate merely because implementation needs a test. Where possible, test the protected distinction and report `REVIEW_RECOMMENDED` for the wording.
+
+For example, a contract may correctly preserve Oromo ON versus ACTIVE and earpiece versus loudspeaker; an assertion freezing an unsupported word for software `Version` would only preserve the defect. As applicable, update locale resources, meaningful semantic regression assertions, Android resource-resolution/direction coverage, Mini measurement coverage, and `docs/PROGRESS.md`. Run current XML, duplicate-key, key/placeholder parity, discovery, contract, RTL, conflict-marker, and whitespace checks. Report static, linguistic self-check, runtime, emulator, physical-device, independent-audit, and human/native evidence separately.
