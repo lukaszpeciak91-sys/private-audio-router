@@ -63,7 +63,9 @@ class Layer7BProximityPreferenceContractTest {
         assertFalse(overlay.contains("ProximityScreenController"))
         assertFalse(overlay.contains("updateProximityFeatureEnabled"))
         assertTrue(overlay.contains("ACTION_HIDE"))
-        assertTrue(overlay.contains("ACTION_EXPAND"))
+        val touchDispatch = overlay.kotlinDeclaration("override fun onTouchEvent(")
+        assertTrue(touchDispatch.contains("MiniControl.EXPAND ->"))
+        assertTrue(touchDispatch.contains("expandMain()"))
     }
 
     private fun String.occurrences(needle: String) = windowed(needle.length).count { it == needle }

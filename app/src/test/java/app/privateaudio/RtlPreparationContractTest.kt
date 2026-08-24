@@ -1,5 +1,7 @@
 package app.privateaudio
 
+import app.privateaudio.overlay.miniDirectionalX
+import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue
 import org.junit.Test
@@ -28,7 +30,7 @@ class RtlPreparationContractTest {
 
     @Test
     fun overlayStatusGeometryAndBidiDirectionFollowLayoutDirection() {
-        val statusRenderer = overlay.method("private fun drawStatusLabel")
+        val statusRenderer = overlay.kotlinDeclaration("private fun drawStatusLabel")
         assertTrue(statusRenderer.contains("StaticLayout.Builder.obtain"))
         assertTrue(statusRenderer.contains("TextDirectionHeuristics.FIRSTSTRONG_RTL"))
         assertTrue(statusRenderer.contains("TextDirectionHeuristics.FIRSTSTRONG_LTR"))
@@ -39,7 +41,9 @@ class RtlPreparationContractTest {
         assertTrue(overlay.contains("STATUS_TEXT_LEFT = 34f"))
         assertTrue(overlay.contains("STATUS_TEXT_RIGHT = 134f"))
         assertTrue(overlay.contains("STATUS_DOT_X = 20f"))
-        assertTrue(overlay.contains("DESIGN_WIDTH - ltrX"))
+        assertTrue(overlay.contains("miniDirectionalX(ltrX, DESIGN_WIDTH, isRtlLayout())"))
+        assertEquals(34f, miniDirectionalX(34f, 300f, rtl = false))
+        assertEquals(266f, miniDirectionalX(34f, 300f, rtl = true))
         assertTrue(overlay.contains("directionalX(STATUS_DOT_X)"))
         assertTrue(overlay.contains("directionalX(STATUS_TEXT_RIGHT)"))
         assertTrue(overlay.contains("RectF(134f, 15f, 166f, 47f)"))
@@ -47,11 +51,12 @@ class RtlPreparationContractTest {
 
     @Test
     fun miniDirectionUsesTheLogicalApplicationLocaleAndFutureRtlSafePlatformResolution() {
-        val direction = overlay.method("private fun isRtlLayout")
-        assertTrue(direction.contains("rtlLayout"))
+        assertTrue(overlay.contains("private fun isRtlLayout() = rtlLayout"))
         assertTrue(overlay.contains("rtlLayout = miniLayoutDirection(context) == View.LAYOUT_DIRECTION_RTL"))
-        assertTrue(overlay.method("fun refreshLocalizedPresentation").contains("rtlLayout = miniLayoutDirection(context)"))
-        assertTrue(layoutDirection.contains("AppLanguagePreferences.presentationLayoutDirection(context)"))
+        assertTrue(overlay.kotlinDeclaration("fun refreshLocalizedPresentation").contains("rtlLayout = miniLayoutDirection(context)"))
+        assertTrue(layoutDirection.kotlinDeclaration("internal fun miniLayoutDirection(").contains("AppLanguagePreferences.presentationLayoutDirection(context)"))
+        assertTrue(productScreen.kotlinDeclaration("fun PrivateAudioScreen(").contains("AppLanguagePreferences.presentationLayoutDirection(context)"))
+        assertTrue(languagePreferences.contains("TextUtils.getLayoutDirectionFromLocale(effectivePresentationLocale(context))"))
         listOf("\"yi\"", "\"he\"", "\"ar\"", "\"ur\"", "\"fa\"").forEach {
             assertFalse(presentationKotlin.contains(it))
         }
@@ -89,6 +94,7 @@ class RtlPreparationContractTest {
         val presentationKotlin = listOf(productScreen, settings, overlay, layoutDirection).joinToString("\n")
         val position = projectFile("app/src/main/java/app/privateaudio/overlay/OverlayPosition.kt").readText()
         val service = projectFile("app/src/main/java/app/privateaudio/PrivateAudioService.kt").readText()
+        val languagePreferences = projectFile("app/src/main/java/app/privateaudio/localization/AppLanguagePreferences.kt").readText()
 
         fun projectFile(relativePath: String) = File(root, relativePath)
     }

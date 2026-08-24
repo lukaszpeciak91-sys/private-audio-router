@@ -33,14 +33,19 @@ class Layer4SettingsContractTest {
 
     @Test
     fun languageOptionsScrollWithinTheSheetAndSelectionReturnsToSettings() {
-        assertTrue(settingsSource.contains("LazyColumn("))
-        assertTrue(settingsSource.contains("WindowInsets.safeDrawing.only(WindowInsetsSides.Vertical)"))
-        assertTrue(settingsSource.contains("max = maxHeight - SettingsLayout.verticalOffset * 2"))
-        assertTrue(
-            settingsSource.contains(
-                "AppLanguagePreferences.select(context, it)\n                            page = SettingsPage.ROOT",
-            ),
-        )
+        val settingsSheet = settingsSource.kotlinDeclaration("fun SettingsSheet(")
+        assertTrue(settingsSheet.contains("SettingsPage.LANGUAGE -> LanguagePage("))
+        assertTrue(settingsSheet.contains("val portraitInsetPage = page == SettingsPage.LANGUAGE"))
+        assertTrue(settingsSheet.contains("WindowInsets.safeDrawing.only(WindowInsetsSides.Vertical)"))
+        val portraitHeightBranch = settingsSheet.indexOf("else if (portraitInsetPage)")
+        val insetHeight = settingsSheet.indexOf("maxHeight - SettingsLayout.verticalOffset * 2", portraitHeightBranch)
+        assertTrue("Portrait inset height branch must be present", portraitHeightBranch >= 0)
+        assertTrue("Portrait inset height must subtract both offsets", insetHeight > portraitHeightBranch)
+        assertTrue(settingsSource.kotlinDeclaration("private fun LanguagePage(").contains("LazyColumn("))
+        val select = settingsSheet.indexOf("AppLanguagePreferences.select(context, it)")
+        val returnToRoot = settingsSheet.indexOf("page = SettingsPage.ROOT", select)
+        assertTrue("Language selection must be present", select >= 0)
+        assertTrue("Language selection must return to Settings root", returnToRoot > select)
     }
 
     @Test
