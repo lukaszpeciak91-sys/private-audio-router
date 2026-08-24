@@ -3,7 +3,7 @@
     <string name="app_name">Private Audio</string>
     <string name="routing_notification_channel">Private Audio</string>
     <string name="routing_notification_title">Private Audio 开咗</string>
-    <string name="routing_notification_text">等紧切换音频输出</string>
+    <string name="routing_notification_text">等紧进行音频路由</string>
     <string name="product_title">Private Audio</string>
     <string name="product_subtitle">好似打电话咁，私下同人工智能倾偈。</string>
     <string name="state_ready">准备好</string>
@@ -22,13 +22,13 @@
     <string name="settings_advanced">高级</string>
     <string name="settings_about">关于 Private Audio</string>
     <string name="settings_privacy_policy">隐私政策</string>
-    <string name="settings_privacy_policy_body">Private Audio 唔会收集、录制或传输你嘅对话或音频内容。\n\n呢个应用唔需要账户或登录。佢唔会请求麦克风访问权限，亦唔会使用分析、广告或崩溃报告服务。Private Audio 唔会请求 Android 嘅互联网权限，亦唔会向服务器发送数据。\n\nPrivate Audio 只会观察音频输出切换同诊断所需嘅 Android 音频系统技术状态同元数据。Private Audio 唔会访问你嘅对话内容。\n\n应用设置会保存在你嘅设备本地。诊断数据会喺本地产生同处理，而且只有你选择保存诊断报告时先会保存报告。报告可能包含你嘅设备、Android 版本、音频输出切换同音频系统状态等技术信息，但唔会包含对话或音频内容。\n\nAndroid 应用数据备份已停用。</string>
+    <string name="settings_privacy_policy_body">Private Audio 唔会收集、录制或传输你嘅对话或音频内容。\n\n呢个应用唔需要账户或登录。佢唔会请求麦克风访问权限，亦唔会使用分析、广告或崩溃报告服务。Private Audio 唔会请求 Android 嘅互联网权限，亦唔会向服务器发送数据。\n\nPrivate Audio 只会观察音频路由同诊断所需嘅 Android 音频系统技术状态同元数据。Private Audio 唔会访问你嘅对话内容。\n\n应用设置会保存在你嘅设备本地。诊断数据会喺本地产生同处理，而且只有你选择保存诊断报告时先会保存报告。报告可能包含你嘅设备、Android 版本、音频路由同音频系统状态等技术信息，但唔会包含对话或音频内容。\n\nAndroid 应用数据备份已停用。</string>
     <string name="settings_version">版本 %1$s</string>
     <string name="settings_language_body">Private Audio 而家跟随你嘅设备语言，并已选择“默认”。</string>
     <string name="settings_language_android_13_required">应用内语言选择功能需要 Android 13 或更高版本。呢部设备会跟随系统语言。</string>
     <string name="settings_proximity_screen">靠近耳仔时关闭屏幕</string>
     <string name="settings_advanced_body">随着 Private Audio 不断发展，呢度会提供更多选项。</string>
-    <string name="settings_about_body">Private Audio 帮你将支持嘅语音音频切换到手机嘅内置听筒。</string>
+    <string name="settings_about_body">Private Audio 帮你将支持嘅语音音频路由到手机嘅内置听筒。</string>
     <string name="diagnostic_report_saved">诊断报告已保存。</string>
     <string name="diagnostic_report_save_failed">无法保存诊断报告。</string>
     <string name="diagnostics_title">诊断</string>
@@ -36,10 +36,10 @@
     <string name="diagnostics_earpiece">听筒</string>
     <string name="diagnostics_proximity_sensor">距离传感器</string>
     <string name="diagnostics_private_audio">PRIVATE AUDIO</string>
-    <string name="diagnostics_routing">音频输出切换</string>
+    <string name="diagnostics_routing">音频路由</string>
     <string name="diagnostics_status">状态</string>
     <string name="diagnostics_audio_route">音频输出</string>
-    <string name="diagnostics_last_routing">上次音频输出切换尝试</string>
+    <string name="diagnostics_last_routing">上次音频路由尝试</string>
     <string name="diagnostics_result">结果</string>
     <string name="diagnostics_error">错误</string>
     <string name="diagnostics_available">可用</string>
@@ -58,10 +58,10 @@
     <string name="diagnostics_route_speaker">扬声器</string>
     <string name="diagnostics_route_bluetooth">蓝牙</string>
     <string name="diagnostics_route_other">其他</string>
-    <string name="diagnostics_error_blocked_by_system">系统阻止咗音频输出切换。</string>
-    <string name="diagnostics_error_session_ended">音频会话喺输出切换完成之前已经结束。</string>
-    <string name="diagnostics_error_audio_start">Private Audio 无法开始切换音频输出。</string>
+    <string name="diagnostics_error_blocked_by_system">系统阻止咗音频路由。</string>
+    <string name="diagnostics_error_session_ended">音频会话喺音频路由完成之前已经结束。</string>
+    <string name="diagnostics_error_audio_start">Private Audio 无法开始音频路由。</string>
     <string name="diagnostics_error_audio_preparation">Private Audio 无法准备通信音频。</string>
-    <string name="diagnostics_error_request_rejected">听筒输出切换请求未获接受。</string>
-    <string name="diagnostics_error_not_completed">无法完成音频输出切换。</string>
+    <string name="diagnostics_error_request_rejected">听筒音频路由请求未获接受。</string>
+    <string name="diagnostics_error_not_completed">无法完成音频路由。</string>
 </resources>
