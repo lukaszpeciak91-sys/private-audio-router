@@ -55,6 +55,7 @@ class LingalaLocalizationContractTest {
     fun productStatesAndProtectedAudioConceptsRemainDistinct() {
         assertEquals("Private Audio", resourceValue("app_name"))
         assertEquals("Private Audio", resourceValue("product_title"))
+        assertTrue(resourceValue("product_subtitle").contains("AI"))
 
         val states = listOf("state_ready", "state_waiting", "state_active", "state_error")
             .map(::resourceValue)
@@ -72,8 +73,10 @@ class LingalaLocalizationContractTest {
         val routing = resourceValue("diagnostics_routing")
         assertTrue(routing.contains("kotambwisa"))
         assertFalse(routing.contains("kotinda"))
-        assertTrue(resourceValue("diagnostics_error_audio_preparation").contains("mongongo ya bosololi"))
-        assertTrue(resourceValue("diagnostics_error_session_ended").startsWith("Eleko ya mongongo"))
+        val communicationAudio = resourceValue("diagnostics_error_audio_preparation")
+        assertTrue(communicationAudio.contains("audio ya communication"))
+        assertFalse(communicationAudio.contains("mongongo ya bosololi"))
+        assertTrue(resourceValue("diagnostics_error_session_ended").startsWith("Session ya audio"))
     }
 
     @Test
@@ -85,10 +88,12 @@ class LingalaLocalizationContractTest {
             "esangisaka", "ekangaka", "etindaka", "esɛngaka ndingisa ya kosalela mikrofɔ te",
             "esɛngaka ndingisa ya Internet ya Android te", "etindaka ba données na serveur te",
             "ezalela ya tekiniki mpe metadata", "Ekɔtaka na makambo ya masolo na yo te",
-            "ebimisamaka mpe esalelamaka kaka na aparɛyi", "kaka ntango oponi kobomba yango",
+            "Mabongisi ya aplikasio ebombamaka na aparɛyi na yo",
+            "ebimisamaka mpe traitement na yango esalemaka na aparɛyi", "kaka ntango oponi kobomba yango",
             "vɛrsio ya Android", "ezalaka na masolo to makambo ya mongongo te",
             "Backup ya ba données ya aplikasio ya Android ekangami",
         ).forEach { guard -> assertTrue("Missing privacy guard: $guard", privacy.contains(guard)) }
+        assertFalse(privacy.contains("esalelamaka kaka na aparɛyi"))
 
         val rejected = resourceValue("diagnostics_error_request_rejected")
         assertTrue(rejected.contains("endimamaki te"))
