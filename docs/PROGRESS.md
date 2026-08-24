@@ -1,5 +1,13 @@
 # Progress
 
+## Dead Settings resource contract reconciliation
+
+- Five frozen-localization JVM contracts no longer expect Serbian, Bosnian,
+  Montenegrin, or Zulu phrases that existed only in the intentionally deleted
+  `settings_language_body` or `settings_advanced_body` resources. All assertions for
+  still-live locale identity, terminology, state, routing, and UI semantics remain;
+  no localized resource wording or production behavior changed.
+
 ## Final current-lint cleanup and warning non-regression gate
 
 - Android app-data backup remains disabled, and modern data-extraction rules now

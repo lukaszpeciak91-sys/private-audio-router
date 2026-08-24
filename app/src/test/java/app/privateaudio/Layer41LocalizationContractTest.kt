@@ -622,7 +622,6 @@ class Layer41LocalizationContractTest {
         assertTrue(serbianCyrillicStrings.contains("name=\"settings\">Подешавања</string>"))
         assertTrue(serbianCyrillicStrings.contains("name=\"settings_system_default\">Подразумевано</string>"))
         assertTrue(serbianCyrillicStrings.contains("извештај"))
-        assertTrue(serbianCyrillicStrings.contains("овде"))
         assertTrue(serbianCyrillicStrings.contains("name=\"state_ready\">Спремно</string>"))
         assertTrue(serbianCyrillicStrings.contains("name=\"state_waiting\">Чекање</string>"))
         assertTrue(serbianCyrillicStrings.contains("name=\"state_active\">Активно</string>"))
@@ -730,7 +729,6 @@ class Layer41LocalizationContractTest {
         assertTrue(serbianLatinStrings.contains("name=\"settings\">Podešavanja</string>"))
         assertTrue(serbianLatinStrings.contains("name=\"settings_system_default\">Podrazumevano</string>"))
         assertTrue(serbianLatinStrings.contains("dijagnostički izveštaj"))
-        assertTrue(serbianLatinStrings.contains("pojavljivati ovde"))
         assertFalse(serbianLatinStrings.any { it in '\u0400'..'\u04FF' })
     }
 
@@ -758,7 +756,6 @@ class Layer41LocalizationContractTest {
         assertTrue(bosnianStrings.contains("name=\"settings\">Postavke</string>"))
         assertTrue(bosnianStrings.contains("name=\"settings_system_default\">Zadano</string>"))
         assertTrue(bosnianStrings.contains("dijagnostički izvještaj"))
-        assertTrue(bosnianStrings.contains("pojavljivati ovdje"))
     }
 
     @Test
@@ -788,11 +785,11 @@ class Layer41LocalizationContractTest {
         assertTrue(serbianLatinMontenegroStrings.contains("name=\"state_waiting\">Čekanje</string>"))
         assertTrue(serbianLatinMontenegroStrings.contains("name=\"state_active\">Aktivno</string>"))
         assertTrue(serbianLatinMontenegroStrings.contains("name=\"state_error\">Greška</string>"))
-        listOf("Podrazumijevano", "podrazumijevana", "zahtijeva", "izvještaj", "ovdje").forEach {
+        listOf("Podrazumijevano", "podrazumijevana", "zahtijeva", "izvještaj").forEach {
             assertTrue(it, serbianLatinMontenegroStrings.contains(it))
             assertFalse(it, serbianLatinStrings.contains(it))
         }
-        listOf("Podrazumevano", "podrazumevana", "zahteva", "izveštaj", "ovde").forEach {
+        listOf("Podrazumevano", "podrazumevana", "zahteva", "izveštaj").forEach {
             assertTrue(it, serbianLatinStrings.contains(it))
             assertFalse(it, serbianLatinMontenegroStrings.contains(it))
         }
@@ -1450,7 +1447,6 @@ class Layer41LocalizationContractTest {
         assertFalse(zuluStrings.contains("name=\"floating\">imini</string>"))
         assertTrue(zuluStrings.contains("name=\"settings_system_default\">Okuzenzakalelayo</string>"))
         assertTrue(zuluStrings.contains("name=\"settings_advanced\">Izilungiselelo ezithuthukisiwe</string>"))
-        assertTrue(zuluStrings.contains("ulimi lwedivayisi yakho"))
         assertTrue(zuluStrings.contains("Le divayisi ilandela ulimi lwesistimu."))
         assertTrue(zuluStrings.contains("Cisha isikrini uma ifoni iseduze nendlebe yakho"))
         assertTrue(zuluStrings.contains("isipikha sendlebe", ignoreCase = true))
