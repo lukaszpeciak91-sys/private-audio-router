@@ -104,78 +104,91 @@ fun SettingsSheet(
     ) {
         val sheetInteraction = remember { MutableInteractionSource() }
         BoxWithConstraints(
-            modifier = modifier
-                .fillMaxSize()
-                .windowInsetsPadding(
-                    WindowInsets.safeDrawing.only(WindowInsetsSides.Vertical),
-                )
-                .background(SettingsScrim)
-                .clickable(onClick = onDismiss)
-                .testTag("settings_backdrop"),
-            contentAlignment = Alignment.Center,
+            modifier = modifier.fillMaxSize(),
         ) {
             val compactHeight = maxHeight < 600.dp
-            Column(
+            val portraitInsetPage = page == SettingsPage.LANGUAGE || page == SettingsPage.PRIVACY_POLICY
+            BoxWithConstraints(
                 modifier = Modifier
-                    .fillMaxWidth(SettingsLayout.widthFraction)
-                    .heightIn(
-                        max = if (compactHeight) {
-                            maxHeight
-                        } else if (page == SettingsPage.LANGUAGE || page == SettingsPage.PRIVACY_POLICY) {
-                            maxHeight - SettingsLayout.verticalOffset * 2
+                    .fillMaxSize()
+                    .then(
+                        if (compactHeight) {
+                            Modifier.windowInsetsPadding(WindowInsets.safeDrawing)
+                        } else if (portraitInsetPage) {
+                            Modifier.windowInsetsPadding(
+                                WindowInsets.safeDrawing.only(WindowInsetsSides.Vertical),
+                            )
                         } else {
-                            maxHeight
+                            Modifier
                         },
                     )
-                    .offset(y = if (compactHeight) 0.dp else SettingsLayout.verticalOffset)
-                    .background(SettingsSurface, RoundedCornerShape(SettingsLayout.cornerRadius))
-                    .border(1.dp, SettingsBorder, RoundedCornerShape(SettingsLayout.cornerRadius))
-                    .clickable(
-                        interactionSource = sheetInteraction,
-                        indication = null,
-                        onClick = {},
-                    )
-                    .padding(
-                        horizontal = SettingsLayout.horizontalPadding,
-                        vertical = SettingsLayout.verticalPadding,
-                    )
-                    .testTag("settings_sheet"),
+                    .background(SettingsScrim)
+                    .clickable(onClick = onDismiss)
+                    .testTag("settings_backdrop"),
+                contentAlignment = Alignment.Center,
             ) {
-                when (page) {
-                    SettingsPage.ROOT -> SettingsRoot(
-                        versionName = versionName,
-                        selectedLanguageTag = selectedLanguageTag,
-                        supportedLanguages = supportedLanguages,
-                        onLanguage = { page = SettingsPage.LANGUAGE },
-                        onDiagnostics = onDiagnostics,
-                        onAdvanced = { page = SettingsPage.ADVANCED },
-                        onPrivacyPolicy = { page = SettingsPage.PRIVACY_POLICY },
-                        onAbout = { page = SettingsPage.ABOUT },
-                    )
-                    SettingsPage.LANGUAGE -> LanguagePage(
-                        selectedLanguageTag = selectedLanguageTag,
-                        supportedLanguages = supportedLanguages,
-                        onSelect = {
-                            AppLanguagePreferences.select(context, it)
-                            page = SettingsPage.ROOT
-                        },
-                        onBack = { page = SettingsPage.ROOT },
-                    )
-                    SettingsPage.ADVANCED -> AdvancedPage(
-                        proximityFeatureEnabled = proximityFeatureEnabled,
-                        onProximityFeatureChange = onProximityFeatureChange,
-                        assistantEarlyRouteEnabled = assistantEarlyRouteEnabled,
-                        onAssistantEarlyRouteChange = onAssistantEarlyRouteChange,
-                        onBack = { page = SettingsPage.ROOT },
-                    )
-                    SettingsPage.PRIVACY_POLICY -> PrivacyPolicyPage(
-                        onBack = { page = SettingsPage.ROOT },
-                    )
-                    SettingsPage.ABOUT -> ChildPage(
-                        title = stringResource(R.string.settings_about),
-                        body = stringResource(R.string.settings_about_body),
-                        onBack = { page = SettingsPage.ROOT },
-                    )
+                Column(
+                    modifier = Modifier
+                        .fillMaxWidth(SettingsLayout.widthFraction)
+                        .heightIn(
+                            max = if (compactHeight) {
+                                maxHeight
+                            } else if (portraitInsetPage) {
+                                maxHeight - SettingsLayout.verticalOffset * 2
+                            } else {
+                                maxHeight
+                            },
+                        )
+                        .offset(y = if (compactHeight) 0.dp else SettingsLayout.verticalOffset)
+                        .background(SettingsSurface, RoundedCornerShape(SettingsLayout.cornerRadius))
+                        .border(1.dp, SettingsBorder, RoundedCornerShape(SettingsLayout.cornerRadius))
+                        .clickable(
+                            interactionSource = sheetInteraction,
+                            indication = null,
+                            onClick = {},
+                        )
+                        .padding(
+                            horizontal = SettingsLayout.horizontalPadding,
+                            vertical = SettingsLayout.verticalPadding,
+                        )
+                        .testTag("settings_sheet"),
+                ) {
+                    when (page) {
+                        SettingsPage.ROOT -> SettingsRoot(
+                            versionName = versionName,
+                            selectedLanguageTag = selectedLanguageTag,
+                            supportedLanguages = supportedLanguages,
+                            onLanguage = { page = SettingsPage.LANGUAGE },
+                            onDiagnostics = onDiagnostics,
+                            onAdvanced = { page = SettingsPage.ADVANCED },
+                            onPrivacyPolicy = { page = SettingsPage.PRIVACY_POLICY },
+                            onAbout = { page = SettingsPage.ABOUT },
+                        )
+                        SettingsPage.LANGUAGE -> LanguagePage(
+                            selectedLanguageTag = selectedLanguageTag,
+                            supportedLanguages = supportedLanguages,
+                            onSelect = {
+                                AppLanguagePreferences.select(context, it)
+                                page = SettingsPage.ROOT
+                            },
+                            onBack = { page = SettingsPage.ROOT },
+                        )
+                        SettingsPage.ADVANCED -> AdvancedPage(
+                            proximityFeatureEnabled = proximityFeatureEnabled,
+                            onProximityFeatureChange = onProximityFeatureChange,
+                            assistantEarlyRouteEnabled = assistantEarlyRouteEnabled,
+                            onAssistantEarlyRouteChange = onAssistantEarlyRouteChange,
+                            onBack = { page = SettingsPage.ROOT },
+                        )
+                        SettingsPage.PRIVACY_POLICY -> PrivacyPolicyPage(
+                            onBack = { page = SettingsPage.ROOT },
+                        )
+                        SettingsPage.ABOUT -> ChildPage(
+                            title = stringResource(R.string.settings_about),
+                            body = stringResource(R.string.settings_about_body),
+                            onBack = { page = SettingsPage.ROOT },
+                        )
+                    }
                 }
             }
         }
