@@ -42,12 +42,10 @@ object AppLanguagePreferences {
             .distinctBy(Locale::toLanguageTag)
         val languageCounts = localeValues.groupingBy(Locale::getLanguage).eachCount()
         return localeValues.map { locale ->
-            val rawName = if (languageCounts[locale.language] == 1) {
-                locale.getDisplayLanguage(locale)
-            } else {
-                locale.getDisplayName(locale)
-            }
-            AppLanguageOption(locale.toLanguageTag(), rawName.localizedTitlecase(locale))
+            AppLanguageOption(
+                locale.toLanguageTag(),
+                pickerDisplayName(locale, languageCounts.getValue(locale.language)),
+            )
         }
     }
 
@@ -61,6 +59,13 @@ object AppLanguagePreferences {
     fun nativeName(languageTag: String): String {
         val locale = canonicalLocale(Locale.forLanguageTag(languageTag))
         return locale.getDisplayName(locale).localizedTitlecase(locale)
+    }
+
+    /** Keeps generic languages concise while making an intentionally scoped locale explicit. */
+    internal fun pickerDisplayName(locale: Locale, logicalLanguageVariantCount: Int): String {
+        val needsScope = logicalLanguageVariantCount > 1 || locale.script.isNotEmpty() || locale.country.isNotEmpty()
+        val rawName = if (needsScope) locale.getDisplayName(locale) else locale.getDisplayLanguage(locale)
+        return rawName.localizedTitlecase(locale)
     }
 
     /** Converts Android/Java legacy language identities to modern logical BCP-47 identities. */

@@ -84,6 +84,30 @@ Preserve locale-specific Unicode and orthographic distinctions, including Persia
 
 Create separate regional or script variants only when meaningful vocabulary, grammar, script, or UI-convention differences justify them. Current examples are Brazilian and European Portuguese (`pt-BR`, `pt-PT`) and Simplified and Traditional Chinese (`zh-Hans`, `zh-Hant`). Treat each as an independent product localization: do not create a variant merely because a country exists, and do not mechanically convert one variant into another.
 
+The app-owned `values-*` resource inventory, together with the declared English
+default locale, is the authoritative supported-product-locale inventory. The build
+derives `androidResources.localeFilters` from those directories so translations
+supplied only by dependencies cannot enter generated `LocaleConfig`. Persistent
+contracts compare the canonicalized app-owned and packaged sets for equality rather
+than treating either as a manually curated language registry.
+
+Explicit script or region scope remains visible in the language picker's native
+display name even when it is the only variant of its logical language; generic
+locales remain language-name-only. Names come from Android/Java locale display-name
+data rather than a product-maintained list.
+
+Known future expansion candidates, and **not currently supported**, are Azerbaijani
+Cyrillic, Bosnian Cyrillic, Hindi Latin, Uzbek Cyrillic, Uzbek Arabic, and Cantonese
+Simplified. Android resource-resolution tests protect these gaps from silently
+presenting a supported resource tree written in a different script.
+
+OEMs may expose different sets of system languages, but this does not normally
+require OEM-specific Private Audio resource qualifiers. On Android 13 and newer,
+per-app language selection is driven by Private Audio's generated `LocaleConfig`.
+On Android 12 and 12L the current custom picker follows the device locale because it
+uses platform `LocaleManager` support available from API 33; pre-Android-13
+AppCompat per-app language support remains a separate future product decision.
+
 ### Android legacy ISO language aliases
 
 A product locale's modern BCP-47 logical language tag and its Android resource qualifier are related but are not always textually identical. Before adding or renaming a locale, inspect Android resource matching across the project's current `minSdk` through `targetSdk` and current Android runtime range. Current compatibility-sensitive mappings are Indonesian `id` → `values-in`, Hebrew `he` → `values-iw`, and Yiddish `yi` → `values-ji`.

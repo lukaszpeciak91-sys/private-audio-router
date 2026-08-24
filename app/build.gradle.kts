@@ -3,6 +3,42 @@ plugins {
     id("org.jetbrains.kotlin.plugin.compose")
 }
 
+val appOwnedLocalizedResourceConfigurations = file("src/main/res").listFiles().orEmpty()
+    .asSequence()
+    .filter { it.isDirectory && it.name.startsWith("values-") && it.name != "values-night" }
+    .map { it.name.removePrefix("values-") }
+    .sorted()
+    .toList()
+val appOwnedDefaultLanguageTag = file("src/main/res/resources.properties").readLines()
+    .single { it.startsWith("unqualifiedResLocale=") }
+    .substringAfter('=')
+
+fun String.toAndroidResourceConfiguration(): String {
+    val parts = split('-')
+    return if (parts.size == 2 && (parts[1].length == 2 || parts[1].length == 3)) {
+        "${parts[0]}-r${parts[1]}"
+    } else {
+        "b+${parts.joinToString("+")}"
+    }
+}
+
+val appOwnedLocaleResourceConfigurations =
+    (listOf(appOwnedDefaultLanguageTag.toAndroidResourceConfiguration()) + appOwnedLocalizedResourceConfigurations).sorted()
+
+fun String.toLogicalLanguageTag(): String {
+    val resourceTag = if (startsWith("b+")) {
+        removePrefix("b+").replace('+', '-')
+    } else {
+        replace(Regex("-r([A-Z]{2}|[0-9]{3})$"), "-$1")
+    }
+    val parts = resourceTag.split('-').toMutableList()
+    parts[0] = mapOf("in" to "id", "iw" to "he", "ji" to "yi")[parts[0]] ?: parts[0]
+    return parts.joinToString("-")
+}
+
+val appOwnedProductLanguageTags =
+    (listOf(appOwnedDefaultLanguageTag) + appOwnedLocalizedResourceConfigurations.map(String::toLogicalLanguageTag)).sorted()
+
 android {
     namespace = "app.privateaudio"
     compileSdk = 36
@@ -14,6 +50,11 @@ android {
         versionCode = 1
         versionName = "0.1.0"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        buildConfigField(
+            "String",
+            "APP_OWNED_PRODUCT_LANGUAGE_TAGS",
+            "\"${appOwnedProductLanguageTags.joinToString(",")}\"",
+        )
     }
 
     buildTypes {
@@ -34,6 +75,9 @@ android {
 
     androidResources {
         generateLocaleConfig = true
+        // Dependencies can contribute translations to generated LocaleConfig. Restrict both
+        // packaged resources and generated discovery to locale trees owned by this app.
+        localeFilters += appOwnedLocaleResourceConfigurations
     }
 }
 

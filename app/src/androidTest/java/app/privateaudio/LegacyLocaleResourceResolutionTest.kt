@@ -19,6 +19,23 @@ import app.privateaudio.localization.AppLanguagePreferences
 @RunWith(AndroidJUnit4::class)
 class LegacyLocaleResourceResolutionTest {
     @Test
+    fun generatedLocaleConfigExactlyMatchesAppOwnedProductLocales() {
+        val context = InstrumentationRegistry.getInstrumentation().targetContext
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.TIRAMISU) return
+        val packaged = LocaleConfig(context).supportedLocales
+            ?.let { locales -> (0 until locales.size()).map { locales[it].toLanguageTag() } }
+            .orEmpty()
+            .map(AppLanguagePreferences::canonicalLanguageTag)
+            .toSet()
+        val appOwned = BuildConfig.APP_OWNED_PRODUCT_LANGUAGE_TAGS
+            .split(',')
+            .map(AppLanguagePreferences::canonicalLanguageTag)
+            .toSet()
+
+        assertEquals("Dependency locales must not leak and app locales must not disappear", appOwned, packaged)
+    }
+
+    @Test
     fun representativePrivacyPoliciesResolveFiveSemanticParagraphs() {
         val context = InstrumentationRegistry.getInstrumentation().targetContext
 
@@ -319,6 +336,70 @@ class LegacyLocaleResourceResolutionTest {
             assertTrue(discoveredTags.containsAll(listOf("id", "he", "yi", "ml", "pa-Guru-IN", "pa-Arab-PK", "ps", "ha", "am", "zu", "so", "ne", "hy", "jv", "or", "my", "uz", "km", "as", "ca", "gl", "kk", "mn", "ka", "lo", "az", "az-Arab-IR")))
         }
     }
+
+    @Test
+    fun genericProductLocalesResolveForCommonRegionalIdentities() {
+        val context = InstrumentationRegistry.getInstrumentation().targetContext
+        listOf(
+            LocaleResolution("bho", listOf("bho", "bho-IN")),
+            LocaleResolution("mai", listOf("mai", "mai-IN")),
+            LocaleResolution("ku-Latn", listOf("ku", "ku-TR", "ku-Latn-TR")),
+            LocaleResolution("ceb", listOf("ceb", "ceb-PH")),
+            LocaleResolution("ln", listOf("ln", "ln-CD", "ln-CG", "ln-AO", "ln-CF")),
+        ).forEach { resolution ->
+            assertRequestsResolveToProductResource(context, resolution)
+        }
+    }
+
+    @Test
+    fun portugueseRegionsFollowTheirIntendedResourceFamilies() {
+        val context = InstrumentationRegistry.getInstrumentation().targetContext
+        val english = localizedContext(context, "en-US").getString(R.string.settings)
+        val brazilian = localizedContext(context, "pt-BR").getString(R.string.settings)
+        val european = localizedContext(context, "pt-PT").getString(R.string.settings)
+
+        assertNotEquals(english, brazilian)
+        assertNotEquals(english, european)
+        assertNotEquals("Portuguese variants need distinct sentinels for this architecture test", brazilian, european)
+        listOf("pt-AO", "pt-MZ").forEach { tag ->
+            assertEquals("$tag must use the European Portuguese family", european, localizedContext(context, tag).getString(R.string.settings))
+        }
+    }
+
+    @Test
+    fun unsupportedScriptsDoNotCrossResolveToAProductTreeInAnotherScript() {
+        val context = InstrumentationRegistry.getInstrumentation().targetContext
+        val english = localizedContext(context, "en-US").getString(R.string.settings)
+        listOf(
+            "az-Cyrl-AZ",
+            "bs-Cyrl-BA",
+            "hi-Latn-IN",
+            "uz-Cyrl-UZ",
+            "uz-Arab-AF",
+            "yue-Hans-CN",
+        ).forEach { unsupportedTag ->
+            assertEquals(
+                "$unsupportedTag must not silently use a supported different-script tree",
+                english,
+                localizedContext(context, unsupportedTag).getString(R.string.settings),
+            )
+        }
+    }
+
+    private fun assertRequestsResolveToProductResource(context: Context, resolution: LocaleResolution) {
+        val english = localizedContext(context, "en-US").getString(R.string.settings)
+        val product = localizedContext(context, resolution.productTag).getString(R.string.settings)
+        assertNotEquals("${resolution.productTag} must resolve outside English", english, product)
+        resolution.requestTags.forEach { requestedTag ->
+            assertEquals(
+                "$requestedTag must resolve to ${resolution.productTag}",
+                product,
+                localizedContext(context, requestedTag).getString(R.string.settings),
+            )
+        }
+    }
+
+    private data class LocaleResolution(val productTag: String, val requestTags: List<String>)
 
     private fun assertLocalizedSettings(context: Context, modernTag: String, expected: String) {
         val resolved = localizedContext(context, modernTag).getString(R.string.settings)

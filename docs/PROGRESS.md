@@ -202,6 +202,13 @@ this summary intentionally does not duplicate its test matrix.
   inventory, excluding non-locale `values-night`; supported variants include the
   intentional Portuguese, Chinese, Serbian, Punjabi, and Azerbaijani script or
   regional distinctions and Android-compatible legacy qualifiers.
+- Generated locale discovery is filtered from that app-owned resource inventory,
+  preventing dependency-only translations from being advertised as product
+  languages. Exact-set instrumentation coverage canonicalizes `in`/`iw`/`ji` to
+  `id`/`he`/`yi`; focused Android resource contracts cover representative regional
+  matching, Portuguese family fallback, legacy aliases, and intentionally missing
+  script variants. Execution of those Android contracts still requires an available
+  emulator or device.
 - English/default resources are authoritative. The established 28-string stable
   product surface has locale-specific review and source-contract evidence recorded
   in repository history. Sundanese (`su`, `values-su`) now covers the complete
