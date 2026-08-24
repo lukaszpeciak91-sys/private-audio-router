@@ -25,6 +25,26 @@ class TestSourceContractsTest {
     }
 
     @Test
+    fun defaultLambdasInTheParameterListAreNotMistakenForTheFunctionBody() {
+        val source = """
+            fun example(
+                callback: () -> Unit = {},
+                fallback: (String) -> Unit = { value -> consume(value) },
+            ) {
+                realBody()
+            }
+            fun following() { excluded() }
+        """.trimIndent()
+
+        val extracted = source.kotlinDeclaration("fun example(")
+
+        assertTrue(extracted.contains("callback: () -> Unit = {}"))
+        assertTrue(extracted.contains("realBody()"))
+        assertFalse(extracted.contains("fun following"))
+        assertFalse(extracted.contains("excluded()"))
+    }
+
+    @Test
     fun interpolatedAndEscapedOrdinaryStringsDoNotAffectBraceDepth() {
         val source = "fun target() { val text = \"${'$'}{value} } \\\"quoted\\\" {\"; finish() }\nval after = true"
 

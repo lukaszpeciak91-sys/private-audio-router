@@ -25,7 +25,26 @@ internal fun String.kotlinDeclaration(declaration: String): String {
     val start = sanitized.indexOf(declaration)
     check(start >= 0) { "Missing Kotlin declaration: $declaration" }
 
-    val openingBrace = sanitized.indexOf('{', start)
+    var parentheses = 0
+    var brackets = 0
+    var headerLambdaBraces = 0
+    var openingBrace = -1
+    for (index in start until sanitized.length) {
+        when (sanitized[index]) {
+            '(' -> parentheses++
+            ')' -> parentheses--
+            '[' -> brackets++
+            ']' -> brackets--
+            '{' -> {
+                if (parentheses == 0 && brackets == 0 && headerLambdaBraces == 0) {
+                    openingBrace = index
+                    break
+                }
+                headerLambdaBraces++
+            }
+            '}' -> if (headerLambdaBraces > 0) headerLambdaBraces--
+        }
+    }
     check(openingBrace >= 0) { "Missing body for Kotlin declaration: $declaration" }
 
     var depth = 0

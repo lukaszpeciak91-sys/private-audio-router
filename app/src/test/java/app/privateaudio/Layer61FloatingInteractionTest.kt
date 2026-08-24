@@ -96,15 +96,21 @@ class Layer61FloatingInteractionTest {
 
     @Test fun hitTestingMirrorsWithTheInternalRtlComposition() {
         val width = 100f
+        val epsilon = 0.001f
+        val powerStart = width * 0.40f
+        val expandStart = width * 0.60f
+        val closeStart = width * 0.80f
         val logicalCases = listOf(
             0f to MiniControl.NONE,
-            39.99f to MiniControl.NONE,
-            40f to MiniControl.POWER,
-            59.99f to MiniControl.POWER,
-            60f to MiniControl.EXPAND,
-            79.99f to MiniControl.EXPAND,
-            80f to MiniControl.CLOSE,
-            100f to MiniControl.CLOSE,
+            powerStart - epsilon to MiniControl.NONE,
+            powerStart to MiniControl.POWER,
+            (powerStart + expandStart) / 2f to MiniControl.POWER,
+            expandStart - epsilon to MiniControl.POWER,
+            expandStart to MiniControl.EXPAND,
+            (expandStart + closeStart) / 2f to MiniControl.EXPAND,
+            closeStart - epsilon to MiniControl.EXPAND,
+            closeStart to MiniControl.CLOSE,
+            closeStart + epsilon to MiniControl.CLOSE,
         )
         logicalCases.forEach { (logicalX, expected) ->
             assertEquals("LTR at $logicalX", expected, miniControlAt(logicalX, width, rtl = false))
