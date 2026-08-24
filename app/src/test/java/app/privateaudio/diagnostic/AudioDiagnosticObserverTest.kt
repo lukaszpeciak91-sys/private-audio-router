@@ -1,5 +1,6 @@
 package app.privateaudio.diagnostic
 
+import app.privateaudio.kotlinDeclaration
 import android.media.AudioDeviceInfo
 import android.media.AudioManager
 import org.junit.Assert.assertEquals
@@ -398,20 +399,7 @@ class AudioDiagnosticObserverTest {
         }
     }
 
-    private fun String.method(signature: String): String {
-        val start = indexOf(signature)
-        check(start >= 0) { "Missing method signature: $signature" }
-        val openingBrace = indexOf('{', start)
-        check(openingBrace >= 0) { "Missing method body: $signature" }
-        var depth = 0
-        for (index in openingBrace until length) {
-            when (this[index]) {
-                '{' -> depth++
-                '}' -> if (--depth == 0) return substring(start, index + 1)
-            }
-        }
-        error("Unterminated method body: $signature")
-    }
+    private fun String.method(signature: String) = kotlinDeclaration(signature)
 
     private fun String.occurrences(needle: String): Int = windowed(needle.length).count { it == needle }
 
