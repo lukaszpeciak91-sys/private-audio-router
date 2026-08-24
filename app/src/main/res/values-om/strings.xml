@@ -22,8 +22,8 @@
     <string name="settings_advanced">Sadarkaa olaanaa</string>
     <string name="settings_about">Waa\'ee Private Audio</string>
     <string name="settings_privacy_policy">Imaammata Dhuunfummaa</string>
-    <string name="settings_privacy_policy_body">Private Audio haasawa kee yookiin qabiyyee sagalee kee hin walitti qabu, hin waraabu, hin dabarsus.\n\nAppichi herrega yookiin seenuu hin barbaadu. Maayikiroofonii argachuuf hayyama hin gaafatu; tajaajiloota xiinxalaa, beeksisaa yookiin gabaasa caccabuu hin fayyadamu. Private Audio hayyama Intarneetii Android hin gaafatu; daataa gara sarvarii hin ergu.\n\nPrivate Audio haala teeknikaa fi meetadaataa sirna sagalee Android keessaa, hamma bakka sagaleen itti bahu qajeelchuu fi qorannoo gochuuf barbaachisu qofa ilaala. Qabiyyee haasawa kee hin argatu.\n\nQindaa\'inni appichaa meeshaa kee irratti naannoodhuma keessatti kuufama. Daataan qorannoo naannoodhuma keessatti uumamee adeemsifama; gabaasni qorannoo immoo yeroo ati kuusuuf filattu qofa kuufama. Gabaasichi waa\'ee meeshaa kee, gosa Android, bakka sagaleen itti bahu qajeelchuu fi haala sirna sagalee irratti odeeffannoo teeknikaa qabaachuu danda\'a; garuu haasawa yookiin qabiyyee sagalee hin qabu.\n\nKuusni duubaa daataa appii Android dhaamsameera.</string>
-    <string name="settings_version">Gosa %1$s</string>
+    <string name="settings_privacy_policy_body">Private Audio haasawa kee yookiin qabiyyee sagalee kee hin walitti qabu, hin waraabu, hin dabarsus.\n\nAppichi herrega yookiin seenuu hin barbaadu. Maayikiroofonii argachuuf hayyama hin gaafatu; tajaajiloota xiinxalaa, beeksisaa yookiin gabaasa halakuu hin fayyadamu. Private Audio hayyama Intarneetii Android hin gaafatu; daataa gara sarvarii hin ergu.\n\nPrivate Audio haala teeknikaa fi meetadaataa sirna sagalee Android keessaa, hamma bakka sagaleen itti bahu qajeelchuu fi qorannoo gochuuf barbaachisu qofa ilaala. Qabiyyee haasawa keetti hin gahu.\n\nQindaa\'inni appichaa meeshaa kee irratti naannoodhuma keessatti kuufama. Daataan qorannoo naannoodhuma keessatti uumamee adeemsifama; gabaasni qorannoo immoo yeroo ati kuusuuf filattu qofa kuufama. Gabaasichi waa\'ee meeshaa kee, fooyya\'aa Android, bakka sagaleen itti bahu qajeelchuu fi haala sirna sagalee irratti odeeffannoo teeknikaa qabaachuu danda\'a; garuu haasawa yookiin qabiyyee sagalee hin qabu.\n\nKuusni duubaa daataa appii Android dhaamsameera.</string>
+    <string name="settings_version">Fooyya\'aa %1$s</string>
     <string name="settings_language_body">Private Audio amma afaan meeshaa kee hordofa. Durtiin filatameera.</string>
     <string name="settings_language_android_13_required">Appii keessatti afaan filachuun Android 13 yookiin isaa ol barbaada. Meeshaan kun afaan sirnaa hordofa.</string>
     <string name="settings_proximity_screen">Yeroo bilbilli gurra kee bira jiru iskiriinii dhaamsi</string>
@@ -59,7 +59,7 @@
     <string name="diagnostics_route_bluetooth">Bluetooth</string>
     <string name="diagnostics_route_other">Kan biraa</string>
     <string name="diagnostics_error_blocked_by_system">Sirnichi bakka sagaleen itti bahu qajeelchuu uggure.</string>
-    <string name="diagnostics_error_session_ended">Kutaan sagalee qajeelchuun osoo hin xumuramin dhume.</string>
+    <string name="diagnostics_error_session_ended">Tursi sagalee bakka sagaleen itti bahu qajeelchuun osoo hin xumuramin dhume.</string>
     <string name="diagnostics_error_audio_start">Private Audio bakka sagaleen itti bahu qajeelchuu jalqabuu hin dandeenye.</string>
     <string name="diagnostics_error_audio_preparation">Private Audio sagalee qunnamtii qopheessuu hin dandeenye.</string>
     <string name="diagnostics_error_request_rejected">Gaaffiin sagalee gara dhageessisaa gurraa bilbilaa keessaa qajeelchuu fudhatama hin arganne.</string>
