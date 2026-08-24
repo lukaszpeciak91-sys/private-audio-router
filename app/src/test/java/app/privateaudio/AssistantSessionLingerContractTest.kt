@@ -101,16 +101,7 @@ class AssistantSessionLingerContractTest {
 
     private fun String.occurrences(needle: String) = windowed(needle.length).count { it == needle }
 
-    private fun String.method(signature: String): String {
-        val start = indexOf(signature).also { check(it >= 0) { "Missing $signature" } }
-        val opening = indexOf('{', start)
-        var depth = 0
-        for (index in opening until length) when (this[index]) {
-            '{' -> depth++
-            '}' -> if (--depth == 0) return substring(start, index + 1)
-        }
-        error("Unterminated $signature")
-    }
+    private fun String.method(signature: String) = kotlinDeclaration(signature)
 
     private fun assertInOrder(source: String, vararg fragments: String) {
         var previous = -1
