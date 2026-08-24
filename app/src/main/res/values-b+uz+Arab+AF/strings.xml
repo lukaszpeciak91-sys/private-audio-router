@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Private Audio</string>
+    <string name="routing_notification_channel">Private Audio</string>
+    <string name="routing_notification_title">Private Audio یاقیق</string>
+    <string name="routing_notification_text">آدیو چیقیشینی یۉنلتیریش کوتیلماغده</string>
+
+    <string name="product_title">Private Audio</string>
+    <string name="product_subtitle">صنعي عقل بیلن، خدی تیلفون قۉنغیراغی‌دیک، باشقه‌لرگه ایشیتیرمی صحبت قیلیڭ.</string>
+
+    <string name="state_ready">تییار</string>
+    <string name="state_waiting">کوتیلماغده</string>
+    <string name="state_active">فعال</string>
+    <string name="state_error">خطا</string>
+
+    <string name="power_control">یاقیش/اۉچیریش</string>
+    <string name="floating">مینی</string>
+    <string name="settings">تنظیمات</string>
+    <string name="close">یاپیش</string>
+
+    <string name="overlay_controller_description">Private Audio‌نینگ سوزوچی باشقروو پنلی. حالت: %1$s. یاقیش/اۉچیریش، کینگیتیریش و یاپیش باشقروولری.</string>
+
+    <string name="settings_language">تیل</string>
+    <string name="settings_system_default">اصل حالت</string>
+    <string name="settings_save_diagnostic">تشخیص حساباتینی سقلش</string>
+    <string name="settings_advanced">کینگییتیریلگن تنظیمات</string>
+    <string name="settings_about">Private Audio حقیده</string>
+    <string name="settings_privacy_policy">مخفی‌لیک سیاستی</string>
+    <string name="settings_privacy_policy_body">Private Audio صحبت‌لریڭیز یا آدیو محتویاتیڭیزنی توپلمیدی، یازیب آلمیدی و اوزتمیدی.\n\nایلووه حساب یا سیستمگه کیریشنی طلب قیلمیدی. او میکروفونگه کیریش اجازتینی سورمیدی و تحلیلات، اعلان یا برنامه خطاسی حقیده خبر بیریش خدمت‌لریدن فایده‌لنمیدی. Private Audio اندروید‌نینگ اینترنت اجازتینی سورمیدی و سرورگه معلومات یوبورمیدی.\n\nPrivate Audio فقط آدیونی یۉنلتیریش و تشخیص اوچون ضروری بولگن اندروید آدیو سیستمی‌نینگ تخنیکی حالتی و میته‌معلوماتینی کوزتدی. او صحبت‌لریڭیز محتویاتیگه کیرمیدی.\n\nایلووه تنظیمات‌لری قوریلمه‌ڭیزده محلی سقلنیدی. تشخیص معلوماتی محلی یرتیله‌دی و قایته ایشله‌نه‌دی؛ تشخیص حساباتی فقط اونی سقلشنی تنله‌گنیڭیزده سقلنه‌دی. حسابات قوریلمه‌ڭیز، اندروید نسخه‌سی، آدیونی یۉنلتیریش و آدیو سیستمی حالتی حقیده‌گی تخنیکی معلوماتنی اۉز ایچیگه آلیشی ممکن، لیکن اونده صحبت یا آدیو محتویاتی بولمیدی.\n\nاندروید ایلووه معلومات‌لری‌نینگ زحیره نوسخه‌سینی یرتیش اۉچیریلگن.</string>
+    <string name="settings_version">نسخه %1$s</string>
+    <string name="settings_language_body">Private Audio حاضر قوریلمه‌ڭیز تیلیدن فایده‌لنه‌دی. اصل حالت تنله‌نگن.</string>
+    <string name="settings_language_android_13_required">ایلووه ایچیده تیل تنلش اوچون اندروید 13 یا کینگی نسخه کیره‌ک. بو قوریلمه سیستم تیلیدن فایده‌لنه‌دی.</string>
+    <string name="settings_proximity_screen">تیلفون قولاغیڭیزگه یقیلشگنده اکرننی اۉچیریش</string>
+    <string name="settings_advanced_body">Private Audio ریواجلنگنی سری بو یرده قۉشیمچه تنظیمات پیدا بولدی.</string>
+    <string name="settings_about_body">Private Audio قوللب-قووتلنه‌دیگن نطق آدیوسینی تیلفونیڭیزده‌گی ایچکی قولاق دینامیکگه یۉنلتیریشگه یاردم بیردی.</string>
+
+    <string name="diagnostic_report_saved">تشخیص حساباتی سقلندی.</string>
+    <string name="diagnostic_report_save_failed">تشخیص حساباتینی سقلش ممکن بولمدی.</string>
+    <string name="settings_diagnostics">تشخیص</string>
+    <string name="diagnostics_title">تشخیص</string>
+    <string name="diagnostics_system_check">سیستم تیکشیرووی</string>
+    <string name="diagnostics_earpiece">قولاق دینامیک</string>
+    <string name="diagnostics_proximity_sensor">یقین‌لیک حسگری</string>
+    <string name="diagnostics_private_audio">PRIVATE AUDIO</string>
+    <string name="diagnostics_routing">یۉنلتیریش</string>
+    <string name="diagnostics_status">حالت</string>
+    <string name="diagnostics_audio_route">آدیو چیقیشی</string>
+    <string name="diagnostics_last_routing">آخیرگی یۉنلتیریش اورینیشی</string>
+    <string name="diagnostics_result">نتیجه</string>
+    <string name="diagnostics_error">خطا</string>
+    <string name="diagnostics_available">موجود</string>
+    <string name="diagnostics_earpiece_available">موجود</string>
+    <string name="diagnostics_earpiece_not_available">موجود ایمس</string>
+    <string name="diagnostics_proximity_available">موجود</string>
+    <string name="diagnostics_proximity_not_available">موجود ایمس</string>
+    <string name="diagnostics_checking">تیکشیریلماغده…</string>
+    <string name="diagnostics_audio_output_unknown">نامعلوم</string>
+    <string name="diagnostics_permission_required">اجازت کیره‌ک</string>
+    <string name="diagnostics_on">یاقیلگن</string>
+    <string name="diagnostics_off">اۉچیریلگن</string>
+    <string name="diagnostics_success">موفقیت‌لی</string>
+    <string name="diagnostics_failed">موفقیت‌سیز</string>
+    <string name="diagnostics_route_earpiece">قولاق دینامیک</string>
+    <string name="diagnostics_route_speaker">بلندگۉی</string>
+    <string name="diagnostics_route_bluetooth">Bluetooth</string>
+    <string name="diagnostics_route_other">باشقه</string>
+    <string name="diagnostics_error_blocked_by_system">سیستم آدیونی یۉنلتیریشنی توسدی.</string>
+    <string name="diagnostics_error_session_ended">آدیو جلسه‌سی یۉنلتیریش توگشیدن آلدین یاپیلدی.</string>
+    <string name="diagnostics_error_audio_start">Private Audio آدیونی یۉنلتیریشنی باشلی آلمدی.</string>
+    <string name="diagnostics_error_audio_preparation">Private Audio آلاقه آدیوسینی تیارلی آلمدی.</string>
+    <string name="diagnostics_error_request_rejected">قولاق دینامیکگه یۉنلتیریش سورووی قبول قیلینمدی.</string>
+    <string name="diagnostics_error_not_completed">آدیونی یۉنلتیریشنی توگتیش ممکن بولمدی.</string>
+</resources>

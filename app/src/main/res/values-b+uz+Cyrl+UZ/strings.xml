@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Private Audio</string>
+    <string name="routing_notification_channel">Private Audio</string>
+    <string name="routing_notification_title">Private Audio ёниқ</string>
+    <string name="routing_notification_text">Аудио чиқишини йўналтириш кутилмоқда</string>
+
+    <string name="product_title">Private Audio</string>
+    <string name="product_subtitle">Сунъий интеллект билан худди телефон қўнғироғидек, бошқаларга эшиттирмай гаплашинг.</string>
+
+    <string name="state_ready">Тайёр</string>
+    <string name="state_waiting">Кутилмоқда</string>
+    <string name="state_active">Фаол</string>
+    <string name="state_error">Хатолик</string>
+
+    <string name="power_control">Ёқиш/ўчириш</string>
+    <string name="floating">Мини</string>
+    <string name="settings">Созламалар</string>
+    <string name="close">Ёпиш</string>
+
+    <string name="overlay_controller_description">Private Audio сузувчи бошқарув панели. Ҳолат: %1$s. Ёқиш/ўчириш, кенгайтириш ва ёпиш бошқарувлари.</string>
+
+    <string name="settings_language">Тил</string>
+    <string name="settings_system_default">Бирламчи</string>
+    <string name="settings_save_diagnostic">Диагностика ҳисоботини сақлаш</string>
+    <string name="settings_advanced">Кенгайтирилган созламалар</string>
+    <string name="settings_about">Private Audio ҳақида</string>
+    <string name="settings_privacy_policy">Махфийлик сиёсати</string>
+    <string name="settings_privacy_policy_body">Private Audio суҳбатларингиз ёки аудио контентингизни йиғмайди, ёзиб олмайди ва узатмайди.\n\nИлова ҳисоб ёки тизимга киришни талаб қилмайди. У микрофонга кириш рухсатини сўрамайди ҳамда таҳлил, реклама ёки носозлик ҳақида хабар бериш хизматларидан фойдаланмайди. Private Audio Android интернет рухсатини сўрамайди ва серверга маълумот юбормайди.\n\nPrivate Audio фақат аудиони йўналтириш ва диагностика учун зарур бўлган Android аудио тизимининг техник ҳолати ва метамаълумотларини кузатади. У суҳбатларингиз мазмунига кирмайди.\n\nИлова созламалари қурилмангизда маҳаллий сақланади. Диагностика маълумотлари маҳаллий яратилади ва қайта ишланади; диагностика ҳисоботи фақат уни сақлашни танлаганингизда сақланади. Ҳисобот қурилмангиз, Android версияси, аудиони йўналтириш ва аудио тизими ҳолати ҳақидаги техник маълумотларни ўз ичига олиши мумкин, аммо унда суҳбат ёки аудио контенти бўлмайди.\n\nAndroid илова маълумотларининг захира нусхасини яратиш ўчирилган.</string>
+    <string name="settings_version">Версия %1$s</string>
+    <string name="settings_language_body">Private Audio ҳозир қурилмангиз тилидан фойдаланади. Бирламчи вариант танланган.</string>
+    <string name="settings_language_android_13_required">Илова ичида тил танлаш учун Android 13 ёки кейинги версия керак. Бу қурилма тизим тилидан фойдаланади.</string>
+    <string name="settings_proximity_screen">Телефон қулоғингизга яқинлашганда экранни ўчириш</string>
+    <string name="settings_advanced_body">Private Audio ривожлангани сари бу ерда қўшимча параметрлар пайдо бўлади.</string>
+    <string name="settings_about_body">Private Audio қўллаб-қувватланадиган нутқ аудиосини телефонингиздаги ички қулоқ динамигига йўналтиришга ёрдам беради.</string>
+
+    <string name="diagnostic_report_saved">Диагностика ҳисоботи сақланди.</string>
+    <string name="diagnostic_report_save_failed">Диагностика ҳисоботини сақлаб бўлмади.</string>
+    <string name="settings_diagnostics">Диагностика</string>
+    <string name="diagnostics_title">Диагностика</string>
+    <string name="diagnostics_system_check">ТИЗИМ ТЕКШИРУВИ</string>
+    <string name="diagnostics_earpiece">Қулоқ динамиги</string>
+    <string name="diagnostics_proximity_sensor">Яқинлик сенсори</string>
+    <string name="diagnostics_private_audio">PRIVATE AUDIO</string>
+    <string name="diagnostics_routing">Йўналтириш</string>
+    <string name="diagnostics_status">Ҳолат</string>
+    <string name="diagnostics_audio_route">Аудио чиқиши</string>
+    <string name="diagnostics_last_routing">ОХИРГИ ЙЎНАЛТИРИШ УРИНИШИ</string>
+    <string name="diagnostics_result">Натижа</string>
+    <string name="diagnostics_error">Хатолик</string>
+    <string name="diagnostics_available">Мавжуд</string>
+    <string name="diagnostics_earpiece_available">Мавжуд</string>
+    <string name="diagnostics_earpiece_not_available">Мавжуд эмас</string>
+    <string name="diagnostics_proximity_available">Мавжуд</string>
+    <string name="diagnostics_proximity_not_available">Мавжуд эмас</string>
+    <string name="diagnostics_checking">Текширилмоқда…</string>
+    <string name="diagnostics_audio_output_unknown">Номаълум</string>
+    <string name="diagnostics_permission_required">Рухсат керак</string>
+    <string name="diagnostics_on">Ёқилган</string>
+    <string name="diagnostics_off">Ўчирилган</string>
+    <string name="diagnostics_success">Муваффақиятли</string>
+    <string name="diagnostics_failed">Муваффақиятсиз</string>
+    <string name="diagnostics_route_earpiece">Қулоқ динамиги</string>
+    <string name="diagnostics_route_speaker">Баландгўяк</string>
+    <string name="diagnostics_route_bluetooth">Bluetooth</string>
+    <string name="diagnostics_route_other">Бошқа</string>
+    <string name="diagnostics_error_blocked_by_system">Тизим аудиони йўналтиришни тўсиб қўйди.</string>
+    <string name="diagnostics_error_session_ended">Аудио сеанси йўналтириш тугашидан олдин якунланди.</string>
+    <string name="diagnostics_error_audio_start">Private Audio аудиони йўналтиришни бошлай олмади.</string>
+    <string name="diagnostics_error_audio_preparation">Private Audio алоқа аудиосини тайёрлай олмади.</string>
+    <string name="diagnostics_error_request_rejected">Қулоқ динамигига йўналтириш сўрови қабул қилинмади.</string>
+    <string name="diagnostics_error_not_completed">Аудиони йўналтиришни тугаллаб бўлмади.</string>
+</resources>

@@ -156,6 +156,8 @@ class LegacyLocaleResourceResolutionTest {
         listOf("uz", "uz-UZ", "uz-Latn-UZ").forEach { tag ->
             assertLocalizedSettings(context, modernTag = tag, expected = "Sozlamalar")
         }
+        assertLocalizedSettings(context, modernTag = "uz-Cyrl-UZ", expected = "Созламалар")
+        assertLocalizedSettings(context, modernTag = "uz-Arab-AF", expected = "تنظیمات")
         listOf("km", "km-KH", "km-Khmr-KH").forEach { tag ->
             assertLocalizedSettings(context, modernTag = tag, expected = "ការកំណត់")
         }
@@ -287,6 +289,8 @@ class LegacyLocaleResourceResolutionTest {
                 localizedContext(context, tag).resources.configuration.layoutDirection,
             )
         }
+        assertEquals(android.view.View.LAYOUT_DIRECTION_LTR, localizedContext(context, "uz-Cyrl-UZ").resources.configuration.layoutDirection)
+        assertEquals(android.view.View.LAYOUT_DIRECTION_RTL, localizedContext(context, "uz-Arab-AF").resources.configuration.layoutDirection)
         listOf("km", "km-KH", "km-Khmr-KH").forEach { tag ->
             assertEquals(
                 "$tag layout direction",
@@ -333,7 +337,7 @@ class LegacyLocaleResourceResolutionTest {
             val discoveredTags = LocaleConfig(context).supportedLocales
                 ?.let { locales -> (0 until locales.size()).map { locales[it].toLanguageTag() } }
                 .orEmpty()
-            assertTrue(discoveredTags.containsAll(listOf("id", "he", "yi", "ml", "pa-Guru-IN", "pa-Arab-PK", "ps", "ha", "am", "zu", "so", "ne", "hy", "jv", "or", "my", "uz", "km", "as", "ca", "gl", "kk", "mn", "ka", "lo", "az", "az-Arab-IR")))
+            assertTrue(discoveredTags.containsAll(listOf("id", "he", "yi", "ml", "pa-Guru-IN", "pa-Arab-PK", "ps", "ha", "am", "zu", "so", "ne", "hy", "jv", "or", "my", "uz", "uz-Cyrl-UZ", "uz-Arab-AF", "km", "as", "ca", "gl", "kk", "mn", "ka", "lo", "az", "az-Arab-IR")))
         }
     }
 
@@ -374,8 +378,6 @@ class LegacyLocaleResourceResolutionTest {
             "az-Cyrl-AZ",
             "bs-Cyrl-BA",
             "hi-Latn-IN",
-            "uz-Cyrl-UZ",
-            "uz-Arab-AF",
             "yue-Hans-CN",
         ).forEach { unsupportedTag ->
             assertEquals(
@@ -383,6 +385,21 @@ class LegacyLocaleResourceResolutionTest {
                 english,
                 localizedContext(context, unsupportedTag).getString(R.string.settings),
             )
+        }
+    }
+
+    @Test
+    fun uzbekScriptVariantsResolveIndependentlyAndRemainDistinctInThePicker() {
+        val context = InstrumentationRegistry.getInstrumentation().targetContext
+        val tags = listOf("uz", "uz-Cyrl-UZ", "uz-Arab-AF")
+        val resolvedSettings = tags.map { localizedContext(context, it).getString(R.string.settings) }
+
+        assertEquals(listOf("Sozlamalar", "Созламалар", "تنظیمات"), resolvedSettings)
+        assertEquals(3, resolvedSettings.toSet().size)
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            val options = AppLanguagePreferences.supportedLanguages(context).filter { it.languageTag.startsWith("uz") }
+            assertEquals(setOf("uz", "uz-Cyrl-UZ", "uz-Arab-AF"), options.map { it.languageTag }.toSet())
+            assertEquals(3, options.map { it.nativeName }.toSet().size)
         }
     }
 
