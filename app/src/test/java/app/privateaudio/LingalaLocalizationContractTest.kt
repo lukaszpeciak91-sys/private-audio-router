@@ -71,8 +71,8 @@ class LingalaLocalizationContractTest {
         assertTrue(resourceValue("settings_about_body").contains("écouteur ya kati ya telefone"))
 
         val routing = resourceValue("diagnostics_routing")
-        assertTrue(routing.contains("kotambwisa"))
-        assertFalse(routing.contains("kotinda"))
+        assertTrue(routing.contains("kotambwisa", ignoreCase = true))
+        assertFalse(routing.contains("kotinda", ignoreCase = true))
         val communicationAudio = resourceValue("diagnostics_error_audio_preparation")
         assertTrue(communicationAudio.contains("audio ya communication"))
         assertFalse(communicationAudio.contains("mongongo ya bosololi"))
