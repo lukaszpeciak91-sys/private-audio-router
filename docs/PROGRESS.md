@@ -49,6 +49,81 @@ physical test records remain in [`DECISIONS.md`](DECISIONS.md),
   floating Mini controller. Proximity screen-off behavior is service-owned,
   preference-controlled, and downstream of established `ACTIVE` evidence.
 
+## Current V1 / public-beta release baseline
+
+This baseline is the current intended V1/public-beta scope and release path unless
+new evidence gives a concrete reason to revise it. It is a directional baseline,
+not an immutable feature freeze: physical testing, audits, Play/platform
+requirements, privacy constraints, architectural findings, or implementation
+experience may justify changing scope or sequence. Evidence-based change is
+allowed; speculative scope drift is not.
+
+The intended beta is the existing **Private Audio** product:
+
+- an Android-only, provider-independent utility for compatible communication-audio
+  routing to the built-in earpiece through the established protected POC-5 path;
+- the service-owned permanent controller and its `READY`, `WAITING`, `ACTIVE`, and
+  `ERROR` states;
+- Main, including its intentional compact-height landscape composition; Settings,
+  including compact-height behavior; Diagnostics and user-triggered local saving of
+  a diagnostic report; the optional Mini floating controller; and service-owned
+  proximity screen behavior; and
+- per-app language selection with the current localization coverage described below,
+  within the existing local, privacy-oriented architecture.
+
+The V1 boundary remains public Android APIs, no root, Shizuku, Accessibility
+Service, or MediaProjection, no capture or proxying of third-party audio, no
+provider authentication, and no network dependency unless separately approved.
+Real telephony retains priority. Every routing cycle remains reversible and
+fail-closed. [`PROJECT_CHARTER.md`](PROJECT_CHARTER.md) remains authoritative for
+the project's scope and non-goals; this baseline does not rewrite it.
+
+The current V1/public-beta implementation target does **not** include a new Fake
+Phone product mode, speculative new routing classes, unrelated audio-routing
+experiments, rebuilding the established protected POC-5 path, or universal support
+for every Android sound or application before beta. Fake Phone is a possible future
+product/research direction, not a beta blocker. The superseded D-030, D-034, and
+D-036 experiments are historical evidence, not its future specification; any
+future Fake Phone mode requires fresh research and specification in a separate,
+evidence-driven development program.
+
+**Release identity:** Private Audio remains the working V1 product name. The
+current `app.privateaudio` identity remains provisional under D-010; this baseline
+does not decide or change it. A final package identity and launcher/release branding
+decision must be made consciously before the first Google Play release/upload,
+where a later identity change would be problematic.
+
+### Current release-readiness sequence
+
+This is a **CURRENT PLAN**, not a promise or irreversible ordering. Evidence may
+reorder, split, remove, or add work:
+
+1. Reconcile the release baseline and current documentation.
+2. Establish the CI and release-engineering foundation.
+3. Complete the privacy policy and release disclosures.
+4. Decide final application identity and launcher/release branding.
+5. Polish permission and foreground-notification transparency.
+6. Pass the current-device release-safety physical gates.
+7. Prepare a release-candidate build and signed Android App Bundle.
+8. Use Google Play Internal Testing as an evidence-gathering stage.
+9. Run a cross-device Closed Beta.
+10. Consider Production only after sufficient beta evidence.
+
+Internal Testing may begin before every cross-device gate is `PASS` because it is
+part of evidence gathering, not a Production-readiness claim. Submission-time Play
+Console procedures and changing external requirements must be verified when used
+rather than frozen here.
+
+### Release-evidence boundary
+
+Private Audio is not currently ready for Production. High-priority open evidence
+includes incoming and outgoing real-call safety; Samsung, AOSP-like/Pixel, and newer
+Android-release coverage; accessory behavior; service/process-loss and reboot
+behavior; remaining overlay/Mini lifecycle checks; diagnostic-report save-picker
+runtime validation; and physical portrait/landscape validation of Main and Settings.
+[`TEST_PLAN.md`](TEST_PLAN.md) is authoritative for the exact gates and statuses;
+this summary intentionally does not duplicate its test matrix.
+
 ## Routing and controller state
 
 - Automatic routing recognizes three provider-independent public-metadata classes:
@@ -272,15 +347,20 @@ physical test records remain in [`DECISIONS.md`](DECISIONS.md),
   contract coverage exists. Physical Gemini evidence confirms same-cycle resource
   reuse within the linger and shows that 5 seconds narrowly missed some later turns;
   the tuned 7-second duration and full multi-turn regression gate remain pending.
-- **Assistant early silent-track pre-arm — implemented, default OFF, not physically validated.**
+- **Assistant early silent-track pre-arm — implemented, default OFF, experimental and device-scoped.**
   Fake Phone was replaced rather than duplicated. Exact `VOICE_RECOGNITION` plus
   assistant/sonification may start the prepared silent track during `WAITING`, then
   establish `MODE_IN_COMMUNICATION` only after `PLAYSTATE_PLAYING`. It makes no early
   device request, attempt, `ACTIVE` transition, or proximity acquisition. Healthy
   assistant/speech reuses the playing track and established mode before the single
   protected device request; other origins cancel and use their unchanged paths.
-  Cleanup is generation-safe and bounded at 10 seconds. Physical clipping reduction
-  and recording stability with the early mode remain `NOT TESTED / UNKNOWN`.
+  Cleanup is generation-safe and bounded at 10 seconds. **FACT:** supplied physical
+  and runtime evidence on Xiaomi `2201117TY`, Android 13/API 33, exercised stable
+  unsilenced recognition, early track `PLAYING`, early mode, speech promotion, one
+  post-speech device request, and `ACTIVE`; human listening reported that the response
+  beginning was no longer clipped. **UNKNOWN:** cross-device, OEM, Android-release,
+  accessory, and telephony compatibility. **PRODUCT STATUS:** the feature remains
+  experimental and default OFF.
 - The ChatGPT startup-sound signature and route remain unresolved. Diagnostics can
   record bounded playback metadata, but the trace neither classifies nor reroutes
   the sound by itself.
