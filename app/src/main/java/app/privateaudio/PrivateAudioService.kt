@@ -1,5 +1,6 @@
 package app.privateaudio
 
+import android.Manifest
 import android.app.Notification
 import android.app.NotificationChannel
 import android.app.NotificationManager
@@ -9,14 +10,17 @@ import android.content.Intent
 import android.content.Context
 import android.content.res.Configuration
 import android.content.pm.ServiceInfo
+import android.content.pm.PackageManager
 import android.media.AudioManager
 import android.os.Binder
+import android.os.Build
 import android.os.IBinder
 import android.os.PowerManager
 import android.provider.Settings
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
+import androidx.core.content.ContextCompat
 import app.privateaudio.diagnostic.AudioDiagnosticObserver
 import app.privateaudio.diagnostic.ExperimentState
 import app.privateaudio.diagnostic.DiagnosticsSummary
@@ -184,7 +188,14 @@ class PrivateAudioService : Service() {
 
     override fun onConfigurationChanged(newConfig: Configuration) {
         super.onConfigurationChanged(newConfig)
-        if (foregroundNotificationActive) {
+        if (
+            foregroundNotificationActive &&
+            (
+                Build.VERSION.SDK_INT < Build.VERSION_CODES.TIRAMISU ||
+                    ContextCompat.checkSelfPermission(this, Manifest.permission.POST_NOTIFICATIONS) ==
+                    PackageManager.PERMISSION_GRANTED
+            )
+        ) {
             getSystemService(NotificationManager::class.java).notify(
                 NOTIFICATION_ID,
                 buildForegroundNotification(),
