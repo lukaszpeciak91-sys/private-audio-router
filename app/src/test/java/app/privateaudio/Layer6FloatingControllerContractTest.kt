@@ -64,7 +64,10 @@ class Layer6FloatingControllerContractTest {
         assertTrue(overlay.contains("if (!Settings.canDrawOverlays(this)) return"))
         assertTrue(main.contains("hideOverlay()")); assertTrue(main.contains("disarmAndStopStartedLifetime()")); assertTrue(main.contains("finishAndRemoveTask()"))
         listOf("AudioManager", "setCommunicationDevice(", "MODE_IN_COMMUNICATION", "projectPrivateAudioState(").forEach { assertFalse(it, overlay.contains(it)) }
-        assertEquals(1, productionSources.sumOf { it.readText().occurrences("setCommunicationDevice(") })
+        assertEquals(
+            listOf(observerSourceFile),
+            productionSources.kotlinMemberCallSites("setCommunicationDevice").map(KotlinCallSite::file),
+        )
         listOf("state_ready", "state_waiting", "state_active", "state_error", "overlay_controller_description").forEach { assertTrue(it, strings.contains("name=\"$it\"")) }
         listOf("state_ready_mini", "state_waiting_mini", "state_active_mini", "state_error_mini").forEach {
             assertTrue(it, miniAliases.contains("name=\"$it\""))
@@ -82,6 +85,7 @@ class Layer6FloatingControllerContractTest {
         val main = File(root, "app/src/main/java/app/privateaudio/MainActivity.kt").readText()
         val strings = File(root, "app/src/main/res/values/strings.xml").readText()
         val miniAliases = File(root, "app/src/main/res/values/mini_state_aliases.xml").readText()
+        val observerSourceFile = File(root, "app/src/main/java/app/privateaudio/diagnostic/AudioDiagnosticObserver.kt")
         val productionSources = File(root, "app/src/main/java").walkTopDown().filter { it.isFile && it.extension == "kt" }.toList()
     }
 
