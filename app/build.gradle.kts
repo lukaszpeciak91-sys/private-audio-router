@@ -3,10 +3,15 @@ plugins {
     id("org.jetbrains.kotlin.plugin.compose")
 }
 
+val localeResourceConfigurationPattern = Regex(
+    "^(?:[a-z]{2,3}(?:-r(?:[A-Z]{2}|[0-9]{3}))?|b\\+[A-Za-z]{2,8}(?:\\+[A-Za-z0-9]{2,8})+)$",
+)
+
 val appOwnedLocalizedResourceConfigurations = file("src/main/res").listFiles().orEmpty()
     .asSequence()
-    .filter { it.isDirectory && it.name.startsWith("values-") && it.name != "values-night" }
+    .filter { it.isDirectory && it.name.startsWith("values-") }
     .map { it.name.removePrefix("values-") }
+    .filter(localeResourceConfigurationPattern::matches)
     .sorted()
     .toList()
 val appOwnedDefaultLanguageTag = file("src/main/res/resources.properties").readLines()
