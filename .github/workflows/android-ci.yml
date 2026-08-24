@@ -34,5 +34,23 @@ jobs:
       - name: Set up Gradle
         uses: gradle/actions/setup-gradle@v5
 
-      - name: Validate Android project
-        run: ./gradlew testDebugUnitTest lintDebug assembleDebug bundleRelease
+      - name: Run JVM tests and builds
+        run: ./gradlew testDebugUnitTest assembleDebug bundleRelease
+
+      - name: Run Android lint and print the complete report
+        shell: bash
+        run: |
+          set +e
+          ./gradlew lintDebug
+          lint_status=$?
+          report="app/build/intermediates/lint_intermediate_text_report/debug/lintReportDebug/lint-results-debug.txt"
+
+          if [[ -f "$report" ]]; then
+            echo "::group::Complete Android lint report"
+            cat "$report"
+            echo "::endgroup::"
+          else
+            echo "Android lint text report was not generated at: $report"
+          fi
+
+          exit "$lint_status"

@@ -1,5 +1,15 @@
 # Progress
 
+## Android lint CI visibility audit
+
+- Android CI now runs the existing JVM and assembly gates separately from Android
+  lint, then prints the complete generated lint text report while preserving lint's
+  original failing exit status. Current lint errors therefore remain release-gating
+  without a baseline, suppression, severity change, or `abortOnError` bypass.
+- This audit changes no application production code, resources, permissions, or
+  protected routing behavior. The exposed inventory is the input to a separate
+  implementation and product-decision step; lint findings are not fixed here.
+
 ## Localization inventory contract reconciliation
 
 - Localization architecture contracts now follow the current app-owned Android
