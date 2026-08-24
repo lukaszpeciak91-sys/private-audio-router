@@ -64,8 +64,8 @@ data class DiagnosticSnapshot(
     val availableCommunicationDevices: List<ObservedDevice>,
     val speakerphoneState: String,
     val timestamp: String = "Unavailable — not observed yet",
-    val processId: Int = Process.myPid(),
-    val userId: Int = Process.myUid(),
+    val processId: Int? = null,
+    val userId: Int? = null,
     val lifecycleState: String = "Unknown",
     val activePlaybackConfigurations: List<ObservedPlayback> = emptyList(),
 ) {
@@ -454,6 +454,8 @@ class AudioDiagnosticObserver(
     fun snapshot(reason: String) {
         val observed = DiagnosticSnapshot(
             timestamp = OffsetDateTime.now().format(DateTimeFormatter.ISO_OFFSET_DATE_TIME),
+            processId = Process.myPid(),
+            userId = Process.myUid(),
             lifecycleState = processLifecycleState(),
             mode = audioModeName(audioManager.mode),
             communicationDevice = audioManager.communicationDevice?.toObservedDevice(),
@@ -1720,6 +1722,8 @@ class AudioDiagnosticObserver(
 
     private fun collectSnapshot() = DiagnosticSnapshot(
         timestamp = OffsetDateTime.now().format(DateTimeFormatter.ISO_OFFSET_DATE_TIME),
+        processId = Process.myPid(),
+        userId = Process.myUid(),
         lifecycleState = processLifecycleState(),
         mode = audioModeName(audioManager.mode),
         communicationDevice = audioManager.communicationDevice?.toObservedDevice(),
@@ -1774,8 +1778,8 @@ internal fun buildDiagnosticReport(
     appendLine("Diagnostic report format: $DIAGNOSTIC_REPORT_FORMAT")
     appendLine("Timestamp: $timestamp")
     appendLine("Package: $packageName")
-    appendLine("Private Audio PID: ${Process.myPid()}")
-    appendLine("Private Audio UID: ${Process.myUid()}")
+    appendLine("Private Audio PID: ${snapshot.processId.reportIdentity()}")
+    appendLine("Private Audio UID: ${snapshot.userId.reportIdentity()}")
     appendLine()
     supportSummary?.let {
         appendLine(it.supportSummary())
@@ -2008,8 +2012,8 @@ internal fun buildDiagnosticReport(
     appendLine()
     appendLine()
     appendLine("ADB CORRELATION")
-    appendLine("Private Audio PID: ${Process.myPid()}")
-    appendLine("Private Audio UID: ${Process.myUid()}")
+    appendLine("Private Audio PID: ${snapshot.processId.reportIdentity()}")
+    appendLine("Private Audio UID: ${snapshot.userId.reportIdentity()}")
     appendLine("Report timestamp: $timestamp")
     appendLine("Capture before cleanup with: adb shell dumpsys audio > audio-poc5.txt")
     append("This report does not claim actual mode ownership; verify it externally.")
@@ -2057,7 +2061,10 @@ private fun StringBuilder.appendIdentity(label: String, snapshot: DiagnosticSnap
     if (snapshot == null) {
         appendLine("$label: Not recorded")
     } else {
-        appendLine("$label: timestamp=${snapshot.timestamp}; PID=${snapshot.processId}; UID=${snapshot.userId}; process=${snapshot.lifecycleState}")
+        appendLine(
+            "$label: timestamp=${snapshot.timestamp}; PID=${snapshot.processId.reportIdentity()}; " +
+                "UID=${snapshot.userId.reportIdentity()}; process=${snapshot.lifecycleState}",
+        )
     }
 }
 
@@ -2073,7 +2080,7 @@ private fun StringBuilder.appendSnapshot(
         return
     }
     appendLine("Timestamp: ${snapshot.timestamp}")
-    appendLine("PID / UID: ${snapshot.processId} / ${snapshot.userId}")
+    appendLine("PID / UID: ${snapshot.processId.reportIdentity()} / ${snapshot.userId.reportIdentity()}")
     appendLine("Process state: ${snapshot.lifecycleState}")
     appendLine("AudioManager mode: ${snapshot.mode}")
     appendLine("Communication device: ${snapshot.communicationDevice.reportDescription()}")
@@ -2264,6 +2271,8 @@ private fun ObservedDevice?.shortName() = this?.let { "${it.type} (${it.productN
 private fun ObservedDevice?.reportDescription() = this?.let {
     "type=${it.type}; product=${it.productName}; Android device ID=${it.id}"
 } ?: "None reported by Android"
+
+private fun Int?.reportIdentity() = this?.toString() ?: "Not observed"
 
 private fun Throwable.exactDescription() =
     "${javaClass.name}: ${message ?: "No message"}"

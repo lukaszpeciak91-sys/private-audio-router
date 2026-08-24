@@ -433,6 +433,12 @@ this summary intentionally does not duplicate its test matrix.
 
 ## Recently completed significant changes
 
+- Decoupled diagnostic snapshot data from Android process observation: PID and UID
+  are captured explicitly at the observer boundary and preserved in real diagnostic
+  evidence, while empty and synthetic snapshots remain explicitly unobserved and
+  plain JVM diagnostic projection tests no longer require the Android `Process`
+  runtime. Broader JVM baseline reconciliation remains in progress, and routing
+  behavior is unchanged.
 - Corrected the Layer41 localization placeholder contract’s Map-key filtering compile
   regression while preserving the resource-key-to-ordered-placeholder association. No
   translations, product behavior, or routing behavior changed.
