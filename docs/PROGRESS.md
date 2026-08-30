@@ -245,6 +245,13 @@ reorder, split, remove, or add work:
 9. Run a cross-device Closed Beta.
 10. Consider Production only after sufficient beta evidence.
 
+Before release-candidate freeze, review the remaining Kotlin compiler warnings as a
+small engineering-cleanup gate. Resolve low-risk deprecations, annotation-target, and
+test-nullability warnings where safe; explicitly classify any behavior-sensitive
+Android diagnostics/routing deprecations rather than modernizing them mechanically.
+A zero-warning compiler log is not itself a publication requirement, and this review
+does not block the current Privacy work merely because warnings remain.
+
 Internal Testing may begin before every cross-device gate is `PASS` because it is
 part of evidence gathering, not a Production-readiness claim. Submission-time Play
 Console procedures and changing external requirements must be verified when used
