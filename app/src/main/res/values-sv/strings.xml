@@ -23,10 +23,8 @@
     <string name="settings_privacy_policy">Integritetspolicy</string>
     <string name="settings_privacy_policy_body">Private Audio samlar inte in, spelar in eller överför dina samtal eller ditt ljudinnehåll.\n\nAppen kräver inget konto eller någon inloggning. Den begär inte mikrofonåtkomst och använder inga tjänster för analys, annonsering eller kraschrapportering. Private Audio begär inte Androids internetbehörighet och skickar inga data till en server.\n\nPrivate Audio observerar endast Android-ljudsystemets tekniska tillstånd och metadata när det behövs för ljuddirigering och diagnostik. Appen kommer inte åt innehållet i dina samtal.\n\nAppinställningar lagras lokalt på din enhet. Diagnostikdata genereras och behandlas lokalt, och en diagnostikrapport sparas endast när du väljer att spara den. Rapporten kan innehålla teknisk information om enheten, Android-versionen, ljuddirigeringen och ljudsystemets tillstånd, men inte samtal eller ljudinnehåll.\n\nAndroid-säkerhetskopiering av appdata är inaktiverad.</string>
     <string name="settings_version">Version %1$s</string>
-    <string name="settings_language_body">Private Audio följer för närvarande enhetens språk. Standard är valt.</string>
     <string name="settings_language_android_13_required">Språkval i appen kräver Android 13 eller senare. Den här enheten följer systemspråket.</string>
     <string name="settings_proximity_screen">Stäng av skärmen nära örat</string>
-    <string name="settings_advanced_body">Fler alternativ visas här i takt med att Private Audio utvecklas.</string>
     <string name="settings_about_body">Private Audio hjälper till att växla ljud från kompatibla rösttjänster till telefonens inbyggda samtalslur.</string>
     <string name="diagnostic_report_saved">Diagnostikrapporten har sparats.</string>
     <string name="diagnostic_report_save_failed">Det gick inte att spara diagnostikrapporten.</string>

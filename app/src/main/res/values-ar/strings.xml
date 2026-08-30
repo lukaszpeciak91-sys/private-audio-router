@@ -23,10 +23,8 @@
     <string name="settings_privacy_policy">سياسة الخصوصية</string>
     <string name="settings_privacy_policy_body">لا يجمع Private Audio محادثاتك أو محتواك الصوتي ولا يسجلهما أو يرسلهما.\n\nلا يتطلب التطبيق حسابًا أو تسجيل الدخول. ولا يطلب الوصول إلى الميكروفون، ولا يستخدم خدمات التحليلات أو الإعلانات أو الإبلاغ عن الأعطال. لا يطلب Private Audio إذن الإنترنت في Android ولا يرسل بيانات إلى خادم.\n\nلا يراقب Private Audio إلا الحالة التقنية والبيانات الوصفية لنظام الصوت في Android بالقدر اللازم لتوجيه الصوت والتشخيص. ولا يصل إلى محتوى محادثاتك.\n\nتُخزَّن إعدادات التطبيق محليًا على جهازك. وتُنشأ بيانات التشخيص وتُعالج محليًا، ولا يُحفظ تقرير تشخيصي إلا عندما تختار حفظه. قد يتضمن التقرير معلومات تقنية عن جهازك وإصدار Android وتوجيه الصوت وحالة نظام الصوت، لكنه لا يتضمن محادثات أو محتوى صوتيًا.\n\nالنسخ الاحتياطي لبيانات تطبيق Android معطّل.</string>
     <string name="settings_version">الإصدار %1$s</string>
-    <string name="settings_language_body">يتبع Private Audio حاليًا لغة جهازك. تم اختيار «تلقائي».</string>
     <string name="settings_language_android_13_required">يتطلب اختيار اللغة داخل التطبيق Android 13 أو إصدارًا أحدث. يتبع هذا الجهاز لغة النظام.</string>
     <string name="settings_proximity_screen">إطفاء الشاشة عند تقريب الهاتف من الأذن</string>
-    <string name="settings_advanced_body">ستظهر هنا خيارات إضافية مع تطوّر Private Audio.</string>
     <string name="settings_about_body">يساعد Private Audio على توجيه الصوت إلى سماعة الأذن المدمجة في الهاتف.</string>
     <string name="diagnostic_report_saved">تم حفظ تقرير التشخيص.</string>
     <string name="diagnostic_report_save_failed">تعذّر حفظ تقرير التشخيص.</string>

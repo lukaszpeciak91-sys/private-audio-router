@@ -47,6 +47,17 @@ The project must never knowingly implement uncertain Android behavior blindly. S
 - Audit unexpected behavior before making another change.
 - Record durable evidence in the appropriate existing authoritative documentation.
 
+### Android lint policy
+
+- Android lint errors block CI, and correctness, platform, resource, accessibility,
+  and other actionable warnings are expected to be fixed.
+- `UseKtx` is not enforced because it is a style preference rather than a
+  correctness rule. Code may still use KTX when it naturally improves an
+  implementation.
+- Only explicitly accepted toolchain-freshness advisories may remain visible. CI
+  compares each warning's path, issue ID, and exact message with that accepted set;
+  every unexpected warning blocks the build.
+
 ## Audits
 
 ### Pre-implementation audit

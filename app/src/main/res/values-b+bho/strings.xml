@@ -24,10 +24,8 @@
     <string name="settings_privacy_policy">निजता नीति</string>
     <string name="settings_privacy_policy_body">Private Audio रउआ के बातचीत भा ऑडियो सामग्री के ना एकट्ठा करेला, ना रिकॉर्ड करेला आ ना कहीं भेजेला।\n\nएह ऐप खातिर कवनो अकाउंट भा साइन-इन जरूरी नइखे। ई माइक्रोफोन के पहुँच ना माँगेला आ एनालिटिक्स, विज्ञापन भा ऐप क्रैश रिपोर्टिंग सेवा के इस्तेमाल ना करेला। Private Audio Android के इंटरनेट अनुमति ना माँगेला आ कवनो सर्वर पर डेटा ना भेजेला।\n\nPrivate Audio ऑडियो रूटिंग आ जाँच खातिर जतने जरूरी बा, ओतने Android के ऑडियो सिस्टम के तकनीकी स्थिति आ मेटाडेटा देखेला। ई रउआ के बातचीत के सामग्री तक पहुँच ना करेला।\n\nऐप के सेटिंग रउआ के डिवाइस पर स्थानीय रूप से स्टोर होला। जाँच के डेटा स्थानीय रूप से बनावल आ प्रोसेस कइल जाला, आ जाँच रिपोर्ट तबे सेव होला जब रउआ एकरा के सेव करे के चुनीं। रिपोर्ट में रउआ के डिवाइस, Android वर्जन, ऑडियो रूटिंग आ ऑडियो सिस्टम के स्थिति के तकनीकी जानकारी हो सकेला, बाकिर एह में बातचीत भा ऑडियो सामग्री ना होला।\n\nAndroid ऐप-डेटा बैकअप बंद बा।</string>
     <string name="settings_version">वर्जन %1$s</string>
-    <string name="settings_language_body">Private Audio अभी रउआ के डिवाइस के भाषा के इस्तेमाल करेला। डिफॉल्ट चुनल बा।</string>
     <string name="settings_language_android_13_required">ऐप में भाषा चुने खातिर Android 13 भा ओकरा बाद के वर्जन जरूरी बा। ई डिवाइस सिस्टम के भाषा के इस्तेमाल करेला।</string>
     <string name="settings_proximity_screen">कान के लगे स्क्रीन बंद करीं</string>
-    <string name="settings_advanced_body">Private Audio के आगे बढ़ला पर इहाँ अउरी विकल्प लउकी।</string>
     <string name="settings_about_body">Private Audio समर्थित आवाज के ऑडियो फोन में लागल ऊपरी कान वाला स्पीकर पर भेजे में मदद करेला।</string>
     <string name="diagnostic_report_saved">जाँच रिपोर्ट सेव हो गइल।</string>
     <string name="diagnostic_report_save_failed">जाँच रिपोर्ट सेव ना हो पावल।</string>

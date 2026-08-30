@@ -84,6 +84,11 @@ android {
         // packaged resources and generated discovery to locale trees owned by this app.
         localeFilters += appOwnedLocaleResourceConfigurations
     }
+
+    lint {
+        // UseKtx is a convenience preference, not a correctness requirement for this project.
+        disable += "UseKtx"
+    }
 }
 
 dependencies {

@@ -24,10 +24,8 @@
     <string name="settings_privacy_policy">Umgaqo-nkqubo wabucala</string>
     <string name="settings_privacy_policy_body">I-Private Audio ayiqokeleli, ayirekhodi, okanye ayithumeli iincoko zakho okanye umxholo weaudio.\n\nLe app ayifuni akhawunti okanye ungene ngemvume. Ayiceli imvume yokusebenzisa imayikrofoni kwaye ayisebenzisi uhlalutyo losetyenziso, iintengiso, okanye iinkonzo zokunika ingxelo xa iapp ima ngokungalindelekanga. I-Private Audio ayiceli imvume ye-Intanethi ye-Android kwaye ayithumeli datha kwiseva.\n\nI-Private Audio iqwalasela kuphela isimo sobugcisa kunye nemethadatha yesistim yeaudio ye-Android njengoko kuyimfuneko ekuhambiseni iaudio nakuxilongo. Ayifikeleli kumxholo weencoko zakho.\n\nIisetingi zeapp zigcinwa kwisixhobo sakho kuphela. Idatha yoxilongo yenziwa ize isetyenzwe kwisixhobo sakho, kwaye ingxelo yoxilongo igcinwa kuphela xa ukhetha ukuyigcina. Ingxelo isenokuquka iinkcukacha zobugcisa ngesixhobo sakho, uhlobo lwe-Android, ukuhanjiswa kweaudio, kunye nesimo sesistim yeaudio, kodwa ayiqulathanga ncoko okanye umxholo weaudio.\n\nUgcino lwedatha yeapp ye-Android luvaliwe.</string>
     <string name="settings_version">Uhlobo %1$s</string>
-    <string name="settings_language_body">I-Private Audio ngoku ilandela ulwimi lwesixhobo sakho. Kukhethwe Okumiselweyo.</string>
     <string name="settings_language_android_13_required">Ukukhetha ulwimi ngaphakathi kwiapp kufuna i-Android 13 okanye entsha. Esi sixhobo silandela ulwimi lwesistim.</string>
     <string name="settings_proximity_screen">Cima isikrini xa ifowuni ikufutshane nendlebe yakho</string>
-    <string name="settings_advanced_body">Iinketho ezongezelelekileyo ziza kuvela apha njengoko i-Private Audio iphucuka.</string>
     <string name="settings_about_body">I-Private Audio inceda ukuhambisa iaudio yelizwi exhaswayo kwisamkeli sendlebe esakhelwe ngaphakathi kwifowuni yakho.</string>
     <string name="diagnostic_report_saved">Ingxelo yoxilongo igciniwe.</string>
     <string name="diagnostic_report_save_failed">Ayikwazanga ukugcina ingxelo yoxilongo.</string>

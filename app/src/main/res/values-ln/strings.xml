@@ -24,10 +24,8 @@
     <string name="settings_privacy_policy">Mobeko ya kobatela makambo ya moto</string>
     <string name="settings_privacy_policy_body">Private Audio esangisaka, ekangaka to etindaka masolo na yo to makambo ya mongongo te.\n\nAplikasio esɛngaka kɔnti to kokɔta te. Esɛngaka ndingisa ya kosalela mikrofɔ te mpe esalelaka misala ya analyse, piblisite to kopesa balapɔrɔ ya kokwea ya programɛ te. Private Audio esɛngaka ndingisa ya Internet ya Android te mpe etindaka ba données na serveur te.\n\nPrivate Audio etalaka kaka ezalela ya tekiniki mpe metadata ya système ya mongongo ya Android oyo esengeli mpo na kotambwisa mongongo mpe kosala diagnostic. Ekɔtaka na makambo ya masolo na yo te.\n\nMabongisi ya aplikasio ebombamaka na aparɛyi na yo. Ba données ya diagnostic ebimisamaka mpe traitement na yango esalemaka na aparɛyi, mpe lapɔrɔ ya diagnostic ebombamaka kaka ntango oponi kobomba yango. Lapɔrɔ ekoki kozala na bansango ya tekiniki oyo etali aparɛyi na yo, vɛrsio ya Android, kotambwisama ya mongongo mpe ezalela ya système ya mongongo, kasi ezalaka na masolo to makambo ya mongongo te.\n\nBackup ya ba données ya aplikasio ya Android ekangami.</string>
     <string name="settings_version">Vɛrsio %1$s</string>
-    <string name="settings_language_body">Private Audio elandaka sikoyo lokótá ya aparɛyi na yo. Ya momesano eponami.</string>
     <string name="settings_language_android_13_required">Esengeli kozala na Android 13 to ya sika koleka mpo na kopona lokótá na kati ya aplikasio. Aparɛyi oyo elandaka lokótá ya système.</string>
     <string name="settings_proximity_screen">Boma écran ntango ezali pene na litoi na yo</string>
-    <string name="settings_advanced_body">Maponi mosusu ekobima awa ntango Private Audio ezali kokola.</string>
     <string name="settings_about_body">Private Audio esalisaka kotambwisa mongongo ya maloba oyo endimami na écouteur ya kati ya telefone na yo.</string>
     <string name="diagnostic_report_saved">Lapɔrɔ ya diagnostic ebombami.</string>
     <string name="diagnostic_report_save_failed">Lapɔrɔ ya diagnostic ekokaki kobombama te.</string>

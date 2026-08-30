@@ -24,10 +24,8 @@
     <string name="settings_privacy_policy">隐私政策</string>
     <string name="settings_privacy_policy_body">Private Audio 唔会收集、录制或传输你嘅对话或音频内容。\n\n呢个应用唔需要账户或登录。佢唔会请求麦克风访问权限，亦唔会使用分析、广告或崩溃报告服务。Private Audio 唔会请求 Android 嘅互联网权限，亦唔会向服务器发送数据。\n\nPrivate Audio 只会观察音频路由同诊断所需嘅 Android 音频系统技术状态同元数据。Private Audio 唔会访问你嘅对话内容。\n\n应用设置会保存在你嘅设备本地。诊断数据会喺本地产生同处理，而且只有你选择保存诊断报告时先会保存报告。报告可能包含你嘅设备、Android 版本、音频路由同音频系统状态等技术信息，但唔会包含对话或音频内容。\n\nAndroid 应用数据备份已停用。</string>
     <string name="settings_version">版本 %1$s</string>
-    <string name="settings_language_body">Private Audio 而家跟随你嘅设备语言，并已选择“默认”。</string>
     <string name="settings_language_android_13_required">应用内语言选择功能需要 Android 13 或更高版本。呢部设备会跟随系统语言。</string>
     <string name="settings_proximity_screen">靠近耳仔时关闭屏幕</string>
-    <string name="settings_advanced_body">随着 Private Audio 不断发展，呢度会提供更多选项。</string>
     <string name="settings_about_body">Private Audio 帮你将支持嘅语音音频路由到手机嘅内置听筒。</string>
     <string name="diagnostic_report_saved">诊断报告已保存。</string>
     <string name="diagnostic_report_save_failed">无法保存诊断报告。</string>

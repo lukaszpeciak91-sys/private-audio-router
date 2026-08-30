@@ -23,10 +23,8 @@
     <string name="settings_privacy_policy">Siyaasadda Asturnaanta</string>
     <string name="settings_privacy_policy_body">Private Audio ma ururiyo, ma duubo mana gudbiyo wada hadalladaada ama nuxurka maqalka.\n\nAbku uma baahna akoon ama soo galid. Ma codsado gelitaanka makarafoonka mana isticmaalo adeegyada falanqaynta, xayeysiiska ama warbixinta burburka. Private Audio ma codsado oggolaanshaha Internetka Android mana diro xog server.\n\nPrivate Audio wuxuu eegaa oo keliya xaaladda farsamo iyo metadata nidaamka maqalka Android ee loo baahan yahay hagidda maqalka iyo baaritaanka. Ma galo nuxurka wada hadalladaada.\n\nDejimaha abka waxaa lagu kaydiyaa qalabkaaga. Xogta baaritaanka waxaa lagu abuuraa laguna farsameeyaa qalabka, warbixinna waxaa la kaydiyaa oo keliya markaad doorato. Waxay yeelan kartaa xog farsamo oo ku saabsan qalabka, nooca Android, hagidda maqalka iyo xaaladda nidaamka maqalka, balse ma laha wada hadal ama nuxur maqal.\n\nKaydinta xogta abka Android waa naafo.</string>
     <string name="settings_version">Nooca %1$s</string>
-    <string name="settings_language_body">Private Audio hadda wuxuu raacayaa luqadda qalabkaaga. Caadi ayaa la doortay.</string>
     <string name="settings_language_android_13_required">Doorashada luqadda gudaha app-ka waxay u baahan tahay Android 13 ama nooc ka dambeeya. Qalabkan wuxuu raacayaa luqadda nidaamka.</string>
     <string name="settings_proximity_screen">Dami shaashadda marka taleefanku dhegtaada u dhow yahay</string>
-    <string name="settings_advanced_body">Ikhtiyaarro dheeraad ah ayaa halkan ka soo muuqan doona marka Private Audio sii horumaro.</string>
     <string name="settings_about_body">Private Audio wuxuu caawiyaa in codka hadalka ee la taageero loo wareejiyo sameecadda sare ee taleefankaaga.</string>
     <string name="diagnostic_report_saved">Warbixinta baaritaanka waa la kaydiyey.</string>
     <string name="diagnostic_report_save_failed">Lama kaydin karin warbixinta baaritaanka.</string>

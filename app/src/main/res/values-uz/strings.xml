@@ -29,13 +29,11 @@
     <string name="settings_privacy_policy_body">Private Audio suhbatlaringiz yoki audio kontentingizni yig‘maydi, yozib olmaydi va uzatmaydi.\n\nIlova hisob yoki tizimga kirishni talab qilmaydi. U mikrofon ruxsatini so‘ramaydi hamda tahlil, reklama yoki nosozlik haqida xabar berish xizmatlaridan foydalanmaydi. Private Audio Android Internet ruxsatini so‘ramaydi va serverga ma’lumot yubormaydi.\n\nPrivate Audio faqat audio yo‘naltirish va diagnostika uchun zarur Android audio tizimining texnik holati va metama’lumotlarini kuzatadi. Suhbatlaringiz mazmuniga kirmaydi.\n\nIlova sozlamalari qurilmangizda mahalliy saqlanadi. Diagnostika ma’lumotlari mahalliy yaratiladi va qayta ishlanadi; diagnostika hisoboti faqat uni saqlashni tanlaganingizda saqlanadi. Hisobot qurilma, Android versiyasi, audio yo‘naltirish va audio tizimi holati haqidagi texnik ma’lumotlarni o‘z ichiga olishi mumkin, ammo suhbat yoki audio kontentni emas.\n\nAndroid ilova ma’lumotlarini zaxiralash o‘chirilgan.</string>
     <string name="settings_version">Versiya %1$s</string>
 
-    <string name="settings_language_body">Private Audio hozir qurilmangiz tilidan foydalanadi. Birlamchi variant tanlangan.</string>
 
     <string name="settings_language_android_13_required">Ilova ichida til tanlash uchun Android 13 yoki undan keyingi versiya kerak. Bu qurilma tizim tilidan foydalanadi.</string>
 
     <string name="settings_proximity_screen">Telefon qulog‘ingizga yaqinlashganda ekranni o‘chirish</string>
 
-    <string name="settings_advanced_body">Private Audio rivojlangani sari bu yerda qo‘shimcha parametrlar paydo bo‘ladi.</string>
 
     <string name="settings_about_body">Private Audio qo‘llab-quvvatlanadigan nutq audiosini telefoningizning ichki quloq karnaychasiga o‘tkazishga yordam beradi.</string>
 

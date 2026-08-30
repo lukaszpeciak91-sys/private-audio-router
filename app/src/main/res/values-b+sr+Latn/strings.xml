@@ -23,10 +23,8 @@
     <string name="settings_privacy_policy">Politika privatnosti</string>
     <string name="settings_privacy_policy_body">Private Audio ne prikuplja, ne snima niti prenosi vaše razgovore ili audio-sadržaj.\n\nAplikacija ne zahteva nalog ili prijavljivanje. Ne traži pristup mikrofonu i ne koristi usluge analitike, oglašavanja ili izveštavanja o otkazivanju. Private Audio ne traži Android dozvolu za internet i ne šalje podatke serveru.\n\nPrivate Audio prati samo tehničko stanje i metapodatke Android audio-sistema, koliko je potrebno za usmeravanje zvuka i dijagnostiku. Ne pristupa sadržaju vaših razgovora.\n\nPodešavanja aplikacije čuvaju se lokalno na uređaju. Dijagnostički podaci se generišu i obrađuju lokalno, a dijagnostički izveštaj se čuva samo kada odaberete da ga sačuvate. Izveštaj može da sadrži tehničke informacije o uređaju, verziji Android-a, usmeravanju zvuka i stanju audio-sistema, ali ne sadrži razgovore ili audio-sadržaj.\n\nAndroid rezervna kopija podataka aplikacije je onemogućena.</string>
     <string name="settings_version">Verzija %1$s</string>
-    <string name="settings_language_body">Private Audio trenutno koristi jezik vašeg uređaja. Izabrana je podrazumevana postavka.</string>
     <string name="settings_language_android_13_required">Izbor jezika u aplikaciji zahteva Android 13 ili noviji. Ovaj uređaj koristi jezik sistema.</string>
     <string name="settings_proximity_screen">Isključi ekran blizu uha</string>
-    <string name="settings_advanced_body">Dodatne opcije će se pojavljivati ovde kako se Private Audio bude razvijao.</string>
     <string name="settings_about_body">Private Audio pomaže da se podržani glasovni zvuk prebaci na ugrađenu slušalicu telefona.</string>
     <string name="diagnostic_report_saved">Dijagnostički izveštaj je sačuvan.</string>
     <string name="diagnostic_report_save_failed">Nije moguće sačuvati dijagnostički izveštaj.</string>

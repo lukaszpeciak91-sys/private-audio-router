@@ -53,4 +53,49 @@ jobs:
             echo "Android lint text report was not generated at: $report"
           fi
 
-          exit "$lint_status"
+          python3 - "$report" <<'PY'
+          import pathlib
+          import re
+          import sys
+
+          report = pathlib.Path(sys.argv[1])
+          repository_root = pathlib.Path.cwd().resolve()
+          if not report.is_file():
+              print(f"Cannot enforce the lint warning policy: missing {report}", file=sys.stderr)
+              sys.exit(1)
+
+          accepted = {
+              ("app/build.gradle.kts", "OldTargetApi", "Not targeting the latest versions of Android; compatibility modes apply. Consider testing and updating this version. Consult the android.os.Build.VERSION_CODES javadoc for details."),
+              ("gradle/wrapper/gradle-wrapper.properties", "AndroidGradlePluginVersion", "A newer version of Gradle than 9.5.0 is available: 9.7.1"),
+              ("app/build.gradle.kts", "GradleDependency", "A newer version of compileSdk than 36 is available: 37"),
+          }
+          header = re.compile(r"^(.*?):\d+: Warning: (.*) \[([^]]+)]$")
+          findings = []
+          for line in report.read_text(encoding="utf-8").splitlines():
+              match = header.match(line)
+              if not match:
+                  continue
+              path, message, issue = match.groups()
+              finding_path = pathlib.Path(path)
+              if not finding_path.is_absolute():
+                  finding_path = repository_root / finding_path
+              try:
+                  normalized_path = finding_path.resolve().relative_to(repository_root).as_posix()
+              except ValueError:
+                  normalized_path = finding_path.resolve().as_posix()
+              findings.append((normalized_path, issue, message))
+
+          unexpected = [finding for finding in findings if finding not in accepted]
+          if unexpected:
+              print("Unexpected Android lint warning(s):", file=sys.stderr)
+              for path, issue, message in unexpected:
+                  print(f"- {path}: {message} [{issue}]", file=sys.stderr)
+              sys.exit(1)
+          print(f"Lint warning policy passed ({len(findings)} accepted warning(s), 0 unexpected).")
+          PY
+          warning_policy_status=$?
+
+          if (( lint_status != 0 )); then
+            exit "$lint_status"
+          fi
+          exit "$warning_policy_status"

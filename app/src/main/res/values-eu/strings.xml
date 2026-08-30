@@ -23,10 +23,8 @@
     <string name="settings_privacy_policy">Pribatutasun-gidalerroa</string>
     <string name="settings_privacy_policy_body">Private Audio aplikazioak ez ditu zure elkarrizketak edo audio-edukia biltzen, grabatzen edo transmititzen.\n\nAplikazioak ez du konturik edo saioa hasterik behar. Ez du mikrofonorako sarbidea eskatzen, eta ez du analitika-, publizitate- edo hutsegiteen berri emateko zerbitzurik erabiltzen. Private Audio aplikazioak ez du Androiden Internet baimena eskatzen eta ez du daturik zerbitzarira bidaltzen.\n\nPrivate Audio aplikazioak Androiden audio-sistemaren egoera teknikoa eta metadatuak soilik behatzen ditu, audioa bideratzeko eta diagnostikorako behar den neurrian. Ez du zure elkarrizketen edukia atzitzen.\n\nAplikazioaren ezarpenak gailuan lokalean gordetzen dira. Diagnostiko-datuak lokalean sortu eta prozesatzen dira, eta diagnostiko-txostena zuk gordetzea aukeratzen duzunean bakarrik gordetzen da. Txostenak gailuari, Android bertsioari, audio-bideratzeari eta audio-sistemaren egoerari buruzko informazio teknikoa izan dezake, baina ez elkarrizketarik edo audio-edukirik.\n\nAndroiden aplikazio-datuen babeskopia desgaituta dago.</string>
     <string name="settings_version">%1$s bertsioa</string>
-    <string name="settings_language_body">Private Audiok zure gailuaren hizkuntza erabiltzen du une honetan. Lehenetsia hautatuta dago.</string>
     <string name="settings_language_android_13_required">Aplikazioaren hizkuntza hautatzeko, Android 13 edo berriagoa behar da. Gailu honek sistemaren hizkuntza erabiltzen du.</string>
     <string name="settings_proximity_screen">Itzali pantaila belarriaren ondoan</string>
-    <string name="settings_advanced_body">Aukera gehiago agertuko dira hemen Private Audio garatu ahala.</string>
     <string name="settings_about_body">Private Audiok ahots-audio bateragarria telefonoaren aurikular integratura bideratzen laguntzen du.</string>
     <string name="diagnostic_report_saved">Diagnostiko-txostena gorde da.</string>
     <string name="diagnostic_report_save_failed">Ezin izan da diagnostiko-txostena gorde.</string>

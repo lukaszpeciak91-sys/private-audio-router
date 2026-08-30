@@ -23,10 +23,8 @@
     <string name="settings_privacy_policy">개인정보처리방침</string>
     <string name="settings_privacy_policy_body">Private Audio는 사용자의 대화나 오디오 콘텐츠를 수집, 녹음 또는 전송하지 않습니다.\n\n이 앱에는 계정이나 로그인이 필요하지 않습니다. 마이크 접근 권한을 요청하지 않으며 분석, 광고 또는 비정상 종료 보고 서비스를 사용하지 않습니다. Private Audio는 Android 인터넷 권한을 요청하지 않고 서버로 데이터를 보내지 않습니다.\n\nPrivate Audio는 오디오 라우팅과 진단에 필요한 범위에서 Android 오디오 시스템의 기술적 상태와 메타데이터만 확인합니다. 사용자의 대화 내용에는 접근하지 않습니다.\n\n앱 설정은 기기에 로컬로 저장됩니다. 진단 데이터는 로컬에서 생성 및 처리되며, 진단 보고서는 사용자가 저장을 선택한 경우에만 저장됩니다. 보고서에는 기기, Android 버전, 오디오 라우팅 및 오디오 시스템 상태에 관한 기술 정보가 포함될 수 있지만 대화나 오디오 콘텐츠는 포함되지 않습니다.\n\nAndroid 앱 데이터 백업은 사용 중지되어 있습니다.</string>
     <string name="settings_version">버전 %1$s</string>
-    <string name="settings_language_body">Private Audio는 현재 기기 언어를 따릅니다. 기본값이 선택되어 있습니다.</string>
     <string name="settings_language_android_13_required">앱에서 언어를 선택하려면 Android 13 이상이 필요합니다. 이 기기에서는 시스템 언어를 사용합니다.</string>
     <string name="settings_proximity_screen">귀에 가까이 대면 화면 끄기</string>
-    <string name="settings_advanced_body">Private Audio가 발전함에 따라 여기에 더 많은 옵션이 표시됩니다.</string>
     <string name="settings_about_body">Private Audio는 음성을 휴대전화의 수화부로 전환하는 데 도움을 줍니다.</string>
     <string name="diagnostic_report_saved">진단 보고서를 저장했습니다.</string>
     <string name="diagnostic_report_save_failed">진단 보고서를 저장할 수 없습니다.</string>

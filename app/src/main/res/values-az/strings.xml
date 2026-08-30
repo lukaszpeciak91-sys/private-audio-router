@@ -23,10 +23,8 @@
     <string name="settings_privacy_policy">Məxfilik siyasəti</string>
     <string name="settings_privacy_policy_body">Private Audio söhbətlərinizi və ya audio məzmununuzu toplamır, yazmır və ötürmür.\n\nTətbiq hesab və ya giriş tələb etmir. Mikrofon icazəsi istəmir və analitika, reklam və ya nasazlıq hesabatı xidmətlərindən istifadə etmir. Private Audio Android-in İnternet icazəsini istəmir və serverə məlumat göndərmir.\n\nPrivate Audio yalnız audio yönləndirməsi və diaqnostika üçün lazım olan Android audio sisteminin texniki vəziyyətini və metadatasını müşahidə edir. Söhbətlərinizin məzmununa daxil olmur.\n\nTətbiq ayarları cihazınızda yerli saxlanılır. Diaqnostika məlumatları yerli yaradılır və işlənir; diaqnostika hesabatı yalnız siz onu saxlamağı seçəndə saxlanılır. Hesabatda cihaz, Android versiyası, audio yönləndirməsi və audio sisteminin vəziyyəti barədə texniki məlumat ola bilər, lakin söhbət və ya audio məzmun olmur.\n\nAndroid tətbiq məlumatlarının ehtiyat nüsxəsi deaktivdir.</string>
     <string name="settings_version">Versiya %1$s</string>
-    <string name="settings_language_body">Private Audio hazırda cihazınızın dilindən istifadə edir. Defolt seçilib.</string>
     <string name="settings_language_android_13_required">Tətbiq daxilində dil seçimi üçün Android 13 və ya daha yeni versiya tələb olunur. Bu cihaz sistem dilindən istifadə edir.</string>
     <string name="settings_proximity_screen">Telefon qulağınıza yaxın olduqda ekranı söndürün</string>
-    <string name="settings_advanced_body">Private Audio inkişaf etdikcə burada əlavə seçimlər görünəcək.</string>
     <string name="settings_about_body">Private Audio dəstəklənən səsli audionu telefonunuzun daxili qulaq dinamikinə yönləndirməyə kömək edir.</string>
     <string name="diagnostic_report_saved">Diaqnostik hesabat yadda saxlanıldı.</string>
     <string name="diagnostic_report_save_failed">Diaqnostik hesabatı yadda saxlamaq mümkün olmadı.</string>

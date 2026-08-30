@@ -1,5 +1,30 @@
 # Progress
 
+## Dead Settings resource contract reconciliation
+
+- Five frozen-localization JVM contracts no longer expect Serbian, Bosnian,
+  Montenegrin, or Zulu phrases that existed only in the intentionally deleted
+  `settings_language_body` or `settings_advanced_body` resources. All assertions for
+  still-live locale identity, terminology, state, routing, and UI semantics remain;
+  no localized resource wording or production behavior changed.
+
+## Final current-lint cleanup and warning non-regression gate
+
+- Android app-data backup remains disabled, and modern data-extraction rules now
+  exclude every credential- and device-protected app-owned storage domain from both
+  cloud backup and device-to-device transfer.
+- The Mini controller reuses its unchanged surface rectangle, and its physical
+  left-origin overlay gravity has a declaration-scoped lint suppression documenting
+  the separation from direction-driven RTL content.
+- The obsolete `settings_language_body` and `settings_advanced_body` resources were
+  mechanically removed from the default and every localized inventory without
+  rewriting translations. The Compose screen API now places `modifier` first among
+  optional parameters without changing named call semantics.
+- Module lint policy no longer enforces the stylistic `UseKtx` recommendation.
+  Correctness warnings remain actionable, while CI admits only the three exact,
+  visible target SDK, Gradle, and compile SDK freshness advisories and rejects every
+  other warning by normalized path, issue ID, and message.
+
 ## Final Android lint localization-metadata corrections
 
 - The four default Mini state aliases retain locale-selected full-state resolution,

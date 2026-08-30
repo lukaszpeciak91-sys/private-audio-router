@@ -23,10 +23,8 @@
     <string name="settings_privacy_policy">ນະໂຍບາຍຄວາມເປັນສ່ວນຕົວ</string>
     <string name="settings_privacy_policy_body">Private Audio ບໍ່ເກັບກຳ, ບັນທຶກ ຫຼື ສົ່ງການສົນທະນາ ຫຼື ເນື້ອຫາສຽງຂອງທ່ານ.\n\nແອັບບໍ່ຕ້ອງການບັນຊີ ຫຼື ການເຂົ້າລະບົບ. ບໍ່ຂໍສິດໄມໂຄຣໂຟນ ແລະ ບໍ່ໃຊ້ການວິເຄາະ, ໂຄສະນາ ຫຼື ບໍລິການລາຍງານຂໍ້ຜິດພາດ. Private Audio ບໍ່ຂໍສິດ Internet ຂອງ Android ແລະ ບໍ່ສົ່ງຂໍ້ມູນໄປເຊີບເວີ.\n\nPrivate Audio ເບິ່ງສະເພາະສະຖານະທາງເຕັກນິກ ແລະ metadata ຂອງລະບົບສຽງ Android ທີ່ຈຳເປັນສຳລັບການກຳນົດເສັ້ນທາງສຽງ ແລະ ການວິນິດໄສ; ບໍ່ເຂົ້າເຖິງເນື້ອຫາການສົນທະນາ.\n\nການຕັ້ງຄ່າເກັບໄວ້ໃນອຸປະກອນ. ຂໍ້ມູນວິນິດໄສຖືກສ້າງແລະປະມວນຜົນໃນອຸປະກອນ; ລາຍງານຈະຖືກບັນທຶກເມື່ອທ່ານເລືອກເທົ່ານັ້ນ. ອາດມີຂໍ້ມູນເຕັກນິກກ່ຽວກັບອຸປະກອນ, ລຸ້ນ Android, ເສັ້ນທາງສຽງ ແລະ ສະຖານະລະບົບສຽງ, ແຕ່ບໍ່ມີການສົນທະນາ ຫຼື ເນື້ອຫາສຽງ.\n\nການສຳຮອງຂໍ້ມູນແອັບ Android ຖືກປິດ.</string>
     <string name="settings_version">ເວີຊັນ %1$s</string>
-    <string name="settings_language_body">ຕອນນີ້ Private Audio ໃຊ້ພາສາຂອງອຸປະກອນຂອງທ່ານ. ເລືອກ “ຄ່າເລີ່ມຕົ້ນ” ແລ້ວ.</string>
     <string name="settings_language_android_13_required">ການເລືອກພາສາພາຍໃນແອັບຕ້ອງໃຊ້ Android 13 ຫຼືໃໝ່ກວ່າ. ອຸປະກອນນີ້ໃຊ້ພາສາຂອງລະບົບ.</string>
     <string name="settings_proximity_screen">ປິດໜ້າຈໍເມື່ອນຳໂທລະສັບເຂົ້າໃກ້ຫູ</string>
-    <string name="settings_advanced_body">ຕົວເລືອກເພີ່ມເຕີມຈະປາກົດຢູ່ນີ້ເມື່ອ Private Audio ພັດທະນາຕໍ່ໄປ.</string>
     <string name="settings_about_body">Private Audio ຊ່ວຍປ່ຽນສຽງສົນທະນາທີ່ຮອງຮັບໄປຫາຊຸດຫູຟັງໃນຕົວໂທລະສັບຂອງທ່ານ.</string>
     <string name="diagnostic_report_saved">ບັນທຶກລາຍງານການວິນິດໄສແລ້ວ.</string>
     <string name="diagnostic_report_save_failed">ບໍ່ສາມາດບັນທຶກລາຍງານການວິນິດໄສໄດ້.</string>
