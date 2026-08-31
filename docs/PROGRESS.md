@@ -1,5 +1,30 @@
 # Progress
 
+## English Privacy Policy disclosure alignment
+
+- The authoritative English in-app Privacy Policy now describes the verified current
+  implementation at its actual boundaries: no account or microphone permission; no
+  microphone or conversation-audio capture; local use of public Android playback and
+  recording-session metadata for routing and diagnostics; app-private preferences and
+  transient diagnostic state; explicit Android document-provider report export; and
+  destination-controlled handling, retention, and deletion after export.
+- The disclosure also bounds current network behavior without making a permanent
+  architectural promise: this version has no Internet permission, Private Audio
+  backend or network transmission path, analytics, advertising, or crash-reporting
+  service/SDK, and therefore has no server-side diagnostic retention. App-owned data
+  remains excluded from cloud backup and device-to-device transfer.
+- The existing semantic Settings contract now protects the microphone-audio versus
+  public recording-session-metadata distinction, local generation versus persistent
+  export, user-controlled destination boundary, current network/service behavior, and
+  backup/transfer statement. Production routing and diagnostic behavior are unchanged.
+- This change establishes and validates the high-risk English source before translation.
+  Existing localized Privacy Policy bodies have not been machine-rewritten or presented
+  as independently validated; propagation through controlled Translation Skill batches
+  remains localization follow-up. Public publisher/privacy-contact details are not
+  authoritatively defined in the repository and remain a release-disclosure input.
+  Public privacy hosting/URL, Play Console Data Safety and foreground-service
+  declarations, and any future user-initiated Share Sheet remain outside this work.
+
 ## Dead Settings resource contract reconciliation
 
 - Five frozen-localization JVM contracts no longer expect Serbian, Bosnian,

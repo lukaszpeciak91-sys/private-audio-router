@@ -106,18 +106,31 @@ class Layer4SettingsContractTest {
 
         val strings = projectFile("app/src/main/res/values/strings.xml").readText()
         listOf(
-            "does not collect, record, or transmit your conversations or audio content",
             "does not require an account or sign-in",
-            "does not request microphone access",
-            "does not use analytics, advertising, or crash-reporting services",
+            "does not request microphone permission",
+            "does not capture or record microphone audio",
+            "record or store your conversations or their audio content",
+            "playback and recording-session metadata",
+            "Recording-session metadata is technical audio-system information",
+            "does not capture the microphone audio associated with those sessions",
+            "generated and processed on your device",
+            "Reports are not automatically saved or sent",
+            "only when you explicitly choose Save diagnostic report",
+            "select a destination through Android",
+            "selected location or service—not Private Audio—controls that copy’s handling, retention, and deletion",
             "does not request Android’s Internet permission",
-            "does not send data to a server",
-            "observes only the technical state and metadata",
-            "does not access the content of your conversations",
-            "saved only when you choose to save it",
-            "does not contain conversation or audio content",
-            "Android app-data backup is disabled",
+            "has no Private Audio backend or network transmission path",
+            "does not include analytics, advertising, or crash-reporting services or SDKs",
+            "does not currently send diagnostic reports to the developer or a Private Audio server",
+            "has no server-side diagnostic retention",
+            "excluded from Android cloud backup and device-to-device transfer",
         ).forEach { claim -> assertTrue(claim, strings.contains(claim)) }
+        listOf(
+            "cannot access the microphone",
+            "never transmits",
+            "completely anonymous",
+            "contain no identifying information",
+        ).forEach { overclaim -> assertFalse(overclaim, strings.contains(overclaim, ignoreCase = true)) }
     }
 
     @Test
