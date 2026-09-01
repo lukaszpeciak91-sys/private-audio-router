@@ -18,9 +18,11 @@
   export, user-controlled destination boundary, current network/service behavior, and
   backup/transfer statement. Production routing and diagnostic behavior are unchanged.
 - This change establishes and validates the high-risk English source before translation.
-  Existing localized Privacy Policy bodies have not been machine-rewritten or presented
-  as independently validated; propagation through controlled Translation Skill batches
-  remains localization follow-up. Public publisher/privacy-contact details are not
+  The first controlled Translation Skill batch now propagates that source to Polish,
+  German, Spanish, Japanese, and Arabic, preserving the five-paragraph claim structure
+  after high-risk semantic and reverse self-checks. The remaining localized Privacy
+  Policy bodies are still pending controlled propagation and are not presented as
+  independently validated. Public publisher/privacy-contact details are not
   authoritatively defined in the repository and remain a release-disclosure input.
   Public privacy hosting/URL, Play Console Data Safety and foreground-service
   declarations, and any future user-initiated Share Sheet remain outside this work.
