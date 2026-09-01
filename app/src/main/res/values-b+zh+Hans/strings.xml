@@ -21,7 +21,7 @@
     <string name="settings_advanced">高级</string>
     <string name="settings_about">关于 Private Audio</string>
     <string name="settings_privacy_policy">隐私政策</string>
-    <string name="settings_privacy_policy_body">Private Audio 不会收集、录制或传输您的通话或音频内容。\n\n本应用不要求创建账号或登录。它不会请求麦克风访问权限，也不使用分析、广告或崩溃报告服务。Private Audio 不会请求 Android 的互联网权限，也不会向服务器发送数据。\n\nPrivate Audio 仅在音频路由和诊断所需的范围内观察 Android 音频系统的技术状态和元数据。它不会访问您的通话内容。\n\n应用设置保存在您的设备本地。诊断数据在本地生成和处理，只有当您选择保存诊断报告时才会保存报告。报告可能包含有关设备、Android 版本、音频路由和音频系统状态的技术信息，但不包含通话或音频内容。\n\nAndroid 应用数据备份已停用。</string>
+    <string name="settings_privacy_policy_body">Private Audio 无需帐户或登录，也不会请求麦克风权限。它不会采集或录制麦克风音频，也不会录制或存储您的对话或其中的音频内容。\n\nPrivate Audio 会使用音频路由和诊断所需的 Android 音频系统信息。诊断功能可能会检查由 Android 公共 API 公开的技术状态和元数据，包括播放元数据和录音会话元数据。录音会话元数据是音频系统的技术信息；Private Audio 不会采集与这些会话关联的麦克风音频。诊断信息可能包括应用和 Android 版本、设备和型号信息、应用进程和状态信息、可用和当前的音频设备、公开的播放和录音配置元数据，以及路由尝试、结果、时间信息和技术事件。\n\n应用偏好设置会存储在设备上 Private Audio 的应用专用存储空间中。诊断信息会在您的设备上生成和处理，并且可能存在于运行中应用的本地状态中。报告不会自动保存或发送。只有当您明确选择“保存诊断报告”并通过 Android 选择目标位置时，才会在 Private Audio 的应用专用存储空间之外创建持久报告。导出后，该副本的处理、保留和删除由所选位置或服务（而非 Private Audio）控制。\n\n当前版本不会请求 Android 的互联网权限，没有 Private Audio 后端或网络传输路径，也不包含分析、广告或崩溃报告服务或 SDK。它目前不会向开发者或 Private Audio 服务器发送诊断报告，因此 Private Audio 不会在任何服务器上保留诊断信息。\n\n应用自有数据不会纳入 Android 云备份和设备间传输。本地偏好设置会保留在应用专用存储空间中，直至被更改或应用数据被移除；临时诊断状态并非已保存的报告。导出的报告仍由您所选的位置或服务控制。</string>
     <string name="settings_version">版本 %1$s</string>
     <string name="settings_language_android_13_required">应用内语言选择需要 Android 13 或更高版本。此设备使用系统语言。</string>
     <string name="settings_proximity_screen">靠近耳朵时关闭屏幕</string>
