@@ -23,12 +23,12 @@
   Portuguese, Dutch, Ukrainian, Turkish, Korean, Hindi, Hebrew, Czech, Slovak,
   Slovenian, Croatian, Romanian, Hungarian, Greek, Bulgarian, Lithuanian, Latvian,
   Estonian, Finnish, Swedish, Danish, Norwegian Bokmål, Indonesian, Vietnamese, Thai,
-  Simplified Chinese, Traditional Chinese, Malay, Icelandic, Faroese, Kannada,
-  Gujarati, Marathi, Telugu, Tamil, Belarusian, Russian, Basque, Albanian, Afrikaans,
-  Luxembourgish, Serbian Cyrillic, Macedonian, Serbian Latin, Serbian Latin for
-  Montenegro, Bosnian, and Maltese. Each preserves the five-paragraph claim structure
-  after high-risk semantic and reverse self-checks. The remaining localized Privacy
-  Policy bodies are still pending controlled propagation
+  Simplified Chinese, and Traditional Chinese. Batch 4 covers exactly Malay, Icelandic,
+  Faroese, Kannada, Gujarati, Marathi, Telugu, Tamil, Belarusian, Russian, Basque,
+  Albanian, Afrikaans, Luxembourgish, Serbian Cyrillic, Macedonian, Serbian Latin,
+  Serbian Latin for Montenegro, Bosnian, and Maltese. Each preserves the
+  five-paragraph claim structure after high-risk semantic and reverse self-checks. The
+  remaining localized Privacy Policy bodies are still pending controlled propagation
   and are not presented as independently validated. Public publisher/privacy-contact
   details are not authoritatively defined in the repository and remain a release-disclosure
   input.
