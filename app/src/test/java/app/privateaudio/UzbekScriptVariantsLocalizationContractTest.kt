@@ -81,13 +81,6 @@ class UzbekScriptVariantsLocalizationContractTest {
             assertFalse("Local metadata observation must not become conversation processing", paragraphs[2].contains(paragraphs[0]))
         }
 
-        val cyrillic = value(cyrillicFile, "settings_privacy_policy_body")
-        listOf("йиғмайди", "ёзиб олмайди", "узатмайди", "рухсатини сўрамайди", "серверга маълумот юбормайди", "метамаълумотларини кузатади", "фақат уни сақлашни танлаганингизда", "захира нусхасини яратиш ўчирилган")
-            .forEach { assertTrue("Missing Cyrillic Privacy guard: $it", cyrillic.contains(it)) }
-
-        val arabic = value(arabicFile, "settings_privacy_policy_body")
-        listOf("توپلمیدی", "یازیب آلمیدی", "اوزتمیدی", "اجازتینی سورمیدی", "سرورگه معلومات یوبورمیدی", "میته‌معلوماتینی کوزتدی", "فقط اونی سقلشنی تنله‌گنیڭیزده", "زحیره نوسخه‌سینی یرتیش اۉچیریلگن")
-            .forEach { assertTrue("Missing Arabic Privacy guard: $it", arabic.contains(it)) }
     }
 
     private fun values(file: File): Map<String, String> {

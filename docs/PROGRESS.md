@@ -30,6 +30,12 @@
   propagates that source to Catalan, Galician, Filipino, Swahili, Zulu, Xhosa,
   Javanese, Sundanese, Azerbaijani (Latin), Kazakh, Uzbek (Latin), Armenian,
   Georgian, Persian, Urdu, Bengali, Malayalam, Nepali, Sinhala, and Mongolian.
+  Privacy Policy localization Batch 6 propagates that source to Amharic, Assamese,
+  Azerbaijani (Arabic, Iran), Cebuano, Kurdish (Latin), Bhojpuri, Maithili,
+  Punjabi (Arabic, Pakistan), Punjabi (Gurmukhi, India), Uzbek (Arabic,
+  Afghanistan), Uzbek (Cyrillic, Uzbekistan), Cantonese (Simplified, China),
+  Cantonese (Traditional, Hong Kong), Hausa, Igbo, Yiddish, Khmer, Lao, Malagasy,
+  and Burmese.
   Each batch preserves the five-paragraph claim structure after high-risk semantic
   and reverse self-checks. The remaining localized Privacy Policy bodies are still
   pending controlled propagation

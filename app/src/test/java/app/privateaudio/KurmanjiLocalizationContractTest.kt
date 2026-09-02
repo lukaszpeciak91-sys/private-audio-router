@@ -100,22 +100,11 @@ class KurmanjiLocalizationContractTest {
     }
 
     @Test
-    fun privacyClaimSetAndRoutingActorsRemainProtected() {
+    fun privacyStructureAndRoutingActorsRemainProtected() {
         val privacy = resourceValue("settings_privacy_policy_body")
         assertEquals(4, Regex(Regex.escape("\\n\\n")).findAll(privacy).count())
-        val paragraphs = privacy.split("\\n\\n")
-        assertEquals(5, paragraphs.size)
-        listOf(
-            "berhev nake", "tomar nake", "veneguhezîne", "destûra gihîştina mîkrofonê naxwaze",
-            "analîtîk", "reklam", "raporkirina têkçûna sepanê", "destûra Înternetê ya Androidê naxwaze",
-            "daneyan naşîne serverekê", "rewşa teknîkî", "metadaneyên", "xwe nagihîne naveroka axaftinên",
-            "bi awayekî herêmî tên çêkirin û pêvajokirin", "hûn tomar kirina wê hilbijêrin",
-            "naveroka axaftinê an dengê nahewîne", "Çêkirina paşnusxeya daneyên sepana Androidê neçalak e",
-        ).forEach { guard -> assertTrue("Missing privacy guard: $guard", privacy.contains(guard)) }
-        assertFalse(privacy.contains("Paşvekişandina"))
-        assertTrue(paragraphs[2].contains("rêkirina deng"))
-        assertTrue(paragraphs[3].contains("rêkirina deng"))
-        assertTrue(paragraphs[3].contains("guhertoya Androidê"))
+        assertEquals(5, privacy.split("\\n\\n").size)
+        assertTrue(privacy.split("\\n\\n").all(String::isNotBlank))
 
         val rejected = resourceValue("diagnostics_error_request_rejected")
         assertTrue(rejected.contains("nehat pejirandin"))

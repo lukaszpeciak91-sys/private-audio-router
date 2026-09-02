@@ -24,10 +24,9 @@ class Layer41LocalizationContractTest {
     }
 
     @Test
-    fun yorubaAndIgboPrivacyPolicyTextRemainsFormattingOnly() {
+    fun yorubaPrivacyPolicyTextRemainsFormattingOnly() {
         mapOf(
             "values-yo" to "c5d7882f9e0f0c026ad2ffe5bf8850915f421523cd978a85ab77fa93082635b3",
-            "values-ig" to "8672914b22660182b74b877add0f4cdaf7152612b83bd702e4e297d4f39a60aa",
         ).forEach { (resourceDirectory, expectedDigest) ->
             val resources = projectFile("app/src/main/res/$resourceDirectory/strings.xml").readText()
             val body = resourceValue(resources, "settings_privacy_policy_body")
