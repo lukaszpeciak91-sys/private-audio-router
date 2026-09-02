@@ -26,9 +26,13 @@
   Simplified Chinese, Traditional Chinese, Malay, Icelandic, Faroese, Kannada,
   Gujarati, Marathi, Telugu, Tamil, Belarusian, Russian, Basque, Albanian, Afrikaans,
   Luxembourgish, Serbian Cyrillic, Macedonian, Serbian Latin, Serbian Latin for
-  Montenegro, Bosnian, and Maltese. Each preserves the five-paragraph claim structure
-  after high-risk semantic and reverse self-checks. The remaining localized Privacy
-  Policy bodies are still pending controlled propagation
+  Montenegro, Bosnian, and Maltese. Privacy Policy localization Batch 5 now also
+  propagates that source to Catalan, Galician, Filipino, Swahili, Zulu, Xhosa,
+  Javanese, Sundanese, Azerbaijani (Latin), Kazakh, Uzbek (Latin), Armenian,
+  Georgian, Persian, Urdu, Bengali, Malayalam, Nepali, Sinhala, and Mongolian.
+  Each batch preserves the five-paragraph claim structure after high-risk semantic
+  and reverse self-checks. The remaining localized Privacy Policy bodies are still
+  pending controlled propagation
   and are not presented as independently validated. Public publisher/privacy-contact
   details are not authoritatively defined in the repository and remain a release-disclosure
   input.
