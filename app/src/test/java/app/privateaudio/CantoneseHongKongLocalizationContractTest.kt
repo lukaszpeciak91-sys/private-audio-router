@@ -52,7 +52,21 @@ class CantoneseHongKongLocalizationContractTest {
         val privacy = resourceValue("settings_privacy_policy_body")
         assertEquals(4, privacy.windowed(4).count { it == "\\n\\n" })
         assertEquals(5, privacy.split("\\n\\n").size)
+        listOf(
+            "唔需要帳戶或者登入", "唔會要求麥克風權限", "唔會擷取或者錄製麥克風音訊",
+            "唔會記錄或者儲存你嘅對話或者其音訊內容",
+            "錄音工作階段中繼資料係技術性音訊系統資料",
+            "喺你嘅裝置上產生同處理", "報告唔會自動儲存或者傳送",
+            "明確選擇「儲存診斷報告」", "冇 Private Audio 後端或者網絡傳輸路徑",
+            "分析、廣告或者當機回報服務或 SDK", "唔會將診斷報告傳送畀開發者或者 Private Audio 伺服器",
+            "Android 雲端備份同裝置對裝置傳輸之外",
+        ).forEach { guard -> assertTrue("Missing updated Traditional Cantonese privacy guard: $guard", privacy.contains(guard)) }
+        assertTrue(resourceValue("settings_about_body").contains("內置聽筒"))
+        assertEquals("聽筒音訊導向要求未獲接受。", resourceValue("diagnostics_error_request_rejected"))
+        assertFalse(resourceValue("diagnostics_error_request_rejected").contains("系統"))
 
+        assertFalse(strings.contains("settings_assistant_early_route"))
+        assertFalse(projectFile("app/src/main/res/values-b+yue+Hant+HK/mini_state_strings.xml").exists())
     }
 
     @Test
@@ -92,10 +106,18 @@ class CantoneseHongKongLocalizationContractTest {
     }
 
     @Test
-    fun simplifiedCantonesePrivacyRetainsSourceStructure() {
+    fun simplifiedCantonesePrivacyClaimsRetainSourceStructureAndScope() {
         val privacy = simplifiedValue("settings_privacy_policy_body")
         assertEquals(5, privacy.split("\\n\\n").size)
         assertTrue(privacy.split("\\n\\n").all(String::isNotBlank))
+        listOf(
+            "不需要账号或登录", "不会请求麦克风权限", "不会采集或录制麦克风音频",
+            "不会录制或存储您的对话或其音频内容", "录音会话元数据属于技术性的音频系统信息",
+            "在您的设备上生成和处理", "报告不会被自动保存或发送", "明确选择“保存诊断报告”",
+            "没有 Private Audio 的后端或网络传输路径", "分析、广告或崩溃报告服务或 SDK",
+            "不会将诊断报告发送给开发者或 Private Audio 服务器",
+            "Android 云备份和设备到设备传输之外",
+        ).forEach { guard -> assertTrue("Missing updated Simplified Cantonese privacy guard: $guard", privacy.contains(guard)) }
     }
 
     private fun resourceValue(key: String): String =

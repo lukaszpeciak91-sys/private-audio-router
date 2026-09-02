@@ -84,11 +84,30 @@ class BhojpuriLocalizationContractTest {
     }
 
     @Test
-    fun privacyStructureAndRoutingActorsRemainProtected() {
+    fun privacyClaimSetAndRoutingActorsRemainProtected() {
         val privacy = resourceValue("settings_privacy_policy_body")
+        val privacyParagraphs = privacy.split("\\n\\n")
         assertEquals(4, Regex(Regex.escape("\\n\\n")).findAll(privacy).count())
-        assertEquals(5, privacy.split("\\n\\n").size)
-        assertTrue(privacy.split("\\n\\n").all(String::isNotBlank))
+        assertEquals(5, privacyParagraphs.size)
+        assertTrue(privacyParagraphs.all(String::isNotBlank))
+        listOf(
+            "खाता बनावे या साइन-इन करे के जरूरत नइखे",
+            "माइक्रोफोन के अनुमति नइखे माँगत",
+            "माइक्रोफोन के ऑडियो के कैप्चर या रिकॉर्ड नइखे करत",
+            "बातचीत या ओकर ऑडियो सामग्री के रिकॉर्ड या स्टोर",
+            "रिकॉर्डिंग-सेशन मेटाडेटा तकनीकी ऑडियो-सिस्टम जानकारी ह",
+            "डिवाइस पर जनरेट आ प्रोसेस होला",
+            "रिपोर्ट अपने-आप सेव या भेजल नइखे जात",
+            "डायग्नोस्टिक रिपोर्ट सहेजें चुनीं",
+            "बैकएंड या नेटवर्क ट्रांसमिशन पथ नइखे",
+            "एनालिटिक्स, विज्ञापन, या क्रैश-रिपोर्टिंग सेवाएँ या SDKs",
+            "डेवलपर या Private Audio सर्वर के डायग्नोस्टिक रिपोर्ट नइखे भेजत",
+            "Android क्लाउड बैकअप आ डिवाइस-से-डिवाइस ट्रांसफर से बाहर",
+        ).forEach { guard -> assertTrue("Missing updated privacy guard: $guard", privacy.contains(guard)) }
+        assertTrue(privacyParagraphs[1].contains("रूटिंग"))
+        assertTrue(privacyParagraphs[2].contains("एक्सपोर्ट"))
+        assertFalse(privacyParagraphs[1].contains("सही जगह भेजे"))
+        assertFalse(privacyParagraphs[2].contains("ऑडियो आउटपुट कहाँ भेजल गइल"))
 
         val rejected = resourceValue("diagnostics_error_request_rejected")
         assertTrue(rejected.contains("अनुरोध स्वीकार ना भइल"))
