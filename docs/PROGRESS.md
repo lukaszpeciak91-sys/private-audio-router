@@ -18,14 +18,17 @@
   export, user-controlled destination boundary, current network/service behavior, and
   backup/transfer statement. Production routing and diagnostic behavior are unchanged.
 - This change establishes and validates the high-risk English source before translation.
-  The first two controlled Translation Skill batches now propagate that source to
+  The first four controlled Translation Skill batches now propagate that source to
   Polish, German, Spanish, Japanese, Arabic, French, Italian, Brazilian and European
   Portuguese, Dutch, Ukrainian, Turkish, Korean, Hindi, Hebrew, Czech, Slovak,
   Slovenian, Croatian, Romanian, Hungarian, Greek, Bulgarian, Lithuanian, Latvian,
   Estonian, Finnish, Swedish, Danish, Norwegian Bokmål, Indonesian, Vietnamese, Thai,
-  Simplified Chinese, and Traditional Chinese. Each preserves the five-paragraph claim
-  structure after high-risk semantic and reverse self-checks. The remaining localized
-  Privacy Policy bodies are still pending controlled propagation
+  Simplified Chinese, Traditional Chinese, Malay, Icelandic, Faroese, Kannada,
+  Gujarati, Marathi, Telugu, Tamil, Belarusian, Russian, Basque, Albanian, Afrikaans,
+  Luxembourgish, Serbian Cyrillic, Macedonian, Serbian Latin, Serbian Latin for
+  Montenegro, Bosnian, and Maltese. Each preserves the five-paragraph claim structure
+  after high-risk semantic and reverse self-checks. The remaining localized Privacy
+  Policy bodies are still pending controlled propagation
   and are not presented as independently validated. Public publisher/privacy-contact
   details are not authoritatively defined in the repository and remain a release-disclosure
   input.
