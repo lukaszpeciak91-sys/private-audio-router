@@ -20,9 +20,12 @@
 - This change establishes and validates the high-risk English source before translation.
   The first two controlled Translation Skill batches now propagate that source to
   Polish, German, Spanish, Japanese, Arabic, French, Italian, Brazilian and European
-  Portuguese, Dutch, Ukrainian, Turkish, Korean, Hindi, and Hebrew. Each preserves the
-  five-paragraph claim structure after high-risk semantic and reverse self-checks. The
-  remaining localized Privacy Policy bodies are still pending controlled propagation
+  Portuguese, Dutch, Ukrainian, Turkish, Korean, Hindi, Hebrew, Czech, Slovak,
+  Slovenian, Croatian, Romanian, Hungarian, Greek, Bulgarian, Lithuanian, Latvian,
+  Estonian, Finnish, Swedish, Danish, Norwegian Bokmål, Indonesian, Vietnamese, Thai,
+  Simplified Chinese, and Traditional Chinese. Each preserves the five-paragraph claim
+  structure after high-risk semantic and reverse self-checks. The remaining localized
+  Privacy Policy bodies are still pending controlled propagation
   and are not presented as independently validated. Public publisher/privacy-contact
   details are not authoritatively defined in the repository and remain a release-disclosure
   input.
