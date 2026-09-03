@@ -106,16 +106,13 @@ class KurmanjiLocalizationContractTest {
         val paragraphs = privacy.split("\\n\\n")
         assertEquals(5, paragraphs.size)
         listOf(
-            "berhev nake", "tomar nake", "veneguhezîne", "destûra gihîştina mîkrofonê naxwaze",
-            "analîtîk", "reklam", "raporkirina têkçûna sepanê", "destûra Înternetê ya Androidê naxwaze",
-            "daneyan naşîne serverekê", "rewşa teknîkî", "metadaneyên", "xwe nagihîne naveroka axaftinên",
-            "bi awayekî herêmî tên çêkirin û pêvajokirin", "hûn tomar kirina wê hilbijêrin",
-            "naveroka axaftinê an dengê nahewîne", "Çêkirina paşnusxeya daneyên sepana Androidê neçalak e",
+            "ne hesabek an têketinê hewce dike", "destûra mîkrofônê dixwaze", "dengê mîkrofônê nagire an tomar nake",
+            "ne jî axaftinên we an naveroka dengî ya wan tomar dike an diparêze", "Metadata-yên danişînên tomarê agahiyên teknîkî yên pergala dengê ne",
+            "dengê mîkrofônê ku bi wan danişînan ve girêdayî ye nagire", "li ser cîhaza we têne afirandin û pêvajokirin", "Rapor bixweber nayên tomarkirin an şandin",
+            "tenê dema ku hûn bi eşkereyî Tomara rapora teşhîsê hilbijêrin", "Guhertoya niha destûra Internetê ya Android naxwaze",
+            "ne backendekî Private Audio heye ne jî rêyek şandina torê heye", "SDK-yên analîtîk, reklam, an raporkirina çewtiyan",
+            "raporên teşhîsê ji pêşdebirê an jî ji serveurê Private Audio re naşîne", "cloud backup û veguheztina ji cîhazekê bo cîhazekî din a Android têne derxistin",
         ).forEach { guard -> assertTrue("Missing privacy guard: $guard", privacy.contains(guard)) }
-        assertFalse(privacy.contains("Paşvekişandina"))
-        assertTrue(paragraphs[2].contains("rêkirina deng"))
-        assertTrue(paragraphs[3].contains("rêkirina deng"))
-        assertTrue(paragraphs[3].contains("guhertoya Androidê"))
 
         val rejected = resourceValue("diagnostics_error_request_rejected")
         assertTrue(rejected.contains("nehat pejirandin"))

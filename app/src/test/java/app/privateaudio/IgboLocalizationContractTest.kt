@@ -47,10 +47,15 @@ class IgboLocalizationContractTest {
         assertEquals("Spika", resourceValue("diagnostics_route_speaker"))
         assertFalse(resourceValue("diagnostics_route_earpiece") == resourceValue("diagnostics_route_speaker"))
 
-        assertTrue(strings.contains("anaghị anakọta, edekọ, ma ọ bụ zipụ"))
-        assertTrue(strings.contains("Ngwa ahụ anaghị enweta ọdịnaya mkparịta ụka gị"))
-        assertTrue(strings.contains("ọrụ na-akọ mgbe ngwa kwụsịrị na mberede"))
-        assertTrue(strings.contains("naanị mgbe ị họrọ ichekwa ya"))
+        val privacy = resourceValue("settings_privacy_policy_body")
+        listOf(
+            "achọghị akaụntụ ma ọ bụ nbanye", "ọ naghịkwa arịọ ikike igwe okwu", "Ọ naghị ejide ma ọ bụ dekọọ ọdịyo igwe okwu",
+            "dekọọ ma ọ bụ chekwaa mkparịta ụka unu ma ọ bụ ọdịnaya ọdịyo ha", "Metadata nke oge ndekọ bụ ozi teknụzụ gbasara usoro ọdịyo",
+            "adịghị ejide ọdịyo igwe okwu metụtara oge ndị ahụ", "na-emepụta ma na-ahazi ozi nchọpụta nsogbu n’ime ngwaọrụ gị", "A naghị echekwa ma ọ bụ zipu akụkọ n’onwe ya",
+            "naanị mgbe ị họrọpụtara kpọmkwem Chekwaa akụkọ nchọpụta nsogbu", "Ụdị dị ugbu a anaghị arịọ ikike Internet nke Android", "enweghị backend ma ọ bụ ụzọ nnyefe netwọk nke Private Audio",
+            "SDK maka analytics, mgbasa ozi, ma ọ bụ ịkọ mmebi ngwa", "Ọ naghị eziga ugbu a akụkọ nchọpụta nsogbu n’aka onye mmepe ma ọ bụ na sava Private Audio",
+            "nkwado ndabere igwe ojii Android na mbufe site n’otu ngwaọrụ gaa n’ọzọ",
+        ).forEach { guard -> assertTrue("Missing privacy guard: $guard", privacy.contains(guard)) }
         assertFalse(projectFile("app/src/main/res/values-ig/mini_state_strings.xml").exists())
     }
 
