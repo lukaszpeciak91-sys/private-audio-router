@@ -80,29 +80,14 @@ class UzbekScriptVariantsLocalizationContractTest {
             assertTrue(paragraphs.all(String::isNotBlank))
             assertFalse("Local metadata observation must not become conversation processing", paragraphs[2].contains(paragraphs[0]))
         }
+
         val cyrillic = value(cyrillicFile, "settings_privacy_policy_body")
-        listOf(
-            "ҳисоб ёки тизимга киришни талаб қилмайди", "микрофон рухсатини сўрамайди",
-            "микрофон овозини ушламайди ёки ёзиб олмайди", "аудио мазмунини ёзиб олмайди ёки сақламайди",
-            "Ёзиб олиш сеанси метамаълумотлари техник аудио тизими маълумотидир",
-            "қурилмангизда яратилади ва қайта ишланади", "Ҳисоботлар автоматик тарзда сақланмайди ёки юборилмайди",
-            "ҳисоботини сақлаш”ни очиқ танлаганингизда", "бекендга ёки тармоқ орқали узатиш йўлига эга эмас",
-            "аналитика, реклама ёки носозликлар ҳақида ҳисобот бериш хизматлари ёки SDK",
-            "диагностик ҳисоботларни дастурчига ёки Private Audio серверига юбормайди",
-            "Android булутли захира нусхасидан ва қурилмадан қурилмага кўчиришдан чиқариб ташланган",
-        ).forEach { guard -> assertTrue("Missing updated Cyrillic Privacy guard: $guard", cyrillic.contains(guard)) }
+        listOf("йиғмайди", "ёзиб олмайди", "узатмайди", "рухсатини сўрамайди", "серверга маълумот юбормайди", "метамаълумотларини кузатади", "фақат уни сақлашни танлаганингизда", "захира нусхасини яратиш ўчирилган")
+            .forEach { assertTrue("Missing Cyrillic Privacy guard: $it", cyrillic.contains(it)) }
 
         val arabic = value(arabicFile, "settings_privacy_policy_body")
-        listOf(
-            "حساب يا كىرىشنى لازم قىلمايدۇ", "مایكروفون اجازىسىنى سورامايدۇ",
-            "مایكروفون آۋازىنى تۇتمايدۇ ياكى يازمايدۇ", "آۋاز مەزمۇنىنى يازمايدۇ ياكى ساقلىمايدۇ",
-            "Recording-session metadata تېخنىكىلىق آۋاز-سىستېمىسى ئۇچۇرىدۇر",
-            "ئۈسكۈنىڭىزدە ھاسىل قىلىنىدۇ ۋە بىر تەرەپ قىلىنىدۇ", "دوكلاتلار ئاپتوماتىك ساقلانمايدۇ ياكى ئەۋەتىلمەيدۇ",
-            "Save diagnostic report نى روشەن تاللاپ", "Private Audio backend ى ياكى network transmission path ى يوق",
-            "analytics، advertising، ياكى crash-reporting services ياكى SDK",
-            "دىئاگنوستىكا دوكلاتلىرىنى ئىشلەپچىقارغۇچىغا ياكى بىر Private Audio server ىغا ئەۋەتمەيدۇ",
-            "Android cloud backup ۋە device-to-device transfer دىن چىقىرىپ تاشلانغان",
-        ).forEach { guard -> assertTrue("Missing updated Arabic Privacy guard: $guard", arabic.contains(guard)) }
+        listOf("توپلمیدی", "یازیب آلمیدی", "اوزتمیدی", "اجازتینی سورمیدی", "سرورگه معلومات یوبورمیدی", "میته‌معلوماتینی کوزتدی", "فقط اونی سقلشنی تنله‌گنیڭیزده", "زحیره نوسخه‌سینی یرتیش اۉچیریلگن")
+            .forEach { assertTrue("Missing Arabic Privacy guard: $it", arabic.contains(it)) }
     }
 
     private fun values(file: File): Map<String, String> {

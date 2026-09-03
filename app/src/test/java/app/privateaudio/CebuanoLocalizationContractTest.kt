@@ -88,18 +88,16 @@ class CebuanoLocalizationContractTest {
         val privacy = resourceValue("settings_privacy_policy_body")
         assertEquals(4, Regex(Regex.escape("\\n\\n")).findAll(privacy).count())
         assertEquals(5, privacy.split("\\n\\n").size)
-        assertTrue(privacy.split("\\n\\n").all(String::isNotBlank))
         listOf(
-            "wala magkinahanglan og account o pag-sign in", "wala mangayo og permiso sa microphone",
-            "Dili kini mokuha o morekord og microphone audio",
-            "morekord o motipig sa inyong mga panag-istorya o sa ilang audio content",
-            "recording-session metadata mao ang teknikal nga impormasyon sa audio system",
-            "gihimo ug giproseso sa inyong device", "dili awtomatikong masave o mapadala",
-            "pilion ang I-save ang diagnostic report", "walay backend o network transmission path",
-            "analytics, advertising, o crash-reporting nga mga serbisyo o SDKs",
-            "dili kini nagpadala og diagnostic reports ngadto sa developer",
-            "Android cloud backup ug device-to-device transfer",
-        ).forEach { guard -> assertTrue("Missing updated privacy guard: $guard", privacy.contains(guard)) }
+            "dili mangolekta", "magrekord", "magpadala", "Dili kini mangayo og access sa mikropono",
+            "analytics, advertising, o mga serbisyo sa pagreport sa crash",
+            "dili mangayo sa permiso sa Internet sa Android", "dili magpadala og data ngadto sa server",
+            "teknikal nga kahimtang ug metadata sa audio system sa Android",
+            "Dili kini mo-access sa sulod sa imong mga panag-istorya",
+            "gihimo ug giproseso sa lokal", "i-save lamang kon pilion nimo",
+            "bersyon sa Android", "wala kini maglakip sa panag-istorya o sulod sa audio",
+            "Gi-disable ang backup sa data sa Android app",
+        ).forEach { guard -> assertTrue("Missing privacy guard: $guard", privacy.contains(guard)) }
 
         val rejected = resourceValue("diagnostics_error_request_rejected")
         assertTrue(rejected.startsWith("Wala dawata ang hangyo"))

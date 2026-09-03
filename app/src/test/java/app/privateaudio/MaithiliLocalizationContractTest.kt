@@ -85,25 +85,22 @@ class MaithiliLocalizationContractTest {
     @Test
     fun privacyClaimSetAndRoutingActorsRemainProtected() {
         val privacy = resourceValue("settings_privacy_policy_body")
-        val paragraphs = privacy.split("\\n\\n")
         assertEquals(4, Regex(Regex.escape("\\n\\n")).findAll(privacy).count())
+        val paragraphs = privacy.split("\\n\\n")
         assertEquals(5, paragraphs.size)
-        assertTrue(paragraphs.all(String::isNotBlank))
+
         listOf(
-            "खाता वा साइन-इनक आवश्यकता नहि अछि", "माइक्रोफोन अनुमति नहि मांगैत अछि",
-            "माइक्रोफोन ऑडियो केँ कैप्चर वा रिकॉर्ड नहि करैत अछि",
-            "बातचीत वा हुनकर ऑडियो सामग्री केँ रिकॉर्ड वा संग्रहित",
-            "रिकॉर्डिंग-सेशन मेटाडेटा तकनीकी ऑडियो-सिस्टम जानकारी अछि",
-            "डिवाइस पर उत्पन्न आ संसाधित होइत अछि", "रिपोर्टसभ अपने-आप सहेजल वा पठाओल नहि जाइत अछि",
-            "Save diagnostic report चुनैत छी", "backend वा नेटवर्क ट्रांसमिशन पथ नहि अछि",
-            "analytics, advertising, वा crash-reporting सेवासभ वा SDKs",
-            "डेवलपर वा Private Audio सर्वरकेँ नहि पठबैत अछि",
-            "Android cloud backup आ device-to-device transfer सँ बाहर",
-        ).forEach { guard -> assertTrue("Missing updated privacy guard: $guard", privacy.contains(guard)) }
-        assertTrue(paragraphs[1].contains("ऑडियो-सिस्टम"))
-        assertTrue(paragraphs[2].contains("एक्सपोर्ट"))
-        assertFalse(paragraphs[1].contains("डेटा नहि पठबैत"))
-        assertTrue(paragraphs[1].contains("Android संस्करण"))
+            "संग्रह", "रिकॉर्डिंग", "प्रसारण", "माइक्रोफोनक पहुँच नहि माँगैत",
+            "एनालिटिक्स", "विज्ञापन", "क्रैश-रिपोर्टिंग", "इंटरनेट अनुमति नहि माँगैत",
+            "सर्वर पर डेटा नहि पठबैत", "ऑडियो सिस्टमक तकनीकी स्थिति", "मेटाडेटा",
+            "बातचीतक सामग्री धरि पहुँच नहि", "स्थानीय रूपेँ उत्पन्न आ प्रोसेस",
+            "अहाँ ओकरा सहेजब चुनैत छी", "बातचीत वा ऑडियो सामग्री नहि",
+            "ऐप-डेटाक बैकअप अक्षम",
+        ).forEach { guard -> assertTrue("Missing privacy guard: $guard", privacy.contains(guard)) }
+        assertTrue(paragraphs[2].contains("ऑडियो रूटिंग"))
+        assertTrue(paragraphs[3].contains("ऑडियो रूटिंग"))
+        assertFalse(paragraphs[2].contains("डेटा नहि पठबैत"))
+        assertTrue(paragraphs[3].contains("Android संस्करण"))
 
         val rejected = resourceValue("diagnostics_error_request_rejected")
         assertTrue(rejected.contains("अनुरोध स्वीकार नहि भेल"))

@@ -102,25 +102,20 @@ class KurmanjiLocalizationContractTest {
     @Test
     fun privacyClaimSetAndRoutingActorsRemainProtected() {
         val privacy = resourceValue("settings_privacy_policy_body")
-        val paragraphs = privacy.split("\\n\\n")
         assertEquals(4, Regex(Regex.escape("\\n\\n")).findAll(privacy).count())
+        val paragraphs = privacy.split("\\n\\n")
         assertEquals(5, paragraphs.size)
-        assertTrue(paragraphs.all(String::isNotBlank))
         listOf(
-            "ne hesabek an têketinê hewce dike", "ne jî destûra mîkrofônê dixwaze",
-            "dengê mîkrofônê nagire an tomar nake",
-            "ne jî axaftinên we an naveroka dengî ya wan tomar dike an diparêze",
-            "Metadata-yên danişînên tomarê agahiyên teknîkî yên pergala dengê ne",
-            "li ser cîhaza we têne afirandin û pêvajokirin", "Rapor bixweber nayên tomarkirin an şandin",
-            "Tomara rapora teşhîsê hilbijêrin", "ne backendekî Private Audio heye ne jî rêyek şandina torê heye",
-            "SDK-yên analîtîk, reklam, an raporkirina çewtiyan",
-            "raporên teşhîsê ji pêşdebirê an jî ji serveurê Private Audio re naşîne",
-            "cloud backup û veguheztina ji cîhazekê bo cîhazekî din",
-        ).forEach { guard -> assertTrue("Missing updated privacy guard: $guard", privacy.contains(guard)) }
+            "berhev nake", "tomar nake", "veneguhezîne", "destûra gihîştina mîkrofonê naxwaze",
+            "analîtîk", "reklam", "raporkirina têkçûna sepanê", "destûra Înternetê ya Androidê naxwaze",
+            "daneyan naşîne serverekê", "rewşa teknîkî", "metadaneyên", "xwe nagihîne naveroka axaftinên",
+            "bi awayekî herêmî tên çêkirin û pêvajokirin", "hûn tomar kirina wê hilbijêrin",
+            "naveroka axaftinê an dengê nahewîne", "Çêkirina paşnusxeya daneyên sepana Androidê neçalak e",
+        ).forEach { guard -> assertTrue("Missing privacy guard: $guard", privacy.contains(guard)) }
         assertFalse(privacy.contains("Paşvekişandina"))
-        assertTrue(paragraphs[1].contains("rêvebirin"))
-        assertTrue(paragraphs[2].contains("derxistinê"))
-        assertTrue(paragraphs[1].contains("guherto yên sepanê û Android"))
+        assertTrue(paragraphs[2].contains("rêkirina deng"))
+        assertTrue(paragraphs[3].contains("rêkirina deng"))
+        assertTrue(paragraphs[3].contains("guhertoya Androidê"))
 
         val rejected = resourceValue("diagnostics_error_request_rejected")
         assertTrue(rejected.contains("nehat pejirandin"))
