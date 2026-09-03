@@ -89,14 +89,13 @@ class CebuanoLocalizationContractTest {
         assertEquals(4, Regex(Regex.escape("\\n\\n")).findAll(privacy).count())
         assertEquals(5, privacy.split("\\n\\n").size)
         listOf(
-            "dili mangolekta", "magrekord", "magpadala", "Dili kini mangayo og access sa mikropono",
-            "analytics, advertising, o mga serbisyo sa pagreport sa crash",
-            "dili mangayo sa permiso sa Internet sa Android", "dili magpadala og data ngadto sa server",
-            "teknikal nga kahimtang ug metadata sa audio system sa Android",
-            "Dili kini mo-access sa sulod sa imong mga panag-istorya",
-            "gihimo ug giproseso sa lokal", "i-save lamang kon pilion nimo",
-            "bersyon sa Android", "wala kini maglakip sa panag-istorya o sulod sa audio",
-            "Gi-disable ang backup sa data sa Android app",
+            "wala magkinahanglan og account o pag-sign in", "wala mangayo og permiso sa microphone",
+            "Dili kini mokuha o morekord og microphone audio", "ni morekord o motipig sa inyong mga panag-istorya o sa ilang audio content",
+            "recording-session metadata mao ang teknikal nga impormasyon sa audio system", "dili mokuha sa microphone audio nga may kalabutan sa maong mga session",
+            "gihimo ug giproseso sa inyong device", "mga report dili awtomatikong masave o mapadala", "lamang kung klaro ninyong pilion ang I-save ang diagnostic report",
+            "kasamtangang bersyon wala mangayo sa Internet permission sa Android", "walay backend o network transmission path ang Private Audio",
+            "analytics, advertising, o crash-reporting nga mga serbisyo o SDKs", "dili kini nagpadala og diagnostic reports ngadto sa developer o sa usa ka Private Audio server",
+            "dili apil sa Android cloud backup ug device-to-device transfer",
         ).forEach { guard -> assertTrue("Missing privacy guard: $guard", privacy.contains(guard)) }
 
         val rejected = resourceValue("diagnostics_error_request_rejected")

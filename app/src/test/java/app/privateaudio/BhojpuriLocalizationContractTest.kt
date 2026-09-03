@@ -91,18 +91,16 @@ class BhojpuriLocalizationContractTest {
         assertEquals(5, privacyParagraphs.size)
 
         listOf(
-            "ना एकट्ठा करेला", "ना रिकॉर्ड करेला", "ना कहीं भेजेला",
-            "माइक्रोफोन के पहुँच ना माँगेला", "एनालिटिक्स", "विज्ञापन",
-            "ऐप क्रैश रिपोर्टिंग", "Android के इंटरनेट अनुमति ना माँगेला",
-            "सर्वर पर डेटा ना भेजेला", "ऑडियो सिस्टम के तकनीकी स्थिति आ मेटाडेटा देखेला",
-            "बातचीत के सामग्री तक पहुँच ना करेला", "स्थानीय रूप से बनावल आ प्रोसेस कइल जाला",
-            "जब रउआ एकरा के सेव करे के चुनीं", "बातचीत भा ऑडियो सामग्री ना होला",
-            "Android ऐप-डेटा बैकअप बंद बा",
+            "खाता बनावे या साइन-इन करे के जरूरत नइखे", "माइक्रोफोन के अनुमति नइखे माँगत",
+            "माइक्रोफोन के ऑडियो के कैप्चर या रिकॉर्ड नइखे करत", "बातचीत या ओकर ऑडियो सामग्री के रिकॉर्ड या स्टोर करत",
+            "रिकॉर्डिंग-सेशन मेटाडेटा तकनीकी ऑडियो-सिस्टम जानकारी ह", "रउरा डिवाइस पर जनरेट आ प्रोसेस होला",
+            "रिपोर्ट अपने-आप सेव या भेजल नइखे जात", "साफ तौर पर डायग्नोस्टिक रिपोर्ट सहेजें चुनीं",
+            "मौजूदा संस्करण Android के Internet अनुमति नइखे माँगत", "बैकएंड या नेटवर्क ट्रांसमिशन पथ नइखे",
+            "एनालिटिक्स, विज्ञापन, या क्रैश-रिपोर्टिंग सेवाएँ या SDKs शामिल नइखन", "डेवलपर या Private Audio सर्वर के डायग्नोस्टिक रिपोर्ट नइखे भेजत",
+            "Android क्लाउड बैकअप आ डिवाइस-से-डिवाइस ट्रांसफर से बाहर",
         ).forEach { guard -> assertTrue("Missing privacy guard: $guard", privacy.contains(guard)) }
-        assertTrue(privacyParagraphs[2].contains("ऑडियो रूटिंग"))
-        assertTrue(privacyParagraphs[3].contains("ऑडियो रूटिंग"))
-        assertFalse(privacyParagraphs[2].contains("सही जगह भेजे"))
-        assertFalse(privacyParagraphs[3].contains("ऑडियो आउटपुट कहाँ भेजल गइल"))
+        assertTrue(privacyParagraphs[1].contains("रूटिंग"))
+        assertTrue(privacyParagraphs[2].contains("एक्सपोर्ट"))
 
         val rejected = resourceValue("diagnostics_error_request_rejected")
         assertTrue(rejected.contains("अनुरोध स्वीकार ना भइल"))
