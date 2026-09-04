@@ -92,14 +92,11 @@ class UzbekScriptVariantsLocalizationContractTest {
         ).forEach { assertTrue("Missing Cyrillic Privacy guard: $it", cyrillic.contains(it)) }
 
         val arabic = value(arabicFile, "settings_privacy_policy_body")
-        listOf(
-            "حساب يا كىرىشنى لازم قىلمايدۇ", "مایكروفون اجازىسىنى سورامايدۇ", "مایكروفون آۋازىنى تۇتمايدۇ ياكى يازمايدۇ",
-            "سۆھبەتلىرىڭىزنى ياكى ئۇلارنىڭ آۋاز مەزمۇنىنى يازمايدۇ ياكى ساقلىمايدۇ", "Recording-session metadata تېخنىكىلىق آۋاز-سىستېمىسى ئۇچۇرىدۇر",
-            "session لارغا باغلانغان مایكروفون آۋازىنى تۇتمايدۇ", "ئۈسكۈنىڭىزدە ھاسىل قىلىنىدۇ ۋە بىر تەرەپ قىلىنىدۇ", "دوكلاتلار ئاپتوماتىك ساقلانمايدۇ ياكى ئەۋەتىلمەيدۇ",
-            "پەقەت سىز Save diagnostic report نى روشەن تاللاپ", "نۆۋەتتىكى نەشر Android نىڭ Internet permission ىنى سورامايدۇ",
-            "Private Audio backend ى ياكى network transmission path ى يوق", "analytics، advertising، ياكى crash-reporting services ياكى SDK لار",
-            "دىئاگنوستىكا دوكلاتلىرىنى ئىشلەپچىقارغۇچىغا ياكى بىر Private Audio server ىغا ئەۋەتمەيدۇ", "Android cloud backup ۋە device-to-device transfer دىن چىقىرىپ تاشلانغان",
-        ).forEach { assertTrue("Missing Arabic Privacy guard: $it", arabic.contains(it)) }
+        assertTrue(arabic.any { it in '\u0600'..'\u06ff' })
+        listOf("قىلمايدۇ", "ئىشلىتىدۇ", "ئۇچۇر", "ئۈسكۈنە", "دوكلات", "ئەۋەتىلمەيدۇ")
+            .forEach { assertFalse("Uyghur drift in Uzbek-AF Privacy text: $it", arabic.contains(it)) }
+        listOf("مایکروفون اجازتینی", "ضبط جلسه", "عمومی Android API", "ایلووه‌گه مخصوص مخفی سقلش", "خودکار سقلنمه‌یدی یا یوبریلمه‌یدی", "حاضرگی نسخه", "شبکه آرقلی یوبریش یۉلی", "سرورده", "بولوتی‌ده‌گی زحیره نسخه", "قوریلمه‌دن قوریلمه‌گه")
+            .forEach { assertTrue("Missing Uzbek-AF semantic guard: $it", arabic.contains(it)) }
 
     }
 
