@@ -24,9 +24,8 @@ class Layer41LocalizationContractTest {
     }
 
     @Test
-    fun yorubaAndIgboPrivacyPolicyTextRemainsFormattingOnly() {
+    fun igboPrivacyPolicyTextRemainsFormattingOnly() {
         mapOf(
-            "values-yo" to "c5d7882f9e0f0c026ad2ffe5bf8850915f421523cd978a85ab77fa93082635b3",
             "values-ig" to "d93d7a613ad92c1b291b7724d61b71843c78e3dd96607d51e0222b39e5cff0d7",
         ).forEach { (resourceDirectory, expectedDigest) ->
             val resources = projectFile("app/src/main/res/$resourceDirectory/strings.xml").readText()
@@ -38,6 +37,24 @@ class Layer41LocalizationContractTest {
 
             assertEquals("$resourceDirectory lexical content changed", expectedDigest, digest)
         }
+    }
+
+    @Test
+    fun yorubaPrivacyPolicyPreservesCurrentClaimSet() {
+        val resources = projectFile("app/src/main/res/values-yo/strings.xml").readText()
+        val paragraphs = resourceValue(resources, "settings_privacy_policy_body").split("\\n\\n")
+
+        assertEquals(5, paragraphs.size)
+        listOf("kò sì béèrè àṣẹ láti lo gbohùngbohùn", "Kì í gba tàbí ṣe ìgbàsílẹ̀ ohùn gbohùngbohùn", "kì í ṣe ìgbàsílẹ̀ tàbí fi àwọn ìjíròrò rẹ tàbí àkóónú ohùn wọn pamọ́")
+            .forEach { assertTrue("Missing Yoruba microphone/conversation guard: $it", paragraphs[0].contains(it)) }
+        listOf("àwọn API Android ti gbogbo ènìyàn", "metadata ṣíṣe ohùn àti ti ìgbà ìgbàsílẹ̀", "kì í gba ohùn gbohùngbohùn tó ní í ṣe pẹ̀lú àwọn ìgbà wọ̀nyẹn")
+            .forEach { assertTrue("Missing Yoruba public-metadata guard: $it", paragraphs[1].contains(it)) }
+        listOf("lórí ẹ̀rọ rẹ", "A kì í fi àwọn ìjábọ̀ pamọ́ tàbí rán wọn lọ fúnra wọn", "yan ibi kan nípasẹ̀ Android", "kì í ṣe Private Audio")
+            .forEach { assertTrue("Missing Yoruba local/export guard: $it", paragraphs[2].contains(it)) }
+        listOf("kò béèrè àṣẹ Íńtánẹ́ẹ̀tì Android", "kò ní ẹ̀rọ ẹ̀yìn Private Audio tàbí ọ̀nà ìfiránṣẹ́ nẹ́tíwọ́ọ̀kì", "kò ní ibi ìpamọ́ ìwífún àyẹ̀wò lórí ẹ̀rọ apínṣẹ́")
+            .forEach { assertTrue("Missing Yoruba network guard: $it", paragraphs[3].contains(it)) }
+        listOf("afẹ́yinti awọsánmà Android", "gbígbé láti ẹ̀rọ kan sí òmíràn", "ipò àyẹ̀wò fún ìgbà díẹ̀ kì í ṣe ìjábọ̀ tí a fi pamọ́", "ibi tàbí iṣẹ́ tí o yàn")
+            .forEach { assertTrue("Missing Yoruba retention guard: $it", paragraphs[4].contains(it)) }
     }
 
     @Test

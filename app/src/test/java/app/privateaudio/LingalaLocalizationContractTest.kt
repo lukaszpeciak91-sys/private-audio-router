@@ -83,16 +83,18 @@ class LingalaLocalizationContractTest {
     fun privacyStructureClaimSetAndRoutingActorsRemainProtected() {
         val privacy = resourceValue("settings_privacy_policy_body")
         assertEquals(4, Regex(Regex.escape("\\n\\n")).findAll(privacy).count())
-        assertEquals(5, privacy.split("\\n\\n").size)
-        listOf(
-            "esangisaka", "ekangaka", "etindaka", "Esɛngaka ndingisa ya kosalela mikrofɔ te",
-            "esɛngaka ndingisa ya Internet ya Android te", "etindaka ba données na serveur te",
-            "ezalela ya tekiniki mpe metadata", "Ekɔtaka na makambo ya masolo na yo te",
-            "Mabongisi ya aplikasio ebombamaka na aparɛyi na yo",
-            "ebimisamaka mpe traitement na yango esalemaka na aparɛyi", "kaka ntango oponi kobomba yango",
-            "vɛrsio ya Android", "ezalaka na masolo to makambo ya mongongo te",
-            "Backup ya ba données ya aplikasio ya Android ekangami",
-        ).forEach { guard -> assertTrue("Missing privacy guard: $guard", privacy.contains(guard)) }
+        val paragraphs = privacy.split("\\n\\n")
+        assertEquals(5, paragraphs.size)
+        listOf("esɛngaka kɔnti to kokɔta te", "esɛngaka ndingisa ya kosalela mikrofɔ te", "ekangaka mongongo ya mikrofɔ te", "ekangaka to ebombaka masolo na yo to makambo na yango ya mongongo te")
+            .forEach { guard -> assertTrue("Missing microphone/conversation guard: $guard", paragraphs[0].contains(guard)) }
+        listOf("ba API ya Android ya bato nyonso", "metadata ya kobɛta mongongo mpe ya ba session ya enregistrement", "ekangaka mongongo ya mikrofɔ oyo ezali na ba session yango te")
+            .forEach { guard -> assertTrue("Missing public-metadata guard: $guard", paragraphs[1].contains(guard)) }
+        listOf("esika ya Private Audio oyo ezali kaka mpo na aplikasio", "ebimisamaka mpe traitement na yango esalemaka na aparɛyi na yo", "Balapɔrɔ ebombamaka to etindamaka yango moko te", "oponi esika na nzela ya Android", "Private Audio te")
+            .forEach { guard -> assertTrue("Missing local/export guard: $guard", paragraphs[2].contains(guard)) }
+        listOf("esɛngaka ndingisa ya Internet ya Android te", "backend ya Private Audio to nzela ya kotinda bansango na réseau te", "ebombaka bansango ya diagnostic na serveur te")
+            .forEach { guard -> assertTrue("Missing network guard: $guard", paragraphs[3].contains(guard)) }
+        listOf("Backup ya ba données ya aplikasio ya Android mpe transfert na aparɛyi mosusu elongolami", "ezalela ya diagnostic oyo ezali mpo na mwa ntango ezali lapɔrɔ oyo ebombami te", "esika to service oyo oponaki")
+            .forEach { guard -> assertTrue("Missing retention guard: $guard", paragraphs[4].contains(guard)) }
         assertFalse(privacy.contains("esalelamaka kaka na aparɛyi"))
 
         val rejected = resourceValue("diagnostics_error_request_rejected")

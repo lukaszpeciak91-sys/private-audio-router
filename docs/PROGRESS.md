@@ -35,11 +35,12 @@
   Punjabi (Arabic, Pakistan), Punjabi (Gurmukhi, India), Uzbek (Arabic,
   Afghanistan), Uzbek (Cyrillic, Uzbekistan), Cantonese (Simplified, China),
   Cantonese (Traditional, Hong Kong), Hausa, Igbo, Yiddish, Khmer, Lao, Malagasy,
-  and Burmese.
+  and Burmese. Privacy Policy localization Batch 7 completes propagation to
+  Lingala, Oromo, Odia, Nigerian Pidgin, Pashto, Somali, and Yoruba.
   Each batch preserves the five-paragraph claim structure after high-risk semantic
-  and reverse self-checks. The remaining localized Privacy Policy bodies are still
-  pending controlled propagation
-  and are not presented as independently validated. Public publisher/privacy-contact
+  and reverse self-checks. The approved Privacy Policy source is now propagated to
+  all supported locales; these translations are not presented as independently
+  validated. Public publisher/privacy-contact
   details are not authoritatively defined in the repository and remain a release-disclosure
   input.
   Public privacy hosting/URL, Play Console Data Safety and foreground-service
