@@ -109,13 +109,12 @@ class CantoneseHongKongLocalizationContractTest {
         val privacy = simplifiedValue("settings_privacy_policy_body")
         val paragraphs = privacy.split("\\n\\n")
         assertEquals(5, paragraphs.size)
-        listOf(
-            "不需要账号或登录", "不会请求麦克风权限", "不会采集或录制麦克风音频", "不会录制或存储您的对话或其音频内容",
-            "录音会话元数据属于技术性的音频系统信息", "不会采集与这些会话相关联的麦克风音频", "在您的设备上生成和处理", "报告不会被自动保存或发送",
-            "只有当您明确选择“保存诊断报告”", "当前版本不会请求 Android 的互联网权限", "没有 Private Audio 的后端或网络传输路径",
-            "不包含分析、广告或崩溃报告服务或 SDK", "不会将诊断报告发送给开发者或 Private Audio 服务器", "Android 云备份和设备到设备传输之外",
-        )
-            .forEach { assertTrue("Missing privacy action: $it", privacy.contains(it)) }
+        listOf("唔使", "佢", "嘅", "喺", "使用紧", "唔会自动", "先会", "唔系 Private Audio")
+            .forEach { assertTrue("Missing Simplified Written Cantonese marker: $it", privacy.contains(it)) }
+        listOf("麦克风权限", "麦克风音频", "录音会话元数据系", "设备上生成同处理", "明确选择", "互联网权限", "网络传输路径", "开发者", "服务器", "云备份", "设备到设备传输")
+            .forEach { assertTrue("Missing privacy concept: $it", privacy.contains(it)) }
+        assertFalse(privacy.contains("您的"))
+        assertNotEquals(resourceValue("settings_privacy_policy_body"), privacy)
     }
 
     private fun resourceValue(key: String): String =

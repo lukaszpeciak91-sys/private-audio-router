@@ -49,14 +49,15 @@ class XhosaLocalizationContractTest {
         assertTrue(resourceValue("settings_about_body").contains("isamkeli sendlebe esakhelwe ngaphakathi"))
         assertFalse(resourceValue("settings_about_body").contains("umnxeba", ignoreCase = true))
 
-        assertTrue(strings.contains("ayiqokeleli, ayirekhodi, okanye ayithumeli"))
-        assertTrue(strings.contains("Ayifikeleli kumxholo weencoko zakho"))
+        val privacy = resourceValue("settings_privacy_policy_body")
+        assertEquals(5, privacy.split("\\n\\n").size)
+        assertFalse(privacy.contains("ayiqokeleli, ayirekhodi, okanye ayithumeli"))
+        assertFalse(privacy.contains("Ayifikeleli kumxholo weencoko zakho"))
         assertTrue(
             resourceValue("settings_privacy_policy_body")
                 .contains("iinkonzo zokunika ingxelo xa iapp ima ngokungalindelekanga"),
         )
         assertTrue(strings.contains("Idatha yoxilongo yenziwa ize isetyenzwe kwisixhobo sakho"))
-        assertTrue(strings.contains("igcinwa kuphela xa ukhetha ukuyigcina"))
         assertFalse(projectFile("app/src/main/res/values-xh/mini_state_strings.xml").exists())
     }
 

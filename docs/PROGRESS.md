@@ -613,6 +613,14 @@ this summary intentionally does not duplicate its test matrix.
 
 ## Recently completed significant changes
 
+- Corrected the audited Privacy Policy copy for isiXhosa and Sinhala by removing
+  obsolete legacy guarantees, rewrote Uzbek-AF in the locale's established Uzbek
+  Arabic register, and polished Simplified Written Cantonese, Faroese, and
+  Luxembourgish while preserving the current five-paragraph English claim set.
+  Localization contracts now reject the identified legacy and language-drift
+  regressions; this translation self-review is not independent or native-speaker
+  validation.
+
 - Reviewed the final 12 historical localization JVM findings across Cebuano,
   Lingala, Malagasy, Xhosa, Yoruba, Catalan, Galician, Malayalam, Zulu, Hausa,
   and Pashto. A follow-up delta review reverted the temporary Xhosa and Zulu
