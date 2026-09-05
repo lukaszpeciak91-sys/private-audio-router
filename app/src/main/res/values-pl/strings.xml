@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Private Audio</string>
-    <string name="routing_notification_channel">Private Audio</string>
-    <string name="routing_notification_title">Private Audio jest włączone</string>
+    <string name="app_name">Puzru</string>
+    <string name="routing_notification_channel">Puzru</string>
+    <string name="routing_notification_title">Puzru jest włączone</string>
     <string name="routing_notification_text">Czeka na przekierowanie dźwięku</string>
-    <string name="product_title">Private Audio</string>
+    <string name="product_title">Puzru</string>
     <string name="product_subtitle">Rozmawiaj z AI prywatnie, jak podczas rozmowy telefonicznej.</string>
     <string name="state_ready">Gotowe</string>
     <string name="state_waiting">Czeka</string>
@@ -14,18 +14,18 @@
     <string name="floating">Mini</string>
     <string name="settings">Ustawienia</string>
     <string name="close">Zamknij</string>
-    <string name="overlay_controller_description">Pływający kontroler Private Audio. Stan: %1$s. Przyciski włączania, rozwijania i zamykania.</string>
+    <string name="overlay_controller_description">Pływający kontroler Puzru. Stan: %1$s. Przyciski włączania, rozwijania i zamykania.</string>
     <string name="settings_language">Język</string>
     <string name="settings_system_default">Domyślny</string>
     <string name="settings_save_diagnostic">Zapisz raport diagnostyczny</string>
     <string name="settings_advanced">Zaawansowane</string>
-    <string name="settings_about">O Private Audio</string>
+    <string name="settings_about">O Puzru</string>
     <string name="settings_privacy_policy">Polityka prywatności</string>
-    <string name="settings_privacy_policy_body">Private Audio nie wymaga konta ani logowania i nie prosi o uprawnienie do mikrofonu. Nie przechwytuje ani nie nagrywa dźwięku z mikrofonu, a także nie nagrywa ani nie przechowuje Twoich rozmów lub zawartych w nich treści dźwiękowych.\n\nPrivate Audio korzysta z informacji o systemie audio Androida potrzebnych do kierowania dźwięku i diagnostyki. Diagnostyka może sprawdzać stan techniczny i metadane udostępniane przez publiczne interfejsy API Androida, w tym metadane odtwarzania i sesji nagrywania. Metadane sesji nagrywania są informacjami technicznymi systemu audio; Private Audio nie przechwytuje dźwięku z mikrofonu powiązanego z tymi sesjami. Informacje diagnostyczne mogą obejmować wersje aplikacji i Androida, informacje o urządzeniu i modelu, informacje o procesie i stanie aplikacji, dostępne i aktualnie używane urządzenia audio, publiczne metadane konfiguracji odtwarzania i nagrywania oraz próby kierowania dźwięku, ich wyniki, czasy i zdarzenia techniczne.\n\nPreferencje aplikacji są przechowywane lokalnie w prywatnej pamięci aplikacji Private Audio. Informacje diagnostyczne są generowane i przetwarzane na Twoim urządzeniu i mogą istnieć w lokalnym stanie uruchomionej aplikacji. Raporty nie są automatycznie zapisywane ani wysyłane. Trwały raport jest tworzony poza prywatną pamięcią aplikacji Private Audio tylko wtedy, gdy wyraźnie wybierzesz opcję Zapisz raport diagnostyczny i wskażesz miejsce docelowe za pośrednictwem Androida. Po wyeksportowaniu sposób obsługi, przechowywania i usunięcia tej kopii zależy od wybranej lokalizacji lub usługi, a nie od Private Audio.\n\nBieżąca wersja nie prosi o uprawnienie Androida do Internetu, nie ma zaplecza Private Audio ani ścieżki transmisji sieciowej i nie zawiera usług ani zestawów SDK do analityki, reklam lub raportowania awarii. Obecnie nie wysyła raportów diagnostycznych do dewelopera ani na serwer Private Audio, dlatego Private Audio nie przechowuje informacji diagnostycznych po stronie serwera.\n\nDane należące do aplikacji są wykluczone z kopii zapasowej Androida w chmurze oraz przenoszenia między urządzeniami. Lokalne preferencje pozostają w prywatnej pamięci aplikacji do czasu ich zmiany lub usunięcia danych aplikacji; przejściowy stan diagnostyczny nie jest zapisanym raportem. Wyeksportowane raporty pozostają pod kontrolą wybranej lokalizacji lub usługi.</string>
+    <string name="settings_privacy_policy_body">Puzru nie wymaga konta ani logowania i nie prosi o uprawnienie do mikrofonu. Nie przechwytuje ani nie nagrywa dźwięku z mikrofonu, a także nie nagrywa ani nie przechowuje Twoich rozmów lub zawartych w nich treści dźwiękowych.\n\nPuzru korzysta z informacji o systemie audio Androida potrzebnych do kierowania dźwięku i diagnostyki. Diagnostyka może sprawdzać stan techniczny i metadane udostępniane przez publiczne interfejsy API Androida, w tym metadane odtwarzania i sesji nagrywania. Metadane sesji nagrywania są informacjami technicznymi systemu audio; Puzru nie przechwytuje dźwięku z mikrofonu powiązanego z tymi sesjami. Informacje diagnostyczne mogą obejmować wersje aplikacji i Androida, informacje o urządzeniu i modelu, informacje o procesie i stanie aplikacji, dostępne i aktualnie używane urządzenia audio, publiczne metadane konfiguracji odtwarzania i nagrywania oraz próby kierowania dźwięku, ich wyniki, czasy i zdarzenia techniczne.\n\nPreferencje aplikacji są przechowywane lokalnie w prywatnej pamięci aplikacji Puzru. Informacje diagnostyczne są generowane i przetwarzane na Twoim urządzeniu i mogą istnieć w lokalnym stanie uruchomionej aplikacji. Raporty nie są automatycznie zapisywane ani wysyłane. Trwały raport jest tworzony poza prywatną pamięcią aplikacji Puzru tylko wtedy, gdy wyraźnie wybierzesz opcję Zapisz raport diagnostyczny i wskażesz miejsce docelowe za pośrednictwem Androida. Po wyeksportowaniu sposób obsługi, przechowywania i usunięcia tej kopii zależy od wybranej lokalizacji lub usługi, a nie od Puzru.\n\nBieżąca wersja nie prosi o uprawnienie Androida do Internetu, nie ma zaplecza Puzru ani ścieżki transmisji sieciowej i nie zawiera usług ani zestawów SDK do analityki, reklam lub raportowania awarii. Obecnie nie wysyła raportów diagnostycznych do dewelopera ani na serwer Puzru, dlatego Puzru nie przechowuje informacji diagnostycznych po stronie serwera.\n\nDane należące do aplikacji są wykluczone z kopii zapasowej Androida w chmurze oraz przenoszenia między urządzeniami. Lokalne preferencje pozostają w prywatnej pamięci aplikacji do czasu ich zmiany lub usunięcia danych aplikacji; przejściowy stan diagnostyczny nie jest zapisanym raportem. Wyeksportowane raporty pozostają pod kontrolą wybranej lokalizacji lub usługi.</string>
     <string name="settings_version">Wersja %1$s</string>
     <string name="settings_language_android_13_required">Wybór języka w aplikacji wymaga Androida 13 lub nowszego. To urządzenie używa języka systemowego.</string>
     <string name="settings_proximity_screen">Wyłącz ekran przy uchu</string>
-    <string name="settings_about_body">Private Audio pomaga kierować obsługiwany dźwięk głosowy do górnej słuchawki telefonu.</string>
+    <string name="settings_about_body">Puzru pomaga kierować obsługiwany dźwięk głosowy do górnej słuchawki telefonu.</string>
     <string name="diagnostic_report_saved">Raport diagnostyczny zapisano.</string>
     <string name="diagnostic_report_save_failed">Nie udało się zapisać raportu diagnostycznego.</string>
 
@@ -34,7 +34,7 @@
     <string name="diagnostics_system_check">SPRAWDZENIE SYSTEMU</string>
     <string name="diagnostics_earpiece">Słuchawka</string>
     <string name="diagnostics_proximity_sensor">Czujnik zbliżeniowy</string>
-    <string name="diagnostics_private_audio">PRIVATE AUDIO</string>
+    <string name="diagnostics_private_audio">PUZRU</string>
     <string name="diagnostics_routing">Przekierowanie dźwięku</string>
     <string name="diagnostics_status">Stan</string>
     <string name="diagnostics_audio_route">Wyjście audio</string>
@@ -59,8 +59,8 @@
     <string name="diagnostics_route_other">Inne</string>
     <string name="diagnostics_error_blocked_by_system">System zablokował przekierowanie dźwięku.</string>
     <string name="diagnostics_error_session_ended">Sesja dźwięku zakończyła się przed ukończeniem przekierowania dźwięku.</string>
-    <string name="diagnostics_error_audio_start">Aplikacja Private Audio nie mogła rozpocząć przekierowania dźwięku.</string>
-    <string name="diagnostics_error_audio_preparation">Aplikacja Private Audio nie mogła przygotować dźwięku do komunikacji.</string>
+    <string name="diagnostics_error_audio_start">Aplikacja Puzru nie mogła rozpocząć przekierowania dźwięku.</string>
+    <string name="diagnostics_error_audio_preparation">Aplikacja Puzru nie mogła przygotować dźwięku do komunikacji.</string>
     <string name="diagnostics_error_request_rejected">Żądanie przekierowania dźwięku do słuchawki nie zostało zaakceptowane.</string>
     <string name="diagnostics_error_not_completed">Nie udało się ukończyć przekierowania dźwięku.</string>
 </resources>

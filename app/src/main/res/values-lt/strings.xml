@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Private Audio</string>
-    <string name="routing_notification_channel">Private Audio</string>
-    <string name="routing_notification_title">Private Audio įjungta</string>
+    <string name="app_name">Puzru</string>
+    <string name="routing_notification_channel">Puzru</string>
+    <string name="routing_notification_title">Puzru įjungta</string>
     <string name="routing_notification_text">Laukia garso nukreipimo</string>
-    <string name="product_title">Private Audio</string>
+    <string name="product_title">Puzru</string>
     <string name="product_subtitle">Kalbėkitės su DI privačiai, kaip telefonu.</string>
     <string name="state_ready">Paruošta</string>
     <string name="state_waiting">Laukia</string>
@@ -14,18 +14,18 @@
     <string name="floating">Mini</string>
     <string name="settings">Nustatymai</string>
     <string name="close">Uždaryti</string>
-    <string name="overlay_controller_description">Slankusis „Private Audio“ valdiklis. Būsena: %1$s. Įjungimo, išskleidimo ir uždarymo valdikliai.</string>
+    <string name="overlay_controller_description">Slankusis „Puzru“ valdiklis. Būsena: %1$s. Įjungimo, išskleidimo ir uždarymo valdikliai.</string>
     <string name="settings_language">Kalba</string>
     <string name="settings_system_default">Numatytoji</string>
     <string name="settings_save_diagnostic">Išsaugoti diagnostikos ataskaitą</string>
     <string name="settings_advanced">Išplėstiniai</string>
-    <string name="settings_about">Apie Private Audio</string>
+    <string name="settings_about">Apie Puzru</string>
     <string name="settings_privacy_policy">Privatumo politika</string>
-    <string name="settings_privacy_policy_body">„Private Audio“ nereikalauja paskyros ar prisijungimo ir neprašo leidimo naudoti mikrofoną. Ji nefiksuoja ir neįrašo mikrofono garso, taip pat neįrašo ir nesaugo jūsų pokalbių ar jų garso turinio.\n\n„Private Audio“ naudoja „Android“ garso sistemos informaciją, reikalingą garsui nukreipti ir diagnostikai. Diagnostika gali tikrinti techninę būseną ir metaduomenis, kuriuos pateikia viešosios „Android“ API, įskaitant atkūrimo ir įrašymo seansų metaduomenis. Įrašymo seansų metaduomenys yra techninė garso sistemos informacija; „Private Audio“ nefiksuoja su šiais seansais susijusio mikrofono garso. Diagnostikos informacija gali apimti programos ir „Android“ versijas, įrenginio ir modelio informaciją, programos proceso ir būsenos informaciją, pasiekiamus ir esamus garso įrenginius, viešus atkūrimo ir įrašymo konfigūracijos metaduomenis, taip pat nukreipimo bandymus, jų rezultatus, laiką ir techninius įvykius.\n\nProgramos nuostatos saugomos vietoje, privačioje „Private Audio“ programos saugykloje. Diagnostikos informacija generuojama ir apdorojama jūsų įrenginyje ir gali būti veikiančios programos vietinėje būsenoje. Ataskaitos automatiškai neišsaugomos ir nesiunčiamos. Ilgalaikė ataskaita už privačios „Private Audio“ programos saugyklos ribų sukuriama tik tada, kai aiškiai pasirenkate Išsaugoti diagnostikos ataskaitą ir per „Android“ nurodote paskirties vietą. Eksportavus tos kopijos tvarkymą, saugojimą ir ištrynimą kontroliuoja pasirinkta vieta ar paslauga, o ne „Private Audio“.\n\nDabartinė versija neprašo „Android“ interneto leidimo, neturi „Private Audio“ serverio sistemos ar perdavimo tinklu kelio ir joje nėra analizės, reklamavimo ar strigčių ataskaitų teikimo paslaugų ar SDK. Šiuo metu ji nesiunčia diagnostikos ataskaitų kūrėjui ar į „Private Audio“ serverį, todėl „Private Audio“ jokiame serveryje nesaugo diagnostikos informacijos.\n\nProgramai priklausantys duomenys neįtraukiami į „Android“ atsarginį kopijavimą debesyje ir perkėlimą iš vieno įrenginio į kitą. Vietinės nuostatos lieka privačioje programos saugykloje, kol jos pakeičiamos arba pašalinami programos duomenys; laikina diagnostikos būsena nėra išsaugota ataskaita. Eksportuotos ataskaitos lieka valdomos jūsų pasirinktos vietos ar paslaugos.</string>
+    <string name="settings_privacy_policy_body">„Puzru“ nereikalauja paskyros ar prisijungimo ir neprašo leidimo naudoti mikrofoną. Ji nefiksuoja ir neįrašo mikrofono garso, taip pat neįrašo ir nesaugo jūsų pokalbių ar jų garso turinio.\n\n„Puzru“ naudoja „Android“ garso sistemos informaciją, reikalingą garsui nukreipti ir diagnostikai. Diagnostika gali tikrinti techninę būseną ir metaduomenis, kuriuos pateikia viešosios „Android“ API, įskaitant atkūrimo ir įrašymo seansų metaduomenis. Įrašymo seansų metaduomenys yra techninė garso sistemos informacija; „Puzru“ nefiksuoja su šiais seansais susijusio mikrofono garso. Diagnostikos informacija gali apimti programos ir „Android“ versijas, įrenginio ir modelio informaciją, programos proceso ir būsenos informaciją, pasiekiamus ir esamus garso įrenginius, viešus atkūrimo ir įrašymo konfigūracijos metaduomenis, taip pat nukreipimo bandymus, jų rezultatus, laiką ir techninius įvykius.\n\nProgramos nuostatos saugomos vietoje, privačioje „Puzru“ programos saugykloje. Diagnostikos informacija generuojama ir apdorojama jūsų įrenginyje ir gali būti veikiančios programos vietinėje būsenoje. Ataskaitos automatiškai neišsaugomos ir nesiunčiamos. Ilgalaikė ataskaita už privačios „Puzru“ programos saugyklos ribų sukuriama tik tada, kai aiškiai pasirenkate Išsaugoti diagnostikos ataskaitą ir per „Android“ nurodote paskirties vietą. Eksportavus tos kopijos tvarkymą, saugojimą ir ištrynimą kontroliuoja pasirinkta vieta ar paslauga, o ne „Puzru“.\n\nDabartinė versija neprašo „Android“ interneto leidimo, neturi „Puzru“ serverio sistemos ar perdavimo tinklu kelio ir joje nėra analizės, reklamavimo ar strigčių ataskaitų teikimo paslaugų ar SDK. Šiuo metu ji nesiunčia diagnostikos ataskaitų kūrėjui ar į „Puzru“ serverį, todėl „Puzru“ jokiame serveryje nesaugo diagnostikos informacijos.\n\nProgramai priklausantys duomenys neįtraukiami į „Android“ atsarginį kopijavimą debesyje ir perkėlimą iš vieno įrenginio į kitą. Vietinės nuostatos lieka privačioje programos saugykloje, kol jos pakeičiamos arba pašalinami programos duomenys; laikina diagnostikos būsena nėra išsaugota ataskaita. Eksportuotos ataskaitos lieka valdomos jūsų pasirinktos vietos ar paslaugos.</string>
     <string name="settings_version">Versija %1$s</string>
     <string name="settings_language_android_13_required">Norint pasirinkti kalbą programėlėje, reikia „Android 13“ arba naujesnės versijos. Šiame įrenginyje naudojama sistemos kalba.</string>
     <string name="settings_proximity_screen">Išjungti ekraną prie ausies</string>
-    <string name="settings_about_body">Private Audio padeda nukreipti balso garsą į telefono vidinį pokalbių garsiakalbį.</string>
+    <string name="settings_about_body">Puzru padeda nukreipti balso garsą į telefono vidinį pokalbių garsiakalbį.</string>
     <string name="diagnostic_report_saved">Diagnostikos ataskaita išsaugota.</string>
     <string name="diagnostic_report_save_failed">Nepavyko išsaugoti diagnostikos ataskaitos.</string>
 
@@ -34,7 +34,7 @@
     <string name="diagnostics_system_check">SISTEMOS PATIKRA</string>
     <string name="diagnostics_earpiece">Pokalbių garsiakalbis</string>
     <string name="diagnostics_proximity_sensor">Artumo jutiklis</string>
-    <string name="diagnostics_private_audio">Private Audio</string>
+    <string name="diagnostics_private_audio">Puzru</string>
     <string name="diagnostics_routing">Garso nukreipimas</string>
     <string name="diagnostics_status">Būsena</string>
     <string name="diagnostics_audio_route">Garso išvestis</string>
@@ -59,8 +59,8 @@
     <string name="diagnostics_route_other">Kita</string>
     <string name="diagnostics_error_blocked_by_system">Sistema užblokavo garso nukreipimą.</string>
     <string name="diagnostics_error_session_ended">Garso seansas baigėsi anksčiau, nei buvo baigtas garso nukreipimas.</string>
-    <string name="diagnostics_error_audio_start">Private Audio nepavyko pradėti garso nukreipimo.</string>
-    <string name="diagnostics_error_audio_preparation">Private Audio nepavyko paruošti pokalbio garso.</string>
+    <string name="diagnostics_error_audio_start">Puzru nepavyko pradėti garso nukreipimo.</string>
+    <string name="diagnostics_error_audio_preparation">Puzru nepavyko paruošti pokalbio garso.</string>
     <string name="diagnostics_error_request_rejected">Prašymas nukreipti garsą į pokalbių garsiakalbį nebuvo priimtas.</string>
     <string name="diagnostics_error_not_completed">Nepavyko užbaigti garso nukreipimo.</string>
 </resources>

@@ -20,8 +20,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import app.privateaudio.R
 import app.privateaudio.diagnostic.DiagnosticSnapshot
 import app.privateaudio.diagnostic.EarpieceExperiment
 import app.privateaudio.diagnostic.ObservedDevice
@@ -53,7 +55,7 @@ fun DiagnosticScreen(
                 .padding(20.dp),
             verticalArrangement = Arrangement.spacedBy(16.dp),
         ) {
-            Text("PRIVATE AUDIO", style = MaterialTheme.typography.labelLarge)
+            Text(stringResource(R.string.diagnostics_private_audio), style = MaterialTheme.typography.labelLarge)
             Text("POC-5 Active Requester", style = MaterialTheme.typography.headlineMedium)
             Text(
                 "Experimental: one explicit arm starts a silent communication AudioTrack, requests communication mode, then makes exactly one earpiece request. No microphone, capture, proxy, or audio-focus request is used. Audible success requires your confirmation.",

@@ -32,8 +32,8 @@ class SundaneseLocalizationContractTest {
         assertEquals("Pareum", resourceValue("diagnostics_off"))
         assertFalse(resourceValue("state_active") == resourceValue("diagnostics_on"))
 
-        assertEquals("Private Audio", resourceValue("app_name"))
-        assertEquals("Private Audio", resourceValue("product_title"))
+        assertEquals("Puzru", resourceValue("app_name"))
+        assertEquals("Puzru", resourceValue("product_title"))
         assertEquals("Mini", resourceValue("floating"))
         assertEquals("Kaluaran audio", resourceValue("diagnostics_audio_route"))
         assertEquals("Pangarahan audio", resourceValue("diagnostics_routing"))

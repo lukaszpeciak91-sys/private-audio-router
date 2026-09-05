@@ -9,7 +9,7 @@
   transient diagnostic state; explicit Android document-provider report export; and
   destination-controlled handling, retention, and deletion after export.
 - The disclosure also bounds current network behavior without making a permanent
-  architectural promise: this version has no Internet permission, Private Audio
+  architectural promise: this version has no Internet permission, Puzru
   backend or network transmission path, analytics, advertising, or crash-reporting
   service/SDK, and therefore has no server-side diagnostic retention. App-owned data
   remains excluded from cloud backup and device-to-device transfer.
@@ -87,7 +87,7 @@
 - The foreground notification's optional configuration-change refresh now checks
   `POST_NOTIFICATIONS` on Android 13 and newer, while older Android versions retain
   their existing refresh. The permission is declared without runtime request UX;
-  foreground-service startup and Private Audio routing remain independent of whether
+  foreground-service startup and Puzru routing remain independent of whether
   notification permission is unavailable or denied.
 - Settings language presentation now observes configuration changes through
   Compose's `LocalConfiguration`, while platform locale discovery and selection
@@ -206,7 +206,7 @@
 
 ## Public recording-session metadata diagnostics
 
-- The diagnostic observer now registers a public `AudioManager.AudioRecordingCallback` for its full started lifetime, independently of the Private Audio controller setting, and reports bounded meaningful active-recording metadata transitions without microphone permission or audio capture.
+- The diagnostic observer now registers a public `AudioManager.AudioRecordingCallback` for its full started lifetime, independently of the Puzru controller setting, and reports bounded meaningful active-recording metadata transitions without microphone permission or audio capture.
 - Routing-start markers correlate public recording state with the existing protected-cycle generation and PRE-POC5, silent-track, mode, routing-request, and first-earpiece observations. This is diagnostic-only; classifier, routing, prepared-track/prefill, and assistant-linger behavior are unchanged.
 - Physical comparison of controller-OFF and controller-ON sessions remains required.
 
@@ -217,7 +217,7 @@ physical test records remain in [`DECISIONS.md`](DECISIONS.md),
 
 ## Current product state
 
-- Private Audio is an Android utility that uses public APIs to request the built-in
+- Puzru is an Android utility that uses public APIs to request the built-in
   earpiece for compatible communication audio. It controls Android routing and does
   not receive, record, capture, proxy, or transmit conversation audio.
 - The service-owned permanent controller exposes `READY`, `WAITING`, `ACTIVE`, and
@@ -240,7 +240,7 @@ requirements, privacy constraints, architectural findings, or implementation
 experience may justify changing scope or sequence. Evidence-based change is
 allowed; speculative scope drift is not.
 
-The intended beta is the existing **Private Audio** product:
+The intended beta is the existing **Puzru** product:
 
 - an Android-only, provider-independent utility for compatible communication-audio
   routing to the built-in earpiece through the established protected POC-5 path;
@@ -269,11 +269,13 @@ D-036 experiments are historical evidence, not its future specification; any
 future Fake Phone mode requires fresh research and specification in a separate,
 evidence-driven development program.
 
-**Release identity:** Private Audio remains the working V1 product name. The
-current `app.privateaudio` identity remains provisional under D-010; this baseline
-does not decide or change it. A final package identity and launcher/release branding
-decision must be made consciously before the first Google Play release/upload,
-where a later identity change would be problematic.
+**Release identity:** Puzru is the public product name, and Napahu Studios is the
+accepted publisher/umbrella brand under D-039. This first public-brand migration
+changes release-facing product identity only and does not change routing or
+architecture behavior. The current `app.privateaudio` application identity remains
+provisional under D-010; its final value is a separate unresolved release-identity
+decision for a follow-up PR and must be decided before the first Google Play
+release/upload, where a later identity change would be problematic.
 
 ### Current release-readiness sequence
 
@@ -305,7 +307,7 @@ rather than frozen here.
 
 ### Release-evidence boundary
 
-Private Audio is not currently ready for Production. High-priority open evidence
+Puzru is not currently ready for Production. High-priority open evidence
 includes incoming and outgoing real-call safety; Samsung, AOSP-like/Pixel, and newer
 Android-release coverage; accessory behavior; service/process-loss and reboot
 behavior; remaining overlay/Mini lifecycle checks; diagnostic-report save-picker
@@ -414,7 +416,7 @@ this summary intentionally does not duplicate its test matrix.
   terminology and preserves controller ON `开启` versus runtime ACTIVE `使用紧`,
   built-in earpiece `听筒` versus loudspeaker `扬声器`, audio-output switching versus
   transmission, `通信音频`, local diagnostics and report-saving scope, disabled
-  Android app-data backup, the five-paragraph Privacy claim set, the `Private Audio`
+  Android app-data backup, the five-paragraph Privacy claim set, the `Puzru`
   brand, and localizable `迷你`. Source contracts cover keys, placeholders, NFC,
   protected semantics, script-specific locale identities, LTR direction, generated
   locale discovery, picker distinction, and independent Android resource resolution.
@@ -524,11 +526,11 @@ this summary intentionally does not duplicate its test matrix.
 - No account or sign-in is required. The manifest requests neither microphone nor
   Android Internet permission, app-data backup is disabled, and the application
   uses no analytics, advertising, or crash-reporting services.
-- Private Audio does not collect, record, or transmit conversation/audio content.
+- Puzru does not collect, record, or transmit conversation/audio content.
   It locally observes technical Android audio-system metadata and state needed for
   routing and diagnostics; that metadata is distinct from conversation content.
 - The user-facing Diagnostics screen is a concise product-health summary: System
-  Check shows earpiece, proximity-sensor, and Mini availability; Private Audio shows
+  Check shows earpiece, proximity-sensor, and Mini availability; Puzru shows
   routing intent, product state, and current audio output; Last Routing Attempt appears
   only after a completed cycle and shows a result plus a concise error only on
   failure. Device/environment and classifier details are intentionally omitted.
@@ -600,7 +602,7 @@ this summary intentionally does not duplicate its test matrix.
 
 ## Next meaningful questions
 
-1. Does telephony immediately retain priority while Private Audio is waiting,
+1. Does telephony immediately retain priority while Puzru is waiting,
    active, or retaining an assistant linger context?
 2. Does protected POC-5 remain reversible and audibly effective on Samsung, an
    AOSP-like device, and newer Android releases?

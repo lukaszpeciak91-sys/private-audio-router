@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Private Audio</string>
-    <string name="routing_notification_channel">Private Audio</string>
-    <string name="routing_notification_title">Private Audio یاقیق</string>
+    <string name="app_name">Puzru</string>
+    <string name="routing_notification_channel">Puzru</string>
+    <string name="routing_notification_title">Puzru یاقیق</string>
     <string name="routing_notification_text">آدیو چیقیشینی یۉنلتیریش کوتیلماغده</string>
 
-    <string name="product_title">Private Audio</string>
+    <string name="product_title">Puzru</string>
     <string name="product_subtitle">صنعي عقل بیلن، خدی تیلفون قۉنغیراغی‌دیک، باشقه‌لرگه ایشیتیرمی صحبت قیلیڭ.</string>
 
     <string name="state_ready">تییار</string>
@@ -18,19 +18,19 @@
     <string name="settings">تنظیمات</string>
     <string name="close">یاپیش</string>
 
-    <string name="overlay_controller_description">Private Audio‌نینگ سوزوچی باشقروو پنلی. حالت: %1$s. یاقیش/اۉچیریش، کینگیتیریش و یاپیش باشقروولری.</string>
+    <string name="overlay_controller_description">Puzru‌نینگ سوزوچی باشقروو پنلی. حالت: %1$s. یاقیش/اۉچیریش، کینگیتیریش و یاپیش باشقروولری.</string>
 
     <string name="settings_language">تیل</string>
     <string name="settings_system_default">اصل حالت</string>
     <string name="settings_save_diagnostic">تشخیص حساباتینی سقلش</string>
     <string name="settings_advanced">کینگییتیریلگن تنظیمات</string>
-    <string name="settings_about">Private Audio حقیده</string>
+    <string name="settings_about">Puzru حقیده</string>
     <string name="settings_privacy_policy">مخفی‌لیک سیاستی</string>
-    <string name="settings_privacy_policy_body">Private Audio حساب یا کیریشنی طلب قیلمه‌یدی و مایکروفون اجازتینی سورمه‌یدی. او مایکروفون آدیوسینی ضبط قیلمه‌یدی یا یازیب آلمه‌یدی، صحبت‌لریڭیزنی یا اولرنینگ آدیو مضمونینی هم یازیب آلمه‌یدی یا سقلمه‌یدی.\n\nPrivate Audio آدیونی یۉنلتیریش و تشخیص اوچون کیره‌کلی بولگن Android آدیو سیستمی معلوماتیدن فایده‌لنه‌دی. تشخیص عمومی Android API‌لری اۉرته‌گه چیقره‌دیگن تخنیکی حالت و میته‌معلوماتنی، شو جمله‌دن اجرا و ضبط جلسه‌لری میته‌معلوماتینی، تیکشیریشی ممکن. ضبط جلسه‌سینینگ میته‌معلوماتی آدیو سیستمینه عاید تخنیکی معلومات‌دیر؛ Private Audio او جلسه‌لرگه باغلیق مایکروفون آدیوسینی ضبط قیلمه‌یدی. تشخیص معلوماتی ایلووه و Android نسخه‌لری، قوریلمه و مودل معلوماتی، ایلووه پروسه‌سی و حالتی، موجود و حاضرگی آدیو قوریلمه‌لری، عمومی اجرا و ضبط تنظیماتینینگ میته‌معلوماتی، همده یۉنلتیریش اورینیش‌لری، نتیجه‌لر، وقت و تخنیکی حادثه‌لرنی ایچگه آلیشی ممکن.\n\nایلووه تنظیمات‌لری Private Audio‌نینگ ایلووه‌گه مخصوص مخفی سقلش جاییده محلی سقلنه‌دی. تشخیص معلوماتی قوریلمه‌ڭیزده یره‌تیله‌دی و قیته ایشلنه‌دی و ایشلب تورگن ایلووه‌نینگ محلی حالتی‌ده بولیشی ممکن. حسابات‌لر خودکار سقلنمه‌یدی یا یوبریلمه‌یدی. دایمی حسابات فقت سیز «تشخیص حساباتینی سقلش»نی آچق تَنلب، Android آرقلی بر مقصدنی تَنلگن وقتینگیزده Private Audio‌نینگ ایلووه‌گه مخصوص مخفی سقلش جاییدن تشقریده یره‌تیله‌دی. صادراتدن کین، تَنلنگن جای یا خدمت — Private Audio ایمس — او نسخه‌نینگ قندای ایشلتیلیشی، قنچه مدت سقلنیشی و اۉچیریلیشینی باشقره‌دی.\n\nحاضرگی نسخه Android‌نینگ انترنت اجازتینی سورمه‌یدی، Private Audio‌نینگ هیچ قندای بک‌اندی یا معلوماتنی شبکه آرقلی یوبریش یۉلی یۉق و تحلیلات، اعلان یا ایلووه توختب قالیشی حقیده حسابات بیریش خدمت‌لری یا SDK‌لرنی ایچگه آلمه‌یدی. او حاضر تشخیص حسابات‌لرینی توسعه بیرووچیگه یا Private Audio سرورینه یوبرمه‌یدی، شونینگ اوچون Private Audio سرورده تشخیص معلوماتینی سقلمه‌یدی.\n\nایلووه‌گه عاید معلومات Android بولوتی‌ده‌گی زحیره نسخه و قوریلمه‌دن قوریلمه‌گه اۉتکزیشدن چیقریلب تشلنگن. محلی تنظیمات‌لر اۉزگرتیریلگونچه یا ایلووه معلوماتی اۉچیریلگونچه ایلووه‌گه مخصوص مخفی سقلش جاییده قاله‌دی؛ موقتی تشخیص حالتی سقلنگن حسابات ایمس. صادرات قیلینگن حسابات‌لر سیز تَنلگن جای یا خدمت باشقروویده قاله‌دی.</string>
+    <string name="settings_privacy_policy_body">Puzru حساب یا کیریشنی طلب قیلمه‌یدی و مایکروفون اجازتینی سورمه‌یدی. او مایکروفون آدیوسینی ضبط قیلمه‌یدی یا یازیب آلمه‌یدی، صحبت‌لریڭیزنی یا اولرنینگ آدیو مضمونینی هم یازیب آلمه‌یدی یا سقلمه‌یدی.\n\nPuzru آدیونی یۉنلتیریش و تشخیص اوچون کیره‌کلی بولگن Android آدیو سیستمی معلوماتیدن فایده‌لنه‌دی. تشخیص عمومی Android API‌لری اۉرته‌گه چیقره‌دیگن تخنیکی حالت و میته‌معلوماتنی، شو جمله‌دن اجرا و ضبط جلسه‌لری میته‌معلوماتینی، تیکشیریشی ممکن. ضبط جلسه‌سینینگ میته‌معلوماتی آدیو سیستمینه عاید تخنیکی معلومات‌دیر؛ Puzru او جلسه‌لرگه باغلیق مایکروفون آدیوسینی ضبط قیلمه‌یدی. تشخیص معلوماتی ایلووه و Android نسخه‌لری، قوریلمه و مودل معلوماتی، ایلووه پروسه‌سی و حالتی، موجود و حاضرگی آدیو قوریلمه‌لری، عمومی اجرا و ضبط تنظیماتینینگ میته‌معلوماتی، همده یۉنلتیریش اورینیش‌لری، نتیجه‌لر، وقت و تخنیکی حادثه‌لرنی ایچگه آلیشی ممکن.\n\nایلووه تنظیمات‌لری Puzru‌نینگ ایلووه‌گه مخصوص مخفی سقلش جاییده محلی سقلنه‌دی. تشخیص معلوماتی قوریلمه‌ڭیزده یره‌تیله‌دی و قیته ایشلنه‌دی و ایشلب تورگن ایلووه‌نینگ محلی حالتی‌ده بولیشی ممکن. حسابات‌لر خودکار سقلنمه‌یدی یا یوبریلمه‌یدی. دایمی حسابات فقت سیز «تشخیص حساباتینی سقلش»نی آچق تَنلب، Android آرقلی بر مقصدنی تَنلگن وقتینگیزده Puzru‌نینگ ایلووه‌گه مخصوص مخفی سقلش جاییدن تشقریده یره‌تیله‌دی. صادراتدن کین، تَنلنگن جای یا خدمت — Puzru ایمس — او نسخه‌نینگ قندای ایشلتیلیشی، قنچه مدت سقلنیشی و اۉچیریلیشینی باشقره‌دی.\n\nحاضرگی نسخه Android‌نینگ انترنت اجازتینی سورمه‌یدی، Puzru‌نینگ هیچ قندای بک‌اندی یا معلوماتنی شبکه آرقلی یوبریش یۉلی یۉق و تحلیلات، اعلان یا ایلووه توختب قالیشی حقیده حسابات بیریش خدمت‌لری یا SDK‌لرنی ایچگه آلمه‌یدی. او حاضر تشخیص حسابات‌لرینی توسعه بیرووچیگه یا Puzru سرورینه یوبرمه‌یدی، شونینگ اوچون Puzru سرورده تشخیص معلوماتینی سقلمه‌یدی.\n\nایلووه‌گه عاید معلومات Android بولوتی‌ده‌گی زحیره نسخه و قوریلمه‌دن قوریلمه‌گه اۉتکزیشدن چیقریلب تشلنگن. محلی تنظیمات‌لر اۉزگرتیریلگونچه یا ایلووه معلوماتی اۉچیریلگونچه ایلووه‌گه مخصوص مخفی سقلش جاییده قاله‌دی؛ موقتی تشخیص حالتی سقلنگن حسابات ایمس. صادرات قیلینگن حسابات‌لر سیز تَنلگن جای یا خدمت باشقروویده قاله‌دی.</string>
     <string name="settings_version">نسخه %1$s</string>
     <string name="settings_language_android_13_required">ایلووه ایچیده تیل تنلش اوچون اندروید 13 یا کینگی نسخه کیره‌ک. بو قوریلمه سیستم تیلیدن فایده‌لنه‌دی.</string>
     <string name="settings_proximity_screen">تیلفون قولاغیڭیزگه یقیلشگنده اکرننی اۉچیریش</string>
-    <string name="settings_about_body">Private Audio قوللب-قووتلنه‌دیگن نطق آدیوسینی تیلفونیڭیزده‌گی ایچکی قولاق دینامیکگه یۉنلتیریشگه یاردم بیردی.</string>
+    <string name="settings_about_body">Puzru قوللب-قووتلنه‌دیگن نطق آدیوسینی تیلفونیڭیزده‌گی ایچکی قولاق دینامیکگه یۉنلتیریشگه یاردم بیردی.</string>
 
     <string name="diagnostic_report_saved">تشخیص حساباتی سقلندی.</string>
     <string name="diagnostic_report_save_failed">تشخیص حساباتینی سقلش ممکن بولمدی.</string>
@@ -39,7 +39,7 @@
     <string name="diagnostics_system_check">سیستم تیکشیرووی</string>
     <string name="diagnostics_earpiece">قولاق دینامیک</string>
     <string name="diagnostics_proximity_sensor">یقین‌لیک حسگری</string>
-    <string name="diagnostics_private_audio">PRIVATE AUDIO</string>
+    <string name="diagnostics_private_audio">PUZRU</string>
     <string name="diagnostics_routing">یۉنلتیریش</string>
     <string name="diagnostics_status">حالت</string>
     <string name="diagnostics_audio_route">آدیو چیقیشی</string>
@@ -64,8 +64,8 @@
     <string name="diagnostics_route_other">باشقه</string>
     <string name="diagnostics_error_blocked_by_system">سیستم آدیونی یۉنلتیریشنی توسدی.</string>
     <string name="diagnostics_error_session_ended">آدیو جلسه‌سی یۉنلتیریش توگشیدن آلدین یاپیلدی.</string>
-    <string name="diagnostics_error_audio_start">Private Audio آدیونی یۉنلتیریشنی باشلی آلمدی.</string>
-    <string name="diagnostics_error_audio_preparation">Private Audio آلاقه آدیوسینی تیارلی آلمدی.</string>
+    <string name="diagnostics_error_audio_start">Puzru آدیونی یۉنلتیریشنی باشلی آلمدی.</string>
+    <string name="diagnostics_error_audio_preparation">Puzru آلاقه آدیوسینی تیارلی آلمدی.</string>
     <string name="diagnostics_error_request_rejected">قولاق دینامیکگه یۉنلتیریش سورووی قبول قیلینمدی.</string>
     <string name="diagnostics_error_not_completed">آدیونی یۉنلتیریشنی توگتیش ممکن بولمدی.</string>
 </resources>

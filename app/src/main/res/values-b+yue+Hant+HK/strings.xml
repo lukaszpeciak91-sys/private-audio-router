@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Private Audio</string>
-    <string name="routing_notification_channel">Private Audio</string>
-    <string name="routing_notification_title">Private Audio 已開啟</string>
+    <string name="app_name">Puzru</string>
+    <string name="routing_notification_channel">Puzru</string>
+    <string name="routing_notification_title">Puzru 已開啟</string>
     <string name="routing_notification_text">等緊進行音訊導向</string>
-    <string name="product_title">Private Audio</string>
+    <string name="product_title">Puzru</string>
     <string name="product_subtitle">好似打電話咁，私下同 AI 傾偈。</string>
     <string name="state_ready">準備好</string>
     <string name="state_waiting">等緊</string>
@@ -14,26 +14,26 @@
     <string name="floating">迷你</string>
     <string name="settings">設定</string>
     <string name="close">關閉</string>
-    <string name="overlay_controller_description">Private Audio 浮動迷你控制器。狀態：%1$s。設有電源、展開同關閉控制。</string>
+    <string name="overlay_controller_description">Puzru 浮動迷你控制器。狀態：%1$s。設有電源、展開同關閉控制。</string>
     <string name="settings_language">語言</string>
     <string name="settings_system_default">預設</string>
     <string name="settings_save_diagnostic">儲存診斷報告</string>
     <string name="settings_diagnostics">診斷</string>
     <string name="settings_advanced">進階</string>
-    <string name="settings_about">關於 Private Audio</string>
+    <string name="settings_about">關於 Puzru</string>
     <string name="settings_privacy_policy">私隱政策</string>
-    <string name="settings_privacy_policy_body">Private Audio 唔需要帳戶或者登入，亦唔會要求麥克風權限。佢唔會擷取或者錄製麥克風音訊，亦唔會記錄或者儲存你嘅對話或者其音訊內容。\n\nPrivate Audio 會使用 Android 音訊系統中作路由同診斷所需嘅資料。診斷可能會檢視由公開 Android API 提供嘅技術狀態同中繼資料，包括播放同錄音工作階段中繼資料。錄音工作階段中繼資料係技術性音訊系統資料；Private Audio 唔會擷取與該等工作階段相關聯嘅麥克風音訊。診斷資料可能包括 app 同 Android 版本、裝置同型號資料、app 程序同狀態資料、可用同目前使用中嘅音訊裝置、公開嘅播放同錄音設定中繼資料，以及路由嘗試、結果、時間資料同技術事件。\n\nApp 偏好設定會儲存在 Private Audio 嘅 app 私有儲存空間內。診斷資料會喺你嘅裝置上產生同處理，並且可以存在於執行中 app 嘅本機狀態之中。報告唔會自動儲存或者傳送。只有當你明確選擇「儲存診斷報告」，並透過 Android 揀選目的地時，先會喺 Private Audio 嘅 app 私有儲存空間以外建立持久報告。匯出之後，所選位置或者服務——而唔係 Private Audio——會控制該副本嘅處理、保留同刪除。\n\n目前版本唔會要求 Android 嘅 Internet 權限，冇 Private Audio 後端或者網絡傳輸路徑，亦唔包含分析、廣告或者當機回報服務或 SDK。佢目前唔會將診斷報告傳送畀開發者或者 Private Audio 伺服器，所以 Private Audio 冇伺服器端診斷保留。\n\n由 app 擁有嘅資料會被排除喺 Android 雲端備份同裝置對裝置傳輸之外。本機偏好設定會一直保留喺 app 私有儲存空間內，直到被更改或者 app 資料被移除為止；暫時性診斷狀態並唔係已儲存報告。已匯出報告會繼續受你所選位置或者服務嘅控制。</string>
+    <string name="settings_privacy_policy_body">Puzru 唔需要帳戶或者登入，亦唔會要求麥克風權限。佢唔會擷取或者錄製麥克風音訊，亦唔會記錄或者儲存你嘅對話或者其音訊內容。\n\nPuzru 會使用 Android 音訊系統中作路由同診斷所需嘅資料。診斷可能會檢視由公開 Android API 提供嘅技術狀態同中繼資料，包括播放同錄音工作階段中繼資料。錄音工作階段中繼資料係技術性音訊系統資料；Puzru 唔會擷取與該等工作階段相關聯嘅麥克風音訊。診斷資料可能包括 app 同 Android 版本、裝置同型號資料、app 程序同狀態資料、可用同目前使用中嘅音訊裝置、公開嘅播放同錄音設定中繼資料，以及路由嘗試、結果、時間資料同技術事件。\n\nApp 偏好設定會儲存在 Puzru 嘅 app 私有儲存空間內。診斷資料會喺你嘅裝置上產生同處理，並且可以存在於執行中 app 嘅本機狀態之中。報告唔會自動儲存或者傳送。只有當你明確選擇「儲存診斷報告」，並透過 Android 揀選目的地時，先會喺 Puzru 嘅 app 私有儲存空間以外建立持久報告。匯出之後，所選位置或者服務——而唔係 Puzru——會控制該副本嘅處理、保留同刪除。\n\n目前版本唔會要求 Android 嘅 Internet 權限，冇 Puzru 後端或者網絡傳輸路徑，亦唔包含分析、廣告或者當機回報服務或 SDK。佢目前唔會將診斷報告傳送畀開發者或者 Puzru 伺服器，所以 Puzru 冇伺服器端診斷保留。\n\n由 app 擁有嘅資料會被排除喺 Android 雲端備份同裝置對裝置傳輸之外。本機偏好設定會一直保留喺 app 私有儲存空間內，直到被更改或者 app 資料被移除為止；暫時性診斷狀態並唔係已儲存報告。已匯出報告會繼續受你所選位置或者服務嘅控制。</string>
     <string name="settings_version">版本 %1$s</string>
     <string name="settings_language_android_13_required">App 內語言選擇功能需要 Android 13 或更新版本。呢部裝置會跟隨系統語言。</string>
     <string name="settings_proximity_screen">靠近耳仔時關閉螢幕</string>
-    <string name="settings_about_body">Private Audio 幫你將支援嘅語音音訊導向手機嘅內置聽筒。</string>
+    <string name="settings_about_body">Puzru 幫你將支援嘅語音音訊導向手機嘅內置聽筒。</string>
     <string name="diagnostic_report_saved">診斷報告已儲存。</string>
     <string name="diagnostic_report_save_failed">無法儲存診斷報告。</string>
     <string name="diagnostics_title">診斷</string>
     <string name="diagnostics_system_check">系統檢查</string>
     <string name="diagnostics_earpiece">聽筒</string>
     <string name="diagnostics_proximity_sensor">距離感應器</string>
-    <string name="diagnostics_private_audio">PRIVATE AUDIO</string>
+    <string name="diagnostics_private_audio">PUZRU</string>
     <string name="diagnostics_routing">音訊導向</string>
     <string name="diagnostics_status">狀態</string>
     <string name="diagnostics_audio_route">音訊輸出</string>
@@ -58,8 +58,8 @@
     <string name="diagnostics_route_other">其他</string>
     <string name="diagnostics_error_blocked_by_system">系統封鎖咗音訊導向。</string>
     <string name="diagnostics_error_session_ended">音訊工作階段喺音訊導向完成之前已經結束。</string>
-    <string name="diagnostics_error_audio_start">Private Audio 無法開始音訊導向。</string>
-    <string name="diagnostics_error_audio_preparation">Private Audio 無法準備通訊音訊。</string>
+    <string name="diagnostics_error_audio_start">Puzru 無法開始音訊導向。</string>
+    <string name="diagnostics_error_audio_preparation">Puzru 無法準備通訊音訊。</string>
     <string name="diagnostics_error_request_rejected">聽筒音訊導向要求未獲接受。</string>
     <string name="diagnostics_error_not_completed">無法完成音訊導向。</string>
 </resources>

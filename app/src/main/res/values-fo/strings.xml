@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Private Audio</string>
-    <string name="routing_notification_channel">Private Audio</string>
-    <string name="routing_notification_title">Private Audio er tendrað</string>
+    <string name="app_name">Puzru</string>
+    <string name="routing_notification_channel">Puzru</string>
+    <string name="routing_notification_title">Puzru er tendrað</string>
     <string name="routing_notification_text">Bíðar eftir at skifta ljóðið</string>
-    <string name="product_title">Private Audio</string>
+    <string name="product_title">Puzru</string>
     <string name="product_subtitle">Tosa einsliga við AI, sum í einari telefonsamrøðu.</string>
     <string name="state_ready">Klárt</string>
     <string name="state_waiting">Bíðar</string>
@@ -14,18 +14,18 @@
     <string name="floating">Mini</string>
     <string name="settings">Stillingar</string>
     <string name="close">Lat aftur</string>
-    <string name="overlay_controller_description">Flótandi stýring til Private Audio. Støða: %1$s. Stýringar til at tendra, víðka og lata aftur.</string>
+    <string name="overlay_controller_description">Flótandi stýring til Puzru. Støða: %1$s. Stýringar til at tendra, víðka og lata aftur.</string>
     <string name="settings_language">Mál</string>
     <string name="settings_system_default">Vanligt</string>
     <string name="settings_save_diagnostic">Goym greiningarfrágreiðing</string>
     <string name="settings_advanced">Framkomið</string>
-    <string name="settings_about">Um Private Audio</string>
+    <string name="settings_about">Um Puzru</string>
     <string name="settings_privacy_policy">Persónsupolitikkur</string>
-    <string name="settings_privacy_policy_body">Private Audio krevur hvørki kontu ella innritan og biður ikki um mikrofonloyvi. Tað fangar ella tekur ikki ljóð úr mikrofonini upp og tekur heldur ikki samrøður tínar ella ljóðinnihaldið í teimum upp ella goymir tað.\n\nPrivate Audio brúkar upplýsingar úr Android-ljóðskipanini, sum eru neyðugar til ljóðleiðing og greining. Greining kann kanna tøkniliga støðu og metadátur, sum almenn Android-API geva atgongd til, undir hesum metadátur um avspæling og upptøkusessiónir. Metadátur um upptøkusessiónir eru tøkniligar upplýsingar úr ljóðskipanini; Private Audio fangar ikki mikrofonljóðið, sum er knýtt at hesum sessiónum. Greiningarupplýsingar kunnu fevna um útgávur av forritinum og Android, upplýsingar um tól og slag, upplýsingar um tilgongd og støðu hjá forritinum, tøk og núverandi ljóðtól, almennar metadátur um uppseting av avspæling og upptøku, umframt royndir at leiða ljóð, úrslit, tíðarseting og tøkniligar hendingar.\n\nForritsval verða goymd lokalt í privatu forritsgoymsluni hjá Private Audio. Greiningarupplýsingar verða gjørdar og viðgjørdar á tólinum hjá tær og kunnu vera í lokalu støðuni hjá forritinum, meðan tað koyrir. Frágreiðingar verða ikki sjálvvirkandi goymdar ella sendar. Ein frágreiðing, sum verður goymd varandi, verður bert gjørd uttan fyri privatu forritsgoymsluna hjá Private Audio, tá tú týðiliga velur Goym greiningarfrágreiðing og velur eitt goymslustað ella eina tænastu gjøgnum Android. Eftir útflutning stýrir valda goymslustaðið ella tænastan—ikki Private Audio—viðgerðini, varðveitingini og strikingini av hesum avritinum.\n\nNúverandi útgáva biður ikki um internetloyvi hjá Android, hevur onga Private Audio-bakendaskipan ella netflutningsleið og inniheldur ongar tænastur ella SDK til greining, lýsingar ella fráboðan um brek. Hon sendir í løtuni ikki greiningarfrágreiðingar til mennaran ella ein Private Audio-ambætara, so Private Audio hevur ongar greiningarupplýsingar goymdar á ambætara.\n\nDátur, sum forritið eigur, eru undantiknar skýtrygdaravriti hjá Android og flutningi millum tól. Lokal forritsval verða verandi í privatu forritsgoymsluni, til tey verða broytt, ella forritsdáturnar verða strikaðar; fyribils greiningarstøða er ikki ein goymd frágreiðing. Útfluttar frágreiðingar verða verandi undir stýring hjá goymslustaðnum ella tænastuni, sum tú valdi.</string>
+    <string name="settings_privacy_policy_body">Puzru krevur hvørki kontu ella innritan og biður ikki um mikrofonloyvi. Tað fangar ella tekur ikki ljóð úr mikrofonini upp og tekur heldur ikki samrøður tínar ella ljóðinnihaldið í teimum upp ella goymir tað.\n\nPuzru brúkar upplýsingar úr Android-ljóðskipanini, sum eru neyðugar til ljóðleiðing og greining. Greining kann kanna tøkniliga støðu og metadátur, sum almenn Android-API geva atgongd til, undir hesum metadátur um avspæling og upptøkusessiónir. Metadátur um upptøkusessiónir eru tøkniligar upplýsingar úr ljóðskipanini; Puzru fangar ikki mikrofonljóðið, sum er knýtt at hesum sessiónum. Greiningarupplýsingar kunnu fevna um útgávur av forritinum og Android, upplýsingar um tól og slag, upplýsingar um tilgongd og støðu hjá forritinum, tøk og núverandi ljóðtól, almennar metadátur um uppseting av avspæling og upptøku, umframt royndir at leiða ljóð, úrslit, tíðarseting og tøkniligar hendingar.\n\nForritsval verða goymd lokalt í privatu forritsgoymsluni hjá Puzru. Greiningarupplýsingar verða gjørdar og viðgjørdar á tólinum hjá tær og kunnu vera í lokalu støðuni hjá forritinum, meðan tað koyrir. Frágreiðingar verða ikki sjálvvirkandi goymdar ella sendar. Ein frágreiðing, sum verður goymd varandi, verður bert gjørd uttan fyri privatu forritsgoymsluna hjá Puzru, tá tú týðiliga velur Goym greiningarfrágreiðing og velur eitt goymslustað ella eina tænastu gjøgnum Android. Eftir útflutning stýrir valda goymslustaðið ella tænastan—ikki Puzru—viðgerðini, varðveitingini og strikingini av hesum avritinum.\n\nNúverandi útgáva biður ikki um internetloyvi hjá Android, hevur onga Puzru-bakendaskipan ella netflutningsleið og inniheldur ongar tænastur ella SDK til greining, lýsingar ella fráboðan um brek. Hon sendir í løtuni ikki greiningarfrágreiðingar til mennaran ella ein Puzru-ambætara, so Puzru hevur ongar greiningarupplýsingar goymdar á ambætara.\n\nDátur, sum forritið eigur, eru undantiknar skýtrygdaravriti hjá Android og flutningi millum tól. Lokal forritsval verða verandi í privatu forritsgoymsluni, til tey verða broytt, ella forritsdáturnar verða strikaðar; fyribils greiningarstøða er ikki ein goymd frágreiðing. Útfluttar frágreiðingar verða verandi undir stýring hjá goymslustaðnum ella tænastuni, sum tú valdi.</string>
     <string name="settings_version">Útgáva %1$s</string>
     <string name="settings_language_android_13_required">Málval í appini krevur Android 13 ella nýggjari. Hetta tólið fylgir skipanarmálinum.</string>
     <string name="settings_proximity_screen">Sløkk skíggjan nær oyranum</string>
-    <string name="settings_about_body">Private Audio hjálpir við at skifta stuðlað røddarljóð til innbygda hátalaran ovast á telefonini, sum verður brúktur við oyrað undir telefonsamrøðum.</string>
+    <string name="settings_about_body">Puzru hjálpir við at skifta stuðlað røddarljóð til innbygda hátalaran ovast á telefonini, sum verður brúktur við oyrað undir telefonsamrøðum.</string>
     <string name="diagnostic_report_saved">Greiningarfrágreiðingin er goymd.</string>
     <string name="diagnostic_report_save_failed">Bar ikki til at goyma greiningarfrágreiðingina.</string>
 
@@ -34,7 +34,7 @@
     <string name="diagnostics_system_check">SKIPANARKANNING</string>
     <string name="diagnostics_earpiece">Oyrahátalari</string>
     <string name="diagnostics_proximity_sensor">Nærleikaskynjari</string>
-    <string name="diagnostics_private_audio">PRIVATE AUDIO</string>
+    <string name="diagnostics_private_audio">PUZRU</string>
     <string name="diagnostics_routing">Ljóðbeining</string>
     <string name="diagnostics_status">Støða</string>
     <string name="diagnostics_audio_route">Ljóðúttak</string>
@@ -59,8 +59,8 @@
     <string name="diagnostics_route_other">Annað</string>
     <string name="diagnostics_error_blocked_by_system">Skipanin forðaði ljóðbeiningini.</string>
     <string name="diagnostics_error_session_ended">Ljóðsetan endaði, áðrenn ljóðbeiningin var liðug.</string>
-    <string name="diagnostics_error_audio_start">Private Audio fekk ikki sett ljóðbeiningina í gongd.</string>
-    <string name="diagnostics_error_audio_preparation">Private Audio fekk ikki fyrireikað samskiftisljóð.</string>
+    <string name="diagnostics_error_audio_start">Puzru fekk ikki sett ljóðbeiningina í gongd.</string>
+    <string name="diagnostics_error_audio_preparation">Puzru fekk ikki fyrireikað samskiftisljóð.</string>
     <string name="diagnostics_error_request_rejected">Umbønin um at beina ljóðið til oyrahátalaran varð ikki góðtikin.</string>
     <string name="diagnostics_error_not_completed">Tað bar ikki til at fullføra ljóðbeiningina.</string>
 </resources>

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Private Audio</string>
-    <string name="routing_notification_channel">Private Audio</string>
-    <string name="routing_notification_title">Private Audio este activat</string>
+    <string name="app_name">Puzru</string>
+    <string name="routing_notification_channel">Puzru</string>
+    <string name="routing_notification_title">Puzru este activat</string>
     <string name="routing_notification_text">Se așteaptă redirecționarea sunetului</string>
-    <string name="product_title">Private Audio</string>
+    <string name="product_title">Puzru</string>
     <string name="product_subtitle">Vorbește în privat cu AI, ca într-un apel telefonic.</string>
     <string name="state_ready">Pregătit</string>
     <string name="state_waiting">În așteptare</string>
@@ -14,18 +14,18 @@
     <string name="floating">Mini</string>
     <string name="settings">Setări</string>
     <string name="close">Închide</string>
-    <string name="overlay_controller_description">Controler flotant Private Audio. Stare: %1$s. Comenzi pentru activare, extindere și închidere.</string>
+    <string name="overlay_controller_description">Controler flotant Puzru. Stare: %1$s. Comenzi pentru activare, extindere și închidere.</string>
     <string name="settings_language">Limbă</string>
     <string name="settings_system_default">Prestabilit de sistem</string>
     <string name="settings_save_diagnostic">Salvează raportul de diagnosticare</string>
     <string name="settings_advanced">Avansate</string>
-    <string name="settings_about">Despre Private Audio</string>
+    <string name="settings_about">Despre Puzru</string>
     <string name="settings_privacy_policy">Politica de confidențialitate</string>
-    <string name="settings_privacy_policy_body">Private Audio nu necesită un cont sau autentificare și nu solicită permisiunea pentru microfon. Nu captează și nu înregistrează sunetul microfonului și nu înregistrează sau stochează conversațiile dvs. ori conținutul audio al acestora.\n\nPrivate Audio utilizează informațiile sistemului audio Android necesare pentru rutare și diagnosticare. Diagnosticarea poate examina starea tehnică și metadatele expuse de API-urile Android publice, inclusiv metadatele de redare și ale sesiunilor de înregistrare. Metadatele sesiunilor de înregistrare sunt informații tehnice ale sistemului audio; Private Audio nu captează sunetul microfonului asociat acestor sesiuni. Informațiile de diagnosticare pot include versiunile aplicației și Android, informații despre dispozitiv și model, informații despre procesul și starea aplicației, dispozitivele audio disponibile și actuale, metadatele publice de configurare a redării și înregistrării, precum și încercările de rutare, rezultatele, temporizarea și evenimentele tehnice ale acestora.\n\nPreferințele aplicației sunt stocate local în spațiul de stocare privat al aplicației Private Audio. Informațiile de diagnosticare sunt generate și procesate pe dispozitivul dvs. și pot exista în starea locală a aplicației în timpul funcționării. Rapoartele nu sunt salvate sau trimise automat. Un raport persistent este creat în afara spațiului de stocare privat al aplicației Private Audio numai când alegeți în mod explicit Salvează raportul de diagnosticare și selectați o destinație prin Android. După export, locația sau serviciul selectat, nu Private Audio, controlează gestionarea, păstrarea și ștergerea copiei respective.\n\nVersiunea actuală nu solicită permisiunea Android pentru internet, nu are un sistem backend Private Audio sau o cale de transmitere prin rețea și nu include servicii ori SDK-uri de analiză, publicitate sau raportare a blocărilor. În prezent, nu trimite rapoarte de diagnosticare dezvoltatorului sau unui server Private Audio, astfel încât Private Audio nu păstrează informații de diagnosticare pe niciun server.\n\nDatele care aparțin aplicației sunt excluse de la copierea de rezervă în cloud Android și de la transferul între dispozitive. Preferințele locale rămân în spațiul de stocare privat al aplicației până când sunt modificate sau datele aplicației sunt eliminate; starea de diagnosticare tranzitorie nu este un raport salvat. Rapoartele exportate rămân sub controlul locației sau serviciului selectat.</string>
+    <string name="settings_privacy_policy_body">Puzru nu necesită un cont sau autentificare și nu solicită permisiunea pentru microfon. Nu captează și nu înregistrează sunetul microfonului și nu înregistrează sau stochează conversațiile dvs. ori conținutul audio al acestora.\n\nPuzru utilizează informațiile sistemului audio Android necesare pentru rutare și diagnosticare. Diagnosticarea poate examina starea tehnică și metadatele expuse de API-urile Android publice, inclusiv metadatele de redare și ale sesiunilor de înregistrare. Metadatele sesiunilor de înregistrare sunt informații tehnice ale sistemului audio; Puzru nu captează sunetul microfonului asociat acestor sesiuni. Informațiile de diagnosticare pot include versiunile aplicației și Android, informații despre dispozitiv și model, informații despre procesul și starea aplicației, dispozitivele audio disponibile și actuale, metadatele publice de configurare a redării și înregistrării, precum și încercările de rutare, rezultatele, temporizarea și evenimentele tehnice ale acestora.\n\nPreferințele aplicației sunt stocate local în spațiul de stocare privat al aplicației Puzru. Informațiile de diagnosticare sunt generate și procesate pe dispozitivul dvs. și pot exista în starea locală a aplicației în timpul funcționării. Rapoartele nu sunt salvate sau trimise automat. Un raport persistent este creat în afara spațiului de stocare privat al aplicației Puzru numai când alegeți în mod explicit Salvează raportul de diagnosticare și selectați o destinație prin Android. După export, locația sau serviciul selectat, nu Puzru, controlează gestionarea, păstrarea și ștergerea copiei respective.\n\nVersiunea actuală nu solicită permisiunea Android pentru internet, nu are un sistem backend Puzru sau o cale de transmitere prin rețea și nu include servicii ori SDK-uri de analiză, publicitate sau raportare a blocărilor. În prezent, nu trimite rapoarte de diagnosticare dezvoltatorului sau unui server Puzru, astfel încât Puzru nu păstrează informații de diagnosticare pe niciun server.\n\nDatele care aparțin aplicației sunt excluse de la copierea de rezervă în cloud Android și de la transferul între dispozitive. Preferințele locale rămân în spațiul de stocare privat al aplicației până când sunt modificate sau datele aplicației sunt eliminate; starea de diagnosticare tranzitorie nu este un raport salvat. Rapoartele exportate rămân sub controlul locației sau serviciului selectat.</string>
     <string name="settings_version">Versiunea %1$s</string>
     <string name="settings_language_android_13_required">Selectarea limbii în aplicație necesită Android 13 sau o versiune ulterioară. Acest dispozitiv folosește limba sistemului.</string>
     <string name="settings_proximity_screen">Oprește ecranul lângă ureche</string>
-    <string name="settings_about_body">Private Audio ajută la redirecționarea sunetului vocal acceptat către casca încorporată a telefonului.</string>
+    <string name="settings_about_body">Puzru ajută la redirecționarea sunetului vocal acceptat către casca încorporată a telefonului.</string>
     <string name="diagnostic_report_saved">Raportul de diagnosticare a fost salvat.</string>
     <string name="diagnostic_report_save_failed">Raportul de diagnosticare nu a putut fi salvat.</string>
 
@@ -34,7 +34,7 @@
     <string name="diagnostics_system_check">VERIFICAREA SISTEMULUI</string>
     <string name="diagnostics_earpiece">Casca telefonului</string>
     <string name="diagnostics_proximity_sensor">Senzor de proximitate</string>
-    <string name="diagnostics_private_audio">Private Audio</string>
+    <string name="diagnostics_private_audio">Puzru</string>
     <string name="diagnostics_routing">Redirecționare audio</string>
     <string name="diagnostics_status">Stare</string>
     <string name="diagnostics_audio_route">Ieșire audio</string>
@@ -59,8 +59,8 @@
     <string name="diagnostics_route_other">Altul</string>
     <string name="diagnostics_error_blocked_by_system">Redirecționarea a fost blocată de sistem.</string>
     <string name="diagnostics_error_session_ended">Sesiunea audio s-a încheiat înainte de finalizarea redirecționării.</string>
-    <string name="diagnostics_error_audio_start">Private Audio nu a putut iniția redirecționarea audio.</string>
-    <string name="diagnostics_error_audio_preparation">Private Audio nu a putut pregăti sunetul pentru comunicare.</string>
+    <string name="diagnostics_error_audio_start">Puzru nu a putut iniția redirecționarea audio.</string>
+    <string name="diagnostics_error_audio_preparation">Puzru nu a putut pregăti sunetul pentru comunicare.</string>
     <string name="diagnostics_error_request_rejected">Solicitarea de redirecționare către casca telefonului nu a fost acceptată.</string>
     <string name="diagnostics_error_not_completed">Redirecționarea nu a putut fi finalizată.</string>
 </resources>

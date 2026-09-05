@@ -4,6 +4,9 @@
 
 `private-audio-router`
 
+The repository retains that technical name for continuity. The current public product
+name is **Puzru**.
+
 ## What this project is
 
 An experimental Android utility intended to allow communication audio from compatible applications to use the phone's built-in earpiece. The intended experience is similar to a normal phone call: the user speaks naturally into the phone and hears the remote or AI voice privately through the earpiece instead of broadcasting it through the main loudspeaker.

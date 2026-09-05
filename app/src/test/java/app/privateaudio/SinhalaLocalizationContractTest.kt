@@ -32,8 +32,8 @@ class SinhalaLocalizationContractTest {
         assertEquals("ක්‍රියාවිරහිතයි", resourceValue("diagnostics_off"))
         assertFalse(resourceValue("state_active") == resourceValue("diagnostics_on"))
 
-        assertEquals("Private Audio", resourceValue("app_name"))
-        assertEquals("Private Audio", resourceValue("product_title"))
+        assertEquals("Puzru", resourceValue("app_name"))
+        assertEquals("Puzru", resourceValue("product_title"))
         assertEquals("සැකසීම්", resourceValue("settings"))
         assertEquals("පෙරනිමි", resourceValue("settings_system_default"))
         assertEquals("උසස්", resourceValue("settings_advanced"))

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Private Audio</string>
-    <string name="routing_notification_channel">Private Audio</string>
-    <string name="routing_notification_title">Private Audio ჩართულია</string>
+    <string name="app_name">Puzru</string>
+    <string name="routing_notification_channel">Puzru</string>
+    <string name="routing_notification_title">Puzru ჩართულია</string>
     <string name="routing_notification_text">ელოდება გამომავალი აუდიოს გადართვას</string>
-    <string name="product_title">Private Audio</string>
+    <string name="product_title">Puzru</string>
     <string name="product_subtitle">AI-სთან პირადად ისაუბრეთ, როგორც სატელეფონო ზარის დროს.</string>
     <string name="state_ready">მზადაა</string>
     <string name="state_waiting">მოლოდინშია</string>
@@ -14,18 +14,18 @@
     <string name="floating">მინი</string>
     <string name="settings">პარამეტრები</string>
     <string name="close">დახურვა</string>
-    <string name="overlay_controller_description">Private Audio-ს მცურავი მართვის პანელი. სტატუსი: %1$s. ჩართვის/გამორთვის, გაშლისა და დახურვის მართვის ელემენტები.</string>
+    <string name="overlay_controller_description">Puzru-ს მცურავი მართვის პანელი. სტატუსი: %1$s. ჩართვის/გამორთვის, გაშლისა და დახურვის მართვის ელემენტები.</string>
     <string name="settings_language">ენა</string>
     <string name="settings_system_default">ნაგულისხმევი</string>
     <string name="settings_save_diagnostic">დიაგნოსტიკის ანგარიშის შენახვა</string>
     <string name="settings_advanced">დამატებითი</string>
-    <string name="settings_about">Private Audio-ს შესახებ</string>
+    <string name="settings_about">Puzru-ს შესახებ</string>
     <string name="settings_privacy_policy">კონფიდენციალურობის პოლიტიკა</string>
-    <string name="settings_privacy_policy_body">Private Audio-ს არ სჭირდება ანგარიში ან შესვლა და არ ითხოვს მიკროფონის ნებართვას. ის არ იღებს ან იწერს მიკროფონის აუდიოს და არ იწერს ან ინახავს თქვენს საუბრებს ან მათ აუდიოშიგთავსს.\n\nPrivate Audio იყენებს Android-ის აუდიოსისტემის ინფორმაციას, რომელიც საჭიროა მარშრუტიზაციისა და დიაგნოსტიკისთვის. დიაგნოსტიკამ შეიძლება შეამოწმოს Android-ის საჯარო API-ებით ხელმისაწვდომი ტექნიკური მდგომარეობა და მეტამონაცემები, მათ შორის დაკვრისა და ჩაწერის სესიის მეტამონაცემები. ჩაწერის სესიის მეტამონაცემები აუდიოსისტემის ტექნიკური ინფორმაციაა; Private Audio არ იღებს ამ სესიებთან დაკავშირებულ მიკროფონის აუდიოს. დიაგნოსტიკური ინფორმაცია შეიძლება მოიცავდეს აპისა და Android-ის ვერსიებს, მოწყობილობისა და მოდელის ინფორმაციას, აპის პროცესსა და მდგომარეობას, ხელმისაწვდომ და მიმდინარე აუდიომოწყობილობებს, დაკვრისა და ჩაწერის საჯარო კონფიგურაციის მეტამონაცემებს, ასევე მარშრუტიზაციის მცდელობებს, შედეგებს, დროსა და ტექნიკურ მოვლენებს.\n\nაპის პარამეტრები ლოკალურად ინახება Private Audio-ს აპის პირად საცავში. დიაგნოსტიკური ინფორმაცია თქვენს მოწყობილობაზე იქმნება და მუშავდება და შეიძლება არსებობდეს გაშვებული აპის ლოკალურ მდგომარეობაში. ანგარიშები ავტომატურად არ ინახება ან იგზავნება. მუდმივი ანგარიში Private Audio-ს პირადი საცავის გარეთ მხოლოდ მაშინ იქმნება, როცა აშკარად ირჩევთ დიაგნოსტიკური ანგარიშის შენახვას და Android-ის მეშვეობით დანიშნულებას. ექსპორტის შემდეგ ამ ასლის დამუშავებას, შენახვასა და წაშლას აკონტროლებს არჩეული ადგილი ან სერვისი და არა Private Audio.\n\nმიმდინარე ვერსია არ ითხოვს Android-ის ინტერნეტის ნებართვას, არ აქვს Private Audio-ს სერვერული ნაწილი ან ქსელით გადაცემის გზა და არ შეიცავს ანალიტიკის, რეკლამის ან ავარიის ანგარიშგების სერვისებს ან SDK-ებს. ის ამჟამად არ აგზავნის დიაგნოსტიკურ ანგარიშებს დეველოპერთან ან Private Audio-ს სერვერზე, ამიტომ Private Audio სერვერზე დიაგნოსტიკას არ ინახავს.\n\nაპის კუთვნილი მონაცემები გამორიცხულია Android-ის ღრუბლოვანი სარეზერვო ასლიდან და მოწყობილობებს შორის გადატანიდან. ლოკალური პარამეტრები აპის პირად საცავში რჩება, სანამ შეიცვლება ან აპის მონაცემები წაიშლება; დროებითი დიაგნოსტიკური მდგომარეობა შენახული ანგარიში არ არის. ექსპორტირებული ანგარიშები თქვენ მიერ არჩეული ადგილის ან სერვისის კონტროლის ქვეშ რჩება.</string>
+    <string name="settings_privacy_policy_body">Puzru-ს არ სჭირდება ანგარიში ან შესვლა და არ ითხოვს მიკროფონის ნებართვას. ის არ იღებს ან იწერს მიკროფონის აუდიოს და არ იწერს ან ინახავს თქვენს საუბრებს ან მათ აუდიოშიგთავსს.\n\nPuzru იყენებს Android-ის აუდიოსისტემის ინფორმაციას, რომელიც საჭიროა მარშრუტიზაციისა და დიაგნოსტიკისთვის. დიაგნოსტიკამ შეიძლება შეამოწმოს Android-ის საჯარო API-ებით ხელმისაწვდომი ტექნიკური მდგომარეობა და მეტამონაცემები, მათ შორის დაკვრისა და ჩაწერის სესიის მეტამონაცემები. ჩაწერის სესიის მეტამონაცემები აუდიოსისტემის ტექნიკური ინფორმაციაა; Puzru არ იღებს ამ სესიებთან დაკავშირებულ მიკროფონის აუდიოს. დიაგნოსტიკური ინფორმაცია შეიძლება მოიცავდეს აპისა და Android-ის ვერსიებს, მოწყობილობისა და მოდელის ინფორმაციას, აპის პროცესსა და მდგომარეობას, ხელმისაწვდომ და მიმდინარე აუდიომოწყობილობებს, დაკვრისა და ჩაწერის საჯარო კონფიგურაციის მეტამონაცემებს, ასევე მარშრუტიზაციის მცდელობებს, შედეგებს, დროსა და ტექნიკურ მოვლენებს.\n\nაპის პარამეტრები ლოკალურად ინახება Puzru-ს აპის პირად საცავში. დიაგნოსტიკური ინფორმაცია თქვენს მოწყობილობაზე იქმნება და მუშავდება და შეიძლება არსებობდეს გაშვებული აპის ლოკალურ მდგომარეობაში. ანგარიშები ავტომატურად არ ინახება ან იგზავნება. მუდმივი ანგარიში Puzru-ს პირადი საცავის გარეთ მხოლოდ მაშინ იქმნება, როცა აშკარად ირჩევთ დიაგნოსტიკური ანგარიშის შენახვას და Android-ის მეშვეობით დანიშნულებას. ექსპორტის შემდეგ ამ ასლის დამუშავებას, შენახვასა და წაშლას აკონტროლებს არჩეული ადგილი ან სერვისი და არა Puzru.\n\nმიმდინარე ვერსია არ ითხოვს Android-ის ინტერნეტის ნებართვას, არ აქვს Puzru-ს სერვერული ნაწილი ან ქსელით გადაცემის გზა და არ შეიცავს ანალიტიკის, რეკლამის ან ავარიის ანგარიშგების სერვისებს ან SDK-ებს. ის ამჟამად არ აგზავნის დიაგნოსტიკურ ანგარიშებს დეველოპერთან ან Puzru-ს სერვერზე, ამიტომ Puzru სერვერზე დიაგნოსტიკას არ ინახავს.\n\nაპის კუთვნილი მონაცემები გამორიცხულია Android-ის ღრუბლოვანი სარეზერვო ასლიდან და მოწყობილობებს შორის გადატანიდან. ლოკალური პარამეტრები აპის პირად საცავში რჩება, სანამ შეიცვლება ან აპის მონაცემები წაიშლება; დროებითი დიაგნოსტიკური მდგომარეობა შენახული ანგარიში არ არის. ექსპორტირებული ანგარიშები თქვენ მიერ არჩეული ადგილის ან სერვისის კონტროლის ქვეშ რჩება.</string>
     <string name="settings_version">ვერსია %1$s</string>
     <string name="settings_language_android_13_required">აპში ენის არჩევისთვის საჭიროა Android 13 ან უფრო ახალი ვერსია. ეს მოწყობილობა სისტემის ენას იყენებს.</string>
     <string name="settings_proximity_screen">ეკრანის გამორთვა ტელეფონის ყურთან მიტანისას</string>
-    <string name="settings_about_body">Private Audio გეხმარებათ, მხარდაჭერილი ხმოვანი აუდიო თქვენი ტელეფონის ჩაშენებულ ყურმილზე გადართოთ.</string>
+    <string name="settings_about_body">Puzru გეხმარებათ, მხარდაჭერილი ხმოვანი აუდიო თქვენი ტელეფონის ჩაშენებულ ყურმილზე გადართოთ.</string>
     <string name="diagnostic_report_saved">დიაგნოსტიკის ანგარიში შენახულია.</string>
     <string name="diagnostic_report_save_failed">დიაგნოსტიკის ანგარიშის შენახვა ვერ მოხერხდა.</string>
 
@@ -34,7 +34,7 @@
     <string name="diagnostics_system_check">სისტემის შემოწმება</string>
     <string name="diagnostics_earpiece">ყურმილი</string>
     <string name="diagnostics_proximity_sensor">სიახლოვის სენსორი</string>
-    <string name="diagnostics_private_audio">Private Audio</string>
+    <string name="diagnostics_private_audio">Puzru</string>
     <string name="diagnostics_routing">აუდიოს გადართვა</string>
     <string name="diagnostics_status">სტატუსი</string>
     <string name="diagnostics_audio_route">აუდიოგამომავალი</string>
@@ -59,8 +59,8 @@
     <string name="diagnostics_route_other">სხვა</string>
     <string name="diagnostics_error_blocked_by_system">სისტემამ აუდიოს გადართვა დაბლოკა.</string>
     <string name="diagnostics_error_session_ended">აუდიოს სესია გადართვის დასრულებამდე დასრულდა.</string>
-    <string name="diagnostics_error_audio_start">Private Audio-მ აუდიოს გადართვა ვერ დაიწყო.</string>
-    <string name="diagnostics_error_audio_preparation">Private Audio-მ საკომუნიკაციო აუდიო ვერ მოამზადა.</string>
+    <string name="diagnostics_error_audio_start">Puzru-მ აუდიოს გადართვა ვერ დაიწყო.</string>
+    <string name="diagnostics_error_audio_preparation">Puzru-მ საკომუნიკაციო აუდიო ვერ მოამზადა.</string>
     <string name="diagnostics_error_request_rejected">სისტემამ ყურმილზე გადართვის მოთხოვნა არ მიიღო.</string>
     <string name="diagnostics_error_not_completed">აუდიოს გადართვა ვერ დასრულდა.</string>
 </resources>

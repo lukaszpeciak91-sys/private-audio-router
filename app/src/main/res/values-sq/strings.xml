@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Private Audio</string>
-    <string name="routing_notification_channel">Private Audio</string>
-    <string name="routing_notification_title">Private Audio është ndezur</string>
+    <string name="app_name">Puzru</string>
+    <string name="routing_notification_channel">Puzru</string>
+    <string name="routing_notification_title">Puzru është ndezur</string>
     <string name="routing_notification_text">Në pritje për ndërrimin e audios</string>
-    <string name="product_title">Private Audio</string>
+    <string name="product_title">Puzru</string>
     <string name="product_subtitle">Fol privatisht me AI, si në një telefonatë.</string>
     <string name="state_ready">Gati</string>
     <string name="state_waiting">Në pritje</string>
@@ -14,18 +14,18 @@
     <string name="floating">Mini</string>
     <string name="settings">Cilësimet</string>
     <string name="close">Mbyll</string>
-    <string name="overlay_controller_description">Kontrolluesi lundrues i Private Audio. Statusi: %1$s. Kontrollet për ndezjen, zgjerimin dhe mbylljen.</string>
+    <string name="overlay_controller_description">Kontrolluesi lundrues i Puzru. Statusi: %1$s. Kontrollet për ndezjen, zgjerimin dhe mbylljen.</string>
     <string name="settings_language">Gjuha</string>
     <string name="settings_system_default">Parazgjedhja</string>
     <string name="settings_save_diagnostic">Ruaj raportin diagnostikues</string>
     <string name="settings_advanced">Të avancuara</string>
-    <string name="settings_about">Rreth Private Audio</string>
+    <string name="settings_about">Rreth Puzru</string>
     <string name="settings_privacy_policy">Politika e privatësisë</string>
-    <string name="settings_privacy_policy_body">Private Audio nuk kërkon llogari ose identifikim dhe nuk kërkon leje për mikrofonin. Nuk kap apo regjistron audion e mikrofonit dhe nuk regjistron apo ruan bisedat tuaja ose përmbajtjen e tyre audio.\n\nPrivate Audio përdor informacionin e sistemit audio të Android që nevojitet për drejtimin dhe diagnostikimin. Diagnostikimi mund të shqyrtojë gjendjen teknike dhe metadatat që bëhen të disponueshme nga API-të publike të Android, duke përfshirë metadatat e riprodhimit dhe të sesioneve të regjistrimit. Metadatat e sesioneve të regjistrimit janë informacion teknik i sistemit audio; Private Audio nuk kap audion e mikrofonit të lidhur me ato sesione. Informacioni diagnostikues mund të përfshijë versionet e aplikacionit dhe të Android, informacionin për pajisjen dhe modelin, informacionin për procesin dhe gjendjen e aplikacionit, pajisjet audio të disponueshme dhe aktuale, metadatat publike të konfigurimit të riprodhimit dhe regjistrimit, si edhe përpjekjet e drejtimit, rezultatet, kohën dhe ngjarjet teknike.\n\nPreferencat e aplikacionit ruhen lokalisht në hapësirën private të ruajtjes së aplikacionit Private Audio. Informacioni diagnostikues krijohet dhe përpunohet në pajisjen tuaj dhe mund të ekzistojë në gjendjen lokale të aplikacionit në ekzekutim. Raportet nuk ruhen ose dërgohen automatikisht. Një raport i përhershëm krijohet jashtë hapësirës private të ruajtjes së aplikacionit Private Audio vetëm kur zgjidhni shprehimisht Ruaj raportin diagnostikues dhe përzgjidhni një destinacion përmes Android. Pas eksportimit, vendndodhja ose shërbimi i përzgjedhur—jo Private Audio—kontrollon trajtimin, ruajtjen dhe fshirjen e asaj kopjeje.\n\nVersioni aktual nuk kërkon lejen e internetit të Android, nuk ka sistem backend të Private Audio ose rrugë transmetimi në rrjet dhe nuk përfshin shërbime ose SDK për analitikë, reklamim apo raportim të ndërprerjeve. Aktualisht nuk i dërgon raporte diagnostikuese zhvilluesit ose një serveri të Private Audio, prandaj Private Audio nuk ruan informacion diagnostikues në server.\n\nTë dhënat në pronësi të aplikacionit përjashtohen nga rezervimi në renë kompjuterike të Android dhe transferimi nga një pajisje në tjetrën. Preferencat lokale mbeten në hapësirën private të ruajtjes së aplikacionit derisa të ndryshohen ose të hiqen të dhënat e aplikacionit; gjendja e përkohshme diagnostikuese nuk është raport i ruajtur. Raportet e eksportuara mbeten nën kontrollin e vendndodhjes ose shërbimit që përzgjodhët.</string>
+    <string name="settings_privacy_policy_body">Puzru nuk kërkon llogari ose identifikim dhe nuk kërkon leje për mikrofonin. Nuk kap apo regjistron audion e mikrofonit dhe nuk regjistron apo ruan bisedat tuaja ose përmbajtjen e tyre audio.\n\nPuzru përdor informacionin e sistemit audio të Android që nevojitet për drejtimin dhe diagnostikimin. Diagnostikimi mund të shqyrtojë gjendjen teknike dhe metadatat që bëhen të disponueshme nga API-të publike të Android, duke përfshirë metadatat e riprodhimit dhe të sesioneve të regjistrimit. Metadatat e sesioneve të regjistrimit janë informacion teknik i sistemit audio; Puzru nuk kap audion e mikrofonit të lidhur me ato sesione. Informacioni diagnostikues mund të përfshijë versionet e aplikacionit dhe të Android, informacionin për pajisjen dhe modelin, informacionin për procesin dhe gjendjen e aplikacionit, pajisjet audio të disponueshme dhe aktuale, metadatat publike të konfigurimit të riprodhimit dhe regjistrimit, si edhe përpjekjet e drejtimit, rezultatet, kohën dhe ngjarjet teknike.\n\nPreferencat e aplikacionit ruhen lokalisht në hapësirën private të ruajtjes së aplikacionit Puzru. Informacioni diagnostikues krijohet dhe përpunohet në pajisjen tuaj dhe mund të ekzistojë në gjendjen lokale të aplikacionit në ekzekutim. Raportet nuk ruhen ose dërgohen automatikisht. Një raport i përhershëm krijohet jashtë hapësirës private të ruajtjes së aplikacionit Puzru vetëm kur zgjidhni shprehimisht Ruaj raportin diagnostikues dhe përzgjidhni një destinacion përmes Android. Pas eksportimit, vendndodhja ose shërbimi i përzgjedhur—jo Puzru—kontrollon trajtimin, ruajtjen dhe fshirjen e asaj kopjeje.\n\nVersioni aktual nuk kërkon lejen e internetit të Android, nuk ka sistem backend të Puzru ose rrugë transmetimi në rrjet dhe nuk përfshin shërbime ose SDK për analitikë, reklamim apo raportim të ndërprerjeve. Aktualisht nuk i dërgon raporte diagnostikuese zhvilluesit ose një serveri të Puzru, prandaj Puzru nuk ruan informacion diagnostikues në server.\n\nTë dhënat në pronësi të aplikacionit përjashtohen nga rezervimi në renë kompjuterike të Android dhe transferimi nga një pajisje në tjetrën. Preferencat lokale mbeten në hapësirën private të ruajtjes së aplikacionit derisa të ndryshohen ose të hiqen të dhënat e aplikacionit; gjendja e përkohshme diagnostikuese nuk është raport i ruajtur. Raportet e eksportuara mbeten nën kontrollin e vendndodhjes ose shërbimit që përzgjodhët.</string>
     <string name="settings_version">Versioni %1$s</string>
     <string name="settings_language_android_13_required">Përzgjedhja e gjuhës brenda aplikacionit kërkon Android 13 ose version më të ri. Kjo pajisje përdor gjuhën e sistemit.</string>
     <string name="settings_proximity_screen">Fike ekranin pranë veshit</string>
-    <string name="settings_about_body">Private Audio ndihmon në kalimin e audios zanore të mbështetur te marrësi i integruar i telefonit.</string>
+    <string name="settings_about_body">Puzru ndihmon në kalimin e audios zanore të mbështetur te marrësi i integruar i telefonit.</string>
     <string name="diagnostic_report_saved">Raporti diagnostikues u ruajt.</string>
     <string name="diagnostic_report_save_failed">Raporti diagnostikues nuk mund të ruhej.</string>
 
@@ -34,7 +34,7 @@
     <string name="diagnostics_system_check">KONTROLLI I SISTEMIT</string>
     <string name="diagnostics_earpiece">Marrësi</string>
     <string name="diagnostics_proximity_sensor">Sensori i afërsisë</string>
-    <string name="diagnostics_private_audio">PRIVATE AUDIO</string>
+    <string name="diagnostics_private_audio">PUZRU</string>
     <string name="diagnostics_routing">Drejtimi i audios</string>
     <string name="diagnostics_status">Statusi</string>
     <string name="diagnostics_audio_route">Dalja e audios</string>
@@ -59,8 +59,8 @@
     <string name="diagnostics_route_other">Tjetër</string>
     <string name="diagnostics_error_blocked_by_system">Drejtimi i audios u bllokua nga sistemi.</string>
     <string name="diagnostics_error_session_ended">Sesioni i audios përfundoi para se të përfundonte drejtimi.</string>
-    <string name="diagnostics_error_audio_start">Private Audio nuk mundi të niste drejtimin e audios.</string>
-    <string name="diagnostics_error_audio_preparation">Private Audio nuk mundi të përgatiste audion e komunikimit.</string>
+    <string name="diagnostics_error_audio_start">Puzru nuk mundi të niste drejtimin e audios.</string>
+    <string name="diagnostics_error_audio_preparation">Puzru nuk mundi të përgatiste audion e komunikimit.</string>
     <string name="diagnostics_error_request_rejected">Kërkesa për drejtimin e audios te marrësi nuk u pranua.</string>
     <string name="diagnostics_error_not_completed">Drejtimi i audios nuk mund të përfundonte.</string>
 </resources>

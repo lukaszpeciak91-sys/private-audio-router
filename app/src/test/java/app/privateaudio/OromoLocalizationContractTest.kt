@@ -44,8 +44,8 @@ class OromoLocalizationContractTest {
 
     @Test
     fun oromoProductStatesAndAudioOutputsRemainDistinct() {
-        assertEquals("Private Audio", resourceValue("app_name"))
-        assertEquals("Private Audio", resourceValue("product_title"))
+        assertEquals("Puzru", resourceValue("app_name"))
+        assertEquals("Puzru", resourceValue("product_title"))
 
         val runtimeStates = listOf("state_ready", "state_waiting", "state_active", "state_error")
             .map(::resourceValue)
@@ -79,9 +79,9 @@ class OromoLocalizationContractTest {
             .forEach { guard -> assertTrue("Missing microphone/conversation guard: $guard", paragraphs[0].contains(guard)) }
         listOf("API Android uummataaf banaa ta\\'een", "meetadaataa taphachiisuu fi meetadaataa galmee sagalee", "sagalee maayikiroofonii galmee sanaan walqabatu hin qabatu")
             .forEach { guard -> assertTrue("Missing public-metadata guard: $guard", paragraphs[1].contains(guard)) }
-        listOf("kuusaa dhuunfaa appii Private Audio", "meeshaa kee irratti uumamee adeemsifama", "Gabaasni ofumaan hin kuufamu yookiin hin ergamu", "karaa Android bakka itti kuufamu filattu qofa", "Private Audio miti")
+        listOf("kuusaa dhuunfaa appii Puzru", "meeshaa kee irratti uumamee adeemsifama", "Gabaasni ofumaan hin kuufamu yookiin hin ergamu", "karaa Android bakka itti kuufamu filattu qofa", "Puzru miti")
             .forEach { guard -> assertTrue("Missing local/export guard: $guard", paragraphs[2].contains(guard)) }
-        listOf("hayyama Intarneetii Android hin gaafatu", "backend Private Audio yookiin karaa dabarsa networkii hin qabu", "kuusaa qorannoo gama sarvarii hin qabu")
+        listOf("hayyama Intarneetii Android hin gaafatu", "backend Puzru yookiin karaa dabarsa networkii hin qabu", "kuusaa qorannoo gama sarvarii hin qabu")
             .forEach { guard -> assertTrue("Missing network guard: $guard", paragraphs[3].contains(guard)) }
         listOf("Kuusni duubaa duumessaa fi dabarsaan meeshaa irraa gara meeshaatti", "haalli qorannoo yeroo gabaabaa gabaasa kuufame miti", "bakka yookiin tajaajila ati filattee")
             .forEach { guard -> assertTrue("Missing retention guard: $guard", paragraphs[4].contains(guard)) }
@@ -89,7 +89,7 @@ class OromoLocalizationContractTest {
 
         val rejected = resourceValue("diagnostics_error_request_rejected")
         assertTrue(rejected.contains("fudhatama hin arganne"))
-        listOf("Android", "sirni", "sirnichi", "bilbilichi", "Private Audio").forEach {
+        listOf("Android", "sirni", "sirnichi", "bilbilichi", "Puzru").forEach {
             assertFalse("Rejected-request error invented actor: $it", rejected.contains(it, ignoreCase = true))
         }
         assertTrue(resourceValue("diagnostics_error_blocked_by_system").contains("Sirnichi"))

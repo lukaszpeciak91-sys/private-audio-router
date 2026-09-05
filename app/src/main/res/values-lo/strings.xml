@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Private Audio</string>
-    <string name="routing_notification_channel">Private Audio</string>
-    <string name="routing_notification_title">Private Audio ເປີດຢູ່</string>
+    <string name="app_name">Puzru</string>
+    <string name="routing_notification_channel">Puzru</string>
+    <string name="routing_notification_title">Puzru ເປີດຢູ່</string>
     <string name="routing_notification_text">ກຳລັງລໍຖ້າປ່ຽນອຸປະກອນສຽງອອກ</string>
-    <string name="product_title">Private Audio</string>
+    <string name="product_title">Puzru</string>
     <string name="product_subtitle">ສົນທະນາກັບ AI ແບບສ່ວນຕົວ ຄືກັບການໂທລະສັບ.</string>
     <string name="state_ready">ພ້ອມ</string>
     <string name="state_waiting">ກຳລັງລໍຖ້າ</string>
@@ -14,18 +14,18 @@
     <string name="floating">ມິນິ</string>
     <string name="settings">ການຕັ້ງຄ່າ</string>
     <string name="close">ປິດ</string>
-    <string name="overlay_controller_description">ຕົວຄວບຄຸມແບບລອຍຂອງ Private Audio. ສະຖານະ: %1$s. ປຸ່ມສຳລັບເປີດ/ປິດ Private Audio, ຂະຫຍາຍແຜງຄວບຄຸມ ແລະ ປິດແຜງຄວບຄຸມ.</string>
+    <string name="overlay_controller_description">ຕົວຄວບຄຸມແບບລອຍຂອງ Puzru. ສະຖານະ: %1$s. ປຸ່ມສຳລັບເປີດ/ປິດ Puzru, ຂະຫຍາຍແຜງຄວບຄຸມ ແລະ ປິດແຜງຄວບຄຸມ.</string>
     <string name="settings_language">ພາສາ</string>
     <string name="settings_system_default">ຄ່າເລີ່ມຕົ້ນ</string>
     <string name="settings_save_diagnostic">ບັນທຶກລາຍງານການວິນິດໄສ</string>
     <string name="settings_advanced">ຂັ້ນສູງ</string>
-    <string name="settings_about">ກ່ຽວກັບ Private Audio</string>
+    <string name="settings_about">ກ່ຽວກັບ Puzru</string>
     <string name="settings_privacy_policy">ນະໂຍບາຍຄວາມເປັນສ່ວນຕົວ</string>
-    <string name="settings_privacy_policy_body">Private Audio ບໍ່ຕ້ອງການບັນຊີ ຫຼື ການລົງຊື່ເຂົ້າໃຊ້ ແລະ ບໍ່ຮ້ອງຂໍສິດອະນຸຍາດໄມໂຄຣໂຟນ. ແອັບບໍ່ຈັບ ຫຼື ບັນທຶກສຽງຈາກໄມໂຄຣໂຟນ, ຫຼື ບັນທຶກ ຫຼື ເກັບຮັກສາການສົນທະນາຂອງທ່ານ ຫຼື ເນື້ອຫາສຽງຂອງມັນ.\n\nPrivate Audio ໃຊ້ຂໍ້ມູນຂອງລະບົບສຽງ Android ທີ່ຈໍາເປັນສໍາລັບການກໍານົດເສັ້ນທາງ ແລະ ການວິນິດໄສ. ການວິນິດໄສອາດກວດສອບສະຖານະທາງເທັກນິກ ແລະ ເມຕາດາຕາທີ່ເຜີຍແຜ່ໂດຍ Android APIs ສາທາລະນະ, ລວມທັງ ເມຕາດາຕາຂອງການຫຼິ້ນສຽງ ແລະ ເຊດຊັນການບັນທຶກ. ເມຕາດາຕາຂອງເຊດຊັນການບັນທຶກແມ່ນຂໍ້ມູນທາງເທັກນິກຂອງລະບົບສຽງ; Private Audio ບໍ່ຈັບສຽງໄມໂຄຣໂຟນທີ່ກ່ຽວຂ້ອງກັບເຊດຊັນເຫຼົ່ານັ້ນ. ຂໍ້ມູນການວິນິດໄສອາດລວມມີ ເວີຊັນຂອງແອັບ ແລະ Android, ຂໍ້ມູນອຸປະກອນ ແລະ ຮຸ່ນ, ຂໍ້ມູນຂະບວນການ ແລະ ສະຖານະຂອງແອັບ, ອຸປະກອນສຽງທີ່ມີໃຫ້ ແລະ ທີ່ກໍາລັງໃຊ້ຢູ່, ເມຕາດາຕາສາທາລະນະຂອງການຫຼິ້ນສຽງ ແລະ ການຕັ້ງຄ່າການບັນທຶກ, ແລະ ຄວາມພະຍາຍາມການກໍານົດເສັ້ນທາງ, ຜົນລັບ, ຈັງຫວະເວລາ, ແລະ ເຫດການທາງເທັກນິກ.\n\nຄ່າກໍານົດຂອງແອັບຖືກເກັບໄວ້ໃນ app-private storage ຂອງ Private Audio ພາຍໃນເຄື່ອງ. ຂໍ້ມູນການວິນິດໄສຖືກສ້າງ ແລະ ປະມວນຜົນຢູ່ໃນອຸປະກອນຂອງທ່ານ ແລະ ອາດຈະມີຢູ່ໃນສະຖານະພາຍໃນເຄື່ອງຂອງແອັບທີ່ກໍາລັງເຮັດວຽກ. ລາຍງານບໍ່ຖືກບັນທຶກ ຫຼື ສົ່ງໂດຍອັດຕະໂນມັດ. ລາຍງານແບບຖາວອນຈະຖືກສ້າງຢູ່ນອກ app-private storage ຂອງ Private Audio ກໍ່ຕໍ່ເມື່ອທ່ານເລືອກ “ບັນທຶກລາຍງານການວິນິດໄສ” ຢ່າງຊັດເຈນ ແລະ ເລືອກປາຍທາງຜ່ານ Android. ຫຼັງຈາກສົ່ງອອກແລ້ວ, ສະຖານທີ່ ຫຼື ບໍລິການທີ່ທ່ານເລືອກ—ບໍ່ແມ່ນ Private Audio—ເປັນຜູ້ຄວບຄຸມການຈັດການ, ການເກັບຮັກສາ, ແລະ ການລຶບສໍາເນົານັ້ນ.\n\nເວີຊັນປັດຈຸບັນບໍ່ຮ້ອງຂໍສິດອະນຸຍາດ Internet ຂອງ Android, ບໍ່ມີ backend ຂອງ Private Audio ຫຼື ເສັ້ນທາງການຮັບສົ່ງຜ່ານເຄືອຂ່າຍ, ແລະ ບໍ່ລວມມີບໍລິການ ຫຼື SDK ສໍາລັບ analytics, ການໂຄສະນາ, ຫຼື ການລາຍງານ crash. ໃນປັດຈຸບັນ ແອັບບໍ່ໄດ້ສົ່ງລາຍງານການວິນິດໄສໃຫ້ນັກພັດທະນາ ຫຼື ເຊີບເວີຂອງ Private Audio, ດັ່ງນັ້ນ Private Audio ຈຶ່ງບໍ່ມີການເກັບຮັກສາຂໍ້ມູນວິນິດໄສໄວ້ຝັ່ງເຊີບເວີ.\n\nຂໍ້ມູນທີ່ແອັບເປັນເຈົ້າຂອງຖືກຍົກເວັ້ນຈາກການສໍາຮອງຂໍ້ມູນຂຶ້ນ cloud ຂອງ Android ແລະ ການໂອນຂໍ້ມູນຈາກອຸປະກອນໜຶ່ງໄປອີກອຸປະກອນໜຶ່ງ. ຄ່າກໍານົດພາຍໃນເຄື່ອງຈະຍັງຄົງຢູ່ໃນ app-private storage ຈົນກວ່າມັນຈະຖືກປ່ຽນແປງ ຫຼື ຂໍ້ມູນຂອງແອັບຖືກລຶບອອກ; ສະຖານະການວິນິດໄສແບບຊົ່ວຄາວບໍ່ແມ່ນລາຍງານທີ່ຖືກບັນທຶກ. ລາຍງານທີ່ສົ່ງອອກແລ້ວຍັງຄົງຢູ່ພາຍໃຕ້ການຄວບຄຸມຂອງສະຖານທີ່ ຫຼື ບໍລິການທີ່ທ່ານເລືອກ.</string>
+    <string name="settings_privacy_policy_body">Puzru ບໍ່ຕ້ອງການບັນຊີ ຫຼື ການລົງຊື່ເຂົ້າໃຊ້ ແລະ ບໍ່ຮ້ອງຂໍສິດອະນຸຍາດໄມໂຄຣໂຟນ. ແອັບບໍ່ຈັບ ຫຼື ບັນທຶກສຽງຈາກໄມໂຄຣໂຟນ, ຫຼື ບັນທຶກ ຫຼື ເກັບຮັກສາການສົນທະນາຂອງທ່ານ ຫຼື ເນື້ອຫາສຽງຂອງມັນ.\n\nPuzru ໃຊ້ຂໍ້ມູນຂອງລະບົບສຽງ Android ທີ່ຈໍາເປັນສໍາລັບການກໍານົດເສັ້ນທາງ ແລະ ການວິນິດໄສ. ການວິນິດໄສອາດກວດສອບສະຖານະທາງເທັກນິກ ແລະ ເມຕາດາຕາທີ່ເຜີຍແຜ່ໂດຍ Android APIs ສາທາລະນະ, ລວມທັງ ເມຕາດາຕາຂອງການຫຼິ້ນສຽງ ແລະ ເຊດຊັນການບັນທຶກ. ເມຕາດາຕາຂອງເຊດຊັນການບັນທຶກແມ່ນຂໍ້ມູນທາງເທັກນິກຂອງລະບົບສຽງ; Puzru ບໍ່ຈັບສຽງໄມໂຄຣໂຟນທີ່ກ່ຽວຂ້ອງກັບເຊດຊັນເຫຼົ່ານັ້ນ. ຂໍ້ມູນການວິນິດໄສອາດລວມມີ ເວີຊັນຂອງແອັບ ແລະ Android, ຂໍ້ມູນອຸປະກອນ ແລະ ຮຸ່ນ, ຂໍ້ມູນຂະບວນການ ແລະ ສະຖານະຂອງແອັບ, ອຸປະກອນສຽງທີ່ມີໃຫ້ ແລະ ທີ່ກໍາລັງໃຊ້ຢູ່, ເມຕາດາຕາສາທາລະນະຂອງການຫຼິ້ນສຽງ ແລະ ການຕັ້ງຄ່າການບັນທຶກ, ແລະ ຄວາມພະຍາຍາມການກໍານົດເສັ້ນທາງ, ຜົນລັບ, ຈັງຫວະເວລາ, ແລະ ເຫດການທາງເທັກນິກ.\n\nຄ່າກໍານົດຂອງແອັບຖືກເກັບໄວ້ໃນ app-private storage ຂອງ Puzru ພາຍໃນເຄື່ອງ. ຂໍ້ມູນການວິນິດໄສຖືກສ້າງ ແລະ ປະມວນຜົນຢູ່ໃນອຸປະກອນຂອງທ່ານ ແລະ ອາດຈະມີຢູ່ໃນສະຖານະພາຍໃນເຄື່ອງຂອງແອັບທີ່ກໍາລັງເຮັດວຽກ. ລາຍງານບໍ່ຖືກບັນທຶກ ຫຼື ສົ່ງໂດຍອັດຕະໂນມັດ. ລາຍງານແບບຖາວອນຈະຖືກສ້າງຢູ່ນອກ app-private storage ຂອງ Puzru ກໍ່ຕໍ່ເມື່ອທ່ານເລືອກ “ບັນທຶກລາຍງານການວິນິດໄສ” ຢ່າງຊັດເຈນ ແລະ ເລືອກປາຍທາງຜ່ານ Android. ຫຼັງຈາກສົ່ງອອກແລ້ວ, ສະຖານທີ່ ຫຼື ບໍລິການທີ່ທ່ານເລືອກ—ບໍ່ແມ່ນ Puzru—ເປັນຜູ້ຄວບຄຸມການຈັດການ, ການເກັບຮັກສາ, ແລະ ການລຶບສໍາເນົານັ້ນ.\n\nເວີຊັນປັດຈຸບັນບໍ່ຮ້ອງຂໍສິດອະນຸຍາດ Internet ຂອງ Android, ບໍ່ມີ backend ຂອງ Puzru ຫຼື ເສັ້ນທາງການຮັບສົ່ງຜ່ານເຄືອຂ່າຍ, ແລະ ບໍ່ລວມມີບໍລິການ ຫຼື SDK ສໍາລັບ analytics, ການໂຄສະນາ, ຫຼື ການລາຍງານ crash. ໃນປັດຈຸບັນ ແອັບບໍ່ໄດ້ສົ່ງລາຍງານການວິນິດໄສໃຫ້ນັກພັດທະນາ ຫຼື ເຊີບເວີຂອງ Puzru, ດັ່ງນັ້ນ Puzru ຈຶ່ງບໍ່ມີການເກັບຮັກສາຂໍ້ມູນວິນິດໄສໄວ້ຝັ່ງເຊີບເວີ.\n\nຂໍ້ມູນທີ່ແອັບເປັນເຈົ້າຂອງຖືກຍົກເວັ້ນຈາກການສໍາຮອງຂໍ້ມູນຂຶ້ນ cloud ຂອງ Android ແລະ ການໂອນຂໍ້ມູນຈາກອຸປະກອນໜຶ່ງໄປອີກອຸປະກອນໜຶ່ງ. ຄ່າກໍານົດພາຍໃນເຄື່ອງຈະຍັງຄົງຢູ່ໃນ app-private storage ຈົນກວ່າມັນຈະຖືກປ່ຽນແປງ ຫຼື ຂໍ້ມູນຂອງແອັບຖືກລຶບອອກ; ສະຖານະການວິນິດໄສແບບຊົ່ວຄາວບໍ່ແມ່ນລາຍງານທີ່ຖືກບັນທຶກ. ລາຍງານທີ່ສົ່ງອອກແລ້ວຍັງຄົງຢູ່ພາຍໃຕ້ການຄວບຄຸມຂອງສະຖານທີ່ ຫຼື ບໍລິການທີ່ທ່ານເລືອກ.</string>
     <string name="settings_version">ເວີຊັນ %1$s</string>
     <string name="settings_language_android_13_required">ການເລືອກພາສາພາຍໃນແອັບຕ້ອງໃຊ້ Android 13 ຫຼືໃໝ່ກວ່າ. ອຸປະກອນນີ້ໃຊ້ພາສາຂອງລະບົບ.</string>
     <string name="settings_proximity_screen">ປິດໜ້າຈໍເມື່ອນຳໂທລະສັບເຂົ້າໃກ້ຫູ</string>
-    <string name="settings_about_body">Private Audio ຊ່ວຍປ່ຽນສຽງສົນທະນາທີ່ຮອງຮັບໄປຫາຊຸດຫູຟັງໃນຕົວໂທລະສັບຂອງທ່ານ.</string>
+    <string name="settings_about_body">Puzru ຊ່ວຍປ່ຽນສຽງສົນທະນາທີ່ຮອງຮັບໄປຫາຊຸດຫູຟັງໃນຕົວໂທລະສັບຂອງທ່ານ.</string>
     <string name="diagnostic_report_saved">ບັນທຶກລາຍງານການວິນິດໄສແລ້ວ.</string>
     <string name="diagnostic_report_save_failed">ບໍ່ສາມາດບັນທຶກລາຍງານການວິນິດໄສໄດ້.</string>
 
@@ -34,7 +34,7 @@
     <string name="diagnostics_system_check">ການກວດສອບລະບົບ</string>
     <string name="diagnostics_earpiece">ຫູຟັງໃນຕົວໂທລະສັບ</string>
     <string name="diagnostics_proximity_sensor">ເຊັນເຊີກວດຈັບໄລຍະໃກ້</string>
-    <string name="diagnostics_private_audio">Private Audio</string>
+    <string name="diagnostics_private_audio">Puzru</string>
     <string name="diagnostics_routing">ການກຳນົດເສັ້ນທາງສຽງ</string>
     <string name="diagnostics_status">ສະຖານະ</string>
     <string name="diagnostics_audio_route">ສຽງອອກ</string>
@@ -59,8 +59,8 @@
     <string name="diagnostics_route_other">ອື່ນໆ</string>
     <string name="diagnostics_error_blocked_by_system">ການກຳນົດເສັ້ນທາງສຽງຖືກລະບົບກີດກັ້ນ.</string>
     <string name="diagnostics_error_session_ended">ເຊດຊັນສຽງສິ້ນສຸດລົງກ່ອນການກຳນົດເສັ້ນທາງສຽງຈະສຳເລັດ.</string>
-    <string name="diagnostics_error_audio_start">Private Audio ບໍ່ສາມາດເລີ່ມການກຳນົດເສັ້ນທາງສຽງໄດ້.</string>
-    <string name="diagnostics_error_audio_preparation">Private Audio ບໍ່ສາມາດກຽມສຽງສື່ສານໄດ້.</string>
+    <string name="diagnostics_error_audio_start">Puzru ບໍ່ສາມາດເລີ່ມການກຳນົດເສັ້ນທາງສຽງໄດ້.</string>
+    <string name="diagnostics_error_audio_preparation">Puzru ບໍ່ສາມາດກຽມສຽງສື່ສານໄດ້.</string>
     <string name="diagnostics_error_request_rejected">ຄຳຂໍກຳນົດເສັ້ນທາງສຽງໄປຫາຫູຟັງໃນຕົວໂທລະສັບບໍ່ໄດ້ຮັບການຍອມຮັບ.</string>
     <string name="diagnostics_error_not_completed">ບໍ່ສາມາດກຳນົດເສັ້ນທາງສຽງໃຫ້ສຳເລັດໄດ້.</string>
 </resources>

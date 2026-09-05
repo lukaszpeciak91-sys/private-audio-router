@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Private Audio</string>
-    <string name="routing_notification_channel">Private Audio</string>
-    <string name="routing_notification_title">Private Audio ఆన్‌లో ఉంది</string>
+    <string name="app_name">Puzru</string>
+    <string name="routing_notification_channel">Puzru</string>
+    <string name="routing_notification_title">Puzru ఆన్‌లో ఉంది</string>
     <string name="routing_notification_text">ఆడియోను మార్చడానికి వేచి ఉంది</string>
-    <string name="product_title">Private Audio</string>
+    <string name="product_title">Puzru</string>
     <string name="product_subtitle">ఫోన్ కాల్‌లా, AIతో ప్రైవేట్‌గా మాట్లాడండి.</string>
     <string name="state_ready">సిద్ధం</string>
     <string name="state_waiting">వేచి ఉంది</string>
@@ -14,18 +14,18 @@
     <string name="floating">మినీ</string>
     <string name="settings">సెట్టింగ్‌లు</string>
     <string name="close">మూసివేయండి</string>
-    <string name="overlay_controller_description">Private Audio ఫ్లోటింగ్ కంట్రోలర్. స్థితి: %1$s. ఆన్ చేయడం, విస్తరించడం, మూసివేయడం కోసం కంట్రోల్‌లు.</string>
+    <string name="overlay_controller_description">Puzru ఫ్లోటింగ్ కంట్రోలర్. స్థితి: %1$s. ఆన్ చేయడం, విస్తరించడం, మూసివేయడం కోసం కంట్రోల్‌లు.</string>
     <string name="settings_language">భాష</string>
     <string name="settings_system_default">ఆటోమేటిక్</string>
     <string name="settings_save_diagnostic">డయాగ్నస్టిక్ రిపోర్ట్‌ను సేవ్ చేయండి</string>
     <string name="settings_advanced">అధునాతన</string>
-    <string name="settings_about">Private Audio గురించి</string>
+    <string name="settings_about">Puzru గురించి</string>
     <string name="settings_privacy_policy">గోప్యతా విధానం</string>
-    <string name="settings_privacy_policy_body">Private Audio కు ఖాతా లేదా సైన్-ఇన్ అవసరం లేదు మరియు ఇది మైక్రోఫోన్ అనుమతిని కోరదు. ఇది మైక్రోఫోన్ ఆడియోను క్యాప్చర్ చేయదు లేదా రికార్డ్ చేయదు; మీ సంభాషణలను లేదా వాటి ఆడియో కంటెంట్‌ను రికార్డ్ చేయదు లేదా నిల్వ చేయదు.\n\nరూటింగ్ మరియు నిర్ధారణకు అవసరమైన Android ఆడియో సిస్టమ్ సమాచారాన్ని Private Audio ఉపయోగిస్తుంది. ప్లేబ్యాక్ మరియు రికార్డింగ్ సెషన్ మెటాడేటాతో సహా పబ్లిక్ Android APIలు అందించే సాంకేతిక స్థితి మరియు మెటాడేటాను నిర్ధారణ పరిశీలించవచ్చు. రికార్డింగ్ సెషన్ మెటాడేటా అనేది ఆడియో సిస్టమ్‌కు సంబంధించిన సాంకేతిక సమాచారం; ఆ సెషన్‌లతో అనుబంధించిన మైక్రోఫోన్ ఆడియోను Private Audio క్యాప్చర్ చేయదు. నిర్ధారణ సమాచారంలో యాప్ మరియు Android వెర్షన్‌లు, పరికరం మరియు మోడల్ సమాచారం, యాప్ ప్రాసెస్ మరియు స్థితి సమాచారం, అందుబాటులో ఉన్న మరియు ప్రస్తుత ఆడియో పరికరాలు, పబ్లిక్ ప్లేబ్యాక్ మరియు రికార్డింగ్ కాన్ఫిగరేషన్ మెటాడేటా, అలాగే రూటింగ్ ప్రయత్నాలు, ఫలితాలు, సమయం మరియు సాంకేతిక ఈవెంట్‌లు ఉండవచ్చు.\n\nయాప్ ప్రాధాన్యతలు Private Audio యాప్-ప్రైవేట్ స్టోరేజ్‌లో స్థానికంగా నిల్వ చేయబడతాయి. నిర్ధారణ సమాచారం మీ పరికరంలో రూపొందించబడి, ప్రాసెస్ చేయబడుతుంది మరియు రన్ అవుతున్న యాప్ స్థానిక స్థితిలో ఉండవచ్చు. నివేదికలు ఆటోమేటిక్‌గా సేవ్ చేయబడవు లేదా పంపబడవు. మీరు నిర్ధారణ నివేదికను సేవ్ చేయండి అని స్పష్టంగా ఎంచుకుని, Android ద్వారా గమ్యస్థానాన్ని ఎంచుకున్నప్పుడు మాత్రమే Private Audio యాప్-ప్రైవేట్ స్టోరేజ్ వెలుపల శాశ్వత నివేదిక రూపొందించబడుతుంది. ఎగుమతి తర్వాత, ఎంచుకున్న స్థానం లేదా సేవ—Private Audio కాదు—ఆ కాపీ నిర్వహణ, నిలుపుదల మరియు తొలగింపును నియంత్రిస్తుంది.\n\nప్రస్తుత వెర్షన్ Android ఇంటర్నెట్ అనుమతిని కోరదు, Private Audio బ్యాకెండ్ లేదా నెట్‌వర్క్ ప్రసార మార్గాన్ని కలిగి లేదు మరియు విశ్లేషణలు, ప్రకటనలు లేదా క్రాష్-రిపోర్టింగ్ సేవలు లేదా SDKలను కలిగి లేదు. ఇది ప్రస్తుతం డెవలపర్‌కు లేదా Private Audio సర్వర్‌కు నిర్ధారణ నివేదికలను పంపదు, కాబట్టి Private Audio సర్వర్ వైపు నిర్ధారణ సమాచారాన్ని నిలుపుకోదు.\n\nయాప్ యాజమాన్యంలోని డేటా Android క్లౌడ్ బ్యాకప్ మరియు పరికరం నుండి పరికరానికి బదిలీ నుండి మినహాయించబడింది. స్థానిక ప్రాధాన్యతలు మార్చబడే వరకు లేదా యాప్ డేటా తొలగించబడే వరకు యాప్-ప్రైవేట్ స్టోరేజ్‌లో ఉంటాయి; తాత్కాలిక నిర్ధారణ స్థితి సేవ్ చేసిన నివేదిక కాదు. ఎగుమతి చేసిన నివేదికలు మీరు ఎంచుకున్న స్థానం లేదా సేవ నియంత్రణలో ఉంటాయి.</string>
+    <string name="settings_privacy_policy_body">Puzru కు ఖాతా లేదా సైన్-ఇన్ అవసరం లేదు మరియు ఇది మైక్రోఫోన్ అనుమతిని కోరదు. ఇది మైక్రోఫోన్ ఆడియోను క్యాప్చర్ చేయదు లేదా రికార్డ్ చేయదు; మీ సంభాషణలను లేదా వాటి ఆడియో కంటెంట్‌ను రికార్డ్ చేయదు లేదా నిల్వ చేయదు.\n\nరూటింగ్ మరియు నిర్ధారణకు అవసరమైన Android ఆడియో సిస్టమ్ సమాచారాన్ని Puzru ఉపయోగిస్తుంది. ప్లేబ్యాక్ మరియు రికార్డింగ్ సెషన్ మెటాడేటాతో సహా పబ్లిక్ Android APIలు అందించే సాంకేతిక స్థితి మరియు మెటాడేటాను నిర్ధారణ పరిశీలించవచ్చు. రికార్డింగ్ సెషన్ మెటాడేటా అనేది ఆడియో సిస్టమ్‌కు సంబంధించిన సాంకేతిక సమాచారం; ఆ సెషన్‌లతో అనుబంధించిన మైక్రోఫోన్ ఆడియోను Puzru క్యాప్చర్ చేయదు. నిర్ధారణ సమాచారంలో యాప్ మరియు Android వెర్షన్‌లు, పరికరం మరియు మోడల్ సమాచారం, యాప్ ప్రాసెస్ మరియు స్థితి సమాచారం, అందుబాటులో ఉన్న మరియు ప్రస్తుత ఆడియో పరికరాలు, పబ్లిక్ ప్లేబ్యాక్ మరియు రికార్డింగ్ కాన్ఫిగరేషన్ మెటాడేటా, అలాగే రూటింగ్ ప్రయత్నాలు, ఫలితాలు, సమయం మరియు సాంకేతిక ఈవెంట్‌లు ఉండవచ్చు.\n\nయాప్ ప్రాధాన్యతలు Puzru యాప్-ప్రైవేట్ స్టోరేజ్‌లో స్థానికంగా నిల్వ చేయబడతాయి. నిర్ధారణ సమాచారం మీ పరికరంలో రూపొందించబడి, ప్రాసెస్ చేయబడుతుంది మరియు రన్ అవుతున్న యాప్ స్థానిక స్థితిలో ఉండవచ్చు. నివేదికలు ఆటోమేటిక్‌గా సేవ్ చేయబడవు లేదా పంపబడవు. మీరు నిర్ధారణ నివేదికను సేవ్ చేయండి అని స్పష్టంగా ఎంచుకుని, Android ద్వారా గమ్యస్థానాన్ని ఎంచుకున్నప్పుడు మాత్రమే Puzru యాప్-ప్రైవేట్ స్టోరేజ్ వెలుపల శాశ్వత నివేదిక రూపొందించబడుతుంది. ఎగుమతి తర్వాత, ఎంచుకున్న స్థానం లేదా సేవ—Puzru కాదు—ఆ కాపీ నిర్వహణ, నిలుపుదల మరియు తొలగింపును నియంత్రిస్తుంది.\n\nప్రస్తుత వెర్షన్ Android ఇంటర్నెట్ అనుమతిని కోరదు, Puzru బ్యాకెండ్ లేదా నెట్‌వర్క్ ప్రసార మార్గాన్ని కలిగి లేదు మరియు విశ్లేషణలు, ప్రకటనలు లేదా క్రాష్-రిపోర్టింగ్ సేవలు లేదా SDKలను కలిగి లేదు. ఇది ప్రస్తుతం డెవలపర్‌కు లేదా Puzru సర్వర్‌కు నిర్ధారణ నివేదికలను పంపదు, కాబట్టి Puzru సర్వర్ వైపు నిర్ధారణ సమాచారాన్ని నిలుపుకోదు.\n\nయాప్ యాజమాన్యంలోని డేటా Android క్లౌడ్ బ్యాకప్ మరియు పరికరం నుండి పరికరానికి బదిలీ నుండి మినహాయించబడింది. స్థానిక ప్రాధాన్యతలు మార్చబడే వరకు లేదా యాప్ డేటా తొలగించబడే వరకు యాప్-ప్రైవేట్ స్టోరేజ్‌లో ఉంటాయి; తాత్కాలిక నిర్ధారణ స్థితి సేవ్ చేసిన నివేదిక కాదు. ఎగుమతి చేసిన నివేదికలు మీరు ఎంచుకున్న స్థానం లేదా సేవ నియంత్రణలో ఉంటాయి.</string>
     <string name="settings_version">వెర్షన్ %1$s</string>
     <string name="settings_language_android_13_required">యాప్‌లో భాషను ఎంచుకోవడానికి Android 13 లేదా ఆ తర్వాతి వెర్షన్ అవసరం. ఈ పరికరం సిస్టమ్ భాషను అనుసరిస్తుంది.</string>
     <string name="settings_proximity_screen">చెవి దగ్గర స్క్రీన్‌ను ఆఫ్ చేయండి</string>
-    <string name="settings_about_body">Private Audio ఆడియోను ఫోన్ ఇయర్‌పీస్‌కు మార్చడంలో సహాయపడుతుంది.</string>
+    <string name="settings_about_body">Puzru ఆడియోను ఫోన్ ఇయర్‌పీస్‌కు మార్చడంలో సహాయపడుతుంది.</string>
     <string name="diagnostic_report_saved">డయాగ్నస్టిక్ రిపోర్ట్ సేవ్ చేయబడింది.</string>
     <string name="diagnostic_report_save_failed">డయాగ్నస్టిక్ రిపోర్ట్‌ను సేవ్ చేయడం సాధ్యపడలేదు.</string>
 
@@ -34,7 +34,7 @@
     <string name="diagnostics_system_check">సిస్టమ్ తనిఖీ</string>
     <string name="diagnostics_earpiece">ఇయర్‌పీస్</string>
     <string name="diagnostics_proximity_sensor">ప్రాక్సిమిటీ సెన్సార్</string>
-    <string name="diagnostics_private_audio">Private Audio</string>
+    <string name="diagnostics_private_audio">Puzru</string>
     <string name="diagnostics_routing">ఆడియో రూటింగ్</string>
     <string name="diagnostics_status">స్థితి</string>
     <string name="diagnostics_audio_route">ఆడియో అవుట్‌పుట్</string>
@@ -59,8 +59,8 @@
     <string name="diagnostics_route_other">ఇతర</string>
     <string name="diagnostics_error_blocked_by_system">ఆడియో రూటింగ్‌ను సిస్టమ్ నిరోధించింది.</string>
     <string name="diagnostics_error_session_ended">ఆడియో రూటింగ్ పూర్తయ్యేలోపే ఆడియో సెషన్ ముగిసింది.</string>
-    <string name="diagnostics_error_audio_start">Private Audio ఆడియో రూటింగ్‌ను ప్రారంభించలేకపోయింది.</string>
-    <string name="diagnostics_error_audio_preparation">Private Audio కమ్యూనికేషన్ ఆడియోను సిద్ధం చేయలేకపోయింది.</string>
+    <string name="diagnostics_error_audio_start">Puzru ఆడియో రూటింగ్‌ను ప్రారంభించలేకపోయింది.</string>
+    <string name="diagnostics_error_audio_preparation">Puzru కమ్యూనికేషన్ ఆడియోను సిద్ధం చేయలేకపోయింది.</string>
     <string name="diagnostics_error_request_rejected">ఇయర్‌పీస్‌కు ఆడియోను రూట్ చేయాలనే అభ్యర్థన ఆమోదించబడలేదు.</string>
     <string name="diagnostics_error_not_completed">ఆడియో రూటింగ్‌ను పూర్తి చేయడం సాధ్యం కాలేదు.</string>
 </resources>

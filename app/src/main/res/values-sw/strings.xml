@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Private Audio</string>
-    <string name="routing_notification_channel">Private Audio</string>
-    <string name="routing_notification_title">Private Audio imewashwa</string>
+    <string name="app_name">Puzru</string>
+    <string name="routing_notification_channel">Puzru</string>
+    <string name="routing_notification_title">Puzru imewashwa</string>
     <string name="routing_notification_text">Inasubiri kuelekeza sauti</string>
-    <string name="product_title">Private Audio</string>
+    <string name="product_title">Puzru</string>
     <string name="product_subtitle">Zungumza na AI kwa faragha, kama kwenye simu.</string>
     <string name="state_ready">Tayari</string>
     <string name="state_waiting">Inasubiri</string>
@@ -14,18 +14,18 @@
     <string name="floating">Mini</string>
     <string name="settings">Mipangilio</string>
     <string name="close">Funga</string>
-    <string name="overlay_controller_description">Kidhibiti kinachoelea cha Private Audio. Hali: %1$s. Vidhibiti vya kuwasha, kupanua na kufunga.</string>
+    <string name="overlay_controller_description">Kidhibiti kinachoelea cha Puzru. Hali: %1$s. Vidhibiti vya kuwasha, kupanua na kufunga.</string>
     <string name="settings_language">Lugha</string>
     <string name="settings_system_default">Chaguomsingi</string>
     <string name="settings_save_diagnostic">Hifadhi ripoti ya uchunguzi</string>
     <string name="settings_advanced">Mipangilio ya kina</string>
-    <string name="settings_about">Kuhusu Private Audio</string>
+    <string name="settings_about">Kuhusu Puzru</string>
     <string name="settings_privacy_policy">Sera ya Faragha</string>
-    <string name="settings_privacy_policy_body">Private Audio haihitaji akaunti au kuingia na haiombi ruhusa ya maikrofoni. Hainasi wala kurekodi sauti ya maikrofoni, wala kurekodi au kuhifadhi mazungumzo yako au maudhui yake ya sauti.\n\nPrivate Audio hutumia taarifa za mfumo wa sauti wa Android zinazohitajika kwa uelekezaji na uchunguzi. Uchunguzi unaweza kukagua hali ya kiufundi na metadata inayowekwa wazi na API za umma za Android, ikijumuisha metadata ya uchezaji na vipindi vya kurekodi. Metadata ya kipindi cha kurekodi ni taarifa ya kiufundi ya mfumo wa sauti; Private Audio hainasi sauti ya maikrofoni inayohusishwa na vipindi hivyo. Taarifa za uchunguzi zinaweza kujumuisha matoleo ya programu na Android, taarifa za kifaa na modeli, taarifa za mchakato na hali ya programu, vifaa vya sauti vinavyopatikana na vya sasa, metadata ya umma ya usanidi wa uchezaji na kurekodi, pamoja na majaribio ya uelekezaji, matokeo, muda na matukio ya kiufundi.\n\nMapendeleo ya programu huhifadhiwa kwenye hifadhi binafsi ya programu ya Private Audio. Taarifa za uchunguzi hutengenezwa na kuchakatwa kwenye kifaa chako na zinaweza kuwepo katika hali ya ndani ya programu inapoendeshwa. Ripoti hazihifadhiwi wala kutumwa kiotomatiki. Ripoti ya kudumu huundwa nje ya hifadhi binafsi ya Private Audio tu unapochagua waziwazi Hifadhi ripoti ya uchunguzi na kuchagua mahali kupitia Android. Baada ya kuhamisha, mahali au huduma uliyochagua—si Private Audio—hudhibiti ushughulikiaji, uhifadhi na ufutaji wa nakala hiyo.\n\nToleo la sasa haliombi ruhusa ya Intaneti ya Android, halina seva ya nyuma ya Private Audio wala njia ya usambazaji wa mtandao, na halijumuishi huduma au SDK za uchanganuzi, matangazo au kuripoti programu kuacha kufanya kazi. Kwa sasa halitumi ripoti za uchunguzi kwa msanidi programu au seva ya Private Audio, kwa hiyo Private Audio haina uhifadhi wa uchunguzi upande wa seva.\n\nData inayomilikiwa na programu haijumuishwi kwenye hifadhi rudufu ya wingu ya Android wala uhamishaji kati ya vifaa. Mapendeleo ya ndani hubaki katika hifadhi binafsi ya programu hadi yabadilishwe au data ya programu iondolewe; hali ya muda ya uchunguzi si ripoti iliyohifadhiwa. Ripoti zilizohamishwa hubaki chini ya udhibiti wa mahali au huduma uliyochagua.</string>
+    <string name="settings_privacy_policy_body">Puzru haihitaji akaunti au kuingia na haiombi ruhusa ya maikrofoni. Hainasi wala kurekodi sauti ya maikrofoni, wala kurekodi au kuhifadhi mazungumzo yako au maudhui yake ya sauti.\n\nPuzru hutumia taarifa za mfumo wa sauti wa Android zinazohitajika kwa uelekezaji na uchunguzi. Uchunguzi unaweza kukagua hali ya kiufundi na metadata inayowekwa wazi na API za umma za Android, ikijumuisha metadata ya uchezaji na vipindi vya kurekodi. Metadata ya kipindi cha kurekodi ni taarifa ya kiufundi ya mfumo wa sauti; Puzru hainasi sauti ya maikrofoni inayohusishwa na vipindi hivyo. Taarifa za uchunguzi zinaweza kujumuisha matoleo ya programu na Android, taarifa za kifaa na modeli, taarifa za mchakato na hali ya programu, vifaa vya sauti vinavyopatikana na vya sasa, metadata ya umma ya usanidi wa uchezaji na kurekodi, pamoja na majaribio ya uelekezaji, matokeo, muda na matukio ya kiufundi.\n\nMapendeleo ya programu huhifadhiwa kwenye hifadhi binafsi ya programu ya Puzru. Taarifa za uchunguzi hutengenezwa na kuchakatwa kwenye kifaa chako na zinaweza kuwepo katika hali ya ndani ya programu inapoendeshwa. Ripoti hazihifadhiwi wala kutumwa kiotomatiki. Ripoti ya kudumu huundwa nje ya hifadhi binafsi ya Puzru tu unapochagua waziwazi Hifadhi ripoti ya uchunguzi na kuchagua mahali kupitia Android. Baada ya kuhamisha, mahali au huduma uliyochagua—si Puzru—hudhibiti ushughulikiaji, uhifadhi na ufutaji wa nakala hiyo.\n\nToleo la sasa haliombi ruhusa ya Intaneti ya Android, halina seva ya nyuma ya Puzru wala njia ya usambazaji wa mtandao, na halijumuishi huduma au SDK za uchanganuzi, matangazo au kuripoti programu kuacha kufanya kazi. Kwa sasa halitumi ripoti za uchunguzi kwa msanidi programu au seva ya Puzru, kwa hiyo Puzru haina uhifadhi wa uchunguzi upande wa seva.\n\nData inayomilikiwa na programu haijumuishwi kwenye hifadhi rudufu ya wingu ya Android wala uhamishaji kati ya vifaa. Mapendeleo ya ndani hubaki katika hifadhi binafsi ya programu hadi yabadilishwe au data ya programu iondolewe; hali ya muda ya uchunguzi si ripoti iliyohifadhiwa. Ripoti zilizohamishwa hubaki chini ya udhibiti wa mahali au huduma uliyochagua.</string>
     <string name="settings_version">Toleo %1$s</string>
     <string name="settings_language_android_13_required">Uteuzi wa lugha ndani ya programu unahitaji Android 13 au toleo jipya zaidi. Kifaa hiki kinafuata lugha ya mfumo.</string>
     <string name="settings_proximity_screen">Zima skrini ikiwa karibu na sikio</string>
-    <string name="settings_about_body">Private Audio husaidia kuelekeza sauti kwenye kipokea sauti cha ndani cha simu.</string>
+    <string name="settings_about_body">Puzru husaidia kuelekeza sauti kwenye kipokea sauti cha ndani cha simu.</string>
     <string name="diagnostic_report_saved">Ripoti ya uchunguzi imehifadhiwa.</string>
     <string name="diagnostic_report_save_failed">Imeshindikana kuhifadhi ripoti ya uchunguzi.</string>
 
@@ -34,7 +34,7 @@
     <string name="diagnostics_system_check">UKAGUZI WA MFUMO</string>
     <string name="diagnostics_earpiece">Kipokea sauti cha sikioni</string>
     <string name="diagnostics_proximity_sensor">Kihisi cha ukaribu</string>
-    <string name="diagnostics_private_audio">PRIVATE AUDIO</string>
+    <string name="diagnostics_private_audio">PUZRU</string>
     <string name="diagnostics_routing">Utumaji wa sauti</string>
     <string name="diagnostics_status">Hali</string>
     <string name="diagnostics_audio_route">Kifaa cha kutoa sauti</string>
@@ -59,8 +59,8 @@
     <string name="diagnostics_route_other">Nyingine</string>
     <string name="diagnostics_error_blocked_by_system">Utumaji wa sauti ulizuiwa na mfumo.</string>
     <string name="diagnostics_error_session_ended">Kipindi cha sauti kilimalizika kabla utumaji haujakamilika.</string>
-    <string name="diagnostics_error_audio_start">Private Audio haikuweza kuanzisha utumaji wa sauti.</string>
-    <string name="diagnostics_error_audio_preparation">Private Audio haikuweza kuandaa sauti ya mawasiliano.</string>
+    <string name="diagnostics_error_audio_start">Puzru haikuweza kuanzisha utumaji wa sauti.</string>
+    <string name="diagnostics_error_audio_preparation">Puzru haikuweza kuandaa sauti ya mawasiliano.</string>
     <string name="diagnostics_error_request_rejected">Ombi la kutuma sauti kwenye kipokea sauti cha sikioni halikukubaliwa.</string>
     <string name="diagnostics_error_not_completed">Utumaji wa sauti haukuweza kukamilishwa.</string>
 </resources>

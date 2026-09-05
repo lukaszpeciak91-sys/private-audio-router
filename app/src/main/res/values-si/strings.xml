@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Private Audio</string>
-    <string name="routing_notification_channel">Private Audio</string>
-    <string name="routing_notification_title">Private Audio ක්‍රියාත්මකයි</string>
+    <string name="app_name">Puzru</string>
+    <string name="routing_notification_channel">Puzru</string>
+    <string name="routing_notification_title">Puzru ක්‍රියාත්මකයි</string>
     <string name="routing_notification_text">ශ්‍රව්‍යය යොමු කිරීමට රැඳී සිටී</string>
-    <string name="product_title">Private Audio</string>
+    <string name="product_title">Puzru</string>
     <string name="product_subtitle">දුරකථන ඇමතුමක් මෙන්, AI සමඟ පෞද්ගලිකව කතා කරන්න.</string>
     <string name="state_ready">සූදානම්</string>
     <string name="state_waiting">රැඳී සිටී</string>
@@ -14,26 +14,26 @@
     <string name="floating">කුඩා</string>
     <string name="settings">සැකසීම්</string>
     <string name="close">වසන්න</string>
-    <string name="overlay_controller_description">Private Audio පාවෙන පාලකය. තත්ත්වය: %1$s. බලය, දිගහැරීම සහ වැසීම සඳහා පාලන.</string>
+    <string name="overlay_controller_description">Puzru පාවෙන පාලකය. තත්ත්වය: %1$s. බලය, දිගහැරීම සහ වැසීම සඳහා පාලන.</string>
     <string name="settings_language">භාෂාව</string>
     <string name="settings_system_default">පෙරනිමි</string>
     <string name="settings_save_diagnostic">රෝග විනිශ්චය වාර්තාව සුරකින්න</string>
     <string name="settings_diagnostics">රෝග විනිශ්චය</string>
     <string name="settings_advanced">උසස්</string>
-    <string name="settings_about">Private Audio ගැන</string>
+    <string name="settings_about">Puzru ගැන</string>
     <string name="settings_privacy_policy">රහස්‍යතා ප්‍රතිපත්තිය</string>
-    <string name="settings_privacy_policy_body">Private Audio සඳහා ගිණුමක් හෝ පුරනය වීමක් අවශ්‍ය නොවන අතර එය මයික්‍රෆෝන අවසරය ඉල්ලා නොසිටී. එය මයික්‍රෆෝන ශ්‍රව්‍ය ග්‍රහණය කිරීම හෝ පටිගත කිරීම නොකරන අතර, ඔබේ සංවාද හෝ ඒවායේ ශ්‍රව්‍ය අන්තර්ගතය පටිගත කිරීම හෝ ගබඩා කිරීම නොකරයි.\n\nPrivate Audio යොමු කිරීම සහ රෝග විනිශ්චය සඳහා අවශ්‍ය Android ශ්‍රව්‍ය පද්ධති තොරතුරු භාවිත කරයි. රෝග විනිශ්චයට පොදු Android API මඟින් හෙළි කරන තාක්ෂණික තත්ත්වය සහ පාරදත්ත, ධාවන හා පටිගත කිරීමේ සැසි පාරදත්ත ඇතුළුව, පරීක්ෂා කළ හැක. පටිගත කිරීමේ සැසි පාරදත්ත යනු ශ්‍රව්‍ය පද්ධතියේ තාක්ෂණික තොරතුරුය; Private Audio එම සැසිවලට අදාළ මයික්‍රෆෝන ශ්‍රව්‍ය ග්‍රහණය නොකරයි. රෝග විනිශ්චය තොරතුරුවලට යෙදුම් හා Android අනුවාද, උපාංග හා මාදිලි තොරතුරු, යෙදුම් ක්‍රියාවලිය හා තත්ත්වය, පවතින හා වත්මන් ශ්‍රව්‍ය උපාංග, පොදු ධාවන හා පටිගත කිරීමේ වින්‍යාස පාරදත්ත සහ යොමු කිරීමේ උත්සාහ, ප්‍රතිඵල, වේලාව හා තාක්ෂණික සිදුවීම් ඇතුළත් විය හැක.\n\nයෙදුම් අභිරුචි Private Audio හි යෙදුමට-පෞද්ගලික ගබඩාවේ දේශීයව ගබඩා වේ. රෝග විනිශ්චය තොරතුරු ඔබේ උපාංගයේ ජනනය කර සකසනු ලබන අතර ධාවනය වන යෙදුමේ දේශීය තත්ත්වයේ පැවතිය හැක. වාර්තා ස්වයංක්‍රීයව සුරැකීම හෝ යැවීම සිදු නොවේ. ඔබ පැහැදිලිව රෝග විනිශ්චය වාර්තාව සුරකින්න තෝරා Android හරහා ගමනාන්තයක් තෝරාගත් විට පමණක් Private Audio හි යෙදුමට-පෞද්ගලික ගබඩාවෙන් පිටත ස්ථිර වාර්තාවක් සෑදේ. නිර්යාතයෙන් පසු එම පිටපත හැසිරවීම, රඳවා තබා ගැනීම හා මැකීම පාලනය කරන්නේ තෝරාගත් ස්ථානය හෝ සේවාවයි—Private Audio නොවේ.\n\nවත්මන් අනුවාදය Android හි අන්තර්ජාල අවසරය ඉල්ලා නොසිටී, Private Audio පසුබිම් සේවාදායකයක් හෝ ජාල සම්ප්‍රේෂණ මාර්ගයක් එයට නැත, සහ විශ්ලේෂණ, වෙළඳ දැන්වීම් හෝ යෙදුම අනපේක්ෂිත ලෙස නතර වූ විට ඒ බව වාර්තා කරන සේවා හෝ SDK ඇතුළත් නොවේ. එය දැනට සංවර්ධකයාට හෝ Private Audio සේවාදායකයකට රෝග විනිශ්චය වාර්තා නොයවන බැවින් Private Audio සේවාදායක පැත්තේ රෝග විනිශ්චය තොරතුරු රඳවා නොගනී.\n\nයෙදුමට අයත් දත්ත Android වලාකුළු උපස්ථයෙන් සහ උපාංග අතර මාරුවෙන් ඉවත් කර ඇත. දේශීය අභිරුචි වෙනස් කරන තුරු හෝ යෙදුම් දත්ත ඉවත් කරන තුරු යෙදුමට-පෞද්ගලික ගබඩාවේ පවතී; තාවකාලික රෝග විනිශ්චය තත්ත්වය සුරැකි වාර්තාවක් නොවේ. නිර්යාත කළ වාර්තා ඔබ තෝරාගත් ස්ථානයේ හෝ සේවාවේ පාලනය යටතේ පවතී.</string>
+    <string name="settings_privacy_policy_body">Puzru සඳහා ගිණුමක් හෝ පුරනය වීමක් අවශ්‍ය නොවන අතර එය මයික්‍රෆෝන අවසරය ඉල්ලා නොසිටී. එය මයික්‍රෆෝන ශ්‍රව්‍ය ග්‍රහණය කිරීම හෝ පටිගත කිරීම නොකරන අතර, ඔබේ සංවාද හෝ ඒවායේ ශ්‍රව්‍ය අන්තර්ගතය පටිගත කිරීම හෝ ගබඩා කිරීම නොකරයි.\n\nPuzru යොමු කිරීම සහ රෝග විනිශ්චය සඳහා අවශ්‍ය Android ශ්‍රව්‍ය පද්ධති තොරතුරු භාවිත කරයි. රෝග විනිශ්චයට පොදු Android API මඟින් හෙළි කරන තාක්ෂණික තත්ත්වය සහ පාරදත්ත, ධාවන හා පටිගත කිරීමේ සැසි පාරදත්ත ඇතුළුව, පරීක්ෂා කළ හැක. පටිගත කිරීමේ සැසි පාරදත්ත යනු ශ්‍රව්‍ය පද්ධතියේ තාක්ෂණික තොරතුරුය; Puzru එම සැසිවලට අදාළ මයික්‍රෆෝන ශ්‍රව්‍ය ග්‍රහණය නොකරයි. රෝග විනිශ්චය තොරතුරුවලට යෙදුම් හා Android අනුවාද, උපාංග හා මාදිලි තොරතුරු, යෙදුම් ක්‍රියාවලිය හා තත්ත්වය, පවතින හා වත්මන් ශ්‍රව්‍ය උපාංග, පොදු ධාවන හා පටිගත කිරීමේ වින්‍යාස පාරදත්ත සහ යොමු කිරීමේ උත්සාහ, ප්‍රතිඵල, වේලාව හා තාක්ෂණික සිදුවීම් ඇතුළත් විය හැක.\n\nයෙදුම් අභිරුචි Puzru හි යෙදුමට-පෞද්ගලික ගබඩාවේ දේශීයව ගබඩා වේ. රෝග විනිශ්චය තොරතුරු ඔබේ උපාංගයේ ජනනය කර සකසනු ලබන අතර ධාවනය වන යෙදුමේ දේශීය තත්ත්වයේ පැවතිය හැක. වාර්තා ස්වයංක්‍රීයව සුරැකීම හෝ යැවීම සිදු නොවේ. ඔබ පැහැදිලිව රෝග විනිශ්චය වාර්තාව සුරකින්න තෝරා Android හරහා ගමනාන්තයක් තෝරාගත් විට පමණක් Puzru හි යෙදුමට-පෞද්ගලික ගබඩාවෙන් පිටත ස්ථිර වාර්තාවක් සෑදේ. නිර්යාතයෙන් පසු එම පිටපත හැසිරවීම, රඳවා තබා ගැනීම හා මැකීම පාලනය කරන්නේ තෝරාගත් ස්ථානය හෝ සේවාවයි—Puzru නොවේ.\n\nවත්මන් අනුවාදය Android හි අන්තර්ජාල අවසරය ඉල්ලා නොසිටී, Puzru පසුබිම් සේවාදායකයක් හෝ ජාල සම්ප්‍රේෂණ මාර්ගයක් එයට නැත, සහ විශ්ලේෂණ, වෙළඳ දැන්වීම් හෝ යෙදුම අනපේක්ෂිත ලෙස නතර වූ විට ඒ බව වාර්තා කරන සේවා හෝ SDK ඇතුළත් නොවේ. එය දැනට සංවර්ධකයාට හෝ Puzru සේවාදායකයකට රෝග විනිශ්චය වාර්තා නොයවන බැවින් Puzru සේවාදායක පැත්තේ රෝග විනිශ්චය තොරතුරු රඳවා නොගනී.\n\nයෙදුමට අයත් දත්ත Android වලාකුළු උපස්ථයෙන් සහ උපාංග අතර මාරුවෙන් ඉවත් කර ඇත. දේශීය අභිරුචි වෙනස් කරන තුරු හෝ යෙදුම් දත්ත ඉවත් කරන තුරු යෙදුමට-පෞද්ගලික ගබඩාවේ පවතී; තාවකාලික රෝග විනිශ්චය තත්ත්වය සුරැකි වාර්තාවක් නොවේ. නිර්යාත කළ වාර්තා ඔබ තෝරාගත් ස්ථානයේ හෝ සේවාවේ පාලනය යටතේ පවතී.</string>
     <string name="settings_version">අනුවාදය %1$s</string>
     <string name="settings_language_android_13_required">යෙදුම තුළ භාෂාව තේරීමට Android 13 හෝ ඊට පසු අනුවාදයක් අවශ්‍යයි. මෙම උපාංගය පද්ධතියේ භාෂාව අනුගමනය කරයි.</string>
     <string name="settings_proximity_screen">කන අසලදී තිරය නිවන්න</string>
-    <string name="settings_about_body">Private Audio සහාය දක්වන කටහඬ ශ්‍රව්‍යය ඔබේ දුරකථනයේ ඇතුළත් කන් රිසීවරය වෙත යොමු කිරීමට උදවු කරයි.</string>
+    <string name="settings_about_body">Puzru සහාය දක්වන කටහඬ ශ්‍රව්‍යය ඔබේ දුරකථනයේ ඇතුළත් කන් රිසීවරය වෙත යොමු කිරීමට උදවු කරයි.</string>
     <string name="diagnostic_report_saved">රෝග විනිශ්චය වාර්තාව සුරකින ලදි.</string>
     <string name="diagnostic_report_save_failed">රෝග විනිශ්චය වාර්තාව සුරැකීමට නොහැකි විය.</string>
     <string name="diagnostics_title">රෝග විනිශ්චය</string>
     <string name="diagnostics_system_check">පද්ධති පරීක්ෂාව</string>
     <string name="diagnostics_earpiece">කන් රිසීවරය</string>
     <string name="diagnostics_proximity_sensor">සමීපතා සංවේදකය</string>
-    <string name="diagnostics_private_audio">PRIVATE AUDIO</string>
+    <string name="diagnostics_private_audio">PUZRU</string>
     <string name="diagnostics_routing">යොමු කිරීම</string>
     <string name="diagnostics_status">තත්ත්වය</string>
     <string name="diagnostics_audio_route">ශ්‍රව්‍ය ප්‍රතිදානය</string>
@@ -58,8 +58,8 @@
     <string name="diagnostics_route_other">වෙනත්</string>
     <string name="diagnostics_error_blocked_by_system">යොමු කිරීම පද්ධතිය මඟින් අවහිර කරන ලදි.</string>
     <string name="diagnostics_error_session_ended">යොමු කිරීම සම්පූර්ණ වීමට පෙර ශ්‍රව්‍ය සැසිය අවසන් විය.</string>
-    <string name="diagnostics_error_audio_start">Private Audio හට ශ්‍රව්‍ය යොමු කිරීම ආරම්භ කිරීමට නොහැකි විය.</string>
-    <string name="diagnostics_error_audio_preparation">Private Audio හට සන්නිවේදන ශ්‍රව්‍යය සූදානම් කිරීමට නොහැකි විය.</string>
+    <string name="diagnostics_error_audio_start">Puzru හට ශ්‍රව්‍ය යොමු කිරීම ආරම්භ කිරීමට නොහැකි විය.</string>
+    <string name="diagnostics_error_audio_preparation">Puzru හට සන්නිවේදන ශ්‍රව්‍යය සූදානම් කිරීමට නොහැකි විය.</string>
     <string name="diagnostics_error_request_rejected">කන් රිසීවරය වෙත යොමු කිරීමේ ඉල්ලීම පිළිගනු නොලැබිණි.</string>
     <string name="diagnostics_error_not_completed">යොමු කිරීම සම්පූර්ණ කිරීමට නොහැකි විය.</string>
 </resources>
