@@ -94,7 +94,7 @@ class CebuanoLocalizationContractTest {
             "recording-session metadata mao ang teknikal nga impormasyon sa audio system", "dili mokuha sa microphone audio nga may kalabutan sa maong mga session",
             "gihimo ug giproseso sa inyong device", "mga report dili awtomatikong masave o mapadala", "lamang kung klaro ninyong pilion ang I-save ang diagnostic report",
             "kasamtangang bersyon wala mangayo sa Internet permission sa Android", "walay backend o network transmission path ang Private Audio",
-            "analytics, advertising, o crash-reporting nga mga serbisyo o SDKs", "dili kini nagpadala og diagnostic reports ngadto sa developer o sa usa ka Private Audio server",
+            "wala naglakip og analytics, advertising, o crash-reporting nga mga serbisyo o SDKs", "dili kini nagpadala og diagnostic reports ngadto sa developer o sa usa ka Private Audio server",
             "dili apil sa Android cloud backup ug device-to-device transfer",
         ).forEach { guard -> assertTrue("Missing privacy guard: $guard", privacy.contains(guard)) }
 

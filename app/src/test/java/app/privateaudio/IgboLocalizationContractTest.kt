@@ -49,12 +49,13 @@ class IgboLocalizationContractTest {
 
         val privacy = resourceValue("settings_privacy_policy_body")
         listOf(
-            "achọghị akaụntụ ma ọ bụ nbanye", "ọ naghịkwa arịọ ikike igwe okwu", "Ọ naghị ejide ma ọ bụ dekọọ ọdịyo igwe okwu",
-            "dekọọ ma ọ bụ chekwaa mkparịta ụka unu ma ọ bụ ọdịnaya ọdịyo ha", "Metadata nke oge ndekọ bụ ozi teknụzụ gbasara usoro ọdịyo",
+            "achọghị akaụntụ ma ọ bụ nbanye", "ọ naghịkwa arịọ ikike igwe okwu",
+            "Ọ naghị ejide ma ọ bụ dekọọ ọdịyo igwe okwu, ma ọ bụ dekọọ ma ọ bụ chekwaa mkparịta ụka unu ma ọ bụ ọdịnaya ọdịyo ha",
+            "Metadata nke oge ndekọ bụ ozi teknụzụ gbasara usoro ọdịyo",
             "adịghị ejide ọdịyo igwe okwu metụtara oge ndị ahụ", "na-emepụta ma na-ahazi ozi nchọpụta nsogbu n’ime ngwaọrụ gị", "A naghị echekwa ma ọ bụ zipu akụkọ n’onwe ya",
             "naanị mgbe ị họrọpụtara kpọmkwem Chekwaa akụkọ nchọpụta nsogbu", "Ụdị dị ugbu a anaghị arịọ ikike Internet nke Android", "enweghị backend ma ọ bụ ụzọ nnyefe netwọk nke Private Audio",
-            "SDK maka analytics, mgbasa ozi, ma ọ bụ ịkọ mmebi ngwa", "Ọ naghị eziga ugbu a akụkọ nchọpụta nsogbu n’aka onye mmepe ma ọ bụ na sava Private Audio",
-            "nkwado ndabere igwe ojii Android na mbufe site n’otu ngwaọrụ gaa n’ọzọ",
+            "ọ gụnyeghị ọrụ ma ọ bụ SDK maka analytics, mgbasa ozi, ma ọ bụ ịkọ mmebi ngwa", "Ọ naghị eziga ugbu a akụkọ nchọpụta nsogbu n’aka onye mmepe ma ọ bụ na sava Private Audio",
+            "A na-ewepu data nke ngwa nwepụtara na nkwado ndabere igwe ojii Android na mbufe site n’otu ngwaọrụ gaa n’ọzọ",
         ).forEach { guard -> assertTrue("Missing privacy guard: $guard", privacy.contains(guard)) }
         assertFalse(projectFile("app/src/main/res/values-ig/mini_state_strings.xml").exists())
     }
