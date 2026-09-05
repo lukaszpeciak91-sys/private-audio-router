@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Private Audio</string>
-    <string name="routing_notification_channel">Private Audio</string>
-    <string name="routing_notification_title">Private Audio ਚਾਲੂ ਹੈ</string>
+    <string name="app_name">Puzru</string>
+    <string name="routing_notification_channel">Puzru</string>
+    <string name="routing_notification_title">Puzru ਚਾਲੂ ਹੈ</string>
     <string name="routing_notification_text">ਆਡੀਓ ਬਦਲਣ ਦੀ ਉਡੀਕ</string>
-    <string name="product_title">Private Audio</string>
+    <string name="product_title">Puzru</string>
     <string name="product_subtitle">AI ਨਾਲ ਨਿੱਜੀ ਤੌਰ ’ਤੇ ਗੱਲ ਕਰੋ, ਬਿਲਕੁਲ ਫ਼ੋਨ ਕਾਲ ਵਾਂਗ।</string>
     <string name="state_ready">ਤਿਆਰ</string>
     <string name="state_waiting">ਉਡੀਕ</string>
@@ -14,18 +14,18 @@
     <string name="floating">ਕੰਪੈਕਟ</string>
     <string name="settings">ਸੈਟਿੰਗਾਂ</string>
     <string name="close">ਬੰਦ ਕਰੋ</string>
-    <string name="overlay_controller_description">Private Audio ਕੰਪੈਕਟ ਕੰਟਰੋਲਰ। ਸਥਿਤੀ: %1$s। ਪਾਵਰ ਚਾਲੂ ਜਾਂ ਬੰਦ ਕਰਨ, ਫੈਲਾਉਣ ਅਤੇ ਬੰਦ ਕਰਨ ਲਈ ਕੰਟਰੋਲ।</string>
+    <string name="overlay_controller_description">Puzru ਕੰਪੈਕਟ ਕੰਟਰੋਲਰ। ਸਥਿਤੀ: %1$s। ਪਾਵਰ ਚਾਲੂ ਜਾਂ ਬੰਦ ਕਰਨ, ਫੈਲਾਉਣ ਅਤੇ ਬੰਦ ਕਰਨ ਲਈ ਕੰਟਰੋਲ।</string>
     <string name="settings_language">ਭਾਸ਼ਾ</string>
     <string name="settings_system_default">ਡਿਫੌਲਟ</string>
     <string name="settings_save_diagnostic">ਡਾਇਗਨੌਸਟਿਕ ਰਿਪੋਰਟ ਸੰਭਾਲੋ</string>
     <string name="settings_advanced">ਉੱਨਤ</string>
-    <string name="settings_about">Private Audio ਬਾਰੇ</string>
+    <string name="settings_about">Puzru ਬਾਰੇ</string>
     <string name="settings_privacy_policy">ਪਰਦੇਦਾਰੀ ਨੀਤੀ</string>
-    <string name="settings_privacy_policy_body">Private Audio ਨੂੰ ਕਿਸੇ ਖਾਤੇ ਜਾਂ ਸਾਈਨ-ਇਨ ਦੀ ਲੋੜ ਨਹੀਂ ਹੈ ਅਤੇ ਇਹ ਮਾਈਕ੍ਰੋਫੋਨ ਦੀ ਇਜਾਜ਼ਤ ਨਹੀਂ ਮੰਗਦਾ। ਇਹ ਮਾਈਕ੍ਰੋਫੋਨ ਆਡੀਓ ਨੂੰ ਕੈਪਚਰ ਜਾਂ ਰਿਕਾਰਡ ਨਹੀਂ ਕਰਦਾ, ਅਤੇ ਨਾ ਹੀ ਤੁਹਾਡੀਆਂ ਗੱਲਬਾਤਾਂ ਜਾਂ ਉਨ੍ਹਾਂ ਦੀ ਆਡੀਓ ਸਮੱਗਰੀ ਨੂੰ ਰਿਕਾਰਡ ਜਾਂ ਸਟੋਰ ਕਰਦਾ ਹੈ।\n\nPrivate Audio ਰੂਟਿੰਗ ਅਤੇ ਡਾਇਗਨੋਸਟਿਕਸ ਲਈ ਲੋੜੀਂਦੀ Android ਆਡੀਓ-ਸਿਸਟਮ ਜਾਣਕਾਰੀ ਵਰਤਦਾ ਹੈ। ਡਾਇਗਨੋਸਟਿਕਸ ਜਨਤਕ Android APIs ਦੁਆਰਾ ਉਪਲਬਧ ਕਰਵਾਈ ਗਈ ਤਕਨੀਕੀ ਸਥਿਤੀ ਅਤੇ ਮੈਟਾਡੇਟਾ ਦੀ ਜਾਂਚ ਕਰ ਸਕਦੇ ਹਨ, ਜਿਸ ਵਿੱਚ ਪਲੇਬੈਕ ਅਤੇ ਰਿਕਾਰਡਿੰਗ-ਸੈਸ਼ਨ ਮੈਟਾਡੇਟਾ ਸ਼ਾਮਲ ਹੈ। ਰਿਕਾਰਡਿੰਗ-ਸੈਸ਼ਨ ਮੈਟਾਡੇਟਾ ਤਕਨੀਕੀ ਆਡੀਓ-ਸਿਸਟਮ ਜਾਣਕਾਰੀ ਹੈ; Private Audio ਉਹਨਾਂ ਸੈਸ਼ਨਾਂ ਨਾਲ ਸੰਬੰਧਤ ਮਾਈਕ੍ਰੋਫੋਨ ਆਡੀਓ ਨੂੰ ਕੈਪਚਰ ਨਹੀਂ ਕਰਦਾ। ਡਾਇਗਨੋਸਟਿਕ ਜਾਣਕਾਰੀ ਵਿੱਚ ਐਪ ਅਤੇ Android ਦੇ ਵਰਜਨ, ਡਿਵਾਈਸ ਅਤੇ ਮਾਡਲ ਜਾਣਕਾਰੀ, ਐਪ ਪ੍ਰੋਸੈਸ ਅਤੇ ਸਥਿਤੀ ਜਾਣਕਾਰੀ, ਉਪਲਬਧ ਅਤੇ ਮੌਜੂਦਾ ਆਡੀਓ ਡਿਵਾਈਸ, ਜਨਤਕ ਪਲੇਬੈਕ ਅਤੇ ਰਿਕਾਰਡਿੰਗ ਕਨਫਿਗਰੇਸ਼ਨ ਮੈਟਾਡੇਟਾ, ਅਤੇ ਰੂਟਿੰਗ ਕੋਸ਼ਿਸ਼ਾਂ, ਨਤੀਜੇ, ਟਾਈਮਿੰਗ, ਅਤੇ ਤਕਨੀਕੀ ਘਟਨਾਵਾਂ ਸ਼ਾਮਲ ਹੋ ਸਕਦੀਆਂ ਹਨ।\n\nਐਪ ਪਸੰਦਾਂ ਨੂੰ Private Audio ਦੀ ਐਪ-ਨਿੱਜੀ ਸਟੋਰੇਜ ਵਿੱਚ ਸਥਾਨਕ ਤੌਰ ‘ਤੇ ਸੰਭਾਲਿਆ ਜਾਂਦਾ ਹੈ। ਡਾਇਗਨੋਸਟਿਕ ਜਾਣਕਾਰੀ ਤੁਹਾਡੇ ਡਿਵਾਈਸ ‘ਤੇ ਬਣਾਈ ਅਤੇ ਪ੍ਰੋਸੈਸ ਕੀਤੀ ਜਾਂਦੀ ਹੈ ਅਤੇ ਚੱਲ ਰਹੀ ਐਪ ਦੀ ਸਥਾਨਕ ਸਥਿਤੀ ਵਿੱਚ ਮੌਜੂਦ ਹੋ ਸਕਦੀ ਹੈ। ਰਿਪੋਰਟਾਂ ਆਪਣੇ ਆਪ ਨਾ ਤਾਂ ਸੇਵ ਕੀਤੀਆਂ ਜਾਂਦੀਆਂ ਹਨ ਅਤੇ ਨਾ ਹੀ ਭੇਜੀਆਂ ਜਾਂਦੀਆਂ ਹਨ। ਇੱਕ ਸਥਾਈ ਰਿਪੋਰਟ Private Audio ਦੀ ਐਪ-ਨਿੱਜੀ ਸਟੋਰੇਜ ਤੋਂ ਬਾਹਰ ਕੇਵਲ ਤਦੋਂ ਬਣਾਈ ਜਾਂਦੀ ਹੈ ਜਦੋਂ ਤੁਸੀਂ ਖੁਦ ਸਪਸ਼ਟ ਤੌਰ ‘ਤੇ ਡਾਇਗਨੋਸਟਿਕ ਰਿਪੋਰਟ ਸੇਵ ਕਰੋ ਚੁਣਦੇ ਹੋ ਅਤੇ Android ਰਾਹੀਂ ਇੱਕ ਮੰਜ਼ਿਲ ਚੁਣਦੇ ਹੋ। ਐਕਸਪੋਰਟ ਤੋਂ ਬਾਅਦ, ਉਸ ਕਾਪੀ ਦੀ ਸੰਭਾਲ, ਰੱਖਰਖਾਅ ਅਤੇ ਮਿਟਾਉਣ ਨੂੰ ਨਿਯੰਤਰਿਤ ਚੁਣੀ ਹੋਈ ਥਾਂ ਜਾਂ ਸੇਵਾ ਕਰਦੀ ਹੈ—Private Audio ਨਹੀਂ।\n\nਮੌਜੂਦਾ ਵਰਜਨ Android ਦੀ Internet ਇਜਾਜ਼ਤ ਨਹੀਂ ਮੰਗਦਾ, ਇਸ ਵਿੱਚ ਕੋਈ Private Audio ਬੈਕਐਂਡ ਜਾਂ ਨੈੱਟਵਰਕ ਟ੍ਰਾਂਸਮਿਸ਼ਨ ਪਾਥ ਨਹੀਂ ਹੈ, ਅਤੇ ਇਸ ਵਿੱਚ ਐਨਾਲਿਟਿਕਸ, ਵਿਗਿਆਪਨ, ਜਾਂ ਕਰੈਸ਼-ਰਿਪੋਰਟਿੰਗ ਸੇਵਾਵਾਂ ਜਾਂ SDKs ਸ਼ਾਮਲ ਨਹੀਂ ਹਨ। ਇਹ ਇਸ ਵੇਲੇ ਡਾਇਗਨੋਸਟਿਕ ਰਿਪੋਰਟਾਂ ਨੂੰ ਡਿਵੈਲਪਰ ਜਾਂ ਕਿਸੇ Private Audio ਸਰਵਰ ਨੂੰ ਨਹੀਂ ਭੇਜਦਾ, ਇਸ ਲਈ Private Audio ਕੋਲ ਸਰਵਰ-ਪੱਖੀ ਡਾਇਗਨੋਸਟਿਕ ਰਿਟੇਨਸ਼ਨ ਨਹੀਂ ਹੈ।\n\nਐਪ ਦੀ ਮਲਕੀਅਤ ਵਾਲਾ ਡਾਟਾ Android ਕਲਾਉਡ ਬੈਕਅੱਪ ਅਤੇ ਡਿਵਾਈਸ-ਤੋਂ-ਡਿਵਾਈਸ ਟ੍ਰਾਂਸਫਰ ਤੋਂ ਬਾਹਰ ਰੱਖਿਆ ਜਾਂਦਾ ਹੈ। ਸਥਾਨਕ ਪਸੰਦਾਂ ਐਪ-ਨਿੱਜੀ ਸਟੋਰੇਜ ਵਿੱਚ ਤਦ ਤੱਕ ਰਹਿੰਦੀਆਂ ਹਨ ਜਦ ਤੱਕ ਉਹਨਾਂ ਨੂੰ ਬਦਲਿਆ ਨਾ ਜਾਵੇ ਜਾਂ ਐਪ ਦਾ ਡਾਟਾ ਹਟਾਇਆ ਨਾ ਜਾਵੇ; ਅਸਥਾਈ ਡਾਇਗਨੋਸਟਿਕ ਸਥਿਤੀ ਸੇਵ ਕੀਤੀ ਹੋਈ ਰਿਪੋਰਟ ਨਹੀਂ ਹੁੰਦੀ। ਐਕਸਪੋਰਟ ਕੀਤੀਆਂ ਰਿਪੋਰਟਾਂ ਤੁਹਾਡੇ ਦੁਆਰਾ ਚੁਣੀ ਗਈ ਥਾਂ ਜਾਂ ਸੇਵਾ ਦੇ ਨਿਯੰਤਰਣ ਹੇਠ ਰਹਿੰਦੀਆਂ ਹਨ।</string>
+    <string name="settings_privacy_policy_body">Puzru ਨੂੰ ਕਿਸੇ ਖਾਤੇ ਜਾਂ ਸਾਈਨ-ਇਨ ਦੀ ਲੋੜ ਨਹੀਂ ਹੈ ਅਤੇ ਇਹ ਮਾਈਕ੍ਰੋਫੋਨ ਦੀ ਇਜਾਜ਼ਤ ਨਹੀਂ ਮੰਗਦਾ। ਇਹ ਮਾਈਕ੍ਰੋਫੋਨ ਆਡੀਓ ਨੂੰ ਕੈਪਚਰ ਜਾਂ ਰਿਕਾਰਡ ਨਹੀਂ ਕਰਦਾ, ਅਤੇ ਨਾ ਹੀ ਤੁਹਾਡੀਆਂ ਗੱਲਬਾਤਾਂ ਜਾਂ ਉਨ੍ਹਾਂ ਦੀ ਆਡੀਓ ਸਮੱਗਰੀ ਨੂੰ ਰਿਕਾਰਡ ਜਾਂ ਸਟੋਰ ਕਰਦਾ ਹੈ।\n\nPuzru ਰੂਟਿੰਗ ਅਤੇ ਡਾਇਗਨੋਸਟਿਕਸ ਲਈ ਲੋੜੀਂਦੀ Android ਆਡੀਓ-ਸਿਸਟਮ ਜਾਣਕਾਰੀ ਵਰਤਦਾ ਹੈ। ਡਾਇਗਨੋਸਟਿਕਸ ਜਨਤਕ Android APIs ਦੁਆਰਾ ਉਪਲਬਧ ਕਰਵਾਈ ਗਈ ਤਕਨੀਕੀ ਸਥਿਤੀ ਅਤੇ ਮੈਟਾਡੇਟਾ ਦੀ ਜਾਂਚ ਕਰ ਸਕਦੇ ਹਨ, ਜਿਸ ਵਿੱਚ ਪਲੇਬੈਕ ਅਤੇ ਰਿਕਾਰਡਿੰਗ-ਸੈਸ਼ਨ ਮੈਟਾਡੇਟਾ ਸ਼ਾਮਲ ਹੈ। ਰਿਕਾਰਡਿੰਗ-ਸੈਸ਼ਨ ਮੈਟਾਡੇਟਾ ਤਕਨੀਕੀ ਆਡੀਓ-ਸਿਸਟਮ ਜਾਣਕਾਰੀ ਹੈ; Puzru ਉਹਨਾਂ ਸੈਸ਼ਨਾਂ ਨਾਲ ਸੰਬੰਧਤ ਮਾਈਕ੍ਰੋਫੋਨ ਆਡੀਓ ਨੂੰ ਕੈਪਚਰ ਨਹੀਂ ਕਰਦਾ। ਡਾਇਗਨੋਸਟਿਕ ਜਾਣਕਾਰੀ ਵਿੱਚ ਐਪ ਅਤੇ Android ਦੇ ਵਰਜਨ, ਡਿਵਾਈਸ ਅਤੇ ਮਾਡਲ ਜਾਣਕਾਰੀ, ਐਪ ਪ੍ਰੋਸੈਸ ਅਤੇ ਸਥਿਤੀ ਜਾਣਕਾਰੀ, ਉਪਲਬਧ ਅਤੇ ਮੌਜੂਦਾ ਆਡੀਓ ਡਿਵਾਈਸ, ਜਨਤਕ ਪਲੇਬੈਕ ਅਤੇ ਰਿਕਾਰਡਿੰਗ ਕਨਫਿਗਰੇਸ਼ਨ ਮੈਟਾਡੇਟਾ, ਅਤੇ ਰੂਟਿੰਗ ਕੋਸ਼ਿਸ਼ਾਂ, ਨਤੀਜੇ, ਟਾਈਮਿੰਗ, ਅਤੇ ਤਕਨੀਕੀ ਘਟਨਾਵਾਂ ਸ਼ਾਮਲ ਹੋ ਸਕਦੀਆਂ ਹਨ।\n\nਐਪ ਪਸੰਦਾਂ ਨੂੰ Puzru ਦੀ ਐਪ-ਨਿੱਜੀ ਸਟੋਰੇਜ ਵਿੱਚ ਸਥਾਨਕ ਤੌਰ ‘ਤੇ ਸੰਭਾਲਿਆ ਜਾਂਦਾ ਹੈ। ਡਾਇਗਨੋਸਟਿਕ ਜਾਣਕਾਰੀ ਤੁਹਾਡੇ ਡਿਵਾਈਸ ‘ਤੇ ਬਣਾਈ ਅਤੇ ਪ੍ਰੋਸੈਸ ਕੀਤੀ ਜਾਂਦੀ ਹੈ ਅਤੇ ਚੱਲ ਰਹੀ ਐਪ ਦੀ ਸਥਾਨਕ ਸਥਿਤੀ ਵਿੱਚ ਮੌਜੂਦ ਹੋ ਸਕਦੀ ਹੈ। ਰਿਪੋਰਟਾਂ ਆਪਣੇ ਆਪ ਨਾ ਤਾਂ ਸੇਵ ਕੀਤੀਆਂ ਜਾਂਦੀਆਂ ਹਨ ਅਤੇ ਨਾ ਹੀ ਭੇਜੀਆਂ ਜਾਂਦੀਆਂ ਹਨ। ਇੱਕ ਸਥਾਈ ਰਿਪੋਰਟ Puzru ਦੀ ਐਪ-ਨਿੱਜੀ ਸਟੋਰੇਜ ਤੋਂ ਬਾਹਰ ਕੇਵਲ ਤਦੋਂ ਬਣਾਈ ਜਾਂਦੀ ਹੈ ਜਦੋਂ ਤੁਸੀਂ ਖੁਦ ਸਪਸ਼ਟ ਤੌਰ ‘ਤੇ ਡਾਇਗਨੋਸਟਿਕ ਰਿਪੋਰਟ ਸੇਵ ਕਰੋ ਚੁਣਦੇ ਹੋ ਅਤੇ Android ਰਾਹੀਂ ਇੱਕ ਮੰਜ਼ਿਲ ਚੁਣਦੇ ਹੋ। ਐਕਸਪੋਰਟ ਤੋਂ ਬਾਅਦ, ਉਸ ਕਾਪੀ ਦੀ ਸੰਭਾਲ, ਰੱਖਰਖਾਅ ਅਤੇ ਮਿਟਾਉਣ ਨੂੰ ਨਿਯੰਤਰਿਤ ਚੁਣੀ ਹੋਈ ਥਾਂ ਜਾਂ ਸੇਵਾ ਕਰਦੀ ਹੈ—Puzru ਨਹੀਂ।\n\nਮੌਜੂਦਾ ਵਰਜਨ Android ਦੀ Internet ਇਜਾਜ਼ਤ ਨਹੀਂ ਮੰਗਦਾ, ਇਸ ਵਿੱਚ ਕੋਈ Puzru ਬੈਕਐਂਡ ਜਾਂ ਨੈੱਟਵਰਕ ਟ੍ਰਾਂਸਮਿਸ਼ਨ ਪਾਥ ਨਹੀਂ ਹੈ, ਅਤੇ ਇਸ ਵਿੱਚ ਐਨਾਲਿਟਿਕਸ, ਵਿਗਿਆਪਨ, ਜਾਂ ਕਰੈਸ਼-ਰਿਪੋਰਟਿੰਗ ਸੇਵਾਵਾਂ ਜਾਂ SDKs ਸ਼ਾਮਲ ਨਹੀਂ ਹਨ। ਇਹ ਇਸ ਵੇਲੇ ਡਾਇਗਨੋਸਟਿਕ ਰਿਪੋਰਟਾਂ ਨੂੰ ਡਿਵੈਲਪਰ ਜਾਂ ਕਿਸੇ Puzru ਸਰਵਰ ਨੂੰ ਨਹੀਂ ਭੇਜਦਾ, ਇਸ ਲਈ Puzru ਕੋਲ ਸਰਵਰ-ਪੱਖੀ ਡਾਇਗਨੋਸਟਿਕ ਰਿਟੇਨਸ਼ਨ ਨਹੀਂ ਹੈ।\n\nਐਪ ਦੀ ਮਲਕੀਅਤ ਵਾਲਾ ਡਾਟਾ Android ਕਲਾਉਡ ਬੈਕਅੱਪ ਅਤੇ ਡਿਵਾਈਸ-ਤੋਂ-ਡਿਵਾਈਸ ਟ੍ਰਾਂਸਫਰ ਤੋਂ ਬਾਹਰ ਰੱਖਿਆ ਜਾਂਦਾ ਹੈ। ਸਥਾਨਕ ਪਸੰਦਾਂ ਐਪ-ਨਿੱਜੀ ਸਟੋਰੇਜ ਵਿੱਚ ਤਦ ਤੱਕ ਰਹਿੰਦੀਆਂ ਹਨ ਜਦ ਤੱਕ ਉਹਨਾਂ ਨੂੰ ਬਦਲਿਆ ਨਾ ਜਾਵੇ ਜਾਂ ਐਪ ਦਾ ਡਾਟਾ ਹਟਾਇਆ ਨਾ ਜਾਵੇ; ਅਸਥਾਈ ਡਾਇਗਨੋਸਟਿਕ ਸਥਿਤੀ ਸੇਵ ਕੀਤੀ ਹੋਈ ਰਿਪੋਰਟ ਨਹੀਂ ਹੁੰਦੀ। ਐਕਸਪੋਰਟ ਕੀਤੀਆਂ ਰਿਪੋਰਟਾਂ ਤੁਹਾਡੇ ਦੁਆਰਾ ਚੁਣੀ ਗਈ ਥਾਂ ਜਾਂ ਸੇਵਾ ਦੇ ਨਿਯੰਤਰਣ ਹੇਠ ਰਹਿੰਦੀਆਂ ਹਨ।</string>
     <string name="settings_version">ਵਰਜਨ %1$s</string>
     <string name="settings_language_android_13_required">ਐਪ ਵਿੱਚ ਭਾਸ਼ਾ ਚੁਣਨ ਲਈ Android 13 ਜਾਂ ਇਸ ਤੋਂ ਨਵਾਂ ਵਰਜਨ ਲੋੜੀਂਦਾ ਹੈ। ਇਹ ਡਿਵਾਈਸ ਸਿਸਟਮ ਦੀ ਭਾਸ਼ਾ ਵਰਤਦਾ ਹੈ।</string>
     <string name="settings_proximity_screen">ਕੰਨ ਦੇ ਨੇੜੇ ਸਕ੍ਰੀਨ ਬੰਦ ਕਰੋ</string>
-    <string name="settings_about_body">Private Audio ਸਮਰਥਿਤ ਵੌਇਸ ਆਡੀਓ ਨੂੰ ਤੁਹਾਡੇ ਫ਼ੋਨ ਦੇ ਬਿਲਟ-ਇਨ ਈਅਰਪੀਸ ’ਤੇ ਬਦਲਣ ਵਿੱਚ ਮਦਦ ਕਰਦਾ ਹੈ।</string>
+    <string name="settings_about_body">Puzru ਸਮਰਥਿਤ ਵੌਇਸ ਆਡੀਓ ਨੂੰ ਤੁਹਾਡੇ ਫ਼ੋਨ ਦੇ ਬਿਲਟ-ਇਨ ਈਅਰਪੀਸ ’ਤੇ ਬਦਲਣ ਵਿੱਚ ਮਦਦ ਕਰਦਾ ਹੈ।</string>
     <string name="diagnostic_report_saved">ਡਾਇਗਨੌਸਟਿਕ ਰਿਪੋਰਟ ਸੰਭਾਲੀ ਗਈ।</string>
     <string name="diagnostic_report_save_failed">ਡਾਇਗਨੌਸਟਿਕ ਰਿਪੋਰਟ ਸੰਭਾਲੀ ਨਹੀਂ ਜਾ ਸਕੀ।</string>
 
@@ -34,7 +34,7 @@
     <string name="diagnostics_system_check">ਸਿਸਟਮ ਜਾਂਚ</string>
     <string name="diagnostics_earpiece">ਈਅਰਪੀਸ</string>
     <string name="diagnostics_proximity_sensor">ਨੇੜਤਾ ਸੈਂਸਰ</string>
-    <string name="diagnostics_private_audio">Private Audio</string>
+    <string name="diagnostics_private_audio">Puzru</string>
     <string name="diagnostics_routing">ਆਡੀਓ ਰੂਟਿੰਗ</string>
     <string name="diagnostics_status">ਸਥਿਤੀ</string>
     <string name="diagnostics_audio_route">ਆਡੀਓ ਆਉਟਪੁੱਟ</string>
@@ -59,8 +59,8 @@
     <string name="diagnostics_route_other">ਹੋਰ</string>
     <string name="diagnostics_error_blocked_by_system">ਸਿਸਟਮ ਨੇ ਆਡੀਓ ਰੂਟਿੰਗ ਨੂੰ ਬਲੌਕ ਕਰ ਦਿੱਤਾ ਸੀ।</string>
     <string name="diagnostics_error_session_ended">ਆਡੀਓ ਰੂਟਿੰਗ ਪੂਰੀ ਹੋਣ ਤੋਂ ਪਹਿਲਾਂ ਹੀ ਆਡੀਓ ਸੈਸ਼ਨ ਸਮਾਪਤ ਹੋ ਗਿਆ।</string>
-    <string name="diagnostics_error_audio_start">Private Audio ਆਡੀਓ ਰੂਟਿੰਗ ਸ਼ੁਰੂ ਨਹੀਂ ਕਰ ਸਕਿਆ।</string>
-    <string name="diagnostics_error_audio_preparation">Private Audio ਸੰਚਾਰ ਆਡੀਓ ਤਿਆਰ ਨਹੀਂ ਕਰ ਸਕਿਆ।</string>
+    <string name="diagnostics_error_audio_start">Puzru ਆਡੀਓ ਰੂਟਿੰਗ ਸ਼ੁਰੂ ਨਹੀਂ ਕਰ ਸਕਿਆ।</string>
+    <string name="diagnostics_error_audio_preparation">Puzru ਸੰਚਾਰ ਆਡੀਓ ਤਿਆਰ ਨਹੀਂ ਕਰ ਸਕਿਆ।</string>
     <string name="diagnostics_error_request_rejected">ਈਅਰਪੀਸ ’ਤੇ ਆਡੀਓ ਰੂਟ ਕਰਨ ਦੀ ਬੇਨਤੀ ਸਵੀਕਾਰ ਨਹੀਂ ਕੀਤੀ ਗਈ।</string>
     <string name="diagnostics_error_not_completed">ਆਡੀਓ ਰੂਟਿੰਗ ਪੂਰੀ ਨਹੀਂ ਕੀਤੀ ਜਾ ਸਕੀ।</string>
 </resources>

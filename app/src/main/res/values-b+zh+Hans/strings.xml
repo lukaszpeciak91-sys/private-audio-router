@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Private Audio</string>
-    <string name="routing_notification_channel">Private Audio</string>
-    <string name="routing_notification_title">Private Audio 已开启</string>
+    <string name="app_name">Puzru</string>
+    <string name="routing_notification_channel">Puzru</string>
+    <string name="routing_notification_title">Puzru 已开启</string>
     <string name="routing_notification_text">正在等待音频重定向</string>
-    <string name="product_title">Private Audio</string>
+    <string name="product_title">Puzru</string>
     <string name="product_subtitle">像打电话一样私密地与 AI 交谈。</string>
     <string name="state_ready">就绪</string>
     <string name="state_waiting">等待中</string>
@@ -14,18 +14,18 @@
     <string name="floating">迷你</string>
     <string name="settings">设置</string>
     <string name="close">关闭</string>
-    <string name="overlay_controller_description">Private Audio 迷你控制器。状态：%1$s。包含开启、展开和关闭控件。</string>
+    <string name="overlay_controller_description">Puzru 迷你控制器。状态：%1$s。包含开启、展开和关闭控件。</string>
     <string name="settings_language">语言</string>
     <string name="settings_system_default">默认</string>
     <string name="settings_save_diagnostic">保存诊断报告</string>
     <string name="settings_advanced">高级</string>
-    <string name="settings_about">关于 Private Audio</string>
+    <string name="settings_about">关于 Puzru</string>
     <string name="settings_privacy_policy">隐私政策</string>
-    <string name="settings_privacy_policy_body">Private Audio 无需帐户或登录，也不会请求麦克风权限。它不会采集或录制麦克风音频，也不会录制或存储您的对话或其中的音频内容。\n\nPrivate Audio 会使用音频路由和诊断所需的 Android 音频系统信息。诊断功能可能会检查由 Android 公共 API 公开的技术状态和元数据，包括播放元数据和录音会话元数据。录音会话元数据是音频系统的技术信息；Private Audio 不会采集与这些会话关联的麦克风音频。诊断信息可能包括应用和 Android 版本、设备和型号信息、应用进程和状态信息、可用和当前的音频设备、公开的播放和录音配置元数据，以及路由尝试、结果、时间信息和技术事件。\n\n应用偏好设置会存储在设备上 Private Audio 的应用专用存储空间中。诊断信息会在您的设备上生成和处理，并且可能存在于运行中应用的本地状态中。报告不会自动保存或发送。只有当您明确选择“保存诊断报告”并通过 Android 选择目标位置时，才会在 Private Audio 的应用专用存储空间之外创建持久报告。导出后，该副本的处理、保留和删除由所选位置或服务（而非 Private Audio）控制。\n\n当前版本不会请求 Android 的互联网权限，没有 Private Audio 后端或网络传输路径，也不包含分析、广告或崩溃报告服务或 SDK。它目前不会向开发者或 Private Audio 服务器发送诊断报告，因此 Private Audio 不会在任何服务器上保留诊断信息。\n\n应用自有数据不会纳入 Android 云备份和设备间传输。本地偏好设置会保留在应用专用存储空间中，直至被更改或应用数据被移除；临时诊断状态并非已保存的报告。导出的报告仍由您所选的位置或服务控制。</string>
+    <string name="settings_privacy_policy_body">Puzru 无需帐户或登录，也不会请求麦克风权限。它不会采集或录制麦克风音频，也不会录制或存储您的对话或其中的音频内容。\n\nPuzru 会使用音频路由和诊断所需的 Android 音频系统信息。诊断功能可能会检查由 Android 公共 API 公开的技术状态和元数据，包括播放元数据和录音会话元数据。录音会话元数据是音频系统的技术信息；Puzru 不会采集与这些会话关联的麦克风音频。诊断信息可能包括应用和 Android 版本、设备和型号信息、应用进程和状态信息、可用和当前的音频设备、公开的播放和录音配置元数据，以及路由尝试、结果、时间信息和技术事件。\n\n应用偏好设置会存储在设备上 Puzru 的应用专用存储空间中。诊断信息会在您的设备上生成和处理，并且可能存在于运行中应用的本地状态中。报告不会自动保存或发送。只有当您明确选择“保存诊断报告”并通过 Android 选择目标位置时，才会在 Puzru 的应用专用存储空间之外创建持久报告。导出后，该副本的处理、保留和删除由所选位置或服务（而非 Puzru）控制。\n\n当前版本不会请求 Android 的互联网权限，没有 Puzru 后端或网络传输路径，也不包含分析、广告或崩溃报告服务或 SDK。它目前不会向开发者或 Puzru 服务器发送诊断报告，因此 Puzru 不会在任何服务器上保留诊断信息。\n\n应用自有数据不会纳入 Android 云备份和设备间传输。本地偏好设置会保留在应用专用存储空间中，直至被更改或应用数据被移除；临时诊断状态并非已保存的报告。导出的报告仍由您所选的位置或服务控制。</string>
     <string name="settings_version">版本 %1$s</string>
     <string name="settings_language_android_13_required">应用内语言选择需要 Android 13 或更高版本。此设备使用系统语言。</string>
     <string name="settings_proximity_screen">靠近耳朵时关闭屏幕</string>
-    <string name="settings_about_body">Private Audio 可将语音音频导向手机内置听筒。</string>
+    <string name="settings_about_body">Puzru 可将语音音频导向手机内置听筒。</string>
     <string name="diagnostic_report_saved">诊断报告已保存。</string>
     <string name="diagnostic_report_save_failed">无法保存诊断报告。</string>
 
@@ -34,7 +34,7 @@
     <string name="diagnostics_system_check">系统检查</string>
     <string name="diagnostics_earpiece">听筒</string>
     <string name="diagnostics_proximity_sensor">距离传感器</string>
-    <string name="diagnostics_private_audio">Private Audio</string>
+    <string name="diagnostics_private_audio">Puzru</string>
     <string name="diagnostics_routing">音频路由</string>
     <string name="diagnostics_status">状态</string>
     <string name="diagnostics_audio_route">音频输出</string>
@@ -59,8 +59,8 @@
     <string name="diagnostics_route_other">其他</string>
     <string name="diagnostics_error_blocked_by_system">系统阻止了音频路由。</string>
     <string name="diagnostics_error_session_ended">音频路由完成前，音频会话已结束。</string>
-    <string name="diagnostics_error_audio_start">Private Audio 无法启动音频路由。</string>
-    <string name="diagnostics_error_audio_preparation">Private Audio 无法准备通信音频。</string>
+    <string name="diagnostics_error_audio_start">Puzru 无法启动音频路由。</string>
+    <string name="diagnostics_error_audio_preparation">Puzru 无法准备通信音频。</string>
     <string name="diagnostics_error_request_rejected">听筒音频路由请求未被接受。</string>
     <string name="diagnostics_error_not_completed">无法完成音频路由。</string>
 </resources>

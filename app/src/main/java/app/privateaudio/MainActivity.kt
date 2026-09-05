@@ -225,4 +225,4 @@ internal fun writeDiagnosticReport(
 }
 
 internal fun diagnosticFilename(now: java.time.LocalDateTime = java.time.LocalDateTime.now()): String =
-    "private-audio-diagnostic-${now.format(java.time.format.DateTimeFormatter.ofPattern("yyyy-MM-dd_HH-mm-ss"))}.txt"
+    "puzru-diagnostic-${now.format(java.time.format.DateTimeFormatter.ofPattern("yyyy-MM-dd_HH-mm-ss"))}.txt"

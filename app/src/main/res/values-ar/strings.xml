@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Private Audio</string>
-    <string name="routing_notification_channel">Private Audio</string>
-    <string name="routing_notification_title">Private Audio قيد التشغيل</string>
+    <string name="app_name">Puzru</string>
+    <string name="routing_notification_channel">Puzru</string>
+    <string name="routing_notification_title">Puzru قيد التشغيل</string>
     <string name="routing_notification_text">في انتظار توجيه الصوت</string>
-    <string name="product_title">Private Audio</string>
+    <string name="product_title">Puzru</string>
     <string name="product_subtitle">تحدّث مع الذكاء الاصطناعي بخصوصية، كما في مكالمة هاتفية.</string>
     <string name="state_ready">جاهز</string>
     <string name="state_waiting">في الانتظار</string>
@@ -14,18 +14,18 @@
     <string name="floating">مصغّر</string>
     <string name="settings">الإعدادات</string>
     <string name="close">إغلاق</string>
-    <string name="overlay_controller_description">وحدة التحكم المصغّرة العائمة لتطبيق Private Audio. الحالة: %1$s. عناصر التحكم في التشغيل والتوسيع والإغلاق.</string>
+    <string name="overlay_controller_description">وحدة التحكم المصغّرة العائمة لتطبيق Puzru. الحالة: %1$s. عناصر التحكم في التشغيل والتوسيع والإغلاق.</string>
     <string name="settings_language">اللغة</string>
     <string name="settings_system_default">تلقائي</string>
     <string name="settings_save_diagnostic">حفظ تقرير التشخيص</string>
     <string name="settings_advanced">متقدّم</string>
-    <string name="settings_about">حول Private Audio</string>
+    <string name="settings_about">حول Puzru</string>
     <string name="settings_privacy_policy">سياسة الخصوصية</string>
-    <string name="settings_privacy_policy_body">لا يتطلب Private Audio حسابًا أو تسجيل الدخول، ولا يطلب إذن الميكروفون. ولا يلتقط صوت الميكروفون أو يسجله، كما لا يسجل محادثاتك أو محتواها الصوتي ولا يخزنهما.\n\nيستخدم Private Audio معلومات نظام الصوت في Android اللازمة لتوجيه الصوت والتشخيص. وقد يفحص التشخيص الحالة التقنية والبيانات الوصفية التي تتيحها واجهات API العامة في Android، بما في ذلك البيانات الوصفية للتشغيل وجلسات التسجيل. والبيانات الوصفية لجلسات التسجيل هي معلومات تقنية لنظام الصوت؛ ولا يلتقط Private Audio صوت الميكروفون المرتبط بتلك الجلسات. وقد تشمل معلومات التشخيص إصدارات التطبيق وAndroid، ومعلومات الجهاز وطرازه، ومعلومات عملية التطبيق وحالته، وأجهزة الصوت المتاحة والحالية، والبيانات الوصفية العامة لإعدادات التشغيل والتسجيل، ومحاولات التوجيه ونتائجها وتوقيتها والأحداث التقنية.\n\nتُخزَّن تفضيلات التطبيق محليًا في مساحة التخزين الخاصة بتطبيق Private Audio. وتُنشأ معلومات التشخيص وتُعالج على جهازك، وقد تكون موجودة في الحالة المحلية للتطبيق أثناء تشغيله. ولا تُحفظ التقارير أو تُرسل تلقائيًا. ولا يُنشأ تقرير دائم خارج مساحة التخزين الخاصة بتطبيق Private Audio إلا عندما تختار صراحةً «حفظ تقرير التشخيص» وتحدد وجهة عبر Android. وبعد التصدير، تتحكم الوجهة أو الخدمة التي اخترتها —وليس Private Audio— في كيفية التعامل مع تلك النسخة والاحتفاظ بها وحذفها.\n\nلا يطلب الإصدار الحالي إذن الإنترنت في Android، ولا يملك واجهة خلفية لتطبيق Private Audio أو مسارًا للإرسال عبر الشبكة، ولا يتضمن خدمات أو حِزم SDK للتحليلات أو الإعلانات أو الإبلاغ عن الأعطال. ولا يرسل حاليًا تقارير التشخيص إلى المطور أو إلى خادم Private Audio، ولذلك لا يحتفظ Private Audio بمعلومات التشخيص على جانب الخادم.\n\nتُستثنى البيانات المملوكة للتطبيق من النسخ الاحتياطي السحابي في Android ومن النقل بين الأجهزة. وتبقى التفضيلات المحلية في مساحة التخزين الخاصة بالتطبيق إلى أن تتغير أو تُحذف بيانات التطبيق؛ أما حالة التشخيص المؤقتة فليست تقريرًا محفوظًا. وتظل التقارير المصدَّرة خاضعة لعناصر تحكم الوجهة أو الخدمة التي اخترتها.</string>
+    <string name="settings_privacy_policy_body">لا يتطلب Puzru حسابًا أو تسجيل الدخول، ولا يطلب إذن الميكروفون. ولا يلتقط صوت الميكروفون أو يسجله، كما لا يسجل محادثاتك أو محتواها الصوتي ولا يخزنهما.\n\nيستخدم Puzru معلومات نظام الصوت في Android اللازمة لتوجيه الصوت والتشخيص. وقد يفحص التشخيص الحالة التقنية والبيانات الوصفية التي تتيحها واجهات API العامة في Android، بما في ذلك البيانات الوصفية للتشغيل وجلسات التسجيل. والبيانات الوصفية لجلسات التسجيل هي معلومات تقنية لنظام الصوت؛ ولا يلتقط Puzru صوت الميكروفون المرتبط بتلك الجلسات. وقد تشمل معلومات التشخيص إصدارات التطبيق وAndroid، ومعلومات الجهاز وطرازه، ومعلومات عملية التطبيق وحالته، وأجهزة الصوت المتاحة والحالية، والبيانات الوصفية العامة لإعدادات التشغيل والتسجيل، ومحاولات التوجيه ونتائجها وتوقيتها والأحداث التقنية.\n\nتُخزَّن تفضيلات التطبيق محليًا في مساحة التخزين الخاصة بتطبيق Puzru. وتُنشأ معلومات التشخيص وتُعالج على جهازك، وقد تكون موجودة في الحالة المحلية للتطبيق أثناء تشغيله. ولا تُحفظ التقارير أو تُرسل تلقائيًا. ولا يُنشأ تقرير دائم خارج مساحة التخزين الخاصة بتطبيق Puzru إلا عندما تختار صراحةً «حفظ تقرير التشخيص» وتحدد وجهة عبر Android. وبعد التصدير، تتحكم الوجهة أو الخدمة التي اخترتها —وليس Puzru— في كيفية التعامل مع تلك النسخة والاحتفاظ بها وحذفها.\n\nلا يطلب الإصدار الحالي إذن الإنترنت في Android، ولا يملك واجهة خلفية لتطبيق Puzru أو مسارًا للإرسال عبر الشبكة، ولا يتضمن خدمات أو حِزم SDK للتحليلات أو الإعلانات أو الإبلاغ عن الأعطال. ولا يرسل حاليًا تقارير التشخيص إلى المطور أو إلى خادم Puzru، ولذلك لا يحتفظ Puzru بمعلومات التشخيص على جانب الخادم.\n\nتُستثنى البيانات المملوكة للتطبيق من النسخ الاحتياطي السحابي في Android ومن النقل بين الأجهزة. وتبقى التفضيلات المحلية في مساحة التخزين الخاصة بالتطبيق إلى أن تتغير أو تُحذف بيانات التطبيق؛ أما حالة التشخيص المؤقتة فليست تقريرًا محفوظًا. وتظل التقارير المصدَّرة خاضعة لعناصر تحكم الوجهة أو الخدمة التي اخترتها.</string>
     <string name="settings_version">الإصدار %1$s</string>
     <string name="settings_language_android_13_required">يتطلب اختيار اللغة داخل التطبيق Android 13 أو إصدارًا أحدث. يتبع هذا الجهاز لغة النظام.</string>
     <string name="settings_proximity_screen">إطفاء الشاشة عند تقريب الهاتف من الأذن</string>
-    <string name="settings_about_body">يساعد Private Audio على توجيه الصوت إلى سماعة الأذن المدمجة في الهاتف.</string>
+    <string name="settings_about_body">يساعد Puzru على توجيه الصوت إلى سماعة الأذن المدمجة في الهاتف.</string>
     <string name="diagnostic_report_saved">تم حفظ تقرير التشخيص.</string>
     <string name="diagnostic_report_save_failed">تعذّر حفظ تقرير التشخيص.</string>
 
@@ -34,7 +34,7 @@
     <string name="diagnostics_system_check">فحص النظام</string>
     <string name="diagnostics_earpiece">سماعة الأذن</string>
     <string name="diagnostics_proximity_sensor">مستشعر التقارب</string>
-    <string name="diagnostics_private_audio">PRIVATE AUDIO</string>
+    <string name="diagnostics_private_audio">PUZRU</string>
     <string name="diagnostics_routing">توجيه الصوت</string>
     <string name="diagnostics_status">الحالة</string>
     <string name="diagnostics_audio_route">إخراج الصوت</string>
@@ -59,8 +59,8 @@
     <string name="diagnostics_route_other">غير ذلك</string>
     <string name="diagnostics_error_blocked_by_system">منع النظام توجيه الصوت.</string>
     <string name="diagnostics_error_session_ended">انتهت جلسة الصوت قبل اكتمال توجيه الصوت.</string>
-    <string name="diagnostics_error_audio_start">تعذّر على Private Audio بدء توجيه الصوت.</string>
-    <string name="diagnostics_error_audio_preparation">تعذّر على Private Audio إعداد صوت الاتصال.</string>
+    <string name="diagnostics_error_audio_start">تعذّر على Puzru بدء توجيه الصوت.</string>
+    <string name="diagnostics_error_audio_preparation">تعذّر على Puzru إعداد صوت الاتصال.</string>
     <string name="diagnostics_error_request_rejected">لم يُقبل طلب توجيه الصوت إلى سماعة الأذن.</string>
     <string name="diagnostics_error_not_completed">تعذّر إكمال توجيه الصوت.</string>
 </resources>

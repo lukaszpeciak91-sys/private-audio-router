@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Private Audio</string>
-    <string name="routing_notification_channel">Private Audio</string>
-    <string name="routing_notification_title">Private Audio agbanyere</string>
+    <string name="app_name">Puzru</string>
+    <string name="routing_notification_channel">Puzru</string>
+    <string name="routing_notification_title">Puzru agbanyere</string>
     <string name="routing_notification_text">Na-eche ibugharị ọdịyo</string>
-    <string name="product_title">Private Audio</string>
+    <string name="product_title">Puzru</string>
     <string name="product_subtitle">Gwa AI okwu na nzuzo, dịka oku ekwentị.</string>
     <string name="state_ready">Dị njikere</string>
     <string name="state_waiting">Na-eche</string>
@@ -14,26 +14,26 @@
     <string name="floating">Obere</string>
     <string name="settings">Ntọala</string>
     <string name="close">Mechie</string>
-    <string name="overlay_controller_description">Ihe njikwa Private Audio na-ese n’elu. Ọnọdụ: %1$s. Njikwa ike, ịgbasa na imechi.</string>
+    <string name="overlay_controller_description">Ihe njikwa Puzru na-ese n’elu. Ọnọdụ: %1$s. Njikwa ike, ịgbasa na imechi.</string>
     <string name="settings_language">Asụsụ</string>
     <string name="settings_system_default">Nke ndabara</string>
     <string name="settings_save_diagnostic">Chekwaa akụkọ nyocha</string>
     <string name="settings_diagnostics">Nnyocha</string>
     <string name="settings_advanced">Nke dị elu</string>
-    <string name="settings_about">Banyere Private Audio</string>
+    <string name="settings_about">Banyere Puzru</string>
     <string name="settings_privacy_policy">Amụma Nzuzo</string>
-    <string name="settings_privacy_policy_body">Private Audio achọghị akaụntụ ma ọ bụ nbanye, ọ naghịkwa arịọ ikike igwe okwu. Ọ naghị ejide ma ọ bụ dekọọ ọdịyo igwe okwu, ma ọ bụ dekọọ ma ọ bụ chekwaa mkparịta ụka unu ma ọ bụ ọdịnaya ọdịyo ha.\n\nPrivate Audio na-eji ozi usoro ọdịyo Android dị mkpa maka ntụgharị ụzọ na nchọpụta nsogbu. Nchọpụta nsogbu nwere ike inyocha ọnọdụ teknụzụ na metadata nke API ọha Android na-ekpughe, gụnyere metadata nke mmegharị egwu na nke oge ndekọ. Metadata nke oge ndekọ bụ ozi teknụzụ gbasara usoro ọdịyo; Private Audio adịghị ejide ọdịyo igwe okwu metụtara oge ndị ahụ. Ozi nchọpụta nsogbu nwere ike ịgụnye ụdị ngwa na Android, ozi ngwaọrụ na ụdị ya, ozi gbasara usoro ngwa na ọnọdụ ya, ngwaọrụ ọdịyo dị ugbu a ma dịnụ, metadata ọha nke nhazi mmegharị egwu na ndekọ, yana mbọ ntụgharị ụzọ, nsonaazụ, oge, na ihe omume teknụzụ.\n\nA na-echekwa mmasị ngwa n’ime nchekwa nzuzo nke ngwa Private Audio n’ime ngwaọrụ. A na-emepụta ma na-ahazi ozi nchọpụta nsogbu n’ime ngwaọrụ gị ma ọ nwere ike ịdị na ọnọdụ mpaghara nke ngwa na-agba ọsọ. A naghị echekwa ma ọ bụ zipu akụkọ n’onwe ya. A na-emepụta akụkọ na-adịgide adịgide n’èzí nchekwa nzuzo nke ngwa Private Audio naanị mgbe ị họrọpụtara kpọmkwem Chekwaa akụkọ nchọpụta nsogbu ma họrọ ebe aga-esi chekwaa ya site na Android. Mgbe e bupụtachara ya, ebe ma ọ bụ ọrụ a họọrọ—ọ bụghị Private Audio—na-achịkwa otu e si ejikwa, debe, ma hichapụ mbipụta ahụ.\n\nỤdị dị ugbu a anaghị arịọ ikike Internet nke Android, enweghị backend ma ọ bụ ụzọ nnyefe netwọk nke Private Audio, ma ọ gụnyeghị ọrụ ma ọ bụ SDK maka analytics, mgbasa ozi, ma ọ bụ ịkọ mmebi ngwa. Ọ naghị eziga ugbu a akụkọ nchọpụta nsogbu n’aka onye mmepe ma ọ bụ na sava Private Audio, ya mere Private Audio enweghị njigide nchọpụta nsogbu n’akụkụ sava.\n\nA na-ewepu data nke ngwa nwepụtara na nkwado ndabere igwe ojii Android na mbufe site n’otu ngwaọrụ gaa n’ọzọ. Mmasị mpaghara na-anọgide n’ime nchekwa nzuzo nke ngwa ruo mgbe a gbanwere ha ma ọ bụ wepu data ngwa ahụ; ọnọdụ nchọpụta nsogbu na-adịru nwa oge abụghị akụkọ echekwara. Akụkọ ebupụtara na-anọgide n’okpuru njikwa nke ebe ma ọ bụ ọrụ ị họrọ.</string>
+    <string name="settings_privacy_policy_body">Puzru achọghị akaụntụ ma ọ bụ nbanye, ọ naghịkwa arịọ ikike igwe okwu. Ọ naghị ejide ma ọ bụ dekọọ ọdịyo igwe okwu, ma ọ bụ dekọọ ma ọ bụ chekwaa mkparịta ụka unu ma ọ bụ ọdịnaya ọdịyo ha.\n\nPuzru na-eji ozi usoro ọdịyo Android dị mkpa maka ntụgharị ụzọ na nchọpụta nsogbu. Nchọpụta nsogbu nwere ike inyocha ọnọdụ teknụzụ na metadata nke API ọha Android na-ekpughe, gụnyere metadata nke mmegharị egwu na nke oge ndekọ. Metadata nke oge ndekọ bụ ozi teknụzụ gbasara usoro ọdịyo; Puzru adịghị ejide ọdịyo igwe okwu metụtara oge ndị ahụ. Ozi nchọpụta nsogbu nwere ike ịgụnye ụdị ngwa na Android, ozi ngwaọrụ na ụdị ya, ozi gbasara usoro ngwa na ọnọdụ ya, ngwaọrụ ọdịyo dị ugbu a ma dịnụ, metadata ọha nke nhazi mmegharị egwu na ndekọ, yana mbọ ntụgharị ụzọ, nsonaazụ, oge, na ihe omume teknụzụ.\n\nA na-echekwa mmasị ngwa n’ime nchekwa nzuzo nke ngwa Puzru n’ime ngwaọrụ. A na-emepụta ma na-ahazi ozi nchọpụta nsogbu n’ime ngwaọrụ gị ma ọ nwere ike ịdị na ọnọdụ mpaghara nke ngwa na-agba ọsọ. A naghị echekwa ma ọ bụ zipu akụkọ n’onwe ya. A na-emepụta akụkọ na-adịgide adịgide n’èzí nchekwa nzuzo nke ngwa Puzru naanị mgbe ị họrọpụtara kpọmkwem Chekwaa akụkọ nchọpụta nsogbu ma họrọ ebe aga-esi chekwaa ya site na Android. Mgbe e bupụtachara ya, ebe ma ọ bụ ọrụ a họọrọ—ọ bụghị Puzru—na-achịkwa otu e si ejikwa, debe, ma hichapụ mbipụta ahụ.\n\nỤdị dị ugbu a anaghị arịọ ikike Internet nke Android, enweghị backend ma ọ bụ ụzọ nnyefe netwọk nke Puzru, ma ọ gụnyeghị ọrụ ma ọ bụ SDK maka analytics, mgbasa ozi, ma ọ bụ ịkọ mmebi ngwa. Ọ naghị eziga ugbu a akụkọ nchọpụta nsogbu n’aka onye mmepe ma ọ bụ na sava Puzru, ya mere Puzru enweghị njigide nchọpụta nsogbu n’akụkụ sava.\n\nA na-ewepu data nke ngwa nwepụtara na nkwado ndabere igwe ojii Android na mbufe site n’otu ngwaọrụ gaa n’ọzọ. Mmasị mpaghara na-anọgide n’ime nchekwa nzuzo nke ngwa ruo mgbe a gbanwere ha ma ọ bụ wepu data ngwa ahụ; ọnọdụ nchọpụta nsogbu na-adịru nwa oge abụghị akụkọ echekwara. Akụkọ ebupụtara na-anọgide n’okpuru njikwa nke ebe ma ọ bụ ọrụ ị họrọ.</string>
     <string name="settings_version">Ụdị %1$s</string>
     <string name="settings_language_android_13_required">Ịhọrọ asụsụ n’ime ngwa chọrọ Android 13 ma ọ bụ nke ka ọhụrụ. Ngwaọrụ a na-agbaso asụsụ sistemụ.</string>
     <string name="settings_proximity_screen">Gbanyụọ ihuenyo mgbe ọ nọ nso na ntị gị</string>
-    <string name="settings_about_body">Private Audio na-enyere aka ibugharị ọdịyo olu akwadoro gaa na igwe nnata ụda dị n’ime ekwentị gị.</string>
+    <string name="settings_about_body">Puzru na-enyere aka ibugharị ọdịyo olu akwadoro gaa na igwe nnata ụda dị n’ime ekwentị gị.</string>
     <string name="diagnostic_report_saved">Echekwara akụkọ nyocha.</string>
     <string name="diagnostic_report_save_failed">Enweghị ike ichekwa akụkọ nyocha.</string>
     <string name="diagnostics_title">Nnyocha</string>
     <string name="diagnostics_system_check">NLELE SISTEMỤ</string>
     <string name="diagnostics_earpiece">Igwe nnata ụda ntị</string>
     <string name="diagnostics_proximity_sensor">Ihe mmetụta ịdị nso</string>
-    <string name="diagnostics_private_audio">PRIVATE AUDIO</string>
+    <string name="diagnostics_private_audio">PUZRU</string>
     <string name="diagnostics_routing">Ibugharị</string>
     <string name="diagnostics_status">Ọnọdụ</string>
     <string name="diagnostics_audio_route">Mmepụta ọdịyo</string>
@@ -58,8 +58,8 @@
     <string name="diagnostics_route_other">Ndị ọzọ</string>
     <string name="diagnostics_error_blocked_by_system">Sistemụ gbochiri ibugharị ọdịyo.</string>
     <string name="diagnostics_error_session_ended">Oge ọdịyo kwụsịrị tupu ibugharị ya agwụ.</string>
-    <string name="diagnostics_error_audio_start">Private Audio enweghị ike ịmalite ibugharị ọdịyo.</string>
-    <string name="diagnostics_error_audio_preparation">Private Audio enweghị ike ịkwadebe ọdịyo nkwurịta okwu.</string>
+    <string name="diagnostics_error_audio_start">Puzru enweghị ike ịmalite ibugharị ọdịyo.</string>
+    <string name="diagnostics_error_audio_preparation">Puzru enweghị ike ịkwadebe ọdịyo nkwurịta okwu.</string>
     <string name="diagnostics_error_request_rejected">Anabataghị arịrịọ ibugharị ọdịyo gaa na igwe nnata ụda ntị.</string>
     <string name="diagnostics_error_not_completed">Enweghị ike imecha ibugharị ọdịyo.</string>
 </resources>

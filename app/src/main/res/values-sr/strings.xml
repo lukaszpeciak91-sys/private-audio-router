@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Private Audio</string>
-    <string name="routing_notification_channel">Private Audio</string>
-    <string name="routing_notification_title">Private Audio је укључен</string>
+    <string name="app_name">Puzru</string>
+    <string name="routing_notification_channel">Puzru</string>
+    <string name="routing_notification_title">Puzru је укључен</string>
     <string name="routing_notification_text">Чекање на пребацивање звука</string>
-    <string name="product_title">Private Audio</string>
+    <string name="product_title">Puzru</string>
     <string name="product_subtitle">Разговарајте приватно са ВИ, као током телефонског позива.</string>
     <string name="state_ready">Спремно</string>
     <string name="state_waiting">Чекање</string>
@@ -14,18 +14,18 @@
     <string name="floating">Мини</string>
     <string name="settings">Подешавања</string>
     <string name="close">Затвори</string>
-    <string name="overlay_controller_description">Плутајући контролер Private Audio. Статус: %1$s. Контроле за укључивање/искључивање, проширивање и затварање.</string>
+    <string name="overlay_controller_description">Плутајући контролер Puzru. Статус: %1$s. Контроле за укључивање/искључивање, проширивање и затварање.</string>
     <string name="settings_language">Језик</string>
     <string name="settings_system_default">Подразумевано</string>
     <string name="settings_save_diagnostic">Сачувај дијагностички извештај</string>
     <string name="settings_advanced">Напредно</string>
-    <string name="settings_about">О апликацији Private Audio</string>
+    <string name="settings_about">О апликацији Puzru</string>
     <string name="settings_privacy_policy">Политика приватности</string>
-    <string name="settings_privacy_policy_body">Private Audio не захтева налог или пријављивање и не тражи дозволу за микрофон. Не снима нити на други начин захвата звук микрофона и не снима нити чува ваше разговоре или њихов аудио-садржај.\n\nPrivate Audio користи информације аудио-система Android-а које су потребне за усмеравање и дијагностику. Дијагностика може да прегледа техничко стање и метаподатке доступне преко јавних Android API-ја, укључујући метаподатке сесија репродукције и снимања. Метаподаци сесија снимања су техничке информације аудио-система; Private Audio не захвата звук микрофона повезан са тим сесијама. Дијагностичке информације могу да обухвате верзије апликације и Android-а, податке о уређају и моделу, процесу и стању апликације, доступне и тренутне аудио-уређаје, јавне метаподатке конфигурације репродукције и снимања, као и покушаје усмеравања, резултате, време и техничке догађаје.\n\nЖељена подешавања апликације чувају се локално у приватном складишту апликације Private Audio. Дијагностичке информације се генеришу и обрађују на вашем уређају и могу да постоје у локалном стању покренуте апликације. Извештаји се не чувају нити шаљу аутоматски. Трајни извештај се прави изван приватног складишта апликације Private Audio само када изричито одаберете Сачувај дијагностички извештај и изаберете одредиште преко Android-а. Након извоза, изабрана локација или услуга—а не Private Audio—контролише руковање том копијом, њено чување и брисање.\n\nТренутна верзија не тражи Android дозволу за интернет, нема позадински систем Private Audio нити путању за мрежни пренос и не садржи услуге или SDK-ове за аналитику, оглашавање или извештавање о отказивању. Тренутно не шаље дијагностичке извештаје програмеру нити Private Audio серверу, па Private Audio не чува дијагностичке информације на серверу.\n\nПодаци у власништву апликације изузети су из Android резервне копије у клауду и преноса са уређаја на уређај. Локална жељена подешавања остају у приватном складишту апликације док се не промене или док се подаци апликације не уклоне; привремено дијагностичко стање није сачуван извештај. Извезени извештаји остају под контролом локације или услуге коју сте изабрали.</string>
+    <string name="settings_privacy_policy_body">Puzru не захтева налог или пријављивање и не тражи дозволу за микрофон. Не снима нити на други начин захвата звук микрофона и не снима нити чува ваше разговоре или њихов аудио-садржај.\n\nPuzru користи информације аудио-система Android-а које су потребне за усмеравање и дијагностику. Дијагностика може да прегледа техничко стање и метаподатке доступне преко јавних Android API-ја, укључујући метаподатке сесија репродукције и снимања. Метаподаци сесија снимања су техничке информације аудио-система; Puzru не захвата звук микрофона повезан са тим сесијама. Дијагностичке информације могу да обухвате верзије апликације и Android-а, податке о уређају и моделу, процесу и стању апликације, доступне и тренутне аудио-уређаје, јавне метаподатке конфигурације репродукције и снимања, као и покушаје усмеравања, резултате, време и техничке догађаје.\n\nЖељена подешавања апликације чувају се локално у приватном складишту апликације Puzru. Дијагностичке информације се генеришу и обрађују на вашем уређају и могу да постоје у локалном стању покренуте апликације. Извештаји се не чувају нити шаљу аутоматски. Трајни извештај се прави изван приватног складишта апликације Puzru само када изричито одаберете Сачувај дијагностички извештај и изаберете одредиште преко Android-а. Након извоза, изабрана локација или услуга—а не Puzru—контролише руковање том копијом, њено чување и брисање.\n\nТренутна верзија не тражи Android дозволу за интернет, нема позадински систем Puzru нити путању за мрежни пренос и не садржи услуге или SDK-ове за аналитику, оглашавање или извештавање о отказивању. Тренутно не шаље дијагностичке извештаје програмеру нити Puzru серверу, па Puzru не чува дијагностичке информације на серверу.\n\nПодаци у власништву апликације изузети су из Android резервне копије у клауду и преноса са уређаја на уређај. Локална жељена подешавања остају у приватном складишту апликације док се не промене или док се подаци апликације не уклоне; привремено дијагностичко стање није сачуван извештај. Извезени извештаји остају под контролом локације или услуге коју сте изабрали.</string>
     <string name="settings_version">Верзија %1$s</string>
     <string name="settings_language_android_13_required">Избор језика у апликацији захтева Android 13 или новији. Овај уређај користи језик система.</string>
     <string name="settings_proximity_screen">Искључи екран близу уха</string>
-    <string name="settings_about_body">Private Audio помаже да се подржани гласовни звук пребаци на уграђену слушалицу телефона.</string>
+    <string name="settings_about_body">Puzru помаже да се подржани гласовни звук пребаци на уграђену слушалицу телефона.</string>
     <string name="diagnostic_report_saved">Дијагностички извештај је сачуван.</string>
     <string name="diagnostic_report_save_failed">Није могуће сачувати дијагностички извештај.</string>
 
@@ -34,7 +34,7 @@
     <string name="diagnostics_system_check">ПРОВЕРА СИСТЕМА</string>
     <string name="diagnostics_earpiece">Слушалица</string>
     <string name="diagnostics_proximity_sensor">Сензор близине</string>
-    <string name="diagnostics_private_audio">Private Audio</string>
+    <string name="diagnostics_private_audio">Puzru</string>
     <string name="diagnostics_routing">Усмеравање звука</string>
     <string name="diagnostics_status">Статус</string>
     <string name="diagnostics_audio_route">Излаз звука</string>
@@ -59,8 +59,8 @@
     <string name="diagnostics_route_other">Друго</string>
     <string name="diagnostics_error_blocked_by_system">Систем је блокирао усмеравање звука.</string>
     <string name="diagnostics_error_session_ended">Аудио-сесија се завршила пре него што је усмеравање завршено.</string>
-    <string name="diagnostics_error_audio_start">Private Audio није могао да покрене усмеравање звука.</string>
-    <string name="diagnostics_error_audio_preparation">Private Audio није могао да припреми звук за комуникацију.</string>
+    <string name="diagnostics_error_audio_start">Puzru није могао да покрене усмеравање звука.</string>
+    <string name="diagnostics_error_audio_preparation">Puzru није могао да припреми звук за комуникацију.</string>
     <string name="diagnostics_error_request_rejected">Захтев за усмеравање звука на слушалицу није прихваћен.</string>
     <string name="diagnostics_error_not_completed">Усмеравање звука није могло да се заврши.</string>
 </resources>

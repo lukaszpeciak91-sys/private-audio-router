@@ -94,8 +94,8 @@ private fun projectDiagnosticsError(
 
 internal fun DiagnosticsSummary.supportSummary(): String = buildString {
     appendLine("SUPPORT SUMMARY")
-    appendLine("Private Audio enabled: ${routing == DiagnosticsRouting.ON}")
-    appendLine("Private Audio state: ${status.name}")
+    appendLine("Puzru enabled: ${routing == DiagnosticsRouting.ON}")
+    appendLine("Puzru state: ${status.name}")
     appendLine("Built-in earpiece available: ${earpiece == DiagnosticsAvailability.AVAILABLE}")
     appendLine("Current audio route: ${audioRoute.name}")
     appendLine("Proximity supported: ${proximitySensor == DiagnosticsAvailability.AVAILABLE}")

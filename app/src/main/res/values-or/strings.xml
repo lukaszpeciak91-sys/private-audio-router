@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Private Audio</string>
-    <string name="routing_notification_channel">Private Audio</string>
-    <string name="routing_notification_title">Private Audio ଚାଲୁ ଅଛି</string>
+    <string name="app_name">Puzru</string>
+    <string name="routing_notification_channel">Puzru</string>
+    <string name="routing_notification_title">Puzru ଚାଲୁ ଅଛି</string>
     <string name="routing_notification_text">ଅଡିଓ ଆଉଟପୁଟ ସ୍ୱିଚ୍ କରିବାକୁ ଅପେକ୍ଷା କରାଯାଉଛି</string>
 
-    <string name="product_title">Private Audio</string>
+    <string name="product_title">Puzru</string>
     <string name="product_subtitle">ଫୋନ୍ କଲ୍ ପରି, ଏଆଇ ସହିତ ବ୍ୟକ୍ତିଗତ ଭାବେ କଥା ହୁଅନ୍ତୁ।</string>
 
     <string name="state_ready">ପ୍ରସ୍ତୁତ</string>
@@ -18,15 +18,15 @@
     <string name="settings">ସେଟିଂସ</string>
     <string name="close">ବନ୍ଦ କରନ୍ତୁ</string>
 
-    <string name="overlay_controller_description">Private Audio ଫ୍ଲୋଟିଂ କଣ୍ଟ୍ରୋଲର୍। ସ୍ଥିତି: %1$s। ଚାଲୁ/ବନ୍ଦ କରିବା, ବଢ଼ାଇବା ଏବଂ କଣ୍ଟ୍ରୋଲର୍ ବନ୍ଦ କରିବା ପାଇଁ ନିୟନ୍ତ୍ରଣ।</string>
+    <string name="overlay_controller_description">Puzru ଫ୍ଲୋଟିଂ କଣ୍ଟ୍ରୋଲର୍। ସ୍ଥିତି: %1$s। ଚାଲୁ/ବନ୍ଦ କରିବା, ବଢ଼ାଇବା ଏବଂ କଣ୍ଟ୍ରୋଲର୍ ବନ୍ଦ କରିବା ପାଇଁ ନିୟନ୍ତ୍ରଣ।</string>
 
     <string name="settings_language">ଭାଷା</string>
     <string name="settings_system_default">ଡିଫଲ୍ଟ</string>
     <string name="settings_save_diagnostic">ଡାଇଗ୍ନୋଷ୍ଟିକ୍ ରିପୋର୍ଟ ସେଭ୍ କରନ୍ତୁ</string>
     <string name="settings_advanced">ଉନ୍ନତ ସେଟିଂସ</string>
-    <string name="settings_about">Private Audio ବିଷୟରେ</string>
+    <string name="settings_about">Puzru ବିଷୟରେ</string>
     <string name="settings_privacy_policy">ଗୋପନୀୟତା ନୀତି</string>
-    <string name="settings_privacy_policy_body">Private Audio ପାଇଁ ଆକାଉଣ୍ଟ କିମ୍ବା ସାଇନ୍-ଇନ୍ ଦରକାର ନାହିଁ ଏବଂ ଏହା ମାଇକ୍ରୋଫୋନ୍ ଅନୁମତି ମାଗେ ନାହିଁ। ଏହା ମାଇକ୍ରୋଫୋନ୍ ଅଡିଓ କ୍ୟାପ୍‌ଚର୍ କିମ୍ବା ରେକର୍ଡ କରେ ନାହିଁ, କିମ୍ବା ଆପଣଙ୍କ କଥାବାର୍ତ୍ତା ବା ସେଗୁଡ଼ିକର ଅଡିଓ ବିଷୟବସ୍ତୁ ରେକର୍ଡ କିମ୍ବା ସଂରକ୍ଷଣ କରେ ନାହିଁ।\n\nPrivate Audio ଅଡିଓ ରାଉଟିଂ ଓ ନିଦାନ ପାଇଁ ଆବଶ୍ୟକ Android ଅଡିଓ ସିଷ୍ଟମ୍ ସୂଚନା ବ୍ୟବହାର କରେ। ନିଦାନରେ ସାର୍ବଜନୀନ Android API ଦ୍ୱାରା ପ୍ରକାଶିତ ପ୍ରାୟୋଗିକ ସ୍ଥିତି ଓ ମେଟାଡାଟା ଯାଞ୍ଚ ହୋଇପାରେ, ଯେଉଁଥିରେ ପ୍ଲେବ୍ୟାକ୍ ଓ ରେକର୍ଡିଂ-ସେସନ୍ ମେଟାଡାଟା ଅନ୍ତର୍ଭୁକ୍ତ। ରେକର୍ଡିଂ-ସେସନ୍ ମେଟାଡାଟା ହେଉଛି ଅଡିଓ ସିଷ୍ଟମ୍‌ର ପ୍ରାୟୋଗିକ ସୂଚନା; Private Audio ସେହି ସେସନ୍‌ଗୁଡ଼ିକ ସହ ସଂପୃକ୍ତ ମାଇକ୍ରୋଫୋନ୍ ଅଡିଓ କ୍ୟାପ୍‌ଚର୍ କରେ ନାହିଁ। ନିଦାନ ସୂଚନାରେ ଆପ୍ ଓ Android ସଂସ୍କରଣ, ଡିଭାଇସ୍ ଓ ମଡେଲ୍ ସୂଚନା, ଆପ୍ ପ୍ରକ୍ରିୟା ଓ ସ୍ଥିତି ସୂଚନା, ଉପଲବ୍ଧ ଓ ବର୍ତ୍ତମାନର ଅଡିଓ ଡିଭାଇସ୍, ସାର୍ବଜନୀନ ପ୍ଲେବ୍ୟାକ୍ ଓ ରେକର୍ଡିଂ କନଫିଗରେସନ୍ ମେଟାଡାଟା, ଏବଂ ରାଉଟିଂ ପ୍ରୟାସ, ଫଳାଫଳ, ସମୟ ଓ ପ୍ରାୟୋଗିକ ଘଟଣା ରହିପାରେ।\n\nଆପ୍ ପସନ୍ଦଗୁଡ଼ିକ Private Audioର ଆପ୍-ବ୍ୟକ୍ତିଗତ ଷ୍ଟୋରେଜ୍‌ରେ ସ୍ଥାନୀୟ ଭାବେ ସଂରକ୍ଷିତ ହୁଏ। ନିଦାନ ସୂଚନା ଆପଣଙ୍କ ଡିଭାଇସ୍‌ରେ ତିଆରି ଓ ପ୍ରକ୍ରିୟାକରଣ ହୁଏ ଏବଂ ଚାଲୁଥିବା ଆପ୍‌ର ସ୍ଥାନୀୟ ସ୍ଥିତିରେ ରହିପାରେ। ରିପୋର୍ଟଗୁଡ଼ିକ ସ୍ୱୟଂଚାଳିତ ଭାବେ ସେଭ୍ କିମ୍ବା ପଠାଯାଏ ନାହିଁ। ଆପଣ ସ୍ପଷ୍ଟ ଭାବେ ନିଦାନ ରିପୋର୍ଟ ସେଭ୍ କରନ୍ତୁ ବାଛି Android ମାଧ୍ୟମରେ ଏକ ଗନ୍ତବ୍ୟସ୍ଥଳ ବାଛିଲେ ମାତ୍ର Private Audioର ଆପ୍-ବ୍ୟକ୍ତିଗତ ଷ୍ଟୋରେଜ୍ ବାହାରେ ଏକ ସ୍ଥାୟୀ ରିପୋର୍ଟ ତିଆରି ହୁଏ। ରପ୍ତାନି ପରେ, ବାଛିଥିବା ସ୍ଥାନ କିମ୍ବା ସେବା—Private Audio ନୁହେଁ—ସେହି କପିର ପରିଚାଳନା, ରଖିବା ଓ ବିଲୋପ ନିୟନ୍ତ୍ରଣ କରେ।\n\nବର୍ତ୍ତମାନ ସଂସ୍କରଣ Androidର ଇଣ୍ଟରନେଟ୍ ଅନୁମତି ମାଗେ ନାହିଁ, ଏଥିରେ Private Audio ବ୍ୟାକଏଣ୍ଡ୍ କିମ୍ବା ନେଟ୍‌ୱର୍କ ପ୍ରେରଣ ପଥ ନାହିଁ, ଏବଂ ବିଶ୍ଳେଷଣ, ବିଜ୍ଞାପନ କିମ୍ବା କ୍ରାଶ୍-ରିପୋର୍ଟିଂ ସେବା ବା SDK ଅନ୍ତର୍ଭୁକ୍ତ ନାହିଁ। ଏହା ବର୍ତ୍ତମାନ ବିକାଶକାରୀ କିମ୍ବା Private Audio ସର୍ଭରକୁ ନିଦାନ ରିପୋର୍ଟ ପଠାଏ ନାହିଁ, ତେଣୁ Private Audio ପାଖରେ ସର୍ଭର-ପାର୍ଶ୍ୱ ନିଦାନ ସୂଚନା ସଂରକ୍ଷଣ ନାହିଁ।\n\nଆପ୍‌ର ନିଜସ୍ୱ ଡାଟାକୁ Android କ୍ଲାଉଡ୍ ବ୍ୟାକଅପ୍ ଓ ଡିଭାଇସ୍‌ରୁ ଡିଭାଇସ୍ ସ୍ଥାନାନ୍ତରରୁ ବାଦ ଦିଆଯାଇଛି। ସ୍ଥାନୀୟ ପସନ୍ଦଗୁଡ଼ିକ ପରିବର୍ତ୍ତିତ ହେବା କିମ୍ବା ଆପ୍‌ର ଡାଟା ହଟାଯିବା ପର୍ଯ୍ୟନ୍ତ ଆପ୍-ବ୍ୟକ୍ତିଗତ ଷ୍ଟୋରେଜ୍‌ରେ ରହେ; ଅସ୍ଥାୟୀ ନିଦାନ ସ୍ଥିତି ଏକ ସେଭ୍ ହୋଇଥିବା ରିପୋର୍ଟ ନୁହେଁ। ରପ୍ତାନି ହୋଇଥିବା ରିପୋର୍ଟଗୁଡ଼ିକ ଆପଣ ବାଛିଥିବା ସ୍ଥାନ କିମ୍ବା ସେବାର ନିୟନ୍ତ୍ରଣରେ ରହେ।</string>
+    <string name="settings_privacy_policy_body">Puzru ପାଇଁ ଆକାଉଣ୍ଟ କିମ୍ବା ସାଇନ୍-ଇନ୍ ଦରକାର ନାହିଁ ଏବଂ ଏହା ମାଇକ୍ରୋଫୋନ୍ ଅନୁମତି ମାଗେ ନାହିଁ। ଏହା ମାଇକ୍ରୋଫୋନ୍ ଅଡିଓ କ୍ୟାପ୍‌ଚର୍ କିମ୍ବା ରେକର୍ଡ କରେ ନାହିଁ, କିମ୍ବା ଆପଣଙ୍କ କଥାବାର୍ତ୍ତା ବା ସେଗୁଡ଼ିକର ଅଡିଓ ବିଷୟବସ୍ତୁ ରେକର୍ଡ କିମ୍ବା ସଂରକ୍ଷଣ କରେ ନାହିଁ।\n\nPuzru ଅଡିଓ ରାଉଟିଂ ଓ ନିଦାନ ପାଇଁ ଆବଶ୍ୟକ Android ଅଡିଓ ସିଷ୍ଟମ୍ ସୂଚନା ବ୍ୟବହାର କରେ। ନିଦାନରେ ସାର୍ବଜନୀନ Android API ଦ୍ୱାରା ପ୍ରକାଶିତ ପ୍ରାୟୋଗିକ ସ୍ଥିତି ଓ ମେଟାଡାଟା ଯାଞ୍ଚ ହୋଇପାରେ, ଯେଉଁଥିରେ ପ୍ଲେବ୍ୟାକ୍ ଓ ରେକର୍ଡିଂ-ସେସନ୍ ମେଟାଡାଟା ଅନ୍ତର୍ଭୁକ୍ତ। ରେକର୍ଡିଂ-ସେସନ୍ ମେଟାଡାଟା ହେଉଛି ଅଡିଓ ସିଷ୍ଟମ୍‌ର ପ୍ରାୟୋଗିକ ସୂଚନା; Puzru ସେହି ସେସନ୍‌ଗୁଡ଼ିକ ସହ ସଂପୃକ୍ତ ମାଇକ୍ରୋଫୋନ୍ ଅଡିଓ କ୍ୟାପ୍‌ଚର୍ କରେ ନାହିଁ। ନିଦାନ ସୂଚନାରେ ଆପ୍ ଓ Android ସଂସ୍କରଣ, ଡିଭାଇସ୍ ଓ ମଡେଲ୍ ସୂଚନା, ଆପ୍ ପ୍ରକ୍ରିୟା ଓ ସ୍ଥିତି ସୂଚନା, ଉପଲବ୍ଧ ଓ ବର୍ତ୍ତମାନର ଅଡିଓ ଡିଭାଇସ୍, ସାର୍ବଜନୀନ ପ୍ଲେବ୍ୟାକ୍ ଓ ରେକର୍ଡିଂ କନଫିଗରେସନ୍ ମେଟାଡାଟା, ଏବଂ ରାଉଟିଂ ପ୍ରୟାସ, ଫଳାଫଳ, ସମୟ ଓ ପ୍ରାୟୋଗିକ ଘଟଣା ରହିପାରେ।\n\nଆପ୍ ପସନ୍ଦଗୁଡ଼ିକ Puzruର ଆପ୍-ବ୍ୟକ୍ତିଗତ ଷ୍ଟୋରେଜ୍‌ରେ ସ୍ଥାନୀୟ ଭାବେ ସଂରକ୍ଷିତ ହୁଏ। ନିଦାନ ସୂଚନା ଆପଣଙ୍କ ଡିଭାଇସ୍‌ରେ ତିଆରି ଓ ପ୍ରକ୍ରିୟାକରଣ ହୁଏ ଏବଂ ଚାଲୁଥିବା ଆପ୍‌ର ସ୍ଥାନୀୟ ସ୍ଥିତିରେ ରହିପାରେ। ରିପୋର୍ଟଗୁଡ଼ିକ ସ୍ୱୟଂଚାଳିତ ଭାବେ ସେଭ୍ କିମ୍ବା ପଠାଯାଏ ନାହିଁ। ଆପଣ ସ୍ପଷ୍ଟ ଭାବେ ନିଦାନ ରିପୋର୍ଟ ସେଭ୍ କରନ୍ତୁ ବାଛି Android ମାଧ୍ୟମରେ ଏକ ଗନ୍ତବ୍ୟସ୍ଥଳ ବାଛିଲେ ମାତ୍ର Puzruର ଆପ୍-ବ୍ୟକ୍ତିଗତ ଷ୍ଟୋରେଜ୍ ବାହାରେ ଏକ ସ୍ଥାୟୀ ରିପୋର୍ଟ ତିଆରି ହୁଏ। ରପ୍ତାନି ପରେ, ବାଛିଥିବା ସ୍ଥାନ କିମ୍ବା ସେବା—Puzru ନୁହେଁ—ସେହି କପିର ପରିଚାଳନା, ରଖିବା ଓ ବିଲୋପ ନିୟନ୍ତ୍ରଣ କରେ।\n\nବର୍ତ୍ତମାନ ସଂସ୍କରଣ Androidର ଇଣ୍ଟରନେଟ୍ ଅନୁମତି ମାଗେ ନାହିଁ, ଏଥିରେ Puzru ବ୍ୟାକଏଣ୍ଡ୍ କିମ୍ବା ନେଟ୍‌ୱର୍କ ପ୍ରେରଣ ପଥ ନାହିଁ, ଏବଂ ବିଶ୍ଳେଷଣ, ବିଜ୍ଞାପନ କିମ୍ବା କ୍ରାଶ୍-ରିପୋର୍ଟିଂ ସେବା ବା SDK ଅନ୍ତର୍ଭୁକ୍ତ ନାହିଁ। ଏହା ବର୍ତ୍ତମାନ ବିକାଶକାରୀ କିମ୍ବା Puzru ସର୍ଭରକୁ ନିଦାନ ରିପୋର୍ଟ ପଠାଏ ନାହିଁ, ତେଣୁ Puzru ପାଖରେ ସର୍ଭର-ପାର୍ଶ୍ୱ ନିଦାନ ସୂଚନା ସଂରକ୍ଷଣ ନାହିଁ।\n\nଆପ୍‌ର ନିଜସ୍ୱ ଡାଟାକୁ Android କ୍ଲାଉଡ୍ ବ୍ୟାକଅପ୍ ଓ ଡିଭାଇସ୍‌ରୁ ଡିଭାଇସ୍ ସ୍ଥାନାନ୍ତରରୁ ବାଦ ଦିଆଯାଇଛି। ସ୍ଥାନୀୟ ପସନ୍ଦଗୁଡ଼ିକ ପରିବର୍ତ୍ତିତ ହେବା କିମ୍ବା ଆପ୍‌ର ଡାଟା ହଟାଯିବା ପର୍ଯ୍ୟନ୍ତ ଆପ୍-ବ୍ୟକ୍ତିଗତ ଷ୍ଟୋରେଜ୍‌ରେ ରହେ; ଅସ୍ଥାୟୀ ନିଦାନ ସ୍ଥିତି ଏକ ସେଭ୍ ହୋଇଥିବା ରିପୋର୍ଟ ନୁହେଁ। ରପ୍ତାନି ହୋଇଥିବା ରିପୋର୍ଟଗୁଡ଼ିକ ଆପଣ ବାଛିଥିବା ସ୍ଥାନ କିମ୍ବା ସେବାର ନିୟନ୍ତ୍ରଣରେ ରହେ।</string>
     <string name="settings_version">ସଂସ୍କରଣ %1$s</string>
 
 
@@ -35,7 +35,7 @@
     <string name="settings_proximity_screen">ଫୋନ୍‌କୁ କାନ ପାଖକୁ ଆଣିଲେ ସ୍କ୍ରୀନ୍ ବନ୍ଦ କରନ୍ତୁ</string>
 
 
-    <string name="settings_about_body">Private Audio ସମର୍ଥିତ ଭଏସ୍ ଅଡିଓକୁ ଆପଣଙ୍କ ଫୋନର ବିଲ୍ଟ-ଇନ୍ ହ୍ୟାଣ୍ଡସେଟ୍ ଇୟରପିସ୍‌କୁ ସ୍ୱିଚ୍ କରିବାରେ ସାହାଯ୍ୟ କରେ।</string>
+    <string name="settings_about_body">Puzru ସମର୍ଥିତ ଭଏସ୍ ଅଡିଓକୁ ଆପଣଙ୍କ ଫୋନର ବିଲ୍ଟ-ଇନ୍ ହ୍ୟାଣ୍ଡସେଟ୍ ଇୟରପିସ୍‌କୁ ସ୍ୱିଚ୍ କରିବାରେ ସାହାଯ୍ୟ କରେ।</string>
 
     <string name="diagnostic_report_saved">ଡାଇଗ୍ନୋଷ୍ଟିକ୍ ରିପୋର୍ଟ ସେଭ୍ ହୋଇଛି।</string>
     <string name="diagnostic_report_save_failed">ଡାଇଗ୍ନୋଷ୍ଟିକ୍ ରିପୋର୍ଟ ସେଭ୍ କରାଯାଇପାରିଲା ନାହିଁ।</string>
@@ -45,7 +45,7 @@
     <string name="diagnostics_system_check">ସିଷ୍ଟମ୍ ଯାଞ୍ଚ</string>
     <string name="diagnostics_earpiece">ଇୟରପିସ୍</string>
     <string name="diagnostics_proximity_sensor">ନିକଟତା ସେନ୍ସର୍</string>
-    <string name="diagnostics_private_audio">Private Audio</string>
+    <string name="diagnostics_private_audio">Puzru</string>
     <string name="diagnostics_routing">ରୂଟିଂ</string>
     <string name="diagnostics_status">ସ୍ଥିତି</string>
     <string name="diagnostics_audio_route">ଅଡିଓ ଆଉଟପୁଟ୍</string>
@@ -70,8 +70,8 @@
     <string name="diagnostics_route_other">ଅନ୍ୟ</string>
     <string name="diagnostics_error_blocked_by_system">ସିଷ୍ଟମ୍ ରୂଟିଂକୁ ଅବରୋଧ କରିଥିଲା।</string>
     <string name="diagnostics_error_session_ended">ରୂଟିଂ ସମ୍ପୂର୍ଣ୍ଣ ହେବା ପୂର୍ବରୁ ଅଡିଓ ସେସନ୍ ଶେଷ ହୋଇଯାଇଥିଲା।</string>
-    <string name="diagnostics_error_audio_start">Private Audio ଅଡିଓ ରୂଟିଂ ଆରମ୍ଭ କରିପାରିଲା ନାହିଁ।</string>
-    <string name="diagnostics_error_audio_preparation">Private Audio ଯୋଗାଯୋଗ ଅଡିଓ ପ୍ରସ୍ତୁତ କରିପାରିଲା ନାହିଁ।</string>
+    <string name="diagnostics_error_audio_start">Puzru ଅଡିଓ ରୂଟିଂ ଆରମ୍ଭ କରିପାରିଲା ନାହିଁ।</string>
+    <string name="diagnostics_error_audio_preparation">Puzru ଯୋଗାଯୋଗ ଅଡିଓ ପ୍ରସ୍ତୁତ କରିପାରିଲା ନାହିଁ।</string>
     <string name="diagnostics_error_request_rejected">ଇୟରପିସ୍‌କୁ ରୂଟିଂ କରିବାର ଅନୁରୋଧ ଗ୍ରହଣ କରାଯାଇନଥିଲା।</string>
     <string name="diagnostics_error_not_completed">ରୂଟିଂ ସମ୍ପୂର୍ଣ୍ଣ କରାଯାଇପାରିଲା ନାହିଁ।</string>
 </resources>

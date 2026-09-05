@@ -45,8 +45,8 @@ class BhojpuriLocalizationContractTest {
 
     @Test
     fun productStatesBrandAndAudioOutputsRemainDistinct() {
-        assertEquals("Private Audio", resourceValue("app_name"))
-        assertEquals("Private Audio", resourceValue("product_title"))
+        assertEquals("Puzru", resourceValue("app_name"))
+        assertEquals("Puzru", resourceValue("product_title"))
 
         val runtimeStates = listOf("state_ready", "state_waiting", "state_active", "state_error")
             .map(::resourceValue)
@@ -96,7 +96,7 @@ class BhojpuriLocalizationContractTest {
             "रिकॉर्डिंग-सेशन मेटाडेटा तकनीकी ऑडियो-सिस्टम जानकारी ह", "रउरा डिवाइस पर जनरेट आ प्रोसेस होला",
             "रिपोर्ट अपने-आप सेव या भेजल नइखे जात", "साफ तौर पर डायग्नोस्टिक रिपोर्ट सहेजें चुनीं",
             "मौजूदा संस्करण Android के Internet अनुमति नइखे माँगत", "बैकएंड या नेटवर्क ट्रांसमिशन पथ नइखे",
-            "एनालिटिक्स, विज्ञापन, या क्रैश-रिपोर्टिंग सेवाएँ या SDKs शामिल नइखन", "डेवलपर या Private Audio सर्वर के डायग्नोस्टिक रिपोर्ट नइखे भेजत",
+            "एनालिटिक्स, विज्ञापन, या क्रैश-रिपोर्टिंग सेवाएँ या SDKs शामिल नइखन", "डेवलपर या Puzru सर्वर के डायग्नोस्टिक रिपोर्ट नइखे भेजत",
             "Android क्लाउड बैकअप आ डिवाइस-से-डिवाइस ट्रांसफर से बाहर",
         ).forEach { guard -> assertTrue("Missing privacy guard: $guard", privacy.contains(guard)) }
         assertTrue(privacyParagraphs[1].contains("रूटिंग"))
@@ -104,7 +104,7 @@ class BhojpuriLocalizationContractTest {
 
         val rejected = resourceValue("diagnostics_error_request_rejected")
         assertTrue(rejected.contains("अनुरोध स्वीकार ना भइल"))
-        listOf("Android", "सिस्टम", "फोन", "Private Audio").forEach { actor ->
+        listOf("Android", "सिस्टम", "फोन", "Puzru").forEach { actor ->
             assertFalse("Rejected-request error invented actor: $actor", rejected.contains(actor, ignoreCase = true))
         }
         assertTrue(resourceValue("diagnostics_error_blocked_by_system").contains("सिस्टम"))

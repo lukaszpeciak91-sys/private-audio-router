@@ -39,8 +39,8 @@ class CantoneseHongKongLocalizationContractTest {
         assertEquals("關閉", resourceValue("diagnostics_off"))
         assertNotEquals(resourceValue("state_active"), resourceValue("diagnostics_on"))
 
-        assertEquals("Private Audio", resourceValue("app_name"))
-        assertEquals("Private Audio", resourceValue("product_title"))
+        assertEquals("Puzru", resourceValue("app_name"))
+        assertEquals("Puzru", resourceValue("product_title"))
         assertEquals("迷你", resourceValue("floating"))
         assertEquals("私隱政策", resourceValue("settings_privacy_policy"))
         assertEquals("聽筒", resourceValue("diagnostics_route_earpiece"))
@@ -56,8 +56,8 @@ class CantoneseHongKongLocalizationContractTest {
             "唔需要帳戶或者登入", "唔會要求麥克風權限", "唔會擷取或者錄製麥克風音訊",
             "唔會記錄或者儲存你嘅對話或者其音訊內容", "錄音工作階段中繼資料係技術性音訊系統資料",
             "唔會擷取與該等工作階段相關聯嘅麥克風音訊", "診斷資料會喺你嘅裝置上產生同處理", "報告唔會自動儲存或者傳送",
-            "只有當你明確選擇「儲存診斷報告」", "目前版本唔會要求 Android 嘅 Internet 權限", "冇 Private Audio 後端或者網絡傳輸路徑",
-            "唔包含分析、廣告或者當機回報服務或 SDK", "唔會將診斷報告傳送畀開發者或者 Private Audio 伺服器",
+            "只有當你明確選擇「儲存診斷報告」", "目前版本唔會要求 Android 嘅 Internet 權限", "冇 Puzru 後端或者網絡傳輸路徑",
+            "唔包含分析、廣告或者當機回報服務或 SDK", "唔會將診斷報告傳送畀開發者或者 Puzru 伺服器",
             "Android 雲端備份同裝置對裝置傳輸之外",
         ).forEach { guard -> assertTrue("Missing privacy guard: $guard", privacy.contains(guard)) }
         assertTrue(resourceValue("settings_about_body").contains("內置聽筒"))
@@ -109,14 +109,14 @@ class CantoneseHongKongLocalizationContractTest {
         val privacy = simplifiedValue("settings_privacy_policy_body")
         val paragraphs = privacy.split("\\n\\n")
         assertEquals(5, paragraphs.size)
-        listOf("唔使", "佢", "嘅", "喺", "使用紧", "先会", "唔系 Private Audio")
+        listOf("唔使", "佢", "嘅", "喺", "使用紧", "先会", "唔系 Puzru")
             .forEach { assertTrue("Missing Simplified Written Cantonese marker: $it", privacy.contains(it)) }
         listOf(
             "唔会要求麦克风权限", "唔会采集或者录制麦克风音频", "唔会录制或者存储你嘅对话或者当中嘅音频内容",
             "录音会话元数据系音频系统嘅技术信息", "唔会采集同呢啲会话相关嘅麦克风音频", "设备上生成同处理",
             "报告唔会自动保存或者发送", "明确选择“保存诊断报告”", "唔会要求 Android 嘅互联网权限",
-            "冇 Private Audio 后端或者网络传输路径", "唔包含分析、广告或者崩溃报告服务或 SDK",
-            "唔会将诊断报告发送畀开发者或者 Private Audio 服务器", "唔会包含喺 Android 云备份同设备到设备传输入面",
+            "冇 Puzru 后端或者网络传输路径", "唔包含分析、广告或者崩溃报告服务或 SDK",
+            "唔会将诊断报告发送畀开发者或者 Puzru 服务器", "唔会包含喺 Android 云备份同设备到设备传输入面",
         )
             .forEach { assertTrue("Missing privacy concept: $it", privacy.contains(it)) }
         assertFalse(privacy.contains("您的"))

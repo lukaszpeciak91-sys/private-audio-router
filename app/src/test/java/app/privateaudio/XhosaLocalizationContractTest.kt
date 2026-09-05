@@ -33,8 +33,8 @@ class XhosaLocalizationContractTest {
         assertEquals("Ilindile ukuhambisa iaudio", resourceValue("routing_notification_text"))
         assertFalse(resourceValue("state_active") == resourceValue("diagnostics_on"))
 
-        assertEquals("Private Audio", resourceValue("app_name"))
-        assertEquals("Private Audio", resourceValue("product_title"))
+        assertEquals("Puzru", resourceValue("app_name"))
+        assertEquals("Puzru", resourceValue("product_title"))
         assertEquals("Iisetingi", resourceValue("settings"))
         assertEquals("Okumiselweyo", resourceValue("settings_system_default"))
         assertEquals("Ezihambele phambili", resourceValue("settings_advanced"))

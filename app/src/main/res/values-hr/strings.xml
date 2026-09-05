@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Private Audio</string>
-    <string name="routing_notification_channel">Private Audio</string>
-    <string name="routing_notification_title">Private Audio je uključen</string>
+    <string name="app_name">Puzru</string>
+    <string name="routing_notification_channel">Puzru</string>
+    <string name="routing_notification_title">Puzru je uključen</string>
     <string name="routing_notification_text">Čekanje na prebacivanje zvuka</string>
-    <string name="product_title">Private Audio</string>
+    <string name="product_title">Puzru</string>
     <string name="product_subtitle">Razgovarajte privatno s AI-jem, kao tijekom telefonskog poziva.</string>
     <string name="state_ready">Spremno</string>
     <string name="state_waiting">Čekanje</string>
@@ -14,18 +14,18 @@
     <string name="floating">Mini</string>
     <string name="settings">Postavke</string>
     <string name="close">Zatvori</string>
-    <string name="overlay_controller_description">Plutajući upravljač Private Audio. Status: %1$s. Kontrole za uključivanje/isključivanje, proširivanje i zatvaranje.</string>
+    <string name="overlay_controller_description">Plutajući upravljač Puzru. Status: %1$s. Kontrole za uključivanje/isključivanje, proširivanje i zatvaranje.</string>
     <string name="settings_language">Jezik</string>
     <string name="settings_system_default">Zadano</string>
     <string name="settings_save_diagnostic">Spremi dijagnostičko izvješće</string>
     <string name="settings_advanced">Napredno</string>
-    <string name="settings_about">O aplikaciji Private Audio</string>
+    <string name="settings_about">O aplikaciji Puzru</string>
     <string name="settings_privacy_policy">Pravila privatnosti</string>
-    <string name="settings_privacy_policy_body">Private Audio ne zahtijeva račun ni prijavu i ne traži dopuštenje za mikrofon. Ne snima niti bilježi zvuk mikrofona te ne snima niti pohranjuje vaše razgovore ili njihov audiosadržaj.\n\nPrivate Audio koristi informacije Androidova audiosustava potrebne za usmjeravanje i dijagnostiku. Dijagnostika može pregledavati tehničko stanje i metapodatke dostupne putem javnih Androidovih API-ja, uključujući metapodatke reprodukcije i sesija snimanja. Metapodaci sesija snimanja tehničke su informacije audiosustava; Private Audio ne snima zvuk mikrofona povezan s tim sesijama. Dijagnostičke informacije mogu uključivati verzije aplikacije i Androida, podatke o uređaju i modelu, podatke o procesu i stanju aplikacije, dostupne i trenutačne audiouređaje, javne metapodatke konfiguracije reprodukcije i snimanja te pokušaje usmjeravanja, njihove rezultate, vremenske podatke i tehničke događaje.\n\nPostavke aplikacije pohranjuju se lokalno u privatnoj pohrani aplikacije Private Audio. Dijagnostičke informacije stvaraju se i obrađuju na vašem uređaju i mogu postojati u lokalnom stanju pokrenute aplikacije. Izvješća se ne spremaju niti šalju automatski. Trajno izvješće stvara se izvan privatne pohrane aplikacije Private Audio samo kada izričito odaberete Spremi dijagnostičko izvješće i putem Androida odaberete odredište. Nakon izvoza odabrana lokacija ili usluga, a ne Private Audio, upravlja obradom, čuvanjem i brisanjem te kopije.\n\nTrenutačna verzija ne traži Androidovo dopuštenje za internet, nema pozadinski sustav Private Audio ni put za mrežni prijenos te ne uključuje usluge ni SDK-ove za analitiku, oglašavanje ili izvješćivanje o rušenjima. Trenutačno ne šalje dijagnostička izvješća razvojnom programeru ni poslužitelju Private Audio, pa Private Audio ne čuva dijagnostičke informacije ni na jednom poslužitelju.\n\nPodaci u vlasništvu aplikacije izuzeti su iz Androidove sigurnosne kopije u oblaku i prijenosa s uređaja na uređaj. Lokalne postavke ostaju u privatnoj pohrani aplikacije dok ih ne promijenite ili ne uklonite podatke aplikacije; prolazno dijagnostičko stanje nije spremljeno izvješće. Izvezena izvješća ostaju pod kontrolom lokacije ili usluge koju ste odabrali.</string>
+    <string name="settings_privacy_policy_body">Puzru ne zahtijeva račun ni prijavu i ne traži dopuštenje za mikrofon. Ne snima niti bilježi zvuk mikrofona te ne snima niti pohranjuje vaše razgovore ili njihov audiosadržaj.\n\nPuzru koristi informacije Androidova audiosustava potrebne za usmjeravanje i dijagnostiku. Dijagnostika može pregledavati tehničko stanje i metapodatke dostupne putem javnih Androidovih API-ja, uključujući metapodatke reprodukcije i sesija snimanja. Metapodaci sesija snimanja tehničke su informacije audiosustava; Puzru ne snima zvuk mikrofona povezan s tim sesijama. Dijagnostičke informacije mogu uključivati verzije aplikacije i Androida, podatke o uređaju i modelu, podatke o procesu i stanju aplikacije, dostupne i trenutačne audiouređaje, javne metapodatke konfiguracije reprodukcije i snimanja te pokušaje usmjeravanja, njihove rezultate, vremenske podatke i tehničke događaje.\n\nPostavke aplikacije pohranjuju se lokalno u privatnoj pohrani aplikacije Puzru. Dijagnostičke informacije stvaraju se i obrađuju na vašem uređaju i mogu postojati u lokalnom stanju pokrenute aplikacije. Izvješća se ne spremaju niti šalju automatski. Trajno izvješće stvara se izvan privatne pohrane aplikacije Puzru samo kada izričito odaberete Spremi dijagnostičko izvješće i putem Androida odaberete odredište. Nakon izvoza odabrana lokacija ili usluga, a ne Puzru, upravlja obradom, čuvanjem i brisanjem te kopije.\n\nTrenutačna verzija ne traži Androidovo dopuštenje za internet, nema pozadinski sustav Puzru ni put za mrežni prijenos te ne uključuje usluge ni SDK-ove za analitiku, oglašavanje ili izvješćivanje o rušenjima. Trenutačno ne šalje dijagnostička izvješća razvojnom programeru ni poslužitelju Puzru, pa Puzru ne čuva dijagnostičke informacije ni na jednom poslužitelju.\n\nPodaci u vlasništvu aplikacije izuzeti su iz Androidove sigurnosne kopije u oblaku i prijenosa s uređaja na uređaj. Lokalne postavke ostaju u privatnoj pohrani aplikacije dok ih ne promijenite ili ne uklonite podatke aplikacije; prolazno dijagnostičko stanje nije spremljeno izvješće. Izvezena izvješća ostaju pod kontrolom lokacije ili usluge koju ste odabrali.</string>
     <string name="settings_version">Verzija %1$s</string>
     <string name="settings_language_android_13_required">Odabir jezika u aplikaciji zahtijeva Android 13 ili noviji. Ovaj uređaj upotrebljava jezik sustava.</string>
     <string name="settings_proximity_screen">Isključi zaslon blizu uha</string>
-    <string name="settings_about_body">Private Audio pomaže prebaciti podržani glasovni zvuk na ugrađenu slušalicu telefona.</string>
+    <string name="settings_about_body">Puzru pomaže prebaciti podržani glasovni zvuk na ugrađenu slušalicu telefona.</string>
     <string name="diagnostic_report_saved">Dijagnostičko izvješće je spremljeno.</string>
     <string name="diagnostic_report_save_failed">Nije moguće spremiti dijagnostičko izvješće.</string>
 
@@ -34,7 +34,7 @@
     <string name="diagnostics_system_check">PROVJERA SUSTAVA</string>
     <string name="diagnostics_earpiece">Slušalica telefona</string>
     <string name="diagnostics_proximity_sensor">Senzor blizine</string>
-    <string name="diagnostics_private_audio">Private Audio</string>
+    <string name="diagnostics_private_audio">Puzru</string>
     <string name="diagnostics_routing">Usmjeravanje zvuka</string>
     <string name="diagnostics_status">Status</string>
     <string name="diagnostics_audio_route">Izlaz zvuka</string>
@@ -59,8 +59,8 @@
     <string name="diagnostics_route_other">Ostalo</string>
     <string name="diagnostics_error_blocked_by_system">Sustav je blokirao usmjeravanje zvuka.</string>
     <string name="diagnostics_error_session_ended">Sesija zvuka završila je prije dovršetka usmjeravanja zvuka.</string>
-    <string name="diagnostics_error_audio_start">Private Audio nije mogao pokrenuti usmjeravanje zvuka.</string>
-    <string name="diagnostics_error_audio_preparation">Private Audio nije mogao pripremiti zvuk za komunikaciju.</string>
+    <string name="diagnostics_error_audio_start">Puzru nije mogao pokrenuti usmjeravanje zvuka.</string>
+    <string name="diagnostics_error_audio_preparation">Puzru nije mogao pripremiti zvuk za komunikaciju.</string>
     <string name="diagnostics_error_request_rejected">Zahtjev za usmjeravanje zvuka na slušalicu telefona nije prihvaćen.</string>
     <string name="diagnostics_error_not_completed">Usmjeravanje zvuka nije se moglo dovršiti.</string>
 </resources>

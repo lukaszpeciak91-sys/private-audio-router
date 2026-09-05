@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Private Audio</string>
-    <string name="routing_notification_channel">Private Audio</string>
-    <string name="routing_notification_title">Private Audio est activé</string>
+    <string name="app_name">Puzru</string>
+    <string name="routing_notification_channel">Puzru</string>
+    <string name="routing_notification_title">Puzru est activé</string>
     <string name="routing_notification_text">En attente du routage audio</string>
-    <string name="product_title">Private Audio</string>
+    <string name="product_title">Puzru</string>
     <string name="product_subtitle">Parlez avec une IA en privé, comme au téléphone.</string>
     <string name="state_ready">Prêt</string>
     <string name="state_waiting">En attente</string>
@@ -14,18 +14,18 @@
     <string name="floating">Mini</string>
     <string name="settings">Paramètres</string>
     <string name="close">Fermer</string>
-    <string name="overlay_controller_description">Contrôleur flottant Private Audio. État : %1$s. Commandes pour activer, développer et fermer.</string>
+    <string name="overlay_controller_description">Contrôleur flottant Puzru. État : %1$s. Commandes pour activer, développer et fermer.</string>
     <string name="settings_language">Langue</string>
     <string name="settings_system_default">Par défaut</string>
     <string name="settings_save_diagnostic">Enregistrer le rapport de diagnostic</string>
     <string name="settings_advanced">Avancé</string>
-    <string name="settings_about">À propos de Private Audio</string>
+    <string name="settings_about">À propos de Puzru</string>
     <string name="settings_privacy_policy">Politique de confidentialité</string>
-    <string name="settings_privacy_policy_body">Private Audio ne nécessite ni compte ni connexion et ne demande pas l’autorisation d’accéder au microphone. L’application ne capture ni n’enregistre le son du microphone, et n’enregistre ni ne stocke vos conversations ou leur contenu audio.\n\nPrivate Audio utilise les informations du système audio d’Android nécessaires au routage et aux diagnostics. Les diagnostics peuvent examiner l’état technique et les métadonnées exposés par les API Android publiques, notamment les métadonnées des sessions de lecture et d’enregistrement. Les métadonnées des sessions d’enregistrement sont des informations techniques du système audio ; Private Audio ne capture pas le son du microphone associé à ces sessions. Les informations de diagnostic peuvent inclure les versions de l’application et d’Android, des informations sur l’appareil et son modèle, des informations sur le processus et l’état de l’application, les appareils audio disponibles et actuels, les métadonnées publiques de configuration de lecture et d’enregistrement, ainsi que les tentatives de routage, leurs résultats, leur chronologie et les événements techniques.\n\nLes préférences de l’application sont stockées localement dans l’espace de stockage privé de Private Audio. Les informations de diagnostic sont générées et traitées sur votre appareil et peuvent exister dans l’état local de l’application en cours d’exécution. Les rapports ne sont ni enregistrés ni envoyés automatiquement. Un rapport persistant n’est créé en dehors de l’espace de stockage privé de Private Audio que lorsque vous choisissez explicitement Enregistrer le rapport de diagnostic et sélectionnez une destination via Android. Après l’exportation, l’emplacement ou le service sélectionné — et non Private Audio — contrôle le traitement, la conservation et la suppression de cette copie.\n\nLa version actuelle ne demande pas l’autorisation Internet d’Android, ne dispose d’aucun serveur principal Private Audio ni d’aucun moyen de transmission réseau, et n’inclut aucun service ou SDK d’analyse, de publicité ou de rapport de plantage. Elle n’envoie actuellement aucun rapport de diagnostic au développeur ni à un serveur Private Audio ; Private Audio ne conserve donc aucun diagnostic côté serveur.\n\nLes données appartenant à l’application sont exclues de la sauvegarde Android dans le cloud et du transfert d’un appareil à un autre. Les préférences locales restent dans l’espace de stockage privé de l’application jusqu’à ce qu’elles soient modifiées ou que les données de l’application soient supprimées ; l’état de diagnostic temporaire n’est pas un rapport enregistré. Les rapports exportés restent sous le contrôle de l’emplacement ou du service que vous avez sélectionné.</string>
+    <string name="settings_privacy_policy_body">Puzru ne nécessite ni compte ni connexion et ne demande pas l’autorisation d’accéder au microphone. L’application ne capture ni n’enregistre le son du microphone, et n’enregistre ni ne stocke vos conversations ou leur contenu audio.\n\nPuzru utilise les informations du système audio d’Android nécessaires au routage et aux diagnostics. Les diagnostics peuvent examiner l’état technique et les métadonnées exposés par les API Android publiques, notamment les métadonnées des sessions de lecture et d’enregistrement. Les métadonnées des sessions d’enregistrement sont des informations techniques du système audio ; Puzru ne capture pas le son du microphone associé à ces sessions. Les informations de diagnostic peuvent inclure les versions de l’application et d’Android, des informations sur l’appareil et son modèle, des informations sur le processus et l’état de l’application, les appareils audio disponibles et actuels, les métadonnées publiques de configuration de lecture et d’enregistrement, ainsi que les tentatives de routage, leurs résultats, leur chronologie et les événements techniques.\n\nLes préférences de l’application sont stockées localement dans l’espace de stockage privé de Puzru. Les informations de diagnostic sont générées et traitées sur votre appareil et peuvent exister dans l’état local de l’application en cours d’exécution. Les rapports ne sont ni enregistrés ni envoyés automatiquement. Un rapport persistant n’est créé en dehors de l’espace de stockage privé de Puzru que lorsque vous choisissez explicitement Enregistrer le rapport de diagnostic et sélectionnez une destination via Android. Après l’exportation, l’emplacement ou le service sélectionné — et non Puzru — contrôle le traitement, la conservation et la suppression de cette copie.\n\nLa version actuelle ne demande pas l’autorisation Internet d’Android, ne dispose d’aucun serveur principal Puzru ni d’aucun moyen de transmission réseau, et n’inclut aucun service ou SDK d’analyse, de publicité ou de rapport de plantage. Elle n’envoie actuellement aucun rapport de diagnostic au développeur ni à un serveur Puzru ; Puzru ne conserve donc aucun diagnostic côté serveur.\n\nLes données appartenant à l’application sont exclues de la sauvegarde Android dans le cloud et du transfert d’un appareil à un autre. Les préférences locales restent dans l’espace de stockage privé de l’application jusqu’à ce qu’elles soient modifiées ou que les données de l’application soient supprimées ; l’état de diagnostic temporaire n’est pas un rapport enregistré. Les rapports exportés restent sous le contrôle de l’emplacement ou du service que vous avez sélectionné.</string>
     <string name="settings_version">Version %1$s</string>
     <string name="settings_language_android_13_required">La sélection de la langue dans l’application nécessite Android 13 ou une version ultérieure. Cet appareil utilise la langue du système.</string>
     <string name="settings_proximity_screen">Éteindre l’écran près de l’oreille</string>
-    <string name="settings_about_body">Private Audio aide à diriger l’audio vocal vers l’écouteur intégré du téléphone.</string>
+    <string name="settings_about_body">Puzru aide à diriger l’audio vocal vers l’écouteur intégré du téléphone.</string>
     <string name="diagnostic_report_saved">Rapport de diagnostic enregistré.</string>
     <string name="diagnostic_report_save_failed">Impossible d’enregistrer le rapport de diagnostic.</string>
 
@@ -34,7 +34,7 @@
     <string name="diagnostics_system_check">VÉRIFICATION DU SYSTÈME</string>
     <string name="diagnostics_earpiece">Écouteur</string>
     <string name="diagnostics_proximity_sensor">Capteur de proximité</string>
-    <string name="diagnostics_private_audio">PRIVATE AUDIO</string>
+    <string name="diagnostics_private_audio">PUZRU</string>
     <string name="diagnostics_routing">Routage</string>
     <string name="diagnostics_status">État</string>
     <string name="diagnostics_audio_route">Sortie audio</string>
@@ -59,8 +59,8 @@
     <string name="diagnostics_route_other">Autre</string>
     <string name="diagnostics_error_blocked_by_system">Le routage a été bloqué par le système.</string>
     <string name="diagnostics_error_session_ended">La session audio s’est terminée avant la fin du routage.</string>
-    <string name="diagnostics_error_audio_start">Private Audio n’a pas pu démarrer le routage audio.</string>
-    <string name="diagnostics_error_audio_preparation">Private Audio n’a pas pu préparer l’audio de communication.</string>
+    <string name="diagnostics_error_audio_start">Puzru n’a pas pu démarrer le routage audio.</string>
+    <string name="diagnostics_error_audio_preparation">Puzru n’a pas pu préparer l’audio de communication.</string>
     <string name="diagnostics_error_request_rejected">La demande de routage vers l’écouteur n’a pas été acceptée.</string>
     <string name="diagnostics_error_not_completed">Le routage n’a pas pu être effectué.</string>
 </resources>

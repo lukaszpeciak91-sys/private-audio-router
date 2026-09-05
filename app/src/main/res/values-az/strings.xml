@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Private Audio</string>
-    <string name="routing_notification_channel">Private Audio</string>
-    <string name="routing_notification_title">Private Audio açıqdır</string>
+    <string name="app_name">Puzru</string>
+    <string name="routing_notification_channel">Puzru</string>
+    <string name="routing_notification_title">Puzru açıqdır</string>
     <string name="routing_notification_text">Audio çıxışını dəyişməyi gözləyir</string>
-    <string name="product_title">Private Audio</string>
+    <string name="product_title">Puzru</string>
     <string name="product_subtitle">Sİ ilə telefon zəngi kimi özəl şəkildə danışın.</string>
     <string name="state_ready">Hazır</string>
     <string name="state_waiting">Gözləyir</string>
@@ -14,18 +14,18 @@
     <string name="floating">Mini</string>
     <string name="settings">Ayarlar</string>
     <string name="close">Bağlayın</string>
-    <string name="overlay_controller_description">Private Audio üzən idarəedicisi. Vəziyyət: %1$s. Yandırıb-söndürmək, genişləndirmək və bağlamaq üçün idarəetmələr.</string>
+    <string name="overlay_controller_description">Puzru üzən idarəedicisi. Vəziyyət: %1$s. Yandırıb-söndürmək, genişləndirmək və bağlamaq üçün idarəetmələr.</string>
     <string name="settings_language">Dil</string>
     <string name="settings_system_default">Defolt</string>
     <string name="settings_save_diagnostic">Diaqnostik hesabatı yadda saxlayın</string>
     <string name="settings_advanced">Qabaqcıl</string>
-    <string name="settings_about">Private Audio haqqında</string>
+    <string name="settings_about">Puzru haqqında</string>
     <string name="settings_privacy_policy">Məxfilik siyasəti</string>
-    <string name="settings_privacy_policy_body">Private Audio hesab və ya giriş tələb etmir və mikrofon icazəsi istəmir. O, mikrofon audiosunu tutmur və ya yazmır, söhbətlərinizi və ya onların audio məzmununu yazmır və ya saxlamır.\n\nPrivate Audio yönləndirmə və diaqnostika üçün lazım olan Android audio sistemi məlumatlarından istifadə edir. Diaqnostika açıq Android API-lərinin təqdim etdiyi texniki vəziyyəti və metadatanı, o cümlədən oxutma və yazma sessiyası metadatasını yoxlaya bilər. Yazma sessiyası metadatası audio sisteminin texniki məlumatıdır; Private Audio həmin sessiyalarla əlaqəli mikrofon audiosunu tutmur. Diaqnostika məlumatlarına tətbiq və Android versiyaları, cihaz və model məlumatları, tətbiq prosesi və vəziyyəti, mövcud və cari audio cihazları, açıq oxutma və yazma konfiqurasiyası metadatası, həmçinin yönləndirmə cəhdləri, nəticələri, vaxtı və texniki hadisələri daxil ola bilər.\n\nTətbiq tərcihləri Private Audio-nun tətbiqə məxsus şəxsi yaddaşında yerli saxlanılır. Diaqnostika məlumatı cihazınızda yaradılır və işlənir və işləyən tətbiqin yerli vəziyyətində mövcud ola bilər. Hesabatlar avtomatik saxlanılmır və ya göndərilmir. Daimi hesabat yalnız siz Diaqnostika hesabatını saxla seçimini açıq şəkildə seçib Android vasitəsilə təyinat yeri seçdikdə Private Audio-nun şəxsi yaddaşından kənarda yaradılır. İxracdan sonra həmin nüsxənin işlənməsinə, saxlanmasına və silinməsinə Private Audio deyil, seçilmiş yer və ya xidmət nəzarət edir.\n\nCari versiya Android-in İnternet icazəsini istəmir, Private Audio server hissəsinə və ya şəbəkə ötürmə yoluna malik deyil və analitika, reklam və ya nasazlıq hesabatı xidmətləri və ya SDK-ları ehtiva etmir. Hazırda diaqnostika hesabatlarını tərtibatçıya və ya Private Audio serverinə göndərmir, buna görə Private Audio server tərəfində diaqnostika saxlamır.\n\nTətbiqə məxsus məlumatlar Android bulud ehtiyat nüsxəsindən və cihazlararası köçürmədən çıxarılıb. Yerli tərcihlər dəyişdirilənə və ya tətbiq məlumatları silinənə qədər tətbiqin şəxsi yaddaşında qalır; müvəqqəti diaqnostika vəziyyəti saxlanmış hesabat deyil. İxrac edilmiş hesabatlar seçdiyiniz yerin və ya xidmətin nəzarətində qalır.</string>
+    <string name="settings_privacy_policy_body">Puzru hesab və ya giriş tələb etmir və mikrofon icazəsi istəmir. O, mikrofon audiosunu tutmur və ya yazmır, söhbətlərinizi və ya onların audio məzmununu yazmır və ya saxlamır.\n\nPuzru yönləndirmə və diaqnostika üçün lazım olan Android audio sistemi məlumatlarından istifadə edir. Diaqnostika açıq Android API-lərinin təqdim etdiyi texniki vəziyyəti və metadatanı, o cümlədən oxutma və yazma sessiyası metadatasını yoxlaya bilər. Yazma sessiyası metadatası audio sisteminin texniki məlumatıdır; Puzru həmin sessiyalarla əlaqəli mikrofon audiosunu tutmur. Diaqnostika məlumatlarına tətbiq və Android versiyaları, cihaz və model məlumatları, tətbiq prosesi və vəziyyəti, mövcud və cari audio cihazları, açıq oxutma və yazma konfiqurasiyası metadatası, həmçinin yönləndirmə cəhdləri, nəticələri, vaxtı və texniki hadisələri daxil ola bilər.\n\nTətbiq tərcihləri Puzru-nun tətbiqə məxsus şəxsi yaddaşında yerli saxlanılır. Diaqnostika məlumatı cihazınızda yaradılır və işlənir və işləyən tətbiqin yerli vəziyyətində mövcud ola bilər. Hesabatlar avtomatik saxlanılmır və ya göndərilmir. Daimi hesabat yalnız siz Diaqnostika hesabatını saxla seçimini açıq şəkildə seçib Android vasitəsilə təyinat yeri seçdikdə Puzru-nun şəxsi yaddaşından kənarda yaradılır. İxracdan sonra həmin nüsxənin işlənməsinə, saxlanmasına və silinməsinə Puzru deyil, seçilmiş yer və ya xidmət nəzarət edir.\n\nCari versiya Android-in İnternet icazəsini istəmir, Puzru server hissəsinə və ya şəbəkə ötürmə yoluna malik deyil və analitika, reklam və ya nasazlıq hesabatı xidmətləri və ya SDK-ları ehtiva etmir. Hazırda diaqnostika hesabatlarını tərtibatçıya və ya Puzru serverinə göndərmir, buna görə Puzru server tərəfində diaqnostika saxlamır.\n\nTətbiqə məxsus məlumatlar Android bulud ehtiyat nüsxəsindən və cihazlararası köçürmədən çıxarılıb. Yerli tərcihlər dəyişdirilənə və ya tətbiq məlumatları silinənə qədər tətbiqin şəxsi yaddaşında qalır; müvəqqəti diaqnostika vəziyyəti saxlanmış hesabat deyil. İxrac edilmiş hesabatlar seçdiyiniz yerin və ya xidmətin nəzarətində qalır.</string>
     <string name="settings_version">Versiya %1$s</string>
     <string name="settings_language_android_13_required">Tətbiq daxilində dil seçimi üçün Android 13 və ya daha yeni versiya tələb olunur. Bu cihaz sistem dilindən istifadə edir.</string>
     <string name="settings_proximity_screen">Telefon qulağınıza yaxın olduqda ekranı söndürün</string>
-    <string name="settings_about_body">Private Audio dəstəklənən səsli audionu telefonunuzun daxili qulaq dinamikinə yönləndirməyə kömək edir.</string>
+    <string name="settings_about_body">Puzru dəstəklənən səsli audionu telefonunuzun daxili qulaq dinamikinə yönləndirməyə kömək edir.</string>
     <string name="diagnostic_report_saved">Diaqnostik hesabat yadda saxlanıldı.</string>
     <string name="diagnostic_report_save_failed">Diaqnostik hesabatı yadda saxlamaq mümkün olmadı.</string>
 
@@ -34,7 +34,7 @@
     <string name="diagnostics_system_check">SİSTEM YOXLAMASI</string>
     <string name="diagnostics_earpiece">Qulaq dinamiki</string>
     <string name="diagnostics_proximity_sensor">Yaxınlıq sensoru</string>
-    <string name="diagnostics_private_audio">PRIVATE AUDIO</string>
+    <string name="diagnostics_private_audio">PUZRU</string>
     <string name="diagnostics_routing">Səsin yönləndirilməsi</string>
     <string name="diagnostics_status">Vəziyyət</string>
     <string name="diagnostics_audio_route">Səs çıxışı</string>
@@ -59,8 +59,8 @@
     <string name="diagnostics_route_other">Digər</string>
     <string name="diagnostics_error_blocked_by_system">Səsin yönləndirilməsi sistem tərəfindən bloklandı.</string>
     <string name="diagnostics_error_session_ended">Audio sessiyası yönləndirmə tamamlanmazdan əvvəl başa çatdı.</string>
-    <string name="diagnostics_error_audio_start">Private Audio səsin yönləndirilməsini başlada bilmədi.</string>
-    <string name="diagnostics_error_audio_preparation">Private Audio rabitə audiosunu hazırlaya bilmədi.</string>
+    <string name="diagnostics_error_audio_start">Puzru səsin yönləndirilməsini başlada bilmədi.</string>
+    <string name="diagnostics_error_audio_preparation">Puzru rabitə audiosunu hazırlaya bilmədi.</string>
     <string name="diagnostics_error_request_rejected">Səsi qulaq dinamikinə yönləndirmə sorğusu qəbul edilmədi.</string>
     <string name="diagnostics_error_not_completed">Yönləndirmə tamamlana bilmədi.</string>
 </resources>

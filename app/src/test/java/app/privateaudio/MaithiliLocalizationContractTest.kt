@@ -44,8 +44,8 @@ class MaithiliLocalizationContractTest {
 
     @Test
     fun productStatesBrandAndAudioConceptsRemainDistinct() {
-        assertEquals("Private Audio", resourceValue("app_name"))
-        assertEquals("Private Audio", resourceValue("product_title"))
+        assertEquals("Puzru", resourceValue("app_name"))
+        assertEquals("Puzru", resourceValue("product_title"))
         assertEquals("मिनी", resourceValue("floating"))
 
         val runtimeStates = listOf("state_ready", "state_waiting", "state_active", "state_error")
@@ -95,12 +95,12 @@ class MaithiliLocalizationContractTest {
             "सेशनसँ संबंधित माइक्रोफोन ऑडियो केँ कैप्चर नहि करैत अछि", "अहाँक डिवाइस पर उत्पन्न आ संसाधित होइत अछि", "रिपोर्टसभ अपने-आप सहेजल वा पठाओल नहि जाइत अछि",
             "केवल तखन बनाओल जाइत अछि जखन अहाँ स्पष्ट रूपसँ Save diagnostic report चुनैत छी", "वर्तमान संस्करण Android केर Internet permission नहि मांगैत अछि",
             "कोनो backend वा नेटवर्क ट्रांसमिशन पथ नहि अछि", "analytics, advertising, वा crash-reporting सेवासभ वा SDKs शामिल नहि अछि",
-            "डायग्नॉस्टिक रिपोर्टसभ डेवलपर वा Private Audio सर्वरकेँ नहि पठबैत अछि", "Android cloud backup आ device-to-device transfer सँ बाहर राखल गेल अछि",
+            "डायग्नॉस्टिक रिपोर्टसभ डेवलपर वा Puzru सर्वरकेँ नहि पठबैत अछि", "Android cloud backup आ device-to-device transfer सँ बाहर राखल गेल अछि",
         ).forEach { guard -> assertTrue("Missing privacy guard: $guard", privacy.contains(guard)) }
 
         val rejected = resourceValue("diagnostics_error_request_rejected")
         assertTrue(rejected.contains("अनुरोध स्वीकार नहि भेल"))
-        listOf("Android", "सिस्टम", "फोन", "Private Audio").forEach { actor ->
+        listOf("Android", "सिस्टम", "फोन", "Puzru").forEach { actor ->
             assertFalse("Rejected-request error invented actor: $actor", rejected.contains(actor, ignoreCase = true))
         }
         assertTrue(resourceValue("diagnostics_error_blocked_by_system").contains("सिस्टम"))

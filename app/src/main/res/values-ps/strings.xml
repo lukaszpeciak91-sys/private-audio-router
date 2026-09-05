@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Private Audio</string>
-    <string name="routing_notification_channel">Private Audio</string>
-    <string name="routing_notification_title">Private Audio چالان دی</string>
+    <string name="app_name">Puzru</string>
+    <string name="routing_notification_channel">Puzru</string>
+    <string name="routing_notification_title">Puzru چالان دی</string>
     <string name="routing_notification_text">د آډیو بدلولو په تمه</string>
-    <string name="product_title">Private Audio</string>
+    <string name="product_title">Puzru</string>
     <string name="product_subtitle">له AI سره په شخصي ډول خبرې وکړئ، لکه په تلیفون کې.</string>
     <string name="state_ready">چمتو</string>
     <string name="state_waiting">په تمه</string>
@@ -14,18 +14,18 @@
     <string name="floating">مینی</string>
     <string name="settings">امستنې</string>
     <string name="close">وتړئ</string>
-    <string name="overlay_controller_description">د Private Audio مینی کنټرولر. حالت: %1$s. د پاور، پراخولو او تړلو کنټرولونه.</string>
+    <string name="overlay_controller_description">د Puzru مینی کنټرولر. حالت: %1$s. د پاور، پراخولو او تړلو کنټرولونه.</string>
     <string name="settings_language">ژبه</string>
     <string name="settings_system_default">ډیفالټ</string>
     <string name="settings_save_diagnostic">تشخیصي راپور خوندي کړئ</string>
     <string name="settings_advanced">پرمختللی</string>
-    <string name="settings_about">د Private Audio په اړه</string>
+    <string name="settings_about">د Puzru په اړه</string>
     <string name="settings_privacy_policy">د محرمیت تګلاره</string>
-    <string name="settings_privacy_policy_body">Private Audio حساب یا ننوتلو ته اړتیا نه لري او د مایکروفون اجازه نه غواړي. دا د مایکروفون غږ نه اخلي او نه یې ثبتوي، او ستاسو خبرې یا د هغو غږیزه منځپانګه نه ثبتوي او نه یې ساتي.\n\nPrivate Audio د Android غږیز سیسټم هغه معلومات کاروي چې د غږ مسیریابۍ او تشخیص لپاره اړین دي. تشخیص کېدای شي هغه تخنیکي حالت او مېټاډاټا وګوري چې د Android عامه API ګانې یې ښکاره کوي، د غږونې او ثبت ناستې مېټاډاټا په ګډون. د ثبت ناستې مېټاډاټا د غږیز سیسټم تخنیکي معلومات دي؛ Private Audio له دغو ناستو سره تړلی د مایکروفون غږ نه اخلي. په تشخیصي معلوماتو کې د اپلېکېشن او Android نسخې، د وسیلې او ماډل معلومات، د اپلېکېشن د پروسې او حالت معلومات، شته او اوسنۍ غږیزې وسیلې، د عامه غږونې او ثبت د تنظیم مېټاډاټا، او د مسیریابۍ هڅې، پایلې، وختونه او تخنیکي پېښې شاملېدای شي.\n\nد اپلېکېشن امستنې په محلي ډول د Private Audio د اپلېکېشن په شخصي زېرمه کې ساتل کېږي. تشخیصي معلومات ستاسو پر وسیله جوړېږي او پروسس کېږي او د روان اپلېکېشن په محلي حالت کې موجودېدای شي. راپورونه په اتومات ډول نه ساتل کېږي او نه لېږل کېږي. د Private Audio د اپلېکېشن له شخصي زېرمې بهر دایمي راپور یوازې هغه وخت جوړېږي چې تاسو په ښکاره د تشخیصي راپور ساتل وټاکئ او د Android له لارې یو ځای غوره کړئ. له صادرولو وروسته، غوره شوی ځای یا خدمت—نه Private Audio—د هغې کاپي کارول، ساتنه او ړنګول کنټرولوي.\n\nاوسنۍ نسخه د Android د انټرنېټ اجازه نه غواړي، د Private Audio شاتنۍ شبکه یا د شبکې د لېږد لار نه لري، او د شننې، اعلانونو یا خرابۍ راپورولو خدمتونه یا SDK ګانې پکې نشته. دا اوس مهال تشخیصي راپورونه پرمخ وړونکي یا د Private Audio سرور ته نه لېږي؛ نو Private Audio په سرور کې تشخیصي معلومات نه ساتي.\n\nد اپلېکېشن خپل معلومات د Android له کلاوډ شاتړ او له یوې وسیلې بلې ته له لېږد څخه ایستل شوي دي. محلي امستنې د اپلېکېشن په شخصي زېرمه کې تر هغه پاتې کېږي چې بدلې شي یا د اپلېکېشن معلومات لرې شي؛ لنډمهالی تشخیصي حالت ساتل شوی راپور نه دی. صادر شوي راپورونه د هغه ځای یا خدمت تر کنټرول لاندې پاتې کېږي چې تاسو غوره کړی.</string>
+    <string name="settings_privacy_policy_body">Puzru حساب یا ننوتلو ته اړتیا نه لري او د مایکروفون اجازه نه غواړي. دا د مایکروفون غږ نه اخلي او نه یې ثبتوي، او ستاسو خبرې یا د هغو غږیزه منځپانګه نه ثبتوي او نه یې ساتي.\n\nPuzru د Android غږیز سیسټم هغه معلومات کاروي چې د غږ مسیریابۍ او تشخیص لپاره اړین دي. تشخیص کېدای شي هغه تخنیکي حالت او مېټاډاټا وګوري چې د Android عامه API ګانې یې ښکاره کوي، د غږونې او ثبت ناستې مېټاډاټا په ګډون. د ثبت ناستې مېټاډاټا د غږیز سیسټم تخنیکي معلومات دي؛ Puzru له دغو ناستو سره تړلی د مایکروفون غږ نه اخلي. په تشخیصي معلوماتو کې د اپلېکېشن او Android نسخې، د وسیلې او ماډل معلومات، د اپلېکېشن د پروسې او حالت معلومات، شته او اوسنۍ غږیزې وسیلې، د عامه غږونې او ثبت د تنظیم مېټاډاټا، او د مسیریابۍ هڅې، پایلې، وختونه او تخنیکي پېښې شاملېدای شي.\n\nد اپلېکېشن امستنې په محلي ډول د Puzru د اپلېکېشن په شخصي زېرمه کې ساتل کېږي. تشخیصي معلومات ستاسو پر وسیله جوړېږي او پروسس کېږي او د روان اپلېکېشن په محلي حالت کې موجودېدای شي. راپورونه په اتومات ډول نه ساتل کېږي او نه لېږل کېږي. د Puzru د اپلېکېشن له شخصي زېرمې بهر دایمي راپور یوازې هغه وخت جوړېږي چې تاسو په ښکاره د تشخیصي راپور ساتل وټاکئ او د Android له لارې یو ځای غوره کړئ. له صادرولو وروسته، غوره شوی ځای یا خدمت—نه Puzru—د هغې کاپي کارول، ساتنه او ړنګول کنټرولوي.\n\nاوسنۍ نسخه د Android د انټرنېټ اجازه نه غواړي، د Puzru شاتنۍ شبکه یا د شبکې د لېږد لار نه لري، او د شننې، اعلانونو یا خرابۍ راپورولو خدمتونه یا SDK ګانې پکې نشته. دا اوس مهال تشخیصي راپورونه پرمخ وړونکي یا د Puzru سرور ته نه لېږي؛ نو Puzru په سرور کې تشخیصي معلومات نه ساتي.\n\nد اپلېکېشن خپل معلومات د Android له کلاوډ شاتړ او له یوې وسیلې بلې ته له لېږد څخه ایستل شوي دي. محلي امستنې د اپلېکېشن په شخصي زېرمه کې تر هغه پاتې کېږي چې بدلې شي یا د اپلېکېشن معلومات لرې شي؛ لنډمهالی تشخیصي حالت ساتل شوی راپور نه دی. صادر شوي راپورونه د هغه ځای یا خدمت تر کنټرول لاندې پاتې کېږي چې تاسو غوره کړی.</string>
     <string name="settings_version">نسخه %1$s</string>
     <string name="settings_language_android_13_required">په اپلیکیشن کې د ژبې ټاکلو لپاره Android 13 یا تر هغې نوې نسخه اړینه ده. دا وسیله د سیسټم ژبه کاروي.</string>
     <string name="settings_proximity_screen">کله چې تلیفون غوږ ته نږدې شي، سکرین بند کړئ</string>
-    <string name="settings_about_body">Private Audio مرسته کوي چې ملاتړ شوی غږیز آډیو ستاسو د تلیفون رسیدونکي ته واړوي.</string>
+    <string name="settings_about_body">Puzru مرسته کوي چې ملاتړ شوی غږیز آډیو ستاسو د تلیفون رسیدونکي ته واړوي.</string>
     <string name="diagnostic_report_saved">تشخیصي راپور خوندي شو.</string>
     <string name="diagnostic_report_save_failed">تشخیصي راپور خوندي نه شو.</string>
 
@@ -34,7 +34,7 @@
     <string name="diagnostics_system_check">د سیسټم ارزونه</string>
     <string name="diagnostics_earpiece">د تلیفون رسیدونکی</string>
     <string name="diagnostics_proximity_sensor">د نږدېوالي حسګر</string>
-    <string name="diagnostics_private_audio">Private Audio</string>
+    <string name="diagnostics_private_audio">Puzru</string>
     <string name="diagnostics_routing">د غږ لېږد</string>
     <string name="diagnostics_status">حالت</string>
     <string name="diagnostics_audio_route">د غږ وتۍ</string>
@@ -59,8 +59,8 @@
     <string name="diagnostics_route_other">نور</string>
     <string name="diagnostics_error_blocked_by_system">سیسټم د غږ لېږد بند کړی و.</string>
     <string name="diagnostics_error_session_ended">د آډیو ناسته د غږ لېږد تر بشپړېدو مخکې پای ته ورسېده.</string>
-    <string name="diagnostics_error_audio_start">Private Audio د غږ لېږد پیل نه شو کړای.</string>
-    <string name="diagnostics_error_audio_preparation">Private Audio ونه شو کړای چې د اړیکې آډیو چمتو کړي.</string>
+    <string name="diagnostics_error_audio_start">Puzru د غږ لېږد پیل نه شو کړای.</string>
+    <string name="diagnostics_error_audio_preparation">Puzru ونه شو کړای چې د اړیکې آډیو چمتو کړي.</string>
     <string name="diagnostics_error_request_rejected">د تلیفون رسیدونکي ته د غږ لېږد غوښتنه ونه منل شوه.</string>
     <string name="diagnostics_error_not_completed">د غږ لېږد بشپړ نه شو.</string>
 </resources>

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Private Audio</string>
-    <string name="routing_notification_channel">Private Audio</string>
-    <string name="routing_notification_title">Mandeha ny Private Audio</string>
+    <string name="app_name">Puzru</string>
+    <string name="routing_notification_channel">Puzru</string>
+    <string name="routing_notification_title">Mandeha ny Puzru</string>
     <string name="routing_notification_text">Miandry ny fampitodihana ny feo</string>
-    <string name="product_title">Private Audio</string>
+    <string name="product_title">Puzru</string>
     <string name="product_subtitle">Miresaha mitokana amin’ny AI, toy ny antso an-telefaonina.</string>
     <string name="state_ready">Vonona</string>
     <string name="state_waiting">Miandry</string>
@@ -14,26 +14,26 @@
     <string name="floating">Kely</string>
     <string name="settings">Fikirana</string>
     <string name="close">Akatona</string>
-    <string name="overlay_controller_description">Fanaraha-maso mitsingevana an’ny Private Audio. Toetra: %1$s. Bokotra hampandehanana, hanitarana ary hanakatonana.</string>
+    <string name="overlay_controller_description">Fanaraha-maso mitsingevana an’ny Puzru. Toetra: %1$s. Bokotra hampandehanana, hanitarana ary hanakatonana.</string>
     <string name="settings_language">Fiteny</string>
     <string name="settings_system_default">Safidy mahazatra</string>
     <string name="settings_save_diagnostic">Tehirizo ny tatitra momba ny fizahana</string>
     <string name="settings_diagnostics">Fizahana</string>
     <string name="settings_advanced">Fikirana mandroso</string>
-    <string name="settings_about">Momba ny Private Audio</string>
+    <string name="settings_about">Momba ny Puzru</string>
     <string name="settings_privacy_policy">Politika momba ny fiainana manokana</string>
-    <string name="settings_privacy_policy_body">Private Audio dia tsy mitaky kaonty na fidirana anaty kaonty ary tsy mangataka alalana amin’ny mikrô. Tsy misambotra na mandrakitra feo avy amin’ny mikrô izy, ary tsy mandrakitra na mitahiry ny resakao na ny votoatin’ny feony.\n\nMampiasa ny fampahalalana momba ny rafitra feo Android ilaina amin’ny fitarihana sy ny fitiliana i Private Audio. Ny fitiliana dia mety handinika ny toetra ara-teknika sy ny metadata avoakan’ny API Android ho an’ny daholobe, anisan’izany ny metadata momba ny playback sy ny recording-session. Ny metadata recording-session dia fampahalalana ara-teknika momba ny rafitra feo; tsy misambotra ny feon’ny mikrô mifandraika amin’ireo session ireo i Private Audio. Ny fampahalalana fitiliana dia mety ahitana ny kinovan’ny app sy Android, ny mombamomba ny fitaovana sy ny modely, ny mombamomba ny fizotry ny app sy ny toe-javatra misy azy, ireo fitaovana feo misy sy ampiasaina amin’izao fotoana izao, ny metadata ho an’ny daholobe momba ny fikirakirana playback sy recording, ary ny andrana fitarihana, ny valiny, ny fotoana, ary ny hetsika ara-teknika.\n\nNy safidin’ny app dia tehirizina eo an-toerana ao amin’ny fitahirizana an’ny app manokan’i Private Audio. Ny fampahalalana fitiliana dia vokarina sy karakaraina ao amin’ny fitaovanao ary mety hisy ao amin’ny toe-javatra eo an-toerana an’ilay app mandeha. Ny tatitra dia tsy voatahiry na alefa ho azy. Tatitra maharitra iray dia foronina ivelan’ny fitahirizana an’ny app manokan’i Private Audio ihany rehefa misafidy mazava tsara ny Hitehirizana ny tatitra fitiliana ianao ary mifidy toerana haleha amin’ny alalan’ny Android. Aorian’ny fanondranana, ny toerana na serivisy nofidinao — fa tsy i Private Audio — no mifehy ny fikarakarana, ny fitazonana ary ny famafana an’io dika io.\n\nNy kinova amin’izao fotoana izao dia tsy mangataka ny alalana Internet an’ny Android, tsy manana backend an’i Private Audio na lalan’ny fandefasana amin’ny tambajotra, ary tsy ahitana serivisy na SDK ho an’ny analytics, doka, na tatitra momba ny crash. Tsy mandefa tatitra fitiliana any amin’ny mpamorona na amin’ny mpizara Private Audio izy amin’izao fotoana izao, ka tsy manana fitazonana tatitra fitiliana amin’ny lafiny mpizara i Private Audio.\n\nNy angona an’ny app dia esorina amin’ny cloud backup sy ny famindrana avy amin’ny fitaovana iray mankany amin’ny fitaovana iray hafa ao amin’ny Android. Ny safidy eo an-toerana dia mijanona ao amin’ny fitahirizana an’ny app manokana mandra-panovana azy na mandra-panaisotra ny angon’ilay app; ny toe-javatra fitiliana vetivety dia tsy tatitra voatahiry. Ny tatitra naondrana dia mijanona eo ambanin’ny fifehezan’ilay toerana na serivisy nofidinao.</string>
+    <string name="settings_privacy_policy_body">Puzru dia tsy mitaky kaonty na fidirana anaty kaonty ary tsy mangataka alalana amin’ny mikrô. Tsy misambotra na mandrakitra feo avy amin’ny mikrô izy, ary tsy mandrakitra na mitahiry ny resakao na ny votoatin’ny feony.\n\nMampiasa ny fampahalalana momba ny rafitra feo Android ilaina amin’ny fitarihana sy ny fitiliana i Puzru. Ny fitiliana dia mety handinika ny toetra ara-teknika sy ny metadata avoakan’ny API Android ho an’ny daholobe, anisan’izany ny metadata momba ny playback sy ny recording-session. Ny metadata recording-session dia fampahalalana ara-teknika momba ny rafitra feo; tsy misambotra ny feon’ny mikrô mifandraika amin’ireo session ireo i Puzru. Ny fampahalalana fitiliana dia mety ahitana ny kinovan’ny app sy Android, ny mombamomba ny fitaovana sy ny modely, ny mombamomba ny fizotry ny app sy ny toe-javatra misy azy, ireo fitaovana feo misy sy ampiasaina amin’izao fotoana izao, ny metadata ho an’ny daholobe momba ny fikirakirana playback sy recording, ary ny andrana fitarihana, ny valiny, ny fotoana, ary ny hetsika ara-teknika.\n\nNy safidin’ny app dia tehirizina eo an-toerana ao amin’ny fitahirizana an’ny app manokan’i Puzru. Ny fampahalalana fitiliana dia vokarina sy karakaraina ao amin’ny fitaovanao ary mety hisy ao amin’ny toe-javatra eo an-toerana an’ilay app mandeha. Ny tatitra dia tsy voatahiry na alefa ho azy. Tatitra maharitra iray dia foronina ivelan’ny fitahirizana an’ny app manokan’i Puzru ihany rehefa misafidy mazava tsara ny Hitehirizana ny tatitra fitiliana ianao ary mifidy toerana haleha amin’ny alalan’ny Android. Aorian’ny fanondranana, ny toerana na serivisy nofidinao — fa tsy i Puzru — no mifehy ny fikarakarana, ny fitazonana ary ny famafana an’io dika io.\n\nNy kinova amin’izao fotoana izao dia tsy mangataka ny alalana Internet an’ny Android, tsy manana backend an’i Puzru na lalan’ny fandefasana amin’ny tambajotra, ary tsy ahitana serivisy na SDK ho an’ny analytics, doka, na tatitra momba ny crash. Tsy mandefa tatitra fitiliana any amin’ny mpamorona na amin’ny mpizara Puzru izy amin’izao fotoana izao, ka tsy manana fitazonana tatitra fitiliana amin’ny lafiny mpizara i Puzru.\n\nNy angona an’ny app dia esorina amin’ny cloud backup sy ny famindrana avy amin’ny fitaovana iray mankany amin’ny fitaovana iray hafa ao amin’ny Android. Ny safidy eo an-toerana dia mijanona ao amin’ny fitahirizana an’ny app manokana mandra-panovana azy na mandra-panaisotra ny angon’ilay app; ny toe-javatra fitiliana vetivety dia tsy tatitra voatahiry. Ny tatitra naondrana dia mijanona eo ambanin’ny fifehezan’ilay toerana na serivisy nofidinao.</string>
     <string name="settings_version">Kinova %1$s</string>
     <string name="settings_language_android_13_required">Mila Android 13 na vaovao kokoa ny fisafidianana fiteny ao anatin’ny rindranasa. Manaraka ny fitenin’ny rafitra ity fitaovana ity.</string>
     <string name="settings_proximity_screen">Vonoy ny efijery rehefa akaikin’ny sofinao</string>
-    <string name="settings_about_body">Manampy mampitodika ny feo tohanana mankany amin’ny fanamafisam-peo anatiny eo amin’ny sofin’ny telefaoninao ny Private Audio.</string>
+    <string name="settings_about_body">Manampy mampitodika ny feo tohanana mankany amin’ny fanamafisam-peo anatiny eo amin’ny sofin’ny telefaoninao ny Puzru.</string>
     <string name="diagnostic_report_saved">Voatahiry ny tatitra momba ny fizahana.</string>
     <string name="diagnostic_report_save_failed">Tsy voatahiry ny tatitra momba ny fizahana.</string>
     <string name="diagnostics_title">Fizahana</string>
     <string name="diagnostics_system_check">FANAMARINANA NY RAFITRA</string>
     <string name="diagnostics_earpiece">Fanamafisam-peo anatiny eo amin’ny sofina</string>
     <string name="diagnostics_proximity_sensor">Mpamantatra fanakaikezana</string>
-    <string name="diagnostics_private_audio">PRIVATE AUDIO</string>
+    <string name="diagnostics_private_audio">PUZRU</string>
     <string name="diagnostics_routing">Fampitodihana</string>
     <string name="diagnostics_status">Toetra</string>
     <string name="diagnostics_audio_route">Fivoahan’ny feo</string>
@@ -58,8 +58,8 @@
     <string name="diagnostics_route_other">Hafa</string>
     <string name="diagnostics_error_blocked_by_system">Nosakanan’ny rafitra ny fampitodihana feo.</string>
     <string name="diagnostics_error_session_ended">Tapitra ny fotoam-peo talohan’ny nahavitan’ny fampitodihana.</string>
-    <string name="diagnostics_error_audio_start">Tsy afaka nanomboka ny fampitodihana feo ny Private Audio.</string>
-    <string name="diagnostics_error_audio_preparation">Tsy afaka nanomana ny feon’ny fifandraisana ny Private Audio.</string>
+    <string name="diagnostics_error_audio_start">Tsy afaka nanomboka ny fampitodihana feo ny Puzru.</string>
+    <string name="diagnostics_error_audio_preparation">Tsy afaka nanomana ny feon’ny fifandraisana ny Puzru.</string>
     <string name="diagnostics_error_request_rejected">Tsy nekena ny fangatahana hampitodika ny feo mankany amin’ny fanamafisam-peo anatiny eo amin’ny sofina.</string>
     <string name="diagnostics_error_not_completed">Tsy vita ny fampitodihana feo.</string>
 </resources>

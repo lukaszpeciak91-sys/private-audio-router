@@ -56,7 +56,7 @@ class UzbekScriptVariantsLocalizationContractTest {
         assertFalse(arabic.any { it in '\u0400'..'\u04FF' })
 
         listOf(cyrillicFile, arabicFile).forEach { file ->
-            assertEquals("Private Audio", value(file, "app_name"))
+            assertEquals("Puzru", value(file, "app_name"))
             assertNotEquals(value(file, "state_active"), value(file, "diagnostics_on"))
             assertNotEquals(value(file, "diagnostics_route_earpiece"), value(file, "diagnostics_route_speaker"))
             assertTrue(value(file, "diagnostics_error_request_rejected").contains(value(file, "diagnostics_route_earpiece")))
@@ -88,7 +88,7 @@ class UzbekScriptVariantsLocalizationContractTest {
             "сеанслар билан боғлиқ микрофон овозини ушламайди", "қурилмангизда яратилади ва қайта ишланади", "Ҳисоботлар автоматик тарзда сақланмайди ёки юборилмайди",
             "фақат сиз “Diagnostika ҳисоботини сақлаш”ни очиқ танлаганингизда", "Жорий версия Android’нинг Интернет рухсатини сўрамайди",
             "ҳеч қандай бекендга ёки тармоқ орқали узатиш йўлига эга эмас", "аналитика, реклама ёки носозликлар ҳақида ҳисобот бериш хизматлари ёки SDK’ларни ўз ичига олмайди",
-            "диагностик ҳисоботларни дастурчига ёки Private Audio серверига юбормайди", "Android булутли захира нусхасидан ва қурилмадан қурилмага кўчиришдан чиқариб ташланган",
+            "диагностик ҳисоботларни дастурчига ёки Puzru серверига юбормайди", "Android булутли захира нусхасидан ва қурилмадан қурилмага кўчиришдан чиқариб ташланган",
         ).forEach { assertTrue("Missing Cyrillic Privacy guard: $it", cyrillic.contains(it)) }
 
         val arabic = value(arabicFile, "settings_privacy_policy_body")

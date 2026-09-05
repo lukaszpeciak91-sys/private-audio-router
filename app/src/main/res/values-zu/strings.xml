@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Private Audio</string>
-    <string name="routing_notification_channel">Private Audio</string>
-    <string name="routing_notification_title">I-Private Audio ivuliwe</string>
+    <string name="app_name">Puzru</string>
+    <string name="routing_notification_channel">Puzru</string>
+    <string name="routing_notification_title">I-Puzru ivuliwe</string>
     <string name="routing_notification_text">Iyalinda ukushintsha okukhiphayo komsindo</string>
-    <string name="product_title">Private Audio</string>
+    <string name="product_title">Puzru</string>
     <string name="product_subtitle">Khuluma ne-AI ngasese, njengokungathi usocingweni.</string>
     <string name="state_ready">Ilungile</string>
     <string name="state_waiting">Iyalinda</string>
@@ -14,18 +14,18 @@
     <string name="floating">Mini</string>
     <string name="settings">Izilungiselelo</string>
     <string name="close">Vala</string>
-    <string name="overlay_controller_description">Isilawuli esintantayo se-Private Audio. Isimo: %1$s. Izilawuli zokuvula/ukucisha, ukunweba nokuvala.</string>
+    <string name="overlay_controller_description">Isilawuli esintantayo se-Puzru. Isimo: %1$s. Izilawuli zokuvula/ukucisha, ukunweba nokuvala.</string>
     <string name="settings_language">Ulimi</string>
     <string name="settings_system_default">Okuzenzakalelayo</string>
     <string name="settings_save_diagnostic">Londoloza umbiko wokuxilonga</string>
     <string name="settings_advanced">Izilungiselelo ezithuthukisiwe</string>
-    <string name="settings_about">Mayelana ne-Private Audio</string>
+    <string name="settings_about">Mayelana ne-Puzru</string>
     <string name="settings_privacy_policy">Inqubomgomo Yobumfihlo</string>
-    <string name="settings_privacy_policy_body">I-Private Audio ayidingi i-akhawunti noma ukungena ngemvume futhi ayiceli imvume yemakrofoni. Ayithwebuli noma irekhode umsindo wemakrofoni, futhi ayirekhodi noma igcine izingxoxo zakho noma okuqukethwe kwazo komsindo.\n\nI-Private Audio isebenzisa ulwazi lwesistimu yomsindo ye-Android oludingekayo ekuqondiseni nasekuhloleni. Ukuhlola kungabheka isimo sobuchwepheshe nemethadatha evezwa ama-API asesidlangalaleni e-Android, kuhlanganise nemethadatha yokudlala neyeseshini yokuqopha. Imethadatha yeseshini yokuqopha iwulwazi lobuchwepheshe lwesistimu yomsindo; i-Private Audio ayithwebuli umsindo wemakrofoni ohlobene nalezo seshini. Ulwazi lokuhlola lungahlanganisa izinhlobo zohlelo ne-Android, ulwazi lwedivayisi nemodeli, inqubo nesimo sohlelo, amadivayisi omsindo atholakalayo nawamanje, imethadatha esesidlangalaleni yokumiswa kokudlala nokuqopha, kanye nemizamo yokuqondisa, imiphumela, izikhathi nezehlakalo zobuchwepheshe.\n\nIzintandokazi zohlelo zigcinwa endaweni kusitoreji esiyimfihlo sohlelo lwe-Private Audio. Ulwazi lokuhlola lwenziwa futhi lucutshungulwe kudivayisi yakho futhi lungaba sesimweni sendawo sohlelo olusebenzayo. Imibiko ayigcinwa noma ithunyelwe ngokuzenzakalela. Umbiko ohlala njalo wenziwa ngaphandle kwesitoreji esiyimfihlo se-Private Audio kuphela lapho ukhetha ngokusobala okuthi Londoloza umbiko wokuhlola bese ukhetha indawo nge-Android. Ngemva kokuthekelisa, indawo noma isevisi oyikhethile—hhayi i-Private Audio—ilawula ukuphathwa, ukugcinwa nokususwa kwaleyo khophi.\n\nInguqulo yamanje ayiceli imvume ye-Inthanethi ye-Android, ayinayo ingemuva leseva le-Private Audio noma indlela yokudlulisa ngenethiwekhi, futhi ayifaki amasevisi noma ama-SDK okuhlaziya, okukhangisa noma okubika ukuphahlazeka. Okwamanje ayithumeli imibiko yokuhlola kunjiniyela noma kuseva ye-Private Audio, ngakho i-Private Audio ayigcini ukuxilonga ohlangothini lweseva.\n\nIdatha yohlelo ayifakwa kusipele samafu se-Android noma ekudlulisweni phakathi kwamadivayisi. Izintandokazi zendawo zihlala kusitoreji esiyimfihlo sohlelo zize zishintshwe noma kususwe idatha yohlelo; isimo sokuhlola sesikhashana asiwona umbiko ogciniwe. Imibiko ethekelisiwe ihlala ngaphansi kokulawulwa indawo noma isevisi oyikhethile.</string>
+    <string name="settings_privacy_policy_body">I-Puzru ayidingi i-akhawunti noma ukungena ngemvume futhi ayiceli imvume yemakrofoni. Ayithwebuli noma irekhode umsindo wemakrofoni, futhi ayirekhodi noma igcine izingxoxo zakho noma okuqukethwe kwazo komsindo.\n\nI-Puzru isebenzisa ulwazi lwesistimu yomsindo ye-Android oludingekayo ekuqondiseni nasekuhloleni. Ukuhlola kungabheka isimo sobuchwepheshe nemethadatha evezwa ama-API asesidlangalaleni e-Android, kuhlanganise nemethadatha yokudlala neyeseshini yokuqopha. Imethadatha yeseshini yokuqopha iwulwazi lobuchwepheshe lwesistimu yomsindo; i-Puzru ayithwebuli umsindo wemakrofoni ohlobene nalezo seshini. Ulwazi lokuhlola lungahlanganisa izinhlobo zohlelo ne-Android, ulwazi lwedivayisi nemodeli, inqubo nesimo sohlelo, amadivayisi omsindo atholakalayo nawamanje, imethadatha esesidlangalaleni yokumiswa kokudlala nokuqopha, kanye nemizamo yokuqondisa, imiphumela, izikhathi nezehlakalo zobuchwepheshe.\n\nIzintandokazi zohlelo zigcinwa endaweni kusitoreji esiyimfihlo sohlelo lwe-Puzru. Ulwazi lokuhlola lwenziwa futhi lucutshungulwe kudivayisi yakho futhi lungaba sesimweni sendawo sohlelo olusebenzayo. Imibiko ayigcinwa noma ithunyelwe ngokuzenzakalela. Umbiko ohlala njalo wenziwa ngaphandle kwesitoreji esiyimfihlo se-Puzru kuphela lapho ukhetha ngokusobala okuthi Londoloza umbiko wokuhlola bese ukhetha indawo nge-Android. Ngemva kokuthekelisa, indawo noma isevisi oyikhethile—hhayi i-Puzru—ilawula ukuphathwa, ukugcinwa nokususwa kwaleyo khophi.\n\nInguqulo yamanje ayiceli imvume ye-Inthanethi ye-Android, ayinayo ingemuva leseva le-Puzru noma indlela yokudlulisa ngenethiwekhi, futhi ayifaki amasevisi noma ama-SDK okuhlaziya, okukhangisa noma okubika ukuphahlazeka. Okwamanje ayithumeli imibiko yokuhlola kunjiniyela noma kuseva ye-Puzru, ngakho i-Puzru ayigcini ukuxilonga ohlangothini lweseva.\n\nIdatha yohlelo ayifakwa kusipele samafu se-Android noma ekudlulisweni phakathi kwamadivayisi. Izintandokazi zendawo zihlala kusitoreji esiyimfihlo sohlelo zize zishintshwe noma kususwe idatha yohlelo; isimo sokuhlola sesikhashana asiwona umbiko ogciniwe. Imibiko ethekelisiwe ihlala ngaphansi kokulawulwa indawo noma isevisi oyikhethile.</string>
     <string name="settings_version">Inguqulo %1$s</string>
     <string name="settings_language_android_13_required">Ukukhetha ulimi ngaphakathi kwe-app kudinga i-Android 13 noma inguqulo entsha. Le divayisi ilandela ulimi lwesistimu.</string>
     <string name="settings_proximity_screen">Cisha isikrini uma ifoni iseduze nendlebe yakho</string>
-    <string name="settings_about_body">I-Private Audio isiza ukudlulisela umsindo wezwi osekelwayo esipikheni sendlebe sefoni yakho.</string>
+    <string name="settings_about_body">I-Puzru isiza ukudlulisela umsindo wezwi osekelwayo esipikheni sendlebe sefoni yakho.</string>
     <string name="diagnostic_report_saved">Umbiko wokuxilonga ulondoloziwe.</string>
     <string name="diagnostic_report_save_failed">Umbiko wokuxilonga awukwazanga ukulondolozwa.</string>
 
@@ -34,7 +34,7 @@
     <string name="diagnostics_system_check">UKUHLOLA UHLELO</string>
     <string name="diagnostics_earpiece">Isipikha sendlebe</string>
     <string name="diagnostics_proximity_sensor">Inzwa yokusondela</string>
-    <string name="diagnostics_private_audio">PRIVATE AUDIO</string>
+    <string name="diagnostics_private_audio">PUZRU</string>
     <string name="diagnostics_routing">Ukuqondiswa komsindo</string>
     <string name="diagnostics_status">Isimo</string>
     <string name="diagnostics_audio_route">Okukhipha umsindo</string>
@@ -59,8 +59,8 @@
     <string name="diagnostics_route_other">Okunye</string>
     <string name="diagnostics_error_blocked_by_system">Ukuqondiswa komsindo kuvinjwe uhlelo.</string>
     <string name="diagnostics_error_session_ended">Iseshini yomsindo iphele ngaphambi kokuba ukuqondiswa komsindo kuqedwe.</string>
-    <string name="diagnostics_error_audio_start">I-Private Audio ayikwazanga ukuqala ukuqondiswa komsindo.</string>
-    <string name="diagnostics_error_audio_preparation">I-Private Audio ayikwazanga ukulungiselela umsindo wokuxhumana.</string>
+    <string name="diagnostics_error_audio_start">I-Puzru ayikwazanga ukuqala ukuqondiswa komsindo.</string>
+    <string name="diagnostics_error_audio_preparation">I-Puzru ayikwazanga ukulungiselela umsindo wokuxhumana.</string>
     <string name="diagnostics_error_request_rejected">Isicelo sokuqondisa umsindo esipikheni sendlebe asamukelwanga.</string>
     <string name="diagnostics_error_not_completed">Ukuqondiswa komsindo akukwazanga ukuqedwa.</string>
 </resources>

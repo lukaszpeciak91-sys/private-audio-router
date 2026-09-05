@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Private Audio</string>
-    <string name="routing_notification_channel">Private Audio</string>
-    <string name="routing_notification_title">Private Audio はオンです</string>
+    <string name="app_name">Puzru</string>
+    <string name="routing_notification_channel">Puzru</string>
+    <string name="routing_notification_title">Puzru はオンです</string>
     <string name="routing_notification_text">音声の切り替えを待機中</string>
-    <string name="product_title">Private Audio</string>
+    <string name="product_title">Puzru</string>
     <string name="product_subtitle">電話のように、AIとプライベートに話せます。</string>
     <string name="state_ready">準備完了</string>
     <string name="state_waiting">待機中</string>
@@ -14,18 +14,18 @@
     <string name="floating">ミニ</string>
     <string name="settings">設定</string>
     <string name="close">閉じる</string>
-    <string name="overlay_controller_description">Private Audio のミニコントローラー。ステータス: %1$s。オンにする、展開、閉じるの各操作ができます。</string>
+    <string name="overlay_controller_description">Puzru のミニコントローラー。ステータス: %1$s。オンにする、展開、閉じるの各操作ができます。</string>
     <string name="settings_language">言語</string>
     <string name="settings_system_default">デフォルト</string>
     <string name="settings_save_diagnostic">診断レポートを保存</string>
     <string name="settings_advanced">詳細設定</string>
-    <string name="settings_about">Private Audio について</string>
+    <string name="settings_about">Puzru について</string>
     <string name="settings_privacy_policy">プライバシーポリシー</string>
-    <string name="settings_privacy_policy_body">Private Audio はアカウントやログインを必要とせず、マイクの権限を要求しません。マイクの音声を取得または録音することも、会話や会話の音声コンテンツを録音または保存することもありません。\n\nPrivate Audio は、音声ルーティングと診断に必要な Android オーディオシステムの情報を使用します。診断では、公開 Android API が提供する技術的な状態やメタデータ（再生および録音セッションのメタデータを含む）を確認する場合があります。録音セッションのメタデータはオーディオシステムの技術情報です。Private Audio は、それらのセッションに関連するマイクの音声を取得しません。診断情報には、アプリと Android のバージョン、端末とモデルの情報、アプリのプロセスと状態の情報、利用可能な音声デバイスと現在の音声デバイス、公開されている再生および録音構成のメタデータ、ならびにルーティングの試行、結果、タイミング、技術的イベントが含まれる場合があります。\n\nアプリの設定は、Private Audio のアプリ専用ストレージにローカルで保存されます。診断情報は端末上で生成および処理され、実行中のアプリのローカルな状態に存在する場合があります。レポートが自動的に保存または送信されることはありません。Private Audio のアプリ専用ストレージ外に永続的なレポートが作成されるのは、ユーザーが明示的に「診断レポートを保存」を選択し、Android を通じて保存先を選んだ場合だけです。エクスポート後は、Private Audio ではなく、選択した保存先またはサービスが、そのコピーの取り扱い、保持、削除を管理します。\n\n現在のバージョンは Android のインターネット権限を要求せず、Private Audio のバックエンドやネットワーク送信経路を持たず、分析、広告、クラッシュ報告のサービスや SDK を含みません。現在、診断レポートを開発者や Private Audio のサーバーに送信しないため、Private Audio が診断情報をサーバー側で保持することはありません。\n\nアプリが所有するデータは、Android のクラウドバックアップおよび端末間転送の対象外です。ローカルの設定は、変更されるかアプリのデータが削除されるまでアプリ専用ストレージに残ります。一時的な診断状態は保存済みレポートではありません。エクスポートしたレポートは、選択した保存先またはサービスの管理下に置かれます。</string>
+    <string name="settings_privacy_policy_body">Puzru はアカウントやログインを必要とせず、マイクの権限を要求しません。マイクの音声を取得または録音することも、会話や会話の音声コンテンツを録音または保存することもありません。\n\nPuzru は、音声ルーティングと診断に必要な Android オーディオシステムの情報を使用します。診断では、公開 Android API が提供する技術的な状態やメタデータ（再生および録音セッションのメタデータを含む）を確認する場合があります。録音セッションのメタデータはオーディオシステムの技術情報です。Puzru は、それらのセッションに関連するマイクの音声を取得しません。診断情報には、アプリと Android のバージョン、端末とモデルの情報、アプリのプロセスと状態の情報、利用可能な音声デバイスと現在の音声デバイス、公開されている再生および録音構成のメタデータ、ならびにルーティングの試行、結果、タイミング、技術的イベントが含まれる場合があります。\n\nアプリの設定は、Puzru のアプリ専用ストレージにローカルで保存されます。診断情報は端末上で生成および処理され、実行中のアプリのローカルな状態に存在する場合があります。レポートが自動的に保存または送信されることはありません。Puzru のアプリ専用ストレージ外に永続的なレポートが作成されるのは、ユーザーが明示的に「診断レポートを保存」を選択し、Android を通じて保存先を選んだ場合だけです。エクスポート後は、Puzru ではなく、選択した保存先またはサービスが、そのコピーの取り扱い、保持、削除を管理します。\n\n現在のバージョンは Android のインターネット権限を要求せず、Puzru のバックエンドやネットワーク送信経路を持たず、分析、広告、クラッシュ報告のサービスや SDK を含みません。現在、診断レポートを開発者や Puzru のサーバーに送信しないため、Puzru が診断情報をサーバー側で保持することはありません。\n\nアプリが所有するデータは、Android のクラウドバックアップおよび端末間転送の対象外です。ローカルの設定は、変更されるかアプリのデータが削除されるまでアプリ専用ストレージに残ります。一時的な診断状態は保存済みレポートではありません。エクスポートしたレポートは、選択した保存先またはサービスの管理下に置かれます。</string>
     <string name="settings_version">バージョン %1$s</string>
     <string name="settings_language_android_13_required">アプリ内で言語を選択するには Android 13 以降が必要です。この端末ではシステムの言語が使用されます。</string>
     <string name="settings_proximity_screen">耳に近づけたとき画面を消す</string>
-    <string name="settings_about_body">Private Audio は音声をスマートフォンの受話口スピーカーに切り替えるためのアプリです。</string>
+    <string name="settings_about_body">Puzru は音声をスマートフォンの受話口スピーカーに切り替えるためのアプリです。</string>
     <string name="diagnostic_report_saved">診断レポートを保存しました。</string>
     <string name="diagnostic_report_save_failed">診断レポートを保存できませんでした。</string>
 
@@ -34,7 +34,7 @@
     <string name="diagnostics_system_check">システムチェック</string>
     <string name="diagnostics_earpiece">受話口スピーカー</string>
     <string name="diagnostics_proximity_sensor">近接センサー</string>
-    <string name="diagnostics_private_audio">PRIVATE AUDIO</string>
+    <string name="diagnostics_private_audio">PUZRU</string>
     <string name="diagnostics_routing">音声出力先の切り替え</string>
     <string name="diagnostics_status">ステータス</string>
     <string name="diagnostics_audio_route">音声出力先</string>
@@ -59,8 +59,8 @@
     <string name="diagnostics_route_other">その他</string>
     <string name="diagnostics_error_blocked_by_system">システムによって音声出力先の切り替えがブロックされました。</string>
     <string name="diagnostics_error_session_ended">音声出力先の切り替えが完了する前に、音声セッションが終了しました。</string>
-    <string name="diagnostics_error_audio_start">Private Audio は音声出力先の切り替えを開始できませんでした。</string>
-    <string name="diagnostics_error_audio_preparation">Private Audio は通信用音声を準備できませんでした。</string>
+    <string name="diagnostics_error_audio_start">Puzru は音声出力先の切り替えを開始できませんでした。</string>
+    <string name="diagnostics_error_audio_preparation">Puzru は通信用音声を準備できませんでした。</string>
     <string name="diagnostics_error_request_rejected">受話口スピーカーへの音声出力切り替えリクエストが受け付けられませんでした。</string>
     <string name="diagnostics_error_not_completed">音声出力先の切り替えを完了できませんでした。</string>
 </resources>

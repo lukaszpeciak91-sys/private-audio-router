@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Private Audio</string>
-    <string name="routing_notification_channel">Private Audio</string>
-    <string name="routing_notification_title">Private Audio epeli</string>
+    <string name="app_name">Puzru</string>
+    <string name="routing_notification_channel">Puzru</string>
+    <string name="routing_notification_title">Puzru epeli</string>
     <string name="routing_notification_text">Ezali kozela kotambwisa mongongo</string>
-    <string name="product_title">Private Audio</string>
+    <string name="product_title">Puzru</string>
     <string name="product_subtitle">Sololá na AI na nkuku, lokola na telefone.</string>
     <string name="state_ready">Ebongami</string>
     <string name="state_waiting">Ezali kozela</string>
@@ -14,26 +14,26 @@
     <string name="floating">Ya moke</string>
     <string name="settings">Mabongisi</string>
     <string name="close">Kanga</string>
-    <string name="overlay_controller_description">Etambwiseli ya Private Audio oyo etambolaka likoló ya écran. Ezalela: %1$s. Bisaleli ya kopelisa, kofungola mpe kokanga.</string>
+    <string name="overlay_controller_description">Etambwiseli ya Puzru oyo etambolaka likoló ya écran. Ezalela: %1$s. Bisaleli ya kopelisa, kofungola mpe kokanga.</string>
     <string name="settings_language">Lokótá</string>
     <string name="settings_system_default">Ya momesano</string>
     <string name="settings_save_diagnostic">Bomba lapɔrɔ ya diagnostic</string>
     <string name="settings_diagnostics">Diagnostic</string>
     <string name="settings_advanced">Ya bozindo</string>
-    <string name="settings_about">Na ntina na Private Audio</string>
+    <string name="settings_about">Na ntina na Puzru</string>
     <string name="settings_privacy_policy">Mobeko ya kobatela makambo ya moto</string>
-    <string name="settings_privacy_policy_body">Private Audio esɛngaka kɔnti to kokɔta te mpe esɛngaka ndingisa ya kosalela mikrofɔ te. Esangisaka to ekangaka mongongo ya mikrofɔ te, mpe ekangaka to ebombaka masolo na yo to makambo na yango ya mongongo te.\n\nPrivate Audio esalelaka bansango ya système ya mongongo ya Android oyo esengeli mpo na kotambwisa mongongo mpe kosala diagnostic. Diagnostic ekoki kotala ezalela ya tekiniki mpe metadata oyo ba API ya Android ya bato nyonso emonisaka, ata mpe metadata ya kobɛta mongongo mpe ya ba session ya enregistrement. Metadata ya session ya enregistrement ezali bansango ya tekiniki ya système ya mongongo; Private Audio ekangaka mongongo ya mikrofɔ oyo ezali na ba session yango te. Bansango ya diagnostic ekoki kozala na bavɛrsio ya aplikasio mpe ya Android, bansango ya aparɛyi mpe modɛlɛ, bansango ya processus mpe ezalela ya aplikasio, baaparɛyi ya mongongo oyo ezali mpe oyo ezali kosalelama, metadata ya configuration ya kobɛta mpe ya enregistrement oyo ezali polele, mpe komeka kotambwisa mongongo, mbano, ntango mpe makambo ya tekiniki.\n\nMabongisi ya aplikasio ebombamaka na aparɛyi na yo na esika ya Private Audio oyo ezali kaka mpo na aplikasio. Ba données ya diagnostic ebimisamaka mpe traitement na yango esalemaka na aparɛyi na yo, mpe ekoki kozala na ezalela ya aplikasio oyo ezali kosala. Balapɔrɔ ebombamaka to etindamaka yango moko te. Lapɔrɔ oyo ekoumela esalemaka libándá ya esika ya Private Audio oyo ezali kaka mpo na aplikasio kaka ntango oponi polele Kobomba lapɔrɔ ya diagnostic mpe oponi esika na nzela ya Android. Nsima ya kobimisa yango, esika to service oyo oponaki—Private Audio te—nde etambwisaka lolenge kopi yango esalelamaka, ntango ebombamaka mpe ndenge elongolamaka.\n\nVɛrsio ya sikoyo esɛngaka ndingisa ya Internet ya Android te, ezali na backend ya Private Audio to nzela ya kotinda bansango na réseau te, mpe ezali na misala to ba SDK ya analyse, piblisite to kopesa balapɔrɔ ya kokwea ya programɛ te. Sikoyo etindaka balapɔrɔ ya diagnostic epai ya mobimisi to na serveur ya Private Audio te; yango wana Private Audio ebombaka bansango ya diagnostic na serveur te.\n\nBackup ya ba données ya aplikasio ya Android mpe transfert na aparɛyi mosusu elongolami. Mabongisi ya aparɛyi etikalaka na esika oyo ezali kaka mpo na aplikasio kino ebongwani to ba données ya aplikasio elongolami; ezalela ya diagnostic oyo ezali mpo na mwa ntango ezali lapɔrɔ oyo ebombami te. Balapɔrɔ oyo ebimisami etikalaka na nse ya bokonzi ya esika to service oyo oponaki.</string>
+    <string name="settings_privacy_policy_body">Puzru esɛngaka kɔnti to kokɔta te mpe esɛngaka ndingisa ya kosalela mikrofɔ te. Esangisaka to ekangaka mongongo ya mikrofɔ te, mpe ekangaka to ebombaka masolo na yo to makambo na yango ya mongongo te.\n\nPuzru esalelaka bansango ya système ya mongongo ya Android oyo esengeli mpo na kotambwisa mongongo mpe kosala diagnostic. Diagnostic ekoki kotala ezalela ya tekiniki mpe metadata oyo ba API ya Android ya bato nyonso emonisaka, ata mpe metadata ya kobɛta mongongo mpe ya ba session ya enregistrement. Metadata ya session ya enregistrement ezali bansango ya tekiniki ya système ya mongongo; Puzru ekangaka mongongo ya mikrofɔ oyo ezali na ba session yango te. Bansango ya diagnostic ekoki kozala na bavɛrsio ya aplikasio mpe ya Android, bansango ya aparɛyi mpe modɛlɛ, bansango ya processus mpe ezalela ya aplikasio, baaparɛyi ya mongongo oyo ezali mpe oyo ezali kosalelama, metadata ya configuration ya kobɛta mpe ya enregistrement oyo ezali polele, mpe komeka kotambwisa mongongo, mbano, ntango mpe makambo ya tekiniki.\n\nMabongisi ya aplikasio ebombamaka na aparɛyi na yo na esika ya Puzru oyo ezali kaka mpo na aplikasio. Ba données ya diagnostic ebimisamaka mpe traitement na yango esalemaka na aparɛyi na yo, mpe ekoki kozala na ezalela ya aplikasio oyo ezali kosala. Balapɔrɔ ebombamaka to etindamaka yango moko te. Lapɔrɔ oyo ekoumela esalemaka libándá ya esika ya Puzru oyo ezali kaka mpo na aplikasio kaka ntango oponi polele Kobomba lapɔrɔ ya diagnostic mpe oponi esika na nzela ya Android. Nsima ya kobimisa yango, esika to service oyo oponaki—Puzru te—nde etambwisaka lolenge kopi yango esalelamaka, ntango ebombamaka mpe ndenge elongolamaka.\n\nVɛrsio ya sikoyo esɛngaka ndingisa ya Internet ya Android te, ezali na backend ya Puzru to nzela ya kotinda bansango na réseau te, mpe ezali na misala to ba SDK ya analyse, piblisite to kopesa balapɔrɔ ya kokwea ya programɛ te. Sikoyo etindaka balapɔrɔ ya diagnostic epai ya mobimisi to na serveur ya Puzru te; yango wana Puzru ebombaka bansango ya diagnostic na serveur te.\n\nBackup ya ba données ya aplikasio ya Android mpe transfert na aparɛyi mosusu elongolami. Mabongisi ya aparɛyi etikalaka na esika oyo ezali kaka mpo na aplikasio kino ebongwani to ba données ya aplikasio elongolami; ezalela ya diagnostic oyo ezali mpo na mwa ntango ezali lapɔrɔ oyo ebombami te. Balapɔrɔ oyo ebimisami etikalaka na nse ya bokonzi ya esika to service oyo oponaki.</string>
     <string name="settings_version">Vɛrsio %1$s</string>
     <string name="settings_language_android_13_required">Esengeli kozala na Android 13 to ya sika koleka mpo na kopona lokótá na kati ya aplikasio. Aparɛyi oyo elandaka lokótá ya système.</string>
     <string name="settings_proximity_screen">Boma écran ntango ezali pene na litoi na yo</string>
-    <string name="settings_about_body">Private Audio esalisaka kotambwisa mongongo ya maloba oyo endimami na écouteur ya kati ya telefone na yo.</string>
+    <string name="settings_about_body">Puzru esalisaka kotambwisa mongongo ya maloba oyo endimami na écouteur ya kati ya telefone na yo.</string>
     <string name="diagnostic_report_saved">Lapɔrɔ ya diagnostic ebombami.</string>
     <string name="diagnostic_report_save_failed">Lapɔrɔ ya diagnostic ekokaki kobombama te.</string>
     <string name="diagnostics_title">Diagnostic</string>
     <string name="diagnostics_system_check">BOTALI YA SYSTÈME</string>
     <string name="diagnostics_earpiece">Écouteur ya kati</string>
     <string name="diagnostics_proximity_sensor">Capteur ya kozala pene</string>
-    <string name="diagnostics_private_audio">PRIVATE AUDIO</string>
+    <string name="diagnostics_private_audio">PUZRU</string>
     <string name="diagnostics_routing">Kotambwisa mongongo</string>
     <string name="diagnostics_status">Ezalela</string>
     <string name="diagnostics_audio_route">Esika mongongo ebimaka</string>
@@ -58,8 +58,8 @@
     <string name="diagnostics_route_other">Mosusu</string>
     <string name="diagnostics_error_blocked_by_system">Système epekisaki kotambwisama ya mongongo.</string>
     <string name="diagnostics_error_session_ended">Session ya audio esilaki liboso kotambwisama esila.</string>
-    <string name="diagnostics_error_audio_start">Private Audio ekokaki kobanda kotambwisa mongongo te.</string>
-    <string name="diagnostics_error_audio_preparation">Private Audio ekokaki kobongisa audio ya communication te.</string>
+    <string name="diagnostics_error_audio_start">Puzru ekokaki kobanda kotambwisa mongongo te.</string>
+    <string name="diagnostics_error_audio_preparation">Puzru ekokaki kobongisa audio ya communication te.</string>
     <string name="diagnostics_error_request_rejected">Bosɛngi ya kotambwisa mongongo na écouteur endimamaki te.</string>
     <string name="diagnostics_error_not_completed">Kotambwisama ya mongongo ekokaki kosila te.</string>
 </resources>
