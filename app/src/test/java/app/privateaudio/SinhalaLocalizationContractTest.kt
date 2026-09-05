@@ -54,7 +54,7 @@ class SinhalaLocalizationContractTest {
         assertEquals(5, privacy.split("\\n\\n").size)
         assertFalse(privacy.contains("එකතු කිරීම, පටිගත කිරීම හෝ සම්ප්‍රේෂණය කිරීම නොකරයි"))
         assertFalse(privacy.contains("සංවාදවල අන්තර්ගතයට ප්‍රවේශ නොවේ"))
-        assertTrue(strings.contains("යෙදුම අනපේක්ෂිත ලෙස නතර වූ විට ඒ බව වාර්තා කරන සේවා"))
+        assertTrue(privacy.contains("යෙදුම අනපේක්ෂිත ලෙස නතර වූ විට ඒ බව වාර්තා කරන සේවා හෝ SDK ඇතුළත් නොවේ"))
         assertTrue(privacy.contains("ඔබේ උපාංගයේ ජනනය කර සකසනු ලබන"))
         assertFalse(projectFile("app/src/main/res/values-si/mini_state_strings.xml").exists())
     }

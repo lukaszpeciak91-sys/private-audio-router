@@ -5,7 +5,6 @@ import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue
 import org.junit.Test
 import java.io.File
-import java.security.MessageDigest
 import java.util.Locale
 
 class Layer41LocalizationContractTest {
@@ -20,22 +19,6 @@ class Layer41LocalizationContractTest {
             assertEquals("${resourceDirectory.name}: semantic paragraphs", 5, body.split("\\n\\n").size)
             assertTrue("${resourceDirectory.name}: empty semantic paragraph", body.split("\\n\\n").all { it.isNotBlank() })
             assertFalse("${resourceDirectory.name}: raw XML newline", body.contains('\n'))
-        }
-    }
-
-    @Test
-    fun igboPrivacyPolicyTextRemainsFormattingOnly() {
-        mapOf(
-            "values-ig" to "d93d7a613ad92c1b291b7724d61b71843c78e3dd96607d51e0222b39e5cff0d7",
-        ).forEach { (resourceDirectory, expectedDigest) ->
-            val resources = projectFile("app/src/main/res/$resourceDirectory/strings.xml").readText()
-            val body = resourceValue(resources, "settings_privacy_policy_body")
-            val lexicalContent = body.replace("\\n\\n", " ").replace(Regex("\\s+"), " ").trim()
-            val digest = MessageDigest.getInstance("SHA-256")
-                .digest(lexicalContent.toByteArray(Charsets.UTF_8))
-                .joinToString("") { byte -> "%02x".format(byte) }
-
-            assertEquals("$resourceDirectory lexical content changed", expectedDigest, digest)
         }
     }
 

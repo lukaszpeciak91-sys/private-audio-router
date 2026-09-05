@@ -53,10 +53,7 @@ class XhosaLocalizationContractTest {
         assertEquals(5, privacy.split("\\n\\n").size)
         assertFalse(privacy.contains("ayiqokeleli, ayirekhodi, okanye ayithumeli"))
         assertFalse(privacy.contains("Ayifikeleli kumxholo weencoko zakho"))
-        assertTrue(
-            resourceValue("settings_privacy_policy_body")
-                .contains("iinkonzo zokunika ingxelo xa iapp ima ngokungalindelekanga"),
-        )
+        assertTrue(privacy.contains("ayibandakanyi iinkonzo okanye ii-SDK zohlalutyo, iintengiso okanye iinkonzo zokunika ingxelo xa iapp ima ngokungalindelekanga"))
         assertTrue(strings.contains("Idatha yoxilongo yenziwa ize isetyenzwe kwisixhobo sakho"))
         assertFalse(projectFile("app/src/main/res/values-xh/mini_state_strings.xml").exists())
     }

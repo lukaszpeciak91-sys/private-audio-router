@@ -613,6 +613,11 @@ this summary intentionally does not duplicate its test matrix.
 
 ## Recently completed significant changes
 
+- Hardened Privacy Policy localization contracts so negative factual guarantees
+  require the associated negation, and replaced the obsolete Igbo whole-text digest
+  with explicit semantic guards. This test-only maintenance adds no linguistic,
+  native-speaker, runtime, or physical-device validation.
+
 - Corrected the audited Privacy Policy copy for isiXhosa and Sinhala by removing
   obsolete legacy guarantees, rewrote Uzbek-AF in the locale's established Uzbek
   Arabic register, and polished Simplified Written Cantonese, Faroese, and

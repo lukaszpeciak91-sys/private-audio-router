@@ -106,11 +106,11 @@ class KurmanjiLocalizationContractTest {
         val paragraphs = privacy.split("\\n\\n")
         assertEquals(5, paragraphs.size)
         listOf(
-            "ne hesabek an têketinê hewce dike", "destûra mîkrofônê dixwaze", "dengê mîkrofônê nagire an tomar nake",
+            "ne hesabek an têketinê hewce dike", "ne jî destûra mîkrofônê dixwaze", "dengê mîkrofônê nagire an tomar nake",
             "ne jî axaftinên we an naveroka dengî ya wan tomar dike an diparêze", "Metadata-yên danişînên tomarê agahiyên teknîkî yên pergala dengê ne",
             "dengê mîkrofônê ku bi wan danişînan ve girêdayî ye nagire", "li ser cîhaza we têne afirandin û pêvajokirin", "Rapor bixweber nayên tomarkirin an şandin",
             "tenê dema ku hûn bi eşkereyî Tomara rapora teşhîsê hilbijêrin", "Guhertoya niha destûra Internetê ya Android naxwaze",
-            "ne backendekî Private Audio heye ne jî rêyek şandina torê heye", "SDK-yên analîtîk, reklam, an raporkirina çewtiyan",
+            "ne backendekî Private Audio heye ne jî rêyek şandina torê heye", "ne xizmet an SDK-yên analîtîk, reklam, an raporkirina çewtiyan tê de ne",
             "raporên teşhîsê ji pêşdebirê an jî ji serveurê Private Audio re naşîne", "cloud backup û veguheztina ji cîhazekê bo cîhazekî din a Android têne derxistin",
         ).forEach { guard -> assertTrue("Missing privacy guard: $guard", privacy.contains(guard)) }
 
