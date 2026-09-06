@@ -11,10 +11,19 @@
   structured body now uses explicit runtime paragraph, heading, and bullet breaks,
   start-aligned text, scrolling, and the shared direction-driven layout behavior;
   the page is also bounded by the existing portrait safe-inset treatment.
-- Localized About propagation is intentionally deferred to the next localization
-  stage. Existing locale-specific `settings_about_body` values remain unchanged and
-  are temporarily based on the previous English source until that controlled
-  propagation occurs; they are not asserted to translate this newly frozen source.
+- A controlled localization pilot has propagated the finalized About source
+  independently to Polish, German, Spanish, Arabic, and Japanese. Each candidate
+  preserves the source's six semantic sections, seven bullets, technical output
+  distinctions, compatibility limits, and provider-side privacy boundary.
+- The pilot’s independent audit accepted German and Spanish, requested a Japanese
+  naturalness polish, and identified claim-scope defects in Polish and Arabic. A
+  targeted Translation Skill iteration corrected only those affected passages; the
+  resulting deltas still require independent re-audit.
+- The five pilot translations were produced and semantically self-checked with the
+  Translation Skill. This is not an independent audit or human/native-speaker
+  validation. Propagation to the remaining locales is deferred until this iteration
+  has been independently re-audited; their existing About values continue to reflect
+  the previous, shorter source in the meantime.
 
 ## English Privacy Policy disclosure alignment
 
