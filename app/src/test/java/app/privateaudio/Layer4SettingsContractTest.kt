@@ -97,12 +97,16 @@ class Layer4SettingsContractTest {
     fun privacyPolicyUsesTheSingleSettingsModalAndAuthoritativeEnglishClaims() {
         assertTrue(settingsSource.contains("tag = \"settings_privacy_policy\""))
         assertTrue(settingsSource.contains("SettingsPage.PRIVACY_POLICY -> PrivacyPolicyPage("))
-        val privacyPolicyPage = settingsSource.method("private fun PrivacyPolicyPage(onBack: () -> Unit)")
+        val privacyPolicyPage = settingsSource.method(
+            "private fun PrivacyPolicyPage(onBack: () -> Unit, onContactClick: () -> Unit)",
+        )
         assertTrue(privacyPolicyPage.contains("testTag(\"settings_child_back\")"))
         assertTrue(privacyPolicyPage.contains("BackChevron()"))
         assertTrue(settingsSource.contains("BackHandler(enabled = page != SettingsPage.ROOT) { page = SettingsPage.ROOT }"))
         assertTrue(settingsSource.contains("testTag(\"privacy_policy_body\")"))
         assertEquals(1, settingsSource.occurrences("Dialog("))
+
+        assertTrue(settingsSource.contains("ContactBlock(onContactClick)"))
 
         val strings = projectFile("app/src/main/res/values/strings.xml").readText()
         listOf(
@@ -131,6 +135,18 @@ class Layer4SettingsContractTest {
             "completely anonymous",
             "contain no identifying information",
         ).forEach { overclaim -> assertFalse(overclaim, strings.contains(overclaim, ignoreCase = true)) }
+    }
+
+    @Test
+    fun publisherAndPrivacyContactAreSeparateNonTranslatableResources() {
+        val strings = projectFile("app/src/main/res/values/strings.xml").readText()
+        assertTrue(strings.contains("name=\"publisher_name\" translatable=\"false\">Napahu Studios</string>"))
+        assertTrue(strings.contains("name=\"privacy_support_email\" translatable=\"false\">napahustudios@gmail.com</string>"))
+        assertTrue(settingsSource.contains("testTag(\"settings_support_contact\")"))
+        assertEquals(2, settingsSource.occurrences("ContactBlock(onContactClick)"))
+        assertTrue(mainSource.contains("Intent.ACTION_SENDTO"))
+        assertTrue(mainSource.contains("Uri.parse(\"mailto:${'$'}{getString(R.string.privacy_support_email)}\")"))
+        assertTrue(mainSource.contains("catch (_: android.content.ActivityNotFoundException)"))
     }
 
     @Test
@@ -166,13 +182,13 @@ class Layer4SettingsContractTest {
         assertTrue(strings.contains("Puzru by Napahu Studios\\n\\nWhat the name means\\n"))
 
         val settingsSheet = settingsSource.kotlinDeclaration("fun SettingsSheet(")
-        assertTrue(settingsSheet.contains("SettingsPage.ABOUT -> ChildPage("))
+        assertTrue(settingsSheet.contains("SettingsPage.ABOUT -> AboutPage("))
         assertTrue(settingsSheet.contains("page == SettingsPage.ABOUT"))
-        val childPage = settingsSource.kotlinDeclaration("private fun ChildPage(")
-        assertTrue(childPage.contains(".verticalScroll(rememberScrollState())"))
-        assertTrue(childPage.contains(".testTag(\"settings_about_body\")"))
-        assertTrue(childPage.contains("textAlign = TextAlign.Start"))
-        assertFalse(childPage.contains("textAlign = TextAlign.Center"))
+        val aboutPage = settingsSource.kotlinDeclaration("private fun AboutPage(")
+        assertTrue(aboutPage.contains(".verticalScroll(rememberScrollState())"))
+        assertTrue(aboutPage.contains(".testTag(\"settings_about_body\")"))
+        assertTrue(aboutPage.contains("textAlign = TextAlign.Start"))
+        assertFalse(aboutPage.contains("textAlign = TextAlign.Center"))
     }
 
     @Test

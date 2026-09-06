@@ -52,6 +52,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.unit.LayoutDirection
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -87,6 +88,7 @@ fun SettingsSheet(
     assistantEarlyRouteEnabled: Boolean,
     onAssistantEarlyRouteChange: (Boolean) -> Unit,
     onDiagnostics: () -> Unit,
+    onContactClick: () -> Unit = {},
     onDismiss: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
@@ -186,11 +188,11 @@ fun SettingsSheet(
                         )
                         SettingsPage.PRIVACY_POLICY -> PrivacyPolicyPage(
                             onBack = { page = SettingsPage.ROOT },
+                            onContactClick = onContactClick,
                         )
-                        SettingsPage.ABOUT -> ChildPage(
-                            title = stringResource(R.string.settings_about),
-                            body = stringResource(R.string.settings_about_body),
+                        SettingsPage.ABOUT -> AboutPage(
                             onBack = { page = SettingsPage.ROOT },
+                            onContactClick = onContactClick,
                         )
                     }
                 }
@@ -431,7 +433,7 @@ private fun LanguageChoice(label: String, selected: Boolean, tag: String, onClic
 }
 
 @Composable
-private fun PrivacyPolicyPage(onBack: () -> Unit) {
+private fun PrivacyPolicyPage(onBack: () -> Unit, onContactClick: () -> Unit) {
     Column(
         modifier = Modifier
             .fillMaxWidth()
@@ -462,6 +464,7 @@ private fun PrivacyPolicyPage(onBack: () -> Unit) {
                     fontSize = 15.sp,
                     lineHeight = 22.sp,
                 )
+                ContactBlock(onContactClick)
                 Spacer(Modifier.height(12.dp))
             }
         }
@@ -469,7 +472,7 @@ private fun PrivacyPolicyPage(onBack: () -> Unit) {
 }
 
 @Composable
-private fun ChildPage(title: String, body: String, onBack: () -> Unit) {
+private fun AboutPage(onBack: () -> Unit, onContactClick: () -> Unit) {
     Column(
         modifier = Modifier
             .fillMaxWidth()
@@ -484,11 +487,11 @@ private fun ChildPage(title: String, body: String, onBack: () -> Unit) {
                 .testTag("settings_child_back"),
             contentAlignment = Alignment.CenterStart,
         ) { BackChevron() }
-        SheetTitle(title)
+        SheetTitle(stringResource(R.string.settings_about))
     }
     Spacer(Modifier.height(26.dp))
     Text(
-        text = body,
+        text = stringResource(R.string.settings_about_body),
         modifier = Modifier
             .fillMaxWidth()
             .padding(horizontal = 8.dp)
@@ -498,7 +501,36 @@ private fun ChildPage(title: String, body: String, onBack: () -> Unit) {
         lineHeight = 22.sp,
         textAlign = TextAlign.Start,
     )
+    ContactBlock(onContactClick)
     Spacer(Modifier.height(30.dp))
+    }
+}
+
+@Composable
+private fun ContactBlock(onContactClick: () -> Unit) {
+    Spacer(Modifier.height(22.dp))
+    SettingsDivider()
+    Spacer(Modifier.height(22.dp))
+    Column(
+        modifier = Modifier
+            .fillMaxWidth()
+            .clickable(role = Role.Button, onClick = onContactClick)
+            .padding(horizontal = 8.dp, vertical = 8.dp)
+            .testTag("settings_support_contact"),
+    ) {
+        Text(
+            text = stringResource(R.string.publisher_name),
+            color = SettingsPrimary,
+            fontSize = 15.sp,
+            lineHeight = 21.sp,
+        )
+        Text(
+            text = stringResource(R.string.privacy_support_email),
+            color = SettingsSecondary,
+            fontSize = 14.sp,
+            lineHeight = 20.sp,
+            textDecoration = TextDecoration.Underline,
+        )
     }
 }
 

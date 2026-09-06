@@ -101,10 +101,23 @@ class MainActivity : ComponentActivity() {
                         finishAndRemoveTask()
                     },
                     onSaveDiagnosticReport = { launchDiagnosticDocumentPicker() },
+                    onContactClick = { openPrivacySupportEmail() },
                     diagnosticsSummary = connectedService?.diagnosticsSummary(overlayPermissionGranted),
                     versionName = BuildConfig.VERSION_NAME,
                 )
             }
+        }
+    }
+
+    private fun openPrivacySupportEmail() {
+        val emailIntent = Intent(
+            Intent.ACTION_SENDTO,
+            Uri.parse("mailto:${getString(R.string.privacy_support_email)}"),
+        )
+        try {
+            startActivity(emailIntent)
+        } catch (_: android.content.ActivityNotFoundException) {
+            // A device without an email app has no normal contact target to open.
         }
     }
 
