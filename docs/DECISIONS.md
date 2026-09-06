@@ -313,3 +313,11 @@ This is a lightweight, append-only log. Do not rewrite accepted history; append 
 - **Context:** `Private Audio` served as the working/project product name. Release preparation now requires a stable public product identity while preserving the tested routing implementation and its established technical identifiers.
 - **Decision:** Adopt **Puzru** as the public product name and **Napahu Studios** as the publisher/umbrella brand. Migrate current user-facing and release-facing product-name tokens to Puzru. Retain repository, package, namespace, class, preference, notification-channel, action, test-tag, log-tag, and other technical identifiers where renaming provides no release benefit.
 - **Consequences:** This decision changes public branding, not routing architecture or behavior. Publisher presentation in production UI and the About redesign remain separate work. The current `applicationId` is unchanged and remains a separate unresolved release-identity decision for a follow-up PR.
+
+## D-040 — Production Android application identity
+
+- **Date:** 2026-09-06
+- **Status:** Accepted; supersedes D-010 for the application ID only
+- **Context:** Release preparation requires the permanent Android application identity before Puzru's first Google Play distribution. The Kotlin package and Android namespace are established internal technical identifiers and do not need to change with the installed application identity.
+- **Decision:** Use `com.napahu.puzru` as the production `applicationId`. Keep the Android namespace, Kotlin packages, and other internal technical naming as `app.privateaudio`.
+- **Consequences:** Puzru will enter its first Google Play distribution under the final package identity. Because this change precedes that first distribution, no published install or upgrade lineage must be migrated. Routing behavior, persisted preference identifiers, notification channel IDs, internal action strings, component names, and other established technical identifiers remain unchanged.

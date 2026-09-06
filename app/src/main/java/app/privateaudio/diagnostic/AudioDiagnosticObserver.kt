@@ -1756,7 +1756,7 @@ internal fun buildDiagnosticReport(
     lastCompletedExperiment: CompletedRoutingCycle? = null,
     snapshot: DiagnosticSnapshot,
     events: List<String>,
-    packageName: String = "app.privateaudio",
+    packageName: String = "com.napahu.puzru",
     baseline: DiagnosticSnapshot? = null,
     startupAudioTrace: List<String> = emptyList(),
     assistantQualifyingPlaybackCount: Int = experiment.assistantQualifyingPlaybackCount,

@@ -49,7 +49,7 @@ android {
     compileSdk = 36
 
     defaultConfig {
-        applicationId = "app.privateaudio"
+        applicationId = "com.napahu.puzru"
         minSdk = 31
         targetSdk = 36
         versionCode = 1
