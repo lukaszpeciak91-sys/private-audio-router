@@ -17,8 +17,10 @@
   distinctions, compatibility limits, and provider-side privacy boundary.
 - The pilot’s independent audit accepted German and Spanish, requested a Japanese
   naturalness polish, and identified claim-scope defects in Polish and Arabic. A
-  targeted Translation Skill iteration corrected only those affected passages; the
-  resulting deltas still require independent re-audit.
+  targeted Translation Skill iteration corrected those affected passages. A final
+  narrowly scoped follow-up now makes the Arabic nearby-listener relation explicit,
+  restores its voice-audio scope, and refines the Polish supported-playback wording;
+  the resulting Arabic and Polish deltas still require independent re-audit.
 - The five pilot translations were produced and semantically self-checked with the
   Translation Skill. This is not an independent audit or human/native-speaker
   validation. Propagation to the remaining locales is deferred until this iteration
