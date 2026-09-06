@@ -67,9 +67,11 @@
   Each batch preserves the five-paragraph claim structure after high-risk semantic
   and reverse self-checks. The approved Privacy Policy source is now propagated to
   all supported locales; these translations are not presented as independently
-  validated. Public publisher/privacy-contact
-  details are not authoritatively defined in the repository and remain a release-disclosure
-  input.
+  validated. The public publisher/developer and privacy/support contact are now
+  defined as non-translatable identity data: Napahu Studios —
+  `napahustudios@gmail.com`. Settings presents them separately from the unchanged
+  five-paragraph localized policy bodies, and About provides the same actionable
+  email contact separately from its finalized descriptive copy.
   Public privacy hosting/URL, Play Console Data Safety and foreground-service
   declarations, and any future user-initiated Share Sheet remain outside this work.
 
@@ -303,6 +305,8 @@ architecture behavior. D-040 establishes `com.napahu.puzru` as the production
 `applicationId` before the first Google Play distribution. The Android namespace,
 Kotlin packages, and established internal technical naming intentionally remain
 `app.privateaudio`; no routing or product behavior changed with the release identity.
+The public publisher/developer and privacy/support contact is Napahu Studios —
+`napahustudios@gmail.com`.
 
 ### Current release-readiness sequence
 

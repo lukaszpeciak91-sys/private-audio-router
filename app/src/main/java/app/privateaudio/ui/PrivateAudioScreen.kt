@@ -131,6 +131,7 @@ internal fun PrivateAudioScreen(
     onCloseClick: () -> Unit,
     diagnosticsSummary: DiagnosticsSummary? = null,
     onSaveDiagnosticReport: () -> Unit = {},
+    onContactClick: () -> Unit = {},
     versionName: String = "",
 ) {
     val context = LocalContext.current
@@ -150,6 +151,7 @@ internal fun PrivateAudioScreen(
             onCloseClick = onCloseClick,
             diagnosticsSummary = diagnosticsSummary,
             onSaveDiagnosticReport = onSaveDiagnosticReport,
+            onContactClick = onContactClick,
             versionName = versionName,
             modifier = modifier,
         )
@@ -169,6 +171,7 @@ private fun PrivateAudioScreenContent(
     onCloseClick: () -> Unit,
     diagnosticsSummary: DiagnosticsSummary?,
     onSaveDiagnosticReport: () -> Unit,
+    onContactClick: () -> Unit,
     versionName: String,
     modifier: Modifier,
 ) {
@@ -246,6 +249,7 @@ private fun PrivateAudioScreenContent(
                     diagnosticsVisible = true
                 },
                 onDismiss = { settingsVisible = false },
+                onContactClick = onContactClick,
             )
         }
     }
