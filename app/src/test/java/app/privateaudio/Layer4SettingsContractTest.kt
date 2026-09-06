@@ -176,6 +176,24 @@ class Layer4SettingsContractTest {
     }
 
     @Test
+    fun pilotAboutLocalesPreserveTheSourceStructureWithoutEnglishFallback() {
+        val defaultAbout = resourceValue(projectFile("app/src/main/res/values/strings.xml"), "settings_about_body")
+
+        listOf("pl", "de", "es", "ar", "ja").forEach { locale ->
+            val stringsFile = projectFile("app/src/main/res/values-$locale/strings.xml")
+            val about = resourceValue(stringsFile, "settings_about_body")
+
+            assertTrue("$locale: translated About is missing", about.isNotBlank())
+            assertFalse("$locale: English About fallback", about == defaultAbout)
+            assertEquals("$locale: semantic sections", 6, about.split("\\n\\n").size)
+            assertEquals("$locale: bullet structure", 7, about.split("\\n").count { it.startsWith("• ") })
+            assertFalse("$locale: raw XML newline", about.contains('\n'))
+            assertTrue("$locale: Puzru brand", about.contains("Puzru"))
+            assertTrue("$locale: publisher brand", about.contains("Napahu Studios"))
+        }
+    }
+
+    @Test
     fun diagnosticSaveUsesCreateDocumentAndUtf8ContentResolver() {
         val launchMethod = mainSource.method("private fun launchDiagnosticDocumentPicker()")
         val saveMethod = mainSource.method("private fun saveDiagnosticReport(destination: Uri)")
@@ -256,6 +274,16 @@ class Layer4SettingsContractTest {
         substring(indexOf(signature)).substringBefore("\n    }")
 
     private fun String.occurrences(needle: String): Int = windowed(needle.length).count { it == needle }
+
+    private fun resourceValue(stringsFile: File, key: String): String {
+        val nodes = DocumentBuilderFactory.newInstance().newDocumentBuilder()
+            .parse(stringsFile).getElementsByTagName("string")
+        return (0 until nodes.length).firstNotNullOf { index ->
+            nodes.item(index).attributes?.getNamedItem("name")
+                ?.takeIf { it.nodeValue == key }
+                ?.let { nodes.item(index).textContent }
+        }
+    }
 
     private companion object {
         val projectRoot = generateSequence(File(System.getProperty("user.dir")).absoluteFile) { it.parentFile }
