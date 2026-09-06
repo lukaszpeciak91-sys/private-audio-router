@@ -272,10 +272,10 @@ evidence-driven development program.
 **Release identity:** Puzru is the public product name, and Napahu Studios is the
 accepted publisher/umbrella brand under D-039. This first public-brand migration
 changes release-facing product identity only and does not change routing or
-architecture behavior. The current `app.privateaudio` application identity remains
-provisional under D-010; its final value is a separate unresolved release-identity
-decision for a follow-up PR and must be decided before the first Google Play
-release/upload, where a later identity change would be problematic.
+architecture behavior. D-040 establishes `com.napahu.puzru` as the production
+`applicationId` before the first Google Play distribution. The Android namespace,
+Kotlin packages, and established internal technical naming intentionally remain
+`app.privateaudio`; no routing or product behavior changed with the release identity.
 
 ### Current release-readiness sequence
 
@@ -285,7 +285,7 @@ reorder, split, remove, or add work:
 1. Reconcile the release baseline and current documentation.
 2. Establish the CI and release-engineering foundation.
 3. Complete the privacy policy and release disclosures.
-4. Decide final application identity and launcher/release branding.
+4. Complete launcher and remaining release branding.
 5. Polish permission and foreground-notification transparency.
 6. Pass the current-device release-safety physical gates.
 7. Prepare a release-candidate build and signed Android App Bundle.
