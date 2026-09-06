@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Private Audio</string>
-    <string name="routing_notification_channel">Private Audio</string>
-    <string name="routing_notification_title">Kveikt er á Private Audio</string>
+    <string name="app_name">Puzru</string>
+    <string name="routing_notification_channel">Puzru</string>
+    <string name="routing_notification_title">Kveikt er á Puzru</string>
     <string name="routing_notification_text">Bíður eftir að skipta um hljóðúttak</string>
-    <string name="product_title">Private Audio</string>
+    <string name="product_title">Puzru</string>
     <string name="product_subtitle">Talaðu einslega við AI, eins og í símtali.</string>
     <string name="state_ready">Tilbúið</string>
     <string name="state_waiting">Bíður</string>
@@ -14,18 +14,18 @@
     <string name="floating">Mini</string>
     <string name="settings">Stillingar</string>
     <string name="close">Loka</string>
-    <string name="overlay_controller_description">Fljótandi stjórntæki fyrir Private Audio. Staða: %1$s. Stjórntæki til að kveikja, stækka og loka.</string>
+    <string name="overlay_controller_description">Fljótandi stjórntæki fyrir Puzru. Staða: %1$s. Stjórntæki til að kveikja, stækka og loka.</string>
     <string name="settings_language">Tungumál</string>
     <string name="settings_system_default">Sjálfgefið</string>
     <string name="settings_save_diagnostic">Vista greiningarskýrslu</string>
     <string name="settings_advanced">Ítarlegt</string>
-    <string name="settings_about">Um Private Audio</string>
+    <string name="settings_about">Um Puzru</string>
     <string name="settings_privacy_policy">Persónuverndarstefna</string>
-    <string name="settings_privacy_policy_body">Private Audio krefst hvorki reiknings né innskráningar og biður ekki um hljóðnemaheimild. Það fangar hvorki né tekur upp hljóð úr hljóðnemanum og tekur hvorki upp né geymir samtöl þín eða hljóðefni þeirra.\n\nPrivate Audio notar upplýsingar úr hljóðkerfi Android sem þarf fyrir hljóðleiðingu og greiningu. Greining kann að skoða tæknilegt ástand og lýsigögn sem opinber Android-forritaskil birta, þar á meðal lýsigögn um afspilun og upptökulotur. Lýsigögn upptökulota eru tæknilegar upplýsingar hljóðkerfisins; Private Audio fangar ekki hljóð úr hljóðnemanum sem tengist þessum lotum. Greiningarupplýsingar kunna að innihalda útgáfur forritsins og Android, upplýsingar um tæki og gerð, upplýsingar um ferli og ástand forritsins, tiltæk og núverandi hljóðtæki, opinber lýsigögn um stillingar afspilunar og upptöku, auk tilrauna til hljóðleiðingar, niðurstaðna, tímasetninga og tæknilegra atburða.\n\nKjörstillingar forritsins eru geymdar staðbundið í einkageymslu Private Audio. Greiningarupplýsingar eru búnar til og unnar í tækinu þínu og geta verið til staðar í staðbundnu ástandi forritsins meðan það er í gangi. Skýrslur eru hvorki vistaðar né sendar sjálfkrafa. Varanleg skýrsla er aðeins búin til utan einkageymslu Private Audio þegar þú velur sérstaklega að vista greiningarskýrslu og velur áfangastað í gegnum Android. Eftir útflutning stýrir valin staðsetning eða þjónusta—ekki Private Audio—meðhöndlun, varðveislu og eyðingu þess eintaks.\n\nNúverandi útgáfa biður ekki um internetheimild Android, er hvorki með bakenda Private Audio né flutningsleið um net og inniheldur hvorki greiningar-, auglýsinga- né hrunskýrsluþjónustur eða SDK. Hún sendir ekki greiningarskýrslur til þróunaraðilans eða netþjóns Private Audio eins og er og því varðveitir Private Audio engar greiningarupplýsingar á netþjóni.\n\nGögn í eigu forritsins eru undanskilin skýjaafritun Android og flutningi milli tækja. Staðbundnar kjörstillingar eru áfram í einkageymslu forritsins þar til þeim er breytt eða gögnum forritsins er eytt; tímabundið greiningarástand er ekki vistuð skýrsla. Útfluttar skýrslur eru áfram undir stjórn staðsetningarinnar eða þjónustunnar sem þú valdir.</string>
+    <string name="settings_privacy_policy_body">Puzru krefst hvorki reiknings né innskráningar og biður ekki um hljóðnemaheimild. Það fangar hvorki né tekur upp hljóð úr hljóðnemanum og tekur hvorki upp né geymir samtöl þín eða hljóðefni þeirra.\n\nPuzru notar upplýsingar úr hljóðkerfi Android sem þarf fyrir hljóðleiðingu og greiningu. Greining kann að skoða tæknilegt ástand og lýsigögn sem opinber Android-forritaskil birta, þar á meðal lýsigögn um afspilun og upptökulotur. Lýsigögn upptökulota eru tæknilegar upplýsingar hljóðkerfisins; Puzru fangar ekki hljóð úr hljóðnemanum sem tengist þessum lotum. Greiningarupplýsingar kunna að innihalda útgáfur forritsins og Android, upplýsingar um tæki og gerð, upplýsingar um ferli og ástand forritsins, tiltæk og núverandi hljóðtæki, opinber lýsigögn um stillingar afspilunar og upptöku, auk tilrauna til hljóðleiðingar, niðurstaðna, tímasetninga og tæknilegra atburða.\n\nKjörstillingar forritsins eru geymdar staðbundið í einkageymslu Puzru. Greiningarupplýsingar eru búnar til og unnar í tækinu þínu og geta verið til staðar í staðbundnu ástandi forritsins meðan það er í gangi. Skýrslur eru hvorki vistaðar né sendar sjálfkrafa. Varanleg skýrsla er aðeins búin til utan einkageymslu Puzru þegar þú velur sérstaklega að vista greiningarskýrslu og velur áfangastað í gegnum Android. Eftir útflutning stýrir valin staðsetning eða þjónusta—ekki Puzru—meðhöndlun, varðveislu og eyðingu þess eintaks.\n\nNúverandi útgáfa biður ekki um internetheimild Android, er hvorki með bakenda Puzru né flutningsleið um net og inniheldur hvorki greiningar-, auglýsinga- né hrunskýrsluþjónustur eða SDK. Hún sendir ekki greiningarskýrslur til þróunaraðilans eða netþjóns Puzru eins og er og því varðveitir Puzru engar greiningarupplýsingar á netþjóni.\n\nGögn í eigu forritsins eru undanskilin skýjaafritun Android og flutningi milli tækja. Staðbundnar kjörstillingar eru áfram í einkageymslu forritsins þar til þeim er breytt eða gögnum forritsins er eytt; tímabundið greiningarástand er ekki vistuð skýrsla. Útfluttar skýrslur eru áfram undir stjórn staðsetningarinnar eða þjónustunnar sem þú valdir.</string>
     <string name="settings_version">Útgáfa %1$s</string>
     <string name="settings_language_android_13_required">Til að velja tungumál í forritinu þarf Android 13 eða nýrra. Þetta tæki fylgir tungumáli kerfisins.</string>
     <string name="settings_proximity_screen">Slökkva á skjánum nálægt eyranu</string>
-    <string name="settings_about_body">Private Audio hjálpar til við að færa studd raddhljóð í innbyggða símahátalarann.</string>
+    <string name="settings_about_body">Puzru hjálpar til við að færa studd raddhljóð í innbyggða símahátalarann.</string>
     <string name="diagnostic_report_saved">Greiningarskýrslan var vistuð.</string>
     <string name="diagnostic_report_save_failed">Ekki tókst að vista greiningarskýrsluna.</string>
 
@@ -34,7 +34,7 @@
     <string name="diagnostics_system_check">KERFISATHUGUN</string>
     <string name="diagnostics_earpiece">Eyrnarhátalari</string>
     <string name="diagnostics_proximity_sensor">Nálægðarskynjari</string>
-    <string name="diagnostics_private_audio">PRIVATE AUDIO</string>
+    <string name="diagnostics_private_audio">PUZRU</string>
     <string name="diagnostics_routing">Hljóðbeining</string>
     <string name="diagnostics_status">Staða</string>
     <string name="diagnostics_audio_route">Hljóðúttak</string>
@@ -59,8 +59,8 @@
     <string name="diagnostics_route_other">Annað</string>
     <string name="diagnostics_error_blocked_by_system">Kerfið kom í veg fyrir hljóðbeiningu.</string>
     <string name="diagnostics_error_session_ended">Hljóðlotunni lauk áður en hljóðbeiningu lauk.</string>
-    <string name="diagnostics_error_audio_start">Private Audio tókst ekki að hefja hljóðbeiningu.</string>
-    <string name="diagnostics_error_audio_preparation">Private Audio tókst ekki að undirbúa samskiptahljóð.</string>
+    <string name="diagnostics_error_audio_start">Puzru tókst ekki að hefja hljóðbeiningu.</string>
+    <string name="diagnostics_error_audio_preparation">Puzru tókst ekki að undirbúa samskiptahljóð.</string>
     <string name="diagnostics_error_request_rejected">Beiðni um hljóðbeiningu í eyrnarhátalara var ekki samþykkt.</string>
     <string name="diagnostics_error_not_completed">Ekki tókst að ljúka hljóðbeiningu.</string>
 </resources>

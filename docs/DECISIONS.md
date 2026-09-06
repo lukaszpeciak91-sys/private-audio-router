@@ -305,3 +305,11 @@ This is a lightweight, append-only log. Do not rewrite accepted history; append 
 - **Context:** Supplied physical/runtime evidence from Xiaomi `2201117TY` on Android 13/API 33 successfully exercised the corrected early track plus early `MODE_IN_COMMUNICATION` sequence while recognition remained present and unsilenced. Assistant/speech promotion made one device request, and human listening reported no beginning clipping in the successful corrected run.
 - **Decision:** Retain the current experimental Assistant strategy: prepared silent track, early communication-mode participation, and exactly one post-speech communication-device request. There is currently no evidence-based justification for escalating to an early `setCommunicationDevice()` request.
 - **Consequences:** Keep Assistant early route default OFF while broader device, OEM, Android-release, accessory, and telephony compatibility remains untested. The successful result is evidence for the tested Xiaomi configuration only.
+
+## D-039 — Public product and publisher identity
+
+- **Date:** 2026-09-05
+- **Status:** Accepted
+- **Context:** `Private Audio` served as the working/project product name. Release preparation now requires a stable public product identity while preserving the tested routing implementation and its established technical identifiers.
+- **Decision:** Adopt **Puzru** as the public product name and **Napahu Studios** as the publisher/umbrella brand. Migrate current user-facing and release-facing product-name tokens to Puzru. Retain repository, package, namespace, class, preference, notification-channel, action, test-tag, log-tag, and other technical identifiers where renaming provides no release benefit.
+- **Consequences:** This decision changes public branding, not routing architecture or behavior. Publisher presentation in production UI and the About redesign remain separate work. The current `applicationId` is unchanged and remains a separate unresolved release-identity decision for a follow-up PR.

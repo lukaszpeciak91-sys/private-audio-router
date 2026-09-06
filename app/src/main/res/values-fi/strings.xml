@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Private Audio</string>
-    <string name="routing_notification_channel">Private Audio</string>
-    <string name="routing_notification_title">Private Audio on käytössä</string>
+    <string name="app_name">Puzru</string>
+    <string name="routing_notification_channel">Puzru</string>
+    <string name="routing_notification_title">Puzru on käytössä</string>
     <string name="routing_notification_text">Odottaa äänen ohjaamista</string>
-    <string name="product_title">Private Audio</string>
+    <string name="product_title">Puzru</string>
     <string name="product_subtitle">Puhu AI:n kanssa yksityisesti, aivan kuin puhelussa.</string>
     <string name="state_ready">Valmis</string>
     <string name="state_waiting">Odottaa</string>
@@ -14,18 +14,18 @@
     <string name="floating">Mini</string>
     <string name="settings">Asetukset</string>
     <string name="close">Sulje</string>
-    <string name="overlay_controller_description">Private Audio -kelluva ohjain. Tila: %1$s. Virran kytkemisen, laajentamisen ja sulkemisen säätimet.</string>
+    <string name="overlay_controller_description">Puzru -kelluva ohjain. Tila: %1$s. Virran kytkemisen, laajentamisen ja sulkemisen säätimet.</string>
     <string name="settings_language">Kieli</string>
     <string name="settings_system_default">Oletus</string>
     <string name="settings_save_diagnostic">Tallenna diagnostiikkaraportti</string>
     <string name="settings_advanced">Lisäasetukset</string>
-    <string name="settings_about">Tietoja Private Audiosta</string>
+    <string name="settings_about">Tietoja Puzrusta</string>
     <string name="settings_privacy_policy">Tietosuojakäytäntö</string>
-    <string name="settings_privacy_policy_body">Private Audio ei edellytä tiliä tai sisäänkirjautumista eikä pyydä mikrofonin käyttöoikeutta. Se ei kaappaa tai tallenna mikrofonin ääntä eikä tallenna tai säilytä keskustelujasi tai niiden äänisisältöä.\n\nPrivate Audio käyttää reititykseen ja diagnostiikkaan tarvittavia Androidin äänijärjestelmän tietoja. Diagnostiikka voi tarkastella julkisten Android-ohjelmointirajapintojen paljastamaa teknistä tilaa ja metadataa, mukaan lukien toisto- ja tallennusistuntojen metadataa. Tallennusistuntojen metadata on äänijärjestelmän teknistä tietoa; Private Audio ei kaappaa näihin istuntoihin liittyvää mikrofonin ääntä. Diagnostiikkatietoihin voi sisältyä sovelluksen ja Androidin versiot, laite- ja mallitiedot, sovelluksen prosessi- ja tilatiedot, käytettävissä olevat ja nykyiset äänilaitteet, toiston ja tallennuksen julkiset määritysmetatiedot sekä reititysyritykset, niiden tulokset, ajoitus ja tekniset tapahtumat.\n\nSovelluksen asetukset tallennetaan paikallisesti Private Audio -sovelluksen yksityiseen tallennustilaan. Diagnostiikkatiedot luodaan ja käsitellään laitteellasi, ja niitä voi olla käynnissä olevan sovelluksen paikallisessa tilassa. Raportteja ei tallenneta tai lähetetä automaattisesti. Pysyvä raportti luodaan Private Audio -sovelluksen yksityisen tallennustilan ulkopuolelle vain, kun valitset erikseen Tallenna diagnostiikkaraportti ja valitset kohteen Androidin kautta. Viennin jälkeen valittu sijainti tai palvelu, ei Private Audio, hallitsee kyseisen kopion käsittelyä, säilyttämistä ja poistamista.\n\nNykyinen versio ei pyydä Androidin internetkäyttöoikeutta, sillä ei ole Private Audio -taustajärjestelmää tai verkkosiirtoreittiä eikä se sisällä analytiikka-, mainonta- tai kaatumisraportointipalveluita tai SDK:ita. Se ei tällä hetkellä lähetä diagnostiikkaraportteja kehittäjälle tai Private Audio -palvelimelle, joten Private Audio ei säilytä diagnostiikkatietoja millään palvelimella.\n\nSovelluksen omat tiedot on suljettu pois Androidin pilvivarmuuskopioinnista ja laitteiden välisestä siirrosta. Paikalliset asetukset säilyvät sovelluksen yksityisessä tallennustilassa, kunnes niitä muutetaan tai sovelluksen tiedot poistetaan; tilapäinen diagnostiikkatila ei ole tallennettu raportti. Viedyt raportit pysyvät valitsemasi sijainnin tai palvelun hallinnassa.</string>
+    <string name="settings_privacy_policy_body">Puzru ei edellytä tiliä tai sisäänkirjautumista eikä pyydä mikrofonin käyttöoikeutta. Se ei kaappaa tai tallenna mikrofonin ääntä eikä tallenna tai säilytä keskustelujasi tai niiden äänisisältöä.\n\nPuzru käyttää reititykseen ja diagnostiikkaan tarvittavia Androidin äänijärjestelmän tietoja. Diagnostiikka voi tarkastella julkisten Android-ohjelmointirajapintojen paljastamaa teknistä tilaa ja metadataa, mukaan lukien toisto- ja tallennusistuntojen metadataa. Tallennusistuntojen metadata on äänijärjestelmän teknistä tietoa; Puzru ei kaappaa näihin istuntoihin liittyvää mikrofonin ääntä. Diagnostiikkatietoihin voi sisältyä sovelluksen ja Androidin versiot, laite- ja mallitiedot, sovelluksen prosessi- ja tilatiedot, käytettävissä olevat ja nykyiset äänilaitteet, toiston ja tallennuksen julkiset määritysmetatiedot sekä reititysyritykset, niiden tulokset, ajoitus ja tekniset tapahtumat.\n\nSovelluksen asetukset tallennetaan paikallisesti Puzru -sovelluksen yksityiseen tallennustilaan. Diagnostiikkatiedot luodaan ja käsitellään laitteellasi, ja niitä voi olla käynnissä olevan sovelluksen paikallisessa tilassa. Raportteja ei tallenneta tai lähetetä automaattisesti. Pysyvä raportti luodaan Puzru -sovelluksen yksityisen tallennustilan ulkopuolelle vain, kun valitset erikseen Tallenna diagnostiikkaraportti ja valitset kohteen Androidin kautta. Viennin jälkeen valittu sijainti tai palvelu, ei Puzru, hallitsee kyseisen kopion käsittelyä, säilyttämistä ja poistamista.\n\nNykyinen versio ei pyydä Androidin internetkäyttöoikeutta, sillä ei ole Puzru -taustajärjestelmää tai verkkosiirtoreittiä eikä se sisällä analytiikka-, mainonta- tai kaatumisraportointipalveluita tai SDK:ita. Se ei tällä hetkellä lähetä diagnostiikkaraportteja kehittäjälle tai Puzru -palvelimelle, joten Puzru ei säilytä diagnostiikkatietoja millään palvelimella.\n\nSovelluksen omat tiedot on suljettu pois Androidin pilvivarmuuskopioinnista ja laitteiden välisestä siirrosta. Paikalliset asetukset säilyvät sovelluksen yksityisessä tallennustilassa, kunnes niitä muutetaan tai sovelluksen tiedot poistetaan; tilapäinen diagnostiikkatila ei ole tallennettu raportti. Viedyt raportit pysyvät valitsemasi sijainnin tai palvelun hallinnassa.</string>
     <string name="settings_version">Versio %1$s</string>
     <string name="settings_language_android_13_required">Sovelluksen kielivalinta vaatii Android 13:n tai uudemman. Tämä laite käyttää järjestelmän kieltä.</string>
     <string name="settings_proximity_screen">Sammuta näyttö korvan lähellä</string>
-    <string name="settings_about_body">Private Audio auttaa ohjaamaan tuetun puheäänen puhelimen sisäänrakennettuun kuulokkeeseen.</string>
+    <string name="settings_about_body">Puzru auttaa ohjaamaan tuetun puheäänen puhelimen sisäänrakennettuun kuulokkeeseen.</string>
     <string name="diagnostic_report_saved">Diagnostiikkaraportti tallennettu.</string>
     <string name="diagnostic_report_save_failed">Diagnostiikkaraporttia ei voitu tallentaa.</string>
 
@@ -34,7 +34,7 @@
     <string name="diagnostics_system_check">JÄRJESTELMÄN TARKISTUS</string>
     <string name="diagnostics_earpiece">Kuuloke</string>
     <string name="diagnostics_proximity_sensor">Lähestymisanturi</string>
-    <string name="diagnostics_private_audio">PRIVATE AUDIO</string>
+    <string name="diagnostics_private_audio">PUZRU</string>
     <string name="diagnostics_routing">Äänen reititys</string>
     <string name="diagnostics_status">Tila</string>
     <string name="diagnostics_audio_route">Äänilähtö</string>
@@ -59,8 +59,8 @@
     <string name="diagnostics_route_other">Muu</string>
     <string name="diagnostics_error_blocked_by_system">Järjestelmä esti äänen reitityksen.</string>
     <string name="diagnostics_error_session_ended">Ääni-istunto päättyi ennen kuin reititys valmistui.</string>
-    <string name="diagnostics_error_audio_start">Private Audio ei voinut käynnistää äänen reititystä.</string>
-    <string name="diagnostics_error_audio_preparation">Private Audio ei voinut valmistella viestintä-ääntä.</string>
+    <string name="diagnostics_error_audio_start">Puzru ei voinut käynnistää äänen reititystä.</string>
+    <string name="diagnostics_error_audio_preparation">Puzru ei voinut valmistella viestintä-ääntä.</string>
     <string name="diagnostics_error_request_rejected">Pyyntöä reitittää ääni kuulokkeeseen ei hyväksytty.</string>
     <string name="diagnostics_error_not_completed">Äänen reititystä ei voitu suorittaa loppuun.</string>
 </resources>

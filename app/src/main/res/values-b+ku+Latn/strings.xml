@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Private Audio</string>
-    <string name="routing_notification_channel">Private Audio</string>
-    <string name="routing_notification_title">Private Audio vekirî ye</string>
+    <string name="app_name">Puzru</string>
+    <string name="routing_notification_channel">Puzru</string>
+    <string name="routing_notification_title">Puzru vekirî ye</string>
     <string name="routing_notification_text">Li benda rêkirina deng e</string>
-    <string name="product_title">Private Audio</string>
+    <string name="product_title">Puzru</string>
     <string name="product_subtitle">Bi AI re bi nepenî, wek bangeke telefonê biaxive.</string>
     <string name="state_ready">Amade</string>
     <string name="state_waiting">Li bendê</string>
@@ -14,26 +14,26 @@
     <string name="floating">Mini</string>
     <string name="settings">Mîheng</string>
     <string name="close">Bigire</string>
-    <string name="overlay_controller_description">Kontrolkera Private Audio ya li ser sepanên din dimîne. Rewş: %1$s. Kontrolên hêzê, firehkirinê û girtinê.</string>
+    <string name="overlay_controller_description">Kontrolkera Puzru ya li ser sepanên din dimîne. Rewş: %1$s. Kontrolên hêzê, firehkirinê û girtinê.</string>
     <string name="settings_language">Ziman</string>
     <string name="settings_system_default">Wekî heyî</string>
     <string name="settings_save_diagnostic">Rapora teşhîsê tomar bike</string>
     <string name="settings_diagnostics">Teşhîs</string>
     <string name="settings_advanced">Pêşketî</string>
-    <string name="settings_about">Derbarê Private Audio de</string>
+    <string name="settings_about">Derbarê Puzru de</string>
     <string name="settings_privacy_policy">Siyaseta Nepeniyê</string>
-    <string name="settings_privacy_policy_body">Private Audio ne hesabek an têketinê hewce dike û ne jî destûra mîkrofônê dixwaze. Ew dengê mîkrofônê nagire an tomar nake, û ne jî axaftinên we an naveroka dengî ya wan tomar dike an diparêze.\n\nPrivate Audio agahiyên pergala dengê ya Android bi kar tîne ku ji bo rêvebirin û teşhîsê pêwîstin. Teşhîs dikare rewşa teknîkî û metadata ku ji aliyê API-yên giştî yên Android ve têne derxistin binirxîne, di nav de metadata-yên playback û danişînên tomarê. Metadata-yên danişînên tomarê agahiyên teknîkî yên pergala dengê ne; Private Audio dengê mîkrofônê ku bi wan danişînan ve girêdayî ye nagire. Agahiyên teşhîsê dikarin guherto yên sepanê û Android, agahiyên cîhaz û modelê, agahiyên pêvajoya sepanê û rewşê, amûrên dengê yên berdest û yên niha, metadata-yên giştî yên veavakirina playback û tomarê, û hewildanên rêvebirinê, encam, demkirin, û bûyerên teknîkî dihewîne.\n\nTercihên sepanê li gorî xwe li depoya taybet a sepanê ya Private Audio têne parastin. Agahiyên teşhîsê li ser cîhaza we têne afirandin û pêvajokirin û dikarin di rewşa herêmî ya sepana ku dixebite de hebe. Rapor bixweber nayên tomarkirin an şandin. Raporek domdar tenê dema ku hûn bi eşkereyî Tomara rapora teşhîsê hilbijêrin û bi rêya Android cîhekî armanc hilbijêrin, li derveyî depoya taybet a sepanê ya Private Audio tê afirandin. Piştî derxistinê, cih an xizmeta ku we hilbijartiye — ne Private Audio — kontrola têgihiştin, mayîndetî, û jêbirina wê kopiyê dike.\n\nGuhertoya niha destûra Internetê ya Android naxwaze, ne backendekî Private Audio heye ne jî rêyek şandina torê heye, û ne xizmet an SDK-yên analîtîk, reklam, an raporkirina çewtiyan tê de ne. Ew di vê demê de raporên teşhîsê ji pêşdebirê an jî ji serveurê Private Audio re naşîne, ji ber vê yekê Private Audio di aliyê serveurê de parastina teşhîsê tune.\n\nDaneyên ku xwediyê wan sepan e ji cloud backup û veguheztina ji cîhazekê bo cîhazekî din a Android têne derxistin. Tercihên herêmî di depoya taybet a sepanê de dimînin heta ku werin guhertin an daneyên sepanê werin rakirin; rewşa teşhîsê ya derbasdar raporek tomarkirî nîne. Raporên ku hatine derxistin di bin kontrola cih an xizmeta ku we hilbijartiye de dimînin.</string>
+    <string name="settings_privacy_policy_body">Puzru ne hesabek an têketinê hewce dike û ne jî destûra mîkrofônê dixwaze. Ew dengê mîkrofônê nagire an tomar nake, û ne jî axaftinên we an naveroka dengî ya wan tomar dike an diparêze.\n\nPuzru agahiyên pergala dengê ya Android bi kar tîne ku ji bo rêvebirin û teşhîsê pêwîstin. Teşhîs dikare rewşa teknîkî û metadata ku ji aliyê API-yên giştî yên Android ve têne derxistin binirxîne, di nav de metadata-yên playback û danişînên tomarê. Metadata-yên danişînên tomarê agahiyên teknîkî yên pergala dengê ne; Puzru dengê mîkrofônê ku bi wan danişînan ve girêdayî ye nagire. Agahiyên teşhîsê dikarin guherto yên sepanê û Android, agahiyên cîhaz û modelê, agahiyên pêvajoya sepanê û rewşê, amûrên dengê yên berdest û yên niha, metadata-yên giştî yên veavakirina playback û tomarê, û hewildanên rêvebirinê, encam, demkirin, û bûyerên teknîkî dihewîne.\n\nTercihên sepanê li gorî xwe li depoya taybet a sepanê ya Puzru têne parastin. Agahiyên teşhîsê li ser cîhaza we têne afirandin û pêvajokirin û dikarin di rewşa herêmî ya sepana ku dixebite de hebe. Rapor bixweber nayên tomarkirin an şandin. Raporek domdar tenê dema ku hûn bi eşkereyî Tomara rapora teşhîsê hilbijêrin û bi rêya Android cîhekî armanc hilbijêrin, li derveyî depoya taybet a sepanê ya Puzru tê afirandin. Piştî derxistinê, cih an xizmeta ku we hilbijartiye — ne Puzru — kontrola têgihiştin, mayîndetî, û jêbirina wê kopiyê dike.\n\nGuhertoya niha destûra Internetê ya Android naxwaze, ne backendekî Puzru heye ne jî rêyek şandina torê heye, û ne xizmet an SDK-yên analîtîk, reklam, an raporkirina çewtiyan tê de ne. Ew di vê demê de raporên teşhîsê ji pêşdebirê an jî ji serveurê Puzru re naşîne, ji ber vê yekê Puzru di aliyê serveurê de parastina teşhîsê tune.\n\nDaneyên ku xwediyê wan sepan e ji cloud backup û veguheztina ji cîhazekê bo cîhazekî din a Android têne derxistin. Tercihên herêmî di depoya taybet a sepanê de dimînin heta ku werin guhertin an daneyên sepanê werin rakirin; rewşa teşhîsê ya derbasdar raporek tomarkirî nîne. Raporên ku hatine derxistin di bin kontrola cih an xizmeta ku we hilbijartiye de dimînin.</string>
     <string name="settings_version">Guhertoya %1$s</string>
     <string name="settings_language_android_13_required">Hilbijartina zimanê di sepanê de Android 13 an guhertoyeke nûtir dixwaze. Ev cîhaz li gorî zimanê pergalê dixebite.</string>
     <string name="settings_proximity_screen">Li nêzî guhê xwe ekranê vemirîne</string>
-    <string name="settings_about_body">Private Audio dibe alîkar ku dengê dengî yê piştgirîkirî ber bi wergira bangê ya jorîn a di hundirê telefona we de, ku li ber guhê tê bikaranîn, bê rêkirin.</string>
+    <string name="settings_about_body">Puzru dibe alîkar ku dengê dengî yê piştgirîkirî ber bi wergira bangê ya jorîn a di hundirê telefona we de, ku li ber guhê tê bikaranîn, bê rêkirin.</string>
     <string name="diagnostic_report_saved">Rapora teşhîsê hat tomarkirin.</string>
     <string name="diagnostic_report_save_failed">Rapora teşhîsê nehat tomarkirin.</string>
     <string name="diagnostics_title">Teşhîs</string>
     <string name="diagnostics_system_check">KONTROLA PERGALÊ</string>
     <string name="diagnostics_earpiece">Wergira bangê</string>
     <string name="diagnostics_proximity_sensor">Sensorê nêzîkbûnê</string>
-    <string name="diagnostics_private_audio">PRIVATE AUDIO</string>
+    <string name="diagnostics_private_audio">PUZRU</string>
     <string name="diagnostics_routing">Rêkirina deng</string>
     <string name="diagnostics_status">Rewş</string>
     <string name="diagnostics_audio_route">Derana dengê</string>
@@ -58,8 +58,8 @@
     <string name="diagnostics_route_other">Yê din</string>
     <string name="diagnostics_error_blocked_by_system">Rêkirina deng ji aliyê pergalê ve hat astengkirin.</string>
     <string name="diagnostics_error_session_ended">Danişîna dengê berî ku rêkirin biqede bi dawî bû.</string>
-    <string name="diagnostics_error_audio_start">Private Audio nikarî rêkirina deng dest pê bike.</string>
-    <string name="diagnostics_error_audio_preparation">Private Audio nikarî dengê ragihandinê amade bike.</string>
+    <string name="diagnostics_error_audio_start">Puzru nikarî rêkirina deng dest pê bike.</string>
+    <string name="diagnostics_error_audio_preparation">Puzru nikarî dengê ragihandinê amade bike.</string>
     <string name="diagnostics_error_request_rejected">Daxwaza rêkirinê ya wergira bangê nehat pejirandin.</string>
     <string name="diagnostics_error_not_completed">Rêkirina deng nekarî bê qedandin.</string>
 </resources>

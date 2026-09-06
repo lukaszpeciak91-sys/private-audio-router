@@ -1,9 +1,9 @@
 ---
 name: private-audio-translation
-description: Produce, self-check, and write Private Audio translations. Use when translating source strings, propagating new or changed English copy to locales, adding a locale or localized copy, fixing translations identified by an audit, maintaining localized plurals/placeholders/markup, or changing locale-specific user-facing wording. Do not use for an independent audit or verification-only request.
+description: Produce, self-check, and write Puzru translations. Use when translating source strings, propagating new or changed English copy to locales, adding a locale or localized copy, fixing translations identified by an audit, maintaining localized plurals/placeholders/markup, or changing locale-specific user-facing wording. Do not use for an independent audit or verification-only request.
 ---
 
-# Private Audio translation
+# Puzru translation
 
 Produce the best defensible translation candidate for the requested locale and write it. Read `docs/LOCALIZATION.md`, the current default English resources, the current locale inventory, relevant target resources, and current terminology contracts before editing. Treat default English as authoritative; do not silently change its meaning.
 
@@ -59,17 +59,17 @@ SOURCE SENSE: software/application release version, not type, kind, or category
 SURFACE: Settings version label
 ```
 
-Apply this proportionally to terms such as version, session, access, crash, route/routing, output, active, available, permission, metadata, backup, server, analytics, diagnostics, report, account, sign-in, built-in, receiver/earpiece, speaker, and proximity sensor. This is a trigger list, not a fixed glossary. Product semantics come first: a generic ICT translation of `Active`, for example, must not replace Private Audio's state meaning—current participation in an established qualifying communication-audio routing cycle—with merely enabled/ON.
+Apply this proportionally to terms such as version, session, access, crash, route/routing, output, active, available, permission, metadata, backup, server, analytics, diagnostics, report, account, sign-in, built-in, receiver/earpiece, speaker, and proximity sensor. This is a trigger list, not a fixed glossary. Product semantics come first: a generic ICT translation of `Active`, for example, must not replace Puzru's state meaning—current participation in an established qualifying communication-audio routing cycle—with merely enabled/ON.
 
 For every materially uncertain term, maintain a lightweight **Targeted Terminology Ledger** in working analysis rather than a new repository file:
 
 **source concept → source sense/referent → candidate → evidence → reverse gloss → rejected alternative(s), when relevant → decision → confidence/review need**
 
-The entries must contain the actual reasoning, not merely “self-checked.” Report only meaningful decisions and unresolved uncertainty rather than dumping the whole ledger. A dictionary-correct equivalent is insufficient when an established software or Android sense applies; choose wording that denotes the exact product concept. Conversely, do not blindly adopt glossary wording that is obsolete, unnatural, or semantically wrong for the Private Audio surface.
+The entries must contain the actual reasoning, not merely “self-checked.” Report only meaningful decisions and unresolved uncertainty rather than dumping the whole ledger. A dictionary-correct equivalent is insufficient when an established software or Android sense applies; choose wording that denotes the exact product concept. Conversely, do not blindly adopt glossary wording that is obsolete, unnatural, or semantically wrong for the Puzru surface.
 
 When research tools are available, actively seek terminology evidence for a term that is technical or software-specific; concerns privacy, security, or data; is semantically overloaded or unfamiliar; looks like a literal calque; becomes uncertain under reverse gloss; or is likely to differ from ordinary dictionary meaning. Use this evidence hierarchy contextually:
 
-1. exact Private Audio semantics;
+1. exact Puzru semantics;
 2. first-party Android, Google, or platform terminology for the target locale when semantically correct;
 3. official or institutional target-language technology terminology;
 4. established software localization or mature localized software documentation;
@@ -102,27 +102,27 @@ When triggered:
 ## Preserve product terminology
 
 - Apply terminology in this order:
-  1. exact Private Audio product semantics;
+  1. exact Puzru product semantics;
   2. established Android or first-party platform terminology when semantically correct for that locale and surface;
-  3. established terminology already used consistently in that Private Audio locale; and
+  3. established terminology already used consistently in that Puzru locale; and
   4. natural contemporary native-language software/UI wording.
-- Treat platform terminology as evidence, not authority. Never adopt a platform term that collapses a protected distinction such as earpiece versus loudspeaker/speakerphone, headphones/headset, or Bluetooth, and do not replace a more precise existing Private Audio term merely to match an imperfect platform translation.
+- Treat platform terminology as evidence, not authority. Never adopt a platform term that collapses a protected distinction such as earpiece versus loudspeaker/speakerphone, headphones/headset, or Bluetooth, and do not replace a more precise existing Puzru term merely to match an imperfect platform translation.
 - Keep **ON/enabled** (waiting or available) distinct from runtime **ACTIVE**.
 - Distinguish the built-in call earpiece/receiver from loudspeaker, speakerphone, headphones, earbuds, and Bluetooth.
 - Preserve source versus destination, action versus state, trigger versus effect, and screen versus phone/device.
 - Resolve terminology independently for each locale, including AI terminology. Related Oromo/Somali/Amharic, Slavic, Indic, Malay/Indonesian, African regional, Romance, or other language-group copy is not lexical evidence for the target locale.
-- Keep `Private Audio` untranslated. Treat `Mini` as a compact-controller concept, not necessarily a Latin-script brand token.
+- Keep `Puzru` untranslated. Treat `Mini` as a compact-controller concept, not necessarily a Latin-script brand token.
 - Check transliterated/international terms for misleading, offensive, embarrassing, or concept-colliding target-language meanings.
 - Use the normal native script and orthography, including locale-specific Unicode distinctions and the correct CJK variant.
 - Apply the technical-sense and terminology-evidence gate above rather than relying on plausibility or a general dictionary gloss.
 
 ### Classify short international-looking UI terms
 
-Do not automatically freeze concise terms such as `Mini`, `Compact`, `Pro`, `Default`, or `Advanced` as untranslated technical tokens. First distinguish a **brand token** from a **localizable UI concept**: `Private Audio` is currently a brand token, while `Mini` is currently a localizable compact-controller concept. Script is not a reason to keep English, and ASCII/Latin wording inside otherwise non-Latin UI is a review signal rather than a default strategy.
+Do not automatically freeze concise terms such as `Mini`, `Compact`, `Pro`, `Default`, or `Advanced` as untranslated technical tokens. First distinguish a **brand token** from a **localizable UI concept**: `Puzru` is currently a brand token, while `Mini` is currently a localizable compact-controller concept. Script is not a reason to keep English, and ASCII/Latin wording inside otherwise non-Latin UI is a review signal rather than a default strategy.
 
-For each concept, establish its exact Private Audio meaning and surface, then research first-party Android/Google/Microsoft or equivalent terminology where available and contemporary target-language software/product usage. Determine whether users normally expect an established native UI term, an attested target-script transliteration or loanword, a concise semantic equivalent, or the Latin original. Prefer established target-language product terminology, then an established target-script loanword, then a concise established semantic equivalent, and use the Latin original only when it is genuinely normal target-language UI usage; this order is evidence-guided, not rigid. Do not invent a phonetic spelling mechanically. Check every candidate for unrelated, offensive, embarrassing, misleading, technical, or grammatical lexical collisions. Khmer `ខ្នាតតូច` illustrates a natural semantic equivalent that is preferable to an invented transliteration.
+For each concept, establish its exact Puzru meaning and surface, then research first-party Android/Google/Microsoft or equivalent terminology where available and contemporary target-language software/product usage. Determine whether users normally expect an established native UI term, an attested target-script transliteration or loanword, a concise semantic equivalent, or the Latin original. Prefer established target-language product terminology, then an established target-script loanword, then a concise established semantic equivalent, and use the Latin original only when it is genuinely normal target-language UI usage; this order is evidence-guided, not rigid. Do not invent a phonetic spelling mechanically. Check every candidate for unrelated, offensive, embarrassing, misleading, technical, or grammatical lexical collisions. Khmer `ខ្នាតតូច` illustrates a natural semantic equivalent that is preferable to an invented transliteration.
 
-Surface constraints affect the decision: a first-party phrase for a full component such as `Miniplayer` may be unsuitable for a standalone one-word button. Adapt evidence to the actual Private Audio surface instead of copying a long component name. Script consistency is evidence, not a hard cross-locale uniformity rule; never replace an established native form merely to make locales look alike. Visual fit does not authorize inferior language: follow **NATURAL LANGUAGE → MEASURE → 16f / 15f / 14f → compact linguistic review → ellipsis safety**.
+Surface constraints affect the decision: a first-party phrase for a full component such as `Miniplayer` may be unsuitable for a standalone one-word button. Adapt evidence to the actual Puzru surface instead of copying a long component name. Script consistency is evidence, not a hard cross-locale uniformity rule; never replace an established native form merely to make locales look alike. Visual fit does not authorize inferior language: follow **NATURAL LANGUAGE → MEASURE → 16f / 15f / 14f → compact linguistic review → ellipsis safety**.
 
 ## Check contextual grammar before propagation
 

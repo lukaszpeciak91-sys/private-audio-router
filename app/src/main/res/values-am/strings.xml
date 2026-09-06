@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Private Audio</string>
-    <string name="routing_notification_channel">Private Audio</string>
-    <string name="routing_notification_title">Private Audio በርቷል</string>
+    <string name="app_name">Puzru</string>
+    <string name="routing_notification_channel">Puzru</string>
+    <string name="routing_notification_title">Puzru በርቷል</string>
     <string name="routing_notification_text">የድምፅ ውጽዓትን ለመቀየር በመጠበቅ ላይ</string>
-    <string name="product_title">Private Audio</string>
+    <string name="product_title">Puzru</string>
     <string name="product_subtitle">ከAI ጋር በግል ይነጋገሩ፣ ልክ እንደ ስልክ ጥሪ።</string>
     <string name="state_ready">ዝግጁ</string>
     <string name="state_waiting">በመጠበቅ ላይ</string>
@@ -14,18 +14,18 @@
     <string name="floating">ሚኒ</string>
     <string name="settings">ቅንብሮች</string>
     <string name="close">ዝጋ</string>
-    <string name="overlay_controller_description">የPrivate Audio ሚኒ መቆጣጠሪያ። ሁኔታ፦ %1$s። የማብራት/ማጥፋት፣ የመዘርጋት እና የመዝጋት መቆጣጠሪያዎች።</string>
+    <string name="overlay_controller_description">የPuzru ሚኒ መቆጣጠሪያ። ሁኔታ፦ %1$s። የማብራት/ማጥፋት፣ የመዘርጋት እና የመዝጋት መቆጣጠሪያዎች።</string>
     <string name="settings_language">ቋንቋ</string>
     <string name="settings_system_default">ነባሪ</string>
     <string name="settings_save_diagnostic">የምርመራ ሪፖርት አስቀምጥ</string>
     <string name="settings_advanced">የላቁ ቅንብሮች</string>
-    <string name="settings_about">ስለ Private Audio</string>
+    <string name="settings_about">ስለ Puzru</string>
     <string name="settings_privacy_policy">የግላዊነት ፖሊሲ</string>
-    <string name="settings_privacy_policy_body">Private Audio መለያ ወይም ግባ መግባት አያስፈልገውም እና የማይክሮፎን ፈቃድ አይጠይቅም። የማይክሮፎን ድምጽ አይይዝም ወይም አይመዘግብም፣ እንዲሁም ውይይቶችዎን ወይም የእነሱን የድምጽ ይዘት አይመዘግብም ወይም አያከማችም።\n\nPrivate Audio ለመስመር መምራት እና ለምርመራ የሚያስፈልገውን የAndroid የድምጽ ስርዓት መረጃ ይጠቀማል። የምርመራ ሂደቶች በሕዝባዊ Android APIዎች የሚገለጥ ቴክኒካዊ ሁኔታ እና መታወቂያ ውሂብን ሊመለከቱ ይችላሉ፣ ይህም የመልሶ ማጫወት እና የቀረጻ ክፍለ-ጊዜ መታወቂያ ውሂብን ያካትታል። የቀረጻ ክፍለ-ጊዜ መታወቂያ ውሂብ ቴክኒካዊ የድምጽ ስርዓት መረጃ ነው፤ Private Audio ከእነዚያ ክፍለ-ጊዜዎች ጋር የተያያዘውን የማይክሮፎን ድምጽ አይይዝም። የምርመራ መረጃ የመተግበሪያ እና የAndroid ስሪቶችን፣ የመሣሪያ እና የሞዴል መረጃን፣ የመተግበሪያ ሂደት እና ሁኔታ መረጃን፣ ያሉ እና አሁን በስራ ላይ ያሉ የድምጽ መሣሪያዎችን፣ ሕዝባዊ የመልሶ ማጫወት እና የቀረጻ ውቅረት መታወቂያ ውሂብን፣ እና የመስመር መምራት ሙከራዎችን፣ ውጤቶችን፣ የጊዜ መረጃን እና ቴክኒካዊ ክስተቶችን ሊያካትት ይችላል።\n\nየመተግበሪያ ምርጫዎች በአካባቢያዊ ሁኔታ በPrivate Audio የመተግበሪያ-ግል ማከማቻ ውስጥ ይከማቻሉ። የምርመራ መረጃ በመሣሪያዎ ላይ ይፈጠራል እና ይታከማል፣ እንዲሁም በሚሰራው መተግበሪያ የአካባቢያዊ ሁኔታ ውስጥ ሊኖር ይችላል። ሪፖርቶች በራስ-ሰር አይቀመጡም ወይም አይላኩም። ቋሚ ሪፖርት ከPrivate Audio የመተግበሪያ-ግል ማከማቻ ውጭ የሚፈጠረው እርስዎ በግልጽ ሁኔታ የምርመራ ሪፖርት አስቀምጥ ሲመርጡ እና በAndroid አማካኝነት መድረሻ ሲመርጡ ብቻ ነው። ወደ ውጭ ከተላከ በኋላ፣ የዚያን ቅጂ አያያዝ፣ ማቆያ እና መሰረዝ የሚቆጣጠረው የመረጡት ቦታ ወይም አገልግሎት ነው—Private Audio አይደለም።\n\nየአሁኑ ስሪት የAndroid የኢንተርኔት ፈቃድ አይጠይቅም፣ የPrivate Audio የጀርባ አገልግሎት ወይም የአውታረ መረብ ማስተላለፊያ መንገድ የለውም፣ እንዲሁም የትንታኔ፣ የማስታወቂያ ወይም የብልሽት-ሪፖርት አገልግሎቶች ወይም SDKዎችን አያካትትም። በአሁኑ ጊዜ የምርመራ ሪፖርቶችን ለአበልጻጊው ወይም ለPrivate Audio አገልጋይ አይልክም፣ ስለዚህ Private Audio በአገልጋይ ጎን የምርመራ ማቆያ የለውም።\n\nበመተግበሪያው ባለቤትነት የሚያዙ ውሂቦች ከAndroid የደመና ምትኬ እና ከመሣሪያ-ወደ-መሣሪያ ማስተላለፍ ውጭ ናቸው። የአካባቢያዊ ምርጫዎች እስኪቀየሩ ወይም የመተግበሪያው ውሂብ እስኪወገድ ድረስ በመተግበሪያ-ግል ማከማቻ ውስጥ ይቀራሉ፤ ጊዜያዊ የምርመራ ሁኔታ የተቀመጠ ሪፖርት አይደለም። ወደ ውጭ የተላኩ ሪፖርቶች በእርስዎ በመረጡት ቦታ ወይም አገልግሎት ቁጥጥር ስር ይቆያሉ።</string>
+    <string name="settings_privacy_policy_body">Puzru መለያ ወይም ግባ መግባት አያስፈልገውም እና የማይክሮፎን ፈቃድ አይጠይቅም። የማይክሮፎን ድምጽ አይይዝም ወይም አይመዘግብም፣ እንዲሁም ውይይቶችዎን ወይም የእነሱን የድምጽ ይዘት አይመዘግብም ወይም አያከማችም።\n\nPuzru ለመስመር መምራት እና ለምርመራ የሚያስፈልገውን የAndroid የድምጽ ስርዓት መረጃ ይጠቀማል። የምርመራ ሂደቶች በሕዝባዊ Android APIዎች የሚገለጥ ቴክኒካዊ ሁኔታ እና መታወቂያ ውሂብን ሊመለከቱ ይችላሉ፣ ይህም የመልሶ ማጫወት እና የቀረጻ ክፍለ-ጊዜ መታወቂያ ውሂብን ያካትታል። የቀረጻ ክፍለ-ጊዜ መታወቂያ ውሂብ ቴክኒካዊ የድምጽ ስርዓት መረጃ ነው፤ Puzru ከእነዚያ ክፍለ-ጊዜዎች ጋር የተያያዘውን የማይክሮፎን ድምጽ አይይዝም። የምርመራ መረጃ የመተግበሪያ እና የAndroid ስሪቶችን፣ የመሣሪያ እና የሞዴል መረጃን፣ የመተግበሪያ ሂደት እና ሁኔታ መረጃን፣ ያሉ እና አሁን በስራ ላይ ያሉ የድምጽ መሣሪያዎችን፣ ሕዝባዊ የመልሶ ማጫወት እና የቀረጻ ውቅረት መታወቂያ ውሂብን፣ እና የመስመር መምራት ሙከራዎችን፣ ውጤቶችን፣ የጊዜ መረጃን እና ቴክኒካዊ ክስተቶችን ሊያካትት ይችላል።\n\nየመተግበሪያ ምርጫዎች በአካባቢያዊ ሁኔታ በPuzru የመተግበሪያ-ግል ማከማቻ ውስጥ ይከማቻሉ። የምርመራ መረጃ በመሣሪያዎ ላይ ይፈጠራል እና ይታከማል፣ እንዲሁም በሚሰራው መተግበሪያ የአካባቢያዊ ሁኔታ ውስጥ ሊኖር ይችላል። ሪፖርቶች በራስ-ሰር አይቀመጡም ወይም አይላኩም። ቋሚ ሪፖርት ከPuzru የመተግበሪያ-ግል ማከማቻ ውጭ የሚፈጠረው እርስዎ በግልጽ ሁኔታ የምርመራ ሪፖርት አስቀምጥ ሲመርጡ እና በAndroid አማካኝነት መድረሻ ሲመርጡ ብቻ ነው። ወደ ውጭ ከተላከ በኋላ፣ የዚያን ቅጂ አያያዝ፣ ማቆያ እና መሰረዝ የሚቆጣጠረው የመረጡት ቦታ ወይም አገልግሎት ነው—Puzru አይደለም።\n\nየአሁኑ ስሪት የAndroid የኢንተርኔት ፈቃድ አይጠይቅም፣ የPuzru የጀርባ አገልግሎት ወይም የአውታረ መረብ ማስተላለፊያ መንገድ የለውም፣ እንዲሁም የትንታኔ፣ የማስታወቂያ ወይም የብልሽት-ሪፖርት አገልግሎቶች ወይም SDKዎችን አያካትትም። በአሁኑ ጊዜ የምርመራ ሪፖርቶችን ለአበልጻጊው ወይም ለPuzru አገልጋይ አይልክም፣ ስለዚህ Puzru በአገልጋይ ጎን የምርመራ ማቆያ የለውም።\n\nበመተግበሪያው ባለቤትነት የሚያዙ ውሂቦች ከAndroid የደመና ምትኬ እና ከመሣሪያ-ወደ-መሣሪያ ማስተላለፍ ውጭ ናቸው። የአካባቢያዊ ምርጫዎች እስኪቀየሩ ወይም የመተግበሪያው ውሂብ እስኪወገድ ድረስ በመተግበሪያ-ግል ማከማቻ ውስጥ ይቀራሉ፤ ጊዜያዊ የምርመራ ሁኔታ የተቀመጠ ሪፖርት አይደለም። ወደ ውጭ የተላኩ ሪፖርቶች በእርስዎ በመረጡት ቦታ ወይም አገልግሎት ቁጥጥር ስር ይቆያሉ።</string>
     <string name="settings_version">ሥሪት %1$s</string>
     <string name="settings_language_android_13_required">በመተግበሪያ ውስጥ ቋንቋ ለመምረጥ Android 13 ወይም ከዚያ በኋላ ያለ ሥሪት ያስፈልጋል። ይህ መሣሪያ የስርዓት ቋንቋን ይከተላል።</string>
     <string name="settings_proximity_screen">ስልኩ ወደ ጆሮዎ ሲቀርብ ማያ ገጹን ያጥፉ</string>
-    <string name="settings_about_body">Private Audio የሚደገፍ የድምፅ ኦዲዮን ወደ የስልክዎ አብሮገነብ መስሚያ ለመቀየር ያግዛል።</string>
+    <string name="settings_about_body">Puzru የሚደገፍ የድምፅ ኦዲዮን ወደ የስልክዎ አብሮገነብ መስሚያ ለመቀየር ያግዛል።</string>
     <string name="diagnostic_report_saved">የምርመራ ሪፖርቱ ተቀምጧል።</string>
     <string name="diagnostic_report_save_failed">የምርመራ ሪፖርቱን ማስቀመጥ አልተቻለም።</string>
 
@@ -34,7 +34,7 @@
     <string name="diagnostics_system_check">የስርዓት ፍተሻ</string>
     <string name="diagnostics_earpiece">የስልኩ አብሮገነብ መስሚያ</string>
     <string name="diagnostics_proximity_sensor">የቅርበት ዳሳሽ</string>
-    <string name="diagnostics_private_audio">Private Audio</string>
+    <string name="diagnostics_private_audio">Puzru</string>
     <string name="diagnostics_routing">የድምፅ መውጫ ማዘዋወር</string>
     <string name="diagnostics_status">ሁኔታ</string>
     <string name="diagnostics_audio_route">የድምፅ መውጫ</string>
@@ -59,8 +59,8 @@
     <string name="diagnostics_route_other">ሌላ</string>
     <string name="diagnostics_error_blocked_by_system">ስርዓቱ የድምፅ መውጫው እንዳይዘዋወር ከልክሏል።</string>
     <string name="diagnostics_error_session_ended">የድምፅ ክፍለ ጊዜው የድምፅ መውጫው መዘዋወሩ ከመጠናቀቁ በፊት አብቅቷል።</string>
-    <string name="diagnostics_error_audio_start">Private Audio የድምፅ መውጫ ማዘዋወርን መጀመር አልቻለም።</string>
-    <string name="diagnostics_error_audio_preparation">Private Audio የግንኙነት ድምፅን ማዘጋጀት አልቻለም።</string>
+    <string name="diagnostics_error_audio_start">Puzru የድምፅ መውጫ ማዘዋወርን መጀመር አልቻለም።</string>
+    <string name="diagnostics_error_audio_preparation">Puzru የግንኙነት ድምፅን ማዘጋጀት አልቻለም።</string>
     <string name="diagnostics_error_request_rejected">ድምፁን ወደ ስልኩ አብሮገነብ መስሚያ ለማዘዋወር የቀረበው ጥያቄ ተቀባይነት አላገኘም።</string>
     <string name="diagnostics_error_not_completed">የድምፅ መውጫ ማዘዋወሩ ሊጠናቀቅ አልቻለም።</string>
 </resources>

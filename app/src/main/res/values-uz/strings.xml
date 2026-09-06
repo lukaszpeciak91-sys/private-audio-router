@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Private Audio</string>
-    <string name="routing_notification_channel">Private Audio</string>
-    <string name="routing_notification_title">Private Audio yoniq</string>
+    <string name="app_name">Puzru</string>
+    <string name="routing_notification_channel">Puzru</string>
+    <string name="routing_notification_title">Puzru yoniq</string>
     <string name="routing_notification_text">Audio chiqishini almashtirish kutilmoqda</string>
 
-    <string name="product_title">Private Audio</string>
+    <string name="product_title">Puzru</string>
     <string name="product_subtitle">AI bilan xuddi telefon qo‘ng‘irog‘idek, boshqalarga eshittirmay gaplashing.</string>
 
     <string name="state_ready">Tayyor</string>
@@ -18,15 +18,15 @@
     <string name="settings">Sozlamalar</string>
     <string name="close">Yopish</string>
 
-    <string name="overlay_controller_description">Private Audio suzuvchi boshqaruv paneli. Holat: %1$s. Yoqish/o‘chirish, kengaytirish va yopish boshqaruvlari.</string>
+    <string name="overlay_controller_description">Puzru suzuvchi boshqaruv paneli. Holat: %1$s. Yoqish/o‘chirish, kengaytirish va yopish boshqaruvlari.</string>
 
     <string name="settings_language">Til</string>
     <string name="settings_system_default">Birlamchi</string>
     <string name="settings_save_diagnostic">Diagnostika hisobotini saqlash</string>
     <string name="settings_advanced">Kengaytirilgan sozlamalar</string>
-    <string name="settings_about">Private Audio haqida</string>
+    <string name="settings_about">Puzru haqida</string>
     <string name="settings_privacy_policy">Maxfiylik siyosati</string>
-    <string name="settings_privacy_policy_body">Private Audio hisob yoki tizimga kirishni talab qilmaydi va mikrofon ruxsatini so‘ramaydi. U mikrofon audiosini tutmaydi yoki yozib olmaydi, suhbatlaringizni yoxud ularning audio kontentini yozib olmaydi yoki saqlamaydi.\n\nPrivate Audio yo‘naltirish va diagnostika uchun zarur Android audio tizimi ma’lumotlaridan foydalanadi. Diagnostika ochiq Android APIlari taqdim etgan texnik holat va metama’lumotlarni, jumladan ijro va yozib olish seansi metama’lumotlarini tekshirishi mumkin. Yozib olish seansi metama’lumotlari audio tizimining texnik ma’lumotidir; Private Audio shu seanslarga aloqador mikrofon audiosini tutmaydi. Diagnostika ma’lumotlariga ilova va Android versiyalari, qurilma va model ma’lumotlari, ilova jarayoni va holati, mavjud va joriy audio qurilmalar, ochiq ijro va yozib olish konfiguratsiyasi metama’lumotlari, shuningdek yo‘naltirish urinishlari, natijalari, vaqti va texnik hodisalari kirishi mumkin.\n\nIlova sozlamalari Private Audio ilovasining shaxsiy xotirasida mahalliy saqlanadi. Diagnostika ma’lumoti qurilmangizda yaratiladi va qayta ishlanadi hamda ishlayotgan ilovaning mahalliy holatida mavjud bo‘lishi mumkin. Hisobotlar avtomatik saqlanmaydi yoki yuborilmaydi. Doimiy hisobot faqat Diagnostika hisobotini saqlash bandini aniq tanlab, Android orqali manzilni tanlaganingizda Private Audio ilovasining shaxsiy xotirasidan tashqarida yaratiladi. Eksportdan keyin ushbu nusxaning ishlatilishi, saqlanishi va o‘chirilishini Private Audio emas, tanlangan joy yoki xizmat boshqaradi.\n\nJoriy versiya Android Internet ruxsatini so‘ramaydi, Private Audio server qismiga yoki tarmoq orqali uzatish yo‘liga ega emas va analitika, reklama yoki nosozlik hisobotlari xizmatlari yoxud SDKlarini o‘z ichiga olmaydi. Hozirda u diagnostika hisobotlarini dasturchiga yoki Private Audio serveriga yubormaydi, shu sababli Private Audio server tomonida diagnostika ma’lumotlarini saqlamaydi.\n\nIlovaga tegishli ma’lumotlar Android bulutli zaxira nusxasi va qurilmalar o‘rtasidagi ko‘chirishdan chiqarilgan. Mahalliy sozlamalar o‘zgartirilguncha yoki ilova ma’lumotlari o‘chirilguncha ilovaning shaxsiy xotirasida qoladi; vaqtinchalik diagnostika holati saqlangan hisobot emas. Eksport qilingan hisobotlar siz tanlagan joy yoki xizmat nazoratida qoladi.</string>
+    <string name="settings_privacy_policy_body">Puzru hisob yoki tizimga kirishni talab qilmaydi va mikrofon ruxsatini so‘ramaydi. U mikrofon audiosini tutmaydi yoki yozib olmaydi, suhbatlaringizni yoxud ularning audio kontentini yozib olmaydi yoki saqlamaydi.\n\nPuzru yo‘naltirish va diagnostika uchun zarur Android audio tizimi ma’lumotlaridan foydalanadi. Diagnostika ochiq Android APIlari taqdim etgan texnik holat va metama’lumotlarni, jumladan ijro va yozib olish seansi metama’lumotlarini tekshirishi mumkin. Yozib olish seansi metama’lumotlari audio tizimining texnik ma’lumotidir; Puzru shu seanslarga aloqador mikrofon audiosini tutmaydi. Diagnostika ma’lumotlariga ilova va Android versiyalari, qurilma va model ma’lumotlari, ilova jarayoni va holati, mavjud va joriy audio qurilmalar, ochiq ijro va yozib olish konfiguratsiyasi metama’lumotlari, shuningdek yo‘naltirish urinishlari, natijalari, vaqti va texnik hodisalari kirishi mumkin.\n\nIlova sozlamalari Puzru ilovasining shaxsiy xotirasida mahalliy saqlanadi. Diagnostika ma’lumoti qurilmangizda yaratiladi va qayta ishlanadi hamda ishlayotgan ilovaning mahalliy holatida mavjud bo‘lishi mumkin. Hisobotlar avtomatik saqlanmaydi yoki yuborilmaydi. Doimiy hisobot faqat Diagnostika hisobotini saqlash bandini aniq tanlab, Android orqali manzilni tanlaganingizda Puzru ilovasining shaxsiy xotirasidan tashqarida yaratiladi. Eksportdan keyin ushbu nusxaning ishlatilishi, saqlanishi va o‘chirilishini Puzru emas, tanlangan joy yoki xizmat boshqaradi.\n\nJoriy versiya Android Internet ruxsatini so‘ramaydi, Puzru server qismiga yoki tarmoq orqali uzatish yo‘liga ega emas va analitika, reklama yoki nosozlik hisobotlari xizmatlari yoxud SDKlarini o‘z ichiga olmaydi. Hozirda u diagnostika hisobotlarini dasturchiga yoki Puzru serveriga yubormaydi, shu sababli Puzru server tomonida diagnostika ma’lumotlarini saqlamaydi.\n\nIlovaga tegishli ma’lumotlar Android bulutli zaxira nusxasi va qurilmalar o‘rtasidagi ko‘chirishdan chiqarilgan. Mahalliy sozlamalar o‘zgartirilguncha yoki ilova ma’lumotlari o‘chirilguncha ilovaning shaxsiy xotirasida qoladi; vaqtinchalik diagnostika holati saqlangan hisobot emas. Eksport qilingan hisobotlar siz tanlagan joy yoki xizmat nazoratida qoladi.</string>
     <string name="settings_version">Versiya %1$s</string>
 
 
@@ -35,7 +35,7 @@
     <string name="settings_proximity_screen">Telefon qulog‘ingizga yaqinlashganda ekranni o‘chirish</string>
 
 
-    <string name="settings_about_body">Private Audio qo‘llab-quvvatlanadigan nutq audiosini telefoningizning ichki quloq karnaychasiga o‘tkazishga yordam beradi.</string>
+    <string name="settings_about_body">Puzru qo‘llab-quvvatlanadigan nutq audiosini telefoningizning ichki quloq karnaychasiga o‘tkazishga yordam beradi.</string>
 
     <string name="diagnostic_report_saved">Diagnostika hisoboti saqlandi.</string>
     <string name="diagnostic_report_save_failed">Diagnostika hisobotini saqlab bo‘lmadi.</string>
@@ -45,7 +45,7 @@
     <string name="diagnostics_system_check">TIZIM TEKSHIRUVI</string>
     <string name="diagnostics_earpiece">Quloq karnaychasi</string>
     <string name="diagnostics_proximity_sensor">Yaqinlik sensori</string>
-    <string name="diagnostics_private_audio">Private Audio</string>
+    <string name="diagnostics_private_audio">Puzru</string>
     <string name="diagnostics_routing">Yo‘naltirish</string>
     <string name="diagnostics_status">Holat</string>
     <string name="diagnostics_audio_route">Audio chiqishi</string>
@@ -70,8 +70,8 @@
     <string name="diagnostics_route_other">Boshqa</string>
     <string name="diagnostics_error_blocked_by_system">Tizim audio yo‘naltirilishini blokladi.</string>
     <string name="diagnostics_error_session_ended">Audio seansi yo‘naltirish yakunlanishidan oldin tugadi.</string>
-    <string name="diagnostics_error_audio_start">Private Audio audio yo‘naltirishni boshlay olmadi.</string>
-    <string name="diagnostics_error_audio_preparation">Private Audio aloqa audiosini tayyorlay olmadi.</string>
+    <string name="diagnostics_error_audio_start">Puzru audio yo‘naltirishni boshlay olmadi.</string>
+    <string name="diagnostics_error_audio_preparation">Puzru aloqa audiosini tayyorlay olmadi.</string>
     <string name="diagnostics_error_request_rejected">Quloq karnaychasiga yo‘naltirish so‘rovi qabul qilinmadi.</string>
     <string name="diagnostics_error_not_completed">Audio yo‘naltirishni yakunlab bo‘lmadi.</string>
 </resources>

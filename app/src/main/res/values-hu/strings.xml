@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Private Audio</string>
-    <string name="routing_notification_channel">Private Audio</string>
-    <string name="routing_notification_title">A Private Audio be van kapcsolva</string>
+    <string name="app_name">Puzru</string>
+    <string name="routing_notification_channel">Puzru</string>
+    <string name="routing_notification_title">A Puzru be van kapcsolva</string>
     <string name="routing_notification_text">Várakozás a hang átirányítására</string>
-    <string name="product_title">Private Audio</string>
+    <string name="product_title">Puzru</string>
     <string name="product_subtitle">Beszélgess privát módon az AI-jal, akár egy telefonhívásban.</string>
     <string name="state_ready">Kész</string>
     <string name="state_waiting">Várakozik</string>
@@ -14,18 +14,18 @@
     <string name="floating">Mini</string>
     <string name="settings">Beállítások</string>
     <string name="close">Bezárás</string>
-    <string name="overlay_controller_description">A Private Audio lebegő vezérlője. Állapot: %1$s. A bekapcsolás, a kibontás és a bezárás vezérlői.</string>
+    <string name="overlay_controller_description">A Puzru lebegő vezérlője. Állapot: %1$s. A bekapcsolás, a kibontás és a bezárás vezérlői.</string>
     <string name="settings_language">Nyelv</string>
     <string name="settings_system_default">Alapértelmezett</string>
     <string name="settings_save_diagnostic">Diagnosztikai jelentés mentése</string>
     <string name="settings_advanced">Speciális</string>
-    <string name="settings_about">A Private Audio névjegye</string>
+    <string name="settings_about">A Puzru névjegye</string>
     <string name="settings_privacy_policy">Adatvédelmi irányelvek</string>
-    <string name="settings_privacy_policy_body">A Private Audio használatához nincs szükség fiókra vagy bejelentkezésre, és az alkalmazás nem kér mikrofonengedélyt. Nem rögzíti vagy veszi fel a mikrofon hangját, és nem veszi fel vagy tárolja az Ön beszélgetéseit, illetve azok hangtartalmát.\n\nA Private Audio az Android hangrendszerének a hangirányításhoz és a diagnosztikához szükséges információit használja. A diagnosztika megvizsgálhatja a nyilvános Android API-k által elérhetővé tett műszaki állapotot és metaadatokat, beleértve a lejátszási és felvételi munkamenetek metaadatait. A felvételi munkamenetek metaadatai a hangrendszer műszaki információi; a Private Audio nem rögzíti az ezekhez a munkamenetekhez kapcsolódó mikrofonhangot. A diagnosztikai információk tartalmazhatják az alkalmazás és az Android verzióját, az eszköz és a modell adatait, az alkalmazás folyamatának és állapotának adatait, az elérhető és aktuális hangeszközöket, a lejátszás és felvétel nyilvános konfigurációs metaadatait, valamint a hangirányítási kísérleteket, azok eredményeit, időzítését és műszaki eseményeit.\n\nAz alkalmazás beállításai helyben, a Private Audio alkalmazás saját tárhelyén tárolódnak. A diagnosztikai információk az Ön eszközén jönnek létre és ott kerülnek feldolgozásra, és a futó alkalmazás helyi állapotában is jelen lehetnek. A jelentéseket az alkalmazás nem menti és nem küldi el automatikusan. Tartós jelentés csak akkor jön létre a Private Audio alkalmazás saját tárhelyén kívül, ha Ön kifejezetten a Diagnosztikai jelentés mentése lehetőséget választja, majd az Androidon keresztül kiválaszt egy célhelyet. Az exportálás után a kiválasztott hely vagy szolgáltatás – nem a Private Audio – szabályozza a másolat kezelését, megőrzését és törlését.\n\nA jelenlegi verzió nem kér Android-internetengedélyt, nincs Private Audio háttérrendszere vagy hálózati átviteli útvonala, és nem tartalmaz elemzési, hirdetési vagy összeomlás-jelentési szolgáltatásokat vagy SDK-kat. Jelenleg nem küld diagnosztikai jelentéseket a fejlesztőnek vagy Private Audio-szervernek, ezért a Private Audio semmilyen szerveren nem őriz diagnosztikai információkat.\n\nAz alkalmazás saját adatai ki vannak zárva az Android felhőalapú biztonsági mentéséből és az eszközök közötti átvitelből. A helyi beállítások az alkalmazás saját tárhelyén maradnak, amíg meg nem változtatják őket vagy el nem távolítják az alkalmazás adatait; az átmeneti diagnosztikai állapot nem mentett jelentés. Az exportált jelentések a kiválasztott hely vagy szolgáltatás felügyelete alatt maradnak.</string>
+    <string name="settings_privacy_policy_body">A Puzru használatához nincs szükség fiókra vagy bejelentkezésre, és az alkalmazás nem kér mikrofonengedélyt. Nem rögzíti vagy veszi fel a mikrofon hangját, és nem veszi fel vagy tárolja az Ön beszélgetéseit, illetve azok hangtartalmát.\n\nA Puzru az Android hangrendszerének a hangirányításhoz és a diagnosztikához szükséges információit használja. A diagnosztika megvizsgálhatja a nyilvános Android API-k által elérhetővé tett műszaki állapotot és metaadatokat, beleértve a lejátszási és felvételi munkamenetek metaadatait. A felvételi munkamenetek metaadatai a hangrendszer műszaki információi; a Puzru nem rögzíti az ezekhez a munkamenetekhez kapcsolódó mikrofonhangot. A diagnosztikai információk tartalmazhatják az alkalmazás és az Android verzióját, az eszköz és a modell adatait, az alkalmazás folyamatának és állapotának adatait, az elérhető és aktuális hangeszközöket, a lejátszás és felvétel nyilvános konfigurációs metaadatait, valamint a hangirányítási kísérleteket, azok eredményeit, időzítését és műszaki eseményeit.\n\nAz alkalmazás beállításai helyben, a Puzru alkalmazás saját tárhelyén tárolódnak. A diagnosztikai információk az Ön eszközén jönnek létre és ott kerülnek feldolgozásra, és a futó alkalmazás helyi állapotában is jelen lehetnek. A jelentéseket az alkalmazás nem menti és nem küldi el automatikusan. Tartós jelentés csak akkor jön létre a Puzru alkalmazás saját tárhelyén kívül, ha Ön kifejezetten a Diagnosztikai jelentés mentése lehetőséget választja, majd az Androidon keresztül kiválaszt egy célhelyet. Az exportálás után a kiválasztott hely vagy szolgáltatás – nem a Puzru – szabályozza a másolat kezelését, megőrzését és törlését.\n\nA jelenlegi verzió nem kér Android-internetengedélyt, nincs Puzru háttérrendszere vagy hálózati átviteli útvonala, és nem tartalmaz elemzési, hirdetési vagy összeomlás-jelentési szolgáltatásokat vagy SDK-kat. Jelenleg nem küld diagnosztikai jelentéseket a fejlesztőnek vagy Puzru-szervernek, ezért a Puzru semmilyen szerveren nem őriz diagnosztikai információkat.\n\nAz alkalmazás saját adatai ki vannak zárva az Android felhőalapú biztonsági mentéséből és az eszközök közötti átvitelből. A helyi beállítások az alkalmazás saját tárhelyén maradnak, amíg meg nem változtatják őket vagy el nem távolítják az alkalmazás adatait; az átmeneti diagnosztikai állapot nem mentett jelentés. Az exportált jelentések a kiválasztott hely vagy szolgáltatás felügyelete alatt maradnak.</string>
     <string name="settings_version">%1$s verzió</string>
     <string name="settings_language_android_13_required">Az alkalmazáson belüli nyelvválasztáshoz Android 13 vagy újabb verzió szükséges. Ez az eszköz a rendszer nyelvét követi.</string>
     <string name="settings_proximity_screen">A képernyő kikapcsolása a fül közelében</string>
-    <string name="settings_about_body">A Private Audio segít a támogatott beszédhangot a telefon beépített fülhallgatójára átirányítani.</string>
+    <string name="settings_about_body">A Puzru segít a támogatott beszédhangot a telefon beépített fülhallgatójára átirányítani.</string>
     <string name="diagnostic_report_saved">A diagnosztikai jelentés mentve.</string>
     <string name="diagnostic_report_save_failed">Nem sikerült menteni a diagnosztikai jelentést.</string>
 
@@ -34,7 +34,7 @@
     <string name="diagnostics_system_check">RENDSZERELLENŐRZÉS</string>
     <string name="diagnostics_earpiece">Beépített fülhallgató</string>
     <string name="diagnostics_proximity_sensor">Közelségérzékelő</string>
-    <string name="diagnostics_private_audio">PRIVATE AUDIO</string>
+    <string name="diagnostics_private_audio">PUZRU</string>
     <string name="diagnostics_routing">Átirányítás</string>
     <string name="diagnostics_status">Állapot</string>
     <string name="diagnostics_audio_route">Hangkimenet</string>
@@ -59,8 +59,8 @@
     <string name="diagnostics_route_other">Egyéb</string>
     <string name="diagnostics_error_blocked_by_system">A rendszer letiltotta a hang átirányítását.</string>
     <string name="diagnostics_error_session_ended">A hangmunkamenet az átirányítás befejezése előtt véget ért.</string>
-    <string name="diagnostics_error_audio_start">A Private Audio nem tudta elindítani a hang átirányítását.</string>
-    <string name="diagnostics_error_audio_preparation">A Private Audio nem tudta előkészíteni a kommunikációs hangot.</string>
+    <string name="diagnostics_error_audio_start">A Puzru nem tudta elindítani a hang átirányítását.</string>
+    <string name="diagnostics_error_audio_preparation">A Puzru nem tudta előkészíteni a kommunikációs hangot.</string>
     <string name="diagnostics_error_request_rejected">A rendszer nem fogadta el a beépített fülhallgatóra való átirányítási kérelmet.</string>
     <string name="diagnostics_error_not_completed">A hang átirányítását nem sikerült befejezni.</string>
 </resources>

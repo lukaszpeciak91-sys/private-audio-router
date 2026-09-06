@@ -54,8 +54,8 @@ class CebuanoLocalizationContractTest {
 
     @Test
     fun productStatesAndAudioConceptsRemainDistinct() {
-        assertEquals("Private Audio", resourceValue("app_name"))
-        assertEquals("Private Audio", resourceValue("product_title"))
+        assertEquals("Puzru", resourceValue("app_name"))
+        assertEquals("Puzru", resourceValue("product_title"))
         assertEquals("Mini", resourceValue("floating"))
 
         val states = listOf("state_ready", "state_waiting", "state_active", "state_error")
@@ -93,14 +93,14 @@ class CebuanoLocalizationContractTest {
             "Dili kini mokuha o morekord og microphone audio", "ni morekord o motipig sa inyong mga panag-istorya o sa ilang audio content",
             "recording-session metadata mao ang teknikal nga impormasyon sa audio system", "dili mokuha sa microphone audio nga may kalabutan sa maong mga session",
             "gihimo ug giproseso sa inyong device", "mga report dili awtomatikong masave o mapadala", "lamang kung klaro ninyong pilion ang I-save ang diagnostic report",
-            "kasamtangang bersyon wala mangayo sa Internet permission sa Android", "walay backend o network transmission path ang Private Audio",
-            "wala naglakip og analytics, advertising, o crash-reporting nga mga serbisyo o SDKs", "dili kini nagpadala og diagnostic reports ngadto sa developer o sa usa ka Private Audio server",
+            "kasamtangang bersyon wala mangayo sa Internet permission sa Android", "walay backend o network transmission path ang Puzru",
+            "wala naglakip og analytics, advertising, o crash-reporting nga mga serbisyo o SDKs", "dili kini nagpadala og diagnostic reports ngadto sa developer o sa usa ka Puzru server",
             "dili apil sa Android cloud backup ug device-to-device transfer",
         ).forEach { guard -> assertTrue("Missing privacy guard: $guard", privacy.contains(guard)) }
 
         val rejected = resourceValue("diagnostics_error_request_rejected")
         assertTrue(rejected.startsWith("Wala dawata ang hangyo"))
-        listOf("Android", "system", "telepono", "Private Audio").forEach { actor ->
+        listOf("Android", "system", "telepono", "Puzru").forEach { actor ->
             assertFalse("Rejected request invented actor: $actor", rejected.contains(actor, ignoreCase = true))
         }
         assertTrue(resourceValue("diagnostics_error_blocked_by_system").contains("system"))

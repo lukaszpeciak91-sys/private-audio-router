@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Private Audio</string>
-    <string name="routing_notification_channel">Private Audio</string>
-    <string name="routing_notification_title">Private Audio diaktifkan</string>
+    <string name="app_name">Puzru</string>
+    <string name="routing_notification_channel">Puzru</string>
+    <string name="routing_notification_title">Puzru diaktifkan</string>
     <string name="routing_notification_text">Menunggu pengalihan audio</string>
-    <string name="product_title">Private Audio</string>
+    <string name="product_title">Puzru</string>
     <string name="product_subtitle">Bicara dengan AI secara pribadi, seperti saat menelepon.</string>
     <string name="state_ready">Siap</string>
     <string name="state_waiting">Menunggu</string>
@@ -14,18 +14,18 @@
     <string name="floating">Mini</string>
     <string name="settings">Setelan</string>
     <string name="close">Tutup</string>
-    <string name="overlay_controller_description">Pengontrol mengambang Private Audio. Status: %1$s. Kontrol untuk mengaktifkan, memperluas, dan menutup.</string>
+    <string name="overlay_controller_description">Pengontrol mengambang Puzru. Status: %1$s. Kontrol untuk mengaktifkan, memperluas, dan menutup.</string>
     <string name="settings_language">Bahasa</string>
     <string name="settings_system_default">Default</string>
     <string name="settings_save_diagnostic">Simpan laporan diagnostik</string>
     <string name="settings_advanced">Lanjutan</string>
-    <string name="settings_about">Tentang Private Audio</string>
+    <string name="settings_about">Tentang Puzru</string>
     <string name="settings_privacy_policy">Kebijakan Privasi</string>
-    <string name="settings_privacy_policy_body">Private Audio tidak memerlukan akun atau proses masuk dan tidak meminta izin mikrofon. Aplikasi tidak menangkap atau merekam audio mikrofon, serta tidak merekam atau menyimpan percakapan maupun konten audio percakapan Anda.\n\nPrivate Audio menggunakan informasi sistem audio Android yang diperlukan untuk perutean dan diagnostik. Diagnostik dapat memeriksa status teknis dan metadata yang diekspos oleh API Android publik, termasuk metadata pemutaran dan sesi perekaman. Metadata sesi perekaman adalah informasi teknis sistem audio; Private Audio tidak menangkap audio mikrofon yang terkait dengan sesi tersebut. Informasi diagnostik dapat mencakup versi aplikasi dan Android, informasi perangkat dan model, informasi proses dan status aplikasi, perangkat audio yang tersedia dan sedang digunakan, metadata konfigurasi pemutaran dan perekaman publik, serta upaya perutean, hasil, waktu, dan peristiwa teknisnya.\n\nPreferensi aplikasi disimpan secara lokal di penyimpanan privat aplikasi Private Audio. Informasi diagnostik dibuat dan diproses di perangkat Anda dan dapat berada dalam status lokal aplikasi yang sedang berjalan. Laporan tidak disimpan atau dikirim secara otomatis. Laporan persisten dibuat di luar penyimpanan privat aplikasi Private Audio hanya saat Anda secara eksplisit memilih Simpan laporan diagnostik dan memilih tujuan melalui Android. Setelah diekspor, lokasi atau layanan yang dipilih, bukan Private Audio, mengendalikan penanganan, penyimpanan, dan penghapusan salinan tersebut.\n\nVersi saat ini tidak meminta izin Internet Android, tidak memiliki backend Private Audio atau jalur transmisi jaringan, dan tidak menyertakan layanan atau SDK analitik, iklan, atau pelaporan error. Saat ini aplikasi tidak mengirim laporan diagnostik kepada pengembang atau server Private Audio, sehingga Private Audio tidak menyimpan informasi diagnostik di server mana pun.\n\nData milik aplikasi dikecualikan dari pencadangan cloud Android dan transfer antarperangkat. Preferensi lokal tetap berada di penyimpanan privat aplikasi hingga diubah atau data aplikasi dihapus; status diagnostik sementara bukanlah laporan tersimpan. Laporan yang diekspor tetap berada di bawah kendali lokasi atau layanan yang Anda pilih.</string>
+    <string name="settings_privacy_policy_body">Puzru tidak memerlukan akun atau proses masuk dan tidak meminta izin mikrofon. Aplikasi tidak menangkap atau merekam audio mikrofon, serta tidak merekam atau menyimpan percakapan maupun konten audio percakapan Anda.\n\nPuzru menggunakan informasi sistem audio Android yang diperlukan untuk perutean dan diagnostik. Diagnostik dapat memeriksa status teknis dan metadata yang diekspos oleh API Android publik, termasuk metadata pemutaran dan sesi perekaman. Metadata sesi perekaman adalah informasi teknis sistem audio; Puzru tidak menangkap audio mikrofon yang terkait dengan sesi tersebut. Informasi diagnostik dapat mencakup versi aplikasi dan Android, informasi perangkat dan model, informasi proses dan status aplikasi, perangkat audio yang tersedia dan sedang digunakan, metadata konfigurasi pemutaran dan perekaman publik, serta upaya perutean, hasil, waktu, dan peristiwa teknisnya.\n\nPreferensi aplikasi disimpan secara lokal di penyimpanan privat aplikasi Puzru. Informasi diagnostik dibuat dan diproses di perangkat Anda dan dapat berada dalam status lokal aplikasi yang sedang berjalan. Laporan tidak disimpan atau dikirim secara otomatis. Laporan persisten dibuat di luar penyimpanan privat aplikasi Puzru hanya saat Anda secara eksplisit memilih Simpan laporan diagnostik dan memilih tujuan melalui Android. Setelah diekspor, lokasi atau layanan yang dipilih, bukan Puzru, mengendalikan penanganan, penyimpanan, dan penghapusan salinan tersebut.\n\nVersi saat ini tidak meminta izin Internet Android, tidak memiliki backend Puzru atau jalur transmisi jaringan, dan tidak menyertakan layanan atau SDK analitik, iklan, atau pelaporan error. Saat ini aplikasi tidak mengirim laporan diagnostik kepada pengembang atau server Puzru, sehingga Puzru tidak menyimpan informasi diagnostik di server mana pun.\n\nData milik aplikasi dikecualikan dari pencadangan cloud Android dan transfer antarperangkat. Preferensi lokal tetap berada di penyimpanan privat aplikasi hingga diubah atau data aplikasi dihapus; status diagnostik sementara bukanlah laporan tersimpan. Laporan yang diekspor tetap berada di bawah kendali lokasi atau layanan yang Anda pilih.</string>
     <string name="settings_version">Versi %1$s</string>
     <string name="settings_language_android_13_required">Pemilihan bahasa dalam aplikasi memerlukan Android 13 atau yang lebih baru. Perangkat ini mengikuti bahasa sistem.</string>
     <string name="settings_proximity_screen">Matikan layar saat dekat telinga</string>
-    <string name="settings_about_body">Private Audio membantu mengalihkan audio suara ke earpiece bawaan ponsel.</string>
+    <string name="settings_about_body">Puzru membantu mengalihkan audio suara ke earpiece bawaan ponsel.</string>
     <string name="diagnostic_report_saved">Laporan diagnostik disimpan.</string>
     <string name="diagnostic_report_save_failed">Laporan diagnostik tidak dapat disimpan.</string>
 
@@ -34,7 +34,7 @@
     <string name="diagnostics_system_check">PEMERIKSAAN SISTEM</string>
     <string name="diagnostics_earpiece">Earpiece</string>
     <string name="diagnostics_proximity_sensor">Sensor kedekatan</string>
-    <string name="diagnostics_private_audio">PRIVATE AUDIO</string>
+    <string name="diagnostics_private_audio">PUZRU</string>
     <string name="diagnostics_routing">Pengalihan audio</string>
     <string name="diagnostics_status">Status</string>
     <string name="diagnostics_audio_route">Output audio</string>
@@ -59,8 +59,8 @@
     <string name="diagnostics_route_other">Lainnya</string>
     <string name="diagnostics_error_blocked_by_system">Pengalihan audio diblokir oleh sistem.</string>
     <string name="diagnostics_error_session_ended">Sesi audio berakhir sebelum pengalihan selesai.</string>
-    <string name="diagnostics_error_audio_start">Private Audio tidak dapat memulai pengalihan audio.</string>
-    <string name="diagnostics_error_audio_preparation">Private Audio tidak dapat menyiapkan audio komunikasi.</string>
+    <string name="diagnostics_error_audio_start">Puzru tidak dapat memulai pengalihan audio.</string>
+    <string name="diagnostics_error_audio_preparation">Puzru tidak dapat menyiapkan audio komunikasi.</string>
     <string name="diagnostics_error_request_rejected">Permintaan pengalihan ke earpiece bawaan ponsel tidak diterima.</string>
     <string name="diagnostics_error_not_completed">Pengalihan audio tidak dapat diselesaikan.</string>
 </resources>

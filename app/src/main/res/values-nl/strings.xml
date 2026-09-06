@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Private Audio</string>
-    <string name="routing_notification_channel">Private Audio</string>
-    <string name="routing_notification_title">Private Audio staat aan</string>
+    <string name="app_name">Puzru</string>
+    <string name="routing_notification_channel">Puzru</string>
+    <string name="routing_notification_title">Puzru staat aan</string>
     <string name="routing_notification_text">Wachten om audio om te schakelen</string>
-    <string name="product_title">Private Audio</string>
+    <string name="product_title">Puzru</string>
     <string name="product_subtitle">Praat privé met AI, net als tijdens een telefoongesprek.</string>
     <string name="state_ready">Gereed</string>
     <string name="state_waiting">Wachten</string>
@@ -14,18 +14,18 @@
     <string name="floating">Mini</string>
     <string name="settings">Instellingen</string>
     <string name="close">Sluiten</string>
-    <string name="overlay_controller_description">Zwevende bediening van Private Audio. Status: %1$s. Knoppen voor in-/uitschakelen, uitvouwen en sluiten.</string>
+    <string name="overlay_controller_description">Zwevende bediening van Puzru. Status: %1$s. Knoppen voor in-/uitschakelen, uitvouwen en sluiten.</string>
     <string name="settings_language">Taal</string>
     <string name="settings_system_default">Standaard</string>
     <string name="settings_save_diagnostic">Diagnostisch rapport opslaan</string>
     <string name="settings_advanced">Geavanceerd</string>
-    <string name="settings_about">Over Private Audio</string>
+    <string name="settings_about">Over Puzru</string>
     <string name="settings_privacy_policy">Privacybeleid</string>
-    <string name="settings_privacy_policy_body">Private Audio vereist geen account of aanmelding en vraagt niet om microfoontoestemming. De app legt geen microfoonaudio vast of neemt deze op en neemt je gesprekken of de audio-inhoud ervan niet op en slaat deze niet op.\n\nPrivate Audio gebruikt informatie van het Android-audiosysteem die nodig is voor audioroutering en diagnostiek. Diagnostiek kan technische status en metagegevens onderzoeken die via openbare Android-API’s beschikbaar zijn, waaronder metagegevens van afspeel- en opnamesessies. Metagegevens van opnamesessies zijn technische informatie van het audiosysteem; Private Audio legt de microfoonaudio die bij deze sessies hoort niet vast. Diagnostische informatie kan app- en Android-versies, informatie over apparaat en model, informatie over het appproces en de appstatus, beschikbare en huidige audioapparaten, openbare configuratiemetagegevens voor afspelen en opnemen, en routeringspogingen, resultaten, timing en technische gebeurtenissen bevatten.\n\nAppvoorkeuren worden lokaal opgeslagen in de app-privéopslag van Private Audio. Diagnostische informatie wordt op je apparaat gegenereerd en verwerkt en kan aanwezig zijn in de lokale status van de actieve app. Rapporten worden niet automatisch opgeslagen of verzonden. Alleen wanneer je uitdrukkelijk Diagnostisch rapport opslaan kiest en via Android een bestemming selecteert, wordt buiten de app-privéopslag van Private Audio een permanent rapport gemaakt. Na het exporteren bepaalt de geselecteerde locatie of dienst — niet Private Audio — hoe die kopie wordt verwerkt, bewaard en verwijderd.\n\nDe huidige versie vraagt niet om Androids internettoestemming, heeft geen Private Audio-backend of pad voor netwerkoverdracht en bevat geen diensten of SDK’s voor analyse, advertenties of crashrapportage. De app verzendt momenteel geen diagnostische rapporten naar de ontwikkelaar of een Private Audio-server, waardoor Private Audio geen diagnostische gegevens op een server bewaart.\n\nGegevens die eigendom zijn van de app zijn uitgesloten van Android-cloudback-ups en overdracht van apparaat naar apparaat. Lokale voorkeuren blijven in de app-privéopslag totdat ze worden gewijzigd of de appgegevens worden verwijderd; tijdelijke diagnostische status is geen opgeslagen rapport. Geëxporteerde rapporten blijven onder beheer van de locatie of dienst die je hebt geselecteerd.</string>
+    <string name="settings_privacy_policy_body">Puzru vereist geen account of aanmelding en vraagt niet om microfoontoestemming. De app legt geen microfoonaudio vast of neemt deze op en neemt je gesprekken of de audio-inhoud ervan niet op en slaat deze niet op.\n\nPuzru gebruikt informatie van het Android-audiosysteem die nodig is voor audioroutering en diagnostiek. Diagnostiek kan technische status en metagegevens onderzoeken die via openbare Android-API’s beschikbaar zijn, waaronder metagegevens van afspeel- en opnamesessies. Metagegevens van opnamesessies zijn technische informatie van het audiosysteem; Puzru legt de microfoonaudio die bij deze sessies hoort niet vast. Diagnostische informatie kan app- en Android-versies, informatie over apparaat en model, informatie over het appproces en de appstatus, beschikbare en huidige audioapparaten, openbare configuratiemetagegevens voor afspelen en opnemen, en routeringspogingen, resultaten, timing en technische gebeurtenissen bevatten.\n\nAppvoorkeuren worden lokaal opgeslagen in de app-privéopslag van Puzru. Diagnostische informatie wordt op je apparaat gegenereerd en verwerkt en kan aanwezig zijn in de lokale status van de actieve app. Rapporten worden niet automatisch opgeslagen of verzonden. Alleen wanneer je uitdrukkelijk Diagnostisch rapport opslaan kiest en via Android een bestemming selecteert, wordt buiten de app-privéopslag van Puzru een permanent rapport gemaakt. Na het exporteren bepaalt de geselecteerde locatie of dienst — niet Puzru — hoe die kopie wordt verwerkt, bewaard en verwijderd.\n\nDe huidige versie vraagt niet om Androids internettoestemming, heeft geen Puzru-backend of pad voor netwerkoverdracht en bevat geen diensten of SDK’s voor analyse, advertenties of crashrapportage. De app verzendt momenteel geen diagnostische rapporten naar de ontwikkelaar of een Puzru-server, waardoor Puzru geen diagnostische gegevens op een server bewaart.\n\nGegevens die eigendom zijn van de app zijn uitgesloten van Android-cloudback-ups en overdracht van apparaat naar apparaat. Lokale voorkeuren blijven in de app-privéopslag totdat ze worden gewijzigd of de appgegevens worden verwijderd; tijdelijke diagnostische status is geen opgeslagen rapport. Geëxporteerde rapporten blijven onder beheer van de locatie of dienst die je hebt geselecteerd.</string>
     <string name="settings_version">Versie %1$s</string>
     <string name="settings_language_android_13_required">Taalkeuze in de app vereist Android 13 of hoger. Dit apparaat volgt de systeemtaal.</string>
     <string name="settings_proximity_screen">Scherm uitschakelen bij je oor</string>
-    <string name="settings_about_body">Private Audio helpt ondersteunde spraakaudio naar de ingebouwde oorspeaker van je telefoon om te schakelen.</string>
+    <string name="settings_about_body">Puzru helpt ondersteunde spraakaudio naar de ingebouwde oorspeaker van je telefoon om te schakelen.</string>
     <string name="diagnostic_report_saved">Diagnostisch rapport opgeslagen.</string>
     <string name="diagnostic_report_save_failed">Kan diagnostisch rapport niet opslaan.</string>
 
@@ -34,7 +34,7 @@
     <string name="diagnostics_system_check">SYSTEEMCONTROLE</string>
     <string name="diagnostics_earpiece">Oorspeaker</string>
     <string name="diagnostics_proximity_sensor">Nabijheidssensor</string>
-    <string name="diagnostics_private_audio">PRIVATE AUDIO</string>
+    <string name="diagnostics_private_audio">PUZRU</string>
     <string name="diagnostics_routing">Audioroutering</string>
     <string name="diagnostics_status">Status</string>
     <string name="diagnostics_audio_route">Audio-uitvoer</string>
@@ -59,8 +59,8 @@
     <string name="diagnostics_route_other">Overig</string>
     <string name="diagnostics_error_blocked_by_system">Audioroutering is door het systeem geblokkeerd.</string>
     <string name="diagnostics_error_session_ended">De audiosessie is beëindigd voordat de audioroutering was voltooid.</string>
-    <string name="diagnostics_error_audio_start">Private Audio kon de audioroutering niet starten.</string>
-    <string name="diagnostics_error_audio_preparation">Private Audio kon de audio voor communicatie niet voorbereiden.</string>
+    <string name="diagnostics_error_audio_start">Puzru kon de audioroutering niet starten.</string>
+    <string name="diagnostics_error_audio_preparation">Puzru kon de audio voor communicatie niet voorbereiden.</string>
     <string name="diagnostics_error_request_rejected">Het verzoek om audio naar de oorspeaker om te leiden, is niet geaccepteerd.</string>
     <string name="diagnostics_error_not_completed">De audioroutering kon niet worden voltooid.</string>
 </resources>

@@ -1,6 +1,6 @@
 # Localization Policy
 
-This document is the authoritative localization policy and maintenance workflow for Private Audio. It records the product-language rules established by the existing localization work. `PROGRESS.md` records the current locale inventory, evidence level, and meaningful unresolved localization issues; Git history preserves individual locale additions. Presentation architecture remains described in `ARCHITECTURE.md` and decisions D-023 and D-024.
+This document is the authoritative localization policy and maintenance workflow for Puzru. It records the product-language rules established by the existing localization work. `PROGRESS.md` records the current locale inventory, evidence level, and meaningful unresolved localization issues; Git history preserves individual locale additions. Presentation architecture remains described in `ARCHITECTURE.md` and decisions D-023 and D-024.
 
 ## Authority and evidence
 
@@ -18,7 +18,7 @@ First-party Android, Google, and product terminology is strong evidence of real 
 
 Do not claim all existing translations have been runtime-validated unless repository evidence establishes that fact.
 
-Resolve a technical term's exact product/software sense before selecting target wording; an everyday dictionary equivalent is not sufficient when it changes the referent or action. Seek terminology evidence in proportion to semantic risk, with Private Audio semantics first and semantically appropriate first-party or established target-language technology usage as supporting evidence. Localization contracts protect justified terminology and semantic distinctions, but a Translator-authored passing assertion does not establish linguistic correctness.
+Resolve a technical term's exact product/software sense before selecting target wording; an everyday dictionary equivalent is not sufficient when it changes the referent or action. Seek terminology evidence in proportion to semantic risk, with Puzru semantics first and semantically appropriate first-party or established target-language technology usage as supporting evidence. Localization contracts protect justified terminology and semantic distinctions, but a Translator-authored passing assertion does not establish linguistic correctness.
 
 ## Product copy and translation quality
 
@@ -56,23 +56,23 @@ As applicable, translations must preserve the actor, action, object or data cate
 - saving or exporting a diagnostic report is not generating diagnostic data; and
 - app-data backup being disabled does not mean data can never be copied by any mechanism.
 
-When related statements jointly define product behavior, review the complete claim set rather than treating each sentence in isolation. The translation must remain internally consistent and must not create a broader promise than the source. For example, claims that Private Audio neither collects, records, nor transmits conversation/audio content and that it locally observes technical audio-system metadata/state can both be true; translating the first as “Private Audio does not process any data” contradicts the set and is semantically wrong. Natural restructuring across sentences is acceptable when the complete factual meaning remains equivalent. This is a translation-semantic fidelity rule, not legal advice, and it applies proportionally to high-risk factual copy rather than ordinary labels such as `Close`, `Settings`, `Error`, or `Mini` in isolation.
+When related statements jointly define product behavior, review the complete claim set rather than treating each sentence in isolation. The translation must remain internally consistent and must not create a broader promise than the source. For example, claims that Puzru neither collects, records, nor transmits conversation/audio content and that it locally observes technical audio-system metadata/state can both be true; translating the first as “Puzru does not process any data” contradicts the set and is semantically wrong. Natural restructuring across sentences is acceptable when the complete factual meaning remains equivalent. This is a translation-semantic fidelity rule, not legal advice, and it applies proportionally to high-risk factual copy rather than ordinary labels such as `Close`, `Settings`, `Error`, or `Mini` in isolation.
 
-Private Audio distinguishes **ON / enabled**—the controller or service is enabled and waiting or available—from **ACTIVE**—Private Audio is currently participating in a qualifying communication-audio session. Translations must preserve both product states: an ON/enabled notification or Power state must not use wording with the same meaning as the runtime Active state. During FULL/MINI review, back-check both concepts whenever both occur. Grammatical similarity is acceptable, but semantic identity is not; when a newly reviewed/frozen locale could plausibly collapse the terms, persistent locale-specific regression assertions must protect both sides.
+Puzru distinguishes **ON / enabled**—the controller or service is enabled and waiting or available—from **ACTIVE**—Puzru is currently participating in a qualifying communication-audio session. Translations must preserve both product states: an ON/enabled notification or Power state must not use wording with the same meaning as the runtime Active state. During FULL/MINI review, back-check both concepts whenever both occur. Grammatical similarity is acceptable, but semantic identity is not; when a newly reviewed/frozen locale could plausibly collapse the terms, persistent locale-specific regression assertions must protect both sides.
 
 ### Independent locale terminology
 
 Each locale owns its terminology. Do not normalize international technology terms across languages merely for superficial consistency, and do not derive one language's terminology from a neighboring language. Existing approved copy demonstrates that some locales naturally use `AI`, others use localized abbreviations such as `IA`, `KI`, `DI`, `ИИ`, or `ШІ`, and others use full native artificial-intelligence terms, including Arabic and Persian. For each new language, determine the contemporary consumer/software standard independently.
 
-`Private Audio` remains untranslated unless a future explicit branding decision changes it.
+`Puzru` is the untranslated public brand token. Preserve this exact Latin-script spelling in every locale: do not translate, transliterate, decline, or otherwise localize it. `Private Audio` is the former working product name and is not the current brand token.
 
-`Mini` is a product concept, not an untranslated brand token. Preserve the compact or minimized-controller meaning. Latin `Mini` may remain where it is normal and naturally understood; a natural local-script form or transliteration such as `ミニ`, `미니`, or `Мини`, or an established local equivalent such as Chinese `迷你`, is equally valid. An ASCII/Latin international-looking term inside otherwise non-Latin UI triggers review but is not automatically wrong. Do not force Latin script for visual consistency, invent a transliteration, or replace a familiar concise native form with a longer, purist, artificial, or less familiar alternative merely to localize it. First-party terminology for a full component must be adapted to the actual Private Audio surface rather than copied blindly into a constrained one-word label. Any choice must remain natural and suitable for the constrained Mini surface; script differences alone are not inconsistency.
+`Mini` is a product concept, not an untranslated brand token. Preserve the compact or minimized-controller meaning. Latin `Mini` may remain where it is normal and naturally understood; a natural local-script form or transliteration such as `ミニ`, `미니`, or `Мини`, or an established local equivalent such as Chinese `迷你`, is equally valid. An ASCII/Latin international-looking term inside otherwise non-Latin UI triggers review but is not automatically wrong. Do not force Latin script for visual consistency, invent a transliteration, or replace a familiar concise native form with a longer, purist, artificial, or less familiar alternative merely to localize it. First-party terminology for a full component must be adapted to the actual Puzru surface rather than copied blindly into a constrained one-word label. Any choice must remain natural and suitable for the constrained Mini surface; script differences alone are not inconsistency.
 
 A transliterated loanword must be checked for lexical collisions in the target language before it is frozen. Phonetic similarity to the source is insufficient when the written target form has an unrelated, inappropriate, misleading, or embarrassing native meaning.
 
 ### Earpiece and routing distinctions
 
-Private Audio distinguishes the built-in call earpiece or receiver from the loudspeaker/speakerphone, headphones, and Bluetooth audio. Every locale must use terminology that preserves this distinction. Do not accept a generic translation of “speaker” when it makes the intended physical output ambiguous.
+Puzru distinguishes the built-in call earpiece or receiver from the loudspeaker/speakerphone, headphones, and Bluetooth audio. Every locale must use terminology that preserves this distinction. Do not accept a generic translation of “speaker” when it makes the intended physical output ambiguous.
 
 ### Script and orthography
 
@@ -102,8 +102,8 @@ resource-resolution tests protect these gaps from silently
 presenting a supported resource tree written in a different script.
 
 OEMs may expose different sets of system languages, but this does not normally
-require OEM-specific Private Audio resource qualifiers. On Android 13 and newer,
-per-app language selection is driven by Private Audio's generated `LocaleConfig`.
+require OEM-specific Puzru resource qualifiers. On Android 13 and newer,
+per-app language selection is driven by Puzru's generated `LocaleConfig`.
 On Android 12 and 12L the current custom picker follows the device locale because it
 uses platform `LocaleManager` support available from API 33; pre-Android-13
 AppCompat per-app language support remains a separate future product decision.
@@ -166,7 +166,7 @@ RTL support is shared, direction-driven infrastructure, not locale-specific code
 - Mini window and drag positioning use physical screen coordinates;
 - Mini content mirrors by layout direction and its status uses bidi-aware measured rendering;
 - active notification presentation refreshes after a localization configuration change; and
-- the Private Audio Compose root explicitly provides the shared effective logical-locale
+- the Puzru Compose root explicitly provides the shared effective logical-locale
   direction rather than trusting a legacy-alias configuration direction.
 
 Resource selection and presentation direction are separate platform results. A modern logical application locale such as Yiddish `yi` or Hebrew `he` can resolve a legacy-compatible `values-ji` or `values-iw` tree while a configuration-derived direction still reflects the legacy alias incorrectly. Direction-sensitive custom presentation must use the active logical application locale with Android's locale-direction API, falling back to the effective configuration locale when no application override exists. Never reverse localized text to compensate for a direction-resolution defect.

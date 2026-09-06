@@ -2,7 +2,7 @@
 
 > **Use AI voice conversations like a private phone call.**
 
-`private-audio-router` (Private Audio) is an Android 12+ experimental, private-call-style audio routing controller. It uses only public Android communication-routing APIs and remains outside other applications' audio-data paths.
+`private-audio-router` (Puzru) is an Android 12+ experimental, private-call-style audio routing controller. It uses only public Android communication-routing APIs and remains outside other applications' audio-data paths.
 
 ## Status
 

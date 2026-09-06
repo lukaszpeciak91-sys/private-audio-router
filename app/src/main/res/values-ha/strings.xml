@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Private Audio</string>
-    <string name="routing_notification_channel">Private Audio</string>
-    <string name="routing_notification_title">An kunna Private Audio</string>
+    <string name="app_name">Puzru</string>
+    <string name="routing_notification_channel">Puzru</string>
+    <string name="routing_notification_title">An kunna Puzru</string>
     <string name="routing_notification_text">Ana jiran sauya inda sauti zai fito</string>
-    <string name="product_title">Private Audio</string>
+    <string name="product_title">Puzru</string>
     <string name="product_subtitle">Yi magana da AI cikin sirri, kamar kiran waya.</string>
     <string name="state_ready">A shirye</string>
     <string name="state_waiting">Ana jira</string>
@@ -14,18 +14,18 @@
     <string name="floating">Ƙarami</string>
     <string name="settings">Saituna</string>
     <string name="close">Rufe</string>
-    <string name="overlay_controller_description">Ƙaramin mai sarrafa Private Audio. Matsayi: %1$s. Abubuwan sarrafa kunnawa ko kashewa, faɗaɗawa da rufewa.</string>
+    <string name="overlay_controller_description">Ƙaramin mai sarrafa Puzru. Matsayi: %1$s. Abubuwan sarrafa kunnawa ko kashewa, faɗaɗawa da rufewa.</string>
     <string name="settings_language">Harshe</string>
     <string name="settings_system_default">Na asali</string>
     <string name="settings_save_diagnostic">Ajiye rahoton bincike</string>
     <string name="settings_advanced">Ci gaba</string>
-    <string name="settings_about">Game da Private Audio</string>
+    <string name="settings_about">Game da Puzru</string>
     <string name="settings_privacy_policy">Manufar Sirri</string>
-    <string name="settings_privacy_policy_body">Private Audio ba ya buƙatar asusu ko shiga, kuma ba ya neman izinin makirufo. Ba ya ɗauka ko rikodin sautin makirufo, kuma ba ya rikodi ko adana tattaunawarku ko abin da sautinsu ya ƙunsa.\n\nPrivate Audio yana amfani da bayanan tsarin sauti na Android da ake buƙata don juyar da hanya da binciken matsala. Binciken matsala na iya duba yanayin fasaha da metadata da APIs na jama\'a na Android ke bayyanawa, ciki har da metadata na sake kunnawa da metadata na zaman rikodi. Metadata na zaman rikodi bayanan fasaha ne na tsarin sauti; Private Audio ba ya ɗaukar sautin makirufo da ke da alaƙa da waɗannan zaman. Bayanan binciken matsala na iya haɗawa da sigar manhaja da ta Android, bayanan na\'ura da samfurinta, bayanan tsarin aikin manhajar da yanayinta, na\'urorin sauti da suke samuwa da waɗanda ake amfani da su a yanzu, metadata na jama\'a na tsarin sake kunnawa da rikodi, da yunƙurin juyar da hanya, sakamako, lokaci, da abubuwan fasaha.\n\nAna adana zaɓuɓɓukan manhajar a cikin ma\'ajiyar sirri ta manhajar ta Private Audio a kan na\'urar. Ana ƙirƙira da sarrafa bayanan binciken matsala a kan na\'urarku kuma suna iya kasancewa a cikin yanayin gida na manhajar da ke gudana. Ba a adana rahotanni ko aika su ta atomatik. Ana ƙirƙirar rahoto mai dorewa a wajen ma\'ajiyar sirri ta manhajar ta Private Audio ne kawai idan kun zaɓi Ajiye rahoton binciken matsala a sarari kuma kuka zaɓi wurin da za a ajiye ta hanyar Android. Bayan fitarwa, wurin ko sabis ɗin da kuka zaɓa—ba Private Audio ba—shi ne ke sarrafa yadda ake mu\'amala da wannan kwafin, tsawon lokacin ajiye shi, da gogewarsa.\n\nSigar yanzu ba ta neman izinin Intanet na Android, ba ta da backend na Private Audio ko hanyar watsa bayanai ta hanyar sadarwa, kuma ba ta ƙunshe da ayyuka ko SDKs na nazari, talla, ko bayar da rahoton faɗuwar manhaja. A halin yanzu ba ta aika rahotannin binciken matsala ga mai haɓakawa ko wani sabar na Private Audio ba, don haka Private Audio ba shi da ajiyar bayanan binciken matsala a gefen sabar.\n\nAn ware bayanan da manhajar ta mallaka daga ajiyar girgije ta Android da canja wuri daga na\'ura zuwa na\'ura. Zaɓuɓɓukan gida suna ci gaba da kasancewa a cikin ma\'ajiyar sirri ta manhajar har sai an canja su ko kuma an cire bayanan manhajar; yanayin binciken matsala na wucin gadi ba rahoto ne da aka adana ba. Rahotannin da aka fitar suna ci gaba da kasancewa ƙarƙashin ikon wurin ko sabis ɗin da kuka zaɓa.</string>
+    <string name="settings_privacy_policy_body">Puzru ba ya buƙatar asusu ko shiga, kuma ba ya neman izinin makirufo. Ba ya ɗauka ko rikodin sautin makirufo, kuma ba ya rikodi ko adana tattaunawarku ko abin da sautinsu ya ƙunsa.\n\nPuzru yana amfani da bayanan tsarin sauti na Android da ake buƙata don juyar da hanya da binciken matsala. Binciken matsala na iya duba yanayin fasaha da metadata da APIs na jama\'a na Android ke bayyanawa, ciki har da metadata na sake kunnawa da metadata na zaman rikodi. Metadata na zaman rikodi bayanan fasaha ne na tsarin sauti; Puzru ba ya ɗaukar sautin makirufo da ke da alaƙa da waɗannan zaman. Bayanan binciken matsala na iya haɗawa da sigar manhaja da ta Android, bayanan na\'ura da samfurinta, bayanan tsarin aikin manhajar da yanayinta, na\'urorin sauti da suke samuwa da waɗanda ake amfani da su a yanzu, metadata na jama\'a na tsarin sake kunnawa da rikodi, da yunƙurin juyar da hanya, sakamako, lokaci, da abubuwan fasaha.\n\nAna adana zaɓuɓɓukan manhajar a cikin ma\'ajiyar sirri ta manhajar ta Puzru a kan na\'urar. Ana ƙirƙira da sarrafa bayanan binciken matsala a kan na\'urarku kuma suna iya kasancewa a cikin yanayin gida na manhajar da ke gudana. Ba a adana rahotanni ko aika su ta atomatik. Ana ƙirƙirar rahoto mai dorewa a wajen ma\'ajiyar sirri ta manhajar ta Puzru ne kawai idan kun zaɓi Ajiye rahoton binciken matsala a sarari kuma kuka zaɓi wurin da za a ajiye ta hanyar Android. Bayan fitarwa, wurin ko sabis ɗin da kuka zaɓa—ba Puzru ba—shi ne ke sarrafa yadda ake mu\'amala da wannan kwafin, tsawon lokacin ajiye shi, da gogewarsa.\n\nSigar yanzu ba ta neman izinin Intanet na Android, ba ta da backend na Puzru ko hanyar watsa bayanai ta hanyar sadarwa, kuma ba ta ƙunshe da ayyuka ko SDKs na nazari, talla, ko bayar da rahoton faɗuwar manhaja. A halin yanzu ba ta aika rahotannin binciken matsala ga mai haɓakawa ko wani sabar na Puzru ba, don haka Puzru ba shi da ajiyar bayanan binciken matsala a gefen sabar.\n\nAn ware bayanan da manhajar ta mallaka daga ajiyar girgije ta Android da canja wuri daga na\'ura zuwa na\'ura. Zaɓuɓɓukan gida suna ci gaba da kasancewa a cikin ma\'ajiyar sirri ta manhajar har sai an canja su ko kuma an cire bayanan manhajar; yanayin binciken matsala na wucin gadi ba rahoto ne da aka adana ba. Rahotannin da aka fitar suna ci gaba da kasancewa ƙarƙashin ikon wurin ko sabis ɗin da kuka zaɓa.</string>
     <string name="settings_version">Siga %1$s</string>
     <string name="settings_language_android_13_required">Zaɓin harshe a cikin manhaja yana buƙatar Android 13 ko mafi sabo. Wannan na\'urar tana bin harshen tsarin.</string>
     <string name="settings_proximity_screen">Kashe allo idan wayar ta kusanci kunnenka</string>
-    <string name="settings_about_body">Private Audio yana taimakawa wajen sauya sautin murya da ake tallafawa zuwa lasifikar kunne da ke cikin wayarka.</string>
+    <string name="settings_about_body">Puzru yana taimakawa wajen sauya sautin murya da ake tallafawa zuwa lasifikar kunne da ke cikin wayarka.</string>
     <string name="diagnostic_report_saved">An ajiye rahoton bincike.</string>
     <string name="diagnostic_report_save_failed">Ba a iya ajiye rahoton bincike ba.</string>
 
@@ -34,7 +34,7 @@
     <string name="diagnostics_system_check">BINCIKEN TSARI</string>
     <string name="diagnostics_earpiece">Lasifikar kunne</string>
     <string name="diagnostics_proximity_sensor">Na\'urar gano kusanci</string>
-    <string name="diagnostics_private_audio">PRIVATE AUDIO</string>
+    <string name="diagnostics_private_audio">PUZRU</string>
     <string name="diagnostics_routing">Tura sauti</string>
     <string name="diagnostics_status">Matsayi</string>
     <string name="diagnostics_audio_route">Fitowar sauti</string>
@@ -59,8 +59,8 @@
     <string name="diagnostics_route_other">Sauran</string>
     <string name="diagnostics_error_blocked_by_system">Tsarin ya hana tura sauti.</string>
     <string name="diagnostics_error_session_ended">Zaman sautin ya ƙare kafin a kammala tura sautin.</string>
-    <string name="diagnostics_error_audio_start">Private Audio bai iya fara tura sauti ba.</string>
-    <string name="diagnostics_error_audio_preparation">Private Audio bai iya shirya sautin sadarwa ba.</string>
+    <string name="diagnostics_error_audio_start">Puzru bai iya fara tura sauti ba.</string>
+    <string name="diagnostics_error_audio_preparation">Puzru bai iya shirya sautin sadarwa ba.</string>
     <string name="diagnostics_error_request_rejected">Ba a amince da buƙatar tura sauti zuwa lasifikar kunne ba.</string>
     <string name="diagnostics_error_not_completed">Ba a iya kammala tura sauti ba.</string>
 </resources>

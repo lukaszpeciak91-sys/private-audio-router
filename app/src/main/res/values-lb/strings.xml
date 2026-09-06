@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Private Audio</string>
-    <string name="routing_notification_channel">Private Audio</string>
-    <string name="routing_notification_title">Private Audio ass un</string>
+    <string name="app_name">Puzru</string>
+    <string name="routing_notification_channel">Puzru</string>
+    <string name="routing_notification_title">Puzru ass un</string>
     <string name="routing_notification_text">Waart drop, den Audio ëmzeschalten</string>
-    <string name="product_title">Private Audio</string>
+    <string name="product_title">Puzru</string>
     <string name="product_subtitle">Schwätz privat mat der KI, wéi bei engem Telefonsgespréich.</string>
     <string name="state_ready">Prett</string>
     <string name="state_waiting">Waart</string>
@@ -14,18 +14,18 @@
     <string name="floating">Mini</string>
     <string name="settings">Astellungen</string>
     <string name="close">Zoumaachen</string>
-    <string name="overlay_controller_description">Schwiewend Steierung vu Private Audio. Status: %1$s. Knäppercher fir un-/auszeschalten, ze vergréisseren an zouzemaachen.</string>
+    <string name="overlay_controller_description">Schwiewend Steierung vu Puzru. Status: %1$s. Knäppercher fir un-/auszeschalten, ze vergréisseren an zouzemaachen.</string>
     <string name="settings_language">Sprooch</string>
     <string name="settings_system_default">Standard</string>
     <string name="settings_save_diagnostic">Diagnoserapport späicheren</string>
     <string name="settings_advanced">Erweidert</string>
-    <string name="settings_about">Iwwer Private Audio</string>
+    <string name="settings_about">Iwwer Puzru</string>
     <string name="settings_privacy_policy">Dateschutzrichtlinn</string>
-    <string name="settings_privacy_policy_body">Private Audio erfuerdert kee Kont a keng Umeldung a freet keng Mikrofonberechtegung un. D’App erfaasst oder hëlt keen Toun vum Mikro op a si hëlt Är Gespréicher oder hiren Audioinhalt net op a späichert se net.\n\nPrivate Audio benotzt Informatioune vum Android-Audiosystem, déi fir d’Audioroutage an d’Diagnostik néideg sinn. D’Diagnostik kann den techneschen Zoustand a Metadaten ënnersichen, déi vun ëffentlechen Android-APIen zur Verfügung gestallt ginn, dorënner Metadate vun der Wiedergab a vun Opnamssessiounen. Metadate vun Opnamssessioune sinn technesch Informatioune vum Audiosystem; Private Audio erfaasst net de Mikrofontoun, dee mat dëse Sessiounen verbonnen ass. Diagnosinformatioune kënnen App- an Android-Versiounen, Apparat- a Modellinformatiounen, Informatiounen iwwer den App-Prozess an -Zoustand, verfügbar an aktuell Audiogeräter, ëffentlech Metadate vun der Wiedergab- an Opnamkonfiguratioun souwéi Routageversich, Resultater, Zäiten an technesch Evenementer enthalen.\n\nApp-Astellunge gi lokal am private Späicherberäich vu Private Audio gespäichert, deen nëmme fir d’App zougänglech ass. Diagnosinformatioune ginn op Ärem Apparat erstallt a verschafft a kënnen am lokale Zoustand vun der lafender App bestoen. Rapporte ginn net automatesch gespäichert oder geschéckt. E Rapport, dee bestoe bleift, gëtt nëmmen ausserhalb vum private Späicherberäich vu Private Audio erstallt, wann Dir ausdrécklech Diagnosrapport späicheren auswielt an iwwer Android eng Destinatioun wielt. Nom Export kontrolléiert déi ausgewielte Plaz oder den Déngscht—net Private Audio—d’Veraarbechtung, d’Opbewahrung an d’Läsche vun där Kopie.\n\nDéi aktuell Versioun freet d’Internetberechtegung vun Android net un, huet weder e Private Audio-Backend nach e Wee fir Daten iwwer en Netzwierk ze iwwerdroen an enthält keng Analyse-, Reklamm- oder Ofstuerzrapportservicer oder SDKen. Si schéckt de Moment keng Diagnosrapporten un den Entwéckler oder e Private Audio-Server; dofir hält Private Audio keng Diagnosinformatiounen op engem Server zeréck.\n\nDaten, déi der App gehéieren, si vum Android-Cloud-Backup a vum Transfert vun engem Apparat op en aneren ausgeschloss. Lokal App-Astellunge bleiwen am private Späicherberäich vun der App, bis se geännert oder d’App-Daten ewechgeholl ginn; en temporären Diagnoszoustand ass kee gespäicherte Rapport. Exportéiert Rapporte bleiwen ënner der Kontroll vun der Plaz oder dem Déngscht, déi bzw. deen Dir ausgewielt hutt.</string>
+    <string name="settings_privacy_policy_body">Puzru erfuerdert kee Kont a keng Umeldung a freet keng Mikrofonberechtegung un. D’App erfaasst oder hëlt keen Toun vum Mikro op a si hëlt Är Gespréicher oder hiren Audioinhalt net op a späichert se net.\n\nPuzru benotzt Informatioune vum Android-Audiosystem, déi fir d’Audioroutage an d’Diagnostik néideg sinn. D’Diagnostik kann den techneschen Zoustand a Metadaten ënnersichen, déi vun ëffentlechen Android-APIen zur Verfügung gestallt ginn, dorënner Metadate vun der Wiedergab a vun Opnamssessiounen. Metadate vun Opnamssessioune sinn technesch Informatioune vum Audiosystem; Puzru erfaasst net de Mikrofontoun, dee mat dëse Sessiounen verbonnen ass. Diagnosinformatioune kënnen App- an Android-Versiounen, Apparat- a Modellinformatiounen, Informatiounen iwwer den App-Prozess an -Zoustand, verfügbar an aktuell Audiogeräter, ëffentlech Metadate vun der Wiedergab- an Opnamkonfiguratioun souwéi Routageversich, Resultater, Zäiten an technesch Evenementer enthalen.\n\nApp-Astellunge gi lokal am private Späicherberäich vu Puzru gespäichert, deen nëmme fir d’App zougänglech ass. Diagnosinformatioune ginn op Ärem Apparat erstallt a verschafft a kënnen am lokale Zoustand vun der lafender App bestoen. Rapporte ginn net automatesch gespäichert oder geschéckt. E Rapport, dee bestoe bleift, gëtt nëmmen ausserhalb vum private Späicherberäich vu Puzru erstallt, wann Dir ausdrécklech Diagnosrapport späicheren auswielt an iwwer Android eng Destinatioun wielt. Nom Export kontrolléiert déi ausgewielte Plaz oder den Déngscht—net Puzru—d’Veraarbechtung, d’Opbewahrung an d’Läsche vun där Kopie.\n\nDéi aktuell Versioun freet d’Internetberechtegung vun Android net un, huet weder e Puzru-Backend nach e Wee fir Daten iwwer en Netzwierk ze iwwerdroen an enthält keng Analyse-, Reklamm- oder Ofstuerzrapportservicer oder SDKen. Si schéckt de Moment keng Diagnosrapporten un den Entwéckler oder e Puzru-Server; dofir hält Puzru keng Diagnosinformatiounen op engem Server zeréck.\n\nDaten, déi der App gehéieren, si vum Android-Cloud-Backup a vum Transfert vun engem Apparat op en aneren ausgeschloss. Lokal App-Astellunge bleiwen am private Späicherberäich vun der App, bis se geännert oder d’App-Daten ewechgeholl ginn; en temporären Diagnoszoustand ass kee gespäicherte Rapport. Exportéiert Rapporte bleiwen ënner der Kontroll vun der Plaz oder dem Déngscht, déi bzw. deen Dir ausgewielt hutt.</string>
     <string name="settings_version">Versioun %1$s</string>
     <string name="settings_language_android_13_required">D\'Sproochauswiel an der App erfuerdert Android 13 oder méi nei. Dësen Apparat riicht sech no der Systemsprooch.</string>
     <string name="settings_proximity_screen">Écran beim Ouer ausschalten</string>
-    <string name="settings_about_body">Private Audio hëlleft, den Audio vu ënnerstëtzte Stëmmfunktiounen op den agebaute Lautsprecher uewen um Telefon ze leeden, deen bei Telefonsgespréicher um Ouer benotzt gëtt.</string>
+    <string name="settings_about_body">Puzru hëlleft, den Audio vu ënnerstëtzte Stëmmfunktiounen op den agebaute Lautsprecher uewen um Telefon ze leeden, deen bei Telefonsgespréicher um Ouer benotzt gëtt.</string>
     <string name="diagnostic_report_saved">Diagnoserapport gespäichert.</string>
     <string name="diagnostic_report_save_failed">Diagnoserapport konnt net gespäichert ginn.</string>
 
@@ -34,7 +34,7 @@
     <string name="diagnostics_system_check">SYSTEMKONTROLL</string>
     <string name="diagnostics_earpiece">Ouer-Lautsprecher</string>
     <string name="diagnostics_proximity_sensor">Proximitéitssensor</string>
-    <string name="diagnostics_private_audio">PRIVATE AUDIO</string>
+    <string name="diagnostics_private_audio">PUZRU</string>
     <string name="diagnostics_routing">Audioleedung</string>
     <string name="diagnostics_status">Status</string>
     <string name="diagnostics_audio_route">Audioausgab</string>
@@ -59,8 +59,8 @@
     <string name="diagnostics_route_other">Aner</string>
     <string name="diagnostics_error_blocked_by_system">D’Audioleedung gouf vum System blockéiert.</string>
     <string name="diagnostics_error_session_ended">D’Audiosessioun war eriwwer, éier d’Audioleedung ofgeschloss war.</string>
-    <string name="diagnostics_error_audio_start">Private Audio konnt d’Audioleedung net starten.</string>
-    <string name="diagnostics_error_audio_preparation">Private Audio konnt de Kommunikatiounsaudio net virbereeden.</string>
+    <string name="diagnostics_error_audio_start">Puzru konnt d’Audioleedung net starten.</string>
+    <string name="diagnostics_error_audio_preparation">Puzru konnt de Kommunikatiounsaudio net virbereeden.</string>
     <string name="diagnostics_error_request_rejected">D’Ufro fir d’Audioausgab iwwer den Ouer-Lautsprecher gouf net ugeholl.</string>
     <string name="diagnostics_error_not_completed">D’Audioleedung konnt net ofgeschloss ginn.</string>
 </resources>

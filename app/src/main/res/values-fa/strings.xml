@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Private Audio</string>
-    <string name="routing_notification_channel">Private Audio</string>
-    <string name="routing_notification_title">Private Audio روشن است</string>
+    <string name="app_name">Puzru</string>
+    <string name="routing_notification_channel">Puzru</string>
+    <string name="routing_notification_title">Puzru روشن است</string>
     <string name="routing_notification_text">در انتظار هدایت صدا</string>
-    <string name="product_title">Private Audio</string>
+    <string name="product_title">Puzru</string>
     <string name="product_subtitle">مثل تماس تلفنی، خصوصی با هوش مصنوعی صحبت کنید.</string>
     <string name="state_ready">آماده</string>
     <string name="state_waiting">در انتظار</string>
@@ -14,18 +14,18 @@
     <string name="floating">مینی</string>
     <string name="settings">تنظیمات</string>
     <string name="close">بستن</string>
-    <string name="overlay_controller_description">کنترل‌کننده شناور مینی Private Audio. وضعیت: %1$s. کنترل‌های روشن کردن، باز کردن و بستن.</string>
+    <string name="overlay_controller_description">کنترل‌کننده شناور مینی Puzru. وضعیت: %1$s. کنترل‌های روشن کردن، باز کردن و بستن.</string>
     <string name="settings_language">زبان</string>
     <string name="settings_system_default">پیش‌فرض</string>
     <string name="settings_save_diagnostic">ذخیره گزارش عیب‌یابی</string>
     <string name="settings_advanced">پیشرفته</string>
-    <string name="settings_about">درباره Private Audio</string>
+    <string name="settings_about">درباره Puzru</string>
     <string name="settings_privacy_policy">سیاست حفظ حریم خصوصی</string>
-    <string name="settings_privacy_policy_body">Private Audio به حساب یا ورود نیاز ندارد و مجوز میکروفون را درخواست نمی‌کند. صدای میکروفون را دریافت یا ضبط نمی‌کند و مکالمات شما یا محتوای صوتی آن‌ها را ضبط یا ذخیره نمی‌کند.\n\nPrivate Audio از اطلاعات سامانه صوتی Android که برای مسیریابی و عیب‌یابی لازم است استفاده می‌کند. عیب‌یابی ممکن است وضعیت فنی و فراداده‌های ارائه‌شده توسط APIهای عمومی Android، ازجمله فراداده‌های پخش و نشست ضبط را بررسی کند. فراداده نشست ضبط اطلاعات فنی سامانه صوتی است؛ Private Audio صدای میکروفون مرتبط با آن نشست‌ها را دریافت نمی‌کند. اطلاعات عیب‌یابی ممکن است شامل نسخه‌های برنامه و Android، اطلاعات دستگاه و مدل، اطلاعات فرایند و وضعیت برنامه، دستگاه‌های صوتی موجود و فعلی، فراداده عمومی پیکربندی پخش و ضبط، و تلاش‌های مسیریابی، نتایج، زمان‌بندی و رویدادهای فنی باشد.\n\nتنظیمات برگزیده برنامه به‌صورت محلی در فضای خصوصی برنامه Private Audio ذخیره می‌شود. اطلاعات عیب‌یابی در دستگاه شما تولید و پردازش می‌شود و ممکن است در وضعیت محلی برنامه در حال اجرا وجود داشته باشد. گزارش‌ها خودکار ذخیره یا ارسال نمی‌شوند. گزارش دائمی خارج از فضای خصوصی Private Audio فقط زمانی ایجاد می‌شود که صریحاً «ذخیره گزارش عیب‌یابی» را انتخاب کنید و ازطریق Android مقصدی برگزینید. پس از برون‌بری، مکان یا سرویس انتخابی—نه Private Audio—نحوه رسیدگی، نگهداری و حذف آن نسخه را کنترل می‌کند.\n\nنسخه فعلی مجوز اینترنت Android را درخواست نمی‌کند، بخش پشتیبان Private Audio یا مسیر انتقال شبکه ندارد و شامل سرویس‌ها یا SDKهای تحلیل، تبلیغات یا گزارش خرابی نیست. درحال‌حاضر گزارش عیب‌یابی را برای توسعه‌دهنده یا سرور Private Audio نمی‌فرستد؛ بنابراین Private Audio هیچ عیب‌یابی را در سمت سرور نگهداری نمی‌کند.\n\nداده‌های متعلق به برنامه از پشتیبان‌گیری ابری Android و انتقال دستگاه‌به‌دستگاه کنار گذاشته شده‌اند. تنظیمات برگزیده محلی تا هنگام تغییر یا حذف داده‌های برنامه در فضای خصوصی برنامه می‌مانند؛ وضعیت موقت عیب‌یابی گزارش ذخیره‌شده نیست. گزارش‌های برون‌بری‌شده زیر کنترل مکان یا سرویس انتخابی شما باقی می‌مانند.</string>
+    <string name="settings_privacy_policy_body">Puzru به حساب یا ورود نیاز ندارد و مجوز میکروفون را درخواست نمی‌کند. صدای میکروفون را دریافت یا ضبط نمی‌کند و مکالمات شما یا محتوای صوتی آن‌ها را ضبط یا ذخیره نمی‌کند.\n\nPuzru از اطلاعات سامانه صوتی Android که برای مسیریابی و عیب‌یابی لازم است استفاده می‌کند. عیب‌یابی ممکن است وضعیت فنی و فراداده‌های ارائه‌شده توسط APIهای عمومی Android، ازجمله فراداده‌های پخش و نشست ضبط را بررسی کند. فراداده نشست ضبط اطلاعات فنی سامانه صوتی است؛ Puzru صدای میکروفون مرتبط با آن نشست‌ها را دریافت نمی‌کند. اطلاعات عیب‌یابی ممکن است شامل نسخه‌های برنامه و Android، اطلاعات دستگاه و مدل، اطلاعات فرایند و وضعیت برنامه، دستگاه‌های صوتی موجود و فعلی، فراداده عمومی پیکربندی پخش و ضبط، و تلاش‌های مسیریابی، نتایج، زمان‌بندی و رویدادهای فنی باشد.\n\nتنظیمات برگزیده برنامه به‌صورت محلی در فضای خصوصی برنامه Puzru ذخیره می‌شود. اطلاعات عیب‌یابی در دستگاه شما تولید و پردازش می‌شود و ممکن است در وضعیت محلی برنامه در حال اجرا وجود داشته باشد. گزارش‌ها خودکار ذخیره یا ارسال نمی‌شوند. گزارش دائمی خارج از فضای خصوصی Puzru فقط زمانی ایجاد می‌شود که صریحاً «ذخیره گزارش عیب‌یابی» را انتخاب کنید و ازطریق Android مقصدی برگزینید. پس از برون‌بری، مکان یا سرویس انتخابی—نه Puzru—نحوه رسیدگی، نگهداری و حذف آن نسخه را کنترل می‌کند.\n\nنسخه فعلی مجوز اینترنت Android را درخواست نمی‌کند، بخش پشتیبان Puzru یا مسیر انتقال شبکه ندارد و شامل سرویس‌ها یا SDKهای تحلیل، تبلیغات یا گزارش خرابی نیست. درحال‌حاضر گزارش عیب‌یابی را برای توسعه‌دهنده یا سرور Puzru نمی‌فرستد؛ بنابراین Puzru هیچ عیب‌یابی را در سمت سرور نگهداری نمی‌کند.\n\nداده‌های متعلق به برنامه از پشتیبان‌گیری ابری Android و انتقال دستگاه‌به‌دستگاه کنار گذاشته شده‌اند. تنظیمات برگزیده محلی تا هنگام تغییر یا حذف داده‌های برنامه در فضای خصوصی برنامه می‌مانند؛ وضعیت موقت عیب‌یابی گزارش ذخیره‌شده نیست. گزارش‌های برون‌بری‌شده زیر کنترل مکان یا سرویس انتخابی شما باقی می‌مانند.</string>
     <string name="settings_version">نسخه %1$s</string>
     <string name="settings_language_android_13_required">انتخاب زبان درون‌برنامه‌ای به Android 13 یا بالاتر نیاز دارد. این دستگاه از زبان سیستم پیروی می‌کند.</string>
     <string name="settings_proximity_screen">خاموش کردن صفحه‌نمایش نزدیک گوش</string>
-    <string name="settings_about_body">Private Audio به هدایت صدا به بلندگوی بالای تلفن کمک می‌کند.</string>
+    <string name="settings_about_body">Puzru به هدایت صدا به بلندگوی بالای تلفن کمک می‌کند.</string>
     <string name="diagnostic_report_saved">گزارش عیب‌یابی ذخیره شد.</string>
     <string name="diagnostic_report_save_failed">گزارش عیب‌یابی ذخیره نشد.</string>
 
@@ -34,7 +34,7 @@
     <string name="diagnostics_system_check">بررسی سیستم</string>
     <string name="diagnostics_earpiece">بلندگوی مکالمه</string>
     <string name="diagnostics_proximity_sensor">حسگر مجاورت</string>
-    <string name="diagnostics_private_audio">Private Audio</string>
+    <string name="diagnostics_private_audio">Puzru</string>
     <string name="diagnostics_routing">هدایت صدا</string>
     <string name="diagnostics_status">وضعیت</string>
     <string name="diagnostics_audio_route">خروجی صدا</string>
@@ -59,8 +59,8 @@
     <string name="diagnostics_route_other">سایر</string>
     <string name="diagnostics_error_blocked_by_system">هدایت صدا توسط سیستم مسدود شد.</string>
     <string name="diagnostics_error_session_ended">جلسه صوتی پیش از تکمیل هدایت صدا پایان یافت.</string>
-    <string name="diagnostics_error_audio_start">Private Audio نتوانست هدایت صدا را آغاز کند.</string>
-    <string name="diagnostics_error_audio_preparation">Private Audio نتوانست صدای ارتباطی را آماده کند.</string>
+    <string name="diagnostics_error_audio_start">Puzru نتوانست هدایت صدا را آغاز کند.</string>
+    <string name="diagnostics_error_audio_preparation">Puzru نتوانست صدای ارتباطی را آماده کند.</string>
     <string name="diagnostics_error_request_rejected">درخواست هدایت صدا به بلندگوی مکالمه پذیرفته نشد.</string>
     <string name="diagnostics_error_not_completed">هدایت صدا تکمیل نشد.</string>
 </resources>

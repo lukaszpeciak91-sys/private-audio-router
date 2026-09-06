@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Private Audio</string>
-    <string name="routing_notification_channel">Private Audio</string>
-    <string name="routing_notification_title">Private Audio асаалттай</string>
+    <string name="app_name">Puzru</string>
+    <string name="routing_notification_channel">Puzru</string>
+    <string name="routing_notification_title">Puzru асаалттай</string>
     <string name="routing_notification_text">Аудио гаралтыг солихыг хүлээж байна</string>
-    <string name="product_title">Private Audio</string>
+    <string name="product_title">Puzru</string>
     <string name="product_subtitle">ХОУ-тай утсаар ярьж байгаа мэт хувийн байдлаар ярилцаарай.</string>
     <string name="state_ready">Бэлэн</string>
     <string name="state_waiting">Хүлээж байна</string>
@@ -14,18 +14,18 @@
     <string name="floating">Мини</string>
     <string name="settings">Тохиргоо</string>
     <string name="close">Хаах</string>
-    <string name="overlay_controller_description">Private Audio-н хөвөгч удирдлага. Төлөв: %1$s. Асаах/унтраах, дэлгэх, хаах товчлуурууд.</string>
+    <string name="overlay_controller_description">Puzru-н хөвөгч удирдлага. Төлөв: %1$s. Асаах/унтраах, дэлгэх, хаах товчлуурууд.</string>
     <string name="settings_language">Хэл</string>
     <string name="settings_system_default">Өгөгдмөл</string>
     <string name="settings_save_diagnostic">Оношилгооны тайланг хадгалах</string>
     <string name="settings_advanced">Нарийвчилсан</string>
-    <string name="settings_about">Private Audio-н тухай</string>
+    <string name="settings_about">Puzru-н тухай</string>
     <string name="settings_privacy_policy">Нууцлалын бодлого</string>
-    <string name="settings_privacy_policy_body">Private Audio нь бүртгэл эсвэл нэвтрэхийг шаарддаггүй бөгөөд микрофоны зөвшөөрөл хүсдэггүй. Микрофоны аудиог авах эсвэл бичихгүй, мөн таны яриа эсвэл түүний аудио агуулгыг бичих эсвэл хадгалахгүй.\n\nPrivate Audio чиглүүлэлт болон оношилгоонд шаардлагатай Android аудио системийн мэдээллийг ашиглана. Оношилгоо нь нийтэд нээлттэй Android API-аар ил болгосон техникийн төлөв ба мета өгөгдөл, үүнд тоглуулах болон бичлэгийн сессийн мета өгөгдлийг шалгаж болно. Бичлэгийн сессийн мета өгөгдөл нь аудио системийн техникийн мэдээлэл бөгөөд Private Audio тухайн сесстэй холбоотой микрофоны аудиог авахгүй. Оношилгооны мэдээлэлд апп болон Android хувилбар, төхөөрөмж ба загвар, аппын процесс ба төлөв, боломжтой болон одоогийн аудио төхөөрөмж, нийтэд нээлттэй тоглуулах ба бичлэгийн тохиргооны мета өгөгдөл, мөн чиглүүлэлтийн оролдлого, үр дүн, хугацаа, техникийн үйл явдал багтаж болно.\n\nАппын тохиргоо Private Audio аппын хувийн хадгалах санд дотоодод хадгалагдана. Оношилгооны мэдээллийг таны төхөөрөмж дээр үүсгэж боловсруулдаг бөгөөд ажиллаж буй аппын дотоод төлөвт байж болно. Тайланг автоматаар хадгалах эсвэл илгээхгүй. Та Оношилгооны тайлан хадгалахыг тодорхой сонгож, Android-аар дамжуулан очих газрыг сонгосон үед л Private Audio-н хувийн сангаас гадна байнгын тайлан үүснэ. Экспортын дараа тухайн хуулбарыг боловсруулах, хадгалах, устгахыг Private Audio биш, сонгосон байршил эсвэл үйлчилгээ хянана.\n\nОдоогийн хувилбар Android-ын интернет зөвшөөрлийг хүсдэггүй, Private Audio серверийн хэсэг эсвэл сүлжээгээр дамжуулах замгүй бөгөөд шинжилгээ, зар сурталчилгаа, гацалтын тайлангийн үйлчилгээ эсвэл SDK агуулаагүй. Одоогоор оношилгооны тайланг хөгжүүлэгч эсвэл Private Audio сервер рүү илгээдэггүй тул Private Audio сервер талд оношилгооны мэдээлэл хадгалдаггүй.\n\nАппын эзэмшлийн өгөгдлийг Android үүлэн нөөцлөлт болон төхөөрөмж хоорондын шилжүүлгээс хассан. Дотоод тохиргоо өөрчлөгдөх эсвэл аппын өгөгдөл устах хүртэл хувийн санд үлдэнэ; түр зуурын оношилгооны төлөв нь хадгалсан тайлан биш. Экспортолсон тайлан таны сонгосон байршил эсвэл үйлчилгээний хяналтад үлдэнэ.</string>
+    <string name="settings_privacy_policy_body">Puzru нь бүртгэл эсвэл нэвтрэхийг шаарддаггүй бөгөөд микрофоны зөвшөөрөл хүсдэггүй. Микрофоны аудиог авах эсвэл бичихгүй, мөн таны яриа эсвэл түүний аудио агуулгыг бичих эсвэл хадгалахгүй.\n\nPuzru чиглүүлэлт болон оношилгоонд шаардлагатай Android аудио системийн мэдээллийг ашиглана. Оношилгоо нь нийтэд нээлттэй Android API-аар ил болгосон техникийн төлөв ба мета өгөгдөл, үүнд тоглуулах болон бичлэгийн сессийн мета өгөгдлийг шалгаж болно. Бичлэгийн сессийн мета өгөгдөл нь аудио системийн техникийн мэдээлэл бөгөөд Puzru тухайн сесстэй холбоотой микрофоны аудиог авахгүй. Оношилгооны мэдээлэлд апп болон Android хувилбар, төхөөрөмж ба загвар, аппын процесс ба төлөв, боломжтой болон одоогийн аудио төхөөрөмж, нийтэд нээлттэй тоглуулах ба бичлэгийн тохиргооны мета өгөгдөл, мөн чиглүүлэлтийн оролдлого, үр дүн, хугацаа, техникийн үйл явдал багтаж болно.\n\nАппын тохиргоо Puzru аппын хувийн хадгалах санд дотоодод хадгалагдана. Оношилгооны мэдээллийг таны төхөөрөмж дээр үүсгэж боловсруулдаг бөгөөд ажиллаж буй аппын дотоод төлөвт байж болно. Тайланг автоматаар хадгалах эсвэл илгээхгүй. Та Оношилгооны тайлан хадгалахыг тодорхой сонгож, Android-аар дамжуулан очих газрыг сонгосон үед л Puzru-н хувийн сангаас гадна байнгын тайлан үүснэ. Экспортын дараа тухайн хуулбарыг боловсруулах, хадгалах, устгахыг Puzru биш, сонгосон байршил эсвэл үйлчилгээ хянана.\n\nОдоогийн хувилбар Android-ын интернет зөвшөөрлийг хүсдэггүй, Puzru серверийн хэсэг эсвэл сүлжээгээр дамжуулах замгүй бөгөөд шинжилгээ, зар сурталчилгаа, гацалтын тайлангийн үйлчилгээ эсвэл SDK агуулаагүй. Одоогоор оношилгооны тайланг хөгжүүлэгч эсвэл Puzru сервер рүү илгээдэггүй тул Puzru сервер талд оношилгооны мэдээлэл хадгалдаггүй.\n\nАппын эзэмшлийн өгөгдлийг Android үүлэн нөөцлөлт болон төхөөрөмж хоорондын шилжүүлгээс хассан. Дотоод тохиргоо өөрчлөгдөх эсвэл аппын өгөгдөл устах хүртэл хувийн санд үлдэнэ; түр зуурын оношилгооны төлөв нь хадгалсан тайлан биш. Экспортолсон тайлан таны сонгосон байршил эсвэл үйлчилгээний хяналтад үлдэнэ.</string>
     <string name="settings_version">Хувилбар %1$s</string>
     <string name="settings_language_android_13_required">Апп дотор хэл сонгоход Android 13 эсвэл түүнээс хойших хувилбар шаардлагатай. Энэ төхөөрөмж системийн хэлийг ашиглаж байна.</string>
     <string name="settings_proximity_screen">Утсаа чихэндээ ойртуулахад дэлгэцийг унтраах</string>
-    <string name="settings_about_body">Private Audio нь дэмжигдсэн ярианы аудиог таны утсанд суурилуулсан чихний чанга яригч руу шилжүүлэхэд тусална.</string>
+    <string name="settings_about_body">Puzru нь дэмжигдсэн ярианы аудиог таны утсанд суурилуулсан чихний чанга яригч руу шилжүүлэхэд тусална.</string>
     <string name="diagnostic_report_saved">Оношилгооны тайлан хадгалагдлаа.</string>
     <string name="diagnostic_report_save_failed">Оношилгооны тайланг хадгалж чадсангүй.</string>
 
@@ -34,7 +34,7 @@
     <string name="diagnostics_system_check">СИСТЕМИЙН ШАЛГАЛТ</string>
     <string name="diagnostics_earpiece">Чихний чанга яригч</string>
     <string name="diagnostics_proximity_sensor">Ойртолтын мэдрэгч</string>
-    <string name="diagnostics_private_audio">PRIVATE AUDIO</string>
+    <string name="diagnostics_private_audio">PUZRU</string>
     <string name="diagnostics_routing">Аудио чиглүүлэлт</string>
     <string name="diagnostics_status">Төлөв</string>
     <string name="diagnostics_audio_route">Аудио гаралт</string>
@@ -59,8 +59,8 @@
     <string name="diagnostics_route_other">Бусад</string>
     <string name="diagnostics_error_blocked_by_system">Аудио чиглүүлэлтийг систем хориглосон.</string>
     <string name="diagnostics_error_session_ended">Аудио чиглүүлэлт дуусахаас өмнө аудио сесс дууссан.</string>
-    <string name="diagnostics_error_audio_start">Private Audio аудио чиглүүлэлтийг эхлүүлж чадсангүй.</string>
-    <string name="diagnostics_error_audio_preparation">Private Audio харилцаа холбооны аудиог бэлтгэж чадсангүй.</string>
+    <string name="diagnostics_error_audio_start">Puzru аудио чиглүүлэлтийг эхлүүлж чадсангүй.</string>
+    <string name="diagnostics_error_audio_preparation">Puzru харилцаа холбооны аудиог бэлтгэж чадсангүй.</string>
     <string name="diagnostics_error_request_rejected">Чихний чанга яригч руу чиглүүлэх хүсэлтийг хүлээн зөвшөөрөөгүй.</string>
     <string name="diagnostics_error_not_completed">Аудио чиглүүлэлтийг дуусгаж чадсангүй.</string>
 </resources>

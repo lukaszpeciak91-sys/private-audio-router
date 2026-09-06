@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Private Audio</string>
-    <string name="routing_notification_channel">Private Audio</string>
-    <string name="routing_notification_title">Private Audio je zapnuté</string>
+    <string name="app_name">Puzru</string>
+    <string name="routing_notification_channel">Puzru</string>
+    <string name="routing_notification_title">Puzru je zapnuté</string>
     <string name="routing_notification_text">Čaká na presmerovanie zvuku</string>
-    <string name="product_title">Private Audio</string>
+    <string name="product_title">Puzru</string>
     <string name="product_subtitle">Hovorte s AI súkromne, ako pri telefonickom hovore.</string>
     <string name="state_ready">Pripravené</string>
     <string name="state_waiting">Čaká</string>
@@ -14,18 +14,18 @@
     <string name="floating">Mini</string>
     <string name="settings">Nastavenia</string>
     <string name="close">Zavrieť</string>
-    <string name="overlay_controller_description">Plávajúci ovládač Private Audio. Stav: %1$s. Ovládacie prvky na zapnutie, rozbalenie a zatvorenie.</string>
+    <string name="overlay_controller_description">Plávajúci ovládač Puzru. Stav: %1$s. Ovládacie prvky na zapnutie, rozbalenie a zatvorenie.</string>
     <string name="settings_language">Jazyk</string>
     <string name="settings_system_default">Predvolené</string>
     <string name="settings_save_diagnostic">Uložiť diagnostickú správu</string>
     <string name="settings_advanced">Rozšírené</string>
-    <string name="settings_about">O aplikácii Private Audio</string>
+    <string name="settings_about">O aplikácii Puzru</string>
     <string name="settings_privacy_policy">Zásady ochrany súkromia</string>
-    <string name="settings_privacy_policy_body">Private Audio nevyžaduje účet ani prihlásenie a nežiada o povolenie mikrofónu. Nezachytáva ani nenahráva zvuk z mikrofónu a nenahráva ani neukladá vaše hovory alebo ich zvukový obsah.\n\nPrivate Audio používa informácie zvukového systému Android potrebné na smerovanie a diagnostiku. Diagnostika môže skúmať technický stav a metadáta sprístupnené verejnými rozhraniami API systému Android vrátane metadát prehrávania a relácií nahrávania. Metadáta relácií nahrávania sú technické informácie zvukového systému; Private Audio nezachytáva zvuk z mikrofónu súvisiaci s týmito reláciami. Diagnostické informácie môžu zahŕňať verzie aplikácie a Androidu, informácie o zariadení a modeli, informácie o procese a stave aplikácie, dostupné a aktuálne zvukové zariadenia, verejné metadáta konfigurácie prehrávania a nahrávania a pokusy o smerovanie, ich výsledky, časovanie a technické udalosti.\n\nPredvoľby aplikácie sa ukladajú lokálne v súkromnom úložisku aplikácie Private Audio. Diagnostické informácie sa vytvárajú a spracúvajú vo vašom zariadení a môžu existovať v lokálnom stave spustenej aplikácie. Správy sa automaticky neukladajú ani neodosielajú. Trvalá správa sa vytvorí mimo súkromného úložiska aplikácie Private Audio iba vtedy, keď výslovne vyberiete Uložiť diagnostickú správu a prostredníctvom Androidu zvolíte cieľové umiestnenie. Po exporte riadi spracovanie, uchovávanie a odstránenie tejto kópie vybrané umiestnenie alebo služba, nie Private Audio.\n\nAktuálna verzia nežiada o internetové povolenie systému Android, nemá backend Private Audio ani cestu sieťového prenosu a neobsahuje služby ani súpravy SDK na analytiku, reklamu alebo hlásenie zlyhaní. V súčasnosti neposiela diagnostické správy vývojárovi ani na server Private Audio, takže Private Audio neuchováva diagnostické informácie na žiadnom serveri.\n\nDáta vlastnené aplikáciou sú vylúčené z cloudového zálohovania Androidu a prenosu medzi zariadeniami. Lokálne predvoľby zostávajú v súkromnom úložisku aplikácie, kým ich nezmeníte alebo neodstránite dáta aplikácie; prechodný diagnostický stav nie je uložená správa. Exportované správy zostávajú pod kontrolou vybraného umiestnenia alebo služby.</string>
+    <string name="settings_privacy_policy_body">Puzru nevyžaduje účet ani prihlásenie a nežiada o povolenie mikrofónu. Nezachytáva ani nenahráva zvuk z mikrofónu a nenahráva ani neukladá vaše hovory alebo ich zvukový obsah.\n\nPuzru používa informácie zvukového systému Android potrebné na smerovanie a diagnostiku. Diagnostika môže skúmať technický stav a metadáta sprístupnené verejnými rozhraniami API systému Android vrátane metadát prehrávania a relácií nahrávania. Metadáta relácií nahrávania sú technické informácie zvukového systému; Puzru nezachytáva zvuk z mikrofónu súvisiaci s týmito reláciami. Diagnostické informácie môžu zahŕňať verzie aplikácie a Androidu, informácie o zariadení a modeli, informácie o procese a stave aplikácie, dostupné a aktuálne zvukové zariadenia, verejné metadáta konfigurácie prehrávania a nahrávania a pokusy o smerovanie, ich výsledky, časovanie a technické udalosti.\n\nPredvoľby aplikácie sa ukladajú lokálne v súkromnom úložisku aplikácie Puzru. Diagnostické informácie sa vytvárajú a spracúvajú vo vašom zariadení a môžu existovať v lokálnom stave spustenej aplikácie. Správy sa automaticky neukladajú ani neodosielajú. Trvalá správa sa vytvorí mimo súkromného úložiska aplikácie Puzru iba vtedy, keď výslovne vyberiete Uložiť diagnostickú správu a prostredníctvom Androidu zvolíte cieľové umiestnenie. Po exporte riadi spracovanie, uchovávanie a odstránenie tejto kópie vybrané umiestnenie alebo služba, nie Puzru.\n\nAktuálna verzia nežiada o internetové povolenie systému Android, nemá backend Puzru ani cestu sieťového prenosu a neobsahuje služby ani súpravy SDK na analytiku, reklamu alebo hlásenie zlyhaní. V súčasnosti neposiela diagnostické správy vývojárovi ani na server Puzru, takže Puzru neuchováva diagnostické informácie na žiadnom serveri.\n\nDáta vlastnené aplikáciou sú vylúčené z cloudového zálohovania Androidu a prenosu medzi zariadeniami. Lokálne predvoľby zostávajú v súkromnom úložisku aplikácie, kým ich nezmeníte alebo neodstránite dáta aplikácie; prechodný diagnostický stav nie je uložená správa. Exportované správy zostávajú pod kontrolou vybraného umiestnenia alebo služby.</string>
     <string name="settings_version">Verzia %1$s</string>
     <string name="settings_language_android_13_required">Výber jazyka v aplikácii vyžaduje Android 13 alebo novší. Toto zariadenie používa jazyk systému.</string>
     <string name="settings_proximity_screen">Vypnúť obrazovku pri uchu</string>
-    <string name="settings_about_body">Private Audio pomáha presmerovať podporovaný hlasový zvuk do slúchadla telefónu.</string>
+    <string name="settings_about_body">Puzru pomáha presmerovať podporovaný hlasový zvuk do slúchadla telefónu.</string>
     <string name="diagnostic_report_saved">Diagnostická správa bola uložená.</string>
     <string name="diagnostic_report_save_failed">Diagnostickú správu sa nepodarilo uložiť.</string>
 
@@ -34,7 +34,7 @@
     <string name="diagnostics_system_check">KONTROLA SYSTÉMU</string>
     <string name="diagnostics_earpiece">Slúchadlo telefónu</string>
     <string name="diagnostics_proximity_sensor">Snímač priblíženia</string>
-    <string name="diagnostics_private_audio">PRIVATE AUDIO</string>
+    <string name="diagnostics_private_audio">PUZRU</string>
     <string name="diagnostics_routing">Smerovanie</string>
     <string name="diagnostics_status">Stav</string>
     <string name="diagnostics_audio_route">Zvukový výstup</string>
@@ -59,8 +59,8 @@
     <string name="diagnostics_route_other">Iné</string>
     <string name="diagnostics_error_blocked_by_system">Systém zablokoval smerovanie zvuku.</string>
     <string name="diagnostics_error_session_ended">Zvuková relácia sa skončila skôr, než sa dokončilo smerovanie.</string>
-    <string name="diagnostics_error_audio_start">Private Audio nemohlo spustiť smerovanie zvuku.</string>
-    <string name="diagnostics_error_audio_preparation">Private Audio nemohlo pripraviť zvuk pre komunikáciu.</string>
+    <string name="diagnostics_error_audio_start">Puzru nemohlo spustiť smerovanie zvuku.</string>
+    <string name="diagnostics_error_audio_preparation">Puzru nemohlo pripraviť zvuk pre komunikáciu.</string>
     <string name="diagnostics_error_request_rejected">Požiadavka na smerovanie zvuku do slúchadla nebola prijatá.</string>
     <string name="diagnostics_error_not_completed">Smerovanie sa nepodarilo dokončiť.</string>
 </resources>

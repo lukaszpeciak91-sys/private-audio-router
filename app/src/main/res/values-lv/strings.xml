@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Private Audio</string>
-    <string name="routing_notification_channel">Private Audio</string>
-    <string name="routing_notification_title">Private Audio ir ieslēgts</string>
+    <string name="app_name">Puzru</string>
+    <string name="routing_notification_channel">Puzru</string>
+    <string name="routing_notification_title">Puzru ir ieslēgts</string>
     <string name="routing_notification_text">Gaida audio pārslēgšanu</string>
-    <string name="product_title">Private Audio</string>
+    <string name="product_title">Puzru</string>
     <string name="product_subtitle">Runājiet ar MI privāti, gluži kā tālruņa sarunā.</string>
     <string name="state_ready">Gatavs</string>
     <string name="state_waiting">Gaida</string>
@@ -14,18 +14,18 @@
     <string name="floating">Mini</string>
     <string name="settings">Iestatījumi</string>
     <string name="close">Aizvērt</string>
-    <string name="overlay_controller_description">Private Audio peldošais vadības panelis. Statuss: %1$s. Ieslēgšanas, izvēršanas un aizvēršanas vadīklas.</string>
+    <string name="overlay_controller_description">Puzru peldošais vadības panelis. Statuss: %1$s. Ieslēgšanas, izvēršanas un aizvēršanas vadīklas.</string>
     <string name="settings_language">Valoda</string>
     <string name="settings_system_default">Noklusējums</string>
     <string name="settings_save_diagnostic">Saglabāt diagnostikas pārskatu</string>
     <string name="settings_advanced">Papildu</string>
-    <string name="settings_about">Par Private Audio</string>
+    <string name="settings_about">Par Puzru</string>
     <string name="settings_privacy_policy">Konfidencialitātes politika</string>
-    <string name="settings_privacy_policy_body">Private Audio nav nepieciešams konts vai pierakstīšanās, un tā nepieprasa mikrofona atļauju. Tā netver un neieraksta mikrofona audio, kā arī neieraksta un neglabā jūsu sarunas vai to audio saturu.\n\nPrivate Audio izmanto Android audio sistēmas informāciju, kas nepieciešama audio maršrutēšanai un diagnostikai. Diagnostika var pārbaudīt tehnisko stāvokli un metadatus, ko nodrošina publiskās Android API, tostarp atskaņošanas un ierakstīšanas sesiju metadatus. Ierakstīšanas sesiju metadati ir audio sistēmas tehniskā informācija; Private Audio netver ar šīm sesijām saistīto mikrofona audio. Diagnostikas informācija var ietvert lietotnes un Android versijas, ierīces un modeļa informāciju, lietotnes procesa un stāvokļa informāciju, pieejamās un pašreizējās audioierīces, publiskos atskaņošanas un ierakstīšanas konfigurācijas metadatus, kā arī maršrutēšanas mēģinājumus, to rezultātus, laika datus un tehniskos notikumus.\n\nLietotnes preferences tiek glabātas lokāli Private Audio lietotnes privātajā krātuvē. Diagnostikas informācija tiek ģenerēta un apstrādāta jūsu ierīcē un var pastāvēt palaistās lietotnes lokālajā stāvoklī. Pārskati netiek automātiski saglabāti vai nosūtīti. Pastāvīgs pārskats ārpus Private Audio lietotnes privātās krātuves tiek izveidots tikai tad, kad skaidri izvēlaties Saglabāt diagnostikas pārskatu un Android sistēmā atlasāt galamērķi. Pēc eksportēšanas šīs kopijas apstrādi, glabāšanu un dzēšanu kontrolē atlasītā atrašanās vieta vai pakalpojums, nevis Private Audio.\n\nPašreizējā versija nepieprasa Android interneta atļauju, tai nav Private Audio aizmugursistēmas vai tīkla pārraides ceļa, un tajā nav analītikas, reklāmu vai avāriju ziņošanas pakalpojumu vai SDK. Pašlaik tā nesūta diagnostikas pārskatus izstrādātājam vai Private Audio serverim, tāpēc Private Audio nevienā serverī neglabā diagnostikas informāciju.\n\nLietotnei piederošie dati ir izslēgti no Android mākoņa dublēšanas un pārsūtīšanas no ierīces uz ierīci. Lokālās preferences paliek lietotnes privātajā krātuvē, līdz tās tiek mainītas vai lietotnes dati tiek noņemti; pārejošais diagnostikas stāvoklis nav saglabāts pārskats. Eksportētie pārskati paliek jūsu izvēlētās atrašanās vietas vai pakalpojuma kontrolē.</string>
+    <string name="settings_privacy_policy_body">Puzru nav nepieciešams konts vai pierakstīšanās, un tā nepieprasa mikrofona atļauju. Tā netver un neieraksta mikrofona audio, kā arī neieraksta un neglabā jūsu sarunas vai to audio saturu.\n\nPuzru izmanto Android audio sistēmas informāciju, kas nepieciešama audio maršrutēšanai un diagnostikai. Diagnostika var pārbaudīt tehnisko stāvokli un metadatus, ko nodrošina publiskās Android API, tostarp atskaņošanas un ierakstīšanas sesiju metadatus. Ierakstīšanas sesiju metadati ir audio sistēmas tehniskā informācija; Puzru netver ar šīm sesijām saistīto mikrofona audio. Diagnostikas informācija var ietvert lietotnes un Android versijas, ierīces un modeļa informāciju, lietotnes procesa un stāvokļa informāciju, pieejamās un pašreizējās audioierīces, publiskos atskaņošanas un ierakstīšanas konfigurācijas metadatus, kā arī maršrutēšanas mēģinājumus, to rezultātus, laika datus un tehniskos notikumus.\n\nLietotnes preferences tiek glabātas lokāli Puzru lietotnes privātajā krātuvē. Diagnostikas informācija tiek ģenerēta un apstrādāta jūsu ierīcē un var pastāvēt palaistās lietotnes lokālajā stāvoklī. Pārskati netiek automātiski saglabāti vai nosūtīti. Pastāvīgs pārskats ārpus Puzru lietotnes privātās krātuves tiek izveidots tikai tad, kad skaidri izvēlaties Saglabāt diagnostikas pārskatu un Android sistēmā atlasāt galamērķi. Pēc eksportēšanas šīs kopijas apstrādi, glabāšanu un dzēšanu kontrolē atlasītā atrašanās vieta vai pakalpojums, nevis Puzru.\n\nPašreizējā versija nepieprasa Android interneta atļauju, tai nav Puzru aizmugursistēmas vai tīkla pārraides ceļa, un tajā nav analītikas, reklāmu vai avāriju ziņošanas pakalpojumu vai SDK. Pašlaik tā nesūta diagnostikas pārskatus izstrādātājam vai Puzru serverim, tāpēc Puzru nevienā serverī neglabā diagnostikas informāciju.\n\nLietotnei piederošie dati ir izslēgti no Android mākoņa dublēšanas un pārsūtīšanas no ierīces uz ierīci. Lokālās preferences paliek lietotnes privātajā krātuvē, līdz tās tiek mainītas vai lietotnes dati tiek noņemti; pārejošais diagnostikas stāvoklis nav saglabāts pārskats. Eksportētie pārskati paliek jūsu izvēlētās atrašanās vietas vai pakalpojuma kontrolē.</string>
     <string name="settings_version">Versija %1$s</string>
     <string name="settings_language_android_13_required">Valodas atlasei lietotnē ir nepieciešama Android 13 vai jaunāka versija. Šī ierīce izmanto sistēmas valodu.</string>
     <string name="settings_proximity_screen">Izslēgt ekrānu pie auss</string>
-    <string name="settings_about_body">Private Audio palīdz pārslēgt atbalstīto balss audio uz tālruņa iebūvēto uztvērēju.</string>
+    <string name="settings_about_body">Puzru palīdz pārslēgt atbalstīto balss audio uz tālruņa iebūvēto uztvērēju.</string>
     <string name="diagnostic_report_saved">Diagnostikas pārskats ir saglabāts.</string>
     <string name="diagnostic_report_save_failed">Neizdevās saglabāt diagnostikas pārskatu.</string>
 
@@ -34,7 +34,7 @@
     <string name="diagnostics_system_check">SISTĒMAS PĀRBAUDE</string>
     <string name="diagnostics_earpiece">Tālruņa uztvērējs</string>
     <string name="diagnostics_proximity_sensor">Tuvuma sensors</string>
-    <string name="diagnostics_private_audio">Private Audio</string>
+    <string name="diagnostics_private_audio">Puzru</string>
     <string name="diagnostics_routing">Audio novirzīšana</string>
     <string name="diagnostics_status">Statuss</string>
     <string name="diagnostics_audio_route">Audio izvade</string>
@@ -59,8 +59,8 @@
     <string name="diagnostics_route_other">Cits</string>
     <string name="diagnostics_error_blocked_by_system">Sistēma bloķēja audio novirzīšanu.</string>
     <string name="diagnostics_error_session_ended">Audio sesija beidzās, pirms tika pabeigta audio novirzīšana.</string>
-    <string name="diagnostics_error_audio_start">Private Audio neizdevās sākt audio novirzīšanu.</string>
-    <string name="diagnostics_error_audio_preparation">Private Audio neizdevās sagatavot saziņas audio.</string>
+    <string name="diagnostics_error_audio_start">Puzru neizdevās sākt audio novirzīšanu.</string>
+    <string name="diagnostics_error_audio_preparation">Puzru neizdevās sagatavot saziņas audio.</string>
     <string name="diagnostics_error_request_rejected">Pieprasījums novirzīt audio uz tālruņa uztvērēju netika pieņemts.</string>
     <string name="diagnostics_error_not_completed">Audio novirzīšanu neizdevās pabeigt.</string>
 </resources>

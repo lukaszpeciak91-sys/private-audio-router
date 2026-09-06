@@ -418,10 +418,10 @@ class PrivateAudioScreenTest {
         showDiagnostics(diagnosticsSummary())
 
         listOf(
-            "SYSTEM CHECK", "PRIVATE AUDIO", "Earpiece", "Proximity sensor", "Floating control",
+            "SYSTEM CHECK", "PUZRU", "Earpiece", "Proximity sensor", "Floating control",
             "Routing", "Status", "Audio route", "Save diagnostic report",
         ).forEach { composeRule.onNodeWithText(it).assertIsDisplayed() }
-        listOf("DEVICE", "Device", "Android", "Private Audio version", "Detected audio", "LAST ROUTING")
+        listOf("DEVICE", "Device", "Android", "Puzru version", "Detected audio", "LAST ROUTING")
             .forEach { composeRule.onNodeWithText(it).assertDoesNotExist() }
     }
 

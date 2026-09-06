@@ -63,8 +63,8 @@ class KurmanjiLocalizationContractTest {
 
     @Test
     fun productStatesBrandAndAudioReferentsRemainDistinct() {
-        assertEquals("Private Audio", resourceValue("app_name"))
-        assertEquals("Private Audio", resourceValue("product_title"))
+        assertEquals("Puzru", resourceValue("app_name"))
+        assertEquals("Puzru", resourceValue("product_title"))
         assertEquals("Wekî heyî", resourceValue("settings_system_default"))
 
         val overlay = resourceValue("overlay_controller_description")
@@ -110,13 +110,13 @@ class KurmanjiLocalizationContractTest {
             "ne jî axaftinên we an naveroka dengî ya wan tomar dike an diparêze", "Metadata-yên danişînên tomarê agahiyên teknîkî yên pergala dengê ne",
             "dengê mîkrofônê ku bi wan danişînan ve girêdayî ye nagire", "li ser cîhaza we têne afirandin û pêvajokirin", "Rapor bixweber nayên tomarkirin an şandin",
             "tenê dema ku hûn bi eşkereyî Tomara rapora teşhîsê hilbijêrin", "Guhertoya niha destûra Internetê ya Android naxwaze",
-            "ne backendekî Private Audio heye ne jî rêyek şandina torê heye", "ne xizmet an SDK-yên analîtîk, reklam, an raporkirina çewtiyan tê de ne",
-            "raporên teşhîsê ji pêşdebirê an jî ji serveurê Private Audio re naşîne", "cloud backup û veguheztina ji cîhazekê bo cîhazekî din a Android têne derxistin",
+            "ne backendekî Puzru heye ne jî rêyek şandina torê heye", "ne xizmet an SDK-yên analîtîk, reklam, an raporkirina çewtiyan tê de ne",
+            "raporên teşhîsê ji pêşdebirê an jî ji serveurê Puzru re naşîne", "cloud backup û veguheztina ji cîhazekê bo cîhazekî din a Android têne derxistin",
         ).forEach { guard -> assertTrue("Missing privacy guard: $guard", privacy.contains(guard)) }
 
         val rejected = resourceValue("diagnostics_error_request_rejected")
         assertTrue(rejected.contains("nehat pejirandin"))
-        listOf("Android", "pergal", "telefon", "Private Audio").forEach { actor ->
+        listOf("Android", "pergal", "telefon", "Puzru").forEach { actor ->
             assertFalse("Rejected request invented actor: $actor", rejected.contains(actor, ignoreCase = true))
         }
         assertTrue(resourceValue("diagnostics_error_blocked_by_system").contains("pergalê"))

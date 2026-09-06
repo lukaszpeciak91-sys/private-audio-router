@@ -1266,7 +1266,7 @@ class AudioDiagnosticObserver(
         ) {
             modeParticipationActive = false
             audioManager.mode = AudioManager.MODE_NORMAL
-            reconciliation = "Relinquished stale Private Audio mode participation with MODE_NORMAL; " +
+            reconciliation = "Relinquished stale Puzru mode participation with MODE_NORMAL; " +
                 "Android-reported mode=${audioModeName(audioManager.mode)}"
         }
         if (assistantEarlyRoute.generation == generation) {
@@ -1633,7 +1633,7 @@ class AudioDiagnosticObserver(
             modeParticipationActive = false
             audioManager.mode = AudioManager.MODE_NORMAL
             addEvent(
-                "Private Audio mode participation relinquished with MODE_NORMAL — " +
+                "Puzru mode participation relinquished with MODE_NORMAL — " +
                     "pre-participation mode=${experiment.modeBeforeParticipation}; " +
                     "Android-reported mode=${audioModeName(audioManager.mode)}",
             )
@@ -1774,19 +1774,19 @@ internal fun buildDiagnosticReport(
     recordingStartupObservation: RecordingStartupObservation? = null,
     supportSummary: DiagnosticsSummary? = null,
 ) = buildString {
-    appendLine("PRIVATE AUDIO — DIAGNOSTIC REPORT")
+    appendLine("PUZRU — DIAGNOSTIC REPORT")
     appendLine("Diagnostic report format: $DIAGNOSTIC_REPORT_FORMAT")
     appendLine("Timestamp: $timestamp")
     appendLine("Package: $packageName")
-    appendLine("Private Audio PID: ${snapshot.processId.reportIdentity()}")
-    appendLine("Private Audio UID: ${snapshot.userId.reportIdentity()}")
+    appendLine("Puzru PID: ${snapshot.processId.reportIdentity()}")
+    appendLine("Puzru UID: ${snapshot.userId.reportIdentity()}")
     appendLine()
     supportSummary?.let {
         appendLine(it.supportSummary())
         appendLine()
     }
     appendLine("DIAGNOSTIC ENVIRONMENT")
-    appendLine("Private Audio version: ${environment.versionName} (${environment.versionCode})")
+    appendLine("Puzru version: ${environment.versionName} (${environment.versionCode})")
     appendLine("Android: ${environment.androidRelease}")
     appendLine("API level: ${environment.apiLevel}")
     appendLine("Manufacturer: ${environment.manufacturer}")
@@ -1900,7 +1900,7 @@ internal fun buildDiagnosticReport(
     appendLine()
     appendLine("STARTUP AUDIO TRACE")
     appendLine("FACT: entries below contain only public Android playback metadata; no audio is captured or recorded.")
-    appendLine("UNKNOWN: Android does not publicly expose player/session ownership or an exact player-state value here, so entries are not classified as startup chime, ChatGPT, or Private Audio.")
+    appendLine("UNKNOWN: Android does not publicly expose player/session ownership or an exact player-state value here, so entries are not classified as startup chime, ChatGPT, or Puzru.")
     if (startupAudioTrace.isEmpty()) appendLine("No playback callbacks recorded") else {
         startupAudioTrace.forEach(::appendLine)
     }
@@ -1952,10 +1952,10 @@ internal fun buildDiagnosticReport(
     appendLine("Trigger to earpiece first observed elapsed ms: ${experiment.triggerToEarpieceObservedElapsedMs ?: "unknown / not applicable"}")
     appendLine("Fallback AudioTrack creation used: ${experiment.fallbackCreationUsed}")
     appendLine("AudioAttributes: USAGE_VOICE_COMMUNICATION + CONTENT_TYPE_SPEECH")
-    appendLine("Private Audio active VOICE_COMMUNICATION playback observed: ${experiment.activeVoiceCommunicationPlaybackObserved} (track PLAYING plus matching public active-playback configuration)")
+    appendLine("Puzru active VOICE_COMMUNICATION playback observed: ${experiment.activeVoiceCommunicationPlaybackObserved} (track PLAYING plus matching public active-playback configuration)")
     appendLine("Silent VOICE_COMMUNICATION AudioTrack active before mode request: ${experiment.silentTrackActiveBeforeModeRequest}")
     appendLine("Mode request issued after silent playback became active: ${experiment.modeRequestIssuedAfterPlaybackActive}")
-    appendLine("Explicit Private Audio setMode(MODE_IN_COMMUNICATION) invoked: ${experiment.explicitModeRequestInvoked}")
+    appendLine("Explicit Puzru setMode(MODE_IN_COMMUNICATION) invoked: ${experiment.explicitModeRequestInvoked}")
     appendLine("Mode request timestamp: ${experiment.modeRequestTimestamp ?: "Not invoked"}")
     appendLine("Mode request thread: ${experiment.modeRequestThread ?: "Not invoked"}")
     appendLine("Mode immediately before request: ${experiment.modeImmediatelyBeforeRequest ?: "Not invoked"}")
@@ -2012,8 +2012,8 @@ internal fun buildDiagnosticReport(
     appendLine()
     appendLine()
     appendLine("ADB CORRELATION")
-    appendLine("Private Audio PID: ${snapshot.processId.reportIdentity()}")
-    appendLine("Private Audio UID: ${snapshot.userId.reportIdentity()}")
+    appendLine("Puzru PID: ${snapshot.processId.reportIdentity()}")
+    appendLine("Puzru UID: ${snapshot.userId.reportIdentity()}")
     appendLine("Report timestamp: $timestamp")
     appendLine("Capture before cleanup with: adb shell dumpsys audio > audio-poc5.txt")
     append("This report does not claim actual mode ownership; verify it externally.")

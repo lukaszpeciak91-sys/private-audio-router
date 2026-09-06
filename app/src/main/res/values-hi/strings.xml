@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Private Audio</string>
-    <string name="routing_notification_channel">Private Audio</string>
-    <string name="routing_notification_title">Private Audio चालू है</string>
+    <string name="app_name">Puzru</string>
+    <string name="routing_notification_channel">Puzru</string>
+    <string name="routing_notification_title">Puzru चालू है</string>
     <string name="routing_notification_text">ऑडियो भेजे जाने का इंतज़ार है</string>
-    <string name="product_title">Private Audio</string>
+    <string name="product_title">Puzru</string>
     <string name="product_subtitle">फ़ोन कॉल की तरह, एआई से निजी तौर पर बात करें।</string>
     <string name="state_ready">तैयार</string>
     <string name="state_waiting">इंतज़ार में</string>
@@ -14,18 +14,18 @@
     <string name="floating">मिनी</string>
     <string name="settings">सेटिंग</string>
     <string name="close">बंद करें</string>
-    <string name="overlay_controller_description">Private Audio मिनी कंट्रोलर। स्थिति: %1$s। चालू करने, फैलाने और बंद करने के कंट्रोल।</string>
+    <string name="overlay_controller_description">Puzru मिनी कंट्रोलर। स्थिति: %1$s। चालू करने, फैलाने और बंद करने के कंट्रोल।</string>
     <string name="settings_language">भाषा</string>
     <string name="settings_system_default">डिफ़ॉल्ट</string>
     <string name="settings_save_diagnostic">डायग्नोस्टिक रिपोर्ट सेव करें</string>
     <string name="settings_advanced">उन्नत</string>
-    <string name="settings_about">Private Audio के बारे में</string>
+    <string name="settings_about">Puzru के बारे में</string>
     <string name="settings_privacy_policy">गोपनीयता नीति</string>
-    <string name="settings_privacy_policy_body">Private Audio के लिए खाता या साइन-इन आवश्यक नहीं है और यह माइक्रोफ़ोन की अनुमति का अनुरोध नहीं करता। यह माइक्रोफ़ोन ऑडियो को कैप्चर या रिकॉर्ड नहीं करता और आपकी बातचीत या उसकी ऑडियो सामग्री को रिकॉर्ड या संग्रहीत नहीं करता।\n\nPrivate Audio रूटिंग और निदान के लिए आवश्यक Android ऑडियो सिस्टम की जानकारी का उपयोग करता है। निदान सार्वजनिक Android API द्वारा उपलब्ध कराई गई तकनीकी स्थिति और मेटाडेटा की जाँच कर सकता है, जिसमें प्लेबैक और रिकॉर्डिंग-सेशन मेटाडेटा शामिल है। रिकॉर्डिंग-सेशन मेटाडेटा ऑडियो सिस्टम की तकनीकी जानकारी है; Private Audio उन सेशन से जुड़े माइक्रोफ़ोन ऑडियो को कैप्चर नहीं करता। निदान जानकारी में ऐप और Android के वर्शन, डिवाइस और मॉडल की जानकारी, ऐप की प्रोसेस और स्थिति की जानकारी, उपलब्ध और वर्तमान ऑडियो डिवाइस, सार्वजनिक प्लेबैक और रिकॉर्डिंग कॉन्फ़िगरेशन मेटाडेटा, तथा रूटिंग के प्रयास, परिणाम, समय और तकनीकी घटनाएँ शामिल हो सकती हैं।\n\nऐप की प्राथमिकताएँ Private Audio के ऐप-निजी स्टोरेज में स्थानीय रूप से संग्रहीत होती हैं। निदान जानकारी आपके डिवाइस पर बनाई और संसाधित की जाती है और चालू ऐप की स्थानीय स्थिति में मौजूद हो सकती है। रिपोर्ट अपने-आप सहेजी या भेजी नहीं जातीं। Private Audio के ऐप-निजी स्टोरेज के बाहर स्थायी रिपोर्ट केवल तभी बनाई जाती है, जब आप स्पष्ट रूप से निदान रिपोर्ट सहेजें चुनते हैं और Android के माध्यम से कोई गंतव्य चुनते हैं। निर्यात के बाद उस प्रति के प्रबंधन, प्रतिधारण और हटाने को Private Audio नहीं, बल्कि चुना गया स्थान या सेवा नियंत्रित करती है।\n\nवर्तमान वर्शन Android की इंटरनेट अनुमति का अनुरोध नहीं करता, इसमें Private Audio का कोई बैकएंड या नेटवर्क प्रसारण पथ नहीं है और इसमें विश्लेषण, विज्ञापन या क्रैश-रिपोर्टिंग सेवाएँ अथवा SDK शामिल नहीं हैं। यह वर्तमान में डेवलपर या Private Audio सर्वर को निदान रिपोर्ट नहीं भेजता, इसलिए Private Audio के पास सर्वर पर निदान जानकारी का कोई प्रतिधारण नहीं है।\n\nऐप के स्वामित्व वाला डेटा Android क्लाउड बैकअप और एक डिवाइस से दूसरे डिवाइस में स्थानांतरण से बाहर रखा जाता है। स्थानीय प्राथमिकताएँ बदले जाने या ऐप का डेटा हटाए जाने तक ऐप-निजी स्टोरेज में रहती हैं; अस्थायी निदान स्थिति कोई सहेजी गई रिपोर्ट नहीं है। निर्यात की गई रिपोर्ट आपके चुने हुए स्थान या सेवा के नियंत्रण में रहती हैं।</string>
+    <string name="settings_privacy_policy_body">Puzru के लिए खाता या साइन-इन आवश्यक नहीं है और यह माइक्रोफ़ोन की अनुमति का अनुरोध नहीं करता। यह माइक्रोफ़ोन ऑडियो को कैप्चर या रिकॉर्ड नहीं करता और आपकी बातचीत या उसकी ऑडियो सामग्री को रिकॉर्ड या संग्रहीत नहीं करता।\n\nPuzru रूटिंग और निदान के लिए आवश्यक Android ऑडियो सिस्टम की जानकारी का उपयोग करता है। निदान सार्वजनिक Android API द्वारा उपलब्ध कराई गई तकनीकी स्थिति और मेटाडेटा की जाँच कर सकता है, जिसमें प्लेबैक और रिकॉर्डिंग-सेशन मेटाडेटा शामिल है। रिकॉर्डिंग-सेशन मेटाडेटा ऑडियो सिस्टम की तकनीकी जानकारी है; Puzru उन सेशन से जुड़े माइक्रोफ़ोन ऑडियो को कैप्चर नहीं करता। निदान जानकारी में ऐप और Android के वर्शन, डिवाइस और मॉडल की जानकारी, ऐप की प्रोसेस और स्थिति की जानकारी, उपलब्ध और वर्तमान ऑडियो डिवाइस, सार्वजनिक प्लेबैक और रिकॉर्डिंग कॉन्फ़िगरेशन मेटाडेटा, तथा रूटिंग के प्रयास, परिणाम, समय और तकनीकी घटनाएँ शामिल हो सकती हैं।\n\nऐप की प्राथमिकताएँ Puzru के ऐप-निजी स्टोरेज में स्थानीय रूप से संग्रहीत होती हैं। निदान जानकारी आपके डिवाइस पर बनाई और संसाधित की जाती है और चालू ऐप की स्थानीय स्थिति में मौजूद हो सकती है। रिपोर्ट अपने-आप सहेजी या भेजी नहीं जातीं। Puzru के ऐप-निजी स्टोरेज के बाहर स्थायी रिपोर्ट केवल तभी बनाई जाती है, जब आप स्पष्ट रूप से निदान रिपोर्ट सहेजें चुनते हैं और Android के माध्यम से कोई गंतव्य चुनते हैं। निर्यात के बाद उस प्रति के प्रबंधन, प्रतिधारण और हटाने को Puzru नहीं, बल्कि चुना गया स्थान या सेवा नियंत्रित करती है।\n\nवर्तमान वर्शन Android की इंटरनेट अनुमति का अनुरोध नहीं करता, इसमें Puzru का कोई बैकएंड या नेटवर्क प्रसारण पथ नहीं है और इसमें विश्लेषण, विज्ञापन या क्रैश-रिपोर्टिंग सेवाएँ अथवा SDK शामिल नहीं हैं। यह वर्तमान में डेवलपर या Puzru सर्वर को निदान रिपोर्ट नहीं भेजता, इसलिए Puzru के पास सर्वर पर निदान जानकारी का कोई प्रतिधारण नहीं है।\n\nऐप के स्वामित्व वाला डेटा Android क्लाउड बैकअप और एक डिवाइस से दूसरे डिवाइस में स्थानांतरण से बाहर रखा जाता है। स्थानीय प्राथमिकताएँ बदले जाने या ऐप का डेटा हटाए जाने तक ऐप-निजी स्टोरेज में रहती हैं; अस्थायी निदान स्थिति कोई सहेजी गई रिपोर्ट नहीं है। निर्यात की गई रिपोर्ट आपके चुने हुए स्थान या सेवा के नियंत्रण में रहती हैं।</string>
     <string name="settings_version">वर्शन %1$s</string>
     <string name="settings_language_android_13_required">ऐप में भाषा चुनने के लिए Android 13 या इसके बाद का वर्शन चाहिए। यह डिवाइस सिस्टम की भाषा का इस्तेमाल करता है।</string>
     <string name="settings_proximity_screen">कान के पास स्क्रीन बंद करें</string>
-    <string name="settings_about_body">Private Audio वॉइस ऑडियो को फ़ोन के अंदरूनी ईयरपीस पर भेजने में मदद करता है।</string>
+    <string name="settings_about_body">Puzru वॉइस ऑडियो को फ़ोन के अंदरूनी ईयरपीस पर भेजने में मदद करता है।</string>
     <string name="diagnostic_report_saved">डायग्नोस्टिक रिपोर्ट सेव हो गई।</string>
     <string name="diagnostic_report_save_failed">डायग्नोस्टिक रिपोर्ट सेव नहीं हो सकी।</string>
 
@@ -34,7 +34,7 @@
     <string name="diagnostics_system_check">सिस्टम जाँच</string>
     <string name="diagnostics_earpiece">ईयरपीस</string>
     <string name="diagnostics_proximity_sensor">प्रॉक्सिमिटी सेंसर</string>
-    <string name="diagnostics_private_audio">Private Audio</string>
+    <string name="diagnostics_private_audio">Puzru</string>
     <string name="diagnostics_routing">ऑडियो रूटिंग</string>
     <string name="diagnostics_status">स्थिति</string>
     <string name="diagnostics_audio_route">ऑडियो आउटपुट</string>
@@ -59,8 +59,8 @@
     <string name="diagnostics_route_other">अन्य</string>
     <string name="diagnostics_error_blocked_by_system">सिस्टम ने ऑडियो रूटिंग रोक दी।</string>
     <string name="diagnostics_error_session_ended">ऑडियो रूटिंग पूरी होने से पहले ऑडियो सेशन खत्म हो गया।</string>
-    <string name="diagnostics_error_audio_start">Private Audio ऑडियो रूटिंग शुरू नहीं कर सका।</string>
-    <string name="diagnostics_error_audio_preparation">Private Audio कम्यूनिकेशन ऑडियो तैयार नहीं कर सका।</string>
+    <string name="diagnostics_error_audio_start">Puzru ऑडियो रूटिंग शुरू नहीं कर सका।</string>
+    <string name="diagnostics_error_audio_preparation">Puzru कम्यूनिकेशन ऑडियो तैयार नहीं कर सका।</string>
     <string name="diagnostics_error_request_rejected">ईयरपीस पर ऑडियो भेजने का अनुरोध स्वीकार नहीं किया गया।</string>
     <string name="diagnostics_error_not_completed">ऑडियो रूटिंग पूरी नहीं की जा सकी।</string>
 </resources>

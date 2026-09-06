@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Private Audio</string>
-    <string name="routing_notification_channel">Private Audio</string>
-    <string name="routing_notification_title">Private Audio қосулы</string>
+    <string name="app_name">Puzru</string>
+    <string name="routing_notification_channel">Puzru</string>
+    <string name="routing_notification_title">Puzru қосулы</string>
     <string name="routing_notification_text">Аудио шығысын ауыстыруды күтуде</string>
-    <string name="product_title">Private Audio</string>
+    <string name="product_title">Puzru</string>
     <string name="product_subtitle">ЖИ-мен телефон қоңырауындағыдай жеке сөйлесіңіз.</string>
     <string name="state_ready">Дайын</string>
     <string name="state_waiting">Күтуде</string>
@@ -14,18 +14,18 @@
     <string name="floating">Мини</string>
     <string name="settings">Параметрлер</string>
     <string name="close">Жабу</string>
-    <string name="overlay_controller_description">Private Audio қалқымалы басқару құралы. Күйі: %1$s. Private Audio-ны қосу немесе өшіру, басқару құралын кеңейту және жабу элементтері.</string>
+    <string name="overlay_controller_description">Puzru қалқымалы басқару құралы. Күйі: %1$s. Puzru-ны қосу немесе өшіру, басқару құралын кеңейту және жабу элементтері.</string>
     <string name="settings_language">Тіл</string>
     <string name="settings_system_default">Әдепкі</string>
     <string name="settings_save_diagnostic">Диагностикалық есепті сақтау</string>
     <string name="settings_advanced">Қосымша</string>
-    <string name="settings_about">Private Audio туралы</string>
+    <string name="settings_about">Puzru туралы</string>
     <string name="settings_privacy_policy">Құпиялық саясаты</string>
-    <string name="settings_privacy_policy_body">Private Audio тіркелгіні немесе жүйеге кіруді қажет етпейді және микрофон рұқсатын сұрамайды. Ол микрофон аудиосын түсірмейді немесе жазбайды, сөйлесулеріңізді не олардың аудио мазмұнын жазбайды немесе сақтамайды.\n\nPrivate Audio бағыттау мен диагностикаға қажетті Android аудио жүйесінің ақпаратын пайдаланады. Диагностика жалпыға ашық Android API интерфейстері көрсететін техникалық күй мен метадеректерді, соның ішінде ойнату және жазу сеансының метадеректерін тексере алады. Жазу сеансының метадеректері — аудио жүйенің техникалық ақпараты; Private Audio сол сеанстарға қатысты микрофон аудиосын түсірмейді. Диагностикалық ақпарат қолданба мен Android нұсқаларын, құрылғы мен модель туралы ақпаратты, қолданба процесі мен күйін, қолжетімді және ағымдағы аудио құрылғыларды, жалпыға ашық ойнату және жазу конфигурациясының метадеректерін, сондай-ақ бағыттау әрекеттерін, нәтижелерін, уақытын және техникалық оқиғаларын қамтуы мүмкін.\n\nҚолданба параметрлері Private Audio қолданбасының жеке қоймасында жергілікті сақталады. Диагностикалық ақпарат құрылғыңызда жасалып, өңделеді және жұмыс істеп тұрған қолданбаның жергілікті күйінде болуы мүмкін. Есептер автоматты түрде сақталмайды немесе жіберілмейді. Тұрақты есеп Private Audio жеке қоймасынан тыс жерде тек Диагностикалық есепті сақтау пәрменін анық таңдап, Android арқылы межелі орынды таңдағанда жасалады. Экспорттан кейін сол көшірменің өңделуін, сақталуын және жойылуын Private Audio емес, таңдалған орын немесе қызмет басқарады.\n\nАғымдағы нұсқа Android интернет рұқсатын сұрамайды, Private Audio серверлік бөлігі немесе желілік тасымалдау жолы жоқ және талдау, жарнама немесе ақау туралы есеп беру қызметтерін не SDK жинақтарын қамтымайды. Қазір ол диагностикалық есептерді әзірлеушіге немесе Private Audio серверіне жібермейді, сондықтан Private Audio сервер жағында диагностиканы сақтамайды.\n\nҚолданбаға тиесілі деректер Android бұлттық сақтық көшірмесінен және құрылғылар арасында тасымалдаудан шығарылған. Жергілікті параметрлер өзгертілгенше немесе қолданба деректері жойылғанша қолданбаның жеке қоймасында қалады; уақытша диагностикалық күй сақталған есеп емес. Экспортталған есептер сіз таңдаған орынның немесе қызметтің бақылауында қалады.</string>
+    <string name="settings_privacy_policy_body">Puzru тіркелгіні немесе жүйеге кіруді қажет етпейді және микрофон рұқсатын сұрамайды. Ол микрофон аудиосын түсірмейді немесе жазбайды, сөйлесулеріңізді не олардың аудио мазмұнын жазбайды немесе сақтамайды.\n\nPuzru бағыттау мен диагностикаға қажетті Android аудио жүйесінің ақпаратын пайдаланады. Диагностика жалпыға ашық Android API интерфейстері көрсететін техникалық күй мен метадеректерді, соның ішінде ойнату және жазу сеансының метадеректерін тексере алады. Жазу сеансының метадеректері — аудио жүйенің техникалық ақпараты; Puzru сол сеанстарға қатысты микрофон аудиосын түсірмейді. Диагностикалық ақпарат қолданба мен Android нұсқаларын, құрылғы мен модель туралы ақпаратты, қолданба процесі мен күйін, қолжетімді және ағымдағы аудио құрылғыларды, жалпыға ашық ойнату және жазу конфигурациясының метадеректерін, сондай-ақ бағыттау әрекеттерін, нәтижелерін, уақытын және техникалық оқиғаларын қамтуы мүмкін.\n\nҚолданба параметрлері Puzru қолданбасының жеке қоймасында жергілікті сақталады. Диагностикалық ақпарат құрылғыңызда жасалып, өңделеді және жұмыс істеп тұрған қолданбаның жергілікті күйінде болуы мүмкін. Есептер автоматты түрде сақталмайды немесе жіберілмейді. Тұрақты есеп Puzru жеке қоймасынан тыс жерде тек Диагностикалық есепті сақтау пәрменін анық таңдап, Android арқылы межелі орынды таңдағанда жасалады. Экспорттан кейін сол көшірменің өңделуін, сақталуын және жойылуын Puzru емес, таңдалған орын немесе қызмет басқарады.\n\nАғымдағы нұсқа Android интернет рұқсатын сұрамайды, Puzru серверлік бөлігі немесе желілік тасымалдау жолы жоқ және талдау, жарнама немесе ақау туралы есеп беру қызметтерін не SDK жинақтарын қамтымайды. Қазір ол диагностикалық есептерді әзірлеушіге немесе Puzru серверіне жібермейді, сондықтан Puzru сервер жағында диагностиканы сақтамайды.\n\nҚолданбаға тиесілі деректер Android бұлттық сақтық көшірмесінен және құрылғылар арасында тасымалдаудан шығарылған. Жергілікті параметрлер өзгертілгенше немесе қолданба деректері жойылғанша қолданбаның жеке қоймасында қалады; уақытша диагностикалық күй сақталған есеп емес. Экспортталған есептер сіз таңдаған орынның немесе қызметтің бақылауында қалады.</string>
     <string name="settings_version">Нұсқа: %1$s</string>
     <string name="settings_language_android_13_required">Қолданба ішінде тілді таңдау үшін Android 13 немесе одан кейінгі нұсқа қажет. Бұл құрылғы жүйе тілін қолданады.</string>
     <string name="settings_proximity_screen">Телефонды құлағыңызға жақындатқанда экранды өшіру</string>
-    <string name="settings_about_body">Private Audio қолдау көрсетілетін дауыстық аудионы телефоныңыздағы кірістірілген құлақ динамигіне ауыстыруға көмектеседі.</string>
+    <string name="settings_about_body">Puzru қолдау көрсетілетін дауыстық аудионы телефоныңыздағы кірістірілген құлақ динамигіне ауыстыруға көмектеседі.</string>
     <string name="diagnostic_report_saved">Диагностикалық есеп сақталды.</string>
     <string name="diagnostic_report_save_failed">Диагностикалық есепті сақтау мүмкін болмады.</string>
 
@@ -34,7 +34,7 @@
     <string name="diagnostics_system_check">ЖҮЙЕНІ ТЕКСЕРУ</string>
     <string name="diagnostics_earpiece">Құлақ динамигі</string>
     <string name="diagnostics_proximity_sensor">Жақындық датчигі</string>
-    <string name="diagnostics_private_audio">PRIVATE AUDIO</string>
+    <string name="diagnostics_private_audio">PUZRU</string>
     <string name="diagnostics_routing">Бағыттау</string>
     <string name="diagnostics_status">Күйі</string>
     <string name="diagnostics_audio_route">Аудио шығысы</string>
@@ -59,8 +59,8 @@
     <string name="diagnostics_route_other">Басқа</string>
     <string name="diagnostics_error_blocked_by_system">Аудионы бағыттауды жүйе бұғаттады.</string>
     <string name="diagnostics_error_session_ended">Аудионы бағыттау аяқталмай тұрып, аудио сеансы аяқталды.</string>
-    <string name="diagnostics_error_audio_start">Private Audio аудионы бағыттауды бастай алмады.</string>
-    <string name="diagnostics_error_audio_preparation">Private Audio байланыс аудиосын дайындай алмады.</string>
+    <string name="diagnostics_error_audio_start">Puzru аудионы бағыттауды бастай алмады.</string>
+    <string name="diagnostics_error_audio_preparation">Puzru байланыс аудиосын дайындай алмады.</string>
     <string name="diagnostics_error_request_rejected">Аудионы құлақ динамигіне бағыттау сұрауы қабылданбады.</string>
     <string name="diagnostics_error_not_completed">Аудионы бағыттауды аяқтау мүмкін болмады.</string>
 </resources>

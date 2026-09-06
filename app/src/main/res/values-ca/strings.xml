@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Private Audio</string>
-    <string name="routing_notification_channel">Private Audio</string>
-    <string name="routing_notification_title">Private Audio està activat</string>
+    <string name="app_name">Puzru</string>
+    <string name="routing_notification_channel">Puzru</string>
+    <string name="routing_notification_title">Puzru està activat</string>
     <string name="routing_notification_text">En espera de canviar la sortida d\'àudio</string>
-    <string name="product_title">Private Audio</string>
+    <string name="product_title">Puzru</string>
     <string name="product_subtitle">Parla amb la IA en privat, com si fos una trucada telefònica.</string>
     <string name="state_ready">A punt</string>
     <string name="state_waiting">En espera</string>
@@ -14,18 +14,18 @@
     <string name="floating">Mini</string>
     <string name="settings">Configuració</string>
     <string name="close">Tanca</string>
-    <string name="overlay_controller_description">Control flotant de Private Audio. Estat: %1$s. Botons per activar o desactivar Private Audio, ampliar el control i tancar-lo.</string>
+    <string name="overlay_controller_description">Control flotant de Puzru. Estat: %1$s. Botons per activar o desactivar Puzru, ampliar el control i tancar-lo.</string>
     <string name="settings_language">Idioma</string>
     <string name="settings_system_default">Predeterminat</string>
     <string name="settings_save_diagnostic">Desa l\'informe de diagnòstic</string>
     <string name="settings_advanced">Configuració avançada</string>
-    <string name="settings_about">Sobre Private Audio</string>
+    <string name="settings_about">Sobre Puzru</string>
     <string name="settings_privacy_policy">Política de privadesa</string>
-    <string name="settings_privacy_policy_body">Private Audio no requereix cap compte ni inici de sessió i no sol·licita el permís del micròfon. No captura ni grava l’àudio del micròfon, ni grava ni emmagatzema les teves converses o el seu contingut d’àudio.\n\nPrivate Audio utilitza la informació del sistema d’àudio d’Android necessària per a l’encaminament i els diagnòstics. Els diagnòstics poden examinar l’estat tècnic i les metadades exposats per les API públiques d’Android, incloses les metadades de reproducció i de les sessions d’enregistrament. Les metadades de les sessions d’enregistrament són informació tècnica del sistema d’àudio; Private Audio no captura l’àudio del micròfon associat a aquestes sessions. La informació de diagnòstic pot incloure les versions de l’aplicació i d’Android, informació del dispositiu i el model, informació del procés i l’estat de l’aplicació, els dispositius d’àudio disponibles i actuals, metadades públiques de configuració de reproducció i enregistrament, i els intents d’encaminament, els resultats, els temps i els esdeveniments tècnics.\n\nLes preferències de l’aplicació s’emmagatzemen localment a l’espai privat de Private Audio. La informació de diagnòstic es genera i es processa al teu dispositiu i pot existir a l’estat local de l’aplicació en execució. Els informes no es desen ni s’envien automàticament. Només es crea un informe persistent fora de l’espai privat de Private Audio quan tries explícitament «Desa l’informe de diagnòstic» i selecciones una destinació mitjançant Android. Després de l’exportació, la ubicació o el servei seleccionat —no Private Audio— controla el tractament, la conservació i la supressió d’aquesta còpia.\n\nLa versió actual no sol·licita el permís d’Internet d’Android, no té cap servidor de Private Audio ni cap via de transmissió per xarxa, i no inclou serveis ni SDK d’analítica, publicitat o informes d’errors. Actualment no envia informes de diagnòstic al desenvolupador ni a cap servidor de Private Audio; per tant, Private Audio no conserva diagnòstics al servidor.\n\nLes dades propietat de l’aplicació s’exclouen de la còpia de seguretat al núvol d’Android i de la transferència entre dispositius. Les preferències locals romanen a l’espai privat de l’aplicació fins que es modifiquen o se suprimeixen les dades de l’aplicació; l’estat de diagnòstic transitori no és un informe desat. Els informes exportats romanen sota els controls de la ubicació o el servei que has seleccionat.</string>
+    <string name="settings_privacy_policy_body">Puzru no requereix cap compte ni inici de sessió i no sol·licita el permís del micròfon. No captura ni grava l’àudio del micròfon, ni grava ni emmagatzema les teves converses o el seu contingut d’àudio.\n\nPuzru utilitza la informació del sistema d’àudio d’Android necessària per a l’encaminament i els diagnòstics. Els diagnòstics poden examinar l’estat tècnic i les metadades exposats per les API públiques d’Android, incloses les metadades de reproducció i de les sessions d’enregistrament. Les metadades de les sessions d’enregistrament són informació tècnica del sistema d’àudio; Puzru no captura l’àudio del micròfon associat a aquestes sessions. La informació de diagnòstic pot incloure les versions de l’aplicació i d’Android, informació del dispositiu i el model, informació del procés i l’estat de l’aplicació, els dispositius d’àudio disponibles i actuals, metadades públiques de configuració de reproducció i enregistrament, i els intents d’encaminament, els resultats, els temps i els esdeveniments tècnics.\n\nLes preferències de l’aplicació s’emmagatzemen localment a l’espai privat de Puzru. La informació de diagnòstic es genera i es processa al teu dispositiu i pot existir a l’estat local de l’aplicació en execució. Els informes no es desen ni s’envien automàticament. Només es crea un informe persistent fora de l’espai privat de Puzru quan tries explícitament «Desa l’informe de diagnòstic» i selecciones una destinació mitjançant Android. Després de l’exportació, la ubicació o el servei seleccionat —no Puzru— controla el tractament, la conservació i la supressió d’aquesta còpia.\n\nLa versió actual no sol·licita el permís d’Internet d’Android, no té cap servidor de Puzru ni cap via de transmissió per xarxa, i no inclou serveis ni SDK d’analítica, publicitat o informes d’errors. Actualment no envia informes de diagnòstic al desenvolupador ni a cap servidor de Puzru; per tant, Puzru no conserva diagnòstics al servidor.\n\nLes dades propietat de l’aplicació s’exclouen de la còpia de seguretat al núvol d’Android i de la transferència entre dispositius. Les preferències locals romanen a l’espai privat de l’aplicació fins que es modifiquen o se suprimeixen les dades de l’aplicació; l’estat de diagnòstic transitori no és un informe desat. Els informes exportats romanen sota els controls de la ubicació o el servei que has seleccionat.</string>
     <string name="settings_version">Versió %1$s</string>
     <string name="settings_language_android_13_required">Per seleccionar l\'idioma dins de l\'aplicació cal Android 13 o una versió posterior. Aquest dispositiu utilitza l\'idioma del sistema.</string>
     <string name="settings_proximity_screen">Apaga la pantalla quan acostis el telèfon a l\'orella</string>
-    <string name="settings_about_body">Private Audio ajuda a reproduir l\'àudio de veu compatible per l\'auricular integrat del telèfon.</string>
+    <string name="settings_about_body">Puzru ajuda a reproduir l\'àudio de veu compatible per l\'auricular integrat del telèfon.</string>
     <string name="diagnostic_report_saved">S\'ha desat l\'informe de diagnòstic.</string>
     <string name="diagnostic_report_save_failed">No s\'ha pogut desar l\'informe de diagnòstic.</string>
 
@@ -34,7 +34,7 @@
     <string name="diagnostics_system_check">COMPROVACIÓ DEL SISTEMA</string>
     <string name="diagnostics_earpiece">Auricular integrat</string>
     <string name="diagnostics_proximity_sensor">Sensor de proximitat</string>
-    <string name="diagnostics_private_audio">PRIVATE AUDIO</string>
+    <string name="diagnostics_private_audio">PUZRU</string>
     <string name="diagnostics_routing">Encaminament de l’àudio</string>
     <string name="diagnostics_status">Estat</string>
     <string name="diagnostics_audio_route">Sortida d’àudio</string>
@@ -59,8 +59,8 @@
     <string name="diagnostics_route_other">Altres</string>
     <string name="diagnostics_error_blocked_by_system">El sistema ha bloquejat l’encaminament de l’àudio.</string>
     <string name="diagnostics_error_session_ended">La sessió d’àudio ha finalitzat abans que es completés l’encaminament.</string>
-    <string name="diagnostics_error_audio_start">Private Audio no ha pogut iniciar l’encaminament de l’àudio.</string>
-    <string name="diagnostics_error_audio_preparation">Private Audio no ha pogut preparar l’àudio de comunicació.</string>
+    <string name="diagnostics_error_audio_start">Puzru no ha pogut iniciar l’encaminament de l’àudio.</string>
+    <string name="diagnostics_error_audio_preparation">Puzru no ha pogut preparar l’àudio de comunicació.</string>
     <string name="diagnostics_error_request_rejected">No s’ha acceptat la sol·licitud d’encaminar l’àudio a l’auricular integrat.</string>
     <string name="diagnostics_error_not_completed">No s’ha pogut completar l’encaminament de l’àudio.</string>
 </resources>

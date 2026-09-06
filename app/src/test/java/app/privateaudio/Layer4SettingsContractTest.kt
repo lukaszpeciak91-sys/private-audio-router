@@ -117,11 +117,11 @@ class Layer4SettingsContractTest {
             "Reports are not automatically saved or sent",
             "only when you explicitly choose Save diagnostic report",
             "select a destination through Android",
-            "selected location or service—not Private Audio—controls that copy’s handling, retention, and deletion",
+            "selected location or service—not Puzru—controls that copy’s handling, retention, and deletion",
             "does not request Android’s Internet permission",
-            "has no Private Audio backend or network transmission path",
+            "has no Puzru backend or network transmission path",
             "does not include analytics, advertising, or crash-reporting services or SDKs",
-            "does not currently send diagnostic reports to the developer or a Private Audio server",
+            "does not currently send diagnostic reports to the developer or a Puzru server",
             "has no server-side diagnostic retention",
             "excluded from Android cloud backup and device-to-device transfer",
         ).forEach { claim -> assertTrue(claim, strings.contains(claim)) }
@@ -156,7 +156,7 @@ class Layer4SettingsContractTest {
     @Test
     fun diagnosticWritePreservesUtf8WithoutAService() {
         val output = ByteArrayOutputStream()
-        val report = "Private Audio — zażółć 日本語"
+        val report = "Puzru — zażółć 日本語"
 
         assertEquals(DiagnosticWriteResult.Success, writeDiagnosticReport(report) { output })
         assertEquals(report, output.toString(Charsets.UTF_8.name()))
@@ -207,7 +207,7 @@ class Layer4SettingsContractTest {
     @Test
     fun diagnosticFilenameIsTimestampedPlainText() {
         val filename = diagnosticFilename(java.time.LocalDateTime.of(2026, 8, 19, 7, 5, 9))
-        assertEquals("private-audio-diagnostic-2026-08-19_07-05-09.txt", filename)
+        assertEquals("puzru-diagnostic-2026-08-19_07-05-09.txt", filename)
     }
 
     private fun String.method(signature: String): String =

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Private Audio</string>
-    <string name="routing_notification_channel">Private Audio</string>
-    <string name="routing_notification_title">Private Audio waa daaran yahay</string>
+    <string name="app_name">Puzru</string>
+    <string name="routing_notification_channel">Puzru</string>
+    <string name="routing_notification_title">Puzru waa daaran yahay</string>
     <string name="routing_notification_text">Sugaya in la beddelo halka codku ka soo baxayo</string>
-    <string name="product_title">Private Audio</string>
+    <string name="product_title">Puzru</string>
     <string name="product_subtitle">AI si gaar ah ula hadal, sida adigoo taleefan ku hadlaya.</string>
     <string name="state_ready">Diyaar</string>
     <string name="state_waiting">Sugaya</string>
@@ -14,18 +14,18 @@
     <string name="floating">Mini</string>
     <string name="settings">Dejinta</string>
     <string name="close">Xir</string>
-    <string name="overlay_controller_description">Xakameeyaha sabbaynaya ee Private Audio. Xaalad: %1$s. Xakamaynta daarista/daminta, ballaarinta iyo xiritaanka.</string>
+    <string name="overlay_controller_description">Xakameeyaha sabbaynaya ee Puzru. Xaalad: %1$s. Xakamaynta daarista/daminta, ballaarinta iyo xiritaanka.</string>
     <string name="settings_language">Luqad</string>
     <string name="settings_system_default">Caadi</string>
     <string name="settings_save_diagnostic">Kaydi warbixinta baaritaanka</string>
     <string name="settings_advanced">Dejinta horumarsan</string>
-    <string name="settings_about">Ku saabsan Private Audio</string>
+    <string name="settings_about">Ku saabsan Puzru</string>
     <string name="settings_privacy_policy">Siyaasadda Asturnaanta</string>
-    <string name="settings_privacy_policy_body">Private Audio uma baahna akoon ama soo galid, mana codsado oggolaanshaha makarafoonka. Ma qabto mana duubo codka makarafoonka, mana duubo mana kaydiyo wada hadalladaada ama nuxurkooda maqal.\n\nPrivate Audio wuxuu isticmaalaa macluumaadka nidaamka maqalka Android ee loogu baahan yahay hagidda maqalka iyo baaritaanka. Baaritaanku wuxuu eegi karaa xaaladda farsamo iyo metadata ay muujiyaan API-yada dadweynaha ee Android, oo ay ku jiraan metadata dib-u-ciyaarista iyo fadhiyada duubista. Metadata fadhiga duubistu waa macluumaad farsamo oo nidaamka maqalka ah; Private Audio ma qabto codka makarafoonka ee la xiriira fadhiyadaas. Macluumaadka baaritaanka waxaa ku jiri kara noocyada abka iyo Android, macluumaadka qalabka iyo moodeelka, macluumaadka habsocodka iyo xaaladda abka, qalabka maqalka ee la heli karo iyo kan hadda jira, metadata qaabaynta dadweynaha ee dib-u-ciyaarista iyo duubista, iyo isku-dayada hagidda, natiijooyinka, waqtiga iyo dhacdooyinka farsamo.\n\nDejimaha abka waxaa gudaha loogu kaydiyaa kaydka gaarka ah ee abka Private Audio. Macluumaadka baaritaanka waxaa lagu abuuraa laguna farsameeyaa qalabkaaga, wuxuuna ku jiri karaa xaaladda gudaha ee abka socda. Warbixinnada si toos ah looma kaydiyo loomana diro. Warbixin joogto ah waxaa bannaanka kaydka gaarka ah ee abka Private Audio lagu abuuraa oo keliya markaad si cad u doorato Kaydi warbixinta baaritaanka oo aad meel ku doorato Android. Dhoofinta ka dib, goobta ama adeegga aad dooratay—ma aha Private Audio—ayaa maamula sida nuqulkaas loo adeegsado, loo hayo loona tirtiro.\n\nNooca hadda jira ma codsado oggolaanshaha Internetka Android, ma laha backend Private Audio ama jid gudbinta shabakad, kumana jiraan adeegyo ama SDK-yo falanqayn, xayeysiis ama warbixinta burburka ah. Hadda uma diro warbixinnada baaritaanka horumariyaha ama server Private Audio; sidaas darteed Private Audio kuma hayo xogta baaritaanka dhinaca server-ka.\n\nXogta abku leeyahay waa laga reebay kaydinta daruurta Android iyo gudbinta qalab ilaa qalab. Dejimaha gudaha waxay ku jiraan kaydka gaarka ah ee abka ilaa laga beddelo ama xogta abka laga saaro; xaalad baaritaan oo ku-meel-gaar ahi ma aha warbixin la kaydiyey. Warbixinnada la dhoofiyey waxay hoos yimaadaan maamulka goobta ama adeegga aad dooratay.</string>
+    <string name="settings_privacy_policy_body">Puzru uma baahna akoon ama soo galid, mana codsado oggolaanshaha makarafoonka. Ma qabto mana duubo codka makarafoonka, mana duubo mana kaydiyo wada hadalladaada ama nuxurkooda maqal.\n\nPuzru wuxuu isticmaalaa macluumaadka nidaamka maqalka Android ee loogu baahan yahay hagidda maqalka iyo baaritaanka. Baaritaanku wuxuu eegi karaa xaaladda farsamo iyo metadata ay muujiyaan API-yada dadweynaha ee Android, oo ay ku jiraan metadata dib-u-ciyaarista iyo fadhiyada duubista. Metadata fadhiga duubistu waa macluumaad farsamo oo nidaamka maqalka ah; Puzru ma qabto codka makarafoonka ee la xiriira fadhiyadaas. Macluumaadka baaritaanka waxaa ku jiri kara noocyada abka iyo Android, macluumaadka qalabka iyo moodeelka, macluumaadka habsocodka iyo xaaladda abka, qalabka maqalka ee la heli karo iyo kan hadda jira, metadata qaabaynta dadweynaha ee dib-u-ciyaarista iyo duubista, iyo isku-dayada hagidda, natiijooyinka, waqtiga iyo dhacdooyinka farsamo.\n\nDejimaha abka waxaa gudaha loogu kaydiyaa kaydka gaarka ah ee abka Puzru. Macluumaadka baaritaanka waxaa lagu abuuraa laguna farsameeyaa qalabkaaga, wuxuuna ku jiri karaa xaaladda gudaha ee abka socda. Warbixinnada si toos ah looma kaydiyo loomana diro. Warbixin joogto ah waxaa bannaanka kaydka gaarka ah ee abka Puzru lagu abuuraa oo keliya markaad si cad u doorato Kaydi warbixinta baaritaanka oo aad meel ku doorato Android. Dhoofinta ka dib, goobta ama adeegga aad dooratay—ma aha Puzru—ayaa maamula sida nuqulkaas loo adeegsado, loo hayo loona tirtiro.\n\nNooca hadda jira ma codsado oggolaanshaha Internetka Android, ma laha backend Puzru ama jid gudbinta shabakad, kumana jiraan adeegyo ama SDK-yo falanqayn, xayeysiis ama warbixinta burburka ah. Hadda uma diro warbixinnada baaritaanka horumariyaha ama server Puzru; sidaas darteed Puzru kuma hayo xogta baaritaanka dhinaca server-ka.\n\nXogta abku leeyahay waa laga reebay kaydinta daruurta Android iyo gudbinta qalab ilaa qalab. Dejimaha gudaha waxay ku jiraan kaydka gaarka ah ee abka ilaa laga beddelo ama xogta abka laga saaro; xaalad baaritaan oo ku-meel-gaar ahi ma aha warbixin la kaydiyey. Warbixinnada la dhoofiyey waxay hoos yimaadaan maamulka goobta ama adeegga aad dooratay.</string>
     <string name="settings_version">Nooca %1$s</string>
     <string name="settings_language_android_13_required">Doorashada luqadda gudaha app-ka waxay u baahan tahay Android 13 ama nooc ka dambeeya. Qalabkan wuxuu raacayaa luqadda nidaamka.</string>
     <string name="settings_proximity_screen">Dami shaashadda marka taleefanku dhegtaada u dhow yahay</string>
-    <string name="settings_about_body">Private Audio wuxuu caawiyaa in codka hadalka ee la taageero loo wareejiyo sameecadda sare ee taleefankaaga.</string>
+    <string name="settings_about_body">Puzru wuxuu caawiyaa in codka hadalka ee la taageero loo wareejiyo sameecadda sare ee taleefankaaga.</string>
     <string name="diagnostic_report_saved">Warbixinta baaritaanka waa la kaydiyey.</string>
     <string name="diagnostic_report_save_failed">Lama kaydin karin warbixinta baaritaanka.</string>
 
@@ -34,7 +34,7 @@
     <string name="diagnostics_system_check">HUBINTA NIDAAMKA</string>
     <string name="diagnostics_earpiece">Sameecadda sare</string>
     <string name="diagnostics_proximity_sensor">Dareemaha u dhawaanshaha</string>
-    <string name="diagnostics_private_audio">PRIVATE AUDIO</string>
+    <string name="diagnostics_private_audio">PUZRU</string>
     <string name="diagnostics_routing">Wareejinta codka</string>
     <string name="diagnostics_status">Xaaladda</string>
     <string name="diagnostics_audio_route">Meesha codku ka baxayo</string>
@@ -59,8 +59,8 @@
     <string name="diagnostics_route_other">Kale</string>
     <string name="diagnostics_error_blocked_by_system">Nidaamku wuxuu xannibay wareejinta codka.</string>
     <string name="diagnostics_error_session_ended">Fadhiga codku wuu dhammaaday ka hor inta aan wareejinta codka la dhammaystirin.</string>
-    <string name="diagnostics_error_audio_start">Private Audio ma bilaabi karin wareejinta codka.</string>
-    <string name="diagnostics_error_audio_preparation">Private Audio ma diyaarin karin codka isgaarsiinta.</string>
+    <string name="diagnostics_error_audio_start">Puzru ma bilaabi karin wareejinta codka.</string>
+    <string name="diagnostics_error_audio_preparation">Puzru ma diyaarin karin codka isgaarsiinta.</string>
     <string name="diagnostics_error_request_rejected">Codsigii ahaa in codka loo wareejiyo sameecadda sare lama aqbalin.</string>
     <string name="diagnostics_error_not_completed">Wareejinta codka lama dhammaystiri karin.</string>
 </resources>

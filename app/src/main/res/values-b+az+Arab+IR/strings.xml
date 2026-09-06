@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Private Audio</string>
-    <string name="routing_notification_channel">Private Audio</string>
-    <string name="routing_notification_title">Private Audio آچیقدیر</string>
+    <string name="app_name">Puzru</string>
+    <string name="routing_notification_channel">Puzru</string>
+    <string name="routing_notification_title">Puzru آچیقدیر</string>
     <string name="routing_notification_text">آودیو چیخیشینی دَییشدیرمه‌یی گؤزله‌ییر</string>
-    <string name="product_title">Private Audio</string>
+    <string name="product_title">Puzru</string>
     <string name="product_subtitle">یاپای ذکاء ایله تلفون زنگی کیمی اؤزل شکیلده دانیشین.</string>
     <string name="state_ready">حاضیر</string>
     <string name="state_waiting">گؤزله‌ییر</string>
@@ -14,18 +14,18 @@
     <string name="floating">مینی</string>
     <string name="settings">آیارلار</string>
     <string name="close">باغلا</string>
-    <string name="overlay_controller_description">Private Audio-نون اۆزن ایداره‌ئدیجی‌سی. دوروم: %1$s. یاندیرماق/سؤندورمک، گئنیشلندیرمک و باغلاماق اۆچون ایداره‌لر.</string>
+    <string name="overlay_controller_description">Puzru-نون اۆزن ایداره‌ئدیجی‌سی. دوروم: %1$s. یاندیرماق/سؤندورمک، گئنیشلندیرمک و باغلاماق اۆچون ایداره‌لر.</string>
     <string name="settings_language">دیل</string>
     <string name="settings_system_default">فرض ائدیلن</string>
     <string name="settings_save_diagnostic">دیاقنوستیک حساباتی ذخیره ائت</string>
     <string name="settings_advanced">گئنیشمیش</string>
-    <string name="settings_about">Private Audio حاقیندا</string>
+    <string name="settings_about">Puzru حاقیندا</string>
     <string name="settings_privacy_policy">گئزلیلیک سیاستی</string>
-    <string name="settings_privacy_policy_body">Private Audio حساب یا گئریش ایسته‌میر و میکروفون ایجازه‌سی طلب ائتمیر. او، میکروفون سَسی‌نی توتماز یا یازماز، و دانیشیقلارینیزی یا اونلارین سَس محتواسى‌نى یازماز یا ساخلاماز.\n\nPrivate Audio، یؤن‌لندیرمه و دیاقنوستیک اوچون لازم اولان Android سس-سیستمی معلوماتیندان استفاده ائدیر. دیاقنوستیک، Android-ین عمومی API-لری واسطه‌سیله آشکار اولان فنی وضعیت و متاداتانی، او جمله‌دن پخش و ضبط سئانس متاداتاسینی یوخلايا بیلر. ضبط سئانس متاداتاسى فنی سس-سیستمی معلوماتیدیر؛ Private Audio او سئانس‌لارلا باغلی میکروفون سَسی‌نی توتمور. دیاقنوستیک معلوماتى، برنامه و Android وئرسییا‌لارینی، دستگاه و مدل معلوماتىنى، برنامه پروسس و وضعیت معلوماتىنى، موجود و جاری سس دستگاه‌لارینی، عمومی پخش و ضبط پیکربندی متاداتاسینی، و یؤن‌لندیرمه تلاش‌لارینی، نتیجه‌لرینی، زمانلامانی و فنی حدث‌لری اؤز ایچینده توتا بیلر.\n\nبرنامه ترجیح‌لری یئرلی اولاراق Private Audio-نون برنامه‌یه-مخصوص ساخلاماسیندا ساخلانیر. دیاقنوستیک معلوماتى سیزین دستگاهینیزدا یارانیر و ایشلنیر و ایشله‌ین برنامه‌نین یئرلی وضعیتینده موجود اولا بیلر. رپورت‌لار اوتوماتیک اولاراق ساخلانمیر یا گؤندریلمیر. قالیجی بیر رپورت، سیز آشکارا «دیاقنوستیک رپورتونو ساخلا»نی سئچیب Android واسطه‌سیله بیر مقصد یئری سئچنده‌ن سونرا، فقط او زامان Private Audio-نون برنامه‌یه-مخصوص ساخلاماسیندان کَناندا یارادیلیر. ائکسپورت‌دان سونرا، سئچدییینیز مکان یا خدمت — Private Audio یوخ — او نوسخه‌نین ائله‌نمه‌سینی، ساخلاما مدتینی و سیلینمه‌سینی ایداره ائدیر.\n\nحاضیرکی وئرسییا Android-ین Internet ایجازه‌سینی طلب ائتمیر، Private Audio اوچون هئچ بیر بَکند یا شبکه انتقال یولو یوخدور، و آنالیتیک، تبلیغات، یا کراش-رپورتینگ خدمت‌لری یا SDK-لری‌نی شامل ائتمیر. او، حاضیردا، دیاقنوستیک رپورت‌لارینی توسعه‌ده‌ن‌ه‌یه یا Private Audio سرورونا گؤندرمیر؛ بونا گؤره Private Audio-نون سرور-طرفی دیاقنوستیک ساخلاماسی یوخدور.\n\nبرنامه‌یه مئنسوب داده‌لار Android بولود یئدکلَمه‌سیندن و دستگاه‌دان-دستگاهه انتقالدان خاریج ائدیلیب. یئرلی ترجیح‌لر، دَییشدیریلنَنه قدر یا برنامه‌نین داده‌لاری سیلینَنه قدر، برنامه‌یه-مخصوص ساخلامادا قالیر؛ گذَری دیاقنوستیک وضعیتى ساخلانمیش رپورت دئییل. ائکسپورت ائدیلمیش رپورت‌لار سئچدییینیز مکانین یا خدمتین کنترولی آلتیندا قالیر.</string>
+    <string name="settings_privacy_policy_body">Puzru حساب یا گئریش ایسته‌میر و میکروفون ایجازه‌سی طلب ائتمیر. او، میکروفون سَسی‌نی توتماز یا یازماز، و دانیشیقلارینیزی یا اونلارین سَس محتواسى‌نى یازماز یا ساخلاماز.\n\nPuzru، یؤن‌لندیرمه و دیاقنوستیک اوچون لازم اولان Android سس-سیستمی معلوماتیندان استفاده ائدیر. دیاقنوستیک، Android-ین عمومی API-لری واسطه‌سیله آشکار اولان فنی وضعیت و متاداتانی، او جمله‌دن پخش و ضبط سئانس متاداتاسینی یوخلايا بیلر. ضبط سئانس متاداتاسى فنی سس-سیستمی معلوماتیدیر؛ Puzru او سئانس‌لارلا باغلی میکروفون سَسی‌نی توتمور. دیاقنوستیک معلوماتى، برنامه و Android وئرسییا‌لارینی، دستگاه و مدل معلوماتىنى، برنامه پروسس و وضعیت معلوماتىنى، موجود و جاری سس دستگاه‌لارینی، عمومی پخش و ضبط پیکربندی متاداتاسینی، و یؤن‌لندیرمه تلاش‌لارینی، نتیجه‌لرینی، زمانلامانی و فنی حدث‌لری اؤز ایچینده توتا بیلر.\n\nبرنامه ترجیح‌لری یئرلی اولاراق Puzru-نون برنامه‌یه-مخصوص ساخلاماسیندا ساخلانیر. دیاقنوستیک معلوماتى سیزین دستگاهینیزدا یارانیر و ایشلنیر و ایشله‌ین برنامه‌نین یئرلی وضعیتینده موجود اولا بیلر. رپورت‌لار اوتوماتیک اولاراق ساخلانمیر یا گؤندریلمیر. قالیجی بیر رپورت، سیز آشکارا «دیاقنوستیک رپورتونو ساخلا»نی سئچیب Android واسطه‌سیله بیر مقصد یئری سئچنده‌ن سونرا، فقط او زامان Puzru-نون برنامه‌یه-مخصوص ساخلاماسیندان کَناندا یارادیلیر. ائکسپورت‌دان سونرا، سئچدییینیز مکان یا خدمت — Puzru یوخ — او نوسخه‌نین ائله‌نمه‌سینی، ساخلاما مدتینی و سیلینمه‌سینی ایداره ائدیر.\n\nحاضیرکی وئرسییا Android-ین Internet ایجازه‌سینی طلب ائتمیر، Puzru اوچون هئچ بیر بَکند یا شبکه انتقال یولو یوخدور، و آنالیتیک، تبلیغات، یا کراش-رپورتینگ خدمت‌لری یا SDK-لری‌نی شامل ائتمیر. او، حاضیردا، دیاقنوستیک رپورت‌لارینی توسعه‌ده‌ن‌ه‌یه یا Puzru سرورونا گؤندرمیر؛ بونا گؤره Puzru-نون سرور-طرفی دیاقنوستیک ساخلاماسی یوخدور.\n\nبرنامه‌یه مئنسوب داده‌لار Android بولود یئدکلَمه‌سیندن و دستگاه‌دان-دستگاهه انتقالدان خاریج ائدیلیب. یئرلی ترجیح‌لر، دَییشدیریلنَنه قدر یا برنامه‌نین داده‌لاری سیلینَنه قدر، برنامه‌یه-مخصوص ساخلامادا قالیر؛ گذَری دیاقنوستیک وضعیتى ساخلانمیش رپورت دئییل. ائکسپورت ائدیلمیش رپورت‌لار سئچدییینیز مکانین یا خدمتین کنترولی آلتیندا قالیر.</string>
     <string name="settings_version">نوسخه %1$s</string>
     <string name="settings_language_android_13_required">اۇیقولاما ایچینده دیل سئچیمی اۆچون Android 13 یا داها یئنی نوسخه لازیمدیر. بو جهاز سیستئم دیلیندن ایستیفاده ائدیر.</string>
     <string name="settings_proximity_screen">تلفونو قولاغینیزا یاخینلاشدیراندا اکرانی سؤندورون</string>
-    <string name="settings_about_body">Private Audio دستکلنن سسلی آودیونو تلفونونوزون داخیل قولاق دینامیکینه یؤنلندیرمه‌یه کؤمک ائدیر.</string>
+    <string name="settings_about_body">Puzru دستکلنن سسلی آودیونو تلفونونوزون داخیل قولاق دینامیکینه یؤنلندیرمه‌یه کؤمک ائدیر.</string>
     <string name="diagnostic_report_saved">دیاقنوستیک حسابات ذخیره ائدیلدی.</string>
     <string name="diagnostic_report_save_failed">دیاقنوستیک حساباتی ذخیره ائتمک مۆمکون اولمادی.</string>
 
@@ -34,7 +34,7 @@
     <string name="diagnostics_system_check">سیستم یوخلاماسی</string>
     <string name="diagnostics_earpiece">داخیل قولاق دینامیکی</string>
     <string name="diagnostics_proximity_sensor">یاخینلیق سنسورو</string>
-    <string name="diagnostics_private_audio">Private Audio</string>
+    <string name="diagnostics_private_audio">Puzru</string>
     <string name="diagnostics_routing">سس یؤنلندیرمه‌سی</string>
     <string name="diagnostics_status">دوروم</string>
     <string name="diagnostics_audio_route">سس چیخیشی</string>
@@ -59,8 +59,8 @@
     <string name="diagnostics_route_other">دیگر</string>
     <string name="diagnostics_error_blocked_by_system">سس یؤنلندیرمه‌سی سیستم طرفیندن انگللندی.</string>
     <string name="diagnostics_error_session_ended">آودیو سئانسی، سس یؤنلندیرمه‌سی تاماملانمامیشدان اؤنجه بیتدی.</string>
-    <string name="diagnostics_error_audio_start">Private Audio سس یؤنلندیرمه‌سینی باشلادا بیلمه‌دی.</string>
-    <string name="diagnostics_error_audio_preparation">Private Audio رابطه آودیوسونو حاضیرلایا بیلمه‌دی.</string>
+    <string name="diagnostics_error_audio_start">Puzru سس یؤنلندیرمه‌سینی باشلادا بیلمه‌دی.</string>
+    <string name="diagnostics_error_audio_preparation">Puzru رابطه آودیوسونو حاضیرلایا بیلمه‌دی.</string>
     <string name="diagnostics_error_request_rejected">داخیل قولاق دینامیکینه یؤنلندیرمه ایسته‌یی قبول ائدیلمه‌دی.</string>
     <string name="diagnostics_error_not_completed">سس یؤنلندیرمه‌سی تاماملانا بیلمه‌دی.</string>
 </resources>

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Private Audio</string>
-    <string name="routing_notification_channel">Private Audio</string>
-    <string name="routing_notification_title">Private Audio چل رہا ہے</string>
+    <string name="app_name">Puzru</string>
+    <string name="routing_notification_channel">Puzru</string>
+    <string name="routing_notification_title">Puzru چل رہا ہے</string>
     <string name="routing_notification_text">آڈیو منتقل ہونے کا انتظار ہے</string>
-    <string name="product_title">Private Audio</string>
+    <string name="product_title">Puzru</string>
     <string name="product_subtitle">فون کال کی طرح AI سے نجی طور پر بات کریں۔</string>
     <string name="state_ready">تیار</string>
     <string name="state_waiting">انتظار میں</string>
@@ -14,18 +14,18 @@
     <string name="floating">کمپیکٹ</string>
     <string name="settings">سیٹنگز</string>
     <string name="close">بند کریں</string>
-    <string name="overlay_controller_description">Private Audio کا فلوٹنگ کمپیکٹ کنٹرولر۔ اسٹیٹس: %1$s۔ چالو کرنے، پھیلانے اور بند کرنے کے کنٹرولز۔</string>
+    <string name="overlay_controller_description">Puzru کا فلوٹنگ کمپیکٹ کنٹرولر۔ اسٹیٹس: %1$s۔ چالو کرنے، پھیلانے اور بند کرنے کے کنٹرولز۔</string>
     <string name="settings_language">زبان</string>
     <string name="settings_system_default">ڈیفالٹ</string>
     <string name="settings_save_diagnostic">تشخیصی رپورٹ محفوظ کریں</string>
     <string name="settings_advanced">ایڈوانسڈ</string>
-    <string name="settings_about">Private Audio کے بارے میں</string>
+    <string name="settings_about">Puzru کے بارے میں</string>
     <string name="settings_privacy_policy">رازداری کی پالیسی</string>
-    <string name="settings_privacy_policy_body">Private Audio کو اکاؤنٹ یا سائن ان درکار نہیں ہے اور یہ مائیکروفون کی اجازت طلب نہیں کرتا۔ یہ مائیکروفون آڈیو کو حاصل یا ریکارڈ نہیں کرتا، اور آپ کی گفتگو یا اس کے آڈیو مواد کو ریکارڈ یا محفوظ نہیں کرتا۔\n\nPrivate Audio روٹنگ اور تشخیص کے لیے درکار Android آڈیو سسٹم کی معلومات استعمال کرتا ہے۔ تشخیص عوامی Android APIs کے ذریعے ظاہر کردہ تکنیکی حالت اور میٹا ڈیٹا، بشمول پلے بیک اور ریکارڈنگ سیشن کا میٹا ڈیٹا، دیکھ سکتی ہے۔ ریکارڈنگ سیشن میٹا ڈیٹا آڈیو سسٹم کی تکنیکی معلومات ہے؛ Private Audio ان سیشنز سے وابستہ مائیکروفون آڈیو حاصل نہیں کرتا۔ تشخیصی معلومات میں ایپ اور Android ورژن، آلے اور ماڈل کی معلومات، ایپ کے عمل اور حالت کی معلومات، دستیاب اور موجودہ آڈیو آلات، عوامی پلے بیک اور ریکارڈنگ کنفیگریشن میٹا ڈیٹا، اور روٹنگ کی کوششیں، نتائج، وقت اور تکنیکی واقعات شامل ہو سکتے ہیں۔\n\nایپ کی ترجیحات Private Audio کی ایپ کے نجی اسٹوریج میں مقامی طور پر محفوظ ہوتی ہیں۔ تشخیصی معلومات آپ کے آلے پر تیار اور پراسیس ہوتی ہیں اور چلتی ایپ کی مقامی حالت میں موجود ہو سکتی ہیں۔ رپورٹس خودکار طور پر محفوظ یا ارسال نہیں ہوتیں۔ Private Audio کے نجی اسٹوریج سے باہر مستقل رپورٹ صرف اس وقت بنتی ہے جب آپ واضح طور پر تشخیصی رپورٹ محفوظ کریں منتخب کریں اور Android کے ذریعے منزل چنیں۔ برآمد کے بعد منتخب مقام یا سروس—Private Audio نہیں—اس نقل کے استعمال، برقرار رکھنے اور حذف کرنے کو کنٹرول کرتی ہے۔\n\nموجودہ ورژن Android کی انٹرنیٹ اجازت طلب نہیں کرتا، اس میں Private Audio بیک اینڈ یا نیٹ ورک ترسیل کا راستہ نہیں، اور اس میں تجزیات، اشتہارات یا کریش رپورٹنگ کی خدمات یا SDKs شامل نہیں۔ یہ فی الحال تشخیصی رپورٹس ڈیولپر یا Private Audio سرور کو نہیں بھیجتا، اس لیے Private Audio سرور پر تشخیصی معلومات برقرار نہیں رکھتا۔\n\nایپ کی ملکیت والا ڈیٹا Android کلاؤڈ بیک اپ اور ایک آلے سے دوسرے آلے میں منتقلی سے خارج ہے۔ مقامی ترجیحات بدلنے یا ایپ کا ڈیٹا ہٹائے جانے تک ایپ کے نجی اسٹوریج میں رہتی ہیں؛ عارضی تشخیصی حالت محفوظ رپورٹ نہیں ہے۔ برآمد شدہ رپورٹس آپ کے منتخب مقام یا سروس کے کنٹرول میں رہتی ہیں۔</string>
+    <string name="settings_privacy_policy_body">Puzru کو اکاؤنٹ یا سائن ان درکار نہیں ہے اور یہ مائیکروفون کی اجازت طلب نہیں کرتا۔ یہ مائیکروفون آڈیو کو حاصل یا ریکارڈ نہیں کرتا، اور آپ کی گفتگو یا اس کے آڈیو مواد کو ریکارڈ یا محفوظ نہیں کرتا۔\n\nPuzru روٹنگ اور تشخیص کے لیے درکار Android آڈیو سسٹم کی معلومات استعمال کرتا ہے۔ تشخیص عوامی Android APIs کے ذریعے ظاہر کردہ تکنیکی حالت اور میٹا ڈیٹا، بشمول پلے بیک اور ریکارڈنگ سیشن کا میٹا ڈیٹا، دیکھ سکتی ہے۔ ریکارڈنگ سیشن میٹا ڈیٹا آڈیو سسٹم کی تکنیکی معلومات ہے؛ Puzru ان سیشنز سے وابستہ مائیکروفون آڈیو حاصل نہیں کرتا۔ تشخیصی معلومات میں ایپ اور Android ورژن، آلے اور ماڈل کی معلومات، ایپ کے عمل اور حالت کی معلومات، دستیاب اور موجودہ آڈیو آلات، عوامی پلے بیک اور ریکارڈنگ کنفیگریشن میٹا ڈیٹا، اور روٹنگ کی کوششیں، نتائج، وقت اور تکنیکی واقعات شامل ہو سکتے ہیں۔\n\nایپ کی ترجیحات Puzru کی ایپ کے نجی اسٹوریج میں مقامی طور پر محفوظ ہوتی ہیں۔ تشخیصی معلومات آپ کے آلے پر تیار اور پراسیس ہوتی ہیں اور چلتی ایپ کی مقامی حالت میں موجود ہو سکتی ہیں۔ رپورٹس خودکار طور پر محفوظ یا ارسال نہیں ہوتیں۔ Puzru کے نجی اسٹوریج سے باہر مستقل رپورٹ صرف اس وقت بنتی ہے جب آپ واضح طور پر تشخیصی رپورٹ محفوظ کریں منتخب کریں اور Android کے ذریعے منزل چنیں۔ برآمد کے بعد منتخب مقام یا سروس—Puzru نہیں—اس نقل کے استعمال، برقرار رکھنے اور حذف کرنے کو کنٹرول کرتی ہے۔\n\nموجودہ ورژن Android کی انٹرنیٹ اجازت طلب نہیں کرتا، اس میں Puzru بیک اینڈ یا نیٹ ورک ترسیل کا راستہ نہیں، اور اس میں تجزیات، اشتہارات یا کریش رپورٹنگ کی خدمات یا SDKs شامل نہیں۔ یہ فی الحال تشخیصی رپورٹس ڈیولپر یا Puzru سرور کو نہیں بھیجتا، اس لیے Puzru سرور پر تشخیصی معلومات برقرار نہیں رکھتا۔\n\nایپ کی ملکیت والا ڈیٹا Android کلاؤڈ بیک اپ اور ایک آلے سے دوسرے آلے میں منتقلی سے خارج ہے۔ مقامی ترجیحات بدلنے یا ایپ کا ڈیٹا ہٹائے جانے تک ایپ کے نجی اسٹوریج میں رہتی ہیں؛ عارضی تشخیصی حالت محفوظ رپورٹ نہیں ہے۔ برآمد شدہ رپورٹس آپ کے منتخب مقام یا سروس کے کنٹرول میں رہتی ہیں۔</string>
     <string name="settings_version">ورژن %1$s</string>
     <string name="settings_language_android_13_required">ایپ میں زبان منتخب کرنے کے لیے Android 13 یا اس کے بعد کا ورژن درکار ہے۔ یہ آلہ سسٹم کی زبان استعمال کرتا ہے۔</string>
     <string name="settings_proximity_screen">کان کے قریب اسکرین بند کریں</string>
-    <string name="settings_about_body">Private Audio صوتی آڈیو کو فون کے اندرونی ایئر پیس تک منتقل کرنے میں مدد کرتا ہے۔</string>
+    <string name="settings_about_body">Puzru صوتی آڈیو کو فون کے اندرونی ایئر پیس تک منتقل کرنے میں مدد کرتا ہے۔</string>
     <string name="diagnostic_report_saved">تشخیصی رپورٹ محفوظ ہو گئی۔</string>
     <string name="diagnostic_report_save_failed">تشخیصی رپورٹ محفوظ نہیں ہو سکی۔</string>
 
@@ -34,7 +34,7 @@
     <string name="diagnostics_system_check">سسٹم کی جانچ</string>
     <string name="diagnostics_earpiece">ایئر پیس</string>
     <string name="diagnostics_proximity_sensor">قربت کا سینسر</string>
-    <string name="diagnostics_private_audio">Private Audio</string>
+    <string name="diagnostics_private_audio">Puzru</string>
     <string name="diagnostics_routing">آڈیو روٹنگ</string>
     <string name="diagnostics_status">حالت</string>
     <string name="diagnostics_audio_route">آڈیو آؤٹ پٹ</string>
@@ -59,8 +59,8 @@
     <string name="diagnostics_route_other">دیگر</string>
     <string name="diagnostics_error_blocked_by_system">سسٹم نے آڈیو روٹنگ کو روک دیا تھا۔</string>
     <string name="diagnostics_error_session_ended">آڈیو روٹنگ مکمل ہونے سے پہلے آڈیو سیشن ختم ہو گیا۔</string>
-    <string name="diagnostics_error_audio_start">Private Audio آڈیو روٹنگ شروع نہیں کر سکا۔</string>
-    <string name="diagnostics_error_audio_preparation">Private Audio مواصلاتی آڈیو تیار نہیں کر سکا۔</string>
+    <string name="diagnostics_error_audio_start">Puzru آڈیو روٹنگ شروع نہیں کر سکا۔</string>
+    <string name="diagnostics_error_audio_preparation">Puzru مواصلاتی آڈیو تیار نہیں کر سکا۔</string>
     <string name="diagnostics_error_request_rejected">ایئر پیس پر آڈیو روٹنگ کی درخواست قبول نہیں کی گئی۔</string>
     <string name="diagnostics_error_not_completed">آڈیو روٹنگ مکمل نہیں کی جا سکی۔</string>
 </resources>

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Private Audio</string>
-    <string name="routing_notification_channel">Private Audio</string>
-    <string name="routing_notification_title">Private Audio đang bật</string>
+    <string name="app_name">Puzru</string>
+    <string name="routing_notification_channel">Puzru</string>
+    <string name="routing_notification_title">Puzru đang bật</string>
     <string name="routing_notification_text">Đang chờ chuyển đổi âm thanh</string>
-    <string name="product_title">Private Audio</string>
+    <string name="product_title">Puzru</string>
     <string name="product_subtitle">Trò chuyện riêng tư với AI, như một cuộc gọi điện thoại.</string>
     <string name="state_ready">Sẵn sàng</string>
     <string name="state_waiting">Đang chờ</string>
@@ -14,18 +14,18 @@
     <string name="floating">Mini</string>
     <string name="settings">Cài đặt</string>
     <string name="close">Đóng</string>
-    <string name="overlay_controller_description">Bộ điều khiển nổi của Private Audio. Trạng thái: %1$s. Các nút điều khiển Bật, mở rộng và đóng.</string>
+    <string name="overlay_controller_description">Bộ điều khiển nổi của Puzru. Trạng thái: %1$s. Các nút điều khiển Bật, mở rộng và đóng.</string>
     <string name="settings_language">Ngôn ngữ</string>
     <string name="settings_system_default">Mặc định</string>
     <string name="settings_save_diagnostic">Lưu báo cáo chẩn đoán</string>
     <string name="settings_advanced">Nâng cao</string>
-    <string name="settings_about">Giới thiệu về Private Audio</string>
+    <string name="settings_about">Giới thiệu về Puzru</string>
     <string name="settings_privacy_policy">Chính sách quyền riêng tư</string>
-    <string name="settings_privacy_policy_body">Private Audio không yêu cầu tài khoản hoặc đăng nhập và không yêu cầu quyền sử dụng micrô. Ứng dụng không thu hoặc ghi âm thanh từ micrô, cũng không ghi hoặc lưu trữ các cuộc trò chuyện hay nội dung âm thanh của các cuộc trò chuyện đó.\n\nPrivate Audio sử dụng thông tin hệ thống âm thanh Android cần thiết cho việc định tuyến và chẩn đoán. Hoạt động chẩn đoán có thể kiểm tra trạng thái kỹ thuật và siêu dữ liệu do các API Android công khai cung cấp, bao gồm siêu dữ liệu phát lại và phiên ghi âm. Siêu dữ liệu phiên ghi âm là thông tin kỹ thuật của hệ thống âm thanh; Private Audio không thu âm thanh micrô liên quan đến các phiên đó. Thông tin chẩn đoán có thể bao gồm phiên bản ứng dụng và Android, thông tin thiết bị và kiểu máy, thông tin về tiến trình và trạng thái ứng dụng, các thiết bị âm thanh khả dụng và hiện tại, siêu dữ liệu cấu hình phát lại và ghi âm công khai, cùng các lần thử định tuyến, kết quả, thời gian và sự kiện kỹ thuật của chúng.\n\nCác tùy chọn của ứng dụng được lưu cục bộ trong bộ nhớ riêng của ứng dụng Private Audio. Thông tin chẩn đoán được tạo và xử lý trên thiết bị của bạn và có thể tồn tại trong trạng thái cục bộ của ứng dụng đang chạy. Báo cáo không tự động được lưu hoặc gửi. Báo cáo lâu dài chỉ được tạo bên ngoài bộ nhớ riêng của ứng dụng Private Audio khi bạn chủ động chọn Lưu báo cáo chẩn đoán và chọn một đích thông qua Android. Sau khi xuất, vị trí hoặc dịch vụ đã chọn — không phải Private Audio — sẽ kiểm soát việc xử lý, lưu giữ và xóa bản sao đó.\n\nPhiên bản hiện tại không yêu cầu quyền Internet của Android, không có hệ thống backend Private Audio hoặc đường truyền qua mạng, và không tích hợp dịch vụ hay SDK phân tích, quảng cáo hoặc báo cáo sự cố. Hiện tại, ứng dụng không gửi báo cáo chẩn đoán cho nhà phát triển hoặc máy chủ Private Audio, do đó Private Audio không lưu giữ thông tin chẩn đoán trên bất kỳ máy chủ nào.\n\nDữ liệu thuộc sở hữu của ứng dụng được loại trừ khỏi hoạt động sao lưu lên đám mây Android và chuyển giữa các thiết bị. Các tùy chọn cục bộ vẫn nằm trong bộ nhớ riêng của ứng dụng cho đến khi được thay đổi hoặc dữ liệu ứng dụng bị xóa; trạng thái chẩn đoán tạm thời không phải là báo cáo đã lưu. Các báo cáo đã xuất vẫn chịu sự kiểm soát của vị trí hoặc dịch vụ bạn đã chọn.</string>
+    <string name="settings_privacy_policy_body">Puzru không yêu cầu tài khoản hoặc đăng nhập và không yêu cầu quyền sử dụng micrô. Ứng dụng không thu hoặc ghi âm thanh từ micrô, cũng không ghi hoặc lưu trữ các cuộc trò chuyện hay nội dung âm thanh của các cuộc trò chuyện đó.\n\nPuzru sử dụng thông tin hệ thống âm thanh Android cần thiết cho việc định tuyến và chẩn đoán. Hoạt động chẩn đoán có thể kiểm tra trạng thái kỹ thuật và siêu dữ liệu do các API Android công khai cung cấp, bao gồm siêu dữ liệu phát lại và phiên ghi âm. Siêu dữ liệu phiên ghi âm là thông tin kỹ thuật của hệ thống âm thanh; Puzru không thu âm thanh micrô liên quan đến các phiên đó. Thông tin chẩn đoán có thể bao gồm phiên bản ứng dụng và Android, thông tin thiết bị và kiểu máy, thông tin về tiến trình và trạng thái ứng dụng, các thiết bị âm thanh khả dụng và hiện tại, siêu dữ liệu cấu hình phát lại và ghi âm công khai, cùng các lần thử định tuyến, kết quả, thời gian và sự kiện kỹ thuật của chúng.\n\nCác tùy chọn của ứng dụng được lưu cục bộ trong bộ nhớ riêng của ứng dụng Puzru. Thông tin chẩn đoán được tạo và xử lý trên thiết bị của bạn và có thể tồn tại trong trạng thái cục bộ của ứng dụng đang chạy. Báo cáo không tự động được lưu hoặc gửi. Báo cáo lâu dài chỉ được tạo bên ngoài bộ nhớ riêng của ứng dụng Puzru khi bạn chủ động chọn Lưu báo cáo chẩn đoán và chọn một đích thông qua Android. Sau khi xuất, vị trí hoặc dịch vụ đã chọn — không phải Puzru — sẽ kiểm soát việc xử lý, lưu giữ và xóa bản sao đó.\n\nPhiên bản hiện tại không yêu cầu quyền Internet của Android, không có hệ thống backend Puzru hoặc đường truyền qua mạng, và không tích hợp dịch vụ hay SDK phân tích, quảng cáo hoặc báo cáo sự cố. Hiện tại, ứng dụng không gửi báo cáo chẩn đoán cho nhà phát triển hoặc máy chủ Puzru, do đó Puzru không lưu giữ thông tin chẩn đoán trên bất kỳ máy chủ nào.\n\nDữ liệu thuộc sở hữu của ứng dụng được loại trừ khỏi hoạt động sao lưu lên đám mây Android và chuyển giữa các thiết bị. Các tùy chọn cục bộ vẫn nằm trong bộ nhớ riêng của ứng dụng cho đến khi được thay đổi hoặc dữ liệu ứng dụng bị xóa; trạng thái chẩn đoán tạm thời không phải là báo cáo đã lưu. Các báo cáo đã xuất vẫn chịu sự kiểm soát của vị trí hoặc dịch vụ bạn đã chọn.</string>
     <string name="settings_version">Phiên bản %1$s</string>
     <string name="settings_language_android_13_required">Tính năng chọn ngôn ngữ trong ứng dụng yêu cầu Android 13 trở lên. Thiết bị này sử dụng ngôn ngữ hệ thống.</string>
     <string name="settings_proximity_screen">Tắt màn hình khi đưa gần tai</string>
-    <string name="settings_about_body">Private Audio giúp chuyển âm thanh sang loa trong của điện thoại.</string>
+    <string name="settings_about_body">Puzru giúp chuyển âm thanh sang loa trong của điện thoại.</string>
     <string name="diagnostic_report_saved">Đã lưu báo cáo chẩn đoán.</string>
     <string name="diagnostic_report_save_failed">Không thể lưu báo cáo chẩn đoán.</string>
 
@@ -34,7 +34,7 @@
     <string name="diagnostics_system_check">KIỂM TRA HỆ THỐNG</string>
     <string name="diagnostics_earpiece">Loa thoại</string>
     <string name="diagnostics_proximity_sensor">Cảm biến tiệm cận</string>
-    <string name="diagnostics_private_audio">PRIVATE AUDIO</string>
+    <string name="diagnostics_private_audio">PUZRU</string>
     <string name="diagnostics_routing">Định tuyến</string>
     <string name="diagnostics_status">Trạng thái</string>
     <string name="diagnostics_audio_route">Đầu ra âm thanh</string>
@@ -59,8 +59,8 @@
     <string name="diagnostics_route_other">Khác</string>
     <string name="diagnostics_error_blocked_by_system">Hệ thống đã chặn việc định tuyến âm thanh.</string>
     <string name="diagnostics_error_session_ended">Phiên âm thanh đã kết thúc trước khi hoàn tất định tuyến.</string>
-    <string name="diagnostics_error_audio_start">Private Audio không thể bắt đầu định tuyến âm thanh.</string>
-    <string name="diagnostics_error_audio_preparation">Private Audio không thể chuẩn bị âm thanh liên lạc.</string>
+    <string name="diagnostics_error_audio_start">Puzru không thể bắt đầu định tuyến âm thanh.</string>
+    <string name="diagnostics_error_audio_preparation">Puzru không thể chuẩn bị âm thanh liên lạc.</string>
     <string name="diagnostics_error_request_rejected">Yêu cầu định tuyến đến loa thoại không được chấp nhận.</string>
     <string name="diagnostics_error_not_completed">Không thể hoàn tất định tuyến âm thanh.</string>
 </resources>

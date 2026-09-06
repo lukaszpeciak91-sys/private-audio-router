@@ -85,8 +85,8 @@ class DiagnosticsSummaryTest {
 
         assertEquals(
             """SUPPORT SUMMARY
-Private Audio enabled: true
-Private Audio state: WAITING
+Puzru enabled: true
+Puzru state: WAITING
 Built-in earpiece available: true
 Current audio route: EARPIECE
 Proximity supported: true

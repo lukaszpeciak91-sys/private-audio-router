@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Private Audio</string>
-    <string name="routing_notification_channel">Private Audio</string>
-    <string name="routing_notification_title">Naka-on ang Private Audio</string>
+    <string name="app_name">Puzru</string>
+    <string name="routing_notification_channel">Puzru</string>
+    <string name="routing_notification_title">Naka-on ang Puzru</string>
     <string name="routing_notification_text">Nagpaabot sa pag-route sa audio</string>
-    <string name="product_title">Private Audio</string>
+    <string name="product_title">Puzru</string>
     <string name="product_subtitle">Pakigsulti sa AI nga pribado, sama sa tawag sa telepono.</string>
     <string name="state_ready">Andam</string>
     <string name="state_waiting">Nagpaabot</string>
@@ -14,26 +14,26 @@
     <string name="floating">Mini</string>
     <string name="settings">Mga setting</string>
     <string name="close">Sirad-i</string>
-    <string name="overlay_controller_description">Floating controller sa Private Audio. Kahimtang: %1$s. Mga kontrol sa power, pagpalapad, ug pagsirado.</string>
+    <string name="overlay_controller_description">Floating controller sa Puzru. Kahimtang: %1$s. Mga kontrol sa power, pagpalapad, ug pagsirado.</string>
     <string name="settings_language">Pinulongan</string>
     <string name="settings_system_default">Default</string>
     <string name="settings_save_diagnostic">I-save ang diagnostic report</string>
     <string name="settings_diagnostics">Diagnostics</string>
     <string name="settings_advanced">Advanced</string>
-    <string name="settings_about">Bahin sa Private Audio</string>
+    <string name="settings_about">Bahin sa Puzru</string>
     <string name="settings_privacy_policy">Patakaran sa Pagkapribado</string>
-    <string name="settings_privacy_policy_body">Ang Private Audio wala magkinahanglan og account o pag-sign in ug wala mangayo og permiso sa microphone. Dili kini mokuha o morekord og microphone audio, ni morekord o motipig sa inyong mga panag-istorya o sa ilang audio content.\n\nAng Private Audio naggamit sa impormasyon sa Android audio system nga gikinahanglan para sa routing ug diagnostics. Ang diagnostics mahimong mosusi sa teknikal nga kahimtang ug metadata nga gipagawas sa publikong Android APIs, lakip ang playback ug recording-session metadata. Ang recording-session metadata mao ang teknikal nga impormasyon sa audio system; ang Private Audio dili mokuha sa microphone audio nga may kalabutan sa maong mga session. Ang diagnostic information mahimong maglakip sa app ug Android versions, impormasyon sa device ug model, impormasyon sa app process ug state, available ug current nga audio devices, publikong playback ug recording configuration metadata, ug routing attempts, results, timing, ug teknikal nga mga panghitabo.\n\nAng app preferences gitipig lokal sa app-private storage sa Private Audio. Ang diagnostic information gihimo ug giproseso sa inyong device ug mahimong anaa sa lokal nga state sa nagdagang app. Ang mga report dili awtomatikong masave o mapadala. Ang usa ka persistent nga report gihimo sa gawas sa app-private storage sa Private Audio lamang kung klaro ninyong pilion ang I-save ang diagnostic report ug mopili og destinasyon pinaagi sa Android. Human sa export, ang piniling lokasyon o serbisyo—dili ang Private Audio—ang nagkontrol sa pagdumala, pagtipig, ug pagtangtang niadtong kopya.\n\nAng kasamtangang bersyon wala mangayo sa Internet permission sa Android, walay backend o network transmission path ang Private Audio, ug wala naglakip og analytics, advertising, o crash-reporting nga mga serbisyo o SDKs. Sa pagkakaron dili kini nagpadala og diagnostic reports ngadto sa developer o sa usa ka Private Audio server, busa ang Private Audio walay server-side nga diagnostic retention.\n\nAng data nga gipanag-iya sa app dili apil sa Android cloud backup ug device-to-device transfer. Ang lokal nga preferences magpabilin sa app-private storage hangtod mausab kini o matangtang ang data sa app; ang transient nga diagnostic state dili saved nga report. Ang exported nga mga report magpabilin ubos sa mga kontrol sa lokasyon o serbisyo nga inyong gipili.</string>
+    <string name="settings_privacy_policy_body">Ang Puzru wala magkinahanglan og account o pag-sign in ug wala mangayo og permiso sa microphone. Dili kini mokuha o morekord og microphone audio, ni morekord o motipig sa inyong mga panag-istorya o sa ilang audio content.\n\nAng Puzru naggamit sa impormasyon sa Android audio system nga gikinahanglan para sa routing ug diagnostics. Ang diagnostics mahimong mosusi sa teknikal nga kahimtang ug metadata nga gipagawas sa publikong Android APIs, lakip ang playback ug recording-session metadata. Ang recording-session metadata mao ang teknikal nga impormasyon sa audio system; ang Puzru dili mokuha sa microphone audio nga may kalabutan sa maong mga session. Ang diagnostic information mahimong maglakip sa app ug Android versions, impormasyon sa device ug model, impormasyon sa app process ug state, available ug current nga audio devices, publikong playback ug recording configuration metadata, ug routing attempts, results, timing, ug teknikal nga mga panghitabo.\n\nAng app preferences gitipig lokal sa app-private storage sa Puzru. Ang diagnostic information gihimo ug giproseso sa inyong device ug mahimong anaa sa lokal nga state sa nagdagang app. Ang mga report dili awtomatikong masave o mapadala. Ang usa ka persistent nga report gihimo sa gawas sa app-private storage sa Puzru lamang kung klaro ninyong pilion ang I-save ang diagnostic report ug mopili og destinasyon pinaagi sa Android. Human sa export, ang piniling lokasyon o serbisyo—dili ang Puzru—ang nagkontrol sa pagdumala, pagtipig, ug pagtangtang niadtong kopya.\n\nAng kasamtangang bersyon wala mangayo sa Internet permission sa Android, walay backend o network transmission path ang Puzru, ug wala naglakip og analytics, advertising, o crash-reporting nga mga serbisyo o SDKs. Sa pagkakaron dili kini nagpadala og diagnostic reports ngadto sa developer o sa usa ka Puzru server, busa ang Puzru walay server-side nga diagnostic retention.\n\nAng data nga gipanag-iya sa app dili apil sa Android cloud backup ug device-to-device transfer. Ang lokal nga preferences magpabilin sa app-private storage hangtod mausab kini o matangtang ang data sa app; ang transient nga diagnostic state dili saved nga report. Ang exported nga mga report magpabilin ubos sa mga kontrol sa lokasyon o serbisyo nga inyong gipili.</string>
     <string name="settings_version">Bersyon %1$s</string>
     <string name="settings_language_android_13_required">Gikinahanglan ang Android 13 o mas bag-o para sa pagpili og pinulongan sulod sa app. Kini nga device nagsunod sa pinulongan sa system.</string>
     <string name="settings_proximity_screen">I-off ang screen kon duol sa imong dalunggan</string>
-    <string name="settings_about_body">Ang Private Audio motabang sa pag-route sa suportadong voice audio ngadto sa built-in nga earpiece sa imong telepono.</string>
+    <string name="settings_about_body">Ang Puzru motabang sa pag-route sa suportadong voice audio ngadto sa built-in nga earpiece sa imong telepono.</string>
     <string name="diagnostic_report_saved">Na-save ang diagnostic report.</string>
     <string name="diagnostic_report_save_failed">Dili ma-save ang diagnostic report.</string>
     <string name="diagnostics_title">Diagnostics</string>
     <string name="diagnostics_system_check">PAGSUSI SA SYSTEM</string>
     <string name="diagnostics_earpiece">Earpiece</string>
     <string name="diagnostics_proximity_sensor">Proximity sensor</string>
-    <string name="diagnostics_private_audio">PRIVATE AUDIO</string>
+    <string name="diagnostics_private_audio">PUZRU</string>
     <string name="diagnostics_routing">Pag-route sa audio</string>
     <string name="diagnostics_status">Kahimtang</string>
     <string name="diagnostics_audio_route">Audio output</string>
@@ -58,8 +58,8 @@
     <string name="diagnostics_route_other">Uban pa</string>
     <string name="diagnostics_error_blocked_by_system">Gibabagan sa system ang pag-route sa audio.</string>
     <string name="diagnostics_error_session_ended">Natapos ang audio session sa wala pa makompleto ang pag-route.</string>
-    <string name="diagnostics_error_audio_start">Dili masugdan sa Private Audio ang pag-route sa audio.</string>
-    <string name="diagnostics_error_audio_preparation">Dili maandam sa Private Audio ang communication audio.</string>
+    <string name="diagnostics_error_audio_start">Dili masugdan sa Puzru ang pag-route sa audio.</string>
+    <string name="diagnostics_error_audio_preparation">Dili maandam sa Puzru ang communication audio.</string>
     <string name="diagnostics_error_request_rejected">Wala dawata ang hangyo sa pag-route ngadto sa earpiece.</string>
     <string name="diagnostics_error_not_completed">Dili makompleto ang pag-route sa audio.</string>
 </resources>

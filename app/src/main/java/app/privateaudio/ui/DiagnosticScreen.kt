@@ -53,7 +53,7 @@ fun DiagnosticScreen(
                 .padding(20.dp),
             verticalArrangement = Arrangement.spacedBy(16.dp),
         ) {
-            Text("PRIVATE AUDIO", style = MaterialTheme.typography.labelLarge)
+            Text("PUZRU", style = MaterialTheme.typography.labelLarge)
             Text("POC-5 Active Requester", style = MaterialTheme.typography.headlineMedium)
             Text(
                 "Experimental: one explicit arm starts a silent communication AudioTrack, requests communication mode, then makes exactly one earpiece request. No microphone, capture, proxy, or audio-focus request is used. Audible success requires your confirmation.",

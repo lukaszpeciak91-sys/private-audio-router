@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Private Audio</string>
-    <string name="routing_notification_channel">Private Audio</string>
-    <string name="routing_notification_title">Private Audio चालू बा</string>
+    <string name="app_name">Puzru</string>
+    <string name="routing_notification_channel">Puzru</string>
+    <string name="routing_notification_title">Puzru चालू बा</string>
     <string name="routing_notification_text">ऑडियो रूट करे के इंतजार हो रहल बा</string>
-    <string name="product_title">Private Audio</string>
+    <string name="product_title">Puzru</string>
     <string name="product_subtitle">फोन कॉल जइसन, AI से निजी तौर पर बात करीं।</string>
     <string name="state_ready">तइयार</string>
     <string name="state_waiting">इंतजार में</string>
@@ -14,26 +14,26 @@
     <string name="floating">छोट</string>
     <string name="settings">सेटिंग</string>
     <string name="close">बंद करीं</string>
-    <string name="overlay_controller_description">Private Audio के तैरत कंट्रोलर। स्थिति: %1$s। पावर, फइलावे आ बंद करे के कंट्रोल।</string>
+    <string name="overlay_controller_description">Puzru के तैरत कंट्रोलर। स्थिति: %1$s। पावर, फइलावे आ बंद करे के कंट्रोल।</string>
     <string name="settings_language">भाषा</string>
     <string name="settings_system_default">डिफॉल्ट</string>
     <string name="settings_save_diagnostic">जाँच रिपोर्ट सेव करीं</string>
     <string name="settings_diagnostics">जाँच</string>
     <string name="settings_advanced">एडवांस</string>
-    <string name="settings_about">Private Audio के बारे में</string>
+    <string name="settings_about">Puzru के बारे में</string>
     <string name="settings_privacy_policy">निजता नीति</string>
-    <string name="settings_privacy_policy_body">Private Audio खातिर खाता बनावे या साइन-इन करे के जरूरत नइखे आ ई माइक्रोफोन के अनुमति नइखे माँगत। ई माइक्रोफोन के ऑडियो के कैप्चर या रिकॉर्ड नइखे करत, आ ना ही रउरा बातचीत या ओकर ऑडियो सामग्री के रिकॉर्ड या स्टोर करत।\n\nPrivate Audio रूटिंग आ डायग्नोस्टिक्स खातिर जरूरी Android ऑडियो-सिस्टम जानकारी के इस्तेमाल करेला। डायग्नोस्टिक्स, सार्वजनिक Android APIs से उपलब्ध करावल गइल तकनीकी अवस्था आ मेटाडेटा के जांच सकेला, जवना में प्लेबैक आ रिकॉर्डिंग-सेशन मेटाडेटा शामिल बा। रिकॉर्डिंग-सेशन मेटाडेटा तकनीकी ऑडियो-सिस्टम जानकारी ह; Private Audio ओह सेशन से जुड़ल माइक्रोफोन ऑडियो के कैप्चर नइखे करत। डायग्नोस्टिक जानकारी में ऐप आ Android के संस्करण, डिवाइस आ मॉडल जानकारी, ऐप प्रोसेस आ अवस्था संबंधी जानकारी, उपलब्ध आ वर्तमान ऑडियो डिवाइस, सार्वजनिक प्लेबैक आ रिकॉर्डिंग कॉन्फ़िगरेशन मेटाडेटा, आ रूटिंग के कोशिश, परिणाम, समय-संबंधी जानकारी, आ तकनीकी घटनाएँ शामिल हो सकेलीं।\n\nऐप के प्राथमिकताएँ लोकली Private Audio के ऐप-प्राइवेट स्टोरेज में स्टोर होला। डायग्नोस्टिक जानकारी रउरा डिवाइस पर जनरेट आ प्रोसेस होला, आ चलत ऐप के लोकल अवस्था में मौजूद रह सकेला। रिपोर्ट अपने-आप सेव या भेजल नइखे जात। स्थायी रिपोर्ट Private Audio के ऐप-प्राइवेट स्टोरेज के बाहर तबे बनावल जाला जब रउरा साफ तौर पर डायग्नोस्टिक रिपोर्ट सहेजें चुनीं आ Android के माध्यम से एगो गंतव्य चुनीं। एक्सपोर्ट के बाद, चुनी गइल लोकेशन या सेवा—Private Audio ना—ओह कॉपी के हैंडलिंग, रखरखाव, आ मिटावे पर नियंत्रण रखेला।\n\nमौजूदा संस्करण Android के Internet अनुमति नइखे माँगत, एकर Private Audio बैकएंड या नेटवर्क ट्रांसमिशन पथ नइखे, आ एह में एनालिटिक्स, विज्ञापन, या क्रैश-रिपोर्टिंग सेवाएँ या SDKs शामिल नइखन। ई फिलहाल डेवलपर या Private Audio सर्वर के डायग्नोस्टिक रिपोर्ट नइखे भेजत, एह से Private Audio लगे सर्वर-पक्ष डायग्नोस्टिक रखरखाव नइखे।\n\nऐप-स्वामित्व वाला डेटा Android क्लाउड बैकअप आ डिवाइस-से-डिवाइस ट्रांसफर से बाहर रखल गइल बा। लोकल प्राथमिकताएँ ऐप-प्राइवेट स्टोरेज में तबले रहेली जबले उनकरा बदले ना जाए या ऐप के डेटा हटावल ना जाए; अस्थायी डायग्नोस्टिक अवस्था सेव कइल रिपोर्ट नइखे। एक्सपोर्ट कइल रिपोर्ट ओह लोकेशन या सेवा के नियंत्रण में रहेली जे रउरा चुनले बानी।</string>
+    <string name="settings_privacy_policy_body">Puzru खातिर खाता बनावे या साइन-इन करे के जरूरत नइखे आ ई माइक्रोफोन के अनुमति नइखे माँगत। ई माइक्रोफोन के ऑडियो के कैप्चर या रिकॉर्ड नइखे करत, आ ना ही रउरा बातचीत या ओकर ऑडियो सामग्री के रिकॉर्ड या स्टोर करत।\n\nPuzru रूटिंग आ डायग्नोस्टिक्स खातिर जरूरी Android ऑडियो-सिस्टम जानकारी के इस्तेमाल करेला। डायग्नोस्टिक्स, सार्वजनिक Android APIs से उपलब्ध करावल गइल तकनीकी अवस्था आ मेटाडेटा के जांच सकेला, जवना में प्लेबैक आ रिकॉर्डिंग-सेशन मेटाडेटा शामिल बा। रिकॉर्डिंग-सेशन मेटाडेटा तकनीकी ऑडियो-सिस्टम जानकारी ह; Puzru ओह सेशन से जुड़ल माइक्रोफोन ऑडियो के कैप्चर नइखे करत। डायग्नोस्टिक जानकारी में ऐप आ Android के संस्करण, डिवाइस आ मॉडल जानकारी, ऐप प्रोसेस आ अवस्था संबंधी जानकारी, उपलब्ध आ वर्तमान ऑडियो डिवाइस, सार्वजनिक प्लेबैक आ रिकॉर्डिंग कॉन्फ़िगरेशन मेटाडेटा, आ रूटिंग के कोशिश, परिणाम, समय-संबंधी जानकारी, आ तकनीकी घटनाएँ शामिल हो सकेलीं।\n\nऐप के प्राथमिकताएँ लोकली Puzru के ऐप-प्राइवेट स्टोरेज में स्टोर होला। डायग्नोस्टिक जानकारी रउरा डिवाइस पर जनरेट आ प्रोसेस होला, आ चलत ऐप के लोकल अवस्था में मौजूद रह सकेला। रिपोर्ट अपने-आप सेव या भेजल नइखे जात। स्थायी रिपोर्ट Puzru के ऐप-प्राइवेट स्टोरेज के बाहर तबे बनावल जाला जब रउरा साफ तौर पर डायग्नोस्टिक रिपोर्ट सहेजें चुनीं आ Android के माध्यम से एगो गंतव्य चुनीं। एक्सपोर्ट के बाद, चुनी गइल लोकेशन या सेवा—Puzru ना—ओह कॉपी के हैंडलिंग, रखरखाव, आ मिटावे पर नियंत्रण रखेला।\n\nमौजूदा संस्करण Android के Internet अनुमति नइखे माँगत, एकर Puzru बैकएंड या नेटवर्क ट्रांसमिशन पथ नइखे, आ एह में एनालिटिक्स, विज्ञापन, या क्रैश-रिपोर्टिंग सेवाएँ या SDKs शामिल नइखन। ई फिलहाल डेवलपर या Puzru सर्वर के डायग्नोस्टिक रिपोर्ट नइखे भेजत, एह से Puzru लगे सर्वर-पक्ष डायग्नोस्टिक रखरखाव नइखे।\n\nऐप-स्वामित्व वाला डेटा Android क्लाउड बैकअप आ डिवाइस-से-डिवाइस ट्रांसफर से बाहर रखल गइल बा। लोकल प्राथमिकताएँ ऐप-प्राइवेट स्टोरेज में तबले रहेली जबले उनकरा बदले ना जाए या ऐप के डेटा हटावल ना जाए; अस्थायी डायग्नोस्टिक अवस्था सेव कइल रिपोर्ट नइखे। एक्सपोर्ट कइल रिपोर्ट ओह लोकेशन या सेवा के नियंत्रण में रहेली जे रउरा चुनले बानी।</string>
     <string name="settings_version">वर्जन %1$s</string>
     <string name="settings_language_android_13_required">ऐप में भाषा चुने खातिर Android 13 भा ओकरा बाद के वर्जन जरूरी बा। ई डिवाइस सिस्टम के भाषा के इस्तेमाल करेला।</string>
     <string name="settings_proximity_screen">कान के लगे स्क्रीन बंद करीं</string>
-    <string name="settings_about_body">Private Audio समर्थित आवाज के ऑडियो फोन में लागल ऊपरी कान वाला स्पीकर पर भेजे में मदद करेला।</string>
+    <string name="settings_about_body">Puzru समर्थित आवाज के ऑडियो फोन में लागल ऊपरी कान वाला स्पीकर पर भेजे में मदद करेला।</string>
     <string name="diagnostic_report_saved">जाँच रिपोर्ट सेव हो गइल।</string>
     <string name="diagnostic_report_save_failed">जाँच रिपोर्ट सेव ना हो पावल।</string>
     <string name="diagnostics_title">जाँच</string>
     <string name="diagnostics_system_check">सिस्टम के जाँच</string>
     <string name="diagnostics_earpiece">कान वाला स्पीकर</string>
     <string name="diagnostics_proximity_sensor">नजदीकी सेंसर</string>
-    <string name="diagnostics_private_audio">PRIVATE AUDIO</string>
+    <string name="diagnostics_private_audio">PUZRU</string>
     <string name="diagnostics_routing">ऑडियो रूटिंग</string>
     <string name="diagnostics_status">स्थिति</string>
     <string name="diagnostics_audio_route">ऑडियो आउटपुट</string>
@@ -58,8 +58,8 @@
     <string name="diagnostics_route_other">दूसर</string>
     <string name="diagnostics_error_blocked_by_system">सिस्टम ऑडियो रूटिंग रोक दिहलस।</string>
     <string name="diagnostics_error_session_ended">ऑडियो रूटिंग पूरा होखे से पहिले ऑडियो सेशन खतम हो गइल।</string>
-    <string name="diagnostics_error_audio_start">Private Audio ऑडियो रूटिंग सुरू ना कर पावल।</string>
-    <string name="diagnostics_error_audio_preparation">Private Audio कम्युनिकेशन ऑडियो तइयार ना कर पावल।</string>
+    <string name="diagnostics_error_audio_start">Puzru ऑडियो रूटिंग सुरू ना कर पावल।</string>
+    <string name="diagnostics_error_audio_preparation">Puzru कम्युनिकेशन ऑडियो तइयार ना कर पावल।</string>
     <string name="diagnostics_error_request_rejected">कान वाला स्पीकर पर ऑडियो रूट करे के अनुरोध स्वीकार ना भइल।</string>
     <string name="diagnostics_error_not_completed">ऑडियो रूटिंग पूरा ना हो पावल।</string>
 </resources>

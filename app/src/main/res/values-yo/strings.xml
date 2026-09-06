@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Private Audio</string>
-    <string name="routing_notification_channel">Private Audio</string>
-    <string name="routing_notification_title">Private Audio ti wa ni titan</string>
+    <string name="app_name">Puzru</string>
+    <string name="routing_notification_channel">Puzru</string>
+    <string name="routing_notification_title">Puzru ti wa ni titan</string>
     <string name="routing_notification_text">N dúró láti darí ohùn</string>
-    <string name="product_title">Private Audio</string>
+    <string name="product_title">Puzru</string>
     <string name="product_subtitle">Bá AI sọ̀rọ̀ ní ìkọ̀kọ̀, bí ìpè tẹlifóònù.</string>
     <string name="state_ready">Ṣetán</string>
     <string name="state_waiting">N dúró</string>
@@ -14,26 +14,26 @@
     <string name="floating">Kékeré</string>
     <string name="settings">Àwọn ààtò</string>
     <string name="close">Tì í</string>
-    <string name="overlay_controller_description">Ohun ìṣàkóso lílefo ti Private Audio. Ipò: %1$s. Àwọn ìṣàkóso agbára, fífẹ̀ àti títì.</string>
+    <string name="overlay_controller_description">Ohun ìṣàkóso lílefo ti Puzru. Ipò: %1$s. Àwọn ìṣàkóso agbára, fífẹ̀ àti títì.</string>
     <string name="settings_language">Èdè</string>
     <string name="settings_system_default">Àìyípadà</string>
     <string name="settings_save_diagnostic">Fi ìjábọ̀ àyẹ̀wò pamọ́</string>
     <string name="settings_diagnostics">Àyẹ̀wò</string>
     <string name="settings_advanced">Tó ti ní ìlọsíwájú</string>
-    <string name="settings_about">Nípa Private Audio</string>
+    <string name="settings_about">Nípa Puzru</string>
     <string name="settings_privacy_policy">Ìlànà Ìpamọ́</string>
-    <string name="settings_privacy_policy_body">Private Audio kò nílò àkọọ́lẹ̀ tàbí wíwọlé, kò sì béèrè àṣẹ láti lo gbohùngbohùn. Kì í gba tàbí ṣe ìgbàsílẹ̀ ohùn gbohùngbohùn, bẹ́ẹ̀ ni kì í ṣe ìgbàsílẹ̀ tàbí fi àwọn ìjíròrò rẹ tàbí àkóónú ohùn wọn pamọ́.\n\nPrivate Audio ń lo ìwífún ètò ohùn Android tí ó yẹ fún dídarí ohùn àti àyẹ̀wò. Àyẹ̀wò lè ṣàyẹ̀wò ipò ìmọ̀ ẹ̀rọ àti metadata tí àwọn API Android ti gbogbo ènìyàn fi hàn, pẹ̀lú metadata ṣíṣe ohùn àti ti ìgbà ìgbàsílẹ̀. Metadata ìgbà ìgbàsílẹ̀ jẹ́ ìwífún ìmọ̀ ẹ̀rọ nípa ètò ohùn; Private Audio kì í gba ohùn gbohùngbohùn tó ní í ṣe pẹ̀lú àwọn ìgbà wọ̀nyẹn. Ìwífún àyẹ̀wò lè ní ẹ̀yà ìṣàfilọ́lẹ̀ àti Android, ìwífún ẹ̀rọ àti àwòṣe, ìwífún ìlànà àti ipò ìṣàfilọ́lẹ̀, àwọn ẹ̀rọ ohùn tó wà àti èyí tí a ń lò, metadata ìṣètò ṣíṣe ohùn àti ìgbàsílẹ̀ ti gbogbo ènìyàn, àti àwọn ìgbìyànjú dídarí, èsì, àkókò àti ìṣẹ̀lẹ̀ ìmọ̀ ẹ̀rọ.\n\nÀwọn ààtò ìṣàfilọ́lẹ̀ wà ní ìpamọ́ lórí ẹ̀rọ nínú ibi ìpamọ́ aládàáni ìṣàfilọ́lẹ̀ Private Audio. Ìwífún àyẹ̀wò ni a ń ṣẹ̀dá tí a sì ń ṣiṣẹ́ lé lórí ẹ̀rọ rẹ, ó sì lè wà nínú ipò abẹ́lẹ̀ ìṣàfilọ́lẹ̀ tó ń ṣiṣẹ́. A kì í fi àwọn ìjábọ̀ pamọ́ tàbí rán wọn lọ fúnra wọn. Ìjábọ̀ tó máa dúró ni a ṣẹ̀dá níta ibi ìpamọ́ aládàáni ìṣàfilọ́lẹ̀ Private Audio nígbà tí o bá yàn láti fi ìjábọ̀ àyẹ̀wò pamọ́ nìkan tí o sì yan ibi kan nípasẹ̀ Android. Lẹ́yìn fífi jáde, ibi tàbí iṣẹ́ tí o yàn—kì í ṣe Private Audio—ló ń ṣàkóso bí a ṣe ń bójú tó ẹ̀dà náà, bí ó ṣe pẹ́ tó ní ìpamọ́ àti bí a ṣe ń parẹ́ rẹ̀.\n\nẸ̀yà tó wà lọ́wọ́lọ́wọ́ kò béèrè àṣẹ Íńtánẹ́ẹ̀tì Android, kò ní ẹ̀rọ ẹ̀yìn Private Audio tàbí ọ̀nà ìfiránṣẹ́ nẹ́tíwọ́ọ̀kì, kò sì ní iṣẹ́ tàbí SDK ìtúpalẹ̀, ìpolówó, tàbí iṣẹ́ ìjábọ̀ nígbà tí ìṣàfilọ́lẹ̀ bá dá dúró lójijì. Lọ́wọ́lọ́wọ́, kì í fi ìjábọ̀ àyẹ̀wò ránṣẹ́ sí olùgbéejáde tàbí ẹ̀rọ apínṣẹ́ Private Audio; nítorí náà Private Audio kò ní ibi ìpamọ́ ìwífún àyẹ̀wò lórí ẹ̀rọ apínṣẹ́.\n\nA yọ dátà tí ìṣàfilọ́lẹ̀ ní kúrò nínú afẹ́yinti awọsánmà Android àti gbígbé láti ẹ̀rọ kan sí òmíràn. Àwọn ààtò agbègbè dúró nínú ibi ìpamọ́ aládàáni ìṣàfilọ́lẹ̀ títí tí a ó fi yí wọn padà tàbí yọ dátà ìṣàfilọ́lẹ̀ kúrò; ipò àyẹ̀wò fún ìgbà díẹ̀ kì í ṣe ìjábọ̀ tí a fi pamọ́. Àwọn ìjábọ̀ tí a fi jáde wà lábẹ́ ìṣàkóso ibi tàbí iṣẹ́ tí o yàn.</string>
+    <string name="settings_privacy_policy_body">Puzru kò nílò àkọọ́lẹ̀ tàbí wíwọlé, kò sì béèrè àṣẹ láti lo gbohùngbohùn. Kì í gba tàbí ṣe ìgbàsílẹ̀ ohùn gbohùngbohùn, bẹ́ẹ̀ ni kì í ṣe ìgbàsílẹ̀ tàbí fi àwọn ìjíròrò rẹ tàbí àkóónú ohùn wọn pamọ́.\n\nPuzru ń lo ìwífún ètò ohùn Android tí ó yẹ fún dídarí ohùn àti àyẹ̀wò. Àyẹ̀wò lè ṣàyẹ̀wò ipò ìmọ̀ ẹ̀rọ àti metadata tí àwọn API Android ti gbogbo ènìyàn fi hàn, pẹ̀lú metadata ṣíṣe ohùn àti ti ìgbà ìgbàsílẹ̀. Metadata ìgbà ìgbàsílẹ̀ jẹ́ ìwífún ìmọ̀ ẹ̀rọ nípa ètò ohùn; Puzru kì í gba ohùn gbohùngbohùn tó ní í ṣe pẹ̀lú àwọn ìgbà wọ̀nyẹn. Ìwífún àyẹ̀wò lè ní ẹ̀yà ìṣàfilọ́lẹ̀ àti Android, ìwífún ẹ̀rọ àti àwòṣe, ìwífún ìlànà àti ipò ìṣàfilọ́lẹ̀, àwọn ẹ̀rọ ohùn tó wà àti èyí tí a ń lò, metadata ìṣètò ṣíṣe ohùn àti ìgbàsílẹ̀ ti gbogbo ènìyàn, àti àwọn ìgbìyànjú dídarí, èsì, àkókò àti ìṣẹ̀lẹ̀ ìmọ̀ ẹ̀rọ.\n\nÀwọn ààtò ìṣàfilọ́lẹ̀ wà ní ìpamọ́ lórí ẹ̀rọ nínú ibi ìpamọ́ aládàáni ìṣàfilọ́lẹ̀ Puzru. Ìwífún àyẹ̀wò ni a ń ṣẹ̀dá tí a sì ń ṣiṣẹ́ lé lórí ẹ̀rọ rẹ, ó sì lè wà nínú ipò abẹ́lẹ̀ ìṣàfilọ́lẹ̀ tó ń ṣiṣẹ́. A kì í fi àwọn ìjábọ̀ pamọ́ tàbí rán wọn lọ fúnra wọn. Ìjábọ̀ tó máa dúró ni a ṣẹ̀dá níta ibi ìpamọ́ aládàáni ìṣàfilọ́lẹ̀ Puzru nígbà tí o bá yàn láti fi ìjábọ̀ àyẹ̀wò pamọ́ nìkan tí o sì yan ibi kan nípasẹ̀ Android. Lẹ́yìn fífi jáde, ibi tàbí iṣẹ́ tí o yàn—kì í ṣe Puzru—ló ń ṣàkóso bí a ṣe ń bójú tó ẹ̀dà náà, bí ó ṣe pẹ́ tó ní ìpamọ́ àti bí a ṣe ń parẹ́ rẹ̀.\n\nẸ̀yà tó wà lọ́wọ́lọ́wọ́ kò béèrè àṣẹ Íńtánẹ́ẹ̀tì Android, kò ní ẹ̀rọ ẹ̀yìn Puzru tàbí ọ̀nà ìfiránṣẹ́ nẹ́tíwọ́ọ̀kì, kò sì ní iṣẹ́ tàbí SDK ìtúpalẹ̀, ìpolówó, tàbí iṣẹ́ ìjábọ̀ nígbà tí ìṣàfilọ́lẹ̀ bá dá dúró lójijì. Lọ́wọ́lọ́wọ́, kì í fi ìjábọ̀ àyẹ̀wò ránṣẹ́ sí olùgbéejáde tàbí ẹ̀rọ apínṣẹ́ Puzru; nítorí náà Puzru kò ní ibi ìpamọ́ ìwífún àyẹ̀wò lórí ẹ̀rọ apínṣẹ́.\n\nA yọ dátà tí ìṣàfilọ́lẹ̀ ní kúrò nínú afẹ́yinti awọsánmà Android àti gbígbé láti ẹ̀rọ kan sí òmíràn. Àwọn ààtò agbègbè dúró nínú ibi ìpamọ́ aládàáni ìṣàfilọ́lẹ̀ títí tí a ó fi yí wọn padà tàbí yọ dátà ìṣàfilọ́lẹ̀ kúrò; ipò àyẹ̀wò fún ìgbà díẹ̀ kì í ṣe ìjábọ̀ tí a fi pamọ́. Àwọn ìjábọ̀ tí a fi jáde wà lábẹ́ ìṣàkóso ibi tàbí iṣẹ́ tí o yàn.</string>
     <string name="settings_version">Ẹ̀yà %1$s</string>
     <string name="settings_language_android_13_required">Yíyan èdè nínú ìṣàfilọ́lẹ̀ nílò Android 13 tàbí èyí tó tuntun jù. Ẹ̀rọ yìí ń tẹ̀lé èdè ètò.</string>
     <string name="settings_proximity_screen">Pa ojú-ìbojú nígbà tó bá sún mọ́ etí rẹ</string>
-    <string name="settings_about_body">Private Audio ń ṣèrànwọ́ láti darí ohùn tí a ṣe àtìlẹ́yìn fún sí agbohùnsókè etí inú foonu rẹ.</string>
+    <string name="settings_about_body">Puzru ń ṣèrànwọ́ láti darí ohùn tí a ṣe àtìlẹ́yìn fún sí agbohùnsókè etí inú foonu rẹ.</string>
     <string name="diagnostic_report_saved">A ti fi ìjábọ̀ àyẹ̀wò pamọ́.</string>
     <string name="diagnostic_report_save_failed">A kò lè fi ìjábọ̀ àyẹ̀wò pamọ́.</string>
     <string name="diagnostics_title">Àyẹ̀wò</string>
     <string name="diagnostics_system_check">ÀYẸ̀WÒ ÈTÒ</string>
     <string name="diagnostics_earpiece">Agbohùnsókè etí inú foonu</string>
     <string name="diagnostics_proximity_sensor">Ẹ̀rọ amóye ìsúnmọ́</string>
-    <string name="diagnostics_private_audio">PRIVATE AUDIO</string>
+    <string name="diagnostics_private_audio">PUZRU</string>
     <string name="diagnostics_routing">Dídarí</string>
     <string name="diagnostics_status">Ipò</string>
     <string name="diagnostics_audio_route">Ìjáde ohùn</string>
@@ -58,8 +58,8 @@
     <string name="diagnostics_route_other">Míràn</string>
     <string name="diagnostics_error_blocked_by_system">Ètò náà dí dídarí ohùn lọ́wọ́.</string>
     <string name="diagnostics_error_session_ended">Àkókò ohùn parí kí dídarí tó pé.</string>
-    <string name="diagnostics_error_audio_start">Private Audio kò lè bẹ̀rẹ̀ dídarí ohùn.</string>
-    <string name="diagnostics_error_audio_preparation">Private Audio kò lè pèsè ohùn ìbánisọ̀rọ̀.</string>
+    <string name="diagnostics_error_audio_start">Puzru kò lè bẹ̀rẹ̀ dídarí ohùn.</string>
+    <string name="diagnostics_error_audio_preparation">Puzru kò lè pèsè ohùn ìbánisọ̀rọ̀.</string>
     <string name="diagnostics_error_request_rejected">A kò gba ìbéèrè láti darí ohùn sí agbohùnsókè etí inú foonu.</string>
     <string name="diagnostics_error_not_completed">A kò lè parí dídarí ohùn.</string>
 </resources>

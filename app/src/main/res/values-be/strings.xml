@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Private Audio</string>
-    <string name="routing_notification_channel">Private Audio</string>
-    <string name="routing_notification_title">Private Audio уключана</string>
+    <string name="app_name">Puzru</string>
+    <string name="routing_notification_channel">Puzru</string>
+    <string name="routing_notification_title">Puzru уключана</string>
     <string name="routing_notification_text">Чакае на перанакіраванне гуку</string>
-    <string name="product_title">Private Audio</string>
+    <string name="product_title">Puzru</string>
     <string name="product_subtitle">Размаўляйце з AI прыватна, як падчас тэлефоннай размовы.</string>
     <string name="state_ready">Гатова</string>
     <string name="state_waiting">Чакае</string>
@@ -14,18 +14,18 @@
     <string name="floating">Міні</string>
     <string name="settings">Налады</string>
     <string name="close">Закрыць</string>
-    <string name="overlay_controller_description">Плывучы элемент кіравання Private Audio. Стан: %1$s. Элементы кіравання ўключэннем, разгортваннем і закрыццём.</string>
+    <string name="overlay_controller_description">Плывучы элемент кіравання Puzru. Стан: %1$s. Элементы кіравання ўключэннем, разгортваннем і закрыццём.</string>
     <string name="settings_language">Мова</string>
     <string name="settings_system_default">Па змаўчанні</string>
     <string name="settings_save_diagnostic">Захаваць дыягнастычную справаздачу</string>
     <string name="settings_advanced">Пашыраныя</string>
-    <string name="settings_about">Пра Private Audio</string>
+    <string name="settings_about">Пра Puzru</string>
     <string name="settings_privacy_policy">Палітыка прыватнасці</string>
-    <string name="settings_privacy_policy_body">Private Audio не патрабуе ўліковага запісу або ўваходу і не запытвае дазвол на выкарыстанне мікрафона. Праграма не захоплівае і не запісвае гук з мікрафона, а таксама не запісвае і не захоўвае вашы размовы або іх аўдыязмесціва.\n\nPrivate Audio выкарыстоўвае інфармацыю аўдыясістэмы Android, неабходную для маршрутызацыі і дыягностыкі. Дыягностыка можа правяраць тэхнічны стан і метаданыя, даступныя праз агульнадаступныя API Android, у тым ліку метаданыя сеансаў прайгравання і запісу. Метаданыя сеансаў запісу — гэта тэхнічная інфармацыя аўдыясістэмы; Private Audio не захоплівае гук з мікрафона, звязаны з гэтымі сеансамі. Дыягнастычная інфармацыя можа ўключаць версіі праграмы і Android, звесткі пра прыладу і мадэль, працэс і стан праграмы, даступныя і бягучыя аўдыяпрылады, агульнадаступныя метаданыя канфігурацыі прайгравання і запісу, а таксама спробы маршрутызацыі, іх вынікі і час, і тэхнічныя падзеі.\n\nНалады праграмы захоўваюцца лакальна ў прыватным сховішчы праграмы Private Audio. Дыягнастычная інфармацыя ствараецца і апрацоўваецца на вашай прыладзе і можа існаваць у лакальным стане запушчанай праграмы. Справаздачы не захоўваюцца і не адпраўляюцца аўтаматычна. Пастаянная справаздача ствараецца па-за прыватным сховішчам праграмы Private Audio толькі тады, калі вы відавочна выбіраеце «Захаваць дыягнастычную справаздачу» і ўказваеце месца прызначэння праз Android. Пасля экспарту выбранае месца або служба, а не Private Audio, кантралюе апрацоўку, захоўванне і выдаленне гэтай копіі.\n\nБягучая версія не запытвае дазвол Android на доступ да Інтэрнэту, не мае сервернай часткі Private Audio або шляху перадачы па сетцы і не ўключае службы або SDK аналітыкі, рэкламы ці справаздач аб збоях. Цяпер яна не адпраўляе дыягнастычныя справаздачы распрацоўшчыку або на сервер Private Audio, таму Private Audio не захоўвае дыягнастычную інфармацыю на серверы.\n\nДаныя, якія належаць праграме, выключаны з воблачнага рэзервовага капіравання Android і перадачы з прылады на прыладу. Лакальныя налады застаюцца ў прыватным сховішчы праграмы, пакуль яны не будуць зменены або даныя праграмы не будуць выдалены; часовы дыягнастычны стан не з’яўляецца захаванай справаздачай. Экспартаваныя справаздачы застаюцца пад кантролем выбранага вамі месца або службы.</string>
+    <string name="settings_privacy_policy_body">Puzru не патрабуе ўліковага запісу або ўваходу і не запытвае дазвол на выкарыстанне мікрафона. Праграма не захоплівае і не запісвае гук з мікрафона, а таксама не запісвае і не захоўвае вашы размовы або іх аўдыязмесціва.\n\nPuzru выкарыстоўвае інфармацыю аўдыясістэмы Android, неабходную для маршрутызацыі і дыягностыкі. Дыягностыка можа правяраць тэхнічны стан і метаданыя, даступныя праз агульнадаступныя API Android, у тым ліку метаданыя сеансаў прайгравання і запісу. Метаданыя сеансаў запісу — гэта тэхнічная інфармацыя аўдыясістэмы; Puzru не захоплівае гук з мікрафона, звязаны з гэтымі сеансамі. Дыягнастычная інфармацыя можа ўключаць версіі праграмы і Android, звесткі пра прыладу і мадэль, працэс і стан праграмы, даступныя і бягучыя аўдыяпрылады, агульнадаступныя метаданыя канфігурацыі прайгравання і запісу, а таксама спробы маршрутызацыі, іх вынікі і час, і тэхнічныя падзеі.\n\nНалады праграмы захоўваюцца лакальна ў прыватным сховішчы праграмы Puzru. Дыягнастычная інфармацыя ствараецца і апрацоўваецца на вашай прыладзе і можа існаваць у лакальным стане запушчанай праграмы. Справаздачы не захоўваюцца і не адпраўляюцца аўтаматычна. Пастаянная справаздача ствараецца па-за прыватным сховішчам праграмы Puzru толькі тады, калі вы відавочна выбіраеце «Захаваць дыягнастычную справаздачу» і ўказваеце месца прызначэння праз Android. Пасля экспарту выбранае месца або служба, а не Puzru, кантралюе апрацоўку, захоўванне і выдаленне гэтай копіі.\n\nБягучая версія не запытвае дазвол Android на доступ да Інтэрнэту, не мае сервернай часткі Puzru або шляху перадачы па сетцы і не ўключае службы або SDK аналітыкі, рэкламы ці справаздач аб збоях. Цяпер яна не адпраўляе дыягнастычныя справаздачы распрацоўшчыку або на сервер Puzru, таму Puzru не захоўвае дыягнастычную інфармацыю на серверы.\n\nДаныя, якія належаць праграме, выключаны з воблачнага рэзервовага капіравання Android і перадачы з прылады на прыладу. Лакальныя налады застаюцца ў прыватным сховішчы праграмы, пакуль яны не будуць зменены або даныя праграмы не будуць выдалены; часовы дыягнастычны стан не з’яўляецца захаванай справаздачай. Экспартаваныя справаздачы застаюцца пад кантролем выбранага вамі месца або службы.</string>
     <string name="settings_version">Версія %1$s</string>
     <string name="settings_language_android_13_required">Для выбару мовы ў праграме патрэбна Android 13 або навейшая версія. Гэтая прылада выкарыстоўвае сістэмную мову.</string>
     <string name="settings_proximity_screen">Выключаць экран каля вуха</string>
-    <string name="settings_about_body">Private Audio дапамагае перанакіроўваць галасавы гук на ўбудаваны размоўны дынамік тэлефона.</string>
+    <string name="settings_about_body">Puzru дапамагае перанакіроўваць галасавы гук на ўбудаваны размоўны дынамік тэлефона.</string>
     <string name="diagnostic_report_saved">Дыягнастычная справаздача захавана.</string>
     <string name="diagnostic_report_save_failed">Не ўдалося захаваць дыягнастычную справаздачу.</string>
 
@@ -34,7 +34,7 @@
     <string name="diagnostics_system_check">ПРАВЕРКА СІСТЭМЫ</string>
     <string name="diagnostics_earpiece">Размоўны дынамік</string>
     <string name="diagnostics_proximity_sensor">Датчык набліжэння</string>
-    <string name="diagnostics_private_audio">PRIVATE AUDIO</string>
+    <string name="diagnostics_private_audio">PUZRU</string>
     <string name="diagnostics_routing">Перанакіраванне гуку</string>
     <string name="diagnostics_status">Стан</string>
     <string name="diagnostics_audio_route">Аўдыявыхад</string>
@@ -59,8 +59,8 @@
     <string name="diagnostics_route_other">Іншае</string>
     <string name="diagnostics_error_blocked_by_system">Перанакіраванне гуку было заблакіравана сістэмай.</string>
     <string name="diagnostics_error_session_ended">Аўдыясесія завяршылася да заканчэння перанакіравання гуку.</string>
-    <string name="diagnostics_error_audio_start">Праграме Private Audio не ўдалося пачаць перанакіраванне гуку.</string>
-    <string name="diagnostics_error_audio_preparation">Праграме Private Audio не ўдалося падрыхтаваць аўдыя для сувязі.</string>
+    <string name="diagnostics_error_audio_start">Праграме Puzru не ўдалося пачаць перанакіраванне гуку.</string>
+    <string name="diagnostics_error_audio_preparation">Праграме Puzru не ўдалося падрыхтаваць аўдыя для сувязі.</string>
     <string name="diagnostics_error_request_rejected">Запыт на перанакіраванне гуку на размоўны дынамік не быў прыняты.</string>
     <string name="diagnostics_error_not_completed">Не ўдалося завяршыць перанакіраванне гуку.</string>
 </resources>

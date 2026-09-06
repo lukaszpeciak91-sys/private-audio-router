@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Private Audio</string>
-    <string name="routing_notification_channel">Private Audio</string>
-    <string name="routing_notification_title">Private Audio מופעל</string>
+    <string name="app_name">Puzru</string>
+    <string name="routing_notification_channel">Puzru</string>
+    <string name="routing_notification_title">Puzru מופעל</string>
     <string name="routing_notification_text">בהמתנה להחלפת פלט האודיו</string>
-    <string name="product_title">Private Audio</string>
+    <string name="product_title">Puzru</string>
     <string name="product_subtitle">דברו עם AI בפרטיות, כמו בשיחת טלפון.</string>
     <string name="state_ready">מוכן</string>
     <string name="state_waiting">בהמתנה</string>
@@ -14,18 +14,18 @@
     <string name="floating">מיני</string>
     <string name="settings">הגדרות</string>
     <string name="close">סגירה</string>
-    <string name="overlay_controller_description">הבקר הצף של Private Audio. מצב: %1$s. פקדים להפעלה/כיבוי, להרחבה ולסגירה.</string>
+    <string name="overlay_controller_description">הבקר הצף של Puzru. מצב: %1$s. פקדים להפעלה/כיבוי, להרחבה ולסגירה.</string>
     <string name="settings_language">שפה</string>
     <string name="settings_system_default">ברירת המחדל של המערכת</string>
     <string name="settings_save_diagnostic">שמירת דוח אבחון</string>
     <string name="settings_advanced">הגדרות מתקדמות</string>
-    <string name="settings_about">מידע על Private Audio</string>
+    <string name="settings_about">מידע על Puzru</string>
     <string name="settings_privacy_policy">מדיניות פרטיות</string>
-    <string name="settings_privacy_policy_body">Private Audio אינו דורש חשבון או כניסה ואינו מבקש הרשאת מיקרופון. הוא אינו לוכד או מקליט שמע מהמיקרופון, ואינו מקליט או מאחסן את השיחות שלך או את תוכן השמע שלהן.\n\nPrivate Audio משתמש במידע ממערכת השמע של Android הנחוץ לניתוב ולאבחון. האבחון עשוי לבדוק מצב טכני ומטא-נתונים שנחשפים באמצעות ממשקי API ציבוריים של Android, לרבות מטא-נתונים של הפעלות השמעה והקלטה. מטא-נתונים של הפעלות הקלטה הם מידע טכני של מערכת השמע; Private Audio אינו לוכד את שמע המיקרופון המשויך להפעלות אלה. מידע אבחוני עשוי לכלול גרסאות של האפליקציה ושל Android, מידע על המכשיר והדגם, מידע על תהליך האפליקציה ומצבה, התקני שמע זמינים ונוכחיים, מטא-נתונים ציבוריים של תצורות השמעה והקלטה, וכן ניסיונות ניתוב, תוצאות, תזמון ואירועים טכניים.\n\nהעדפות האפליקציה מאוחסנות באופן מקומי באחסון הפרטי של אפליקציית Private Audio. מידע אבחוני נוצר ומעובד במכשיר שלך ועשוי להתקיים במצב המקומי של האפליקציה הפועלת. דוחות אינם נשמרים או נשלחים באופן אוטומטי. דוח קבוע נוצר מחוץ לאחסון הפרטי של אפליקציית Private Audio רק כאשר בוחרים במפורש באפשרות שמירת דוח אבחון ובוחרים יעד דרך Android. לאחר הייצוא, המיקום או השירות שנבחרו — ולא Private Audio — שולטים בטיפול בעותק זה, בשמירתו ובמחיקתו.\n\nהגרסה הנוכחית אינה מבקשת את הרשאת האינטרנט של Android, אין לה שרת קצה עורפי של Private Audio או נתיב שידור ברשת, והיא אינה כוללת שירותים או ערכות SDK לניתוח נתונים, לפרסום או לדיווח על קריסות. היא אינה שולחת כעת דוחות אבחון למפתח או לשרת של Private Audio, ולכן Private Audio אינו שומר מידע אבחוני בצד השרת.\n\nנתונים שבבעלות האפליקציה אינם נכללים בגיבוי לענן של Android ובהעברה ממכשיר למכשיר. ההעדפות המקומיות נשארות באחסון הפרטי של האפליקציה עד שהן משתנות או שנתוני האפליקציה מוסרים; מצב אבחוני זמני אינו דוח שנשמר. דוחות שיוצאו נשארים בשליטת המיקום או השירות שבחרת.</string>
+    <string name="settings_privacy_policy_body">Puzru אינו דורש חשבון או כניסה ואינו מבקש הרשאת מיקרופון. הוא אינו לוכד או מקליט שמע מהמיקרופון, ואינו מקליט או מאחסן את השיחות שלך או את תוכן השמע שלהן.\n\nPuzru משתמש במידע ממערכת השמע של Android הנחוץ לניתוב ולאבחון. האבחון עשוי לבדוק מצב טכני ומטא-נתונים שנחשפים באמצעות ממשקי API ציבוריים של Android, לרבות מטא-נתונים של הפעלות השמעה והקלטה. מטא-נתונים של הפעלות הקלטה הם מידע טכני של מערכת השמע; Puzru אינו לוכד את שמע המיקרופון המשויך להפעלות אלה. מידע אבחוני עשוי לכלול גרסאות של האפליקציה ושל Android, מידע על המכשיר והדגם, מידע על תהליך האפליקציה ומצבה, התקני שמע זמינים ונוכחיים, מטא-נתונים ציבוריים של תצורות השמעה והקלטה, וכן ניסיונות ניתוב, תוצאות, תזמון ואירועים טכניים.\n\nהעדפות האפליקציה מאוחסנות באופן מקומי באחסון הפרטי של אפליקציית Puzru. מידע אבחוני נוצר ומעובד במכשיר שלך ועשוי להתקיים במצב המקומי של האפליקציה הפועלת. דוחות אינם נשמרים או נשלחים באופן אוטומטי. דוח קבוע נוצר מחוץ לאחסון הפרטי של אפליקציית Puzru רק כאשר בוחרים במפורש באפשרות שמירת דוח אבחון ובוחרים יעד דרך Android. לאחר הייצוא, המיקום או השירות שנבחרו — ולא Puzru — שולטים בטיפול בעותק זה, בשמירתו ובמחיקתו.\n\nהגרסה הנוכחית אינה מבקשת את הרשאת האינטרנט של Android, אין לה שרת קצה עורפי של Puzru או נתיב שידור ברשת, והיא אינה כוללת שירותים או ערכות SDK לניתוח נתונים, לפרסום או לדיווח על קריסות. היא אינה שולחת כעת דוחות אבחון למפתח או לשרת של Puzru, ולכן Puzru אינו שומר מידע אבחוני בצד השרת.\n\nנתונים שבבעלות האפליקציה אינם נכללים בגיבוי לענן של Android ובהעברה ממכשיר למכשיר. ההעדפות המקומיות נשארות באחסון הפרטי של האפליקציה עד שהן משתנות או שנתוני האפליקציה מוסרים; מצב אבחוני זמני אינו דוח שנשמר. דוחות שיוצאו נשארים בשליטת המיקום או השירות שבחרת.</string>
     <string name="settings_version">גרסה %1$s</string>
     <string name="settings_language_android_13_required">בחירת שפה באפליקציה דורשת Android 13 ואילך. המכשיר הזה משתמש בשפת המערכת.</string>
     <string name="settings_proximity_screen">כיבוי המסך כשהטלפון ליד האוזן</string>
-    <string name="settings_about_body">באמצעות Private Audio ניתן להעביר אודיו קולי נתמך לאוזניה המובנית בחלק העליון של הטלפון, שמשמשת לשיחות ליד האוזן.</string>
+    <string name="settings_about_body">באמצעות Puzru ניתן להעביר אודיו קולי נתמך לאוזניה המובנית בחלק העליון של הטלפון, שמשמשת לשיחות ליד האוזן.</string>
     <string name="diagnostic_report_saved">דוח האבחון נשמר.</string>
     <string name="diagnostic_report_save_failed">לא ניתן לשמור את דוח האבחון.</string>
 
@@ -34,7 +34,7 @@
     <string name="diagnostics_system_check">בדיקת מערכת</string>
     <string name="diagnostics_earpiece">אפרכסת</string>
     <string name="diagnostics_proximity_sensor">חיישן קרבה</string>
-    <string name="diagnostics_private_audio">Private Audio</string>
+    <string name="diagnostics_private_audio">Puzru</string>
     <string name="diagnostics_routing">ניתוב</string>
     <string name="diagnostics_status">מצב</string>
     <string name="diagnostics_audio_route">פלט שמע</string>
@@ -59,8 +59,8 @@
     <string name="diagnostics_route_other">אחר</string>
     <string name="diagnostics_error_blocked_by_system">ניתוב השמע נחסם על ידי המערכת.</string>
     <string name="diagnostics_error_session_ended">הפעלת השמע הסתיימה לפני שהניתוב הושלם.</string>
-    <string name="diagnostics_error_audio_start">אפליקציית Private Audio לא הצליחה להתחיל את ניתוב השמע.</string>
-    <string name="diagnostics_error_audio_preparation">אפליקציית Private Audio לא הצליחה להכין שמע לתקשורת.</string>
+    <string name="diagnostics_error_audio_start">אפליקציית Puzru לא הצליחה להתחיל את ניתוב השמע.</string>
+    <string name="diagnostics_error_audio_preparation">אפליקציית Puzru לא הצליחה להכין שמע לתקשורת.</string>
     <string name="diagnostics_error_request_rejected">הבקשה לניתוב השמע לאפרכסת לא התקבלה.</string>
     <string name="diagnostics_error_not_completed">לא ניתן היה להשלים את הניתוב.</string>
 </resources>

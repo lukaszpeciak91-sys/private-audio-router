@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Private Audio</string>
-    <string name="routing_notification_channel">Private Audio</string>
-    <string name="routing_notification_title">Private Audio is on</string>
+    <string name="app_name">Puzru</string>
+    <string name="routing_notification_channel">Puzru</string>
+    <string name="routing_notification_title">Puzru is on</string>
     <string name="routing_notification_text">Waiting to route audio</string>
-    <string name="product_title">Private Audio</string>
+    <string name="product_title">Puzru</string>
     <string name="product_subtitle">Talk with AI privately, like a phone call.</string>
     <string name="state_ready">Ready</string>
     <string name="state_waiting">Waiting</string>
@@ -14,28 +14,28 @@
     <string name="floating">Mini</string>
     <string name="settings">Settings</string>
     <string name="close">Close</string>
-    <string name="overlay_controller_description">Private Audio floating controller. Status: %1$s. Power, expand, and close controls.</string>
+    <string name="overlay_controller_description">Puzru floating controller. Status: %1$s. Power, expand, and close controls.</string>
     <string name="settings_language">Language</string>
     <string name="settings_system_default">Default</string>
     <string name="settings_save_diagnostic">Save diagnostic report</string>
     <string name="settings_diagnostics">Diagnostics</string>
     <string name="settings_advanced">Advanced</string>
-    <string name="settings_about">About Private Audio</string>
+    <string name="settings_about">About Puzru</string>
     <string name="settings_privacy_policy">Privacy Policy</string>
-    <string name="settings_privacy_policy_body">Private Audio does not require an account or sign-in and does not request microphone permission. It does not capture or record microphone audio, or record or store your conversations or their audio content.\n\nPrivate Audio uses Android audio-system information needed for routing and diagnostics. Diagnostics may inspect technical state and metadata exposed by public Android APIs, including playback and recording-session metadata. Recording-session metadata is technical audio-system information; Private Audio does not capture the microphone audio associated with those sessions. Diagnostic information may include app and Android versions, device and model information, app process and state information, available and current audio devices, public playback and recording configuration metadata, and routing attempts, results, timing, and technical events.\n\nApp preferences are stored locally in Private Audio’s app-private storage. Diagnostic information is generated and processed on your device and can exist in the running app’s local state. Reports are not automatically saved or sent. A persistent report is created outside Private Audio’s app-private storage only when you explicitly choose Save diagnostic report and select a destination through Android. After export, the selected location or service—not Private Audio—controls that copy’s handling, retention, and deletion.\n\nThe current version does not request Android’s Internet permission, has no Private Audio backend or network transmission path, and does not include analytics, advertising, or crash-reporting services or SDKs. It does not currently send diagnostic reports to the developer or a Private Audio server, so Private Audio has no server-side diagnostic retention.\n\nApp-owned data is excluded from Android cloud backup and device-to-device transfer. Local preferences remain in app-private storage until they are changed or the app’s data is removed; transient diagnostic state is not a saved report. Exported reports remain under the controls of the location or service you selected.</string>
+    <string name="settings_privacy_policy_body">Puzru does not require an account or sign-in and does not request microphone permission. It does not capture or record microphone audio, or record or store your conversations or their audio content.\n\nPuzru uses Android audio-system information needed for routing and diagnostics. Diagnostics may inspect technical state and metadata exposed by public Android APIs, including playback and recording-session metadata. Recording-session metadata is technical audio-system information; Puzru does not capture the microphone audio associated with those sessions. Diagnostic information may include app and Android versions, device and model information, app process and state information, available and current audio devices, public playback and recording configuration metadata, and routing attempts, results, timing, and technical events.\n\nApp preferences are stored locally in Puzru’s app-private storage. Diagnostic information is generated and processed on your device and can exist in the running app’s local state. Reports are not automatically saved or sent. A persistent report is created outside Puzru’s app-private storage only when you explicitly choose Save diagnostic report and select a destination through Android. After export, the selected location or service—not Puzru—controls that copy’s handling, retention, and deletion.\n\nThe current version does not request Android’s Internet permission, has no Puzru backend or network transmission path, and does not include analytics, advertising, or crash-reporting services or SDKs. It does not currently send diagnostic reports to the developer or a Puzru server, so Puzru has no server-side diagnostic retention.\n\nApp-owned data is excluded from Android cloud backup and device-to-device transfer. Local preferences remain in app-private storage until they are changed or the app’s data is removed; transient diagnostic state is not a saved report. Exported reports remain under the controls of the location or service you selected.</string>
     <string name="settings_version">Version %1$s</string>
     <string name="settings_language_android_13_required">In-app language selection requires Android 13 or later. This device follows the system language.</string>
     <string name="settings_proximity_screen">Turn off screen near your ear</string>
     <string name="settings_assistant_early_route" translatable="false">Assistant early route</string>
     <string name="settings_assistant_early_route_description" translatable="false">Experimental. Primes private audio before assistant speech.</string>
-    <string name="settings_about_body">Private Audio helps route supported voice audio to your phone’s built-in earpiece.</string>
+    <string name="settings_about_body">Puzru helps route supported voice audio to your phone’s built-in earpiece.</string>
     <string name="diagnostic_report_saved">Diagnostic report saved.</string>
     <string name="diagnostic_report_save_failed">Could not save diagnostic report.</string>
     <string name="diagnostics_title">Diagnostics</string>
     <string name="diagnostics_system_check">SYSTEM CHECK</string>
     <string name="diagnostics_earpiece">Earpiece</string>
     <string name="diagnostics_proximity_sensor">Proximity sensor</string>
-    <string name="diagnostics_private_audio">PRIVATE AUDIO</string>
+    <string name="diagnostics_private_audio">PUZRU</string>
     <string name="diagnostics_routing">Routing</string>
     <string name="diagnostics_status">Status</string>
     <string name="diagnostics_audio_route">Audio output</string>
@@ -60,8 +60,8 @@
     <string name="diagnostics_route_other">Other</string>
     <string name="diagnostics_error_blocked_by_system">Routing was blocked by the system.</string>
     <string name="diagnostics_error_session_ended">The audio session ended before routing completed.</string>
-    <string name="diagnostics_error_audio_start">Private Audio could not start audio routing.</string>
-    <string name="diagnostics_error_audio_preparation">Private Audio could not prepare communication audio.</string>
+    <string name="diagnostics_error_audio_start">Puzru could not start audio routing.</string>
+    <string name="diagnostics_error_audio_preparation">Puzru could not prepare communication audio.</string>
     <string name="diagnostics_error_request_rejected">The earpiece routing request was not accepted.</string>
     <string name="diagnostics_error_not_completed">Routing could not be completed.</string>
 </resources>

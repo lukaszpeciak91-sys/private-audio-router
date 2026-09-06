@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Private Audio</string>
-    <string name="routing_notification_channel">Private Audio</string>
-    <string name="routing_notification_title">Private Audio is aan</string>
+    <string name="app_name">Puzru</string>
+    <string name="routing_notification_channel">Puzru</string>
+    <string name="routing_notification_title">Puzru is aan</string>
     <string name="routing_notification_text">Wag om oudio oor te skakel</string>
-    <string name="product_title">Private Audio</string>
+    <string name="product_title">Puzru</string>
     <string name="product_subtitle">Praat privaat met KI, soos tydens \'n telefoonoproep.</string>
     <string name="state_ready">Gereed</string>
     <string name="state_waiting">Wag</string>
@@ -14,18 +14,18 @@
     <string name="floating">Mini</string>
     <string name="settings">Instellings</string>
     <string name="close">Maak toe</string>
-    <string name="overlay_controller_description">Private Audio se swewende beheerder. Status: %1$s. Kontroles om aan/af te skakel, uit te vou en toe te maak.</string>
+    <string name="overlay_controller_description">Puzru se swewende beheerder. Status: %1$s. Kontroles om aan/af te skakel, uit te vou en toe te maak.</string>
     <string name="settings_language">Taal</string>
     <string name="settings_system_default">Verstek</string>
     <string name="settings_save_diagnostic">Stoor diagnostiese verslag</string>
     <string name="settings_advanced">Gevorderd</string>
-    <string name="settings_about">Meer oor Private Audio</string>
+    <string name="settings_about">Meer oor Puzru</string>
     <string name="settings_privacy_policy">Privaatheidsbeleid</string>
-    <string name="settings_privacy_policy_body">Private Audio vereis nie ’n rekening of aanmelding nie en versoek nie mikrofoontoestemming nie. Dit neem nie mikrofoonoudio vas of op nie, en neem nie jou gesprekke of die oudio-inhoud daarvan op of stoor dit nie.\n\nPrivate Audio gebruik Android-oudiostelselinligting wat vir roetering en diagnostiek nodig is. Diagnostiek kan tegniese toestand en metadata ondersoek wat deur openbare Android-API’s beskikbaar gestel word, insluitend terugspeel- en opnamesessiemetadata. Opnamesessiemetadata is tegniese oudiostelselinligting; Private Audio neem nie die mikrofoonoudio vas wat met daardie sessies geassosieer word nie. Diagnostiese inligting kan program- en Android-weergawes, toestel- en modelinligting, programproses- en -toestandinligting, beskikbare en huidige oudiotoestelle, openbare terugspeel- en opnamekonfigurasiemetadata, en roeteringspogings, resultate, tydsberekening en tegniese gebeure insluit.\n\nProgramvoorkeure word plaaslik in Private Audio se programprivate berging gestoor. Diagnostiese inligting word op jou toestel geskep en verwerk en kan in die lopende program se plaaslike toestand bestaan. Verslae word nie outomaties gestoor of gestuur nie. ’n Permanente verslag word slegs buite Private Audio se programprivate berging geskep wanneer jy uitdruklik Stoor diagnostiese verslag kies en ’n bestemming deur Android kies. Ná uitvoer beheer die gekose ligging of diens—nie Private Audio nie—daardie kopie se hantering, bewaring en skrapping.\n\nDie huidige weergawe versoek nie Android se internettoestemming nie, het geen Private Audio-agterkant of netwerkversendingspad nie, en sluit geen ontledings-, advertensie- of omvalverslagdienste of SDK’s in nie. Dit stuur tans nie diagnostiese verslae aan die ontwikkelaar of ’n Private Audio-bediener nie, dus bewaar Private Audio geen diagnostiese inligting aan die bedienerkant nie.\n\nData wat aan die program behoort, word van Android-wolkrugsteun en toestel-na-toestel-oordrag uitgesluit. Plaaslike voorkeure bly in programprivate berging totdat dit verander of die program se data verwyder word; verbygaande diagnostiese toestand is nie ’n gestoorde verslag nie. Uitgevoerde verslae bly onder beheer van die ligging of diens wat jy gekies het.</string>
+    <string name="settings_privacy_policy_body">Puzru vereis nie ’n rekening of aanmelding nie en versoek nie mikrofoontoestemming nie. Dit neem nie mikrofoonoudio vas of op nie, en neem nie jou gesprekke of die oudio-inhoud daarvan op of stoor dit nie.\n\nPuzru gebruik Android-oudiostelselinligting wat vir roetering en diagnostiek nodig is. Diagnostiek kan tegniese toestand en metadata ondersoek wat deur openbare Android-API’s beskikbaar gestel word, insluitend terugspeel- en opnamesessiemetadata. Opnamesessiemetadata is tegniese oudiostelselinligting; Puzru neem nie die mikrofoonoudio vas wat met daardie sessies geassosieer word nie. Diagnostiese inligting kan program- en Android-weergawes, toestel- en modelinligting, programproses- en -toestandinligting, beskikbare en huidige oudiotoestelle, openbare terugspeel- en opnamekonfigurasiemetadata, en roeteringspogings, resultate, tydsberekening en tegniese gebeure insluit.\n\nProgramvoorkeure word plaaslik in Puzru se programprivate berging gestoor. Diagnostiese inligting word op jou toestel geskep en verwerk en kan in die lopende program se plaaslike toestand bestaan. Verslae word nie outomaties gestoor of gestuur nie. ’n Permanente verslag word slegs buite Puzru se programprivate berging geskep wanneer jy uitdruklik Stoor diagnostiese verslag kies en ’n bestemming deur Android kies. Ná uitvoer beheer die gekose ligging of diens—nie Puzru nie—daardie kopie se hantering, bewaring en skrapping.\n\nDie huidige weergawe versoek nie Android se internettoestemming nie, het geen Puzru-agterkant of netwerkversendingspad nie, en sluit geen ontledings-, advertensie- of omvalverslagdienste of SDK’s in nie. Dit stuur tans nie diagnostiese verslae aan die ontwikkelaar of ’n Puzru-bediener nie, dus bewaar Puzru geen diagnostiese inligting aan die bedienerkant nie.\n\nData wat aan die program behoort, word van Android-wolkrugsteun en toestel-na-toestel-oordrag uitgesluit. Plaaslike voorkeure bly in programprivate berging totdat dit verander of die program se data verwyder word; verbygaande diagnostiese toestand is nie ’n gestoorde verslag nie. Uitgevoerde verslae bly onder beheer van die ligging of diens wat jy gekies het.</string>
     <string name="settings_version">Weergawe %1$s</string>
     <string name="settings_language_android_13_required">Taalkeuse in die app vereis Android 13 of nuwer. Hierdie toestel volg die stelseltaal.</string>
     <string name="settings_proximity_screen">Skakel die skerm af naby jou oor</string>
-    <string name="settings_about_body">Private Audio help om ondersteunde stemoudio na jou foon se ingeboude oorstuk oor te skakel.</string>
+    <string name="settings_about_body">Puzru help om ondersteunde stemoudio na jou foon se ingeboude oorstuk oor te skakel.</string>
     <string name="diagnostic_report_saved">Diagnostiese verslag gestoor.</string>
     <string name="diagnostic_report_save_failed">Kon nie diagnostiese verslag stoor nie.</string>
 
@@ -34,7 +34,7 @@
     <string name="diagnostics_system_check">STELSELKONTROLE</string>
     <string name="diagnostics_earpiece">Oorstuk</string>
     <string name="diagnostics_proximity_sensor">Nabyheidsensor</string>
-    <string name="diagnostics_private_audio">PRIVATE AUDIO</string>
+    <string name="diagnostics_private_audio">PUZRU</string>
     <string name="diagnostics_routing">Roetering</string>
     <string name="diagnostics_status">Status</string>
     <string name="diagnostics_audio_route">Oudio-uitvoer</string>
@@ -59,8 +59,8 @@
     <string name="diagnostics_route_other">Ander</string>
     <string name="diagnostics_error_blocked_by_system">Roetering is deur die stelsel geblokkeer.</string>
     <string name="diagnostics_error_session_ended">Die oudiosessie het geëindig voordat roetering voltooi is.</string>
-    <string name="diagnostics_error_audio_start">Private Audio kon nie oudioroetering begin nie.</string>
-    <string name="diagnostics_error_audio_preparation">Private Audio kon nie kommunikasieoudio voorberei nie.</string>
+    <string name="diagnostics_error_audio_start">Puzru kon nie oudioroetering begin nie.</string>
+    <string name="diagnostics_error_audio_preparation">Puzru kon nie kommunikasieoudio voorberei nie.</string>
     <string name="diagnostics_error_request_rejected">Die versoek om oudio na die oorstuk oor te skakel, is nie aanvaar nie.</string>
     <string name="diagnostics_error_not_completed">Roetering kon nie voltooi word nie.</string>
 </resources>

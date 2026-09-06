@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Private Audio</string>
-    <string name="routing_notification_channel">Private Audio</string>
-    <string name="routing_notification_title">Private Audio on sisse lülitatud</string>
+    <string name="app_name">Puzru</string>
+    <string name="routing_notification_channel">Puzru</string>
+    <string name="routing_notification_title">Puzru on sisse lülitatud</string>
     <string name="routing_notification_text">Ootab heli suunamist</string>
-    <string name="product_title">Private Audio</string>
+    <string name="product_title">Puzru</string>
     <string name="product_subtitle">Räägi AI-ga privaatselt, nagu telefonikõnes.</string>
     <string name="state_ready">Valmis</string>
     <string name="state_waiting">Ootab</string>
@@ -14,18 +14,18 @@
     <string name="floating">Mini</string>
     <string name="settings">Seaded</string>
     <string name="close">Sulge</string>
-    <string name="overlay_controller_description">Private Audio ujuv juhtelement. Olek: %1$s. Sisselülitamise, laiendamise ja sulgemise juhtelemendid.</string>
+    <string name="overlay_controller_description">Puzru ujuv juhtelement. Olek: %1$s. Sisselülitamise, laiendamise ja sulgemise juhtelemendid.</string>
     <string name="settings_language">Keel</string>
     <string name="settings_system_default">Vaikeseade</string>
     <string name="settings_save_diagnostic">Salvesta diagnostikaaruanne</string>
     <string name="settings_advanced">Täpsemad seaded</string>
-    <string name="settings_about">Teave Private Audio kohta</string>
+    <string name="settings_about">Teave Puzru kohta</string>
     <string name="settings_privacy_policy">Privaatsuspoliitika</string>
-    <string name="settings_privacy_policy_body">Private Audio ei vaja kontot ega sisselogimist ja ei taotle mikrofoniluba. See ei hõiva ega salvesta mikrofoniheli ning ei salvesta ega talleta teie vestlusi ega nende helisisu.\n\nPrivate Audio kasutab marsruutimiseks ja diagnostikaks vajalikku Androidi helisüsteemi teavet. Diagnostika võib uurida avalike Androidi API-de kaudu kättesaadavaks tehtud tehnilist olekut ja metaandmeid, sealhulgas taasesituse ja salvestusseansside metaandmeid. Salvestusseansside metaandmed on helisüsteemi tehniline teave; Private Audio ei hõiva nende seanssidega seotud mikrofoniheli. Diagnostikateave võib hõlmata rakenduse ja Androidi versioone, seadme- ja mudeliteavet, rakenduse protsessi- ja olekuteavet, saadaolevaid ja praegusi heliseadmeid, taasesituse ja salvestamise avalikke konfiguratsiooni metaandmeid ning marsruutimiskatseid, nende tulemusi, ajastust ja tehnilisi sündmusi.\n\nRakenduse eelistused salvestatakse kohapeal Private Audio rakenduse privaatsesse salvestusruumi. Diagnostikateave luuakse ja seda töödeldakse teie seadmes ning see võib olla töötava rakenduse kohalikus olekus. Aruandeid ei salvestata ega saadeta automaatselt. Püsiv aruanne luuakse väljapoole Private Audio rakenduse privaatset salvestusruumi ainult siis, kui valite sõnaselgelt Salvesta diagnostikaaruanne ja määrate Androidi kaudu sihtkoha. Pärast eksportimist juhib selle koopia töötlemist, säilitamist ja kustutamist valitud asukoht või teenus, mitte Private Audio.\n\nPraegune versioon ei taotle Androidi internetiluba, sellel pole Private Audio tagasüsteemi ega võrguedastusteed ning see ei sisalda analüütika-, reklaami- ega krahhiaruandlusteenuseid või SDK-sid. Praegu ei saada see diagnostikaaruandeid arendajale ega Private Audio serverisse, mistõttu Private Audio ei säilita diagnostikateavet üheski serveris.\n\nRakendusele kuuluvad andmed on Androidi pilvvarundusest ja seadmetevahelisest edastusest välja jäetud. Kohalikud eelistused jäävad rakenduse privaatsesse salvestusruumi, kuni neid muudetakse või rakenduse andmed eemaldatakse; ajutine diagnostikaolek ei ole salvestatud aruanne. Eksporditud aruanded jäävad teie valitud asukoha või teenuse kontrolli alla.</string>
+    <string name="settings_privacy_policy_body">Puzru ei vaja kontot ega sisselogimist ja ei taotle mikrofoniluba. See ei hõiva ega salvesta mikrofoniheli ning ei salvesta ega talleta teie vestlusi ega nende helisisu.\n\nPuzru kasutab marsruutimiseks ja diagnostikaks vajalikku Androidi helisüsteemi teavet. Diagnostika võib uurida avalike Androidi API-de kaudu kättesaadavaks tehtud tehnilist olekut ja metaandmeid, sealhulgas taasesituse ja salvestusseansside metaandmeid. Salvestusseansside metaandmed on helisüsteemi tehniline teave; Puzru ei hõiva nende seanssidega seotud mikrofoniheli. Diagnostikateave võib hõlmata rakenduse ja Androidi versioone, seadme- ja mudeliteavet, rakenduse protsessi- ja olekuteavet, saadaolevaid ja praegusi heliseadmeid, taasesituse ja salvestamise avalikke konfiguratsiooni metaandmeid ning marsruutimiskatseid, nende tulemusi, ajastust ja tehnilisi sündmusi.\n\nRakenduse eelistused salvestatakse kohapeal Puzru rakenduse privaatsesse salvestusruumi. Diagnostikateave luuakse ja seda töödeldakse teie seadmes ning see võib olla töötava rakenduse kohalikus olekus. Aruandeid ei salvestata ega saadeta automaatselt. Püsiv aruanne luuakse väljapoole Puzru rakenduse privaatset salvestusruumi ainult siis, kui valite sõnaselgelt Salvesta diagnostikaaruanne ja määrate Androidi kaudu sihtkoha. Pärast eksportimist juhib selle koopia töötlemist, säilitamist ja kustutamist valitud asukoht või teenus, mitte Puzru.\n\nPraegune versioon ei taotle Androidi internetiluba, sellel pole Puzru tagasüsteemi ega võrguedastusteed ning see ei sisalda analüütika-, reklaami- ega krahhiaruandlusteenuseid või SDK-sid. Praegu ei saada see diagnostikaaruandeid arendajale ega Puzru serverisse, mistõttu Puzru ei säilita diagnostikateavet üheski serveris.\n\nRakendusele kuuluvad andmed on Androidi pilvvarundusest ja seadmetevahelisest edastusest välja jäetud. Kohalikud eelistused jäävad rakenduse privaatsesse salvestusruumi, kuni neid muudetakse või rakenduse andmed eemaldatakse; ajutine diagnostikaolek ei ole salvestatud aruanne. Eksporditud aruanded jäävad teie valitud asukoha või teenuse kontrolli alla.</string>
     <string name="settings_version">Versioon %1$s</string>
     <string name="settings_language_android_13_required">Rakenduses keele valimiseks on vaja Android 13 või uuemat. See seade kasutab süsteemi keelt.</string>
     <string name="settings_proximity_screen">Lülita ekraan kõrva lähedal välja</string>
-    <string name="settings_about_body">Private Audio aitab suunata toetatud kõneheli telefoni sisseehitatud kuularisse.</string>
+    <string name="settings_about_body">Puzru aitab suunata toetatud kõneheli telefoni sisseehitatud kuularisse.</string>
     <string name="diagnostic_report_saved">Diagnostikaaruanne on salvestatud.</string>
     <string name="diagnostic_report_save_failed">Diagnostikaaruannet ei saanud salvestada.</string>
 
@@ -34,7 +34,7 @@
     <string name="diagnostics_system_check">SÜSTEEMIKONTROLL</string>
     <string name="diagnostics_earpiece">Kuular</string>
     <string name="diagnostics_proximity_sensor">Lähedusandur</string>
-    <string name="diagnostics_private_audio">PRIVATE AUDIO</string>
+    <string name="diagnostics_private_audio">PUZRU</string>
     <string name="diagnostics_routing">Heli suunamine</string>
     <string name="diagnostics_status">Olek</string>
     <string name="diagnostics_audio_route">Heliväljund</string>
@@ -59,8 +59,8 @@
     <string name="diagnostics_route_other">Muu</string>
     <string name="diagnostics_error_blocked_by_system">Süsteem blokeeris heli suunamise.</string>
     <string name="diagnostics_error_session_ended">Heliseanss lõppes enne heli suunamise lõpulejõudmist.</string>
-    <string name="diagnostics_error_audio_start">Private Audio ei saanud heli suunamist alustada.</string>
-    <string name="diagnostics_error_audio_preparation">Private Audio ei saanud sideheli ette valmistada.</string>
+    <string name="diagnostics_error_audio_start">Puzru ei saanud heli suunamist alustada.</string>
+    <string name="diagnostics_error_audio_preparation">Puzru ei saanud sideheli ette valmistada.</string>
     <string name="diagnostics_error_request_rejected">Kuularisse suunamise taotlust ei võetud vastu.</string>
     <string name="diagnostics_error_not_completed">Heli suunamist ei saanud lõpule viia.</string>
 </resources>

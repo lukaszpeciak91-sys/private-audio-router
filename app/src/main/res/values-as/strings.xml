@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Private Audio</string>
-    <string name="routing_notification_channel">Private Audio</string>
-    <string name="routing_notification_title">Private Audio অন আছে</string>
+    <string name="app_name">Puzru</string>
+    <string name="routing_notification_channel">Puzru</string>
+    <string name="routing_notification_title">Puzru অন আছে</string>
     <string name="routing_notification_text">অডিঅ’ আউটপুট সলনি কৰিবলৈ অপেক্ষা কৰি আছে</string>
-    <string name="product_title">Private Audio</string>
+    <string name="product_title">Puzru</string>
     <string name="product_subtitle">ফ’ন কলৰ দৰে AIৰ সৈতে ব্যক্তিগতভাৱে কথা পাতক।</string>
     <string name="state_ready">সাজু</string>
     <string name="state_waiting">অপেক্ষাৰত</string>
@@ -14,18 +14,18 @@
     <string name="floating">মিনি</string>
     <string name="settings">ছেটিং</string>
     <string name="close">বন্ধ কৰক</string>
-    <string name="overlay_controller_description">Private Audioৰ ফ্ল’টিং কণ্ট্ৰ’লাৰ। অৱস্থা: %1$s। পাৱাৰ অন বা অফ কৰিবলৈ, বিস্তাৰ কৰিবলৈ আৰু বন্ধ কৰিবলৈ নিয়ন্ত্ৰণসমূহ।</string>
+    <string name="overlay_controller_description">Puzruৰ ফ্ল’টিং কণ্ট্ৰ’লাৰ। অৱস্থা: %1$s। পাৱাৰ অন বা অফ কৰিবলৈ, বিস্তাৰ কৰিবলৈ আৰু বন্ধ কৰিবলৈ নিয়ন্ত্ৰণসমূহ।</string>
     <string name="settings_language">ভাষা</string>
     <string name="settings_system_default">ডিফ’ল্ট</string>
     <string name="settings_save_diagnostic">ডায়েগন’ষ্টিক ৰিপ’ৰ্ট ছেভ কৰক</string>
     <string name="settings_advanced">উচ্চখাপৰ</string>
-    <string name="settings_about">Private Audioৰ বিষয়ে</string>
+    <string name="settings_about">Puzruৰ বিষয়ে</string>
     <string name="settings_privacy_policy">গোপনীয়তা নীতি</string>
-    <string name="settings_privacy_policy_body">Private Audio-ৰ বাবে একাউণ্ট বা sign-inৰ প্ৰয়োজন নাই আৰু ই microphone permission নাখোজে। ই মাইক্ৰ’ফোন অডিঅ’ ধৰি নাৰে বা record নকৰে, আৰু আপোনাৰ কথোপকথন বা সিহতৰ অডিঅ’ বিষয়বস্তু record বা store নকৰে।\n\nPrivate Audio-এ routing আৰু diagnostics-ৰ বাবে প্ৰয়োজনীয় Android audio-system তথ্য ব্যৱহাৰ কৰে। Diagnostics-এ public Android APIs-এ উন্মোচিত technical state আৰু metadata পৰীক্ষা কৰিব পাৰে, যাৰ ভিতৰত playback আৰু recording-session metadata অন্তৰ্ভুক্ত। Recording-session metadata হৈছে technical audio-system তথ্য; Private Audio-এ সেই session-সমূহৰ সৈতে জড়িত microphone audio ধৰি নাৰে। Diagnostic information-ৰ ভিতৰত app আৰু Android version, device আৰু model information, app process আৰু state information, available আৰু current audio devices, public playback আৰু recording configuration metadata, আৰু routing attempts, results, timing, আৰু technical events অন্তৰ্ভুক্ত হ’ব পাৰে।\n\nApp preferences স্থানীয়ভাৱে Private Audio-ৰ app-private storage-ত সংৰক্ষণ কৰা হয়। Diagnostic information আপোনাৰ device-তেই সৃষ্টি আৰু process কৰা হয় আৰু চলি থকা app-ৰ local state-ত থাকিব পাৰে। Reports স্বয়ংক্ৰিয়ভাৱে save বা send কৰা নহয়। এটা স্থায়ী report Private Audio-ৰ app-private storage-ৰ বাহিৰত তেতিয়াহে সৃষ্টি হয় যেতিয়া আপুনি স্পষ্টভাৱে Save diagnostic report বাছনি কৰে আৰু Android-ৰ জৰিয়তে এটা destination নিৰ্বাচন কৰে। Export কৰাৰ পাছত, নিৰ্বাচিত location বা service-এ—Private Audio-এ নহয়—সেই copy-টোৰ handling, retention, আৰু deletion নিয়ন্ত্ৰণ কৰে।\n\nবৰ্তমানৰ version-এ Android-ৰ Internet permission নাখোজে, ইয়াৰ কোনো Private Audio backend বা network transmission path নাই, আৰু analytics, advertising, বা crash-reporting services বা SDKs অন্তৰ্ভুক্ত নকৰে। ই বৰ্তমান developer বা কোনো Private Audio server-লৈ diagnostic reports নপঠিয়ায়, সেয়ে Private Audio-ৰ server-side diagnostic retention নাই।\n\nApp-owned data Android cloud backup আৰু device-to-device transfer-ৰ পৰা বাদ দিয়া হৈছে। Local preferences app-private storage-তেই থাকে যেতিয়ালৈ সলনি কৰা নহয় বা app-ৰ data আঁতৰোৱা নহয়; transient diagnostic state saved report নহয়। Export কৰা reports আপুনি নিৰ্বাচন কৰা location বা service-ৰ নিয়ন্ত্ৰণৰ অধীনতেই থাকে।</string>
+    <string name="settings_privacy_policy_body">Puzru-ৰ বাবে একাউণ্ট বা sign-inৰ প্ৰয়োজন নাই আৰু ই microphone permission নাখোজে। ই মাইক্ৰ’ফোন অডিঅ’ ধৰি নাৰে বা record নকৰে, আৰু আপোনাৰ কথোপকথন বা সিহতৰ অডিঅ’ বিষয়বস্তু record বা store নকৰে।\n\nPuzru-এ routing আৰু diagnostics-ৰ বাবে প্ৰয়োজনীয় Android audio-system তথ্য ব্যৱহাৰ কৰে। Diagnostics-এ public Android APIs-এ উন্মোচিত technical state আৰু metadata পৰীক্ষা কৰিব পাৰে, যাৰ ভিতৰত playback আৰু recording-session metadata অন্তৰ্ভুক্ত। Recording-session metadata হৈছে technical audio-system তথ্য; Puzru-এ সেই session-সমূহৰ সৈতে জড়িত microphone audio ধৰি নাৰে। Diagnostic information-ৰ ভিতৰত app আৰু Android version, device আৰু model information, app process আৰু state information, available আৰু current audio devices, public playback আৰু recording configuration metadata, আৰু routing attempts, results, timing, আৰু technical events অন্তৰ্ভুক্ত হ’ব পাৰে।\n\nApp preferences স্থানীয়ভাৱে Puzru-ৰ app-private storage-ত সংৰক্ষণ কৰা হয়। Diagnostic information আপোনাৰ device-তেই সৃষ্টি আৰু process কৰা হয় আৰু চলি থকা app-ৰ local state-ত থাকিব পাৰে। Reports স্বয়ংক্ৰিয়ভাৱে save বা send কৰা নহয়। এটা স্থায়ী report Puzru-ৰ app-private storage-ৰ বাহিৰত তেতিয়াহে সৃষ্টি হয় যেতিয়া আপুনি স্পষ্টভাৱে Save diagnostic report বাছনি কৰে আৰু Android-ৰ জৰিয়তে এটা destination নিৰ্বাচন কৰে। Export কৰাৰ পাছত, নিৰ্বাচিত location বা service-এ—Puzru-এ নহয়—সেই copy-টোৰ handling, retention, আৰু deletion নিয়ন্ত্ৰণ কৰে।\n\nবৰ্তমানৰ version-এ Android-ৰ Internet permission নাখোজে, ইয়াৰ কোনো Puzru backend বা network transmission path নাই, আৰু analytics, advertising, বা crash-reporting services বা SDKs অন্তৰ্ভুক্ত নকৰে। ই বৰ্তমান developer বা কোনো Puzru server-লৈ diagnostic reports নপঠিয়ায়, সেয়ে Puzru-ৰ server-side diagnostic retention নাই।\n\nApp-owned data Android cloud backup আৰু device-to-device transfer-ৰ পৰা বাদ দিয়া হৈছে। Local preferences app-private storage-তেই থাকে যেতিয়ালৈ সলনি কৰা নহয় বা app-ৰ data আঁতৰোৱা নহয়; transient diagnostic state saved report নহয়। Export কৰা reports আপুনি নিৰ্বাচন কৰা location বা service-ৰ নিয়ন্ত্ৰণৰ অধীনতেই থাকে।</string>
     <string name="settings_version">সংস্কৰণ %1$s</string>
     <string name="settings_language_android_13_required">এপৰ ভিতৰত ভাষা বাছনি কৰিবলৈ Android 13 বা তাৰ পাছৰ সংস্কৰণৰ প্ৰয়োজন। এই ডিভাইচে ছিষ্টেমৰ ভাষা ব্যৱহাৰ কৰে।</string>
     <string name="settings_proximity_screen">ফ’নটো কাণৰ ওচৰলৈ নিলে স্ক্ৰীন বন্ধ কৰক</string>
-    <string name="settings_about_body">Private Audioএ সমৰ্থিত ভইচ অডিঅ’ আপোনাৰ ফ’নৰ বিল্ট-ইন ইয়েৰপিচলৈ সলনি কৰাত সহায় কৰে।</string>
+    <string name="settings_about_body">Puzruএ সমৰ্থিত ভইচ অডিঅ’ আপোনাৰ ফ’নৰ বিল্ট-ইন ইয়েৰপিচলৈ সলনি কৰাত সহায় কৰে।</string>
     <string name="diagnostic_report_saved">ডায়েগন’ষ্টিক ৰিপ’ৰ্ট ছেভ কৰা হ’ল।</string>
     <string name="diagnostic_report_save_failed">ডায়েগন’ষ্টিক ৰিপ’ৰ্ট ছেভ কৰিব পৰা নগ’ল।</string>
 
@@ -34,7 +34,7 @@
     <string name="diagnostics_system_check">ছিষ্টেম পৰীক্ষা</string>
     <string name="diagnostics_earpiece">ইয়েৰপিচ</string>
     <string name="diagnostics_proximity_sensor">প্ৰক্সিমিটি ছেন্সৰ</string>
-    <string name="diagnostics_private_audio">Private Audio</string>
+    <string name="diagnostics_private_audio">Puzru</string>
     <string name="diagnostics_routing">অডিঅ’ ৰাউটিং</string>
     <string name="diagnostics_status">স্থিতি</string>
     <string name="diagnostics_audio_route">অডিঅ’ আউটপুট</string>
@@ -59,8 +59,8 @@
     <string name="diagnostics_route_other">অন্যান্য</string>
     <string name="diagnostics_error_blocked_by_system">ছিষ্টেমে অডিঅ’ ৰাউটিং অৱৰোধ কৰিছিল।</string>
     <string name="diagnostics_error_session_ended">অডিঅ’ ৰাউটিং সম্পূৰ্ণ হোৱাৰ আগতেই অডিঅ’ ছেছন শেষ হৈছিল।</string>
-    <string name="diagnostics_error_audio_start">Private Audioএ অডিঅ’ ৰাউটিং আৰম্ভ কৰিব নোৱাৰিলে।</string>
-    <string name="diagnostics_error_audio_preparation">Private Audioএ যোগাযোগৰ অডিঅ’ সাজু কৰিব নোৱাৰিলে।</string>
+    <string name="diagnostics_error_audio_start">Puzruএ অডিঅ’ ৰাউটিং আৰম্ভ কৰিব নোৱাৰিলে।</string>
+    <string name="diagnostics_error_audio_preparation">Puzruএ যোগাযোগৰ অডিঅ’ সাজু কৰিব নোৱাৰিলে।</string>
     <string name="diagnostics_error_request_rejected">ইয়েৰপিচলৈ অডিঅ’ ৰাউটিং কৰাৰ অনুৰোধ গ্ৰহণ কৰা নহ’ল।</string>
     <string name="diagnostics_error_not_completed">অডিঅ’ ৰাউটিং সম্পূৰ্ণ কৰিব পৰা নগ’ল।</string>
 </resources>

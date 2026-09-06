@@ -128,14 +128,14 @@ class LegacyLocaleResourceResolutionTest {
         listOf("hy", "hy-AM", "hy-Armn-AM").forEach { tag ->
             assertLocalizedSettings(context, modernTag = tag, expected = "Կարգավորումներ")
             assertEquals(
-                "Private Audio-ի լողացող կառավարիչ։ Կարգավիճակ՝ Պատրաստ է։ Private Audio-ն միացնելու կամ անջատելու, կառավարիչն ընդարձակելու և փակելու կառավարման տարրեր։",
+                "Puzru-ի լողացող կառավարիչ։ Կարգավիճակ՝ Պատրաստ է։ Puzru-ն միացնելու կամ անջատելու, կառավարիչն ընդարձակելու և փակելու կառավարման տարրեր։",
                 localizedContext(context, tag).getString(R.string.overlay_controller_description, "Պատրաստ է"),
             )
         }
         listOf("jv", "jv-ID", "jv-Latn-ID").forEach { tag ->
             assertLocalizedSettings(context, modernTag = tag, expected = "Setelan")
             assertEquals(
-                "Kontrol ngambang Private Audio. Status: Siyap. Tombol kanggo nguripake utawa mateni Private Audio, nggedhekake kontrol, lan nutup.",
+                "Kontrol ngambang Puzru. Status: Siyap. Tombol kanggo nguripake utawa mateni Puzru, nggedhekake kontrol, lan nutup.",
                 localizedContext(context, tag).getString(R.string.overlay_controller_description, "Siyap"),
             )
             assertEquals("$tag layout direction", android.view.View.LAYOUT_DIRECTION_LTR, localizedContext(context, tag).resources.configuration.layoutDirection)
@@ -167,14 +167,14 @@ class LegacyLocaleResourceResolutionTest {
         listOf("ca", "ca-ES", "ca-Latn-ES").forEach { tag ->
             assertLocalizedSettings(context, modernTag = tag, expected = "Configuració")
             assertEquals(
-                "Control flotant de Private Audio. Estat: A punt. Botons per activar o desactivar Private Audio, ampliar el control i tancar-lo.",
+                "Control flotant de Puzru. Estat: A punt. Botons per activar o desactivar Puzru, ampliar el control i tancar-lo.",
                 localizedContext(context, tag).getString(R.string.overlay_controller_description, "A punt"),
             )
         }
         listOf("gl", "gl-ES", "gl-Latn-ES").forEach { tag ->
             assertLocalizedSettings(context, modernTag = tag, expected = "Configuración")
             assertEquals(
-                "Control flotante de Private Audio. Estado: Preparado. Botóns para activar ou desactivar Private Audio, ampliar o control e pechalo.",
+                "Control flotante de Puzru. Estado: Preparado. Botóns para activar ou desactivar Puzru, ampliar o control e pechalo.",
                 localizedContext(context, tag).getString(R.string.overlay_controller_description, "Preparado"),
             )
             assertEquals("$tag layout direction", android.view.View.LAYOUT_DIRECTION_LTR, localizedContext(context, tag).resources.configuration.layoutDirection)
@@ -185,14 +185,14 @@ class LegacyLocaleResourceResolutionTest {
         listOf("mn", "mn-MN", "mn-Cyrl-MN").forEach { tag ->
             assertLocalizedSettings(context, modernTag = tag, expected = "Тохиргоо")
             assertEquals(
-                "Private Audio-н хөвөгч удирдлага. Төлөв: Бэлэн. Асаах/унтраах, дэлгэх, хаах товчлуурууд.",
+                "Puzru-н хөвөгч удирдлага. Төлөв: Бэлэн. Асаах/унтраах, дэлгэх, хаах товчлуурууд.",
                 localizedContext(context, tag).getString(R.string.overlay_controller_description, "Бэлэн"),
             )
         }
         listOf("ka", "ka-GE", "ka-Geor-GE").forEach { tag ->
             assertLocalizedSettings(context, modernTag = tag, expected = "პარამეტრები")
             assertEquals(
-                "Private Audio-ს მცურავი მართვის პანელი. სტატუსი: მზადაა. ჩართვის/გამორთვის, გაშლისა და დახურვის მართვის ელემენტები.",
+                "Puzru-ს მცურავი მართვის პანელი. სტატუსი: მზადაა. ჩართვის/გამორთვის, გაშლისა და დახურვის მართვის ელემენტები.",
                 localizedContext(context, tag).getString(R.string.overlay_controller_description, "მზადაა"),
             )
             assertEquals("$tag layout direction", android.view.View.LAYOUT_DIRECTION_LTR, localizedContext(context, tag).resources.configuration.layoutDirection)
@@ -200,18 +200,18 @@ class LegacyLocaleResourceResolutionTest {
         listOf("lo", "lo-LA", "lo-Laoo-LA").forEach { tag ->
             assertLocalizedSettings(context, modernTag = tag, expected = "ການຕັ້ງຄ່າ")
             assertEquals(
-                "ຕົວຄວບຄຸມແບບລອຍຂອງ Private Audio. ສະຖານະ: ພ້ອມ. ປຸ່ມສຳລັບເປີດ/ປິດ Private Audio, ຂະຫຍາຍແຜງຄວບຄຸມ ແລະ ປິດແຜງຄວບຄຸມ.",
+                "ຕົວຄວບຄຸມແບບລອຍຂອງ Puzru. ສະຖານະ: ພ້ອມ. ປຸ່ມສຳລັບເປີດ/ປິດ Puzru, ຂະຫຍາຍແຜງຄວບຄຸມ ແລະ ປິດແຜງຄວບຄຸມ.",
                 localizedContext(context, tag).getString(R.string.overlay_controller_description, "ພ້ອມ"),
             )
             assertEquals("$tag layout direction", android.view.View.LAYOUT_DIRECTION_LTR, localizedContext(context, tag).resources.configuration.layoutDirection)
         }
         listOf("az", "az-AZ", "az-Latn-AZ").forEach { tag ->
             assertLocalizedSettings(context, modernTag = tag, expected = "Ayarlar")
-            assertEquals("Private Audio üzən idarəedicisi. Vəziyyət: Hazır. Yandırıb-söndürmək, genişləndirmək və bağlamaq üçün idarəetmələr.", localizedContext(context, tag).getString(R.string.overlay_controller_description, "Hazır"))
+            assertEquals("Puzru üzən idarəedicisi. Vəziyyət: Hazır. Yandırıb-söndürmək, genişləndirmək və bağlamaq üçün idarəetmələr.", localizedContext(context, tag).getString(R.string.overlay_controller_description, "Hazır"))
         }
         listOf("az-IR", "az-Arab", "az-Arab-IR").forEach { tag ->
             assertLocalizedSettings(context, modernTag = tag, expected = "آیارلار")
-            assertEquals("Private Audio-نون اۆزن ایداره‌ئدیجی‌سی. دوروم: حاضیر. یاندیرماق/سؤندورمک، گئنیشلندیرمک و باغلاماق اۆچون ایداره‌لر.", localizedContext(context, tag).getString(R.string.overlay_controller_description, "حاضیر"))
+            assertEquals("Puzru-نون اۆزن ایداره‌ئدیجی‌سی. دوروم: حاضیر. یاندیرماق/سؤندورمک، گئنیشلندیرمک و باغلاماق اۆچون ایداره‌لر.", localizedContext(context, tag).getString(R.string.overlay_controller_description, "حاضیر"))
         }
 
         assertEquals(

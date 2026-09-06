@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Private Audio</string>
-    <string name="routing_notification_channel">Private Audio</string>
-    <string name="routing_notification_title">Private Audio er slået til</string>
+    <string name="app_name">Puzru</string>
+    <string name="routing_notification_channel">Puzru</string>
+    <string name="routing_notification_title">Puzru er slået til</string>
     <string name="routing_notification_text">Venter på at skifte lyd</string>
-    <string name="product_title">Private Audio</string>
+    <string name="product_title">Puzru</string>
     <string name="product_subtitle">Tal privat med AI, som i et telefonopkald.</string>
     <string name="state_ready">Klar</string>
     <string name="state_waiting">Venter</string>
@@ -14,18 +14,18 @@
     <string name="floating">Mini</string>
     <string name="settings">Indstillinger</string>
     <string name="close">Luk</string>
-    <string name="overlay_controller_description">Flydende betjening til Private Audio. Status: %1$s. Knapper til at tænde, udvide og lukke.</string>
+    <string name="overlay_controller_description">Flydende betjening til Puzru. Status: %1$s. Knapper til at tænde, udvide og lukke.</string>
     <string name="settings_language">Sprog</string>
     <string name="settings_system_default">Standard</string>
     <string name="settings_save_diagnostic">Gem diagnosticeringsrapport</string>
     <string name="settings_advanced">Avanceret</string>
-    <string name="settings_about">Om Private Audio</string>
+    <string name="settings_about">Om Puzru</string>
     <string name="settings_privacy_policy">Privatlivspolitik</string>
-    <string name="settings_privacy_policy_body">Private Audio kræver ikke en konto eller login og anmoder ikke om mikrofontilladelse. Appen opfanger eller optager ikke mikrofonlyd og optager eller gemmer ikke dine samtaler eller deres lydindhold.\n\nPrivate Audio bruger oplysninger fra Androids lydsystem, som er nødvendige for dirigering og diagnosticering. Diagnosticering kan undersøge teknisk tilstand og metadata, der stilles til rådighed af offentlige Android-API\'er, herunder metadata for afspilnings- og optagelsessessioner. Metadata for optagelsessessioner er tekniske oplysninger om lydsystemet. Private Audio opfanger ikke den mikrofonlyd, der er knyttet til disse sessioner. Diagnostiske oplysninger kan omfatte app- og Android-versioner, oplysninger om enhed og model, oplysninger om appens proces og tilstand, tilgængelige og aktuelle lydenheder, offentlige konfigurationsmetadata for afspilning og optagelse samt dirigeringsforsøg, deres resultater, tidsoplysninger og tekniske hændelser.\n\nAppindstillinger gemmes lokalt i Private Audios private applager. Diagnostiske oplysninger genereres og behandles på din enhed og kan findes i den kørende apps lokale tilstand. Rapporter gemmes eller sendes ikke automatisk. En permanent rapport oprettes uden for Private Audios private applager, kun når du udtrykkeligt vælger Gem diagnosticeringsrapport og vælger en destination via Android. Efter eksporten styrer den valgte placering eller tjeneste, ikke Private Audio, håndteringen, opbevaringen og sletningen af denne kopi.\n\nDen aktuelle version anmoder ikke om Androids internettilladelse, har ingen Private Audio-backend eller netværkstransmissionsvej og indeholder ingen tjenester eller SDK\'er til analyse, annoncering eller rapportering af nedbrud. Den sender i øjeblikket ikke diagnosticeringsrapporter til udvikleren eller en Private Audio-server, så Private Audio opbevarer ingen diagnostiske oplysninger på nogen server.\n\nAppejede data er udelukket fra Androids sikkerhedskopiering i skyen og overførsel mellem enheder. Lokale indstillinger forbliver i appens private lager, indtil de ændres, eller appens data fjernes. Midlertidig diagnostisk tilstand er ikke en gemt rapport. Eksporterede rapporter forbliver under kontrol af den placering eller tjeneste, du valgte.</string>
+    <string name="settings_privacy_policy_body">Puzru kræver ikke en konto eller login og anmoder ikke om mikrofontilladelse. Appen opfanger eller optager ikke mikrofonlyd og optager eller gemmer ikke dine samtaler eller deres lydindhold.\n\nPuzru bruger oplysninger fra Androids lydsystem, som er nødvendige for dirigering og diagnosticering. Diagnosticering kan undersøge teknisk tilstand og metadata, der stilles til rådighed af offentlige Android-API\'er, herunder metadata for afspilnings- og optagelsessessioner. Metadata for optagelsessessioner er tekniske oplysninger om lydsystemet. Puzru opfanger ikke den mikrofonlyd, der er knyttet til disse sessioner. Diagnostiske oplysninger kan omfatte app- og Android-versioner, oplysninger om enhed og model, oplysninger om appens proces og tilstand, tilgængelige og aktuelle lydenheder, offentlige konfigurationsmetadata for afspilning og optagelse samt dirigeringsforsøg, deres resultater, tidsoplysninger og tekniske hændelser.\n\nAppindstillinger gemmes lokalt i Puzrus private applager. Diagnostiske oplysninger genereres og behandles på din enhed og kan findes i den kørende apps lokale tilstand. Rapporter gemmes eller sendes ikke automatisk. En permanent rapport oprettes uden for Puzrus private applager, kun når du udtrykkeligt vælger Gem diagnosticeringsrapport og vælger en destination via Android. Efter eksporten styrer den valgte placering eller tjeneste, ikke Puzru, håndteringen, opbevaringen og sletningen af denne kopi.\n\nDen aktuelle version anmoder ikke om Androids internettilladelse, har ingen Puzru-backend eller netværkstransmissionsvej og indeholder ingen tjenester eller SDK\'er til analyse, annoncering eller rapportering af nedbrud. Den sender i øjeblikket ikke diagnosticeringsrapporter til udvikleren eller en Puzru-server, så Puzru opbevarer ingen diagnostiske oplysninger på nogen server.\n\nAppejede data er udelukket fra Androids sikkerhedskopiering i skyen og overførsel mellem enheder. Lokale indstillinger forbliver i appens private lager, indtil de ændres, eller appens data fjernes. Midlertidig diagnostisk tilstand er ikke en gemt rapport. Eksporterede rapporter forbliver under kontrol af den placering eller tjeneste, du valgte.</string>
     <string name="settings_version">Version %1$s</string>
     <string name="settings_language_android_13_required">Sprogvalg i appen kræver Android 13 eller nyere. Denne enhed følger systemsproget.</string>
     <string name="settings_proximity_screen">Sluk skærmen tæt på øret</string>
-    <string name="settings_about_body">Private Audio hjælper med at skifte understøttet stemmelyd til telefonens indbyggede ørestykke.</string>
+    <string name="settings_about_body">Puzru hjælper med at skifte understøttet stemmelyd til telefonens indbyggede ørestykke.</string>
     <string name="diagnostic_report_saved">Diagnosticeringsrapporten er gemt.</string>
     <string name="diagnostic_report_save_failed">Diagnosticeringsrapporten kunne ikke gemmes.</string>
 
@@ -34,7 +34,7 @@
     <string name="diagnostics_system_check">SYSTEMKONTROL</string>
     <string name="diagnostics_earpiece">Ørestykke</string>
     <string name="diagnostics_proximity_sensor">Nærhedssensor</string>
-    <string name="diagnostics_private_audio">PRIVATE AUDIO</string>
+    <string name="diagnostics_private_audio">PUZRU</string>
     <string name="diagnostics_routing">Lydrouting</string>
     <string name="diagnostics_status">Status</string>
     <string name="diagnostics_audio_route">Lydudgang</string>
@@ -59,8 +59,8 @@
     <string name="diagnostics_route_other">Andet</string>
     <string name="diagnostics_error_blocked_by_system">Lydrouting blev blokeret af systemet.</string>
     <string name="diagnostics_error_session_ended">Lydsessionen sluttede, før lydroutingen var fuldført.</string>
-    <string name="diagnostics_error_audio_start">Private Audio kunne ikke starte lydrouting.</string>
-    <string name="diagnostics_error_audio_preparation">Private Audio kunne ikke forberede kommunikationslyd.</string>
+    <string name="diagnostics_error_audio_start">Puzru kunne ikke starte lydrouting.</string>
+    <string name="diagnostics_error_audio_preparation">Puzru kunne ikke forberede kommunikationslyd.</string>
     <string name="diagnostics_error_request_rejected">Anmodningen om routing til ørestykket blev ikke accepteret.</string>
     <string name="diagnostics_error_not_completed">Lydroutingen kunne ikke fuldføres.</string>
 </resources>
