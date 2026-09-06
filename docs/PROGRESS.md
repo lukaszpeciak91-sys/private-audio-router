@@ -1,5 +1,21 @@
 # Progress
 
+## Final English About Puzru source
+
+- The default, unqualified English `settings_about_body` resource now establishes
+  the finalized About Puzru source, including the product purpose, name meaning,
+  compatibility boundaries, and explicit limits on third-party service control and
+  provider-side privacy. About presents Napahu Studios as Puzru's
+  publisher/developer brand.
+- The existing Settings About child page and navigation are preserved. Its longer,
+  structured body now uses explicit runtime paragraph, heading, and bullet breaks,
+  start-aligned text, scrolling, and the shared direction-driven layout behavior;
+  the page is also bounded by the existing portrait safe-inset treatment.
+- Localized About propagation is intentionally deferred to the next localization
+  stage. Existing locale-specific `settings_about_body` values remain unchanged and
+  are temporarily based on the previous English source until that controlled
+  propagation occurs; they are not asserted to translate this newly frozen source.
+
 ## English Privacy Policy disclosure alignment
 
 - The authoritative English in-app Privacy Policy now describes the verified current
