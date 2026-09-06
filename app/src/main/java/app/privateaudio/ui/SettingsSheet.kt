@@ -109,7 +109,9 @@ fun SettingsSheet(
             modifier = modifier.fillMaxSize(),
         ) {
             val compactHeight = maxHeight < 600.dp
-            val portraitInsetPage = page == SettingsPage.LANGUAGE || page == SettingsPage.PRIVACY_POLICY
+            val portraitInsetPage = page == SettingsPage.LANGUAGE ||
+                page == SettingsPage.PRIVACY_POLICY ||
+                page == SettingsPage.ABOUT
             BoxWithConstraints(
                 modifier = Modifier
                     .fillMaxSize()
@@ -487,11 +489,14 @@ private fun ChildPage(title: String, body: String, onBack: () -> Unit) {
     Spacer(Modifier.height(26.dp))
     Text(
         text = body,
-        modifier = Modifier.fillMaxWidth().padding(horizontal = 8.dp),
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(horizontal = 8.dp)
+            .testTag("settings_about_body"),
         color = SettingsSecondary,
         fontSize = 15.sp,
         lineHeight = 22.sp,
-        textAlign = TextAlign.Center,
+        textAlign = TextAlign.Start,
     )
     Spacer(Modifier.height(30.dp))
     }

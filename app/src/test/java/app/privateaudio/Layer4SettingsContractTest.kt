@@ -134,6 +134,48 @@ class Layer4SettingsContractTest {
     }
 
     @Test
+    fun aboutUsesTheAuthoritativeStructuredEnglishSourceAndReadablePresentation() {
+        val stringsFile = projectFile("app/src/main/res/values/strings.xml")
+        val strings = stringsFile.readText()
+        val document = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(stringsFile)
+        val stringNodes = document.getElementsByTagName("string")
+        val aboutValues = (0 until stringNodes.length).mapNotNull { index ->
+            stringNodes.item(index).attributes?.getNamedItem("name")
+                ?.takeIf { it.nodeValue == "settings_about_body" }
+                ?.let { stringNodes.item(index).textContent }
+        }
+
+        assertEquals(1, aboutValues.size)
+        val about = aboutValues.single()
+        listOf(
+            "Puzru by Napahu Studios",
+            "What the name means",
+            "Akkadian word associated with concealment or secrecy",
+            "What Puzru does",
+            "phone’s built-in earpiece",
+            "like a normal phone call",
+            "standard Android audio-routing features",
+            "Compatibility and limitations",
+            "does not unlock, extend, or bypass",
+            "What Puzru does not do",
+            "does not make phone calls",
+            "does not provide privacy from the AI service itself",
+        ).forEach { claim -> assertTrue(claim, about.contains(claim)) }
+        assertEquals(6, about.split("\\n\\n").size)
+        assertEquals(7, about.split("\\n").count { it.startsWith("• ") })
+        assertTrue(strings.contains("Puzru by Napahu Studios\\n\\nWhat the name means\\n"))
+
+        val settingsSheet = settingsSource.kotlinDeclaration("fun SettingsSheet(")
+        assertTrue(settingsSheet.contains("SettingsPage.ABOUT -> ChildPage("))
+        assertTrue(settingsSheet.contains("page == SettingsPage.ABOUT"))
+        val childPage = settingsSource.kotlinDeclaration("private fun ChildPage(")
+        assertTrue(childPage.contains(".verticalScroll(rememberScrollState())"))
+        assertTrue(childPage.contains(".testTag(\"settings_about_body\")"))
+        assertTrue(childPage.contains("textAlign = TextAlign.Start"))
+        assertFalse(childPage.contains("textAlign = TextAlign.Center"))
+    }
+
+    @Test
     fun diagnosticSaveUsesCreateDocumentAndUtf8ContentResolver() {
         val launchMethod = mainSource.method("private fun launchDiagnosticDocumentPicker()")
         val saveMethod = mainSource.method("private fun saveDiagnosticReport(destination: Uri)")
