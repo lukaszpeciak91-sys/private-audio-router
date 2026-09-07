@@ -72,8 +72,11 @@
   `napahustudios@gmail.com`. Settings presents them separately from the unchanged
   five-paragraph localized policy bodies, and About provides the same actionable
   email contact separately from its finalized descriptive copy.
-  Public privacy hosting/URL, Play Console Data Safety and foreground-service
-  declarations, and any future user-initiated Share Sheet remain outside this work.
+  The canonical framework-free public Privacy Policy site and a dedicated GitHub
+  Pages deployment workflow now publish only the public site directory. The live
+  Pages URL still requires deployment and verification before it is release-ready.
+  Play Console Data Safety and foreground-service declarations, and any future
+  user-initiated Share Sheet remain outside this work.
 
 ## Dead Settings resource contract reconciliation
 
