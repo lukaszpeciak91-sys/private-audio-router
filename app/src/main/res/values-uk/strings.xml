@@ -32,8 +32,6 @@
 
     <string name="settings_diagnostics">Діагностика</string>
     <string name="diagnostics_send_report">Надіслати діагностичний звіт</string>
-    <string name="diagnostic_email_subject">Діагностичний звіт Puzru</string>
-    <string name="diagnostic_email_body">Діагностичний звіт Puzru\n\nВикористаний голосовий застосунок/сервіс:\nЩо сталося:\nДе було чути звук? (гучномовець / розмовний динамік / ніде / інше):\n\nТехнічний діагностичний звіт додано як текстовий файл.</string>
     <string name="diagnostic_report_no_handler">Немає сумісного застосунку для надсилання цього звіту.</string>
     <string name="diagnostic_report_unavailable">Діагностичний звіт недоступний.</string>
     <string name="diagnostic_report_share_failed">Не вдалося підготувати діагностичний звіт.</string>

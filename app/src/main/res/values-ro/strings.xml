@@ -32,8 +32,6 @@
 
     <string name="settings_diagnostics">Diagnosticare</string>
     <string name="diagnostics_send_report">Trimite raportul de diagnostic</string>
-    <string name="diagnostic_email_subject">Raport de diagnostic Puzru</string>
-    <string name="diagnostic_email_body">Raport de diagnostic Puzru\n\nAplicația/serviciul vocal utilizat:\nCe s-a întâmplat:\nUnde ați auzit sunetul? (difuzor / cască / nicăieri / altundeva):\n\nRaportul tehnic de diagnostic este atașat ca fișier text.</string>
     <string name="diagnostic_report_no_handler">Nicio aplicație compatibilă nu poate trimite acest raport.</string>
     <string name="diagnostic_report_unavailable">Raportul de diagnostic nu este disponibil.</string>
     <string name="diagnostic_report_share_failed">Raportul de diagnostic nu a putut fi pregătit.</string>

@@ -229,11 +229,6 @@ class MainActivity : ComponentActivity() {
             clipData = ClipData.newUri(contentResolver, writeResult.file.name, attachment)
             addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
         }
-        if (sendIntent.resolveActivity(packageManager) == null) {
-            writeResult.file.delete()
-            showDiagnosticSendFeedback(R.string.diagnostic_report_no_handler)
-            return
-        }
         try {
             startActivity(Intent.createChooser(sendIntent, getString(R.string.diagnostics_send_report)))
         } catch (_: android.content.ActivityNotFoundException) {

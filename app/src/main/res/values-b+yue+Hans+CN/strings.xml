@@ -31,8 +31,6 @@
     <string name="diagnostic_report_saved">诊断报告已保存。</string>
     <string name="diagnostic_report_save_failed">无法保存诊断报告。</string>
     <string name="diagnostics_send_report">发送诊断报告</string>
-    <string name="diagnostic_email_subject">Puzru 诊断报告</string>
-    <string name="diagnostic_email_body">Puzru 诊断报告\n\n使用嘅语音应用程式／服务：\n发生咗咩事：\n你喺边度听到音讯？（扬声器／听筒／听唔到／其他）：\n\n技术诊断报告已作为文字档案附加。</string>
     <string name="diagnostic_report_no_handler">冇相容嘅应用程式可以发送呢份报告。</string>
     <string name="diagnostic_report_unavailable">诊断报告无法使用。</string>
     <string name="diagnostic_report_share_failed">无法准备诊断报告。</string>

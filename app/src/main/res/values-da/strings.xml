@@ -32,8 +32,6 @@
 
     <string name="settings_diagnostics">Diagnostik</string>
     <string name="diagnostics_send_report">Send diagnosticeringsrapport</string>
-    <string name="diagnostic_email_subject">Puzru-diagnosticeringsrapport</string>
-    <string name="diagnostic_email_body">Puzru-diagnosticeringsrapport\n\nAnvendt stemmeapp/-tjeneste:\nHvad skete der:\nHvor hørte du lyden? (højttaler / ørestykke / ingen steder / andet):\n\nDen tekniske diagnosticeringsrapport er vedhæftet som en tekstfil.</string>
     <string name="diagnostic_report_no_handler">Ingen kompatibel app kan sende rapporten.</string>
     <string name="diagnostic_report_unavailable">Diagnosticeringsrapporten er ikke tilgængelig.</string>
     <string name="diagnostic_report_share_failed">Diagnosticeringsrapporten kunne ikke klargøres.</string>

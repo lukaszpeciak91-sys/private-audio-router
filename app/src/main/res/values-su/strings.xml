@@ -31,8 +31,6 @@
     <string name="diagnostic_report_saved">Laporan diagnostik geus disimpen.</string>
     <string name="diagnostic_report_save_failed">Laporan diagnostik teu bisa disimpen.</string>
     <string name="diagnostics_send_report">Kirim laporan diagnostik</string>
-    <string name="diagnostic_email_subject">Laporan diagnostik Puzru</string>
-    <string name="diagnostic_email_body">Laporan diagnostik Puzru\n\nAplikasi/layanan sora anu dipaké:\nNaon anu kajadian:\nTi mana anjeun ngadéngé audio? (spéker / spéker ceuli / teu kadéngé / séjén):\n\nLaporan diagnostik téknis dilampirkeun salaku file téks.</string>
     <string name="diagnostic_report_no_handler">Teu aya aplikasi anu cocog pikeun ngirim laporan ieu.</string>
     <string name="diagnostic_report_unavailable">Laporan diagnostik teu sadia.</string>
     <string name="diagnostic_report_share_failed">Laporan diagnostik teu bisa disiapkeun.</string>

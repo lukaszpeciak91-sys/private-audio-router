@@ -32,8 +32,6 @@
 
     <string name="settings_diagnostics">Diagnostiikka</string>
     <string name="diagnostics_send_report">Lähetä diagnostiikkaraportti</string>
-    <string name="diagnostic_email_subject">Puzrun diagnostiikkaraportti</string>
-    <string name="diagnostic_email_body">Puzrun diagnostiikkaraportti\n\nKäytetty äänisovellus/-palvelu:\nMitä tapahtui:\nMistä ääni kuului? (kaiutin / kuuloke / ei mistään / muu):\n\nTekninen diagnostiikkaraportti on liitetty tekstitiedostona.</string>
     <string name="diagnostic_report_no_handler">Mikään yhteensopiva sovellus ei voi lähettää tätä raporttia.</string>
     <string name="diagnostic_report_unavailable">Diagnostiikkaraportti ei ole saatavilla.</string>
     <string name="diagnostic_report_share_failed">Diagnostiikkaraporttia ei voitu valmistella.</string>

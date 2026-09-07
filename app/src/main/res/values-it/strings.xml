@@ -32,8 +32,6 @@
 
     <string name="settings_diagnostics">Diagnostica</string>
     <string name="diagnostics_send_report">Invia rapporto diagnostico</string>
-    <string name="diagnostic_email_subject">Rapporto diagnostico di Puzru</string>
-    <string name="diagnostic_email_body">Rapporto diagnostico di Puzru\n\nApp/servizio vocale utilizzato:\nChe cosa è successo:\nDove hai sentito l’audio? (altoparlante / auricolare / da nessuna parte / altro):\n\nIl rapporto diagnostico tecnico è allegato come file di testo.</string>
     <string name="diagnostic_report_no_handler">Nessuna app compatibile può inviare questo rapporto.</string>
     <string name="diagnostic_report_unavailable">Il rapporto diagnostico non è disponibile.</string>
     <string name="diagnostic_report_share_failed">Impossibile preparare il rapporto diagnostico.</string>

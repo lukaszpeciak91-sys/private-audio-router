@@ -32,8 +32,6 @@
 
     <string name="settings_diagnostics">Dijagnostika</string>
     <string name="diagnostics_send_report">Pošalji dijagnostički izvještaj</string>
-    <string name="diagnostic_email_subject">Puzru dijagnostički izvještaj</string>
-    <string name="diagnostic_email_body">Puzru dijagnostički izvještaj\n\nKorištena glasovna aplikacija/usluga:\nŠta se dogodilo:\nGdje ste čuli zvuk? (zvučnik / slušalica / nigdje / drugo):\n\nTehnički dijagnostički izvještaj priložen je kao tekstualna datoteka.</string>
     <string name="diagnostic_report_no_handler">Nijedna kompatibilna aplikacija ne može poslati ovaj izvještaj.</string>
     <string name="diagnostic_report_unavailable">Dijagnostički izvještaj nije dostupan.</string>
     <string name="diagnostic_report_share_failed">Dijagnostički izvještaj nije moguće pripremiti.</string>

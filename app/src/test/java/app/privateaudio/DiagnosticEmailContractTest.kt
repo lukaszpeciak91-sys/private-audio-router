@@ -63,7 +63,7 @@ class DiagnosticEmailContractTest {
         assertFalse(method.contains("FLAG_GRANT_WRITE_URI_PERMISSION"))
         assertFalse(method.contains("FLAG_GRANT_PERSISTABLE_URI_PERMISSION"))
         assertFalse(method.contains("ACTION_CREATE_DOCUMENT"))
-        assertTrue(method.contains("sendIntent.resolveActivity(packageManager) == null"))
+        assertFalse(method.contains("resolveActivity("))
         assertTrue(method.contains("ActivityNotFoundException"))
     }
 

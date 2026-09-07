@@ -32,8 +32,6 @@
 
     <string name="settings_diagnostics">診断</string>
     <string name="diagnostics_send_report">診断レポートを送信</string>
-    <string name="diagnostic_email_subject">Puzru 診断レポート</string>
-    <string name="diagnostic_email_body">Puzru 診断レポート\n\n使用した音声アプリ／サービス：\n発生したこと：\n音声はどこから聞こえましたか？（スピーカー／受話口／どこからも聞こえない／その他）：\n\n技術的な診断レポートをテキストファイルとして添付しています。</string>
     <string name="diagnostic_report_no_handler">このレポートを送信できる対応アプリがありません。</string>
     <string name="diagnostic_report_unavailable">診断レポートを利用できません。</string>
     <string name="diagnostic_report_share_failed">診断レポートを準備できませんでした。</string>

@@ -32,8 +32,6 @@
 
     <string name="settings_diagnostics">Diagnostyka</string>
     <string name="diagnostics_send_report">Wyślij raport diagnostyczny</string>
-    <string name="diagnostic_email_subject">Raport diagnostyczny Puzru</string>
-    <string name="diagnostic_email_body">Raport diagnostyczny Puzru\n\nUżywana aplikacja/usługa głosowa:\nCo się stało:\nGdzie było słychać dźwięk? (głośnik / słuchawka / nigdzie / inne):\n\nTechniczny raport diagnostyczny jest załączony jako plik tekstowy.</string>
     <string name="diagnostic_report_no_handler">Brak zgodnej aplikacji do wysłania tego raportu.</string>
     <string name="diagnostic_report_unavailable">Raport diagnostyczny jest niedostępny.</string>
     <string name="diagnostic_report_share_failed">Nie udało się przygotować raportu diagnostycznego.</string>

@@ -32,8 +32,6 @@
 
     <string name="settings_diagnostics">Διαγνωστικά</string>
     <string name="diagnostics_send_report">Αποστολή αναφοράς διαγνωστικών</string>
-    <string name="diagnostic_email_subject">Αναφορά διαγνωστικών Puzru</string>
-    <string name="diagnostic_email_body">Αναφορά διαγνωστικών Puzru\n\nΕφαρμογή/υπηρεσία φωνής που χρησιμοποιήθηκε:\nΤι συνέβη:\nΠού ακούσατε τον ήχο; (ηχείο / ακουστικό / πουθενά / αλλού):\n\nΗ τεχνική αναφορά διαγνωστικών επισυνάπτεται ως αρχείο κειμένου.</string>
     <string name="diagnostic_report_no_handler">Καμία συμβατή εφαρμογή δεν μπορεί να στείλει αυτή την αναφορά.</string>
     <string name="diagnostic_report_unavailable">Η αναφορά διαγνωστικών δεν είναι διαθέσιμη.</string>
     <string name="diagnostic_report_share_failed">Δεν ήταν δυνατή η προετοιμασία της αναφοράς διαγνωστικών.</string>

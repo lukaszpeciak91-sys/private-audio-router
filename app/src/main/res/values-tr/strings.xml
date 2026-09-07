@@ -32,8 +32,6 @@
 
     <string name="settings_diagnostics">Tanılama</string>
     <string name="diagnostics_send_report">Tanılama raporunu gönder</string>
-    <string name="diagnostic_email_subject">Puzru tanılama raporu</string>
-    <string name="diagnostic_email_body">Puzru tanılama raporu\n\nKullanılan sesli uygulama/hizmet:\nNe oldu:\nSesi nereden duydunuz? (hoparlör / ahize / hiçbir yer / diğer):\n\nTeknik tanılama raporu metin dosyası olarak eklenmiştir.</string>
     <string name="diagnostic_report_no_handler">Bu raporu gönderebilecek uyumlu bir uygulama yok.</string>
     <string name="diagnostic_report_unavailable">Tanılama raporu kullanılamıyor.</string>
     <string name="diagnostic_report_share_failed">Tanılama raporu hazırlanamadı.</string>

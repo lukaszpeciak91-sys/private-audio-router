@@ -32,8 +32,6 @@
 
     <string name="settings_diagnostics">Diagnostika</string>
     <string name="diagnostics_send_report">Pošlji diagnostično poročilo</string>
-    <string name="diagnostic_email_subject">Diagnostično poročilo Puzru</string>
-    <string name="diagnostic_email_body">Diagnostično poročilo Puzru\n\nUporabljena glasovna aplikacija/storitev:\nKaj se je zgodilo:\nKje ste slišali zvok? (zvočnik / slušalka / nikjer / drugo):\n\nTehnično diagnostično poročilo je priloženo kot besedilna datoteka.</string>
     <string name="diagnostic_report_no_handler">Nobena združljiva aplikacija ne more poslati tega poročila.</string>
     <string name="diagnostic_report_unavailable">Diagnostično poročilo ni na voljo.</string>
     <string name="diagnostic_report_share_failed">Diagnostičnega poročila ni bilo mogoče pripraviti.</string>

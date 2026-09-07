@@ -32,8 +32,6 @@
 
     <string name="settings_diagnostics">Diagnostika</string>
     <string name="diagnostics_send_report">Odoslať diagnostickú správu</string>
-    <string name="diagnostic_email_subject">Diagnostická správa Puzru</string>
-    <string name="diagnostic_email_body">Diagnostická správa Puzru\n\nPoužitá hlasová aplikácia/služba:\nČo sa stalo:\nKde ste počuli zvuk? (reproduktor / slúchadlo / nikde / inde):\n\nTechnická diagnostická správa je priložená ako textový súbor.</string>
     <string name="diagnostic_report_no_handler">Túto správu nemôže odoslať žiadna kompatibilná aplikácia.</string>
     <string name="diagnostic_report_unavailable">Diagnostická správa nie je k dispozícii.</string>
     <string name="diagnostic_report_share_failed">Diagnostickú správu sa nepodarilo pripraviť.</string>

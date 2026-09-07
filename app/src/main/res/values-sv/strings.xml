@@ -32,8 +32,6 @@
 
     <string name="settings_diagnostics">Diagnostik</string>
     <string name="diagnostics_send_report">Skicka diagnostikrapport</string>
-    <string name="diagnostic_email_subject">Puzru-diagnostikrapport</string>
-    <string name="diagnostic_email_body">Puzru-diagnostikrapport\n\nRöstapp/-tjänst som användes:\nVad hände:\nVar hörde du ljudet? (högtalare / hörlur / ingenstans / annat):\n\nDen tekniska diagnostikrapporten bifogas som en textfil.</string>
     <string name="diagnostic_report_no_handler">Ingen kompatibel app kan skicka rapporten.</string>
     <string name="diagnostic_report_unavailable">Diagnostikrapporten är inte tillgänglig.</string>
     <string name="diagnostic_report_share_failed">Det gick inte att förbereda diagnostikrapporten.</string>

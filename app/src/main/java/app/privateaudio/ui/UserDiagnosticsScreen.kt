@@ -53,9 +53,9 @@ private val DiagnosticsAccent = Color(0xFF22DA70)
 internal fun UserDiagnosticsScreen(
     summary: DiagnosticsSummary?,
     onBack: () -> Unit,
-    onSendDiagnosticReport: () -> Unit = {},
     onSaveDiagnosticReport: () -> Unit,
     modifier: Modifier = Modifier,
+    onSendDiagnosticReport: () -> Unit = {},
 ) {
     BackHandler(onBack = onBack)
     Column(

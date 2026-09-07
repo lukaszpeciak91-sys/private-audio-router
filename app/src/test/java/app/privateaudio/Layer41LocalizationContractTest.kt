@@ -80,6 +80,8 @@ class Layer41LocalizationContractTest {
                 "settings_assistant_early_route_description",
                 "publisher_name",
                 "privacy_support_email",
+                "diagnostic_email_subject",
+                "diagnostic_email_body",
             ),
             Regex("<string name=\"([^\"]+)\" translatable=\"false\"")
                 .findAll(defaultStrings).map { it.groupValues[1] }.toSet(),

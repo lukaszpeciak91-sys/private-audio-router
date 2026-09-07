@@ -32,8 +32,6 @@
 
     <string name="settings_diagnostics">Диагностика</string>
     <string name="diagnostics_send_report">Отправить диагностический отчёт</string>
-    <string name="diagnostic_email_subject">Диагностический отчёт Puzru</string>
-    <string name="diagnostic_email_body">Диагностический отчёт Puzru\n\nИспользованное голосовое приложение/служба:\nЧто произошло:\nГде был слышен звук? (динамик / разговорный динамик / нигде / другое):\n\nТехнический диагностический отчёт приложен в виде текстового файла.</string>
     <string name="diagnostic_report_no_handler">Нет совместимого приложения для отправки этого отчёта.</string>
     <string name="diagnostic_report_unavailable">Диагностический отчёт недоступен.</string>
     <string name="diagnostic_report_share_failed">Не удалось подготовить диагностический отчёт.</string>

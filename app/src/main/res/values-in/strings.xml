@@ -32,8 +32,6 @@
 
     <string name="settings_diagnostics">Diagnostik</string>
     <string name="diagnostics_send_report">Kirim laporan diagnostik</string>
-    <string name="diagnostic_email_subject">Laporan diagnostik Puzru</string>
-    <string name="diagnostic_email_body">Laporan diagnostik Puzru\n\nAplikasi/layanan suara yang digunakan:\nApa yang terjadi:\nDi mana Anda mendengar audio? (speaker / earpiece / tidak terdengar / lainnya):\n\nLaporan diagnostik teknis dilampirkan sebagai file teks.</string>
     <string name="diagnostic_report_no_handler">Tidak ada aplikasi kompatibel yang dapat mengirim laporan ini.</string>
     <string name="diagnostic_report_unavailable">Laporan diagnostik tidak tersedia.</string>
     <string name="diagnostic_report_share_failed">Laporan diagnostik tidak dapat disiapkan.</string>

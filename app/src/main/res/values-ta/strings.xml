@@ -32,8 +32,6 @@
 
     <string name="settings_diagnostics">கண்டறிதல்</string>
     <string name="diagnostics_send_report">கண்டறிதல் அறிக்கையை அனுப்பு</string>
-    <string name="diagnostic_email_subject">Puzru கண்டறிதல் அறிக்கை</string>
-    <string name="diagnostic_email_body">Puzru கண்டறிதல் அறிக்கை\n\nபயன்படுத்திய குரல் ஆப்ஸ்/சேவை:\nஎன்ன நடந்தது:\nஒலியை எங்கே கேட்டீர்கள்? (ஸ்பீக்கர் / இயர்பீஸ் / எங்கும் இல்லை / மற்றவை):\n\nதொழில்நுட்பக் கண்டறிதல் அறிக்கை உரைக் கோப்பாக இணைக்கப்பட்டுள்ளது.</string>
     <string name="diagnostic_report_no_handler">இந்த அறிக்கையை அனுப்ப இணக்கமான ஆப்ஸ் இல்லை.</string>
     <string name="diagnostic_report_unavailable">கண்டறிதல் அறிக்கை கிடைக்கவில்லை.</string>
     <string name="diagnostic_report_share_failed">கண்டறிதல் அறிக்கையைத் தயாரிக்க முடியவில்லை.</string>

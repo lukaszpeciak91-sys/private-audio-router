@@ -32,8 +32,6 @@
 
     <string name="settings_diagnostics">진단</string>
     <string name="diagnostics_send_report">진단 보고서 보내기</string>
-    <string name="diagnostic_email_subject">Puzru 진단 보고서</string>
-    <string name="diagnostic_email_body">Puzru 진단 보고서\n\n사용한 음성 앱/서비스:\n발생한 상황:\n오디오가 어디에서 들렸나요? (스피커 / 수화부 / 들리지 않음 / 기타):\n\n기술 진단 보고서가 텍스트 파일로 첨부되어 있습니다.</string>
     <string name="diagnostic_report_no_handler">이 보고서를 보낼 수 있는 호환 앱이 없습니다.</string>
     <string name="diagnostic_report_unavailable">진단 보고서를 사용할 수 없습니다.</string>
     <string name="diagnostic_report_share_failed">진단 보고서를 준비할 수 없습니다.</string>
