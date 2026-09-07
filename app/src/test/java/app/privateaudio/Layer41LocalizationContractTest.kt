@@ -1169,18 +1169,26 @@ class Layer41LocalizationContractTest {
         assertTrue(northernAzerbaijaniStrings.contains("name=\"state_active\">Aktiv</string>"))
         assertFalse(northernAzerbaijaniStrings.contains("name=\"state_active\">Açıq</string>"))
         assertEquals(mapOf("state_ready" to "Hazır", "state_waiting" to "Gözləyir", "state_active" to "Aktiv", "state_error" to "Xəta"), frozenStates(northernAzerbaijaniStrings))
-        listOf("Sİ ilə", ">Mini</string>", ">Ayarlar</string>", ">Defolt</string>", ">Qabaqcıl</string>", "daxili qulaq dinamiki", "Audio çıxışını", "Diaqnostik hesabat").forEach {
+        listOf("Sİ ilə", ">Mini</string>", ">Ayarlar</string>", ">Defolt</string>", ">Qabaqcıl</string>", "Audio çıxışını", "Diaqnostik hesabat").forEach {
             assertTrue(it, northernAzerbaijaniStrings.contains(it))
         }
+        assertEquals(
+            "Qulaq dinamiki",
+            resourceValue(northernAzerbaijaniStrings, "diagnostics_route_earpiece"),
+        )
 
         assertTrue(iranianAzerbaijaniStrings.any { it in '\u0600'..'\u06FF' })
         assertTrue(iranianAzerbaijaniStrings.contains("name=\"routing_notification_title\">Puzru آچیقدیر</string>"))
         assertTrue(iranianAzerbaijaniStrings.contains("name=\"state_active\">فعال</string>"))
         assertFalse(iranianAzerbaijaniStrings.contains("name=\"state_active\">آچیق</string>"))
         assertEquals(mapOf("state_ready" to "حاضیر", "state_waiting" to "گؤزله‌ییر", "state_active" to "فعال", "state_error" to "خطا"), frozenStates(iranianAzerbaijaniStrings))
-        listOf("یاپای ذکاء", ">مینی</string>", ">آیارلار</string>", ">فرض ائدیلن</string>", ">گئنیشمیش</string>", "داخیل قولاق دینامیکی", "آودیو چیخیشی", "دیاقنوستیک حسابات").forEach {
+        listOf("یاپای ذکاء", ">مینی</string>", ">آیارلار</string>", ">فرض ائدیلن</string>", ">گئنیشمیش</string>", "آودیو چیخیشی", "دیاقنوستیک حسابات").forEach {
             assertTrue(it, iranianAzerbaijaniStrings.contains(it))
         }
+        assertEquals(
+            "داخیل قولاق دینامیکی",
+            resourceValue(iranianAzerbaijaniStrings, "diagnostics_route_earpiece"),
+        )
         assertFalse(northernAzerbaijaniStrings.contains("settings_assistant_early_route"))
         assertFalse(iranianAzerbaijaniStrings.contains("settings_assistant_early_route"))
         assertFalse(projectFile("app/src/main/res/values-az/mini_state_strings.xml").exists())
