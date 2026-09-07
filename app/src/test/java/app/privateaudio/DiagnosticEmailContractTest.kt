@@ -44,8 +44,11 @@ class DiagnosticEmailContractTest {
     @Test
     fun sendCapturesOnceAndBuildsOneReadOnlyContentAttachment() {
         val method = main.method("private fun sendDiagnosticReport()")
+        val capture = "val frozenReport = connectedService.diagnosticReport()"
         assertEquals(1, method.occurrences("connectedService.diagnosticReport()"))
-        assertFalse(method.substringAfter("val frozenReport").contains("diagnosticReport()"))
+        assertTrue(method.contains(capture))
+        assertTrue(method.contains("writeDiagnosticShareFile(cacheDir, diagnosticFilename(), frozenReport)"))
+        assertFalse(method.substringAfter(capture).contains("diagnosticReport()"))
         assertTrue(method.contains("Intent(Intent.ACTION_SEND)"))
         assertFalse(method.contains("ACTION_SENDTO"))
         assertFalse(method.contains("ACTION_SEND_MULTIPLE"))

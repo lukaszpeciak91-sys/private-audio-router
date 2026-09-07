@@ -378,7 +378,7 @@ class Layer41LocalizationContractTest {
         val swahiliStrings = projectFile("app/src/main/res/values-sw/strings.xml").readText()
         val afrikaansStrings = projectFile("app/src/main/res/values-af/strings.xml").readText()
         val diagnosticsKeys = stringKeys(defaultStrings).filter { it == "settings_diagnostics" || it.startsWith("diagnostics_") }
-        assertEquals(34, diagnosticsKeys.size)
+        assertEquals(35, diagnosticsKeys.size)
         val obsoleteKeys = setOf(
             "diagnostics_device", "diagnostics_device_model", "diagnostics_android_version",
             "diagnostics_android_value", "diagnostics_private_audio_version", "diagnostics_version_value",
