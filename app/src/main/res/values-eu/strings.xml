@@ -31,10 +31,10 @@
     <string name="diagnostic_report_save_failed">Ezin izan da diagnostiko-txostena gorde.</string>
 
     <string name="settings_diagnostics">Diagnostikoak</string>
-    <string name="diagnostics_send_report">Send diagnostic report</string>
-    <string name="diagnostic_report_no_handler">No compatible app can send this report.</string>
-    <string name="diagnostic_report_unavailable">Diagnostic report is unavailable.</string>
-    <string name="diagnostic_report_share_failed">Could not prepare diagnostic report.</string>
+    <string name="diagnostics_send_report">Bidali diagnostiko-txostena</string>
+    <string name="diagnostic_report_no_handler">Ez dago txosten hau bidal dezakeen aplikazio bateragarririk.</string>
+    <string name="diagnostic_report_unavailable">Diagnostiko-txostena ez dago erabilgarri.</string>
+    <string name="diagnostic_report_share_failed">Ezin izan da diagnostiko-txostena partekatzeko prestatu.</string>
     <string name="diagnostics_title">Diagnostikoak</string>
     <string name="diagnostics_system_check">SISTEMAREN EGIAZTAPENA</string>
     <string name="diagnostics_earpiece">Aurikularra</string>

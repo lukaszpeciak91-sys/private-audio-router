@@ -31,10 +31,10 @@
     <string name="diagnostic_report_save_failed">Не ўдалося захаваць дыягнастычную справаздачу.</string>
 
     <string name="settings_diagnostics">Дыягностыка</string>
-    <string name="diagnostics_send_report">Send diagnostic report</string>
-    <string name="diagnostic_report_no_handler">No compatible app can send this report.</string>
-    <string name="diagnostic_report_unavailable">Diagnostic report is unavailable.</string>
-    <string name="diagnostic_report_share_failed">Could not prepare diagnostic report.</string>
+    <string name="diagnostics_send_report">Адправіць дыягнастычную справаздачу</string>
+    <string name="diagnostic_report_no_handler">Няма сумяшчальнай праграмы, якая можа адправіць гэту справаздачу.</string>
+    <string name="diagnostic_report_unavailable">Дыягнастычная справаздача недаступная.</string>
+    <string name="diagnostic_report_share_failed">Не ўдалося падрыхтаваць дыягнастычную справаздачу для абагульвання.</string>
     <string name="diagnostics_title">Дыягностыка</string>
     <string name="diagnostics_system_check">ПРАВЕРКА СІСТЭМЫ</string>
     <string name="diagnostics_earpiece">Размоўны дынамік</string>

@@ -31,10 +31,10 @@
     <string name="diagnostic_report_save_failed">ডায়েগন’ষ্টিক ৰিপ’ৰ্ট ছেভ কৰিব পৰা নগ’ল।</string>
 
     <string name="settings_diagnostics">ডায়েগন’ষ্টিক</string>
-    <string name="diagnostics_send_report">Send diagnostic report</string>
-    <string name="diagnostic_report_no_handler">No compatible app can send this report.</string>
-    <string name="diagnostic_report_unavailable">Diagnostic report is unavailable.</string>
-    <string name="diagnostic_report_share_failed">Could not prepare diagnostic report.</string>
+    <string name="diagnostics_send_report">ডায়েগন’ষ্টিক ৰিপ’ৰ্ট পঠিয়াওক</string>
+    <string name="diagnostic_report_no_handler">এই ৰিপ’ৰ্টটো পঠিয়াব পৰা কোনো সুসংগত এপ নাই।</string>
+    <string name="diagnostic_report_unavailable">ডায়েগন’ষ্টিক ৰিপ’ৰ্ট উপলব্ধ নহয়।</string>
+    <string name="diagnostic_report_share_failed">শ্বেয়াৰ কৰিবলৈ ডায়েগন’ষ্টিক ৰিপ’ৰ্ট প্ৰস্তুত কৰিব পৰা নগ’ল।</string>
     <string name="diagnostics_title">ডায়েগন’ষ্টিক</string>
     <string name="diagnostics_system_check">ছিষ্টেম পৰীক্ষা</string>
     <string name="diagnostics_earpiece">ইয়েৰপিচ</string>
