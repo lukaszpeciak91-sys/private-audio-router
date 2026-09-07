@@ -60,11 +60,6 @@ class BhojpuriLocalizationContractTest {
         assertTrue(earpiece.contains("कान"))
         assertTrue(loudspeaker.contains("लाउडस्पीकर"))
         assertFalse(earpiece == loudspeaker)
-        val about = resourceValue("settings_about_body")
-        assertTrue(about.contains("फोन में लागल ऊपरी"))
-        assertTrue(about.contains("कान वाला स्पीकर"))
-        assertFalse(about.contains("लाउडस्पीकर"))
-
         val routingCopy = listOf(
             "routing_notification_text",
             "diagnostics_routing",

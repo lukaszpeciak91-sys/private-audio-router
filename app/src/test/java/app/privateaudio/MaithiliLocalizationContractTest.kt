@@ -61,11 +61,6 @@ class MaithiliLocalizationContractTest {
         assertTrue(earpiece.contains("कॉल"))
         assertTrue(loudspeaker.contains("लाउडस्पीकर"))
         assertFalse(earpiece == loudspeaker)
-        val about = resourceValue("settings_about_body")
-        assertTrue(about.contains("फोनमे बनल"))
-        assertTrue(about.contains("ऊपरी कॉल स्पीकर"))
-        assertFalse(about.contains("लाउडस्पीकर"))
-
         val routingCopy = listOf(
             "routing_notification_text", "diagnostics_routing", "diagnostics_last_routing",
             "diagnostics_error_blocked_by_system", "diagnostics_error_session_ended",

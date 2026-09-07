@@ -26,7 +26,7 @@
     <string name="settings_version">版本 %1$s</string>
     <string name="settings_language_android_13_required">應用程式內語言選擇需要 Android 13 或更新版本。此裝置使用系統語言。</string>
     <string name="settings_proximity_screen">靠近耳朵時關閉螢幕</string>
-    <string name="settings_about_body">Puzru 可將語音音訊導向手機內建聽筒。</string>
+    <string name="settings_about_body">Napahu Studios 出品的 Puzru\n\n名稱含義\nPuzru 這個名稱源自一個與隱藏或保密相關的阿卡德語詞。它體現了本應用程式的用途：降低附近的人聽到受支援 AI 語音播放內容的可能性。\n\nPuzru 的作用\nPuzru 可協助您將受支援的 AI 語音播放內容導向手機內建的通話聽筒，讓您能像接聽一般電話一樣聽取回覆，而不是透過主揚聲器大聲播放。\n\nPuzru 仰賴 Android 的標準音訊路由功能。相容性取決於您的裝置、Android 版本，以及各應用程式或服務處理語音音訊的方式。\n\n相容性與限制\n• 語音功能在不同應用程式和服務中的運作方式不同。\n• 某些語音模式可能需要訂閱、可能受地區或帳戶限制，也可能完全無法使用。\n• Puzru 不會解鎖或擴充第三方服務提供的功能，也不會規避這些功能的限制。\n\nPuzru 不會做什麼\n• 它不會撥打電話。\n• 它不會營運、修改或控制第三方 AI 服務。\n• 它不會控制語音辨識、AI 回覆的內容或準確性、語音輸出、延遲、網路穩定性或服務可用性。\n• 它不會針對 AI 服務本身提供隱私保障。Puzru 改變的是受支援的語音音訊在您裝置上的播放位置，而不是 AI 服務處理您對話的方式。</string>
     <string name="diagnostic_report_saved">診斷報告已儲存。</string>
     <string name="diagnostic_report_save_failed">無法儲存診斷報告。</string>
 

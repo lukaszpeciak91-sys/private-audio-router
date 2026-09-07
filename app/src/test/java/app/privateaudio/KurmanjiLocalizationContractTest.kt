@@ -81,9 +81,6 @@ class KurmanjiLocalizationContractTest {
         assertTrue(earpiece.contains("wergira bangê", ignoreCase = true))
         assertTrue(speaker.contains("bilindbêj", ignoreCase = true))
         assertFalse(earpiece == speaker)
-        val about = resourceValue("settings_about_body")
-        listOf("jorîn", "hundirê telefona", "ber guhê").forEach { assertTrue(about.contains(it)) }
-
         val routing = listOf(
             "routing_notification_text", "diagnostics_routing", "diagnostics_last_routing",
             "diagnostics_error_blocked_by_system", "diagnostics_error_session_ended",

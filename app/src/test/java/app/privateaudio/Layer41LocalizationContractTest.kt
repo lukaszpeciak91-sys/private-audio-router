@@ -554,7 +554,7 @@ class Layer41LocalizationContractTest {
         assertTrue(afrikaansStrings.contains("name=\"routing_notification_text\">Wag om oudio oor te skakel</string>"))
         assertTrue(afrikaansStrings.contains("name=\"settings_language_android_13_required\"") && afrikaansStrings.contains("Hierdie toestel volg die stelseltaal."))
         assertTrue(afrikaansStrings.contains("name=\"settings_proximity_screen\">Skakel die skerm af naby jou oor</string>"))
-        assertTrue(afrikaansStrings.contains("jou foon se ingeboude oorstuk"))
+        assertEquals("Oorstuk", resourceValue(afrikaansStrings, "diagnostics_route_earpiece"))
         assertTrue(afrikaansStrings.contains("aan/af te skakel, uit te vou en toe te maak"))
         assertTrue(afrikaansStrings.contains("name=\"state_ready\">Gereed</string>"))
         assertTrue(afrikaansStrings.contains("name=\"state_waiting\">Wag</string>"))
@@ -1169,18 +1169,26 @@ class Layer41LocalizationContractTest {
         assertTrue(northernAzerbaijaniStrings.contains("name=\"state_active\">Aktiv</string>"))
         assertFalse(northernAzerbaijaniStrings.contains("name=\"state_active\">Açıq</string>"))
         assertEquals(mapOf("state_ready" to "Hazır", "state_waiting" to "Gözləyir", "state_active" to "Aktiv", "state_error" to "Xəta"), frozenStates(northernAzerbaijaniStrings))
-        listOf("Sİ ilə", ">Mini</string>", ">Ayarlar</string>", ">Defolt</string>", ">Qabaqcıl</string>", "daxili qulaq dinamiki", "Audio çıxışını", "Diaqnostik hesabat").forEach {
+        listOf("Sİ ilə", ">Mini</string>", ">Ayarlar</string>", ">Defolt</string>", ">Qabaqcıl</string>", "Audio çıxışını", "Diaqnostik hesabat").forEach {
             assertTrue(it, northernAzerbaijaniStrings.contains(it))
         }
+        assertEquals(
+            "Qulaq dinamiki",
+            resourceValue(northernAzerbaijaniStrings, "diagnostics_route_earpiece"),
+        )
 
         assertTrue(iranianAzerbaijaniStrings.any { it in '\u0600'..'\u06FF' })
         assertTrue(iranianAzerbaijaniStrings.contains("name=\"routing_notification_title\">Puzru آچیقدیر</string>"))
         assertTrue(iranianAzerbaijaniStrings.contains("name=\"state_active\">فعال</string>"))
         assertFalse(iranianAzerbaijaniStrings.contains("name=\"state_active\">آچیق</string>"))
         assertEquals(mapOf("state_ready" to "حاضیر", "state_waiting" to "گؤزله‌ییر", "state_active" to "فعال", "state_error" to "خطا"), frozenStates(iranianAzerbaijaniStrings))
-        listOf("یاپای ذکاء", ">مینی</string>", ">آیارلار</string>", ">فرض ائدیلن</string>", ">گئنیشمیش</string>", "داخیل قولاق دینامیکی", "آودیو چیخیشی", "دیاقنوستیک حسابات").forEach {
+        listOf("یاپای ذکاء", ">مینی</string>", ">آیارلار</string>", ">فرض ائدیلن</string>", ">گئنیشمیش</string>", "آودیو چیخیشی", "دیاقنوستیک حسابات").forEach {
             assertTrue(it, iranianAzerbaijaniStrings.contains(it))
         }
+        assertEquals(
+            "داخیل قولاق دینامیکی",
+            resourceValue(iranianAzerbaijaniStrings, "diagnostics_route_earpiece"),
+        )
         assertFalse(northernAzerbaijaniStrings.contains("settings_assistant_early_route"))
         assertFalse(iranianAzerbaijaniStrings.contains("settings_assistant_early_route"))
         assertFalse(projectFile("app/src/main/res/values-az/mini_state_strings.xml").exists())
@@ -1212,8 +1220,7 @@ class Layer41LocalizationContractTest {
         assertTrue(amharicStrings.contains("name=\"floating\">ሚኒ</string>"))
         assertTrue(amharicStrings.contains("name=\"settings_advanced\">የላቁ ቅንብሮች</string>"))
         assertTrue(amharicStrings.contains("name=\"settings_system_default\">ነባሪ</string>"))
-        assertTrue(amharicStrings.contains("name=\"settings_about_body\">Puzru የሚደገፍ የድምፅ ኦዲዮን ወደ የስልክዎ አብሮገነብ መስሚያ ለመቀየር ያግዛል።</string>"))
-        assertTrue(amharicStrings.contains("የስልክዎ አብሮገነብ መስሚያ"))
+        assertEquals("የስልኩ አብሮገነብ መስሚያ", resourceValue(amharicStrings, "diagnostics_route_earpiece"))
         assertFalse(amharicStrings.contains("የጆሮ ማዳመጫ"))
         assertFalse(projectFile("app/src/main/res/values-am/mini_state_strings.xml").exists())
     }
@@ -1336,7 +1343,7 @@ class Layer41LocalizationContractTest {
         assertTrue(gurmukhiPunjabiStrings.contains("name=\"routing_notification_title\">Puzru ਚਾਲੂ ਹੈ</string>"))
         assertTrue(gurmukhiPunjabiStrings.contains("name=\"product_subtitle\">AI ਨਾਲ"))
         assertTrue(gurmukhiPunjabiStrings.contains("name=\"floating\">ਕੰਪੈਕਟ</string>"))
-        assertTrue(gurmukhiPunjabiStrings.contains("ਬਿਲਟ-ਇਨ ਈਅਰਪੀਸ"))
+        assertEquals("ਈਅਰਪੀਸ", resourceValue(gurmukhiPunjabiStrings, "diagnostics_route_earpiece"))
         assertEquals(
             mapOf("state_ready" to "ਤਿਆਰ", "state_waiting" to "ਉਡੀਕ", "state_active" to "ਸਰਗਰਮ", "state_error" to "ਤਰੁੱਟੀ"),
             frozenStates(gurmukhiPunjabiStrings),
@@ -1346,7 +1353,7 @@ class Layer41LocalizationContractTest {
         assertTrue(shahmukhiPunjabiStrings.contains("name=\"routing_notification_title\">Puzru چالو اے</string>"))
         assertTrue(shahmukhiPunjabiStrings.contains("name=\"product_subtitle\">AI نال"))
         assertTrue(shahmukhiPunjabiStrings.contains("name=\"floating\">کمپیکٹ</string>"))
-        assertTrue(shahmukhiPunjabiStrings.contains("بِلٹ اِن ایئر پیس"))
+        assertEquals("ایئر پیس", resourceValue(shahmukhiPunjabiStrings, "diagnostics_route_earpiece"))
         assertTrue(shahmukhiPunjabiStrings.contains("name=\"settings_advanced\">ایڈوانسڈ</string>"))
         assertFalse(shahmukhiPunjabiStrings.contains("ہے"))
         assertEquals(
@@ -1622,7 +1629,7 @@ class Layer41LocalizationContractTest {
         assertTrue(assameseStrings.contains("name=\"floating\">মিনি</string>"))
         assertTrue(assameseStrings.contains("name=\"settings_system_default\">ডিফ’ল্ট</string>"))
         assertTrue(assameseStrings.contains("name=\"settings_advanced\">উচ্চখাপৰ</string>"))
-        assertTrue(assameseStrings.contains("বিল্ট-ইন ইয়েৰপিচলৈ"))
+        assertEquals("ইয়েৰপিচ", resourceValue(assameseStrings, "diagnostics_route_earpiece"))
         assertEquals(3, assameseStrings.occurrences("ডায়েগন’ষ্টিক ৰিপ’ৰ্ট"))
         assertTrue(assameseStrings.contains("পাৱাৰ অন বা অফ কৰিবলৈ, বিস্তাৰ কৰিবলৈ আৰু বন্ধ কৰিবলৈ"))
         assertFalse(projectFile("app/src/main/res/values-as/mini_state_strings.xml").exists())

@@ -234,20 +234,28 @@ class Layer4SettingsContractTest {
     }
 
     @Test
-    fun pilotAboutLocalesPreserveTheSourceStructureWithoutEnglishFallback() {
+    fun finalizedAboutLocalesPreserveTheSourceStructureWithoutEnglishFallback() {
         val defaultAbout = resourceValue(projectFile("app/src/main/res/values/strings.xml"), "settings_about_body")
 
-        listOf("pl", "de", "es", "ar", "ja").forEach { locale ->
-            val stringsFile = projectFile("app/src/main/res/values-$locale/strings.xml")
+        listOf(
+            "values-pl", "values-de", "values-es", "values-ar", "values-ja",
+            "values-af", "values-am", "values-as", "values-az", "values-b+az+Arab+IR",
+            "values-b+bho", "values-b+ceb", "values-b+ku+Latn", "values-b+mai",
+            "values-b+pa+Arab+PK", "values-b+pa+Guru+IN", "values-b+sr+Latn",
+            "values-b+sr+Latn+ME", "values-b+uz+Arab+AF", "values-b+uz+Cyrl+UZ",
+            "values-b+yue+Hans+CN", "values-b+yue+Hant+HK", "values-b+zh+Hans",
+            "values-b+zh+Hant", "values-be",
+        ).forEach { resourceDirectory ->
+            val stringsFile = projectFile("app/src/main/res/$resourceDirectory/strings.xml")
             val about = resourceValue(stringsFile, "settings_about_body")
 
-            assertTrue("$locale: translated About is missing", about.isNotBlank())
-            assertFalse("$locale: English About fallback", about == defaultAbout)
-            assertEquals("$locale: semantic sections", 6, about.split("\\n\\n").size)
-            assertEquals("$locale: bullet structure", 7, about.split("\\n").count { it.startsWith("• ") })
-            assertFalse("$locale: raw XML newline", about.contains('\n'))
-            assertTrue("$locale: Puzru brand", about.contains("Puzru"))
-            assertTrue("$locale: publisher brand", about.contains("Napahu Studios"))
+            assertTrue("$resourceDirectory: translated About is missing", about.isNotBlank())
+            assertFalse("$resourceDirectory: English About fallback", about == defaultAbout)
+            assertEquals("$resourceDirectory: semantic sections", 6, about.split("\\n\\n").size)
+            assertEquals("$resourceDirectory: bullet structure", 7, about.split("\\n").count { it.startsWith("• ") })
+            assertFalse("$resourceDirectory: raw XML newline", about.contains('\n'))
+            assertTrue("$resourceDirectory: Puzru brand", about.contains("Puzru"))
+            assertTrue("$resourceDirectory: publisher brand", about.contains("Napahu Studios"))
         }
     }
 

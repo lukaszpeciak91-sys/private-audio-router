@@ -60,7 +60,6 @@ class CantoneseHongKongLocalizationContractTest {
             "唔包含分析、廣告或者當機回報服務或 SDK", "唔會將診斷報告傳送畀開發者或者 Puzru 伺服器",
             "Android 雲端備份同裝置對裝置傳輸之外",
         ).forEach { guard -> assertTrue("Missing privacy guard: $guard", privacy.contains(guard)) }
-        assertTrue(resourceValue("settings_about_body").contains("內置聽筒"))
         assertEquals("聽筒音訊導向要求未獲接受。", resourceValue("diagnostics_error_request_rejected"))
         assertFalse(resourceValue("diagnostics_error_request_rejected").contains("系統"))
 
@@ -96,7 +95,6 @@ class CantoneseHongKongLocalizationContractTest {
         assertEquals("使用紧", simplifiedValue("state_active"))
         assertNotEquals(simplifiedValue("diagnostics_on"), simplifiedValue("state_active"))
         assertTrue(simplifiedValue("diagnostics_error_audio_preparation").contains("通信音频"))
-        assertTrue(simplifiedValue("settings_about_body").contains("内置听筒"))
         assertTrue(simplifiedValue("diagnostics_error_request_rejected").contains("听筒"))
         assertFalse(simplifiedValue("diagnostics_error_request_rejected").contains("扬声器"))
         assertEquals(Character.DIRECTIONALITY_LEFT_TO_RIGHT, Character.getDirectionality(simplifiedValue("settings").first()))
