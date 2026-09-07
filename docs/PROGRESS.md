@@ -35,6 +35,14 @@
   self-checked Translation Skill output and require independent localization audit
   before they can be considered accepted; no human/native-speaker validation is
   claimed.
+- Independent audit of this first 20-locale rollout batch accepted 15 About
+  translations unchanged. Amharic and Punjabi in Shahmukhi required targeted polish;
+  Assamese, Azerbaijani in Arabic script, and Afghan Uzbek in Arabic script required
+  fixes. Translation Skill corrections have been applied directly from the
+  authoritative English source, while the other 15 audited About values remain
+  unchanged. The five corrected candidates require targeted independent re-audit
+  before the batch can be considered finally accepted; no human/native-speaker
+  validation is claimed.
 
 ## English Privacy Policy disclosure alignment
 
