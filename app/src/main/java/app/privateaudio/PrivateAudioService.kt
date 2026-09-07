@@ -139,11 +139,17 @@ class PrivateAudioService : Service() {
     }
 
     fun diagnosticReport(): String {
-        observer.snapshot("Report snapshot")
+        val currentObservation = observer.currentObservation()
         val proximity = proximityController.status()
-        val supportSummary = diagnosticsSummary(Settings.canDrawOverlays(this))
+        val supportSummary = observer.diagnosticsSummary(
+            snapshot = currentObservation,
+            privateAudioEnabled = isPrivateAudioEnabled,
+            privateAudioState = privateAudioState,
+            proximitySupported = proximity.supported,
+            overlayPermissionGranted = Settings.canDrawOverlays(this),
+        )
         return buildString {
-            append(observer.report(supportSummary))
+            append(observer.report(supportSummary, currentObservation))
             appendLine()
             appendLine("PROXIMITY SCREEN")
             appendLine("Feature enabled: $isProximityFeatureEnabled")

@@ -595,6 +595,21 @@ this summary intentionally does not duplicate its test matrix.
   requires no storage permission, and uses a frozen snapshot so service unbinding
   cannot change the selected report. Physical save-picker validation remains
   pending.
+- Detailed diagnostic capture is observationally read-only: it collects a fresh
+  current public Android state without invoking the mutating observer path or any
+  routing, mode, silent-track, controller, or proximity transition. Format 3 retains
+  the latest three completed protected cycles in service/process memory, newest
+  first, with stable existing routing-generation IDs; records the latest meaningful
+  public playback observation for no-trigger investigation; generalizes established
+  earpiece route-loss evidence to any Android-reported replacement; and includes
+  public build ID, display, fingerprint, and security-patch evidence. Retention is
+  bounded and non-persistent, and no send/share, networking, analytics, permission,
+  client attribution, or audio/content capture path was added.
+- The latest meaningful public playback evidence now specifically retains the most
+  recent non-empty Android playback observation. A later empty playback callback
+  cannot erase the no-trigger evidence before a report is generated; a subsequent
+  non-empty observation replaces it. This is one bounded in-memory observation and
+  does not change playback classification or routing behavior.
 
 ## Validation status
 

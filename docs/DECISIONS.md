@@ -321,3 +321,11 @@ This is a lightweight, append-only log. Do not rewrite accepted history; append 
 - **Context:** Release preparation requires the permanent Android application identity before Puzru's first Google Play distribution. The Kotlin package and Android namespace are established internal technical identifiers and do not need to change with the installed application identity.
 - **Decision:** Use `com.napahu.puzru` as the production `applicationId`. Keep the Android namespace, Kotlin packages, and other internal technical naming as `app.privateaudio`.
 - **Consequences:** Puzru will enter its first Google Play distribution under the final package identity. Because this change precedes that first distribution, no published install or upgrade lineage must be migrated. Routing behavior, persisted preference identifiers, notification channel IDs, internal action strings, component names, and other established technical identifiers remain unchanged.
+
+## D-041 — Read-only, bounded local diagnostic reporting
+
+- **Date:** 2026-09-07
+- **Status:** Accepted
+- **Context:** Support reports must describe no-trigger and multi-session failures without report capture itself becoming a routing stimulus or creating unbounded or durable technical history.
+- **Decision:** A report takes one fresh, observationally read-only public Android state observation through the pure collector; it does not use the mutating observer snapshot path. Runtime diagnostics retain the latest three genuine completed routing cycles newest-first, keyed by the existing routing generation, plus the latest meaningful public playback observation. This history remains bounded to service/process memory. Reports add generic active-session earpiece-route-loss evidence and public, non-user-specific Android build evidence.
+- **Consequences:** Report capture does not prepare, play, or release a track; classify a trigger; request mode or a communication device; mutate controller/public/proximity state; or add a routing event. Cleanup is excluded from active-session route-loss classification. No persistence, upload, networking, analytics, permission, client attribution, or audio/content capture is introduced. Audible routing remains subject to physical/human confirmation.

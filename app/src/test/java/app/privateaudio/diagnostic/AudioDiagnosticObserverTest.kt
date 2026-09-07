@@ -148,7 +148,7 @@ class AudioDiagnosticObserverTest {
         )
 
         assertTrue(report.contains("Timestamp: 2026-08-12T12:34:56Z"))
-        assertTrue(report.contains("Diagnostic report format: 2"))
+        assertTrue(report.contains("Diagnostic report format: 3"))
         assertTrue(report.contains("DIAGNOSTIC ENVIRONMENT"))
         assertTrue(report.contains("SUPPORT SUMMARY"))
         assertTrue(report.indexOf("SUPPORT SUMMARY") < report.indexOf("DIAGNOSTIC ENVIRONMENT"))
@@ -207,7 +207,7 @@ class AudioDiagnosticObserverTest {
         assertTrue(report.contains("Speakerphone: Off (directly observed)"))
         assertTrue(report.contains("12:34:55.000  Baseline — state recorded"))
         assertTrue(report.contains("12:34:56.000  Manual snapshot"))
-        assertTrue(report.contains("LAST COMPLETED ROUTING CYCLE\nNone recorded"))
+        assertTrue(report.contains("COMPLETED ROUTING CYCLE HISTORY (NEWEST FIRST)\nNone recorded"))
     }
 
     @Test
@@ -268,6 +268,213 @@ class AudioDiagnosticObserverTest {
             assertTrue(report.contains("Final mode after cleanup: MODE_NORMAL"))
             assertTrue(report.contains("COMPLETED FINAL CLEANUP OBSERVATION"))
         }
+    }
+
+    @Test
+    fun completedCycleRetentionIsNewestFirstBoundedAndGenerationDeduplicated() {
+        fun cycle(generation: Long) = CompletedRoutingCycle(
+            experiment = EarpieceExperiment(routingGeneration = generation, requestAttempted = true),
+            finalCleanupObservation = DiagnosticSnapshot.Empty,
+            completionReason = "cycle-$generation",
+            completedAt = "2026-09-07T00:00:0${generation}Z",
+        )
+        var retained = emptyList<CompletedRoutingCycle>()
+        (1L..4L).forEach { retained = retainCompletedRoutingCycle(retained, cycle(it)) }
+        assertEquals(listOf(4L, 3L, 2L), retained.map { it.experiment.routingGeneration })
+        retained = retainCompletedRoutingCycle(retained, cycle(3))
+        assertEquals(listOf(3L, 4L, 2L), retained.map { it.experiment.routingGeneration })
+
+        val report = buildDiagnosticReport(
+            timestamp = "now",
+            experiment = EarpieceExperiment(routingGeneration = 5),
+            completedRoutingCycles = retained,
+            snapshot = DiagnosticSnapshot.Empty,
+            events = emptyList(),
+        )
+        assertTrue(report.indexOf("cycle-3") < report.indexOf("cycle-4"))
+        assertTrue(report.indexOf("cycle-4") < report.indexOf("cycle-2"))
+        assertTrue(report.contains("Routing cycle/generation: 5"))
+    }
+
+    @Test
+    fun reportIncludesNoTriggerPlaybackRouteLossAndBuildEvidence() {
+        val playback = PublicPlaybackObservation(
+            timestamp = "2026-09-07T12:00:00Z",
+            mode = "MODE_NORMAL",
+            communicationDevice = ObservedDevice(2, "Built-in speaker", "speaker"),
+            speakerphoneState = "On (directly observed)",
+            playbackConfigurations = listOf(ObservedPlayback("USAGE_MEDIA", "CONTENT_TYPE_SPEECH", allowedCapturePolicy = "ALLOW_CAPTURE_BY_ALL", device = null)),
+            communicationQualifierCount = 0,
+            assistantQualifierCount = 0,
+            browserCommunicationQualifierCount = 0,
+            selectedTriggerFamily = null,
+        )
+        val report = buildDiagnosticReport(
+            timestamp = "now",
+            experiment = EarpieceExperiment(
+                routingGeneration = 9,
+                earpieceReportedDuringSession = true,
+                routeLostAfterEarpiece = true,
+                firstReplacementCommunicationDevice = ObservedDevice(8, "USB headset", "USB"),
+                routeLossTimestamp = "2026-09-07T12:00:01Z",
+            ),
+            snapshot = DiagnosticSnapshot.Empty,
+            events = emptyList(),
+            playbackObservation = playback,
+            environment = DiagnosticEnvironment("0.1.0", 1, "13", 33, "OEM", "model", "product", "TKQ1", "build-display", "fingerprint", "2026-08-01"),
+        )
+        assertTrue(report.contains("MOST RECENT MEANINGFUL PUBLIC PLAYBACK OBSERVATION"))
+        assertTrue(report.contains("Communication qualifier count: 0"))
+        assertTrue(report.contains("Selected existing trigger family: None"))
+        assertTrue(report.contains("application/client ownership is not attributed"))
+        assertTrue(report.contains("Route lost after earpiece: true"))
+        assertTrue(report.contains("type=USB headset"))
+        assertTrue(report.contains("Route-loss timestamp: 2026-09-07T12:00:01Z"))
+        assertTrue(report.contains("Android build ID: TKQ1"))
+        assertTrue(report.contains("Android build fingerprint: fingerprint"))
+        assertTrue(report.contains("Android security patch: 2026-08-01"))
+    }
+
+    @Test
+    fun meaningfulPlaybackRetentionIgnoresEmptyCallbacksAndAcceptsLaterPlayback() {
+        fun observation(timestamp: String, playback: List<ObservedPlayback>) = PublicPlaybackObservation(
+            timestamp = timestamp,
+            mode = "MODE_NORMAL",
+            communicationDevice = ObservedDevice(2, "Built-in speaker", "speaker"),
+            speakerphoneState = "On (directly observed)",
+            playbackConfigurations = playback,
+            communicationQualifierCount = 0,
+            assistantQualifierCount = 0,
+            browserCommunicationQualifierCount = 0,
+            selectedTriggerFamily = null,
+        )
+        val unqualified = ObservedPlayback(
+            usage = "USAGE_MEDIA",
+            contentType = "CONTENT_TYPE_SPEECH",
+            allowedCapturePolicy = "ALLOW_CAPTURE_BY_ALL",
+            device = null,
+        )
+        val later = unqualified.copy(contentType = "CONTENT_TYPE_MUSIC")
+
+        val retained = retainMeaningfulPlaybackObservation(null, observation("first", listOf(unqualified)))
+        assertEquals("first", retained?.timestamp)
+        assertEquals(
+            retained,
+            retainMeaningfulPlaybackObservation(retained, observation("empty", emptyList())),
+        )
+        val replaced = retainMeaningfulPlaybackObservation(retained, observation("later", listOf(later)))
+        assertEquals("later", replaced?.timestamp)
+        assertEquals(listOf(later), replaced?.playbackConfigurations)
+    }
+
+    @Test
+    fun activeRouteLossIsGenericAndCleanupIsNotMisclassified() {
+        val established = EarpieceExperiment(earpieceReportedDuringSession = true)
+        val replacement = DiagnosticSnapshot(
+            "MODE_IN_COMMUNICATION",
+            ObservedDevice(7, "Wired headset", "USB-C headset"),
+            emptyList(),
+            "Off",
+            timestamp = "loss-time",
+        )
+        val lost = observeActiveRouteLoss(established, replacement, cleanupInProgress = false)
+        assertTrue(lost.routeLostAfterEarpiece)
+        assertEquals("Wired headset", lost.firstReplacementCommunicationDevice?.type)
+        assertEquals("loss-time", lost.routeLossTimestamp)
+        assertFalse(lost.revertedToSpeaker)
+
+        val cleanup = observeActiveRouteLoss(established, replacement, cleanupInProgress = true)
+        assertFalse(cleanup.routeLostAfterEarpiece)
+        assertEquals(established, cleanup)
+    }
+
+    @Test
+    fun reportCapturePathIsFreshAndObservationallyReadOnly() {
+        val report = serviceSource.method("fun diagnosticReport(): String")
+        assertTrue(report.contains("observer.currentObservation()"))
+        assertFalse(report.contains("observer.snapshot("))
+        assertTrue(
+            observerSource.contains(
+                "internal fun currentObservation(): DiagnosticSnapshot = collectSnapshot()",
+            ),
+        )
+        val observation = observerSource.method("private fun collectSnapshot()")
+        listOf("snapshot =", "addEvent(", "prepareSilentCommunicationTrack", "evaluateExperimentTrigger", "setCommunicationDevice", "audioManager.mode =").forEach {
+            assertFalse("Read-only observation unexpectedly contains $it", observation.contains(it))
+        }
+    }
+
+    @Test
+    fun representativeWorstCaseReportHasConservativeUtf8SizeGuard() {
+        val device = ObservedDevice(1234, "Bluetooth LE headset", "Representative OEM accessory")
+        val playback = ObservedPlayback(
+            usage = "USAGE_VOICE_COMMUNICATION",
+            contentType = "CONTENT_TYPE_SPEECH",
+            flags = "FLAG_AUDIBILITY_ENFORCED (0x1)",
+            allowedCapturePolicy = "ALLOW_CAPTURE_BY_SYSTEM",
+            device = device,
+        )
+        val snapshot = DiagnosticSnapshot(
+            mode = "MODE_IN_COMMUNICATION",
+            communicationDevice = device,
+            availableCommunicationDevices = List(8) { device.copy(id = it + 1, productName = "Representative device $it") },
+            speakerphoneState = "Off (directly observed)",
+            timestamp = "2026-09-07T12:34:56.123456789Z",
+            processId = 12345,
+            userId = 10123,
+            lifecycleState = "Foreground",
+            activePlaybackConfigurations = List(8) { playback },
+        )
+        fun cycle(generation: Long) = CompletedRoutingCycle(
+            experiment = EarpieceExperiment(
+                routingGeneration = generation,
+                state = ExperimentState.CLEARED,
+                requestAttempted = true,
+                triggerOrigin = TriggerOrigin.ASSISTANT,
+                selectedTarget = device,
+                requestAccepted = true,
+                attempts = listOf(RoutingAttempt(1, "12:34:56.123", "representative protected request", "MODE_IN_COMMUNICATION", device, true, device, "Off (directly observed)")),
+                earpieceReportedDuringSession = true,
+                routeLostAfterEarpiece = true,
+                firstReplacementCommunicationDevice = device,
+                routeLossTimestamp = "2026-09-07T12:34:57Z",
+                preOwnership = snapshot,
+                postSilentTrackStart = snapshot,
+                postModeOwnership = snapshot,
+                postRoutingRequest = snapshot,
+                shortObservation = snapshot,
+                silentTrackCreated = true,
+                silentTrackCleanupCompleted = true,
+            ),
+            finalCleanupObservation = snapshot.copy(mode = "MODE_NORMAL", communicationDevice = null),
+            completionReason = "Representative completed protected routing cycle",
+            completedAt = "2026-09-07T12:35:00Z",
+        )
+        val recording = ObservedRecording("VOICE_RECOGNITION", "123", "PCM_16_BIT/48000 Hz/mono", device, false)
+        val recordingContext = RecordingContext(true, "MODE_IN_COMMUNICATION", device, "Off", true, TriggerOrigin.ASSISTANT, "PLAYSTATE_PLAYING", 4)
+        val report = buildDiagnosticReport(
+            timestamp = "2026-09-07T12:35:00Z",
+            experiment = cycle(4).experiment.copy(state = ExperimentState.REQUEST_ATTEMPTED),
+            completedRoutingCycles = listOf(cycle(3), cycle(2), cycle(1)),
+            snapshot = snapshot,
+            events = List(MAX_EVENTS) { "12:34:56.123  Representative retained diagnostic event $it with bounded routing evidence" },
+            baseline = snapshot,
+            startupAudioTrace = List(MAX_STARTUP_TRACE_EVENTS) { "12:34:56.123  playback callback $it — public metadata changed with representative bounded detail" },
+            playbackObservation = PublicPlaybackObservation("2026-09-07T12:34:56Z", snapshot.mode, device, snapshot.speakerphoneState, snapshot.activePlaybackConfigurations, 2, 1, 1, TriggerOrigin.COMMUNICATION),
+            environment = DiagnosticEnvironment("0.1.0", 1, "16", 36, "Representative OEM", "Representative model", "representative_product", "BUILD-ID", "display-build-string", "oem/product/device:16/BUILD-ID/123456:user/release-keys", "2026-08-01"),
+            eventEntriesDropped = 999,
+            startupTraceEntriesDropped = 999,
+            recordingCallbackRegistered = true,
+            currentRecordingConfigurations = List(4) { recording },
+            recordingTrace = List(MAX_RECORDING_TRACE_EVENTS) { RecordingTraceEntry("2026-09-07T12:34:56Z", it.toLong(), "RECORDING configuration changed; input device changed", List(4) { recording }, recordingContext) },
+            recordingTraceEntriesDropped = 999,
+            recordingStartupObservation = RecordingStartupObservation(4, 1, List(4) { recording }, List(4) { recording }, List(4) { recording }, List(4) { recording }, List(4) { recording }),
+            supportSummary = supportSummary(),
+        )
+        val utf8Bytes = report.toByteArray(Charsets.UTF_8).size
+        println("REPRESENTATIVE_WORST_CASE_DIAGNOSTIC_UTF8_BYTES=$utf8Bytes")
+        assertTrue("Representative report unexpectedly omitted evidence", utf8Bytes > 50_000)
+        assertTrue("Representative report exceeded 512 KiB: $utf8Bytes bytes", utf8Bytes <= 512 * 1024)
     }
 
     @Test
@@ -352,10 +559,19 @@ class AudioDiagnosticObserverTest {
     @Test
     fun cleanupReturnsEnabledControllerToFreshWaitingCycle() {
         val cleanup = observerSource.method("private fun clearExperiment(")
-        assertInOrder(cleanup, "cancelPendingEndConfirmation()", "cancelPendingObservation()", "audioManager.clearCommunicationDevice()", "audioManager.mode = AudioManager.MODE_NORMAL", "stopSilentCommunicationTrack()", "armed = false", "snapshot(\"Post-cleanup observation\")", "lastCompletedExperiment = CompletedRoutingCycle(")
+        assertInOrder(cleanup, "cancelPendingEndConfirmation()", "cancelPendingObservation()", "audioManager.clearCommunicationDevice()", "audioManager.mode = AudioManager.MODE_NORMAL", "stopSilentCommunicationTrack()", "armed = false", "snapshot(\"Post-cleanup observation\")", "val completed = CompletedRoutingCycle(")
         assertTrue(cleanup.contains("experiment.requestAttempted || experiment.triggerOrigin != null"))
         val waiting = observerSource.method("private fun returnToWaiting()")
-        assertInOrder(waiting, "if (!controllerEnabled) return", "cycleGeneration++", "EarpieceExperiment(state = ExperimentState.ARMED, armed = true)", "returned to clean waiting")
+        assertInOrder(
+            waiting,
+            "if (!controllerEnabled) return",
+            "cycleGeneration++",
+            "EarpieceExperiment(",
+            "state = ExperimentState.ARMED",
+            "armed = true",
+            "routingGeneration = cycleGeneration",
+            "returned to clean waiting",
+        )
         assertFalse(serviceSource.contains("onCompletedExperimentCleared"))
         assertFalse(serviceSource.contains("armFreshExperimentIfSafe"))
     }
@@ -399,7 +615,7 @@ class AudioDiagnosticObserverTest {
     fun reportCopyStillUsesSingleFormatter() {
         assertEquals(1, observerSource.occurrences("internal fun buildDiagnosticReport("))
         assertEquals(0, mainActivitySource.occurrences("buildDiagnosticReport("))
-        assertTrue(serviceSource.method("fun diagnosticReport(): String").contains("append(observer.report(supportSummary))"))
+        assertTrue(serviceSource.method("fun diagnosticReport(): String").contains("append(observer.report(supportSummary, currentObservation))"))
     }
 
     private fun supportSummary() = DiagnosticsSummary(
