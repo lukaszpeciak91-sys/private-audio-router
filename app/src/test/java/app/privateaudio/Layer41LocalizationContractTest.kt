@@ -75,7 +75,12 @@ class Layer41LocalizationContractTest {
             }
         }
         assertEquals(
-            setOf("settings_assistant_early_route", "settings_assistant_early_route_description"),
+            setOf(
+                "settings_assistant_early_route",
+                "settings_assistant_early_route_description",
+                "publisher_name",
+                "privacy_support_email",
+            ),
             Regex("<string name=\"([^\"]+)\" translatable=\"false\"")
                 .findAll(defaultStrings).map { it.groupValues[1] }.toSet(),
         )
@@ -422,7 +427,12 @@ class Layer41LocalizationContractTest {
     }
 
     private fun isEnglishFallbackOnlyKey(key: String): Boolean =
-        key == "settings_assistant_early_route" || key == "settings_assistant_early_route_description"
+        key in setOf(
+            "settings_assistant_early_route",
+            "settings_assistant_early_route_description",
+            "publisher_name",
+            "privacy_support_email",
+        )
 
     @Test
     fun finnishFrozenLocalizationSemanticsRemainIntact() {

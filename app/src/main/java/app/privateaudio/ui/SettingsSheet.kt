@@ -88,9 +88,9 @@ fun SettingsSheet(
     assistantEarlyRouteEnabled: Boolean,
     onAssistantEarlyRouteChange: (Boolean) -> Unit,
     onDiagnostics: () -> Unit,
-    onContactClick: () -> Unit = {},
     onDismiss: () -> Unit,
     modifier: Modifier = Modifier,
+    onContactClick: () -> Unit = {},
 ) {
     var page by rememberSaveable { mutableStateOf(SettingsPage.ROOT) }
     val context = LocalContext.current
