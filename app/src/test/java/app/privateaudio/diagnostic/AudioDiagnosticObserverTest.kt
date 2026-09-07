@@ -361,8 +361,12 @@ class AudioDiagnosticObserverTest {
         val report = serviceSource.method("fun diagnosticReport(): String")
         assertTrue(report.contains("observer.currentObservation()"))
         assertFalse(report.contains("observer.snapshot("))
-        val observation = observerSource.method("internal fun currentObservation()")
-        assertTrue(observation.contains("collectSnapshot()"))
+        assertTrue(
+            observerSource.contains(
+                "internal fun currentObservation(): DiagnosticSnapshot = collectSnapshot()",
+            ),
+        )
+        val observation = observerSource.method("private fun collectSnapshot()")
         listOf("snapshot =", "addEvent(", "prepareSilentCommunicationTrack", "evaluateExperimentTrigger", "setCommunicationDevice", "audioManager.mode =").forEach {
             assertFalse("Read-only observation unexpectedly contains $it", observation.contains(it))
         }
@@ -526,7 +530,16 @@ class AudioDiagnosticObserverTest {
         assertInOrder(cleanup, "cancelPendingEndConfirmation()", "cancelPendingObservation()", "audioManager.clearCommunicationDevice()", "audioManager.mode = AudioManager.MODE_NORMAL", "stopSilentCommunicationTrack()", "armed = false", "snapshot(\"Post-cleanup observation\")", "val completed = CompletedRoutingCycle(")
         assertTrue(cleanup.contains("experiment.requestAttempted || experiment.triggerOrigin != null"))
         val waiting = observerSource.method("private fun returnToWaiting()")
-        assertInOrder(waiting, "if (!controllerEnabled) return", "cycleGeneration++", "EarpieceExperiment(state = ExperimentState.ARMED, armed = true)", "returned to clean waiting")
+        assertInOrder(
+            waiting,
+            "if (!controllerEnabled) return",
+            "cycleGeneration++",
+            "EarpieceExperiment(",
+            "state = ExperimentState.ARMED",
+            "armed = true",
+            "routingGeneration = cycleGeneration",
+            "returned to clean waiting",
+        )
         assertFalse(serviceSource.contains("onCompletedExperimentCleared"))
         assertFalse(serviceSource.contains("armFreshExperimentIfSafe"))
     }
