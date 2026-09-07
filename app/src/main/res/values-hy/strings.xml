@@ -31,10 +31,10 @@
     <string name="diagnostic_report_save_failed">Չհաջողվեց պահել ախտորոշման հաշվետվությունը։</string>
 
     <string name="settings_diagnostics">Ախտորոշում</string>
-    <string name="diagnostics_send_report">Send diagnostic report</string>
-    <string name="diagnostic_report_no_handler">No compatible app can send this report.</string>
-    <string name="diagnostic_report_unavailable">Diagnostic report is unavailable.</string>
-    <string name="diagnostic_report_share_failed">Could not prepare diagnostic report.</string>
+    <string name="diagnostics_send_report">Ուղարկել ախտորոշման հաշվետվությունը</string>
+    <string name="diagnostic_report_no_handler">Չկա համատեղելի հավելված, որը կարող է ուղարկել այս հաշվետվությունը։</string>
+    <string name="diagnostic_report_unavailable">Ախտորոշման հաշվետվությունն անհասանելի է։</string>
+    <string name="diagnostic_report_share_failed">Չհաջողվեց պատրաստել ախտորոշման հաշվետվությունը։</string>
     <string name="diagnostics_title">Ախտորոշում</string>
     <string name="diagnostics_system_check">ՀԱՄԱԿԱՐԳԻ ՍՏՈՒԳՈՒՄ</string>
     <string name="diagnostics_earpiece">Ներկառուցված լսափող</string>

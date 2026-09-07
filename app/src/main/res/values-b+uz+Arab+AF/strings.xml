@@ -39,7 +39,7 @@
     <string name="diagnostics_send_report">تشخیص حساباتینی یوبریش</string>
     <string name="diagnostic_report_no_handler">بو حساباتنی یوبریش اوچون موس ایلووه یۉق.</string>
     <string name="diagnostic_report_unavailable">تشخیص حساباتی موجود ایمس.</string>
-    <string name="diagnostic_report_share_failed">تشخیص حساباتینی اولشیش اوچون تیارلب بولمدی.</string>
+    <string name="diagnostic_report_share_failed">تشخیص حساباتینی تیارلش ممکن بولمدی.</string>
     <string name="diagnostics_title">تشخیص</string>
     <string name="diagnostics_system_check">سیستم تیکشیرووی</string>
     <string name="diagnostics_earpiece">قولاق دینامیک</string>

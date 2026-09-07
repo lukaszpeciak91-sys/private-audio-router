@@ -30,10 +30,10 @@
     <string name="settings_about_body">Manampy mampitodika ny feo tohanana mankany amin’ny fanamafisam-peo anatiny eo amin’ny sofin’ny telefaoninao ny Puzru.</string>
     <string name="diagnostic_report_saved">Voatahiry ny tatitra momba ny fizahana.</string>
     <string name="diagnostic_report_save_failed">Tsy voatahiry ny tatitra momba ny fizahana.</string>
-    <string name="diagnostics_send_report">Send diagnostic report</string>
-    <string name="diagnostic_report_no_handler">No compatible app can send this report.</string>
-    <string name="diagnostic_report_unavailable">Diagnostic report is unavailable.</string>
-    <string name="diagnostic_report_share_failed">Could not prepare diagnostic report.</string>
+    <string name="diagnostics_send_report">Alefaso ny tatitra momba ny fizahana</string>
+    <string name="diagnostic_report_no_handler">Tsy misy rindranasa mifanaraka afaka mandefa ity tatitra ity.</string>
+    <string name="diagnostic_report_unavailable">Tsy misy ny tatitra momba ny fizahana.</string>
+    <string name="diagnostic_report_share_failed">Tsy afaka nanomana ny tatitra momba ny fizahana.</string>
     <string name="diagnostics_title">Fizahana</string>
     <string name="diagnostics_system_check">FANAMARINANA NY RAFITRA</string>
     <string name="diagnostics_earpiece">Fanamafisam-peo anatiny eo amin’ny sofina</string>

@@ -31,10 +31,10 @@
     <string name="diagnostic_report_save_failed">Дијагностичкиот извештај не може да се зачува.</string>
 
     <string name="settings_diagnostics">Дијагностика</string>
-    <string name="diagnostics_send_report">Send diagnostic report</string>
-    <string name="diagnostic_report_no_handler">No compatible app can send this report.</string>
-    <string name="diagnostic_report_unavailable">Diagnostic report is unavailable.</string>
-    <string name="diagnostic_report_share_failed">Could not prepare diagnostic report.</string>
+    <string name="diagnostics_send_report">Испрати дијагностички извештај</string>
+    <string name="diagnostic_report_no_handler">Нема компатибилна апликација што може да го испрати овој извештај.</string>
+    <string name="diagnostic_report_unavailable">Дијагностичкиот извештај не е достапен.</string>
+    <string name="diagnostic_report_share_failed">Дијагностичкиот извештај не може да се подготви.</string>
     <string name="diagnostics_title">Дијагностика</string>
     <string name="diagnostics_system_check">ПРОВЕРКА НА СИСТЕМОТ</string>
     <string name="diagnostics_earpiece">Слушалка</string>

@@ -31,10 +31,10 @@
     <string name="diagnostic_report_save_failed">დიაგნოსტიკის ანგარიშის შენახვა ვერ მოხერხდა.</string>
 
     <string name="settings_diagnostics">დიაგნოსტიკა</string>
-    <string name="diagnostics_send_report">Send diagnostic report</string>
-    <string name="diagnostic_report_no_handler">No compatible app can send this report.</string>
-    <string name="diagnostic_report_unavailable">Diagnostic report is unavailable.</string>
-    <string name="diagnostic_report_share_failed">Could not prepare diagnostic report.</string>
+    <string name="diagnostics_send_report">დიაგნოსტიკის ანგარიშის გაგზავნა</string>
+    <string name="diagnostic_report_no_handler">არ არის თავსებადი აპი, რომელსაც ამ ანგარიშის გაგზავნა შეუძლია.</string>
+    <string name="diagnostic_report_unavailable">დიაგნოსტიკის ანგარიში მიუწვდომელია.</string>
+    <string name="diagnostic_report_share_failed">დიაგნოსტიკის ანგარიშის მომზადება ვერ მოხერხდა.</string>
     <string name="diagnostics_title">დიაგნოსტიკა</string>
     <string name="diagnostics_system_check">სისტემის შემოწმება</string>
     <string name="diagnostics_earpiece">ყურმილი</string>

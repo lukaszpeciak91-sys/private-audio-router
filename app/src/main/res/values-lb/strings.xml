@@ -31,10 +31,10 @@
     <string name="diagnostic_report_save_failed">Diagnoserapport konnt net gespäichert ginn.</string>
 
     <string name="settings_diagnostics">Diagnos</string>
-    <string name="diagnostics_send_report">Send diagnostic report</string>
-    <string name="diagnostic_report_no_handler">No compatible app can send this report.</string>
-    <string name="diagnostic_report_unavailable">Diagnostic report is unavailable.</string>
-    <string name="diagnostic_report_share_failed">Could not prepare diagnostic report.</string>
+    <string name="diagnostics_send_report">Diagnoserapport schécken</string>
+    <string name="diagnostic_report_no_handler">Et gëtt keng kompatibel App, déi dëse Rapport schécke kann.</string>
+    <string name="diagnostic_report_unavailable">Den Diagnoserapport ass net verfügbar.</string>
+    <string name="diagnostic_report_share_failed">Den Diagnoserapport konnt net virbereet ginn.</string>
     <string name="diagnostics_title">Diagnos</string>
     <string name="diagnostics_system_check">SYSTEMKONTROLL</string>
     <string name="diagnostics_earpiece">Ouer-Lautsprecher</string>

@@ -31,10 +31,10 @@
     <string name="diagnostic_report_save_failed">ડાયગ્નોસ્ટિક રિપોર્ટ સાચવી શકાયો નહીં.</string>
 
     <string name="settings_diagnostics">ડાયગ્નોસ્ટિક્સ</string>
-    <string name="diagnostics_send_report">Send diagnostic report</string>
-    <string name="diagnostic_report_no_handler">No compatible app can send this report.</string>
-    <string name="diagnostic_report_unavailable">Diagnostic report is unavailable.</string>
-    <string name="diagnostic_report_share_failed">Could not prepare diagnostic report.</string>
+    <string name="diagnostics_send_report">ડાયગ્નોસ્ટિક રિપોર્ટ મોકલો</string>
+    <string name="diagnostic_report_no_handler">આ રિપોર્ટ મોકલી શકે તેવી કોઈ સુસંગત ઍપ નથી.</string>
+    <string name="diagnostic_report_unavailable">ડાયગ્નોસ્ટિક રિપોર્ટ ઉપલબ્ધ નથી.</string>
+    <string name="diagnostic_report_share_failed">ડાયગ્નોસ્ટિક રિપોર્ટ તૈયાર કરી શકાયો નહીં.</string>
     <string name="diagnostics_title">ડાયગ્નોસ્ટિક્સ</string>
     <string name="diagnostics_system_check">સિસ્ટમ તપાસ</string>
     <string name="diagnostics_earpiece">ઇયરપીસ</string>

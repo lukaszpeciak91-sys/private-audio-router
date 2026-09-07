@@ -31,10 +31,10 @@
     <string name="diagnostic_report_save_failed">מען האט נישט געקענט אויפהיטן דעם דיאגנאסטיק רעפארט.</string>
 
     <string name="settings_diagnostics">דיאגנאסטיק</string>
-    <string name="diagnostics_send_report">Send diagnostic report</string>
-    <string name="diagnostic_report_no_handler">No compatible app can send this report.</string>
-    <string name="diagnostic_report_unavailable">Diagnostic report is unavailable.</string>
-    <string name="diagnostic_report_share_failed">Could not prepare diagnostic report.</string>
+    <string name="diagnostics_send_report">שיקן דעם דיאגנאסטיק רעפארט</string>
+    <string name="diagnostic_report_no_handler">עס איז נישטא קיין קאמפאטיבלע אפליקאציע וואס קען שיקן דעם רעפארט.</string>
+    <string name="diagnostic_report_unavailable">דער דיאגנאסטיק רעפארט איז נישט פאראן.</string>
+    <string name="diagnostic_report_share_failed">מען האט נישט געקענט צוגרייטן דעם דיאגנאסטיק רעפארט.</string>
     <string name="diagnostics_title">דיאגנאסטיק</string>
     <string name="diagnostics_system_check">סיסטעם־קאנטראל</string>
     <string name="diagnostics_earpiece">אויער־טרייבל</string>

@@ -31,10 +31,10 @@
     <string name="diagnostic_report_save_failed">Bar ikki til at goyma greiningarfrágreiðingina.</string>
 
     <string name="settings_diagnostics">Greining</string>
-    <string name="diagnostics_send_report">Send diagnostic report</string>
-    <string name="diagnostic_report_no_handler">No compatible app can send this report.</string>
-    <string name="diagnostic_report_unavailable">Diagnostic report is unavailable.</string>
-    <string name="diagnostic_report_share_failed">Could not prepare diagnostic report.</string>
+    <string name="diagnostics_send_report">Send greiningarfrágreiðing</string>
+    <string name="diagnostic_report_no_handler">Einki samsvarandi forrit kann senda hesa frágreiðingina.</string>
+    <string name="diagnostic_report_unavailable">Greiningarfrágreiðingin er ikki tøk.</string>
+    <string name="diagnostic_report_share_failed">Bar ikki til at fyrireika greiningarfrágreiðingina.</string>
     <string name="diagnostics_title">Greining</string>
     <string name="diagnostics_system_check">SKIPANARKANNING</string>
     <string name="diagnostics_earpiece">Oyrahátalari</string>

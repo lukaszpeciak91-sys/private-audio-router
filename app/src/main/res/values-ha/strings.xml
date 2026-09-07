@@ -31,10 +31,10 @@
     <string name="diagnostic_report_save_failed">Ba a iya ajiye rahoton bincike ba.</string>
 
     <string name="settings_diagnostics">Bincike</string>
-    <string name="diagnostics_send_report">Send diagnostic report</string>
-    <string name="diagnostic_report_no_handler">No compatible app can send this report.</string>
-    <string name="diagnostic_report_unavailable">Diagnostic report is unavailable.</string>
-    <string name="diagnostic_report_share_failed">Could not prepare diagnostic report.</string>
+    <string name="diagnostics_send_report">Aika rahoton bincike</string>
+    <string name="diagnostic_report_no_handler">Babu manhaja mai jituwa da za ta iya aika wannan rahoto.</string>
+    <string name="diagnostic_report_unavailable">Rahoton bincike ba ya samuwa.</string>
+    <string name="diagnostic_report_share_failed">Ba a iya shirya rahoton bincike ba.</string>
     <string name="diagnostics_title">Bincike</string>
     <string name="diagnostics_system_check">BINCIKEN TSARI</string>
     <string name="diagnostics_earpiece">Lasifikar kunne</string>
