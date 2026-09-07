@@ -15,17 +15,26 @@
   independently to Polish, German, Spanish, Arabic, and Japanese. Each candidate
   preserves the source's six semantic sections, seven bullets, technical output
   distinctions, compatibility limits, and provider-side privacy boundary.
-- The pilot’s independent audit accepted German and Spanish, requested a Japanese
-  naturalness polish, and identified claim-scope defects in Polish and Arabic. A
-  targeted Translation Skill iteration corrected those affected passages. A final
-  narrowly scoped follow-up now makes the Arabic nearby-listener relation explicit,
-  restores its voice-audio scope, and refines the Polish supported-playback wording;
-  the resulting Arabic and Polish deltas still require independent re-audit.
+- The pilot’s independent audit accepted German and Spanish, requested and accepted
+  a Japanese naturalness polish, and identified claim-scope defects in Polish and
+  Arabic. Targeted Translation Skill iterations corrected the affected passages;
+  the finalized Polish and Arabic follow-up was independently re-audited and accepted.
+  German, Spanish, Japanese, Polish, and Arabic therefore form the completed
+  five-locale About pilot, which is closed for rollout purposes. This is independent
+  audit evidence, not human/native-speaker validation.
 - The five pilot translations were produced and semantically self-checked with the
   Translation Skill. This is not an independent audit or human/native-speaker
-  validation. Propagation to the remaining locales is deferred until this iteration
-  has been independently re-audited; their existing About values continue to reflect
-  the previous, shorter source in the meantime.
+  validation.
+- The next deterministic About rollout batch translates the finalized English source
+  directly and independently with the Translation Skill for `values-af`, `values-am`,
+  `values-as`, `values-az`, `values-b+az+Arab+IR`, `values-b+bho`, `values-b+ceb`,
+  `values-b+ku+Latn`, `values-b+mai`, `values-b+pa+Arab+PK`, `values-b+pa+Guru+IN`,
+  `values-b+sr+Latn`, `values-b+sr+Latn+ME`, `values-b+uz+Arab+AF`,
+  `values-b+uz+Cyrl+UZ`, `values-b+yue+Hans+CN`, `values-b+yue+Hant+HK`,
+  `values-b+zh+Hans`, `values-b+zh+Hant`, and `values-be`. These candidates are
+  self-checked Translation Skill output and require independent localization audit
+  before they can be considered accepted; no human/native-speaker validation is
+  claimed.
 
 ## English Privacy Policy disclosure alignment
 
