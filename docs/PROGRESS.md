@@ -1,5 +1,13 @@
 # Progress
 
+## Diagnostic email attachment handoff
+
+- Diagnostics now presents separate **Send diagnostic report** and **Save diagnostic report** actions. Send captures the connected service's observationally read-only format-3 report exactly once, retains that frozen string, and writes it unchanged as UTF-8 to a timestamped `.txt` in `cacheDir/diagnostic-share/`. Prior regular files in that dedicated cache directory are removed before the next preparation so retention remains bounded.
+- A non-exported AndroidX `FileProvider` with authority `${applicationId}.fileprovider` exposes only `diagnostic-share/` as a temporary `content://` attachment. The one-attachment `ACTION_SEND` message grants read permission only, addresses the existing Napahu Studios support resource, and supplies a localized concise subject and prompt body. The report is not placed in the body. Puzru has no Internet permission, backend, SMTP, automatic upload, or delivery tracking; an external app transmits only if the user explicitly sends there.
+- The established manual Save path remains independent and continues to use `ACTION_CREATE_DOCUMENT`. Routing classifiers, requests, prepared tracks, Assistant behavior, proximity, cleanup, retained diagnostic evidence, and report format 3 are unchanged. JVM/source and Compose coverage protects the attachment boundary; physical email-client composition and actual delivery remain **NOT TESTED**.
+- **Release follow-up:** Privacy Policy and Google Play data-disclosure review is required before releasing the diagnostic-email feature publicly. That review must distinguish local report generation and temporary attachment creation, explicit temporary exposure to an external app, Puzru's absence of a network-transmission path, and transmission by the external app only after user action. The current Privacy Policy was not changed and this review is not complete.
+- **Localization follow-up:** the new resource-backed attachment action, message, and feedback currently use the reviewed English source as an explicit controlled fallback. Translation production for the existing product locales remains pending rather than copying unreviewed or machine-generated wording into every locale.
+
 ## Final English About Puzru source
 
 - The default, unqualified English `settings_about_body` resource now establishes

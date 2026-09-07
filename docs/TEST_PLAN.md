@@ -1,5 +1,56 @@
 # Hardware-in-the-Loop Test Plan
 
+## Diagnostic email attachment physical gate
+
+**Status: NOT TESTED**
+
+Test on a physical Android device with at least one configured real email client. Passing JVM tests does not establish successful composition or email delivery.
+
+### Test A — WAITING
+
+1. Enable Puzru and remain in `WAITING`.
+2. Record current routing generation, state, and request count.
+3. Open Diagnostics.
+4. Tap **Send diagnostic report**.
+5. Verify an external compatible composition/share flow opens.
+6. Choose the email client if Android presents a chooser.
+7. Verify the recipient is the configured Napahu Studios support address.
+8. Verify the subject is populated.
+9. Verify the email body is short.
+10. Verify a `.txt` diagnostic file is attached.
+11. Open or inspect the attachment if the email client supports it.
+12. Verify the complete format-3 report is present.
+13. Cancel or back out without sending.
+14. Return to Puzru.
+15. Verify Puzru state, cycle generation, routing request count, communication device, mode, track state, and proximity ownership did not change because of report generation or handoff.
+
+### Test B — actual delivery
+
+1. Repeat Send.
+2. Manually press Send in the email application.
+3. Verify the message arrives at the tester-controlled/configured recipient mailbox.
+4. Download and open the received `.txt`.
+5. Compare it against the generated report.
+6. Verify no truncation, encoding corruption, missing sections, or duplicate report content.
+7. Confirm subject, body, and attachment look appropriate as a real support email.
+
+### Test C — substantial report
+
+Where practical:
+
+1. Create three completed routing cycles.
+2. Generate and send a report.
+3. Verify the attached file contains the full newest-first three-cycle history.
+4. Verify email composition and delivery still work normally.
+
+### Test D — Save regression
+
+Verify **Save diagnostic report** still independently opens the Android document picker and writes the normal persistent `.txt`.
+
+### Test E — another email client
+
+Where practical, repeat the attachment handoff using another email client because attachment and chooser behavior may vary by app or OEM.
+
 ## Public recording/input observation gate
 
 - With Assistant early route OFF, alternate approximately three fresh ChatGPT Voice starts with Private Audio OFF and ON, asking the same short question immediately; save the diagnostic report after every ON run where the first input is missed.

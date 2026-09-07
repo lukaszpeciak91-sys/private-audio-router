@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">Puzru</string>
     <string name="routing_notification_channel">Puzru</string>
     <string name="routing_notification_title">Puzru is on</string>
@@ -34,6 +34,12 @@
     <string name="settings_about_body">Puzru by Napahu Studios\n\nWhat the name means\nThe name Puzru comes from an Akkadian word associated with concealment or secrecy. It reflects the app’s purpose: making supported AI voice playback less likely to be heard by people nearby.\n\nWhat Puzru does\nPuzru helps route supported AI voice playback to your phone’s built-in earpiece, so responses can be heard more like a normal phone call instead of playing aloud through the main speaker.\n\nPuzru relies on standard Android audio-routing features. Compatibility depends on your device, Android version, and how each app or service handles voice audio.\n\nCompatibility and limitations\n• Voice features work differently across apps and services.\n• Some voice modes may require a subscription, may be limited by region or account, or may not be available at all.\n• Puzru does not unlock, extend, or bypass features provided by third-party services.\n\nWhat Puzru does not do\n• It does not make phone calls.\n• It does not operate, modify, or control third-party AI services.\n• It does not control speech recognition, the content or accuracy of AI responses, voice output, latency, network stability, or service availability.\n• It does not provide privacy from the AI service itself. Puzru changes where supported voice audio is played on your device, not how the AI service handles your conversation.</string>
     <string name="diagnostic_report_saved">Diagnostic report saved.</string>
     <string name="diagnostic_report_save_failed">Could not save diagnostic report.</string>
+    <string name="diagnostics_send_report" tools:ignore="MissingTranslation">Send diagnostic report</string>
+    <string name="diagnostic_email_subject" tools:ignore="MissingTranslation">Puzru diagnostic report</string>
+    <string name="diagnostic_email_body" tools:ignore="MissingTranslation">Puzru diagnostic report\n\nVoice app/service used:\nWhat happened:\nWhere did you hear the audio? (speaker / earpiece / neither / other):\n\nThe technical diagnostic report is attached as a text file.</string>
+    <string name="diagnostic_report_no_handler" tools:ignore="MissingTranslation">No compatible app can send this report.</string>
+    <string name="diagnostic_report_unavailable" tools:ignore="MissingTranslation">Diagnostic report is unavailable.</string>
+    <string name="diagnostic_report_share_failed" tools:ignore="MissingTranslation">Could not prepare diagnostic report.</string>
     <string name="diagnostics_title">Diagnostics</string>
     <string name="diagnostics_system_check">SYSTEM CHECK</string>
     <string name="diagnostics_earpiece">Earpiece</string>

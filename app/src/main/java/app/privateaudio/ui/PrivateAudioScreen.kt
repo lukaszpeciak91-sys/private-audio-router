@@ -130,6 +130,7 @@ internal fun PrivateAudioScreen(
     onFloatingClick: () -> Unit = {},
     onCloseClick: () -> Unit,
     diagnosticsSummary: DiagnosticsSummary? = null,
+    onSendDiagnosticReport: () -> Unit = {},
     onSaveDiagnosticReport: () -> Unit = {},
     onContactClick: () -> Unit = {},
     onPrivacyPolicyOnlineClick: () -> Unit = {},
@@ -151,6 +152,7 @@ internal fun PrivateAudioScreen(
             onFloatingClick = onFloatingClick,
             onCloseClick = onCloseClick,
             diagnosticsSummary = diagnosticsSummary,
+            onSendDiagnosticReport = onSendDiagnosticReport,
             onSaveDiagnosticReport = onSaveDiagnosticReport,
             onContactClick = onContactClick,
             onPrivacyPolicyOnlineClick = onPrivacyPolicyOnlineClick,
@@ -172,6 +174,7 @@ private fun PrivateAudioScreenContent(
     onFloatingClick: () -> Unit,
     onCloseClick: () -> Unit,
     diagnosticsSummary: DiagnosticsSummary?,
+    onSendDiagnosticReport: () -> Unit,
     onSaveDiagnosticReport: () -> Unit,
     onContactClick: () -> Unit,
     onPrivacyPolicyOnlineClick: () -> Unit,
@@ -187,6 +190,7 @@ private fun PrivateAudioScreenContent(
         UserDiagnosticsScreen(
             summary = diagnosticsSummary,
             onBack = { diagnosticsVisible = false },
+            onSendDiagnosticReport = onSendDiagnosticReport,
             onSaveDiagnosticReport = onSaveDiagnosticReport,
             modifier = modifier,
         )

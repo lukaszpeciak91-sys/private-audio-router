@@ -432,6 +432,12 @@ class Layer41LocalizationContractTest {
             "settings_assistant_early_route_description",
             "publisher_name",
             "privacy_support_email",
+            "diagnostics_send_report",
+            "diagnostic_email_subject",
+            "diagnostic_email_body",
+            "diagnostic_report_no_handler",
+            "diagnostic_report_unavailable",
+            "diagnostic_report_share_failed",
         )
 
     @Test

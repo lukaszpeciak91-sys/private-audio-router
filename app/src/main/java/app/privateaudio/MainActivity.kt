@@ -1,6 +1,7 @@
 package app.privateaudio
 
 import android.content.ComponentName
+import android.content.ClipData
 import android.content.Context
 import android.content.Intent
 import android.content.ServiceConnection
@@ -18,6 +19,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.SystemBarStyle
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.core.content.FileProvider
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
@@ -101,6 +103,7 @@ class MainActivity : ComponentActivity() {
                         finishAndRemoveTask()
                     },
                     onSaveDiagnosticReport = { launchDiagnosticDocumentPicker() },
+                    onSendDiagnosticReport = { sendDiagnosticReport() },
                     onContactClick = { openPrivacySupportEmail() },
                     onPrivacyPolicyOnlineClick = { openPrivacyPolicyOnline() },
                     diagnosticsSummary = connectedService?.diagnosticsSummary(overlayPermissionGranted),
@@ -199,6 +202,49 @@ class MainActivity : ComponentActivity() {
         )
     }
 
+    private fun sendDiagnosticReport() {
+        val connectedService = service
+        if (connectedService == null) {
+            showDiagnosticSendFeedback(R.string.diagnostic_report_unavailable)
+            return
+        }
+        val frozenReport = connectedService.diagnosticReport()
+        val writeResult = writeDiagnosticShareFile(cacheDir, diagnosticFilename(), frozenReport)
+        if (writeResult !is DiagnosticShareFileResult.Success) {
+            Log.e(TAG, "Diagnostic attachment creation failed — ${(writeResult as DiagnosticShareFileResult.Failure).reason}")
+            showDiagnosticSendFeedback(R.string.diagnostic_report_share_failed)
+            return
+        }
+        val attachment = FileProvider.getUriForFile(
+            this,
+            "$packageName.fileprovider",
+            writeResult.file,
+        )
+        val sendIntent = Intent(Intent.ACTION_SEND)
+            .setType("text/plain")
+            .putExtra(Intent.EXTRA_EMAIL, arrayOf(getString(R.string.privacy_support_email)))
+            .putExtra(Intent.EXTRA_SUBJECT, getString(R.string.diagnostic_email_subject))
+            .putExtra(Intent.EXTRA_TEXT, getString(R.string.diagnostic_email_body))
+            .putExtra(Intent.EXTRA_STREAM, attachment)
+            .setClipData(ClipData.newUri(contentResolver, writeResult.file.name, attachment))
+            .addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
+        if (sendIntent.resolveActivity(packageManager) == null) {
+            writeResult.file.delete()
+            showDiagnosticSendFeedback(R.string.diagnostic_report_no_handler)
+            return
+        }
+        try {
+            startActivity(Intent.createChooser(sendIntent, getString(R.string.diagnostics_send_report)))
+        } catch (_: android.content.ActivityNotFoundException) {
+            writeResult.file.delete()
+            showDiagnosticSendFeedback(R.string.diagnostic_report_no_handler)
+        }
+    }
+
+    private fun showDiagnosticSendFeedback(message: Int) {
+        Toast.makeText(this, getString(message), Toast.LENGTH_SHORT).show()
+    }
+
     private fun saveDiagnosticReport(destination: Uri) {
         val report = pendingDiagnosticReport
         val result = if (report == null) {
@@ -253,3 +299,26 @@ internal fun writeDiagnosticReport(
 
 internal fun diagnosticFilename(now: java.time.LocalDateTime = java.time.LocalDateTime.now()): String =
     "puzru-diagnostic-${now.format(java.time.format.DateTimeFormatter.ofPattern("yyyy-MM-dd_HH-mm-ss"))}.txt"
+
+internal sealed interface DiagnosticShareFileResult {
+    data class Success(val file: java.io.File) : DiagnosticShareFileResult
+    data class Failure(val reason: String) : DiagnosticShareFileResult
+}
+
+internal fun writeDiagnosticShareFile(
+    cacheDir: java.io.File,
+    filename: String,
+    frozenReport: String,
+): DiagnosticShareFileResult = try {
+    val directory = java.io.File(cacheDir, "diagnostic-share")
+    if (!directory.exists() && !directory.mkdirs()) {
+        return DiagnosticShareFileResult.Failure("Could not create diagnostic-share cache directory")
+    }
+    directory.listFiles().orEmpty().filter { it.isFile }.forEach { it.delete() }
+    val file = java.io.File(directory, filename)
+    file.outputStream().use { it.write(frozenReport.toByteArray(Charsets.UTF_8)) }
+    DiagnosticShareFileResult.Success(file)
+} catch (exception: Exception) {
+    val detail = exception.message?.takeIf { it.isNotBlank() }?.let { ": $it" }.orEmpty()
+    DiagnosticShareFileResult.Failure("${exception.javaClass.simpleName}$detail")
+}
