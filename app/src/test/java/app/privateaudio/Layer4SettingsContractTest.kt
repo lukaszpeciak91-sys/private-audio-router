@@ -105,7 +105,7 @@ class Layer4SettingsContractTest {
         assertTrue(settingsSource.contains("BackHandler(enabled = page != SettingsPage.ROOT) { page = SettingsPage.ROOT }"))
         assertTrue(settingsSource.contains("testTag(\"privacy_policy_body\")"))
         assertTrue(privacyPolicyPage.contains("R.string.settings_privacy_policy_online"))
-        assertTrue(privacyPolicyPage.contains("testTag(\"privacy_policy_online\")"))
+        assertTrue(privacyPolicyPage.contains("tag = \"privacy_policy_online\""))
         assertTrue(privacyPolicyPage.contains("onClick = onPrivacyPolicyOnlineClick"))
         assertEquals(1, settingsSource.occurrences("Dialog("))
 
