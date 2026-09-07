@@ -605,6 +605,11 @@ this summary intentionally does not duplicate its test matrix.
   public build ID, display, fingerprint, and security-patch evidence. Retention is
   bounded and non-persistent, and no send/share, networking, analytics, permission,
   client attribution, or audio/content capture path was added.
+- The latest meaningful public playback evidence now specifically retains the most
+  recent non-empty Android playback observation. A later empty playback callback
+  cannot erase the no-trigger evidence before a report is generated; a subsequent
+  non-empty observation replaces it. This is one bounded in-memory observation and
+  does not change playback classification or routing behavior.
 
 ## Validation status
 

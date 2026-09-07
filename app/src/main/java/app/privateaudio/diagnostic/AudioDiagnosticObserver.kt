@@ -1389,7 +1389,7 @@ class AudioDiagnosticObserver(
         val assistantCount = assistantQualifyingPlaybackCount(configs)
         val browserCount = browserQualifyingPlaybackCount(configs)
         val observedPlayback = configs.map(AudioPlaybackConfiguration::toObservedPlayback)
-        lastMeaningfulPlaybackObservation = PublicPlaybackObservation(
+        val playbackObservation = PublicPlaybackObservation(
             timestamp = OffsetDateTime.now().format(DateTimeFormatter.ISO_OFFSET_DATE_TIME),
             mode = audioModeName(audioManager.mode),
             communicationDevice = audioManager.communicationDevice?.toObservedDevice(),
@@ -1401,6 +1401,10 @@ class AudioDiagnosticObserver(
             // A qualifier is evidence, not necessarily a selected trigger. Only retain a
             // family once the unchanged protected classifier has actually selected it.
             selectedTriggerFamily = experiment.triggerOrigin,
+        )
+        lastMeaningfulPlaybackObservation = retainMeaningfulPlaybackObservation(
+            lastMeaningfulPlaybackObservation,
+            playbackObservation,
         )
         recordPlaybackObservation(
             observedPlayback,
@@ -1435,7 +1439,12 @@ class AudioDiagnosticObserver(
             previousQualifierCounts = qualifierCounts
         }
         if (experiment.attempts.isEmpty()) {
-            if (!routingActionInProgress && (count > 0 || assistantCount > 0 || browserCount > 0)) evaluateExperimentTrigger()
+            if (!routingActionInProgress && (count > 0 || assistantCount > 0 || browserCount > 0)) {
+                evaluateExperimentTrigger()
+                lastMeaningfulPlaybackObservation = lastMeaningfulPlaybackObservation?.copy(
+                    selectedTriggerFamily = experiment.triggerOrigin,
+                )
+            }
             return
         }
         if (silentTrack?.playState != AudioTrack.PLAYSTATE_PLAYING) return
@@ -2153,6 +2162,11 @@ internal fun retainCompletedRoutingCycle(
     }
     return (listOf(completed) + withoutDuplicate).take(MAX_COMPLETED_ROUTING_CYCLES)
 }
+
+internal fun retainMeaningfulPlaybackObservation(
+    previous: PublicPlaybackObservation?,
+    candidate: PublicPlaybackObservation,
+): PublicPlaybackObservation? = if (candidate.playbackConfigurations.isEmpty()) previous else candidate
 
 internal fun observeActiveRouteLoss(
     experiment: EarpieceExperiment,

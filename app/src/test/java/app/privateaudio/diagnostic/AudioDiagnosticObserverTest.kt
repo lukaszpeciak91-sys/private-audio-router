@@ -336,6 +336,38 @@ class AudioDiagnosticObserverTest {
     }
 
     @Test
+    fun meaningfulPlaybackRetentionIgnoresEmptyCallbacksAndAcceptsLaterPlayback() {
+        fun observation(timestamp: String, playback: List<ObservedPlayback>) = PublicPlaybackObservation(
+            timestamp = timestamp,
+            mode = "MODE_NORMAL",
+            communicationDevice = ObservedDevice(2, "Built-in speaker", "speaker"),
+            speakerphoneState = "On (directly observed)",
+            playbackConfigurations = playback,
+            communicationQualifierCount = 0,
+            assistantQualifierCount = 0,
+            browserCommunicationQualifierCount = 0,
+            selectedTriggerFamily = null,
+        )
+        val unqualified = ObservedPlayback(
+            usage = "USAGE_MEDIA",
+            contentType = "CONTENT_TYPE_SPEECH",
+            allowedCapturePolicy = "ALLOW_CAPTURE_BY_ALL",
+            device = null,
+        )
+        val later = unqualified.copy(contentType = "CONTENT_TYPE_MUSIC")
+
+        val retained = retainMeaningfulPlaybackObservation(null, observation("first", listOf(unqualified)))
+        assertEquals("first", retained?.timestamp)
+        assertEquals(
+            retained,
+            retainMeaningfulPlaybackObservation(retained, observation("empty", emptyList())),
+        )
+        val replaced = retainMeaningfulPlaybackObservation(retained, observation("later", listOf(later)))
+        assertEquals("later", replaced?.timestamp)
+        assertEquals(listOf(later), replaced?.playbackConfigurations)
+    }
+
+    @Test
     fun activeRouteLossIsGenericAndCleanupIsNotMisclassified() {
         val established = EarpieceExperiment(earpieceReportedDuringSession = true)
         val replacement = DiagnosticSnapshot(
