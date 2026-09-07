@@ -102,6 +102,7 @@ class MainActivity : ComponentActivity() {
                     },
                     onSaveDiagnosticReport = { launchDiagnosticDocumentPicker() },
                     onContactClick = { openPrivacySupportEmail() },
+                    onPrivacyPolicyOnlineClick = { openPrivacyPolicyOnline() },
                     diagnosticsSummary = connectedService?.diagnosticsSummary(overlayPermissionGranted),
                     versionName = BuildConfig.VERSION_NAME,
                 )
@@ -118,6 +119,18 @@ class MainActivity : ComponentActivity() {
             startActivity(emailIntent)
         } catch (_: android.content.ActivityNotFoundException) {
             // A device without an email app has no normal contact target to open.
+        }
+    }
+
+    private fun openPrivacyPolicyOnline() {
+        val browserIntent = Intent(
+            Intent.ACTION_VIEW,
+            Uri.parse(PRIVACY_POLICY_URL),
+        )
+        try {
+            startActivity(browserIntent)
+        } catch (_: android.content.ActivityNotFoundException) {
+            // A device without a compatible browser has no external target to open.
         }
     }
 
@@ -214,6 +227,7 @@ class MainActivity : ComponentActivity() {
 
     private companion object {
         const val TAG = "PrivateAudio"
+        const val PRIVACY_POLICY_URL = "https://lukaszpeciak91-sys.github.io/private-audio-router/"
     }
 }
 

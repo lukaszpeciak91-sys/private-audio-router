@@ -91,6 +91,7 @@ fun SettingsSheet(
     onDismiss: () -> Unit,
     modifier: Modifier = Modifier,
     onContactClick: () -> Unit = {},
+    onPrivacyPolicyOnlineClick: () -> Unit = {},
 ) {
     var page by rememberSaveable { mutableStateOf(SettingsPage.ROOT) }
     val context = LocalContext.current
@@ -189,6 +190,7 @@ fun SettingsSheet(
                         SettingsPage.PRIVACY_POLICY -> PrivacyPolicyPage(
                             onBack = { page = SettingsPage.ROOT },
                             onContactClick = onContactClick,
+                            onPrivacyPolicyOnlineClick = onPrivacyPolicyOnlineClick,
                         )
                         SettingsPage.ABOUT -> AboutPage(
                             onBack = { page = SettingsPage.ROOT },
@@ -433,7 +435,11 @@ private fun LanguageChoice(label: String, selected: Boolean, tag: String, onClic
 }
 
 @Composable
-private fun PrivacyPolicyPage(onBack: () -> Unit, onContactClick: () -> Unit) {
+private fun PrivacyPolicyPage(
+    onBack: () -> Unit,
+    onContactClick: () -> Unit,
+    onPrivacyPolicyOnlineClick: () -> Unit,
+) {
     Column(
         modifier = Modifier
             .fillMaxWidth()
@@ -463,6 +469,14 @@ private fun PrivacyPolicyPage(onBack: () -> Unit, onContactClick: () -> Unit) {
                     color = SettingsSecondary,
                     fontSize = 15.sp,
                     lineHeight = 22.sp,
+                )
+                Spacer(Modifier.height(14.dp))
+                SettingsDivider()
+                SettingsRow(
+                    label = stringResource(R.string.settings_privacy_policy_online),
+                    chevron = true,
+                    tag = "privacy_policy_online",
+                    onClick = onPrivacyPolicyOnlineClick,
                 )
                 ContactBlock(onContactClick)
                 Spacer(Modifier.height(12.dp))
