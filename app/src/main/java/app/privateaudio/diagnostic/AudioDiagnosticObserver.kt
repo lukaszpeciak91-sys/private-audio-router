@@ -41,6 +41,10 @@ internal data class DiagnosticEnvironment(
     val manufacturer: String,
     val model: String,
     val product: String,
+    val buildId: String = "Unknown",
+    val buildDisplay: String = "Unknown",
+    val buildFingerprint: String = "Unknown",
+    val securityPatch: String = "Unknown",
 ) {
     companion object {
         fun from(context: Context): DiagnosticEnvironment {
@@ -53,6 +57,10 @@ internal data class DiagnosticEnvironment(
                 manufacturer = Build.MANUFACTURER,
                 model = Build.MODEL,
                 product = Build.PRODUCT,
+                buildId = Build.ID,
+                buildDisplay = Build.DISPLAY,
+                buildFingerprint = Build.FINGERPRINT,
+                securityPatch = Build.VERSION.SECURITY_PATCH,
             )
         }
     }
@@ -87,6 +95,18 @@ data class ObservedPlayback(
     val playerState: String = "Not exposed by the public AudioPlaybackConfiguration API",
     val playerIdentity: String = "Not exposed by the public AudioPlaybackConfiguration API",
     val device: ObservedDevice?,
+)
+
+data class PublicPlaybackObservation(
+    val timestamp: String,
+    val mode: String,
+    val communicationDevice: ObservedDevice?,
+    val speakerphoneState: String,
+    val playbackConfigurations: List<ObservedPlayback>,
+    val communicationQualifierCount: Int,
+    val assistantQualifierCount: Int,
+    val browserCommunicationQualifierCount: Int,
+    val selectedTriggerFamily: TriggerOrigin?,
 )
 
 data class ObservedRecording(
@@ -171,6 +191,7 @@ enum class TriggerOrigin {
 }
 
 data class EarpieceExperiment(
+    val routingGeneration: Long? = null,
     val state: ExperimentState = ExperimentState.IDLE,
     val armed: Boolean = false,
     val requestAttempted: Boolean = false,
@@ -196,6 +217,9 @@ data class EarpieceExperiment(
     val attempts: List<RoutingAttempt> = emptyList(),
     val earpieceReportedDuringSession: Boolean = false,
     val revertedToSpeaker: Boolean = false,
+    val routeLostAfterEarpiece: Boolean = false,
+    val firstReplacementCommunicationDevice: ObservedDevice? = null,
+    val routeLossTimestamp: String? = null,
     val shortObservation: DiagnosticSnapshot? = null,
     val preOwnership: DiagnosticSnapshot? = null,
     val postModeOwnership: DiagnosticSnapshot? = null,
@@ -351,6 +375,11 @@ class AudioDiagnosticObserver(
     var lastCompletedExperiment by mutableStateOf<CompletedRoutingCycle?>(null)
         private set
 
+    val completedRoutingCycles = mutableStateListOf<CompletedRoutingCycle>()
+
+    var lastMeaningfulPlaybackObservation by mutableStateOf<PublicPlaybackObservation?>(null)
+        private set
+
     var assistantEarlyRoute by mutableStateOf(AssistantEarlyRouteStatus())
         private set
 
@@ -452,18 +481,7 @@ class AudioDiagnosticObserver(
     }
 
     fun snapshot(reason: String) {
-        val observed = DiagnosticSnapshot(
-            timestamp = OffsetDateTime.now().format(DateTimeFormatter.ISO_OFFSET_DATE_TIME),
-            processId = Process.myPid(),
-            userId = Process.myUid(),
-            lifecycleState = processLifecycleState(),
-            mode = audioModeName(audioManager.mode),
-            communicationDevice = audioManager.communicationDevice?.toObservedDevice(),
-            availableCommunicationDevices = audioManager.availableCommunicationDevices
-                .map(AudioDeviceInfo::toObservedDevice),
-            speakerphoneState = observedSpeakerphoneState(),
-            activePlaybackConfigurations = activePlaybackConfigurations(),
-        )
+        val observed = collectSnapshot()
         val changes = describeChanges(snapshot, observed)
         snapshot = observed
         addEvent("$reason — $changes")
@@ -479,7 +497,7 @@ class AudioDiagnosticObserver(
         if (controllerEnabled) return
         controllerEnabled = true
         cycleGeneration++
-        experiment = EarpieceExperiment(state = ExperimentState.ARMED, armed = true)
+        experiment = EarpieceExperiment(state = ExperimentState.ARMED, armed = true, routingGeneration = cycleGeneration)
         audioManager.registerAudioPlaybackCallback(playbackCallback, observationHandler)
         playbackCallbackRegistered = true
         addEvent("Controller ON — clean waiting; playback observation registered")
@@ -514,17 +532,21 @@ class AudioDiagnosticObserver(
         addEvent(message)
     }
 
-    internal fun report(supportSummary: DiagnosticsSummary): String = buildDiagnosticReport(
+    internal fun currentObservation(): DiagnosticSnapshot = collectSnapshot()
+
+    internal fun report(supportSummary: DiagnosticsSummary, currentObservation: DiagnosticSnapshot = collectSnapshot()): String = buildDiagnosticReport(
         timestamp = OffsetDateTime.now().format(DateTimeFormatter.ISO_OFFSET_DATE_TIME),
         experiment = experiment,
         lastCompletedExperiment = lastCompletedExperiment,
-        snapshot = snapshot,
+        completedRoutingCycles = completedRoutingCycles.toList(),
+        snapshot = currentObservation,
         events = events,
         packageName = context.packageName,
         baseline = baseline,
         startupAudioTrace = startupAudioTrace.toList(),
         assistantQualifyingPlaybackCount = currentAssistantQualifyingPlaybackCount,
         browserQualifyingPlaybackCount = currentBrowserQualifyingPlaybackCount,
+        playbackObservation = lastMeaningfulPlaybackObservation,
         environment = DiagnosticEnvironment.from(context),
         eventEntriesDropped = eventEntriesDropped,
         startupTraceEntriesDropped = startupTraceEntriesDropped,
@@ -607,6 +629,7 @@ class AudioDiagnosticObserver(
     )
 
     internal fun diagnosticsSummary(
+        snapshot: DiagnosticSnapshot = this.snapshot,
         privateAudioEnabled: Boolean,
         privateAudioState: PrivateAudioState,
         proximitySupported: Boolean,
@@ -1182,7 +1205,11 @@ class AudioDiagnosticObserver(
             cleanupCompleted = cleaned,
             cleanupReason = reason,
         )
-        experiment = EarpieceExperiment(state = ExperimentState.ARMED, armed = controllerEnabled)
+        experiment = EarpieceExperiment(
+            state = ExperimentState.ARMED,
+            armed = controllerEnabled,
+            routingGeneration = cycleGeneration,
+        )
         addEvent("Assistant early pre-arm aborted — $reason")
         if (controllerEnabled && reEvaluatePlayback && !routingActionInProgress) {
             prepareSilentCommunicationTrack()
@@ -1361,8 +1388,22 @@ class AudioDiagnosticObserver(
         val count = qualifyingPlaybackCount(configs)
         val assistantCount = assistantQualifyingPlaybackCount(configs)
         val browserCount = browserQualifyingPlaybackCount(configs)
+        val observedPlayback = configs.map(AudioPlaybackConfiguration::toObservedPlayback)
+        lastMeaningfulPlaybackObservation = PublicPlaybackObservation(
+            timestamp = OffsetDateTime.now().format(DateTimeFormatter.ISO_OFFSET_DATE_TIME),
+            mode = audioModeName(audioManager.mode),
+            communicationDevice = audioManager.communicationDevice?.toObservedDevice(),
+            speakerphoneState = observedSpeakerphoneState(),
+            playbackConfigurations = observedPlayback,
+            communicationQualifierCount = count,
+            assistantQualifierCount = assistantCount,
+            browserCommunicationQualifierCount = browserCount,
+            // A qualifier is evidence, not necessarily a selected trigger. Only retain a
+            // family once the unchanged protected classifier has actually selected it.
+            selectedTriggerFamily = experiment.triggerOrigin,
+        )
         recordPlaybackObservation(
-            configs.map(AudioPlaybackConfiguration::toObservedPlayback),
+            observedPlayback,
             Triple(count, assistantCount, browserCount),
         )
         currentAssistantQualifyingPlaybackCount = assistantCount
@@ -1547,7 +1588,7 @@ class AudioDiagnosticObserver(
         recordingStartupObservation = null
         externalContributionEstablished = false
         activeEvidenceRecorded = false
-        experiment = EarpieceExperiment(state = ExperimentState.ARMED, armed = true)
+        experiment = EarpieceExperiment(state = ExperimentState.ARMED, armed = true, routingGeneration = cycleGeneration)
         addEvent("Cleanup completed — controller remains ON and returned to clean waiting")
         prepareSilentCommunicationTrack()
         handlePlaybackConfigurations(audioManager.activePlaybackConfigurations)
@@ -1578,7 +1619,7 @@ class AudioDiagnosticObserver(
     }
 
     private fun observeExperimentOutcome(observed: DiagnosticSnapshot, reason: String) {
-        if (experiment.attempts.isEmpty() || observed.mode != "MODE_IN_COMMUNICATION") return
+        if (routingActionInProgress || experiment.attempts.isEmpty() || observed.mode != "MODE_IN_COMMUNICATION") return
         when (observed.communicationDevice?.type) {
             "Built-in earpiece" -> if (!experiment.earpieceReportedDuringSession) {
                 val timing = matchingStartupTiming()
@@ -1604,9 +1645,10 @@ class AudioDiagnosticObserver(
                     timing?.earpieceObservedNanos
                 addEvent("Android reported built-in earpiece while external communication remained active — observation=$reason")
             }
-            "Built-in speaker" -> if (experiment.earpieceReportedDuringSession && !experiment.revertedToSpeaker) {
-                experiment = experiment.copy(revertedToSpeaker = true)
-                addEvent("Android route reverted to built-in speaker during active session — observation=$reason")
+            else -> if (experiment.earpieceReportedDuringSession && !experiment.routeLostAfterEarpiece) {
+                val replacement = observed.communicationDevice
+                experiment = observeActiveRouteLoss(experiment, observed, cleanupInProgress = false)
+                addEvent("Android route lost built-in earpiece during active session — replacement=${replacement.reportDescription()}; observation=$reason")
             }
         }
         if (!activeEvidenceRecorded && observed.communicationDevice?.type == "Built-in earpiece" &&
@@ -1639,7 +1681,6 @@ class AudioDiagnosticObserver(
             )
         }
         val trackCleanupCompleted = stopSilentCommunicationTrack()
-        routingActionInProgress = false
         experiment = experiment.copy(
             state = finalState,
             armed = false,
@@ -1654,13 +1695,18 @@ class AudioDiagnosticObserver(
             )
         }
         snapshot("Post-cleanup observation")
+        routingActionInProgress = false
         if (experiment.requestAttempted || experiment.triggerOrigin != null) {
-            lastCompletedExperiment = CompletedRoutingCycle(
+            val completed = CompletedRoutingCycle(
                 experiment = experiment,
                 finalCleanupObservation = snapshot,
                 completionReason = reason,
                 completedAt = OffsetDateTime.now().format(DateTimeFormatter.ISO_OFFSET_DATE_TIME),
             )
+            val retainedCycles = retainCompletedRoutingCycle(completedRoutingCycles, completed)
+            completedRoutingCycles.clear()
+            completedRoutingCycles.addAll(retainedCycles)
+            lastCompletedExperiment = completedRoutingCycles.firstOrNull()
         }
     }
 
@@ -1754,6 +1800,7 @@ internal fun buildDiagnosticReport(
     timestamp: String,
     experiment: EarpieceExperiment,
     lastCompletedExperiment: CompletedRoutingCycle? = null,
+    completedRoutingCycles: List<CompletedRoutingCycle> = listOfNotNull(lastCompletedExperiment),
     snapshot: DiagnosticSnapshot,
     events: List<String>,
     packageName: String = "com.napahu.puzru",
@@ -1761,6 +1808,7 @@ internal fun buildDiagnosticReport(
     startupAudioTrace: List<String> = emptyList(),
     assistantQualifyingPlaybackCount: Int = experiment.assistantQualifyingPlaybackCount,
     browserQualifyingPlaybackCount: Int = experiment.browserQualifyingPlaybackCount,
+    playbackObservation: PublicPlaybackObservation? = null,
     environment: DiagnosticEnvironment = DiagnosticEnvironment("Unknown", 0, "Unknown", 0, "Unknown", "Unknown", "Unknown"),
     eventEntriesDropped: Int = 0,
     startupTraceEntriesDropped: Int = 0,
@@ -1792,6 +1840,30 @@ internal fun buildDiagnosticReport(
     appendLine("Manufacturer: ${environment.manufacturer}")
     appendLine("Model: ${environment.model}")
     appendLine("Product: ${environment.product}")
+    appendLine("Android build ID: ${environment.buildId}")
+    appendLine("Android build display: ${environment.buildDisplay}")
+    appendLine("Android build fingerprint: ${environment.buildFingerprint}")
+    appendLine("Android security patch: ${environment.securityPatch}")
+    appendLine()
+    appendLine("MOST RECENT MEANINGFUL PUBLIC PLAYBACK OBSERVATION")
+    if (playbackObservation == null) {
+        appendLine("None observed")
+    } else {
+        appendLine("Observation timestamp: ${playbackObservation.timestamp}")
+        appendLine("AudioManager mode: ${playbackObservation.mode}")
+        appendLine("Communication device: ${playbackObservation.communicationDevice.reportDescription()}")
+        appendLine("Speakerphone: ${playbackObservation.speakerphoneState}")
+        appendLine("Communication qualifier count: ${playbackObservation.communicationQualifierCount}")
+        appendLine("Assistant/speech qualifier count: ${playbackObservation.assistantQualifierCount}")
+        appendLine("Browser communication qualifier count: ${playbackObservation.browserCommunicationQualifierCount}")
+        appendLine("Selected existing trigger family: ${playbackObservation.selectedTriggerFamily ?: "None"}")
+        appendLine("Public playback configurations:")
+        if (playbackObservation.playbackConfigurations.isEmpty()) appendLine("  None visible")
+        playbackObservation.playbackConfigurations.forEachIndexed { index, playback ->
+            appendLine("  ${index + 1}. usage=${playback.usage}; content=${playback.contentType}; flags=${playback.flags}; capture policy=${playback.allowedCapturePolicy}; device=${playback.device.reportDescription()}")
+        }
+        appendLine("FACT: This is public Android metadata; application/client ownership is not attributed.")
+    }
     appendLine()
     appendLine("RECORDING / INPUT OBSERVATION")
     appendLine("Recording callback registered: $recordingCallbackRegistered")
@@ -1912,6 +1984,7 @@ internal fun buildDiagnosticReport(
     appendIdentity("DELAYED OBSERVATION", experiment.shortObservation)
     appendLine()
     appendLine("EARPIECE EXPERIMENT")
+    appendLine("Routing cycle/generation: ${experiment.routingGeneration ?: "Not active"}")
     appendLine("Assistant qualifying playback count: $assistantQualifyingPlaybackCount")
     appendLine("Browser qualifying VOICE_COMMUNICATION/UNKNOWN count: $browserQualifyingPlaybackCount")
     appendLine("Trigger origin: ${experiment.triggerOrigin ?: "Not attempted"}")
@@ -1968,6 +2041,9 @@ internal fun buildDiagnosticReport(
     appendLine("Total routing attempts: ${experiment.attempts.size}")
     appendLine("Android reported earpiece while external communication remained active: ${experiment.earpieceReportedDuringSession}")
     appendLine("External/system playback subsequently reclaimed speaker: ${experiment.revertedToSpeaker}")
+    appendLine("Route lost after earpiece: ${experiment.routeLostAfterEarpiece}")
+    appendLine("First replacement communication device: ${experiment.firstReplacementCommunicationDevice.reportDescription()}")
+    appendLine("Route-loss timestamp: ${experiment.routeLossTimestamp ?: "Not observed"}")
     appendLine("External voice playback device after routing request where observable: ${experiment.externalVoicePlaybackDeviceAfterRequest.reportDescription()} (public diagnostics do not identify the client)")
     appendLine("Silent AudioTrack cleanup completed: ${experiment.silentTrackCleanupCompleted}")
     appendLine("Audible result requiring human confirmation: UNKNOWN")
@@ -1985,7 +2061,13 @@ internal fun buildDiagnosticReport(
         appendLine("Attempt ${attempt.number}: timestamp=${attempt.timestamp}; trigger=${attempt.trigger}; mode=${attempt.mode}; device before=${attempt.deviceBefore.reportDescription()}; return=${attempt.accepted}; device immediately after=${attempt.deviceImmediatelyAfter.reportDescription()}; speakerphone immediately after=${attempt.speakerphoneImmediatelyAfter}")
     }
     appendLine()
-    appendCompletedRoutingCycle(lastCompletedExperiment)
+    appendLine("COMPLETED ROUTING CYCLE HISTORY (NEWEST FIRST)")
+    if (completedRoutingCycles.isEmpty()) appendLine("None recorded")
+    completedRoutingCycles.forEachIndexed { index, cycle ->
+        appendLine()
+        appendLine("COMPLETED ROUTING CYCLE ${index + 1}")
+        appendCompletedRoutingCycle(cycle)
+    }
     appendLine()
     appendLine("CURRENT STATE")
     appendLine("AudioManager mode: ${snapshot.mode}")
@@ -2027,6 +2109,7 @@ private fun StringBuilder.appendCompletedRoutingCycle(cycle: CompletedRoutingCyc
     }
 
     val completed = cycle.experiment
+    appendLine("Routing cycle/generation: ${completed.routingGeneration ?: "Not recorded"}")
     appendLine("Completed at: ${cycle.completedAt}")
     appendLine("Completion reason: ${cycle.completionReason}")
     appendLine("Trigger origin: ${completed.triggerOrigin ?: "Not recorded"}")
@@ -2038,6 +2121,9 @@ private fun StringBuilder.appendCompletedRoutingCycle(cycle: CompletedRoutingCyc
     appendLine("Selected target: ${completed.selectedTarget.reportDescription()}")
     appendLine("Earpiece reported during session: ${completed.earpieceReportedDuringSession}")
     appendLine("Speaker subsequently reclaimed: ${completed.revertedToSpeaker}")
+    appendLine("Route lost after earpiece: ${completed.routeLostAfterEarpiece}")
+    appendLine("First replacement communication device: ${completed.firstReplacementCommunicationDevice.reportDescription()}")
+    appendLine("Route-loss timestamp: ${completed.routeLossTimestamp ?: "Not observed"}")
     appendLine("Silent AudioTrack cleanup completed: ${completed.silentTrackCleanupCompleted}")
     appendLine("Final mode after cleanup: ${cycle.finalCleanupObservation.mode}")
     appendSnapshot("COMPLETED PRE-POC5", completed.preOwnership)
@@ -2055,6 +2141,34 @@ private fun StringBuilder.appendCompletedRoutingCycle(cycle: CompletedRoutingCyc
                 "device immediately after=${attempt.deviceImmediatelyAfter.reportDescription()}",
         )
     }
+}
+
+internal fun retainCompletedRoutingCycle(
+    existingNewestFirst: List<CompletedRoutingCycle>,
+    completed: CompletedRoutingCycle,
+): List<CompletedRoutingCycle> {
+    val generation = completed.experiment.routingGeneration
+    val withoutDuplicate = existingNewestFirst.filterNot {
+        generation != null && it.experiment.routingGeneration == generation
+    }
+    return (listOf(completed) + withoutDuplicate).take(MAX_COMPLETED_ROUTING_CYCLES)
+}
+
+internal fun observeActiveRouteLoss(
+    experiment: EarpieceExperiment,
+    observed: DiagnosticSnapshot,
+    cleanupInProgress: Boolean,
+): EarpieceExperiment {
+    if (cleanupInProgress || !experiment.earpieceReportedDuringSession || experiment.routeLostAfterEarpiece ||
+        observed.mode != "MODE_IN_COMMUNICATION" || observed.communicationDevice?.type == "Built-in earpiece"
+    ) return experiment
+    val replacement = observed.communicationDevice
+    return experiment.copy(
+        revertedToSpeaker = replacement?.type == "Built-in speaker",
+        routeLostAfterEarpiece = true,
+        firstReplacementCommunicationDevice = replacement,
+        routeLossTimestamp = observed.timestamp,
+    )
 }
 
 private fun StringBuilder.appendIdentity(label: String, snapshot: DiagnosticSnapshot?) {
@@ -2319,7 +2433,8 @@ internal fun audioDeviceTypeName(type: Int) = when (type) {
 }
 
 private val TIME_FORMAT = DateTimeFormatter.ofPattern("HH:mm:ss.SSS")
-internal const val DIAGNOSTIC_REPORT_FORMAT = 2
+internal const val DIAGNOSTIC_REPORT_FORMAT = 3
+internal const val MAX_COMPLETED_ROUTING_CYCLES = 3
 internal const val MAX_EVENTS = 100
 internal const val MAX_STARTUP_TRACE_EVENTS = 240
 internal const val MAX_RECORDING_TRACE_EVENTS = 80

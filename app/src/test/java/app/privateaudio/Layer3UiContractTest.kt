@@ -41,7 +41,7 @@ class Layer3UiContractTest {
         assertTrue(diagnosticScreen.isFile)
         assertTrue(observerSource.contains("internal fun buildDiagnosticReport("))
         assertTrue(serviceSource.contains("fun diagnosticReport(): String"))
-        assertTrue(serviceSource.contains("observer.report(supportSummary)"))
+        assertTrue(serviceSource.contains("observer.report(supportSummary, currentObservation)"))
     }
 
     @Test
