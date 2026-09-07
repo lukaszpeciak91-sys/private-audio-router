@@ -98,12 +98,15 @@ class Layer4SettingsContractTest {
         assertTrue(settingsSource.contains("tag = \"settings_privacy_policy\""))
         assertTrue(settingsSource.contains("SettingsPage.PRIVACY_POLICY -> PrivacyPolicyPage("))
         val privacyPolicyPage = settingsSource.method(
-            "private fun PrivacyPolicyPage(onBack: () -> Unit, onContactClick: () -> Unit)",
+            "private fun PrivacyPolicyPage(",
         )
         assertTrue(privacyPolicyPage.contains("testTag(\"settings_child_back\")"))
         assertTrue(privacyPolicyPage.contains("BackChevron()"))
         assertTrue(settingsSource.contains("BackHandler(enabled = page != SettingsPage.ROOT) { page = SettingsPage.ROOT }"))
         assertTrue(settingsSource.contains("testTag(\"privacy_policy_body\")"))
+        assertTrue(privacyPolicyPage.contains("R.string.settings_privacy_policy_online"))
+        assertTrue(privacyPolicyPage.contains("tag = \"privacy_policy_online\""))
+        assertTrue(privacyPolicyPage.contains("onClick = onPrivacyPolicyOnlineClick"))
         assertEquals(1, settingsSource.occurrences("Dialog("))
 
         assertTrue(settingsSource.contains("ContactBlock(onContactClick)"))
@@ -135,6 +138,45 @@ class Layer4SettingsContractTest {
             "completely anonymous",
             "contain no identifying information",
         ).forEach { overclaim -> assertFalse(overclaim, strings.contains(overclaim, ignoreCase = true)) }
+    }
+
+    @Test
+    fun privacyPolicyOnlineActionUsesSafeExternalBrowserFlowAndIsNotInAbout() {
+        val privacyPolicyPage = settingsSource.kotlinDeclaration("private fun PrivacyPolicyPage(")
+        val aboutPage = settingsSource.kotlinDeclaration("private fun AboutPage(")
+        val browserMethod = mainSource.kotlinDeclaration("private fun openPrivacyPolicyOnline()")
+        val manifest = projectFile("app/src/main/AndroidManifest.xml").readText()
+
+        assertTrue(privacyPolicyPage.contains("settings_privacy_policy_online"))
+        assertFalse(aboutPage.contains("settings_privacy_policy_online"))
+        assertTrue(mainSource.contains("onPrivacyPolicyOnlineClick = { openPrivacyPolicyOnline() }"))
+        assertTrue(browserMethod.contains("Intent.ACTION_VIEW"))
+        assertTrue(browserMethod.contains("Uri.parse(PRIVACY_POLICY_URL)"))
+        assertTrue(browserMethod.contains("catch (_: android.content.ActivityNotFoundException)"))
+        assertTrue(mainSource.contains(
+            "https://lukaszpeciak91-sys.github.io/private-audio-router/",
+        ))
+        assertFalse(manifest.contains("android.permission.INTERNET"))
+    }
+
+    @Test
+    fun privacyPolicyOnlineActionIsLocalizedAcrossTheProductLocaleInventory() {
+        val resourceRoot = projectFile("app/src/main/res")
+        val defaultValue = resourceValue(
+            File(resourceRoot, "values/strings.xml"),
+            "settings_privacy_policy_online",
+        )
+        val localizedFiles = resourceRoot.listFiles().orEmpty()
+            .filter { it.isDirectory && it.name.startsWith("values-") }
+            .map { File(it, "strings.xml") }
+            .filter(File::isFile)
+
+        assertEquals("View Privacy Policy online", defaultValue)
+        localizedFiles.forEach { stringsFile ->
+            val localizedValue = resourceValue(stringsFile, "settings_privacy_policy_online")
+            assertTrue("${stringsFile.parentFile.name}: action is missing", localizedValue.isNotBlank())
+            assertFalse("${stringsFile.parentFile.name}: English fallback", localizedValue == defaultValue)
+        }
     }
 
     @Test

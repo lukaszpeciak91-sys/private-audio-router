@@ -73,8 +73,10 @@
   five-paragraph localized policy bodies, and About provides the same actionable
   email contact separately from its finalized descriptive copy.
   The canonical framework-free public Privacy Policy site and a dedicated GitHub
-  Pages deployment workflow now publish only the public site directory. The live
-  Pages URL still requires deployment and verification before it is release-ready.
+  Pages deployment workflow publish only the public site directory. The verified
+  public URL is now exposed as a localized action only in the in-app Privacy Policy
+  panel; it opens through Android's external-browser flow, with a safe no-target
+  fallback and no app Internet permission.
   Play Console Data Safety and foreground-service declarations, and any future
   user-initiated Share Sheet remain outside this work.
 
