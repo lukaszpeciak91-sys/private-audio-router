@@ -31,10 +31,10 @@
     <string name="diagnostic_report_save_failed">Raporti diagnostikues nuk mund të ruhej.</string>
 
     <string name="settings_diagnostics">Diagnostikimi</string>
-    <string name="diagnostics_send_report">Send diagnostic report</string>
-    <string name="diagnostic_report_no_handler">No compatible app can send this report.</string>
-    <string name="diagnostic_report_unavailable">Diagnostic report is unavailable.</string>
-    <string name="diagnostic_report_share_failed">Could not prepare diagnostic report.</string>
+    <string name="diagnostics_send_report">Dërgo raportin diagnostikues</string>
+    <string name="diagnostic_report_no_handler">Nuk ka asnjë aplikacion të përputhshëm që mund ta dërgojë këtë raport.</string>
+    <string name="diagnostic_report_unavailable">Raporti diagnostikues nuk është i disponueshëm.</string>
+    <string name="diagnostic_report_share_failed">Raporti diagnostikues nuk mund të përgatitej.</string>
     <string name="diagnostics_title">Diagnostikimi</string>
     <string name="diagnostics_system_check">KONTROLLI I SISTEMIT</string>
     <string name="diagnostics_earpiece">Marrësi</string>

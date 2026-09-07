@@ -42,10 +42,10 @@
     <string name="diagnostic_report_save_failed">ଡାଇଗ୍ନୋଷ୍ଟିକ୍ ରିପୋର୍ଟ ସେଭ୍ କରାଯାଇପାରିଲା ନାହିଁ।</string>
 
     <string name="settings_diagnostics">ଡାଇଗ୍ନୋଷ୍ଟିକ୍ସ</string>
-    <string name="diagnostics_send_report">Send diagnostic report</string>
-    <string name="diagnostic_report_no_handler">No compatible app can send this report.</string>
-    <string name="diagnostic_report_unavailable">Diagnostic report is unavailable.</string>
-    <string name="diagnostic_report_share_failed">Could not prepare diagnostic report.</string>
+    <string name="diagnostics_send_report">ଡାଇଗ୍ନୋଷ୍ଟିକ୍ ରିପୋର୍ଟ ପଠାନ୍ତୁ</string>
+    <string name="diagnostic_report_no_handler">ଏହି ରିପୋର୍ଟ ପଠାଇପାରିବା ଭଳି କୌଣସି ସୁସଙ୍ଗତ ଆପ୍ ନାହିଁ।</string>
+    <string name="diagnostic_report_unavailable">ଡାଇଗ୍ନୋଷ୍ଟିକ୍ ରିପୋର୍ଟ ଉପଲବ୍ଧ ନାହିଁ।</string>
+    <string name="diagnostic_report_share_failed">ଡାଇଗ୍ନୋଷ୍ଟିକ୍ ରିପୋର୍ଟ ପ୍ରସ୍ତୁତ କରାଯାଇପାରିଲା ନାହିଁ।</string>
     <string name="diagnostics_title">ଡାଇଗ୍ନୋଷ୍ଟିକ୍ସ</string>
     <string name="diagnostics_system_check">ସିଷ୍ଟମ୍ ଯାଞ୍ଚ</string>
     <string name="diagnostics_earpiece">ଇୟରପିସ୍</string>

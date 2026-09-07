@@ -31,10 +31,10 @@
     <string name="diagnostic_report_save_failed">ഡയഗ്നോസ്റ്റിക് റിപ്പോർട്ട് സംരക്ഷിക്കാനായില്ല.</string>
 
     <string name="settings_diagnostics">ഡയഗ്നോസ്റ്റിക്സ്</string>
-    <string name="diagnostics_send_report">Send diagnostic report</string>
-    <string name="diagnostic_report_no_handler">No compatible app can send this report.</string>
-    <string name="diagnostic_report_unavailable">Diagnostic report is unavailable.</string>
-    <string name="diagnostic_report_share_failed">Could not prepare diagnostic report.</string>
+    <string name="diagnostics_send_report">ഡയഗ്നോസ്റ്റിക് റിപ്പോർട്ട് അയയ്ക്കുക</string>
+    <string name="diagnostic_report_no_handler">ഈ റിപ്പോർട്ട് അയയ്ക്കാൻ കഴിയുന്ന അനുയോജ്യമായ ആപ്പുകളൊന്നുമില്ല.</string>
+    <string name="diagnostic_report_unavailable">ഡയഗ്നോസ്റ്റിക് റിപ്പോർട്ട് ലഭ്യമല്ല.</string>
+    <string name="diagnostic_report_share_failed">ഡയഗ്നോസ്റ്റിക് റിപ്പോർട്ട് തയ്യാറാക്കാനായില്ല.</string>
     <string name="diagnostics_title">ഡയഗ്നോസ്റ്റിക്സ്</string>
     <string name="diagnostics_system_check">സിസ്റ്റം പരിശോധന</string>
     <string name="diagnostics_earpiece">ഇയർപീസ്</string>

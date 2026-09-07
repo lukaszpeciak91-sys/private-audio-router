@@ -31,10 +31,10 @@
     <string name="diagnostic_report_save_failed">Lama kaydin karin warbixinta baaritaanka.</string>
 
     <string name="settings_diagnostics">Baaritaanno</string>
-    <string name="diagnostics_send_report">Send diagnostic report</string>
-    <string name="diagnostic_report_no_handler">No compatible app can send this report.</string>
-    <string name="diagnostic_report_unavailable">Diagnostic report is unavailable.</string>
-    <string name="diagnostic_report_share_failed">Could not prepare diagnostic report.</string>
+    <string name="diagnostics_send_report">Dir warbixinta baaritaanka</string>
+    <string name="diagnostic_report_no_handler">Ma jiro abka la jaanqaadaya ee diri kara warbixintan.</string>
+    <string name="diagnostic_report_unavailable">Warbixinta baaritaanka lama heli karo.</string>
+    <string name="diagnostic_report_share_failed">Lama diyaarin karin warbixinta baaritaanka.</string>
     <string name="diagnostics_title">Baaritaanno</string>
     <string name="diagnostics_system_check">HUBINTA NIDAAMKA</string>
     <string name="diagnostics_earpiece">Sameecadda sare</string>

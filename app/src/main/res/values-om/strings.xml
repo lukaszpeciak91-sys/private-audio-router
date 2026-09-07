@@ -30,10 +30,10 @@
     <string name="settings_about_body">Puzru sagalee dubbii deeggaramu gara dhageessisaa bilbilaa keessaa kan gubbaa, gurra biratti itti fayyadamanitti qajeelchuuf gargaara.</string>
     <string name="diagnostic_report_saved">Gabaasni qorannoo kuufameera.</string>
     <string name="diagnostic_report_save_failed">Gabaasa qorannoo kuusuu hin dandeenye.</string>
-    <string name="diagnostics_send_report">Send diagnostic report</string>
-    <string name="diagnostic_report_no_handler">No compatible app can send this report.</string>
-    <string name="diagnostic_report_unavailable">Diagnostic report is unavailable.</string>
-    <string name="diagnostic_report_share_failed">Could not prepare diagnostic report.</string>
+    <string name="diagnostics_send_report">Gabaasa qorannoo ergi</string>
+    <string name="diagnostic_report_no_handler">Gabaasa kana erguu kan danda’u appiin walsimu hin jiru.</string>
+    <string name="diagnostic_report_unavailable">Gabaasni qorannoo hin argamu.</string>
+    <string name="diagnostic_report_share_failed">Gabaasa qorannoo qopheessuun hin danda’amne.</string>
     <string name="diagnostics_title">Qorannoo</string>
     <string name="diagnostics_system_check">SAKATTA\'INSA SIRNAA</string>
     <string name="diagnostics_earpiece">Dhageessisaa gurraa bilbilaa keessaa</string>

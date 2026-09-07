@@ -31,10 +31,10 @@
     <string name="diagnostic_report_save_failed">Imeshindikana kuhifadhi ripoti ya uchunguzi.</string>
 
     <string name="settings_diagnostics">Uchunguzi</string>
-    <string name="diagnostics_send_report">Send diagnostic report</string>
-    <string name="diagnostic_report_no_handler">No compatible app can send this report.</string>
-    <string name="diagnostic_report_unavailable">Diagnostic report is unavailable.</string>
-    <string name="diagnostic_report_share_failed">Could not prepare diagnostic report.</string>
+    <string name="diagnostics_send_report">Tuma ripoti ya uchunguzi</string>
+    <string name="diagnostic_report_no_handler">Hakuna programu inayooana inayoweza kutuma ripoti hii.</string>
+    <string name="diagnostic_report_unavailable">Ripoti ya uchunguzi haipatikani.</string>
+    <string name="diagnostic_report_share_failed">Imeshindikana kuandaa ripoti ya uchunguzi.</string>
     <string name="diagnostics_title">Uchunguzi</string>
     <string name="diagnostics_system_check">UKAGUZI WA MFUMO</string>
     <string name="diagnostics_earpiece">Kipokea sauti cha sikioni</string>
