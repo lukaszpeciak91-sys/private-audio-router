@@ -30,6 +30,12 @@
     <string name="settings_about_body">Napahu Studios 出品嘅 Puzru\n\n名称含义\nPuzru 呢个名源自一个同隐藏或者保密有关嘅阿卡德语词。佢反映咗应用嘅用途：令附近嘅人冇咁容易听到受支持嘅 AI 语音播放。\n\nPuzru 有咩作用\nPuzru 帮你将受支持嘅 AI 语音播放路由到手机内置嘅通话听筒，等你听回复时更似普通电话通话，而唔系由主扬声器大声播出。\n\nPuzru 依靠 Android 嘅标准音频路由功能。兼容性取决于你嘅设备、Android 版本，以及每个应用或者服务处理语音音频嘅方式。\n\n兼容性同限制\n• 语音功能喺唔同应用同服务入面嘅运作方式各有不同。\n• 部分语音模式可能需要订阅，亦可能受地区或者账号限制，或者完全唔可用。\n• Puzru 唔会解锁或者扩展第三方服务提供嘅功能，亦唔会绕过呢啲功能嘅限制。\n\nPuzru 唔会做嘅事\n• 唔会拨打电话。\n• 唔会运营、修改或者控制第三方 AI 服务。\n• 唔会控制语音识别、AI 回复嘅内容或者准确性、语音输出、延迟、网络稳定性或者服务可用性。\n• 唔会为你提供相对于 AI 服务本身嘅隐私保障。Puzru 改变嘅系受支持嘅语音音频喺你设备上嘅播放位置，而唔系 AI 服务处理你对话嘅方式。</string>
     <string name="diagnostic_report_saved">诊断报告已保存。</string>
     <string name="diagnostic_report_save_failed">无法保存诊断报告。</string>
+    <string name="diagnostics_send_report">发送诊断报告</string>
+    <string name="diagnostic_email_subject">Puzru 诊断报告</string>
+    <string name="diagnostic_email_body">Puzru 诊断报告\n\n使用嘅语音应用程式／服务：\n发生咗咩事：\n你喺边度听到音讯？（扬声器／听筒／听唔到／其他）：\n\n技术诊断报告已作为文字档案附加。</string>
+    <string name="diagnostic_report_no_handler">冇相容嘅应用程式可以发送呢份报告。</string>
+    <string name="diagnostic_report_unavailable">诊断报告无法使用。</string>
+    <string name="diagnostic_report_share_failed">无法准备诊断报告。</string>
     <string name="diagnostics_title">诊断</string>
     <string name="diagnostics_system_check">系统检查</string>
     <string name="diagnostics_earpiece">听筒</string>

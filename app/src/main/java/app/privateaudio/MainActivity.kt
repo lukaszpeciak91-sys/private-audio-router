@@ -220,14 +220,15 @@ class MainActivity : ComponentActivity() {
             "$packageName.fileprovider",
             writeResult.file,
         )
-        val sendIntent = Intent(Intent.ACTION_SEND)
-            .setType("text/plain")
-            .putExtra(Intent.EXTRA_EMAIL, arrayOf(getString(R.string.privacy_support_email)))
-            .putExtra(Intent.EXTRA_SUBJECT, getString(R.string.diagnostic_email_subject))
-            .putExtra(Intent.EXTRA_TEXT, getString(R.string.diagnostic_email_body))
-            .putExtra(Intent.EXTRA_STREAM, attachment)
-            .setClipData(ClipData.newUri(contentResolver, writeResult.file.name, attachment))
-            .addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
+        val sendIntent = Intent(Intent.ACTION_SEND).apply {
+            type = "text/plain"
+            putExtra(Intent.EXTRA_EMAIL, arrayOf(getString(R.string.privacy_support_email)))
+            putExtra(Intent.EXTRA_SUBJECT, getString(R.string.diagnostic_email_subject))
+            putExtra(Intent.EXTRA_TEXT, getString(R.string.diagnostic_email_body))
+            putExtra(Intent.EXTRA_STREAM, attachment)
+            clipData = ClipData.newUri(contentResolver, writeResult.file.name, attachment)
+            addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
+        }
         if (sendIntent.resolveActivity(packageManager) == null) {
             writeResult.file.delete()
             showDiagnosticSendFeedback(R.string.diagnostic_report_no_handler)

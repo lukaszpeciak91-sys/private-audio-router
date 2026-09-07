@@ -54,6 +54,7 @@ class DiagnosticEmailContractTest {
         assertTrue(method.contains("Intent.EXTRA_SUBJECT"))
         assertTrue(method.contains("Intent.EXTRA_TEXT"))
         assertFalse(method.contains("putExtra(Intent.EXTRA_TEXT, frozenReport)"))
+        assertTrue(method.contains("clipData = ClipData.newUri"))
         assertTrue(method.contains("FileProvider.getUriForFile"))
         assertTrue(method.contains("Intent.FLAG_GRANT_READ_URI_PERMISSION"))
         assertFalse(method.contains("FLAG_GRANT_WRITE_URI_PERMISSION"))

@@ -31,6 +31,12 @@
     <string name="diagnostic_report_save_failed">Диагностикалық есепті сақтау мүмкін болмады.</string>
 
     <string name="settings_diagnostics">Диагностика</string>
+    <string name="diagnostics_send_report">Send diagnostic report</string>
+    <string name="diagnostic_email_subject">Puzru diagnostic report</string>
+    <string name="diagnostic_email_body">Puzru diagnostic report\n\nVoice app/service used:\nWhat happened:\nWhere did you hear the audio? (speaker / earpiece / neither / other):\n\nThe technical diagnostic report is attached as a text file.</string>
+    <string name="diagnostic_report_no_handler">No compatible app can send this report.</string>
+    <string name="diagnostic_report_unavailable">Diagnostic report is unavailable.</string>
+    <string name="diagnostic_report_share_failed">Could not prepare diagnostic report.</string>
     <string name="diagnostics_title">Диагностика</string>
     <string name="diagnostics_system_check">ЖҮЙЕНІ ТЕКСЕРУ</string>
     <string name="diagnostics_earpiece">Құлақ динамигі</string>

@@ -31,6 +31,12 @@
     <string name="diagnostic_report_save_failed">Hindi ma-save ang diagnostic report.</string>
 
     <string name="settings_diagnostics">Mga diagnostic</string>
+    <string name="diagnostics_send_report">Ipadala ang diagnostic report</string>
+    <string name="diagnostic_email_subject">Diagnostic report ng Puzru</string>
+    <string name="diagnostic_email_body">Diagnostic report ng Puzru\n\nVoice app/serbisyong ginamit:\nAno ang nangyari:\nSaan mo narinig ang audio? (speaker / earpiece / wala / iba pa):\n\nNaka-attach bilang text file ang teknikal na diagnostic report.</string>
+    <string name="diagnostic_report_no_handler">Walang compatible na app na makapagpapadala ng report na ito.</string>
+    <string name="diagnostic_report_unavailable">Hindi available ang diagnostic report.</string>
+    <string name="diagnostic_report_share_failed">Hindi maihanda ang diagnostic report.</string>
     <string name="diagnostics_title">Mga diagnostic</string>
     <string name="diagnostics_system_check">PAGSUSURI NG SYSTEM</string>
     <string name="diagnostics_earpiece">Earpiece</string>

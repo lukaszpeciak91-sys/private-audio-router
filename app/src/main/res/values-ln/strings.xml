@@ -30,6 +30,12 @@
     <string name="settings_about_body">Puzru esalisaka kotambwisa mongongo ya maloba oyo endimami na écouteur ya kati ya telefone na yo.</string>
     <string name="diagnostic_report_saved">Lapɔrɔ ya diagnostic ebombami.</string>
     <string name="diagnostic_report_save_failed">Lapɔrɔ ya diagnostic ekokaki kobombama te.</string>
+    <string name="diagnostics_send_report">Send diagnostic report</string>
+    <string name="diagnostic_email_subject">Puzru diagnostic report</string>
+    <string name="diagnostic_email_body">Puzru diagnostic report\n\nVoice app/service used:\nWhat happened:\nWhere did you hear the audio? (speaker / earpiece / neither / other):\n\nThe technical diagnostic report is attached as a text file.</string>
+    <string name="diagnostic_report_no_handler">No compatible app can send this report.</string>
+    <string name="diagnostic_report_unavailable">Diagnostic report is unavailable.</string>
+    <string name="diagnostic_report_share_failed">Could not prepare diagnostic report.</string>
     <string name="diagnostics_title">Diagnostic</string>
     <string name="diagnostics_system_check">BOTALI YA SYSTÈME</string>
     <string name="diagnostics_earpiece">Écouteur ya kati</string>

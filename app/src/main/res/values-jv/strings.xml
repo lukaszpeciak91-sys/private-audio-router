@@ -31,6 +31,12 @@
     <string name="diagnostic_report_save_failed">Laporan diagnostik ora bisa disimpen.</string>
 
     <string name="settings_diagnostics">Diagnostik</string>
+    <string name="diagnostics_send_report">Kirim laporan diagnostik</string>
+    <string name="diagnostic_email_subject">Laporan diagnostik Puzru</string>
+    <string name="diagnostic_email_body">Laporan diagnostik Puzru\n\nAplikasi/layanan swara sing digunakake:\nApa sing kedadeyan:\nIng endi sampeyan krungu audio? (speaker / earpiece / ora krungu / liyane):\n\nLaporan diagnostik teknis dilampirake minangka file teks.</string>
+    <string name="diagnostic_report_no_handler">Ora ana aplikasi sing kompatibel kanggo ngirim laporan iki.</string>
+    <string name="diagnostic_report_unavailable">Laporan diagnostik ora kasedhiya.</string>
+    <string name="diagnostic_report_share_failed">Laporan diagnostik ora bisa disiapake.</string>
     <string name="diagnostics_title">Diagnostik</string>
     <string name="diagnostics_system_check">PAMRIKSA SISTEM</string>
     <string name="diagnostics_earpiece">Earpiece gawan telpon</string>

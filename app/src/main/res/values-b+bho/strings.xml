@@ -30,6 +30,12 @@
     <string name="settings_about_body">Napahu Studios के Puzru\n\nनाम के मतलब\nPuzru नाम अक्कादी भाषा के एगो अइसन शब्द से आइल बा जे लुकावे भा गोपनीयता से जुड़ल बा। ई ऐप के मकसद बतावेला: समर्थित AI आवाज के प्लेबैक के आसपास के लोग के सुनाई पड़े के संभावना कम कइल।\n\nPuzru का करेला\nPuzru समर्थित AI आवाज के प्लेबैक के रउरा फोन के बिल्ट-इन कॉल इयरपीस में रूट करे में मदद करेला, ताकि जवाब मुख्य लाउडस्पीकर से जोर से बजे के बजाय सामान्य फोन कॉल नियर सुनाई पड़े।\n\nPuzru Android के मानक ऑडियो-रूटिंग सुविधा के इस्तेमाल करेला। संगतता रउरा डिवाइस, Android संस्करण, आ हर ऐप भा सेवा आवाज के ऑडियो के कइसे संभालेला, एह पर निर्भर बा।\n\nसंगतता आ सीमाएँ\n• आवाज के सुविधाएँ अलग-अलग ऐप आ सेवा में अलग तरह से काम करेली।\n• कुछ आवाज मोड खातिर सदस्यता जरूरी हो सकेला, ऊ क्षेत्र भा खाता के हिसाब से सीमित हो सकेला, भा एकदम उपलब्ध ना हो सकेला।\n• Puzru तिसरका पक्ष के सेवा से मिलल सुविधा के अनलॉक भा विस्तार नइखे करत, आ ओह सुविधा पर लागल रोक के बाईपास नइखे करत।\n\nPuzru का ना करेला\n• ई फोन कॉल नइखे करत।\n• ई तिसरका पक्ष के AI सेवा के चलावत, बदलत भा नियंत्रित नइखे करत।\n• ई बोली पहिचान, AI जवाब के सामग्री भा सटीकता, आवाज आउटपुट, देरी, नेटवर्क के स्थिरता भा सेवा के उपलब्धता नियंत्रित नइखे करत।\n• ई AI सेवा से खुद गोपनीयता नइखे देत। Puzru रउरा डिवाइस पर समर्थित आवाज के ऑडियो कहाँ बजे, बस ई बदलत बा; AI सेवा रउरा बातचीत के कइसे संभालेले, ई ना।</string>
     <string name="diagnostic_report_saved">जाँच रिपोर्ट सेव हो गइल।</string>
     <string name="diagnostic_report_save_failed">जाँच रिपोर्ट सेव ना हो पावल।</string>
+    <string name="diagnostics_send_report">Send diagnostic report</string>
+    <string name="diagnostic_email_subject">Puzru diagnostic report</string>
+    <string name="diagnostic_email_body">Puzru diagnostic report\n\nVoice app/service used:\nWhat happened:\nWhere did you hear the audio? (speaker / earpiece / neither / other):\n\nThe technical diagnostic report is attached as a text file.</string>
+    <string name="diagnostic_report_no_handler">No compatible app can send this report.</string>
+    <string name="diagnostic_report_unavailable">Diagnostic report is unavailable.</string>
+    <string name="diagnostic_report_share_failed">Could not prepare diagnostic report.</string>
     <string name="diagnostics_title">जाँच</string>
     <string name="diagnostics_system_check">सिस्टम के जाँच</string>
     <string name="diagnostics_earpiece">कान वाला स्पीकर</string>

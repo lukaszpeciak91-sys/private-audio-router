@@ -31,6 +31,12 @@
     <string name="diagnostic_report_save_failed">Nem sikerült menteni a diagnosztikai jelentést.</string>
 
     <string name="settings_diagnostics">Diagnosztika</string>
+    <string name="diagnostics_send_report">Diagnosztikai jelentés küldése</string>
+    <string name="diagnostic_email_subject">Puzru diagnosztikai jelentés</string>
+    <string name="diagnostic_email_body">Puzru diagnosztikai jelentés\n\nHasznált hangalkalmazás/-szolgáltatás:\nMi történt:\nHol hallotta a hangot? (hangszóró / fülhallgató / sehol / egyéb):\n\nA műszaki diagnosztikai jelentés szövegfájlként van csatolva.</string>
+    <string name="diagnostic_report_no_handler">Nincs kompatibilis alkalmazás, amely elküldhetné ezt a jelentést.</string>
+    <string name="diagnostic_report_unavailable">A diagnosztikai jelentés nem érhető el.</string>
+    <string name="diagnostic_report_share_failed">Nem sikerült előkészíteni a diagnosztikai jelentést.</string>
     <string name="diagnostics_title">Diagnosztika</string>
     <string name="diagnostics_system_check">RENDSZERELLENŐRZÉS</string>
     <string name="diagnostics_earpiece">Beépített fülhallgató</string>

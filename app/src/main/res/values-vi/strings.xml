@@ -31,6 +31,12 @@
     <string name="diagnostic_report_save_failed">Không thể lưu báo cáo chẩn đoán.</string>
 
     <string name="settings_diagnostics">Chẩn đoán</string>
+    <string name="diagnostics_send_report">Gửi báo cáo chẩn đoán</string>
+    <string name="diagnostic_email_subject">Báo cáo chẩn đoán Puzru</string>
+    <string name="diagnostic_email_body">Báo cáo chẩn đoán Puzru\n\nỨng dụng/dịch vụ thoại đã dùng:\nĐiều gì đã xảy ra:\nBạn nghe thấy âm thanh ở đâu? (loa / loa thoại / không nghe thấy / khác):\n\nBáo cáo chẩn đoán kỹ thuật được đính kèm dưới dạng tệp văn bản.</string>
+    <string name="diagnostic_report_no_handler">Không có ứng dụng tương thích để gửi báo cáo này.</string>
+    <string name="diagnostic_report_unavailable">Báo cáo chẩn đoán không khả dụng.</string>
+    <string name="diagnostic_report_share_failed">Không thể chuẩn bị báo cáo chẩn đoán.</string>
     <string name="diagnostics_title">Chẩn đoán</string>
     <string name="diagnostics_system_check">KIỂM TRA HỆ THỐNG</string>
     <string name="diagnostics_earpiece">Loa thoại</string>

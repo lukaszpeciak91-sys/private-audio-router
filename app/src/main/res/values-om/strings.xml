@@ -30,6 +30,12 @@
     <string name="settings_about_body">Puzru sagalee dubbii deeggaramu gara dhageessisaa bilbilaa keessaa kan gubbaa, gurra biratti itti fayyadamanitti qajeelchuuf gargaara.</string>
     <string name="diagnostic_report_saved">Gabaasni qorannoo kuufameera.</string>
     <string name="diagnostic_report_save_failed">Gabaasa qorannoo kuusuu hin dandeenye.</string>
+    <string name="diagnostics_send_report">Send diagnostic report</string>
+    <string name="diagnostic_email_subject">Puzru diagnostic report</string>
+    <string name="diagnostic_email_body">Puzru diagnostic report\n\nVoice app/service used:\nWhat happened:\nWhere did you hear the audio? (speaker / earpiece / neither / other):\n\nThe technical diagnostic report is attached as a text file.</string>
+    <string name="diagnostic_report_no_handler">No compatible app can send this report.</string>
+    <string name="diagnostic_report_unavailable">Diagnostic report is unavailable.</string>
+    <string name="diagnostic_report_share_failed">Could not prepare diagnostic report.</string>
     <string name="diagnostics_title">Qorannoo</string>
     <string name="diagnostics_system_check">SAKATTA\'INSA SIRNAA</string>
     <string name="diagnostics_earpiece">Dhageessisaa gurraa bilbilaa keessaa</string>

@@ -31,6 +31,12 @@
     <string name="diagnostic_report_save_failed">無法儲存診斷報告。</string>
 
     <string name="settings_diagnostics">診斷</string>
+    <string name="diagnostics_send_report">傳送診斷報告</string>
+    <string name="diagnostic_email_subject">Puzru 診斷報告</string>
+    <string name="diagnostic_email_body">Puzru 診斷報告\n\n使用的語音應用程式／服務：\n發生了什麼事：\n您從哪裡聽到音訊？（揚聲器／聽筒／未聽到／其他）：\n\n技術診斷報告已作為文字檔案附加。</string>
+    <string name="diagnostic_report_no_handler">沒有可傳送此報告的相容應用程式。</string>
+    <string name="diagnostic_report_unavailable">診斷報告無法使用。</string>
+    <string name="diagnostic_report_share_failed">無法準備診斷報告。</string>
     <string name="diagnostics_title">診斷</string>
     <string name="diagnostics_system_check">系統檢查</string>
     <string name="diagnostics_earpiece">聽筒</string>

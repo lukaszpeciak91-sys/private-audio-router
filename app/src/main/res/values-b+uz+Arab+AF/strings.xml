@@ -36,6 +36,12 @@
     <string name="diagnostic_report_saved">تشخیص حساباتی سقلندی.</string>
     <string name="diagnostic_report_save_failed">تشخیص حساباتینی سقلش ممکن بولمدی.</string>
     <string name="settings_diagnostics">تشخیص</string>
+    <string name="diagnostics_send_report">Send diagnostic report</string>
+    <string name="diagnostic_email_subject">Puzru diagnostic report</string>
+    <string name="diagnostic_email_body">Puzru diagnostic report\n\nVoice app/service used:\nWhat happened:\nWhere did you hear the audio? (speaker / earpiece / neither / other):\n\nThe technical diagnostic report is attached as a text file.</string>
+    <string name="diagnostic_report_no_handler">No compatible app can send this report.</string>
+    <string name="diagnostic_report_unavailable">Diagnostic report is unavailable.</string>
+    <string name="diagnostic_report_share_failed">Could not prepare diagnostic report.</string>
     <string name="diagnostics_title">تشخیص</string>
     <string name="diagnostics_system_check">سیستم تیکشیرووی</string>
     <string name="diagnostics_earpiece">قولاق دینامیک</string>

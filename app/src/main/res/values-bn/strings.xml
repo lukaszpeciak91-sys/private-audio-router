@@ -31,6 +31,12 @@
     <string name="diagnostic_report_save_failed">ডায়াগনস্টিক রিপোর্ট সেভ করা যায়নি।</string>
 
     <string name="settings_diagnostics">ডায়াগনস্টিকস</string>
+    <string name="diagnostics_send_report">ডায়াগনস্টিক রিপোর্ট পাঠান</string>
+    <string name="diagnostic_email_subject">Puzru ডায়াগনস্টিক রিপোর্ট</string>
+    <string name="diagnostic_email_body">Puzru ডায়াগনস্টিক রিপোর্ট\n\nব্যবহৃত ভয়েস অ্যাপ/পরিষেবা:\nকী ঘটেছে:\nআপনি অডিও কোথায় শুনেছেন? (স্পিকার / ইয়ারপিস / কোথাও নয় / অন্যান্য):\n\nপ্রযুক্তিগত ডায়াগনস্টিক রিপোর্টটি একটি টেক্সট ফাইল হিসেবে সংযুক্ত আছে।</string>
+    <string name="diagnostic_report_no_handler">এই রিপোর্ট পাঠাতে পারে এমন কোনো সামঞ্জস্যপূর্ণ অ্যাপ নেই।</string>
+    <string name="diagnostic_report_unavailable">ডায়াগনস্টিক রিপোর্টটি উপলভ্য নয়।</string>
+    <string name="diagnostic_report_share_failed">ডায়াগনস্টিক রিপোর্ট প্রস্তুত করা যায়নি।</string>
     <string name="diagnostics_title">ডায়াগনস্টিকস</string>
     <string name="diagnostics_system_check">সিস্টেম পরীক্ষা</string>
     <string name="diagnostics_earpiece">ইয়ারপিস</string>

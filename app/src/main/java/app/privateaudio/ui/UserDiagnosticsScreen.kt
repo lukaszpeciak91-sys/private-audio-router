@@ -130,21 +130,21 @@ private fun DiagnosticAction(
     testTag: String,
     onClick: () -> Unit,
 ) {
-        Box(
-            modifier = Modifier.fillMaxWidth().height(52.dp)
-                .background(background, androidx.compose.foundation.shape.RoundedCornerShape(12.dp))
-                .clickable(role = Role.Button, onClick = onClick)
-                .testTag(testTag),
-            contentAlignment = Alignment.Center,
-        ) {
-            Text(
-                stringResource(label),
-                color = contentColor,
-                fontSize = 15.sp,
-                lineHeight = 20.sp,
-                fontWeight = FontWeight.Medium,
-            )
-        }
+    Box(
+        modifier = Modifier.fillMaxWidth().height(52.dp)
+            .background(background, androidx.compose.foundation.shape.RoundedCornerShape(12.dp))
+            .clickable(role = Role.Button, onClick = onClick)
+            .testTag(testTag),
+        contentAlignment = Alignment.Center,
+    ) {
+        Text(
+            stringResource(label),
+            color = contentColor,
+            fontSize = 15.sp,
+            lineHeight = 20.sp,
+            fontWeight = FontWeight.Medium,
+        )
+    }
 }
 
 @Composable

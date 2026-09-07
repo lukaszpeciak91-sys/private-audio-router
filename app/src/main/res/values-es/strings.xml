@@ -31,6 +31,12 @@
     <string name="diagnostic_report_save_failed">No se pudo guardar el informe de diagnóstico.</string>
 
     <string name="settings_diagnostics">Diagnóstico</string>
+    <string name="diagnostics_send_report">Enviar informe de diagnóstico</string>
+    <string name="diagnostic_email_subject">Informe de diagnóstico de Puzru</string>
+    <string name="diagnostic_email_body">Informe de diagnóstico de Puzru\n\nAplicación/servicio de voz utilizado:\nQué ocurrió:\n¿Dónde escuchaste el audio? (altavoz / auricular / en ninguna parte / otro):\n\nEl informe técnico de diagnóstico se adjunta como archivo de texto.</string>
+    <string name="diagnostic_report_no_handler">No hay ninguna aplicación compatible que pueda enviar este informe.</string>
+    <string name="diagnostic_report_unavailable">El informe de diagnóstico no está disponible.</string>
+    <string name="diagnostic_report_share_failed">No se pudo preparar el informe de diagnóstico.</string>
     <string name="diagnostics_title">Diagnóstico</string>
     <string name="diagnostics_system_check">COMPROBACIÓN DEL SISTEMA</string>
     <string name="diagnostics_earpiece">Auricular</string>

@@ -31,6 +31,12 @@
     <string name="diagnostic_report_save_failed">Диагностичният отчет не можа да бъде запазен.</string>
 
     <string name="settings_diagnostics">Диагностика</string>
+    <string name="diagnostics_send_report">Изпращане на диагностичен отчет</string>
+    <string name="diagnostic_email_subject">Диагностичен отчет на Puzru</string>
+    <string name="diagnostic_email_body">Диагностичен отчет на Puzru\n\nИзползвано гласово приложение/услуга:\nКакво се случи:\nОткъде чухте звука? (високоговорител / слушалка / отникъде / друго):\n\nТехническият диагностичен отчет е прикачен като текстов файл.</string>
+    <string name="diagnostic_report_no_handler">Няма съвместимо приложение, което да изпрати този отчет.</string>
+    <string name="diagnostic_report_unavailable">Диагностичният отчет не е наличен.</string>
+    <string name="diagnostic_report_share_failed">Диагностичният отчет не можа да бъде подготвен.</string>
     <string name="diagnostics_title">Диагностика</string>
     <string name="diagnostics_system_check">ПРОВЕРКА НА СИСТЕМАТА</string>
     <string name="diagnostics_earpiece">Телефонна слушалка</string>

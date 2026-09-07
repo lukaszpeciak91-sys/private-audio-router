@@ -31,6 +31,12 @@
     <string name="diagnostic_report_save_failed">تعذّر حفظ تقرير التشخيص.</string>
 
     <string name="settings_diagnostics">التشخيص</string>
+    <string name="diagnostics_send_report">إرسال تقرير التشخيص</string>
+    <string name="diagnostic_email_subject">تقرير تشخيص Puzru</string>
+    <string name="diagnostic_email_body">تقرير تشخيص Puzru\n\nتطبيق/خدمة الصوت المستخدمة:\nما الذي حدث:\nأين سمعت الصوت؟ (مكبر الصوت / سماعة الأذن / لم أسمعه / غير ذلك):\n\nتم إرفاق تقرير التشخيص الفني كملف نصي.</string>
+    <string name="diagnostic_report_no_handler">لا يوجد تطبيق متوافق يمكنه إرسال هذا التقرير.</string>
+    <string name="diagnostic_report_unavailable">تقرير التشخيص غير متاح.</string>
+    <string name="diagnostic_report_share_failed">تعذر إعداد تقرير التشخيص.</string>
     <string name="diagnostics_title">التشخيص</string>
     <string name="diagnostics_system_check">فحص النظام</string>
     <string name="diagnostics_earpiece">سماعة الأذن</string>
