@@ -23,7 +23,11 @@ class Layer7BProximityPreferenceContractTest {
         assertTrue(service.contains(".getBoolean(PROXIMITY_FEATURE_KEY, true)"))
         val setter = service.method("fun updateProximityFeatureEnabled(")
         assertTrue(setter.contains("if (enabled == isProximityFeatureEnabled) return"))
-        assertInOrder(setter, "isProximityFeatureEnabled = enabled", ".putBoolean(", "syncProximityBehavior(")
+        assertInOrder(setter, "isProximityFeatureEnabled = enabled", ".putBoolean(", "syncStateOwnedBehavior(")
+        assertTrue(
+            service.method("private fun syncStateOwnedBehavior(")
+                .contains("syncProximityBehavior(reason)"),
+        )
         assertTrue(setter.contains("\"Preference disabled\""))
         assertFalse(main.contains("getSharedPreferences"))
         assertFalse(settings.contains("SharedPreferences"))
@@ -33,10 +37,15 @@ class Layer7BProximityPreferenceContractTest {
     @Test
     fun preferenceChangesOnlyProximityAndPreserveProtectedAudioContracts() {
         val setter = service.method("fun updateProximityFeatureEnabled(")
+        val stateOwnedSync = service.method("private fun syncStateOwnedBehavior(")
         val sync = service.method("private fun syncProximityBehavior(")
         listOf("PrivateAudioState", "setCommunicationDevice(", "clearCommunicationDevice(",
             "AudioManager.mode", "MODE_IN_COMMUNICATION", "AudioTrack", "observer.enableController",
             "observer.disableController").forEach { assertFalse(it, setter.contains(it)) }
+        listOf("setCommunicationDevice(", "clearCommunicationDevice(", "audioManager.mode =",
+            "startProtectedPoc5Probe(", "observer.enableController", "observer.disableController")
+            .forEach { assertFalse(it, stateOwnedSync.contains(it)) }
+        assertTrue(stateOwnedSync.contains("syncProximityBehavior(reason)"))
         assertTrue(sync.contains("isProximityFeatureEnabled"))
         listOf("setCommunicationDevice(", "clearCommunicationDevice(", "audioManager.mode =",
             "startProtectedPoc5Probe(", "observer.enableController", "observer.disableController")

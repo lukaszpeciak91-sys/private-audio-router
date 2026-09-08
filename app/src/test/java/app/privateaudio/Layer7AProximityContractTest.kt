@@ -40,10 +40,17 @@ class Layer7AProximityContractTest {
 
     @Test
     fun serviceSynchronizesFromObserverAndHasExplicitFailSafeReleases() {
-        assertTrue(service.contains("onEvidenceChanged = ::syncProximityBehavior"))
-        assertTrue(service.method("private fun syncProximityBehavior(").contains("proximityEligible("))
-        assertTrue(service.method("private fun syncProximityBehavior(").contains("proximityController.acquire"))
-        assertTrue(service.method("private fun syncProximityBehavior(").contains("proximityController.release"))
+        assertTrue(service.contains("onEvidenceChanged = ::syncStateOwnedBehavior"))
+        val stateOwnedSync = service.method("private fun syncStateOwnedBehavior(")
+        assertInOrder(
+            stateOwnedSync,
+            "waitingAutoDisableController.onStateChanged(privateAudioState)",
+            "syncProximityBehavior(reason)",
+        )
+        val proximitySync = service.method("private fun syncProximityBehavior(")
+        assertTrue(proximitySync.contains("proximityEligible("))
+        assertTrue(proximitySync.contains("proximityController.acquire"))
+        assertTrue(proximitySync.contains("proximityController.release"))
         assertTrue(service.method("fun disarmAndStopStartedLifetime()").contains("proximityController.release(\"Power OFF\""))
         assertTrue(service.method("override fun onDestroy()").contains("proximityController.release(\"Service destroyed\""))
         assertInOrder(
