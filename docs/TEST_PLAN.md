@@ -85,6 +85,22 @@ Unless a row says otherwise, current PASS evidence is supplied physical testing 
 | Perplexity Web | No realtime Voice mode on the tested web surface | **BLOCKED** | Not applicable to routing: no routable realtime voice surface was available; this is not a Private Audio failure. |
 | ChatGPT Web Voice in Opera | Realtime Voice session could not be started | **BLOCKED** | Voice could not be loaded during the attempted check, so Private Audio was not exercised and did not fail. Retry only if the surface becomes available. |
 
+The 2026-09-08 physical session also established a distinct, shared compatibility
+scenario for ChatGPT Android, Gemini Live, Grok Android, and Perplexity Android:
+when each AI voice session already had an active Bluetooth route, enabling Private
+Audio preserved that external route rather than moving playback to the built-in
+earpiece. Android continued to report Bluetooth communication routing after accepting
+Private Audio's earpiece request, and the tester separately heard each session remain
+on Bluetooth. Observed sessions returned to normal Bluetooth A2DP behavior after
+communication ended. This is **PASS** only for that already-active-route preservation
+scenario on Xiaomi product `2201117TY`, Android 13/API 33, with Private Audio
+`0.1.0 (1)` where confirmed by the supplied diagnostics. The Bluetooth accessory,
+profile details, and third-party application versions were not recorded. It does not
+establish every Bluetooth lifecycle, accessory/profile, OEM, Android release, or
+application version. The application names come from the tester's controlled manual
+sequence; public Android playback metadata did not identify the third-party
+player/session owner with certainty.
+
 Every confirmed routing cycle retains one `setCommunicationDevice(earpiece)` request, reversible cleanup, and Waiting re-arm. Ordinary `USAGE_MEDIA` and assistant `CONTENT_TYPE_SONIFICATION` without speech remain outside the automatic classifiers. The user reported that local `./gradlew testDebugUnitTest lintDebug assembleDebug` passed after the earlier remote Gradle-download limitation; that supplied automated result is not physical OEM evidence and was not executed by Codex for this reconciliation.
 
 ### Remaining physical validation priorities
@@ -94,14 +110,17 @@ Every confirmed routing cycle retains one `setCommunicationDevice(earpiece)` req
 1. Samsung/One UI: routing, cleanup, proximity, and all three trigger families.
 2. Pixel or another AOSP-like device: separate framework behavior from Xiaomi-specific behavior.
 3. A newer Android release than Android 13, preferably Android 15/16 when available.
-4. Incoming real phone call while armed and while Active: telephony must win immediately.
-5. Outgoing real phone call while armed and while Active: telephony must win immediately.
+4. Incoming real phone call while armed but not Active, and during assistant linger:
+   telephony must win immediately. The Active incoming-call case is recorded in T-009.
+5. Outgoing real phone call while armed and while Active: telephony must win immediately;
+   it remains **NOT TESTED**.
 
 The two telephony cases are release-safety gates, not optional compatibility polish.
 
 **MEDIUM — accessories and lifecycle**
 
-1. Bluetooth headset/earbuds connected before and during use.
+1. Bluetooth connection, selection, disconnection, and other lifecycle cases beyond
+   T-011's already-active-route preservation scenario.
 2. Wired/USB audio where available.
 3. Service/process termination during Active routing.
 4. Device reboot after prior participation.
@@ -222,15 +241,28 @@ The two telephony cases are release-safety gates, not optional compatibility pol
 
 ## T-009 — Incoming real phone call
 
-- **Status:** NOT TESTED
-- **Device:** Not recorded
-- **Android version:** Not recorded
-- **Build:** Not recorded
+- **Status:** PASS
+- **Device:** Xiaomi product `2201117TY`
+- **Android version:** Android 13/API 33
+- **Build:** Private Audio `0.1.0 (1)` (confirmed by supplied diagnostics)
 - **Preconditions:** A routing request is active; a safe method to place an incoming test call is available.
 - **Steps:** Receive and answer a real phone call; observe telephony routing during and after the call.
 - **Expected result:** Telephony retains priority; the utility does not attempt to override call routing; post-call behavior is safe.
-- **Observed result:** Not recorded
-- **Notes:** Stop immediately if normal call behavior is impaired.
+- **Observed Android facts (2026-09-08):** With Private Audio `ACTIVE` and the
+  built-in earpiece reported, an incoming call appeared normally over the foreground
+  application. Android entered `MODE_RINGTONE`, then `MODE_IN_CALL` when answered.
+  Public recording metadata for the AI voice session became silenced and then
+  disappeared. Telephony retained priority, Private Audio did not override the call,
+  and cleanup returned the controller to its normal waiting behavior after the
+  external communication cycle ended.
+- **Human-observed result (2026-09-08):** Before answer, the ringtone and the still
+  audible AI voice were both noticeable. The ringtone was heard through the built-in
+  earpiece while Private Audio's earpiece route was active. The tester accepted this
+  behavior and requested no routing change. This observation is not a defect or proof
+  that the behavior is ideal on every device or in every environment.
+- **Notes:** This PASS covers the tested Active incoming-call case only. It does not
+  establish an incoming call while merely waiting/armed or during assistant linger,
+  and it does not establish T-010. Stop immediately if normal call behavior is impaired.
 
 ## T-010 — Outgoing real phone call
 
@@ -246,15 +278,35 @@ The two telephony cases are release-safety gates, not optional compatibility pol
 
 ## T-011 — Bluetooth device connected
 
-- **Status:** NOT TESTED
-- **Device:** Not recorded
-- **Android version:** Not recorded
-- **Build:** Not recorded
+- **Status:** PASS
+- **Device:** Xiaomi product `2201117TY`
+- **Android version:** Android 13/API 33
+- **Build:** Private Audio `0.1.0 (1)` (confirmed by supplied diagnostics)
 - **Preconditions:** A supported Bluetooth audio device is paired and available.
-- **Steps:** Connect Bluetooth, observe communication devices, exercise request and clear operations, and record Android's selection behavior.
-- **Expected result:** Behavior is observed accurately and the utility makes no unsafe priority or override assumptions.
-- **Observed result:** Not recorded
-- **Notes:** Record Bluetooth device type and connection profile where visible.
+- **Steps:** Start an AI voice session already using Bluetooth audio, enable Private
+  Audio during that session, observe Android's communication route and the audible
+  output, then end communication and observe post-session Bluetooth behavior.
+- **Expected result:** Private Audio preserves the already active external Bluetooth
+  route rather than forcefully hijacking playback to the built-in earpiece, and the
+  session remains usable.
+- **Observed Android facts (2026-09-08):** Across controlled ChatGPT, Gemini, Grok,
+  and Perplexity sessions, Android accepted Private Audio's earpiece request but
+  continued reporting Bluetooth as the communication route. In the observed sessions,
+  Bluetooth returned to normal A2DP behavior after communication ended.
+- **Human-observed result (2026-09-08):** The tester confirmed that all four AI voice
+  sessions continued audibly through Bluetooth and remained usable.
+- **Known state-semantics limitation:** In at least the Gemini execution, Private
+  Audio later transitioned to `ERROR` / `ROUTING_NOT_COMPLETED` even though the
+  preserved Bluetooth behavior was correct. The current product-state semantics can
+  report this user-successful external-device preservation as a false-negative because
+  Android did not confirm the requested built-in earpiece. This is not a routing
+  failure, and no implementation fix is claimed.
+- **Notes:** This PASS is limited to preserving an already active Bluetooth route on
+  the recorded device/build. Bluetooth accessory type/profile and all third-party app
+  versions were not recorded. Connection, selection, disconnection, and other
+  lifecycle scenarios remain **NOT TESTED**. App names derive from the tester's
+  controlled sequence, not certain package/player ownership in public Android
+  playback metadata.
 
 ## T-012 — Gemini voice
 
@@ -375,7 +427,9 @@ These are stability and safety follow-ups for the successful POC-5, not a new ro
 - activity destruction and recreation;
 - explicit disarm cleanup;
 - ChatGPT ending the communication session;
-- incoming and outgoing real telephony, which must retain priority;
+- incoming and outgoing real telephony, which must retain priority (T-009 now records
+  the separate Active incoming-call PASS; the other cases in this historical
+  follow-up matrix remain **NOT TESTED**);
 - APK update over the existing installation;
 - full uninstall/reinstall as a comparison baseline;
 - confirmation that no silent `AudioTrack` survives any cleanup path; and
@@ -430,9 +484,16 @@ The following checks validate lifecycle ownership without claiming routing succe
 
 ### Main portrait/landscape rotation gate
 
-- **Status:** NOT TESTED / UNKNOWN on physical hardware
+- **Status:** PASS for recorded physical layout stability; unrecorded interaction,
+  inset, RTL, and routing-continuity cases remain **NOT TESTED**
+- **Device / Android / build:** Xiaomi product `2201117TY` / Android 13/API 33 /
+  Private Audio `0.1.0 (1)` (confirmed by supplied diagnostics)
 - **Steps:** (1) Open Main in portrait and verify the approved canonical appearance is unchanged. (2) Rotate to landscape and verify the compact three-area composition: localized product information and status at logical start, Power centered, and Floating/Settings/Close vertically at logical end. (3) Verify content clears status, navigation, cutout, and physical edges without clipping or overlap. (4) Tap Power and verify Floating, Settings, and Close remain usable. (5) Rotate landscape → portrait and verify service-owned state and routing behavior remain intact. (6) Repeat in `READY` and `WAITING`, and preferably during an established `ACTIVE` session; repeat with an RTL presentation language where practical.
 - **Expected result:** Rotation changes only Main composition. Portrait remains visually equivalent to the approved reference; landscape remains bounded and usable; logical areas mirror for RTL; activity recreation binds back to the existing service-owned state without changing routing requests, session boundaries, or cleanup.
+- **Observed result (2026-09-08):** Screen orientation changes were exercised on the
+  physical device. The application layout remained stable, with no visible layout
+  breakage or element misplacement. No evidence was recorded for the gate's separate
+  touch, inset/cutout, RTL, or routing-continuity checks, so those remain **NOT TESTED**.
 - **Evidence rule:** Compose previews and automated UI tests establish structural layout and callbacks only. Do not mark system-inset rendering, physical touch usability, rotation lifecycle, or routing continuity PASS until recorded on a physical phone.
 
 ## Layer 4 Settings physical gate

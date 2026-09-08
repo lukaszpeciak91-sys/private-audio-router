@@ -383,10 +383,12 @@ rather than frozen here.
 ### Release-evidence boundary
 
 Puzru is not currently ready for Production. High-priority open evidence
-includes incoming and outgoing real-call safety; Samsung, AOSP-like/Pixel, and newer
-Android-release coverage; accessory behavior; service/process-loss and reboot
-behavior; remaining overlay/Mini lifecycle checks; diagnostic-report save-picker
-runtime validation; and physical portrait/landscape validation of Main and Settings.
+includes outgoing real-call safety and incoming-call boundaries outside the recorded
+Active case; Samsung, AOSP-like/Pixel, and newer Android-release coverage; accessory
+behavior beyond the recorded already-active Bluetooth preservation scenario;
+service/process-loss and reboot behavior; remaining overlay/Mini lifecycle checks;
+diagnostic-report save-picker runtime validation; and the unrecorded portions of the
+physical portrait/landscape gates for Main and Settings.
 [`TEST_PLAN.md`](TEST_PLAN.md) is authoritative for the exact gates and statuses;
 this summary intentionally does not duplicate its test matrix.
 
@@ -637,12 +639,16 @@ this summary intentionally does not duplicate its test matrix.
 
 - Physical evidence establishes the three routing classes only on the tested Xiaomi
   configuration and applications listed above. It also establishes core proximity
-  near/off and far/on behavior. Emulator, JVM, static, and instrumentation contracts
-  are not treated as physical routing evidence.
-- High-priority release-safety gaps are incoming and outgoing real-call priority,
-  plus routing/cleanup/proximity coverage on Samsung, an AOSP-like device, and a
-  newer Android release. Accessory, service/process-loss, reboot, and remaining UI
-  lifecycle cases are also pending.
+  near/off and far/on behavior. On 2026-09-08, the same Xiaomi `2201117TY`, Android
+  13/API 33 scope also passed preservation of already-active Bluetooth routing across
+  ChatGPT, Gemini, Grok, and Perplexity, Active incoming-call telephony priority, and
+  physical orientation/layout stability. Emulator, JVM, static, and instrumentation
+  contracts are not treated as physical routing evidence.
+- High-priority release-safety gaps are outgoing real-call priority and incoming-call
+  boundaries outside the recorded Active case, plus routing/cleanup/proximity coverage
+  on Samsung, an AOSP-like device, and a newer Android release. Bluetooth lifecycle
+  cases beyond preservation of an already-active route, other accessories,
+  service/process loss, reboot, and remaining UI lifecycle cases are also pending.
 - Runtime checks remain pending for compact-height Settings/Privacy scrolling,
   diagnostic report saving, overlay permission and recreation, Mini drag/bounds and
   task reuse, Close boundaries, and process death. See
@@ -687,13 +693,16 @@ this summary intentionally does not duplicate its test matrix.
   record bounded playback metadata, but the trace neither classifies nor reroutes
   the sound by itself.
 - Stability across untested devices, OEMs, Android/software updates, lifecycle
-  transitions, accessories, and real calls remains unknown. Firefox/Gecko and other
-  browser coverage must not be inferred from Chrome and Mi Browser.
+  transitions, accessory scenarios beyond the recorded Bluetooth-preservation case,
+  and real-call scenarios beyond the recorded Active incoming call remains unknown.
+  Firefox/Gecko and other browser coverage must not be inferred from Chrome and Mi
+  Browser.
 
 ## Next meaningful questions
 
-1. Does telephony immediately retain priority while Puzru is waiting,
-   active, or retaining an assistant linger context?
+1. Does telephony immediately retain priority for an outgoing call, or for an incoming
+   call while Puzru is waiting or retaining an assistant linger context? The Active
+   incoming-call case passed on the tested Xiaomi configuration.
 2. Does protected POC-5 remain reversible and audibly effective on Samsung, an
    AOSP-like device, and newer Android releases?
 3. Does assistant linger improve multi-turn Gemini stability without changing
@@ -704,6 +713,20 @@ this summary intentionally does not duplicate its test matrix.
    startup sound on the tested Xiaomi device?
 
 ## Recently completed significant changes
+
+- Reconciled supplied 2026-09-08 physical evidence from Xiaomi product `2201117TY`,
+  Android 13/API 33, with Private Audio `0.1.0 (1)` where diagnostics confirmed the
+  build. Already-active Bluetooth routing was preserved and remained audible across
+  controlled ChatGPT, Gemini, Grok, and Perplexity sessions; application versions and
+  Bluetooth accessory/profile details were not recorded, and public playback metadata
+  did not establish player/package ownership. An Active incoming real call passed with
+  telephony priority; its ringtone was noticeable through the active earpiece and was
+  accepted without a requested routing change. Physical orientation changes showed a
+  stable layout. A Gemini Bluetooth execution also exposed a known semantic/UI
+  false-negative: `ERROR` / `ROUTING_NOT_COMPLETED` can follow correct preserved
+  Bluetooth behavior because built-in-earpiece confirmation was not reached. No fix
+  or broader device, accessory, lifecycle, application-version, or outgoing-call
+  validation is claimed.
 
 - Hardened Privacy Policy localization contracts so negative factual guarantees
   require the associated negation, and replaced the obsolete Igbo whole-text digest
