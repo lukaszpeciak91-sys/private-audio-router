@@ -13,7 +13,7 @@
 - A non-exported AndroidX `FileProvider` with authority `${applicationId}.fileprovider` exposes only `diagnostic-share/` as a temporary `content://` attachment. The one-attachment `ACTION_SEND` message grants read permission only, addresses the existing Napahu Studios support resource, and supplies a universal English support subject and short editable prompt body. The report is not placed in the body. Puzru has no Internet permission, backend, SMTP, automatic upload, or delivery tracking; an external app transmits only if the user explicitly sends there.
 - The established manual Save path remains independent and continues to use `ACTION_CREATE_DOCUMENT`. Routing classifiers, requests, prepared tracks, Assistant behavior, proximity, cleanup, retained diagnostic evidence, and report format 3 are unchanged. JVM/source and Compose coverage protects the attachment boundary; physical email-client composition and actual delivery remain **NOT TESTED**.
 - The diagnostic email subject and body are deliberately non-translatable support/debugging artifacts and are defined only in the default English resources. The four UI-facing action and feedback strings remain in their current locale-resource state for a separate reviewed translation iteration.
-- **Release follow-up:** Privacy Policy and Google Play data-disclosure review is required before releasing the diagnostic-email feature publicly. That review must distinguish local report generation and temporary attachment creation, explicit temporary exposure to an external app, Puzru's absence of a network-transmission path, and transmission by the external app only after user action. The current Privacy Policy was not changed and this review is not complete.
+- The canonical English Privacy Policy now covers this user-triggered handoff: local report preparation, temporary app-private cache storage, chooser-based delivery to the selected external app, possible prefilling of the Napahu Studios support address, destination-controlled transmission and copies, and the bounded best-effort cleanup of prior regular share-cache files. Google Play data-disclosure review remains a separate release task.
 
 ## Final English About Puzru source
 
@@ -61,6 +61,8 @@
 
 ## English Privacy Policy disclosure alignment
 
+- The canonical English in-app and public policies are aligned with the current Save and Send implementations. They distinguish a user-selected persistent document copy from a temporary app-private cache attachment, Puzru’s local chooser handoff from transmission by a selected external app or service, and prior-share-file cleanup from any unsupported fixed lifetime guarantee for the current cache attachment.
+- The diagnostic-content disclosure now includes Android security-patch and build identifiers, device manufacturer/model/product data, and bounded routing, playback, recording, and lifecycle evidence while retaining the microphone-audio and conversation-content limits. The public page is dated September 8, 2026. Localized policy bodies intentionally retain the earlier canonical source pending a separate translation effort.
 - The authoritative English in-app Privacy Policy now describes the verified current
   implementation at its actual boundaries: no account or microphone permission; no
   microphone or conversation-audio capture; local use of public Android playback and

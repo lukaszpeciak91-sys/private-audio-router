@@ -120,16 +120,22 @@ class Layer4SettingsContractTest {
             "playback and recording-session metadata",
             "Recording-session metadata is technical audio-system information",
             "does not capture the microphone audio associated with those sessions",
+            "security patch, and build identifiers",
+            "bounded histories of routing attempts, results, timing",
             "generated and processed on your device",
-            "Reports are not automatically saved or sent",
-            "only when you explicitly choose Save diagnostic report",
-            "select a destination through Android",
-            "selected location or service—not Puzru—controls that copy’s handling, retention, and deletion",
+            "Reports are not automatically saved or transmitted",
+            "select a destination through Android’s document picker",
+            "temporary text attachment in Puzru’s app-private cache",
+            "through Android’s chooser, to the external app you select",
             "does not request Android’s Internet permission",
             "has no Puzru backend or network transmission path",
             "does not include analytics, advertising, or crash-reporting services or SDKs",
-            "does not currently send diagnostic reports to the developer or a Puzru server",
-            "has no server-side diagnostic retention",
+            "Puzru itself does not automatically send diagnostic reports",
+            "Napahu Studios privacy and support address may be prefilled",
+            "actual transmission is performed by the selected external app or service",
+            "governed by its privacy practices and controls, not Puzru’s",
+            "removes prior regular report files in its diagnostic-share cache where deletion succeeds",
+            "no fixed deletion time for the current attachment is guaranteed",
             "excluded from Android cloud backup and device-to-device transfer",
         ).forEach { claim -> assertTrue(claim, strings.contains(claim)) }
         listOf(
@@ -138,6 +144,30 @@ class Layer4SettingsContractTest {
             "completely anonymous",
             "contain no identifying information",
         ).forEach { overclaim -> assertFalse(overclaim, strings.contains(overclaim, ignoreCase = true)) }
+    }
+
+    @Test
+    fun publicPrivacyPolicyMatchesCanonicalEnglishBodyAndIdentity() {
+        val canonical = resourceValue(
+            projectFile("app/src/main/res/values/strings.xml"),
+            "settings_privacy_policy_body",
+        ).split("\\n\\n")
+        val publicPage = projectFile("public/index.html").readText()
+        val publicSection = Regex(
+            "<section aria-label=\"Privacy Policy\">(.*?)</section>",
+            RegexOption.DOT_MATCHES_ALL,
+        ).find(publicPage)?.groupValues?.get(1).orEmpty()
+        val publicParagraphs = Regex("<p>(.*?)</p>", RegexOption.DOT_MATCHES_ALL)
+            .findAll(publicSection)
+            .map { it.groupValues[1].trim() }
+            .toList()
+
+        assertEquals(canonical, publicParagraphs)
+        assertTrue(publicPage.contains("<title>Puzru Privacy Policy</title>"))
+        assertTrue(publicPage.contains("<h1>Puzru Privacy Policy</h1>"))
+        assertTrue(publicPage.contains("Developer and publisher: Napahu Studios"))
+        assertTrue(publicPage.contains("Last updated: September 8, 2026"))
+        assertTrue(publicPage.contains("mailto:napahustudios@gmail.com"))
     }
 
     @Test
