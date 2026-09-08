@@ -1,5 +1,10 @@
 # Progress
 
+## Privacy Summary migration
+
+- The app retains one canonical full English Privacy Policy, kept equal to the public GitHub Pages policy. Each of the 102 non-English resource sets now provides a compact in-app Privacy Summary assembled only from complete semantic units in its previously reviewed policy copy; localized full-policy bodies no longer ship in Android resources.
+- The existing localized online-policy action now identifies its unchanged public destination with a small non-translatable `EN` indication. Superseded localized full policies are retained only in `docs/localization-reference/privacy-policy-legacy-2026-09-07.md` as non-authoritative historical terminology and style references, without any native-speaker-validation claim.
+
 ## Continuous-WAITING inactivity safeguard
 
 - `PrivateAudioService` now owns a single in-memory delayed deadline for each uninterrupted product-state `WAITING` period. Transition tracking, rather than observer callback frequency, starts the fixed 30-minute period, so snapshots, callbacks, binds, foregrounding, configuration changes, and other same-state evidence cannot restart or extend it.

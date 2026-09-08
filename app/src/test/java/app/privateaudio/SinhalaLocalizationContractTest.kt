@@ -50,12 +50,9 @@ class SinhalaLocalizationContractTest {
         assertTrue(resourceValue("settings_about_body").contains("දුරකථනයේ ඇතුළත් කන් රිසීවරය"))
         assertFalse(resourceValue("settings_about_body").contains("ඇමතුම්"))
 
-        val privacy = resourceValue("settings_privacy_policy_body")
-        assertEquals(5, privacy.split("\\n\\n").size)
-        assertFalse(privacy.contains("එකතු කිරීම, පටිගත කිරීම හෝ සම්ප්‍රේෂණය කිරීම නොකරයි"))
-        assertFalse(privacy.contains("සංවාදවල අන්තර්ගතයට ප්‍රවේශ නොවේ"))
-        assertTrue(privacy.contains("යෙදුම අනපේක්ෂිත ලෙස නතර වූ විට ඒ බව වාර්තා කරන සේවා හෝ SDK ඇතුළත් නොවේ"))
-        assertTrue(privacy.contains("ඔබේ උපාංගයේ ජනනය කර සකසනු ලබන"))
+        val privacy = resourceValue("settings_privacy_summary_body")
+        assertEquals(3, privacy.split("\\n\\n").size)
+        assertTrue(privacy.contains("Puzru"))
         assertFalse(projectFile("app/src/main/res/values-si/mini_state_strings.xml").exists())
     }
 

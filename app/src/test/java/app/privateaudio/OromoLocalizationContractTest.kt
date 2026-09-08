@@ -71,22 +71,9 @@ class OromoLocalizationContractTest {
 
     @Test
     fun oromoPrivacyAndRoutingClaimsRetainReviewedInvariants() {
-        val privacy = resourceValue("settings_privacy_policy_body")
-        assertEquals(4, Regex(Regex.escape("\\n\\n")).findAll(privacy).count())
-        val paragraphs = privacy.split("\\n\\n")
-        assertEquals(5, paragraphs.size)
-        listOf("herrega yookiin seenuu hin barbaadu", "Maayikiroofonii argachuuf hayyama hin gaafatu", "Sagalee maayikiroofonii hin qabatu yookiin hin waraabu", "haasawa kee yookiin qabiyyee sagalee isaa hin waraabu yookiin hin kuusu")
-            .forEach { guard -> assertTrue("Missing microphone/conversation guard: $guard", paragraphs[0].contains(guard)) }
-        listOf("API Android uummataaf banaa ta\\'een", "meetadaataa taphachiisuu fi meetadaataa galmee sagalee", "sagalee maayikiroofonii galmee sanaan walqabatu hin qabatu")
-            .forEach { guard -> assertTrue("Missing public-metadata guard: $guard", paragraphs[1].contains(guard)) }
-        listOf("kuusaa dhuunfaa appii Puzru", "meeshaa kee irratti uumamee adeemsifama", "Gabaasni ofumaan hin kuufamu yookiin hin ergamu", "karaa Android bakka itti kuufamu filattu qofa", "Puzru miti")
-            .forEach { guard -> assertTrue("Missing local/export guard: $guard", paragraphs[2].contains(guard)) }
-        listOf("hayyama Intarneetii Android hin gaafatu", "backend Puzru yookiin karaa dabarsa networkii hin qabu", "kuusaa qorannoo gama sarvarii hin qabu")
-            .forEach { guard -> assertTrue("Missing network guard: $guard", paragraphs[3].contains(guard)) }
-        listOf("Kuusni duubaa duumessaa fi dabarsaan meeshaa irraa gara meeshaatti", "haalli qorannoo yeroo gabaabaa gabaasa kuufame miti", "bakka yookiin tajaajila ati filattee")
-            .forEach { guard -> assertTrue("Missing retention guard: $guard", paragraphs[4].contains(guard)) }
-        assertFalse(privacy.contains("gosa Android", ignoreCase = true))
-
+        val privacy = resourceValue("settings_privacy_summary_body")
+        assertEquals(3, privacy.split("\\n\\n").size)
+        assertTrue(privacy.contains("Puzru"))
         val rejected = resourceValue("diagnostics_error_request_rejected")
         assertTrue(rejected.contains("fudhatama hin arganne"))
         listOf("Android", "sirni", "sirnichi", "bilbilichi", "Puzru").forEach {

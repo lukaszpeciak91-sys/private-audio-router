@@ -464,7 +464,7 @@ private fun PrivacyPolicyPage(
         ) {
             item {
                 Text(
-                    text = stringResource(R.string.settings_privacy_policy_body),
+                    text = stringResource(R.string.settings_privacy_summary_body),
                     modifier = Modifier.fillMaxWidth().padding(horizontal = 8.dp),
                     color = SettingsSecondary,
                     fontSize = 15.sp,
@@ -474,6 +474,7 @@ private fun PrivacyPolicyPage(
                 SettingsDivider()
                 SettingsRow(
                     label = stringResource(R.string.settings_privacy_policy_online),
+                    value = stringResource(R.string.settings_privacy_policy_language),
                     chevron = true,
                     tag = "privacy_policy_online",
                     onClick = onPrivacyPolicyOnlineClick,
