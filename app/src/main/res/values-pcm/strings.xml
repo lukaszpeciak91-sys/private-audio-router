@@ -34,7 +34,7 @@
     <string name="diagnostics_send_report">Send di diagnostic report</string>
     <string name="diagnostic_report_no_handler">No compatible app dey wey fit send dis report.</string>
     <string name="diagnostic_report_unavailable">Di diagnostic report no dey available.</string>
-    <string name="diagnostic_report_share_failed">Dem no fit prepare di diagnostic report.</string>
+    <string name="diagnostic_report_share_failed">No fit prepare di diagnostic report.</string>
     <string name="diagnostics_title">Diagnostics</string>
     <string name="diagnostics_system_check">SYSTEM CHECK</string>
     <string name="diagnostics_earpiece">Earpiece</string>
