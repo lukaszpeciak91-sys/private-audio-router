@@ -22,7 +22,7 @@
     <string name="settings_about">O aplikaciji Puzru</string>
     <string name="settings_privacy_policy">Pravilnik o zasebnosti</string>
     <string name="settings_privacy_policy_online">Prikaži pravilnik o zasebnosti v spletu</string>
-    <string name="settings_privacy_summary_body">Puzru ne zahteva računa ali prijave in ne zahteva dovoljenja za mikrofon. Ne zajema ali snema zvoka mikrofona ter ne snema ali shranjuje vaših pogovorov oziroma njihove zvočne vsebine.\n\nPuzru uporablja informacije zvočnega sistema Android, potrebne za usmerjanje in diagnostiko.\n\nDiagnostične informacije se ustvarijo in obdelajo v vaši napravi ter so lahko prisotne v lokalnem stanju delujoče aplikacije. Poročila se ne shranijo ali pošljejo samodejno.</string>
+    <string name="settings_privacy_summary_body">Puzru ne zahteva računa ali prijave in ne zahteva dovoljenja za mikrofon. Ne zajema ali snema zvoka mikrofona ter ne snema ali shranjuje vaših pogovorov oziroma njihove zvočne vsebine.\n\nPuzru uporablja informacije zvočnega sistema Android, potrebne za usmerjanje in diagnostiko.\n\nDiagnostične informacije se ustvarijo in obdelajo v vaši napravi ter so lahko prisotne v lokalnem stanju delujoče aplikacije. Poročila se ne shranijo ali pošljejo samodejno. Za shranjevanje poročila ali njegovo predajo drugi aplikaciji je potrebno vaše izrecno dejanje.</string>
     <string name="settings_version">Različica %1$s</string>
     <string name="settings_language_android_13_required">Izbira jezika v aplikaciji zahteva Android 13 ali novejši. Ta naprava uporablja sistemski jezik.</string>
     <string name="settings_proximity_screen">Izklopi zaslon ob ušesu</string>

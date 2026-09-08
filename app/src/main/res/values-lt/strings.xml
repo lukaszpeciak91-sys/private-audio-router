@@ -22,7 +22,7 @@
     <string name="settings_about">Apie Puzru</string>
     <string name="settings_privacy_policy">Privatumo politika</string>
     <string name="settings_privacy_policy_online">Peržiūrėti privatumo politiką internete</string>
-    <string name="settings_privacy_summary_body">„Puzru“ nereikalauja paskyros ar prisijungimo ir neprašo leidimo naudoti mikrofoną. Ji nefiksuoja ir neįrašo mikrofono garso, taip pat neįrašo ir nesaugo jūsų pokalbių ar jų garso turinio.\n\n„Puzru“ naudoja „Android“ garso sistemos informaciją, reikalingą garsui nukreipti ir diagnostikai.\n\nDiagnostikos informacija generuojama ir apdorojama jūsų įrenginyje ir gali būti veikiančios programos vietinėje būsenoje. Ataskaitos automatiškai neišsaugomos ir nesiunčiamos.</string>
+    <string name="settings_privacy_summary_body">„Puzru“ nereikalauja paskyros ar prisijungimo ir neprašo leidimo naudoti mikrofoną. Ji nefiksuoja ir neįrašo mikrofono garso, taip pat neįrašo ir nesaugo jūsų pokalbių ar jų garso turinio.\n\n„Puzru“ naudoja „Android“ garso sistemos informaciją, reikalingą garsui nukreipti ir diagnostikai.\n\nDiagnostikos informacija generuojama ir apdorojama jūsų įrenginyje ir gali būti veikiančios programos vietinėje būsenoje. Ataskaitos automatiškai neišsaugomos ir nesiunčiamos. Norint išsaugoti ataskaitą arba perduoti ją kitai programai, reikia aiškaus jūsų veiksmo.</string>
     <string name="settings_version">Versija %1$s</string>
     <string name="settings_language_android_13_required">Norint pasirinkti kalbą programėlėje, reikia „Android 13“ arba naujesnės versijos. Šiame įrenginyje naudojama sistemos kalba.</string>
     <string name="settings_proximity_screen">Išjungti ekraną prie ausies</string>

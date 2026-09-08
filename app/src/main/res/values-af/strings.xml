@@ -22,7 +22,7 @@
     <string name="settings_about">Meer oor Puzru</string>
     <string name="settings_privacy_policy">Privaatheidsbeleid</string>
     <string name="settings_privacy_policy_online">Bekyk privaatheidsbeleid aanlyn</string>
-    <string name="settings_privacy_summary_body">Puzru vereis nie ’n rekening of aanmelding nie en versoek nie mikrofoontoestemming nie. Dit neem nie mikrofoonoudio vas of op nie, en neem nie jou gesprekke of die oudio-inhoud daarvan op of stoor dit nie.\n\nPuzru gebruik Android-oudiostelselinligting wat vir roetering en diagnostiek nodig is.\n\nDiagnostiese inligting word op jou toestel geskep en verwerk en kan in die lopende program se plaaslike toestand bestaan. Verslae word nie outomaties gestoor of gestuur nie.</string>
+    <string name="settings_privacy_summary_body">Puzru vereis nie ’n rekening of aanmelding nie en versoek nie mikrofoontoestemming nie. Dit neem nie mikrofoonoudio vas of op nie, en neem nie jou gesprekke of die oudio-inhoud daarvan op of stoor dit nie.\n\nPuzru gebruik Android-oudiostelselinligting wat vir roetering en diagnostiek nodig is.\n\nDiagnostiese inligting word op jou toestel geskep en verwerk en kan in die lopende program se plaaslike toestand bestaan. Verslae word nie outomaties gestoor of gestuur nie. Om ’n verslag te stoor of dit aan ’n ander program te oorhandig, vereis ’n uitdruklike handeling deur jou.</string>
     <string name="settings_version">Weergawe %1$s</string>
     <string name="settings_language_android_13_required">Taalkeuse in die app vereis Android 13 of nuwer. Hierdie toestel volg die stelseltaal.</string>
     <string name="settings_proximity_screen">Skakel die skerm af naby jou oor</string>

@@ -23,7 +23,7 @@
     <string name="settings_about">Malunga ne-Puzru</string>
     <string name="settings_privacy_policy">Umgaqo-nkqubo wabucala</string>
     <string name="settings_privacy_policy_online">Jonga uMgaqo-nkqubo wabucala kwi-intanethi</string>
-    <string name="settings_privacy_summary_body">I-Puzru ayifuni akhawunti okanye ukungena ngemvume kwaye ayiceli mvume yemayikrofoni. Ayibambi okanye irekhode iaudio yemayikrofoni, kwaye ayirekhodi okanye igcine iincoko zakho okanye umxholo wazo weaudio.\n\nI-Puzru isebenzisa ulwazi lwesistim yeaudio ye-Android olufunekayo ekuhambiseni iaudio nakuxilongo.\n\nIdatha yoxilongo yenziwa ize isetyenzwe kwisixhobo sakho kwaye inokubakho kwisimo sendawo seapp esebenzayo. Iingxelo azigcinwa okanye zithunyelwe ngokuzenzekelayo.</string>
+    <string name="settings_privacy_summary_body">I-Puzru ayifuni akhawunti okanye ukungena ngemvume kwaye ayiceli mvume yemayikrofoni. Ayibambi okanye irekhode iaudio yemayikrofoni, kwaye ayirekhodi okanye igcine iincoko zakho okanye umxholo wazo weaudio.\n\nI-Puzru isebenzisa ulwazi lwesistim yeaudio ye-Android olufunekayo ekuhambiseni iaudio nakuxilongo.\n\nIdatha yoxilongo yenziwa ize isetyenzwe kwisixhobo sakho kwaye inokubakho kwisimo sendawo seapp esebenzayo. Iingxelo azigcinwa okanye zithunyelwe ngokuzenzekelayo. Ukugcina ingxelo okanye ukuyinikezela kwenye iapp kufuna ukuba uthathe inyathelo elicacileyo.</string>
     <string name="settings_version">Uhlobo %1$s</string>
     <string name="settings_language_android_13_required">Ukukhetha ulwimi ngaphakathi kwiapp kufuna i-Android 13 okanye entsha. Esi sixhobo silandela ulwimi lwesistim.</string>
     <string name="settings_proximity_screen">Cima isikrini xa ifowuni ikufutshane nendlebe yakho</string>

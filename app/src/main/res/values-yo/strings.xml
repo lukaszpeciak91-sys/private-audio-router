@@ -23,7 +23,7 @@
     <string name="settings_about">Nípa Puzru</string>
     <string name="settings_privacy_policy">Ìlànà Ìpamọ́</string>
     <string name="settings_privacy_policy_online">Wo Ìlànà Ìpamọ́ lórí ayélujára</string>
-    <string name="settings_privacy_summary_body">Puzru kò nílò àkọọ́lẹ̀ tàbí wíwọlé, kò sì béèrè àṣẹ láti lo gbohùngbohùn. Kì í gba tàbí ṣe ìgbàsílẹ̀ ohùn gbohùngbohùn, bẹ́ẹ̀ ni kì í ṣe ìgbàsílẹ̀ tàbí fi àwọn ìjíròrò rẹ tàbí àkóónú ohùn wọn pamọ́.\n\nPuzru ń lo ìwífún ètò ohùn Android tí ó yẹ fún dídarí ohùn àti àyẹ̀wò.\n\nÌwífún àyẹ̀wò ni a ń ṣẹ̀dá tí a sì ń ṣiṣẹ́ lé lórí ẹ̀rọ rẹ, ó sì lè wà nínú ipò abẹ́lẹ̀ ìṣàfilọ́lẹ̀ tó ń ṣiṣẹ́. A kì í fi àwọn ìjábọ̀ pamọ́ tàbí rán wọn lọ fúnra wọn.</string>
+    <string name="settings_privacy_summary_body">Puzru kò nílò àkọọ́lẹ̀ tàbí wíwọlé, kò sì béèrè àṣẹ láti lo gbohùngbohùn. Kì í gba tàbí ṣe ìgbàsílẹ̀ ohùn gbohùngbohùn, bẹ́ẹ̀ ni kì í ṣe ìgbàsílẹ̀ tàbí fi àwọn ìjíròrò rẹ tàbí àkóónú ohùn wọn pamọ́.\n\nPuzru ń lo ìwífún ètò ohùn Android tí ó yẹ fún dídarí ohùn àti àyẹ̀wò.\n\nÌwífún àyẹ̀wò ni a ń ṣẹ̀dá tí a sì ń ṣiṣẹ́ lé lórí ẹ̀rọ rẹ, ó sì lè wà nínú ipò abẹ́lẹ̀ ìṣàfilọ́lẹ̀ tó ń ṣiṣẹ́. A kì í fi àwọn ìjábọ̀ pamọ́ tàbí rán wọn lọ fúnra wọn. Fífipamọ́ ìròyìn tàbí fífi í lé ìṣàfilọ́lẹ̀ míì lọ́wọ́ nílò kí o ṣe ìgbésẹ̀ tó ṣe kedere.</string>
     <string name="settings_version">Ẹ̀yà %1$s</string>
     <string name="settings_language_android_13_required">Yíyan èdè nínú ìṣàfilọ́lẹ̀ nílò Android 13 tàbí èyí tó tuntun jù. Ẹ̀rọ yìí ń tẹ̀lé èdè ètò.</string>
     <string name="settings_proximity_screen">Pa ojú-ìbojú nígbà tó bá sún mọ́ etí rẹ</string>

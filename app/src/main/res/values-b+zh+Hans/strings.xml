@@ -22,7 +22,7 @@
     <string name="settings_about">关于 Puzru</string>
     <string name="settings_privacy_policy">隐私政策</string>
     <string name="settings_privacy_policy_online">在线查看隐私政策</string>
-    <string name="settings_privacy_summary_body">Puzru 无需帐户或登录，也不会请求麦克风权限。它不会采集或录制麦克风音频，也不会录制或存储您的对话或其中的音频内容。\n\nPuzru 会使用音频路由和诊断所需的 Android 音频系统信息。\n\n诊断信息会在您的设备上生成和处理，并且可能存在于运行中应用的本地状态中。 报告不会自动保存或发送。</string>
+    <string name="settings_privacy_summary_body">Puzru 无需帐户或登录，也不会请求麦克风权限。它不会采集或录制麦克风音频，也不会录制或存储您的对话或其中的音频内容。\n\nPuzru 会使用音频路由和诊断所需的 Android 音频系统信息。\n\n诊断信息会在您的设备上生成和处理，并且可能存在于运行中应用的本地状态中。 报告不会自动保存或发送。 保存报告或将报告交给其他应用，都需要您明确操作。</string>
     <string name="settings_version">版本 %1$s</string>
     <string name="settings_language_android_13_required">应用内语言选择需要 Android 13 或更高版本。此设备使用系统语言。</string>
     <string name="settings_proximity_screen">靠近耳朵时关闭屏幕</string>

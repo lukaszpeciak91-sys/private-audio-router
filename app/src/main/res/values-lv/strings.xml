@@ -22,7 +22,7 @@
     <string name="settings_about">Par Puzru</string>
     <string name="settings_privacy_policy">Konfidencialitātes politika</string>
     <string name="settings_privacy_policy_online">Skatīt konfidencialitātes politiku tiešsaistē</string>
-    <string name="settings_privacy_summary_body">Puzru nav nepieciešams konts vai pierakstīšanās, un tā nepieprasa mikrofona atļauju. Tā netver un neieraksta mikrofona audio, kā arī neieraksta un neglabā jūsu sarunas vai to audio saturu.\n\nPuzru izmanto Android audio sistēmas informāciju, kas nepieciešama audio maršrutēšanai un diagnostikai.\n\nDiagnostikas informācija tiek ģenerēta un apstrādāta jūsu ierīcē un var pastāvēt palaistās lietotnes lokālajā stāvoklī. Pārskati netiek automātiski saglabāti vai nosūtīti.</string>
+    <string name="settings_privacy_summary_body">Puzru nav nepieciešams konts vai pierakstīšanās, un tā nepieprasa mikrofona atļauju. Tā netver un neieraksta mikrofona audio, kā arī neieraksta un neglabā jūsu sarunas vai to audio saturu.\n\nPuzru izmanto Android audio sistēmas informāciju, kas nepieciešama audio maršrutēšanai un diagnostikai.\n\nDiagnostikas informācija tiek ģenerēta un apstrādāta jūsu ierīcē un var pastāvēt palaistās lietotnes lokālajā stāvoklī. Pārskati netiek automātiski saglabāti vai nosūtīti. Lai saglabātu pārskatu vai nodotu to citai lietotnei, jums ir jāveic nepārprotama darbība.</string>
     <string name="settings_version">Versija %1$s</string>
     <string name="settings_language_android_13_required">Valodas atlasei lietotnē ir nepieciešama Android 13 vai jaunāka versija. Šī ierīce izmanto sistēmas valodu.</string>
     <string name="settings_proximity_screen">Izslēgt ekrānu pie auss</string>

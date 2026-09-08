@@ -22,7 +22,7 @@
     <string name="settings_about">Kuhusu Puzru</string>
     <string name="settings_privacy_policy">Sera ya Faragha</string>
     <string name="settings_privacy_policy_online">Angalia Sera ya Faragha mtandaoni</string>
-    <string name="settings_privacy_summary_body">Puzru haihitaji akaunti au kuingia na haiombi ruhusa ya maikrofoni. Hainasi wala kurekodi sauti ya maikrofoni, wala kurekodi au kuhifadhi mazungumzo yako au maudhui yake ya sauti.\n\nPuzru hutumia taarifa za mfumo wa sauti wa Android zinazohitajika kwa uelekezaji na uchunguzi.\n\nTaarifa za uchunguzi hutengenezwa na kuchakatwa kwenye kifaa chako na zinaweza kuwepo katika hali ya ndani ya programu inapoendeshwa. Ripoti hazihifadhiwi wala kutumwa kiotomatiki.</string>
+    <string name="settings_privacy_summary_body">Puzru haihitaji akaunti au kuingia na haiombi ruhusa ya maikrofoni. Hainasi wala kurekodi sauti ya maikrofoni, wala kurekodi au kuhifadhi mazungumzo yako au maudhui yake ya sauti.\n\nPuzru hutumia taarifa za mfumo wa sauti wa Android zinazohitajika kwa uelekezaji na uchunguzi.\n\nTaarifa za uchunguzi hutengenezwa na kuchakatwa kwenye kifaa chako na zinaweza kuwepo katika hali ya ndani ya programu inapoendeshwa. Ripoti hazihifadhiwi wala kutumwa kiotomatiki. Kuhifadhi ripoti au kuikabidhi kwa programu nyingine kunahitaji uchukue hatua ya wazi.</string>
     <string name="settings_version">Toleo %1$s</string>
     <string name="settings_language_android_13_required">Uteuzi wa lugha ndani ya programu unahitaji Android 13 au toleo jipya zaidi. Kifaa hiki kinafuata lugha ya mfumo.</string>
     <string name="settings_proximity_screen">Zima skrini ikiwa karibu na sikio</string>

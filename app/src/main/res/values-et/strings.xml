@@ -22,7 +22,7 @@
     <string name="settings_about">Teave Puzru kohta</string>
     <string name="settings_privacy_policy">Privaatsuspoliitika</string>
     <string name="settings_privacy_policy_online">Vaata privaatsuspoliitikat veebis</string>
-    <string name="settings_privacy_summary_body">Puzru ei vaja kontot ega sisselogimist ja ei taotle mikrofoniluba. See ei hõiva ega salvesta mikrofoniheli ning ei salvesta ega talleta teie vestlusi ega nende helisisu.\n\nPuzru kasutab marsruutimiseks ja diagnostikaks vajalikku Androidi helisüsteemi teavet.\n\nDiagnostikateave luuakse ja seda töödeldakse teie seadmes ning see võib olla töötava rakenduse kohalikus olekus. Aruandeid ei salvestata ega saadeta automaatselt.</string>
+    <string name="settings_privacy_summary_body">Puzru ei vaja kontot ega sisselogimist ja ei taotle mikrofoniluba. See ei hõiva ega salvesta mikrofoniheli ning ei salvesta ega talleta teie vestlusi ega nende helisisu.\n\nPuzru kasutab marsruutimiseks ja diagnostikaks vajalikku Androidi helisüsteemi teavet.\n\nDiagnostikateave luuakse ja seda töödeldakse teie seadmes ning see võib olla töötava rakenduse kohalikus olekus. Aruandeid ei salvestata ega saadeta automaatselt. Aruande salvestamine või teisele rakendusele üleandmine nõuab teilt selgesõnalist toimingut.</string>
     <string name="settings_version">Versioon %1$s</string>
     <string name="settings_language_android_13_required">Rakenduses keele valimiseks on vaja Android 13 või uuemat. See seade kasutab süsteemi keelt.</string>
     <string name="settings_proximity_screen">Lülita ekraan kõrva lähedal välja</string>

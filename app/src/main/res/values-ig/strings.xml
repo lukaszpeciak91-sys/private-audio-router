@@ -23,7 +23,7 @@
     <string name="settings_about">Banyere Puzru</string>
     <string name="settings_privacy_policy">Amụma Nzuzo</string>
     <string name="settings_privacy_policy_online">Lelee Iwu Nzuzo n’ịntanetị</string>
-    <string name="settings_privacy_summary_body">Puzru achọghị akaụntụ ma ọ bụ nbanye, ọ naghịkwa arịọ ikike igwe okwu. Ọ naghị ejide ma ọ bụ dekọọ ọdịyo igwe okwu, ma ọ bụ dekọọ ma ọ bụ chekwaa mkparịta ụka unu ma ọ bụ ọdịnaya ọdịyo ha.\n\nPuzru na-eji ozi usoro ọdịyo Android dị mkpa maka ntụgharị ụzọ na nchọpụta nsogbu.\n\nA na-emepụta ma na-ahazi ozi nchọpụta nsogbu n’ime ngwaọrụ gị ma ọ nwere ike ịdị na ọnọdụ mpaghara nke ngwa na-agba ọsọ. A naghị echekwa ma ọ bụ zipu akụkọ n’onwe ya.</string>
+    <string name="settings_privacy_summary_body">Puzru achọghị akaụntụ ma ọ bụ nbanye, ọ naghịkwa arịọ ikike igwe okwu. Ọ naghị ejide ma ọ bụ dekọọ ọdịyo igwe okwu, ma ọ bụ dekọọ ma ọ bụ chekwaa mkparịta ụka unu ma ọ bụ ọdịnaya ọdịyo ha.\n\nPuzru na-eji ozi usoro ọdịyo Android dị mkpa maka ntụgharị ụzọ na nchọpụta nsogbu.\n\nA na-emepụta ma na-ahazi ozi nchọpụta nsogbu n’ime ngwaọrụ gị ma ọ nwere ike ịdị na ọnọdụ mpaghara nke ngwa na-agba ọsọ. A naghị echekwa ma ọ bụ zipu akụkọ n’onwe ya. Ịchekwa mkpesa ma ọ bụ inyefe ya n’aka ngwa ọzọ chọrọ ka i jiri aka gị mee ihe n’ụzọ doro anya.</string>
     <string name="settings_version">Ụdị %1$s</string>
     <string name="settings_language_android_13_required">Ịhọrọ asụsụ n’ime ngwa chọrọ Android 13 ma ọ bụ nke ka ọhụrụ. Ngwaọrụ a na-agbaso asụsụ sistemụ.</string>
     <string name="settings_proximity_screen">Gbanyụọ ihuenyo mgbe ọ nọ nso na ntị gị</string>

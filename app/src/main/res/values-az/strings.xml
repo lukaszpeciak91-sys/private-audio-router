@@ -22,7 +22,7 @@
     <string name="settings_about">Puzru haqqında</string>
     <string name="settings_privacy_policy">Məxfilik siyasəti</string>
     <string name="settings_privacy_policy_online">Məxfilik siyasətinə onlayn baxın</string>
-    <string name="settings_privacy_summary_body">Puzru hesab və ya giriş tələb etmir və mikrofon icazəsi istəmir. O, mikrofon audiosunu tutmur və ya yazmır, söhbətlərinizi və ya onların audio məzmununu yazmır və ya saxlamır.\n\nPuzru yönləndirmə və diaqnostika üçün lazım olan Android audio sistemi məlumatlarından istifadə edir.\n\nDiaqnostika məlumatı cihazınızda yaradılır və işlənir və işləyən tətbiqin yerli vəziyyətində mövcud ola bilər. Hesabatlar avtomatik saxlanılmır və ya göndərilmir.</string>
+    <string name="settings_privacy_summary_body">Puzru hesab və ya giriş tələb etmir və mikrofon icazəsi istəmir. O, mikrofon audiosunu tutmur və ya yazmır, söhbətlərinizi və ya onların audio məzmununu yazmır və ya saxlamır.\n\nPuzru yönləndirmə və diaqnostika üçün lazım olan Android audio sistemi məlumatlarından istifadə edir.\n\nDiaqnostika məlumatı cihazınızda yaradılır və işlənir və işləyən tətbiqin yerli vəziyyətində mövcud ola bilər. Hesabatlar avtomatik saxlanılmır və ya göndərilmir. Hesabatı saxlamaq və ya başqa tətbiqə ötürmək üçün açıq şəkildə hərəkət etməyiniz tələb olunur.</string>
     <string name="settings_version">Versiya %1$s</string>
     <string name="settings_language_android_13_required">Tətbiq daxilində dil seçimi üçün Android 13 və ya daha yeni versiya tələb olunur. Bu cihaz sistem dilindən istifadə edir.</string>
     <string name="settings_proximity_screen">Telefon qulağınıza yaxın olduqda ekranı söndürün</string>

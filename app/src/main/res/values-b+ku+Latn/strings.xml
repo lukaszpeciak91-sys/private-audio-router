@@ -23,7 +23,7 @@
     <string name="settings_about">Derbarê Puzru de</string>
     <string name="settings_privacy_policy">Siyaseta Nepeniyê</string>
     <string name="settings_privacy_policy_online">Polîtîkaya nepeniyê li ser înternetê bibîne</string>
-    <string name="settings_privacy_summary_body">Puzru ne hesabek an têketinê hewce dike û ne jî destûra mîkrofônê dixwaze. Ew dengê mîkrofônê nagire an tomar nake, û ne jî axaftinên we an naveroka dengî ya wan tomar dike an diparêze.\n\nPuzru agahiyên pergala dengê ya Android bi kar tîne ku ji bo rêvebirin û teşhîsê pêwîstin.\n\nAgahiyên teşhîsê li ser cîhaza we têne afirandin û pêvajokirin û dikarin di rewşa herêmî ya sepana ku dixebite de hebe. Rapor bixweber nayên tomarkirin an şandin.</string>
+    <string name="settings_privacy_summary_body">Puzru ne hesabek an têketinê hewce dike û ne jî destûra mîkrofônê dixwaze. Ew dengê mîkrofônê nagire an tomar nake, û ne jî axaftinên we an naveroka dengî ya wan tomar dike an diparêze.\n\nPuzru agahiyên pergala dengê ya Android bi kar tîne ku ji bo rêvebirin û teşhîsê pêwîstin.\n\nAgahiyên teşhîsê li ser cîhaza we têne afirandin û pêvajokirin û dikarin di rewşa herêmî ya sepana ku dixebite de hebe. Rapor bixweber nayên tomarkirin an şandin. Ji bo parastina raporekê an radestkirina wê bo sepaneke din, divê hûn bi awayekî eşkere tevbigerin.</string>
     <string name="settings_version">Guhertoya %1$s</string>
     <string name="settings_language_android_13_required">Hilbijartina zimanê di sepanê de Android 13 an guhertoyeke nûtir dixwaze. Ev cîhaz li gorî zimanê pergalê dixebite.</string>
     <string name="settings_proximity_screen">Li nêzî guhê xwe ekranê vemirîne</string>

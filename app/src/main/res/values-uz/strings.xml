@@ -27,7 +27,7 @@
     <string name="settings_about">Puzru haqida</string>
     <string name="settings_privacy_policy">Maxfiylik siyosati</string>
     <string name="settings_privacy_policy_online">Maxfiylik siyosatini onlayn ko‘rish</string>
-    <string name="settings_privacy_summary_body">Puzru hisob yoki tizimga kirishni talab qilmaydi va mikrofon ruxsatini so‘ramaydi. U mikrofon audiosini tutmaydi yoki yozib olmaydi, suhbatlaringizni yoxud ularning audio kontentini yozib olmaydi yoki saqlamaydi.\n\nPuzru yo‘naltirish va diagnostika uchun zarur Android audio tizimi ma’lumotlaridan foydalanadi.\n\nDiagnostika ma’lumoti qurilmangizda yaratiladi va qayta ishlanadi hamda ishlayotgan ilovaning mahalliy holatida mavjud bo‘lishi mumkin. Hisobotlar avtomatik saqlanmaydi yoki yuborilmaydi.</string>
+    <string name="settings_privacy_summary_body">Puzru hisob yoki tizimga kirishni talab qilmaydi va mikrofon ruxsatini so‘ramaydi. U mikrofon audiosini tutmaydi yoki yozib olmaydi, suhbatlaringizni yoxud ularning audio kontentini yozib olmaydi yoki saqlamaydi.\n\nPuzru yo‘naltirish va diagnostika uchun zarur Android audio tizimi ma’lumotlaridan foydalanadi.\n\nDiagnostika ma’lumoti qurilmangizda yaratiladi va qayta ishlanadi hamda ishlayotgan ilovaning mahalliy holatida mavjud bo‘lishi mumkin. Hisobotlar avtomatik saqlanmaydi yoki yuborilmaydi. Hisobotni saqlash yoki boshqa ilovaga topshirish uchun sizning aniq harakatingiz talab qilinadi.</string>
     <string name="settings_version">Versiya %1$s</string>
 
 

@@ -22,7 +22,7 @@
     <string name="settings_about">מידע על Puzru</string>
     <string name="settings_privacy_policy">מדיניות פרטיות</string>
     <string name="settings_privacy_policy_online">הצגת מדיניות הפרטיות באינטרנט</string>
-    <string name="settings_privacy_summary_body">Puzru אינו דורש חשבון או כניסה ואינו מבקש הרשאת מיקרופון. הוא אינו לוכד או מקליט שמע מהמיקרופון, ואינו מקליט או מאחסן את השיחות שלך או את תוכן השמע שלהן.\n\nPuzru משתמש במידע ממערכת השמע של Android הנחוץ לניתוב ולאבחון.\n\nמידע אבחוני נוצר ומעובד במכשיר שלך ועשוי להתקיים במצב המקומי של האפליקציה הפועלת. דוחות אינם נשמרים או נשלחים באופן אוטומטי.</string>
+    <string name="settings_privacy_summary_body">Puzru אינו דורש חשבון או כניסה ואינו מבקש הרשאת מיקרופון. הוא אינו לוכד או מקליט שמע מהמיקרופון, ואינו מקליט או מאחסן את השיחות שלך או את תוכן השמע שלהן.\n\nPuzru משתמש במידע ממערכת השמע של Android הנחוץ לניתוב ולאבחון.\n\nמידע אבחוני נוצר ומעובד במכשיר שלך ועשוי להתקיים במצב המקומי של האפליקציה הפועלת. דוחות אינם נשמרים או נשלחים באופן אוטומטי. שמירת דוח או מסירתו לאפליקציה אחרת מחייבת פעולה מפורשת מצידך.</string>
     <string name="settings_version">גרסה %1$s</string>
     <string name="settings_language_android_13_required">בחירת שפה באפליקציה דורשת Android 13 ואילך. המכשיר הזה משתמש בשפת המערכת.</string>
     <string name="settings_proximity_screen">כיבוי המסך כשהטלפון ליד האוזן</string>

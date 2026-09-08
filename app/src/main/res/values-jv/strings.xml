@@ -22,7 +22,7 @@
     <string name="settings_about">Babagan Puzru</string>
     <string name="settings_privacy_policy">Kabijakan Privasi</string>
     <string name="settings_privacy_policy_online">Deleng Kabijakan Privasi kanthi online</string>
-    <string name="settings_privacy_summary_body">Puzru ora mbutuhake akun utawa mlebu lan ora njaluk idin mikropon. Aplikasi ora njupuk utawa ngrekam audio mikropon, uga ora ngrekam utawa nyimpen pacelathon sampeyan utawa isi audione.\n\nPuzru nggunakake informasi sistem audio Android sing dibutuhake kanggo pangarahan lan diagnostik.\n\nInformasi diagnostik digawe lan diproses ing piranti sampeyan lan bisa ana ing kahanan lokal aplikasi sing mlaku. Laporan ora disimpen utawa dikirim kanthi otomatis.</string>
+    <string name="settings_privacy_summary_body">Puzru ora mbutuhake akun utawa mlebu lan ora njaluk idin mikropon. Aplikasi ora njupuk utawa ngrekam audio mikropon, uga ora ngrekam utawa nyimpen pacelathon sampeyan utawa isi audione.\n\nPuzru nggunakake informasi sistem audio Android sing dibutuhake kanggo pangarahan lan diagnostik.\n\nInformasi diagnostik digawe lan diproses ing piranti sampeyan lan bisa ana ing kahanan lokal aplikasi sing mlaku. Laporan ora disimpen utawa dikirim kanthi otomatis. Nyimpen laporan utawa masrahake menyang aplikasi liya mbutuhake tumindak sing cetha saka sampeyan.</string>
     <string name="settings_version">Versi %1$s</string>
     <string name="settings_language_android_13_required">Milih basa ing aplikasi mbutuhake Android 13 utawa luwih anyar. Piranti iki ngetutake basa sistem.</string>
     <string name="settings_proximity_screen">Pateni layar nalika telpon cedhak kuping</string>

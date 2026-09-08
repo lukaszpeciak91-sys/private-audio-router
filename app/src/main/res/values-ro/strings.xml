@@ -22,7 +22,7 @@
     <string name="settings_about">Despre Puzru</string>
     <string name="settings_privacy_policy">Politica de confidențialitate</string>
     <string name="settings_privacy_policy_online">Vezi Politica de confidențialitate online</string>
-    <string name="settings_privacy_summary_body">Puzru nu necesită un cont sau autentificare și nu solicită permisiunea pentru microfon. Nu captează și nu înregistrează sunetul microfonului și nu înregistrează sau stochează conversațiile dvs. ori conținutul audio al acestora.\n\nPuzru utilizează informațiile sistemului audio Android necesare pentru rutare și diagnosticare.\n\nInformațiile de diagnosticare sunt generate și procesate pe dispozitivul dvs. și pot exista în starea locală a aplicației în timpul funcționării.</string>
+    <string name="settings_privacy_summary_body">Puzru nu necesită un cont sau autentificare și nu solicită permisiunea pentru microfon. Nu captează și nu înregistrează sunetul microfonului și nu înregistrează sau stochează conversațiile dvs. ori conținutul audio al acestora.\n\nPuzru utilizează informațiile sistemului audio Android necesare pentru rutare și diagnosticare.\n\nInformațiile de diagnosticare sunt generate și procesate pe dispozitivul dvs. și pot exista în starea locală a aplicației în timpul funcționării. Salvarea unui raport sau predarea acestuia unei alte aplicații necesită o acțiune explicită din partea dvs.</string>
     <string name="settings_version">Versiunea %1$s</string>
     <string name="settings_language_android_13_required">Selectarea limbii în aplicație necesită Android 13 sau o versiune ulterioară. Acest dispozitiv folosește limba sistemului.</string>
     <string name="settings_proximity_screen">Oprește ecranul lângă ureche</string>
