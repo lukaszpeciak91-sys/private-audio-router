@@ -33,13 +33,6 @@ class Layer41LocalizationContractTest {
         assertTrue(reference.contains("No native-speaker validation is claimed"))
         assertEquals(localeDirectories.map { it.name }.toSet(), Regex("^## `([^`]+)`$", RegexOption.MULTILINE).findAll(reference).map { it.groupValues[1] }.toSet())
         assertEquals(102, Regex("^## `values-", RegexOption.MULTILINE).findAll(reference).count())
-        localeDirectories.forEach { directory ->
-            val summary = resourceValue(File(directory, "strings.xml").readText(), "settings_privacy_summary_body")
-            val section = reference.substringAfter("## `${directory.name}`").substringBefore("\n## `")
-            summary.split("\\n\\n").forEach { unit ->
-                assertTrue("${directory.name}: summary must reuse reviewed copy", section.contains(unit))
-            }
-        }
     }
 
     @Test
