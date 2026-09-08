@@ -22,7 +22,7 @@
     <string name="settings_about">Giới thiệu về Puzru</string>
     <string name="settings_privacy_policy">Chính sách quyền riêng tư</string>
     <string name="settings_privacy_policy_online">Xem Chính sách quyền riêng tư trực tuyến</string>
-    <string name="settings_privacy_summary_body">Puzru không yêu cầu tài khoản hoặc đăng nhập và không yêu cầu quyền sử dụng micrô. Ứng dụng không thu hoặc ghi âm thanh từ micrô, cũng không ghi hoặc lưu trữ các cuộc trò chuyện hay nội dung âm thanh của các cuộc trò chuyện đó.\n\nPuzru sử dụng thông tin hệ thống âm thanh Android cần thiết cho việc định tuyến và chẩn đoán.\n\nThông tin chẩn đoán được tạo và xử lý trên thiết bị của bạn và có thể tồn tại trong trạng thái cục bộ của ứng dụng đang chạy. Báo cáo không tự động được lưu hoặc gửi.</string>
+    <string name="settings_privacy_summary_body">Puzru không yêu cầu tài khoản hoặc đăng nhập và không yêu cầu quyền sử dụng micrô. Ứng dụng không thu hoặc ghi âm thanh từ micrô, cũng không ghi hoặc lưu trữ các cuộc trò chuyện hay nội dung âm thanh của các cuộc trò chuyện đó.\n\nPuzru sử dụng thông tin hệ thống âm thanh Android cần thiết cho việc định tuyến và chẩn đoán.\n\nThông tin chẩn đoán được tạo và xử lý trên thiết bị của bạn và có thể tồn tại trong trạng thái cục bộ của ứng dụng đang chạy. Báo cáo không tự động được lưu hoặc gửi. Việc lưu báo cáo hoặc chuyển báo cáo cho một ứng dụng khác đòi hỏi bạn phải thực hiện một thao tác rõ ràng.</string>
     <string name="settings_version">Phiên bản %1$s</string>
     <string name="settings_language_android_13_required">Tính năng chọn ngôn ngữ trong ứng dụng yêu cầu Android 13 trở lên. Thiết bị này sử dụng ngôn ngữ hệ thống.</string>
     <string name="settings_proximity_screen">Tắt màn hình khi đưa gần tai</string>

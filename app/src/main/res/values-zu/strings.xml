@@ -22,7 +22,7 @@
     <string name="settings_about">Mayelana ne-Puzru</string>
     <string name="settings_privacy_policy">Inqubomgomo Yobumfihlo</string>
     <string name="settings_privacy_policy_online">Buka Inqubomgomo Yobumfihlo ku-inthanethi</string>
-    <string name="settings_privacy_summary_body">I-Puzru ayidingi i-akhawunti noma ukungena ngemvume futhi ayiceli imvume yemakrofoni. Ayithwebuli noma irekhode umsindo wemakrofoni, futhi ayirekhodi noma igcine izingxoxo zakho noma okuqukethwe kwazo komsindo.\n\nI-Puzru isebenzisa ulwazi lwesistimu yomsindo ye-Android oludingekayo ekuqondiseni nasekuhloleni.\n\nUlwazi lokuhlola lwenziwa futhi lucutshungulwe kudivayisi yakho futhi lungaba sesimweni sendawo sohlelo olusebenzayo. Imibiko ayigcinwa noma ithunyelwe ngokuzenzakalela.</string>
+    <string name="settings_privacy_summary_body">I-Puzru ayidingi i-akhawunti noma ukungena ngemvume futhi ayiceli imvume yemakrofoni. Ayithwebuli noma irekhode umsindo wemakrofoni, futhi ayirekhodi noma igcine izingxoxo zakho noma okuqukethwe kwazo komsindo.\n\nI-Puzru isebenzisa ulwazi lwesistimu yomsindo ye-Android oludingekayo ekuqondiseni nasekuhloleni.\n\nUlwazi lokuhlola lwenziwa futhi lucutshungulwe kudivayisi yakho futhi lungaba sesimweni sendawo sohlelo olusebenzayo. Imibiko ayigcinwa noma ithunyelwe ngokuzenzakalela. Ukulondoloza umbiko noma ukuwudlulisela kolunye uhlelo lokusebenza kudinga isenzo sakho esicacile.</string>
     <string name="settings_version">Inguqulo %1$s</string>
     <string name="settings_language_android_13_required">Ukukhetha ulimi ngaphakathi kwe-app kudinga i-Android 13 noma inguqulo entsha. Le divayisi ilandela ulimi lwesistimu.</string>
     <string name="settings_proximity_screen">Cisha isikrini uma ifoni iseduze nendlebe yakho</string>

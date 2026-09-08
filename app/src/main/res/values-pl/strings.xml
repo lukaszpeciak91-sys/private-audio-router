@@ -22,7 +22,7 @@
     <string name="settings_about">O Puzru</string>
     <string name="settings_privacy_policy">Polityka prywatności</string>
     <string name="settings_privacy_policy_online">Wyświetl Politykę prywatności online</string>
-    <string name="settings_privacy_summary_body">Puzru nie wymaga konta ani logowania i nie prosi o uprawnienie do mikrofonu. Nie przechwytuje ani nie nagrywa dźwięku z mikrofonu, a także nie nagrywa ani nie przechowuje Twoich rozmów lub zawartych w nich treści dźwiękowych.\n\nPuzru korzysta z informacji o systemie audio Androida potrzebnych do kierowania dźwięku i diagnostyki.\n\nInformacje diagnostyczne są generowane i przetwarzane na Twoim urządzeniu i mogą istnieć w lokalnym stanie uruchomionej aplikacji. Raporty nie są automatycznie zapisywane ani wysyłane.</string>
+    <string name="settings_privacy_summary_body">Puzru nie wymaga konta ani logowania i nie prosi o uprawnienie do mikrofonu. Nie przechwytuje ani nie nagrywa dźwięku z mikrofonu, a także nie nagrywa ani nie przechowuje Twoich rozmów lub zawartych w nich treści dźwiękowych.\n\nPuzru korzysta z informacji o systemie audio Androida potrzebnych do kierowania dźwięku i diagnostyki.\n\nInformacje diagnostyczne są generowane i przetwarzane na Twoim urządzeniu i mogą istnieć w lokalnym stanie uruchomionej aplikacji. Raporty nie są automatycznie zapisywane ani wysyłane. Zapisanie raportu lub przekazanie go innej aplikacji wymaga wyraźnego działania z Twojej strony.</string>
     <string name="settings_version">Wersja %1$s</string>
     <string name="settings_language_android_13_required">Wybór języka w aplikacji wymaga Androida 13 lub nowszego. To urządzenie używa języka systemowego.</string>
     <string name="settings_proximity_screen">Wyłącz ekran przy uchu</string>

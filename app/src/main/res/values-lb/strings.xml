@@ -22,7 +22,7 @@
     <string name="settings_about">Iwwer Puzru</string>
     <string name="settings_privacy_policy">Dateschutzrichtlinn</string>
     <string name="settings_privacy_policy_online">Dateschutzrichtlinn online ukucken</string>
-    <string name="settings_privacy_summary_body">Puzru erfuerdert kee Kont a keng Umeldung a freet keng Mikrofonberechtegung un. D’App erfaasst oder hëlt keen Toun vum Mikro op a si hëlt Är Gespréicher oder hiren Audioinhalt net op a späichert se net.\n\nPuzru benotzt Informatioune vum Android-Audiosystem, déi fir d’Audioroutage an d’Diagnostik néideg sinn.\n\nDiagnosinformatioune ginn op Ärem Apparat erstallt a verschafft a kënnen am lokale Zoustand vun der lafender App bestoen. Rapporte ginn net automatesch gespäichert oder geschéckt.</string>
+    <string name="settings_privacy_summary_body">Puzru erfuerdert kee Kont a keng Umeldung a freet keng Mikrofonberechtegung un. D’App erfaasst oder hëlt keen Toun vum Mikro op a si hëlt Är Gespréicher oder hiren Audioinhalt net op a späichert se net.\n\nPuzru benotzt Informatioune vum Android-Audiosystem, déi fir d’Audioroutage an d’Diagnostik néideg sinn.\n\nDiagnosinformatioune ginn op Ärem Apparat erstallt a verschafft a kënnen am lokale Zoustand vun der lafender App bestoen. Rapporte ginn net automatesch gespäichert oder geschéckt. Fir e Rapport ze späicheren oder en un eng aner App ze iwwerginn, ass eng ausdrécklech Aktioun vun Iech néideg.</string>
     <string name="settings_version">Versioun %1$s</string>
     <string name="settings_language_android_13_required">D\'Sproochauswiel an der App erfuerdert Android 13 oder méi nei. Dësen Apparat riicht sech no der Systemsprooch.</string>
     <string name="settings_proximity_screen">Écran beim Ouer ausschalten</string>

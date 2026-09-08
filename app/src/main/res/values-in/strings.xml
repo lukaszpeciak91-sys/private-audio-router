@@ -22,7 +22,7 @@
     <string name="settings_about">Tentang Puzru</string>
     <string name="settings_privacy_policy">Kebijakan Privasi</string>
     <string name="settings_privacy_policy_online">Lihat Kebijakan Privasi secara online</string>
-    <string name="settings_privacy_summary_body">Puzru tidak memerlukan akun atau proses masuk dan tidak meminta izin mikrofon. Aplikasi tidak menangkap atau merekam audio mikrofon, serta tidak merekam atau menyimpan percakapan maupun konten audio percakapan Anda.\n\nPuzru menggunakan informasi sistem audio Android yang diperlukan untuk perutean dan diagnostik.\n\nInformasi diagnostik dibuat dan diproses di perangkat Anda dan dapat berada dalam status lokal aplikasi yang sedang berjalan. Laporan tidak disimpan atau dikirim secara otomatis.</string>
+    <string name="settings_privacy_summary_body">Puzru tidak memerlukan akun atau proses masuk dan tidak meminta izin mikrofon. Aplikasi tidak menangkap atau merekam audio mikrofon, serta tidak merekam atau menyimpan percakapan maupun konten audio percakapan Anda.\n\nPuzru menggunakan informasi sistem audio Android yang diperlukan untuk perutean dan diagnostik.\n\nInformasi diagnostik dibuat dan diproses di perangkat Anda dan dapat berada dalam status lokal aplikasi yang sedang berjalan. Laporan tidak disimpan atau dikirim secara otomatis. Menyimpan laporan atau menyerahkannya ke aplikasi lain memerlukan tindakan tegas dari Anda.</string>
     <string name="settings_version">Versi %1$s</string>
     <string name="settings_language_android_13_required">Pemilihan bahasa dalam aplikasi memerlukan Android 13 atau yang lebih baru. Perangkat ini mengikuti bahasa sistem.</string>
     <string name="settings_proximity_screen">Matikan layar saat dekat telinga</string>

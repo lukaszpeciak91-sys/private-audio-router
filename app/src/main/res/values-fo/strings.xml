@@ -22,7 +22,7 @@
     <string name="settings_about">Um Puzru</string>
     <string name="settings_privacy_policy">Persónsupolitikkur</string>
     <string name="settings_privacy_policy_online">Vís dátuverndarpolitikkin á netinum</string>
-    <string name="settings_privacy_summary_body">Puzru krevur hvørki kontu ella innritan og biður ikki um mikrofonloyvi. Tað fangar ella tekur ikki ljóð úr mikrofonini upp og tekur heldur ikki samrøður tínar ella ljóðinnihaldið í teimum upp ella goymir tað.\n\nPuzru brúkar upplýsingar úr Android-ljóðskipanini, sum eru neyðugar til ljóðleiðing og greining.\n\nGreiningarupplýsingar verða gjørdar og viðgjørdar á tólinum hjá tær og kunnu vera í lokalu støðuni hjá forritinum, meðan tað koyrir. Frágreiðingar verða ikki sjálvvirkandi goymdar ella sendar.</string>
+    <string name="settings_privacy_summary_body">Puzru krevur hvørki kontu ella innritan og biður ikki um mikrofonloyvi. Tað fangar ella tekur ikki ljóð úr mikrofonini upp og tekur heldur ikki samrøður tínar ella ljóðinnihaldið í teimum upp ella goymir tað.\n\nPuzru brúkar upplýsingar úr Android-ljóðskipanini, sum eru neyðugar til ljóðleiðing og greining.\n\nGreiningarupplýsingar verða gjørdar og viðgjørdar á tólinum hjá tær og kunnu vera í lokalu støðuni hjá forritinum, meðan tað koyrir. Frágreiðingar verða ikki sjálvvirkandi goymdar ella sendar. At goyma eina frágreiðing ella lata hana til eitt annað forrit krevur eina týðiliga gerð frá tær.</string>
     <string name="settings_version">Útgáva %1$s</string>
     <string name="settings_language_android_13_required">Málval í appini krevur Android 13 ella nýggjari. Hetta tólið fylgir skipanarmálinum.</string>
     <string name="settings_proximity_screen">Sløkk skíggjan nær oyranum</string>

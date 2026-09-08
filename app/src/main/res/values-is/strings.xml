@@ -22,7 +22,7 @@
     <string name="settings_about">Um Puzru</string>
     <string name="settings_privacy_policy">Persónuverndarstefna</string>
     <string name="settings_privacy_policy_online">Skoða persónuverndarstefnu á netinu</string>
-    <string name="settings_privacy_summary_body">Puzru krefst hvorki reiknings né innskráningar og biður ekki um hljóðnemaheimild. Það fangar hvorki né tekur upp hljóð úr hljóðnemanum og tekur hvorki upp né geymir samtöl þín eða hljóðefni þeirra.\n\nPuzru notar upplýsingar úr hljóðkerfi Android sem þarf fyrir hljóðleiðingu og greiningu.\n\nGreiningarupplýsingar eru búnar til og unnar í tækinu þínu og geta verið til staðar í staðbundnu ástandi forritsins meðan það er í gangi. Skýrslur eru hvorki vistaðar né sendar sjálfkrafa.</string>
+    <string name="settings_privacy_summary_body">Puzru krefst hvorki reiknings né innskráningar og biður ekki um hljóðnemaheimild. Það fangar hvorki né tekur upp hljóð úr hljóðnemanum og tekur hvorki upp né geymir samtöl þín eða hljóðefni þeirra.\n\nPuzru notar upplýsingar úr hljóðkerfi Android sem þarf fyrir hljóðleiðingu og greiningu.\n\nGreiningarupplýsingar eru búnar til og unnar í tækinu þínu og geta verið til staðar í staðbundnu ástandi forritsins meðan það er í gangi. Skýrslur eru hvorki vistaðar né sendar sjálfkrafa. Til að vista skýrslu eða afhenda hana öðru forriti þarft þú að framkvæma skýra aðgerð.</string>
     <string name="settings_version">Útgáfa %1$s</string>
     <string name="settings_language_android_13_required">Til að velja tungumál í forritinu þarf Android 13 eða nýrra. Þetta tæki fylgir tungumáli kerfisins.</string>
     <string name="settings_proximity_screen">Slökkva á skjánum nálægt eyranu</string>

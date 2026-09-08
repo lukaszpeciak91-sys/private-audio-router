@@ -22,7 +22,7 @@
     <string name="settings_about">Puzru について</string>
     <string name="settings_privacy_policy">プライバシーポリシー</string>
     <string name="settings_privacy_policy_online">プライバシーポリシーをオンラインで見る</string>
-    <string name="settings_privacy_summary_body">Puzru はアカウントやログインを必要とせず、マイクの権限を要求しません。マイクの音声を取得または録音することも、会話や会話の音声コンテンツを録音または保存することもありません。\n\nPuzru は、音声ルーティングと診断に必要な Android オーディオシステムの情報を使用します。\n\n診断情報は端末上で生成および処理され、実行中のアプリのローカルな状態に存在する場合があります。 レポートが自動的に保存または送信されることはありません。</string>
+    <string name="settings_privacy_summary_body">Puzru はアカウントやログインを必要とせず、マイクの権限を要求しません。マイクの音声を取得または録音することも、会話やその音声内容を録音または保存することもありません。\n\nPuzru は、音声ルーティングと診断のために Android の音声システムに関する技術情報を使用します。この情報は端末上で処理されます。\n\n診断レポートが自動的に保存または送信されることはありません。レポートを保存したり別のアプリに渡したりするには、ユーザーによる明示的な操作が必要です。</string>
     <string name="settings_version">バージョン %1$s</string>
     <string name="settings_language_android_13_required">アプリ内で言語を選択するには Android 13 以降が必要です。この端末ではシステムの言語が使用されます。</string>
     <string name="settings_proximity_screen">耳に近づけたとき画面を消す</string>

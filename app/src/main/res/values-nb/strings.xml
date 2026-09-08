@@ -22,7 +22,7 @@
     <string name="settings_about">Om Puzru</string>
     <string name="settings_privacy_policy">Personvernerklæring</string>
     <string name="settings_privacy_policy_online">Se personvernerklæringen på nettet</string>
-    <string name="settings_privacy_summary_body">Puzru krever ikke en konto eller pålogging og ber ikke om mikrofontillatelse. Appen fanger eller tar ikke opp mikrofonlyd og tar ikke opp eller lagrer samtalene dine eller lydinnholdet i dem.\n\nPuzru bruker informasjon fra Androids lydsystem som er nødvendig for ruting og diagnostikk.\n\nDiagnostikkinformasjon genereres og behandles på enheten din og kan finnes i den kjørende appens lokale tilstand. Rapporter lagres eller sendes ikke automatisk.</string>
+    <string name="settings_privacy_summary_body">Puzru krever ikke en konto eller pålogging og ber ikke om mikrofontillatelse. Appen fanger eller tar ikke opp mikrofonlyd og tar ikke opp eller lagrer samtalene dine eller lydinnholdet i dem.\n\nPuzru bruker informasjon fra Androids lydsystem som er nødvendig for ruting og diagnostikk.\n\nDiagnostikkinformasjon genereres og behandles på enheten din og kan finnes i den kjørende appens lokale tilstand. Rapporter lagres eller sendes ikke automatisk. Det kreves en uttrykkelig handling fra deg for å lagre en rapport eller overlevere den til en annen app.</string>
     <string name="settings_version">Versjon %1$s</string>
     <string name="settings_language_android_13_required">Språkvalg i appen krever Android 13 eller nyere. Denne enheten følger systemspråket.</string>
     <string name="settings_proximity_screen">Slå av skjermen nær øret</string>

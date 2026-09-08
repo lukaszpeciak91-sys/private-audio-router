@@ -22,7 +22,7 @@
     <string name="settings_about">Tietoja Puzrusta</string>
     <string name="settings_privacy_policy">Tietosuojakäytäntö</string>
     <string name="settings_privacy_policy_online">Näytä tietosuojakäytäntö verkossa</string>
-    <string name="settings_privacy_summary_body">Puzru ei edellytä tiliä tai sisäänkirjautumista eikä pyydä mikrofonin käyttöoikeutta. Se ei kaappaa tai tallenna mikrofonin ääntä eikä tallenna tai säilytä keskustelujasi tai niiden äänisisältöä.\n\nPuzru käyttää reititykseen ja diagnostiikkaan tarvittavia Androidin äänijärjestelmän tietoja.\n\nDiagnostiikkatiedot luodaan ja käsitellään laitteellasi, ja niitä voi olla käynnissä olevan sovelluksen paikallisessa tilassa. Raportteja ei tallenneta tai lähetetä automaattisesti.</string>
+    <string name="settings_privacy_summary_body">Puzru ei edellytä tiliä tai sisäänkirjautumista eikä pyydä mikrofonin käyttöoikeutta. Se ei kaappaa tai tallenna mikrofonin ääntä eikä tallenna tai säilytä keskustelujasi tai niiden äänisisältöä.\n\nPuzru käyttää reititykseen ja diagnostiikkaan tarvittavia Androidin äänijärjestelmän tietoja.\n\nDiagnostiikkatiedot luodaan ja käsitellään laitteellasi, ja niitä voi olla käynnissä olevan sovelluksen paikallisessa tilassa. Raportteja ei tallenneta tai lähetetä automaattisesti. Raportin tallentaminen tai luovuttaminen toiselle sovellukselle edellyttää sinulta nimenomaista toimintoa.</string>
     <string name="settings_version">Versio %1$s</string>
     <string name="settings_language_android_13_required">Sovelluksen kielivalinta vaatii Android 13:n tai uudemman. Tämä laite käyttää järjestelmän kieltä.</string>
     <string name="settings_proximity_screen">Sammuta näyttö korvan lähellä</string>

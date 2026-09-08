@@ -22,7 +22,7 @@
     <string name="settings_about">Puzruৰ বিষয়ে</string>
     <string name="settings_privacy_policy">গোপনীয়তা নীতি</string>
     <string name="settings_privacy_policy_online">গোপনীয়তা নীতি অনলাইনত চাওক</string>
-    <string name="settings_privacy_summary_body">Puzru-ৰ বাবে একাউণ্ট বা sign-inৰ প্ৰয়োজন নাই আৰু ই microphone permission নাখোজে। ই মাইক্ৰ’ফোন অডিঅ’ ধৰি নাৰে বা record নকৰে, আৰু আপোনাৰ কথোপকথন বা সিহতৰ অডিঅ’ বিষয়বস্তু record বা store নকৰে।\n\nPuzru-এ routing আৰু diagnostics-ৰ বাবে প্ৰয়োজনীয় Android audio-system তথ্য ব্যৱহাৰ কৰে।\n\nDiagnostic information আপোনাৰ device-তেই সৃষ্টি আৰু process কৰা হয় আৰু চলি থকা app-ৰ local state-ত থাকিব পাৰে। Reports স্বয়ংক্ৰিয়ভাৱে save বা send কৰা নহয়।</string>
+    <string name="settings_privacy_summary_body">Puzru-ৰ বাবে কোনো একাউণ্ট বা প্ৰৱেশৰ প্ৰয়োজন নাই আৰু ই মাইক্ৰ’ফোন ব্যৱহাৰৰ অনুমতি নিবিচাৰে। ই মাইক্ৰ’ফোনৰ শব্দ ধৰি নলয় বা বাণীবদ্ধ নকৰে, আৰু আপোনাৰ কথোপকথন বা তাৰ শব্দবিষয়বস্তু বাণীবদ্ধ বা সঞ্চয় নকৰে।\n\nPuzru-এ শব্দৰ দিশ নিৰ্ধাৰণ আৰু কাৰিকৰী সমস্যা নিৰ্ণয়ৰ বাবে Android-ৰ শব্দ-ব্যৱস্থাৰ কাৰিকৰী তথ্য ব্যৱহাৰ কৰে। এই তথ্য আপোনাৰ যন্ত্ৰতেই স্থানীয়ভাৱে প্ৰক্ৰিয়াকৰণ কৰা হয়।\n\nকাৰিকৰী সমস্যা নিৰ্ণয়ৰ প্ৰতিবেদন স্বয়ংক্ৰিয়ভাৱে সঞ্চয় বা প্ৰেৰণ কৰা নহয়। কোনো প্ৰতিবেদন সঞ্চয় কৰিবলৈ বা আন এটা এপক দিবলৈ আপুনি স্পষ্টভাৱে পদক্ষেপ ল’ব লাগিব।</string>
     <string name="settings_version">সংস্কৰণ %1$s</string>
     <string name="settings_language_android_13_required">এপৰ ভিতৰত ভাষা বাছনি কৰিবলৈ Android 13 বা তাৰ পাছৰ সংস্কৰণৰ প্ৰয়োজন। এই ডিভাইচে ছিষ্টেমৰ ভাষা ব্যৱহাৰ কৰে।</string>
     <string name="settings_proximity_screen">ফ’নটো কাণৰ ওচৰলৈ নিলে স্ক্ৰীন বন্ধ কৰক</string>

@@ -22,7 +22,7 @@
     <string name="settings_about">Game da Puzru</string>
     <string name="settings_privacy_policy">Manufar Sirri</string>
     <string name="settings_privacy_policy_online">Duba Dokar Sirri a yanar gizo</string>
-    <string name="settings_privacy_summary_body">Puzru ba ya buƙatar asusu ko shiga, kuma ba ya neman izinin makirufo. Ba ya ɗauka ko rikodin sautin makirufo, kuma ba ya rikodi ko adana tattaunawarku ko abin da sautinsu ya ƙunsa.\n\nPuzru yana amfani da bayanan tsarin sauti na Android da ake buƙata don juyar da hanya da binciken matsala.\n\nAna ƙirƙira da sarrafa bayanan binciken matsala a kan na\'urarku kuma suna iya kasancewa a cikin yanayin gida na manhajar da ke gudana. Ba a adana rahotanni ko aika su ta atomatik.</string>
+    <string name="settings_privacy_summary_body">Puzru ba ya buƙatar asusu ko shiga, kuma ba ya neman izinin makirufo. Ba ya ɗauka ko rikodin sautin makirufo, kuma ba ya rikodi ko adana tattaunawarku ko abin da sautinsu ya ƙunsa.\n\nPuzru yana amfani da bayanan tsarin sauti na Android da ake buƙata don juyar da hanya da binciken matsala.\n\nAna ƙirƙira da sarrafa bayanan binciken matsala a kan na\'urarku kuma suna iya kasancewa a cikin yanayin gida na manhajar da ke gudana. Ba a adana rahotanni ko aika su ta atomatik. Ajiye rahoto ko miƙa shi ga wata manhaja yana buƙatar ka ɗauki mataki a sarari.</string>
     <string name="settings_version">Siga %1$s</string>
     <string name="settings_language_android_13_required">Zaɓin harshe a cikin manhaja yana buƙatar Android 13 ko mafi sabo. Wannan na\'urar tana bin harshen tsarin.</string>
     <string name="settings_proximity_screen">Kashe allo idan wayar ta kusanci kunnenka</string>
