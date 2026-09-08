@@ -15,6 +15,8 @@ import android.media.AudioManager
 import android.os.Binder
 import android.os.Build
 import android.os.IBinder
+import android.os.Handler
+import android.os.Looper
 import android.os.PowerManager
 import android.provider.Settings
 import androidx.compose.runtime.getValue
@@ -34,6 +36,15 @@ class PrivateAudioService : Service() {
     private val binder = LocalBinder()
     private var shuttingDown = false
     private var foregroundNotificationActive = false
+    private val waitingAutoDisableController = WaitingAutoDisableController(
+        scheduler = DelayScheduler { delayMillis, action ->
+            val handler = Handler(Looper.getMainLooper())
+            val runnable = Runnable(action)
+            handler.postDelayed(runnable, delayMillis)
+            CancellableDelay { handler.removeCallbacks(runnable) }
+        },
+        onTimeout = ::disarmAndStopStartedLifetime,
+    )
 
     private val proximityController: ProximityScreenController by lazy(LazyThreadSafetyMode.NONE) {
         ProximityScreenController(getSystemService(PowerManager::class.java)) { event ->
@@ -75,7 +86,7 @@ class PrivateAudioService : Service() {
             context = applicationContext,
             audioManager = getSystemService(AudioManager::class.java),
             callbackExecutor = mainExecutor,
-            onEvidenceChanged = ::syncProximityBehavior,
+            onEvidenceChanged = ::syncStateOwnedBehavior,
         )
     }
 
@@ -96,12 +107,13 @@ class PrivateAudioService : Service() {
             isPrivateAudioEnabled = true
             enterForeground()
             observer.enableController()
-            syncProximityBehavior("Power ON")
+            syncStateOwnedBehavior("Power ON")
         }
         return START_NOT_STICKY
     }
 
     fun disarmAndStopStartedLifetime() {
+        waitingAutoDisableController.cancel()
         isPrivateAudioEnabled = false
         proximityController.release("Power OFF", privateAudioState, currentRoute())
         observer.disableController()
@@ -125,7 +137,7 @@ class PrivateAudioService : Service() {
             .edit()
             .putBoolean(PROXIMITY_FEATURE_KEY, enabled)
             .apply()
-        syncProximityBehavior(if (enabled) "Preference enabled" else "Preference disabled")
+        syncStateOwnedBehavior(if (enabled) "Preference enabled" else "Preference disabled")
     }
 
     fun updateAssistantEarlyRouteEnabled(enabled: Boolean) {
@@ -172,6 +184,7 @@ class PrivateAudioService : Service() {
 
     override fun onDestroy() {
         shuttingDown = true
+        waitingAutoDisableController.cancel()
         isPrivateAudioEnabled = false
         foregroundNotificationActive = false
         proximityController.release("Service destroyed", privateAudioState, currentRoute())
@@ -188,6 +201,11 @@ class PrivateAudioService : Service() {
         } else {
             proximityController.release(reason, state, route)
         }
+    }
+
+    private fun syncStateOwnedBehavior(reason: String) {
+        waitingAutoDisableController.onStateChanged(privateAudioState)
+        syncProximityBehavior(reason)
     }
 
     private fun currentRoute() = observer.snapshot.communicationDevice?.type
