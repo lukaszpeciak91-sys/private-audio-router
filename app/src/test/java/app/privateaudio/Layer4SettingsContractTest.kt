@@ -94,7 +94,7 @@ class Layer4SettingsContractTest {
     }
 
     @Test
-    fun privacyPolicyUsesTheSingleSettingsModalAndAuthoritativeEnglishClaims() {
+    fun privacySummaryUsesTheSingleSettingsModalAndKeepsCanonicalPolicyAvailableOnline() {
         assertTrue(settingsSource.contains("tag = \"settings_privacy_policy\""))
         assertTrue(settingsSource.contains("SettingsPage.PRIVACY_POLICY -> PrivacyPolicyPage("))
         val privacyPolicyPage = settingsSource.method(
@@ -104,13 +104,26 @@ class Layer4SettingsContractTest {
         assertTrue(privacyPolicyPage.contains("BackChevron()"))
         assertTrue(settingsSource.contains("BackHandler(enabled = page != SettingsPage.ROOT) { page = SettingsPage.ROOT }"))
         assertTrue(settingsSource.contains("testTag(\"privacy_policy_body\")"))
+        assertTrue(privacyPolicyPage.contains("R.string.settings_privacy_summary_body"))
+        assertFalse(privacyPolicyPage.contains("R.string.settings_privacy_policy_body"))
         assertTrue(privacyPolicyPage.contains("R.string.settings_privacy_policy_online"))
+        assertTrue(privacyPolicyPage.contains("R.string.settings_privacy_policy_language"))
         assertTrue(privacyPolicyPage.contains("tag = \"privacy_policy_online\""))
         assertTrue(privacyPolicyPage.contains("onClick = onPrivacyPolicyOnlineClick"))
         assertEquals(1, settingsSource.occurrences("Dialog("))
 
         assertTrue(settingsSource.contains("ContactBlock(onContactClick)"))
 
+        val summary = resourceValue(projectFile("app/src/main/res/values/strings.xml"), "settings_privacy_summary_body")
+        assertEquals(3, summary.split("\\n\\n").size)
+        listOf(
+            "does not require an account or microphone permission",
+            "does not capture or record microphone audio or conversation content",
+            "technical audio-system information for routing and diagnostics",
+            "processed locally on the device",
+            "not automatically saved or transmitted",
+            "requires an explicit user action",
+        ).forEach { claim -> assertTrue(claim, summary.contains(claim)) }
         val strings = projectFile("app/src/main/res/values/strings.xml").readText()
         listOf(
             "does not require an account or sign-in",

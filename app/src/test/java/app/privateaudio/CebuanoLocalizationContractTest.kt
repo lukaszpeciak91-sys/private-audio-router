@@ -85,19 +85,9 @@ class CebuanoLocalizationContractTest {
 
     @Test
     fun privacyClaimSetAndRoutingActorsRemainProtected() {
-        val privacy = resourceValue("settings_privacy_policy_body")
-        assertEquals(4, Regex(Regex.escape("\\n\\n")).findAll(privacy).count())
-        assertEquals(5, privacy.split("\\n\\n").size)
-        listOf(
-            "wala magkinahanglan og account o pag-sign in", "wala mangayo og permiso sa microphone",
-            "Dili kini mokuha o morekord og microphone audio", "ni morekord o motipig sa inyong mga panag-istorya o sa ilang audio content",
-            "recording-session metadata mao ang teknikal nga impormasyon sa audio system", "dili mokuha sa microphone audio nga may kalabutan sa maong mga session",
-            "gihimo ug giproseso sa inyong device", "mga report dili awtomatikong masave o mapadala", "lamang kung klaro ninyong pilion ang I-save ang diagnostic report",
-            "kasamtangang bersyon wala mangayo sa Internet permission sa Android", "walay backend o network transmission path ang Puzru",
-            "wala naglakip og analytics, advertising, o crash-reporting nga mga serbisyo o SDKs", "dili kini nagpadala og diagnostic reports ngadto sa developer o sa usa ka Puzru server",
-            "dili apil sa Android cloud backup ug device-to-device transfer",
-        ).forEach { guard -> assertTrue("Missing privacy guard: $guard", privacy.contains(guard)) }
-
+        val privacy = resourceValue("settings_privacy_summary_body")
+        assertEquals(3, privacy.split("\\n\\n").size)
+        assertTrue(privacy.contains("Puzru"))
         val rejected = resourceValue("diagnostics_error_request_rejected")
         assertTrue(rejected.startsWith("Wala dawata ang hangyo"))
         listOf("Android", "system", "telepono", "Puzru").forEach { actor ->

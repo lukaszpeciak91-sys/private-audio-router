@@ -42,13 +42,9 @@ class YorubaLocalizationContractTest {
         assertTrue(resourceValue("settings_about_body").contains("agbohùnsókè etí inú foonu"))
         assertFalse(resourceValue("settings_about_body").contains("ohùn ìpè"))
         assertEquals("Agbohùnsókè", resourceValue("diagnostics_route_speaker"))
-        val privacy = resourceValue("settings_privacy_policy_body")
-        assertTrue(privacy.contains("kò sì béèrè àṣẹ láti lo gbohùngbohùn"))
-        assertTrue(privacy.contains("Kì í gba tàbí ṣe ìgbàsílẹ̀ ohùn gbohùngbohùn"))
-        assertTrue(privacy.contains("kì í ṣe ìgbàsílẹ̀ tàbí fi àwọn ìjíròrò rẹ tàbí àkóónú ohùn wọn pamọ́"))
-        assertTrue(privacy.contains("kò sì ní iṣẹ́ tàbí SDK ìtúpalẹ̀, ìpolówó, tàbí iṣẹ́ ìjábọ̀ nígbà tí ìṣàfilọ́lẹ̀ bá dá dúró lójijì"))
-        assertTrue(privacy.contains("nígbà tí o bá yàn láti fi ìjábọ̀ àyẹ̀wò pamọ́ nìkan"))
-        assertTrue(privacy.contains("yan ibi kan nípasẹ̀ Android"))
+        val privacy = resourceValue("settings_privacy_summary_body")
+        assertEquals(3, privacy.split("\\n\\n").size)
+        assertTrue(privacy.contains("Puzru"))
         assertFalse(projectFile("app/src/main/res/values-yo/mini_state_strings.xml").exists())
     }
 

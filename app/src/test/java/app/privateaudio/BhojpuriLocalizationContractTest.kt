@@ -80,23 +80,9 @@ class BhojpuriLocalizationContractTest {
 
     @Test
     fun privacyClaimSetAndRoutingActorsRemainProtected() {
-        val privacy = resourceValue("settings_privacy_policy_body")
-        assertEquals(4, Regex(Regex.escape("\\n\\n")).findAll(privacy).count())
-        val privacyParagraphs = privacy.split("\\n\\n")
-        assertEquals(5, privacyParagraphs.size)
-
-        listOf(
-            "खाता बनावे या साइन-इन करे के जरूरत नइखे", "माइक्रोफोन के अनुमति नइखे माँगत",
-            "माइक्रोफोन के ऑडियो के कैप्चर या रिकॉर्ड नइखे करत", "ना ही रउरा बातचीत या ओकर ऑडियो सामग्री के रिकॉर्ड या स्टोर करत",
-            "रिकॉर्डिंग-सेशन मेटाडेटा तकनीकी ऑडियो-सिस्टम जानकारी ह", "रउरा डिवाइस पर जनरेट आ प्रोसेस होला",
-            "रिपोर्ट अपने-आप सेव या भेजल नइखे जात", "साफ तौर पर डायग्नोस्टिक रिपोर्ट सहेजें चुनीं",
-            "मौजूदा संस्करण Android के Internet अनुमति नइखे माँगत", "बैकएंड या नेटवर्क ट्रांसमिशन पथ नइखे",
-            "एनालिटिक्स, विज्ञापन, या क्रैश-रिपोर्टिंग सेवाएँ या SDKs शामिल नइखन", "डेवलपर या Puzru सर्वर के डायग्नोस्टिक रिपोर्ट नइखे भेजत",
-            "Android क्लाउड बैकअप आ डिवाइस-से-डिवाइस ट्रांसफर से बाहर",
-        ).forEach { guard -> assertTrue("Missing privacy guard: $guard", privacy.contains(guard)) }
-        assertTrue(privacyParagraphs[1].contains("रूटिंग"))
-        assertTrue(privacyParagraphs[2].contains("एक्सपोर्ट"))
-
+        val privacy = resourceValue("settings_privacy_summary_body")
+        assertEquals(3, privacy.split("\\n\\n").size)
+        assertTrue(privacy.contains("Puzru"))
         val rejected = resourceValue("diagnostics_error_request_rejected")
         assertTrue(rejected.contains("अनुरोध स्वीकार ना भइल"))
         listOf("Android", "सिस्टम", "फोन", "Puzru").forEach { actor ->

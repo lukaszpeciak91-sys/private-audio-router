@@ -41,16 +41,9 @@ class SundaneseLocalizationContractTest {
         assertEquals("Spéker", resourceValue("diagnostics_route_speaker"))
         assertFalse(resourceValue("diagnostics_route_earpiece") == resourceValue("diagnostics_route_speaker"))
 
-        val privacy = resourceValue("settings_privacy_policy_body")
-        assertEquals(4, privacy.windowed(4).count { it == "\\n\\n" })
-        assertTrue(privacy.contains("henteu ngumpulkeun, ngarékam, atawa ngirimkeun"))
-        assertTrue(privacy.contains("henteu ménta aksés mikropon"))
-        assertTrue(privacy.contains("henteu ménta idin Internét Android"))
-        assertTrue(privacy.contains("ngan niténan kaayaan téknis jeung metadata"))
-        assertTrue(privacy.contains("ngan disimpen lamun anjeun milih"))
-        assertTrue(privacy.contains("Nyadangkeun data aplikasi Android ditumpurkeun"))
-
-        assertFalse(strings.contains("settings_assistant_early_route"))
+        val privacy = resourceValue("settings_privacy_summary_body")
+        assertEquals(3, privacy.split("\\n\\n").size)
+        assertTrue(privacy.contains("Puzru"))
         assertFalse(projectFile("app/src/main/res/values-su/mini_state_strings.xml").exists())
     }
 

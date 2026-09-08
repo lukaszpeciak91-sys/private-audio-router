@@ -9,35 +9,37 @@ import java.util.Locale
 
 class Layer41LocalizationContractTest {
     @Test
-    fun privacyPolicyBodiesUseFunctionalAndroidParagraphSeparators() {
-        (listOf(File(projectRoot, "app/src/main/res/values")) + localeDirectories).forEach { resourceDirectory ->
-            val rawResources = File(resourceDirectory, "strings.xml").readText()
-            val body = resourceValue(rawResources, "settings_privacy_policy_body")
-
-            assertTrue("${resourceDirectory.name}: missing privacy body", body.isNotEmpty())
-            assertEquals("${resourceDirectory.name}: Android paragraph separators", 4, body.occurrences("\\n\\n"))
-            assertEquals("${resourceDirectory.name}: semantic paragraphs", 5, body.split("\\n\\n").size)
-            assertTrue("${resourceDirectory.name}: empty semantic paragraph", body.split("\\n\\n").all { it.isNotBlank() })
-            assertFalse("${resourceDirectory.name}: raw XML newline", body.contains('\n'))
+    fun privacyResourcesUseCanonicalPolicyAndLocalizedSummaries() {
+        val defaultKeys = stringKeys(defaultStrings)
+        assertTrue("default canonical policy", "settings_privacy_policy_body" in defaultKeys)
+        assertTrue("default summary", "settings_privacy_summary_body" in defaultKeys)
+        assertEquals(1, defaultKeys.count { it == "settings_privacy_policy_body" })
+        localeDirectories.forEach { directory ->
+            val raw = File(directory, "strings.xml").readText()
+            val keys = stringKeys(raw)
+            assertFalse("${directory.name}: obsolete policy", "settings_privacy_policy_body" in keys)
+            assertEquals("${directory.name}: summary count", 1, keys.count { it == "settings_privacy_summary_body" })
+            val summary = resourceValue(raw, "settings_privacy_summary_body")
+            assertEquals("${directory.name}: fixed summary shape", 3, summary.split("\\n\\n").size)
+            assertFalse("${directory.name}: English fallback", summary == resourceValue(defaultStrings, "settings_privacy_summary_body"))
         }
     }
 
     @Test
-    fun yorubaPrivacyPolicyPreservesCurrentClaimSet() {
-        val resources = projectFile("app/src/main/res/values-yo/strings.xml").readText()
-        val paragraphs = resourceValue(resources, "settings_privacy_policy_body").split("\\n\\n")
-
-        assertEquals(5, paragraphs.size)
-        listOf("kò sì béèrè àṣẹ láti lo gbohùngbohùn", "Kì í gba tàbí ṣe ìgbàsílẹ̀ ohùn gbohùngbohùn", "kì í ṣe ìgbàsílẹ̀ tàbí fi àwọn ìjíròrò rẹ tàbí àkóónú ohùn wọn pamọ́")
-            .forEach { assertTrue("Missing Yoruba microphone/conversation guard: $it", paragraphs[0].contains(it)) }
-        listOf("àwọn API Android ti gbogbo ènìyàn", "metadata ṣíṣe ohùn àti ti ìgbà ìgbàsílẹ̀", "kì í gba ohùn gbohùngbohùn tó ní í ṣe pẹ̀lú àwọn ìgbà wọ̀nyẹn")
-            .forEach { assertTrue("Missing Yoruba public-metadata guard: $it", paragraphs[1].contains(it)) }
-        listOf("lórí ẹ̀rọ rẹ", "A kì í fi àwọn ìjábọ̀ pamọ́ tàbí rán wọn lọ fúnra wọn", "yan ibi kan nípasẹ̀ Android", "kì í ṣe Puzru")
-            .forEach { assertTrue("Missing Yoruba local/export guard: $it", paragraphs[2].contains(it)) }
-        listOf("kò béèrè àṣẹ Íńtánẹ́ẹ̀tì Android", "kò ní ẹ̀rọ ẹ̀yìn Puzru tàbí ọ̀nà ìfiránṣẹ́ nẹ́tíwọ́ọ̀kì", "kò ní ibi ìpamọ́ ìwífún àyẹ̀wò lórí ẹ̀rọ apínṣẹ́")
-            .forEach { assertTrue("Missing Yoruba network guard: $it", paragraphs[3].contains(it)) }
-        listOf("afẹ́yinti awọsánmà Android", "gbígbé láti ẹ̀rọ kan sí òmíràn", "ipò àyẹ̀wò fún ìgbà díẹ̀ kì í ṣe ìjábọ̀ tí a fi pamọ́", "ibi tàbí iṣẹ́ tí o yàn")
-            .forEach { assertTrue("Missing Yoruba retention guard: $it", paragraphs[4].contains(it)) }
+    fun historicalPrivacyReferenceIsCompleteAndNonAuthoritative() {
+        val reference = projectFile("docs/localization-reference/privacy-policy-legacy-2026-09-07.md").readText()
+        assertTrue(reference.startsWith("# HISTORICAL LOCALIZATION REFERENCES ONLY"))
+        assertTrue(reference.contains("must not be shipped"))
+        assertTrue(reference.contains("No native-speaker validation is claimed"))
+        assertEquals(localeDirectories.map { it.name }.toSet(), Regex("^## `([^`]+)`$", RegexOption.MULTILINE).findAll(reference).map { it.groupValues[1] }.toSet())
+        assertEquals(102, Regex("^## `values-", RegexOption.MULTILINE).findAll(reference).count())
+        localeDirectories.forEach { directory ->
+            val summary = resourceValue(File(directory, "strings.xml").readText(), "settings_privacy_summary_body")
+            val section = reference.substringAfter("## `${directory.name}`").substringBefore("\n## `")
+            summary.split("\\n\\n").forEach { unit ->
+                assertTrue("${directory.name}: summary must reuse reviewed copy", section.contains(unit))
+            }
+        }
     }
 
     @Test
@@ -75,6 +77,7 @@ class Layer41LocalizationContractTest {
             }
         }
         val defaultOnlyNonTranslatableKeys = setOf(
+            "settings_privacy_policy_language",
             "settings_assistant_early_route",
             "settings_assistant_early_route_description",
             "publisher_name",
@@ -89,19 +92,20 @@ class Layer41LocalizationContractTest {
         )
         assertTrue(defaultStrings.contains("name=\"diagnostic_email_subject\" translatable=\"false\">Puzru diagnostic report</string>"))
         assertTrue(defaultStrings.contains("name=\"diagnostic_email_body\" translatable=\"false\">Puzru diagnostic report\\n\\nVoice app/service used:"))
+        val defaultOnlyKeys = defaultOnlyNonTranslatableKeys + "settings_privacy_policy_body"
         localeDirectories.forEach { localeDirectory ->
             val localeStrings = File(localeDirectory, "strings.xml").readText()
             assertEquals(
                 localeDirectory.name,
-                stringKeys(defaultStrings).filterNot { it in defaultOnlyNonTranslatableKeys }.toSet(),
+                stringKeys(defaultStrings).filterNot { it in defaultOnlyKeys }.toSet(),
                 stringKeys(localeStrings).toSet(),
             )
             assertEquals(
                 localeDirectory.name,
-                placeholders(defaultStrings).filterKeys { key -> key !in defaultOnlyNonTranslatableKeys },
+                placeholders(defaultStrings).filterKeys { key -> key !in defaultOnlyKeys },
                 placeholders(localeStrings),
             )
-            defaultOnlyNonTranslatableKeys.forEach { key ->
+            defaultOnlyKeys.forEach { key ->
                 assertFalse("${localeDirectory.name}: $key must use the default resource", stringKeys(localeStrings).contains(key))
             }
         }

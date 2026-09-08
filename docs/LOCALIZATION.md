@@ -192,6 +192,10 @@ Nigerian Pidgin (`pcm`) carries a known future-maintenance guardrail: review its
 
 Preserve numbered format placeholders and their types across every translation. A localized string may reorder numbered placeholders, but key and placeholder parity must remain complete.
 
+## Privacy Summary resources
+
+The full, authoritative Privacy Policy exists only in the default English `settings_privacy_policy_body` resource and the equal public policy page. Supported non-English resource sets instead own a localized `settings_privacy_summary_body`; the Settings action leads to the English public full policy and displays the universal non-translatable `EN` indication. Superseded localized full-policy bodies are repository-only historical translation references and must not be treated as current disclosure or production resources.
+
 ## Maintenance workflow
 
 ### Add a locale

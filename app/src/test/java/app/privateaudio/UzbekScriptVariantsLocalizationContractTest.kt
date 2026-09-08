@@ -72,37 +72,17 @@ class UzbekScriptVariantsLocalizationContractTest {
     }
 
     @Test
-    fun privacyClaimSetsRetainFiveParagraphsAndBoundedActions() {
+    fun privacySummariesRemainLocalizedAcrossUzbekScriptVariants() {
         listOf(cyrillicFile, arabicFile).forEach { file ->
-            val privacy = value(file, "settings_privacy_policy_body")
-            val paragraphs = privacy.split("\\n\\n")
-            assertEquals("${file.parentFile.name} privacy paragraphs", 5, paragraphs.size)
-            assertTrue(paragraphs.all(String::isNotBlank))
-            assertFalse("Local metadata observation must not become conversation processing", paragraphs[2].contains(paragraphs[0]))
+            val privacy = value(file, "settings_privacy_summary_body")
+            assertEquals(3, privacy.split("\\n\\n").size)
+            assertTrue(privacy.contains("Puzru"))
         }
-
-        val cyrillic = value(cyrillicFile, "settings_privacy_policy_body")
-        listOf(
-            "ҳисоб ёки тизимга киришни талаб қилмайди", "микрофон рухсатини сўрамайди", "микрофон овозини ушламайди ёки ёзиб олмайди",
-            "суҳбатларингизни ёки уларнинг аудио мазмунини ёзиб олмайди ёки сақламайди", "Ёзиб олиш сеанси метамаълумотлари техник аудио тизими маълумотидир",
-            "сеанслар билан боғлиқ микрофон овозини ушламайди", "қурилмангизда яратилади ва қайта ишланади", "Ҳисоботлар автоматик тарзда сақланмайди ёки юборилмайди",
-            "фақат сиз “Diagnostika ҳисоботини сақлаш”ни очиқ танлаганингизда", "Жорий версия Android’нинг Интернет рухсатини сўрамайди",
-            "ҳеч қандай бекендга ёки тармоқ орқали узатиш йўлига эга эмас", "аналитика, реклама ёки носозликлар ҳақида ҳисобот бериш хизматлари ёки SDK’ларни ўз ичига олмайди",
-            "диагностик ҳисоботларни дастурчига ёки Puzru серверига юбормайди", "Android булутли захира нусхасидан ва қурилмадан қурилмага кўчиришдан чиқариб ташланган",
-        ).forEach { assertTrue("Missing Cyrillic Privacy guard: $it", cyrillic.contains(it)) }
-
-        val arabic = value(arabicFile, "settings_privacy_policy_body")
-        assertTrue(arabic.any { it in '\u0600'..'\u06ff' })
-        listOf("قىلمايدۇ", "ئىشلىتىدۇ", "ئۇچۇر", "ئۈسكۈنە", "دوكلات", "ئەۋەتىلمەيدۇ")
-            .forEach { assertFalse("Uyghur drift in Uzbek-AF Privacy text: $it", arabic.contains(it)) }
-        listOf(
-            "مایکروفون اجازتینی سورمه‌یدی", "ضبط جلسه‌سینینگ میته‌معلوماتی آدیو سیستمینه عاید تخنیکی معلومات‌دیر", "عمومی Android API‌لری",
-            "ایلووه‌گه مخصوص مخفی سقلش جاییده محلی سقلنه‌دی", "خودکار سقلنمه‌یدی یا یوبریلمه‌یدی", "حاضرگی نسخه Android‌نینگ انترنت اجازتینی سورمه‌یدی",
-            "شبکه آرقلی یوبریش یۉلی یۉق", "سرورده تشخیص معلوماتینی سقلمه‌یدی",
-            "بولوتی‌ده‌گی زحیره نسخه و قوریلمه‌دن قوریلمه‌گه اۉتکزیشدن چیقریلب تشلنگن",
+        assertTrue(value(arabicFile, "settings_privacy_summary_body").any { it in '\u0600'..'\u06ff' })
+        assertNotEquals(
+            value(cyrillicFile, "settings_privacy_summary_body"),
+            value(arabicFile, "settings_privacy_summary_body"),
         )
-            .forEach { assertTrue("Missing Uzbek-AF semantic guard: $it", arabic.contains(it)) }
-
     }
 
     private fun values(file: File): Map<String, String> {
