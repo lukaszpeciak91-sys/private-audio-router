@@ -71,6 +71,7 @@ class Layer41LocalizationContractTest {
         }
         val defaultOnlyNonTranslatableKeys = setOf(
             "settings_privacy_policy_language",
+            "settings_privacy_policy_body",
             "settings_assistant_early_route",
             "settings_assistant_early_route_description",
             "publisher_name",
@@ -85,20 +86,19 @@ class Layer41LocalizationContractTest {
         )
         assertTrue(defaultStrings.contains("name=\"diagnostic_email_subject\" translatable=\"false\">Puzru diagnostic report</string>"))
         assertTrue(defaultStrings.contains("name=\"diagnostic_email_body\" translatable=\"false\">Puzru diagnostic report\\n\\nVoice app/service used:"))
-        val defaultOnlyKeys = defaultOnlyNonTranslatableKeys + "settings_privacy_policy_body"
         localeDirectories.forEach { localeDirectory ->
             val localeStrings = File(localeDirectory, "strings.xml").readText()
             assertEquals(
                 localeDirectory.name,
-                stringKeys(defaultStrings).filterNot { it in defaultOnlyKeys }.toSet(),
+                stringKeys(defaultStrings).filterNot { it in defaultOnlyNonTranslatableKeys }.toSet(),
                 stringKeys(localeStrings).toSet(),
             )
             assertEquals(
                 localeDirectory.name,
-                placeholders(defaultStrings).filterKeys { key -> key !in defaultOnlyKeys },
+                placeholders(defaultStrings).filterKeys { key -> key !in defaultOnlyNonTranslatableKeys },
                 placeholders(localeStrings),
             )
-            defaultOnlyKeys.forEach { key ->
+            defaultOnlyNonTranslatableKeys.forEach { key ->
                 assertFalse("${localeDirectory.name}: $key must use the default resource", stringKeys(localeStrings).contains(key))
             }
         }
