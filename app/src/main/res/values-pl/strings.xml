@@ -31,6 +31,10 @@
     <string name="diagnostic_report_save_failed">Nie udało się zapisać raportu diagnostycznego.</string>
 
     <string name="settings_diagnostics">Diagnostyka</string>
+    <string name="diagnostics_send_report">Wyślij raport diagnostyczny</string>
+    <string name="diagnostic_report_no_handler">Brak zgodnej aplikacji do wysłania tego raportu.</string>
+    <string name="diagnostic_report_unavailable">Raport diagnostyczny jest niedostępny.</string>
+    <string name="diagnostic_report_share_failed">Nie udało się przygotować raportu diagnostycznego.</string>
     <string name="diagnostics_title">Diagnostyka</string>
     <string name="diagnostics_system_check">SPRAWDZENIE SYSTEMU</string>
     <string name="diagnostics_earpiece">Słuchawka</string>

@@ -31,6 +31,10 @@
     <string name="diagnostic_report_save_failed">Tanılama raporu kaydedilemedi.</string>
 
     <string name="settings_diagnostics">Tanılama</string>
+    <string name="diagnostics_send_report">Tanılama raporunu gönder</string>
+    <string name="diagnostic_report_no_handler">Bu raporu gönderebilecek uyumlu bir uygulama yok.</string>
+    <string name="diagnostic_report_unavailable">Tanılama raporu kullanılamıyor.</string>
+    <string name="diagnostic_report_share_failed">Tanılama raporu hazırlanamadı.</string>
     <string name="diagnostics_title">Tanılama</string>
     <string name="diagnostics_system_check">SİSTEM KONTROLÜ</string>
     <string name="diagnostics_earpiece">Ahize</string>

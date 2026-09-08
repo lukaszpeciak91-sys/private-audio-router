@@ -31,6 +31,10 @@
     <string name="diagnostic_report_save_failed">Nije moguće sačuvati dijagnostički izvještaj.</string>
 
     <string name="settings_diagnostics">Dijagnostika</string>
+    <string name="diagnostics_send_report">Pošalji dijagnostički izvještaj</string>
+    <string name="diagnostic_report_no_handler">Nema kompatibilne aplikacije koja može poslati ovaj izvještaj.</string>
+    <string name="diagnostic_report_unavailable">Dijagnostički izvještaj nije dostupan.</string>
+    <string name="diagnostic_report_share_failed">Nije moguće pripremiti dijagnostički izvještaj za dijeljenje.</string>
     <string name="diagnostics_title">Dijagnostika</string>
     <string name="diagnostics_system_check">PROVJERA SISTEMA</string>
     <string name="diagnostics_earpiece">Slušalica telefona</string>

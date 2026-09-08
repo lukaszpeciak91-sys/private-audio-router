@@ -31,6 +31,10 @@
     <string name="diagnostic_report_save_failed">Kan diagnostisch rapport niet opslaan.</string>
 
     <string name="settings_diagnostics">Diagnostiek</string>
+    <string name="diagnostics_send_report">Diagnostisch rapport verzenden</string>
+    <string name="diagnostic_report_no_handler">Geen compatibele app kan dit rapport verzenden.</string>
+    <string name="diagnostic_report_unavailable">Het diagnostische rapport is niet beschikbaar.</string>
+    <string name="diagnostic_report_share_failed">Kan het diagnostische rapport niet voorbereiden.</string>
     <string name="diagnostics_title">Diagnostiek</string>
     <string name="diagnostics_system_check">SYSTEEMCONTROLE</string>
     <string name="diagnostics_earpiece">Oorspeaker</string>

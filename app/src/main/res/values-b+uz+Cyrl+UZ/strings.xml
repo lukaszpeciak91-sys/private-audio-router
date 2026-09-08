@@ -36,6 +36,10 @@
     <string name="diagnostic_report_saved">Диагностика ҳисоботи сақланди.</string>
     <string name="diagnostic_report_save_failed">Диагностика ҳисоботини сақлаб бўлмади.</string>
     <string name="settings_diagnostics">Диагностика</string>
+    <string name="diagnostics_send_report">Диагностика ҳисоботини юбориш</string>
+    <string name="diagnostic_report_no_handler">Бу ҳисоботни юбора оладиган мос илова йўқ.</string>
+    <string name="diagnostic_report_unavailable">Диагностика ҳисоботи мавжуд эмас.</string>
+    <string name="diagnostic_report_share_failed">Диагностика ҳисоботини улашиш учун тайёрлаб бўлмади.</string>
     <string name="diagnostics_title">Диагностика</string>
     <string name="diagnostics_system_check">ТИЗИМ ТЕКШИРУВИ</string>
     <string name="diagnostics_earpiece">Қулоқ динамиги</string>

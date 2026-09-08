@@ -31,6 +31,10 @@
     <string name="diagnostic_report_save_failed">ບໍ່ສາມາດບັນທຶກລາຍງານການວິນິດໄສໄດ້.</string>
 
     <string name="settings_diagnostics">ການວິນິດໄສ</string>
+    <string name="diagnostics_send_report">ສົ່ງລາຍງານການວິນິດໄສ</string>
+    <string name="diagnostic_report_no_handler">ບໍ່ມີແອັບທີ່ເຂົ້າກັນໄດ້ສາມາດສົ່ງລາຍງານນີ້.</string>
+    <string name="diagnostic_report_unavailable">ລາຍງານການວິນິດໄສບໍ່ພ້ອມໃຊ້ງານ.</string>
+    <string name="diagnostic_report_share_failed">ບໍ່ສາມາດກະກຽມລາຍງານການວິນິດໄສໄດ້.</string>
     <string name="diagnostics_title">ການວິນິດໄສ</string>
     <string name="diagnostics_system_check">ການກວດສອບລະບົບ</string>
     <string name="diagnostics_earpiece">ຫູຟັງໃນຕົວໂທລະສັບ</string>

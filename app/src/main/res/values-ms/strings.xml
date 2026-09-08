@@ -31,6 +31,10 @@
     <string name="diagnostic_report_save_failed">Laporan diagnostik tidak dapat disimpan.</string>
 
     <string name="settings_diagnostics">Diagnostik</string>
+    <string name="diagnostics_send_report">Hantar laporan diagnostik</string>
+    <string name="diagnostic_report_no_handler">Tiada apl serasi yang boleh menghantar laporan ini.</string>
+    <string name="diagnostic_report_unavailable">Laporan diagnostik tidak tersedia.</string>
+    <string name="diagnostic_report_share_failed">Laporan diagnostik tidak dapat disediakan.</string>
     <string name="diagnostics_title">Diagnostik</string>
     <string name="diagnostics_system_check">PEMERIKSAAN SISTEM</string>
     <string name="diagnostics_earpiece">Alat dengar</string>

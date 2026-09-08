@@ -31,6 +31,10 @@
     <string name="diagnostic_report_save_failed">Не вдалося зберегти діагностичний звіт.</string>
 
     <string name="settings_diagnostics">Діагностика</string>
+    <string name="diagnostics_send_report">Надіслати діагностичний звіт</string>
+    <string name="diagnostic_report_no_handler">Немає сумісного застосунку для надсилання цього звіту.</string>
+    <string name="diagnostic_report_unavailable">Діагностичний звіт недоступний.</string>
+    <string name="diagnostic_report_share_failed">Не вдалося підготувати діагностичний звіт.</string>
     <string name="diagnostics_title">Діагностика</string>
     <string name="diagnostics_system_check">ПЕРЕВІРКА СИСТЕМИ</string>
     <string name="diagnostics_earpiece">Розмовний динамік</string>

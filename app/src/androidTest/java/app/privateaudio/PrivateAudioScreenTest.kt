@@ -312,20 +312,27 @@ class PrivateAudioScreenTest {
     @Test
     fun compactHeightDiagnosticsScrollsToSaveReport() {
         var saveClicks = 0
+        var sendClicks = 0
         composeRule.setContent {
             PrivateAudioTheme {
                 UserDiagnosticsScreen(
                     diagnosticsSummary(),
                     onBack = {},
+                    onSendDiagnosticReport = { sendClicks++ },
                     onSaveDiagnosticReport = { saveClicks++ },
                     modifier = Modifier.width(720.dp).height(300.dp),
                 )
             }
         }
 
+        composeRule.onNodeWithTag("diagnostics_send_report")
+            .performScrollTo().assertIsDisplayed().performClick()
         composeRule.onNodeWithTag("diagnostics_save_report")
             .performScrollTo().assertIsDisplayed().performClick()
-        composeRule.runOnIdle { assertEquals(1, saveClicks) }
+        composeRule.runOnIdle {
+            assertEquals(1, sendClicks)
+            assertEquals(1, saveClicks)
+        }
     }
 
     @Test
@@ -393,6 +400,7 @@ class PrivateAudioScreenTest {
     @Test
     fun diagnosticsMovesReportActionOutOfSettingsAndBackReturnsToMainScreen() {
         var saveClicks = 0
+        var sendClicks = 0
         composeRule.setContent {
             PrivateAudioTheme {
                 PrivateAudioScreen(
@@ -400,6 +408,7 @@ class PrivateAudioScreenTest {
                     onPowerClick = {},
                     onCloseClick = {},
                     onSaveDiagnosticReport = { saveClicks++ },
+                    onSendDiagnosticReport = { sendClicks++ },
                 )
             }
         }
@@ -407,8 +416,12 @@ class PrivateAudioScreenTest {
         composeRule.onNodeWithTag("private_audio_settings").performClick()
         composeRule.onNodeWithTag("settings_diagnostics").performClick()
         composeRule.onNodeWithTag("settings_sheet").assertDoesNotExist()
+        composeRule.onNodeWithTag("diagnostics_send_report").performClick()
         composeRule.onNodeWithTag("diagnostics_save_report").performClick()
-        composeRule.runOnIdle { assertEquals(1, saveClicks) }
+        composeRule.runOnIdle {
+            assertEquals(1, sendClicks)
+            assertEquals(1, saveClicks)
+        }
         composeRule.onNodeWithTag("diagnostics_back").performClick()
         composeRule.onNodeWithTag("private_audio_power").assertIsDisplayed()
     }
@@ -419,7 +432,7 @@ class PrivateAudioScreenTest {
 
         listOf(
             "SYSTEM CHECK", "PUZRU", "Earpiece", "Proximity sensor", "Floating control",
-            "Routing", "Status", "Audio route", "Save diagnostic report",
+            "Routing", "Status", "Audio route", "Send diagnostic report", "Save diagnostic report",
         ).forEach { composeRule.onNodeWithText(it).assertIsDisplayed() }
         listOf("DEVICE", "Device", "Android", "Puzru version", "Detected audio", "LAST ROUTING")
             .forEach { composeRule.onNodeWithText(it).assertDoesNotExist() }

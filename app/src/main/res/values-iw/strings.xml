@@ -31,6 +31,10 @@
     <string name="diagnostic_report_save_failed">לא ניתן לשמור את דוח האבחון.</string>
 
     <string name="settings_diagnostics">אבחון</string>
+    <string name="diagnostics_send_report">שליחת דוח אבחון</string>
+    <string name="diagnostic_report_no_handler">אין אפליקציה תואמת שיכולה לשלוח דוח זה.</string>
+    <string name="diagnostic_report_unavailable">דוח האבחון אינו זמין.</string>
+    <string name="diagnostic_report_share_failed">לא ניתן להכין את דוח האבחון.</string>
     <string name="diagnostics_title">אבחון</string>
     <string name="diagnostics_system_check">בדיקת מערכת</string>
     <string name="diagnostics_earpiece">אפרכסת</string>

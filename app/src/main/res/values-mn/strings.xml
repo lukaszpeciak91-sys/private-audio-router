@@ -31,6 +31,10 @@
     <string name="diagnostic_report_save_failed">Оношилгооны тайланг хадгалж чадсангүй.</string>
 
     <string name="settings_diagnostics">Оношилгоо</string>
+    <string name="diagnostics_send_report">Оношилгооны тайланг илгээх</string>
+    <string name="diagnostic_report_no_handler">Энэ тайланг илгээх боломжтой тохирох апп алга.</string>
+    <string name="diagnostic_report_unavailable">Оношилгооны тайлан байхгүй байна.</string>
+    <string name="diagnostic_report_share_failed">Оношилгооны тайланг бэлтгэж чадсангүй.</string>
     <string name="diagnostics_title">Оношилгоо</string>
     <string name="diagnostics_system_check">СИСТЕМИЙН ШАЛГАЛТ</string>
     <string name="diagnostics_earpiece">Чихний чанга яригч</string>

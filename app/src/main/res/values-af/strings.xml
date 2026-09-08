@@ -31,6 +31,10 @@
     <string name="diagnostic_report_save_failed">Kon nie diagnostiese verslag stoor nie.</string>
 
     <string name="settings_diagnostics">Diagnostiek</string>
+    <string name="diagnostics_send_report">Stuur diagnostiese verslag</string>
+    <string name="diagnostic_report_no_handler">Geen versoenbare app kan hierdie verslag stuur nie.</string>
+    <string name="diagnostic_report_unavailable">Diagnostiese verslag is nie beskikbaar nie.</string>
+    <string name="diagnostic_report_share_failed">Kon nie diagnostiese verslag vir deling voorberei nie.</string>
     <string name="diagnostics_title">Diagnostiek</string>
     <string name="diagnostics_system_check">STELSELKONTROLE</string>
     <string name="diagnostics_earpiece">Oorstuk</string>

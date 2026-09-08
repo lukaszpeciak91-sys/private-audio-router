@@ -31,6 +31,10 @@
     <string name="diagnostic_report_save_failed">ไม่สามารถบันทึกรายงานการวินิจฉัยได้</string>
 
     <string name="settings_diagnostics">การวินิจฉัย</string>
+    <string name="diagnostics_send_report">ส่งรายงานการวินิจฉัย</string>
+    <string name="diagnostic_report_no_handler">ไม่มีแอปที่รองรับสำหรับส่งรายงานนี้</string>
+    <string name="diagnostic_report_unavailable">ไม่มีรายงานการวินิจฉัย</string>
+    <string name="diagnostic_report_share_failed">ไม่สามารถเตรียมรายงานการวินิจฉัยได้</string>
     <string name="diagnostics_title">การวินิจฉัย</string>
     <string name="diagnostics_system_check">การตรวจสอบระบบ</string>
     <string name="diagnostics_earpiece">ลำโพงสนทนา</string>

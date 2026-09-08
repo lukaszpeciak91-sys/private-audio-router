@@ -30,6 +30,10 @@
     <string name="settings_about_body">Puzru සහාය දක්වන කටහඬ ශ්‍රව්‍යය ඔබේ දුරකථනයේ ඇතුළත් කන් රිසීවරය වෙත යොමු කිරීමට උදවු කරයි.</string>
     <string name="diagnostic_report_saved">රෝග විනිශ්චය වාර්තාව සුරකින ලදි.</string>
     <string name="diagnostic_report_save_failed">රෝග විනිශ්චය වාර්තාව සුරැකීමට නොහැකි විය.</string>
+    <string name="diagnostics_send_report">රෝග විනිශ්චය වාර්තාව යවන්න</string>
+    <string name="diagnostic_report_no_handler">මෙම වාර්තාව යැවිය හැකි ගැළපෙන යෙදුමක් නොමැත.</string>
+    <string name="diagnostic_report_unavailable">රෝග විනිශ්චය වාර්තාව නොමැත.</string>
+    <string name="diagnostic_report_share_failed">රෝග විනිශ්චය වාර්තාව සකස් කිරීමට නොහැකි විය.</string>
     <string name="diagnostics_title">රෝග විනිශ්චය</string>
     <string name="diagnostics_system_check">පද්ධති පරීක්ෂාව</string>
     <string name="diagnostics_earpiece">කන් රිසීවරය</string>

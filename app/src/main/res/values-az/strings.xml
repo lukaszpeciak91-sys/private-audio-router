@@ -31,6 +31,10 @@
     <string name="diagnostic_report_save_failed">Diaqnostik hesabatı yadda saxlamaq mümkün olmadı.</string>
 
     <string name="settings_diagnostics">Diaqnostika</string>
+    <string name="diagnostics_send_report">Diaqnostik hesabatı göndərin</string>
+    <string name="diagnostic_report_no_handler">Bu hesabatı göndərə bilən uyğun tətbiq yoxdur.</string>
+    <string name="diagnostic_report_unavailable">Diaqnostik hesabat mövcud deyil.</string>
+    <string name="diagnostic_report_share_failed">Diaqnostik hesabatı paylaşmaq üçün hazırlamaq mümkün olmadı.</string>
     <string name="diagnostics_title">Diaqnostika</string>
     <string name="diagnostics_system_check">SİSTEM YOXLAMASI</string>
     <string name="diagnostics_earpiece">Qulaq dinamiki</string>

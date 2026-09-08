@@ -31,6 +31,10 @@
     <string name="diagnostic_report_save_failed">Ma setax jiġi ssejvjat ir-rapport dijanjostiku.</string>
 
     <string name="settings_diagnostics">Dijanjostika</string>
+    <string name="diagnostics_send_report">Ibgħat ir-rapport dijanjostiku</string>
+    <string name="diagnostic_report_no_handler">Ma hemm ebda app kompatibbli li tista’ tibgħat dan ir-rapport.</string>
+    <string name="diagnostic_report_unavailable">Ir-rapport dijanjostiku mhuwiex disponibbli.</string>
+    <string name="diagnostic_report_share_failed">Ma setax jitħejja r-rapport dijanjostiku.</string>
     <string name="diagnostics_title">Dijanjostika</string>
     <string name="diagnostics_system_check">KONTROLL TAS-SISTEMA</string>
     <string name="diagnostics_earpiece">Riċevitur</string>

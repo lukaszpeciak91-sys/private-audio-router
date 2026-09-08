@@ -31,6 +31,10 @@
     <string name="diagnostic_report_save_failed">निदानसम्बन्धी रिपोर्ट सेभ गर्न सकिएन।</string>
 
     <string name="settings_diagnostics">निदान</string>
+    <string name="diagnostics_send_report">निदानसम्बन्धी रिपोर्ट पठाउनुहोस्</string>
+    <string name="diagnostic_report_no_handler">यो रिपोर्ट पठाउन सक्ने कुनै मिल्दो एप छैन।</string>
+    <string name="diagnostic_report_unavailable">निदानसम्बन्धी रिपोर्ट उपलब्ध छैन।</string>
+    <string name="diagnostic_report_share_failed">निदानसम्बन्धी रिपोर्ट तयार गर्न सकिएन।</string>
     <string name="diagnostics_title">निदान</string>
     <string name="diagnostics_system_check">प्रणाली जाँच</string>
     <string name="diagnostics_earpiece">इयरपिस</string>

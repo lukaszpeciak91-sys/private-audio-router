@@ -31,6 +31,10 @@
     <string name="diagnostic_report_save_failed">진단 보고서를 저장할 수 없습니다.</string>
 
     <string name="settings_diagnostics">진단</string>
+    <string name="diagnostics_send_report">진단 보고서 보내기</string>
+    <string name="diagnostic_report_no_handler">이 보고서를 보낼 수 있는 호환 앱이 없습니다.</string>
+    <string name="diagnostic_report_unavailable">진단 보고서를 사용할 수 없습니다.</string>
+    <string name="diagnostic_report_share_failed">진단 보고서를 준비할 수 없습니다.</string>
     <string name="diagnostics_title">진단</string>
     <string name="diagnostics_system_check">시스템 점검</string>
     <string name="diagnostics_earpiece">수화부</string>

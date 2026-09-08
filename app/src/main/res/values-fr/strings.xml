@@ -31,6 +31,10 @@
     <string name="diagnostic_report_save_failed">Impossible d’enregistrer le rapport de diagnostic.</string>
 
     <string name="settings_diagnostics">Diagnostics</string>
+    <string name="diagnostics_send_report">Envoyer le rapport de diagnostic</string>
+    <string name="diagnostic_report_no_handler">Aucune application compatible ne peut envoyer ce rapport.</string>
+    <string name="diagnostic_report_unavailable">Le rapport de diagnostic n’est pas disponible.</string>
+    <string name="diagnostic_report_share_failed">Impossible de préparer le rapport de diagnostic.</string>
     <string name="diagnostics_title">Diagnostics</string>
     <string name="diagnostics_system_check">VÉRIFICATION DU SYSTÈME</string>
     <string name="diagnostics_earpiece">Écouteur</string>

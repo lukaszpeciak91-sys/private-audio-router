@@ -31,6 +31,10 @@
     <string name="diagnostic_report_save_failed">Raportul de diagnosticare nu a putut fi salvat.</string>
 
     <string name="settings_diagnostics">Diagnosticare</string>
+    <string name="diagnostics_send_report">Trimite raportul de diagnostic</string>
+    <string name="diagnostic_report_no_handler">Nicio aplicație compatibilă nu poate trimite acest raport.</string>
+    <string name="diagnostic_report_unavailable">Raportul de diagnostic nu este disponibil.</string>
+    <string name="diagnostic_report_share_failed">Raportul de diagnostic nu a putut fi pregătit.</string>
     <string name="diagnostics_title">Diagnosticare</string>
     <string name="diagnostics_system_check">VERIFICAREA SISTEMULUI</string>
     <string name="diagnostics_earpiece">Casca telefonului</string>

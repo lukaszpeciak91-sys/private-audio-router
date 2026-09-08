@@ -31,6 +31,10 @@
     <string name="diagnostic_report_save_failed">Ekki tókst að vista greiningarskýrsluna.</string>
 
     <string name="settings_diagnostics">Greining</string>
+    <string name="diagnostics_send_report">Senda greiningarskýrslu</string>
+    <string name="diagnostic_report_no_handler">Ekkert samhæft forrit getur sent þessa skýrslu.</string>
+    <string name="diagnostic_report_unavailable">Greiningarskýrslan er ekki tiltæk.</string>
+    <string name="diagnostic_report_share_failed">Ekki tókst að undirbúa greiningarskýrsluna.</string>
     <string name="diagnostics_title">Greining</string>
     <string name="diagnostics_system_check">KERFISATHUGUN</string>
     <string name="diagnostics_earpiece">Eyrnarhátalari</string>

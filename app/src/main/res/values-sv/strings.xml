@@ -31,6 +31,10 @@
     <string name="diagnostic_report_save_failed">Det gick inte att spara diagnostikrapporten.</string>
 
     <string name="settings_diagnostics">Diagnostik</string>
+    <string name="diagnostics_send_report">Skicka diagnostikrapport</string>
+    <string name="diagnostic_report_no_handler">Ingen kompatibel app kan skicka rapporten.</string>
+    <string name="diagnostic_report_unavailable">Diagnostikrapporten är inte tillgänglig.</string>
+    <string name="diagnostic_report_share_failed">Det gick inte att förbereda diagnostikrapporten.</string>
     <string name="diagnostics_title">Diagnostik</string>
     <string name="diagnostics_system_check">SYSTEMKONTROLL</string>
     <string name="diagnostics_earpiece">Samtalslur</string>

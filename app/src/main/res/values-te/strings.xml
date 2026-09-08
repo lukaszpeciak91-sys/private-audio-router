@@ -31,6 +31,10 @@
     <string name="diagnostic_report_save_failed">డయాగ్నస్టిక్ రిపోర్ట్‌ను సేవ్ చేయడం సాధ్యపడలేదు.</string>
 
     <string name="settings_diagnostics">డయాగ్నస్టిక్స్</string>
+    <string name="diagnostics_send_report">విశ్లేషణ నివేదికను పంపండి</string>
+    <string name="diagnostic_report_no_handler">ఈ నివేదికను పంపగల అనుకూల యాప్ లేదు.</string>
+    <string name="diagnostic_report_unavailable">విశ్లేషణ నివేదిక అందుబాటులో లేదు.</string>
+    <string name="diagnostic_report_share_failed">విశ్లేషణ నివేదికను సిద్ధం చేయలేకపోయాం.</string>
     <string name="diagnostics_title">డయాగ్నస్టిక్స్</string>
     <string name="diagnostics_system_check">సిస్టమ్ తనిఖీ</string>
     <string name="diagnostics_earpiece">ఇయర్‌పీస్</string>

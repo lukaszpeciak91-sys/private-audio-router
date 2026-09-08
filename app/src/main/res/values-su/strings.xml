@@ -30,6 +30,10 @@
     <string name="settings_about_body">Puzru mantuan ngarahkeun audio sora nu dirojong ka speaker ceuli bawaan telepon anjeun.</string>
     <string name="diagnostic_report_saved">Laporan diagnostik geus disimpen.</string>
     <string name="diagnostic_report_save_failed">Laporan diagnostik teu bisa disimpen.</string>
+    <string name="diagnostics_send_report">Kirim laporan diagnostik</string>
+    <string name="diagnostic_report_no_handler">Teu aya aplikasi anu cocog pikeun ngirim laporan ieu.</string>
+    <string name="diagnostic_report_unavailable">Laporan diagnostik teu sadia.</string>
+    <string name="diagnostic_report_share_failed">Laporan diagnostik teu bisa disiapkeun.</string>
     <string name="diagnostics_title">Diagnostik</string>
     <string name="diagnostics_system_check">PARIKSA SISTEM</string>
     <string name="diagnostics_earpiece">Spéker ceuli</string>

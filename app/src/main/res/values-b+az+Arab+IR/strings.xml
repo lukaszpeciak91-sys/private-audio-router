@@ -31,6 +31,10 @@
     <string name="diagnostic_report_save_failed">دیاقنوستیک حساباتی ذخیره ائتمک مۆمکون اولمادی.</string>
 
     <string name="settings_diagnostics">دیاقنوستیک</string>
+    <string name="diagnostics_send_report">دیاقنوستیک حساباتی گؤندر</string>
+    <string name="diagnostic_report_no_handler">بو حساباتی گؤندره بیلن اویغون برنامه یوخدور.</string>
+    <string name="diagnostic_report_unavailable">دیاقنوستیک حسابات موجود دئییل.</string>
+    <string name="diagnostic_report_share_failed">دیاقنوستیک حساباتی پایلاشماق اوچون حاضیرلاماق مۆمکون اولمادی.</string>
     <string name="diagnostics_title">دیاقنوستیک</string>
     <string name="diagnostics_system_check">سیستم یوخلاماسی</string>
     <string name="diagnostics_earpiece">داخیل قولاق دینامیکی</string>

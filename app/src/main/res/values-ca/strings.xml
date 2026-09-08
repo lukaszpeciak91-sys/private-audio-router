@@ -31,6 +31,10 @@
     <string name="diagnostic_report_save_failed">No s\'ha pogut desar l\'informe de diagnòstic.</string>
 
     <string name="settings_diagnostics">Diagnòstic</string>
+    <string name="diagnostics_send_report">Envia l’informe de diagnòstic</string>
+    <string name="diagnostic_report_no_handler">No hi ha cap aplicació compatible que pugui enviar aquest informe.</string>
+    <string name="diagnostic_report_unavailable">L’informe de diagnòstic no està disponible.</string>
+    <string name="diagnostic_report_share_failed">No s’ha pogut preparar l’informe de diagnòstic per compartir-lo.</string>
     <string name="diagnostics_title">Diagnòstic</string>
     <string name="diagnostics_system_check">COMPROVACIÓ DEL SISTEMA</string>
     <string name="diagnostics_earpiece">Auricular integrat</string>

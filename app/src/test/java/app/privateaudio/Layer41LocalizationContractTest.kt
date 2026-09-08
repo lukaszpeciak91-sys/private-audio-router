@@ -74,29 +74,36 @@ class Layer41LocalizationContractTest {
                 assertFalse(localeDirectory.name, stringKeys(File(localeDirectory, "strings.xml").readText()).contains(obsoleteKey))
             }
         }
+        val defaultOnlyNonTranslatableKeys = setOf(
+            "settings_assistant_early_route",
+            "settings_assistant_early_route_description",
+            "publisher_name",
+            "privacy_support_email",
+            "diagnostic_email_subject",
+            "diagnostic_email_body",
+        )
         assertEquals(
-            setOf(
-                "settings_assistant_early_route",
-                "settings_assistant_early_route_description",
-                "publisher_name",
-                "privacy_support_email",
-            ),
+            defaultOnlyNonTranslatableKeys,
             Regex("<string name=\"([^\"]+)\" translatable=\"false\"")
                 .findAll(defaultStrings).map { it.groupValues[1] }.toSet(),
         )
+        assertTrue(defaultStrings.contains("name=\"diagnostic_email_subject\" translatable=\"false\">Puzru diagnostic report</string>"))
+        assertTrue(defaultStrings.contains("name=\"diagnostic_email_body\" translatable=\"false\">Puzru diagnostic report\\n\\nVoice app/service used:"))
         localeDirectories.forEach { localeDirectory ->
             val localeStrings = File(localeDirectory, "strings.xml").readText()
             assertEquals(
                 localeDirectory.name,
-                stringKeys(defaultStrings).filterNot(::isEnglishFallbackOnlyKey).toSet(),
+                stringKeys(defaultStrings).filterNot { it in defaultOnlyNonTranslatableKeys }.toSet(),
                 stringKeys(localeStrings).toSet(),
             )
             assertEquals(
                 localeDirectory.name,
-                placeholders(defaultStrings).filterKeys { key -> !isEnglishFallbackOnlyKey(key) },
+                placeholders(defaultStrings).filterKeys { key -> key !in defaultOnlyNonTranslatableKeys },
                 placeholders(localeStrings),
             )
-            assertFalse(localeDirectory.name, localeStrings.contains("settings_assistant_early_route"))
+            defaultOnlyNonTranslatableKeys.forEach { key ->
+                assertFalse("${localeDirectory.name}: $key must use the default resource", stringKeys(localeStrings).contains(key))
+            }
         }
         assertTrue(defaultStrings.contains("name=\"settings_assistant_early_route\" translatable=\"false\">Assistant early route</string>"))
         assertTrue(defaultStrings.contains("name=\"settings_assistant_early_route_description\" translatable=\"false\">Experimental. Primes private audio before assistant speech.</string>"))
@@ -378,7 +385,7 @@ class Layer41LocalizationContractTest {
         val swahiliStrings = projectFile("app/src/main/res/values-sw/strings.xml").readText()
         val afrikaansStrings = projectFile("app/src/main/res/values-af/strings.xml").readText()
         val diagnosticsKeys = stringKeys(defaultStrings).filter { it == "settings_diagnostics" || it.startsWith("diagnostics_") }
-        assertEquals(34, diagnosticsKeys.size)
+        assertEquals(35, diagnosticsKeys.size)
         val obsoleteKeys = setOf(
             "diagnostics_device", "diagnostics_device_model", "diagnostics_android_version",
             "diagnostics_android_value", "diagnostics_private_audio_version", "diagnostics_version_value",
@@ -425,14 +432,6 @@ class Layer41LocalizationContractTest {
             assertTrue(key, resourceValue(polishStrings, key).contains("przekier", ignoreCase = true))
         }
     }
-
-    private fun isEnglishFallbackOnlyKey(key: String): Boolean =
-        key in setOf(
-            "settings_assistant_early_route",
-            "settings_assistant_early_route_description",
-            "publisher_name",
-            "privacy_support_email",
-        )
 
     @Test
     fun finnishFrozenLocalizationSemanticsRemainIntact() {
@@ -1536,7 +1535,10 @@ class Layer41LocalizationContractTest {
         assertTrue(burmeseStrings.contains("name=\"settings_advanced\">အဆင့်မြင့်အပြင်အဆင်များ</string>"))
         assertTrue(burmeseStrings.contains("တယ်လီဖုန်းနားခွက်သို့"))
         assertTrue(burmeseStrings.contains("ပါဝါဖွင့်/ပိတ်ရန်၊ တိုးချဲ့ရန်နှင့် ထိန်းချုပ်ကိရိယာကို ပိတ်ရန်"))
-        assertEquals(3, burmeseStrings.occurrences("ချို့ယွင်းချက်ရှာဖွေမှု အစီရင်ခံစာ"))
+        assertEquals("ချို့ယွင်းချက်ရှာဖွေမှု အစီရင်ခံစာကို ပို့ပါ", resourceValue(burmeseStrings, "diagnostics_send_report"))
+        assertEquals("ဤအစီရင်ခံစာကို ပို့နိုင်သည့် ကိုက်ညီသောအက်ပ် မရှိပါ။", resourceValue(burmeseStrings, "diagnostic_report_no_handler"))
+        assertEquals("ချို့ယွင်းချက်ရှာဖွေမှု အစီရင်ခံစာကို မရရှိနိုင်ပါ။", resourceValue(burmeseStrings, "diagnostic_report_unavailable"))
+        assertEquals("ချို့ယွင်းချက်ရှာဖွေမှု အစီရင်ခံစာကို မပြင်ဆင်နိုင်ပါ။", resourceValue(burmeseStrings, "diagnostic_report_share_failed"))
         assertFalse(projectFile("app/src/main/res/values-my/mini_state_strings.xml").exists())
     }
 
@@ -1600,7 +1602,10 @@ class Layer41LocalizationContractTest {
         assertTrue(khmerStrings.contains("name=\"settings_system_default\">លំនាំដើម</string>"))
         assertTrue(khmerStrings.contains("name=\"settings_advanced\">កម្រិតខ្ពស់</string>"))
         assertTrue(khmerStrings.contains("ឧបករណ៍ស្ដាប់សំឡេងដែលមានស្រាប់ក្នុងទូរសព្ទរបស់អ្នក"))
-        assertEquals(3, khmerStrings.occurrences("របាយការណ៍វិនិច្ឆ័យ"))
+        assertEquals("ផ្ញើរបាយការណ៍វិនិច្ឆ័យ", resourceValue(khmerStrings, "diagnostics_send_report"))
+        assertEquals("មិនមានកម្មវិធីដែលត្រូវគ្នាអាចផ្ញើរបាយការណ៍នេះបានទេ។", resourceValue(khmerStrings, "diagnostic_report_no_handler"))
+        assertEquals("របាយការណ៍វិនិច្ឆ័យមិនអាចប្រើបានទេ។", resourceValue(khmerStrings, "diagnostic_report_unavailable"))
+        assertEquals("មិនអាចរៀបចំរបាយការណ៍វិនិច្ឆ័យបានទេ។", resourceValue(khmerStrings, "diagnostic_report_share_failed"))
         assertTrue(khmerStrings.contains("សម្រាប់បើក ឬបិទ Puzru សម្រាប់ពង្រីកឧបករណ៍បញ្ជា និងសម្រាប់បិទឧបករណ៍បញ្ជា"))
         assertFalse(projectFile("app/src/main/res/values-km/mini_state_strings.xml").exists())
     }
@@ -1630,7 +1635,10 @@ class Layer41LocalizationContractTest {
         assertTrue(assameseStrings.contains("name=\"settings_system_default\">ডিফ’ল্ট</string>"))
         assertTrue(assameseStrings.contains("name=\"settings_advanced\">উচ্চখাপৰ</string>"))
         assertEquals("ইয়েৰপিচ", resourceValue(assameseStrings, "diagnostics_route_earpiece"))
-        assertEquals(3, assameseStrings.occurrences("ডায়েগন’ষ্টিক ৰিপ’ৰ্ট"))
+        assertEquals("ডায়েগন’ষ্টিক ৰিপ’ৰ্ট পঠিয়াওক", resourceValue(assameseStrings, "diagnostics_send_report"))
+        assertEquals("এই ৰিপ’ৰ্টটো পঠিয়াব পৰা কোনো সুসংগত এপ নাই।", resourceValue(assameseStrings, "diagnostic_report_no_handler"))
+        assertEquals("ডায়েগন’ষ্টিক ৰিপ’ৰ্ট উপলব্ধ নহয়।", resourceValue(assameseStrings, "diagnostic_report_unavailable"))
+        assertEquals("শ্বেয়াৰ কৰিবলৈ ডায়েগন’ষ্টিক ৰিপ’ৰ্ট প্ৰস্তুত কৰিব পৰা নগ’ল।", resourceValue(assameseStrings, "diagnostic_report_share_failed"))
         assertTrue(assameseStrings.contains("পাৱাৰ অন বা অফ কৰিবলৈ, বিস্তাৰ কৰিবলৈ আৰু বন্ধ কৰিবলৈ"))
         assertFalse(projectFile("app/src/main/res/values-as/mini_state_strings.xml").exists())
     }
@@ -1660,7 +1668,10 @@ class Layer41LocalizationContractTest {
         assertTrue(catalanStrings.contains("name=\"settings_advanced\">Configuració avançada</string>"))
         assertTrue(catalanStrings.contains("sortida d\\'àudio"))
         assertTrue(catalanStrings.contains("auricular integrat del telèfon"))
-        assertEquals(4, catalanStrings.occurrences("informe de diagnòstic"))
+        assertEquals("Envia l’informe de diagnòstic", resourceValue(catalanStrings, "diagnostics_send_report"))
+        assertEquals("No hi ha cap aplicació compatible que pugui enviar aquest informe.", resourceValue(catalanStrings, "diagnostic_report_no_handler"))
+        assertEquals("L’informe de diagnòstic no està disponible.", resourceValue(catalanStrings, "diagnostic_report_unavailable"))
+        assertEquals("No s’ha pogut preparar l’informe de diagnòstic per compartir-lo.", resourceValue(catalanStrings, "diagnostic_report_share_failed"))
         assertTrue(catalanStrings.contains("Botons per activar o desactivar Puzru, ampliar el control i tancar-lo"))
         assertFalse(catalanStrings.contains("settings_assistant_early_route"))
         assertFalse(projectFile("app/src/main/res/values-ca/mini_state_strings.xml").exists())
@@ -1691,7 +1702,10 @@ class Layer41LocalizationContractTest {
         assertTrue(galicianStrings.contains("name=\"settings_advanced\">Configuración avanzada</string>"))
         assertTrue(galicianStrings.contains("saída de audio"))
         assertTrue(galicianStrings.contains("auricular integrado do teléfono"))
-        assertEquals(4, galicianStrings.occurrences("informe de diagnóstico"))
+        assertEquals("Enviar o informe de diagnóstico", resourceValue(galicianStrings, "diagnostics_send_report"))
+        assertEquals("Non hai ningunha aplicación compatible que poida enviar este informe.", resourceValue(galicianStrings, "diagnostic_report_no_handler"))
+        assertEquals("O informe de diagnóstico non está dispoñible.", resourceValue(galicianStrings, "diagnostic_report_unavailable"))
+        assertEquals("Non se puido preparar o informe de diagnóstico.", resourceValue(galicianStrings, "diagnostic_report_share_failed"))
         assertTrue(galicianStrings.contains("Botóns para activar ou desactivar Puzru, ampliar o control e pechalo"))
         assertFalse(galicianStrings.contains("settings_assistant_early_route"))
         assertFalse(projectFile("app/src/main/res/values-gl/mini_state_strings.xml").exists())

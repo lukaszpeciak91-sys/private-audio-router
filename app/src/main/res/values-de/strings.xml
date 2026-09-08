@@ -31,6 +31,10 @@
     <string name="diagnostic_report_save_failed">Diagnosebericht konnte nicht gespeichert werden.</string>
 
     <string name="settings_diagnostics">Diagnose</string>
+    <string name="diagnostics_send_report">Diagnosebericht senden</string>
+    <string name="diagnostic_report_no_handler">Keine kompatible App kann diesen Bericht senden.</string>
+    <string name="diagnostic_report_unavailable">Der Diagnosebericht ist nicht verfügbar.</string>
+    <string name="diagnostic_report_share_failed">Der Diagnosebericht konnte nicht vorbereitet werden.</string>
     <string name="diagnostics_title">Diagnose</string>
     <string name="diagnostics_system_check">SYSTEMPRÜFUNG</string>
     <string name="diagnostics_earpiece">Hörmuschel</string>

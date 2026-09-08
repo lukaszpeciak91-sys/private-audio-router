@@ -55,6 +55,7 @@ internal fun UserDiagnosticsScreen(
     onBack: () -> Unit,
     onSaveDiagnosticReport: () -> Unit,
     modifier: Modifier = Modifier,
+    onSendDiagnosticReport: () -> Unit = {},
 ) {
     BackHandler(onBack = onBack)
     Column(
@@ -102,22 +103,47 @@ internal fun UserDiagnosticsScreen(
         }
 
         Spacer(Modifier.height(24.dp))
-        Box(
-            modifier = Modifier.fillMaxWidth().height(52.dp)
-                .background(DiagnosticsAccent, androidx.compose.foundation.shape.RoundedCornerShape(12.dp))
-                .clickable(role = Role.Button, onClick = onSaveDiagnosticReport)
-                .testTag("diagnostics_save_report"),
-            contentAlignment = Alignment.Center,
-        ) {
-            Text(
-                stringResource(R.string.settings_save_diagnostic),
-                color = Color.Black,
-                fontSize = 15.sp,
-                lineHeight = 20.sp,
-                fontWeight = FontWeight.Medium,
-            )
-        }
+        DiagnosticAction(
+            label = R.string.diagnostics_send_report,
+            background = DiagnosticsAccent,
+            contentColor = Color.Black,
+            testTag = "diagnostics_send_report",
+            onClick = onSendDiagnosticReport,
+        )
+        Spacer(Modifier.height(12.dp))
+        DiagnosticAction(
+            label = R.string.settings_save_diagnostic,
+            background = DiagnosticsDivider,
+            contentColor = DiagnosticsPrimary,
+            testTag = "diagnostics_save_report",
+            onClick = onSaveDiagnosticReport,
+        )
         Spacer(Modifier.height(32.dp))
+    }
+}
+
+@Composable
+private fun DiagnosticAction(
+    @StringRes label: Int,
+    background: Color,
+    contentColor: Color,
+    testTag: String,
+    onClick: () -> Unit,
+) {
+    Box(
+        modifier = Modifier.fillMaxWidth().height(52.dp)
+            .background(background, androidx.compose.foundation.shape.RoundedCornerShape(12.dp))
+            .clickable(role = Role.Button, onClick = onClick)
+            .testTag(testTag),
+        contentAlignment = Alignment.Center,
+    ) {
+        Text(
+            stringResource(label),
+            color = contentColor,
+            fontSize = 15.sp,
+            lineHeight = 20.sp,
+            fontWeight = FontWeight.Medium,
+        )
     }
 }
 

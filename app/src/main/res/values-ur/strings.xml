@@ -31,6 +31,10 @@
     <string name="diagnostic_report_save_failed">تشخیصی رپورٹ محفوظ نہیں ہو سکی۔</string>
 
     <string name="settings_diagnostics">تشخیص</string>
+    <string name="diagnostics_send_report">تشخیصی رپورٹ بھیجیں</string>
+    <string name="diagnostic_report_no_handler">اس رپورٹ کو بھیجنے کے لیے کوئی موافق ایپ موجود نہیں ہے۔</string>
+    <string name="diagnostic_report_unavailable">تشخیصی رپورٹ دستیاب نہیں ہے۔</string>
+    <string name="diagnostic_report_share_failed">تشخیصی رپورٹ تیار نہیں کی جا سکی۔</string>
     <string name="diagnostics_title">تشخیص</string>
     <string name="diagnostics_system_check">سسٹم کی جانچ</string>
     <string name="diagnostics_earpiece">ایئر پیس</string>

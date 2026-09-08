@@ -31,6 +31,10 @@
     <string name="diagnostic_report_save_failed">डायग्नोस्टिक रिपोर्ट सेव नहीं हो सकी।</string>
 
     <string name="settings_diagnostics">डायग्नोस्टिक्स</string>
+    <string name="diagnostics_send_report">डायग्नोस्टिक रिपोर्ट भेजें</string>
+    <string name="diagnostic_report_no_handler">इस रिपोर्ट को भेजने वाला कोई संगत ऐप नहीं है।</string>
+    <string name="diagnostic_report_unavailable">डायग्नोस्टिक रिपोर्ट उपलब्ध नहीं है।</string>
+    <string name="diagnostic_report_share_failed">डायग्नोस्टिक रिपोर्ट तैयार नहीं की जा सकी।</string>
     <string name="diagnostics_title">डायग्नोस्टिक्स</string>
     <string name="diagnostics_system_check">सिस्टम जाँच</string>
     <string name="diagnostics_earpiece">ईयरपीस</string>

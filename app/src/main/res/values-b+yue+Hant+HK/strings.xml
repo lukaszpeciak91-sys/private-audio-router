@@ -30,6 +30,10 @@
     <string name="settings_about_body">Napahu Studios 出品嘅 Puzru\n\n名稱含義\nPuzru 呢個名源自一個同隱藏或者保密有關嘅阿卡德語詞。佢反映咗 app 嘅用途：令附近嘅人冇咁容易聽到受支援嘅 AI 語音播放。\n\nPuzru 有咩作用\nPuzru 幫你將受支援嘅 AI 語音播放導向手機內置嘅通話聽筒，等你聽回覆時更似普通電話通話，而唔係由主喇叭大聲播放。\n\nPuzru 依靠 Android 嘅標準音訊路由功能。兼容性取決於你嘅裝置、Android 版本，以及每個 app 或者服務處理語音音訊嘅方式。\n\n兼容性同限制\n• 語音功能喺唔同 app 同服務入面嘅運作方式各有不同。\n• 部分語音模式可能需要訂閱，亦可能受地區或者帳戶限制，或者完全唔可用。\n• Puzru 唔會解鎖或者擴展第三方服務提供嘅功能，亦唔會繞過呢啲功能嘅限制。\n\nPuzru 唔會做嘅事\n• 唔會撥打電話。\n• 唔會營運、修改或者控制第三方 AI 服務。\n• 唔會控制語音辨識、AI 回覆嘅內容或者準確性、語音輸出、延遲、網絡穩定性或者服務可用性。\n• 唔會為你提供相對於 AI 服務本身嘅私隱保障。Puzru 改變嘅係受支援嘅語音音訊喺你裝置上嘅播放位置，而唔係 AI 服務處理你對話嘅方式。</string>
     <string name="diagnostic_report_saved">診斷報告已儲存。</string>
     <string name="diagnostic_report_save_failed">無法儲存診斷報告。</string>
+    <string name="diagnostics_send_report">傳送診斷報告</string>
+    <string name="diagnostic_report_no_handler">冇相容嘅應用程式可以傳送呢份報告。</string>
+    <string name="diagnostic_report_unavailable">診斷報告無法使用。</string>
+    <string name="diagnostic_report_share_failed">無法準備診斷報告。</string>
     <string name="diagnostics_title">診斷</string>
     <string name="diagnostics_system_check">系統檢查</string>
     <string name="diagnostics_earpiece">聽筒</string>

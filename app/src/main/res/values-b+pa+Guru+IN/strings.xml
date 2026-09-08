@@ -31,6 +31,10 @@
     <string name="diagnostic_report_save_failed">ਡਾਇਗਨੌਸਟਿਕ ਰਿਪੋਰਟ ਸੰਭਾਲੀ ਨਹੀਂ ਜਾ ਸਕੀ।</string>
 
     <string name="settings_diagnostics">ਡਾਇਗਨੌਸਟਿਕਸ</string>
+    <string name="diagnostics_send_report">ਡਾਇਗਨੌਸਟਿਕ ਰਿਪੋਰਟ ਭੇਜੋ</string>
+    <string name="diagnostic_report_no_handler">ਇਹ ਰਿਪੋਰਟ ਭੇਜ ਸਕਣ ਵਾਲੀ ਕੋਈ ਅਨੁਕੂਲ ਐਪ ਨਹੀਂ ਹੈ।</string>
+    <string name="diagnostic_report_unavailable">ਡਾਇਗਨੌਸਟਿਕ ਰਿਪੋਰਟ ਉਪਲਬਧ ਨਹੀਂ ਹੈ।</string>
+    <string name="diagnostic_report_share_failed">ਸਾਂਝਾ ਕਰਨ ਲਈ ਡਾਇਗਨੌਸਟਿਕ ਰਿਪੋਰਟ ਤਿਆਰ ਨਹੀਂ ਕੀਤੀ ਜਾ ਸਕੀ।</string>
     <string name="diagnostics_title">ਡਾਇਗਨੌਸਟਿਕਸ</string>
     <string name="diagnostics_system_check">ਸਿਸਟਮ ਜਾਂਚ</string>
     <string name="diagnostics_earpiece">ਈਅਰਪੀਸ</string>

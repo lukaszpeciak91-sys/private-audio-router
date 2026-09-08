@@ -31,6 +31,10 @@
     <string name="diagnostic_report_save_failed">診断レポートを保存できませんでした。</string>
 
     <string name="settings_diagnostics">診断</string>
+    <string name="diagnostics_send_report">診断レポートを送信</string>
+    <string name="diagnostic_report_no_handler">このレポートを送信できる対応アプリがありません。</string>
+    <string name="diagnostic_report_unavailable">診断レポートを利用できません。</string>
+    <string name="diagnostic_report_share_failed">診断レポートを準備できませんでした。</string>
     <string name="diagnostics_title">診断</string>
     <string name="diagnostics_system_check">システムチェック</string>
     <string name="diagnostics_earpiece">受話口スピーカー</string>

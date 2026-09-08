@@ -31,6 +31,10 @@
     <string name="diagnostic_report_save_failed">Não foi possível salvar o relatório de diagnóstico.</string>
 
     <string name="settings_diagnostics">Diagnóstico</string>
+    <string name="diagnostics_send_report">Enviar relatório de diagnóstico</string>
+    <string name="diagnostic_report_no_handler">Nenhum app compatível pode enviar este relatório.</string>
+    <string name="diagnostic_report_unavailable">O relatório de diagnóstico não está disponível.</string>
+    <string name="diagnostic_report_share_failed">Não foi possível preparar o relatório de diagnóstico.</string>
     <string name="diagnostics_title">Diagnóstico</string>
     <string name="diagnostics_system_check">VERIFICAÇÃO DO SISTEMA</string>
     <string name="diagnostics_earpiece">Alto-falante de chamadas</string>

@@ -31,6 +31,10 @@
     <string name="diagnostic_report_save_failed">Диагностикалық есепті сақтау мүмкін болмады.</string>
 
     <string name="settings_diagnostics">Диагностика</string>
+    <string name="diagnostics_send_report">Диагностикалық есепті жіберу</string>
+    <string name="diagnostic_report_no_handler">Бұл есепті жібере алатын үйлесімді қолданба жоқ.</string>
+    <string name="diagnostic_report_unavailable">Диагностикалық есеп қолжетімсіз.</string>
+    <string name="diagnostic_report_share_failed">Диагностикалық есепті дайындау мүмкін болмады.</string>
     <string name="diagnostics_title">Диагностика</string>
     <string name="diagnostics_system_check">ЖҮЙЕНІ ТЕКСЕРУ</string>
     <string name="diagnostics_earpiece">Құлақ динамигі</string>

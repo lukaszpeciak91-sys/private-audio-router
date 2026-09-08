@@ -31,6 +31,10 @@
     <string name="diagnostic_report_save_failed">Diagnosticeringsrapporten kunne ikke gemmes.</string>
 
     <string name="settings_diagnostics">Diagnostik</string>
+    <string name="diagnostics_send_report">Send diagnosticeringsrapport</string>
+    <string name="diagnostic_report_no_handler">Ingen kompatibel app kan sende rapporten.</string>
+    <string name="diagnostic_report_unavailable">Diagnosticeringsrapporten er ikke tilgængelig.</string>
+    <string name="diagnostic_report_share_failed">Diagnosticeringsrapporten kunne ikke klargøres.</string>
     <string name="diagnostics_title">Diagnostik</string>
     <string name="diagnostics_system_check">SYSTEMKONTROL</string>
     <string name="diagnostics_earpiece">Ørestykke</string>

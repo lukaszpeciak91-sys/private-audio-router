@@ -31,6 +31,10 @@
     <string name="diagnostic_report_save_failed">گزارش عیب‌یابی ذخیره نشد.</string>
 
     <string name="settings_diagnostics">عیب‌یابی</string>
+    <string name="diagnostics_send_report">ارسال گزارش عیب‌یابی</string>
+    <string name="diagnostic_report_no_handler">هیچ برنامه سازگاری نمی‌تواند این گزارش را ارسال کند.</string>
+    <string name="diagnostic_report_unavailable">گزارش عیب‌یابی در دسترس نیست.</string>
+    <string name="diagnostic_report_share_failed">آماده‌سازی گزارش عیب‌یابی ممکن نشد.</string>
     <string name="diagnostics_title">عیب‌یابی</string>
     <string name="diagnostics_system_check">بررسی سیستم</string>
     <string name="diagnostics_earpiece">بلندگوی مکالمه</string>
