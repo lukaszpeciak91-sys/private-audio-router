@@ -32,7 +32,7 @@
     <string name="diagnostic_report_save_failed">Tsy voatahiry ny tatitra momba ny fizahana.</string>
     <string name="diagnostics_send_report">Alefaso ny tatitra momba ny fizahana</string>
     <string name="diagnostic_report_no_handler">Tsy misy rindranasa mifanaraka afaka mandefa ity tatitra ity.</string>
-    <string name="diagnostic_report_unavailable">Tsy misy ny tatitra momba ny fizahana.</string>
+    <string name="diagnostic_report_unavailable">Tsy azo ampiasaina ny tatitra momba ny fizahana.</string>
     <string name="diagnostic_report_share_failed">Tsy afaka nanomana ny tatitra momba ny fizahana.</string>
     <string name="diagnostics_title">Fizahana</string>
     <string name="diagnostics_system_check">FANAMARINANA NY RAFITRA</string>
