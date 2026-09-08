@@ -1,5 +1,12 @@
 # Progress
 
+## Continuous-WAITING inactivity safeguard
+
+- `PrivateAudioService` now owns a single in-memory delayed deadline for each uninterrupted product-state `WAITING` period. Transition tracking, rather than observer callback frequency, starts the fixed 30-minute period, so snapshots, callbacks, binds, foregrounding, configuration changes, and other same-state evidence cannot restart or extend it.
+- Leaving `WAITING` for `ACTIVE`, `READY`, or `ERROR` cancels pending work; every later transition back to `WAITING` starts a fresh full period. Generation validation makes an already-dispatched callback from an older period harmless to a later active or newly enabled session.
+- Expiry invokes the established `disarmAndStopStartedLifetime()` Power-OFF path. Explicit Power OFF and service destruction cancel the deadline. The safeguard adds no persistence, polling, retry, worker, alarm, receiver, permission, scheduler service, UI, or localized copy, and preserves fail-closed `START_NOT_STICKY` process restart behavior.
+- Deterministic JVM coverage exercises initial scheduling, same-state evidence, WAITING/ACTIVE cycles, explicit and destruction cancellation, stale callbacks, expiry cleanup delegation, and ACTIVE duration beyond 30 minutes. Physical-device validation of timeout expiry and lifecycle cleanup remains pending; no audio-routing behavior is claimed from automated tests.
+
 ## Diagnostic email attachment handoff
 
 - Diagnostics now presents separate **Send diagnostic report** and **Save diagnostic report** actions. Send captures the connected service's observationally read-only format-3 report exactly once, retains that frozen string, and writes it unchanged as UTF-8 to a timestamped `.txt` in `cacheDir/diagnostic-share/`. Prior regular files in that dedicated cache directory are removed before the next preparation so retention remains bounded.
