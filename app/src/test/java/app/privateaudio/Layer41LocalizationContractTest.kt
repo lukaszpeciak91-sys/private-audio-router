@@ -191,7 +191,7 @@ class Layer41LocalizationContractTest {
         assertTrue(gujaratiStrings.contains("name=\"state_active\">સક્રિય</string>"))
         assertTrue(gujaratiStrings.contains("name=\"settings_language_android_13_required\"") && gujaratiStrings.contains("સિસ્ટમ ભાષા"))
         assertTrue(gujaratiStrings.contains("name=\"settings_proximity_screen\">કાન પાસે સ્ક્રીન બંધ કરો</string>"))
-        assertTrue(gujaratiStrings.contains("name=\"settings_about_body\">Puzru ઑડિયોને ફોનના ઇયરપીસ પર સ્વિચ કરવામાં મદદ કરે છે.</string>"))
+        assertTrue(gujaratiStrings.contains("name=\"settings_about_body\">Napahu Studios તરફથી Puzru\\n\\nનામનો અર્થ"))
         assertEquals("मराठी", nativeLocaleName("mr"))
         assertTrue(marathiStrings.contains("name=\"routing_notification_text\">ऑडिओ स्विच होण्याची प्रतीक्षा करत आहे</string>"))
         assertTrue(marathiStrings.contains("name=\"state_waiting\">प्रतीक्षा</string>"))
