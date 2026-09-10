@@ -61,7 +61,7 @@ class OromoLocalizationContractTest {
         assertFalse(resourceValue("diagnostics_route_earpiece") == resourceValue("diagnostics_route_speaker"))
         assertTrue(resourceValue("settings_about_body").contains("dhageessisaa gurraa bilbilaa keessaa"))
         assertTrue(resourceValue("settings_about_body").contains("sagalee guddiftuu ijoo"))
-        assertTrue(resourceValue("settings_about_body").contains("tajaajila AI mataa isaa irraa dhuunfummaa hin kennu"))
+        assertTrue(resourceValue("settings_about_body").contains("Tajaajila AI mataa isaa irraa dhuunfummaa hin kennu"))
 
         assertEquals("Fooyya\\'aa %1\$s", resourceValue("settings_version"))
         val sessionEnded = resourceValue("diagnostics_error_session_ended")

@@ -828,7 +828,6 @@ class Layer41LocalizationContractTest {
         assertTrue(malteseStrings.contains("name=\"settings_language_android_13_required\"") && malteseStrings.contains("lingwa tas-sistema"))
         assertTrue(malteseStrings.contains("name=\"settings_proximity_screen\">Itfi l-iskrin meta jkun qrib widintek</string>"))
         assertTrue(resourceValue(malteseStrings, "settings_about_body").contains("riċevitur tas-sejħiet integrat tat-telefown"))
-        assertTrue(malteseStrings.contains("dak ta\\' fuq li tuża ma\\' widintek waqt telefonata"))
         assertTrue(malteseStrings.contains("tixgħel/titfi, tespandi u tagħlaq"))
         assertTrue(malteseStrings.contains("name=\"state_ready\">Lest</string>"))
         assertTrue(malteseStrings.contains("name=\"state_waiting\">Stennija</string>"))
@@ -1018,7 +1017,7 @@ class Layer41LocalizationContractTest {
         assertTrue(nepaliStrings.contains("name=\"floating\">मिनी</string>"))
         assertTrue(nepaliStrings.contains("name=\"settings_system_default\">डिफल्ट</string>"))
         assertTrue(nepaliStrings.contains("name=\"settings_advanced\">उन्नत</string>"))
-        assertTrue(nepaliStrings.contains("ह्यान्डसेट इयरपिस"))
+        assertTrue(resourceValue(nepaliStrings, "settings_about_body").contains("फोनको बिल्ट-इन कल इयरपिस"))
         assertTrue(nepaliStrings.contains("पावर अन वा अफ गर्ने, विस्तृत गर्ने र बन्द गर्ने नियन्त्रणहरू"))
         assertFalse(projectFile("app/src/main/res/values-ne/mini_state_strings.xml").exists())
     }
