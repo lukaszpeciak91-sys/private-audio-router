@@ -152,7 +152,7 @@ class Layer41LocalizationContractTest {
         assertTrue(danishStrings.contains("name=\"routing_notification_text\">Venter på at skifte lyd</string>"))
         assertTrue(danishStrings.contains("name=\"settings_language_android_13_required\"") && danishStrings.contains("systemsproget"))
         assertTrue(danishStrings.contains("name=\"settings_proximity_screen\">Sluk skærmen tæt på øret</string>"))
-        assertTrue(danishStrings.contains("telefonens indbyggede ørestykke"))
+        assertTrue(resourceValue(danishStrings, "settings_about_body").contains("telefonens indbyggede samtalehøjttaler"))
         assertTrue(danishStrings.contains("tænde, udvide og lukke"))
         assertTrue(danishStrings.contains("name=\"state_ready\">Klar</string>"))
         assertTrue(danishStrings.contains("name=\"state_waiting\">Venter</string>"))
