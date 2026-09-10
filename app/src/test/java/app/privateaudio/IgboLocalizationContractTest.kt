@@ -40,9 +40,10 @@ class IgboLocalizationContractTest {
         assertEquals("Agbanyere", resourceValue("diagnostics_on"))
         assertEquals("Agbanyụrụ", resourceValue("diagnostics_off"))
 
-        assertTrue(resourceValue("settings_about_body").contains("ọdịyo olu akwadoro"))
-        assertTrue(resourceValue("settings_about_body").contains("igwe nnata ụda dị n’ime ekwentị"))
-        assertFalse(resourceValue("settings_about_body").contains("oku"))
+        val about = resourceValue("settings_about_body")
+        assertTrue(about.contains("ọkpụkpọ ọdịyo olu AI akwadoro"))
+        assertTrue(about.contains("igwe nnata ụda dị n’ime ekwentị"))
+        assertTrue(about.contains("Ọ naghị akpọ oku ekwentị."))
         assertEquals("Igwe nnata ụda ntị", resourceValue("diagnostics_route_earpiece"))
         assertEquals("Spika", resourceValue("diagnostics_route_speaker"))
         assertFalse(resourceValue("diagnostics_route_earpiece") == resourceValue("diagnostics_route_speaker"))
