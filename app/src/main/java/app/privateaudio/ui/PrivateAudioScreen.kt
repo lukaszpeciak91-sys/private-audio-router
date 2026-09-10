@@ -125,6 +125,8 @@ internal fun PrivateAudioScreen(
     onProximityFeatureChange: (Boolean) -> Unit = {},
     assistantEarlyRouteEnabled: Boolean = false,
     onAssistantEarlyRouteChange: (Boolean) -> Unit = {},
+    assistantSessionContinuityEnabled: Boolean = false,
+    onAssistantSessionContinuityChange: (Boolean) -> Unit = {},
     powerEnabled: Boolean = true,
     onPowerClick: () -> Unit,
     onFloatingClick: () -> Unit = {},
@@ -147,6 +149,8 @@ internal fun PrivateAudioScreen(
             onProximityFeatureChange = onProximityFeatureChange,
             assistantEarlyRouteEnabled = assistantEarlyRouteEnabled,
             onAssistantEarlyRouteChange = onAssistantEarlyRouteChange,
+            assistantSessionContinuityEnabled = assistantSessionContinuityEnabled,
+            onAssistantSessionContinuityChange = onAssistantSessionContinuityChange,
             powerEnabled = powerEnabled,
             onPowerClick = onPowerClick,
             onFloatingClick = onFloatingClick,
@@ -169,6 +173,8 @@ private fun PrivateAudioScreenContent(
     onProximityFeatureChange: (Boolean) -> Unit,
     assistantEarlyRouteEnabled: Boolean,
     onAssistantEarlyRouteChange: (Boolean) -> Unit,
+    assistantSessionContinuityEnabled: Boolean,
+    onAssistantSessionContinuityChange: (Boolean) -> Unit,
     powerEnabled: Boolean,
     onPowerClick: () -> Unit,
     onFloatingClick: () -> Unit,
@@ -251,6 +257,8 @@ private fun PrivateAudioScreenContent(
                 onProximityFeatureChange = onProximityFeatureChange,
                 assistantEarlyRouteEnabled = assistantEarlyRouteEnabled,
                 onAssistantEarlyRouteChange = onAssistantEarlyRouteChange,
+                assistantSessionContinuityEnabled = assistantSessionContinuityEnabled,
+                onAssistantSessionContinuityChange = onAssistantSessionContinuityChange,
                 onDiagnostics = {
                     settingsVisible = false
                     diagnosticsVisible = true

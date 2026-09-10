@@ -74,6 +74,8 @@ class Layer41LocalizationContractTest {
             "settings_privacy_policy_body",
             "settings_assistant_early_route",
             "settings_assistant_early_route_description",
+            "settings_assistant_session_continuity",
+            "settings_assistant_session_continuity_description",
             "publisher_name",
             "privacy_support_email",
             "diagnostic_email_subject",
@@ -104,6 +106,8 @@ class Layer41LocalizationContractTest {
         }
         assertTrue(defaultStrings.contains("name=\"settings_assistant_early_route\" translatable=\"false\">Assistant early route</string>"))
         assertTrue(defaultStrings.contains("name=\"settings_assistant_early_route_description\" translatable=\"false\">Experimental. Primes private audio before assistant speech.</string>"))
+        assertTrue(defaultStrings.contains("name=\"settings_assistant_session_continuity\" translatable=\"false\">Assistant session continuity</string>"))
+        assertTrue(defaultStrings.contains("name=\"settings_assistant_session_continuity_description\" translatable=\"false\">Experimental. Keeps call-like routing active between assistant replies while voice recognition remains active.</string>"))
         assertEquals("Melayu", nativeLocaleName("ms"))
         assertTrue(malayStrings.contains("name=\"routing_notification_text\">Menunggu audio dialihkan</string>"))
         assertTrue(malayStrings.contains("name=\"settings_language_android_13_required\"") && malayStrings.contains("bahasa sistem"))

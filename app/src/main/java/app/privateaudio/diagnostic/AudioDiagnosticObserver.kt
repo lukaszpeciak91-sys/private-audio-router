@@ -347,6 +347,17 @@ data class AssistantEarlyRouteStatus(
     val trackStateDuringModeRequest: String? = null,
 )
 
+data class AssistantSessionContinuityStatus(
+    val featureEnabled: Boolean = false,
+    val active: Boolean = false,
+    val startedAt: String? = null,
+    val deadline: String? = null,
+    val recordingBaseline: List<ObservedRecording>? = null,
+    val currentRecordingMatches: Boolean? = null,
+    val lastEndReason: String? = null,
+    val protectedContextReused: Boolean = false,
+)
+
 private data class StartupTiming(
     val generation: Long,
     val triggerNanos: Long,
@@ -381,6 +392,9 @@ class AudioDiagnosticObserver(
         private set
 
     var assistantEarlyRoute by mutableStateOf(AssistantEarlyRouteStatus())
+        private set
+
+    var assistantSessionContinuity by mutableStateOf(AssistantSessionContinuityStatus())
         private set
 
     val events = mutableStateListOf<String>()
@@ -423,9 +437,12 @@ class AudioDiagnosticObserver(
     private var pendingObservation: Runnable? = null
     private var pendingEndConfirmation: Runnable? = null
     private var pendingSessionLinger: Runnable? = null
+    private var pendingAssistantSessionContinuity: Runnable? = null
     private var pendingAssistantEarlyRouteTimeout: Runnable? = null
     private var assistantEarlyRouteGeneration = 0L
     private var lingerGeneration = 0L
+    private var continuityGeneration = 0L
+    private var assistantLingerRecordingBaseline: List<ObservedRecording>? = null
     private var baseline: DiagnosticSnapshot? = null
     private val communicationDeviceListener = AudioManager.OnCommunicationDeviceChangedListener {
         snapshot("Communication device callback")
@@ -528,6 +545,16 @@ class AudioDiagnosticObserver(
         onEvidenceChanged("Assistant early route preference changed")
     }
 
+    fun updateAssistantSessionContinuityEnabled(enabled: Boolean) {
+        if (assistantSessionContinuity.featureEnabled == enabled) return
+        assistantSessionContinuity = assistantSessionContinuity.copy(featureEnabled = enabled)
+        addEvent("Assistant session continuity preference ${if (enabled) "enabled" else "disabled"}")
+        if (!enabled && pendingAssistantSessionContinuity != null) {
+            abortAssistantSessionContinuity("experiment toggle OFF")
+        }
+        onEvidenceChanged("Assistant session continuity preference changed")
+    }
+
     fun recordLifecycleEvent(message: String) {
         addEvent(message)
     }
@@ -552,6 +579,7 @@ class AudioDiagnosticObserver(
         startupTraceEntriesDropped = startupTraceEntriesDropped,
         redundantPlaybackCallbacksSuppressed = redundantPlaybackCallbacksSuppressed,
         assistantEarlyRoute = assistantEarlyRoute,
+        assistantSessionContinuity = assistantSessionContinuity,
         recordingCallbackRegistered = recordingCallbackRegistered,
         currentRecordingConfigurations = currentRecordingConfigurations,
         recordingTrace = recordingTrace.toList(),
@@ -587,6 +615,9 @@ class AudioDiagnosticObserver(
         currentRecordingConfigurations = current
         if (assistantEarlyRoute.active && !assistantEarlyRecordingHealthy()) {
             cleanupAssistantEarlyPreArm("VOICE_RECOGNITION disappeared, silenced, or changed")
+        } else if (pendingAssistantSessionContinuity != null && !assistantContinuityRecordingMatches()) {
+            assistantSessionContinuity = assistantSessionContinuity.copy(currentRecordingMatches = false)
+            abortAssistantSessionContinuity("VOICE_RECOGNITION disappeared, changed, or became silenced")
         } else if (controllerEnabled && assistantEarlyRoute.featureEnabled && !routingActionInProgress) {
             handlePlaybackConfigurations(audioManager.activePlaybackConfigurations)
         }
@@ -1456,7 +1487,7 @@ class AudioDiagnosticObserver(
         if (externalPlaybackPresent) {
             externalContributionEstablished = true
             cancelPendingEndConfirmation()
-            if (pendingSessionLinger != null) resumeAssistantDuringLinger()
+            if (pendingSessionLinger != null || pendingAssistantSessionContinuity != null) resumeAssistantDuringLinger()
         } else if (externalContributionEstablished) {
             scheduleEndConfirmation()
         }
@@ -1531,6 +1562,7 @@ class AudioDiagnosticObserver(
 
     private fun startAssistantSessionLinger(generation: Long) {
         cancelPendingSessionLinger()
+        assistantLingerRecordingBaseline = currentVoiceRecognitionConfigurations()
         // The confirmed contribution is absent. Only a genuinely resumed ASSISTANT/SPEECH
         // callback may establish it again and make a later disappearance eligible for stage 1.
         externalContributionEstablished = false
@@ -1549,6 +1581,7 @@ class AudioDiagnosticObserver(
                 ) return
                 pendingSessionLinger = null
                 addEvent("Protected session linger expired — routing cycle=$generation; ${protectedContextDescription()}")
+                if (startAssistantSessionContinuity(generation, assistantLingerRecordingBaseline.orEmpty())) return
                 addEvent("Cleanup started because linger expired — routing cycle=$generation; trigger=ASSISTANT")
                 clearExperiment("ASSISTANT protected session linger expired", ExperimentState.CLEARED)
                 returnToWaiting()
@@ -1560,14 +1593,104 @@ class AudioDiagnosticObserver(
 
     private fun resumeAssistantDuringLinger() {
         val generation = cycleGeneration
-        addEvent("ASSISTANT/SPEECH resumed during linger — routing cycle=$generation; ${protectedContextDescription()}")
+        val resumedDuringContinuity = pendingAssistantSessionContinuity != null
+        if (resumedDuringContinuity) {
+            addEvent("ASSISTANT/SPEECH resumed during continuity — routing cycle=$generation; ${protectedContextDescription()}")
+        } else {
+            addEvent("ASSISTANT/SPEECH resumed during linger — routing cycle=$generation; ${protectedContextDescription()}")
+        }
         cancelPendingSessionLinger()
-        addEvent("Linger cancelled because external contribution resumed — routing cycle=$generation")
+        cancelPendingAssistantSessionContinuity("ASSISTANT/SPEECH resumed")
+        if (resumedDuringContinuity) {
+            addEvent("Continuity cancelled because external contribution resumed — routing cycle=$generation")
+        } else {
+            addEvent("Linger cancelled because external contribution resumed — routing cycle=$generation")
+        }
         addEvent("Protected context reused without new routing attempt — routing cycle=$generation; ${protectedContextDescription()}")
     }
 
+    private fun startAssistantSessionContinuity(generation: Long, baseline: List<ObservedRecording>): Boolean {
+        val failure = assistantContinuityContextFailure(baseline)
+        if (!assistantSessionContinuity.featureEnabled || failure != null) {
+            if (assistantSessionContinuity.featureEnabled) {
+                addEvent("Assistant session continuity not started — ${failure ?: "feature disabled"}; routing cycle=$generation")
+            }
+            return false
+        }
+        cancelPendingAssistantSessionContinuity()
+        val token = ++continuityGeneration
+        val startedAt = OffsetDateTime.now().format(DateTimeFormatter.ISO_OFFSET_DATE_TIME)
+        val deadline = OffsetDateTime.now().plusNanos(ASSISTANT_SESSION_CONTINUITY_MS * 1_000_000)
+            .format(DateTimeFormatter.ISO_OFFSET_DATE_TIME)
+        assistantSessionContinuity = AssistantSessionContinuityStatus(
+            featureEnabled = true,
+            active = true,
+            startedAt = startedAt,
+            deadline = deadline,
+            recordingBaseline = baseline,
+            currentRecordingMatches = true,
+        )
+        addEvent("Assistant session continuity started — routing cycle=$generation; start=$startedAt; deadline=$deadline; recording baseline=${baseline.recordingDescription()}")
+        addEvent("Existing protected context retained without another routing or mode request — routing cycle=$generation; ${protectedContextDescription()}")
+        val runnable = object : Runnable {
+            override fun run() {
+                if (pendingAssistantSessionContinuity !== this || token != continuityGeneration ||
+                    generation != cycleGeneration || !controllerEnabled ||
+                    experiment.triggerOrigin != TriggerOrigin.ASSISTANT || experiment.attempts.size != 1
+                ) return
+                pendingAssistantSessionContinuity = null
+                val recordingMatches = assistantContinuityRecordingMatches()
+                assistantSessionContinuity = assistantSessionContinuity.copy(
+                    active = false,
+                    currentRecordingMatches = recordingMatches,
+                    lastEndReason = "timeout expired",
+                )
+                addEvent("Assistant session continuity timeout expired — routing cycle=$generation; recording still matches=$recordingMatches")
+                clearExperiment("ASSISTANT session continuity timeout expired", ExperimentState.CLEARED)
+                returnToWaiting()
+            }
+        }
+        pendingAssistantSessionContinuity = runnable
+        observationHandler.postDelayed(runnable, ASSISTANT_SESSION_CONTINUITY_MS)
+        return true
+    }
+
+    private fun currentVoiceRecognitionConfigurations() = currentRecordingConfigurations.filter {
+        it.audioSource == "VOICE_RECOGNITION"
+    }
+
+    private fun assistantContinuityRecordingMatches(): Boolean {
+        val baseline = assistantSessionContinuity.recordingBaseline ?: return false
+        return baseline.isNotEmpty() && baseline.none { it.clientSilenced == true } &&
+            currentVoiceRecognitionConfigurations() == baseline
+    }
+
+    private fun assistantContinuityContextFailure(baseline: List<ObservedRecording> = currentVoiceRecognitionConfigurations()): String? = when {
+        baseline.isEmpty() -> "VOICE_RECOGNITION absent"
+        baseline.any { it.clientSilenced == true } -> "VOICE_RECOGNITION clientSilenced=true"
+        currentVoiceRecognitionConfigurations() != baseline -> "VOICE_RECOGNITION configuration/session changed during linger"
+        audioManager.mode.isTelephonyOrSystemPriorityMode() -> "system/telephony-priority mode ${audioModeName(audioManager.mode)}"
+        silentTrack?.state != AudioTrack.STATE_INITIALIZED || silentTrack?.playState != AudioTrack.PLAYSTATE_PLAYING -> "silent track failure"
+        audioManager.availableCommunicationDevices.none { it.type == AudioDeviceInfo.TYPE_BUILTIN_EARPIECE } -> "required earpiece unavailable"
+        audioManager.mode != AudioManager.MODE_IN_COMMUNICATION -> "communication mode ownership lost"
+        audioManager.communicationDevice?.type != AudioDeviceInfo.TYPE_BUILTIN_EARPIECE -> "protected earpiece route lost"
+        else -> null
+    }
+
+    private fun abortAssistantSessionContinuity(
+        reason: String,
+        finalState: ExperimentState = ExperimentState.CLEARED,
+        resumeWaiting: Boolean = true,
+    ) {
+        if (pendingAssistantSessionContinuity == null) return
+        addEvent("Assistant session continuity aborted — $reason; routing cycle=$cycleGeneration; recording still matches=${assistantContinuityRecordingMatches()}")
+        cancelPendingAssistantSessionContinuity(reason)
+        clearExperiment("Assistant session continuity aborted: $reason", finalState)
+        if (resumeWaiting) returnToWaiting()
+    }
+
     private fun abortAssistantLingerIfContextLost(reason: String): Boolean {
-        if (pendingSessionLinger == null) return false
+        if (pendingSessionLinger == null && pendingAssistantSessionContinuity == null) return false
         val failure = when {
             audioManager.mode.isTelephonyOrSystemPriorityMode() ->
                 "system/telephony-priority mode ${audioModeName(audioManager.mode)}"
@@ -1580,7 +1703,15 @@ class AudioDiagnosticObserver(
             else -> return false
         }
         addEvent("Immediate cleanup bypassed linger because $failure — observation=$reason; routing cycle=$cycleGeneration")
-        clearExperiment("Assistant linger aborted: $failure", ExperimentState.BLOCKED)
+        if (pendingAssistantSessionContinuity != null) {
+            abortAssistantSessionContinuity(
+                reason = failure,
+                finalState = ExperimentState.BLOCKED,
+                resumeWaiting = false,
+            )
+        } else {
+            clearExperiment("Assistant linger aborted: $failure", ExperimentState.BLOCKED)
+        }
         return true
     }
 
@@ -1614,6 +1745,7 @@ class AudioDiagnosticObserver(
         invalidateAssistantEarlyRouteDelayedWork()
         cancelPendingEndConfirmation()
         cancelPendingSessionLinger()
+        cancelPendingAssistantSessionContinuity()
     }
 
     private fun cancelPendingEndConfirmation() {
@@ -1625,6 +1757,21 @@ class AudioDiagnosticObserver(
         lingerGeneration++
         pendingSessionLinger?.let(observationHandler::removeCallbacks)
         pendingSessionLinger = null
+        assistantLingerRecordingBaseline = null
+    }
+
+    private fun cancelPendingAssistantSessionContinuity(reason: String? = null) {
+        continuityGeneration++
+        pendingAssistantSessionContinuity?.let(observationHandler::removeCallbacks)
+        pendingAssistantSessionContinuity = null
+        if (assistantSessionContinuity.active) {
+            assistantSessionContinuity = assistantSessionContinuity.copy(
+                active = false,
+                currentRecordingMatches = assistantContinuityRecordingMatches(),
+                lastEndReason = reason ?: assistantSessionContinuity.lastEndReason,
+                protectedContextReused = reason == "ASSISTANT/SPEECH resumed" || assistantSessionContinuity.protectedContextReused,
+            )
+        }
     }
 
     private fun observeExperimentOutcome(observed: DiagnosticSnapshot, reason: String) {
@@ -1674,6 +1821,7 @@ class AudioDiagnosticObserver(
             addEvent("Immediate cleanup bypassed linger because $reason — routing cycle=$cycleGeneration")
         }
         cancelPendingSessionLinger()
+        cancelPendingAssistantSessionContinuity()
         cancelPendingObservation()
         routingActionInProgress = true
         audioManager.clearCommunicationDevice()
@@ -1823,6 +1971,7 @@ internal fun buildDiagnosticReport(
     startupTraceEntriesDropped: Int = 0,
     redundantPlaybackCallbacksSuppressed: Int = 0,
     assistantEarlyRoute: AssistantEarlyRouteStatus = AssistantEarlyRouteStatus(),
+    assistantSessionContinuity: AssistantSessionContinuityStatus = AssistantSessionContinuityStatus(),
     recordingCallbackRegistered: Boolean = false,
     currentRecordingConfigurations: List<ObservedRecording> = emptyList(),
     recordingTrace: List<RecordingTraceEntry> = emptyList(),
@@ -1978,6 +2127,18 @@ internal fun buildDiagnosticReport(
     appendLine("Cleanup reason: ${assistantEarlyRoute.cleanupReason ?: "None"}")
     appendLine("Timeout deadline: ${assistantEarlyRoute.timeoutDeadline ?: "Not scheduled"}")
     appendLine("Audible result: Requires physical confirmation")
+    appendLine()
+    appendLine("ASSISTANT SESSION CONTINUITY EXPERIMENT")
+    appendLine("Feature enabled: ${assistantSessionContinuity.featureEnabled}")
+    appendLine("Continuity active: ${assistantSessionContinuity.active}")
+    appendLine("Start timestamp: ${assistantSessionContinuity.startedAt ?: "Not started"}")
+    appendLine("Deadline: ${assistantSessionContinuity.deadline ?: "Not scheduled"}")
+    appendLine("Recording baseline: ${assistantSessionContinuity.recordingBaseline.recordingDescription()}")
+    appendLine("Current recording still matches: ${assistantSessionContinuity.currentRecordingMatches ?: "Not evaluated"}")
+    appendLine("Last resume / timeout / abort reason: ${assistantSessionContinuity.lastEndReason ?: "None"}")
+    appendLine("Existing protected context reused without another routing request: ${assistantSessionContinuity.protectedContextReused}")
+    appendLine("FACT: continuity matching uses only public Android recording configuration metadata.")
+    appendLine("UNKNOWN: public metadata does not expose provider ownership.")
     appendLine()
     appendLine("STARTUP AUDIO TRACE")
     appendLine("FACT: entries below contain only public Android playback metadata; no audio is captured or recorded.")
@@ -2455,6 +2616,7 @@ internal const val MAX_RECORDING_TRACE_EVENTS = 80
 private const val OBSERVATION_DELAY_MS = 1_000L
 private const val END_CONFIRMATION_DELAY_MS = 1_500L
 private const val ASSISTANT_SESSION_LINGER_MS = 7_000L
+private const val ASSISTANT_SESSION_CONTINUITY_MS = 20_000L
 private const val ASSISTANT_EARLY_ROUTE_TIMEOUT_MS = 10_000L
 private const val DEFAULT_SAMPLE_RATE = 48_000
 private const val MIN_SILENCE_BUFFER_BYTES = 1_024
