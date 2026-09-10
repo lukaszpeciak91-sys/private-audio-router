@@ -1677,11 +1677,16 @@ class AudioDiagnosticObserver(
         else -> null
     }
 
-    private fun abortAssistantSessionContinuity(reason: String) {
+    private fun abortAssistantSessionContinuity(
+        reason: String,
+        finalState: ExperimentState = ExperimentState.CLEARED,
+        resumeWaiting: Boolean = true,
+    ) {
         if (pendingAssistantSessionContinuity == null) return
         addEvent("Assistant session continuity aborted — $reason; routing cycle=$cycleGeneration; recording still matches=${assistantContinuityRecordingMatches()}")
         cancelPendingAssistantSessionContinuity(reason)
-        clearExperiment("Assistant session continuity aborted: $reason", ExperimentState.BLOCKED)
+        clearExperiment("Assistant session continuity aborted: $reason", finalState)
+        if (resumeWaiting) returnToWaiting()
     }
 
     private fun abortAssistantLingerIfContextLost(reason: String): Boolean {
@@ -1699,7 +1704,11 @@ class AudioDiagnosticObserver(
         }
         addEvent("Immediate cleanup bypassed linger because $failure — observation=$reason; routing cycle=$cycleGeneration")
         if (pendingAssistantSessionContinuity != null) {
-            abortAssistantSessionContinuity(failure)
+            abortAssistantSessionContinuity(
+                reason = failure,
+                finalState = ExperimentState.BLOCKED,
+                resumeWaiting = false,
+            )
         } else {
             clearExperiment("Assistant linger aborted: $failure", ExperimentState.BLOCKED)
         }

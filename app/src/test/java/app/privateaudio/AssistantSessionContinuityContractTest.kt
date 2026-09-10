@@ -23,7 +23,13 @@ class AssistantSessionContinuityContractTest {
         assertTrue(observer.contains("private const val ASSISTANT_SESSION_LINGER_MS = 7_000L"))
         assertTrue(observer.contains("private const val ASSISTANT_SESSION_CONTINUITY_MS = 20_000L"))
         val linger = observer.kotlinDeclaration("private fun startAssistantSessionLinger(")
-        assertInOrder(linger, "Protected session linger expired", "startAssistantSessionContinuity(generation)", "clearExperiment", "returnToWaiting()")
+        assertInOrder(
+            linger,
+            "Protected session linger expired",
+            "startAssistantSessionContinuity(generation, assistantLingerRecordingBaseline.orEmpty())",
+            "clearExperiment",
+            "returnToWaiting()",
+        )
         val continuity = observer.kotlinDeclaration("private fun startAssistantSessionContinuity(")
         assertTrue(continuity.contains("!assistantSessionContinuity.featureEnabled"))
         assertTrue(continuity.contains("postDelayed(runnable, ASSISTANT_SESSION_CONTINUITY_MS)"))
@@ -75,6 +81,30 @@ class AssistantSessionContinuityContractTest {
         assertTrue(invalidation.contains("cancelPendingAssistantSessionContinuity()"))
         val toggle = observer.kotlinDeclaration("fun updateAssistantSessionContinuityEnabled(")
         assertTrue(toggle.contains("abortAssistantSessionContinuity(\"experiment toggle OFF\")"))
+    }
+
+    @Test
+    fun normalContinuityEligibilityLossCleansAndReturnsToWaiting() {
+        val abort = observer.kotlinDeclaration("private fun abortAssistantSessionContinuity(")
+        assertTrue(abort.contains("finalState: ExperimentState = ExperimentState.CLEARED"))
+        assertTrue(abort.contains("resumeWaiting: Boolean = true"))
+        assertInOrder(abort, "clearExperiment", "if (resumeWaiting) returnToWaiting()")
+
+        val toggle = observer.kotlinDeclaration("fun updateAssistantSessionContinuityEnabled(")
+        assertTrue(toggle.contains("abortAssistantSessionContinuity(\"experiment toggle OFF\")"))
+        assertFalse(toggle.contains("ExperimentState.BLOCKED"))
+
+        val recording = observer.kotlinDeclaration("private fun handleRecordingConfigurations(")
+        assertTrue(recording.contains("abortAssistantSessionContinuity(\"VOICE_RECOGNITION disappeared, changed, or became silenced\")"))
+        assertFalse(recording.contains("ExperimentState.BLOCKED"))
+    }
+
+    @Test
+    fun genuineProtectedContextFailuresRemainBlocked() {
+        val safety = observer.kotlinDeclaration("private fun abortAssistantLingerIfContextLost(")
+        assertTrue(safety.contains("finalState = ExperimentState.BLOCKED"))
+        assertTrue(safety.contains("resumeWaiting = false"))
+        assertInOrder(safety, "isTelephonyOrSystemPriorityMode", "silent track failure", "required earpiece unavailable", "communication mode ownership lost", "protected earpiece route lost")
     }
 
     @Test
