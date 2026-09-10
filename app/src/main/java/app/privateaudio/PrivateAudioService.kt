@@ -61,6 +61,9 @@ class PrivateAudioService : Service() {
     var isAssistantEarlyRouteEnabled by mutableStateOf(false)
         private set
 
+    var isAssistantSessionContinuityEnabled by mutableStateOf(false)
+        private set
+
     val privateAudioState: PrivateAudioState
         get() {
             val currentExperiment = observer.experiment
@@ -96,8 +99,11 @@ class PrivateAudioService : Service() {
             .getBoolean(PROXIMITY_FEATURE_KEY, true)
         isAssistantEarlyRouteEnabled = getSharedPreferences(PREFERENCES_NAME, Context.MODE_PRIVATE)
             .getBoolean(ASSISTANT_EARLY_ROUTE_KEY, false)
+        isAssistantSessionContinuityEnabled = getSharedPreferences(PREFERENCES_NAME, Context.MODE_PRIVATE)
+            .getBoolean(ASSISTANT_SESSION_CONTINUITY_KEY, false)
         observer.start()
         observer.updateAssistantEarlyRouteEnabled(isAssistantEarlyRouteEnabled)
+        observer.updateAssistantSessionContinuityEnabled(isAssistantSessionContinuityEnabled)
     }
 
     override fun onBind(intent: Intent?): IBinder = binder
@@ -148,6 +154,16 @@ class PrivateAudioService : Service() {
             .putBoolean(ASSISTANT_EARLY_ROUTE_KEY, enabled)
             .apply()
         observer.updateAssistantEarlyRouteEnabled(enabled)
+    }
+
+    fun updateAssistantSessionContinuityEnabled(enabled: Boolean) {
+        if (enabled == isAssistantSessionContinuityEnabled) return
+        isAssistantSessionContinuityEnabled = enabled
+        getSharedPreferences(PREFERENCES_NAME, Context.MODE_PRIVATE)
+            .edit()
+            .putBoolean(ASSISTANT_SESSION_CONTINUITY_KEY, enabled)
+            .apply()
+        observer.updateAssistantSessionContinuityEnabled(enabled)
     }
 
     fun diagnosticReport(): String {
@@ -275,5 +291,6 @@ class PrivateAudioService : Service() {
         private const val PREFERENCES_NAME = "private_audio_preferences"
         private const val PROXIMITY_FEATURE_KEY = "proximity_screen_enabled"
         private const val ASSISTANT_EARLY_ROUTE_KEY = "assistant_early_route_enabled"
+        private const val ASSISTANT_SESSION_CONTINUITY_KEY = "assistant_session_continuity_enabled"
     }
 }

@@ -153,10 +153,11 @@ Tamil paradigm and Malayalam Waiting override remain the current exceptions.
 
 Malayalam records the concrete threshold example: full `കാത്തിരിക്കുന്നു` still failed at 14f on the physical Mini, so the complete paradigm was reviewed and only visible Mini Waiting received the compact status noun `കാത്തിരിപ്പ്`. The full state remains the accessibility and Main wording. This is evidence for that override, not permission to shorten another locale before measurement.
 
-The experimental Assistant early-route label and description currently use their
-default English copy in every locale and are explicitly non-translatable. This is a
-current scope boundary, not a permanent product decision: making that experiment a
-fully localized surface requires a future explicit localization-production task.
+The experimental Assistant early-route and Assistant session-continuity labels and
+descriptions currently use their default English copy in every locale and are
+explicitly non-translatable. This is a current scope boundary, not a permanent
+product decision: making either experiment a fully localized surface requires a
+future explicit localization-production task.
 
 ## RTL, fonts, and glyphs
 

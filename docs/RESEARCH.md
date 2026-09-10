@@ -109,6 +109,9 @@ New statements must be labeled **FACT**, **INFERENCE**, or **UNKNOWN**, with sou
 - **FACT (supplied physical result, 2026-08-21):** In several earlier turns, the 5-second linger expired and completed cleanup only about 0.6–0.7 seconds before the next assistant/speech contribution appeared. This is evidence that 5 seconds was slightly too short on the tested Gemini configuration.
 - **INFERENCE:** A 7-second linger provides margin over the observed misses while remaining substantially shorter than the original 15-second experiment.
 - **UNKNOWN:** The observed timing does not prove cleanup caused any failed Gemini turn. The tuned 7-second Gemini gate plus unchanged ChatGPT, browser, and immediate-cleanup checks remain required.
+- **FACT (supplied controlled Xiaomi evidence, 2026-09-10):** Public Android metadata showed a healthy, unsilenced `VOICE_RECOGNITION` configuration continuing between separate assistant replies during the controlled test.
+- **INFERENCE (human correlation only):** The tester correlated that controlled execution with Gemini. The public playback/recording metadata itself does not expose provider ownership and cannot identify Gemini or another application.
+- **UNKNOWN:** Whether retaining Puzru's already-established protected context for a further bounded window improves reply continuity, and whether the recording-stability pattern generalizes across devices, Android versions, or assistants, require physical testing.
 
 ## Browser-communication playback evidence
 

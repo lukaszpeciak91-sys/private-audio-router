@@ -1,5 +1,12 @@
 # Progress
 
+## Assistant session continuity experiment
+
+- Added a service-owned, persisted, default-OFF Advanced preference that can retain an established `ASSISTANT` protected cycle for one additional fixed 20-second window after the unchanged 7-second linger. Entry requires the same public unsilenced `VOICE_RECOGNITION` configuration plus a healthy silent track, owned communication mode, current built-in earpiece, and no telephony/system-priority condition.
+- Continuity keeps the existing cycle `ACTIVE`, so the established proximity projection remains downstream without another state machine. Assistant/speech resumption cancels the timeout and reuses the same resources; no new track, mode request, communication-device request, routing attempt, retry, polling, or reassertion is added. Recording loss/change/silencing, preference OFF, lifecycle shutdown, safety-context loss, and expiry use immediate generation-safe cleanup.
+- Diagnostics record enablement, activity, timing, the public recording baseline and match result, resume/timeout/abort outcome, and same-context reuse. Deterministic JVM contracts cover default/persistence, OFF behavior, Assistant-only extension, resource reuse, one-request invariants, aborts, stale work, unchanged other origins, and unchanged proximity ownership. Physical validation of the new experiment remains **NOT TESTED / UNKNOWN**.
+- The 2026-09-10 Xiaomi evidence associates the observed healthy public recording configuration with Gemini only through the controlled human test. Public Android metadata itself exposes no provider ownership, and implementation and diagnostics remain provider-independent.
+
 ## Privacy Summary migration
 
 - The app retains one canonical full English Privacy Policy, kept equal to the public GitHub Pages policy. Each of the 102 non-English resource sets now provides a compact in-app Privacy Summary assembled only from complete semantic units in its previously reviewed policy copy; localized full-policy bodies no longer ship in Android resources.

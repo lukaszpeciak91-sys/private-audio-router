@@ -87,6 +87,8 @@ fun SettingsSheet(
     onProximityFeatureChange: (Boolean) -> Unit,
     assistantEarlyRouteEnabled: Boolean,
     onAssistantEarlyRouteChange: (Boolean) -> Unit,
+    assistantSessionContinuityEnabled: Boolean = false,
+    onAssistantSessionContinuityChange: (Boolean) -> Unit = {},
     onDiagnostics: () -> Unit,
     onDismiss: () -> Unit,
     modifier: Modifier = Modifier,
@@ -185,6 +187,8 @@ fun SettingsSheet(
                             onProximityFeatureChange = onProximityFeatureChange,
                             assistantEarlyRouteEnabled = assistantEarlyRouteEnabled,
                             onAssistantEarlyRouteChange = onAssistantEarlyRouteChange,
+                            assistantSessionContinuityEnabled = assistantSessionContinuityEnabled,
+                            onAssistantSessionContinuityChange = onAssistantSessionContinuityChange,
                             onBack = { page = SettingsPage.ROOT },
                         )
                         SettingsPage.PRIVACY_POLICY -> PrivacyPolicyPage(
@@ -209,6 +213,8 @@ private fun AdvancedPage(
     onProximityFeatureChange: (Boolean) -> Unit,
     assistantEarlyRouteEnabled: Boolean,
     onAssistantEarlyRouteChange: (Boolean) -> Unit,
+    assistantSessionContinuityEnabled: Boolean,
+    onAssistantSessionContinuityChange: (Boolean) -> Unit,
     onBack: () -> Unit,
 ) {
     Column(
@@ -282,6 +288,43 @@ private fun AdvancedPage(
         }
         Switch(
             checked = assistantEarlyRouteEnabled,
+            onCheckedChange = null,
+            colors = SwitchDefaults.colors(
+                checkedThumbColor = Color.Black,
+                checkedTrackColor = Color(0xFF22DA70),
+                uncheckedThumbColor = SettingsSecondary,
+                uncheckedTrackColor = SettingsDivider,
+                uncheckedBorderColor = SettingsBorder,
+            ),
+        )
+    }
+    Spacer(Modifier.height(30.dp))
+    Row(
+        modifier = Modifier.fillMaxWidth().height(88.dp)
+            .toggleable(
+                value = assistantSessionContinuityEnabled,
+                role = Role.Switch,
+                onValueChange = onAssistantSessionContinuityChange,
+            ).testTag("settings_assistant_session_continuity"),
+        verticalAlignment = Alignment.CenterVertically,
+        horizontalArrangement = Arrangement.SpaceBetween,
+    ) {
+        Column(modifier = Modifier.weight(1f).padding(end = 12.dp)) {
+            Text(
+                stringResource(R.string.settings_assistant_session_continuity),
+                color = SettingsPrimary,
+                fontSize = 15.sp,
+                lineHeight = 21.sp,
+            )
+            Text(
+                stringResource(R.string.settings_assistant_session_continuity_description),
+                color = SettingsSecondary,
+                fontSize = 12.sp,
+                lineHeight = 16.sp,
+            )
+        }
+        Switch(
+            checked = assistantSessionContinuityEnabled,
             onCheckedChange = null,
             colors = SwitchDefaults.colors(
                 checkedThumbColor = Color.Black,
