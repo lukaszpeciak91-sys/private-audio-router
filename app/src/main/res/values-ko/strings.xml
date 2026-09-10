@@ -26,7 +26,7 @@
     <string name="settings_version">버전 %1$s</string>
     <string name="settings_language_android_13_required">앱에서 언어를 선택하려면 Android 13 이상이 필요합니다. 이 기기에서는 시스템 언어를 사용합니다.</string>
     <string name="settings_proximity_screen">귀에 가까이 대면 화면 끄기</string>
-    <string name="settings_about_body">Puzru는 음성을 휴대전화의 수화부로 전환하는 데 도움을 줍니다.</string>
+    <string name="settings_about_body">Napahu Studios의 Puzru\n\n이름의 의미\nPuzru라는 이름은 숨김 또는 비밀과 관련된 아카드어 단어에서 유래했습니다. 이 이름에는 지원되는 AI 음성 재생을 주변 사람들이 듣기 어렵게 하려는 앱의 목적이 담겨 있습니다.\n\nPuzru의 기능\nPuzru는 지원되는 AI 음성 재생을 휴대전화에 내장된 통화용 수화부로 라우팅하도록 도와줍니다. 따라서 응답이 주 스피커에서 큰 소리로 재생되는 대신 일반 전화 통화처럼 들립니다.\n\nPuzru는 Android의 표준 오디오 라우팅 기능을 사용합니다. 호환성은 기기, Android 버전, 각 앱 또는 서비스가 음성 오디오를 처리하는 방식에 따라 달라집니다.\n\n호환성 및 제한사항\n• 음성 기능은 앱과 서비스마다 다르게 작동합니다.\n• 일부 음성 모드는 구독이 필요하거나 지역 또는 계정에 따라 제한될 수 있으며, 아예 제공되지 않을 수도 있습니다.\n• Puzru는 제3자 서비스가 제공하는 기능을 잠금 해제하거나 확장 또는 우회하지 않습니다.\n\nPuzru가 하지 않는 일\n• 전화를 걸지 않습니다.\n• 제3자 AI 서비스를 운영, 수정 또는 제어하지 않습니다.\n• 음성 인식, AI 응답의 내용이나 정확성, 음성 출력, 지연 시간, 네트워크 안정성 또는 서비스 가용성을 제어하지 않습니다.\n• AI 서비스 자체로부터의 개인정보 보호를 제공하지 않습니다. Puzru는 지원되는 음성 오디오가 기기에서 재생되는 위치만 변경하며, AI 서비스가 대화를 처리하는 방식은 변경하지 않습니다.</string>
     <string name="diagnostic_report_saved">진단 보고서를 저장했습니다.</string>
     <string name="diagnostic_report_save_failed">진단 보고서를 저장할 수 없습니다.</string>
 
