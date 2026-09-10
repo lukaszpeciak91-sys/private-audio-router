@@ -288,6 +288,10 @@ class Layer4SettingsContractTest {
             "values-b+sr+Latn+ME", "values-b+uz+Arab+AF", "values-b+uz+Cyrl+UZ",
             "values-b+yue+Hans+CN", "values-b+yue+Hant+HK", "values-b+zh+Hans",
             "values-b+zh+Hant", "values-be",
+            "values-bg", "values-bn", "values-bs", "values-ca", "values-cs",
+            "values-da", "values-el", "values-et", "values-eu", "values-fa",
+            "values-fi", "values-fil", "values-fo", "values-fr", "values-gl",
+            "values-gu", "values-ha", "values-hi", "values-hr", "values-hu",
         ).forEach { resourceDirectory ->
             val stringsFile = projectFile("app/src/main/res/$resourceDirectory/strings.xml")
             val about = resourceValue(stringsFile, "settings_about_body")
