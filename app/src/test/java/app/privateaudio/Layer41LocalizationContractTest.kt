@@ -172,7 +172,7 @@ class Layer41LocalizationContractTest {
         assertTrue(faroeseStrings.contains("name=\"routing_notification_text\">Bíðar eftir at skifta ljóðið</string>"))
         assertTrue(faroeseStrings.contains("name=\"settings_language_android_13_required\"") && faroeseStrings.contains("skipanarmálinum"))
         assertTrue(faroeseStrings.contains("name=\"settings_proximity_screen\">Sløkk skíggjan nær oyranum</string>"))
-        assertTrue(faroeseStrings.contains("innbygda hátalaran ovast á telefonini, sum verður brúktur við oyrað undir telefonsamrøðum"))
+        assertTrue(resourceValue(faroeseStrings, "settings_about_body").contains("innbygda samtalulurtin í telefonini"))
         assertTrue(faroeseStrings.contains("tendra, víðka og lata aftur"))
         assertTrue(faroeseStrings.contains("name=\"state_ready\">Klárt</string>"))
         assertTrue(faroeseStrings.contains("name=\"state_waiting\">Bíðar</string>"))
