@@ -87,11 +87,11 @@ fun SettingsSheet(
     onProximityFeatureChange: (Boolean) -> Unit,
     assistantEarlyRouteEnabled: Boolean,
     onAssistantEarlyRouteChange: (Boolean) -> Unit,
-    assistantSessionContinuityEnabled: Boolean = false,
-    onAssistantSessionContinuityChange: (Boolean) -> Unit = {},
     onDiagnostics: () -> Unit,
     onDismiss: () -> Unit,
     modifier: Modifier = Modifier,
+    assistantSessionContinuityEnabled: Boolean = false,
+    onAssistantSessionContinuityChange: (Boolean) -> Unit = {},
     onContactClick: () -> Unit = {},
     onPrivacyPolicyOnlineClick: () -> Unit = {},
 ) {
