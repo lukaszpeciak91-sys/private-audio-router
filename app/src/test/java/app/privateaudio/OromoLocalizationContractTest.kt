@@ -59,9 +59,9 @@ class OromoLocalizationContractTest {
         assertEquals("Dhageessisaa gurraa bilbilaa keessaa", resourceValue("diagnostics_route_earpiece"))
         assertEquals("Sagalee guddiftuu", resourceValue("diagnostics_route_speaker"))
         assertFalse(resourceValue("diagnostics_route_earpiece") == resourceValue("diagnostics_route_speaker"))
-        assertTrue(resourceValue("settings_about_body").contains("bilbilaa keessaa kan gubbaa"))
-        assertTrue(resourceValue("settings_about_body").contains("gurra biratti"))
-        assertFalse(resourceValue("settings_about_body").contains("Sagalee guddiftuu", ignoreCase = true))
+        assertTrue(resourceValue("settings_about_body").contains("dhageessisaa gurraa bilbilaa keessaa"))
+        assertTrue(resourceValue("settings_about_body").contains("sagalee guddiftuu ijoo"))
+        assertTrue(resourceValue("settings_about_body").contains("Tajaajila AI mataa isaa irraa dhuunfummaa hin kennu"))
 
         assertEquals("Fooyya\\'aa %1\$s", resourceValue("settings_version"))
         val sessionEnded = resourceValue("diagnostics_error_session_ended")

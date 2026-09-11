@@ -46,9 +46,9 @@ class SinhalaLocalizationContractTest {
         assertEquals("ලබා ගත නොහැකිය", resourceValue("diagnostics_earpiece_not_available"))
         assertEquals("ලබා ගත හැකිය", resourceValue("diagnostics_proximity_available"))
         assertEquals("ලබා ගත නොහැකිය", resourceValue("diagnostics_proximity_not_available"))
-        assertTrue(resourceValue("settings_about_body").contains("සහාය දක්වන කටහඬ ශ්‍රව්‍යය"))
-        assertTrue(resourceValue("settings_about_body").contains("දුරකථනයේ ඇතුළත් කන් රිසීවරය"))
-        assertFalse(resourceValue("settings_about_body").contains("ඇමතුම්"))
+        assertTrue(resourceValue("settings_about_body").contains("සහාය දක්වන AI කටහඬ ධාවනය"))
+        assertTrue(resourceValue("settings_about_body").contains("දුරකථනයේ ඇතුළත් ඇමතුම් කන් රිසීවරයට"))
+        assertTrue(resourceValue("settings_about_body").contains("ප්‍රධාන ශබ්ද විකාශකයෙන්"))
 
         val privacy = resourceValue("settings_privacy_summary_body")
         assertEquals(3, privacy.split("\\n\\n").size)
