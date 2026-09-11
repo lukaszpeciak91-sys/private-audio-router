@@ -56,6 +56,11 @@ class PermissionUxContractTest {
             val matching = defaultNodes.filter { it.attributes.getNamedItem("name").nodeValue == key }
             assertEquals("default: $key", 1, matching.size)
             assertTrue("$key must remain localizable", matching.single().attributes.getNamedItem("translatable") == null)
+            assertEquals(
+                "$key must have only the temporary element-scoped lint suppression",
+                "MissingTranslation",
+                matching.single().attributes.getNamedItem("tools:ignore")?.nodeValue,
+            )
         }
         localeDirectories.forEach { directory ->
             val names = stringNodes(File(directory, "strings.xml"))

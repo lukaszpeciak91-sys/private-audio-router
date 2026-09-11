@@ -211,7 +211,9 @@
   explicit English or mixed-language duplicate. No translation or independent
   localization validation is claimed, and a controlled permission-copy localization
   rollout remains pending. Runtime permission UX implementation is independent of
-  that translation status.
+  that translation status. Each default permission string has an intentional,
+  element-scoped `MissingTranslation` suppression; remove each suppression when that
+  string's complete controlled translation rollout is introduced.
 - Automated decision, persistence-boundary, UI-contract, and fallback-resource checks
   cover the implementation. Runtime/device checks remain pending for first use,
   grant/denial/dismissal, repeat attempts, recreation, compact landscape, RTL,
