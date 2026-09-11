@@ -147,6 +147,14 @@ class Layer4SettingsContractTest {
             "Napahu Studios privacy and support address may be prefilled",
             "actual transmission is performed by the selected external app or service",
             "governed by its privacy practices and controls, not Puzru’s",
+            "If you choose to send a diagnostic report to Napahu Studios",
+            "Napahu Studios and its email service provider may receive the attached technical report",
+            "the sender email address, and any message you add",
+            "only to respond to your support request and investigate or troubleshoot Puzru",
+            "retains information it controls only for as long as reasonably necessary",
+            "or to comply with applicable legal obligations",
+            "request deletion of copies controlled by Napahu Studios by contacting napahustudios@gmail.com",
+            "Copies controlled by an email or other external service remain subject to that service’s privacy practices and controls",
             "removes prior regular report files in its diagnostic-share cache where deletion succeeds",
             "no fixed deletion time for the current attachment is guaranteed",
             "excluded from Android cloud backup and device-to-device transfer",
@@ -156,6 +164,8 @@ class Layer4SettingsContractTest {
             "never transmits",
             "completely anonymous",
             "contain no identifying information",
+            "Napahu Studios can delete all copies",
+            "immediately deleted",
         ).forEach { overclaim -> assertFalse(overclaim, strings.contains(overclaim, ignoreCase = true)) }
     }
 
@@ -179,7 +189,7 @@ class Layer4SettingsContractTest {
         assertTrue(publicPage.contains("<title>Puzru Privacy Policy</title>"))
         assertTrue(publicPage.contains("<h1>Puzru Privacy Policy</h1>"))
         assertTrue(publicPage.contains("Developer and publisher: Napahu Studios"))
-        assertTrue(publicPage.contains("Last updated: September 8, 2026"))
+        assertTrue(publicPage.contains("Last updated: September 10, 2026"))
         assertTrue(publicPage.contains("mailto:napahustudios@gmail.com"))
     }
 
