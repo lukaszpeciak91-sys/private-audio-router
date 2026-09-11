@@ -44,20 +44,30 @@ class PermissionUxContractTest {
         assertTrue(settings.contains("heightIn(min = 48.dp)"))
     }
 
-    @Test fun everyProductLocaleDefinesAllPermissionKeysExactlyOnce() {
+    @Test fun permissionCopyUsesOnlyLocalizableDefaultEnglishUntilControlledRollout() {
         val keys = listOf(
             "permission_notification_title", "permission_notification_body",
             "permission_notification_allow", "permission_notification_continue",
             "permission_overlay_title", "permission_overlay_body",
             "permission_overlay_open_settings", "permission_overlay_not_now",
         )
-        resourceDirectories.forEach { directory ->
-            val nodes = DocumentBuilderFactory.newInstance().newDocumentBuilder()
-                .parse(File(directory, "strings.xml")).getElementsByTagName("string")
-            val names = (0 until nodes.length).map { nodes.item(it).attributes.getNamedItem("name").nodeValue }
-            keys.forEach { assertEquals("${directory.name}: $it", 1, names.count { name -> name == it }) }
+        val defaultNodes = stringNodes(File(resources, "values/strings.xml"))
+        keys.forEach { key ->
+            val matching = defaultNodes.filter { it.attributes.getNamedItem("name").nodeValue == key }
+            assertEquals("default: $key", 1, matching.size)
+            assertTrue("$key must remain localizable", matching.single().attributes.getNamedItem("translatable") == null)
+        }
+        localeDirectories.forEach { directory ->
+            val names = stringNodes(File(directory, "strings.xml"))
+                .map { it.attributes.getNamedItem("name").nodeValue }
+            keys.forEach { assertFalse("${directory.name}: copied permission key $it", names.contains(it)) }
         }
     }
+
+    private fun stringNodes(file: File) = DocumentBuilderFactory.newInstance().newDocumentBuilder()
+        .parse(file).getElementsByTagName("string").let { nodes ->
+            (0 until nodes.length).map(nodes::item)
+        }
 
     private companion object {
         val root = generateSequence(File(System.getProperty("user.dir")).absoluteFile) { it.parentFile }
@@ -68,7 +78,8 @@ class PermissionUxContractTest {
         val service = source("app/src/main/java/app/privateaudio/PrivateAudioService.kt")
         val overlay = source("app/src/main/java/app/privateaudio/overlay/OverlayService.kt")
         val preferences = source("app/src/main/java/app/privateaudio/PermissionUxPreferences.kt")
-        val resourceDirectories = File(root, "app/src/main/res").listFiles().orEmpty()
-            .filter { it.isDirectory && it.name.startsWith("values") && it.name != "values-night" }
+        val resources = File(root, "app/src/main/res")
+        val localeDirectories = resources.listFiles().orEmpty()
+            .filter { it.isDirectory && it.name.startsWith("values-") && it.name != "values-night" }
     }
 }

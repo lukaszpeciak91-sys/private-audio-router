@@ -205,7 +205,14 @@
 - The first missing-permission Mini attempt explains optional access before the
   existing package Settings handoff. A later deliberate attempt opens Settings
   directly, and return still rechecks the grant before requesting one existing Mini.
-- Automated decision, persistence-boundary, UI-contract, and locale-resource checks
+- The finalized English permission source copy is implemented as ordinary localizable
+  default resources. Supported non-English locales temporarily receive that canonical
+  English copy only through Android's normal resource fallback; no locale contains an
+  explicit English or mixed-language duplicate. No translation or independent
+  localization validation is claimed, and a controlled permission-copy localization
+  rollout remains pending. Runtime permission UX implementation is independent of
+  that translation status.
+- Automated decision, persistence-boundary, UI-contract, and fallback-resource checks
   cover the implementation. Runtime/device checks remain pending for first use,
   grant/denial/dismissal, repeat attempts, recreation, compact landscape, RTL,
   notification visibility, and unchanged routing. No routing, service,

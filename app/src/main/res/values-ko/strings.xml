@@ -68,12 +68,4 @@
     <string name="diagnostics_error_audio_preparation">Puzru에서 통신 오디오를 준비하지 못했습니다.</string>
     <string name="diagnostics_error_request_rejected">수화부로 전환 요청이 수락되지 않았습니다.</string>
     <string name="diagnostics_error_not_completed">오디오 전환을 완료하지 못했습니다.</string>
-    <string name="permission_notification_title">Show when Puzru is on</string>
-    <string name="permission_notification_body">Puzru uses a quiet notification to show when it is on and ready to route audio, including while the app is in the background. Notifications are optional; Puzru still works without them.</string>
-    <string name="permission_notification_allow">Allow notifications</string>
-    <string name="permission_notification_continue">Continue without notifications</string>
-    <string name="permission_overlay_title">Allow 미니 over other apps</string>
-    <string name="permission_overlay_body">미니 needs Android’s “Display over other apps” access to stay visible while you use a supported voice app. This access is optional and does not let Puzru read or control other apps. Audio routing works without 미니.</string>
-    <string name="permission_overlay_open_settings">Open settings</string>
-    <string name="permission_overlay_not_now">Not now</string>
 </resources>

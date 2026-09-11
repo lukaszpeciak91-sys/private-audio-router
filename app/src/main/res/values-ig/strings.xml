@@ -67,12 +67,4 @@
     <string name="diagnostics_error_audio_preparation">Puzru enweghị ike ịkwadebe ọdịyo nkwurịta okwu.</string>
     <string name="diagnostics_error_request_rejected">Anabataghị arịrịọ ibugharị ọdịyo gaa na igwe nnata ụda ntị.</string>
     <string name="diagnostics_error_not_completed">Enweghị ike imecha ibugharị ọdịyo.</string>
-    <string name="permission_notification_title">Show when Puzru is on</string>
-    <string name="permission_notification_body">Puzru uses a quiet notification to show when it is on and ready to route audio, including while the app is in the background. Notifications are optional; Puzru still works without them.</string>
-    <string name="permission_notification_allow">Allow notifications</string>
-    <string name="permission_notification_continue">Continue without notifications</string>
-    <string name="permission_overlay_title">Allow Obere over other apps</string>
-    <string name="permission_overlay_body">Obere needs Android’s “Display over other apps” access to stay visible while you use a supported voice app. This access is optional and does not let Puzru read or control other apps. Audio routing works without Obere.</string>
-    <string name="permission_overlay_open_settings">Open settings</string>
-    <string name="permission_overlay_not_now">Not now</string>
 </resources>
