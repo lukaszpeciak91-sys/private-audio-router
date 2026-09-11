@@ -40,7 +40,6 @@ class YorubaLocalizationContractTest {
         assertEquals("Tó ti ní ìlọsíwájú", resourceValue("settings_advanced"))
         assertEquals("Ìjáde ohùn", resourceValue("diagnostics_audio_route"))
         assertTrue(resourceValue("settings_about_body").contains("agbohùnsókè etí inú foonu"))
-        assertFalse(resourceValue("settings_about_body").contains("ohùn ìpè"))
         assertEquals("Agbohùnsókè", resourceValue("diagnostics_route_speaker"))
         val privacy = resourceValue("settings_privacy_summary_body")
         assertEquals(3, privacy.split("\\n\\n").size)

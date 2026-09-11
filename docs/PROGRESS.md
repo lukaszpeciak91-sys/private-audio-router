@@ -29,6 +29,14 @@
 
 ## Final English About Puzru source
 
+- About localization test maintenance now separates the centralized finalized-copy
+  contract from deliberate locale-specific terminology guards. The contract covers
+  the authoritative English product semantics, six-section/seven-bullet structure,
+  identity tokens, English fallback, and the exact current finalized-versus-legacy
+  rollout classification; obsolete one-sentence About assertions have been removed.
+  Future batches should move their locale classification and retain exact localized
+  assertions only for reviewed durable invariants. No locale resource changed in this
+  maintenance step.
 - The default, unqualified English `settings_about_body` resource now establishes
   the finalized About Puzru source, including the product purpose, name meaning,
   compatibility boundaries, and explicit limits on third-party service control and

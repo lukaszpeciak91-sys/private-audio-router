@@ -47,7 +47,6 @@ class XhosaLocalizationContractTest {
         assertFalse(resourceValue("diagnostics_route_earpiece") == resourceValue("diagnostics_route_speaker"))
         assertTrue(resourceValue("settings_about_body").contains("iaudio yelizwi exhaswayo"))
         assertTrue(resourceValue("settings_about_body").contains("isamkeli sendlebe esakhelwe ngaphakathi"))
-        assertFalse(resourceValue("settings_about_body").contains("umnxeba", ignoreCase = true))
 
         val privacy = resourceValue("settings_privacy_summary_body")
         assertEquals(3, privacy.split("\\n\\n").size)

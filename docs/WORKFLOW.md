@@ -135,6 +135,9 @@ Choose current work from `PROGRESS.md` and `TEST_PLAN.md`, then follow
 - New physical behaviors to validate update `TEST_PLAN.md`.
 - Research records preserve **FACT**, **INFERENCE**, and **UNKNOWN** distinctions.
 - Localization work follows the authoritative policy in [`LOCALIZATION.md`](LOCALIZATION.md). Translation production and audit findings delegated for correction use `private-audio-translation`; independent verification and quality classification use the read-only-by-default `private-audio-localization-audit`. Keep the general workflow here free of duplicated localization rules.
+- An About rollout PR must review every `settings_about_body` test reference and update
+  the centralized rollout classification; follow `LOCALIZATION.md` rather than
+  preserving assertions for superseded About wording.
 
 ## Stop condition
 
