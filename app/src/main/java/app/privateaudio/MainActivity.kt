@@ -6,6 +6,7 @@ import android.content.Context
 import android.content.Intent
 import android.content.ServiceConnection
 import android.net.Uri
+import android.os.Build
 import android.os.Bundle
 import android.os.IBinder
 import android.os.Handler
@@ -19,12 +20,14 @@ import androidx.activity.ComponentActivity
 import androidx.activity.SystemBarStyle
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.core.content.ContextCompat
 import androidx.core.content.FileProvider
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import app.privateaudio.overlay.OverlayService
 import app.privateaudio.ui.PrivateAudioScreen
+import app.privateaudio.ui.PermissionExplanation
 import app.privateaudio.ui.theme.PrivateAudioTheme
 
 class MainActivity : ComponentActivity() {
@@ -32,8 +35,13 @@ class MainActivity : ComponentActivity() {
     private var isBound = false
     private var overlayPermissionRequestPending = false
     private var overlayPermissionGranted by mutableStateOf(false)
+    private var permissionExplanation by mutableStateOf<PermissionExplanation?>(null)
+    private lateinit var permissionUxPreferences: PermissionUxPreferences
     private var pendingDiagnosticReport: String? = null
     private var lastDiagnosticSaveFailureReason: String? = null
+    private val notificationPermissionLauncher = registerForActivityResult(
+        ActivityResultContracts.RequestPermission(),
+    ) { armRouting() }
     private val diagnosticDocumentLauncher = registerForActivityResult(
         ActivityResultContracts.StartActivityForResult(),
     ) { result ->
@@ -69,6 +77,12 @@ class MainActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        permissionUxPreferences = PermissionUxPreferences(this)
+        permissionExplanation = savedInstanceState
+            ?.getString(STATE_PERMISSION_EXPLANATION)
+            ?.let(PermissionExplanation::valueOf)
+        overlayPermissionRequestPending = savedInstanceState
+            ?.getBoolean(STATE_OVERLAY_PERMISSION_PENDING) == true
         enableEdgeToEdge(
             statusBarStyle = SystemBarStyle.dark(android.graphics.Color.TRANSPARENT),
             navigationBarStyle = SystemBarStyle.dark(android.graphics.Color.TRANSPARENT),
@@ -90,15 +104,15 @@ class MainActivity : ComponentActivity() {
                     powerEnabled = connectedService != null,
                     onPowerClick = {
                         if (state == PrivateAudioState.READY) {
-                            startForegroundService(
-                                Intent(this, PrivateAudioService::class.java)
-                                    .setAction(PrivateAudioService.ACTION_ARM),
-                            )
+                            handlePowerOn()
                         } else {
                             connectedService?.disarmAndStopStartedLifetime()
                         }
                     },
                     onFloatingClick = { showOverlayOrRequestPermission() },
+                    permissionExplanation = permissionExplanation,
+                    onPermissionExplanationPrimary = { handleExplanationPrimary(it) },
+                    onPermissionExplanationSecondary = { handleExplanationSecondary(it) },
                     onCloseClick = {
                         hideOverlay()
                         connectedService?.disarmAndStopStartedLifetime()
@@ -113,6 +127,12 @@ class MainActivity : ComponentActivity() {
                 )
             }
         }
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        permissionExplanation?.let { outState.putString(STATE_PERMISSION_EXPLANATION, it.name) }
+        outState.putBoolean(STATE_OVERLAY_PERMISSION_PENDING, overlayPermissionRequestPending)
+        super.onSaveInstanceState(outState)
     }
 
     private fun openPrivacySupportEmail() {
@@ -167,16 +187,68 @@ class MainActivity : ComponentActivity() {
     }
 
     private fun showOverlayOrRequestPermission() {
-        if (Settings.canDrawOverlays(this)) {
-            showOverlay()
-            return
+        when (overlayMiniDecision(
+            Settings.canDrawOverlays(this),
+            permissionUxPreferences.overlayExplanationResolved,
+        )) {
+            OverlayMiniDecision.SHOW -> showOverlay()
+            OverlayMiniDecision.EXPLAIN -> permissionExplanation = PermissionExplanation.OVERLAY
+            OverlayMiniDecision.OPEN_SETTINGS -> openOverlaySettings()
         }
+    }
+
+    private fun openOverlaySettings() {
         overlayPermissionRequestPending = true
         startActivity(
             Intent(
                 Settings.ACTION_MANAGE_OVERLAY_PERMISSION,
                 Uri.parse("package:$packageName"),
             ),
+        )
+    }
+
+    private fun handlePowerOn() {
+        val permissionGranted = Build.VERSION.SDK_INT < Build.VERSION_CODES.TIRAMISU ||
+            ContextCompat.checkSelfPermission(this, android.Manifest.permission.POST_NOTIFICATIONS) ==
+            android.content.pm.PackageManager.PERMISSION_GRANTED
+        when (notificationPowerDecision(
+            Build.VERSION.SDK_INT,
+            permissionGranted,
+            permissionUxPreferences.notificationExplanationResolved,
+        )) {
+            NotificationPowerDecision.START -> armRouting()
+            NotificationPowerDecision.EXPLAIN -> permissionExplanation = PermissionExplanation.NOTIFICATION
+        }
+    }
+
+    private fun handleExplanationPrimary(explanation: PermissionExplanation) {
+        permissionExplanation = null
+        when (explanation) {
+            PermissionExplanation.NOTIFICATION -> {
+                permissionUxPreferences.notificationExplanationResolved = true
+                notificationPermissionLauncher.launch(android.Manifest.permission.POST_NOTIFICATIONS)
+            }
+            PermissionExplanation.OVERLAY -> {
+                permissionUxPreferences.overlayExplanationResolved = true
+                openOverlaySettings()
+            }
+        }
+    }
+
+    private fun handleExplanationSecondary(explanation: PermissionExplanation) {
+        permissionExplanation = null
+        when (explanation) {
+            PermissionExplanation.NOTIFICATION -> {
+                permissionUxPreferences.notificationExplanationResolved = true
+                armRouting()
+            }
+            PermissionExplanation.OVERLAY -> permissionUxPreferences.overlayExplanationResolved = true
+        }
+    }
+
+    private fun armRouting() {
+        startForegroundService(
+            Intent(this, PrivateAudioService::class.java).setAction(PrivateAudioService.ACTION_ARM),
         )
     }
 
@@ -270,6 +342,8 @@ class MainActivity : ComponentActivity() {
     }
 
     private companion object {
+        const val STATE_PERMISSION_EXPLANATION = "permission_explanation"
+        const val STATE_OVERLAY_PERMISSION_PENDING = "overlay_permission_pending"
         const val TAG = "PrivateAudio"
         const val PRIVACY_POLICY_URL = "https://lukaszpeciak91-sys.github.io/private-audio-router/"
     }

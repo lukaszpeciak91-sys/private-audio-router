@@ -77,6 +77,98 @@ private val SettingsBorder = Color(0xFF5B5C5E)
 private val SettingsDivider = Color(0xFF292A2C)
 private val SettingsPrimary = Color(0xFFF2F2F2)
 private val SettingsSecondary = Color(0xFFA6A6A8)
+private val PermissionAccent = Color(0xFF00D927)
+
+enum class PermissionExplanation { NOTIFICATION, OVERLAY }
+
+@Composable
+fun PermissionExplanationPanel(
+    explanation: PermissionExplanation,
+    onPrimary: () -> Unit,
+    onSecondary: () -> Unit,
+) {
+    val resources = when (explanation) {
+        PermissionExplanation.NOTIFICATION -> arrayOf(
+            R.string.permission_notification_title,
+            R.string.permission_notification_body,
+            R.string.permission_notification_allow,
+            R.string.permission_notification_continue,
+        )
+        PermissionExplanation.OVERLAY -> arrayOf(
+            R.string.permission_overlay_title,
+            R.string.permission_overlay_body,
+            R.string.permission_overlay_open_settings,
+            R.string.permission_overlay_not_now,
+        )
+    }
+    val prefix = if (explanation == PermissionExplanation.NOTIFICATION) "notification" else "overlay"
+    Dialog(
+        onDismissRequest = onSecondary,
+        properties = DialogProperties(usePlatformDefaultWidth = false),
+    ) {
+        val interaction = remember { MutableInteractionSource() }
+        Box(
+            Modifier
+                .fillMaxSize()
+                .windowInsetsPadding(WindowInsets.safeDrawing)
+                .background(SettingsScrim)
+                .clickable(onClick = onSecondary)
+                .testTag("${prefix}_permission_backdrop"),
+            contentAlignment = Alignment.Center,
+        ) {
+            Column(
+                Modifier
+                    .fillMaxWidth(SettingsLayout.widthFraction)
+                    .heightIn(max = 520.dp)
+                    .background(SettingsSurface, RoundedCornerShape(SettingsLayout.cornerRadius))
+                    .border(1.dp, SettingsBorder, RoundedCornerShape(SettingsLayout.cornerRadius))
+                    .clickable(interactionSource = interaction, indication = null, onClick = {})
+                    .padding(SettingsLayout.horizontalPadding)
+                    .verticalScroll(rememberScrollState())
+                    .testTag("${prefix}_permission_panel"),
+            ) {
+                Text(
+                    stringResource(resources[0]),
+                    color = SettingsPrimary,
+                    fontSize = 22.sp,
+                    lineHeight = 28.sp,
+                    fontWeight = FontWeight.SemiBold,
+                )
+                Spacer(Modifier.height(12.dp))
+                Text(
+                    stringResource(resources[1]),
+                    color = SettingsSecondary,
+                    fontSize = 16.sp,
+                    lineHeight = 23.sp,
+                )
+                Spacer(Modifier.height(20.dp))
+                PermissionAction(
+                    text = stringResource(resources[2]),
+                    color = PermissionAccent,
+                    tag = "${prefix}_permission_primary",
+                    onClick = onPrimary,
+                )
+                Spacer(Modifier.height(8.dp))
+                PermissionAction(
+                    text = stringResource(resources[3]),
+                    color = SettingsSecondary,
+                    tag = "${prefix}_permission_secondary",
+                    onClick = onSecondary,
+                )
+            }
+        }
+    }
+}
+
+@Composable
+private fun PermissionAction(text: String, color: Color, tag: String, onClick: () -> Unit) {
+    Box(
+        Modifier.fillMaxWidth().heightIn(min = 48.dp).clickable(onClick = onClick).testTag(tag),
+        contentAlignment = Alignment.CenterStart,
+    ) {
+        Text(text, color = color, fontSize = 16.sp, lineHeight = 22.sp, fontWeight = FontWeight.Medium)
+    }
+}
 
 private enum class SettingsPage { ROOT, LANGUAGE, ADVANCED, PRIVACY_POLICY, ABOUT }
 

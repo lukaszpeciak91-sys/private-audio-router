@@ -130,6 +130,9 @@ internal fun PrivateAudioScreen(
     powerEnabled: Boolean = true,
     onPowerClick: () -> Unit,
     onFloatingClick: () -> Unit = {},
+    permissionExplanation: PermissionExplanation? = null,
+    onPermissionExplanationPrimary: (PermissionExplanation) -> Unit = {},
+    onPermissionExplanationSecondary: (PermissionExplanation) -> Unit = {},
     onCloseClick: () -> Unit,
     diagnosticsSummary: DiagnosticsSummary? = null,
     onSendDiagnosticReport: () -> Unit = {},
@@ -154,6 +157,9 @@ internal fun PrivateAudioScreen(
             powerEnabled = powerEnabled,
             onPowerClick = onPowerClick,
             onFloatingClick = onFloatingClick,
+            permissionExplanation = permissionExplanation,
+            onPermissionExplanationPrimary = onPermissionExplanationPrimary,
+            onPermissionExplanationSecondary = onPermissionExplanationSecondary,
             onCloseClick = onCloseClick,
             diagnosticsSummary = diagnosticsSummary,
             onSendDiagnosticReport = onSendDiagnosticReport,
@@ -178,6 +184,9 @@ private fun PrivateAudioScreenContent(
     powerEnabled: Boolean,
     onPowerClick: () -> Unit,
     onFloatingClick: () -> Unit,
+    permissionExplanation: PermissionExplanation?,
+    onPermissionExplanationPrimary: (PermissionExplanation) -> Unit,
+    onPermissionExplanationSecondary: (PermissionExplanation) -> Unit,
     onCloseClick: () -> Unit,
     diagnosticsSummary: DiagnosticsSummary?,
     onSendDiagnosticReport: () -> Unit,
@@ -266,6 +275,13 @@ private fun PrivateAudioScreenContent(
                 onDismiss = { settingsVisible = false },
                 onContactClick = onContactClick,
                 onPrivacyPolicyOnlineClick = onPrivacyPolicyOnlineClick,
+            )
+        }
+        permissionExplanation?.let { explanation ->
+            PermissionExplanationPanel(
+                explanation = explanation,
+                onPrimary = { onPermissionExplanationPrimary(explanation) },
+                onSecondary = { onPermissionExplanationSecondary(explanation) },
             )
         }
     }

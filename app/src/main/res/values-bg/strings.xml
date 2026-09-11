@@ -68,4 +68,12 @@
     <string name="diagnostics_error_audio_preparation">Puzru не можа да подготви аудиото за комуникация.</string>
     <string name="diagnostics_error_request_rejected">Заявката за насочване към телефонната слушалка не беше приета.</string>
     <string name="diagnostics_error_not_completed">Насочването не можа да бъде завършено.</string>
+    <string name="permission_notification_title">Show when Puzru is on</string>
+    <string name="permission_notification_body">Puzru uses a quiet notification to show when it is on and ready to route audio, including while the app is in the background. Notifications are optional; Puzru still works without them.</string>
+    <string name="permission_notification_allow">Allow notifications</string>
+    <string name="permission_notification_continue">Continue without notifications</string>
+    <string name="permission_overlay_title">Allow Мини over other apps</string>
+    <string name="permission_overlay_body">Мини needs Android’s “Display over other apps” access to stay visible while you use a supported voice app. This access is optional and does not let Puzru read or control other apps. Audio routing works without Мини.</string>
+    <string name="permission_overlay_open_settings">Open settings</string>
+    <string name="permission_overlay_not_now">Not now</string>
 </resources>

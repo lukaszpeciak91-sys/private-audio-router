@@ -90,7 +90,8 @@ class Layer4SettingsContractTest {
         assertTrue(configurationRefresh.contains("PackageManager.PERMISSION_GRANTED"))
         assertTrue(foregroundEntry.contains("startForeground("))
         assertFalse(foregroundEntry.contains("POST_NOTIFICATIONS"))
-        assertFalse(mainSource.contains("ActivityResultContracts.RequestPermission"))
+        assertTrue(mainSource.contains("ActivityResultContracts.RequestPermission"))
+        assertFalse(foregroundEntry.contains("POST_NOTIFICATIONS"))
     }
 
     @Test

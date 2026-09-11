@@ -68,4 +68,12 @@
     <string name="diagnostics_error_audio_preparation">Puzru যোগাযোগের অডিও প্রস্তুত করতে পারেনি।</string>
     <string name="diagnostics_error_request_rejected">ইয়ারপিসে রাউটিংয়ের অনুরোধ গ্রহণ করা হয়নি।</string>
     <string name="diagnostics_error_not_completed">রাউটিং সম্পূর্ণ করা যায়নি।</string>
+    <string name="permission_notification_title">Show when Puzru is on</string>
+    <string name="permission_notification_body">Puzru uses a quiet notification to show when it is on and ready to route audio, including while the app is in the background. Notifications are optional; Puzru still works without them.</string>
+    <string name="permission_notification_allow">Allow notifications</string>
+    <string name="permission_notification_continue">Continue without notifications</string>
+    <string name="permission_overlay_title">Allow মিনি over other apps</string>
+    <string name="permission_overlay_body">মিনি needs Android’s “Display over other apps” access to stay visible while you use a supported voice app. This access is optional and does not let Puzru read or control other apps. Audio routing works without মিনি.</string>
+    <string name="permission_overlay_open_settings">Open settings</string>
+    <string name="permission_overlay_not_now">Not now</string>
 </resources>
