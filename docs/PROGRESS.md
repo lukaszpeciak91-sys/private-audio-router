@@ -83,9 +83,11 @@
   Ukrainian, Urdu, Uzbek Latin, Vietnamese, Xhosa, Yoruba, and Zulu. All 102
   supported non-English locales now use the finalized six-section, seven-bullet
   structure, so the centralized contract no longer carries a legacy exception list.
-  These final candidates were produced and semantically self-checked with the
-  Translation Skill; they still require the planned independent localization audit,
-  and no human/native-speaker validation is claimed.
+  The final batch has since received independent audit. Targeted corrections were
+  applied to Swahili and Xhosa, naturalness polish was applied where warranted, and
+  stale About-specific JVM assertions were aligned with the finalized copy. Final
+  acceptance still depends on green CI and a final independent re-audit; no
+  human/native-speaker validation is claimed.
 
 ## English Privacy Policy disclosure alignment
 

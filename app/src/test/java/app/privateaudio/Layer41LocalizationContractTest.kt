@@ -136,7 +136,7 @@ class Layer41LocalizationContractTest {
         assertTrue(swedishStrings.contains("name=\"routing_notification_text\">Väntar på att växla ljud</string>"))
         assertTrue(swedishStrings.contains("name=\"settings_language_android_13_required\"") && swedishStrings.contains("systemspråket"))
         assertTrue(swedishStrings.contains("name=\"settings_proximity_screen\">Stäng av skärmen nära örat</string>"))
-        assertTrue(swedishStrings.contains("telefonens inbyggda samtalslur"))
+        assertTrue(resourceValue(swedishStrings, "settings_about_body").contains("telefonens inbyggda hörlur"))
         assertTrue(swedishStrings.contains("slå på, expandera och stänga"))
         assertTrue(swedishStrings.contains("name=\"state_ready\">Redo</string>"))
         assertTrue(swedishStrings.contains("name=\"state_waiting\">Väntar</string>"))
@@ -622,7 +622,10 @@ class Layer41LocalizationContractTest {
         assertTrue(serbianCyrillicStrings.contains("name=\"routing_notification_text\">Чекање на пребацивање звука</string>"))
         assertTrue(serbianCyrillicStrings.contains("name=\"settings_language_android_13_required\"") && serbianCyrillicStrings.contains("језик система"))
         assertTrue(serbianCyrillicStrings.contains("name=\"settings_proximity_screen\">Искључи екран близу уха</string>"))
-        assertTrue(serbianCyrillicStrings.contains("уграђену слушалицу телефона"))
+        assertTrue(
+            resourceValue(serbianCyrillicStrings, "settings_about_body")
+                .contains("уграђену слушалицу за позиве на телефону"),
+        )
         assertTrue(serbianCyrillicStrings.contains("укључивање/искључивање, проширивање и затварање"))
         assertTrue(serbianCyrillicStrings.contains("name=\"settings\">Подешавања</string>"))
         assertTrue(serbianCyrillicStrings.contains("name=\"settings_system_default\">Подразумевано</string>"))
@@ -946,7 +949,10 @@ class Layer41LocalizationContractTest {
         assertTrue(somaliStrings.contains("name=\"settings_system_default\">Caadi</string>"))
         assertTrue(somaliStrings.contains("name=\"settings_advanced\">Dejinta horumarsan</string>"))
         assertTrue(somaliStrings.contains("name=\"power_control\">Daar/Dami</string>"))
-        assertTrue(somaliStrings.contains("sameecadda sare ee taleefankaaga"))
+        assertTrue(
+            resourceValue(somaliStrings, "settings_about_body")
+                .contains("sameecadda wicitaanka ee ku dhex jirta taleefankaaga"),
+        )
         assertTrue(somaliStrings.contains("qalabkaaga"))
         assertTrue(somaliStrings.contains("luqadda nidaamka"))
         assertTrue(somaliStrings.contains("shaashadda"))
@@ -1569,9 +1575,10 @@ class Layer41LocalizationContractTest {
         assertTrue(uzbekStrings.contains("name=\"floating\">Mini</string>"))
         assertTrue(uzbekStrings.contains("name=\"settings_system_default\">Birlamchi</string>"))
         assertTrue(uzbekStrings.contains("name=\"settings_advanced\">Kengaytirilgan sozlamalar</string>"))
-        assertTrue(uzbekStrings.contains("telefoningizning ichki quloq karnaychasiga"))
-        assertTrue(uzbekStrings.contains("nutq audiosini"))
-        assertFalse(uzbekStrings.contains("ovozli audioni"))
+        val uzbekAbout = resourceValue(uzbekStrings, "settings_about_body")
+        assertTrue(uzbekAbout.contains("telefoningizning ichki qo‘ng‘iroq karnaychasiga"))
+        assertTrue(uzbekAbout.contains("qo‘llab-quvvatlanadigan AI ovozi ijrosini"))
+        assertTrue(uzbekAbout.contains("asosiy karnaydan baland ovozda"))
         assertTrue(uzbekStrings.contains("Yoqish/o‘chirish, kengaytirish va yopish boshqaruvlari"))
         assertFalse(projectFile("app/src/main/res/values-uz/mini_state_strings.xml").exists())
     }
