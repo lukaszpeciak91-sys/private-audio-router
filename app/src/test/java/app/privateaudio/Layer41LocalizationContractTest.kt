@@ -1462,9 +1462,11 @@ class Layer41LocalizationContractTest {
         assertTrue(zuluStrings.contains("name=\"settings_advanced\">Izilungiselelo ezithuthukisiwe</string>"))
         assertTrue(zuluStrings.contains("Le divayisi ilandela ulimi lwesistimu."))
         assertTrue(zuluStrings.contains("Cisha isikrini uma ifoni iseduze nendlebe yakho"))
-        assertTrue(
-            resourceValue(zuluStrings, "settings_about_body")
-                .contains("isipikha sendlebe", ignoreCase = true),
+        assertEquals("Isipikha sendlebe", resourceValue(zuluStrings, "diagnostics_route_earpiece"))
+        assertEquals("Isipikha", resourceValue(zuluStrings, "diagnostics_route_speaker"))
+        assertFalse(
+            resourceValue(zuluStrings, "diagnostics_route_earpiece") ==
+                resourceValue(zuluStrings, "diagnostics_route_speaker"),
         )
         val overlayDescription = resourceValue(zuluStrings, "overlay_controller_description")
         listOf("zokuvula/ukucisha", "ukunweba", "nokuvala").forEach {
