@@ -44,6 +44,8 @@ class OromoLocalizationContractTest {
 
     @Test
     fun oromoProductStatesAndAudioOutputsRemainDistinct() {
+        val aboutBody = resourceValue("settings_about_body")
+
         assertEquals("Puzru", resourceValue("app_name"))
         assertEquals("Puzru", resourceValue("product_title"))
 
@@ -59,9 +61,9 @@ class OromoLocalizationContractTest {
         assertEquals("Dhageessisaa gurraa bilbilaa keessaa", resourceValue("diagnostics_route_earpiece"))
         assertEquals("Sagalee guddiftuu", resourceValue("diagnostics_route_speaker"))
         assertFalse(resourceValue("diagnostics_route_earpiece") == resourceValue("diagnostics_route_speaker"))
-        assertTrue(resourceValue("settings_about_body").contains("dhageessisaa gurraa bilbilaa keessaa"))
-        assertTrue(resourceValue("settings_about_body").contains("sagalee guddiftuu ijoo"))
-        assertTrue(resourceValue("settings_about_body").contains("Tajaajila AI mataa isaa irraa dhuunfummaa hin kennu"))
+        assertTrue(aboutBody.contains("dhageessisaa gurraa bilbilaa keessaa"))
+        assertTrue(aboutBody.contains("sagalee guddiftuu ijoo"))
+        assertTrue(aboutBody.contains("Tajaajila AI mataa isaa irraa dhuunfummaa hin kennu"))
 
         assertEquals("Fooyya\\'aa %1\$s", resourceValue("settings_version"))
         val sessionEnded = resourceValue("diagnostics_error_session_ended")

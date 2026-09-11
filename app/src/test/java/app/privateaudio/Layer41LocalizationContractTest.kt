@@ -810,6 +810,7 @@ class Layer41LocalizationContractTest {
     @Test
     fun malteseFrozenLocalizationSemanticsRemainIntact() {
         val locale = Locale.forLanguageTag("mt")
+        val aboutBody = resourceValue(malteseStrings, "settings_about_body")
         assertEquals("mt", locale.toLanguageTag())
         assertEquals("mt", locale.language)
         assertEquals("Malti", nativeLocaleName("mt"))
@@ -827,7 +828,7 @@ class Layer41LocalizationContractTest {
         assertTrue(malteseStrings.contains("name=\"settings_system_default\">Default tas-sistema</string>"))
         assertTrue(malteseStrings.contains("name=\"settings_language_android_13_required\"") && malteseStrings.contains("lingwa tas-sistema"))
         assertTrue(malteseStrings.contains("name=\"settings_proximity_screen\">Itfi l-iskrin meta jkun qrib widintek</string>"))
-        assertTrue(resourceValue(malteseStrings, "settings_about_body").contains("riċevitur tas-sejħiet integrat tat-telefown"))
+        assertTrue(aboutBody.contains("riċevitur tas-sejħiet integrat tat-telefown"))
         assertTrue(malteseStrings.contains("tixgħel/titfi, tespandi u tagħlaq"))
         assertTrue(malteseStrings.contains("name=\"state_ready\">Lest</string>"))
         assertTrue(malteseStrings.contains("name=\"state_waiting\">Stennija</string>"))
@@ -995,6 +996,7 @@ class Layer41LocalizationContractTest {
     fun nepaliKeepsOneNeutralQualifierAndFrozenLtrSemantics() {
         val locale = Locale.forLanguageTag("ne")
         val defaultIdentity = Locale.forLanguageTag("ne-Deva-NP")
+        val aboutBody = resourceValue(nepaliStrings, "settings_about_body")
         assertEquals("ne", locale.toLanguageTag())
         assertEquals("ne", locale.language)
         assertEquals("Deva", defaultIdentity.script)
@@ -1017,7 +1019,7 @@ class Layer41LocalizationContractTest {
         assertTrue(nepaliStrings.contains("name=\"floating\">मिनी</string>"))
         assertTrue(nepaliStrings.contains("name=\"settings_system_default\">डिफल्ट</string>"))
         assertTrue(nepaliStrings.contains("name=\"settings_advanced\">उन्नत</string>"))
-        assertTrue(resourceValue(nepaliStrings, "settings_about_body").contains("फोनको बिल्ट-इन कल इयरपिस"))
+        assertTrue(aboutBody.contains("फोनको बिल्ट-इन कल इयरपिस"))
         assertTrue(nepaliStrings.contains("पावर अन वा अफ गर्ने, विस्तृत गर्ने र बन्द गर्ने नियन्त्रणहरू"))
         assertFalse(projectFile("app/src/main/res/values-ne/mini_state_strings.xml").exists())
     }
