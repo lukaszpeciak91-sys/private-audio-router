@@ -361,3 +361,11 @@ This is a lightweight, append-only log. Do not rewrite accepted history; append 
 - **Context:** The Privacy Policy described Puzru’s external chooser handoff but did not explain handling after a user addressed and sent a diagnostic report to Napahu Studios.
 - **Decision:** Disclose the recipient-side support data that Napahu Studios and its email service provider may receive, its support and troubleshooting purpose, bounded retention for information controlled by Napahu Studios, deletion requests, and the separate control boundary for copies held by external email or other services.
 - **Consequences:** This is a disclosure clarification only. It introduces no backend, networking, automatic transmission, analytics, advertising, crash reporting, account system, audio capture, routing change, diagnostic-format change, or new permission.
+
+## D-046 — Separate finalized About contracts from historical localized wording
+
+- **Date:** 2026-09-11
+- **Status:** Accepted
+- **Context:** Finalized About rollout PRs repeatedly failed CI because locale tests still asserted exact fragments from the superseded one-sentence About copy. Those failures did not identify defects in the new six-section translations and surfaced piecemeal as each locale migrated.
+- **Decision:** Use one centralized finalized-About contract for stable English product semantics, section and bullet structure, product/publisher identity, and non-English fallback protection. Keep locale-specific exact About assertions only when they intentionally protect reviewed, durable terminology or another locale invariant; remove superseded historical-copy assertions.
+- **Consequences:** Future About batches must update the rollout classification and review About-specific assertions, but do not preserve former wording. Unrelated localization contracts and deliberate locale terminology protections remain in force.

@@ -29,6 +29,27 @@ English source strings are product copy, not merely source text. Before translat
 3. remove unnecessary technical jargon; and
 4. stabilize its semantics before propagating it across locales.
 
+### Finalized About contract maintenance
+
+The default English `settings_about_body` remains the authoritative source of the
+finalized About meaning. Its localized rollout uses one centralized contract for the
+durable six-section and seven-bullet structure, `Puzru` and `Napahu Studios` identity,
+and protection against English fallback. The same contract freezes the stable English
+product semantics: the built-in call earpiece/receiver versus main loudspeaker,
+phone-call analogy without claiming that Puzru makes calls, compatibility limits,
+third-party feature and AI-service control boundaries, provider-controlled recognition,
+response, voice-output, latency, network, and availability behavior, and the boundary
+between playback location and provider handling of the conversation.
+
+Locale-specific About assertions may freeze exact wording only for deliberately
+reviewed, durable terminology or another documented locale invariant. Scope those
+assertions directly to `settings_about_body` where practical. Exact fragments from a
+superseded About version, including broad whole-file searches and negative assertions
+that conflict with a claim in the finalized source, are not authoritative and must not
+remain frozen. Every About rollout change must proactively review all About-specific
+assertions; migration to the finalized source never requires preserving historical
+copy.
+
 Do not propagate weak prototype copy into every translation. A translation must prioritize, in order:
 
 1. semantic correctness;

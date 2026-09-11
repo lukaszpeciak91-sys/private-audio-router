@@ -265,14 +265,21 @@ class Layer4SettingsContractTest {
             "What Puzru does",
             "phone’s built-in earpiece",
             "like a normal phone call",
+            "instead of playing aloud through the main speaker",
             "standard Android audio-routing features",
+            "Compatibility depends on your device, Android version, and how each app or service handles voice audio",
             "Compatibility and limitations",
+            "may require a subscription, may be limited by region or account, or may not be available at all",
             "does not unlock, extend, or bypass",
             "What Puzru does not do",
             "does not make phone calls",
+            "does not operate, modify, or control third-party AI services",
+            "does not control speech recognition, the content or accuracy of AI responses, voice output, latency, network stability, or service availability",
             "does not provide privacy from the AI service itself",
+            "changes where supported voice audio is played on your device, not how the AI service handles your conversation",
         ).forEach { claim -> assertTrue(claim, about.contains(claim)) }
         assertEquals(6, about.split("\\n\\n").size)
+        assertEquals(listOf(1, 2, 2, 1, 4, 5), about.sectionLineCounts())
         assertEquals(7, about.split("\\n").count { it.startsWith("• ") })
         assertTrue(strings.contains("Puzru by Napahu Studios\\n\\nWhat the name means\\n"))
 
@@ -287,33 +294,45 @@ class Layer4SettingsContractTest {
     }
 
     @Test
-    fun finalizedAboutLocalesPreserveTheSourceStructureWithoutEnglishFallback() {
-        val defaultAbout = resourceValue(projectFile("app/src/main/res/values/strings.xml"), "settings_about_body")
+    fun localizedAboutRolloutHasOneCentralizedStructuralContract() {
+        val resourceRoot = projectFile("app/src/main/res")
+        val defaultAbout = resourceValue(File(resourceRoot, "values/strings.xml"), "settings_about_body")
+        val legacyShortAboutDirectories = setOf(
+            "values-so", "values-sq", "values-sr", "values-su", "values-sv",
+            "values-sw", "values-ta", "values-te", "values-th", "values-tr",
+            "values-uk", "values-ur", "values-uz", "values-vi", "values-xh",
+            "values-yo", "values-zu",
+        )
+        val localizedFiles = resourceRoot.listFiles().orEmpty()
+            .filter { it.isDirectory && it.name.startsWith("values-") }
+            .map { File(it, "strings.xml") }
+            .filter(File::isFile)
 
-        listOf(
-            "values-pl", "values-de", "values-es", "values-ar", "values-ja",
-            "values-af", "values-am", "values-as", "values-az", "values-b+az+Arab+IR",
-            "values-b+bho", "values-b+ceb", "values-b+ku+Latn", "values-b+mai",
-            "values-b+pa+Arab+PK", "values-b+pa+Guru+IN", "values-b+sr+Latn",
-            "values-b+sr+Latn+ME", "values-b+uz+Arab+AF", "values-b+uz+Cyrl+UZ",
-            "values-b+yue+Hans+CN", "values-b+yue+Hant+HK", "values-b+zh+Hans",
-            "values-b+zh+Hant", "values-be",
-            "values-bg", "values-bn", "values-bs", "values-ca", "values-cs",
-            "values-da", "values-el", "values-et", "values-eu", "values-fa",
-            "values-fi", "values-fil", "values-fo", "values-fr", "values-gl",
-            "values-gu", "values-ha", "values-hi", "values-hr", "values-hu",
-        ).forEach { resourceDirectory ->
-            val stringsFile = projectFile("app/src/main/res/$resourceDirectory/strings.xml")
-            val about = resourceValue(stringsFile, "settings_about_body")
+        assertEquals(17, legacyShortAboutDirectories.size)
+        assertEquals(legacyShortAboutDirectories, localizedFiles
+            .filter { resourceValue(it, "settings_about_body").split("\\n\\n").size == 1 }
+            .map { it.parentFile.name }
+            .toSet())
 
-            assertTrue("$resourceDirectory: translated About is missing", about.isNotBlank())
-            assertFalse("$resourceDirectory: English About fallback", about == defaultAbout)
-            assertEquals("$resourceDirectory: semantic sections", 6, about.split("\\n\\n").size)
-            assertEquals("$resourceDirectory: bullet structure", 7, about.split("\\n").count { it.startsWith("• ") })
-            assertFalse("$resourceDirectory: raw XML newline", about.contains('\n'))
-            assertTrue("$resourceDirectory: Puzru brand", about.contains("Puzru"))
-            assertTrue("$resourceDirectory: publisher brand", about.contains("Napahu Studios"))
-        }
+        localizedFiles
+            .filterNot { it.parentFile.name in legacyShortAboutDirectories }
+            .forEach { stringsFile ->
+                val resourceDirectory = stringsFile.parentFile.name
+                val about = resourceValue(stringsFile, "settings_about_body")
+
+                assertTrue("$resourceDirectory: translated About is missing", about.isNotBlank())
+                assertFalse("$resourceDirectory: English About fallback", about == defaultAbout)
+                assertEquals("$resourceDirectory: semantic sections", 6, about.split("\\n\\n").size)
+                assertEquals(
+                    "$resourceDirectory: paragraph and list structure",
+                    listOf(1, 2, 2, 1, 4, 5),
+                    about.sectionLineCounts(),
+                )
+                assertEquals("$resourceDirectory: bullet structure", 7, about.split("\\n").count { it.startsWith("• ") })
+                assertFalse("$resourceDirectory: raw XML newline", about.contains('\n'))
+                assertTrue("$resourceDirectory: Puzru brand", about.contains("Puzru"))
+                assertTrue("$resourceDirectory: publisher brand", about.contains("Napahu Studios"))
+            }
     }
 
     @Test
@@ -397,6 +416,9 @@ class Layer4SettingsContractTest {
         substring(indexOf(signature)).substringBefore("\n    }")
 
     private fun String.occurrences(needle: String): Int = windowed(needle.length).count { it == needle }
+
+    private fun String.sectionLineCounts(): List<Int> =
+        split("\\n\\n").map { section -> section.split("\\n").size }
 
     private fun resourceValue(stringsFile: File, key: String): String {
         val nodes = DocumentBuilderFactory.newInstance().newDocumentBuilder()

@@ -34,7 +34,6 @@ class MalagasyLocalizationContractTest {
         assertFalse(resourceValue("state_active") == "Mandeha")
 
         assertEquals("Politika momba ny fiainana manokana", resourceValue("settings_privacy_policy"))
-        assertFalse(resourceValue("settings_about_body").contains("feon’ny antso", ignoreCase = true))
         assertTrue(resourceValue("settings_about_body").contains("feo tohanana"))
         assertTrue(resourceValue("settings_about_body").contains("fanamafisam-peo anatiny eo amin’ny sofin’ny telefaoninao"))
         assertTrue(strings.contains("name=\"diagnostics_route_speaker\">Fanamafisam-peo</string>"))
