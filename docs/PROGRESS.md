@@ -32,11 +32,10 @@
 - About localization test maintenance now separates the centralized finalized-copy
   contract from deliberate locale-specific terminology guards. The contract covers
   the authoritative English product semantics, six-section/seven-bullet structure,
-  identity tokens, English fallback, and the exact current finalized-versus-legacy
-  rollout classification; obsolete one-sentence About assertions have been removed.
-  Future batches should move their locale classification and retain exact localized
-  assertions only for reviewed durable invariants. No locale resource changed in this
-  maintenance step.
+  identity tokens, and English fallback. With the rollout complete, the temporary
+  finalized-versus-legacy classification has been removed; locale-specific assertions
+  remain only for reviewed durable invariants, and obsolete one-sentence About
+  assertions remain removed.
 - The default, unqualified English `settings_about_body` resource now establishes
   the finalized About Puzru source, including the product purpose, name meaning,
   compatibility boundaries, and explicit limits on third-party service control and
@@ -78,6 +77,15 @@
   unchanged. The five corrected candidates require targeted independent re-audit
   before the batch can be considered finally accepted; no human/native-speaker
   validation is claimed.
+- The final About rollout batch translates the remaining 17 legacy one-sentence
+  resources directly from the authoritative English source: Somali, Albanian,
+  Serbian Cyrillic, Sundanese, Swedish, Swahili, Tamil, Telugu, Thai, Turkish,
+  Ukrainian, Urdu, Uzbek Latin, Vietnamese, Xhosa, Yoruba, and Zulu. All 102
+  supported non-English locales now use the finalized six-section, seven-bullet
+  structure, so the centralized contract no longer carries a legacy exception list.
+  These final candidates were produced and semantically self-checked with the
+  Translation Skill; they still require the planned independent localization audit,
+  and no human/native-speaker validation is claimed.
 
 ## English Privacy Policy disclosure alignment
 

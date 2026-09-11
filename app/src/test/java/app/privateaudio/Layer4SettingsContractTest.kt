@@ -297,25 +297,12 @@ class Layer4SettingsContractTest {
     fun localizedAboutRolloutHasOneCentralizedStructuralContract() {
         val resourceRoot = projectFile("app/src/main/res")
         val defaultAbout = resourceValue(File(resourceRoot, "values/strings.xml"), "settings_about_body")
-        val legacyShortAboutDirectories = setOf(
-            "values-so", "values-sq", "values-sr", "values-su", "values-sv",
-            "values-sw", "values-ta", "values-te", "values-th", "values-tr",
-            "values-uk", "values-ur", "values-uz", "values-vi", "values-xh",
-            "values-yo", "values-zu",
-        )
         val localizedFiles = resourceRoot.listFiles().orEmpty()
             .filter { it.isDirectory && it.name.startsWith("values-") }
             .map { File(it, "strings.xml") }
             .filter(File::isFile)
 
-        assertEquals(17, legacyShortAboutDirectories.size)
-        assertEquals(legacyShortAboutDirectories, localizedFiles
-            .filter { resourceValue(it, "settings_about_body").split("\\n\\n").size == 1 }
-            .map { it.parentFile.name }
-            .toSet())
-
         localizedFiles
-            .filterNot { it.parentFile.name in legacyShortAboutDirectories }
             .forEach { stringsFile ->
                 val resourceDirectory = stringsFile.parentFile.name
                 val about = resourceValue(stringsFile, "settings_about_body")
