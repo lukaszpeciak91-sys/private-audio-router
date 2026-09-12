@@ -17,7 +17,7 @@
     <string name="permission_notification_allow">允許通知</string>
     <string name="permission_notification_continue">不接收通知並繼續</string>
     <string name="permission_overlay_title">允許迷你顯示在其他應用程式上層</string>
-    <string name="permission_overlay_body">迷你需要 Android 的「顯示在其他應用程式上層」存取權，才能在您使用受支援的語音應用程式時保持顯示。 在下一個畫面，從應用程式清單中選取 Puzru，然後開啟這項權限。 此存取權為選用項目，不會讓 Puzru 讀取或控制其他應用程式。沒有迷你，音訊切換仍可正常運作。</string>
+    <string name="permission_overlay_body">迷你需要 Android 的「顯示在其他應用程式上層」存取權，才能在您使用受支援的語音應用程式時保持顯示。在下一個畫面，從應用程式清單中選取 Puzru，然後開啟這項權限。此存取權為選用項目，不會讓 Puzru 讀取或控制其他應用程式。沒有迷你，音訊切換仍可正常運作。</string>
     <string name="permission_overlay_open_settings">開啟設定</string>
     <string name="permission_overlay_not_now">暫時不要</string>
     <string name="settings">設定</string>
