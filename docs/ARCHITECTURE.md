@@ -59,7 +59,7 @@ End-confirmation and linger callbacks carry the protected cycle generation, and 
 
 Disable clears enabled intent first, invalidates delayed work, unregisters playback observation, and invokes protected cleanup before leaving foreground/stopping. Service destruction does the same fail-closed work; process death loses non-persisted intent. There is no retry, route reassertion, polling, provider detection, or automatic restoration.
 
-The foreground notification is a minimum low-importance lifetime disclosure whose tap returns to `MainActivity`. There is no notification action, media style, runtime notification-permission flow, wake lock, audio-focus request, persistence, boot restart, or background-triggered foreground-service start. The protected POC-5 algorithm and cleanup paths remain unchanged.
+The foreground notification is a minimum low-importance lifetime disclosure whose tap returns to `MainActivity`. On API 33+, the first Power ON while notification permission is absent presents a one-time Puzru explanation; only its primary action launches Android's runtime request, and every permission result continues Power ON. Dismissal or the secondary action also continues without requesting. Permission never guards foreground-service entry or routing. There is no notification action, media style, wake lock, audio-focus request, routing persistence, boot restart, or background-triggered foreground-service start. The protected POC-5 algorithm and cleanup paths remain unchanged.
 
 ## Product state projection
 
@@ -75,7 +75,7 @@ English product copy in `res/values/strings.xml` is the complete default resourc
 
 ## Overlay lifecycle
 
-`OverlayService` is a local, non-exported, `START_NOT_STICKY` owner of at most one `TYPE_APPLICATION_OVERLAY` window. Main checks `Settings.canDrawOverlays()` before showing it; a missing grant opens Android's package-specific overlay-permission screen, and Main checks the actual grant again on resume. Denial or cancellation creates no window. The service also checks permission at the creation boundary.
+`OverlayService` is a local, non-exported, `START_NOT_STICKY` owner of at most one `TYPE_APPLICATION_OVERLAY` window. Main checks `Settings.canDrawOverlays()` before showing it. The first Mini attempt with a missing grant presents a one-time Puzru explanation; its primary action opens Android's package-specific overlay-permission screen, while dismissal or the secondary action does nothing. Later deliberate attempts with access still absent open that screen directly. Main checks the actual grant again on resume. Denial or cancellation creates no window. The service also checks permission at the creation boundary.
 
 `PrivateAudioService` remains the authoritative controller and state owner. `OverlayService` owns only the floating window and its lifecycle: it binds to the existing controller service, consumes the existing `PrivateAudioState` projection, and delegates floating Power to the controller's established enable/disable actions. The overlay has no audio detection or routing APIs, no diagnostic observer, and no independent state projection.
 
