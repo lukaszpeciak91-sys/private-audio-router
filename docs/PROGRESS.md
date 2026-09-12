@@ -45,49 +45,17 @@
   structured body now uses explicit runtime paragraph, heading, and bullet breaks,
   start-aligned text, scrolling, and the shared direction-driven layout behavior;
   the page is also bounded by the existing portrait safe-inset treatment.
-- A controlled localization pilot has propagated the finalized About source
-  independently to Polish, German, Spanish, Arabic, and Japanese. Each candidate
-  preserves the source's six semantic sections, seven bullets, technical output
-  distinctions, compatibility limits, and provider-side privacy boundary.
-- The pilot’s independent audit accepted German and Spanish, requested and accepted
-  a Japanese naturalness polish, and identified claim-scope defects in Polish and
-  Arabic. Targeted Translation Skill iterations corrected the affected passages;
-  the finalized Polish and Arabic follow-up was independently re-audited and accepted.
-  German, Spanish, Japanese, Polish, and Arabic therefore form the completed
-  five-locale About pilot, which is closed for rollout purposes. This is independent
-  audit evidence, not human/native-speaker validation.
-- The five pilot translations were produced and semantically self-checked with the
-  Translation Skill. This is not an independent audit or human/native-speaker
-  validation.
-- The next deterministic About rollout batch translates the finalized English source
-  directly and independently with the Translation Skill for `values-af`, `values-am`,
-  `values-as`, `values-az`, `values-b+az+Arab+IR`, `values-b+bho`, `values-b+ceb`,
-  `values-b+ku+Latn`, `values-b+mai`, `values-b+pa+Arab+PK`, `values-b+pa+Guru+IN`,
-  `values-b+sr+Latn`, `values-b+sr+Latn+ME`, `values-b+uz+Arab+AF`,
-  `values-b+uz+Cyrl+UZ`, `values-b+yue+Hans+CN`, `values-b+yue+Hant+HK`,
-  `values-b+zh+Hans`, `values-b+zh+Hant`, and `values-be`. These candidates are
-  self-checked Translation Skill output and require independent localization audit
-  before they can be considered accepted; no human/native-speaker validation is
-  claimed.
-- Independent audit of this first 20-locale rollout batch accepted 15 About
-  translations unchanged. Amharic and Punjabi in Shahmukhi required targeted polish;
-  Assamese, Azerbaijani in Arabic script, and Afghan Uzbek in Arabic script required
-  fixes. Translation Skill corrections have been applied directly from the
-  authoritative English source, while the other 15 audited About values remain
-  unchanged. The five corrected candidates require targeted independent re-audit
-  before the batch can be considered finally accepted; no human/native-speaker
-  validation is claimed.
-- The final About rollout batch translates the remaining 17 legacy one-sentence
-  resources directly from the authoritative English source: Somali, Albanian,
-  Serbian Cyrillic, Sundanese, Swedish, Swahili, Tamil, Telugu, Thai, Turkish,
-  Ukrainian, Urdu, Uzbek Latin, Vietnamese, Xhosa, Yoruba, and Zulu. All 102
-  supported non-English locales now use the finalized six-section, seven-bullet
-  structure, so the centralized contract no longer carries a legacy exception list.
-  The final batch has since received independent audit. Targeted corrections were
-  applied to Swahili and Xhosa, naturalness polish was applied where warranted, and
-  stale About-specific JVM assertions were aligned with the finalized copy. Final
-  acceptance still depends on green CI and a final independent re-audit; no
-  human/native-speaker validation is claimed.
+- The finalized About rollout is complete across all 102 supported non-English
+  locales. Every localized `settings_about_body` now uses the six-section,
+  seven-bullet source structure; no legacy one-line About remains, and the
+  centralized contract applies uniformly without a legacy exception mechanism.
+- The final 17-locale batch was produced and self-checked with the Translation Skill,
+  independently audited, corrected where required, and successfully independently
+  re-audited. CI is green. With zero legacy resources and centralized contract
+  coverage, the rollout is accepted at the **Independently audited** evidence level.
+- This acceptance records independent agent audit and source-contract evidence only.
+  It does not claim human/native-speaker validation, linguistic review by a human for
+  every locale, or runtime/emulator/physical-device validation of every translation.
 
 ## English Privacy Policy disclosure alignment
 

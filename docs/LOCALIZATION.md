@@ -50,6 +50,34 @@ remain frozen. Every About rollout change must proactively review all About-spec
 assertions; migration to the finalized source never requires preserving historical
 copy.
 
+### Rollout lessons learned
+
+For future large localization rollouts:
+
+1. Stabilize authoritative English semantics first, especially high-risk product
+   claims, and translate every locale directly from that source rather than through
+   another locale.
+2. Keep production/self-check separate from independent audit and acceptance. The
+   independent auditor may return **PASS**, **POLISH**, **FIX**, or **HOLD**; human or
+   native-speaker validation remains a separate evidence level.
+3. Use structural contracts for XML/resource integrity, structure, fallback,
+   brands, and deliberately frozen product invariants—not as proof of linguistic
+   quality. Avoid freezing historical prose; assert exact localized wording only for
+   reviewed durable terminology or semantic risk.
+4. Scope locale-specific checks to the relevant key, such as
+   `settings_about_body`, instead of broad whole-file `.contains(...)` checks. Protect
+   semantic distinctions rather than banning isolated words that may be valid in a
+   different claim.
+5. During a staged migration, temporary legacy/finalized classifications are valid,
+   but tests must match the intended rollout state and the temporary mechanism must
+   be removed at 100% coverage.
+6. Classify a CI failure before editing copy: translation defect, stale contract,
+   structural/resource defect, or unrelated regression. Never distort a correct
+   translation to satisfy an obsolete assertion.
+7. Close a rollout only after it has zero legacy resources, centralized contract
+   coverage, green CI, independent audit closure, and an updated documentation
+   status.
+
 Do not propagate weak prototype copy into every translation. A translation must prioritize, in order:
 
 1. semantic correctness;
