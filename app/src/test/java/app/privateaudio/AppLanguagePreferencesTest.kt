@@ -53,6 +53,17 @@ class AppLanguagePreferencesTest {
         }
     }
 
+    @Test
+    fun genericNewLanguageIdentitiesCanonicalizeAndHaveNativePickerNames() {
+        listOf("ti", "wo", "tt", "mi", "cy").forEach { tag ->
+            val locale = Locale.forLanguageTag(tag)
+
+            assertEquals(tag, AppLanguagePreferences.canonicalLanguageTag(tag))
+            assertTrue("$tag must have a platform-provided native picker name", AppLanguagePreferences.nativeName(tag).isNotBlank())
+            assertFalse(AppLanguagePreferences.pickerDisplayName(locale, 1).contains('('))
+        }
+    }
+
     private fun String.titlecased(locale: Locale): String = replaceFirstChar {
         if (it.isLowerCase()) it.titlecase(locale) else it.toString()
     }

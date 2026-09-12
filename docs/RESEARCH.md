@@ -1,5 +1,41 @@
 # Research Baseline
 
+## Five-language locale identity readiness (Tigrinya, Wolof, Tatar, Māori, Welsh)
+
+- **FACT:** The canonical logical language identities are Tigrinya `ti`, Wolof
+  `wo`, Tatar `tt`, Māori `mi`, and Welsh `cy`. None is one of Android/Java's
+  compatibility-sensitive `in`/`id`, `iw`/`he`, or `ji`/`yi` aliases. The
+  three-letter ISO names sometimes encountered for these languages (`tir`, `wol`,
+  `tat`, `mao`/`mri`, and `wel`/`cym`) are not alternate product identities and
+  Java does not canonicalize them to the two-letter tags. **Sources:** the
+  [IANA Language Subtag Registry](https://www.iana.org/assignments/language-subtag-registry/language-subtag-registry)
+  and [Java `Locale`](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Locale.html).
+- **FACT:** CLDR likely-subtag data expands the generic identities to
+  `ti-Ethi-ET`, `wo-Latn-SN`, `tt-Cyrl-RU`, `mi-Latn-NZ`, and `cy-Latn-GB`.
+  Tigrinya is left-to-right Ethiopic, while the other four are left-to-right;
+  Wolof, Māori, and Welsh use Latin, and generic Tatar uses Cyrillic. **Source:**
+  Unicode CLDR [likely subtags](https://github.com/unicode-org/cldr/blob/main/common/supplemental/likelySubtags.xml).
+- **INFERENCE:** Region-neutral `values-ti`, `values-wo`, `values-tt`,
+  `values-mi`, and `values-cy` are the least restrictive and most accurate trees
+  for the shipped copy. Regions do not identify separate translations here.
+  Explicit `Ethi`, `Latn`, or `Cyrl` would add no matching value and would
+  unnecessarily describe these generic default-script localizations as scoped
+  variants. In particular, plain `tt` intentionally means CLDR's default Cyrillic
+  Tatar and makes no claim to provide a Latin-script Tatar variant.
+- **FACT:** The five plain language qualifiers satisfy the build's existing locale
+  qualifier contract. App-owned directory discovery consequently enrolls them in
+  `localeFilters`, generated `LocaleConfig`, generic parity/semantic contracts,
+  and the picker without a registry or locale-specific runtime branch. Java 25's
+  `Locale.forLanguageTag()` preserves all five identities and supplies non-empty
+  native display names; Android's locale-derived layout direction remains LTR.
+- **INFERENCE:** API 31 minimum and API 36 compile/target levels do not create a
+  compatibility reason to prefer BCP-47 resource syntax for these language-only,
+  default-script identities. All five pass the architecture gate as **READY**.
+- **UNKNOWN:** Locale data wording and font coverage can vary by Android/OEM
+  release. Runtime picker presentation, Ethiopic glyph rendering, Māori macron
+  rendering, and physical-device layout remain unverified until device testing.
+
+
 ## Central Kurdish (`ckb`) localization architecture readiness
 
 The readiness findings below now govern the implemented Central Kurdish locale. The complete `values-b+ckb` resource tree was added after this assessment; implementation status and evidence boundaries are recorded in `docs/PROGRESS.md`.

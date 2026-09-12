@@ -1,5 +1,36 @@
 # Progress
 
+## Tigrinya, Wolof, Tatar, Māori, and Welsh localization batch
+
+- Architecture review accepted the canonical logical tags `ti`, `wo`, `tt`, `mi`,
+  and `cy`, each with the matching language-only Android resource qualifier. Their
+  CLDR default identities are respectively Ethiopic/ET, Latin/SN, Cyrillic/RU,
+  Latin/NZ, and Latin/GB; all are LTR. Region and default-script qualifiers would
+  narrow rather than improve the product identities, and no Android/Java legacy
+  alias applies. Tatar intentionally supports the default Cyrillic form, not the
+  distinct Latin-script form.
+- Added complete `values-ti`, `values-wo`, `values-tt`, `values-mi`, and
+  `values-cy` product localizations. Each supplies all 75 localizable strings from
+  current authoritative English while the ten explicitly non-translatable
+  resources continue to fall back by design. The live app-owned inventory now has
+  108 non-English resource configurations; no historical snapshot or hardcoded
+  inventory count was changed.
+- Existing resource discovery automatically includes all five locales in build
+  filtering, generated `LocaleConfig`, and the platform-native picker. Generic
+  instrumentation coverage now verifies language, likely-region, and
+  likely-script-expanded requests for every new locale, and JVM coverage verifies
+  canonical identity plus non-empty native platform names. The shared
+  locale-derived LTR behavior requires no runtime or bidi special case.
+- Translation Skill self-review was performed separately for every locale,
+  including actor/action/object/destination/condition/negation/qualifier/
+  optionality/scope checks for Permission UX, Privacy, About, and routing copy.
+  Independent linguistic audit, native-speaker review, runtime rendering, Mini
+  measurement, and physical-device validation are still pending and are not
+  claimed. Tigrinya and Wolof technical UI terminology, Tatar audio terminology,
+  Māori technical idiom, and Welsh product naturalness merit particular
+  independent review.
+
+
 ## Central Kurdish CI contract reconciliation
 
 - Kurmanji's contract continues to require the canonical Latin `values-b+ku+Latn`
