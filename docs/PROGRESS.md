@@ -735,6 +735,15 @@ this summary intentionally does not duplicate its test matrix.
 
 ## Recently completed significant changes
 
+- Prepared the final Puzru launcher-icon integration while retaining the manifest's
+  stable `@drawable/ic_launcher` contract. The text-only launcher wrapper now
+  resolves to `@drawable/puzru_launcher`; the repository owner intentionally supplies
+  the final 1024 × 1024 PNG manually at
+  `app/src/main/res/drawable-nodpi/puzru_launcher.png` for use as the Puzru launcher
+  icon source raster. That required raster is not
+  committed by this preparation change, so Android resource processing requires the
+  owner-supplied file before the full build can pass.
+
 - Reconciled supplied 2026-09-08 physical evidence from Xiaomi product `2201117TY`,
   Android 13/API 33, with Private Audio `0.1.0 (1)` where diagnostics confirmed the
   build. Already-active Bluetooth routing was preserved and remained audible across
