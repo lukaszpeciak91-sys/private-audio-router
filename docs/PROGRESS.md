@@ -1,5 +1,31 @@
 # Progress
 
+## Five-language targeted linguistic correction
+
+- Corrected Welsh `supported` qualifiers so compatible voice apps and supported AI
+  voice playback/audio are described with `cefnogi`, not `cynnal` wording that
+  could mean hosted or maintained. Corrected Wolof support scope from acceptance
+  wording to explicit Puzru compatibility (`méngoo ak Puzru` / `ànd ak Puzru`).
+- Reworked every Tigrinya routing occurrence around `ምምራሕ ድምጺ` (directing
+  audio to an output) instead of generic `ምቕያር` (changing). The earpiece
+  destination, main loudspeaker distinction, request/result semantics, and audio
+  content boundary remain explicit. The power icon's spoken label now describes
+  both enable and disable actions; Wolof, Tatar, and Māori power labels received
+  the same two-way-control clarification.
+- Audited the shared visible-and-spoken Mini label at its production call sites for
+  all five locales. Tigrinya changed ambiguous standalone `ንእሽቶ` (“small one”)
+  to the familiar Ethiopic-script product-size loan `ሚኒ`. Wolof `Bu ndaw`,
+  Tatar `Мини`, Māori `Iti`, and Welsh `Mini` remain concise, grammatical compact-
+  controller labels; no offensive, sexual, insulting, embarrassing, or unrelated
+  technical collision was identified. Wolof and Māori semantic size labels can
+  still denote smallness outside this UI, but controller context prevents a
+  material collision.
+- Re-ran separate reverse-semantic reviews of notification and overlay permissions,
+  the Privacy Summary, About, ON/ACTIVE/READY/WAITING, subscription/region/account,
+  earpiece/loudspeaker, provider-side privacy, and third-party-control boundaries.
+  No additional claim defect was found. This is Translation Skill self-review, not
+  independent linguistic acceptance; the recorded review recommendations remain.
+
 ## Tigrinya, Wolof, Tatar, Māori, and Welsh localization batch
 
 - Architecture review accepted the canonical logical tags `ti`, `wo`, `tt`, `mi`,

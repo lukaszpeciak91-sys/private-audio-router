@@ -10,7 +10,7 @@
     <string name="state_waiting">Көтә</string>
     <string name="state_active">Актив</string>
     <string name="state_error">Хата</string>
-    <string name="power_control">Кабызу</string>
+    <string name="power_control">Кабызу/сүндерү</string>
     <string name="floating">Мини</string>
     <string name="permission_notification_title">Puzru кабызылганда күрсәтү</string>
     <string name="permission_notification_body">Puzru кабызылганын һәм тавышны юнәлтергә әзер булуын, шул исәптән кушымта фонда эшләгәндә дә, тавышсыз белдерү аша күрсәтә. Белдерүләр мәҗбүри түгел; Puzru аларсыз да эшли.</string>
@@ -22,7 +22,7 @@
     <string name="permission_overlay_not_now">Хәзер түгел</string>
     <string name="settings">Көйләүләр</string>
     <string name="close">Ябу</string>
-    <string name="overlay_controller_description">Puzruның йөзмә контроллеры. Халәт: %1$s. Кабызу, җәю һәм ябу төймәләре.</string>
+    <string name="overlay_controller_description">Puzruның йөзмә контроллеры. Халәт: %1$s. Кабызу/сүндерү, җәю һәм ябу төймәләре.</string>
     <string name="settings_language">Тел</string>
     <string name="settings_system_default">Килешенгәнчә</string>
     <string name="settings_save_diagnostic">Диагностика хисабын саклау</string>
