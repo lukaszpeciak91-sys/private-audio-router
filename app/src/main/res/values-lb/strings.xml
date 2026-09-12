@@ -17,7 +17,7 @@
     <string name="permission_notification_allow">Notifikatiounen erlaben</string>
     <string name="permission_notification_continue">Ouni Notifikatioune weiderfueren</string>
     <string name="permission_overlay_title">Erlaben, datt Mini iwwer aneren Appe gewise gëtt</string>
-    <string name="permission_overlay_body">Mini brauch den Android-Zougang „Iwwer aneren Appe weisen“, fir siichtbar ze bleiwen, wärend Dir eng ënnerstëtzt Stëmm-App benotzt. Dësen Zougang ass fakultativ an erlaabt Puzru net, aner Appen ze liesen oder ze kontrolléieren. D’Audio-Ëmschaltung funktionéiert ouni Mini.</string>
+    <string name="permission_overlay_body">Mini brauch den Android-Zougang „Iwwer aneren Appe weisen“, fir siichtbar ze bleiwen, wärend Dir eng ënnerstëtzt Stëmm-App benotzt. Wielt um nächsten Ecran Puzru aus der Lëscht vun den Apps a schalt dësen Zougrëff an. Dësen Zougang ass fakultativ an erlaabt Puzru net, aner Appen ze liesen oder ze kontrolléieren. D’Audio-Ëmschaltung funktionéiert ouni Mini.</string>
     <string name="permission_overlay_open_settings">Astellungen opmaachen</string>
     <string name="permission_overlay_not_now">Elo net</string>
     <string name="settings">Astellungen</string>

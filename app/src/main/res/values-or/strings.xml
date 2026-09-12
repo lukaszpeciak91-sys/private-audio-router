@@ -20,7 +20,7 @@
     <string name="permission_notification_allow">ବିଜ୍ଞପ୍ତିକୁ ଅନୁମତି ଦିଅନ୍ତୁ</string>
     <string name="permission_notification_continue">ବିଜ୍ଞପ୍ତି ବିନା ଜାରି ରଖନ୍ତୁ</string>
     <string name="permission_overlay_title">ମିନିକୁ ଅନ୍ୟ ଆପ୍ ଉପରେ ଦେଖାଇବାକୁ ଅନୁମତି ଦିଅନ୍ତୁ</string>
-    <string name="permission_overlay_body">ଆପଣ ଏକ ସମର୍ଥିତ ଭଏସ୍ ଆପ୍ ବ୍ୟବହାର କରୁଥିବାବେଳେ ଦୃଶ୍ୟମାନ ରହିବା ପାଇଁ ମିନିକୁ Androidର “ଅନ୍ୟ ଆପ୍ ଉପରେ ଦେଖାନ୍ତୁ” ଆକ୍ସେସ୍ ଦରକାର। ଏହି ଆକ୍ସେସ୍ ଇଚ୍ଛାଧୀନ ଏବଂ Puzruକୁ ଅନ୍ୟ ଆପ୍ ପଢ଼ିବା କିମ୍ବା ନିୟନ୍ତ୍ରଣ କରିବାକୁ ଦିଏ ନାହିଁ। ମିନି ବିନା ମଧ୍ୟ ଅଡିଓ ରୁଟିଂ କାମ କରେ।</string>
+    <string name="permission_overlay_body">ଆପଣ ଏକ ସମର୍ଥିତ ଭଏସ୍ ଆପ୍ ବ୍ୟବହାର କରୁଥିବାବେଳେ ଦୃଶ୍ୟମାନ ରହିବା ପାଇଁ ମିନିକୁ Androidର “ଅନ୍ୟ ଆପ୍ ଉପରେ ଦେଖାନ୍ତୁ” ଆକ୍ସେସ୍ ଦରକାର। ପରବର୍ତ୍ତୀ ସ୍କ୍ରିନରେ ଆପ୍ ତାଲିକାରୁ Puzru ବାଛନ୍ତୁ ଏବଂ ଏହି ଆକ୍ସେସ୍ ଚାଲୁ କରନ୍ତୁ। ଏହି ଆକ୍ସେସ୍ ଇଚ୍ଛାଧୀନ ଏବଂ Puzruକୁ ଅନ୍ୟ ଆପ୍ ପଢ଼ିବା କିମ୍ବା ନିୟନ୍ତ୍ରଣ କରିବାକୁ ଦିଏ ନାହିଁ। ମିନି ବିନା ମଧ୍ୟ ଅଡିଓ ରୁଟିଂ କାମ କରେ।</string>
     <string name="permission_overlay_open_settings">ସେଟିଂସ ଖୋଲନ୍ତୁ</string>
     <string name="permission_overlay_not_now">ବର୍ତ୍ତମାନ ନୁହେଁ</string>
     <string name="settings">ସେଟିଂସ</string>

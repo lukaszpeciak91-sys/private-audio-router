@@ -20,7 +20,7 @@
     <string name="permission_notification_allow">Bildirishnomalarga ruxsat berish</string>
     <string name="permission_notification_continue">Bildirishnomalarsiz davom etish</string>
     <string name="permission_overlay_title">Minini boshqa ilovalar ustida ko‘rsatishga ruxsat berish</string>
-    <string name="permission_overlay_body">Qo‘llab-quvvatlanadigan ovozli ilovadan foydalanayotganda ko‘rinib turishi uchun Miniga Android’ning “Boshqa ilovalar ustida ko‘rsatish” ruxsati kerak. Bu ruxsat ixtiyoriy va Puzruga boshqa ilovalarni o‘qish yoki boshqarish imkonini bermaydi. Audioni yo‘naltirish Minisiz ham ishlaydi.</string>
+    <string name="permission_overlay_body">Qo‘llab-quvvatlanadigan ovozli ilovadan foydalanayotganda ko‘rinib turishi uchun Miniga Android’ning “Boshqa ilovalar ustida ko‘rsatish” ruxsati kerak. Keyingi ekranda ilovalar roʻyxatidan Puzru-ni tanlang va bu ruxsatni yoqing. Bu ruxsat ixtiyoriy va Puzruga boshqa ilovalarni o‘qish yoki boshqarish imkonini bermaydi. Audioni yo‘naltirish Minisiz ham ishlaydi.</string>
     <string name="permission_overlay_open_settings">Sozlamalarni ochish</string>
     <string name="permission_overlay_not_now">Hozir emas</string>
     <string name="settings">Sozlamalar</string>

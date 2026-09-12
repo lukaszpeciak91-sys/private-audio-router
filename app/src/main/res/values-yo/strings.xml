@@ -17,7 +17,7 @@
     <string name="permission_notification_allow">Gba àwọn ìfitónilétí láyè</string>
     <string name="permission_notification_continue">Tẹ̀síwájú láìsí ìfitónilétí</string>
     <string name="permission_overlay_title">Gba Kékeré láyè láti hàn lórí àwọn ètò míì</string>
-    <string name="permission_overlay_body">Kékeré nílò àṣẹ Android “Fihàn lórí àwọn ètò míì” kí ó lè máa hàn nígbà tí o bá ń lo ètò ohùn tí a ṣe àtìlẹ́yìn fún. Àṣẹ yìí jẹ́ àṣàyàn, kò sì gba Puzru láyè láti ka tàbí ṣàkóso àwọn ètò míì. Dídarí ohùn ń ṣiṣẹ́ láìsí Kékeré.</string>
+    <string name="permission_overlay_body">Kékeré nílò àṣẹ Android “Fihàn lórí àwọn ètò míì” kí ó lè máa hàn nígbà tí o bá ń lo ètò ohùn tí a ṣe àtìlẹ́yìn fún. Lójú iboju tó kàn, yan Puzru nínú àtòjọ àwọn ìṣàfilọ́lẹ̀ kí o sì tan ààyè yìí. Àṣẹ yìí jẹ́ àṣàyàn, kò sì gba Puzru láyè láti ka tàbí ṣàkóso àwọn ètò míì. Dídarí ohùn ń ṣiṣẹ́ láìsí Kékeré.</string>
     <string name="permission_overlay_open_settings">Ṣí àwọn ààtò</string>
     <string name="permission_overlay_not_now">Má ṣe nísinsìnyí</string>
     <string name="settings">Àwọn ààtò</string>

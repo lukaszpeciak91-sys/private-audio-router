@@ -17,7 +17,7 @@
     <string name="permission_notification_allow">اجازه دادن به اعلان‌ها</string>
     <string name="permission_notification_continue">ادامه بدون اعلان‌ها</string>
     <string name="permission_overlay_title">اجازه به مینی برای نمایش روی برنامه‌های دیگر</string>
-    <string name="permission_overlay_body">مینی برای اینکه هنگام استفاده از یک برنامهٔ صوتی پشتیبانی‌شده قابل‌مشاهده بماند، به دسترسی Android برای «نمایش روی برنامه‌های دیگر» نیاز دارد. این دسترسی اختیاری است و به Puzru اجازه نمی‌دهد برنامه‌های دیگر را بخواند یا کنترل کند. هدایت صدا بدون مینی هم کار می‌کند.</string>
+    <string name="permission_overlay_body">مینی برای اینکه هنگام استفاده از یک برنامهٔ صوتی پشتیبانی‌شده قابل‌مشاهده بماند، به دسترسی Android برای «نمایش روی برنامه‌های دیگر» نیاز دارد. در صفحه بعد، Puzru را از فهرست برنامه‌ها انتخاب و این دسترسی را فعال کنید. این دسترسی اختیاری است و به Puzru اجازه نمی‌دهد برنامه‌های دیگر را بخواند یا کنترل کند. هدایت صدا بدون مینی هم کار می‌کند.</string>
     <string name="permission_overlay_open_settings">باز کردن تنظیمات</string>
     <string name="permission_overlay_not_now">اکنون نه</string>
     <string name="settings">تنظیمات</string>

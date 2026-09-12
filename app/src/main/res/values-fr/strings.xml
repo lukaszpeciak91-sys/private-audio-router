@@ -17,7 +17,7 @@
     <string name="permission_notification_allow">Autoriser les notifications</string>
     <string name="permission_notification_continue">Continuer sans notifications</string>
     <string name="permission_overlay_title">Autoriser Mini à s’afficher par-dessus d’autres applications</string>
-    <string name="permission_overlay_body">Mini a besoin de l’accès Android « Afficher par-dessus d’autres applications » pour rester visible pendant que vous utilisez une application vocale compatible. Cet accès est facultatif et ne permet pas à Puzru de lire ni de contrôler d’autres applications. Le routage audio fonctionne sans Mini.</string>
+    <string name="permission_overlay_body">Mini a besoin de l’accès Android « Afficher par-dessus d’autres applications » pour rester visible pendant que vous utilisez une application vocale compatible. Sur l’écran suivant, sélectionnez Puzru dans la liste des applications, puis activez cet accès. Cet accès est facultatif et ne permet pas à Puzru de lire ni de contrôler d’autres applications. Le routage audio fonctionne sans Mini.</string>
     <string name="permission_overlay_open_settings">Ouvrir les paramètres</string>
     <string name="permission_overlay_not_now">Pas maintenant</string>
     <string name="settings">Paramètres</string>

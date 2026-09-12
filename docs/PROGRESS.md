@@ -171,25 +171,34 @@
   non-English locale directories, plus the default English source. The atomic
   eight-string notification and Mini explanation bundle was translated in controlled
   batches, independently audited, and corrected or polished where requested. The
-  final whole-rollout audit passed, with no native-speaker validation claimed.
+  final whole-rollout audit passed, with no native-speaker validation claimed. The
+  later Mini operational instruction was translated across the same unchanged locale
+  inventory and received translation-production semantic self-review; independent
+  audit, human/native-speaker review, and runtime presentation remain pending for
+  that revised sentence.
 - Permanent localization parity now protects all eight Permission UX keys in every
   supported locale. The temporary completed-directory classification and the eight
   default-English `MissingTranslation` suppressions have been removed without adding
   exact translated-prose assertions.
-- Notification and Mini access use separate app-private, false-by-default resolved
-  flags. Neither panel appears at startup; each is persisted only after an action,
-  Back, or backdrop dismissal, and a visible panel survives activity recreation.
-- The first missing-permission Mini attempt explains optional access before the
-  existing package Settings handoff. A later deliberate attempt opens Settings
-  directly, and return still rechecks the grant before requesting one existing Mini.
+- Notification access retains its false-by-default, install-scoped resolved flag and
+  one-time explanation behavior. Mini no longer persists an explanation-resolved
+  state. Neither panel appears at startup, and a visible panel survives activity
+  recreation.
+- Every explicit Mini request rechecks current Display-over-other-apps access. When
+  access is missing, the contextual explanation appears on every deliberate request
+  and tells the user that Android 11+ may show an application list, where Puzru must
+  be selected before the relevant access is enabled. Open settings preserves the
+  pending-return grant recheck; Not now, Back, backdrop dismissal, denial, and
+  cancellation remain inert. A granted return requests exactly one existing Mini,
+  while a missing grant creates no Mini or false success. Routing works without Mini.
 - The finalized English permission source copy remains ordinary localizable default
   resources. Permanent contracts discover supported locale directories and enforce
   complete keys, structural and placeholder integrity, and nonblank localized values
   without freezing target-language prose. Runtime Permission UX implementation remains
   independent of localization status.
 - Automated decision, persistence-boundary, UI-contract, and fallback-resource checks
-  cover the implementation. Runtime/device checks remain pending for first use,
-  grant/denial/dismissal, repeat attempts, recreation, compact landscape, RTL,
+  cover the implementation. Runtime/device checks remain pending for repeated
+  missing-access explanations, grant/denial/dismissal, recreation, compact landscape, RTL,
   notification visibility, and unchanged routing. No routing, service,
   notification-channel/lifecycle, or overlay-window behavior changed.
 

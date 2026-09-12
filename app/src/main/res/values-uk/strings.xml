@@ -17,7 +17,7 @@
     <string name="permission_notification_allow">Дозволити сповіщення</string>
     <string name="permission_notification_continue">Продовжити без сповіщень</string>
     <string name="permission_overlay_title">Дозволити Міні поверх інших застосунків</string>
-    <string name="permission_overlay_body">Щоб залишатися видимим під час використання підтримуваного голосового застосунку, Міні потрібен доступ Android «Поверх інших застосунків». Цей доступ необов’язковий і не дає Puzru змоги читати інші застосунки або керувати ними. Перенаправлення звуку працює без Міні.</string>
+    <string name="permission_overlay_body">Щоб залишатися видимим під час використання підтримуваного голосового застосунку, Міні потрібен доступ Android «Поверх інших застосунків». На наступному екрані виберіть Puzru зі списку застосунків і ввімкніть цей доступ. Цей доступ необов’язковий і не дає Puzru змоги читати інші застосунки або керувати ними. Перенаправлення звуку працює без Міні.</string>
     <string name="permission_overlay_open_settings">Відкрити налаштування</string>
     <string name="permission_overlay_not_now">Не зараз</string>
     <string name="settings">Налаштування</string>

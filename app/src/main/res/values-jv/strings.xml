@@ -17,7 +17,7 @@
     <string name="permission_notification_allow">Idini notifikasi</string>
     <string name="permission_notification_continue">Terusake tanpa notifikasi</string>
     <string name="permission_overlay_title">Idini Mini katon ing ndhuwur aplikasi liyane</string>
-    <string name="permission_overlay_body">Mini mbutuhake akses Android “Tampilake ing ndhuwur aplikasi liyane” supaya tetep katon nalika sampeyan nggunakake aplikasi swara sing didhukung. Akses iki opsional lan ora ngidini Puzru maca utawa ngontrol aplikasi liyane. Ngalihake audio bisa digunakake tanpa Mini.</string>
+    <string name="permission_overlay_body">Mini mbutuhake akses Android “Tampilake ing ndhuwur aplikasi liyane” supaya tetep katon nalika sampeyan nggunakake aplikasi swara sing didhukung. Ing layar sabanjure, pilih Puzru saka dhaptar aplikasi banjur uripake akses iki. Akses iki opsional lan ora ngidini Puzru maca utawa ngontrol aplikasi liyane. Ngalihake audio bisa digunakake tanpa Mini.</string>
     <string name="permission_overlay_open_settings">Bukak setelan</string>
     <string name="permission_overlay_not_now">Ora saiki</string>
     <string name="settings">Setelan</string>

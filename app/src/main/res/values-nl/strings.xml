@@ -17,7 +17,7 @@
     <string name="permission_notification_allow">Meldingen toestaan</string>
     <string name="permission_notification_continue">Doorgaan zonder meldingen</string>
     <string name="permission_overlay_title">Toestaan dat Mini over andere apps wordt weergegeven</string>
-    <string name="permission_overlay_body">Mini heeft de Android-toegang ‘Weergeven over andere apps’ nodig om zichtbaar te blijven terwijl je een ondersteunde spraakapp gebruikt. Deze toegang is optioneel en geeft Puzru geen toestemming om andere apps te lezen of te bedienen. Audio omleiden werkt zonder Mini.</string>
+    <string name="permission_overlay_body">Mini heeft de Android-toegang ‘Weergeven over andere apps’ nodig om zichtbaar te blijven terwijl je een ondersteunde spraakapp gebruikt. Selecteer op het volgende scherm Puzru in de lijst met apps en schakel deze toegang in. Deze toegang is optioneel en geeft Puzru geen toestemming om andere apps te lezen of te bedienen. Audio omleiden werkt zonder Mini.</string>
     <string name="permission_overlay_open_settings">Instellingen openen</string>
     <string name="permission_overlay_not_now">Niet nu</string>
     <string name="settings">Instellingen</string>

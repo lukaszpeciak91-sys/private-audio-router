@@ -17,7 +17,7 @@
     <string name="permission_notification_allow">អនុញ្ញាតការជូនដំណឹង</string>
     <string name="permission_notification_continue">បន្តដោយគ្មានការជូនដំណឹង</string>
     <string name="permission_overlay_title">អនុញ្ញាតឱ្យខ្នាតតូចបង្ហាញលើកម្មវិធីផ្សេងទៀត</string>
-    <string name="permission_overlay_body">ខ្នាតតូចត្រូវការសិទ្ធិ Android «បង្ហាញលើកម្មវិធីផ្សេងទៀត» ដើម្បីបន្តមើលឃើញ ខណៈពេលអ្នកប្រើកម្មវិធីសំឡេងដែលបានគាំទ្រ។ សិទ្ធិនេះជាជម្រើស ហើយមិនអនុញ្ញាតឱ្យ Puzru អាន ឬគ្រប់គ្រងកម្មវិធីផ្សេងទៀតទេ។ ការកំណត់ទិសដៅសំឡេងដំណើរការដោយគ្មានខ្នាតតូច។</string>
+    <string name="permission_overlay_body">ខ្នាតតូចត្រូវការសិទ្ធិ Android «បង្ហាញលើកម្មវិធីផ្សេងទៀត» ដើម្បីបន្តមើលឃើញ ខណៈពេលអ្នកប្រើកម្មវិធីសំឡេងដែលបានគាំទ្រ។ នៅលើអេក្រង់បន្ទាប់ សូមជ្រើសរើស Puzru ពីបញ្ជីកម្មវិធី ហើយបើកសិទ្ធិនេះ។ សិទ្ធិនេះជាជម្រើស ហើយមិនអនុញ្ញាតឱ្យ Puzru អាន ឬគ្រប់គ្រងកម្មវិធីផ្សេងទៀតទេ។ ការកំណត់ទិសដៅសំឡេងដំណើរការដោយគ្មានខ្នាតតូច។</string>
     <string name="permission_overlay_open_settings">បើកការកំណត់</string>
     <string name="permission_overlay_not_now">មិនមែនឥឡូវនេះ</string>
     <string name="settings">ការកំណត់</string>

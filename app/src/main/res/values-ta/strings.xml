@@ -17,7 +17,7 @@
     <string name="permission_notification_allow">அறிவிப்புகளை அனுமதி</string>
     <string name="permission_notification_continue">அறிவிப்புகள் இல்லாமல் தொடரவும்</string>
     <string name="permission_overlay_title">மினியை மற்ற செயலிகளுக்கு மேலே காட்ட அனுமதி</string>
-    <string name="permission_overlay_body">ஆதரிக்கப்படும் குரல் செயலியை நீங்கள் பயன்படுத்தும்போது தொடர்ந்து தெரிய, மினிக்கு Android இன் “மற்ற செயலிகளுக்கு மேல் காட்டுதல்” அணுகல் தேவை. இந்த அணுகல் விருப்பத்திற்குரியது; மற்ற செயலிகளைப் படிக்கவோ கட்டுப்படுத்தவோ Puzru-வை இது அனுமதிக்காது. மினி இல்லாமலும் ஆடியோ வழிமாற்றம் செயல்படும்.</string>
+    <string name="permission_overlay_body">ஆதரிக்கப்படும் குரல் செயலியை நீங்கள் பயன்படுத்தும்போது தொடர்ந்து தெரிய, மினிக்கு Android இன் “மற்ற செயலிகளுக்கு மேல் காட்டுதல்” அணுகல் தேவை. அடுத்த திரையில், ஆப்ஸ் பட்டியலிலிருந்து Puzru-ஐத் தேர்ந்தெடுத்து இந்த அணுகலை இயக்கவும். இந்த அணுகல் விருப்பத்திற்குரியது; மற்ற செயலிகளைப் படிக்கவோ கட்டுப்படுத்தவோ Puzru-வை இது அனுமதிக்காது. மினி இல்லாமலும் ஆடியோ வழிமாற்றம் செயல்படும்.</string>
     <string name="permission_overlay_open_settings">அமைப்புகளைத் திற</string>
     <string name="permission_overlay_not_now">இப்போது வேண்டாம்</string>
     <string name="settings">அமைப்புகள்</string>

@@ -17,7 +17,7 @@
     <string name="permission_notification_allow">Dovoli obvestila</string>
     <string name="permission_notification_continue">Nadaljuj brez obvestil</string>
     <string name="permission_overlay_title">Dovoli prikaz Mini čez druge aplikacije</string>
-    <string name="permission_overlay_body">Mini potrebuje dostop Android »Prikaz čez druge aplikacije«, da ostane viden med uporabo podprte glasovne aplikacije. Ta dostop je izbiren in aplikaciji Puzru ne omogoča branja ali upravljanja drugih aplikacij. Preusmerjanje zvoka deluje brez Mini.</string>
+    <string name="permission_overlay_body">Mini potrebuje dostop Android »Prikaz čez druge aplikacije«, da ostane viden med uporabo podprte glasovne aplikacije. Na naslednjem zaslonu na seznamu aplikacij izberite Puzru in vklopite ta dostop. Ta dostop je izbiren in aplikaciji Puzru ne omogoča branja ali upravljanja drugih aplikacij. Preusmerjanje zvoka deluje brez Mini.</string>
     <string name="permission_overlay_open_settings">Odpri nastavitve</string>
     <string name="permission_overlay_not_now">Ne zdaj</string>
     <string name="settings">Nastavitve</string>

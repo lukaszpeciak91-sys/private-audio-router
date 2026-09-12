@@ -17,7 +17,7 @@
     <string name="permission_notification_allow">Ruhusu arifa</string>
     <string name="permission_notification_continue">Endelea bila arifa</string>
     <string name="permission_overlay_title">Ruhusu Mini ionekane juu ya programu nyingine</string>
-    <string name="permission_overlay_body">Mini inahitaji ruhusa ya Android ya “Kuonekana juu ya programu nyingine” ili iendelee kuonekana unapotumia programu ya sauti inayoungwa mkono. Ruhusa hii ni ya hiari na hairuhusu Puzru kusoma au kudhibiti programu nyingine. Uelekezaji wa sauti hufanya kazi bila Mini.</string>
+    <string name="permission_overlay_body">Mini inahitaji ruhusa ya Android ya “Kuonekana juu ya programu nyingine” ili iendelee kuonekana unapotumia programu ya sauti inayoungwa mkono. Kwenye skrini inayofuata, chagua Puzru kwenye orodha ya programu na uwashe ruhusa hii. Ruhusa hii ni ya hiari na hairuhusu Puzru kusoma au kudhibiti programu nyingine. Uelekezaji wa sauti hufanya kazi bila Mini.</string>
     <string name="permission_overlay_open_settings">Fungua mipangilio</string>
     <string name="permission_overlay_not_now">Si sasa</string>
     <string name="settings">Mipangilio</string>

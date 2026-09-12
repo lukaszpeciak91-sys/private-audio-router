@@ -17,7 +17,7 @@
     <string name="permission_notification_allow">నోటిఫికేషన్‌లను అనుమతించండి</string>
     <string name="permission_notification_continue">నోటిఫికేషన్‌లు లేకుండా కొనసాగించండి</string>
     <string name="permission_overlay_title">మినీని ఇతర యాప్‌ల పైన చూపడానికి అనుమతించండి</string>
-    <string name="permission_overlay_body">మీరు మద్దతు ఉన్న వాయిస్ యాప్‌ను ఉపయోగిస్తున్నప్పుడు కనిపిస్తూ ఉండటానికి మినీకి Android యొక్క “ఇతర యాప్‌ల పైన చూపండి” యాక్సెస్ అవసరం. ఈ యాక్సెస్ ఐచ్ఛికం మరియు ఇతర యాప్‌లను చదవడానికి లేదా నియంత్రించడానికి Puzruను అనుమతించదు. మినీ లేకుండానే ఆడియో రూటింగ్ పని చేస్తుంది.</string>
+    <string name="permission_overlay_body">మీరు మద్దతు ఉన్న వాయిస్ యాప్‌ను ఉపయోగిస్తున్నప్పుడు కనిపిస్తూ ఉండటానికి మినీకి Android యొక్క “ఇతర యాప్‌ల పైన చూపండి” యాక్సెస్ అవసరం. తదుపరి స్క్రీన్‌లో యాప్‌ల జాబితా నుండి Puzruను ఎంచుకుని, ఈ యాక్సెస్‌ను ఆన్ చేయండి. ఈ యాక్సెస్ ఐచ్ఛికం మరియు ఇతర యాప్‌లను చదవడానికి లేదా నియంత్రించడానికి Puzruను అనుమతించదు. మినీ లేకుండానే ఆడియో రూటింగ్ పని చేస్తుంది.</string>
     <string name="permission_overlay_open_settings">సెట్టింగ్‌లను తెరవండి</string>
     <string name="permission_overlay_not_now">ఇప్పుడు వద్దు</string>
     <string name="settings">సెట్టింగ్‌లు</string>

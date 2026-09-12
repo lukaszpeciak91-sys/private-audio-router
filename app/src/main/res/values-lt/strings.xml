@@ -17,7 +17,7 @@
     <string name="permission_notification_allow">Leisti pranešimus</string>
     <string name="permission_notification_continue">Tęsti be pranešimų</string>
     <string name="permission_overlay_title">Leisti „Mini“ rodyti virš kitų programų</string>
-    <string name="permission_overlay_body">Kad liktų matoma naudojant palaikomą balso programą, „Mini“ reikia „Android“ prieigos „Rodyti virš kitų programų“. Ši prieiga neprivaloma ir neleidžia „Puzru“ skaityti ar valdyti kitų programų. Garso nukreipimas veikia be „Mini“.</string>
+    <string name="permission_overlay_body">Kad liktų matoma naudojant palaikomą balso programą, „Mini“ reikia „Android“ prieigos „Rodyti virš kitų programų“. Kitame ekrane programų sąraše pasirinkite „Puzru“ ir įjunkite šią prieigą. Ši prieiga neprivaloma ir neleidžia „Puzru“ skaityti ar valdyti kitų programų. Garso nukreipimas veikia be „Mini“.</string>
     <string name="permission_overlay_open_settings">Atidaryti nustatymus</string>
     <string name="permission_overlay_not_now">Ne dabar</string>
     <string name="settings">Nustatymai</string>

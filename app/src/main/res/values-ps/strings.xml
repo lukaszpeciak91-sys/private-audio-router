@@ -17,7 +17,7 @@
     <string name="permission_notification_allow">خبرتیاوو ته اجازه ورکړئ</string>
     <string name="permission_notification_continue">له خبرتیاوو پرته دوام ورکړئ</string>
     <string name="permission_overlay_title">مینی ته د نورو اپونو پر سر د ښودلو اجازه ورکړئ</string>
-    <string name="permission_overlay_body">مینی د Android «د نورو اپونو پر سر ښودل» لاسرسي ته اړتیا لري، څو د ملاتړ شوي غږیز اپ د کارولو پر مهال ښکاره پاتې شي. دا لاسرسی اختیاري دی او Puzru ته د نورو اپونو د لوستلو یا کنټرول اجازه نه ورکوي. د آډیو لارښوونه له مینی پرته هم کار کوي.</string>
+    <string name="permission_overlay_body">مینی د Android «د نورو اپونو پر سر ښودل» لاسرسي ته اړتیا لري، څو د ملاتړ شوي غږیز اپ د کارولو پر مهال ښکاره پاتې شي. په بل سکرین کې د اپلېکېشنونو له لېست څخه Puzru وټاکئ او دا لاسرسی فعال کړئ. دا لاسرسی اختیاري دی او Puzru ته د نورو اپونو د لوستلو یا کنټرول اجازه نه ورکوي. د آډیو لارښوونه له مینی پرته هم کار کوي.</string>
     <string name="permission_overlay_open_settings">امستنې پرانیزئ</string>
     <string name="permission_overlay_not_now">اوس نه</string>
     <string name="settings">امستنې</string>

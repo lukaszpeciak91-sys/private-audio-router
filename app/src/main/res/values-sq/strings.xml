@@ -17,7 +17,7 @@
     <string name="permission_notification_allow">Lejo njoftimet</string>
     <string name="permission_notification_continue">Vazhdo pa njoftime</string>
     <string name="permission_overlay_title">Lejo shfaqjen e Mini mbi aplikacionet e tjera</string>
-    <string name="permission_overlay_body">Mini ka nevojë për qasjen e Android “Shfaq mbi aplikacionet e tjera” që të mbetet i dukshëm ndërsa përdor një aplikacion zanor të mbështetur. Kjo qasje është opsionale dhe nuk e lejon Puzru të lexojë ose kontrollojë aplikacione të tjera. Ridrejtimi i audios funksionon pa Mini.</string>
+    <string name="permission_overlay_body">Mini ka nevojë për qasjen e Android “Shfaq mbi aplikacionet e tjera” që të mbetet i dukshëm ndërsa përdor një aplikacion zanor të mbështetur. Në ekranin tjetër, zgjidhni Puzru nga lista e aplikacioneve dhe aktivizoni këtë qasje. Kjo qasje është opsionale dhe nuk e lejon Puzru të lexojë ose kontrollojë aplikacione të tjera. Ridrejtimi i audios funksionon pa Mini.</string>
     <string name="permission_overlay_open_settings">Hap cilësimet</string>
     <string name="permission_overlay_not_now">Jo tani</string>
     <string name="settings">Cilësimet</string>

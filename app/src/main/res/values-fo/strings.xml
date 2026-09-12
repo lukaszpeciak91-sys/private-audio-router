@@ -17,7 +17,7 @@
     <string name="permission_notification_allow">Loyv fráboðanum</string>
     <string name="permission_notification_continue">Halt fram uttan fráboðanir</string>
     <string name="permission_overlay_title">Loyv Mini oman á øðrum appum</string>
-    <string name="permission_overlay_body">Mini krevur Android-atgongdina „Vís oman á øðrum appum“ fyri at vera sjónligt, meðan tú brúkar eina stuðlaða taluapp. Henda atgongdin er valfrí og loyvir ikki Puzru at lesa ella stýra øðrum appum. Ljóðskiftið virkar uttan Mini.</string>
+    <string name="permission_overlay_body">Mini krevur Android-atgongdina „Vís oman á øðrum appum“ fyri at vera sjónligt, meðan tú brúkar eina stuðlaða taluapp. Á næsta skíggja skalt tú velja Puzru á applistanum og tendra hesa atgongdina. Henda atgongdin er valfrí og loyvir ikki Puzru at lesa ella stýra øðrum appum. Ljóðskiftið virkar uttan Mini.</string>
     <string name="permission_overlay_open_settings">Lat stillingar upp</string>
     <string name="permission_overlay_not_now">Ikki nú</string>
     <string name="settings">Stillingar</string>

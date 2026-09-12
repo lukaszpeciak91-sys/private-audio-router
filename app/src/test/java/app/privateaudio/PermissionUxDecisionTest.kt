@@ -11,9 +11,8 @@ class PermissionUxDecisionTest {
         assertEquals(NotificationPowerDecision.START, notificationPowerDecision(33, false, true))
     }
 
-    @Test fun overlayDecisionExplainsOnlyTheFirstMissingAccessAttempt() {
-        assertEquals(OverlayMiniDecision.SHOW, overlayMiniDecision(true, false))
-        assertEquals(OverlayMiniDecision.EXPLAIN, overlayMiniDecision(false, false))
-        assertEquals(OverlayMiniDecision.OPEN_SETTINGS, overlayMiniDecision(false, true))
+    @Test fun overlayDecisionDependsOnlyOnCurrentAccess() {
+        assertEquals(OverlayMiniDecision.SHOW, overlayMiniDecision(true))
+        assertEquals(OverlayMiniDecision.EXPLAIN, overlayMiniDecision(false))
     }
 }

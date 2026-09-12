@@ -17,7 +17,7 @@
     <string name="permission_notification_allow">Bildirimlere izin ver</string>
     <string name="permission_notification_continue">Bildirimler olmadan devam et</string>
     <string name="permission_overlay_title">Mini’nin diğer uygulamaların üzerinde görüntülenmesine izin ver</string>
-    <string name="permission_overlay_body">Mini, desteklenen bir sesli uygulamayı kullanırken görünür kalmak için Android’in “Diğer uygulamaların üzerinde gösterme” erişimine ihtiyaç duyar. Bu erişim isteğe bağlıdır ve Puzru’nun diğer uygulamaları okumasına veya kontrol etmesine izin vermez. Ses yönlendirme Mini olmadan da çalışır.</string>
+    <string name="permission_overlay_body">Mini, desteklenen bir sesli uygulamayı kullanırken görünür kalmak için Android’in “Diğer uygulamaların üzerinde gösterme” erişimine ihtiyaç duyar. Sonraki ekranda uygulama listesinden Puzru’yu seçin ve bu erişimi açın. Bu erişim isteğe bağlıdır ve Puzru’nun diğer uygulamaları okumasına veya kontrol etmesine izin vermez. Ses yönlendirme Mini olmadan da çalışır.</string>
     <string name="permission_overlay_open_settings">Ayarları aç</string>
     <string name="permission_overlay_not_now">Şimdi değil</string>
     <string name="settings">Ayarlar</string>

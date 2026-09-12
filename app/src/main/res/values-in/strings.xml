@@ -17,7 +17,7 @@
     <string name="permission_notification_allow">Izinkan notifikasi</string>
     <string name="permission_notification_continue">Lanjutkan tanpa notifikasi</string>
     <string name="permission_overlay_title">Izinkan Mini tampil di atas aplikasi lain</string>
-    <string name="permission_overlay_body">Mini memerlukan akses Android “Tampil di atas aplikasi lain” agar tetap terlihat saat Anda menggunakan aplikasi suara yang didukung. Akses ini bersifat opsional dan tidak memungkinkan Puzru membaca atau mengontrol aplikasi lain. Pengalihan audio tetap berfungsi tanpa Mini.</string>
+    <string name="permission_overlay_body">Mini memerlukan akses Android “Tampil di atas aplikasi lain” agar tetap terlihat saat Anda menggunakan aplikasi suara yang didukung. Di layar berikutnya, pilih Puzru dari daftar aplikasi lalu aktifkan akses ini. Akses ini bersifat opsional dan tidak memungkinkan Puzru membaca atau mengontrol aplikasi lain. Pengalihan audio tetap berfungsi tanpa Mini.</string>
     <string name="permission_overlay_open_settings">Buka setelan</string>
     <string name="permission_overlay_not_now">Jangan sekarang</string>
     <string name="settings">Setelan</string>

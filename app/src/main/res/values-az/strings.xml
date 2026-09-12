@@ -17,7 +17,7 @@
     <string name="permission_notification_allow">Bildirişlərə icazə ver</string>
     <string name="permission_notification_continue">Bildirişlər olmadan davam et</string>
     <string name="permission_overlay_title">Miniyə digər tətbiqlərin üzərində görünməyə icazə ver</string>
-    <string name="permission_overlay_body">Dəstəklənən səsli tətbiqdən istifadə edərkən görünən qalmaq üçün Miniyə Android-in “Digər tətbiqlərin üzərində göstərmə” giriş icazəsi lazımdır. Bu giriş istəyə bağlıdır və Puzruya digər tətbiqləri oxumağa və ya idarə etməyə imkan vermir. Audionun yönləndirilməsi Mini olmadan işləyir.</string>
+    <string name="permission_overlay_body">Dəstəklənən səsli tətbiqdən istifadə edərkən görünən qalmaq üçün Miniyə Android-in “Digər tətbiqlərin üzərində göstərmə” giriş icazəsi lazımdır. Növbəti ekranda tətbiqlər siyahısından Puzru-nu seçin və bu girişi aktiv edin. Bu giriş istəyə bağlıdır və Puzruya digər tətbiqləri oxumağa və ya idarə etməyə imkan vermir. Audionun yönləndirilməsi Mini olmadan işləyir.</string>
     <string name="permission_overlay_open_settings">Ayarları aç</string>
     <string name="permission_overlay_not_now">İndi deyil</string>
     <string name="settings">Ayarlar</string>

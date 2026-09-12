@@ -17,7 +17,7 @@
     <string name="permission_notification_allow">सूचनाहरूलाई अनुमति दिनुहोस्</string>
     <string name="permission_notification_continue">सूचनाबिना जारी राख्नुहोस्</string>
     <string name="permission_overlay_title">मिनीलाई अन्य एपमाथि देखाउन अनुमति दिनुहोस्</string>
-    <string name="permission_overlay_body">तपाईंले समर्थित भ्वाइस एप प्रयोग गर्दा देखिइरहन मिनीलाई Android को “अन्य एपमाथि देखाउनुहोस्” पहुँच चाहिन्छ। यो पहुँच वैकल्पिक हो र यसले Puzru लाई अन्य एप पढ्न वा नियन्त्रण गर्न दिँदैन। मिनिबिना पनि अडियो रुटिङले काम गर्छ।</string>
+    <string name="permission_overlay_body">तपाईंले समर्थित भ्वाइस एप प्रयोग गर्दा देखिइरहन मिनीलाई Android को “अन्य एपमाथि देखाउनुहोस्” पहुँच चाहिन्छ। अर्को स्क्रिनमा एपहरूको सूचीबाट Puzru छान्नुहोस् र यो पहुँच अन गर्नुहोस्। यो पहुँच वैकल्पिक हो र यसले Puzru लाई अन्य एप पढ्न वा नियन्त्रण गर्न दिँदैन। मिनिबिना पनि अडियो रुटिङले काम गर्छ।</string>
     <string name="permission_overlay_open_settings">सेटिङहरू खोल्नुहोस्</string>
     <string name="permission_overlay_not_now">अहिले होइन</string>
     <string name="settings">सेटिङहरू</string>

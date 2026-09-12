@@ -17,7 +17,7 @@
     <string name="permission_notification_allow">Kwe ka ọkwa</string>
     <string name="permission_notification_continue">Gaa n’ihu na-enweghị ọkwa</string>
     <string name="permission_overlay_title">Kwe ka Obere pụta n’elu ngwa ndị ọzọ</string>
-    <string name="permission_overlay_body">Obere chọrọ ohere Android nke “Gosi n’elu ngwa ndị ọzọ” ka ọ nọgide na-apụta mgbe ị na-eji ngwa olu akwadoro. Ohere a bụ nhọrọ, ọ naghịkwa enye Puzru ikike ịgụ ma ọ bụ ịchịkwa ngwa ndị ọzọ. Ibugharị ọdịyo na-arụ ọrụ na-enweghị Obere.</string>
+    <string name="permission_overlay_body">Obere chọrọ ohere Android nke “Gosi n’elu ngwa ndị ọzọ” ka ọ nọgide na-apụta mgbe ị na-eji ngwa olu akwadoro. Na ihuenyo na-esote, họrọ Puzru na ndepụta ngwa ma gbanye ohere a. Ohere a bụ nhọrọ, ọ naghịkwa enye Puzru ikike ịgụ ma ọ bụ ịchịkwa ngwa ndị ọzọ. Ibugharị ọdịyo na-arụ ọrụ na-enweghị Obere.</string>
     <string name="permission_overlay_open_settings">Mepee ntọala</string>
     <string name="permission_overlay_not_now">Ọ bụghị ugbu a</string>
     <string name="settings">Ntọala</string>
