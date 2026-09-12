@@ -167,6 +167,14 @@
 
 ## Contextual permission explanations
 
+- Permission UX localization Batch 1 adds the complete atomic eight-string
+  notification and Mini explanation bundle to 20 resource directories: Spanish,
+  French, German, Russian, Ukrainian, Polish, Italian, Simplified and Traditional
+  Chinese, Hindi, Arabic, Persian, European and Brazilian Portuguese, Swahili,
+  Urdu, Japanese, Korean, Indonesian, and Tamil. The remaining 82 supported
+  non-English locales continue to use intentional English fallback; translation
+  production and semantic self-check are recorded without claiming independent or
+  human validation.
 - Notification and Mini access use separate app-private, false-by-default resolved
   flags. Neither panel appears at startup; each is persisted only after an action,
   Back, or backdrop dismissal, and a visible panel survives activity recreation.

@@ -14,5 +14,26 @@ object PermissionUxLocalizationRollout {
     )
 
     // Add a resource directory only in the batch that adds all eight keys to that directory.
-    val completedLocaleDirectories: Set<String> = emptySet()
+    val completedLocaleDirectories: Set<String> = setOf(
+        "values-es",
+        "values-fr",
+        "values-de",
+        "values-ru",
+        "values-uk",
+        "values-pl",
+        "values-it",
+        "values-b+zh+Hans",
+        "values-b+zh+Hant",
+        "values-hi",
+        "values-ar",
+        "values-fa",
+        "values-pt-rPT",
+        "values-pt-rBR",
+        "values-sw",
+        "values-ur",
+        "values-ja",
+        "values-ko",
+        "values-in",
+        "values-ta",
+    )
 }

@@ -12,6 +12,14 @@
     <string name="state_error">خطأ</string>
     <string name="power_control">تشغيل</string>
     <string name="floating">مصغّر</string>
+    <string name="permission_notification_title">إظهار عندما يكون Puzru قيد التشغيل</string>
+    <string name="permission_notification_body">يستخدم Puzru إشعارًا صامتًا لإظهار أنه قيد التشغيل وجاهز لتوجيه الصوت، حتى عندما يكون التطبيق في الخلفية. الإشعارات اختيارية؛ ويظل Puzru يعمل بدونها.</string>
+    <string name="permission_notification_allow">السماح بالإشعارات</string>
+    <string name="permission_notification_continue">المتابعة بدون إشعارات</string>
+    <string name="permission_overlay_title">السماح بعرض مصغّر فوق التطبيقات الأخرى</string>
+    <string name="permission_overlay_body">يحتاج مصغّر إلى إذن Android «الظهور فوق التطبيقات الأخرى» ليظل ظاهرًا أثناء استخدامك لتطبيق صوتي مدعوم. هذا الإذن اختياري ولا يتيح لـ Puzru قراءة التطبيقات الأخرى أو التحكم فيها. يعمل توجيه الصوت بدون مصغّر.</string>
+    <string name="permission_overlay_open_settings">فتح الإعدادات</string>
+    <string name="permission_overlay_not_now">ليس الآن</string>
     <string name="settings">الإعدادات</string>
     <string name="close">إغلاق</string>
     <string name="overlay_controller_description">وحدة التحكم المصغّرة العائمة لتطبيق Puzru. الحالة: %1$s. عناصر التحكم في التشغيل والتوسيع والإغلاق.</string>

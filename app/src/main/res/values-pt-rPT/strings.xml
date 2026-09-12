@@ -12,6 +12,14 @@
     <string name="state_error">Erro</string>
     <string name="power_control">Ativar</string>
     <string name="floating">Mini</string>
+    <string name="permission_notification_title">Mostrar quando o Puzru está ligado</string>
+    <string name="permission_notification_body">O Puzru utiliza uma notificação silenciosa para mostrar que está ligado e pronto para encaminhar o áudio, mesmo quando a aplicação está em segundo plano. As notificações são opcionais; o Puzru continua a funcionar sem elas.</string>
+    <string name="permission_notification_allow">Permitir notificações</string>
+    <string name="permission_notification_continue">Continuar sem notificações</string>
+    <string name="permission_overlay_title">Permitir o Mini sobre outras aplicações</string>
+    <string name="permission_overlay_body">O Mini necessita do acesso «Apresentar sobre outras aplicações» do Android para permanecer visível enquanto utiliza uma aplicação de voz compatível. Este acesso é opcional e não permite ao Puzru ler ou controlar outras aplicações. O encaminhamento de áudio funciona sem o Mini.</string>
+    <string name="permission_overlay_open_settings">Abrir definições</string>
+    <string name="permission_overlay_not_now">Agora não</string>
     <string name="settings">Definições</string>
     <string name="close">Fechar</string>
     <string name="overlay_controller_description">Controlador flutuante do Puzru. Estado: %1$s. Controlos para ativar, expandir e fechar.</string>

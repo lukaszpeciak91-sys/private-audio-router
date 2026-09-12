@@ -12,6 +12,14 @@
     <string name="state_error">エラー</string>
     <string name="power_control">オンにする</string>
     <string name="floating">ミニ</string>
+    <string name="permission_notification_title">Puzru がオンのときに表示</string>
+    <string name="permission_notification_body">Puzru は、オンになっていて音声の切り替え準備ができていることを、アプリがバックグラウンドにあるときも静かな通知で示します。通知は任意です。通知がなくても Puzru は動作します。</string>
+    <string name="permission_notification_allow">通知を許可</string>
+    <string name="permission_notification_continue">通知なしで続行</string>
+    <string name="permission_overlay_title">ミニを他のアプリの上に表示することを許可</string>
+    <string name="permission_overlay_body">対応する音声アプリの使用中も表示し続けるには、ミニに Android の「他のアプリの上に重ねて表示」へのアクセスが必要です。このアクセスは任意であり、Puzru が他のアプリを読み取ったり操作したりできるようにはなりません。音声の切り替えはミニがなくても機能します。</string>
+    <string name="permission_overlay_open_settings">設定を開く</string>
+    <string name="permission_overlay_not_now">今はしない</string>
     <string name="settings">設定</string>
     <string name="close">閉じる</string>
     <string name="overlay_controller_description">Puzru のミニコントローラー。ステータス: %1$s。オンにする、展開、閉じるの各操作ができます。</string>

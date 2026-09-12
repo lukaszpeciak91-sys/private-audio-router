@@ -12,6 +12,14 @@
     <string name="state_error">Błąd</string>
     <string name="power_control">Włącz</string>
     <string name="floating">Mini</string>
+    <string name="permission_notification_title">Pokazuj, gdy Puzru jest włączone</string>
+    <string name="permission_notification_body">Puzru używa cichego powiadomienia, aby pokazywać, że jest włączone i gotowe do przekierowania dźwięku, również gdy aplikacja działa w tle. Powiadomienia są opcjonalne; Puzru działa także bez nich.</string>
+    <string name="permission_notification_allow">Zezwól na powiadomienia</string>
+    <string name="permission_notification_continue">Kontynuuj bez powiadomień</string>
+    <string name="permission_overlay_title">Zezwól Mini na wyświetlanie nad innymi aplikacjami</string>
+    <string name="permission_overlay_body">Mini potrzebuje dostępu Androida „Wyświetlanie nad innymi aplikacjami”, aby pozostać widoczne podczas korzystania z obsługiwanej aplikacji głosowej. Ten dostęp jest opcjonalny i nie pozwala Puzru odczytywać ani kontrolować innych aplikacji. Przekierowywanie dźwięku działa bez Mini.</string>
+    <string name="permission_overlay_open_settings">Otwórz ustawienia</string>
+    <string name="permission_overlay_not_now">Nie teraz</string>
     <string name="settings">Ustawienia</string>
     <string name="close">Zamknij</string>
     <string name="overlay_controller_description">Pływający kontroler Puzru. Stan: %1$s. Przyciski włączania, rozwijania i zamykania.</string>

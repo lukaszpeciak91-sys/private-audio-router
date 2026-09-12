@@ -12,6 +12,14 @@
     <string name="state_error">गड़बड़ी</string>
     <string name="power_control">चालू करें</string>
     <string name="floating">मिनी</string>
+    <string name="permission_notification_title">Puzru के चालू होने पर दिखाएं</string>
+    <string name="permission_notification_body">Puzru एक शांत नोटिफ़िकेशन से दिखाता है कि वह चालू है और ऑडियो को रूट करने के लिए तैयार है, भले ही ऐप बैकग्राउंड में हो। नोटिफ़िकेशन वैकल्पिक हैं; उनके बिना भी Puzru काम करता है।</string>
+    <string name="permission_notification_allow">नोटिफ़िकेशन की अनुमति दें</string>
+    <string name="permission_notification_continue">नोटिफ़िकेशन के बिना जारी रखें</string>
+    <string name="permission_overlay_title">मिनी को दूसरे ऐप्लिकेशन के ऊपर दिखाने की अनुमति दें</string>
+    <string name="permission_overlay_body">किसी समर्थित वॉइस ऐप का इस्तेमाल करते समय दिखाई देते रहने के लिए मिनी को Android की “दूसरे ऐप्लिकेशन के ऊपर दिखाने” की ऐक्सेस चाहिए। यह ऐक्सेस वैकल्पिक है और इससे Puzru दूसरे ऐप्लिकेशन को पढ़ या नियंत्रित नहीं कर सकता। मिनी के बिना भी ऑडियो रूटिंग काम करती है।</string>
+    <string name="permission_overlay_open_settings">सेटिंग खोलें</string>
+    <string name="permission_overlay_not_now">अभी नहीं</string>
     <string name="settings">सेटिंग</string>
     <string name="close">बंद करें</string>
     <string name="overlay_controller_description">Puzru मिनी कंट्रोलर। स्थिति: %1$s। चालू करने, फैलाने और बंद करने के कंट्रोल।</string>

@@ -12,6 +12,14 @@
     <string name="state_error">خرابی</string>
     <string name="power_control">چالو کریں</string>
     <string name="floating">کمپیکٹ</string>
+    <string name="permission_notification_title">Puzru کے آن ہونے پر دکھائیں</string>
+    <string name="permission_notification_body">Puzru ایک خاموش اطلاع کے ذریعے دکھاتا ہے کہ وہ آن ہے اور آڈیو روٹ کرنے کے لیے تیار ہے، چاہے ایپ پس منظر میں ہو۔ اطلاعات اختیاری ہیں؛ Puzru ان کے بغیر بھی کام کرتا ہے۔</string>
+    <string name="permission_notification_allow">اطلاعات کی اجازت دیں</string>
+    <string name="permission_notification_continue">اطلاعات کے بغیر جاری رکھیں</string>
+    <string name="permission_overlay_title">کمپیکٹ کو دوسری ایپس کے اوپر دکھانے کی اجازت دیں</string>
+    <string name="permission_overlay_body">کسی معاونت یافتہ صوتی ایپ کے استعمال کے دوران نظر آتے رہنے کے لیے کمپیکٹ کو Android کی ”دوسری ایپس کے اوپر دکھانے“ کی رسائی درکار ہے۔ یہ رسائی اختیاری ہے اور Puzru کو دوسری ایپس پڑھنے یا کنٹرول کرنے کی اجازت نہیں دیتی۔ آڈیو روٹنگ کمپیکٹ کے بغیر بھی کام کرتی ہے۔</string>
+    <string name="permission_overlay_open_settings">ترتیبات کھولیں</string>
+    <string name="permission_overlay_not_now">ابھی نہیں</string>
     <string name="settings">سیٹنگز</string>
     <string name="close">بند کریں</string>
     <string name="overlay_controller_description">Puzru کا فلوٹنگ کمپیکٹ کنٹرولر۔ اسٹیٹس: %1$s۔ چالو کرنے، پھیلانے اور بند کرنے کے کنٹرولز۔</string>

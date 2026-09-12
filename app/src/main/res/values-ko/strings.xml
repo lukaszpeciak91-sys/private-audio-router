@@ -12,6 +12,14 @@
     <string name="state_error">오류</string>
     <string name="power_control">켜기</string>
     <string name="floating">미니</string>
+    <string name="permission_notification_title">Puzru가 켜져 있을 때 표시</string>
+    <string name="permission_notification_body">Puzru는 앱이 백그라운드에 있을 때를 포함하여, 켜져 있고 오디오를 전환할 준비가 되었음을 무음 알림으로 표시합니다. 알림은 선택 사항이며 알림이 없어도 Puzru는 작동합니다.</string>
+    <string name="permission_notification_allow">알림 허용</string>
+    <string name="permission_notification_continue">알림 없이 계속</string>
+    <string name="permission_overlay_title">미니를 다른 앱 위에 표시하도록 허용</string>
+    <string name="permission_overlay_body">지원되는 음성 앱을 사용하는 동안 계속 표시되려면 미니에 Android의 ‘다른 앱 위에 표시’ 접근 권한이 필요합니다. 이 접근 권한은 선택 사항이며 Puzru가 다른 앱을 읽거나 제어하도록 허용하지 않습니다. 오디오 전환은 미니 없이도 작동합니다.</string>
+    <string name="permission_overlay_open_settings">설정 열기</string>
+    <string name="permission_overlay_not_now">나중에</string>
     <string name="settings">설정</string>
     <string name="close">닫기</string>
     <string name="overlay_controller_description">Puzru 미니 컨트롤러입니다. 상태: %1$s. 켜기, 펼치기, 닫기 버튼이 있습니다.</string>
