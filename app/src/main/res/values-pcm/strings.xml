@@ -12,6 +12,14 @@
     <string name="state_error">Error</string>
     <string name="power_control">Turn am on</string>
     <string name="floating">Mini</string>
+    <string name="permission_notification_title">Show am when Puzru dey on</string>
+    <string name="permission_notification_body">Puzru dey use notification wey no get sound to show say e dey on and ready to route audio, even when di app dey background. Notification na choice; Puzru still dey work without am.</string>
+    <string name="permission_notification_allow">Allow notification dem</string>
+    <string name="permission_notification_continue">Continue without notification dem</string>
+    <string name="permission_overlay_title">Allow Mini make e show on top oda apps</string>
+    <string name="permission_overlay_body">Mini need Android access wey be “Display over other apps” so e go remain visible when you dey use voice app wey Puzru support. Dis access na choice and e no allow Puzru read or control oda apps. Audio routing dey work without Mini.</string>
+    <string name="permission_overlay_open_settings">Open di settings</string>
+    <string name="permission_overlay_not_now">No be now</string>
     <string name="settings">Settings</string>
     <string name="close">Close</string>
     <string name="overlay_controller_description">Puzru Mini controller. Status: %1$s. Turn am on, expand, and close controls.</string>

@@ -12,6 +12,14 @@
     <string name="state_error">Napaka</string>
     <string name="power_control">Vklop/izklop</string>
     <string name="floating">Mini</string>
+    <string name="permission_notification_title">Prikaži, ko je Puzru vklopljen</string>
+    <string name="permission_notification_body">Puzru s tihim obvestilom pokaže, da je vklopljen in pripravljen za preusmerjanje zvoka, tudi ko aplikacija deluje v ozadju. Obvestila so izbirna; Puzru deluje tudi brez njih.</string>
+    <string name="permission_notification_allow">Dovoli obvestila</string>
+    <string name="permission_notification_continue">Nadaljuj brez obvestil</string>
+    <string name="permission_overlay_title">Dovoli prikaz Mini čez druge aplikacije</string>
+    <string name="permission_overlay_body">Mini potrebuje dostop Android »Prikaz čez druge aplikacije«, da ostane viden med uporabo podprte glasovne aplikacije. Ta dostop je izbiren in aplikaciji Puzru ne omogoča branja ali upravljanja drugih aplikacij. Preusmerjanje zvoka deluje brez Mini.</string>
+    <string name="permission_overlay_open_settings">Odpri nastavitve</string>
+    <string name="permission_overlay_not_now">Ne zdaj</string>
     <string name="settings">Nastavitve</string>
     <string name="close">Zapri</string>
     <string name="overlay_controller_description">Lebdeči upravljalnik Puzru. Stanje: %1$s. Kontrolniki za vklop/izklop, razširitev in zapiranje.</string>

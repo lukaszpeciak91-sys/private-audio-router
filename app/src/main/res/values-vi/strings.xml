@@ -12,6 +12,14 @@
     <string name="state_error">Lỗi</string>
     <string name="power_control">Bật</string>
     <string name="floating">Mini</string>
+    <string name="permission_notification_title">Hiển thị khi Puzru đang bật</string>
+    <string name="permission_notification_body">Puzru dùng một thông báo im lặng để cho biết ứng dụng đang bật và sẵn sàng định tuyến âm thanh, kể cả khi ứng dụng chạy trong nền. Thông báo là tùy chọn; Puzru vẫn hoạt động khi không có thông báo.</string>
+    <string name="permission_notification_allow">Cho phép thông báo</string>
+    <string name="permission_notification_continue">Tiếp tục mà không có thông báo</string>
+    <string name="permission_overlay_title">Cho phép Mini hiển thị trên các ứng dụng khác</string>
+    <string name="permission_overlay_body">Mini cần quyền truy cập “Hiển thị trên các ứng dụng khác” của Android để tiếp tục hiển thị khi bạn dùng một ứng dụng thoại được hỗ trợ. Quyền truy cập này là tùy chọn và không cho phép Puzru đọc hoặc kiểm soát các ứng dụng khác. Tính năng định tuyến âm thanh hoạt động mà không cần Mini.</string>
+    <string name="permission_overlay_open_settings">Mở phần cài đặt</string>
+    <string name="permission_overlay_not_now">Không phải bây giờ</string>
     <string name="settings">Cài đặt</string>
     <string name="close">Đóng</string>
     <string name="overlay_controller_description">Bộ điều khiển nổi của Puzru. Trạng thái: %1$s. Các nút điều khiển Bật, mở rộng và đóng.</string>

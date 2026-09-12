@@ -194,6 +194,12 @@
   routing-terminology corrections or polish for 12 locales; final Batch 4 acceptance
   remains pending correction checks and targeted independent re-audit. No
   native-speaker validation is claimed.
+- The final Permission UX translation batch adds the remaining 22 resource
+  directories, bringing translation coverage to all 102 supported non-English
+  locales with zero pending. The Translation Skill produced and semantically
+  self-checked these candidates. Final independent localization audit is still
+  required, staged-rollout cleanup has not been performed, and no independent,
+  human, or native-speaker acceptance is claimed.
 - Notification and Mini access use separate app-private, false-by-default resolved
   flags. Neither panel appears at startup; each is persisted only after an action,
   Back, or backdrop dismissal, and a visible panel survives activity recreation.

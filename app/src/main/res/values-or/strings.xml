@@ -15,6 +15,14 @@
 
     <string name="power_control">ପାୱାର</string>
     <string name="floating">ମିନି</string>
+    <string name="permission_notification_title">Puzru ଚାଲୁ ଥିବାବେଳେ ଦେଖାନ୍ତୁ</string>
+    <string name="permission_notification_body">Puzru ଚାଲୁ ଅଛି ଏବଂ ଅଡିଓକୁ ରୁଟ୍ କରିବାକୁ ପ୍ରସ୍ତୁତ ଅଛି ବୋଲି ଦେଖାଇବା ପାଇଁ ଏକ ନିରବ ବିଜ୍ଞପ୍ତି ବ୍ୟବହାର କରେ, ଆପ୍ ପୃଷ୍ଠଭୂମିରେ ଥିବାବେଳେ ମଧ୍ୟ। ବିଜ୍ଞପ୍ତିଗୁଡ଼ିକ ଇଚ୍ଛାଧୀନ; ସେଗୁଡ଼ିକ ବିନା ମଧ୍ୟ Puzru କାମ କରେ।</string>
+    <string name="permission_notification_allow">ବିଜ୍ଞପ୍ତିକୁ ଅନୁମତି ଦିଅନ୍ତୁ</string>
+    <string name="permission_notification_continue">ବିଜ୍ଞପ୍ତି ବିନା ଜାରି ରଖନ୍ତୁ</string>
+    <string name="permission_overlay_title">ମିନିକୁ ଅନ୍ୟ ଆପ୍ ଉପରେ ଦେଖାଇବାକୁ ଅନୁମତି ଦିଅନ୍ତୁ</string>
+    <string name="permission_overlay_body">ଆପଣ ଏକ ସମର୍ଥିତ ଭଏସ୍ ଆପ୍ ବ୍ୟବହାର କରୁଥିବାବେଳେ ଦୃଶ୍ୟମାନ ରହିବା ପାଇଁ ମିନିକୁ Androidର “ଅନ୍ୟ ଆପ୍ ଉପରେ ଦେଖାନ୍ତୁ” ଆକ୍ସେସ୍ ଦରକାର। ଏହି ଆକ୍ସେସ୍ ଇଚ୍ଛାଧୀନ ଏବଂ Puzruକୁ ଅନ୍ୟ ଆପ୍ ପଢ଼ିବା କିମ୍ବା ନିୟନ୍ତ୍ରଣ କରିବାକୁ ଦିଏ ନାହିଁ। ମିନି ବିନା ମଧ୍ୟ ଅଡିଓ ରୁଟିଂ କାମ କରେ।</string>
+    <string name="permission_overlay_open_settings">ସେଟିଂସ ଖୋଲନ୍ତୁ</string>
+    <string name="permission_overlay_not_now">ବର୍ତ୍ତମାନ ନୁହେଁ</string>
     <string name="settings">ସେଟିଂସ</string>
     <string name="close">ବନ୍ଦ କରନ୍ତୁ</string>
 

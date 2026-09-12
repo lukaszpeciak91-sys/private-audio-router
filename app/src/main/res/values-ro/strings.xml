@@ -12,6 +12,14 @@
     <string name="state_error">Eroare</string>
     <string name="power_control">Activează</string>
     <string name="floating">Mini</string>
+    <string name="permission_notification_title">Afișează când Puzru este activat</string>
+    <string name="permission_notification_body">Puzru folosește o notificare silențioasă pentru a arăta că este activat și pregătit să redirecționeze sunetul, inclusiv când aplicația rulează în fundal. Notificările sunt opționale; Puzru funcționează și fără ele.</string>
+    <string name="permission_notification_allow">Permite notificările</string>
+    <string name="permission_notification_continue">Continuă fără notificări</string>
+    <string name="permission_overlay_title">Permite afișarea Mini peste alte aplicații</string>
+    <string name="permission_overlay_body">Mini are nevoie de accesul Android „Afișare peste alte aplicații” pentru a rămâne vizibil în timp ce folosești o aplicație vocală compatibilă. Acest acces este opțional și nu permite aplicației Puzru să citească sau să controleze alte aplicații. Redirecționarea sunetului funcționează fără Mini.</string>
+    <string name="permission_overlay_open_settings">Deschide setările</string>
+    <string name="permission_overlay_not_now">Nu acum</string>
     <string name="settings">Setări</string>
     <string name="close">Închide</string>
     <string name="overlay_controller_description">Controler flotant Puzru. Stare: %1$s. Comenzi pentru activare, extindere și închidere.</string>

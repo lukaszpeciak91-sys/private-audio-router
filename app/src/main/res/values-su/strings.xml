@@ -12,6 +12,14 @@
     <string name="state_error">Kasalahan</string>
     <string name="power_control">Hurung/pareum</string>
     <string name="floating">Mini</string>
+    <string name="permission_notification_title">Témbongkeun nalika Puzru hurung</string>
+    <string name="permission_notification_body">Puzru maké béwara jempling pikeun némbongkeun yén éta hurung tur siap ngarahkeun audio, kaasup nalika aplikasi jalan di latar tukang. Béwara sipatna pilihan; Puzru tetep jalan tanpa béwara.</string>
+    <string name="permission_notification_allow">Idinan béwara</string>
+    <string name="permission_notification_continue">Teruskeun tanpa béwara</string>
+    <string name="permission_overlay_title">Idinan Mini dipintonkeun di luhur aplikasi séjén</string>
+    <string name="permission_overlay_body">Mini merlukeun aksés Android “Pintonkeun di luhur aplikasi séjén” sangkan tetep katempo nalika anjeun maké aplikasi sora anu dirojong. Aksés ieu sipatna pilihan sarta henteu ngidinan Puzru maca atawa ngadalikeun aplikasi séjén. Ngarahkeun audio tetep jalan tanpa Mini.</string>
+    <string name="permission_overlay_open_settings">Buka setélan</string>
+    <string name="permission_overlay_not_now">Ulah ayeuna</string>
     <string name="settings">Setélan</string>
     <string name="close">Tutup</string>
     <string name="overlay_controller_description">Kadali ngambang Puzru. Status: %1$s. Kadali pikeun ngahurungkeun atawa mareuman, ngagedéan, jeung nutup.</string>

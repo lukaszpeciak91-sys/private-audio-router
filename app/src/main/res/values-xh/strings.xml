@@ -12,6 +12,14 @@
     <string name="state_error">Impazamo</string>
     <string name="power_control">Amandla</string>
     <string name="floating">Encinci</string>
+    <string name="permission_notification_title">Bonisa xa i-Puzru ivuliwe</string>
+    <string name="permission_notification_body">I-Puzru isebenzisa isaziso esingenasandi ukubonisa ukuba ivuliwe kwaye ilungele ukuhambisa iaudio, naxa i-app isebenza ngasemva. Izaziso azinyanzelekanga; i-Puzru isebenza ngaphandle kwazo.</string>
+    <string name="permission_notification_allow">Vumela izaziso</string>
+    <string name="permission_notification_continue">Qhubeka ngaphandle kwezaziso</string>
+    <string name="permission_overlay_title">Vumela Encinci ibonakale phezu kwezinye ii-app</string>
+    <string name="permission_overlay_body">Encinci ifuna ufikelelo lwe-Android oluthi “Bonisa phezu kwezinye ii-app” ukuze ihlale ibonakala xa usebenzisa i-app yelizwi exhaswayo. Olu fikelelo alunyanzelekanga kwaye aluvumeli i-Puzru ifunde okanye ilawule ezinye ii-app. Ukuhambisa iaudio kusebenza ngaphandle ko-Encinci.</string>
+    <string name="permission_overlay_open_settings">Vula iisetingi</string>
+    <string name="permission_overlay_not_now">Hayi ngoku</string>
     <string name="settings">Iisetingi</string>
     <string name="close">Vala</string>
     <string name="overlay_controller_description">Isilawuli esidadayo se-Puzru. Isimo: %1$s. Izilawuli zokuvula okanye ukucima, zokwandisa nezokuvala.</string>

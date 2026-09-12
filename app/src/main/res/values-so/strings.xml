@@ -12,6 +12,14 @@
     <string name="state_error">Khalad</string>
     <string name="power_control">Daar/Dami</string>
     <string name="floating">Mini</string>
+    <string name="permission_notification_title">Muuji marka Puzru daaran yahay</string>
+    <string name="permission_notification_body">Puzru wuxuu adeegsadaa ogeysiis aamusan si uu u muujiyo inuu daaran yahay oo diyaar u yahay inuu codka jiheeyo, xataa marka abku gadaal ka socdo. Ogeysiisyadu waa ikhtiyaari; Puzru wuu shaqeeyaa la’aantood.</string>
+    <string name="permission_notification_allow">Oggolow ogeysiisyada</string>
+    <string name="permission_notification_continue">Sii wad ogeysiisyo la’aan</string>
+    <string name="permission_overlay_title">Oggolow in Mini ka muuqdo ababka kale dushooda</string>
+    <string name="permission_overlay_body">Mini wuxuu u baahan yahay gelitaanka Android ee “Ku muuji ababka kale dushooda” si uu u sii muuqdo markaad isticmaalayso ab cod ah oo la taageero. Gelitaankani waa ikhtiyaari mana u oggola Puzru inuu akhriyo ama xakameeyo ababka kale. Jihaynta codku way shaqaysaa Mini la’aantiis.</string>
+    <string name="permission_overlay_open_settings">Fur dejinta</string>
+    <string name="permission_overlay_not_now">Hadda ma aha</string>
     <string name="settings">Dejinta</string>
     <string name="close">Xir</string>
     <string name="overlay_controller_description">Xakameeyaha sabbaynaya ee Puzru. Xaalad: %1$s. Xakamaynta daarista/daminta, ballaarinta iyo xiritaanka.</string>

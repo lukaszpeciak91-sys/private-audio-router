@@ -12,6 +12,14 @@
     <string name="state_error">ข้อผิดพลาด</string>
     <string name="power_control">เปิด</string>
     <string name="floating">มินิ</string>
+    <string name="permission_notification_title">แสดงเมื่อเปิด Puzru อยู่</string>
+    <string name="permission_notification_body">Puzru ใช้การแจ้งเตือนแบบไม่มีเสียงเพื่อแสดงว่าเปิดอยู่และพร้อมเปลี่ยนเส้นทางเสียง แม้ในขณะที่แอปทำงานอยู่เบื้องหลัง การแจ้งเตือนเป็นตัวเลือก โดย Puzru ยังคงทำงานได้หากไม่มีการแจ้งเตือน</string>
+    <string name="permission_notification_allow">อนุญาตการแจ้งเตือน</string>
+    <string name="permission_notification_continue">ดำเนินการต่อโดยไม่มีการแจ้งเตือน</string>
+    <string name="permission_overlay_title">อนุญาตให้มินิแสดงทับแอปอื่น</string>
+    <string name="permission_overlay_body">มินิต้องมีสิทธิ์เข้าถึง “แสดงทับแอปอื่น” ของ Android เพื่อให้ยังคงมองเห็นได้ขณะที่คุณใช้แอปเสียงที่รองรับ สิทธิ์นี้เป็นตัวเลือกและไม่ได้ทำให้ Puzru อ่านหรือควบคุมแอปอื่นได้ การเปลี่ยนเส้นทางเสียงทำงานได้โดยไม่มีมินิ</string>
+    <string name="permission_overlay_open_settings">เปิดการตั้งค่า</string>
+    <string name="permission_overlay_not_now">ไม่ใช่ตอนนี้</string>
     <string name="settings">การตั้งค่า</string>
     <string name="close">ปิด</string>
     <string name="overlay_controller_description">ตัวควบคุมแบบลอยของ Puzru สถานะ: %1$s ปุ่มเปิด ขยาย และปิด</string>
