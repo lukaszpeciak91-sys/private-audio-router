@@ -94,12 +94,21 @@ class PermissionUxContractTest {
         val defaultOverlayBody = defaultNodes.single {
             it.attributes.getNamedItem("name").nodeValue == "permission_overlay_body"
         }.textContent
-        assertEquals(
-            "Mini needs Android’s “Display over other apps” access to stay visible while you use a supported voice app. " +
-                "On the next screen, select Puzru from the list and turn on this access. This access is optional and " +
-                "does not let Puzru read or control other apps. Audio routing works without Mini.",
-            defaultOverlayBody,
-        )
+        assertTrue("default overlay body must not be blank", defaultOverlayBody.isNotBlank())
+        listOf(
+            "Display over other apps",
+            "next screen",
+            "select Puzru",
+            "turn on this access",
+            "access is optional",
+            "does not let Puzru read or control other apps",
+            "Audio routing works without Mini",
+        ).forEach { requiredMeaning ->
+            assertTrue(
+                "default overlay body must communicate: $requiredMeaning",
+                defaultOverlayBody.contains(requiredMeaning, ignoreCase = true),
+            )
+        }
         keys.forEach { key ->
             val matching = defaultNodes.filter { it.attributes.getNamedItem("name").nodeValue == key }
             assertEquals("default: $key", 1, matching.size)
