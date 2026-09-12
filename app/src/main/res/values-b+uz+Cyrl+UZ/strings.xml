@@ -15,6 +15,14 @@
 
     <string name="power_control">Ёқиш/ўчириш</string>
     <string name="floating">Мини</string>
+    <string name="permission_notification_title">Puzru ёниқ бўлганда кўрсат</string>
+    <string name="permission_notification_body">Puzru ёниқ ва аудиони йўналтиришга тайёр эканини, илова фонда бўлганда ҳам, овозсиз билдиришнома орқали кўрсатади. Билдиришномалар ихтиёрий; Puzru уларсиз ҳам ишлайди.</string>
+    <string name="permission_notification_allow">Билдиришномаларга рухсат бериш</string>
+    <string name="permission_notification_continue">Билдиришномаларсиз давом этиш</string>
+    <string name="permission_overlay_title">Минини бошқа иловалар устида кўрсатишга рухсат бериш</string>
+    <string name="permission_overlay_body">Қўллаб-қувватланадиган овозли иловадан фойдаланганда кўриниб туриши учун Минига Android’нинг “Бошқа иловалар устида кўрсатиш” рухсати керак. Бу рухсат ихтиёрий ва Puzruга бошқа иловаларни ўқиш ёки бошқариш имконини бермайди. Аудиони йўналтириш Минисиз ҳам ишлайди.</string>
+    <string name="permission_overlay_open_settings">Созламаларни очиш</string>
+    <string name="permission_overlay_not_now">Ҳозир эмас</string>
     <string name="settings">Созламалар</string>
     <string name="close">Ёпиш</string>
 

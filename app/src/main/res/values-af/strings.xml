@@ -12,6 +12,14 @@
     <string name="state_error">Fout</string>
     <string name="power_control">Aan/af</string>
     <string name="floating">Mini</string>
+    <string name="permission_notification_title">Wys wanneer Puzru aan is</string>
+    <string name="permission_notification_body">Puzru gebruik ’n stil kennisgewing om te wys wanneer dit aan en gereed is om oudio oor te skakel, ook wanneer die app in die agtergrond is. Kennisgewings is opsioneel; Puzru werk steeds daarsonder.</string>
+    <string name="permission_notification_allow">Laat kennisgewings toe</string>
+    <string name="permission_notification_continue">Gaan voort sonder kennisgewings</string>
+    <string name="permission_overlay_title">Laat Mini oor ander apps verskyn</string>
+    <string name="permission_overlay_body">Mini benodig Android se “Vertoon oor ander apps”-toegang om sigbaar te bly terwyl jy ’n ondersteunde stemapp gebruik. Hierdie toegang is opsioneel en laat Puzru nie toe om ander apps te lees of te beheer nie. Oudio-omskakeling werk sonder Mini.</string>
+    <string name="permission_overlay_open_settings">Maak instellings oop</string>
+    <string name="permission_overlay_not_now">Nie nou nie</string>
     <string name="settings">Instellings</string>
     <string name="close">Maak toe</string>
     <string name="overlay_controller_description">Puzru se swewende beheerder. Status: %1$s. Kontroles om aan/af te skakel, uit te vou en toe te maak.</string>

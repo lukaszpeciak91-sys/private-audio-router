@@ -12,6 +12,14 @@
     <string name="state_error">خرابی</string>
     <string name="power_control">پاور</string>
     <string name="floating">کمپیکٹ</string>
+    <string name="permission_notification_title">Puzru دے چالو ہووݨ تے وکھاؤ</string>
+    <string name="permission_notification_body">Puzru اک خاموش اطلاع نال وکھاندا اے کہ اوہ چالو تے آڈیو روٹ کرݨ لئی تیار اے، بھانویں ایپ بیک گراؤنڈ وچ ہووے۔ اطلاعات اختیاری نیں؛ Puzru انہاں توں بغیر وی کم کردا اے۔</string>
+    <string name="permission_notification_allow">اطلاعات دی اجازت دیو</string>
+    <string name="permission_notification_continue">اطلاعات توں بغیر جاری رکھو</string>
+    <string name="permission_overlay_title">کمپیکٹ نوں ہور ایپاں دے اُتے وکھاوݨ دی اجازت دیو</string>
+    <string name="permission_overlay_body">کسی معاونت یافتہ صوتی ایپ نوں ورتدیاں نظر آندے رہݨ لئی کمپیکٹ نوں Android دی ”ہور ایپاں دے اُتے وکھاؤ“ رسائی دی لوڑ اے۔ ایہ رسائی اختیاری اے تے Puzru نوں ہور ایپاں پڑھݨ یا کنٹرول کرݨ دی اجازت نئیں دیندی۔ آڈیو روٹنگ کمپیکٹ توں بغیر وی کم کردی اے۔</string>
+    <string name="permission_overlay_open_settings">سیٹنگاں کھولو</string>
+    <string name="permission_overlay_not_now">ہُݨ نئیں</string>
     <string name="settings">سیٹنگاں</string>
     <string name="close">بند کرو</string>
     <string name="overlay_controller_description">Puzru کمپیکٹ کنٹرولر۔ حالت: %1$s۔ پاور چالو یا بند کرن، پھیلاون تے بند کرن لئی کنٹرول۔</string>

@@ -12,6 +12,14 @@
     <string name="state_error">ስህተት</string>
     <string name="power_control">ኃይል</string>
     <string name="floating">ሚኒ</string>
+    <string name="permission_notification_title">Puzru በርቶ ሲሆን አሳይ</string>
+    <string name="permission_notification_body">Puzru በርቶ ድምፅን ለመቀየር ዝግጁ መሆኑን፣ መተግበሪያው ከበስተጀርባ በሚሰራበት ጊዜም ጭምር፣ ጸጥ ባለ ማሳወቂያ ያሳያል። ማሳወቂያዎች አማራጭ ናቸው፤ Puzru ያለእነሱም ይሰራል።</string>
+    <string name="permission_notification_allow">ማሳወቂያዎችን ፍቀድ</string>
+    <string name="permission_notification_continue">ያለ ማሳወቂያዎች ቀጥል</string>
+    <string name="permission_overlay_title">ሚኒ በሌሎች መተግበሪያዎች ላይ እንዲታይ ፍቀድ</string>
+    <string name="permission_overlay_body">ሚኒ የሚደገፍ የድምፅ መተግበሪያ ሲጠቀሙ በማያ ገጹ ላይ እንዲቆይ የAndroid «በሌሎች መተግበሪያዎች ላይ ማሳየት» መዳረሻ ያስፈልገዋል። ይህ መዳረሻ አማራጭ ሲሆን Puzru ሌሎች መተግበሪያዎችን እንዲያነብ ወይም እንዲቆጣጠር አያስችለውም። ድምፅን መቀየር ያለ ሚኒም ይሰራል።</string>
+    <string name="permission_overlay_open_settings">ቅንብሮችን ክፈት</string>
+    <string name="permission_overlay_not_now">አሁን አይደለም</string>
     <string name="settings">ቅንብሮች</string>
     <string name="close">ዝጋ</string>
     <string name="overlay_controller_description">የPuzru ሚኒ መቆጣጠሪያ። ሁኔታ፦ %1$s። የማብራት/ማጥፋት፣ የመዘርጋት እና የመዝጋት መቆጣጠሪያዎች።</string>

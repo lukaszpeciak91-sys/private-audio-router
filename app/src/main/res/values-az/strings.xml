@@ -12,6 +12,14 @@
     <string name="state_error">Xəta</string>
     <string name="power_control">Yandırıb-söndürmə</string>
     <string name="floating">Mini</string>
+    <string name="permission_notification_title">Puzru açıq olduqda göstər</string>
+    <string name="permission_notification_body">Puzru açıq və audionu yönləndirməyə hazır olduğunu, tətbiq arxa planda olduqda belə, səssiz bildirişlə göstərir. Bildirişlər istəyə bağlıdır; Puzru onlarsız da işləyir.</string>
+    <string name="permission_notification_allow">Bildirişlərə icazə ver</string>
+    <string name="permission_notification_continue">Bildirişlər olmadan davam et</string>
+    <string name="permission_overlay_title">Miniyə digər tətbiqlərin üzərində görünməyə icazə ver</string>
+    <string name="permission_overlay_body">Dəstəklənən səsli tətbiqdən istifadə edərkən görünən qalmaq üçün Miniyə Android-in “Digər tətbiqlərin üzərində göstərmə” giriş icazəsi lazımdır. Bu giriş istəyə bağlıdır və Puzruya digər tətbiqləri oxumağa və ya idarə etməyə imkan vermir. Audionun yönləndirilməsi Mini olmadan işləyir.</string>
+    <string name="permission_overlay_open_settings">Ayarları aç</string>
+    <string name="permission_overlay_not_now">İndi deyil</string>
     <string name="settings">Ayarlar</string>
     <string name="close">Bağlayın</string>
     <string name="overlay_controller_description">Puzru üzən idarəedicisi. Vəziyyət: %1$s. Yandırıb-söndürmək, genişləndirmək və bağlamaq üçün idarəetmələr.</string>

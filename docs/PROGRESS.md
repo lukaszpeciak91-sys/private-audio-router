@@ -176,6 +176,11 @@
   audit requested targeted corrections for Swahili, Korean, and European Portuguese;
   final Batch 1 acceptance remains pending correction checks and targeted independent
   re-audit. No native-speaker validation is claimed.
+- Permission UX localization Batch 2 adds the complete atomic bundle to 20
+  previously pending resource directories, bringing the rollout to 40 completed and
+  62 pending non-English locales. The Translation Skill produced and semantically
+  self-checked these candidates; independent localization audit is still required
+  for this batch, and no independent or human/native acceptance is claimed.
 - Notification and Mini access use separate app-private, false-by-default resolved
   flags. Neither panel appears at startup; each is persisted only after an action,
   Back, or backdrop dismissal, and a visible panel survives activity recreation.

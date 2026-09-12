@@ -12,6 +12,14 @@
     <string name="state_error">त्रुटि</string>
     <string name="power_control">पावर</string>
     <string name="floating">मिनी</string>
+    <string name="permission_notification_title">Puzru चालू रहला पर देखाउ</string>
+    <string name="permission_notification_body">Puzru एकटा शान्त सूचना सँ देखबैत अछि जे ई चालू अछि आ ऑडियो रूट करबाक लेल तैयार अछि, एप पृष्ठभूमिमे रहला पर सेहो। सूचना वैकल्पिक अछि; सूचना बिना सेहो Puzru काज करैत अछि।</string>
+    <string name="permission_notification_allow">सूचनाक अनुमति दिअ</string>
+    <string name="permission_notification_continue">सूचना बिना जारी राखू</string>
+    <string name="permission_overlay_title">मिनी केँ दोसर एपक ऊपर देखेबाक अनुमति दिअ</string>
+    <string name="permission_overlay_body">समर्थित वॉइस एपक उपयोग करैत समय देखाइत रहबाक लेल मिनी केँ Android केर “दोसर एपक ऊपर देखाउ” पहुँच चाही। ई पहुँच वैकल्पिक अछि आ एहि सँ Puzru केँ दोसर एप पढ़बाक वा नियंत्रित करबाक अनुमति नहि भेटैत अछि। मिनी बिना सेहो ऑडियो रूटिंग काज करैत अछि।</string>
+    <string name="permission_overlay_open_settings">सेटिंग्स खोलू</string>
+    <string name="permission_overlay_not_now">अखन नहि</string>
     <string name="settings">सेटिंग्स</string>
     <string name="close">बन्न करू</string>
     <string name="overlay_controller_description">Puzru केर फ्लोटिंग नियंत्रक। स्थिति: %1$s। पावर, विस्तृत करबाक आ बन्न करबाक नियंत्रण।</string>

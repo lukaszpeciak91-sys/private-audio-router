@@ -12,6 +12,14 @@
     <string name="state_error">錯誤</string>
     <string name="power_control">電源</string>
     <string name="floating">迷你</string>
+    <string name="permission_notification_title">Puzru 開咗時顯示</string>
+    <string name="permission_notification_body">Puzru 會用靜音通知顯示佢已經開咗，並準備好導向音訊，就算應用程式喺背景執行時都一樣。通知係可選嘅；冇通知，Puzru 都照樣運作。</string>
+    <string name="permission_notification_allow">允許通知</string>
+    <string name="permission_notification_continue">冇通知都繼續</string>
+    <string name="permission_overlay_title">允許迷你顯示喺其他應用程式上層</string>
+    <string name="permission_overlay_body">迷你需要 Android 嘅「顯示喺其他應用程式上層」權限，先可以喺你使用受支援嘅語音應用程式時保持可見。呢項權限係可選嘅，並唔會畀 Puzru 讀取或控制其他應用程式。冇迷你，音訊導向都照樣運作。</string>
+    <string name="permission_overlay_open_settings">開啟設定</string>
+    <string name="permission_overlay_not_now">暫時唔好</string>
     <string name="settings">設定</string>
     <string name="close">關閉</string>
     <string name="overlay_controller_description">Puzru 浮動迷你控制器。狀態：%1$s。設有電源、展開同關閉控制。</string>
