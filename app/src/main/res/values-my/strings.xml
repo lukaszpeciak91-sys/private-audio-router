@@ -16,11 +16,11 @@
     <string name="power_control">ဖွင့်/ပိတ်</string>
     <string name="floating">မီနီ</string>
     <string name="permission_notification_title">Puzru ဖွင့်ထားသည့်အခါ ပြရန်</string>
-    <string name="permission_notification_body">Puzru ဖွင့်ထားပြီး အသံအထွက်ပြောင်းရန် အသင့်ဖြစ်နေကြောင်းကို အက်ပ်နောက်ခံတွင်ရှိနေချိန်အပါအဝင် အသံတိတ် အသိပေးချက်ဖြင့် ပြသသည်။ အသိပေးချက်များသည် ရွေးချယ်စရာဖြစ်ပြီး ၎င်းတို့မရှိဘဲလည်း Puzru အလုပ်လုပ်သည်။</string>
+    <string name="permission_notification_body">Puzru ဖွင့်ထားပြီး အသံကို လမ်းကြောင်းပြောင်းရန် အသင့်ဖြစ်နေကြောင်းကို အက်ပ်နောက်ခံတွင်ရှိနေချိန်အပါအဝင် အသံတိတ် အသိပေးချက်ဖြင့် ပြသသည်။ အသိပေးချက်များသည် ရွေးချယ်စရာဖြစ်ပြီး ၎င်းတို့မရှိဘဲလည်း Puzru အလုပ်လုပ်သည်။</string>
     <string name="permission_notification_allow">အသိပေးချက်များကို ခွင့်ပြုရန်</string>
     <string name="permission_notification_continue">အသိပေးချက်မပါဘဲ ဆက်လုပ်ရန်</string>
     <string name="permission_overlay_title">မီနီကို အခြားအက်ပ်များအပေါ်တွင် ပြရန် ခွင့်ပြုရန်</string>
-    <string name="permission_overlay_body">ပံ့ပိုးထားသော အသံအက်ပ်ကို အသုံးပြုနေစဉ် မြင်နိုင်ရန် မီနီသည် Android ၏ “အခြားအက်ပ်များအပေါ်တွင် ပြရန်” အသုံးပြုခွင့် လိုအပ်သည်။ ဤအသုံးပြုခွင့်သည် ရွေးချယ်စရာဖြစ်ပြီး Puzru ကို အခြားအက်ပ်များ ဖတ်ရှုရန် သို့မဟုတ် ထိန်းချုပ်ရန် ခွင့်မပြုပါ။ မီနီမပါဘဲလည်း အသံအထွက်ပြောင်းခြင်း အလုပ်လုပ်သည်။</string>
+    <string name="permission_overlay_body">ပံ့ပိုးထားသော အသံအက်ပ်ကို အသုံးပြုနေစဉ် မြင်နိုင်ရန် မီနီသည် Android ၏ “အခြားအက်ပ်များအပေါ်တွင် ပြရန်” အသုံးပြုခွင့် လိုအပ်သည်။ ဤအသုံးပြုခွင့်သည် ရွေးချယ်စရာဖြစ်ပြီး Puzru ကို အခြားအက်ပ်များ ဖတ်ရှုရန် သို့မဟုတ် ထိန်းချုပ်ရန် ခွင့်မပြုပါ။ မီနီမပါဘဲလည်း အသံလမ်းကြောင်းပြောင်းခြင်း အလုပ်လုပ်သည်။</string>
     <string name="permission_overlay_open_settings">ဆက်တင်များကို ဖွင့်ရန်</string>
     <string name="permission_overlay_not_now">ယခု မလုပ်သေးပါ</string>
     <string name="settings">ဆက်တင်များ</string>

@@ -13,11 +13,11 @@
     <string name="power_control">सुरू करा</string>
     <string name="floating">मिनी</string>
     <string name="permission_notification_title">Puzru सुरू असताना दाखवा</string>
-    <string name="permission_notification_body">Puzru सुरू आहे आणि ऑडिओ स्विच करण्यासाठी तयार आहे हे दाखवण्यासाठी शांत सूचना वापरते, ॲप बॅकग्राउंडमध्ये असतानाही. सूचना ऐच्छिक आहेत; त्यांच्याशिवायही Puzru काम करते.</string>
+    <string name="permission_notification_body">Puzru सुरू आहे आणि ऑडिओ रूट करण्यासाठी तयार आहे हे दाखवण्यासाठी शांत सूचना वापरते, ॲप बॅकग्राउंडमध्ये असतानाही. सूचना ऐच्छिक आहेत; त्यांच्याशिवायही Puzru काम करते.</string>
     <string name="permission_notification_allow">सूचनांना अनुमती द्या</string>
     <string name="permission_notification_continue">सूचनांशिवाय सुरू ठेवा</string>
     <string name="permission_overlay_title">मिनीला इतर ॲप्सवर दिसण्याची अनुमती द्या</string>
-    <string name="permission_overlay_body">तुम्ही समर्थित व्हॉइस ॲप वापरत असताना दिसत राहण्यासाठी मिनीला Android चा “इतर ॲप्सवर दाखवा” ॲक्सेस आवश्यक आहे. हा ॲक्सेस ऐच्छिक आहे आणि Puzru ला इतर ॲप्स वाचण्याची किंवा नियंत्रित करण्याची अनुमती देत नाही. मिनीशिवायही ऑडिओ स्विचिंग काम करते.</string>
+    <string name="permission_overlay_body">तुम्ही समर्थित व्हॉइस ॲप वापरत असताना दिसत राहण्यासाठी मिनीला Android चा “इतर ॲप्सवर दाखवा” ॲक्सेस आवश्यक आहे. हा ॲक्सेस ऐच्छिक आहे आणि Puzru ला इतर ॲप्स वाचण्याची किंवा नियंत्रित करण्याची अनुमती देत नाही. मिनीशिवायही ऑडिओ रूटिंग काम करते.</string>
     <string name="permission_overlay_open_settings">सेटिंग्ज उघडा</string>
     <string name="permission_overlay_not_now">आत्ता नाही</string>
     <string name="settings">सेटिंग्ज</string>

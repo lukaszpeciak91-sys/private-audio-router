@@ -13,11 +13,11 @@
     <string name="power_control">ថាមពល</string>
     <string name="floating">ខ្នាតតូច</string>
     <string name="permission_notification_title">បង្ហាញនៅពេល Puzru បានបើក</string>
-    <string name="permission_notification_body">Puzru ប្រើការជូនដំណឹងស្ងាត់ ដើម្បីបង្ហាញថាវាបានបើក និងរួចរាល់ក្នុងការប្ដូរសំឡេង ទោះបីជាកម្មវិធីដំណើរការនៅផ្ទៃខាងក្រោយក៏ដោយ។ ការជូនដំណឹងជាជម្រើស ហើយ Puzru នៅតែដំណើរការដោយគ្មានវា។</string>
+    <string name="permission_notification_body">Puzru ប្រើការជូនដំណឹងស្ងាត់ ដើម្បីបង្ហាញថាវាបានបើក និងរួចរាល់ក្នុងការកំណត់ទិសដៅសំឡេង ទោះបីជាកម្មវិធីដំណើរការនៅផ្ទៃខាងក្រោយក៏ដោយ។ ការជូនដំណឹងជាជម្រើស ហើយ Puzru នៅតែដំណើរការដោយគ្មានវា។</string>
     <string name="permission_notification_allow">អនុញ្ញាតការជូនដំណឹង</string>
     <string name="permission_notification_continue">បន្តដោយគ្មានការជូនដំណឹង</string>
     <string name="permission_overlay_title">អនុញ្ញាតឱ្យខ្នាតតូចបង្ហាញលើកម្មវិធីផ្សេងទៀត</string>
-    <string name="permission_overlay_body">ខ្នាតតូចត្រូវការសិទ្ធិ Android «បង្ហាញលើកម្មវិធីផ្សេងទៀត» ដើម្បីបន្តមើលឃើញ ខណៈពេលអ្នកប្រើកម្មវិធីសំឡេងដែលបានគាំទ្រ។ សិទ្ធិនេះជាជម្រើស ហើយមិនអនុញ្ញាតឱ្យ Puzru អាន ឬគ្រប់គ្រងកម្មវិធីផ្សេងទៀតទេ។ ការប្ដូរសំឡេងដំណើរការដោយគ្មានខ្នាតតូច។</string>
+    <string name="permission_overlay_body">ខ្នាតតូចត្រូវការសិទ្ធិ Android «បង្ហាញលើកម្មវិធីផ្សេងទៀត» ដើម្បីបន្តមើលឃើញ ខណៈពេលអ្នកប្រើកម្មវិធីសំឡេងដែលបានគាំទ្រ។ សិទ្ធិនេះជាជម្រើស ហើយមិនអនុញ្ញាតឱ្យ Puzru អាន ឬគ្រប់គ្រងកម្មវិធីផ្សេងទៀតទេ។ ការកំណត់ទិសដៅសំឡេងដំណើរការដោយគ្មានខ្នាតតូច។</string>
     <string name="permission_overlay_open_settings">បើកការកំណត់</string>
     <string name="permission_overlay_not_now">មិនមែនឥឡូវនេះ</string>
     <string name="settings">ការកំណត់</string>

@@ -13,11 +13,11 @@
     <string name="power_control">ເປີດ/ປິດ</string>
     <string name="floating">ມິນິ</string>
     <string name="permission_notification_title">ສະແດງເມື່ອ Puzru ເປີດຢູ່</string>
-    <string name="permission_notification_body">Puzru ໃຊ້ການແຈ້ງເຕືອນແບບງຽບເພື່ອສະແດງວ່າເປີດຢູ່ ແລະພ້ອມປ່ຽນສຽງ, ລວມທັງເມື່ອແອັບເຮັດວຽກຢູ່ເບື້ອງຫຼັງ. ການແຈ້ງເຕືອນເປັນທາງເລືອກ; Puzru ຍັງເຮັດວຽກໄດ້ໂດຍບໍ່ມີມັນ.</string>
+    <string name="permission_notification_body">Puzru ໃຊ້ການແຈ້ງເຕືອນແບບງຽບເພື່ອສະແດງວ່າເປີດຢູ່ ແລະພ້ອມກຳນົດເສັ້ນທາງສຽງ, ລວມທັງເມື່ອແອັບເຮັດວຽກຢູ່ເບື້ອງຫຼັງ. ການແຈ້ງເຕືອນເປັນທາງເລືອກ; Puzru ຍັງເຮັດວຽກໄດ້ໂດຍບໍ່ມີມັນ.</string>
     <string name="permission_notification_allow">ອະນຸຍາດການແຈ້ງເຕືອນ</string>
     <string name="permission_notification_continue">ສືບຕໍ່ໂດຍບໍ່ມີການແຈ້ງເຕືອນ</string>
     <string name="permission_overlay_title">ອະນຸຍາດໃຫ້ມິນິສະແດງທັບແອັບອື່ນ</string>
-    <string name="permission_overlay_body">ມິນິຕ້ອງການສິດ Android “ສະແດງທັບແອັບອື່ນ” ເພື່ອໃຫ້ຍັງເຫັນໄດ້ໃນຂະນະທີ່ທ່ານໃຊ້ແອັບສຽງທີ່ຮອງຮັບ. ສິດນີ້ເປັນທາງເລືອກ ແລະບໍ່ໄດ້ໃຫ້ Puzru ອ່ານ ຫຼືຄວບຄຸມແອັບອື່ນ. ການປ່ຽນສຽງເຮັດວຽກໂດຍບໍ່ມີມິນິ.</string>
+    <string name="permission_overlay_body">ມິນິຕ້ອງການສິດ Android “ສະແດງທັບແອັບອື່ນ” ເພື່ອໃຫ້ຍັງເຫັນໄດ້ໃນຂະນະທີ່ທ່ານໃຊ້ແອັບສຽງທີ່ຮອງຮັບ. ສິດນີ້ເປັນທາງເລືອກ ແລະບໍ່ໄດ້ໃຫ້ Puzru ອ່ານ ຫຼືຄວບຄຸມແອັບອື່ນ. ການກຳນົດເສັ້ນທາງສຽງເຮັດວຽກໂດຍບໍ່ມີມິນິ.</string>
     <string name="permission_overlay_open_settings">ເປີດການຕັ້ງຄ່າ</string>
     <string name="permission_overlay_not_now">ບໍ່ແມ່ນຕອນນີ້</string>
     <string name="settings">ການຕັ້ງຄ່າ</string>
