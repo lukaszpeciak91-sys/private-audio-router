@@ -1,10 +1,11 @@
 # Progress
 
-## Central Kurdish localization architecture readiness
+## Central Kurdish / Sorani localization
 
-- Research established `ckb` as the logical Central Kurdish/Sorani locale and `values-b+ckb` as its future Android resource directory. The unscoped BCP-47 tree is preferred over legacy-form `values-ckb`; `values-b+ckb+Arab` is valid but adds unnecessary script scope for the single intended Arabic-script locale.
-- Existing app-owned discovery, generated `LocaleConfig`, platform-native picker naming, logical-locale RTL direction, generic localization contracts, and both localization Skills are ready without architecture changes. Implementation-time instrumentation should add `ckb`, `ckb-IQ`, and `ckb-Arab-IQ` resolution/direction cases plus normal reviewed terminology guards; this is ordinary locale coverage, not prerequisite architecture work.
-- Central Kurdish remains only a candidate: no resource directory, translation, supported-locale count, source copy, runtime behavior, or support claim changed. Detailed evidence and validation boundaries are in `docs/RESEARCH.md`.
+- Added a complete Central Kurdish (`ckb`) product locale in `values-b+ckb`. Its 75 localizable strings have full default-source key and placeholder parity; the ten explicitly English-only/non-translatable resources continue to fall back by design.
+- The Translation Skill workflow produced and semantically self-checked the Arabic-script RTL copy directly from authoritative English. `Puzru` remains unchanged; the compact-controller concept uses the familiar local-script loanword `مینی`. ON (`چالاکە`) remains distinct from runtime ACTIVE (`کارا`), and the built-in call receiver (`گوێگرە ناوخۆییەکەی پەیوەندی`) remains distinct from the loudspeaker (`بڵندگۆ`). Permission, privacy, About, routing and diagnostics claims were reverse-checked for actor, action, object, destination, condition, negation, optionality, qualifier, scope and strength.
+- App-owned discovery was minimally generalized to accept a language-only `b+` qualifier and now automatically enrolls `ckb` in `localeFilters`, generated `LocaleConfig`, and the platform-native language picker without a registry or runtime branch. Generic localization, Permission UX, About and Privacy contracts include it. Android instrumentation now covers `ckb`, `ckb-IQ`, and `ckb-Arab-IQ` resource resolution and logical RTL direction.
+- Source-contract validation is recorded, but independent Localization Audit Skill review, human/native review, Android runtime rendering, Mini measurement, glyph/shaping, and physical-device validation remain pending and are not claimed.
 
 ## Assistant session continuity experiment
 
@@ -480,7 +481,7 @@ this summary intentionally does not duplicate its test matrix.
 
 ## Localization state
 
-- Resources currently provide **103 product locales: English plus 102 non-English
+- Resources currently provide **104 product locales: English plus 103 non-English
   resource sets**. This count is derived from the current `values*` resource
   inventory, excluding non-locale `values-night`; supported variants include the
   intentional Portuguese, Chinese, Serbian, Punjabi, Azerbaijani, and Uzbek script or

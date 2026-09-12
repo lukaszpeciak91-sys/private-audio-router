@@ -4,7 +4,7 @@ plugins {
 }
 
 val localeResourceConfigurationPattern = Regex(
-    "^(?:[a-z]{2,3}(?:-r(?:[A-Z]{2}|[0-9]{3}))?|b\\+[A-Za-z]{2,8}(?:\\+[A-Za-z0-9]{2,8})+)$",
+    "^(?:[a-z]{2,3}(?:-r(?:[A-Z]{2}|[0-9]{3}))?|b\\+[A-Za-z]{2,8}(?:\\+[A-Za-z0-9]{2,8})*)$",
 )
 
 val appOwnedLocalizedResourceConfigurations = file("src/main/res").listFiles().orEmpty()

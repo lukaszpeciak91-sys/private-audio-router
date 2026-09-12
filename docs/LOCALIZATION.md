@@ -86,10 +86,12 @@ translation batches, each batch used the same authoritative English source, and 
 locale received a mixed translated/fallback panel. Targeted corrections and polish
 were applied during independent review of the staged batches.
 
-All 102 supported non-English locale directories now contain the full bundle, in
-addition to the default English source. The final independent whole-rollout audit
-completed successfully. The temporary completed-directory classification and the
-default resources' `MissingTranslation` suppressions were removed; permanent generic
+All 103 supported non-English locale directories now contain the full bundle, in
+addition to the default English source. The final independent whole-rollout audit of
+the previous 102-locale inventory completed successfully; the subsequently added
+Central Kurdish locale still requires its independent audit. The temporary
+completed-directory classification and the default resources' `MissingTranslation`
+suppressions were removed; permanent generic
 locale parity plus the Permission UX structural contract now protect full coverage,
 nonblank values, unique keys, and placeholder parity.
 
