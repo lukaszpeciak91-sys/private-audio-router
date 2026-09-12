@@ -1,5 +1,23 @@
 # Progress
 
+## Central Kurdish CI contract reconciliation
+
+- Kurmanji's contract continues to require the canonical Latin `values-b+ku+Latn`
+  tree and forbid Arabic-script `ku` variants, but no longer mistakes the distinct,
+  supported Central Kurdish `values-b+ckb` tree for a Kurmanji conflict.
+- The frozen 2026-09-07 Privacy Policy reference now validates its own declared
+  source commit, historical entry count, unique directory headings, and explicit
+  non-authoritative/non-shippable status instead of tracking the live locale
+  inventory. Current resources, including `ckb`, remain covered by the unchanged
+  live discovery, key, placeholder, Permission UX, About, and Privacy contracts.
+
+## Central Kurdish / Sorani localization
+
+- Added a complete Central Kurdish (`ckb`) product locale in `values-b+ckb`. Its 75 localizable strings have full default-source key and placeholder parity; the ten explicitly English-only/non-translatable resources continue to fall back by design.
+- The Translation Skill workflow produced and semantically self-checked the Arabic-script RTL copy directly from authoritative English. `Puzru` remains unchanged; the compact-controller concept uses the familiar local-script loanword `مینی`. ON (`چالاکە`) remains distinct from runtime ACTIVE (`کارا`), and the built-in call receiver (`گوێگرە ناوخۆییەکەی پەیوەندی`) remains distinct from the loudspeaker (`بڵندگۆ`). Permission, privacy, About, routing and diagnostics claims were reverse-checked for actor, action, object, destination, condition, negation, optionality, qualifier, scope and strength.
+- App-owned discovery was minimally generalized to accept a language-only `b+` qualifier and now automatically enrolls `ckb` in `localeFilters`, generated `LocaleConfig`, and the platform-native language picker without a registry or runtime branch. Generic localization, Permission UX, About and Privacy contracts include it. Android instrumentation now covers `ckb`, `ckb-IQ`, and `ckb-Arab-IQ` resource resolution and logical RTL direction.
+- Source-contract validation is recorded, but independent Localization Audit Skill review, human/native review, Android runtime rendering, Mini measurement, glyph/shaping, and physical-device validation remain pending and are not claimed.
+
 ## Assistant session continuity experiment
 
 - Added a service-owned, persisted, default-OFF Advanced preference that can retain an established `ASSISTANT` protected cycle for one additional fixed 20-second window after the unchanged 7-second linger. Entry requires the same public unsilenced `VOICE_RECOGNITION` configuration plus a healthy silent track, owned communication mode, current built-in earpiece, and no telephony/system-priority condition.
@@ -474,7 +492,7 @@ this summary intentionally does not duplicate its test matrix.
 
 ## Localization state
 
-- Resources currently provide **103 product locales: English plus 102 non-English
+- Resources currently provide **104 product locales: English plus 103 non-English
   resource sets**. This count is derived from the current `values*` resource
   inventory, excluding non-locale `values-night`; supported variants include the
   intentional Portuguese, Chinese, Serbian, Punjabi, Azerbaijani, and Uzbek script or

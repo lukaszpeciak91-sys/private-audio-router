@@ -31,8 +31,20 @@ class Layer41LocalizationContractTest {
         assertTrue(reference.startsWith("# HISTORICAL LOCALIZATION REFERENCES ONLY"))
         assertTrue(reference.contains("must not be shipped"))
         assertTrue(reference.contains("No native-speaker validation is claimed"))
-        assertEquals(localeDirectories.map { it.name }.toSet(), Regex("^## `([^`]+)`$", RegexOption.MULTILINE).findAll(reference).map { it.groupValues[1] }.toSet())
-        assertEquals(102, Regex("^## `values-", RegexOption.MULTILINE).findAll(reference).count())
+        val snapshotMetadata = Regex(
+            "preserves the (\\d+) non-English .* source repository commit `([0-9a-f]{40})`",
+        ).find(reference) ?: error("Historical snapshot metadata is missing")
+        val snapshotDirectories = Regex("^## `([^`]+)`$", RegexOption.MULTILINE)
+            .findAll(reference)
+            .map { it.groupValues[1] }
+            .toList()
+
+        assertEquals("ec39dc24c7246532603676aadeb40ef7904b9939", snapshotMetadata.groupValues[2])
+        assertEquals(snapshotMetadata.groupValues[1].toInt(), snapshotDirectories.size)
+        assertEquals(snapshotDirectories.size, snapshotDirectories.toSet().size)
+        assertTrue(snapshotDirectories.all { it.startsWith("values-") })
+        assertEquals(snapshotDirectories.size, Regex("^```xml$", RegexOption.MULTILINE).findAll(reference).count())
+        assertEquals(snapshotDirectories.size, Regex("^```$", RegexOption.MULTILINE).findAll(reference).count())
     }
 
     @Test

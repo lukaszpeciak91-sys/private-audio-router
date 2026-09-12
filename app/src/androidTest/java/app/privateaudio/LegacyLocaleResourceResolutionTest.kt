@@ -81,7 +81,7 @@ class LegacyLocaleResourceResolutionTest {
 
     @Test
     fun logicalApplicationLocaleIdentitiesProvideMiniDirectionIndependentlyOfResourceAliases() {
-        listOf("yi", "he", "ar", "fa", "ur").forEach { tag ->
+        listOf("yi", "he", "ar", "fa", "ur", "ckb").forEach { tag ->
             assertEquals(
                 "$tag Mini direction",
                 android.view.View.LAYOUT_DIRECTION_RTL,
@@ -350,6 +350,7 @@ class LegacyLocaleResourceResolutionTest {
             LocaleResolution("ku-Latn", listOf("ku", "ku-TR", "ku-Latn-TR")),
             LocaleResolution("ceb", listOf("ceb", "ceb-PH")),
             LocaleResolution("ln", listOf("ln", "ln-CD", "ln-CG", "ln-AO", "ln-CF")),
+            LocaleResolution("ckb", listOf("ckb", "ckb-IQ", "ckb-Arab-IQ")),
         ).forEach { resolution ->
             assertRequestsResolveToProductResource(context, resolution)
         }
