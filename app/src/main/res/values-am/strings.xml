@@ -19,7 +19,7 @@
     <string name="permission_overlay_title">ሚኒ በሌሎች መተግበሪያዎች ላይ እንዲታይ ፍቀድ</string>
     <string name="permission_overlay_body">ሚኒ የሚደገፍ የድምፅ መተግበሪያ ሲጠቀሙ በማያ ገጹ ላይ እንዲቆይ የAndroid «በሌሎች መተግበሪያዎች ላይ ማሳየት» መዳረሻ ያስፈልገዋል። ይህ መዳረሻ አማራጭ ሲሆን Puzru ሌሎች መተግበሪያዎችን እንዲያነብ ወይም እንዲቆጣጠር አያስችለውም። ድምፅን መቀየር ያለ ሚኒም ይሰራል።</string>
     <string name="permission_overlay_open_settings">ቅንብሮችን ክፈት</string>
-    <string name="permission_overlay_not_now">አሁን አይደለም</string>
+    <string name="permission_overlay_not_now">አሁን አይሁን</string>
     <string name="settings">ቅንብሮች</string>
     <string name="close">ዝጋ</string>
     <string name="overlay_controller_description">የPuzru ሚኒ መቆጣጠሪያ። ሁኔታ፦ %1$s። የማብራት/ማጥፋት፣ የመዘርጋት እና የመዝጋት መቆጣጠሪያዎች።</string>
