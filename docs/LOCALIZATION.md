@@ -78,6 +78,22 @@ For future large localization rollouts:
    coverage, green CI, independent audit closure, and an updated documentation
    status.
 
+### Permission UX staged rollout
+
+The notification and Display-over-other-apps explanations roll out per locale as one
+atomic bundle of eight resources. A supported locale must contain either all eight
+Permission UX keys or none of them; pending locales temporarily use Android's normal
+English fallback, and a mixed translated/fallback panel is never valid. One temporary,
+centralized completed-resource-directory classification tracks staged batches.
+
+Permission UX contracts verify source localizability, XML and placeholder integrity,
+bundle completeness, and intentional fallback without asserting literal translated
+sentences or individual target-language words. Linguistic and semantic fidelity is
+established separately by Translation Skill self-check followed by an independent
+Localization Audit Skill review. After every supported locale has completed the
+bundle and audit process, remove both the temporary rollout classification and the
+default resources' `MissingTranslation` suppressions.
+
 Do not propagate weak prototype copy into every translation. A translation must prioritize, in order:
 
 1. semantic correctness;
