@@ -91,7 +91,6 @@ class Layer4SettingsContractTest {
         assertTrue(foregroundEntry.contains("startForeground("))
         assertFalse(foregroundEntry.contains("POST_NOTIFICATIONS"))
         assertTrue(mainSource.contains("ActivityResultContracts.RequestPermission"))
-        assertFalse(foregroundEntry.contains("POST_NOTIFICATIONS"))
     }
 
     @Test
