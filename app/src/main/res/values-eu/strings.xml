@@ -12,6 +12,14 @@
     <string name="state_error">Errorea</string>
     <string name="power_control">Piztu</string>
     <string name="floating">Mini</string>
+    <string name="permission_notification_title">Erakutsi Puzru aktibatuta dagoenean</string>
+    <string name="permission_notification_body">Puzruk jakinarazpen isil bat erabiltzen du aktibatuta eta audioa bideratzeko prest dagoela erakusteko, baita aplikazioa atzeko planoan dagoenean ere. Jakinarazpenak aukerakoak dira; Puzruk haiek gabe ere funtzionatzen du.</string>
+    <string name="permission_notification_allow">Baimendu jakinarazpenak</string>
+    <string name="permission_notification_continue">Jarraitu jakinarazpenik gabe</string>
+    <string name="permission_overlay_title">Baimendu Mini beste aplikazioen gainean agertzea</string>
+    <string name="permission_overlay_body">Minik Androiden «Erakutsi beste aplikazioen gainean» sarbidea behar du ikusgai jarraitzeko onartutako ahots-aplikazio bat erabiltzen duzun bitartean. Sarbide hori aukerakoa da eta ez dio Puzruri beste aplikazio batzuk irakurtzen edo kontrolatzen uzten. Audioaren bideratzeak Minirik gabe ere funtzionatzen du.</string>
+    <string name="permission_overlay_open_settings">Ireki ezarpenak</string>
+    <string name="permission_overlay_not_now">Orain ez</string>
     <string name="settings">Ezarpenak</string>
     <string name="close">Itxi</string>
     <string name="overlay_controller_description">Puzru kontrolagailu mugikorra. Egoera: %1$s. Pizteko, zabaltzeko eta ixteko kontrolak.</string>

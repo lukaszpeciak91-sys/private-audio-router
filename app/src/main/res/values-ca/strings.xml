@@ -12,6 +12,14 @@
     <string name="state_error">Error</string>
     <string name="power_control">Activar/desactivar</string>
     <string name="floating">Mini</string>
+    <string name="permission_notification_title">Mostra quan Puzru està activat</string>
+    <string name="permission_notification_body">Puzru utilitza una notificació silenciosa per mostrar que està activat i a punt per redirigir l’àudio, fins i tot quan l’aplicació és en segon pla. Les notificacions són opcionals; Puzru continua funcionant sense aquestes.</string>
+    <string name="permission_notification_allow">Permet les notificacions</string>
+    <string name="permission_notification_continue">Continua sense notificacions</string>
+    <string name="permission_overlay_title">Permet que Mini es mostri sobre altres aplicacions</string>
+    <string name="permission_overlay_body">Mini necessita l’accés d’Android «Mostra sobre altres aplicacions» per continuar visible mentre utilitzes una aplicació de veu compatible. Aquest accés és opcional i no permet que Puzru llegeixi ni controli altres aplicacions. L’encaminament de l’àudio funciona sense Mini.</string>
+    <string name="permission_overlay_open_settings">Obre la configuració</string>
+    <string name="permission_overlay_not_now">Ara no</string>
     <string name="settings">Configuració</string>
     <string name="close">Tanca</string>
     <string name="overlay_controller_description">Control flotant de Puzru. Estat: %1$s. Botons per activar o desactivar Puzru, ampliar el control i tancar-lo.</string>

@@ -12,6 +12,14 @@
     <string name="state_error">Սխալ</string>
     <string name="power_control">Միացնել/անջատել</string>
     <string name="floating">Մինի</string>
+    <string name="permission_notification_title">Ցուցադրել, երբ Puzru-ն միացված է</string>
+    <string name="permission_notification_body">Puzru-ն անձայն ծանուցմամբ ցույց է տալիս, որ միացված է և պատրաստ է փոխարկել աուդիո ելքը, նույնիսկ երբ հավելվածն աշխատում է հետին պլանում։ Ծանուցումները պարտադիր չեն․ Puzru-ն աշխատում է նաև առանց դրանց։</string>
+    <string name="permission_notification_allow">Թույլատրել ծանուցումները</string>
+    <string name="permission_notification_continue">Շարունակել առանց ծանուցումների</string>
+    <string name="permission_overlay_title">Թույլատրել Մինիի ցուցադրումն այլ հավելվածների վրայից</string>
+    <string name="permission_overlay_body">Մինիին անհրաժեշտ է Android-ի «Ցուցադրել այլ հավելվածների վրայից» հասանելիությունը՝ աջակցվող ձայնային հավելվածն օգտագործելիս տեսանելի մնալու համար։ Այս հասանելիությունը պարտադիր չէ և Puzru-ին թույլ չի տալիս կարդալ կամ կառավարել այլ հավելվածներ։ Աուդիո ելքի փոխարկումն աշխատում է առանց Մինիի։</string>
+    <string name="permission_overlay_open_settings">Բացել կարգավորումները</string>
+    <string name="permission_overlay_not_now">Ոչ հիմա</string>
     <string name="settings">Կարգավորումներ</string>
     <string name="close">Փակել</string>
     <string name="overlay_controller_description">Puzru-ի լողացող կառավարիչ։ Կարգավիճակ՝ %1$s։ Puzru-ն միացնելու կամ անջատելու, կառավարիչն ընդարձակելու և փակելու կառավարման տարրեր։</string>

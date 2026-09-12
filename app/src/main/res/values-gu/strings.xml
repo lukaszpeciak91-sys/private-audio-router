@@ -12,6 +12,14 @@
     <string name="state_error">ભૂલ</string>
     <string name="power_control">ચાલુ કરો</string>
     <string name="floating">મિની</string>
+    <string name="permission_notification_title">Puzru ચાલુ હોય ત્યારે બતાવો</string>
+    <string name="permission_notification_body">Puzru ચાલુ છે અને ઑડિયો સ્વિચ કરવા માટે તૈયાર છે તે બતાવવા માટે શાંત સૂચનાનો ઉપયોગ કરે છે, ભલે ઍપ બૅકગ્રાઉન્ડમાં હોય. સૂચનાઓ વૈકલ્પિક છે; તેમના વિના પણ Puzru કામ કરે છે.</string>
+    <string name="permission_notification_allow">સૂચનાઓને મંજૂરી આપો</string>
+    <string name="permission_notification_continue">સૂચનાઓ વિના ચાલુ રાખો</string>
+    <string name="permission_overlay_title">મિનીને અન્ય ઍપની ઉપર દેખાવાની મંજૂરી આપો</string>
+    <string name="permission_overlay_body">તમે સમર્થિત વૉઇસ ઍપનો ઉપયોગ કરો ત્યારે દેખાતું રહેવા માટે મિનીને Androidની “અન્ય ઍપની ઉપર બતાવો” ઍક્સેસની જરૂર છે. આ ઍક્સેસ વૈકલ્પિક છે અને તે Puzruને અન્ય ઍપ વાંચવા કે નિયંત્રિત કરવાની મંજૂરી આપતી નથી. મિની વિના પણ ઑડિયો સ્વિચિંગ કામ કરે છે.</string>
+    <string name="permission_overlay_open_settings">સેટિંગ્સ ખોલો</string>
+    <string name="permission_overlay_not_now">હમણાં નહીં</string>
     <string name="settings">સેટિંગ્સ</string>
     <string name="close">બંધ કરો</string>
     <string name="overlay_controller_description">Puzru ફ્લોટિંગ કંટ્રોલર. સ્થિતિ: %1$s. ચાલુ કરવા, વિસ્તૃત કરવા અને બંધ કરવા માટેનાં નિયંત્રણો.</string>

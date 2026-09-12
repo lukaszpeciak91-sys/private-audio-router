@@ -12,6 +12,14 @@
     <string name="state_error">Kuskure</string>
     <string name="power_control">Kunna/Kashe</string>
     <string name="floating">Ƙarami</string>
+    <string name="permission_notification_title">Nuna lokacin da aka kunna Puzru</string>
+    <string name="permission_notification_body">Puzru yana amfani da sanarwa marar sauti don nuna cewa an kunna shi kuma yana shirye don sauya inda sauti zai fito, har ma lokacin da manhajar take aiki a bango. Sanarwa na da zaɓi; Puzru yana aiki ko ba tare da su ba.</string>
+    <string name="permission_notification_allow">Bada izinin sanarwa</string>
+    <string name="permission_notification_continue">Ci gaba ba tare da sanarwa ba</string>
+    <string name="permission_overlay_title">Bada izinin nuna Ƙarami a kan sauran manhajoji</string>
+    <string name="permission_overlay_body">Ƙarami yana buƙatar izinin Android na “Nunawa a kan sauran manhajoji” don ya ci gaba da kasancewa a bayyane yayin da kake amfani da manhajar murya mai goyan baya. Wannan izinin na da zaɓi kuma ba ya ba Puzru damar karantawa ko sarrafa sauran manhajoji. Sauya inda sauti zai fito yana aiki ba tare da Ƙarami ba.</string>
+    <string name="permission_overlay_open_settings">Buɗe saituna</string>
+    <string name="permission_overlay_not_now">Ba yanzu ba</string>
     <string name="settings">Saituna</string>
     <string name="close">Rufe</string>
     <string name="overlay_controller_description">Ƙaramin mai sarrafa Puzru. Matsayi: %1$s. Abubuwan sarrafa kunnawa ko kashewa, faɗaɗawa da rufewa.</string>

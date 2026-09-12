@@ -12,6 +12,14 @@
     <string name="state_error">Njehie</string>
     <string name="power_control">Ike</string>
     <string name="floating">Obere</string>
+    <string name="permission_notification_title">Gosi mgbe agbanyere Puzru</string>
+    <string name="permission_notification_body">Puzru na-eji ọkwa na-enweghị ụda egosi na agbanyere ya nakwa na ọ dị njikere ibugharị ọdịyo, ọbụlagodi mgbe ngwa ahụ nọ n’azụ. Ọkwa bụ nhọrọ; Puzru ka na-arụ ọrụ na-enweghị ha.</string>
+    <string name="permission_notification_allow">Kwe ka ọkwa</string>
+    <string name="permission_notification_continue">Gaa n’ihu na-enweghị ọkwa</string>
+    <string name="permission_overlay_title">Kwe ka Obere pụta n’elu ngwa ndị ọzọ</string>
+    <string name="permission_overlay_body">Obere chọrọ ohere Android nke “Gosi n’elu ngwa ndị ọzọ” ka ọ nọgide na-apụta mgbe ị na-eji ngwa olu akwadoro. Ohere a bụ nhọrọ, ọ naghịkwa enye Puzru ikike ịgụ ma ọ bụ ịchịkwa ngwa ndị ọzọ. Ibugharị ọdịyo na-arụ ọrụ na-enweghị Obere.</string>
+    <string name="permission_overlay_open_settings">Mepee ntọala</string>
+    <string name="permission_overlay_not_now">Ọ bụghị ugbu a</string>
     <string name="settings">Ntọala</string>
     <string name="close">Mechie</string>
     <string name="overlay_controller_description">Ihe njikwa Puzru na-ese n’elu. Ọnọdụ: %1$s. Njikwa ike, ịgbasa na imechi.</string>
