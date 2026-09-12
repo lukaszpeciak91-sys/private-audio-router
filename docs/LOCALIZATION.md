@@ -78,21 +78,26 @@ For future large localization rollouts:
    coverage, green CI, independent audit closure, and an updated documentation
    status.
 
-### Permission UX staged rollout
+### Permission UX localization rollout
 
-The notification and Display-over-other-apps explanations roll out per locale as one
-atomic bundle of eight resources. A supported locale must contain either all eight
-Permission UX keys or none of them; pending locales temporarily use Android's normal
-English fallback, and a mixed translated/fallback panel is never valid. One temporary,
-centralized completed-resource-directory classification tracks staged batches.
+The notification and Display-over-other-apps explanations were rolled out per locale
+as one atomic bundle of eight resources. Architecture and contract review preceded
+translation batches, each batch used the same authoritative English source, and no
+locale received a mixed translated/fallback panel. Targeted corrections and polish
+were applied during independent review of the staged batches.
 
-Permission UX contracts verify source localizability, XML and placeholder integrity,
-bundle completeness, and intentional fallback without asserting literal translated
-sentences or individual target-language words. Linguistic and semantic fidelity is
-established separately by Translation Skill self-check followed by an independent
-Localization Audit Skill review. After every supported locale has completed the
-bundle and audit process, remove both the temporary rollout classification and the
-default resources' `MissingTranslation` suppressions.
+All 102 supported non-English locale directories now contain the full bundle, in
+addition to the default English source. The final independent whole-rollout audit
+completed successfully. The temporary completed-directory classification and the
+default resources' `MissingTranslation` suppressions were removed; permanent generic
+locale parity plus the Permission UX structural contract now protect full coverage,
+nonblank values, unique keys, and placeholder parity.
+
+The staged rollout remains a process lesson: use atomic all-or-none batches for
+high-risk copy, inspect architecture and contracts before translation, distinguish
+source-contract checks from linguistic acceptance, and require independent linguistic
+audit without freezing ordinary translated prose. This completion records independent
+audit and source-contract evidence, not native-speaker validation.
 
 Do not propagate weak prototype copy into every translation. A translation must prioritize, in order:
 

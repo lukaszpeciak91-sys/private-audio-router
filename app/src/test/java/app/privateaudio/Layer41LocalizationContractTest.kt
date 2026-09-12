@@ -81,27 +81,15 @@ class Layer41LocalizationContractTest {
             "diagnostic_email_subject",
             "diagnostic_email_body",
         )
-        val permissionUxKeys = PermissionUxLocalizationRollout.keys
-        val completedPermissionUxLocales = PermissionUxLocalizationRollout.completedLocaleDirectories
         val actualNonTranslatableKeys = Regex("<string name=\"([^\"]+)\" translatable=\"false\"")
             .findAll(defaultStrings).map { it.groupValues[1] }.toSet()
         assertEquals(defaultOnlyNonTranslatableKeys, actualNonTranslatableKeys)
         assertTrue(defaultStrings.contains("name=\"diagnostic_email_subject\" translatable=\"false\">Puzru diagnostic report</string>"))
         assertTrue(defaultStrings.contains("name=\"diagnostic_email_body\" translatable=\"false\">Puzru diagnostic report\\n\\nVoice app/service used:"))
-        permissionUxKeys.forEach { key ->
-            assertTrue("$key must remain a localizable default resource", stringKeys(defaultStrings).contains(key))
-            assertFalse("$key must not become permanently non-translatable", key in actualNonTranslatableKeys)
-        }
         localeDirectories.forEach { localeDirectory ->
             val localeStrings = File(localeDirectory, "strings.xml").readText()
-            val localizedPermissionUxKeys = if (localeDirectory.name in completedPermissionUxLocales) {
-                permissionUxKeys
-            } else {
-                emptySet()
-            }
             val expectedLocaleKeys = stringKeys(defaultStrings)
                 .filterNot { it in defaultOnlyNonTranslatableKeys }
-                .filterNot { it in permissionUxKeys && it !in localizedPermissionUxKeys }
                 .toSet()
             assertEquals(
                 localeDirectory.name,

@@ -35,16 +35,11 @@ class UzbekScriptVariantsLocalizationContractTest {
 
     @Test
     fun variantsMatchTheExistingUzbekKeyAndPlaceholderContract() {
-        val permissionUxKeys = PermissionUxLocalizationRollout.keys
         val latinValues = values(latinFile)
-        val expectedKeys = latinValues.keys - permissionUxKeys
+        val expectedKeys = latinValues.keys
         listOf(cyrillicFile, arabicFile).forEach { file ->
             val candidate = values(file)
-            assertEquals(
-                "${file.parentFile.name} ordinary keys",
-                expectedKeys,
-                candidate.keys - permissionUxKeys,
-            )
+            assertEquals("${file.parentFile.name} keys", expectedKeys, candidate.keys)
             expectedKeys.forEach { key ->
                 assertEquals(
                     "${file.parentFile.name}/$key placeholders",
