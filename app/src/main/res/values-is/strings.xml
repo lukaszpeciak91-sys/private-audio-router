@@ -16,7 +16,7 @@
     <string name="permission_notification_body">Puzru notar hljóðlausa tilkynningu til að sýna að kveikt sé á því og það sé tilbúið að skipta um hljóðúttak, einnig þegar forritið er í bakgrunni. Tilkynningar eru valfrjálsar; Puzru virkar áfram án þeirra.</string>
     <string name="permission_notification_allow">Leyfa tilkynningar</string>
     <string name="permission_notification_continue">Halda áfram án tilkynninga</string>
-    <string name="permission_overlay_title">Leyfa Mini ofan á öðrum forritum</string>
+    <string name="permission_overlay_title">Leyfa að Mini birtist ofan á öðrum forritum</string>
     <string name="permission_overlay_body">Mini þarf Android-aðganginn „Birta ofan á öðrum forritum“ til að vera áfram sýnilegt meðan þú notar studd raddforrit. Þessi aðgangur er valfrjáls og leyfir Puzru ekki að lesa eða stjórna öðrum forritum. Skipting hljóðúttaks virkar án Mini.</string>
     <string name="permission_overlay_open_settings">Opna stillingar</string>
     <string name="permission_overlay_not_now">Ekki núna</string>
