@@ -151,11 +151,12 @@
 
 ## Android notification and Compose configuration lint corrections
 
-- The foreground notification's optional configuration-change refresh now checks
+- The foreground notification's optional configuration-change refresh checks
   `POST_NOTIFICATIONS` on Android 13 and newer, while older Android versions retain
-  their existing refresh. The permission is declared without runtime request UX;
-  foreground-service startup and Puzru routing remain independent of whether
-  notification permission is unavailable or denied.
+  their existing refresh. The UI now offers a contextual, one-time explanation on
+  the first API 33+ Power ON without the grant and requests permission only after
+  the primary action. Denial, dismissal, and continuing without notifications all
+  preserve foreground-service startup and routing.
 - Settings language presentation now observes configuration changes through
   Compose's `LocalConfiguration`, while platform locale discovery and selection
   semantics remain owned by `AppLanguagePreferences`.
@@ -163,6 +164,29 @@
   `LocalContextConfigurationRead` lint errors without changing protected routing
   behavior or adding physical-device evidence. Remaining lint errors belong to the
   separate resource-contract cluster.
+
+## Contextual permission explanations
+
+- Notification and Mini access use separate app-private, false-by-default resolved
+  flags. Neither panel appears at startup; each is persisted only after an action,
+  Back, or backdrop dismissal, and a visible panel survives activity recreation.
+- The first missing-permission Mini attempt explains optional access before the
+  existing package Settings handoff. A later deliberate attempt opens Settings
+  directly, and return still rechecks the grant before requesting one existing Mini.
+- The finalized English permission source copy is implemented as ordinary localizable
+  default resources. Supported non-English locales temporarily receive that canonical
+  English copy only through Android's normal resource fallback; no locale contains an
+  explicit English or mixed-language duplicate. No translation or independent
+  localization validation is claimed, and a controlled permission-copy localization
+  rollout remains pending. Runtime permission UX implementation is independent of
+  that translation status. Each default permission string has an intentional,
+  element-scoped `MissingTranslation` suppression; remove each suppression when that
+  string's complete controlled translation rollout is introduced.
+- Automated decision, persistence-boundary, UI-contract, and fallback-resource checks
+  cover the implementation. Runtime/device checks remain pending for first use,
+  grant/denial/dismissal, repeat attempts, recreation, compact landscape, RTL,
+  notification visibility, and unchanged routing. No routing, service,
+  notification-channel/lifecycle, or overlay-window behavior changed.
 
 ## Android lint CI visibility audit
 

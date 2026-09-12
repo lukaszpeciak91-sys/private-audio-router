@@ -81,27 +81,46 @@ class Layer41LocalizationContractTest {
             "diagnostic_email_subject",
             "diagnostic_email_body",
         )
-        assertEquals(
-            defaultOnlyNonTranslatableKeys,
-            Regex("<string name=\"([^\"]+)\" translatable=\"false\"")
-                .findAll(defaultStrings).map { it.groupValues[1] }.toSet(),
+        val defaultOnlyPendingTranslationKeys = setOf(
+            "permission_notification_title",
+            "permission_notification_body",
+            "permission_notification_allow",
+            "permission_notification_continue",
+            "permission_overlay_title",
+            "permission_overlay_body",
+            "permission_overlay_open_settings",
+            "permission_overlay_not_now",
         )
+        val actualNonTranslatableKeys = Regex("<string name=\"([^\"]+)\" translatable=\"false\"")
+            .findAll(defaultStrings).map { it.groupValues[1] }.toSet()
+        assertEquals(defaultOnlyNonTranslatableKeys, actualNonTranslatableKeys)
         assertTrue(defaultStrings.contains("name=\"diagnostic_email_subject\" translatable=\"false\">Puzru diagnostic report</string>"))
         assertTrue(defaultStrings.contains("name=\"diagnostic_email_body\" translatable=\"false\">Puzru diagnostic report\\n\\nVoice app/service used:"))
+        defaultOnlyPendingTranslationKeys.forEach { key ->
+            assertTrue("$key must remain a localizable default resource", stringKeys(defaultStrings).contains(key))
+            assertFalse("$key must not become permanently non-translatable", key in actualNonTranslatableKeys)
+        }
+        val defaultOnlyKeys = defaultOnlyNonTranslatableKeys + defaultOnlyPendingTranslationKeys
         localeDirectories.forEach { localeDirectory ->
             val localeStrings = File(localeDirectory, "strings.xml").readText()
             assertEquals(
                 localeDirectory.name,
-                stringKeys(defaultStrings).filterNot { it in defaultOnlyNonTranslatableKeys }.toSet(),
+                stringKeys(defaultStrings).filterNot { it in defaultOnlyKeys }.toSet(),
                 stringKeys(localeStrings).toSet(),
             )
             assertEquals(
                 localeDirectory.name,
-                placeholders(defaultStrings).filterKeys { key -> key !in defaultOnlyNonTranslatableKeys },
+                placeholders(defaultStrings).filterKeys { key -> key !in defaultOnlyKeys },
                 placeholders(localeStrings),
             )
             defaultOnlyNonTranslatableKeys.forEach { key ->
                 assertFalse("${localeDirectory.name}: $key must use the default resource", stringKeys(localeStrings).contains(key))
+            }
+            defaultOnlyPendingTranslationKeys.forEach { key ->
+                assertFalse(
+                    "${localeDirectory.name}: $key must temporarily use Android default fallback",
+                    stringKeys(localeStrings).contains(key),
+                )
             }
         }
         assertTrue(defaultStrings.contains("name=\"settings_assistant_early_route\" translatable=\"false\">Assistant early route</string>"))
