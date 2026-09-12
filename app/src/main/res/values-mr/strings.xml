@@ -17,7 +17,7 @@
     <string name="permission_notification_allow">सूचनांना अनुमती द्या</string>
     <string name="permission_notification_continue">सूचनांशिवाय सुरू ठेवा</string>
     <string name="permission_overlay_title">मिनीला इतर ॲप्सवर दिसण्याची अनुमती द्या</string>
-    <string name="permission_overlay_body">तुम्ही समर्थित व्हॉइस ॲप वापरत असताना दिसत राहण्यासाठी मिनीला Android चा “इतर ॲप्सवर दाखवा” ॲक्सेस आवश्यक आहे. हा ॲक्सेस ऐच्छिक आहे आणि Puzru ला इतर ॲप्स वाचण्याची किंवा नियंत्रित करण्याची अनुमती देत नाही. मिनीशिवायही ऑडिओ रूटिंग काम करते.</string>
+    <string name="permission_overlay_body">तुम्ही समर्थित व्हॉइस ॲप वापरत असताना दिसत राहण्यासाठी मिनीला Android चा “इतर ॲप्सवर दाखवा” ॲक्सेस आवश्यक आहे. पुढील स्क्रीनवर ॲपच्या सूचीमधून Puzru निवडा आणि हा ॲक्सेस सुरू करा. हा ॲक्सेस ऐच्छिक आहे आणि Puzru ला इतर ॲप्स वाचण्याची किंवा नियंत्रित करण्याची अनुमती देत नाही. मिनीशिवायही ऑडिओ रूटिंग काम करते.</string>
     <string name="permission_overlay_open_settings">सेटिंग्ज उघडा</string>
     <string name="permission_overlay_not_now">आत्ता नाही</string>
     <string name="settings">सेटिंग्ज</string>

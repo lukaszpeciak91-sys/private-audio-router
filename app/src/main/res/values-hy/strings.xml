@@ -17,7 +17,7 @@
     <string name="permission_notification_allow">Թույլատրել ծանուցումները</string>
     <string name="permission_notification_continue">Շարունակել առանց ծանուցումների</string>
     <string name="permission_overlay_title">Թույլատրել Մինիի ցուցադրումն այլ հավելվածների վրայից</string>
-    <string name="permission_overlay_body">Մինիին անհրաժեշտ է Android-ի «Ցուցադրել այլ հավելվածների վրայից» հասանելիությունը՝ աջակցվող ձայնային հավելվածն օգտագործելիս տեսանելի մնալու համար։ Այս հասանելիությունը պարտադիր չէ և Puzru-ին թույլ չի տալիս կարդալ կամ կառավարել այլ հավելվածներ։ Աուդիո ելքի փոխարկումն աշխատում է առանց Մինիի։</string>
+    <string name="permission_overlay_body">Մինիին անհրաժեշտ է Android-ի «Ցուցադրել այլ հավելվածների վրայից» հասանելիությունը՝ աջակցվող ձայնային հավելվածն օգտագործելիս տեսանելի մնալու համար։ Հաջորդ էկրանին հավելվածների ցանկից ընտրեք Puzru-ն և միացրեք այս հասանելիությունը։ Այս հասանելիությունը պարտադիր չէ և Puzru-ին թույլ չի տալիս կարդալ կամ կառավարել այլ հավելվածներ։ Աուդիո ելքի փոխարկումն աշխատում է առանց Մինիի։</string>
     <string name="permission_overlay_open_settings">Բացել կարգավորումները</string>
     <string name="permission_overlay_not_now">Ոչ հիմա</string>
     <string name="settings">Կարգավորումներ</string>

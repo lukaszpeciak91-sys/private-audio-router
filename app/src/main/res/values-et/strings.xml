@@ -17,7 +17,7 @@
     <string name="permission_notification_allow">Luba märguanded</string>
     <string name="permission_notification_continue">Jätka märguanneteta</string>
     <string name="permission_overlay_title">Luba Mini kuvamine teiste rakenduste peal</string>
-    <string name="permission_overlay_body">Mini vajab Androidi juurdepääsu „Kuvamine teiste rakenduste peal“, et püsida toetatud häälrakenduse kasutamise ajal nähtaval. See juurdepääs on valikuline ega võimalda Puzrul teisi rakendusi lugeda ega juhtida. Heli suunamine töötab ilma Minitagi.</string>
+    <string name="permission_overlay_body">Mini vajab Androidi juurdepääsu „Kuvamine teiste rakenduste peal“, et püsida toetatud häälrakenduse kasutamise ajal nähtaval. Valige järgmisel kuval rakenduste loendist Puzru ja lülitage see juurdepääs sisse. See juurdepääs on valikuline ega võimalda Puzrul teisi rakendusi lugeda ega juhtida. Heli suunamine töötab ilma Minitagi.</string>
     <string name="permission_overlay_open_settings">Ava seaded</string>
     <string name="permission_overlay_not_now">Mitte praegu</string>
     <string name="settings">Seaded</string>

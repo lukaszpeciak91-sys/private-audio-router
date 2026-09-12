@@ -17,7 +17,7 @@
     <string name="permission_notification_allow">දැනුම්දීම්වලට ඉඩ දෙන්න</string>
     <string name="permission_notification_continue">දැනුම්දීම් නොමැතිව ඉදිරියට යන්න</string>
     <string name="permission_overlay_title">කුඩා වෙනත් යෙදුම් මත පෙන්වීමට ඉඩ දෙන්න</string>
-    <string name="permission_overlay_body">ඔබ සහාය දක්වන හඬ යෙදුමක් භාවිත කරන අතරතුර දෘශ්‍යමානව සිටීමට කුඩාට Androidහි “වෙනත් යෙදුම් මත පෙන්වන්න” ප්‍රවේශය අවශ්‍ය වේ. මෙම ප්‍රවේශය විකල්ප වන අතර වෙනත් යෙදුම් කියවීමට හෝ පාලනය කිරීමට Puzruට ඉඩ නොදේ. කුඩා නොමැතිවද ශ්‍රව්‍ය යොමු කිරීම ක්‍රියා කරයි.</string>
+    <string name="permission_overlay_body">ඔබ සහාය දක්වන හඬ යෙදුමක් භාවිත කරන අතරතුර දෘශ්‍යමානව සිටීමට කුඩාට Androidහි “වෙනත් යෙදුම් මත පෙන්වන්න” ප්‍රවේශය අවශ්‍ය වේ. ඊළඟ තිරයේ යෙදුම් ලැයිස්තුවෙන් Puzru තෝරා මෙම ප්‍රවේශය සක්‍රිය කරන්න. මෙම ප්‍රවේශය විකල්ප වන අතර වෙනත් යෙදුම් කියවීමට හෝ පාලනය කිරීමට Puzruට ඉඩ නොදේ. කුඩා නොමැතිවද ශ්‍රව්‍ය යොමු කිරීම ක්‍රියා කරයි.</string>
     <string name="permission_overlay_open_settings">සැකසීම් විවෘත කරන්න</string>
     <string name="permission_overlay_not_now">දැන් නොවේ</string>
     <string name="settings">සැකසීම්</string>

@@ -17,7 +17,7 @@
     <string name="permission_notification_allow">સૂચનાઓને મંજૂરી આપો</string>
     <string name="permission_notification_continue">સૂચનાઓ વિના ચાલુ રાખો</string>
     <string name="permission_overlay_title">મિનીને અન્ય ઍપની ઉપર દેખાવાની મંજૂરી આપો</string>
-    <string name="permission_overlay_body">તમે સમર્થિત વૉઇસ ઍપનો ઉપયોગ કરો ત્યારે દેખાતું રહેવા માટે મિનીને Androidની “અન્ય ઍપની ઉપર બતાવો” ઍક્સેસની જરૂર છે. આ ઍક્સેસ વૈકલ્પિક છે અને તે Puzruને અન્ય ઍપ વાંચવા કે નિયંત્રિત કરવાની મંજૂરી આપતી નથી. મિની વિના પણ ઑડિયો સ્વિચિંગ કામ કરે છે.</string>
+    <string name="permission_overlay_body">તમે સમર્થિત વૉઇસ ઍપનો ઉપયોગ કરો ત્યારે દેખાતું રહેવા માટે મિનીને Androidની “અન્ય ઍપની ઉપર બતાવો” ઍક્સેસની જરૂર છે. આગલી સ્ક્રીન પર ઍપની સૂચિમાંથી Puzru પસંદ કરો અને આ ઍક્સેસ ચાલુ કરો. આ ઍક્સેસ વૈકલ્પિક છે અને તે Puzruને અન્ય ઍપ વાંચવા કે નિયંત્રિત કરવાની મંજૂરી આપતી નથી. મિની વિના પણ ઑડિયો સ્વિચિંગ કામ કરે છે.</string>
     <string name="permission_overlay_open_settings">સેટિંગ્સ ખોલો</string>
     <string name="permission_overlay_not_now">હમણાં નહીં</string>
     <string name="settings">સેટિંગ્સ</string>

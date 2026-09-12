@@ -17,7 +17,7 @@
     <string name="permission_notification_allow">জাননীৰ অনুমতি দিয়ক</string>
     <string name="permission_notification_continue">জাননী অবিহনে অব্যাহত ৰাখক</string>
     <string name="permission_overlay_title">মিনিক আন এপৰ ওপৰত দেখুৱাবলৈ অনুমতি দিয়ক</string>
-    <string name="permission_overlay_body">আপুনি সমৰ্থিত ভইচ এপ ব্যৱহাৰ কৰি থাকোঁতে দৃশ্যমান হৈ থাকিবলৈ মিনিক Android-ৰ “আন এপৰ ওপৰত দেখুৱাওক” প্ৰৱেশাধিকাৰ লাগে। এই প্ৰৱেশাধিকাৰ ঐচ্ছিক আৰু ইয়াৰ দ্বাৰা Puzru-এ আন এপ পঢ়িব বা নিয়ন্ত্ৰণ কৰিব নোৱাৰে। মিনি অবিহনেও অডিঅ’ সলনি কৰাৰ সুবিধাই কাম কৰে।</string>
+    <string name="permission_overlay_body">আপুনি সমৰ্থিত ভইচ এপ ব্যৱহাৰ কৰি থাকোঁতে দৃশ্যমান হৈ থাকিবলৈ মিনিক Android-ৰ “আন এপৰ ওপৰত দেখুৱাওক” প্ৰৱেশাধিকাৰ লাগে। পৰৱৰ্তী স্ক্ৰীণত এপৰ তালিকাৰ পৰা Puzru বাছনি কৰি এই প্ৰৱেশাধিকাৰ অন কৰক। এই প্ৰৱেশাধিকাৰ ঐচ্ছিক আৰু ইয়াৰ দ্বাৰা Puzru-এ আন এপ পঢ়িব বা নিয়ন্ত্ৰণ কৰিব নোৱাৰে। মিনি অবিহনেও অডিঅ’ সলনি কৰাৰ সুবিধাই কাম কৰে।</string>
     <string name="permission_overlay_open_settings">ছেটিং খোলক</string>
     <string name="permission_overlay_not_now">এতিয়া নহয়</string>
     <string name="settings">ছেটিং</string>

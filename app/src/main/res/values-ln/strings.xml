@@ -17,7 +17,7 @@
     <string name="permission_notification_allow">Pesa nzela na mayebisi</string>
     <string name="permission_notification_continue">Koba kozanga mayebisi</string>
     <string name="permission_overlay_title">Pesa nzela Ya moke emonana likoló ya baprogramɛ mosusu</string>
-    <string name="permission_overlay_body">Ya moke esengeli na ndingisa ya Android “Kolakisa likoló ya baprogramɛ mosusu” mpo emonana ntango ozali kosalela programɛ ya mongongo oyo endimami. Ndingisa yango ezali ya kopona mpe epesaka Puzru nzela te ya kotánga to kotambwisa baprogramɛ mosusu. Kotambwisa mongongo esalaka kozanga Ya moke.</string>
+    <string name="permission_overlay_body">Ya moke esengeli na ndingisa ya Android “Kolakisa likoló ya baprogramɛ mosusu” mpo emonana ntango ozali kosalela programɛ ya mongongo oyo endimami. Na écran oyo elandi, pona Puzru na liste ya ba-appli mpe fungola ndingisa oyo. Ndingisa yango ezali ya kopona mpe epesaka Puzru nzela te ya kotánga to kotambwisa baprogramɛ mosusu. Kotambwisa mongongo esalaka kozanga Ya moke.</string>
     <string name="permission_overlay_open_settings">Fungola mabongisi</string>
     <string name="permission_overlay_not_now">Sikoyo te</string>
     <string name="settings">Mabongisi</string>

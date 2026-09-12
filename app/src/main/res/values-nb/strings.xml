@@ -17,7 +17,7 @@
     <string name="permission_notification_allow">Tillat varsler</string>
     <string name="permission_notification_continue">Fortsett uten varsler</string>
     <string name="permission_overlay_title">Tillat at Mini vises over andre apper</string>
-    <string name="permission_overlay_body">Mini trenger Android-tilgangen «Vis over andre apper» for å forbli synlig mens du bruker en støttet taleapp. Denne tilgangen er valgfri og lar ikke Puzru lese eller kontrollere andre apper. Omdirigering av lyd fungerer uten Mini.</string>
+    <string name="permission_overlay_body">Mini trenger Android-tilgangen «Vis over andre apper» for å forbli synlig mens du bruker en støttet taleapp. På neste skjerm velger du Puzru fra applisten og slår på denne tilgangen. Denne tilgangen er valgfri og lar ikke Puzru lese eller kontrollere andre apper. Omdirigering av lyd fungerer uten Mini.</string>
     <string name="permission_overlay_open_settings">Åpne innstillinger</string>
     <string name="permission_overlay_not_now">Ikke nå</string>
     <string name="settings">Innstillinger</string>

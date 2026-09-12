@@ -17,7 +17,7 @@
     <string name="permission_notification_allow">Atļaut paziņojumus</string>
     <string name="permission_notification_continue">Turpināt bez paziņojumiem</string>
     <string name="permission_overlay_title">Atļaut Mini rādīšanu virs citām lietotnēm</string>
-    <string name="permission_overlay_body">Mini ir nepieciešama Android piekļuve “Rādīt virs citām lietotnēm”, lai tas būtu redzams, kamēr izmantojat atbalstītu balss lietotni. Šī piekļuve nav obligāta un neļauj Puzru lasīt vai kontrolēt citas lietotnes. Audio novirzīšana darbojas bez Mini.</string>
+    <string name="permission_overlay_body">Mini ir nepieciešama Android piekļuve “Rādīt virs citām lietotnēm”, lai tas būtu redzams, kamēr izmantojat atbalstītu balss lietotni. Nākamajā ekrānā lietotņu sarakstā atlasiet Puzru un ieslēdziet šo piekļuvi. Šī piekļuve nav obligāta un neļauj Puzru lasīt vai kontrolēt citas lietotnes. Audio novirzīšana darbojas bez Mini.</string>
     <string name="permission_overlay_open_settings">Atvērt iestatījumus</string>
     <string name="permission_overlay_not_now">Ne tagad</string>
     <string name="settings">Iestatījumi</string>

@@ -17,7 +17,7 @@
     <string name="permission_notification_allow">السماح بالإشعارات</string>
     <string name="permission_notification_continue">المتابعة بدون إشعارات</string>
     <string name="permission_overlay_title">السماح بعرض مصغّر فوق التطبيقات الأخرى</string>
-    <string name="permission_overlay_body">يحتاج مصغّر إلى إذن Android «الظهور فوق التطبيقات الأخرى» ليظل ظاهرًا أثناء استخدامك لتطبيق صوتي مدعوم. هذا الإذن اختياري ولا يتيح لـ Puzru قراءة التطبيقات الأخرى أو التحكم فيها. يعمل توجيه الصوت بدون مصغّر.</string>
+    <string name="permission_overlay_body">يحتاج مصغّر إلى إذن Android «الظهور فوق التطبيقات الأخرى» ليظل ظاهرًا أثناء استخدامك لتطبيق صوتي مدعوم. في الشاشة التالية، اختر Puzru من قائمة التطبيقات وفعِّل إمكانية الوصول هذه. هذا الإذن اختياري ولا يتيح لـ Puzru قراءة التطبيقات الأخرى أو التحكم فيها. يعمل توجيه الصوت بدون مصغّر.</string>
     <string name="permission_overlay_open_settings">فتح الإعدادات</string>
     <string name="permission_overlay_not_now">ليس الآن</string>
     <string name="settings">الإعدادات</string>

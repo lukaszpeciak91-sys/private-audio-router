@@ -17,7 +17,7 @@
     <string name="permission_notification_allow">Értesítések engedélyezése</string>
     <string name="permission_notification_continue">Folytatás értesítések nélkül</string>
     <string name="permission_overlay_title">A Mini megjelenítésének engedélyezése más alkalmazások felett</string>
-    <string name="permission_overlay_body">A Mininek szüksége van az Android „Megjelenítés más alkalmazások felett” hozzáférésére, hogy látható maradjon egy támogatott hangalkalmazás használata közben. Ez a hozzáférés nem kötelező, és nem teszi lehetővé a Puzru számára más alkalmazások olvasását vagy vezérlését. A hang átirányítása Mini nélkül is működik.</string>
+    <string name="permission_overlay_body">A Mininek szüksége van az Android „Megjelenítés más alkalmazások felett” hozzáférésére, hogy látható maradjon egy támogatott hangalkalmazás használata közben. A következő képernyőn válaszd ki a Puzrut az alkalmazáslistából, és kapcsold be ezt a hozzáférést. Ez a hozzáférés nem kötelező, és nem teszi lehetővé a Puzru számára más alkalmazások olvasását vagy vezérlését. A hang átirányítása Mini nélkül is működik.</string>
     <string name="permission_overlay_open_settings">Beállítások megnyitása</string>
     <string name="permission_overlay_not_now">Most nem</string>
     <string name="settings">Beállítások</string>

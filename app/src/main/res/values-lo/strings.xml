@@ -17,7 +17,7 @@
     <string name="permission_notification_allow">ອະນຸຍາດການແຈ້ງເຕືອນ</string>
     <string name="permission_notification_continue">ສືບຕໍ່ໂດຍບໍ່ມີການແຈ້ງເຕືອນ</string>
     <string name="permission_overlay_title">ອະນຸຍາດໃຫ້ມິນິສະແດງທັບແອັບອື່ນ</string>
-    <string name="permission_overlay_body">ມິນິຕ້ອງການສິດ Android “ສະແດງທັບແອັບອື່ນ” ເພື່ອໃຫ້ຍັງເຫັນໄດ້ໃນຂະນະທີ່ທ່ານໃຊ້ແອັບສຽງທີ່ຮອງຮັບ. ສິດນີ້ເປັນທາງເລືອກ ແລະບໍ່ໄດ້ໃຫ້ Puzru ອ່ານ ຫຼືຄວບຄຸມແອັບອື່ນ. ການກຳນົດເສັ້ນທາງສຽງເຮັດວຽກໂດຍບໍ່ມີມິນິ.</string>
+    <string name="permission_overlay_body">ມິນິຕ້ອງການສິດ Android “ສະແດງທັບແອັບອື່ນ” ເພື່ອໃຫ້ຍັງເຫັນໄດ້ໃນຂະນະທີ່ທ່ານໃຊ້ແອັບສຽງທີ່ຮອງຮັບ. ໃນໜ້າຈໍຖັດໄປ ໃຫ້ເລືອກ Puzru ຈາກລາຍຊື່ແອັບ ແລ້ວເປີດການເຂົ້າເຖິງນີ້. ສິດນີ້ເປັນທາງເລືອກ ແລະບໍ່ໄດ້ໃຫ້ Puzru ອ່ານ ຫຼືຄວບຄຸມແອັບອື່ນ. ການກຳນົດເສັ້ນທາງສຽງເຮັດວຽກໂດຍບໍ່ມີມິນິ.</string>
     <string name="permission_overlay_open_settings">ເປີດການຕັ້ງຄ່າ</string>
     <string name="permission_overlay_not_now">ບໍ່ແມ່ນຕອນນີ້</string>
     <string name="settings">ການຕັ້ງຄ່າ</string>

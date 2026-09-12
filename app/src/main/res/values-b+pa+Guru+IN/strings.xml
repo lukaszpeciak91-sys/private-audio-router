@@ -17,7 +17,7 @@
     <string name="permission_notification_allow">ਸੂਚਨਾਵਾਂ ਦੀ ਇਜਾਜ਼ਤ ਦਿਓ</string>
     <string name="permission_notification_continue">ਸੂਚਨਾਵਾਂ ਤੋਂ ਬਿਨਾਂ ਜਾਰੀ ਰੱਖੋ</string>
     <string name="permission_overlay_title">ਕੰਪੈਕਟ ਨੂੰ ਹੋਰ ਐਪਾਂ ਦੇ ਉੱਪਰ ਦਿਖਾਉਣ ਦੀ ਇਜਾਜ਼ਤ ਦਿਓ</string>
-    <string name="permission_overlay_body">ਕਿਸੇ ਸਮਰਥਿਤ ਵੌਇਸ ਐਪ ਦੀ ਵਰਤੋਂ ਕਰਦੇ ਸਮੇਂ ਦਿਖਾਈ ਦਿੰਦੇ ਰਹਿਣ ਲਈ ਕੰਪੈਕਟ ਨੂੰ Android ਦੀ “ਹੋਰ ਐਪਾਂ ਦੇ ਉੱਪਰ ਦਿਖਾਓ” ਪਹੁੰਚ ਦੀ ਲੋੜ ਹੈ। ਇਹ ਪਹੁੰਚ ਵਿਕਲਪਿਕ ਹੈ ਅਤੇ Puzru ਨੂੰ ਹੋਰ ਐਪਾਂ ਪੜ੍ਹਨ ਜਾਂ ਕੰਟਰੋਲ ਕਰਨ ਦੀ ਇਜਾਜ਼ਤ ਨਹੀਂ ਦਿੰਦੀ। ਆਡੀਓ ਬਦਲਣਾ ਕੰਪੈਕਟ ਤੋਂ ਬਿਨਾਂ ਵੀ ਕੰਮ ਕਰਦਾ ਹੈ।</string>
+    <string name="permission_overlay_body">ਕਿਸੇ ਸਮਰਥਿਤ ਵੌਇਸ ਐਪ ਦੀ ਵਰਤੋਂ ਕਰਦੇ ਸਮੇਂ ਦਿਖਾਈ ਦਿੰਦੇ ਰਹਿਣ ਲਈ ਕੰਪੈਕਟ ਨੂੰ Android ਦੀ “ਹੋਰ ਐਪਾਂ ਦੇ ਉੱਪਰ ਦਿਖਾਓ” ਪਹੁੰਚ ਦੀ ਲੋੜ ਹੈ। ਅਗਲੀ ਸਕ੍ਰੀਨ ਉੱਤੇ ਐਪਾਂ ਦੀ ਸੂਚੀ ਵਿੱਚੋਂ Puzru ਚੁਣੋ ਅਤੇ ਇਸ ਪਹੁੰਚ ਨੂੰ ਚਾਲੂ ਕਰੋ। ਇਹ ਪਹੁੰਚ ਵਿਕਲਪਿਕ ਹੈ ਅਤੇ Puzru ਨੂੰ ਹੋਰ ਐਪਾਂ ਪੜ੍ਹਨ ਜਾਂ ਕੰਟਰੋਲ ਕਰਨ ਦੀ ਇਜਾਜ਼ਤ ਨਹੀਂ ਦਿੰਦੀ। ਆਡੀਓ ਬਦਲਣਾ ਕੰਪੈਕਟ ਤੋਂ ਬਿਨਾਂ ਵੀ ਕੰਮ ਕਰਦਾ ਹੈ।</string>
     <string name="permission_overlay_open_settings">ਸੈਟਿੰਗਾਂ ਖੋਲ੍ਹੋ</string>
     <string name="permission_overlay_not_now">ਹੁਣੇ ਨਹੀਂ</string>
     <string name="settings">ਸੈਟਿੰਗਾਂ</string>

@@ -17,7 +17,7 @@
     <string name="permission_notification_allow">Ippermetti n-notifiki</string>
     <string name="permission_notification_continue">Kompli mingħajr notifiki</string>
     <string name="permission_overlay_title">Ippermetti li Mini jidher fuq apps oħra</string>
-    <string name="permission_overlay_body">Mini jeħtieġ l-aċċess ta’ Android “Uri fuq apps oħra” biex jibqa’ viżibbli waqt li tuża app tal-vuċi appoġġjata. Dan l-aċċess huwa fakultattiv u ma jippermettix lil Puzru jaqra jew jikkontrolla apps oħra. Id-direzzjoni tal-awdjo lejn l-output taħdem mingħajr Mini.</string>
+    <string name="permission_overlay_body">Mini jeħtieġ l-aċċess ta’ Android “Uri fuq apps oħra” biex jibqa’ viżibbli waqt li tuża app tal-vuċi appoġġjata. Fl-iskrin li jmiss, agħżel Puzru mil-lista tal-apps u ixgħel dan l-aċċess. Dan l-aċċess huwa fakultattiv u ma jippermettix lil Puzru jaqra jew jikkontrolla apps oħra. Id-direzzjoni tal-awdjo lejn l-output taħdem mingħajr Mini.</string>
     <string name="permission_overlay_open_settings">Iftaħ l-issettjar</string>
     <string name="permission_overlay_not_now">Mhux issa</string>
     <string name="settings">Issettjar</string>

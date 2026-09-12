@@ -16,6 +16,7 @@ class Layer5OverlayContractTest {
         assertTrue(mainSource.contains("if (overlayPermissionRequestPending)"))
         assertTrue(mainSource.contains("if (Settings.canDrawOverlays(this)) showOverlay()"))
         assertFalse(mainSource.contains("overlayPermissionRequestPending = true\n            showOverlay()"))
+        assertEquals(1, mainSource.kotlinDeclaration("override fun onResume()").occurrences("showOverlay()"))
     }
 
     @Test

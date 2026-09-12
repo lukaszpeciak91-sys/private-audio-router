@@ -17,7 +17,7 @@
     <string name="permission_notification_allow">Дозволи известувања</string>
     <string name="permission_notification_continue">Продолжи без известувања</string>
     <string name="permission_overlay_title">Дозволи Мини да се прикажува над други апликации</string>
-    <string name="permission_overlay_body">На Мини му треба пристапот на Android „Прикажување над други апликации“ за да остане видливо додека користите поддржана гласовна апликација. Овој пристап е изборен и не му дозволува на Puzru да чита или контролира други апликации. Пренасочувањето на звукот работи без Мини.</string>
+    <string name="permission_overlay_body">На Мини му треба пристапот на Android „Прикажување над други апликации“ за да остане видливо додека користите поддржана гласовна апликација. На следниот екран изберете Puzru од списокот со апликации и вклучете го овој пристап. Овој пристап е изборен и не му дозволува на Puzru да чита или контролира други апликации. Пренасочувањето на звукот работи без Мини.</string>
     <string name="permission_overlay_open_settings">Отвори поставки</string>
     <string name="permission_overlay_not_now">Не сега</string>
     <string name="settings">Поставки</string>

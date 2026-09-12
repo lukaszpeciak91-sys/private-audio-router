@@ -17,7 +17,7 @@
     <string name="permission_notification_allow">Beeksisawwan hayyami</string>
     <string name="permission_notification_continue">Beeksisa malee itti fufi</string>
     <string name="permission_overlay_title">Xiqqaan appiiwwan biroo irratti akka mul’atu hayyami</string>
-    <string name="permission_overlay_body">Xiqqaan yeroo appii sagalee deeggaramu fayyadamtu mul’atee turuuf hayyama Android “Appiiwwan biroo irratti agarsiisi” barbaada. Hayyamni kun filannoo dha; Puzru appiiwwan biroo akka dubbisu ykn to’atu hin hayyamu. Sagalee qajeelchuun Xiqqaa malee ni hojjeta.</string>
+    <string name="permission_overlay_body">Xiqqaan yeroo appii sagalee deeggaramu fayyadamtu mul’atee turuuf hayyama Android “Appiiwwan biroo irratti agarsiisi” barbaada. Fuula itti aanu irratti tarree appii keessaa Puzru filadhuutii hayyama kana bani. Hayyamni kun filannoo dha; Puzru appiiwwan biroo akka dubbisu ykn to’atu hin hayyamu. Sagalee qajeelchuun Xiqqaa malee ni hojjeta.</string>
     <string name="permission_overlay_open_settings">Qindaa’ina bani</string>
     <string name="permission_overlay_not_now">Amma miti</string>
     <string name="settings">Qindaa\'ina</string>

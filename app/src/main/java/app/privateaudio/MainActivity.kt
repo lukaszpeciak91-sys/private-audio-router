@@ -189,13 +189,9 @@ class MainActivity : ComponentActivity() {
     }
 
     private fun showOverlayOrRequestPermission() {
-        when (overlayMiniDecision(
-            Settings.canDrawOverlays(this),
-            permissionUxPreferences.overlayExplanationResolved,
-        )) {
+        when (overlayMiniDecision(Settings.canDrawOverlays(this))) {
             OverlayMiniDecision.SHOW -> showOverlay()
             OverlayMiniDecision.EXPLAIN -> permissionExplanation = PermissionExplanation.OVERLAY
-            OverlayMiniDecision.OPEN_SETTINGS -> openOverlaySettings()
         }
     }
 
@@ -243,7 +239,6 @@ class MainActivity : ComponentActivity() {
                 }
             }
             PermissionExplanation.OVERLAY -> {
-                permissionUxPreferences.overlayExplanationResolved = true
                 openOverlaySettings()
             }
         }
@@ -261,7 +256,7 @@ class MainActivity : ComponentActivity() {
                 permissionUxPreferences.notificationExplanationResolved = true
                 armRouting()
             }
-            PermissionExplanation.OVERLAY -> permissionUxPreferences.overlayExplanationResolved = true
+            PermissionExplanation.OVERLAY -> Unit
         }
     }
 

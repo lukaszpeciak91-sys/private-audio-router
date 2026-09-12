@@ -14,9 +14,9 @@ class PermissionUxContractTest {
         assertTrue(main.contains("PermissionExplanation.NOTIFICATION -> {"))
         assertTrue(main.contains("permissionUxPreferences.notificationExplanationResolved = true"))
         assertTrue(main.contains("PermissionExplanation.OVERLAY -> {"))
-        assertTrue(main.contains("permissionUxPreferences.overlayExplanationResolved = true"))
         assertTrue(main.contains("Uri.parse(\"package:\$packageName\")"))
         assertTrue(main.contains("if (Settings.canDrawOverlays(this)) showOverlay()"))
+        assertFalse(main.contains("overlayExplanationResolved"))
         assertFalse(service.contains("PermissionUx"))
         assertFalse(overlay.contains("PermissionUx"))
         assertTrue(overlay.contains("if (!Settings.canDrawOverlays(this)) return"))
@@ -49,13 +49,30 @@ class PermissionUxContractTest {
         assertFalse(main.contains("@SuppressLint(\"InlinedApi\")"))
     }
 
-    @Test fun preferenceOwnerContainsExactlyTwoFalseDefaultBooleanFlags() {
-        assertEquals(2, preferences.windowed("getBoolean(".length).count { it == "getBoolean(" })
-        assertEquals(2, preferences.windowed(", false)".length).count { it == ", false)" })
-        listOf("notification_explanation_resolved", "overlay_explanation_resolved").forEach {
-            assertTrue(preferences.contains(it))
-        }
+    @Test fun preferenceOwnerRetainsOnlyTheNotificationExplanationFlag() {
+        assertEquals(1, preferences.windowed("getBoolean(".length).count { it == "getBoolean(" })
+        assertEquals(1, preferences.windowed(", false)".length).count { it == ", false)" })
+        assertTrue(preferences.contains("notification_explanation_resolved"))
+        assertFalse(preferences.contains("overlay_explanation_resolved"))
         listOf("routing", "timestamp", "counter", "analytics").forEach { assertFalse(preferences.contains(it)) }
+    }
+
+    @Test fun everyExplicitMissingAccessAttemptUsesTheExplanationPanel() {
+        val miniRequest = main.kotlinDeclaration("private fun showOverlayOrRequestPermission()")
+        assertTrue(miniRequest.contains("Settings.canDrawOverlays(this)"))
+        assertTrue(miniRequest.contains("OverlayMiniDecision.EXPLAIN -> permissionExplanation"))
+        assertFalse(miniRequest.contains("openOverlaySettings()"))
+
+        val primary = main.kotlinDeclaration(
+            "private fun handleExplanationPrimary(explanation: PermissionExplanation)",
+        )
+        assertTrue(primary.contains("PermissionExplanation.OVERLAY -> {"))
+        assertTrue(primary.contains("openOverlaySettings()"))
+
+        val secondary = main.kotlinDeclaration(
+            "private fun handleExplanationSecondary(explanation: PermissionExplanation)",
+        )
+        assertTrue(secondary.contains("PermissionExplanation.OVERLAY -> Unit"))
     }
 
     @Test fun styledScrollablePanelsHaveStableInteractionContracts() {
@@ -74,6 +91,24 @@ class PermissionUxContractTest {
     @Test fun permissionCopyIsLocalizedForEverySupportedLocale() {
         val keys = permissionUxKeys
         val defaultNodes = stringNodes(File(resources, "values/strings.xml"))
+        val defaultOverlayBody = defaultNodes.single {
+            it.attributes.getNamedItem("name").nodeValue == "permission_overlay_body"
+        }.textContent
+        assertTrue("default overlay body must not be blank", defaultOverlayBody.isNotBlank())
+        listOf(
+            "Display over other apps",
+            "next screen",
+            "select Puzru",
+            "turn on this access",
+            "access is optional",
+            "does not let Puzru read or control other apps",
+            "Audio routing works without Mini",
+        ).forEach { requiredMeaning ->
+            assertTrue(
+                "default overlay body must communicate: $requiredMeaning",
+                defaultOverlayBody.contains(requiredMeaning, ignoreCase = true),
+            )
+        }
         keys.forEach { key ->
             val matching = defaultNodes.filter { it.attributes.getNamedItem("name").nodeValue == key }
             assertEquals("default: $key", 1, matching.size)
@@ -98,6 +133,10 @@ class PermissionUxContractTest {
                 }
                 assertEquals("${directory.name}: $key count", 1, matching.size)
                 assertTrue("${directory.name}: $key must not be blank", matching.single().textContent.isNotBlank())
+                if (key == "permission_overlay_body") {
+                    assertTrue("${directory.name}: overlay instruction must name Puzru", matching.single().textContent.contains("Puzru"))
+                    assertFalse("${directory.name}: overlay body must be localized", matching.single().textContent == defaultOverlayBody)
+                }
                 assertEquals(
                     "${directory.name}: $key placeholders",
                     placeholders(defaultNodes.single { it.attributes.getNamedItem("name").nodeValue == key }.textContent),

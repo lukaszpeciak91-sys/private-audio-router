@@ -17,7 +17,7 @@
     <string name="permission_notification_allow">Permitir notificaciones</string>
     <string name="permission_notification_continue">Continuar sin notificaciones</string>
     <string name="permission_overlay_title">Permitir que Mini se muestre sobre otras aplicaciones</string>
-    <string name="permission_overlay_body">Mini necesita el acceso de Android «Mostrar sobre otras aplicaciones» para permanecer visible mientras usas una aplicación de voz compatible. Este acceso es opcional y no permite que Puzru lea ni controle otras aplicaciones. El redireccionamiento de audio funciona sin Mini.</string>
+    <string name="permission_overlay_body">Mini necesita el acceso de Android «Mostrar sobre otras aplicaciones» para permanecer visible mientras usas una aplicación de voz compatible. En la siguiente pantalla, selecciona Puzru en la lista de aplicaciones y activa este acceso. Este acceso es opcional y no permite que Puzru lea ni controle otras aplicaciones. El redireccionamiento de audio funciona sin Mini.</string>
     <string name="permission_overlay_open_settings">Abrir ajustes</string>
     <string name="permission_overlay_not_now">Ahora no</string>
     <string name="settings">Ajustes</string>

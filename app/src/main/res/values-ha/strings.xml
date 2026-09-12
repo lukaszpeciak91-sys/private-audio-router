@@ -17,7 +17,7 @@
     <string name="permission_notification_allow">Bada izinin sanarwa</string>
     <string name="permission_notification_continue">Ci gaba ba tare da sanarwa ba</string>
     <string name="permission_overlay_title">Bada izinin nuna Ƙarami a kan sauran manhajoji</string>
-    <string name="permission_overlay_body">Ƙarami yana buƙatar izinin Android na “Nunawa a kan sauran manhajoji” don ya ci gaba da kasancewa a bayyane yayin da kake amfani da manhajar murya mai goyan baya. Wannan izinin na da zaɓi kuma ba ya ba Puzru damar karantawa ko sarrafa sauran manhajoji. Sauya inda sauti zai fito yana aiki ba tare da Ƙarami ba.</string>
+    <string name="permission_overlay_body">Ƙarami yana buƙatar izinin Android na “Nunawa a kan sauran manhajoji” don ya ci gaba da kasancewa a bayyane yayin da kake amfani da manhajar murya mai goyan baya. A allo na gaba, zaɓi Puzru daga jerin manhajoji sannan ka kunna wannan damar. Wannan izinin na da zaɓi kuma ba ya ba Puzru damar karantawa ko sarrafa sauran manhajoji. Sauya inda sauti zai fito yana aiki ba tare da Ƙarami ba.</string>
     <string name="permission_overlay_open_settings">Buɗe saituna</string>
     <string name="permission_overlay_not_now">Ba yanzu ba</string>
     <string name="settings">Saituna</string>

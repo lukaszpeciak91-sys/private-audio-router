@@ -17,7 +17,7 @@
     <string name="permission_notification_allow">Мэдэгдлийг зөвшөөрөх</string>
     <string name="permission_notification_continue">Мэдэгдэлгүйгээр үргэлжлүүлэх</string>
     <string name="permission_overlay_title">Миниг бусад аппын дээр харуулахыг зөвшөөрөх</string>
-    <string name="permission_overlay_body">Дэмжигдсэн дуут аппыг ашиглах үед харагдсаар байхын тулд Минид Android-ын “Бусад аппын дээр харуулах” эрх хэрэгтэй. Энэ эрх сонголттой бөгөөд Puzru-д бусад аппыг унших эсвэл удирдах боломж олгохгүй. Аудио чиглүүлэлт Минигүйгээр ажиллана.</string>
+    <string name="permission_overlay_body">Дэмжигдсэн дуут аппыг ашиглах үед харагдсаар байхын тулд Минид Android-ын “Бусад аппын дээр харуулах” эрх хэрэгтэй. Дараагийн дэлгэцэд аппын жагсаалтаас Puzru-г сонгоод энэ эрхийг асаана уу. Энэ эрх сонголттой бөгөөд Puzru-д бусад аппыг унших эсвэл удирдах боломж олгохгүй. Аудио чиглүүлэлт Минигүйгээр ажиллана.</string>
     <string name="permission_overlay_open_settings">Тохиргоог нээх</string>
     <string name="permission_overlay_not_now">Одоо биш</string>
     <string name="settings">Тохиргоо</string>

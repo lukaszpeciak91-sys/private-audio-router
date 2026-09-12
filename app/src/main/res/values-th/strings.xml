@@ -17,7 +17,7 @@
     <string name="permission_notification_allow">อนุญาตการแจ้งเตือน</string>
     <string name="permission_notification_continue">ดำเนินการต่อโดยไม่มีการแจ้งเตือน</string>
     <string name="permission_overlay_title">อนุญาตให้มินิแสดงทับแอปอื่น</string>
-    <string name="permission_overlay_body">มินิต้องมีสิทธิ์เข้าถึง “แสดงทับแอปอื่น” ของ Android เพื่อให้ยังคงมองเห็นได้ขณะที่คุณใช้แอปเสียงที่รองรับ สิทธิ์นี้เป็นตัวเลือกและไม่ได้ทำให้ Puzru อ่านหรือควบคุมแอปอื่นได้ การเปลี่ยนเส้นทางเสียงทำงานได้โดยไม่มีมินิ</string>
+    <string name="permission_overlay_body">มินิต้องมีสิทธิ์เข้าถึง “แสดงทับแอปอื่น” ของ Android เพื่อให้ยังคงมองเห็นได้ขณะที่คุณใช้แอปเสียงที่รองรับ ในหน้าจอถัดไป ให้เลือก Puzru จากรายการแอปแล้วเปิดสิทธิ์การเข้าถึงนี้ สิทธิ์นี้เป็นตัวเลือกและไม่ได้ทำให้ Puzru อ่านหรือควบคุมแอปอื่นได้ การเปลี่ยนเส้นทางเสียงทำงานได้โดยไม่มีมินิ</string>
     <string name="permission_overlay_open_settings">เปิดการตั้งค่า</string>
     <string name="permission_overlay_not_now">ไม่ทำตอนนี้</string>
     <string name="settings">การตั้งค่า</string>

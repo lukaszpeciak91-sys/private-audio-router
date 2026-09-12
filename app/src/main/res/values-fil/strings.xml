@@ -17,7 +17,7 @@
     <string name="permission_notification_allow">Payagan ang mga notification</string>
     <string name="permission_notification_continue">Magpatuloy nang walang mga notification</string>
     <string name="permission_overlay_title">Payagang lumitaw ang Mini sa ibabaw ng ibang app</string>
-    <string name="permission_overlay_body">Kailangan ng Mini ang access ng Android na “I-display sa ibabaw ng ibang app” upang manatiling nakikita habang gumagamit ka ng sinusuportahang voice app. Opsyonal ang access na ito at hindi nito pinapayagan ang Puzru na basahin o kontrolin ang ibang app. Gumagana ang paglilipat ng audio kahit walang Mini.</string>
+    <string name="permission_overlay_body">Kailangan ng Mini ang access ng Android na “I-display sa ibabaw ng ibang app” upang manatiling nakikita habang gumagamit ka ng sinusuportahang voice app. Sa susunod na screen, piliin ang Puzru sa listahan ng mga app at i-on ang access na ito. Opsyonal ang access na ito at hindi nito pinapayagan ang Puzru na basahin o kontrolin ang ibang app. Gumagana ang paglilipat ng audio kahit walang Mini.</string>
     <string name="permission_overlay_open_settings">Buksan ang mga setting</string>
     <string name="permission_overlay_not_now">Hindi ngayon</string>
     <string name="settings">Mga Setting</string>

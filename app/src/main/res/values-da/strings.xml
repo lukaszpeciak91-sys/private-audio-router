@@ -17,7 +17,7 @@
     <string name="permission_notification_allow">Tillad notifikationer</string>
     <string name="permission_notification_continue">Fortsæt uden notifikationer</string>
     <string name="permission_overlay_title">Tillad, at Mini vises oven på andre apps</string>
-    <string name="permission_overlay_body">Mini skal have Android-adgangen “Vis oven på andre apps” for at forblive synlig, mens du bruger en understøttet stemmeapp. Denne adgang er valgfri og giver ikke Puzru mulighed for at læse eller styre andre apps. Lydskift fungerer uden Mini.</string>
+    <string name="permission_overlay_body">Mini skal have Android-adgangen “Vis oven på andre apps” for at forblive synlig, mens du bruger en understøttet stemmeapp. På den næste skærm skal du vælge Puzru på applisten og slå denne adgang til. Denne adgang er valgfri og giver ikke Puzru mulighed for at læse eller styre andre apps. Lydskift fungerer uden Mini.</string>
     <string name="permission_overlay_open_settings">Åbn indstillinger</string>
     <string name="permission_overlay_not_now">Ikke nu</string>
     <string name="settings">Indstillinger</string>

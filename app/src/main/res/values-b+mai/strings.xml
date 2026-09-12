@@ -17,7 +17,7 @@
     <string name="permission_notification_allow">सूचनाक अनुमति दिअ</string>
     <string name="permission_notification_continue">सूचना बिना जारी राखू</string>
     <string name="permission_overlay_title">मिनी केँ दोसर एपक ऊपर देखेबाक अनुमति दिअ</string>
-    <string name="permission_overlay_body">समर्थित वॉइस एपक उपयोग करैत समय देखाइत रहबाक लेल मिनी केँ Android केर “दोसर एपक ऊपर देखाउ” पहुँच चाही। ई पहुँच वैकल्पिक अछि आ एहि सँ Puzru केँ दोसर एप पढ़बाक वा नियंत्रित करबाक अनुमति नहि भेटैत अछि। मिनी बिना सेहो ऑडियो रूटिंग काज करैत अछि।</string>
+    <string name="permission_overlay_body">समर्थित वॉइस एपक उपयोग करैत समय देखाइत रहबाक लेल मिनी केँ Android केर “दोसर एपक ऊपर देखाउ” पहुँच चाही। अगिला स्क्रीन पर ऐपसभक सूचीमे सँ Puzru चुनू आ ई पहुँच चालू करू। ई पहुँच वैकल्पिक अछि आ एहि सँ Puzru केँ दोसर एप पढ़बाक वा नियंत्रित करबाक अनुमति नहि भेटैत अछि। मिनी बिना सेहो ऑडियो रूटिंग काज करैत अछि।</string>
     <string name="permission_overlay_open_settings">सेटिंग्स खोलू</string>
     <string name="permission_overlay_not_now">अखन नहि</string>
     <string name="settings">सेटिंग्स</string>

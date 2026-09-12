@@ -17,7 +17,7 @@
     <string name="permission_notification_allow">Povoliť upozornenia</string>
     <string name="permission_notification_continue">Pokračovať bez upozornení</string>
     <string name="permission_overlay_title">Povoliť zobrazenie Mini nad inými aplikáciami</string>
-    <string name="permission_overlay_body">Mini potrebuje prístup Androidu „Zobrazovať nad inými aplikáciami“, aby zostalo viditeľné pri používaní podporovanej hlasovej aplikácie. Tento prístup je voliteľný a neumožňuje aplikácii Puzru čítať ani ovládať iné aplikácie. Presmerovanie zvuku funguje bez Mini.</string>
+    <string name="permission_overlay_body">Mini potrebuje prístup Androidu „Zobrazovať nad inými aplikáciami“, aby zostalo viditeľné pri používaní podporovanej hlasovej aplikácie. Na nasledujúcej obrazovke vyberte Puzru zo zoznamu aplikácií a zapnite tento prístup. Tento prístup je voliteľný a neumožňuje aplikácii Puzru čítať ani ovládať iné aplikácie. Presmerovanie zvuku funguje bez Mini.</string>
     <string name="permission_overlay_open_settings">Otvoriť nastavenia</string>
     <string name="permission_overlay_not_now">Teraz nie</string>
     <string name="settings">Nastavenia</string>

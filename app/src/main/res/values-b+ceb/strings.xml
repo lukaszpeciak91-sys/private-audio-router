@@ -17,7 +17,7 @@
     <string name="permission_notification_allow">Tugoti ang mga pahibalo</string>
     <string name="permission_notification_continue">Padayon nga walay mga pahibalo</string>
     <string name="permission_overlay_title">Tugoti nga mopakita ang Mini ibabaw sa ubang app</string>
-    <string name="permission_overlay_body">Gikinahanglan sa Mini ang access sa Android nga “Ipakita ibabaw sa ubang app” aron magpabiling makita samtang naggamit ka og suportadong voice app. Opsyonal kini nga access ug dili niini tugotan ang Puzru sa pagbasa o pagkontrol sa ubang app. Molihok ang pag-route sa audio bisan walay Mini.</string>
+    <string name="permission_overlay_body">Gikinahanglan sa Mini ang access sa Android nga “Ipakita ibabaw sa ubang app” aron magpabiling makita samtang naggamit ka og suportadong voice app. Sa sunod nga screen, pilia ang Puzru gikan sa listahan sa mga app ug i-on kini nga access. Opsyonal kini nga access ug dili niini tugotan ang Puzru sa pagbasa o pagkontrol sa ubang app. Molihok ang pag-route sa audio bisan walay Mini.</string>
     <string name="permission_overlay_open_settings">Ablihi ang mga setting</string>
     <string name="permission_overlay_not_now">Dili karon</string>
     <string name="settings">Mga setting</string>

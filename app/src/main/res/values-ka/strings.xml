@@ -17,7 +17,7 @@
     <string name="permission_notification_allow">შეტყობინებების დაშვება</string>
     <string name="permission_notification_continue">გაგრძელება შეტყობინებების გარეშე</string>
     <string name="permission_overlay_title">მინის სხვა აპების ზემოთ ჩვენების დაშვება</string>
-    <string name="permission_overlay_body">მინის სჭირდება Android-ის წვდომა „სხვა აპების ზემოთ ჩვენება“, რათა ხილული დარჩეს მხარდაჭერილი ხმოვანი აპის გამოყენებისას. ეს წვდომა არასავალდებულოა და Puzru-ს არ აძლევს სხვა აპების წაკითხვის ან მართვის საშუალებას. აუდიოს გადართვა მინის გარეშეც მუშაობს.</string>
+    <string name="permission_overlay_body">მინის სჭირდება Android-ის წვდომა „სხვა აპების ზემოთ ჩვენება“, რათა ხილული დარჩეს მხარდაჭერილი ხმოვანი აპის გამოყენებისას. შემდეგ ეკრანზე აპების სიიდან აირჩიეთ Puzru და ჩართეთ ეს წვდომა. ეს წვდომა არასავალდებულოა და Puzru-ს არ აძლევს სხვა აპების წაკითხვის ან მართვის საშუალებას. აუდიოს გადართვა მინის გარეშეც მუშაობს.</string>
     <string name="permission_overlay_open_settings">პარამეტრების გახსნა</string>
     <string name="permission_overlay_not_now">ახლა არა</string>
     <string name="settings">პარამეტრები</string>

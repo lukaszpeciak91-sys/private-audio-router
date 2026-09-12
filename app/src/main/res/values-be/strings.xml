@@ -17,7 +17,7 @@
     <string name="permission_notification_allow">Дазволіць апавяшчэнні</string>
     <string name="permission_notification_continue">Працягнуць без апавяшчэнняў</string>
     <string name="permission_overlay_title">Дазволіць Міні паверх іншых праграм</string>
-    <string name="permission_overlay_body">Каб заставацца бачным падчас выкарыстання падтрымліваемай галасавой праграмы, Міні патрэбен доступ Android «Паверх іншых праграм». Гэты доступ неабавязковы і не дазваляе Puzru чытаць іншыя праграмы або кіраваць імі. Перанакіраванне гуку працуе без Міні.</string>
+    <string name="permission_overlay_body">Каб заставацца бачным падчас выкарыстання падтрымліваемай галасавой праграмы, Міні патрэбен доступ Android «Паверх іншых праграм». На наступным экране выберыце Puzru са спіса праграм і ўключыце гэты доступ. Гэты доступ неабавязковы і не дазваляе Puzru чытаць іншыя праграмы або кіраваць імі. Перанакіраванне гуку працуе без Міні.</string>
     <string name="permission_overlay_open_settings">Адкрыць налады</string>
     <string name="permission_overlay_not_now">Не зараз</string>
     <string name="settings">Налады</string>

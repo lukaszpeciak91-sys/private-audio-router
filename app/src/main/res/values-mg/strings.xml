@@ -17,7 +17,7 @@
     <string name="permission_notification_allow">Avelao ny fampandrenesana</string>
     <string name="permission_notification_continue">Tohizo tsy misy fampandrenesana</string>
     <string name="permission_overlay_title">Avelao hiseho eo ambonin’ny rindranasa hafa i Kely</string>
-    <string name="permission_overlay_body">Mila fahazoan-dàlana Android “Asehoy eo ambonin’ny rindranasa hafa” i Kely mba hijanona ho hita rehefa mampiasa rindranasa feo tohanana ianao. Tsy voatery io fahazoan-dàlana io ary tsy mamela an’i Puzru hamaky na hifehy rindranasa hafa. Mandeha tsy misy an’i Kely ny fampitodihana feo.</string>
+    <string name="permission_overlay_body">Mila fahazoan-dàlana Android “Asehoy eo ambonin’ny rindranasa hafa” i Kely mba hijanona ho hita rehefa mampiasa rindranasa feo tohanana ianao. Eo amin’ny efijery manaraka, fidio ao amin’ny lisitry ny rindranasa ny Puzru ary alefaso ity fidirana ity. Tsy voatery io fahazoan-dàlana io ary tsy mamela an’i Puzru hamaky na hifehy rindranasa hafa. Mandeha tsy misy an’i Kely ny fampitodihana feo.</string>
     <string name="permission_overlay_open_settings">Sokafy ny fikirana</string>
     <string name="permission_overlay_not_now">Tsy izao</string>
     <string name="settings">Fikirana</string>

@@ -17,7 +17,7 @@
     <string name="permission_notification_allow">Vumela izaziso</string>
     <string name="permission_notification_continue">Qhubeka ngaphandle kwezaziso</string>
     <string name="permission_overlay_title">Vumela Encinci ibonakale phezu kwezinye ii-app</string>
-    <string name="permission_overlay_body">Encinci ifuna ufikelelo lwe-Android oluthi “Bonisa phezu kwezinye ii-app” ukuze ihlale ibonakala xa usebenzisa i-app yelizwi exhaswayo. Olu fikelelo alunyanzelekanga kwaye aluvumeli i-Puzru ifunde okanye ilawule ezinye ii-app. Ukuhambisa iaudio kusebenza ngaphandle ko-Encinci.</string>
+    <string name="permission_overlay_body">Encinci ifuna ufikelelo lwe-Android oluthi “Bonisa phezu kwezinye ii-app” ukuze ihlale ibonakala xa usebenzisa i-app yelizwi exhaswayo. Kwisikrini esilandelayo, khetha i-Puzru kuluhlu lwee-app uze uvule olu fikelelo. Olu fikelelo alunyanzelekanga kwaye aluvumeli i-Puzru ifunde okanye ilawule ezinye ii-app. Ukuhambisa iaudio kusebenza ngaphandle ko-Encinci.</string>
     <string name="permission_overlay_open_settings">Vula iisetingi</string>
     <string name="permission_overlay_not_now">Hayi ngoku</string>
     <string name="settings">Iisetingi</string>

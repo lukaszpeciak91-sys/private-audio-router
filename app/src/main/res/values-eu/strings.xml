@@ -17,7 +17,7 @@
     <string name="permission_notification_allow">Baimendu jakinarazpenak</string>
     <string name="permission_notification_continue">Jarraitu jakinarazpenik gabe</string>
     <string name="permission_overlay_title">Baimendu Mini beste aplikazioen gainean agertzea</string>
-    <string name="permission_overlay_body">Minik Androiden «Erakutsi beste aplikazioen gainean» sarbidea behar du ikusgai jarraitzeko onartutako ahots-aplikazio bat erabiltzen duzun bitartean. Sarbide hori aukerakoa da eta ez dio Puzruri beste aplikazio batzuk irakurtzen edo kontrolatzen uzten. Audioaren bideratzeak Minirik gabe ere funtzionatzen du.</string>
+    <string name="permission_overlay_body">Minik Androiden «Erakutsi beste aplikazioen gainean» sarbidea behar du ikusgai jarraitzeko onartutako ahots-aplikazio bat erabiltzen duzun bitartean. Hurrengo pantailan, hautatu Puzru aplikazioen zerrendan eta aktibatu sarbide hau. Sarbide hori aukerakoa da eta ez dio Puzruri beste aplikazio batzuk irakurtzen edo kontrolatzen uzten. Audioaren bideratzeak Minirik gabe ere funtzionatzen du.</string>
     <string name="permission_overlay_open_settings">Ireki ezarpenak</string>
     <string name="permission_overlay_not_now">Orain ez</string>
     <string name="settings">Ezarpenak</string>

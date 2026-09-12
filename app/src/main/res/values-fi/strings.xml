@@ -17,7 +17,7 @@
     <string name="permission_notification_allow">Salli ilmoitukset</string>
     <string name="permission_notification_continue">Jatka ilman ilmoituksia</string>
     <string name="permission_overlay_title">Salli Minin näkyminen muiden sovellusten päällä</string>
-    <string name="permission_overlay_body">Mini tarvitsee Androidin Näkyminen muiden sovellusten päällä -käyttöoikeuden pysyäkseen näkyvissä, kun käytät tuettua äänisovellusta. Tämä käyttöoikeus on valinnainen, eikä se anna Puzrun lukea tai hallita muita sovelluksia. Äänen ohjaaminen toimii ilman Miniä.</string>
+    <string name="permission_overlay_body">Mini tarvitsee Androidin Näkyminen muiden sovellusten päällä -käyttöoikeuden pysyäkseen näkyvissä, kun käytät tuettua äänisovellusta. Valitse seuraavassa näytössä sovellusluettelosta Puzru ja ota tämä käyttöoikeus käyttöön. Tämä käyttöoikeus on valinnainen, eikä se anna Puzrun lukea tai hallita muita sovelluksia. Äänen ohjaaminen toimii ilman Miniä.</string>
     <string name="permission_overlay_open_settings">Avaa asetukset</string>
     <string name="permission_overlay_not_now">Ei nyt</string>
     <string name="settings">Asetukset</string>

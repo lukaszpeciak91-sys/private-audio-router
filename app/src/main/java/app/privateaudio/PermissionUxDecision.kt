@@ -1,7 +1,7 @@
 package app.privateaudio
 
 internal enum class NotificationPowerDecision { START, EXPLAIN }
-internal enum class OverlayMiniDecision { SHOW, EXPLAIN, OPEN_SETTINGS }
+internal enum class OverlayMiniDecision { SHOW, EXPLAIN }
 
 internal fun notificationPowerDecision(
     apiLevel: Int,
@@ -13,9 +13,4 @@ internal fun notificationPowerDecision(
 
 internal fun overlayMiniDecision(
     permissionGranted: Boolean,
-    explanationResolved: Boolean,
-): OverlayMiniDecision = when {
-    permissionGranted -> OverlayMiniDecision.SHOW
-    explanationResolved -> OverlayMiniDecision.OPEN_SETTINGS
-    else -> OverlayMiniDecision.EXPLAIN
-}
+): OverlayMiniDecision = if (permissionGranted) OverlayMiniDecision.SHOW else OverlayMiniDecision.EXPLAIN

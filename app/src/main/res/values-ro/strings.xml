@@ -17,7 +17,7 @@
     <string name="permission_notification_allow">Permite notificările</string>
     <string name="permission_notification_continue">Continuă fără notificări</string>
     <string name="permission_overlay_title">Permite afișarea Mini peste alte aplicații</string>
-    <string name="permission_overlay_body">Mini are nevoie de accesul Android „Afișare peste alte aplicații” pentru a rămâne vizibil în timp ce folosești o aplicație vocală compatibilă. Acest acces este opțional și nu permite aplicației Puzru să citească sau să controleze alte aplicații. Redirecționarea sunetului funcționează fără Mini.</string>
+    <string name="permission_overlay_body">Mini are nevoie de accesul Android „Afișare peste alte aplicații” pentru a rămâne vizibil în timp ce folosești o aplicație vocală compatibilă. Pe ecranul următor, selectează Puzru din lista de aplicații și activează acest acces. Acest acces este opțional și nu permite aplicației Puzru să citească sau să controleze alte aplicații. Redirecționarea sunetului funcționează fără Mini.</string>
     <string name="permission_overlay_open_settings">Deschide setările</string>
     <string name="permission_overlay_not_now">Nu acum</string>
     <string name="settings">Setări</string>

@@ -17,7 +17,7 @@
     <string name="permission_notification_allow">اطلاعات کی اجازت دیں</string>
     <string name="permission_notification_continue">اطلاعات کے بغیر جاری رکھیں</string>
     <string name="permission_overlay_title">کمپیکٹ کو دوسری ایپس کے اوپر دکھانے کی اجازت دیں</string>
-    <string name="permission_overlay_body">کسی معاونت یافتہ صوتی ایپ کے استعمال کے دوران نظر آتے رہنے کے لیے کمپیکٹ کو Android کی ”دوسری ایپس کے اوپر دکھانے“ کی رسائی درکار ہے۔ یہ رسائی اختیاری ہے اور Puzru کو دوسری ایپس پڑھنے یا کنٹرول کرنے کی اجازت نہیں دیتی۔ آڈیو روٹنگ کمپیکٹ کے بغیر بھی کام کرتی ہے۔</string>
+    <string name="permission_overlay_body">کسی معاونت یافتہ صوتی ایپ کے استعمال کے دوران نظر آتے رہنے کے لیے کمپیکٹ کو Android کی ”دوسری ایپس کے اوپر دکھانے“ کی رسائی درکار ہے۔ اگلی اسکرین پر ایپس کی فہرست میں سے Puzru منتخب کریں اور اس رسائی کو آن کریں۔ یہ رسائی اختیاری ہے اور Puzru کو دوسری ایپس پڑھنے یا کنٹرول کرنے کی اجازت نہیں دیتی۔ آڈیو روٹنگ کمپیکٹ کے بغیر بھی کام کرتی ہے۔</string>
     <string name="permission_overlay_open_settings">ترتیبات کھولیں</string>
     <string name="permission_overlay_not_now">ابھی نہیں</string>
     <string name="settings">سیٹنگز</string>

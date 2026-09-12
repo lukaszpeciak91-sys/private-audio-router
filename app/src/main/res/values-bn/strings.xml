@@ -17,7 +17,7 @@
     <string name="permission_notification_allow">বিজ্ঞপ্তির অনুমতি দিন</string>
     <string name="permission_notification_continue">বিজ্ঞপ্তি ছাড়াই চালিয়ে যান</string>
     <string name="permission_overlay_title">মিনিকে অন্য অ্যাপের উপরে দেখানোর অনুমতি দিন</string>
-    <string name="permission_overlay_body">আপনি কোনও সমর্থিত ভয়েস অ্যাপ ব্যবহার করার সময় দৃশ্যমান থাকতে মিনির Android-এর “অন্য অ্যাপের উপরে দেখান” অ্যাক্সেস প্রয়োজন। এই অ্যাক্সেস ঐচ্ছিক এবং এর ফলে Puzru অন্য অ্যাপ পড়তে বা নিয়ন্ত্রণ করতে পারে না। মিনি ছাড়াও অডিও আউটপুট পাল্টানো কাজ করে।</string>
+    <string name="permission_overlay_body">আপনি কোনও সমর্থিত ভয়েস অ্যাপ ব্যবহার করার সময় দৃশ্যমান থাকতে মিনির Android-এর “অন্য অ্যাপের উপরে দেখান” অ্যাক্সেস প্রয়োজন। পরবর্তী স্ক্রিনে অ্যাপের তালিকা থেকে Puzru নির্বাচন করে এই অ্যাক্সেস চালু করুন। এই অ্যাক্সেস ঐচ্ছিক এবং এর ফলে Puzru অন্য অ্যাপ পড়তে বা নিয়ন্ত্রণ করতে পারে না। মিনি ছাড়াও অডিও আউটপুট পাল্টানো কাজ করে।</string>
     <string name="permission_overlay_open_settings">সেটিংস খুলুন</string>
     <string name="permission_overlay_not_now">এখন নয়</string>
     <string name="settings">সেটিংস</string>
