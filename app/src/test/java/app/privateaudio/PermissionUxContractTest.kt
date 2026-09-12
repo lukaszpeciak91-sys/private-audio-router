@@ -22,6 +22,33 @@ class PermissionUxContractTest {
         assertTrue(overlay.contains("if (!Settings.canDrawOverlays(this)) return"))
     }
 
+    @Test fun notificationApiBoundaryIsNarrowAndOlderDevicesArmDirectly() {
+        val handlePowerOn = main.kotlinDeclaration("private fun handlePowerOn()")
+        assertTrue(handlePowerOn.contains("Build.VERSION.SDK_INT < Build.VERSION_CODES.TIRAMISU"))
+        assertTrue(handlePowerOn.contains("armRouting()"))
+        assertTrue(handlePowerOn.contains("return"))
+        assertTrue(handlePowerOn.contains("handlePowerOnApi33()"))
+        assertFalse(handlePowerOn.contains("POST_NOTIFICATIONS"))
+
+        val api33Power = main.kotlinDeclaration("private fun handlePowerOnApi33()")
+        val api33Request = main.kotlinDeclaration("private fun launchNotificationPermissionApi33()")
+        listOf(api33Power, api33Request).forEach { helper ->
+            assertTrue(helper.contains("Manifest.permission.POST_NOTIFICATIONS"))
+        }
+        assertTrue(main.contains("@RequiresApi(Build.VERSION_CODES.TIRAMISU)\n    private fun handlePowerOnApi33()"))
+        assertTrue(main.contains("@RequiresApi(Build.VERSION_CODES.TIRAMISU)\n    private fun launchNotificationPermissionApi33()"))
+
+        val primaryAction = main.kotlinDeclaration(
+            "private fun handleExplanationPrimary(explanation: PermissionExplanation)",
+        )
+        assertTrue(primaryAction.contains("Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU"))
+        assertTrue(primaryAction.contains("launchNotificationPermissionApi33()"))
+        assertTrue(primaryAction.contains("else {\n                    armRouting()"))
+        assertFalse(primaryAction.contains("POST_NOTIFICATIONS"))
+
+        assertFalse(main.contains("@SuppressLint(\"InlinedApi\")"))
+    }
+
     @Test fun preferenceOwnerContainsExactlyTwoFalseDefaultBooleanFlags() {
         assertEquals(2, preferences.windowed("getBoolean(".length).count { it == "getBoolean(" })
         assertEquals(2, preferences.windowed(", false)".length).count { it == ", false)" })

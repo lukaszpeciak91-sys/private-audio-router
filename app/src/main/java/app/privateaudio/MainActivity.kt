@@ -1,5 +1,6 @@
 package app.privateaudio
 
+import android.Manifest
 import android.content.ComponentName
 import android.content.ClipData
 import android.content.Context
@@ -20,6 +21,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.SystemBarStyle
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.annotation.RequiresApi
 import androidx.core.content.ContextCompat
 import androidx.core.content.FileProvider
 import androidx.compose.runtime.getValue
@@ -208,8 +210,16 @@ class MainActivity : ComponentActivity() {
     }
 
     private fun handlePowerOn() {
-        val permissionGranted = Build.VERSION.SDK_INT < Build.VERSION_CODES.TIRAMISU ||
-            ContextCompat.checkSelfPermission(this, android.Manifest.permission.POST_NOTIFICATIONS) ==
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.TIRAMISU) {
+            armRouting()
+            return
+        }
+        handlePowerOnApi33()
+    }
+
+    @RequiresApi(Build.VERSION_CODES.TIRAMISU)
+    private fun handlePowerOnApi33() {
+        val permissionGranted = ContextCompat.checkSelfPermission(this, Manifest.permission.POST_NOTIFICATIONS) ==
             android.content.pm.PackageManager.PERMISSION_GRANTED
         when (notificationPowerDecision(
             Build.VERSION.SDK_INT,
@@ -226,13 +236,22 @@ class MainActivity : ComponentActivity() {
         when (explanation) {
             PermissionExplanation.NOTIFICATION -> {
                 permissionUxPreferences.notificationExplanationResolved = true
-                notificationPermissionLauncher.launch(android.Manifest.permission.POST_NOTIFICATIONS)
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+                    launchNotificationPermissionApi33()
+                } else {
+                    armRouting()
+                }
             }
             PermissionExplanation.OVERLAY -> {
                 permissionUxPreferences.overlayExplanationResolved = true
                 openOverlaySettings()
             }
         }
+    }
+
+    @RequiresApi(Build.VERSION_CODES.TIRAMISU)
+    private fun launchNotificationPermissionApi33() {
+        notificationPermissionLauncher.launch(Manifest.permission.POST_NOTIFICATIONS)
     }
 
     private fun handleExplanationSecondary(explanation: PermissionExplanation) {
