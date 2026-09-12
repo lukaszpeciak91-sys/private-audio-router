@@ -1,5 +1,16 @@
 # Progress
 
+## Central Kurdish CI contract reconciliation
+
+- Kurmanji's contract continues to require the canonical Latin `values-b+ku+Latn`
+  tree and forbid Arabic-script `ku` variants, but no longer mistakes the distinct,
+  supported Central Kurdish `values-b+ckb` tree for a Kurmanji conflict.
+- The frozen 2026-09-07 Privacy Policy reference now validates its own declared
+  source commit, historical entry count, unique directory headings, and explicit
+  non-authoritative/non-shippable status instead of tracking the live locale
+  inventory. Current resources, including `ckb`, remain covered by the unchanged
+  live discovery, key, placeholder, Permission UX, About, and Privacy contracts.
+
 ## Central Kurdish / Sorani localization
 
 - Added a complete Central Kurdish (`ckb`) product locale in `values-b+ckb`. Its 75 localizable strings have full default-source key and placeholder parity; the ten explicitly English-only/non-translatable resources continue to fall back by design.

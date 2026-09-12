@@ -39,11 +39,12 @@ class KurmanjiLocalizationContractTest {
 
         val forbidden = setOf(
             "values-ku", "values-ku-rTR", "values-b+ku+TR", "values-b+ku+Latn+TR",
-            "values-ckb", "values-b+ckb", "values-b+ku+Arab",
+            "values-b+ku+Arab",
         )
         val resourceNames = projectFile("app/src/main/res").listFiles().orEmpty().map { it.name }.toSet()
         assertTrue(resourceNames.intersect(forbidden).isEmpty())
-        assertTrue(resourceNames.none { it.startsWith("values-b+ckb+") || it.startsWith("values-b+ku+Arab+") })
+        assertTrue(resourceNames.none { it.startsWith("values-b+ku+Arab+") })
+        assertTrue("Central Kurdish must remain a separate product locale", "values-b+ckb" in resourceNames)
 
         val appBuild = projectFile("app/build.gradle.kts").readText()
         assertTrue(appBuild.contains("generateLocaleConfig = true"))
