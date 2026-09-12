@@ -178,10 +178,13 @@
   English copy only through Android's normal resource fallback; no locale contains an
   explicit English or mixed-language duplicate. No translation or independent
   localization validation is claimed, and a controlled permission-copy localization
-  rollout remains pending. Runtime permission UX implementation is independent of
-  that translation status. Each default permission string has an intentional,
-  element-scoped `MissingTranslation` suppression; remove each suppression when that
-  string's complete controlled translation rollout is introduced.
+  rollout remains pending. Its test architecture now uses one centralized completed
+  locale-directory classification (currently empty) and enforces atomic all-eight-or-none
+  bundles, structural and placeholder integrity, and intentional fallback without
+  freezing target-language prose. Runtime permission UX implementation is independent
+  of that translation status. Each default permission string has an intentional,
+  element-scoped `MissingTranslation` suppression; remove the temporary classification
+  and all eight suppressions when the controlled rollout reaches every supported locale.
 - Automated decision, persistence-boundary, UI-contract, and fallback-resource checks
   cover the implementation. Runtime/device checks remain pending for first use,
   grant/denial/dismissal, repeat attempts, recreation, compact landscape, RTL,

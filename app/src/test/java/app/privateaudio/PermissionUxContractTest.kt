@@ -71,13 +71,9 @@ class PermissionUxContractTest {
         assertTrue(settings.contains("heightIn(min = 48.dp)"))
     }
 
-    @Test fun permissionCopyUsesOnlyLocalizableDefaultEnglishUntilControlledRollout() {
-        val keys = listOf(
-            "permission_notification_title", "permission_notification_body",
-            "permission_notification_allow", "permission_notification_continue",
-            "permission_overlay_title", "permission_overlay_body",
-            "permission_overlay_open_settings", "permission_overlay_not_now",
-        )
+    @Test fun permissionCopyFollowsTheAtomicStagedLocalizationRollout() {
+        val keys = PermissionUxLocalizationRollout.keys
+        val completedDirectories = PermissionUxLocalizationRollout.completedLocaleDirectories
         val defaultNodes = stringNodes(File(resources, "values/strings.xml"))
         keys.forEach { key ->
             val matching = defaultNodes.filter { it.attributes.getNamedItem("name").nodeValue == key }
@@ -89,17 +85,63 @@ class PermissionUxContractTest {
                 matching.single().attributes.getNamedItem("tools:ignore")?.nodeValue,
             )
         }
+
+        val localeDirectoryNames = localeDirectories.map { it.name }.toSet()
+        assertTrue(
+            "completed Permission UX locales must be supported resource directories: " +
+                (completedDirectories - localeDirectoryNames),
+            localeDirectoryNames.containsAll(completedDirectories),
+        )
+        val actualCompletedDirectories = mutableSetOf<String>()
         localeDirectories.forEach { directory ->
-            val names = stringNodes(File(directory, "strings.xml"))
-                .map { it.attributes.getNamedItem("name").nodeValue }
-            keys.forEach { assertFalse("${directory.name}: copied permission key $it", names.contains(it)) }
+            val nodes = directory.listFiles().orEmpty()
+                .filter { it.isFile && it.extension == "xml" }
+                .flatMap(::stringNodes)
+            val permissionNodes = nodes.filter {
+                it.attributes.getNamedItem("name")?.nodeValue in keys
+            }
+            val presentKeys = permissionNodes.map {
+                it.attributes.getNamedItem("name").nodeValue
+            }.toSet()
+            assertTrue(
+                "${directory.name}: Permission UX must be an atomic all-eight-or-none bundle; found $presentKeys",
+                presentKeys.isEmpty() || presentKeys == keys,
+            )
+
+            if (presentKeys == keys) actualCompletedDirectories += directory.name
+
+            if (directory.name in completedDirectories) {
+                keys.forEach { key ->
+                    val matching = permissionNodes.filter {
+                        it.attributes.getNamedItem("name").nodeValue == key
+                    }
+                    assertEquals("${directory.name}: $key count", 1, matching.size)
+                    assertTrue("${directory.name}: $key must not be blank", matching.single().textContent.isNotBlank())
+                    assertEquals(
+                        "${directory.name}: $key placeholders",
+                        placeholders(defaultNodes.single { it.attributes.getNamedItem("name").nodeValue == key }.textContent),
+                        placeholders(matching.single().textContent),
+                    )
+                }
+            } else {
+                assertTrue(
+                    "${directory.name}: pending locale must use intentional English fallback",
+                    presentKeys.isEmpty(),
+                )
+            }
         }
+        assertEquals("Permission UX completed locale classification", completedDirectories, actualCompletedDirectories)
     }
 
-    private fun stringNodes(file: File) = DocumentBuilderFactory.newInstance().newDocumentBuilder()
+    private fun stringNodes(file: File) = DocumentBuilderFactory.newInstance().apply {
+        isNamespaceAware = true
+    }.newDocumentBuilder()
         .parse(file).getElementsByTagName("string").let { nodes ->
             (0 until nodes.length).map(nodes::item)
         }
+
+    private fun placeholders(value: String) =
+        Regex("%(?:\\d+\\$)?[a-zA-Z]").findAll(value).map { it.value }.toList()
 
     private companion object {
         val root = generateSequence(File(System.getProperty("user.dir")).absoluteFile) { it.parentFile }
