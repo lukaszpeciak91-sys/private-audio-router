@@ -172,9 +172,10 @@
   French, German, Russian, Ukrainian, Polish, Italian, Simplified and Traditional
   Chinese, Hindi, Arabic, Persian, European and Brazilian Portuguese, Swahili,
   Urdu, Japanese, Korean, Indonesian, and Tamil. The remaining 82 supported
-  non-English locales continue to use intentional English fallback; translation
-  production and semantic self-check are recorded without claiming independent or
-  human validation.
+  non-English locales continue to use intentional English fallback. An independent
+  audit requested targeted corrections for Swahili, Korean, and European Portuguese;
+  final Batch 1 acceptance remains pending correction checks and targeted independent
+  re-audit. No native-speaker validation is claimed.
 - Notification and Mini access use separate app-private, false-by-default resolved
   flags. Neither panel appears at startup; each is persisted only after an action,
   Back, or backdrop dismissal, and a visible panel survives activity recreation.
