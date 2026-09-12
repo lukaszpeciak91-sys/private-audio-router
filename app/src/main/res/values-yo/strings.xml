@@ -19,7 +19,7 @@
     <string name="permission_overlay_title">Gba Kékeré láyè láti hàn lórí àwọn ètò míì</string>
     <string name="permission_overlay_body">Kékeré nílò àṣẹ Android “Fihàn lórí àwọn ètò míì” kí ó lè máa hàn nígbà tí o bá ń lo ètò ohùn tí a ṣe àtìlẹ́yìn fún. Àṣẹ yìí jẹ́ àṣàyàn, kò sì gba Puzru láyè láti ka tàbí ṣàkóso àwọn ètò míì. Dídarí ohùn ń ṣiṣẹ́ láìsí Kékeré.</string>
     <string name="permission_overlay_open_settings">Ṣí àwọn ààtò</string>
-    <string name="permission_overlay_not_now">Kì í ṣe báyìí</string>
+    <string name="permission_overlay_not_now">Má ṣe nísinsìnyí</string>
     <string name="settings">Àwọn ààtò</string>
     <string name="close">Tì í</string>
     <string name="overlay_controller_description">Ohun ìṣàkóso lílefo ti Puzru. Ipò: %1$s. Àwọn ìṣàkóso agbára, fífẹ̀ àti títì.</string>

@@ -13,7 +13,7 @@
     <string name="power_control">Turn am on</string>
     <string name="floating">Mini</string>
     <string name="permission_notification_title">Show am when Puzru dey on</string>
-    <string name="permission_notification_body">Puzru dey use notification wey no get sound to show say e dey on and ready to route audio, even when di app dey background. Notification na choice; Puzru still dey work without am.</string>
+    <string name="permission_notification_body">Puzru dey use notification wey no get sound to show say e dey on and ready to route audio, even when di app dey background. Notifications na choice; Puzru still dey work without dem.</string>
     <string name="permission_notification_allow">Allow notification dem</string>
     <string name="permission_notification_continue">Continue without notification dem</string>
     <string name="permission_overlay_title">Allow Mini make e show on top oda apps</string>

@@ -19,7 +19,7 @@
     <string name="permission_overlay_title">Cho phép Mini hiển thị trên các ứng dụng khác</string>
     <string name="permission_overlay_body">Mini cần quyền truy cập “Hiển thị trên các ứng dụng khác” của Android để tiếp tục hiển thị khi bạn dùng một ứng dụng thoại được hỗ trợ. Quyền truy cập này là tùy chọn và không cho phép Puzru đọc hoặc kiểm soát các ứng dụng khác. Tính năng định tuyến âm thanh hoạt động mà không cần Mini.</string>
     <string name="permission_overlay_open_settings">Mở phần cài đặt</string>
-    <string name="permission_overlay_not_now">Không phải bây giờ</string>
+    <string name="permission_overlay_not_now">Bây giờ thì không</string>
     <string name="settings">Cài đặt</string>
     <string name="close">Đóng</string>
     <string name="overlay_controller_description">Bộ điều khiển nổi của Puzru. Trạng thái: %1$s. Các nút điều khiển Bật, mở rộng và đóng.</string>
