@@ -351,6 +351,11 @@ class LegacyLocaleResourceResolutionTest {
             LocaleResolution("ceb", listOf("ceb", "ceb-PH")),
             LocaleResolution("ln", listOf("ln", "ln-CD", "ln-CG", "ln-AO", "ln-CF")),
             LocaleResolution("ckb", listOf("ckb", "ckb-IQ", "ckb-Arab-IQ")),
+            LocaleResolution("ti", listOf("ti", "ti-ET", "ti-Ethi-ET", "ti-ER")),
+            LocaleResolution("wo", listOf("wo", "wo-SN", "wo-Latn-SN")),
+            LocaleResolution("tt", listOf("tt", "tt-RU", "tt-Cyrl-RU")),
+            LocaleResolution("mi", listOf("mi", "mi-NZ", "mi-Latn-NZ")),
+            LocaleResolution("cy", listOf("cy", "cy-GB", "cy-Latn-GB")),
         ).forEach { resolution ->
             assertRequestsResolveToProductResource(context, resolution)
         }
@@ -379,6 +384,8 @@ class LegacyLocaleResourceResolutionTest {
             "az-Cyrl-AZ",
             "bs-Cyrl-BA",
             "hi-Latn-IN",
+            "tt-Latn",
+            "tt-Latn-RU",
         ).forEach { unsupportedTag ->
             assertEquals(
                 "$unsupportedTag must not silently use a supported different-script tree",

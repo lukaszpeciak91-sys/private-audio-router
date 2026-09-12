@@ -1,5 +1,62 @@
 # Progress
 
+## Five-language targeted linguistic correction
+
+- Corrected Welsh `supported` qualifiers so compatible voice apps and supported AI
+  voice playback/audio are described with `cefnogi`, not `cynnal` wording that
+  could mean hosted or maintained. Corrected Wolof support scope from acceptance
+  wording to explicit Puzru compatibility (`méngoo ak Puzru` / `ànd ak Puzru`).
+- Reworked every Tigrinya routing occurrence around `ምምራሕ ድምጺ` (directing
+  audio to an output) instead of generic `ምቕያር` (changing). The earpiece
+  destination, main loudspeaker distinction, request/result semantics, and audio
+  content boundary remain explicit. The power icon's spoken label now describes
+  both enable and disable actions; Wolof, Tatar, and Māori power labels received
+  the same two-way-control clarification.
+- Audited the shared visible-and-spoken Mini label at its production call sites for
+  all five locales. Tigrinya changed ambiguous standalone `ንእሽቶ` (“small one”)
+  to the familiar Ethiopic-script product-size loan `ሚኒ`. Wolof `Bu ndaw`,
+  Tatar `Мини`, Māori `Iti`, and Welsh `Mini` remain concise, grammatical compact-
+  controller labels; no offensive, sexual, insulting, embarrassing, or unrelated
+  technical collision was identified. Wolof and Māori semantic size labels can
+  still denote smallness outside this UI, but controller context prevents a
+  material collision.
+- Re-ran separate reverse-semantic reviews of notification and overlay permissions,
+  the Privacy Summary, About, ON/ACTIVE/READY/WAITING, subscription/region/account,
+  earpiece/loudspeaker, provider-side privacy, and third-party-control boundaries.
+  No additional claim defect was found. This is Translation Skill self-review, not
+  independent linguistic acceptance; the recorded review recommendations remain.
+
+## Tigrinya, Wolof, Tatar, Māori, and Welsh localization batch
+
+- Architecture review accepted the canonical logical tags `ti`, `wo`, `tt`, `mi`,
+  and `cy`, each with the matching language-only Android resource qualifier. Their
+  CLDR default identities are respectively Ethiopic/ET, Latin/SN, Cyrillic/RU,
+  Latin/NZ, and Latin/GB; all are LTR. Region and default-script qualifiers would
+  narrow rather than improve the product identities, and no Android/Java legacy
+  alias applies. Tatar intentionally supports the default Cyrillic form, not the
+  distinct Latin-script form.
+- Added complete `values-ti`, `values-wo`, `values-tt`, `values-mi`, and
+  `values-cy` product localizations. Each supplies all 75 localizable strings from
+  current authoritative English while the ten explicitly non-translatable
+  resources continue to fall back by design. The live app-owned inventory now has
+  108 non-English resource configurations; no historical snapshot or hardcoded
+  inventory count was changed.
+- Existing resource discovery automatically includes all five locales in build
+  filtering, generated `LocaleConfig`, and the platform-native picker. Generic
+  instrumentation coverage now verifies language, likely-region, and
+  likely-script-expanded requests for every new locale, and JVM coverage verifies
+  canonical identity plus non-empty native platform names. The shared
+  locale-derived LTR behavior requires no runtime or bidi special case.
+- Translation Skill self-review was performed separately for every locale,
+  including actor/action/object/destination/condition/negation/qualifier/
+  optionality/scope checks for Permission UX, Privacy, About, and routing copy.
+  Independent linguistic audit, native-speaker review, runtime rendering, Mini
+  measurement, and physical-device validation are still pending and are not
+  claimed. Tigrinya and Wolof technical UI terminology, Tatar audio terminology,
+  Māori technical idiom, and Welsh product naturalness merit particular
+  independent review.
+
+
 ## Central Kurdish CI contract reconciliation
 
 - Kurmanji's contract continues to require the canonical Latin `values-b+ku+Latn`
