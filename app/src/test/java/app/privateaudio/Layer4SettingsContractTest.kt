@@ -95,6 +95,7 @@ class Layer4SettingsContractTest {
 
     @Test
     fun privacySummaryUsesTheSingleSettingsModalAndKeepsCanonicalPolicyAvailableOnline() {
+        val settingsSheet = settingsSource.kotlinDeclaration("fun SettingsSheet(")
         assertTrue(settingsSource.contains("tag = \"settings_privacy_policy\""))
         assertTrue(settingsSource.contains("SettingsPage.PRIVACY_POLICY -> PrivacyPolicyPage("))
         val privacyPolicyPage = settingsSource.method(
@@ -110,7 +111,7 @@ class Layer4SettingsContractTest {
         assertTrue(privacyPolicyPage.contains("R.string.settings_privacy_policy_language"))
         assertTrue(privacyPolicyPage.contains("tag = \"privacy_policy_online\""))
         assertTrue(privacyPolicyPage.contains("onClick = onPrivacyPolicyOnlineClick"))
-        assertEquals(1, settingsSource.occurrences("Dialog("))
+        assertEquals(1, settingsSheet.occurrences("Dialog("))
 
         assertTrue(settingsSource.contains("ContactBlock(onContactClick)"))
 
