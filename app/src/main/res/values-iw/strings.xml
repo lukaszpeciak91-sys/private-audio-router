@@ -12,6 +12,14 @@
     <string name="state_error">שגיאה</string>
     <string name="power_control">הפעלה/כיבוי</string>
     <string name="floating">מיני</string>
+    <string name="permission_notification_title">הצגה כש-Puzru מופעל</string>
+    <string name="permission_notification_body">Puzru משתמש בהתראה שקטה כדי לציין שהוא מופעל ומוכן להחליף את פלט האודיו, גם כשהאפליקציה פועלת ברקע. ההתראות הן אופציונליות; Puzru פועל גם בלעדיהן.</string>
+    <string name="permission_notification_allow">אישור התראות</string>
+    <string name="permission_notification_continue">המשך ללא התראות</string>
+    <string name="permission_overlay_title">מתן הרשאה להצגת מיני מעל אפליקציות אחרות</string>
+    <string name="permission_overlay_body">מיני זקוק לגישת Android מסוג „הצגה מעל אפליקציות אחרות” כדי להישאר גלוי בזמן השימוש באפליקציית קול נתמכת. הגישה הזו אופציונלית ואינה מאפשרת ל-Puzru לקרוא אפליקציות אחרות או לשלוט בהן. החלפת פלט האודיו פועלת ללא מיני.</string>
+    <string name="permission_overlay_open_settings">פתיחת ההגדרות</string>
+    <string name="permission_overlay_not_now">לא עכשיו</string>
     <string name="settings">הגדרות</string>
     <string name="close">סגירה</string>
     <string name="overlay_controller_description">הבקר הצף של Puzru. מצב: %1$s. פקדים להפעלה/כיבוי, להרחבה ולסגירה.</string>

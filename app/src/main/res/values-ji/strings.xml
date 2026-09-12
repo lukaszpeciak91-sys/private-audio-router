@@ -12,6 +12,14 @@
     <string name="state_error">פעלער</string>
     <string name="power_control">אנצינדן/אויסלעשן</string>
     <string name="floating">מיני</string>
+    <string name="permission_notification_title">ווייזן ווען Puzru איז אנגעצונדן</string>
+    <string name="permission_notification_body">Puzru ניצט אַ שטילע מעלדונג צו ווייזן אַז עס איז אנגעצונדן און גרייט איבערצושטעלן דעם אודיא, אויך ווען די אַפּ לויפט אינעם הינטערגרונט. מעלדונגען זענען אפציאנאל; Puzru ארבעט ווייטער אן זיי.</string>
+    <string name="permission_notification_allow">ערלויבן מעלדונגען</string>
+    <string name="permission_notification_continue">ווייטער אן מעלדונגען</string>
+    <string name="permission_overlay_title">ערלויבן מיני איבער אנדערע אַפּס</string>
+    <string name="permission_overlay_body">מיני דארף Android צוטריט פאר „ווייזן איבער אנדערע אַפּס“ כדי צו בלייבן זעבאר בשעת איר ניצט אַ געשטיצטע שטימע־אַפּ. דער צוטריט איז אפציאנאל און ערלויבט Puzru נישט צו לייענען אדער קאנטראלירן אנדערע אַפּס. איבערשטעלן דעם אודיא ארבעט אן מיני.</string>
+    <string name="permission_overlay_open_settings">עפענען סעטינגס</string>
+    <string name="permission_overlay_not_now">נישט איצט</string>
     <string name="settings">סעטינגס</string>
     <string name="close">פארמאכן</string>
     <string name="overlay_controller_description">דער שוועבנדיגער קאנטראלער פון Puzru. סטאטוס: %1$s. קאנטראלן פאר אנצינדן/אויסלעשן, פארגרעסערן און פארמאכן.</string>

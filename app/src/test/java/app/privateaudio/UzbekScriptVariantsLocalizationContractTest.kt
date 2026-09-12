@@ -35,12 +35,17 @@ class UzbekScriptVariantsLocalizationContractTest {
 
     @Test
     fun variantsMatchTheExistingUzbekKeyAndPlaceholderContract() {
-        val expectedKeys = values(latinFile).keys
+        val latinValues = values(latinFile)
+        val expectedKeys = latinValues.keys
         listOf(cyrillicFile, arabicFile).forEach { file ->
             val candidate = values(file)
             assertEquals("${file.parentFile.name} keys", expectedKeys, candidate.keys)
             expectedKeys.forEach { key ->
-                assertEquals("${file.parentFile.name}/$key placeholders", placeholders(values(latinFile).getValue(key)), placeholders(candidate.getValue(key)))
+                assertEquals(
+                    "${file.parentFile.name}/$key placeholders",
+                    placeholders(latinValues.getValue(key)),
+                    placeholders(candidate.getValue(key)),
+                )
             }
             assertTrue("${file.parentFile.name} must be NFC", Normalizer.isNormalized(file.readText(), Normalizer.Form.NFC))
         }

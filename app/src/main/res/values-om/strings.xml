@@ -12,6 +12,14 @@
     <string name="state_error">Dogoggora</string>
     <string name="power_control">Bani/Dhaamsi</string>
     <string name="floating">Xiqqaa</string>
+    <string name="permission_notification_title">Yeroo Puzru banaa ta’e agarsiisi</string>
+    <string name="permission_notification_body">Puzru banaa fi sagalee qajeelchuuf qophaa’aa ta’uu isaa, yeroo appiin duubbee irratti hojjetus dabalatee, beeksisa sagalee hin qabneen agarsiisa. Beeksisawwan filannoo dha; Puzru isaan malee illee ni hojjeta.</string>
+    <string name="permission_notification_allow">Beeksisawwan hayyami</string>
+    <string name="permission_notification_continue">Beeksisa malee itti fufi</string>
+    <string name="permission_overlay_title">Xiqqaan appiiwwan biroo irratti akka mul’atu hayyami</string>
+    <string name="permission_overlay_body">Xiqqaan yeroo appii sagalee deeggaramu fayyadamtu mul’atee turuuf hayyama Android “Appiiwwan biroo irratti agarsiisi” barbaada. Hayyamni kun filannoo dha; Puzru appiiwwan biroo akka dubbisu ykn to’atu hin hayyamu. Sagalee qajeelchuun Xiqqaa malee ni hojjeta.</string>
+    <string name="permission_overlay_open_settings">Qindaa’ina bani</string>
+    <string name="permission_overlay_not_now">Amma miti</string>
     <string name="settings">Qindaa\'ina</string>
     <string name="close">Cufi</string>
     <string name="overlay_controller_description">To\'ataa Xiqqaa bololi\'aa Puzru. Haala: %1$s. To\'annoowwan banuu, bal\'isuu fi cufuu.</string>

@@ -12,6 +12,14 @@
     <string name="state_error">Chyba</string>
     <string name="power_control">Zapnúť</string>
     <string name="floating">Mini</string>
+    <string name="permission_notification_title">Zobraziť, keď je Puzru zapnuté</string>
+    <string name="permission_notification_body">Puzru pomocou tichého upozornenia ukazuje, že je zapnuté a pripravené presmerovať zvuk, a to aj keď je aplikácia na pozadí. Upozornenia sú voliteľné; Puzru funguje aj bez nich.</string>
+    <string name="permission_notification_allow">Povoliť upozornenia</string>
+    <string name="permission_notification_continue">Pokračovať bez upozornení</string>
+    <string name="permission_overlay_title">Povoliť zobrazenie Mini nad inými aplikáciami</string>
+    <string name="permission_overlay_body">Mini potrebuje prístup Androidu „Zobrazovať nad inými aplikáciami“, aby zostalo viditeľné pri používaní podporovanej hlasovej aplikácie. Tento prístup je voliteľný a neumožňuje aplikácii Puzru čítať ani ovládať iné aplikácie. Presmerovanie zvuku funguje bez Mini.</string>
+    <string name="permission_overlay_open_settings">Otvoriť nastavenia</string>
+    <string name="permission_overlay_not_now">Teraz nie</string>
     <string name="settings">Nastavenia</string>
     <string name="close">Zavrieť</string>
     <string name="overlay_controller_description">Plávajúci ovládač Puzru. Stav: %1$s. Ovládacie prvky na zapnutie, rozbalenie a zatvorenie.</string>

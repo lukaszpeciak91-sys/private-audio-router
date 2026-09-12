@@ -12,6 +12,14 @@
     <string name="state_error">Villa</string>
     <string name="power_control">Streymur</string>
     <string name="floating">Mini</string>
+    <string name="permission_notification_title">Vís, tá Puzru er tendrað</string>
+    <string name="permission_notification_body">Puzru brúkar eina ljóðleysa fráboðan til at vísa, at tað er tendrað og klárt at skifta ljóðið, eisini tá appin koyrir í bakgrundini. Fráboðanir eru valfríar; Puzru virkar eisini uttan tær.</string>
+    <string name="permission_notification_allow">Loyv fráboðanum</string>
+    <string name="permission_notification_continue">Halt fram uttan fráboðanir</string>
+    <string name="permission_overlay_title">Loyv Mini oman á øðrum appum</string>
+    <string name="permission_overlay_body">Mini krevur Android-atgongdina „Vís oman á øðrum appum“ fyri at vera sjónligt, meðan tú brúkar eina stuðlaða taluapp. Henda atgongdin er valfrí og loyvir ikki Puzru at lesa ella stýra øðrum appum. Ljóðskiftið virkar uttan Mini.</string>
+    <string name="permission_overlay_open_settings">Lat stillingar upp</string>
+    <string name="permission_overlay_not_now">Ikki nú</string>
     <string name="settings">Stillingar</string>
     <string name="close">Lat aftur</string>
     <string name="overlay_controller_description">Flótandi stýring til Puzru. Støða: %1$s. Stýringar til at tendra, víðka og lata aftur.</string>

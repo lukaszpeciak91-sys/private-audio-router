@@ -12,6 +12,14 @@
     <string name="state_error">Fehler</string>
     <string name="power_control">Einschalten</string>
     <string name="floating">Mini</string>
+    <string name="permission_notification_title">Anzeigen, wenn Puzru eingeschaltet ist</string>
+    <string name="permission_notification_body">Puzru zeigt mit einer lautlosen Benachrichtigung an, dass es eingeschaltet und zum Weiterleiten von Audio bereit ist – auch wenn die App im Hintergrund läuft. Benachrichtigungen sind optional; Puzru funktioniert auch ohne sie.</string>
+    <string name="permission_notification_allow">Benachrichtigungen zulassen</string>
+    <string name="permission_notification_continue">Ohne Benachrichtigungen fortfahren</string>
+    <string name="permission_overlay_title">Mini über anderen Apps zulassen</string>
+    <string name="permission_overlay_body">Mini benötigt den Android-Zugriff „Über anderen Apps einblenden“, damit es sichtbar bleibt, während du eine unterstützte Sprach-App verwendest. Dieser Zugriff ist optional und erlaubt Puzru nicht, andere Apps zu lesen oder zu steuern. Das Audio-Routing funktioniert ohne Mini.</string>
+    <string name="permission_overlay_open_settings">Einstellungen öffnen</string>
+    <string name="permission_overlay_not_now">Nicht jetzt</string>
     <string name="settings">Einstellungen</string>
     <string name="close">Schließen</string>
     <string name="overlay_controller_description">Schwebende Puzru-Steuerung. Status: %1$s. Bedienelemente zum Einschalten, Erweitern und Schließen.</string>

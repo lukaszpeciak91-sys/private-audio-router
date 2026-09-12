@@ -12,6 +12,14 @@
     <string name="state_error">Gabim</string>
     <string name="power_control">Ndezja</string>
     <string name="floating">Mini</string>
+    <string name="permission_notification_title">Shfaq kur Puzru është ndezur</string>
+    <string name="permission_notification_body">Puzru përdor një njoftim pa zë për të treguar se është ndezur dhe gati për të ridrejtuar audion, edhe kur aplikacioni është në sfond. Njoftimet janë opsionale; Puzru funksionon edhe pa to.</string>
+    <string name="permission_notification_allow">Lejo njoftimet</string>
+    <string name="permission_notification_continue">Vazhdo pa njoftime</string>
+    <string name="permission_overlay_title">Lejo shfaqjen e Mini mbi aplikacionet e tjera</string>
+    <string name="permission_overlay_body">Mini ka nevojë për qasjen e Android “Shfaq mbi aplikacionet e tjera” që të mbetet i dukshëm ndërsa përdor një aplikacion zanor të mbështetur. Kjo qasje është opsionale dhe nuk e lejon Puzru të lexojë ose kontrollojë aplikacione të tjera. Ridrejtimi i audios funksionon pa Mini.</string>
+    <string name="permission_overlay_open_settings">Hap cilësimet</string>
+    <string name="permission_overlay_not_now">Jo tani</string>
     <string name="settings">Cilësimet</string>
     <string name="close">Mbyll</string>
     <string name="overlay_controller_description">Kontrolluesi lundrues i Puzru. Statusi: %1$s. Kontrollet për ndezjen, zgjerimin dhe mbylljen.</string>

@@ -12,6 +12,14 @@
     <string name="state_error">Libunga</string>
     <string name="power_control">Kopelisa</string>
     <string name="floating">Ya moke</string>
+    <string name="permission_notification_title">Lakisa ntango Puzru epeli</string>
+    <string name="permission_notification_body">Puzru esalelaka liyebisi ya kimya mpo na kolakisa ete epeli mpe ebongami mpo na kotambwisa mongongo, ata ntango programɛ ezali kosala na nsima. Mayebisi ezali ya kopona; Puzru esalaka mpe soki ezali te.</string>
+    <string name="permission_notification_allow">Pesa nzela na mayebisi</string>
+    <string name="permission_notification_continue">Koba kozanga mayebisi</string>
+    <string name="permission_overlay_title">Pesa nzela Ya moke emonana likoló ya baprogramɛ mosusu</string>
+    <string name="permission_overlay_body">Ya moke esengeli na ndingisa ya Android “Kolakisa likoló ya baprogramɛ mosusu” mpo emonana ntango ozali kosalela programɛ ya mongongo oyo endimami. Ndingisa yango ezali ya kopona mpe epesaka Puzru nzela te ya kotánga to kotambwisa baprogramɛ mosusu. Kotambwisa mongongo esalaka kozanga Ya moke.</string>
+    <string name="permission_overlay_open_settings">Fungola mabongisi</string>
+    <string name="permission_overlay_not_now">Sikoyo te</string>
     <string name="settings">Mabongisi</string>
     <string name="close">Kanga</string>
     <string name="overlay_controller_description">Etambwiseli ya Puzru oyo etambolaka likoló ya écran. Ezalela: %1$s. Bisaleli ya kopelisa, kofungola mpe kokanga.</string>

@@ -12,6 +12,14 @@
     <string name="state_error">Klaida</string>
     <string name="power_control">Įjungti</string>
     <string name="floating">Mini</string>
+    <string name="permission_notification_title">Rodyti, kai „Puzru“ įjungta</string>
+    <string name="permission_notification_body">„Puzru“ tyliuoju pranešimu rodo, kad yra įjungta ir pasirengusi nukreipti garsą, taip pat kai programa veikia fone. Pranešimai neprivalomi; „Puzru“ veikia ir be jų.</string>
+    <string name="permission_notification_allow">Leisti pranešimus</string>
+    <string name="permission_notification_continue">Tęsti be pranešimų</string>
+    <string name="permission_overlay_title">Leisti „Mini“ rodyti virš kitų programų</string>
+    <string name="permission_overlay_body">Kad liktų matoma naudojant palaikomą balso programą, „Mini“ reikia „Android“ prieigos „Rodyti virš kitų programų“. Ši prieiga neprivaloma ir neleidžia „Puzru“ skaityti ar valdyti kitų programų. Garso nukreipimas veikia be „Mini“.</string>
+    <string name="permission_overlay_open_settings">Atidaryti nustatymus</string>
+    <string name="permission_overlay_not_now">Ne dabar</string>
     <string name="settings">Nustatymai</string>
     <string name="close">Uždaryti</string>
     <string name="overlay_controller_description">Slankusis „Puzru“ valdiklis. Būsena: %1$s. Įjungimo, išskleidimo ir uždarymo valdikliai.</string>

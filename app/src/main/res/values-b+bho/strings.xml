@@ -12,6 +12,14 @@
     <string name="state_error">गड़बड़ी</string>
     <string name="power_control">पावर</string>
     <string name="floating">छोट</string>
+    <string name="permission_notification_title">Puzru चालू होखे पर देखाईं</string>
+    <string name="permission_notification_body">Puzru एगो चुप सूचना से देखावेला कि ऊ चालू बा आ ऑडियो रूट करे खातिर तइयार बा, ऐप के बैकग्राउंड में रहे पर भी। सूचना वैकल्पिक बा; सूचना के बिना भी Puzru काम करेला।</string>
+    <string name="permission_notification_allow">सूचना के अनुमति दीं</string>
+    <string name="permission_notification_continue">सूचना के बिना जारी रखीं</string>
+    <string name="permission_overlay_title">छोट के दोसरा ऐप के ऊपर देखावे के अनुमति दीं</string>
+    <string name="permission_overlay_body">समर्थित वॉइस ऐप इस्तेमाल करत घरी देखात रहे खातिर छोट के Android के “दोसरा ऐप के ऊपर देखाईं” एक्सेस चाहीं। ई एक्सेस वैकल्पिक बा आ एहसे Puzru के दोसरा ऐप पढ़े भा नियंत्रित करे के अनुमति ना मिले। छोट के बिना भी ऑडियो रूटिंग काम करेला।</string>
+    <string name="permission_overlay_open_settings">सेटिंग खोलीं</string>
+    <string name="permission_overlay_not_now">अभी ना</string>
     <string name="settings">सेटिंग</string>
     <string name="close">बंद करीं</string>
     <string name="overlay_controller_description">Puzru के तैरत कंट्रोलर। स्थिति: %1$s। पावर, फइलावे आ बंद करे के कंट्रोल।</string>

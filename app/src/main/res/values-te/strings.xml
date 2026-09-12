@@ -12,6 +12,14 @@
     <string name="state_error">ఎర్రర్</string>
     <string name="power_control">ఆన్ చేయండి</string>
     <string name="floating">మినీ</string>
+    <string name="permission_notification_title">Puzru ఆన్‌లో ఉన్నప్పుడు చూపండి</string>
+    <string name="permission_notification_body">Puzru ఆన్‌లో ఉందని, ఆడియోను రూట్ చేయడానికి సిద్ధంగా ఉందని చూపడానికి నిశ్శబ్ద నోటిఫికేషన్‌ను ఉపయోగిస్తుంది, యాప్ బ్యాక్‌గ్రౌండ్‌లో ఉన్నప్పుడు కూడా. నోటిఫికేషన్‌లు ఐచ్ఛికం; అవి లేకుండానే Puzru పని చేస్తుంది.</string>
+    <string name="permission_notification_allow">నోటిఫికేషన్‌లను అనుమతించండి</string>
+    <string name="permission_notification_continue">నోటిఫికేషన్‌లు లేకుండా కొనసాగించండి</string>
+    <string name="permission_overlay_title">మినీని ఇతర యాప్‌ల పైన చూపడానికి అనుమతించండి</string>
+    <string name="permission_overlay_body">మీరు మద్దతు ఉన్న వాయిస్ యాప్‌ను ఉపయోగిస్తున్నప్పుడు కనిపిస్తూ ఉండటానికి మినీకి Android యొక్క “ఇతర యాప్‌ల పైన చూపండి” యాక్సెస్ అవసరం. ఈ యాక్సెస్ ఐచ్ఛికం మరియు ఇతర యాప్‌లను చదవడానికి లేదా నియంత్రించడానికి Puzruను అనుమతించదు. మినీ లేకుండానే ఆడియో రూటింగ్ పని చేస్తుంది.</string>
+    <string name="permission_overlay_open_settings">సెట్టింగ్‌లను తెరవండి</string>
+    <string name="permission_overlay_not_now">ఇప్పుడు వద్దు</string>
     <string name="settings">సెట్టింగ్‌లు</string>
     <string name="close">మూసివేయండి</string>
     <string name="overlay_controller_description">Puzru ఫ్లోటింగ్ కంట్రోలర్. స్థితి: %1$s. ఆన్ చేయడం, విస్తరించడం, మూసివేయడం కోసం కంట్రోల్‌లు.</string>

@@ -12,6 +12,14 @@
     <string name="state_error">Σφάλμα</string>
     <string name="power_control">Ενεργοποίηση/απενεργοποίηση</string>
     <string name="floating">Μίνι</string>
+    <string name="permission_notification_title">Εμφάνιση όταν το Puzru είναι ενεργοποιημένο</string>
+    <string name="permission_notification_body">Το Puzru χρησιμοποιεί μια αθόρυβη ειδοποίηση για να δείχνει ότι είναι ενεργοποιημένο και έτοιμο να αλλάξει την έξοδο ήχου, ακόμη και όταν η εφαρμογή βρίσκεται στο παρασκήνιο. Οι ειδοποιήσεις είναι προαιρετικές· το Puzru λειτουργεί και χωρίς αυτές.</string>
+    <string name="permission_notification_allow">Να επιτρέπονται οι ειδοποιήσεις</string>
+    <string name="permission_notification_continue">Συνέχεια χωρίς ειδοποιήσεις</string>
+    <string name="permission_overlay_title">Να επιτρέπεται η εμφάνιση του Μίνι πάνω από άλλες εφαρμογές</string>
+    <string name="permission_overlay_body">Το Μίνι χρειάζεται την πρόσβαση Android «Εμφάνιση πάνω από άλλες εφαρμογές» για να παραμένει ορατό ενώ χρησιμοποιείτε μια υποστηριζόμενη εφαρμογή φωνής. Αυτή η πρόσβαση είναι προαιρετική και δεν επιτρέπει στο Puzru να διαβάζει ή να ελέγχει άλλες εφαρμογές. Η αλλαγή εξόδου ήχου λειτουργεί χωρίς το Μίνι.</string>
+    <string name="permission_overlay_open_settings">Άνοιγμα ρυθμίσεων</string>
+    <string name="permission_overlay_not_now">Όχι τώρα</string>
     <string name="settings">Ρυθμίσεις</string>
     <string name="close">Κλείσιμο</string>
     <string name="overlay_controller_description">Αιωρούμενο χειριστήριο Puzru. Κατάσταση: %1$s. Στοιχεία ελέγχου για ενεργοποίηση/απενεργοποίηση, ανάπτυξη και κλείσιμο.</string>

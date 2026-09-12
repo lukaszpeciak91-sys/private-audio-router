@@ -12,6 +12,14 @@
     <string name="state_error">ದೋಷ</string>
     <string name="power_control">ಆನ್ ಮಾಡಿ</string>
     <string name="floating">ಮಿನಿ</string>
+    <string name="permission_notification_title">Puzru ಆನ್ ಆಗಿರುವಾಗ ತೋರಿಸಿ</string>
+    <string name="permission_notification_body">Puzru ಆನ್ ಆಗಿದೆ ಮತ್ತು ಆಡಿಯೊವನ್ನು ಮಾರ್ಗಗೊಳಿಸಲು ಸಿದ್ಧವಾಗಿದೆ ಎಂಬುದನ್ನು ತೋರಿಸಲು ಮೌನ ಅಧಿಸೂಚನೆಯನ್ನು ಬಳಸುತ್ತದೆ, ಆ್ಯಪ್ ಹಿನ್ನೆಲೆಯಲ್ಲಿರುವಾಗಲೂ ಸಹ. ಅಧಿಸೂಚನೆಗಳು ಐಚ್ಛಿಕ; ಅವುಗಳಿಲ್ಲದೆಯೂ Puzru ಕೆಲಸ ಮಾಡುತ್ತದೆ.</string>
+    <string name="permission_notification_allow">ಅಧಿಸೂಚನೆಗಳನ್ನು ಅನುಮತಿಸಿ</string>
+    <string name="permission_notification_continue">ಅಧಿಸೂಚನೆಗಳಿಲ್ಲದೆ ಮುಂದುವರಿಸಿ</string>
+    <string name="permission_overlay_title">ಮಿನಿಯನ್ನು ಇತರ ಆ್ಯಪ್‌ಗಳ ಮೇಲೆ ತೋರಿಸಲು ಅನುಮತಿಸಿ</string>
+    <string name="permission_overlay_body">ನೀವು ಬೆಂಬಲಿತ ಧ್ವನಿ ಆ್ಯಪ್ ಬಳಸುವಾಗ ಕಾಣಿಸುತ್ತಿರಲು ಮಿನಿಗೆ Androidನ “ಇತರ ಆ್ಯಪ್‌ಗಳ ಮೇಲೆ ತೋರಿಸಿ” ಪ್ರವೇಶದ ಅಗತ್ಯವಿದೆ. ಈ ಪ್ರವೇಶ ಐಚ್ಛಿಕ ಮತ್ತು ಇತರ ಆ್ಯಪ್‌ಗಳನ್ನು ಓದಲು ಅಥವಾ ನಿಯಂತ್ರಿಸಲು Puzruಗೆ ಅನುಮತಿಸುವುದಿಲ್ಲ. ಮಿನಿ ಇಲ್ಲದೆಯೂ ಆಡಿಯೊ ಮಾರ್ಗಗೊಳಿಸುವಿಕೆ ಕೆಲಸ ಮಾಡುತ್ತದೆ.</string>
+    <string name="permission_overlay_open_settings">ಸೆಟ್ಟಿಂಗ್‌ಗಳನ್ನು ತೆರೆಯಿರಿ</string>
+    <string name="permission_overlay_not_now">ಈಗ ಬೇಡ</string>
     <string name="settings">ಸೆಟ್ಟಿಂಗ್‌ಗಳು</string>
     <string name="close">ಮುಚ್ಚಿ</string>
     <string name="overlay_controller_description">Puzru ಫ್ಲೋಟಿಂಗ್ ಕಂಟ್ರೋಲರ್. ಸ್ಥಿತಿ: %1$s. ಆನ್ ಮಾಡಲು, ವಿಸ್ತರಿಸಲು ಮತ್ತು ಮುಚ್ಚಲು ನಿಯಂತ್ರಣಗಳು.</string>

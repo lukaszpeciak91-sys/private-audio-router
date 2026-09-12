@@ -12,6 +12,14 @@
     <string name="state_error">Hadisoana</string>
     <string name="power_control">Fampandehanana</string>
     <string name="floating">Kely</string>
+    <string name="permission_notification_title">Asehoy rehefa mandeha ny Puzru</string>
+    <string name="permission_notification_body">Mampiasa fampandrenesana mangina ny Puzru mba hampisehoana fa mandeha sy vonona hampitodika ny feo izy, na dia mandeha any ambadika aza ny rindranasa. Tsy voatery ny fampandrenesana; mbola mandeha tsy misy azy ireo ny Puzru.</string>
+    <string name="permission_notification_allow">Avelao ny fampandrenesana</string>
+    <string name="permission_notification_continue">Tohizo tsy misy fampandrenesana</string>
+    <string name="permission_overlay_title">Avelao hiseho eo ambonin’ny rindranasa hafa i Kely</string>
+    <string name="permission_overlay_body">Mila fahazoan-dàlana Android “Asehoy eo ambonin’ny rindranasa hafa” i Kely mba hijanona ho hita rehefa mampiasa rindranasa feo tohanana ianao. Tsy voatery io fahazoan-dàlana io ary tsy mamela an’i Puzru hamaky na hifehy rindranasa hafa. Mandeha tsy misy an’i Kely ny fampitodihana feo.</string>
+    <string name="permission_overlay_open_settings">Sokafy ny fikirana</string>
+    <string name="permission_overlay_not_now">Tsy izao</string>
     <string name="settings">Fikirana</string>
     <string name="close">Akatona</string>
     <string name="overlay_controller_description">Fanaraha-maso mitsingevana an’ny Puzru. Toetra: %1$s. Bokotra hampandehanana, hanitarana ary hanakatonana.</string>

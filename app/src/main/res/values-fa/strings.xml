@@ -12,6 +12,14 @@
     <string name="state_error">خطا</string>
     <string name="power_control">روشن کردن</string>
     <string name="floating">مینی</string>
+    <string name="permission_notification_title">نمایش هنگام روشن بودن Puzru</string>
+    <string name="permission_notification_body">Puzru با یک اعلان بی‌صدا نشان می‌دهد که روشن و آمادهٔ هدایت صدا است، حتی وقتی برنامه در پس‌زمینه است. اعلان‌ها اختیاری هستند؛ Puzru بدون آن‌ها هم کار می‌کند.</string>
+    <string name="permission_notification_allow">اجازه دادن به اعلان‌ها</string>
+    <string name="permission_notification_continue">ادامه بدون اعلان‌ها</string>
+    <string name="permission_overlay_title">اجازه به مینی برای نمایش روی برنامه‌های دیگر</string>
+    <string name="permission_overlay_body">مینی برای اینکه هنگام استفاده از یک برنامهٔ صوتی پشتیبانی‌شده قابل‌مشاهده بماند، به دسترسی Android برای «نمایش روی برنامه‌های دیگر» نیاز دارد. این دسترسی اختیاری است و به Puzru اجازه نمی‌دهد برنامه‌های دیگر را بخواند یا کنترل کند. هدایت صدا بدون مینی هم کار می‌کند.</string>
+    <string name="permission_overlay_open_settings">باز کردن تنظیمات</string>
+    <string name="permission_overlay_not_now">اکنون نه</string>
     <string name="settings">تنظیمات</string>
     <string name="close">بستن</string>
     <string name="overlay_controller_description">کنترل‌کننده شناور مینی Puzru. وضعیت: %1$s. کنترل‌های روشن کردن، باز کردن و بستن.</string>

@@ -12,6 +12,14 @@
     <string name="state_error">Қате</string>
     <string name="power_control">Қуат</string>
     <string name="floating">Мини</string>
+    <string name="permission_notification_title">Puzru қосулы кезде көрсету</string>
+    <string name="permission_notification_body">Puzru қосулы және аудионы бағыттауға дайын екенін, соның ішінде қолданба фонда болғанда да, дыбыссыз хабарландыру арқылы көрсетеді. Хабарландырулар міндетті емес; Puzru оларсыз да жұмыс істейді.</string>
+    <string name="permission_notification_allow">Хабарландыруларға рұқсат беру</string>
+    <string name="permission_notification_continue">Хабарландыруларсыз жалғастыру</string>
+    <string name="permission_overlay_title">Миниді басқа қолданбалардың үстінде көрсетуге рұқсат беру</string>
+    <string name="permission_overlay_body">Қолдау көрсетілетін дауыстық қолданбаны пайдаланған кезде көрініп тұру үшін Миниге Android жүйесінің «Басқа қолданбалардың үстінде көрсету» рұқсаты қажет. Бұл рұқсат міндетті емес және Puzru қолданбасына басқа қолданбаларды оқуға немесе басқаруға мүмкіндік бермейді. Аудионы бағыттау Минисіз де жұмыс істейді.</string>
+    <string name="permission_overlay_open_settings">Параметрлерді ашу</string>
+    <string name="permission_overlay_not_now">Қазір емес</string>
     <string name="settings">Параметрлер</string>
     <string name="close">Жабу</string>
     <string name="overlay_controller_description">Puzru қалқымалы басқару құралы. Күйі: %1$s. Puzru-ны қосу немесе өшіру, басқару құралын кеңейту және жабу элементтері.</string>

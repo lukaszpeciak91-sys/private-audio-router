@@ -12,6 +12,14 @@
     <string name="state_error">Àṣìṣe</string>
     <string name="power_control">Agbára</string>
     <string name="floating">Kékeré</string>
+    <string name="permission_notification_title">Fihàn nígbà tí Puzru bá wà ní titan</string>
+    <string name="permission_notification_body">Puzru ń lo ìfitónilétí tí kò ní ohùn láti fi hàn pé ó wà ní titan, ó sì ti ṣetán láti darí ohùn, títí kan ìgbà tí ètò náà bá ń ṣiṣẹ́ lẹ́yìn. Ìfitónilétí jẹ́ àṣàyàn; Puzru ṣì ń ṣiṣẹ́ láìsí wọn.</string>
+    <string name="permission_notification_allow">Gba àwọn ìfitónilétí láyè</string>
+    <string name="permission_notification_continue">Tẹ̀síwájú láìsí ìfitónilétí</string>
+    <string name="permission_overlay_title">Gba Kékeré láyè láti hàn lórí àwọn ètò míì</string>
+    <string name="permission_overlay_body">Kékeré nílò àṣẹ Android “Fihàn lórí àwọn ètò míì” kí ó lè máa hàn nígbà tí o bá ń lo ètò ohùn tí a ṣe àtìlẹ́yìn fún. Àṣẹ yìí jẹ́ àṣàyàn, kò sì gba Puzru láyè láti ka tàbí ṣàkóso àwọn ètò míì. Dídarí ohùn ń ṣiṣẹ́ láìsí Kékeré.</string>
+    <string name="permission_overlay_open_settings">Ṣí àwọn ààtò</string>
+    <string name="permission_overlay_not_now">Má ṣe nísinsìnyí</string>
     <string name="settings">Àwọn ààtò</string>
     <string name="close">Tì í</string>
     <string name="overlay_controller_description">Ohun ìṣàkóso lílefo ti Puzru. Ipò: %1$s. Àwọn ìṣàkóso agbára, fífẹ̀ àti títì.</string>

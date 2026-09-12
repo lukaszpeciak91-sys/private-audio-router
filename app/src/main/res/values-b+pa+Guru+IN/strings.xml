@@ -12,6 +12,14 @@
     <string name="state_error">ਤਰੁੱਟੀ</string>
     <string name="power_control">ਪਾਵਰ</string>
     <string name="floating">ਕੰਪੈਕਟ</string>
+    <string name="permission_notification_title">Puzru ਦੇ ਚਾਲੂ ਹੋਣ ਵੇਲੇ ਦਿਖਾਓ</string>
+    <string name="permission_notification_body">Puzru ਇੱਕ ਸ਼ਾਂਤ ਸੂਚਨਾ ਰਾਹੀਂ ਦਿਖਾਉਂਦਾ ਹੈ ਕਿ ਇਹ ਚਾਲੂ ਹੈ ਅਤੇ ਆਡੀਓ ਬਦਲਣ ਲਈ ਤਿਆਰ ਹੈ, ਭਾਵੇਂ ਐਪ ਬੈਕਗ੍ਰਾਊਂਡ ਵਿੱਚ ਹੋਵੇ। ਸੂਚਨਾਵਾਂ ਵਿਕਲਪਿਕ ਹਨ; Puzru ਇਨ੍ਹਾਂ ਤੋਂ ਬਿਨਾਂ ਵੀ ਕੰਮ ਕਰਦਾ ਹੈ।</string>
+    <string name="permission_notification_allow">ਸੂਚਨਾਵਾਂ ਦੀ ਇਜਾਜ਼ਤ ਦਿਓ</string>
+    <string name="permission_notification_continue">ਸੂਚਨਾਵਾਂ ਤੋਂ ਬਿਨਾਂ ਜਾਰੀ ਰੱਖੋ</string>
+    <string name="permission_overlay_title">ਕੰਪੈਕਟ ਨੂੰ ਹੋਰ ਐਪਾਂ ਦੇ ਉੱਪਰ ਦਿਖਾਉਣ ਦੀ ਇਜਾਜ਼ਤ ਦਿਓ</string>
+    <string name="permission_overlay_body">ਕਿਸੇ ਸਮਰਥਿਤ ਵੌਇਸ ਐਪ ਦੀ ਵਰਤੋਂ ਕਰਦੇ ਸਮੇਂ ਦਿਖਾਈ ਦਿੰਦੇ ਰਹਿਣ ਲਈ ਕੰਪੈਕਟ ਨੂੰ Android ਦੀ “ਹੋਰ ਐਪਾਂ ਦੇ ਉੱਪਰ ਦਿਖਾਓ” ਪਹੁੰਚ ਦੀ ਲੋੜ ਹੈ। ਇਹ ਪਹੁੰਚ ਵਿਕਲਪਿਕ ਹੈ ਅਤੇ Puzru ਨੂੰ ਹੋਰ ਐਪਾਂ ਪੜ੍ਹਨ ਜਾਂ ਕੰਟਰੋਲ ਕਰਨ ਦੀ ਇਜਾਜ਼ਤ ਨਹੀਂ ਦਿੰਦੀ। ਆਡੀਓ ਬਦਲਣਾ ਕੰਪੈਕਟ ਤੋਂ ਬਿਨਾਂ ਵੀ ਕੰਮ ਕਰਦਾ ਹੈ।</string>
+    <string name="permission_overlay_open_settings">ਸੈਟਿੰਗਾਂ ਖੋਲ੍ਹੋ</string>
+    <string name="permission_overlay_not_now">ਹੁਣੇ ਨਹੀਂ</string>
     <string name="settings">ਸੈਟਿੰਗਾਂ</string>
     <string name="close">ਬੰਦ ਕਰੋ</string>
     <string name="overlay_controller_description">Puzru ਕੰਪੈਕਟ ਕੰਟਰੋਲਰ। ਸਥਿਤੀ: %1$s। ਪਾਵਰ ਚਾਲੂ ਜਾਂ ਬੰਦ ਕਰਨ, ਫੈਲਾਉਣ ਅਤੇ ਬੰਦ ਕਰਨ ਲਈ ਕੰਟਰੋਲ।</string>

@@ -12,6 +12,14 @@
     <string name="state_error">Greška</string>
     <string name="power_control">Uključivanje/isključivanje</string>
     <string name="floating">Mini</string>
+    <string name="permission_notification_title">Prikaži kada je Puzru uključen</string>
+    <string name="permission_notification_body">Puzru koristi tiho obavještenje da pokaže da je uključen i spreman za prebacivanje zvuka, čak i kada je aplikacija u pozadini. Obavještenja su opciona; Puzru radi i bez njih.</string>
+    <string name="permission_notification_allow">Dozvoli obavještenja</string>
+    <string name="permission_notification_continue">Nastavi bez obavještenja</string>
+    <string name="permission_overlay_title">Dozvoli Mini preko drugih aplikacija</string>
+    <string name="permission_overlay_body">Mini zahtijeva Android pristup „Prikaz preko drugih aplikacija“ da bi ostao vidljiv dok koristite podržanu glasovnu aplikaciju. Ovaj pristup je opcionalan i ne omogućava aplikaciji Puzru da čita ili kontroliše druge aplikacije. Prebacivanje zvuka radi bez Minija.</string>
+    <string name="permission_overlay_open_settings">Otvori podešavanja</string>
+    <string name="permission_overlay_not_now">Ne sada</string>
     <string name="settings">Podešavanja</string>
     <string name="close">Zatvori</string>
     <string name="overlay_controller_description">Plutajući kontroler Puzru. Status: %1$s. Kontrole za uključivanje/isključivanje, proširivanje i zatvaranje.</string>

@@ -12,6 +12,14 @@
     <string name="state_error">Hitilafu</string>
     <string name="power_control">Washa</string>
     <string name="floating">Mini</string>
+    <string name="permission_notification_title">Onyesha Puzru ikiwa imewashwa</string>
+    <string name="permission_notification_body">Puzru hutumia arifa tulivu kuonyesha kuwa imewashwa na iko tayari kuelekeza sauti, hata wakati programu iko chinichini. Arifa ni za hiari; Puzru bado hufanya kazi bila arifa hizo.</string>
+    <string name="permission_notification_allow">Ruhusu arifa</string>
+    <string name="permission_notification_continue">Endelea bila arifa</string>
+    <string name="permission_overlay_title">Ruhusu Mini ionekane juu ya programu nyingine</string>
+    <string name="permission_overlay_body">Mini inahitaji ruhusa ya Android ya “Kuonekana juu ya programu nyingine” ili iendelee kuonekana unapotumia programu ya sauti inayoungwa mkono. Ruhusa hii ni ya hiari na hairuhusu Puzru kusoma au kudhibiti programu nyingine. Uelekezaji wa sauti hufanya kazi bila Mini.</string>
+    <string name="permission_overlay_open_settings">Fungua mipangilio</string>
+    <string name="permission_overlay_not_now">Si sasa</string>
     <string name="settings">Mipangilio</string>
     <string name="close">Funga</string>
     <string name="overlay_controller_description">Kidhibiti kinachoelea cha Puzru. Hali: %1$s. Vidhibiti vya kuwasha, kupanua na kufunga.</string>

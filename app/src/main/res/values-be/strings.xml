@@ -12,6 +12,14 @@
     <string name="state_error">Памылка</string>
     <string name="power_control">Уключыць</string>
     <string name="floating">Міні</string>
+    <string name="permission_notification_title">Паказваць, калі Puzru ўключана</string>
+    <string name="permission_notification_body">Puzru выкарыстоўвае ціхае апавяшчэнне, каб паказваць, што праграма ўключана і гатова перанакіроўваць гук, у тым ліку калі яна працуе ў фонавым рэжыме. Апавяшчэнні неабавязковыя; Puzru працуе і без іх.</string>
+    <string name="permission_notification_allow">Дазволіць апавяшчэнні</string>
+    <string name="permission_notification_continue">Працягнуць без апавяшчэнняў</string>
+    <string name="permission_overlay_title">Дазволіць Міні паверх іншых праграм</string>
+    <string name="permission_overlay_body">Каб заставацца бачным падчас выкарыстання падтрымліваемай галасавой праграмы, Міні патрэбен доступ Android «Паверх іншых праграм». Гэты доступ неабавязковы і не дазваляе Puzru чытаць іншыя праграмы або кіраваць імі. Перанакіраванне гуку працуе без Міні.</string>
+    <string name="permission_overlay_open_settings">Адкрыць налады</string>
+    <string name="permission_overlay_not_now">Не зараз</string>
     <string name="settings">Налады</string>
     <string name="close">Закрыць</string>
     <string name="overlay_controller_description">Плывучы элемент кіравання Puzru. Стан: %1$s. Элементы кіравання ўключэннем, разгортваннем і закрыццём.</string>

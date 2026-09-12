@@ -12,6 +12,14 @@
     <string name="state_error">Error</string>
     <string name="power_control">I-on</string>
     <string name="floating">Mini</string>
+    <string name="permission_notification_title">Ipakita kapag naka-on ang Puzru</string>
+    <string name="permission_notification_body">Gumagamit ang Puzru ng tahimik na notification upang ipakitang naka-on ito at handang ilipat ang audio, kahit nasa background ang app. Opsyonal ang mga notification; gumagana pa rin ang Puzru kahit wala ang mga ito.</string>
+    <string name="permission_notification_allow">Payagan ang mga notification</string>
+    <string name="permission_notification_continue">Magpatuloy nang walang mga notification</string>
+    <string name="permission_overlay_title">Payagang lumitaw ang Mini sa ibabaw ng ibang app</string>
+    <string name="permission_overlay_body">Kailangan ng Mini ang access ng Android na “I-display sa ibabaw ng ibang app” upang manatiling nakikita habang gumagamit ka ng sinusuportahang voice app. Opsyonal ang access na ito at hindi nito pinapayagan ang Puzru na basahin o kontrolin ang ibang app. Gumagana ang paglilipat ng audio kahit walang Mini.</string>
+    <string name="permission_overlay_open_settings">Buksan ang mga setting</string>
+    <string name="permission_overlay_not_now">Hindi ngayon</string>
     <string name="settings">Mga Setting</string>
     <string name="close">Isara</string>
     <string name="overlay_controller_description">Floating controller ng Puzru. Status: %1$s. Mga control para i-on, i-expand, at isara.</string>

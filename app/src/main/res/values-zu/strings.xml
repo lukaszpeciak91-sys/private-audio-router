@@ -12,6 +12,14 @@
     <string name="state_error">Iphutha</string>
     <string name="power_control">Vula/Cisha</string>
     <string name="floating">Mini</string>
+    <string name="permission_notification_title">Bonisa uma i-Puzru ivuliwe</string>
+    <string name="permission_notification_body">I-Puzru isebenzisa isaziso esithulile ukuze ibonise ukuthi ivuliwe futhi isilungele ukuqondisa umsindo, ngisho nalapho i-app isebenza ngemuva. Izaziso ziyazikhethela; i-Puzru isebenza ngaphandle kwazo.</string>
+    <string name="permission_notification_allow">Vumela izaziso</string>
+    <string name="permission_notification_continue">Qhubeka ngaphandle kwezaziso</string>
+    <string name="permission_overlay_title">Vumela i-Mini ukuthi ibonakale phezu kwamanye ama-app</string>
+    <string name="permission_overlay_body">I-Mini idinga ukufinyelela kwe-Android kokuthi “Bonisa phezu kwamanye ama-app” ukuze ihlale ibonakala lapho usebenzisa i-app yezwi esekelwayo. Lokhu kufinyelela kuyazikhethela futhi akuvumeli i-Puzru ukuthi ifunde noma ilawule amanye ama-app. Ukuqondisa umsindo kusebenza ngaphandle kwe-Mini.</string>
+    <string name="permission_overlay_open_settings">Vula izilungiselelo</string>
+    <string name="permission_overlay_not_now">Hhayi manje</string>
     <string name="settings">Izilungiselelo</string>
     <string name="close">Vala</string>
     <string name="overlay_controller_description">Isilawuli esintantayo se-Puzru. Isimo: %1$s. Izilawuli zokuvula/ukucisha, ukunweba nokuvala.</string>

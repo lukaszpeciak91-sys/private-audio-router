@@ -12,6 +12,14 @@
     <string name="state_error">Hata</string>
     <string name="power_control">Aç</string>
     <string name="floating">Mini</string>
+    <string name="permission_notification_title">Puzru açıkken göster</string>
+    <string name="permission_notification_body">Puzru, uygulama arka plandayken de açık ve sesi yönlendirmeye hazır olduğunu sessiz bir bildirimle gösterir. Bildirimler isteğe bağlıdır; Puzru bildirimler olmadan da çalışır.</string>
+    <string name="permission_notification_allow">Bildirimlere izin ver</string>
+    <string name="permission_notification_continue">Bildirimler olmadan devam et</string>
+    <string name="permission_overlay_title">Mini’nin diğer uygulamaların üzerinde görüntülenmesine izin ver</string>
+    <string name="permission_overlay_body">Mini, desteklenen bir sesli uygulamayı kullanırken görünür kalmak için Android’in “Diğer uygulamaların üzerinde gösterme” erişimine ihtiyaç duyar. Bu erişim isteğe bağlıdır ve Puzru’nun diğer uygulamaları okumasına veya kontrol etmesine izin vermez. Ses yönlendirme Mini olmadan da çalışır.</string>
+    <string name="permission_overlay_open_settings">Ayarları aç</string>
+    <string name="permission_overlay_not_now">Şimdi değil</string>
     <string name="settings">Ayarlar</string>
     <string name="close">Kapat</string>
     <string name="overlay_controller_description">Puzru Mini denetleyicisi. Durum: %1$s. Açma, genişletme ve kapatma denetimleri.</string>

@@ -12,6 +12,14 @@
     <string name="state_error">Fel</string>
     <string name="power_control">Ström</string>
     <string name="floating">Mini</string>
+    <string name="permission_notification_title">Visa när Puzru är på</string>
+    <string name="permission_notification_body">Puzru använder en tyst avisering för att visa att det är på och redo att dirigera om ljud, även när appen körs i bakgrunden. Aviseringar är valfria; Puzru fungerar även utan dem.</string>
+    <string name="permission_notification_allow">Tillåt aviseringar</string>
+    <string name="permission_notification_continue">Fortsätt utan aviseringar</string>
+    <string name="permission_overlay_title">Tillåt att Mini visas över andra appar</string>
+    <string name="permission_overlay_body">Mini behöver Android-åtkomsten ”Visa över andra appar” för att förbli synlig medan du använder en röstapp som stöds. Åtkomsten är valfri och ger inte Puzru möjlighet att läsa eller styra andra appar. Omdirigering av ljud fungerar utan Mini.</string>
+    <string name="permission_overlay_open_settings">Öppna inställningar</string>
+    <string name="permission_overlay_not_now">Inte nu</string>
     <string name="settings">Inställningar</string>
     <string name="close">Stäng</string>
     <string name="overlay_controller_description">Flytande kontroll för Puzru. Status: %1$s. Kontroller för att slå på, expandera och stänga.</string>

@@ -12,6 +12,14 @@
     <string name="state_error">Feeler</string>
     <string name="power_control">Un/Aus</string>
     <string name="floating">Mini</string>
+    <string name="permission_notification_title">Weise wann Puzru un ass</string>
+    <string name="permission_notification_body">Puzru benotzt eng roueg Notifikatioun fir ze weisen, datt et un a prett ass, den Audio ëmzeschalten, och wann d’App am Hannergrond leeft. Notifikatioune si fakultativ; Puzru funktionéiert och ouni si.</string>
+    <string name="permission_notification_allow">Notifikatiounen erlaben</string>
+    <string name="permission_notification_continue">Ouni Notifikatioune weiderfueren</string>
+    <string name="permission_overlay_title">Erlaben, datt Mini iwwer aneren Appe gewise gëtt</string>
+    <string name="permission_overlay_body">Mini brauch den Android-Zougang „Iwwer aneren Appe weisen“, fir siichtbar ze bleiwen, wärend Dir eng ënnerstëtzt Stëmm-App benotzt. Dësen Zougang ass fakultativ an erlaabt Puzru net, aner Appen ze liesen oder ze kontrolléieren. D’Audio-Ëmschaltung funktionéiert ouni Mini.</string>
+    <string name="permission_overlay_open_settings">Astellungen opmaachen</string>
+    <string name="permission_overlay_not_now">Elo net</string>
     <string name="settings">Astellungen</string>
     <string name="close">Zoumaachen</string>
     <string name="overlay_controller_description">Schwiewend Steierung vu Puzru. Status: %1$s. Knäppercher fir un-/auszeschalten, ze vergréisseren an zouzemaachen.</string>

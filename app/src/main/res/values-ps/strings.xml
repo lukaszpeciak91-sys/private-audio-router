@@ -12,6 +12,14 @@
     <string name="state_error">تېروتنه</string>
     <string name="power_control">پاور</string>
     <string name="floating">مینی</string>
+    <string name="permission_notification_title">کله چې Puzru چالان وي، وښایئ</string>
+    <string name="permission_notification_body">Puzru د غلي خبرتیا له لارې ښيي چې چالان دی او د آډیو د لارښوونې لپاره چمتو دی، ان کله چې اپ په شالید کې وي. خبرتیاوې اختیاري دي؛ Puzru له هغو پرته هم کار کوي.</string>
+    <string name="permission_notification_allow">خبرتیاوو ته اجازه ورکړئ</string>
+    <string name="permission_notification_continue">له خبرتیاوو پرته دوام ورکړئ</string>
+    <string name="permission_overlay_title">مینی ته د نورو اپونو پر سر د ښودلو اجازه ورکړئ</string>
+    <string name="permission_overlay_body">مینی د Android «د نورو اپونو پر سر ښودل» لاسرسي ته اړتیا لري، څو د ملاتړ شوي غږیز اپ د کارولو پر مهال ښکاره پاتې شي. دا لاسرسی اختیاري دی او Puzru ته د نورو اپونو د لوستلو یا کنټرول اجازه نه ورکوي. د آډیو لارښوونه له مینی پرته هم کار کوي.</string>
+    <string name="permission_overlay_open_settings">امستنې پرانیزئ</string>
+    <string name="permission_overlay_not_now">اوس نه</string>
     <string name="settings">امستنې</string>
     <string name="close">وتړئ</string>
     <string name="overlay_controller_description">د Puzru مینی کنټرولر. حالت: %1$s. د پاور، پراخولو او تړلو کنټرولونه.</string>

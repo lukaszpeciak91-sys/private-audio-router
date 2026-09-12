@@ -12,6 +12,14 @@
     <string name="state_error">Ошибка</string>
     <string name="power_control">Включить</string>
     <string name="floating">Мини</string>
+    <string name="permission_notification_title">Показывать, когда Puzru включено</string>
+    <string name="permission_notification_body">Puzru использует тихое уведомление, чтобы показывать, что приложение включено и готово перенаправлять звук, в том числе когда оно работает в фоновом режиме. Уведомления необязательны; Puzru работает и без них.</string>
+    <string name="permission_notification_allow">Разрешить уведомления</string>
+    <string name="permission_notification_continue">Продолжить без уведомлений</string>
+    <string name="permission_overlay_title">Разрешить Мини поверх других приложений</string>
+    <string name="permission_overlay_body">Чтобы оставаться видимым во время использования поддерживаемого голосового приложения, Мини требуется доступ Android «Поверх других приложений». Этот доступ необязателен и не позволяет Puzru читать другие приложения или управлять ими. Перенаправление звука работает без Мини.</string>
+    <string name="permission_overlay_open_settings">Открыть настройки</string>
+    <string name="permission_overlay_not_now">Не сейчас</string>
     <string name="settings">Настройки</string>
     <string name="close">Закрыть</string>
     <string name="overlay_controller_description">Плавающий элемент управления Puzru. Состояние: %1$s. Элементы управления включением, разворачиванием и закрытием.</string>

@@ -12,6 +12,14 @@
     <string name="state_error">خطا</string>
     <string name="power_control">یاندیر/سؤندور</string>
     <string name="floating">مینی</string>
+    <string name="permission_notification_title">Puzru آچیق اولاندا گؤستر</string>
+    <string name="permission_notification_body">Puzru آچیق و آودیونو یؤنلندیرمه‌یه حاضیر اولدوغونو، برنامه آرخا پلندا اولاندا دا، سس‌سیز بیلدیریشله گؤستریر. بیلدیریشلر ایسته‌یه باغلیدیر؛ Puzru اونلارسیز دا ایشله‌ییر.</string>
+    <string name="permission_notification_allow">بیلدیریشلره ایجازه وئر</string>
+    <string name="permission_notification_continue">بیلدیریشلرسز داوام ائت</string>
+    <string name="permission_overlay_title">مینی‌یه باشقا برنامه‌لرین اوستونده گؤرونمه‌یه ایجازه وئر</string>
+    <string name="permission_overlay_body">دستکلنن سسلی برنامه‌دن ایستیفاده ائدرکن گؤرونن قالماق اوچون مینی‌یه Android-ین «باشقا برنامه‌لرین اوستونده گؤسترمک» گیریش ایجازه‌سی لازیمدیر. بو گیریش ایسته‌یه باغلیدیر و Puzru-یا باشقا برنامه‌لری اوخوماغا یا ایداره ائتمه‌یه ایجازه وئرمیر. آودیونو یؤنلندیرمک مینی‌سیز دا ایشله‌ییر.</string>
+    <string name="permission_overlay_open_settings">آیارلاری آچ</string>
+    <string name="permission_overlay_not_now">ایندی یوخ</string>
     <string name="settings">آیارلار</string>
     <string name="close">باغلا</string>
     <string name="overlay_controller_description">Puzru-نون اۆزن ایداره‌ئدیجی‌سی. دوروم: %1$s. یاندیرماق/سؤندورمک، گئنیشلندیرمک و باغلاماق اۆچون ایداره‌لر.</string>

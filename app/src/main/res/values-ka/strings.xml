@@ -12,6 +12,14 @@
     <string name="state_error">შეცდომა</string>
     <string name="power_control">ჩართვა/გამორთვა</string>
     <string name="floating">მინი</string>
+    <string name="permission_notification_title">ჩვენება, როცა Puzru ჩართულია</string>
+    <string name="permission_notification_body">Puzru უხმო შეტყობინებით აჩვენებს, რომ ჩართულია და მზადაა აუდიოს გადასართავად, მათ შორის, როცა აპი ფონურ რეჟიმშია. შეტყობინებები არასავალდებულოა; Puzru მათ გარეშეც მუშაობს.</string>
+    <string name="permission_notification_allow">შეტყობინებების დაშვება</string>
+    <string name="permission_notification_continue">გაგრძელება შეტყობინებების გარეშე</string>
+    <string name="permission_overlay_title">მინის სხვა აპების ზემოთ ჩვენების დაშვება</string>
+    <string name="permission_overlay_body">მინის სჭირდება Android-ის წვდომა „სხვა აპების ზემოთ ჩვენება“, რათა ხილული დარჩეს მხარდაჭერილი ხმოვანი აპის გამოყენებისას. ეს წვდომა არასავალდებულოა და Puzru-ს არ აძლევს სხვა აპების წაკითხვის ან მართვის საშუალებას. აუდიოს გადართვა მინის გარეშეც მუშაობს.</string>
+    <string name="permission_overlay_open_settings">პარამეტრების გახსნა</string>
+    <string name="permission_overlay_not_now">ახლა არა</string>
     <string name="settings">პარამეტრები</string>
     <string name="close">დახურვა</string>
     <string name="overlay_controller_description">Puzru-ს მცურავი მართვის პანელი. სტატუსი: %1$s. ჩართვის/გამორთვის, გაშლისა და დახურვის მართვის ელემენტები.</string>

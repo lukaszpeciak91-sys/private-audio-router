@@ -12,6 +12,14 @@
     <string name="state_error">Viga</string>
     <string name="power_control">Toide</string>
     <string name="floating">Mini</string>
+    <string name="permission_notification_title">Kuva, kui Puzru on sisse lülitatud</string>
+    <string name="permission_notification_body">Puzru näitab vaikse märguandega, et see on sisse lülitatud ja valmis heli suunama, ka siis, kui rakendus töötab taustal. Märguanded on valikulised; Puzru töötab ka ilma nendeta.</string>
+    <string name="permission_notification_allow">Luba märguanded</string>
+    <string name="permission_notification_continue">Jätka märguanneteta</string>
+    <string name="permission_overlay_title">Luba Mini kuvamine teiste rakenduste peal</string>
+    <string name="permission_overlay_body">Mini vajab Androidi juurdepääsu „Kuvamine teiste rakenduste peal“, et püsida toetatud häälrakenduse kasutamise ajal nähtaval. See juurdepääs on valikuline ega võimalda Puzrul teisi rakendusi lugeda ega juhtida. Heli suunamine töötab ilma Minitagi.</string>
+    <string name="permission_overlay_open_settings">Ava seaded</string>
+    <string name="permission_overlay_not_now">Mitte praegu</string>
     <string name="settings">Seaded</string>
     <string name="close">Sulge</string>
     <string name="overlay_controller_description">Puzru ujuv juhtelement. Olek: %1$s. Sisselülitamise, laiendamise ja sulgemise juhtelemendid.</string>

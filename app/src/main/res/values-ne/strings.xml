@@ -12,6 +12,14 @@
     <string name="state_error">त्रुटि</string>
     <string name="power_control">पावर</string>
     <string name="floating">मिनी</string>
+    <string name="permission_notification_title">Puzru अन हुँदा देखाउनुहोस्</string>
+    <string name="permission_notification_body">Puzru अन छ र अडियोलाई रुट गर्न तयार छ भनेर देखाउन मौन सूचना प्रयोग गर्छ, एप ब्याकग्राउन्डमा हुँदा समेत। सूचनाहरू वैकल्पिक हुन्; तिनीहरूबिना पनि Puzru ले काम गर्छ।</string>
+    <string name="permission_notification_allow">सूचनाहरूलाई अनुमति दिनुहोस्</string>
+    <string name="permission_notification_continue">सूचनाबिना जारी राख्नुहोस्</string>
+    <string name="permission_overlay_title">मिनीलाई अन्य एपमाथि देखाउन अनुमति दिनुहोस्</string>
+    <string name="permission_overlay_body">तपाईंले समर्थित भ्वाइस एप प्रयोग गर्दा देखिइरहन मिनीलाई Android को “अन्य एपमाथि देखाउनुहोस्” पहुँच चाहिन्छ। यो पहुँच वैकल्पिक हो र यसले Puzru लाई अन्य एप पढ्न वा नियन्त्रण गर्न दिँदैन। मिनिबिना पनि अडियो रुटिङले काम गर्छ।</string>
+    <string name="permission_overlay_open_settings">सेटिङहरू खोल्नुहोस्</string>
+    <string name="permission_overlay_not_now">अहिले होइन</string>
     <string name="settings">सेटिङहरू</string>
     <string name="close">बन्द गर्नुहोस्</string>
     <string name="overlay_controller_description">Puzru को फ्लोटिङ कन्ट्रोलर। स्थिति: %1$s। पावर अन वा अफ गर्ने, विस्तृत गर्ने र बन्द गर्ने नियन्त्रणहरू।</string>

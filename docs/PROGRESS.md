@@ -167,24 +167,26 @@
 
 ## Contextual permission explanations
 
+- The Permission UX localization rollout is complete across all 102 supported
+  non-English locale directories, plus the default English source. The atomic
+  eight-string notification and Mini explanation bundle was translated in controlled
+  batches, independently audited, and corrected or polished where requested. The
+  final whole-rollout audit passed, with no native-speaker validation claimed.
+- Permanent localization parity now protects all eight Permission UX keys in every
+  supported locale. The temporary completed-directory classification and the eight
+  default-English `MissingTranslation` suppressions have been removed without adding
+  exact translated-prose assertions.
 - Notification and Mini access use separate app-private, false-by-default resolved
   flags. Neither panel appears at startup; each is persisted only after an action,
   Back, or backdrop dismissal, and a visible panel survives activity recreation.
 - The first missing-permission Mini attempt explains optional access before the
   existing package Settings handoff. A later deliberate attempt opens Settings
   directly, and return still rechecks the grant before requesting one existing Mini.
-- The finalized English permission source copy is implemented as ordinary localizable
-  default resources. Supported non-English locales temporarily receive that canonical
-  English copy only through Android's normal resource fallback; no locale contains an
-  explicit English or mixed-language duplicate. No translation or independent
-  localization validation is claimed, and a controlled permission-copy localization
-  rollout remains pending. Its test architecture now uses one centralized completed
-  locale-directory classification (currently empty) and enforces atomic all-eight-or-none
-  bundles, structural and placeholder integrity, and intentional fallback without
-  freezing target-language prose. Runtime permission UX implementation is independent
-  of that translation status. Each default permission string has an intentional,
-  element-scoped `MissingTranslation` suppression; remove the temporary classification
-  and all eight suppressions when the controlled rollout reaches every supported locale.
+- The finalized English permission source copy remains ordinary localizable default
+  resources. Permanent contracts discover supported locale directories and enforce
+  complete keys, structural and placeholder integrity, and nonblank localized values
+  without freezing target-language prose. Runtime Permission UX implementation remains
+  independent of localization status.
 - Automated decision, persistence-boundary, UI-contract, and fallback-resource checks
   cover the implementation. Runtime/device checks remain pending for first use,
   grant/denial/dismissal, repeat attempts, recreation, compact landscape, RTL,
