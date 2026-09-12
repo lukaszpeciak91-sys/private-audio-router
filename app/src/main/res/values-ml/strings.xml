@@ -12,6 +12,14 @@
     <string name="state_error">പിശക്</string>
     <string name="power_control">പവർ</string>
     <string name="floating">മിനി</string>
+    <string name="permission_notification_title">Puzru ഓണായിരിക്കുമ്പോൾ കാണിക്കുക</string>
+    <string name="permission_notification_body">Puzru ഓണാണെന്നും ഓഡിയോ ഔട്ട്‌പുട്ട് മാറ്റാൻ തയ്യാറാണെന്നും കാണിക്കാൻ നിശ്ശബ്ദ അറിയിപ്പ് ഉപയോഗിക്കുന്നു, ആപ്പ് പശ്ചാത്തലത്തിലായിരിക്കുമ്പോഴും. അറിയിപ്പുകൾ ഐച്ഛികമാണ്; അവയില്ലാതെയും Puzru പ്രവർത്തിക്കും.</string>
+    <string name="permission_notification_allow">അറിയിപ്പുകൾ അനുവദിക്കുക</string>
+    <string name="permission_notification_continue">അറിയിപ്പുകളില്ലാതെ തുടരുക</string>
+    <string name="permission_overlay_title">മിനിയെ മറ്റ് ആപ്പുകൾക്ക് മുകളിൽ കാണിക്കാൻ അനുവദിക്കുക</string>
+    <string name="permission_overlay_body">പിന്തുണയ്ക്കുന്ന വോയ്‌സ് ആപ്പ് ഉപയോഗിക്കുമ്പോൾ ദൃശ്യമായി തുടരാൻ മിനിക്ക് Android-ന്റെ “മറ്റ് ആപ്പുകൾക്ക് മുകളിൽ കാണിക്കുക” ആക്‌സസ് ആവശ്യമാണ്. ഈ ആക്‌സസ് ഐച്ഛികമാണ്, മറ്റ് ആപ്പുകൾ വായിക്കാനോ നിയന്ത്രിക്കാനോ ഇത് Puzru-നെ അനുവദിക്കുന്നില്ല. മിനിയില്ലാതെയും ഓഡിയോ ഔട്ട്‌പുട്ട് മാറ്റുന്നത് പ്രവർത്തിക്കും.</string>
+    <string name="permission_overlay_open_settings">ക്രമീകരണം തുറക്കുക</string>
+    <string name="permission_overlay_not_now">ഇപ്പോൾ വേണ്ട</string>
     <string name="settings">ക്രമീകരണം</string>
     <string name="close">അടയ്ക്കുക</string>
     <string name="overlay_controller_description">Puzru മിനി കൺട്രോളർ. നില: %1$s. പവർ ഓണാക്കാനോ ഓഫാക്കാനോ, വികസിപ്പിക്കാനോ, അടയ്ക്കാനോ ഉള്ള നിയന്ത്രണങ്ങൾ.</string>

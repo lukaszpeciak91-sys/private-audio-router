@@ -12,6 +12,14 @@
     <string name="state_error">Żball</string>
     <string name="power_control">Ixgħel/itfi</string>
     <string name="floating">Mini</string>
+    <string name="permission_notification_title">Uri meta Puzru jkun mixgħul</string>
+    <string name="permission_notification_body">Puzru juża notifika siekta biex juri li huwa mixgħul u lest biex ibiddel l-output tal-awdjo, anki meta l-app tkun fl-isfond. In-notifiki huma fakultattivi; Puzru jibqa’ jaħdem mingħajrhom.</string>
+    <string name="permission_notification_allow">Ippermetti n-notifiki</string>
+    <string name="permission_notification_continue">Kompli mingħajr notifiki</string>
+    <string name="permission_overlay_title">Ippermetti li Mini jidher fuq apps oħra</string>
+    <string name="permission_overlay_body">Mini jeħtieġ l-aċċess ta’ Android “Uri fuq apps oħra” biex jibqa’ viżibbli waqt li tuża app tal-vuċi appoġġjata. Dan l-aċċess huwa fakultattiv u ma jippermettix lil Puzru jaqra jew jikkontrolla apps oħra. Il-bdil tal-output tal-awdjo jaħdem mingħajr Mini.</string>
+    <string name="permission_overlay_open_settings">Iftaħ l-issettjar</string>
+    <string name="permission_overlay_not_now">Mhux issa</string>
     <string name="settings">Issettjar</string>
     <string name="close">Agħlaq</string>
     <string name="overlay_controller_description">Kontrollur ta\' Puzru li jidher fuq apps oħra. Status: %1$s. Kontrolli biex tixgħel/titfi, tespandi u tagħlaq.</string>

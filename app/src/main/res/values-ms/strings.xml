@@ -12,6 +12,14 @@
     <string name="state_error">Ralat</string>
     <string name="power_control">Hidupkan</string>
     <string name="floating">Mini</string>
+    <string name="permission_notification_title">Tunjukkan apabila Puzru dihidupkan</string>
+    <string name="permission_notification_body">Puzru menggunakan pemberitahuan senyap untuk menunjukkan bahawa Puzru dihidupkan dan bersedia mengalihkan audio, termasuk semasa apl berjalan di latar belakang. Pemberitahuan adalah pilihan; Puzru masih berfungsi tanpanya.</string>
+    <string name="permission_notification_allow">Benarkan pemberitahuan</string>
+    <string name="permission_notification_continue">Teruskan tanpa pemberitahuan</string>
+    <string name="permission_overlay_title">Benarkan Mini dipaparkan di atas apl lain</string>
+    <string name="permission_overlay_body">Mini memerlukan akses Android “Paparkan di atas apl lain” untuk kekal kelihatan semasa anda menggunakan apl suara yang disokong. Akses ini adalah pilihan dan tidak membenarkan Puzru membaca atau mengawal apl lain. Pengalihan audio berfungsi tanpa Mini.</string>
+    <string name="permission_overlay_open_settings">Buka tetapan</string>
+    <string name="permission_overlay_not_now">Bukan sekarang</string>
     <string name="settings">Tetapan</string>
     <string name="close">Tutup</string>
     <string name="overlay_controller_description">Pengawal terapung Puzru. Status: %1$s. Kawalan untuk hidupkan, kembangkan dan tutup.</string>

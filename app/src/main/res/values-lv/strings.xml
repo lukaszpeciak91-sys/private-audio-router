@@ -12,6 +12,14 @@
     <string name="state_error">Kļūda</string>
     <string name="power_control">Ieslēgšana</string>
     <string name="floating">Mini</string>
+    <string name="permission_notification_title">Rādīt, kad Puzru ir ieslēgts</string>
+    <string name="permission_notification_body">Puzru izmanto klusu paziņojumu, lai parādītu, ka tas ir ieslēgts un gatavs pārslēgt audio, arī tad, kad lietotne darbojas fonā. Paziņojumi nav obligāti; Puzru darbojas arī bez tiem.</string>
+    <string name="permission_notification_allow">Atļaut paziņojumus</string>
+    <string name="permission_notification_continue">Turpināt bez paziņojumiem</string>
+    <string name="permission_overlay_title">Atļaut Mini rādīšanu virs citām lietotnēm</string>
+    <string name="permission_overlay_body">Mini ir nepieciešama Android piekļuve “Rādīt virs citām lietotnēm”, lai tas būtu redzams, kamēr izmantojat atbalstītu balss lietotni. Šī piekļuve nav obligāta un neļauj Puzru lasīt vai kontrolēt citas lietotnes. Audio pārslēgšana darbojas bez Mini.</string>
+    <string name="permission_overlay_open_settings">Atvērt iestatījumus</string>
+    <string name="permission_overlay_not_now">Ne tagad</string>
     <string name="settings">Iestatījumi</string>
     <string name="close">Aizvērt</string>
     <string name="overlay_controller_description">Puzru peldošais vadības panelis. Statuss: %1$s. Ieslēgšanas, izvēršanas un aizvēršanas vadīklas.</string>

@@ -12,6 +12,14 @@
     <string name="state_error">Feil</string>
     <string name="power_control">Strøm</string>
     <string name="floating">Mini</string>
+    <string name="permission_notification_title">Vis når Puzru er på</string>
+    <string name="permission_notification_body">Puzru bruker et lydløst varsel for å vise at den er på og klar til å bytte lyd, også når appen kjører i bakgrunnen. Varsler er valgfrie; Puzru fungerer fortsatt uten dem.</string>
+    <string name="permission_notification_allow">Tillat varsler</string>
+    <string name="permission_notification_continue">Fortsett uten varsler</string>
+    <string name="permission_overlay_title">Tillat at Mini vises over andre apper</string>
+    <string name="permission_overlay_body">Mini trenger Android-tilgangen «Vis over andre apper» for å forbli synlig mens du bruker en støttet taleapp. Denne tilgangen er valgfri og lar ikke Puzru lese eller kontrollere andre apper. Lydbytting fungerer uten Mini.</string>
+    <string name="permission_overlay_open_settings">Åpne innstillinger</string>
+    <string name="permission_overlay_not_now">Ikke nå</string>
     <string name="settings">Innstillinger</string>
     <string name="close">Lukk</string>
     <string name="overlay_controller_description">Flytende kontroll for Puzru. Status: %1$s. Kontroller for å slå på, utvide og lukke.</string>
