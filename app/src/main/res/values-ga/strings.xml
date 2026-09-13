@@ -11,13 +11,13 @@
     <string name="state_active">Gníomhach</string>
     <string name="state_error">Earráid</string>
     <string name="power_control">Cumhacht</string>
-    <string name="floating">Mion</string>
+    <string name="floating">Mini</string>
     <string name="permission_notification_title">Taispeáin nuair atá Puzru ar siúl</string>
     <string name="permission_notification_body">Úsáideann Puzru fógra ciúin chun a thaispeáint nuair atá sé ar siúl agus réidh chun fuaim a atreorú, fiú nuair atá an aip sa chúlra. Tá fógraí roghnach; oibríonn Puzru gan iad fós.</string>
     <string name="permission_notification_allow">Ceadaigh fógraí</string>
     <string name="permission_notification_continue">Lean ar aghaidh gan fógraí</string>
-    <string name="permission_overlay_title">Ceadaigh Mion os cionn aipeanna eile</string>
-    <string name="permission_overlay_body">Teastaíonn rochtain Android “Taispeáin os cionn aipeanna eile” ó Mhion chun fanacht infheicthe agus aip ghutha a dtacaítear léi in úsáid agat. Ar an gcéad scáileán eile, roghnaigh Puzru ón liosta agus cuir an rochtain seo ar siúl. Tá an rochtain seo roghnach agus ní ligeann sí do Puzru aipeanna eile a léamh ná a rialú. Oibríonn atreorú fuaime gan Mion.</string>
+    <string name="permission_overlay_title">Ceadaigh Mini os cionn aipeanna eile</string>
+    <string name="permission_overlay_body">Teastaíonn rochtain Android “Taispeáin os cionn aipeanna eile” ó Mini chun fanacht infheicthe agus aip ghutha a dtacaítear léi in úsáid agat. Ar an gcéad scáileán eile, roghnaigh Puzru ón liosta agus cuir an rochtain seo ar siúl. Tá an rochtain seo roghnach agus ní ligeann sí do Puzru aipeanna eile a léamh ná a rialú. Oibríonn atreorú fuaime gan Mini.</string>
     <string name="permission_overlay_open_settings">Oscail socruithe</string>
     <string name="permission_overlay_not_now">Ní anois</string>
     <string name="settings">Socruithe</string>

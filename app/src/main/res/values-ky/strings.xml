@@ -10,7 +10,7 @@
     <string name="state_waiting">Күтүүдө</string>
     <string name="state_active">Активдүү</string>
     <string name="state_error">Ката</string>
-    <string name="power_control">Кубат</string>
+    <string name="power_control">Күйгүзүү/өчүрүү</string>
     <string name="floating">Мини</string>
     <string name="permission_notification_title">Puzru күйгүзүлгөндө көрсөтүү</string>
     <string name="permission_notification_body">Puzru күйгүзүлүп, аудиону багыттоого даяр болгонун, анын ичинде колдонмо фондо турганда да, үнсүз билдирме аркылуу көрсөтөт. Билдирмелер милдеттүү эмес; Puzru аларсыз деле иштейт.</string>

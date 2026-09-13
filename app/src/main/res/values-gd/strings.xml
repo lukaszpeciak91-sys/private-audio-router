@@ -11,13 +11,13 @@
     <string name="state_active">Gnìomhach</string>
     <string name="state_error">Mearachd</string>
     <string name="power_control">Cumhachd</string>
-    <string name="floating">Beag</string>
+    <string name="floating">Mini</string>
     <string name="permission_notification_title">Seall nuair a tha Puzru air</string>
     <string name="permission_notification_body">Cleachdaidh Puzru brath sàmhach gus sealltainn nuair a tha e air agus deiseil gus fuaim a stiùireadh, fiù nuair a tha an aplacaid sa chùlaibh. Tha brathan roghainneil; obraichidh Puzru às an aonais fhathast.</string>
     <string name="permission_notification_allow">Ceadaich brathan</string>
     <string name="permission_notification_continue">Lean air adhart gun bhrathan</string>
-    <string name="permission_overlay_title">Ceadaich Beag os cionn aplacaidean eile</string>
-    <string name="permission_overlay_body">Feumaidh Beag inntrigeadh Android “Seall os cionn aplacaidean eile” gus fuireach ri fhaicinn fhad ’s a chleachdas tu aplacaid gutha ris an cuirear taic. Air an ath-sgrìn, tagh Puzru on liosta agus cuir an t-inntrigeadh seo air. Tha an t-inntrigeadh seo roghainneil agus cha leig e le Puzru aplacaidean eile a leughadh no a smachdachadh. Obraichidh stiùireadh fuaime gun Bheag.</string>
+    <string name="permission_overlay_title">Ceadaich Mini os cionn aplacaidean eile</string>
+    <string name="permission_overlay_body">Feumaidh Mini inntrigeadh Android “Seall os cionn aplacaidean eile” gus fuireach ri fhaicinn fhad ’s a chleachdas tu aplacaid gutha ris an cuirear taic. Air an ath-sgrìn, tagh Puzru on liosta agus cuir an t-inntrigeadh seo air. Tha an t-inntrigeadh seo roghainneil agus cha leig e le Puzru aplacaidean eile a leughadh no a smachdachadh. Obraichidh stiùireadh fuaime gun Mini.</string>
     <string name="permission_overlay_open_settings">Fosgail na roghainnean</string>
     <string name="permission_overlay_not_now">Chan ann an-dràsta</string>
     <string name="settings">Roghainnean</string>

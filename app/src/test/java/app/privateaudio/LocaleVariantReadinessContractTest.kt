@@ -50,7 +50,7 @@ class LocaleVariantReadinessContractTest {
     fun ordinaryReadyLocalesAreCompleteAndPreserveDurableProductBoundaries() {
         val defaultKeys = keys(File(root, "app/src/main/res/values/strings.xml")) - NON_TRANSLATABLE
         val miniLabels = mapOf(
-            "ht" to "Mini", "ky" to "Мини", "tg" to "Мини", "tk" to "Mini", "ga" to "Mion", "gd" to "Beag",
+            "ht" to "Mini", "ky" to "Мини", "tg" to "Мини", "tk" to "Mini", "ga" to "Mini", "gd" to "Mini",
             "b+az+Cyrl" to "Мини", "b+bs+Cyrl" to "Мини",
         )
         miniLabels.forEach { (configuration, mini) ->
@@ -66,6 +66,13 @@ class LocaleVariantReadinessContractTest {
             assertEquals(6, value(target, "settings_about_body").split("\\n\\n").size)
             assertTrue(value(target, "settings_about_body").contains("Napahu Studios"))
             assertFalse(target.readText().contains("ПУЗРУ"))
+        }
+        mapOf(
+            "ky" to "Күйгүзүү/өчүрүү",
+            "tg" to "Фаъол/хомӯш кардан",
+            "tk" to "Açmak/öçürmek",
+        ).forEach { (configuration, control) ->
+            assertEquals(control, value(file(configuration), "power_control"))
         }
     }
 
