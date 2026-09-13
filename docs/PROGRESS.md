@@ -821,14 +821,22 @@ this summary intentionally does not duplicate its test matrix.
 
 ## Recently completed significant changes
 
-- Prepared the final Puzru launcher-icon integration while retaining the manifest's
-  stable `@drawable/ic_launcher` contract. The text-only launcher wrapper now
-  resolves to `@drawable/puzru_launcher`; the repository owner intentionally supplies
-  the final 1024 × 1024 PNG manually at
-  `app/src/main/res/drawable-nodpi/puzru_launcher.png` for use as the Puzru launcher
-  icon source raster. That required raster is not
-  committed by this preparation change, so Android resource processing requires the
-  owner-supplied file before the full build can pass.
+- Implemented the complete text-based adaptive launcher-icon contract. The manifest's
+  standard and round icon entries now share `@mipmap/ic_launcher`; the API 26 resource
+  composes the approved `#11162F` background with separate adaptive foreground and
+  monochrome layers, while the base resource supplies the legacy fallback. The
+  foreground-service notification now uses the transparent monochrome artwork rather
+  than an opaque launcher wrapper. The repository owner intentionally supplies the
+  three final 1024 × 1024 binaries manually at
+  `app/src/main/res/drawable-nodpi/puzru_adaptive_foreground.png`,
+  `app/src/main/res/drawable-nodpi/puzru_adaptive_monochrome.png`, and
+  `app/src/main/res/drawable-nodpi/puzru_legacy_master.png`; no substitute binaries
+  are committed. Automated contracts validate resource references, exact background
+  color, PNG identity and dimensions, required RGBA/transparency/opacity, and matching
+  adaptive alpha masks. Android resource processing and binary validation remain
+  expected to fail until those owner-supplied files are present. **UNKNOWN:** actual
+  launcher masks, system splash, themed-icon treatment, and notification appearance
+  still require the physical release-branding gate in [`TEST_PLAN.md`](TEST_PLAN.md).
 
 - Reconciled supplied 2026-09-08 physical evidence from Xiaomi product `2201117TY`,
   Android 13/API 33, with Private Audio `0.1.0 (1)` where diagnostics confirmed the
