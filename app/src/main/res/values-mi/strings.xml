@@ -11,13 +11,13 @@
     <string name="state_active">E hohe ana</string>
     <string name="state_error">Hapa</string>
     <string name="power_control">Whakakā/whakaweto</string>
-    <string name="floating">Iti</string>
+    <string name="floating">Mini</string>
     <string name="permission_notification_title">Whakaaturia ina kā a Puzru</string>
     <string name="permission_notification_body">Ka whakamahi a Puzru i tētahi whakamōhiotanga ngū hei whakaatu kei te kā, ā, kua rite ki te ararere ororongo, tae atu ki te wā kei muri te taupānga. He mea kōwhiri ngā whakamōhiotanga; ka mahi tonu a Puzru me te kore aua whakamōhiotanga.</string>
     <string name="permission_notification_allow">Whakaaetia ngā whakamōhiotanga</string>
     <string name="permission_notification_continue">Haere tonu me te kore whakamōhiotanga</string>
-    <string name="permission_overlay_title">Whakaaetia a Iti ki runga i ētahi atu taupānga</string>
-    <string name="permission_overlay_body">Me whai a Iti i te urunga “Whakaatu ki runga i ētahi atu taupānga” a Android kia kitea tonutia i a koe e whakamahi ana i tētahi taupānga reo e tautokona ana. I te mata e whai ake nei, tīpakohia a Puzru i te rārangi, kātahi ka whakakā i tēnei urunga. He mea kōwhiri tēnei urunga, ā, kāore e āhei a Puzru ki te pānui, ki te whakahaere rānei i ētahi atu taupānga. Ka mahi te ararere ororongo me te kore a Iti.</string>
+    <string name="permission_overlay_title">Whakaaetia a Mini ki runga i ētahi atu taupānga</string>
+    <string name="permission_overlay_body">Me whai a Mini i te urunga “Whakaatu ki runga i ētahi atu taupānga” a Android kia kitea tonutia i a koe e whakamahi ana i tētahi taupānga reo e tautokona ana. I te mata e whai ake nei, tīpakohia a Puzru i te rārangi, kātahi ka whakakā i tēnei urunga. He mea kōwhiri tēnei urunga, ā, kāore e āhei a Puzru ki te pānui, ki te whakahaere rānei i ētahi atu taupānga. Ka mahi te ararere ororongo me te kore a Mini.</string>
     <string name="permission_overlay_open_settings">Whakatuwhera tautuhinga</string>
     <string name="permission_overlay_not_now">Kāore i tēnei wā</string>
     <string name="settings">Tautuhinga</string>

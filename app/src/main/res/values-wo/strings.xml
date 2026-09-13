@@ -11,13 +11,13 @@
     <string name="state_active">Mungi dox</string>
     <string name="state_error">Njuumte</string>
     <string name="power_control">Tàkk/Fey</string>
-    <string name="floating">Bu ndaw</string>
+    <string name="floating">Mini</string>
     <string name="permission_notification_title">Wone bu Puzru taalée</string>
     <string name="permission_notification_body">Puzru dafay jëfandikoo yëgle gu noppi ngir wone ne taal na te pare na ngir jubluwaat baat bi, ba ci bi aplikasioŋ bi nekk ci ginaaw. Yëgle yi dañuy tànn; Puzru dina dox ba tey bu ñu amul.</string>
     <string name="permission_notification_allow">May yëgle yi</string>
     <string name="permission_notification_continue">Kontine te amul yëgle</string>
-    <string name="permission_overlay_title">May Bu ndaw ci kaw yeneen aplikasioŋ</string>
-    <string name="permission_overlay_body">Bu ndaw soxla na sañ-sañu Android «Wone ci kaw yeneen aplikasioŋ» ngir mu sax di feeñ bi ngay jëfandikoo aplikasioŋu baat bu méngoo ak Puzru. Ci ekraŋ bi ci topp, tànnal Puzru ci lim bi te taal sañ-sañ boobu. Sañ-sañ boobu du lu war te du may Puzru mu jàng walla mu saytu yeneen aplikasioŋ. Jubluwaat baat bi dina dox te amul Bu ndaw.</string>
+    <string name="permission_overlay_title">May Mini ci kaw yeneen aplikasioŋ</string>
+    <string name="permission_overlay_body">Mini soxla na sañ-sañu Android «Wone ci kaw yeneen aplikasioŋ» ngir mu sax di feeñ bi ngay jëfandikoo aplikasioŋu baat bu méngoo ak Puzru. Ci ekraŋ bi ci topp, tànnal Puzru ci lim bi te taal sañ-sañ boobu. Sañ-sañ boobu du lu war te du may Puzru mu jàng walla mu saytu yeneen aplikasioŋ. Jubluwaat baat bi dina dox te amul Mini.</string>
     <string name="permission_overlay_open_settings">Ubbi paraameetar yi</string>
     <string name="permission_overlay_not_now">Déedéet, du léegi</string>
     <string name="settings">Paraameetar yi</string>
