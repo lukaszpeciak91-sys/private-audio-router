@@ -177,7 +177,7 @@ fun SettingsSheet(
     versionName: String,
     proximityFeatureEnabled: Boolean,
     onProximityFeatureChange: (Boolean) -> Unit,
-    assistantEarlyRouteEnabled: Boolean = true,
+    assistantEarlyRouteEnabled: Boolean,
     onAssistantEarlyRouteChange: (Boolean) -> Unit,
     onDiagnostics: () -> Unit,
     onDismiss: () -> Unit,

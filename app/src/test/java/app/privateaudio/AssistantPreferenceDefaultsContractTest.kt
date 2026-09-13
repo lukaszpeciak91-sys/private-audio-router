@@ -14,7 +14,7 @@ class AssistantPreferenceDefaultsContractTest {
         assertTrue(mainActivity.contains("connectedService?.isAssistantSessionContinuityEnabled ?: true"))
         assertTrue(screen.contains("assistantEarlyRouteEnabled: Boolean = true"))
         assertTrue(screen.contains("assistantSessionContinuityEnabled: Boolean = true"))
-        assertTrue(settings.contains("assistantEarlyRouteEnabled: Boolean = true"))
+        assertTrue(settings.contains("assistantEarlyRouteEnabled: Boolean,"))
         assertTrue(settings.contains("assistantSessionContinuityEnabled: Boolean = true"))
     }
 
