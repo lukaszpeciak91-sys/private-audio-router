@@ -139,5 +139,11 @@ internal fun File.isCompleteTargetLocalizationDirectory(): Boolean {
         .single { it.startsWith("unqualifiedResLocale=") }
         .substringAfter('=')
     val defaultLanguage = defaultTag.substringBefore('-')
-    return !name.startsWith("values-$defaultLanguage-r") && !name.startsWith("values-b+$defaultLanguage+")
+    val configuration = name.removePrefix("values-")
+    val isLegacyRegionVariant = Regex("${Regex.escape(defaultLanguage)}-r(?:[A-Z]{2}|[0-9]{3})").matches(configuration)
+    val bcp47Parts = configuration.removePrefix("b+").split('+')
+    val isBcp47RegionVariant = configuration.startsWith("b+") &&
+        bcp47Parts.size == 2 && bcp47Parts[0] == defaultLanguage &&
+        Regex("(?:[A-Z]{2}|[0-9]{3})").matches(bcp47Parts[1])
+    return !isLegacyRegionVariant && !isBcp47RegionVariant
 }

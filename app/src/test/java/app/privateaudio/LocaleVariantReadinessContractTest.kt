@@ -25,6 +25,12 @@ class LocaleVariantReadinessContractTest {
         assertEquals("Cyrl", Locale.forLanguageTag("az-Cyrl").script)
         assertEquals("Cyrl", Locale.forLanguageTag("bs-Cyrl").script)
         assertEquals("GB", Locale.forLanguageTag("en-GB").country)
+        mapOf("ht" to "ht", "ky" to "ky", "tg" to "tg", "tk" to "tk", "ga" to "ga", "gd" to "gd").forEach { (configuration, tag) ->
+            assertTrue(configuration, file(configuration).isFile)
+            val locale = Locale.forLanguageTag(tag)
+            assertEquals(tag, locale.toLanguageTag())
+            assertTrue("$tag native name", locale.getDisplayName(locale).isNotBlank())
+        }
         assertFalse(file("b+hi+Latn").exists())
     }
 
@@ -38,6 +44,29 @@ class LocaleVariantReadinessContractTest {
         }
         assertNotEquals(value(file("b+az+Cyrl"), "settings"), value(file("az"), "settings"))
         assertNotEquals(value(file("b+bs+Cyrl"), "settings"), value(file("bs"), "settings"))
+    }
+
+    @Test
+    fun ordinaryReadyLocalesAreCompleteAndPreserveDurableProductBoundaries() {
+        val defaultKeys = keys(File(root, "app/src/main/res/values/strings.xml")) - NON_TRANSLATABLE
+        val miniLabels = mapOf(
+            "ht" to "Mini", "ky" to "Мини", "tg" to "Мини", "tk" to "Mini", "ga" to "Mion", "gd" to "Beag",
+            "b+az+Cyrl" to "Мини", "b+bs+Cyrl" to "Мини",
+        )
+        miniLabels.forEach { (configuration, mini) ->
+            val target = file(configuration)
+            assertEquals(configuration, defaultKeys, keys(target))
+            assertEquals("Puzru", value(target, "app_name"))
+            assertEquals("PUZRU", value(target, "diagnostics_private_audio"))
+            assertEquals(mini, value(target, "floating"))
+            assertNotEquals(value(target, "routing_notification_title"), value(target, "state_active"))
+            assertNotEquals(value(target, "state_ready"), value(target, "state_waiting"))
+            assertNotEquals(value(target, "diagnostics_route_earpiece"), value(target, "diagnostics_route_speaker"))
+            assertEquals(3, value(target, "settings_privacy_summary_body").split("\\n\\n").size)
+            assertEquals(6, value(target, "settings_about_body").split("\\n\\n").size)
+            assertTrue(value(target, "settings_about_body").contains("Napahu Studios"))
+            assertFalse(target.readText().contains("ПУЗРУ"))
+        }
     }
 
     @Test

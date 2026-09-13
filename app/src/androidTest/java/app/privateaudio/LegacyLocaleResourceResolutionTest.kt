@@ -356,6 +356,12 @@ class LegacyLocaleResourceResolutionTest {
             LocaleResolution("tt", listOf("tt", "tt-RU", "tt-Cyrl-RU")),
             LocaleResolution("mi", listOf("mi", "mi-NZ", "mi-Latn-NZ")),
             LocaleResolution("cy", listOf("cy", "cy-GB", "cy-Latn-GB")),
+            LocaleResolution("ht", listOf("ht", "ht-HT", "ht-Latn-HT")),
+            LocaleResolution("ky", listOf("ky", "ky-KG", "ky-Cyrl-KG")),
+            LocaleResolution("tg", listOf("tg", "tg-TJ", "tg-Cyrl-TJ")),
+            LocaleResolution("tk", listOf("tk", "tk-TM", "tk-Latn-TM")),
+            LocaleResolution("ga", listOf("ga", "ga-IE", "ga-Latn-IE")),
+            LocaleResolution("gd", listOf("gd", "gd-GB", "gd-Latn-GB")),
         ).forEach { resolution ->
             assertRequestsResolveToProductResource(context, resolution)
         }

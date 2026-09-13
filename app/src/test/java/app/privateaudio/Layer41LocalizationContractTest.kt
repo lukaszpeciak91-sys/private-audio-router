@@ -1177,7 +1177,7 @@ class Layer41LocalizationContractTest {
         listOf(
             "values-az-rAZ", "values-b+az+Latn", "values-b+az+Latn+AZ",
             "values-az-rIR", "values-b+az+Arab", "values-azb", "values-az-rRU",
-            "values-b+az+Cyrl", "values-b+az+Cyrl+RU",
+            "values-b+az+Cyrl+RU",
         ).forEach { assertFalse(projectFile("app/src/main/res/$it").exists()) }
 
         assertTrue(northernAzerbaijaniStrings.contains("name=\"routing_notification_title\">Puzru açıqdır</string>"))
