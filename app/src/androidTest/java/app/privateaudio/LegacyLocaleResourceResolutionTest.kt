@@ -356,6 +356,12 @@ class LegacyLocaleResourceResolutionTest {
             LocaleResolution("tt", listOf("tt", "tt-RU", "tt-Cyrl-RU")),
             LocaleResolution("mi", listOf("mi", "mi-NZ", "mi-Latn-NZ")),
             LocaleResolution("cy", listOf("cy", "cy-GB", "cy-Latn-GB")),
+            LocaleResolution("ht", listOf("ht", "ht-HT", "ht-Latn-HT")),
+            LocaleResolution("ky", listOf("ky", "ky-KG", "ky-Cyrl-KG")),
+            LocaleResolution("tg", listOf("tg", "tg-TJ", "tg-Cyrl-TJ")),
+            LocaleResolution("tk", listOf("tk", "tk-TM", "tk-Latn-TM")),
+            LocaleResolution("ga", listOf("ga", "ga-IE", "ga-Latn-IE")),
+            LocaleResolution("gd", listOf("gd", "gd-GB", "gd-Latn-GB")),
         ).forEach { resolution ->
             assertRequestsResolveToProductResource(context, resolution)
         }
@@ -377,12 +383,39 @@ class LegacyLocaleResourceResolutionTest {
     }
 
     @Test
+    fun newScriptAndRegionVariantsRemainIndependentlyAddressable() {
+        val context = InstrumentationRegistry.getInstrumentation().targetContext
+        val azLatin = localizedContext(context, "az-Latn-AZ").getString(R.string.settings)
+        val azCyrillic = localizedContext(context, "az-Cyrl-AZ").getString(R.string.settings)
+        val bsLatin = localizedContext(context, "bs-Latn-BA").getString(R.string.settings)
+        val bsCyrillic = localizedContext(context, "bs-Cyrl-BA").getString(R.string.settings)
+        assertNotEquals(azLatin, azCyrillic)
+        assertNotEquals(bsLatin, bsCyrillic)
+        assertEquals(localizedContext(context, "az-Cyrl").getString(R.string.settings), azCyrillic)
+        assertEquals(localizedContext(context, "bs-Cyrl").getString(R.string.settings), bsCyrillic)
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            val options = AppLanguagePreferences.supportedLanguages(context)
+            listOf("az-Cyrl", "bs-Cyrl", "en-GB").forEach { tag ->
+                assertEquals(1, options.count { it.languageTag == tag })
+                assertTrue(options.single { it.languageTag == tag }.nativeName.isNotBlank())
+            }
+            assertNotEquals(
+                options.single { it.languageTag == "az" }.nativeName,
+                options.single { it.languageTag == "az-Cyrl" }.nativeName,
+            )
+            assertNotEquals(
+                options.single { it.languageTag == "bs" }.nativeName,
+                options.single { it.languageTag == "bs-Cyrl" }.nativeName,
+            )
+        }
+    }
+
+    @Test
     fun unsupportedScriptsDoNotCrossResolveToAProductTreeInAnotherScript() {
         val context = InstrumentationRegistry.getInstrumentation().targetContext
         val english = localizedContext(context, "en-US").getString(R.string.settings)
         listOf(
-            "az-Cyrl-AZ",
-            "bs-Cyrl-BA",
             "hi-Latn-IN",
             "tt-Latn",
             "tt-Latn-RU",

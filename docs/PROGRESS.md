@@ -1,5 +1,17 @@
 # Progress
 
+## Ten-locale localization batch and PR #259 CI repair
+
+- Hardened the durable localization workflow after the batch: current English is now an explicit freshness gate for all translation and audit work; script variants require independent target-script review; Mini decisions require structured reporting; same-source-language regional fallback trees are distinguished from complete translations; and readiness now flows through independent audit and re-audit before merge. No resource, locale inventory, runtime, or routing behavior changed in this documentation/skill iteration.
+- Fixed the explicit-English regional fallback lint regression by marking the authoritative default `values/strings.xml` root with Android lint metadata `tools:locale="en"`. `resources.properties` remains `unqualifiedResLocale=en-US`; the metadata neither changes app-owned discovery nor duplicates the deliberately partial `en-GB` tree.
+- Implemented complete Haitian Creole (`ht`, `values-ht`), Kyrgyz (`ky`, `values-ky`), Tajik (`tg`, `values-tg`), Turkmen (`tk`, `values-tk`), Irish (`ga`, `values-ga`), and Scottish Gaelic (`gd`, `values-gd`) localizations directly from the current authoritative English source. Each contains all 75 localizable resources; the ten explicitly non-translatable resources continue to fall back by design.
+- Retained complete Azerbaijani Cyrillic (`az-Cyrl`, `values-b+az+Cyrl`) and Bosnian Cyrillic (`bs-Cyrl`, `values-b+bs+Cyrl`) variants and repaired their stale Privacy Summaries from current English. Both now preserve the exact three-claim structure and the Latin `PUZRU` diagnostic brand token. Bosnian consistently uses the `усмјеравање звука` family for directing audio; Azerbaijani consistently uses the `јөнләндирмә` family rather than describing audio-output modification.
+- Kept British English (`en-GB`, `values-en-rGB`) as an intentional source-language fallback target with only the immutable `Puzru` identity override because current copy has no genuine British-English difference. Unqualified `en-US` remains authoritative. Hindi Latin (`hi-Latn`) remains blocked and has no resource tree: syntactic locale support does not establish a standard product orthography or realistic Android selection path.
+- Classified and repaired the three CI failures. Privacy and About failed because mechanical script conversion corrupted Android `\n` escapes into Cyrillic-letter escapes; the resources now retain valid paragraph separators and current claim structure. The Azerbaijani contract still forbade the newly supported `values-b+az+Cyrl`; only that obsolete prohibition was removed, while Latin, Arabic, qualifier, script, and semantic protections remain. The generic full-localization helper now excludes only region-only variants of the authoritative source language, not arbitrary future source-language script variants.
+- Translation Skill self-review separately reconstructed Permission UX, Privacy Summary, About, routing diagnostics, state, output-device, compatibility, subscription/region/account, provider-privacy, and third-party boundaries for all eight complete additions. This is translation-production review, not independent or native-speaker validation. Review is recommended for technical terminology and naturalness in every new locale before merge.
+- Final Mini review retains Haitian Creole `Mini`, Kyrgyz `Мини`, Tajik `Мини`, Turkmen `Mini`, Azerbaijani Cyrillic `Мини`, and Bosnian Cyrillic `Мини`, and changes Irish `Mion` and Scottish Gaelic `Beag` to `Mini`. The former Celtic candidates primarily functioned as “minor/small” morphology rather than established standalone compact-product labels; `Mini` is clearer in the visible and spoken controller contexts. No harmful, embarrassing, offensive, childish, sexual, or unrelated technical collision was identified. These are defensible product-language decisions, not native-speaker validation.
+- Final Power review replaces physical energy/capacity nouns with explicit application-control wording: Kyrgyz `Күйгүзүү/өчүрүү`, Tajik `Фаъол/хомӯш кардан`, and Turkmen `Açmak/öçürmek`. Kyrgyz `Кубаттуулук` was rejected with `Кубат` because both primarily suggest power/strength or capacity rather than the Puzru ON/OFF action. Independent review remains recommended for standalone UI naturalness in all three.
+
 ## Five-language targeted linguistic correction
 
 - Corrected Welsh `supported` qualifiers so compatible voice apps and supported AI
@@ -549,8 +561,8 @@ this summary intentionally does not duplicate its test matrix.
 
 ## Localization state
 
-- Resources currently provide **104 product locales: English plus 103 non-English
-  resource sets**. This count is derived from the current `values*` resource
+- Resources currently provide **118 product locale identities: authoritative English US,
+  the English UK fallback variant, and 116 non-English resource sets**. This count is derived from the current `values*` resource
   inventory, excluding non-locale `values-night`; supported variants include the
   intentional Portuguese, Chinese, Serbian, Punjabi, Azerbaijani, and Uzbek script or
   regional distinctions and Android-compatible legacy qualifiers.

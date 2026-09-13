@@ -126,3 +126,24 @@ private fun StringBuilder.blank(start: Int, count: Int) {
 }
 
 private enum class ScanState { CODE, LINE_COMMENT, BLOCK_COMMENT, STRING, RAW_STRING, CHAR }
+
+/**
+ * True for locale trees expected to translate every localizable source key.
+ * Regional variants of the authoritative default language may intentionally contain only
+ * genuine regional overrides and inherit all unchanged copy from the default resource tree.
+ */
+internal fun File.isCompleteTargetLocalizationDirectory(): Boolean {
+    if (!isDirectory || !name.startsWith("values-") || name == "values-night") return false
+    val resourceRoot = parentFile
+    val defaultTag = File(resourceRoot, "resources.properties").readLines()
+        .single { it.startsWith("unqualifiedResLocale=") }
+        .substringAfter('=')
+    val defaultLanguage = defaultTag.substringBefore('-')
+    val configuration = name.removePrefix("values-")
+    val isLegacyRegionVariant = Regex("${Regex.escape(defaultLanguage)}-r(?:[A-Z]{2}|[0-9]{3})").matches(configuration)
+    val bcp47Parts = configuration.removePrefix("b+").split('+')
+    val isBcp47RegionVariant = configuration.startsWith("b+") &&
+        bcp47Parts.size == 2 && bcp47Parts[0] == defaultLanguage &&
+        Regex("(?:[A-Z]{2}|[0-9]{3})").matches(bcp47Parts[1])
+    return !isLegacyRegionVariant && !isBcp47RegionVariant
+}

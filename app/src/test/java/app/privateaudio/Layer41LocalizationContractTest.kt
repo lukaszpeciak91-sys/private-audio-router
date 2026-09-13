@@ -74,6 +74,7 @@ class Layer41LocalizationContractTest {
     fun standardAndroidLocaleConfigurationUsesEnglishDefaultResources() {
         assertTrue(appBuildSource.contains("generateLocaleConfig = true"))
         assertEquals("unqualifiedResLocale=en-US", resourcesProperties.trim())
+        assertTrue(defaultStrings.contains("<resources xmlns:tools=\"http://schemas.android.com/tools\" tools:locale=\"en\">"))
         assertTrue(defaultStrings.contains("name=\"settings_system_default\">Default</string>"))
         listOf("settings_language_body", "settings_advanced_body").forEach { obsoleteKey ->
             assertFalse(obsoleteKey, stringKeys(defaultStrings).contains(obsoleteKey))
@@ -1177,7 +1178,7 @@ class Layer41LocalizationContractTest {
         listOf(
             "values-az-rAZ", "values-b+az+Latn", "values-b+az+Latn+AZ",
             "values-az-rIR", "values-b+az+Arab", "values-azb", "values-az-rRU",
-            "values-b+az+Cyrl", "values-b+az+Cyrl+RU",
+            "values-b+az+Cyrl+RU",
         ).forEach { assertFalse(projectFile("app/src/main/res/$it").exists()) }
 
         assertTrue(northernAzerbaijaniStrings.contains("name=\"routing_notification_title\">Puzru açıqdır</string>"))
@@ -1936,7 +1937,7 @@ class Layer41LocalizationContractTest {
             .walkTopDown().filter { it.isFile && it.extension == "kt" }.toList()
         val localeDirectories = File(projectRoot, "app/src/main/res")
             .listFiles().orEmpty()
-            .filter { it.isDirectory && it.name.startsWith("values-") && it.name != "values-night" }
+            .filter(File::isCompleteTargetLocalizationDirectory)
 
         fun projectFile(relativePath: String) = File(projectRoot, relativePath)
     }

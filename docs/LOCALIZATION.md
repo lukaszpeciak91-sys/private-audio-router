@@ -152,6 +152,18 @@ Use the normal contemporary writing system of the target locale; never Latin-tra
 
 Preserve locale-specific Unicode and orthographic distinctions, including Persian `ی`/`ک`, Turkish dotted/dotless I, Vietnamese diacritics, and Indic combining marks.
 
+## Complete translations and source-language regional fallbacks
+
+A complete translated target locale owns every localizable key and must satisfy full key and placeholder parity. A deliberate regional variant of the authoritative source language is different: it contains only genuine regional overrides and inherits unchanged copy from the default source tree. It must not duplicate source strings merely to pass an ordinary translation-completeness contract, and it never becomes a second source of truth.
+
+The current source model is unqualified `values/` = `en-US`; `values-en-rGB` = `en-GB` and contains only genuine British-English overrides. Tests and reviews must classify localization directories by this semantic role rather than assuming every advertised locale directory is a complete translation. This rule is generic for future same-source-language regional variants, not an `en-GB` exception.
+
+### Default-locale identity and lint metadata
+
+`app/src/main/res/resources.properties` and `tools:locale` serve different purposes. `unqualifiedResLocale=en-US` declares the canonical locale of unqualified app resources to Android Gradle Plugin and app-locale handling. The `tools:locale="en"` attribute on the authoritative default `values/strings.xml` root informs Android resource tooling and lint of that file's language; it is tooling metadata and does not redefine the canonical product source locale.
+
+Once an explicit regional tree exists for the source language, omitting this lint metadata can cause false `MissingTranslation` findings against the default source tree. The normal remedy is accurate default-resource metadata—not disabling `MissingTranslation`, adding a baseline, marking ordinary source copy non-translatable, or duplicating unchanged strings into the regional tree.
+
 ## Locale variants
 
 Create separate regional or script variants only when meaningful vocabulary, grammar, script, or UI-convention differences justify them. Current examples are Brazilian and European Portuguese (`pt-BR`, `pt-PT`) and Simplified and Traditional Chinese (`zh-Hans`, `zh-Hant`). Treat each as an independent product localization: do not create a variant merely because a country exists, and do not mechanically convert one variant into another.
@@ -168,10 +180,9 @@ display name even when it is the only variant of its logical language; generic
 locales remain language-name-only. Names come from Android/Java locale display-name
 data rather than a product-maintained list.
 
-Known future expansion candidates, and **not currently supported**, are Azerbaijani
-Cyrillic, Bosnian Cyrillic, and Hindi Latin. Android
-resource-resolution tests protect these gaps from silently
-presenting a supported resource tree written in a different script.
+Hindi Latin remains a future expansion candidate and is **not currently supported**.
+Android resource-resolution tests protect this gap from silently presenting the
+supported Devanagari Hindi tree for a Latin-script request.
 
 OEMs may expose different sets of system languages, but this does not normally
 require OEM-specific Puzru resource qualifiers. On Android 13 and newer,
