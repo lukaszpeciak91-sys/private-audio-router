@@ -177,6 +177,6 @@ class PermissionUxContractTest {
         val preferences = source("app/src/main/java/app/privateaudio/PermissionUxPreferences.kt")
         val resources = File(root, "app/src/main/res")
         val localeDirectories = resources.listFiles().orEmpty()
-            .filter { it.isDirectory && it.name.startsWith("values-") && it.name != "values-night" }
+            .filter(File::isCompleteTargetLocalizationDirectory)
     }
 }

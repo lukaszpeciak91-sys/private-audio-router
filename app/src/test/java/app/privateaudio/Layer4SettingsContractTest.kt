@@ -221,7 +221,7 @@ class Layer4SettingsContractTest {
             "settings_privacy_policy_online",
         )
         val localizedFiles = resourceRoot.listFiles().orEmpty()
-            .filter { it.isDirectory && it.name.startsWith("values-") }
+            .filter(File::isCompleteTargetLocalizationDirectory)
             .map { File(it, "strings.xml") }
             .filter(File::isFile)
 
@@ -299,7 +299,7 @@ class Layer4SettingsContractTest {
         val resourceRoot = projectFile("app/src/main/res")
         val defaultAbout = resourceValue(File(resourceRoot, "values/strings.xml"), "settings_about_body")
         val localizedFiles = resourceRoot.listFiles().orEmpty()
-            .filter { it.isDirectory && it.name.startsWith("values-") }
+            .filter(File::isCompleteTargetLocalizationDirectory)
             .map { File(it, "strings.xml") }
             .filter(File::isFile)
 

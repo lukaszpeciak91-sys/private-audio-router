@@ -57,6 +57,29 @@ The readiness findings below now govern the implemented Central Kurdish locale. 
 
 This baseline separates documented platform capabilities from hypotheses and unanswered questions. It does not establish cross-application compatibility.
 
+## Ten-locale batch Android identity readiness
+
+The following findings distinguish Android identity readiness from translation-production status. No physical-device behavior is inferred.
+
+| Target | Logical tag | Android qualifier | Default script / direction | Region scope | Readiness and caveat |
+| --- | --- | --- | --- | --- | --- |
+| Haitian Creole | `ht` | `values-ht` | Latin / LTR | general; likely Haiti | **READY**; language-only legacy syntax is sufficient and no alias applies. |
+| Kyrgyz | `ky` | `values-ky` | Cyrillic / LTR | general; likely Kyrgyzstan | **READY**; the default Cyrillic script need not be repeated. |
+| Tajik | `tg` | `values-tg` | Cyrillic / LTR | general; likely Tajikistan | **READY**; the default Cyrillic script need not be repeated. |
+| Turkmen | `tk` | `values-tk` | Latin / LTR | general; likely Turkmenistan | **READY**; the default Latin script need not be repeated. |
+| Irish | `ga` | `values-ga` | Latin / LTR | general; likely Ireland | **READY**; language-only identity avoids unnecessary region narrowing. |
+| Scottish Gaelic | `gd` | `values-gd` | Latin / LTR | general; likely United Kingdom | **READY**; language-only identity avoids unnecessary region narrowing. |
+| Azerbaijani Cyrillic | `az-Cyrl` | `values-b+az+Cyrl` | Cyrillic / LTR | region-unspecified | **NEEDS SMALL TEST ADJUSTMENT**, implemented. Explicit script prevents generic `az` from selecting the default Latin tree. |
+| Bosnian Cyrillic | `bs-Cyrl` | `values-b+bs+Cyrl` | Cyrillic / LTR | region-unspecified | **NEEDS SMALL TEST ADJUSTMENT**, implemented. Generic `bs` remains the Latin/default project locale. |
+| Hindi Latin | `hi-Latn` | none | Latin / LTR | unresolved | **BLOCKED**. BCP-47 syntax and Java display-name construction alone do not establish a standard, user-addressable, product-quality Hindi Latin orthography or Android system-language path. The protected wrong-script fallback test remains. |
+| English (United Kingdom) | `en-GB` | `values-en-rGB` | Latin / LTR | United Kingdom | **NEEDS SMALL TEST ADJUSTMENT**, implemented as a fallback variant. Current copy has no genuine British differences; `en-US` remains the sole source. |
+
+**FACT (repository/toolchain inspection):** app-owned directory discovery accepts all chosen qualifiers, derives their logical tags, supplies locale filters, and generates `LocaleConfig`; no manual locale registry is required. `Locale.forLanguageTag` supplies nonblank self-display names for the three implemented variants. Generic JVM coverage now permits same-language regional variants to inherit unchanged source copy, while focused JVM and Android contracts protect exact identity, picker distinction, and realistic script-expanded resolution.
+
+**INFERENCE:** The six language-only READY identities need no architecture change, but complete translation production was not completed in this batch. Their resource directories must not be created until complete candidates exist.
+
+**UNKNOWN:** OEM picker exposure and rendering remain unverified on a device. In particular, whether a given OEM exposes a system-level route for `hi-Latn` is not established by syntactic locale support.
+
 ## FACT
 
 - `AudioManager.registerAudioPlaybackCallback()` provides callback-based public observation, and `getActivePlaybackConfigurations()` provides a public active snapshot. For each visible configuration the application can read `AudioAttributes` usage, content type, flags and allowed-capture policy, and an `AudioDeviceInfo` (including ID, type, and product name) when Android supplies one. `AudioPlaybackConfiguration` does not publicly expose a per-configuration `isActive` member; configuration presence in the active snapshot is the available observation. These metadata contain no PCM audio. The ordinary public API available to this application does not expose a safe client package/session identity or exact player-state value, so the diagnostic records those fields as unavailable rather than inferring ownership.

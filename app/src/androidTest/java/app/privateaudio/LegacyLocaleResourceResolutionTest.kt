@@ -377,12 +377,39 @@ class LegacyLocaleResourceResolutionTest {
     }
 
     @Test
+    fun newScriptAndRegionVariantsRemainIndependentlyAddressable() {
+        val context = InstrumentationRegistry.getInstrumentation().targetContext
+        val azLatin = localizedContext(context, "az-Latn-AZ").getString(R.string.settings)
+        val azCyrillic = localizedContext(context, "az-Cyrl-AZ").getString(R.string.settings)
+        val bsLatin = localizedContext(context, "bs-Latn-BA").getString(R.string.settings)
+        val bsCyrillic = localizedContext(context, "bs-Cyrl-BA").getString(R.string.settings)
+        assertNotEquals(azLatin, azCyrillic)
+        assertNotEquals(bsLatin, bsCyrillic)
+        assertEquals(localizedContext(context, "az-Cyrl").getString(R.string.settings), azCyrillic)
+        assertEquals(localizedContext(context, "bs-Cyrl").getString(R.string.settings), bsCyrillic)
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            val options = AppLanguagePreferences.supportedLanguages(context)
+            listOf("az-Cyrl", "bs-Cyrl", "en-GB").forEach { tag ->
+                assertEquals(1, options.count { it.languageTag == tag })
+                assertTrue(options.single { it.languageTag == tag }.nativeName.isNotBlank())
+            }
+            assertNotEquals(
+                options.single { it.languageTag == "az" }.nativeName,
+                options.single { it.languageTag == "az-Cyrl" }.nativeName,
+            )
+            assertNotEquals(
+                options.single { it.languageTag == "bs" }.nativeName,
+                options.single { it.languageTag == "bs-Cyrl" }.nativeName,
+            )
+        }
+    }
+
+    @Test
     fun unsupportedScriptsDoNotCrossResolveToAProductTreeInAnotherScript() {
         val context = InstrumentationRegistry.getInstrumentation().targetContext
         val english = localizedContext(context, "en-US").getString(R.string.settings)
         listOf(
-            "az-Cyrl-AZ",
-            "bs-Cyrl-BA",
             "hi-Latn-IN",
             "tt-Latn",
             "tt-Latn-RU",

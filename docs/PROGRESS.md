@@ -1,5 +1,12 @@
 # Progress
 
+## Ten-locale readiness and partial implementation batch
+
+- Audited all ten requested Android identities. Haitian Creole (`ht`), Kyrgyz (`ky`), Tajik (`tg`), Turkmen (`tk`), Irish (`ga`), and Scottish Gaelic (`gd`) are architecture-ready but were not added without complete product copy. Hindi Latin (`hi-Latn`) remains blocked because syntactic tag support does not establish a standard product orthography or realistic Android selection path.
+- Added complete Cyrillic-script Azerbaijani (`az-Cyrl`, `values-b+az+Cyrl`) and Bosnian (`bs-Cyrl`, `values-b+bs+Cyrl`) variants without changing the existing generic Azerbaijani and Bosnian trees. Both contain all 75 localizable resources and retain region-unspecified script identities. Added British English (`en-GB`, `values-en-rGB`) as an intentional source-language fallback variant: it overrides only the immutable `Puzru` identity because the current source has no genuine British-English wording differences; unqualified `en-US` remains authoritative.
+- Generalized full-parity test discovery so regional variants of the authoritative default language may contain only genuine overrides. Added focused identity, native-name, key/script, picker, LocaleConfig, and Android resource-resolution coverage. The implementation changes no routing or runtime production logic.
+- Translation Skill self-review preserved ON versus ACTIVE, READY versus WAITING, earpiece versus loudspeaker, permissions, privacy, diagnostics, About qualifiers, and third-party boundaries in both Cyrillic variants. Their same-language copy was reviewed in its target orthography rather than accepted from key parity alone. `Mini` became the established local-script loan `Мини` in each; no misleading, offensive, sexual, childish, embarrassing, or unrelated technical collision was identified. Independent audit found no concrete semantic drift in the converted script variants, but this is not native-speaker validation.
+
 ## Five-language targeted linguistic correction
 
 - Corrected Welsh `supported` qualifiers so compatible voice apps and supported AI

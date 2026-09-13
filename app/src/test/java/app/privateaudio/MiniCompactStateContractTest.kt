@@ -134,9 +134,9 @@ class MiniCompactStateContractTest {
         val gujaratiMini = File(res, "values-gu/mini_state_strings.xml")
         val malayalamFull = File(res, "values-ml/strings.xml")
         val malayalamMini = File(res, "values-ml/mini_state_strings.xml")
-        val localeStringFiles = res.listFiles()!!.filter { it.name.startsWith("values-") }
+        val localeStringFiles = res.listFiles()!!.filter(File::isCompleteTargetLocalizationDirectory)
             .map { File(it, "strings.xml") }.filter(File::isFile)
-        val localeResourceFiles = res.listFiles()!!.filter { it.name.startsWith("values-") }
+        val localeResourceFiles = res.listFiles()!!.filter(File::isCompleteTargetLocalizationDirectory)
             .flatMap { it.listFiles()?.toList().orEmpty() }
     }
 }

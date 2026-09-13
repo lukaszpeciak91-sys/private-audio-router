@@ -1936,7 +1936,7 @@ class Layer41LocalizationContractTest {
             .walkTopDown().filter { it.isFile && it.extension == "kt" }.toList()
         val localeDirectories = File(projectRoot, "app/src/main/res")
             .listFiles().orEmpty()
-            .filter { it.isDirectory && it.name.startsWith("values-") && it.name != "values-night" }
+            .filter(File::isCompleteTargetLocalizationDirectory)
 
         fun projectFile(relativePath: String) = File(projectRoot, relativePath)
     }

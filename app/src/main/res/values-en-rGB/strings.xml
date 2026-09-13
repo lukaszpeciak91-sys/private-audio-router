@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- British English inherits the authoritative en-US copy because the current
+         product strings have no genuine spelling, punctuation, or wording differences. -->
+    <string name="app_name">Puzru</string>
+</resources>
