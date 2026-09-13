@@ -839,16 +839,17 @@ this summary intentionally does not duplicate its test matrix.
   monochrome layers, while the base resource supplies the legacy fallback. The
   foreground-service notification now uses the transparent monochrome artwork rather
   than an opaque launcher wrapper. The repository owner intentionally supplies the
-  three final 1024 × 1024 binaries manually at
+  three verified 1024 × 1024 binaries at
   `app/src/main/res/drawable-nodpi/puzru_adaptive_foreground.png`,
   `app/src/main/res/drawable-nodpi/puzru_adaptive_monochrome.png`, and
-  `app/src/main/res/drawable-nodpi/puzru_legacy_master.png`; no substitute binaries
-  are committed. Automated contracts validate resource references, exact background
-  color, PNG identity and dimensions, required RGBA/transparency/opacity, and matching
-  adaptive alpha masks. Android resource processing and binary validation remain
-  expected to fail until those owner-supplied files are present. **UNKNOWN:** actual
-  launcher masks, system splash, themed-icon treatment, and notification appearance
-  still require the physical release-branding gate in [`TEST_PLAN.md`](TEST_PLAN.md).
+  `app/src/main/res/drawable-nodpi/puzru_legacy_master.png`. Automated contracts verify
+  that the adaptive foreground and monochrome resources contain transparency, the
+  legacy master is fully opaque, and the foreground and monochrome alpha masks match.
+  The manifest, adaptive launcher, fallback launcher, round icon, and foreground-service
+  notification references resolve, and canonical Android CI passed after the assets
+  were added. **UNKNOWN:** actual launcher masks, system splash, themed-icon treatment,
+  and notification appearance still require the physical release-branding gate in
+  [`TEST_PLAN.md`](TEST_PLAN.md).
 
 - Reconciled supplied 2026-09-08 physical evidence from Xiaomi product `2201117TY`,
   Android 13/API 33, with Private Audio `0.1.0 (1)` where diagnostics confirmed the
