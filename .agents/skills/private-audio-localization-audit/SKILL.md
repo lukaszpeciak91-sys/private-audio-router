@@ -16,6 +16,12 @@ Independently determine whether existing target copy is acceptable relative to a
 - Never claim native-speaker or human validation unless that evidence actually exists.
 - Reuse a recorded unchanged audit baseline unless a source/candidate/policy change, credible evidence, defect report, or explicit fresh audit invalidates it.
 
+## Verify source freshness and localization category
+
+Audit high-risk copy against the **current authoritative default English resource**, never against another locale or a historical translation. Suspicious sentence-level similarity to an older or related locale is a source-drift signal: reconstruct the current English claim set before assigning a verdict. For script variants, inspect protected Latin tokens such as `Puzru` and `Napahu Studios` for accidental transliteration, mutation, or declension, and do not accept script conversion as linguistic evidence.
+
+Before interpreting parity or fallback, distinguish a complete translated target locale from a deliberate same-language regional variant that inherits unchanged source-language copy. Missing keys are expected only for the latter when they are genuine inherited non-differences; unexpected English fallback in a complete translation remains a defect. Independently verify Mini's standalone naturalness, visible and spoken contexts, and collision evidence rather than accepting a Translator's self-review as proof.
+
 ## Reconstruct meaning independently
 
 Inspect source meaning first, then target meaning without assuming equivalence. For meaningful or high-risk copy record, as applicable:

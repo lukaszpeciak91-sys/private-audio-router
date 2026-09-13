@@ -120,6 +120,17 @@ Git and the decision/evidence documents; they do not define current execution or
 Choose current work from `PROGRESS.md` and `TEST_PLAN.md`, then follow
 `AUDIT → scoped implementation → validation → audit/iteration if needed`.
 
+## Localization batch sequence
+
+Localization implementation follows:
+
+```text
+READINESS → CURRENT-SOURCE TRANSLATION → TRANSLATION SKILL SELF-REVIEW → CI
+→ INDEPENDENT LINGUISTIC AUDIT → FIX/POLISH → RE-AUDIT → MERGE
+```
+
+Green CI is necessary source-contract evidence, not linguistic acceptance, and Translation Skill self-review is not independent audit. Unless a task is explicitly readiness-only, **READY** means implementation continues in the same scoped task; a READY target must not be silently omitted from its implementation batch. A **BLOCKED** target remains unimplemented with the concrete reason recorded. Detailed source, terminology, variant, and evidence rules remain owned by [`LOCALIZATION.md`](LOCALIZATION.md) and the two repository localization skills.
+
 ## Pull-request ownership
 
 - Keep one logical implementation in one PR.

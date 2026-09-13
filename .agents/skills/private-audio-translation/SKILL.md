@@ -22,6 +22,12 @@ Report one of:
 - **`TRANSLATED_WITH_REVIEW_RECOMMENDED`**: the same completed result, with a specific uncertainty worth later review.
 - **`SOURCE COPY REVIEW REQUIRED`**: one identified source item is materially ambiguous, contradictory, factually unsafe, or insufficiently defined, so its intended meaning cannot responsibly be determined.
 
+## Confirm current-source freshness
+
+For every new localization or translation update, treat the **current authoritative default English resource at task time** as the semantic and content source. Existing target locales, historical references, and related languages are terminology or style evidence only. Never copy and adapt or transliterate a sentence or paragraph from them, or use them as a shortcut source, without first reconstructing and comparing the complete current English meaning. This rule is mandatory for Privacy, permissions, About, diagnostics, account/subscription/region, data handling, and product-boundary copy: before writing, confirm the current English claim set; if it differs semantically from older or neighboring copy, current English wins.
+
+Keep the freshness check lightweight: identify the current source key/value or claim set inspected and confirm the candidate was reverse-checked against that version. Do not create a repository ledger for this check.
+
 ## Translate and self-check
 
 For ordinary copy:
@@ -124,11 +130,19 @@ For each concept, establish its exact Puzru meaning and surface, then research f
 
 Surface constraints affect the decision: a first-party phrase for a full component such as `Miniplayer` may be unsuitable for a standalone one-word button. Adapt evidence to the actual Puzru surface instead of copying a long component name. Script consistency is evidence, not a hard cross-locale uniformity rule; never replace an established native form merely to make locales look alike. Visual fit does not authorize inferior language: follow **NATURAL LANGUAGE → MEASURE → 16f / 15f / 14f → compact linguistic review → ellipsis safety**.
 
+### Report every new locale's Mini decision
+
+For every newly introduced locale, the final translation report must explicitly give the final Mini candidate; classify it as a native semantic equivalent, transliteration, or loanword; report the visible-label and spoken/accessibility results; record the lexical-collision result; and state terminology confidence. Emit `REVIEW_RECOMMENDED` when standalone naturalness remains uncertain. Keep the detailed Targeted Terminology Ledger in working analysis rather than adding a repository file.
+
 ## Check contextual grammar before propagation
 
 Before translating or reusing one value/status resource across UI objects or call sites, inspect every semantic context where it renders. Do not assume a source-language invariant such as Available, Not available, Unknown, Enabled, Disabled, Connected, Selected, or Ready has one safe target-language form. Check agreement for grammatical gender, noun class, number, case, animacy, other relevant morphology, and materially different natural formulations required by different UI objects.
 
 If one shared resource would force ungrammatical or misleading wording, prefer a natural context-neutral state when it accurately expresses the product state (for example, a loading/progress phrase); otherwise use context-specific localized resources. Do not hide a source/resource-contract defect behind an awkward “universal” translation. Complete this check before broad locale propagation.
+
+### Treat script variants as independent product language
+
+Script conversion is not translation. Mechanical transliteration may be used as a diagnostic comparison, but it is not sufficient evidence for final product copy. For every script variant, independently review grammar, terminology, product idiom, historical or modern orthography, and technical wording in the target script against current English. This applies equally to Azerbaijani, Bosnian, Serbian, Uzbek, and future script families. Preserve protected Latin brand tokens such as `Puzru` and `Napahu Studios`; never transliterate them merely because the target script is non-Latin.
 
 ## Preserve Android resources and surfaces
 
