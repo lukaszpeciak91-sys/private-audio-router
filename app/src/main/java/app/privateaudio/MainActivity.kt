@@ -99,9 +99,9 @@ class MainActivity : ComponentActivity() {
                     state = state,
                     proximityFeatureEnabled = connectedService?.isProximityFeatureEnabled ?: true,
                     onProximityFeatureChange = { connectedService?.updateProximityFeatureEnabled(it) },
-                    assistantEarlyRouteEnabled = connectedService?.isAssistantEarlyRouteEnabled ?: false,
+                    assistantEarlyRouteEnabled = connectedService?.isAssistantEarlyRouteEnabled ?: true,
                     onAssistantEarlyRouteChange = { connectedService?.updateAssistantEarlyRouteEnabled(it) },
-                    assistantSessionContinuityEnabled = connectedService?.isAssistantSessionContinuityEnabled ?: false,
+                    assistantSessionContinuityEnabled = connectedService?.isAssistantSessionContinuityEnabled ?: true,
                     onAssistantSessionContinuityChange = { connectedService?.updateAssistantSessionContinuityEnabled(it) },
                     powerEnabled = connectedService != null,
                     onPowerClick = {

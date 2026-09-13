@@ -89,7 +89,7 @@
 
 ## Assistant session continuity experiment
 
-- Added a service-owned, persisted, default-OFF Advanced preference that can retain an established `ASSISTANT` protected cycle for one additional fixed 20-second window after the unchanged 7-second linger. Entry requires the same public unsilenced `VOICE_RECOGNITION` configuration plus a healthy silent track, owned communication mode, current built-in earpiece, and no telephony/system-priority condition.
+- The service-owned, persisted Advanced preference now defaults ON when its key is absent and can retain an established `ASSISTANT` protected cycle for one additional fixed 20-second window after the unchanged 7-second linger. An explicitly stored OFF remains OFF. Entry requires the same public unsilenced `VOICE_RECOGNITION` configuration plus a healthy silent track, owned communication mode, current built-in earpiece, and no telephony/system-priority condition.
 - Continuity keeps the existing cycle `ACTIVE`, so the established proximity projection remains downstream without another state machine. Assistant/speech resumption cancels the timeout and reuses the same resources; no new track, mode request, communication-device request, routing attempt, retry, polling, or reassertion is added. Recording loss/change/silencing or preference OFF performs reversible cleanup and returns the enabled controller to clean `WAITING`; genuine protected mode, route, earpiece, or silent-track failures retain existing `BLOCKED`/`ERROR` semantics. Lifecycle shutdown, safety-context loss, and expiry remain generation-safe.
 - Diagnostics record enablement, activity, timing, the public recording baseline and match result, resume/timeout/abort outcome, and same-context reuse. Deterministic JVM contracts cover default/persistence, OFF behavior, Assistant-only extension, resource reuse, one-request invariants, aborts, stale work, unchanged other origins, and unchanged proximity ownership. Physical validation of the new experiment remains **NOT TESTED / UNKNOWN**.
 - The 2026-09-10 Xiaomi evidence associates the observed healthy public recording configuration with Gemini only through the controlled human test. Public Android metadata itself exposes no provider ownership, and implementation and diagnostics remain provider-independent.
@@ -376,7 +376,7 @@
 
 ## Assistant early-mode generation-race correction
 
-- The default-OFF Assistant early-route experiment now models track startup, mode-request
+- The Assistant early-route experiment, which was default OFF at this correction's stage, models track startup, mode-request
   in-flight, mode-ready, promotion, and cancellation explicitly. `MODE_NORMAL` callbacks
   cannot be treated as lost ownership while the current generation's own
   `MODE_IN_COMMUNICATION` request is still in flight.
@@ -711,7 +711,8 @@ this summary intentionally does not duplicate its test matrix.
   terminology as evidence where semantically appropriate. The previously corrected
   Javanese and Zulu distinctions remain protected. The detailed technical diagnostic
   report and SUPPORT SUMMARY remain intentionally English-only, as does the
-  default-OFF Assistant early route experiment copy.
+  English-only Assistant early route experiment copy (introduced default OFF and
+  subsequently changed to the current default-ON internal baseline by D-049).
 - Durable terminology, evidence semantics, Mini fitting, RTL behavior, factual-claim
   safeguards, and locale maintenance rules belong to
   [`LOCALIZATION.md`](LOCALIZATION.md); this document records only current coverage
@@ -794,7 +795,7 @@ this summary intentionally does not duplicate its test matrix.
   contract coverage exists. Physical Gemini evidence confirms same-cycle resource
   reuse within the linger and shows that 5 seconds narrowly missed some later turns;
   the tuned 7-second duration and full multi-turn regression gate remain pending.
-- **Assistant early silent-track pre-arm — implemented, default OFF, experimental and device-scoped.**
+- **Assistant early silent-track pre-arm — implemented, default ON, experimental and device-scoped.**
   Fake Phone was replaced rather than duplicated. Exact `VOICE_RECOGNITION` plus
   assistant/sonification may start the prepared silent track during `WAITING`, then
   establish `MODE_IN_COMMUNICATION` only after `PLAYSTATE_PLAYING`. It makes no early
@@ -807,7 +808,7 @@ this summary intentionally does not duplicate its test matrix.
   post-speech device request, and `ACTIVE`; human listening reported that the response
   beginning was no longer clipped. **UNKNOWN:** cross-device, OEM, Android-release,
   accessory, and telephony compatibility. **PRODUCT STATUS:** the feature remains
-  experimental and default OFF.
+  experimental, defaults ON when no preference is stored, and preserves explicit OFF.
 - The ChatGPT startup-sound signature and route remain unresolved. Diagnostics can
   record bounded playback metadata, but the trace neither classifies nor reroutes
   the sound by itself.

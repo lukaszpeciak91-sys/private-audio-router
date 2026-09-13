@@ -658,3 +658,16 @@ The following checks validate lifecycle ownership without claiming routing succe
 - **Resume and timeout:** Resume assistant/speech within continuity and verify the timeout is cancelled and the same context serves the reply. In a separate run, allow expiry and verify one ordered cleanup and `WAITING` re-arm, with no later stale callback effect.
 - **Abort matrix:** Separately exercise recording disappearance, configuration/session replacement, `clientSilenced=true`, preference OFF while active, Power OFF, service shutdown, telephony/system-priority takeover, current-route/earpiece loss, communication-mode loss, and silent-track failure. Each must bypass the remaining window and clean immediately while preserving telephony and external-device priority.
 - **Evidence rule:** Record public metadata and human-observed app/session correlation separately. Do not label playback or recording configurations as Gemini-owned: Android public metadata does not expose provider ownership. Automated coverage cannot establish physical efficacy.
+
+## Default-ON Assistant experiments internal-update gate
+
+- **Status:** NOT TESTED / UNKNOWN
+- **Clean install:** Clear app data or install cleanly, open Advanced settings, and verify **Assistant early route** and **Assistant session continuity** are both initially ON.
+- **Restart:** Restart the app and service without changing either switch; verify both remain ON.
+- **Independent early-route opt-out:** Disable only **Assistant early route**, restart the app and service, and verify early route remains OFF while session continuity remains ON.
+- **Independent continuity opt-out:** Re-enable early route, disable only **Assistant session continuity**, restart the app and service, and verify continuity remains OFF while early route remains ON.
+- **Update with explicit OFF:** On a build that stores OFF for each setting, update to the default-ON build without clearing app data and verify each explicit OFF remains OFF.
+- **Update with absent keys:** On a build where neither preference key has ever been stored, update without clearing app data and verify the new ON fallbacks are used.
+- **Routing regression:** With both settings enabled, exercise a qualifying Assistant session and verify early preparation, the existing single protected earpiece request, continuity reuse where eligible, ordered cleanup, and audible routing on the physical device.
+- **Diagnostic opt-outs:** Repeat relevant routing diagnostics with each setting disabled independently and verify its switch remains interactive, changes only its own experiment, and can isolate device-specific problems.
+- **Evidence rule:** Record the device, Android version, source and destination build versions, preference setup, Android-reported state, and human-observed audible output separately. Automated contracts establish fallback and persistence wiring only; they do not establish physical routing behavior.

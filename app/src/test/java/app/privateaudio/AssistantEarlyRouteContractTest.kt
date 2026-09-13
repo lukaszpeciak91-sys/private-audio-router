@@ -7,8 +7,8 @@ import org.junit.Test
 import java.io.File
 
 class AssistantEarlyRouteContractTest {
-    @Test fun newPreferenceDefaultsOffAndDoesNotReadStaleFakePhoneKey() {
-        assertTrue(service.contains(".getBoolean(ASSISTANT_EARLY_ROUTE_KEY, false)"))
+    @Test fun absentPreferenceDefaultsOnAndDoesNotReadStaleFakePhoneKey() {
+        assertTrue(service.contains(".getBoolean(ASSISTANT_EARLY_ROUTE_KEY, true)"))
         assertTrue(service.contains("\"assistant_early_route_enabled\""))
         assertFalse(service.contains("fake_phone_pre_arm_enabled"))
     }
