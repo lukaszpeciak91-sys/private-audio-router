@@ -276,7 +276,7 @@ class PrivateAudioService : Service() {
             PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE,
         )
         return Notification.Builder(this, NOTIFICATION_CHANNEL_ID)
-            .setSmallIcon(R.drawable.ic_launcher)
+            .setSmallIcon(R.drawable.puzru_adaptive_monochrome)
             .setContentTitle(getString(R.string.routing_notification_title))
             .setContentText(getString(R.string.routing_notification_text))
             .setContentIntent(openMain)

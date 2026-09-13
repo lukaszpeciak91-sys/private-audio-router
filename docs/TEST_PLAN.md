@@ -59,6 +59,27 @@ Where practical, repeat the attachment handoff using another email client becaus
 
 Allowed status values are **NOT TESTED**, **PASS**, **FAIL**, and **BLOCKED**. Record a specific device, Android version, and application build for every execution. Emulator results are insufficient for built-in-earpiece routing or cross-application compatibility; those claims require a physical-device test.
 
+## Adaptive launcher and notification release-branding gate
+
+- **Status:** NOT TESTED
+- **Device / launcher / Android version:** Record each tested combination; use a
+  physical device with the final owner-supplied production PNGs installed.
+- **Steps:** From a clean install, inspect the Puzru icon on the home screen and in
+  the app drawer, then launch it and inspect the system splash. Exercise every
+  launcher shape available on the test device, including circle, squircle, and
+  rounded-square masks. Enable themed icons where supported and inspect the
+  monochrome result. Turn Puzru on and inspect the foreground-service notification's
+  small icon in the status bar and notification shade.
+- **Pass criteria:** Foreground artwork remains intentional and unclipped under each
+  available mask, the legacy and adaptive presentations retain recognizable Puzru
+  branding, the splash presentation is acceptable without app-owned customization,
+  the themed icon uses the intended monochrome silhouette, and the notification uses
+  a clear transparent monochrome small icon. Record visual findings separately for
+  each surface and configuration.
+- **Evidence boundary:** XML, JVM, resource-processing, emulator, and screenshot
+  checks do not establish physical launcher, mask, splash, themed-icon, or
+  notification appearance. **UNKNOWN** until this gate is executed on hardware.
+
 ## Diagnostic report observational-invariance gate
 
 - **Status:** NOT TESTED
