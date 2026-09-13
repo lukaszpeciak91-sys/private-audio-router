@@ -74,6 +74,7 @@ class Layer41LocalizationContractTest {
     fun standardAndroidLocaleConfigurationUsesEnglishDefaultResources() {
         assertTrue(appBuildSource.contains("generateLocaleConfig = true"))
         assertEquals("unqualifiedResLocale=en-US", resourcesProperties.trim())
+        assertTrue(defaultStrings.contains("<resources xmlns:tools=\"http://schemas.android.com/tools\" tools:locale=\"en\">"))
         assertTrue(defaultStrings.contains("name=\"settings_system_default\">Default</string>"))
         listOf("settings_language_body", "settings_advanced_body").forEach { obsoleteKey ->
             assertFalse(obsoleteKey, stringKeys(defaultStrings).contains(obsoleteKey))
