@@ -58,10 +58,10 @@ class PrivateAudioService : Service() {
     var isProximityFeatureEnabled by mutableStateOf(true)
         private set
 
-    var isAssistantEarlyRouteEnabled by mutableStateOf(false)
+    var isAssistantEarlyRouteEnabled by mutableStateOf(true)
         private set
 
-    var isAssistantSessionContinuityEnabled by mutableStateOf(false)
+    var isAssistantSessionContinuityEnabled by mutableStateOf(true)
         private set
 
     val privateAudioState: PrivateAudioState
@@ -98,9 +98,9 @@ class PrivateAudioService : Service() {
         isProximityFeatureEnabled = getSharedPreferences(PREFERENCES_NAME, Context.MODE_PRIVATE)
             .getBoolean(PROXIMITY_FEATURE_KEY, true)
         isAssistantEarlyRouteEnabled = getSharedPreferences(PREFERENCES_NAME, Context.MODE_PRIVATE)
-            .getBoolean(ASSISTANT_EARLY_ROUTE_KEY, false)
+            .getBoolean(ASSISTANT_EARLY_ROUTE_KEY, true)
         isAssistantSessionContinuityEnabled = getSharedPreferences(PREFERENCES_NAME, Context.MODE_PRIVATE)
-            .getBoolean(ASSISTANT_SESSION_CONTINUITY_KEY, false)
+            .getBoolean(ASSISTANT_SESSION_CONTINUITY_KEY, true)
         observer.start()
         observer.updateAssistantEarlyRouteEnabled(isAssistantEarlyRouteEnabled)
         observer.updateAssistantSessionContinuityEnabled(isAssistantSessionContinuityEnabled)

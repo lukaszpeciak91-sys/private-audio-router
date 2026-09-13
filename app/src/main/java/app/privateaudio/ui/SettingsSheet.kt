@@ -182,7 +182,7 @@ fun SettingsSheet(
     onDiagnostics: () -> Unit,
     onDismiss: () -> Unit,
     modifier: Modifier = Modifier,
-    assistantSessionContinuityEnabled: Boolean = false,
+    assistantSessionContinuityEnabled: Boolean = true,
     onAssistantSessionContinuityChange: (Boolean) -> Unit = {},
     onContactClick: () -> Unit = {},
     onPrivacyPolicyOnlineClick: () -> Unit = {},

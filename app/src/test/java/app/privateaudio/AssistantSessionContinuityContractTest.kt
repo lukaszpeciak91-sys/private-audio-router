@@ -8,9 +8,9 @@ import java.io.File
 
 class AssistantSessionContinuityContractTest {
     @Test
-    fun settingIsDefaultOffServiceOwnedAndPersisted() {
-        assertTrue(service.contains("var isAssistantSessionContinuityEnabled by mutableStateOf(false)"))
-        assertTrue(service.contains("getBoolean(ASSISTANT_SESSION_CONTINUITY_KEY, false)"))
+    fun absentPreferenceDefaultsOnAndSettingRemainsServiceOwnedAndPersisted() {
+        assertTrue(service.contains("var isAssistantSessionContinuityEnabled by mutableStateOf(true)"))
+        assertTrue(service.contains("getBoolean(ASSISTANT_SESSION_CONTINUITY_KEY, true)"))
         assertTrue(service.contains("putBoolean(ASSISTANT_SESSION_CONTINUITY_KEY, enabled)"))
         assertTrue(service.contains("observer.updateAssistantSessionContinuityEnabled(enabled)"))
         assertTrue(settings.contains("testTag(\"settings_assistant_session_continuity\")"))
