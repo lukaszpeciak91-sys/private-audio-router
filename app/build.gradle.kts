@@ -44,6 +44,14 @@ fun String.toLogicalLanguageTag(): String {
 val appOwnedProductLanguageTags =
     (listOf(appOwnedDefaultLanguageTag) + appOwnedLocalizedResourceConfigurations.map(String::toLogicalLanguageTag)).sorted()
 
+val releaseSigningEnvironment = mapOf(
+    "storeFile" to System.getenv("PUZRU_UPLOAD_KEYSTORE_PATH"),
+    "storePassword" to System.getenv("PUZRU_UPLOAD_STORE_PASSWORD"),
+    "keyAlias" to System.getenv("PUZRU_UPLOAD_KEY_ALIAS"),
+    "keyPassword" to System.getenv("PUZRU_UPLOAD_KEY_PASSWORD"),
+)
+val hasCompleteReleaseSigningEnvironment = releaseSigningEnvironment.values.all { !it.isNullOrBlank() }
+
 android {
     namespace = "app.privateaudio"
     compileSdk = 36
@@ -62,9 +70,23 @@ android {
         )
     }
 
+    signingConfigs {
+        if (hasCompleteReleaseSigningEnvironment) {
+            create("release") {
+                storeFile = file(releaseSigningEnvironment.getValue("storeFile")!!)
+                storePassword = releaseSigningEnvironment.getValue("storePassword")
+                keyAlias = releaseSigningEnvironment.getValue("keyAlias")
+                keyPassword = releaseSigningEnvironment.getValue("keyPassword")
+            }
+        }
+    }
+
     buildTypes {
         release {
             isMinifyEnabled = false
+            if (hasCompleteReleaseSigningEnvironment) {
+                signingConfig = signingConfigs.getByName("release")
+            }
         }
     }
 

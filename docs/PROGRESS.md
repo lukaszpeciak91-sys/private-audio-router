@@ -1,5 +1,24 @@
 # Progress
 
+## Owner-controlled signed Android App Bundle release workflow
+
+- Added a manual-only, `main`-restricted, read-only GitHub Actions workflow for an
+  owner-authorized signed Puzru AAB. It validates the four configured repository
+  secrets without printing them, decodes the keystore with restrictive permissions
+  under `RUNNER_TEMP`, runs release-relevant automated checks, builds the AAB, applies
+  strict JDK signature verification, requires the accepted upload-certificate SHA-256
+  fingerprint, generates a checksum, uploads only those two files for seven days, and
+  always removes the temporary keystore. It does not tag, create a GitHub Release,
+  generate a signed APK, upload to Google Play, or change version `0.1.0` (`1`).
+- Release signing in the Android module is conditional on a complete environment-only
+  signing configuration. With those variables absent, local builds and canonical CI
+  retain the existing unsigned `bundleRelease` behavior. Focused JVM contracts protect
+  both paths and the workflow's trigger, ref, secret, cleanup, verification, artifact,
+  retention, and fixed-version requirements.
+- The first signed internal-test AAB remains pending a separate explicit owner request
+  to dispatch the workflow from `main`. A later Google Play upload requires another
+  explicit owner request; signed artifact creation alone does not authorize it.
+
 ## Ten-locale localization batch and PR #259 CI repair
 
 - Hardened the durable localization workflow after the batch: current English is now an explicit freshness gate for all translation and audit work; script variants require independent target-script review; Mini decisions require structured reporting; same-source-language regional fallback trees are distinguished from complete translations; and readiness now flows through independent audit and re-audit before merge. No resource, locale inventory, runtime, or routing behavior changed in this documentation/skill iteration.
