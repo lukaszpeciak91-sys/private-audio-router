@@ -1,0 +1,123 @@
+name: Build signed Puzru release AAB
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  signed-release-aab:
+    name: Verify and package signed release AAB
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Require the main branch
+        shell: bash
+        run: |
+          if [[ "${GITHUB_REF}" != "refs/heads/main" ]]; then
+            echo "::error::Signed releases must be dispatched from refs/heads/main (received ${GITHUB_REF})."
+            exit 1
+          fi
+
+      - name: Check out the dispatched main commit
+        uses: actions/checkout@v5
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 1
+
+      - name: Set up Java 17
+        uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Set up Gradle
+        uses: gradle/actions/setup-gradle@v5
+
+      - name: Validate signing secrets and prepare temporary keystore
+        shell: bash
+        env:
+          PUZRU_UPLOAD_KEYSTORE_BASE64: ${{ secrets.PUZRU_UPLOAD_KEYSTORE_BASE64 }}
+          PUZRU_UPLOAD_KEY_ALIAS: ${{ secrets.PUZRU_UPLOAD_KEY_ALIAS }}
+          PUZRU_UPLOAD_STORE_PASSWORD: ${{ secrets.PUZRU_UPLOAD_STORE_PASSWORD }}
+          PUZRU_UPLOAD_KEY_PASSWORD: ${{ secrets.PUZRU_UPLOAD_KEY_PASSWORD }}
+        run: |
+          missing=0
+          for variable in \
+            PUZRU_UPLOAD_KEYSTORE_BASE64 \
+            PUZRU_UPLOAD_KEY_ALIAS \
+            PUZRU_UPLOAD_STORE_PASSWORD \
+            PUZRU_UPLOAD_KEY_PASSWORD
+          do
+            if [[ -z "${!variable:-}" ]]; then
+              echo "::error::Required repository secret ${variable} is missing or empty."
+              missing=1
+            fi
+          done
+          if (( missing != 0 )); then
+            exit 1
+          fi
+
+          keystore_path="${RUNNER_TEMP}/puzru-upload.keystore"
+          umask 077
+          printf '%s' "${PUZRU_UPLOAD_KEYSTORE_BASE64}" | base64 --decode > "${keystore_path}"
+          chmod 600 "${keystore_path}"
+          printf 'PUZRU_UPLOAD_KEYSTORE_PATH=%s\n' "${keystore_path}" >> "${GITHUB_ENV}"
+
+      - name: Run release-relevant automated checks
+        run: ./gradlew testDebugUnitTest lintDebug assembleDebug
+
+      - name: Build signed release bundle
+        env:
+          PUZRU_UPLOAD_KEY_ALIAS: ${{ secrets.PUZRU_UPLOAD_KEY_ALIAS }}
+          PUZRU_UPLOAD_STORE_PASSWORD: ${{ secrets.PUZRU_UPLOAD_STORE_PASSWORD }}
+          PUZRU_UPLOAD_KEY_PASSWORD: ${{ secrets.PUZRU_UPLOAD_KEY_PASSWORD }}
+        run: ./gradlew bundleRelease
+
+      - name: Verify signature, certificate, and bundle checksum
+        shell: bash
+        env:
+          EXPECTED_CERTIFICATE_SHA256: 0F:45:43:E4:1F:FF:5F:2D:51:12:A2:05:23:08:64:64:99:ED:E4:22:87:A5:D8:E1:A6:4E:4D:CD:B4:38:54:4F
+        run: |
+          bundle="app/build/outputs/bundle/release/app-release.aab"
+          checksum="${bundle}.sha256"
+          if [[ ! -f "${bundle}" ]]; then
+            echo "::error::Expected release bundle was not produced at ${bundle}."
+            exit 1
+          fi
+
+          jarsigner -verify -strict -verbose -certs \
+            -keystore "${PUZRU_UPLOAD_KEYSTORE_PATH}" \
+            -storetype JKS \
+            "${bundle}"
+          actual_fingerprint="$({ keytool -printcert -jarfile "${bundle}"; } | sed -n 's/^[[:space:]]*SHA256:[[:space:]]*//p' | head -n 1)"
+          if [[ -z "${actual_fingerprint}" ]]; then
+            echo "::error::Could not read the signing certificate SHA-256 fingerprint from the AAB."
+            exit 1
+          fi
+          if [[ "${actual_fingerprint}" != "${EXPECTED_CERTIFICATE_SHA256}" ]]; then
+            echo "::error::The AAB signing certificate does not match the expected Puzru upload certificate."
+            exit 1
+          fi
+
+          (
+            cd "$(dirname "${bundle}")"
+            sha256sum "$(basename "${bundle}")" > "$(basename "${checksum}")"
+          )
+
+      - name: Upload signed Puzru AAB
+        uses: actions/upload-artifact@v4
+        with:
+          name: Puzru-signed-release-AAB-${{ github.run_number }}
+          path: |
+            app/build/outputs/bundle/release/app-release.aab
+            app/build/outputs/bundle/release/app-release.aab.sha256
+          if-no-files-found: error
+          retention-days: 7
+
+      - name: Remove temporary keystore
+        if: always()
+        shell: bash
+        run: rm -f "${RUNNER_TEMP}/puzru-upload.keystore"

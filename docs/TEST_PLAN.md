@@ -1,5 +1,23 @@
 # Hardware-in-the-Loop Test Plan
 
+## Signed release infrastructure gate
+
+- **Automated scope:** JVM contract tests verify that the signed-AAB workflow is
+  manual-only, restricted to `main`, read-only, secret-backed, temporary-keystore
+  based, cleanup-safe, certificate/fingerprint verifying, and limited to uploading
+  the AAB plus checksum for seven days. They also protect version `0.1.0` (`1`) and
+  the existing secret-free unsigned `bundleRelease` CI path.
+- **Run-time release scope:** An owner-authorized workflow run must pass JVM tests,
+  Android lint, the debug build, signed `bundleRelease`, strict JDK `jarsigner`
+  verification, exact upload-certificate SHA-256 comparison, and checksum generation
+  before its artifact is accepted. A source-only implementation or unsigned local
+  bundle cannot establish that repository secrets decode correctly or that the
+  owner-held upload key matches the expected certificate.
+- **Physical boundary:** These release checks establish artifact and build integrity,
+  not Android audio routing, audible output, OEM behavior, UI rendering, telephony
+  priority, or lifecycle behavior. Existing physical-device gates remain authoritative
+  for those claims.
+
 ## Diagnostic email attachment physical gate
 
 **Status: NOT TESTED**

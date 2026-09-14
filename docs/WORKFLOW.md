@@ -139,6 +139,26 @@ Green CI is necessary source-contract evidence, not linguistic acceptance, and T
 - Physical-device evidence remains authoritative for routing behavior. Static checks, JVM tests, emulator UI checks, and cloud builds must retain their distinct evidence levels.
 - Treat cloud build limitations as environment limitations, not source failures; conversely, do not use a cloud build result as proof of physical routing behavior.
 
+## Owner-controlled signed AAB workflow
+
+Ordinary Android CI remains automatic for pull requests to and pushes on `main`. It
+runs without signing secrets and continues to produce an unsigned release bundle as a
+build-health check. Signed distribution artifacts use the separate **Build signed
+Puzru release AAB** workflow, whose only trigger is a manual `workflow_dispatch`.
+
+An agent may dispatch that workflow only when the repository owner explicitly asks to
+create a signed AAB. The dispatcher must select `main`; the workflow rejects every
+other ref, checks out the dispatched commit, validates all four repository secrets,
+decodes the upload keystore only under `RUNNER_TEMP`, runs the release-relevant tests,
+lint, and debug build, then builds and strictly verifies the signed release AAB. It
+also compares the bundle certificate with the accepted public SHA-256 fingerprint and
+uploads only the AAB and its checksum for seven days. Cleanup removes the temporary
+keystore even after failure.
+
+That authorization does **not** authorize a version change, tag, GitHub Release, or
+distribution upload. Uploading the artifact to Google Play is a separate action and
+requires a separate explicit owner request. The workflow itself never uploads to Play.
+
 ## Documentation requirements
 
 - Every PR updates `PROGRESS.md`.

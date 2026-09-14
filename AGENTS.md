@@ -67,3 +67,14 @@ Documentation maintenance is part of normal engineering work. Update an authorit
 - workflow change → `docs/WORKFLOW.md`
 
 Do not mechanically update every document on every PR. Update only documents whose authoritative information changed, do not repeat the same detail across documents, and prefer references between authoritative documents over copied sections.
+
+## Owner-controlled releases
+
+Signed release artifacts are owner-controlled. An agent may trigger the signed AAB
+workflow only after an explicit request from the repository owner to create a signed
+AAB. Without that request, agents must not trigger the workflow, increment release
+versions, create signed distribution artifacts, create release tags, or upload builds
+to any distribution service. Authorization to create a signed AAB does not authorize
+uploading it to Google Play; building and uploading to Google Play are separate actions,
+and a Play upload requires its own explicit owner request. Ordinary pull-request CI
+remains automatic and unsigned.
