@@ -65,6 +65,26 @@ class SignedReleaseWorkflowContractTest {
         assertTrue(gradle.contains("versionName = \"0.1.0\""))
     }
 
+    @Test
+    fun releaseOptimizationAndCrashMetadataVerificationStayEnabled() {
+        assertTrue(gradle.contains("optimization {\n                enable = true\n            }"))
+        assertFalse(gradle.contains("isMinifyEnabled = false"))
+        assertTrue(gradle.contains("ndk.debugSymbolLevel = \"SYMBOL_TABLE\""))
+
+        val metadataVerification = workflow.substringAfter("- name: Verify release crash-diagnostics metadata")
+            .substringBefore("- name: Verify signature, certificate, and bundle checksum")
+        assertTrue(metadataVerification.contains("app/build/outputs/mapping/release/mapping.txt"))
+        assertTrue(metadataVerification.contains("[[ ! -s \"\${mapping}\" ]]"))
+        assertTrue(
+            metadataVerification.contains(
+                "BUNDLE-METADATA/com.android.tools.build.obfuscation/proguard.map",
+            ),
+        )
+        assertTrue(metadataVerification.contains("libandroidx.graphics.path.so"))
+        assertTrue(metadataVerification.contains("com.android.tools.build.debugsymbols/"))
+        assertTrue(metadataVerification.contains("::warning::No native debug-symbol metadata is embedded"))
+    }
+
     private companion object {
         val root = generateSequence(File(System.getProperty("user.dir")).absoluteFile) { it.parentFile }
             .first { File(it, "app/src/main").isDirectory }
