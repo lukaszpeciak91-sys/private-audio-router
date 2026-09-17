@@ -27,7 +27,7 @@ class Layer6FloatingControllerContractTest {
     @Test fun allFourAuthoritativeStatesHaveApprovedTreatment() {
         PrivateAudioState.entries.forEach { assertTrue(it.name, overlay.contains("PrivateAudioState.${it.name}")) }
         assertTrue(overlay.contains("privateAudioService?.privateAudioState"))
-        assertTrue(overlay.contains("PrivateAudioState.READY -> Color.rgb(133, 133, 133)"))
+        assertTrue(overlay.contains("PrivateAudioState.READY -> miniColor(MINI_READY_STATUS_COLOR)"))
         assertTrue(overlay.contains("PrivateAudioState.ACTIVE -> Color.rgb(34, 218, 112)"))
         assertTrue(overlay.contains("WAITING -> Color.rgb(238, 172, 54)")); assertTrue(overlay.contains("ERROR -> Color.rgb(238, 75, 75)"))
         assertTrue(overlay.contains("READY -> Color.rgb(184, 184, 188)")); assertFalse(overlay.contains("projectPrivateAudioState("))

@@ -22,10 +22,26 @@ class StatePresentationTest {
         assertNull(ready.notificationTitle)
         assertNull(ready.notificationText)
 
-        PrivateAudioState.entries.filterNot { it == PrivateAudioState.READY }.forEach { state ->
-            val presentation = statePresentation(state)
-            assertNotEquals("$state title", null, presentation.notificationTitle)
-            assertNotEquals("$state text", null, presentation.notificationText)
-        }
+        assertNotification(
+            PrivateAudioState.WAITING,
+            R.string.routing_notification_waiting_title,
+            R.string.routing_notification_waiting_text,
+        )
+        assertNotification(
+            PrivateAudioState.ACTIVE,
+            R.string.routing_notification_active_title,
+            R.string.routing_notification_active_text,
+        )
+        assertNotification(
+            PrivateAudioState.ERROR,
+            R.string.routing_notification_error_title,
+            R.string.routing_notification_error_text,
+        )
+    }
+
+    private fun assertNotification(state: PrivateAudioState, title: Int, text: Int) {
+        val presentation = statePresentation(state)
+        assertEquals(title, presentation.notificationTitle)
+        assertEquals(text, presentation.notificationText)
     }
 }

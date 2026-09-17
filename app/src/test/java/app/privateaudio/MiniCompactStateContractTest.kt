@@ -50,6 +50,11 @@ class MiniCompactStateContractTest {
         val res = File(root, "app/src/main/res")
         val localeStringFiles = res.listFiles()!!.filter(File::isCompleteTargetLocalizationDirectory).map { File(it, "strings.xml") }.filter(File::isFile)
         val overlay = File(root, "app/src/main/java/app/privateaudio/overlay/OverlayService.kt").readText()
-        val stateKeys = listOf("state_ready", "state_waiting", "state_active", "state_error", "state_ready_mini", "state_waiting_mini", "state_active_mini", "state_error_mini")
+        val stateKeys = listOf(
+            "status_mini_ready",
+            "status_mini_waiting",
+            "status_mini_active",
+            "status_mini_error",
+        )
     }
 }

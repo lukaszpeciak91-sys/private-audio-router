@@ -305,7 +305,7 @@ class OverlayService : Service() {
             canvas.drawRoundRect(controllerSurface, 13f, 13f, paint)
             paint.style = Paint.Style.STROKE
             paint.strokeWidth = 1f
-            paint.color = Color.rgb(91, 91, 94)
+            paint.color = miniColor(MINI_STATUS_SURFACE_COLOR)
             canvas.drawRoundRect(controllerSurface, 13f, 13f, paint)
 
             paint.color = statusColor(state)
@@ -517,11 +517,13 @@ class OverlayService : Service() {
         )
 
         private fun statusColor(value: PrivateAudioState) = when (value) {
-            PrivateAudioState.READY -> Color.rgb(133, 133, 133)
+            PrivateAudioState.READY -> miniColor(MINI_READY_STATUS_COLOR)
             PrivateAudioState.ACTIVE -> Color.rgb(34, 218, 112)
             PrivateAudioState.WAITING -> Color.rgb(238, 172, 54)
-            PrivateAudioState.ERROR -> Color.rgb(238, 75, 75)
+            PrivateAudioState.ERROR -> miniColor(MINI_ERROR_STATUS_COLOR)
         }
+
+        private fun miniColor(rgb: Int) = Color.rgb(rgb shr 16 and 0xFF, rgb shr 8 and 0xFF, rgb and 0xFF)
 
         private fun powerColor(value: PrivateAudioState) = when (value) {
             PrivateAudioState.READY -> Color.rgb(184, 184, 188)
@@ -553,3 +555,7 @@ class OverlayService : Service() {
         fun hideIntent(context: Context) = Intent(context, OverlayService::class.java).setAction(ACTION_HIDE)
     }
 }
+
+internal const val MINI_STATUS_SURFACE_COLOR = 0x5B5B5E
+internal const val MINI_READY_STATUS_COLOR = 0xB3B3B3
+internal const val MINI_ERROR_STATUS_COLOR = 0xFF8C8C

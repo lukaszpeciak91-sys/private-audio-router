@@ -1,5 +1,9 @@
 package app.privateaudio
 
+import app.privateaudio.overlay.MINI_ERROR_STATUS_COLOR
+import app.privateaudio.overlay.MINI_READY_STATUS_COLOR
+import app.privateaudio.overlay.MINI_STATUS_SURFACE_COLOR
+import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue
 import org.junit.Test
@@ -38,7 +42,7 @@ class StatusClarityContractTest {
         assertTrue(screen.contains("ProductNeutral"))
         assertFalse(screen.substringAfter("PrivateAudioState.READY -> StateVisuals").substringBefore('\n').contains("ProductGreen"))
         StatusSymbol.entries.forEach { assertTrue(overlay.contains("StatusSymbol.${it.name}")) }
-        assertTrue(overlay.contains("PrivateAudioState.READY -> Color.rgb(133, 133, 133)"))
+        assertTrue(overlay.contains("PrivateAudioState.READY -> miniColor(MINI_READY_STATUS_COLOR)"))
         assertTrue(overlay.contains("statePresentation(value).miniLabel"))
         assertTrue(overlay.contains("fullStateLabel(value)"))
     }
@@ -49,6 +53,32 @@ class StatusClarityContractTest {
         assertTrue(service.contains("statePresentation(privateAudioState)"))
         assertTrue(service.contains("privateAudioState == PrivateAudioState.READY"))
         assertFalse(service.method("private fun updateForegroundNotification").contains("postDelayed"))
+        assertTrue(service.method("private fun updateForegroundNotification").contains("privateAudioState == PrivateAudioState.READY) return"))
+        assertTrue(service.method("private fun buildForegroundNotification").contains("presentation.notificationTitle ?: return null"))
+        assertTrue(service.method("private fun buildForegroundNotification").contains("presentation.notificationText ?: return null"))
+        assertTrue(service.method("fun disarmAndStopStartedLifetime").contains("stopForeground(STOP_FOREGROUND_REMOVE)"))
+        assertTrue(service.method("fun disarmAndStopStartedLifetime").contains("stopSelf()"))
+    }
+
+    @Test fun miniReadyAndErrorTokensMeetNonTextContrastMinimum() {
+        assertEquals(0xB3B3B3, MINI_READY_STATUS_COLOR)
+        assertEquals(0xFF8C8C, MINI_ERROR_STATUS_COLOR)
+        assertTrue(contrast(MINI_READY_STATUS_COLOR, MINI_STATUS_SURFACE_COLOR) >= 3.0)
+        assertTrue(contrast(MINI_ERROR_STATUS_COLOR, MINI_STATUS_SURFACE_COLOR) >= 3.0)
+    }
+
+    private fun contrast(first: Int, second: Int): Double {
+        val lighter = maxOf(relativeLuminance(first), relativeLuminance(second))
+        val darker = minOf(relativeLuminance(first), relativeLuminance(second))
+        return (lighter + 0.05) / (darker + 0.05)
+    }
+
+    private fun relativeLuminance(rgb: Int): Double {
+        fun channel(shift: Int): Double {
+            val value = (rgb shr shift and 0xFF) / 255.0
+            return if (value <= 0.04045) value / 12.92 else Math.pow((value + 0.055) / 1.055, 2.4)
+        }
+        return 0.2126 * channel(16) + 0.7152 * channel(8) + 0.0722 * channel(0)
     }
 
     private fun strings(file: File): Map<String, String> {

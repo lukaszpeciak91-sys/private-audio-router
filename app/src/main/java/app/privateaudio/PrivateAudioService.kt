@@ -227,9 +227,10 @@ class PrivateAudioService : Service() {
 
     private fun updateForegroundNotification() {
         if (!foregroundNotificationActive || privateAudioState == PrivateAudioState.READY) return
+        val notification = buildForegroundNotification() ?: return
         getSystemService(NotificationManager::class.java).notify(
             NOTIFICATION_ID,
-            buildForegroundNotification(),
+            notification,
         )
     }
 
@@ -245,10 +246,9 @@ class PrivateAudioService : Service() {
                     PackageManager.PERMISSION_GRANTED
             )
         ) {
-            getSystemService(NotificationManager::class.java).notify(
-                NOTIFICATION_ID,
-                buildForegroundNotification(),
-            )
+            buildForegroundNotification()?.let { notification ->
+                getSystemService(NotificationManager::class.java).notify(NOTIFICATION_ID, notification)
+            }
         }
     }
 
@@ -261,7 +261,9 @@ class PrivateAudioService : Service() {
                 NotificationManager.IMPORTANCE_LOW,
             ),
         )
-        val notification = buildForegroundNotification()
+        val notification = checkNotNull(buildForegroundNotification()) {
+            "Foreground entry requires an enabled controller state"
+        }
 
         if (android.os.Build.VERSION.SDK_INT >= 34) {
             startForeground(
@@ -275,11 +277,10 @@ class PrivateAudioService : Service() {
         foregroundNotificationActive = true
     }
 
-    private fun buildForegroundNotification(): Notification {
+    private fun buildForegroundNotification(): Notification? {
         val presentation = statePresentation(privateAudioState)
-        check(presentation.notificationTitle != null && presentation.notificationText != null) {
-            "READY has no foreground notification"
-        }
+        val title = presentation.notificationTitle ?: return null
+        val text = presentation.notificationText ?: return null
         val openMain = PendingIntent.getActivity(
             this,
             0,
@@ -290,8 +291,8 @@ class PrivateAudioService : Service() {
         )
         return Notification.Builder(this, NOTIFICATION_CHANNEL_ID)
             .setSmallIcon(R.drawable.puzru_adaptive_monochrome)
-            .setContentTitle(getString(presentation.notificationTitle))
-            .setContentText(getString(presentation.notificationText))
+            .setContentTitle(getString(title))
+            .setContentText(getString(text))
             .setContentIntent(openMain)
             .setOngoing(true)
             .build()

@@ -28,7 +28,6 @@ import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.layout.wrapContentWidth
-import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
@@ -444,7 +443,15 @@ private fun StateSymbol(symbol: StatusSymbol, color: Color, symbolAlpha: Float, 
                 drawLine(color, center, Offset(size.width * 0.70f, size.height * 0.58f), stroke, StrokeCap.Round)
             }
             StatusSymbol.EARPIECE -> {
-                drawArc(color, 120f, 220f, false, Offset(size.width * 0.18f, size.height * 0.08f), Size(size.width * 0.64f, size.height * 0.84f), Stroke(stroke, cap = StrokeCap.Round))
+                drawArc(
+                    color = color,
+                    startAngle = 120f,
+                    sweepAngle = 220f,
+                    useCenter = false,
+                    topLeft = Offset(size.width * 0.18f, size.height * 0.08f),
+                    size = Size(size.width * 0.64f, size.height * 0.84f),
+                    style = Stroke(stroke, cap = StrokeCap.Round),
+                )
                 drawCircle(color, radius = stroke * 0.7f, center = Offset(size.width * 0.60f, size.height * 0.58f))
             }
             StatusSymbol.WARNING -> {

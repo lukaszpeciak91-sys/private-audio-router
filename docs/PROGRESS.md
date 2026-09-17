@@ -2,6 +2,13 @@
 
 ## Main, Mini, and foreground-notification status clarity
 
+- **FACT:** Technical review correction makes the Compose earpiece arc pass its
+  `Stroke` through the drawing API's `style` parameter, removes the obsolete dot
+  import, and raises only Mini's `READY` and `ERROR` symbol tokens to `#B3B3B3`
+  and `#FF8C8C`. Against Mini's `#5B5B5E` reference surface they measure 3.23:1
+  and 3.03:1 respectively. Focused contracts now cover the rendered
+  `status_mini_*` resources, exact notification resources for all enabled states,
+  the READY no-notification guard, foreground removal, and the Mini token contrast.
 - **FACT:** The unchanged service states now have one presentation mapping shared by Main, Mini, and the foreground notification. Controller-off `READY` is neutral grey and labelled Off; `WAITING` is amber and identifies waiting for voice; `ACTIVE` is green and identifies the earpiece route; and `ERROR` is red and identifies a routing problem. Four distinct Canvas symbols supplement the color and motion treatments.
 - **FACT:** Main Power now speaks the pending action (Turn on Puzru while off and Turn off Puzru otherwise). Mini retains its dimensions, control order, direction-aware Canvas geometry, shared measured 16f/15f/14f fitting path, and full-state spoken controller description while displaying compact state labels.
 - **FACT:** Enabled-state notification copy now follows service-owned state transitions through the existing evidence-change callback. `WAITING`, `ACTIVE`, and `ERROR` have distinct content; `READY` preserves the existing foreground removal and stopped started-service lifetime. No polling or additional product-state projection was introduced.
