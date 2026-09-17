@@ -150,10 +150,26 @@ An agent may dispatch that workflow only when the repository owner explicitly as
 create a signed AAB. The dispatcher must select `main`; the workflow rejects every
 other ref, checks out the dispatched commit, validates all four repository secrets,
 decodes the upload keystore only under `RUNNER_TEMP`, runs the release-relevant tests,
-lint, and debug build, then builds and strictly verifies the signed release AAB. It
-also compares the bundle certificate with the accepted public SHA-256 fingerprint and
-uploads only the AAB and its checksum for seven days. Cleanup removes the temporary
-keystore even after failure.
+lint, and debug build, then builds and strictly verifies the signed release AAB.
+Before signing verification, it requires a non-empty
+`app/build/outputs/mapping/release/mapping.txt` and the matching non-empty
+`BUNDLE-METADATA/com.android.tools.build.obfuscation/proguard.map` entry. It also
+requires the audited `androidx.graphics:graphics-path` four-ABI
+`libandroidx.graphics.path.so` inventory to remain exact: an inventory change stops
+the release for a new ownership/symbol audit.
+
+Release builds request `SYMBOL_TABLE` through AGP. The current AndroidX Graphics Path
+inputs are already stripped upstream, so the workflow validates all native-symbol
+metadata entries when present but emits a visible warning instead of failing when AGP
+cannot embed unavailable third-party symbols. Never fabricate or reconstruct symbols
+to satisfy that check. If the native inventory changes, or upstream begins providing
+symbols, directly inspect the release AAB and update the evidence and check together.
+
+The workflow also compares the bundle certificate with the accepted public SHA-256
+fingerprint and uploads only the AAB and its checksum for seven days. Mapping files,
+symbol archives, and other build outputs are verification inputs only and are not
+uploaded as primary artifacts. Cleanup removes the temporary keystore even after
+failure.
 
 That authorization does **not** authorize a version change, tag, GitHub Release, or
 distribution upload. Uploading the artifact to Google Play is a separate action and

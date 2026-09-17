@@ -1,5 +1,34 @@
 # Progress
 
+## Release crash-diagnostics metadata
+
+- **FACT:** Release builds now use the Android Gradle Plugin 9.3 `optimization`
+  pipeline. Code and resources are optimized and shrunk, and R8 produces the
+  non-empty `app/build/outputs/mapping/release/mapping.txt` whose bundle copy is
+  `BUNDLE-METADATA/com.android.tools.build.obfuscation/proguard.map`. The prior
+  `isMinifyEnabled = false` setting was the cause of version code 1 having no
+  deobfuscation mapping in Google Play.
+- **FACT:** Puzru has no app-owned C/C++, JNI, CMake, `externalNativeBuild`, or NDK
+  dependency. The release bundle's native payload is dependency-owned
+  `libandroidx.graphics.path.so`, contributed by the transitive
+  `androidx.graphics:graphics-path` dependency for
+  `arm64-v8a`, `armeabi-v7a`, `x86`, and `x86_64`. Those upstream inputs are already
+  stripped and contain no extractable symbol table or debug information. Release
+  configuration nevertheless requests AGP's supported `SYMBOL_TABLE` metadata so
+  usable symbols will be embedded if the upstream artifact begins supplying them;
+  no NDK installation or native build has been added.
+- **FACT:** The owner-controlled signed workflow now requires both the standalone R8
+  mapping and its non-empty AAB metadata entry. It also verifies the exact audited
+  native-library inventory and validates any native debug-symbol entries, but reports
+  an explicit warning rather than failing when none exist for the already-stripped
+  third-party inputs. The primary downloadable artifact remains only the signed AAB
+  and checksum.
+- **UNKNOWN:** A later Play Console upload of a new version code should remove the
+  missing-deobfuscation warning because the mapping is embedded. The native-symbol
+  warning may remain until AndroidX publishes usable symbols; only a later owner-run
+  upload and Play processing can establish the displayed result. No workflow was
+  dispatched and no release artifact was created or uploaded by this change.
+
 ## Owner-controlled signed Android App Bundle release workflow
 
 - Added a manual-only, `main`-restricted, read-only GitHub Actions workflow for an

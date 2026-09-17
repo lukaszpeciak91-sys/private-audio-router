@@ -83,7 +83,10 @@ android {
 
     buildTypes {
         release {
-            isMinifyEnabled = false
+            optimization {
+                enable = true
+            }
+            ndk.debugSymbolLevel = "SYMBOL_TABLE"
             if (hasCompleteReleaseSigningEnvironment) {
                 signingConfig = signingConfigs.getByName("release")
             }
