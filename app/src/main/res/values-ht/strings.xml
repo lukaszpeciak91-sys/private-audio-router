@@ -2,8 +2,6 @@
 <resources>
     <string name="app_name">Puzru</string>
     <string name="routing_notification_channel">Puzru</string>
-    <string name="routing_notification_title">Puzru limen</string>
-    <string name="routing_notification_text">Ap tann pou dirije odyo a</string>
     <string name="product_title">Puzru</string>
     <string name="product_subtitle">Pale ak IA an prive, tankou yon apèl nan telefòn.</string>
     <string name="state_ready">Pare</string>
@@ -75,4 +73,20 @@
     <string name="diagnostics_error_audio_preparation">Puzru pa t kapab prepare odyo kominikasyon an.</string>
     <string name="diagnostics_error_request_rejected">Demann pou dirije odyo nan ekoutè apèl la pa t aksepte.</string>
     <string name="diagnostics_error_not_completed">Direksyon odyo a pa t kapab konplete.</string>
+    <string name="power_turn_on">Puzru — Limen</string>
+    <string name="power_turn_off">Puzru — Etenn</string>
+    <string name="routing_notification_waiting_title">Puzru limen</string>
+    <string name="routing_notification_waiting_text">Ap tann pou dirije odyo a</string>
+    <string name="routing_notification_active_title">Ekoutè apèl</string>
+    <string name="routing_notification_active_text">Ekoutè apèl</string>
+    <string name="routing_notification_error_title">Erè</string>
+    <string name="routing_notification_error_text">Erè</string>
+    <string name="status_main_ready">Etenn</string>
+    <string name="status_mini_ready">Etenn</string>
+    <string name="status_main_waiting">Ap tann</string>
+    <string name="status_mini_waiting">Ap tann</string>
+    <string name="status_main_active">Ekoutè apèl</string>
+    <string name="status_mini_active">Ekoutè apèl</string>
+    <string name="status_main_error">Erè</string>
+    <string name="status_mini_error">Erè</string>
 </resources>

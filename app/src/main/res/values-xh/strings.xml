@@ -2,8 +2,6 @@
 <resources>
     <string name="app_name">Puzru</string>
     <string name="routing_notification_channel">Puzru</string>
-    <string name="routing_notification_title">I-Puzru ivuliwe</string>
-    <string name="routing_notification_text">Ilindile ukuhambisa iaudio</string>
     <string name="product_title">Puzru</string>
     <string name="product_subtitle">Thetha ne-AI ngasese, ngokungathi usefowunini.</string>
     <string name="state_ready">Ilungile</string>
@@ -75,4 +73,20 @@
     <string name="diagnostics_error_audio_preparation">I-Puzru ayikwazanga ukulungiselela iaudio yonxibelelwano.</string>
     <string name="diagnostics_error_request_rejected">Isicelo sokuhambisa iaudio kwisamkeli sendlebe asamkelwanga.</string>
     <string name="diagnostics_error_not_completed">Ukuhanjiswa kweaudio akukwazanga kugqitywa.</string>
+    <string name="power_turn_on">Puzru — Ivuliwe</string>
+    <string name="power_turn_off">Puzru — Ivaliwe</string>
+    <string name="routing_notification_waiting_title">I-Puzru ivuliwe</string>
+    <string name="routing_notification_waiting_text">Ilindile ukuhambisa iaudio</string>
+    <string name="routing_notification_active_title">Isamkeli sendlebe</string>
+    <string name="routing_notification_active_text">Isamkeli sendlebe</string>
+    <string name="routing_notification_error_title">Impazamo</string>
+    <string name="routing_notification_error_text">Impazamo</string>
+    <string name="status_main_ready">Ivaliwe</string>
+    <string name="status_mini_ready">Ivaliwe</string>
+    <string name="status_main_waiting">Ilindile</string>
+    <string name="status_mini_waiting">Ilindile</string>
+    <string name="status_main_active">Isamkeli sendlebe</string>
+    <string name="status_mini_active">Isamkeli sendlebe</string>
+    <string name="status_main_error">Impazamo</string>
+    <string name="status_mini_error">Impazamo</string>
 </resources>

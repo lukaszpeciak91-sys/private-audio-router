@@ -2,8 +2,6 @@
 <resources>
     <string name="app_name">Puzru</string>
     <string name="routing_notification_channel">Puzru</string>
-    <string name="routing_notification_title">Puzru ಆನ್ ಆಗಿದೆ</string>
-    <string name="routing_notification_text">ಆಡಿಯೊ ಸ್ವಿಚ್ ಆಗಲು ಕಾಯುತ್ತಿದೆ</string>
     <string name="product_title">Puzru</string>
     <string name="product_subtitle">ಫೋನ್ ಕಾಲ್‌ನಂತೆ, AI ಜೊತೆ ಖಾಸಗಿಯಾಗಿ ಮಾತನಾಡಿ.</string>
     <string name="state_ready">ಸಿದ್ಧ</string>
@@ -76,4 +74,20 @@
     <string name="diagnostics_error_audio_preparation">Puzru ಸಂವಹನ ಆಡಿಯೊವನ್ನು ಸಿದ್ಧಪಡಿಸಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ.</string>
     <string name="diagnostics_error_request_rejected">ಇಯರ್‌ಪೀಸ್ ಆಡಿಯೊ ರೂಟಿಂಗ್ ವಿನಂತಿಯನ್ನು ಅಂಗೀಕರಿಸಲಾಗಲಿಲ್ಲ.</string>
     <string name="diagnostics_error_not_completed">ಆಡಿಯೊ ರೂಟಿಂಗ್ ಅನ್ನು ಪೂರ್ಣಗೊಳಿಸಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ.</string>
+    <string name="power_turn_on">Puzru — ಆನ್</string>
+    <string name="power_turn_off">Puzru — ಆಫ್</string>
+    <string name="routing_notification_waiting_title">Puzru ಆನ್ ಆಗಿದೆ</string>
+    <string name="routing_notification_waiting_text">ಆಡಿಯೊ ಸ್ವಿಚ್ ಆಗಲು ಕಾಯುತ್ತಿದೆ</string>
+    <string name="routing_notification_active_title">ಇಯರ್‌ಪೀಸ್</string>
+    <string name="routing_notification_active_text">ಇಯರ್‌ಪೀಸ್</string>
+    <string name="routing_notification_error_title">ದೋಷ</string>
+    <string name="routing_notification_error_text">ದೋಷ</string>
+    <string name="status_main_ready">ಆಫ್</string>
+    <string name="status_mini_ready">ಆಫ್</string>
+    <string name="status_main_waiting">ಕಾಯುತ್ತಿದೆ</string>
+    <string name="status_mini_waiting">ಕಾಯುತ್ತಿದೆ</string>
+    <string name="status_main_active">ಇಯರ್‌ಪೀಸ್</string>
+    <string name="status_mini_active">ಇಯರ್‌ಪೀಸ್</string>
+    <string name="status_main_error">ದೋಷ</string>
+    <string name="status_mini_error">ದೋಷ</string>
 </resources>

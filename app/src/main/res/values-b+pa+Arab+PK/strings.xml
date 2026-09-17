@@ -2,8 +2,6 @@
 <resources>
     <string name="app_name">Puzru</string>
     <string name="routing_notification_channel">Puzru</string>
-    <string name="routing_notification_title">Puzru چالو اے</string>
-    <string name="routing_notification_text">آڈیو بدلݨ دی اُڈیک</string>
     <string name="product_title">Puzru</string>
     <string name="product_subtitle">AI نال نجی طور تے گل کرو، بالکل فون کال وانگ۔</string>
     <string name="state_ready">تیار</string>
@@ -76,4 +74,20 @@
     <string name="diagnostics_error_audio_preparation">Puzru گَل بات والی آڈیو تیار نئیں کر سکیا۔</string>
     <string name="diagnostics_error_request_rejected">ایئر پیس ول آڈیو روٹنگ دی درخواست قبول نئیں کیتی گئی۔</string>
     <string name="diagnostics_error_not_completed">آڈیو روٹنگ پوری نئیں ہو سکی۔</string>
+    <string name="power_turn_on">Puzru — چالو</string>
+    <string name="power_turn_off">Puzru — بند</string>
+    <string name="routing_notification_waiting_title">Puzru چالو اے</string>
+    <string name="routing_notification_waiting_text">آڈیو بدلݨ دی اُڈیک</string>
+    <string name="routing_notification_active_title">ایئر پیس</string>
+    <string name="routing_notification_active_text">ایئر پیس</string>
+    <string name="routing_notification_error_title">خرابی</string>
+    <string name="routing_notification_error_text">خرابی</string>
+    <string name="status_main_ready">بند</string>
+    <string name="status_mini_ready">بند</string>
+    <string name="status_main_waiting">اُڈیک</string>
+    <string name="status_mini_waiting">اُڈیک</string>
+    <string name="status_main_active">ایئر پیس</string>
+    <string name="status_mini_active">ایئر پیس</string>
+    <string name="status_main_error">خرابی</string>
+    <string name="status_mini_error">خرابی</string>
 </resources>

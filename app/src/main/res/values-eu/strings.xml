@@ -2,8 +2,6 @@
 <resources>
     <string name="app_name">Puzru</string>
     <string name="routing_notification_channel">Puzru</string>
-    <string name="routing_notification_title">Puzru aktibatuta dago</string>
-    <string name="routing_notification_text">Audioa bideratzeko zain</string>
     <string name="product_title">Puzru</string>
     <string name="product_subtitle">Hitz egin AArekin modu pribatuan, telefono-dei batean bezala.</string>
     <string name="state_ready">Prest</string>
@@ -76,4 +74,20 @@
     <string name="diagnostics_error_audio_preparation">Puzruk ezin izan du komunikazio-audioa prestatu.</string>
     <string name="diagnostics_error_request_rejected">Aurikularrera bideratzeko eskaera ez da onartu.</string>
     <string name="diagnostics_error_not_completed">Ezin izan da audioaren bideratzea osatu.</string>
+    <string name="power_turn_on">Puzru — Aktibatuta</string>
+    <string name="power_turn_off">Puzru — Desaktibatuta</string>
+    <string name="routing_notification_waiting_title">Puzru aktibatuta dago</string>
+    <string name="routing_notification_waiting_text">Audioa bideratzeko zain</string>
+    <string name="routing_notification_active_title">Aurikularra</string>
+    <string name="routing_notification_active_text">Aurikularra</string>
+    <string name="routing_notification_error_title">Errorea</string>
+    <string name="routing_notification_error_text">Errorea</string>
+    <string name="status_main_ready">Desaktibatuta</string>
+    <string name="status_mini_ready">Desaktibatuta</string>
+    <string name="status_main_waiting">Zain</string>
+    <string name="status_mini_waiting">Zain</string>
+    <string name="status_main_active">Aurikularra</string>
+    <string name="status_mini_active">Aurikularra</string>
+    <string name="status_main_error">Errorea</string>
+    <string name="status_mini_error">Errorea</string>
 </resources>

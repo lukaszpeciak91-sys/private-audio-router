@@ -2,8 +2,6 @@
 <resources>
     <string name="app_name">Puzru</string>
     <string name="routing_notification_channel">Puzru</string>
-    <string name="routing_notification_title">Tá Puzru ar siúl</string>
-    <string name="routing_notification_text">Ag fanacht leis an bhfuaim a atreorú</string>
     <string name="product_title">Puzru</string>
     <string name="product_subtitle">Labhair le IS go príobháideach, ar nós glao gutháin.</string>
     <string name="state_ready">Réidh</string>
@@ -75,4 +73,20 @@
     <string name="diagnostics_error_audio_preparation">Níorbh fhéidir le Puzru fuaim chumarsáide a ullmhú.</string>
     <string name="diagnostics_error_request_rejected">Níor glacadh leis an iarratas atreoraithe chuig an ngléas cluaise glaonna.</string>
     <string name="diagnostics_error_not_completed">Níorbh fhéidir an t-atreorú a chríochnú.</string>
+    <string name="power_turn_on">Puzru — Ar siúl</string>
+    <string name="power_turn_off">Puzru — As</string>
+    <string name="routing_notification_waiting_title">Tá Puzru ar siúl</string>
+    <string name="routing_notification_waiting_text">Ag fanacht leis an bhfuaim a atreorú</string>
+    <string name="routing_notification_active_title">Gléas cluaise glaonna</string>
+    <string name="routing_notification_active_text">Gléas cluaise glaonna</string>
+    <string name="routing_notification_error_title">Earráid</string>
+    <string name="routing_notification_error_text">Earráid</string>
+    <string name="status_main_ready">As</string>
+    <string name="status_mini_ready">As</string>
+    <string name="status_main_waiting">Ag fanacht</string>
+    <string name="status_mini_waiting">Ag fanacht</string>
+    <string name="status_main_active">Gléas cluaise glaonna</string>
+    <string name="status_mini_active">Gléas cluaise glaonna</string>
+    <string name="status_main_error">Earráid</string>
+    <string name="status_mini_error">Earráid</string>
 </resources>

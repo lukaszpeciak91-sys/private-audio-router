@@ -2,8 +2,6 @@
 <resources>
     <string name="app_name">Puzru</string>
     <string name="routing_notification_channel">Puzru</string>
-    <string name="routing_notification_title">Puzru jest włączone</string>
-    <string name="routing_notification_text">Czeka na przekierowanie dźwięku</string>
     <string name="product_title">Puzru</string>
     <string name="product_subtitle">Rozmawiaj z AI prywatnie, jak podczas rozmowy telefonicznej.</string>
     <string name="state_ready">Gotowe</string>
@@ -76,4 +74,20 @@
     <string name="diagnostics_error_audio_preparation">Aplikacja Puzru nie mogła przygotować dźwięku do komunikacji.</string>
     <string name="diagnostics_error_request_rejected">Żądanie przekierowania dźwięku do słuchawki nie zostało zaakceptowane.</string>
     <string name="diagnostics_error_not_completed">Nie udało się ukończyć przekierowania dźwięku.</string>
+    <string name="power_turn_on">Puzru — Włączone</string>
+    <string name="power_turn_off">Puzru — Wyłączone</string>
+    <string name="routing_notification_waiting_title">Puzru jest włączone</string>
+    <string name="routing_notification_waiting_text">Czeka na przekierowanie dźwięku</string>
+    <string name="routing_notification_active_title">Słuchawka</string>
+    <string name="routing_notification_active_text">Słuchawka</string>
+    <string name="routing_notification_error_title">Błąd</string>
+    <string name="routing_notification_error_text">Błąd</string>
+    <string name="status_main_ready">Wyłączone</string>
+    <string name="status_mini_ready">Wyłączone</string>
+    <string name="status_main_waiting">Czeka</string>
+    <string name="status_mini_waiting">Czeka</string>
+    <string name="status_main_active">Słuchawka</string>
+    <string name="status_mini_active">Słuchawka</string>
+    <string name="status_main_error">Błąd</string>
+    <string name="status_mini_error">Błąd</string>
 </resources>

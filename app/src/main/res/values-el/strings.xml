@@ -2,8 +2,6 @@
 <resources>
     <string name="app_name">Puzru</string>
     <string name="routing_notification_channel">Puzru</string>
-    <string name="routing_notification_title">Το Puzru είναι ενεργοποιημένο</string>
-    <string name="routing_notification_text">Αναμονή για αλλαγή εξόδου ήχου</string>
     <string name="product_title">Puzru</string>
     <string name="product_subtitle">Μιλήστε ιδιωτικά με AI, σαν να μιλάτε στο τηλέφωνο.</string>
     <string name="state_ready">Έτοιμο</string>
@@ -76,4 +74,20 @@
     <string name="diagnostics_error_audio_preparation">Το Puzru δεν μπόρεσε να προετοιμάσει τον ήχο επικοινωνίας.</string>
     <string name="diagnostics_error_request_rejected">Το αίτημα δρομολόγησης στο ακουστικό δεν έγινε αποδεκτό.</string>
     <string name="diagnostics_error_not_completed">Δεν ήταν δυνατή η ολοκλήρωση της δρομολόγησης ήχου.</string>
+    <string name="power_turn_on">Puzru — Ενεργοποιημένο</string>
+    <string name="power_turn_off">Puzru — Απενεργοποιημένο</string>
+    <string name="routing_notification_waiting_title">Το Puzru είναι ενεργοποιημένο</string>
+    <string name="routing_notification_waiting_text">Αναμονή για αλλαγή εξόδου ήχου</string>
+    <string name="routing_notification_active_title">Ακουστικό</string>
+    <string name="routing_notification_active_text">Ακουστικό</string>
+    <string name="routing_notification_error_title">Σφάλμα</string>
+    <string name="routing_notification_error_text">Σφάλμα</string>
+    <string name="status_main_ready">Απενεργοποιημένο</string>
+    <string name="status_mini_ready">Απενεργοποιημένο</string>
+    <string name="status_main_waiting">Αναμονή</string>
+    <string name="status_mini_waiting">Αναμονή</string>
+    <string name="status_main_active">Ακουστικό</string>
+    <string name="status_mini_active">Ακουστικό</string>
+    <string name="status_main_error">Σφάλμα</string>
+    <string name="status_mini_error">Σφάλμα</string>
 </resources>

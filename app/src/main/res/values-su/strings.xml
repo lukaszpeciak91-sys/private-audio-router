@@ -2,8 +2,6 @@
 <resources>
     <string name="app_name">Puzru</string>
     <string name="routing_notification_channel">Puzru</string>
-    <string name="routing_notification_title">Puzru hurung</string>
-    <string name="routing_notification_text">Ngadagoan pikeun ngarahkeun audio</string>
     <string name="product_title">Puzru</string>
     <string name="product_subtitle">Ngobrol jeung AI sacara pribadi, kawas nelepon.</string>
     <string name="state_ready">Siap</string>
@@ -75,4 +73,20 @@
     <string name="diagnostics_error_audio_preparation">Puzru teu bisa nyiapkeun audio komunikasi.</string>
     <string name="diagnostics_error_request_rejected">Paménta pikeun ngarahkeun audio ka speaker ceuli bawaan telepon teu ditarima.</string>
     <string name="diagnostics_error_not_completed">Pangarahan audio teu bisa diréngsékeun.</string>
+    <string name="power_turn_on">Puzru — Hurung</string>
+    <string name="power_turn_off">Puzru — Pareum</string>
+    <string name="routing_notification_waiting_title">Puzru hurung</string>
+    <string name="routing_notification_waiting_text">Ngadagoan pikeun ngarahkeun audio</string>
+    <string name="routing_notification_active_title">Spéker ceuli bawaan telepon</string>
+    <string name="routing_notification_active_text">Spéker ceuli bawaan telepon</string>
+    <string name="routing_notification_error_title">Kasalahan</string>
+    <string name="routing_notification_error_text">Kasalahan</string>
+    <string name="status_main_ready">Pareum</string>
+    <string name="status_mini_ready">Pareum</string>
+    <string name="status_main_waiting">Ngadagoan</string>
+    <string name="status_mini_waiting">Ngadagoan</string>
+    <string name="status_main_active">Spéker ceuli bawaan telepon</string>
+    <string name="status_mini_active">Spéker ceuli bawaan telepon</string>
+    <string name="status_main_error">Kasalahan</string>
+    <string name="status_mini_error">Kasalahan</string>
 </resources>

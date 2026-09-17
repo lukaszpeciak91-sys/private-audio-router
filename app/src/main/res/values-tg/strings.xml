@@ -2,8 +2,6 @@
 <resources>
     <string name="app_name">Puzru</string>
     <string name="routing_notification_channel">Puzru</string>
-    <string name="routing_notification_title">Puzru фаъол аст</string>
-    <string name="routing_notification_text">Интизори масирдиҳии аудио</string>
     <string name="product_title">Puzru</string>
     <string name="product_subtitle">Бо зеҳни сунъӣ мисли занги телефонӣ махфӣ суҳбат кунед.</string>
     <string name="state_ready">Омода</string>
@@ -75,4 +73,20 @@
     <string name="diagnostics_error_audio_preparation">Puzru аудиои иртиботиро омода карда натавонист.</string>
     <string name="diagnostics_error_request_rejected">Дархости масирдиҳӣ ба гӯшии занг қабул нашуд.</string>
     <string name="diagnostics_error_not_completed">Масирдиҳӣ анҷом дода нашуд.</string>
+    <string name="power_turn_on">Puzru — Фаъол</string>
+    <string name="power_turn_off">Puzru — Хомӯш</string>
+    <string name="routing_notification_waiting_title">Puzru фаъол аст</string>
+    <string name="routing_notification_waiting_text">Интизори масирдиҳии аудио</string>
+    <string name="routing_notification_active_title">Гӯшии занг</string>
+    <string name="routing_notification_active_text">Гӯшии занг</string>
+    <string name="routing_notification_error_title">Хато</string>
+    <string name="routing_notification_error_text">Хато</string>
+    <string name="status_main_ready">Хомӯш</string>
+    <string name="status_mini_ready">Хомӯш</string>
+    <string name="status_main_waiting">Дар интизорӣ</string>
+    <string name="status_mini_waiting">Дар интизорӣ</string>
+    <string name="status_main_active">Гӯшии занг</string>
+    <string name="status_mini_active">Гӯшии занг</string>
+    <string name="status_main_error">Хато</string>
+    <string name="status_mini_error">Хато</string>
 </resources>

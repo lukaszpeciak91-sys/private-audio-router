@@ -2,8 +2,6 @@
 <resources>
     <string name="app_name">Puzru</string>
     <string name="routing_notification_channel">Puzru</string>
-    <string name="routing_notification_title">Puzru ተወሊዑ ኣሎ</string>
-    <string name="routing_notification_text">ድምጺ ንምምራሕ ይጽበ ኣሎ</string>
     <string name="product_title">Puzru</string>
     <string name="product_subtitle">ምስ AI ብሕታዊ ከም ናይ ተሌፎን ጻውዒት ተዛረብ።</string>
     <string name="state_ready">ድሉው</string>
@@ -75,4 +73,20 @@
     <string name="diagnostics_error_audio_preparation">Puzru ናይ ርክብ ድምጺ ከዳሉ ኣይከኣለን።</string>
     <string name="diagnostics_error_request_rejected">ናብ ናይ ጻውዒት መስምዒ ድምጺ ናይ ምምራሕ ሕቶ ኣይተቐበለን።</string>
     <string name="diagnostics_error_not_completed">ምምራሕ ድምጺ ክዛዘም ኣይከኣለን።</string>
+    <string name="power_turn_on">Puzru — ወሊዑ</string>
+    <string name="power_turn_off">Puzru — ጠፊኡ</string>
+    <string name="routing_notification_waiting_title">Puzru ተወሊዑ ኣሎ</string>
+    <string name="routing_notification_waiting_text">ድምጺ ንምምራሕ ይጽበ ኣሎ</string>
+    <string name="routing_notification_active_title">ናይ ጻውዒት መስምዒ</string>
+    <string name="routing_notification_active_text">ናይ ጻውዒት መስምዒ</string>
+    <string name="routing_notification_error_title">ጌጋ</string>
+    <string name="routing_notification_error_text">ጌጋ</string>
+    <string name="status_main_ready">ጠፊኡ</string>
+    <string name="status_mini_ready">ጠፊኡ</string>
+    <string name="status_main_waiting">ይጽበ ኣሎ</string>
+    <string name="status_mini_waiting">ይጽበ ኣሎ</string>
+    <string name="status_main_active">ናይ ጻውዒት መስምዒ</string>
+    <string name="status_mini_active">ናይ ጻውዒት መስምዒ</string>
+    <string name="status_main_error">ጌጋ</string>
+    <string name="status_mini_error">ጌጋ</string>
 </resources>

@@ -2,8 +2,6 @@
 <resources>
     <string name="app_name">Puzru</string>
     <string name="routing_notification_channel">Puzru</string>
-    <string name="routing_notification_title">Puzru imewashwa</string>
-    <string name="routing_notification_text">Inasubiri kuelekeza sauti</string>
     <string name="product_title">Puzru</string>
     <string name="product_subtitle">Zungumza na AI kwa faragha, kama kwenye simu.</string>
     <string name="state_ready">Tayari</string>
@@ -76,4 +74,20 @@
     <string name="diagnostics_error_audio_preparation">Puzru haikuweza kuandaa sauti ya mawasiliano.</string>
     <string name="diagnostics_error_request_rejected">Ombi la kutuma sauti kwenye kipokea sauti cha sikioni halikukubaliwa.</string>
     <string name="diagnostics_error_not_completed">Utumaji wa sauti haukuweza kukamilishwa.</string>
+    <string name="power_turn_on">Puzru — Imewashwa</string>
+    <string name="power_turn_off">Puzru — Imezimwa</string>
+    <string name="routing_notification_waiting_title">Puzru imewashwa</string>
+    <string name="routing_notification_waiting_text">Inasubiri kuelekeza sauti</string>
+    <string name="routing_notification_active_title">Kipokea sauti cha sikioni</string>
+    <string name="routing_notification_active_text">Kipokea sauti cha sikioni</string>
+    <string name="routing_notification_error_title">Hitilafu</string>
+    <string name="routing_notification_error_text">Hitilafu</string>
+    <string name="status_main_ready">Imezimwa</string>
+    <string name="status_mini_ready">Imezimwa</string>
+    <string name="status_main_waiting">Inasubiri</string>
+    <string name="status_mini_waiting">Inasubiri</string>
+    <string name="status_main_active">Kipokea sauti cha sikioni</string>
+    <string name="status_mini_active">Kipokea sauti cha sikioni</string>
+    <string name="status_main_error">Hitilafu</string>
+    <string name="status_mini_error">Hitilafu</string>
 </resources>

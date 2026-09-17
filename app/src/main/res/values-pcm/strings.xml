@@ -2,8 +2,6 @@
 <resources>
     <string name="app_name">Puzru</string>
     <string name="routing_notification_channel">Puzru</string>
-    <string name="routing_notification_title">Puzru dey on</string>
-    <string name="routing_notification_text">Dey wait to route audio</string>
     <string name="product_title">Puzru</string>
     <string name="product_subtitle">Talk wit AI for private, like phone call.</string>
     <string name="state_ready">Ready</string>
@@ -76,4 +74,20 @@
     <string name="diagnostics_error_audio_preparation">Puzru no fit prepare communication audio.</string>
     <string name="diagnostics_error_request_rejected">Dem no accept request to route audio go earpiece.</string>
     <string name="diagnostics_error_not_completed">Audio routing no fit complete.</string>
+    <string name="power_turn_on">Puzru — Dey on</string>
+    <string name="power_turn_off">Puzru — Dey off</string>
+    <string name="routing_notification_waiting_title">Puzru dey on</string>
+    <string name="routing_notification_waiting_text">Dey wait to route audio</string>
+    <string name="routing_notification_active_title">Earpiece</string>
+    <string name="routing_notification_active_text">Earpiece</string>
+    <string name="routing_notification_error_title">Error</string>
+    <string name="routing_notification_error_text">Error</string>
+    <string name="status_main_ready">Dey off</string>
+    <string name="status_mini_ready">Dey off</string>
+    <string name="status_main_waiting">Dey wait</string>
+    <string name="status_mini_waiting">Dey wait</string>
+    <string name="status_main_active">Earpiece</string>
+    <string name="status_mini_active">Earpiece</string>
+    <string name="status_main_error">Error</string>
+    <string name="status_mini_error">Error</string>
 </resources>

@@ -11,7 +11,7 @@ import java.io.File
 class Layer6FloatingControllerContractTest {
     @Test fun finalSurfaceHasApprovedDimensionsOrderAndNoHideControl() {
         assertTrue(overlay.contains("(300 * density).toInt()")); assertTrue(overlay.contains("(62 * density).toInt()"))
-        assertTrue(overlay.indexOf("canvas.drawCircle(directionalX(STATUS_DOT_X)") < overlay.indexOf("drawPower(canvas"))
+        assertTrue(overlay.indexOf("drawStatusSymbol(canvas, statePresentation(state).symbol)") < overlay.indexOf("drawPower(canvas"))
         assertTrue(overlay.indexOf("drawExpand(canvas)") < overlay.indexOf("drawClose(canvas)"))
         assertTrue(overlay.contains("RectF(134f, 15f, 166f, 47f)"))
         assertFalse(overlay.contains("canvas.drawRect(170f"))
@@ -27,7 +27,8 @@ class Layer6FloatingControllerContractTest {
     @Test fun allFourAuthoritativeStatesHaveApprovedTreatment() {
         PrivateAudioState.entries.forEach { assertTrue(it.name, overlay.contains("PrivateAudioState.${it.name}")) }
         assertTrue(overlay.contains("privateAudioService?.privateAudioState"))
-        assertTrue(overlay.contains("READY, PrivateAudioState.ACTIVE -> Color.rgb(34, 218, 112)"))
+        assertTrue(overlay.contains("PrivateAudioState.READY -> Color.rgb(133, 133, 133)"))
+        assertTrue(overlay.contains("PrivateAudioState.ACTIVE -> Color.rgb(34, 218, 112)"))
         assertTrue(overlay.contains("WAITING -> Color.rgb(238, 172, 54)")); assertTrue(overlay.contains("ERROR -> Color.rgb(238, 75, 75)"))
         assertTrue(overlay.contains("READY -> Color.rgb(184, 184, 188)")); assertFalse(overlay.contains("projectPrivateAudioState("))
     }

@@ -2,8 +2,6 @@
 <resources>
     <string name="app_name">Puzru</string>
     <string name="routing_notification_channel">Puzru</string>
-    <string name="routing_notification_title">Puzru açıqdır</string>
-    <string name="routing_notification_text">Audio çıxışını dəyişməyi gözləyir</string>
     <string name="product_title">Puzru</string>
     <string name="product_subtitle">Sİ ilə telefon zəngi kimi özəl şəkildə danışın.</string>
     <string name="state_ready">Hazır</string>
@@ -76,4 +74,20 @@
     <string name="diagnostics_error_audio_preparation">Puzru rabitə audiosunu hazırlaya bilmədi.</string>
     <string name="diagnostics_error_request_rejected">Səsi qulaq dinamikinə yönləndirmə sorğusu qəbul edilmədi.</string>
     <string name="diagnostics_error_not_completed">Yönləndirmə tamamlana bilmədi.</string>
+    <string name="power_turn_on">Puzru — Yandırılıb</string>
+    <string name="power_turn_off">Puzru — Söndürülüb</string>
+    <string name="routing_notification_waiting_title">Puzru açıqdır</string>
+    <string name="routing_notification_waiting_text">Audio çıxışını dəyişməyi gözləyir</string>
+    <string name="routing_notification_active_title">Qulaq dinamiki</string>
+    <string name="routing_notification_active_text">Qulaq dinamiki</string>
+    <string name="routing_notification_error_title">Xəta</string>
+    <string name="routing_notification_error_text">Xəta</string>
+    <string name="status_main_ready">Söndürülüb</string>
+    <string name="status_mini_ready">Söndürülüb</string>
+    <string name="status_main_waiting">Gözləyir</string>
+    <string name="status_mini_waiting">Gözləyir</string>
+    <string name="status_main_active">Qulaq dinamiki</string>
+    <string name="status_mini_active">Qulaq dinamiki</string>
+    <string name="status_main_error">Xəta</string>
+    <string name="status_mini_error">Xəta</string>
 </resources>

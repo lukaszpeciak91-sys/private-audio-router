@@ -2,8 +2,6 @@
 <resources>
     <string name="app_name">Puzru</string>
     <string name="routing_notification_channel">Puzru</string>
-    <string name="routing_notification_title">Puzru is aan</string>
-    <string name="routing_notification_text">Wag om oudio oor te skakel</string>
     <string name="product_title">Puzru</string>
     <string name="product_subtitle">Praat privaat met KI, soos tydens \'n telefoonoproep.</string>
     <string name="state_ready">Gereed</string>
@@ -76,4 +74,20 @@
     <string name="diagnostics_error_audio_preparation">Puzru kon nie kommunikasieoudio voorberei nie.</string>
     <string name="diagnostics_error_request_rejected">Die versoek om oudio na die oorstuk oor te skakel, is nie aanvaar nie.</string>
     <string name="diagnostics_error_not_completed">Roetering kon nie voltooi word nie.</string>
+    <string name="power_turn_on">Puzru — Aan</string>
+    <string name="power_turn_off">Puzru — Af</string>
+    <string name="routing_notification_waiting_title">Puzru is aan</string>
+    <string name="routing_notification_waiting_text">Wag om oudio oor te skakel</string>
+    <string name="routing_notification_active_title">Oorstuk</string>
+    <string name="routing_notification_active_text">Oorstuk</string>
+    <string name="routing_notification_error_title">Fout</string>
+    <string name="routing_notification_error_text">Fout</string>
+    <string name="status_main_ready">Af</string>
+    <string name="status_mini_ready">Af</string>
+    <string name="status_main_waiting">Wag</string>
+    <string name="status_mini_waiting">Wag</string>
+    <string name="status_main_active">Oorstuk</string>
+    <string name="status_mini_active">Oorstuk</string>
+    <string name="status_main_error">Fout</string>
+    <string name="status_mini_error">Fout</string>
 </resources>

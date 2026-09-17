@@ -2,8 +2,6 @@
 <resources>
     <string name="app_name">Puzru</string>
     <string name="routing_notification_channel">Puzru</string>
-    <string name="routing_notification_title">Puzru روشن است</string>
-    <string name="routing_notification_text">در انتظار هدایت صدا</string>
     <string name="product_title">Puzru</string>
     <string name="product_subtitle">مثل تماس تلفنی، خصوصی با هوش مصنوعی صحبت کنید.</string>
     <string name="state_ready">آماده</string>
@@ -76,4 +74,20 @@
     <string name="diagnostics_error_audio_preparation">Puzru نتوانست صدای ارتباطی را آماده کند.</string>
     <string name="diagnostics_error_request_rejected">درخواست هدایت صدا به بلندگوی مکالمه پذیرفته نشد.</string>
     <string name="diagnostics_error_not_completed">هدایت صدا تکمیل نشد.</string>
+    <string name="power_turn_on">Puzru — روشن</string>
+    <string name="power_turn_off">Puzru — خاموش</string>
+    <string name="routing_notification_waiting_title">Puzru روشن است</string>
+    <string name="routing_notification_waiting_text">در انتظار هدایت صدا</string>
+    <string name="routing_notification_active_title">بلندگوی مکالمه</string>
+    <string name="routing_notification_active_text">بلندگوی مکالمه</string>
+    <string name="routing_notification_error_title">خطا</string>
+    <string name="routing_notification_error_text">خطا</string>
+    <string name="status_main_ready">خاموش</string>
+    <string name="status_mini_ready">خاموش</string>
+    <string name="status_main_waiting">در انتظار</string>
+    <string name="status_mini_waiting">در انتظار</string>
+    <string name="status_main_active">بلندگوی مکالمه</string>
+    <string name="status_mini_active">بلندگوی مکالمه</string>
+    <string name="status_main_error">خطا</string>
+    <string name="status_mini_error">خطا</string>
 </resources>

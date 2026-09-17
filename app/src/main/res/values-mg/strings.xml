@@ -2,8 +2,6 @@
 <resources>
     <string name="app_name">Puzru</string>
     <string name="routing_notification_channel">Puzru</string>
-    <string name="routing_notification_title">Mandeha ny Puzru</string>
-    <string name="routing_notification_text">Miandry ny fampitodihana ny feo</string>
     <string name="product_title">Puzru</string>
     <string name="product_subtitle">Miresaha mitokana amin’ny AI, toy ny antso an-telefaonina.</string>
     <string name="state_ready">Vonona</string>
@@ -75,4 +73,20 @@
     <string name="diagnostics_error_audio_preparation">Tsy afaka nanomana ny feon’ny fifandraisana ny Puzru.</string>
     <string name="diagnostics_error_request_rejected">Tsy nekena ny fangatahana hampitodika ny feo mankany amin’ny fanamafisam-peo anatiny eo amin’ny sofina.</string>
     <string name="diagnostics_error_not_completed">Tsy vita ny fampitodihana feo.</string>
+    <string name="power_turn_on">Puzru — Mandeha</string>
+    <string name="power_turn_off">Puzru — Tsy mandeha</string>
+    <string name="routing_notification_waiting_title">Mandeha ny Puzru</string>
+    <string name="routing_notification_waiting_text">Miandry ny fampitodihana ny feo</string>
+    <string name="routing_notification_active_title">Fanamafisam-peo anatiny eo amin’ny sofina</string>
+    <string name="routing_notification_active_text">Fanamafisam-peo anatiny eo amin’ny sofina</string>
+    <string name="routing_notification_error_title">Hadisoana</string>
+    <string name="routing_notification_error_text">Hadisoana</string>
+    <string name="status_main_ready">Tsy mandeha</string>
+    <string name="status_mini_ready">Tsy mandeha</string>
+    <string name="status_main_waiting">Miandry</string>
+    <string name="status_mini_waiting">Miandry</string>
+    <string name="status_main_active">Fanamafisam-peo anatiny eo amin’ny sofina</string>
+    <string name="status_mini_active">Fanamafisam-peo anatiny eo amin’ny sofina</string>
+    <string name="status_main_error">Hadisoana</string>
+    <string name="status_mini_error">Hadisoana</string>
 </resources>

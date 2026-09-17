@@ -2,8 +2,6 @@
 <resources>
     <string name="app_name">Puzru</string>
     <string name="routing_notification_channel">Puzru</string>
-    <string name="routing_notification_title">Puzru staat aan</string>
-    <string name="routing_notification_text">Wachten om audio om te schakelen</string>
     <string name="product_title">Puzru</string>
     <string name="product_subtitle">Praat privé met AI, net als tijdens een telefoongesprek.</string>
     <string name="state_ready">Gereed</string>
@@ -76,4 +74,20 @@
     <string name="diagnostics_error_audio_preparation">Puzru kon de audio voor communicatie niet voorbereiden.</string>
     <string name="diagnostics_error_request_rejected">Het verzoek om audio naar de oorspeaker om te leiden, is niet geaccepteerd.</string>
     <string name="diagnostics_error_not_completed">De audioroutering kon niet worden voltooid.</string>
+    <string name="power_turn_on">Puzru — Aan</string>
+    <string name="power_turn_off">Puzru — Uit</string>
+    <string name="routing_notification_waiting_title">Puzru staat aan</string>
+    <string name="routing_notification_waiting_text">Wachten om audio om te schakelen</string>
+    <string name="routing_notification_active_title">Oorspeaker</string>
+    <string name="routing_notification_active_text">Oorspeaker</string>
+    <string name="routing_notification_error_title">Fout</string>
+    <string name="routing_notification_error_text">Fout</string>
+    <string name="status_main_ready">Uit</string>
+    <string name="status_mini_ready">Uit</string>
+    <string name="status_main_waiting">Wachten</string>
+    <string name="status_mini_waiting">Wachten</string>
+    <string name="status_main_active">Oorspeaker</string>
+    <string name="status_mini_active">Oorspeaker</string>
+    <string name="status_main_error">Fout</string>
+    <string name="status_mini_error">Fout</string>
 </resources>

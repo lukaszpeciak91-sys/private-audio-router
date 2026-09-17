@@ -2,8 +2,6 @@
 <resources>
     <string name="app_name">Puzru</string>
     <string name="routing_notification_channel">Puzru</string>
-    <string name="routing_notification_title">Puzru är på</string>
-    <string name="routing_notification_text">Väntar på att växla ljud</string>
     <string name="product_title">Puzru</string>
     <string name="product_subtitle">Prata privat med AI, som i ett telefonsamtal.</string>
     <string name="state_ready">Redo</string>
@@ -76,4 +74,20 @@
     <string name="diagnostics_error_audio_preparation">Puzru kunde inte förbereda kommunikationsljud.</string>
     <string name="diagnostics_error_request_rejected">Begäran om ljuddirigering till samtalsluren godkändes inte.</string>
     <string name="diagnostics_error_not_completed">Ljuddirigeringen kunde inte slutföras.</string>
+    <string name="power_turn_on">Puzru — På</string>
+    <string name="power_turn_off">Puzru — Av</string>
+    <string name="routing_notification_waiting_title">Puzru är på</string>
+    <string name="routing_notification_waiting_text">Väntar på att växla ljud</string>
+    <string name="routing_notification_active_title">Samtalslur</string>
+    <string name="routing_notification_active_text">Samtalslur</string>
+    <string name="routing_notification_error_title">Fel</string>
+    <string name="routing_notification_error_text">Fel</string>
+    <string name="status_main_ready">Av</string>
+    <string name="status_mini_ready">Av</string>
+    <string name="status_main_waiting">Väntar</string>
+    <string name="status_mini_waiting">Väntar</string>
+    <string name="status_main_active">Samtalslur</string>
+    <string name="status_mini_active">Samtalslur</string>
+    <string name="status_main_error">Fel</string>
+    <string name="status_mini_error">Fel</string>
 </resources>

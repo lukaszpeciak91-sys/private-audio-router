@@ -2,8 +2,6 @@
 <resources>
     <string name="app_name">Puzru</string>
     <string name="routing_notification_channel">Puzru</string>
-    <string name="routing_notification_title">Puzru este activat</string>
-    <string name="routing_notification_text">Se așteaptă redirecționarea sunetului</string>
     <string name="product_title">Puzru</string>
     <string name="product_subtitle">Vorbește în privat cu AI, ca într-un apel telefonic.</string>
     <string name="state_ready">Pregătit</string>
@@ -76,4 +74,20 @@
     <string name="diagnostics_error_audio_preparation">Puzru nu a putut pregăti sunetul pentru comunicare.</string>
     <string name="diagnostics_error_request_rejected">Solicitarea de redirecționare către casca telefonului nu a fost acceptată.</string>
     <string name="diagnostics_error_not_completed">Redirecționarea nu a putut fi finalizată.</string>
+    <string name="power_turn_on">Puzru — Activat</string>
+    <string name="power_turn_off">Puzru — Dezactivat</string>
+    <string name="routing_notification_waiting_title">Puzru este activat</string>
+    <string name="routing_notification_waiting_text">Se așteaptă redirecționarea sunetului</string>
+    <string name="routing_notification_active_title">Casca telefonului</string>
+    <string name="routing_notification_active_text">Casca telefonului</string>
+    <string name="routing_notification_error_title">Eroare</string>
+    <string name="routing_notification_error_text">Eroare</string>
+    <string name="status_main_ready">Dezactivat</string>
+    <string name="status_mini_ready">Dezactivat</string>
+    <string name="status_main_waiting">În așteptare</string>
+    <string name="status_mini_waiting">În așteptare</string>
+    <string name="status_main_active">Casca telefonului</string>
+    <string name="status_mini_active">Casca telefonului</string>
+    <string name="status_main_error">Eroare</string>
+    <string name="status_mini_error">Eroare</string>
 </resources>

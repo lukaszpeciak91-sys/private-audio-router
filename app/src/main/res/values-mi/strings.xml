@@ -2,8 +2,6 @@
 <resources>
     <string name="app_name">Puzru</string>
     <string name="routing_notification_channel">Puzru</string>
-    <string name="routing_notification_title">Kei te kā a Puzru</string>
-    <string name="routing_notification_text">E tatari ana ki te ararere ororongo</string>
     <string name="product_title">Puzru</string>
     <string name="product_subtitle">Kōrero takitahi ki te AI, anō nei he waea.</string>
     <string name="state_ready">Kua rite</string>
@@ -75,4 +73,20 @@
     <string name="diagnostics_error_audio_preparation">Kāore i taea e Puzru te whakarite ororongo whakawhitiwhiti.</string>
     <string name="diagnostics_error_request_rejected">Kāore i whakaaetia te tono ararere ki te kaikorero-taringa.</string>
     <string name="diagnostics_error_not_completed">Kāore i taea te whakaoti te ararere.</string>
+    <string name="power_turn_on">Puzru — Kā</string>
+    <string name="power_turn_off">Puzru — Weto</string>
+    <string name="routing_notification_waiting_title">Kei te kā a Puzru</string>
+    <string name="routing_notification_waiting_text">E tatari ana ki te ararere ororongo</string>
+    <string name="routing_notification_active_title">Kaikorero-taringa</string>
+    <string name="routing_notification_active_text">Kaikorero-taringa</string>
+    <string name="routing_notification_error_title">Hapa</string>
+    <string name="routing_notification_error_text">Hapa</string>
+    <string name="status_main_ready">Weto</string>
+    <string name="status_mini_ready">Weto</string>
+    <string name="status_main_waiting">E tatari ana</string>
+    <string name="status_mini_waiting">E tatari ana</string>
+    <string name="status_main_active">Kaikorero-taringa</string>
+    <string name="status_mini_active">Kaikorero-taringa</string>
+    <string name="status_main_error">Hapa</string>
+    <string name="status_mini_error">Hapa</string>
 </resources>

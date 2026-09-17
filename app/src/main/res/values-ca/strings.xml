@@ -2,8 +2,6 @@
 <resources>
     <string name="app_name">Puzru</string>
     <string name="routing_notification_channel">Puzru</string>
-    <string name="routing_notification_title">Puzru està activat</string>
-    <string name="routing_notification_text">En espera de canviar la sortida d\'àudio</string>
     <string name="product_title">Puzru</string>
     <string name="product_subtitle">Parla amb la IA en privat, com si fos una trucada telefònica.</string>
     <string name="state_ready">A punt</string>
@@ -76,4 +74,20 @@
     <string name="diagnostics_error_audio_preparation">Puzru no ha pogut preparar l’àudio de comunicació.</string>
     <string name="diagnostics_error_request_rejected">No s’ha acceptat la sol·licitud d’encaminar l’àudio a l’auricular integrat.</string>
     <string name="diagnostics_error_not_completed">No s’ha pogut completar l’encaminament de l’àudio.</string>
+    <string name="power_turn_on">Puzru — Activat</string>
+    <string name="power_turn_off">Puzru — Desactivat</string>
+    <string name="routing_notification_waiting_title">Puzru està activat</string>
+    <string name="routing_notification_waiting_text">En espera de canviar la sortida d\'àudio</string>
+    <string name="routing_notification_active_title">Auricular integrat</string>
+    <string name="routing_notification_active_text">Auricular integrat</string>
+    <string name="routing_notification_error_title">Error</string>
+    <string name="routing_notification_error_text">Error</string>
+    <string name="status_main_ready">Desactivat</string>
+    <string name="status_mini_ready">Desactivat</string>
+    <string name="status_main_waiting">En espera</string>
+    <string name="status_mini_waiting">En espera</string>
+    <string name="status_main_active">Auricular integrat</string>
+    <string name="status_mini_active">Auricular integrat</string>
+    <string name="status_main_error">Error</string>
+    <string name="status_mini_error">Error</string>
 </resources>

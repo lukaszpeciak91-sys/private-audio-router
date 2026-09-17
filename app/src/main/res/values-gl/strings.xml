@@ -2,8 +2,6 @@
 <resources>
     <string name="app_name">Puzru</string>
     <string name="routing_notification_channel">Puzru</string>
-    <string name="routing_notification_title">Puzru está activado</string>
-    <string name="routing_notification_text">Á espera de cambiar a saída de audio</string>
     <string name="product_title">Puzru</string>
     <string name="product_subtitle">Fala coa IA en privado, coma se fose unha chamada telefónica.</string>
     <string name="state_ready">Preparado</string>
@@ -76,4 +74,20 @@
     <string name="diagnostics_error_audio_preparation">Puzru non puido preparar o audio de comunicación.</string>
     <string name="diagnostics_error_request_rejected">Non se aceptou a solicitude de encamiñamento ao auricular integrado.</string>
     <string name="diagnostics_error_not_completed">Non se puido completar o encamiñamento do audio.</string>
+    <string name="power_turn_on">Puzru — Activado</string>
+    <string name="power_turn_off">Puzru — Desactivado</string>
+    <string name="routing_notification_waiting_title">Puzru está activado</string>
+    <string name="routing_notification_waiting_text">Á espera de cambiar a saída de audio</string>
+    <string name="routing_notification_active_title">Auricular integrado</string>
+    <string name="routing_notification_active_text">Auricular integrado</string>
+    <string name="routing_notification_error_title">Erro</string>
+    <string name="routing_notification_error_text">Erro</string>
+    <string name="status_main_ready">Desactivado</string>
+    <string name="status_mini_ready">Desactivado</string>
+    <string name="status_main_waiting">En espera</string>
+    <string name="status_mini_waiting">En espera</string>
+    <string name="status_main_active">Auricular integrado</string>
+    <string name="status_mini_active">Auricular integrado</string>
+    <string name="status_main_error">Erro</string>
+    <string name="status_mini_error">Erro</string>
 </resources>

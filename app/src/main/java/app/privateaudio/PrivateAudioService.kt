@@ -222,6 +222,15 @@ class PrivateAudioService : Service() {
     private fun syncStateOwnedBehavior(reason: String) {
         waitingAutoDisableController.onStateChanged(privateAudioState)
         syncProximityBehavior(reason)
+        updateForegroundNotification()
+    }
+
+    private fun updateForegroundNotification() {
+        if (!foregroundNotificationActive || privateAudioState == PrivateAudioState.READY) return
+        getSystemService(NotificationManager::class.java).notify(
+            NOTIFICATION_ID,
+            buildForegroundNotification(),
+        )
     }
 
     private fun currentRoute() = observer.snapshot.communicationDevice?.type
@@ -267,6 +276,10 @@ class PrivateAudioService : Service() {
     }
 
     private fun buildForegroundNotification(): Notification {
+        val presentation = statePresentation(privateAudioState)
+        check(presentation.notificationTitle != null && presentation.notificationText != null) {
+            "READY has no foreground notification"
+        }
         val openMain = PendingIntent.getActivity(
             this,
             0,
@@ -277,8 +290,8 @@ class PrivateAudioService : Service() {
         )
         return Notification.Builder(this, NOTIFICATION_CHANNEL_ID)
             .setSmallIcon(R.drawable.puzru_adaptive_monochrome)
-            .setContentTitle(getString(R.string.routing_notification_title))
-            .setContentText(getString(R.string.routing_notification_text))
+            .setContentTitle(getString(presentation.notificationTitle))
+            .setContentText(getString(presentation.notificationText))
             .setContentIntent(openMain)
             .setOngoing(true)
             .build()

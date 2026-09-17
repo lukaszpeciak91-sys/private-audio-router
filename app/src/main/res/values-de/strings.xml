@@ -2,8 +2,6 @@
 <resources>
     <string name="app_name">Puzru</string>
     <string name="routing_notification_channel">Puzru</string>
-    <string name="routing_notification_title">Puzru ist eingeschaltet</string>
-    <string name="routing_notification_text">Wartet auf Audio zum Weiterleiten</string>
     <string name="product_title">Puzru</string>
     <string name="product_subtitle">Sprich privat mit KI, wie bei einem Telefonat.</string>
     <string name="state_ready">Bereit</string>
@@ -76,4 +74,20 @@
     <string name="diagnostics_error_audio_preparation">Puzru konnte Audio für die Kommunikation nicht vorbereiten.</string>
     <string name="diagnostics_error_request_rejected">Die Anfrage zur Weiterleitung an die Hörmuschel wurde nicht angenommen.</string>
     <string name="diagnostics_error_not_completed">Die Weiterleitung konnte nicht abgeschlossen werden.</string>
+    <string name="power_turn_on">Puzru — Ein</string>
+    <string name="power_turn_off">Puzru — Aus</string>
+    <string name="routing_notification_waiting_title">Puzru ist eingeschaltet</string>
+    <string name="routing_notification_waiting_text">Wartet auf Audio zum Weiterleiten</string>
+    <string name="routing_notification_active_title">Hörmuschel</string>
+    <string name="routing_notification_active_text">Hörmuschel</string>
+    <string name="routing_notification_error_title">Fehler</string>
+    <string name="routing_notification_error_text">Fehler</string>
+    <string name="status_main_ready">Aus</string>
+    <string name="status_mini_ready">Aus</string>
+    <string name="status_main_waiting">Wartet</string>
+    <string name="status_mini_waiting">Wartet</string>
+    <string name="status_main_active">Hörmuschel</string>
+    <string name="status_mini_active">Hörmuschel</string>
+    <string name="status_main_error">Fehler</string>
+    <string name="status_mini_error">Fehler</string>
 </resources>

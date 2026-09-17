@@ -2,8 +2,6 @@
 <resources>
     <string name="app_name">Puzru</string>
     <string name="routing_notification_channel">Puzru</string>
-    <string name="routing_notification_title">Puzru agbanyere</string>
-    <string name="routing_notification_text">Na-eche ibugharị ọdịyo</string>
     <string name="product_title">Puzru</string>
     <string name="product_subtitle">Gwa AI okwu na nzuzo, dịka oku ekwentị.</string>
     <string name="state_ready">Dị njikere</string>
@@ -75,4 +73,20 @@
     <string name="diagnostics_error_audio_preparation">Puzru enweghị ike ịkwadebe ọdịyo nkwurịta okwu.</string>
     <string name="diagnostics_error_request_rejected">Anabataghị arịrịọ ibugharị ọdịyo gaa na igwe nnata ụda ntị.</string>
     <string name="diagnostics_error_not_completed">Enweghị ike imecha ibugharị ọdịyo.</string>
+    <string name="power_turn_on">Puzru — Agbanyere</string>
+    <string name="power_turn_off">Puzru — Agbanyụrụ</string>
+    <string name="routing_notification_waiting_title">Puzru agbanyere</string>
+    <string name="routing_notification_waiting_text">Na-eche ibugharị ọdịyo</string>
+    <string name="routing_notification_active_title">Igwe nnata ụda ntị</string>
+    <string name="routing_notification_active_text">Igwe nnata ụda ntị</string>
+    <string name="routing_notification_error_title">Njehie</string>
+    <string name="routing_notification_error_text">Njehie</string>
+    <string name="status_main_ready">Agbanyụrụ</string>
+    <string name="status_mini_ready">Agbanyụrụ</string>
+    <string name="status_main_waiting">Na-eche</string>
+    <string name="status_mini_waiting">Na-eche</string>
+    <string name="status_main_active">Igwe nnata ụda ntị</string>
+    <string name="status_mini_active">Igwe nnata ụda ntị</string>
+    <string name="status_main_error">Njehie</string>
+    <string name="status_mini_error">Njehie</string>
 </resources>

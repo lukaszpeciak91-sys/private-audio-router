@@ -1,5 +1,11 @@
 # Hardware-in-the-Loop Test Plan
 
+## Status-presentation clarity gate
+
+- **Automated scope:** Verify all four service states map to their approved Main and Mini resources, semantic color role, unique symbol, and enabled-state notification resources; `READY` is neutral/non-active and has no notification; Main Power exposes Turn on only for `READY` and Turn off otherwise; Mini uses compact visible labels plus full spoken state, one shared measured font size, and direction-aware geometry; every complete locale owns every new localizable key with placeholder parity.
+- **Emulator scope:** At representative portrait and compact-landscape sizes, inspect all four Main states without relying on color, including Power semantics with TalkBack. Inspect Mini in long-label locales at 16f, 15f, and 14f outcomes and in at least one RTL locale; verify no clipping, unintended ellipsis, overlap, mirrored-control regression, or drag/tap regression. Exercise WAITING → ACTIVE → ERROR notification updates and Power OFF removal.
+- **Physical-device scope:** Repeat WAITING → ACTIVE → WAITING, an available ERROR path, and Power OFF while observing notification title/text updates and removal. Confirm the presentation work does not change audible route, request count, cleanup, telephony priority, proximity response, or session detection. Record Android-reported state and human-observed audio separately; automated or emulator results do not establish routing behavior.
+
 ## Signed release infrastructure gate
 
 - **Automated scope:** JVM contract tests verify that the signed-AAB workflow is

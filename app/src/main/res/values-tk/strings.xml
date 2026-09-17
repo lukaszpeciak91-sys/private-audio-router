@@ -2,8 +2,6 @@
 <resources>
     <string name="app_name">Puzru</string>
     <string name="routing_notification_channel">Puzru</string>
-    <string name="routing_notification_title">Puzru açyk</string>
-    <string name="routing_notification_text">Ses ugrukdyrylmagyna garaşylýar</string>
     <string name="product_title">Puzru</string>
     <string name="product_subtitle">Emeli aň bilen telefon jaňy ýaly gizlin gürleşiň.</string>
     <string name="state_ready">Taýýar</string>
@@ -75,4 +73,20 @@
     <string name="diagnostics_error_audio_preparation">Puzru aragatnaşyk sesini taýýarlap bilmedi.</string>
     <string name="diagnostics_error_request_rejected">Gepleşik dinamigine ugrukdyrma haýyşy kabul edilmedi.</string>
     <string name="diagnostics_error_not_completed">Ugrukdyrmany tamamlamak başartmady.</string>
+    <string name="power_turn_on">Puzru — Açyk</string>
+    <string name="power_turn_off">Puzru — Öçük</string>
+    <string name="routing_notification_waiting_title">Puzru açyk</string>
+    <string name="routing_notification_waiting_text">Ses ugrukdyrylmagyna garaşylýar</string>
+    <string name="routing_notification_active_title">Gepleşik dinamigi</string>
+    <string name="routing_notification_active_text">Gepleşik dinamigi</string>
+    <string name="routing_notification_error_title">Säwlik</string>
+    <string name="routing_notification_error_text">Säwlik</string>
+    <string name="status_main_ready">Öçük</string>
+    <string name="status_mini_ready">Öçük</string>
+    <string name="status_main_waiting">Garaşylýar</string>
+    <string name="status_mini_waiting">Garaşylýar</string>
+    <string name="status_main_active">Gepleşik dinamigi</string>
+    <string name="status_mini_active">Gepleşik dinamigi</string>
+    <string name="status_main_error">Säwlik</string>
+    <string name="status_mini_error">Säwlik</string>
 </resources>

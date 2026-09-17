@@ -2,8 +2,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:locale="en">
     <string name="app_name">Puzru</string>
     <string name="routing_notification_channel">Puzru</string>
-    <string name="routing_notification_title">Puzru is on</string>
-    <string name="routing_notification_text">Waiting to route audio</string>
     <string name="product_title">Puzru</string>
     <string name="product_subtitle">Talk with AI privately, like a phone call.</string>
     <string name="state_ready">Ready</string>
@@ -85,4 +83,20 @@
     <string name="diagnostics_error_audio_preparation">Puzru could not prepare communication audio.</string>
     <string name="diagnostics_error_request_rejected">The earpiece routing request was not accepted.</string>
     <string name="diagnostics_error_not_completed">Routing could not be completed.</string>
+    <string name="power_turn_on">Turn on Puzru</string>
+    <string name="power_turn_off">Turn off Puzru</string>
+    <string name="routing_notification_waiting_title">Puzru is on</string>
+    <string name="routing_notification_waiting_text">Waiting for supported voice audio.</string>
+    <string name="routing_notification_active_title">Earpiece routing active</string>
+    <string name="routing_notification_active_text">Supported voice audio is being routed to the earpiece.</string>
+    <string name="routing_notification_error_title">Routing problem</string>
+    <string name="routing_notification_error_text">Open Puzru to turn it off and try again.</string>
+    <string name="status_main_ready">Off</string>
+    <string name="status_mini_ready">Off</string>
+    <string name="status_main_waiting">Waiting for voice</string>
+    <string name="status_mini_waiting">Waiting</string>
+    <string name="status_main_active">Through earpiece</string>
+    <string name="status_mini_active">Earpiece</string>
+    <string name="status_main_error">Routing problem</string>
+    <string name="status_mini_error">Problem</string>
 </resources>

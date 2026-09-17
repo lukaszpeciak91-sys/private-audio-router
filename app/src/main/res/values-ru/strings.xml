@@ -2,8 +2,6 @@
 <resources>
     <string name="app_name">Puzru</string>
     <string name="routing_notification_channel">Puzru</string>
-    <string name="routing_notification_title">Puzru включено</string>
-    <string name="routing_notification_text">Ожидание перенаправления звука</string>
     <string name="product_title">Puzru</string>
     <string name="product_subtitle">Общайтесь с ИИ конфиденциально, как по телефону.</string>
     <string name="state_ready">Готово</string>
@@ -76,4 +74,20 @@
     <string name="diagnostics_error_audio_preparation">Приложению Puzru не удалось подготовить звук для связи.</string>
     <string name="diagnostics_error_request_rejected">Запрос на маршрутизацию звука на разговорный динамик не был принят.</string>
     <string name="diagnostics_error_not_completed">Не удалось завершить маршрутизацию.</string>
+    <string name="power_turn_on">Puzru — Включено</string>
+    <string name="power_turn_off">Puzru — Выключено</string>
+    <string name="routing_notification_waiting_title">Puzru включено</string>
+    <string name="routing_notification_waiting_text">Ожидание перенаправления звука</string>
+    <string name="routing_notification_active_title">Разговорный динамик</string>
+    <string name="routing_notification_active_text">Разговорный динамик</string>
+    <string name="routing_notification_error_title">Ошибка</string>
+    <string name="routing_notification_error_text">Ошибка</string>
+    <string name="status_main_ready">Выключено</string>
+    <string name="status_mini_ready">Выключено</string>
+    <string name="status_main_waiting">Ожидание</string>
+    <string name="status_mini_waiting">Ожидание</string>
+    <string name="status_main_active">Разговорный динамик</string>
+    <string name="status_mini_active">Разговорный динамик</string>
+    <string name="status_main_error">Ошибка</string>
+    <string name="status_mini_error">Ошибка</string>
 </resources>

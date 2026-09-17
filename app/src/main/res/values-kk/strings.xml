@@ -2,8 +2,6 @@
 <resources>
     <string name="app_name">Puzru</string>
     <string name="routing_notification_channel">Puzru</string>
-    <string name="routing_notification_title">Puzru қосулы</string>
-    <string name="routing_notification_text">Аудио шығысын ауыстыруды күтуде</string>
     <string name="product_title">Puzru</string>
     <string name="product_subtitle">ЖИ-мен телефон қоңырауындағыдай жеке сөйлесіңіз.</string>
     <string name="state_ready">Дайын</string>
@@ -76,4 +74,20 @@
     <string name="diagnostics_error_audio_preparation">Puzru байланыс аудиосын дайындай алмады.</string>
     <string name="diagnostics_error_request_rejected">Аудионы құлақ динамигіне бағыттау сұрауы қабылданбады.</string>
     <string name="diagnostics_error_not_completed">Аудионы бағыттауды аяқтау мүмкін болмады.</string>
+    <string name="power_turn_on">Puzru — Қосулы</string>
+    <string name="power_turn_off">Puzru — Өшірулі</string>
+    <string name="routing_notification_waiting_title">Puzru қосулы</string>
+    <string name="routing_notification_waiting_text">Аудио шығысын ауыстыруды күтуде</string>
+    <string name="routing_notification_active_title">Құлақ динамигі</string>
+    <string name="routing_notification_active_text">Құлақ динамигі</string>
+    <string name="routing_notification_error_title">Қате</string>
+    <string name="routing_notification_error_text">Қате</string>
+    <string name="status_main_ready">Өшірулі</string>
+    <string name="status_mini_ready">Өшірулі</string>
+    <string name="status_main_waiting">Күтуде</string>
+    <string name="status_mini_waiting">Күтуде</string>
+    <string name="status_main_active">Құлақ динамигі</string>
+    <string name="status_mini_active">Құлақ динамигі</string>
+    <string name="status_main_error">Қате</string>
+    <string name="status_mini_error">Қате</string>
 </resources>

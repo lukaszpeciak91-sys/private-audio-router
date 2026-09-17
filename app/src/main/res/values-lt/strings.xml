@@ -2,8 +2,6 @@
 <resources>
     <string name="app_name">Puzru</string>
     <string name="routing_notification_channel">Puzru</string>
-    <string name="routing_notification_title">Puzru įjungta</string>
-    <string name="routing_notification_text">Laukia garso nukreipimo</string>
     <string name="product_title">Puzru</string>
     <string name="product_subtitle">Kalbėkitės su DI privačiai, kaip telefonu.</string>
     <string name="state_ready">Paruošta</string>
@@ -76,4 +74,20 @@
     <string name="diagnostics_error_audio_preparation">Puzru nepavyko paruošti pokalbio garso.</string>
     <string name="diagnostics_error_request_rejected">Prašymas nukreipti garsą į pokalbių garsiakalbį nebuvo priimtas.</string>
     <string name="diagnostics_error_not_completed">Nepavyko užbaigti garso nukreipimo.</string>
+    <string name="power_turn_on">Puzru — Įjungta</string>
+    <string name="power_turn_off">Puzru — Išjungta</string>
+    <string name="routing_notification_waiting_title">Puzru įjungta</string>
+    <string name="routing_notification_waiting_text">Laukia garso nukreipimo</string>
+    <string name="routing_notification_active_title">Pokalbių garsiakalbis</string>
+    <string name="routing_notification_active_text">Pokalbių garsiakalbis</string>
+    <string name="routing_notification_error_title">Klaida</string>
+    <string name="routing_notification_error_text">Klaida</string>
+    <string name="status_main_ready">Išjungta</string>
+    <string name="status_mini_ready">Išjungta</string>
+    <string name="status_main_waiting">Laukia</string>
+    <string name="status_mini_waiting">Laukia</string>
+    <string name="status_main_active">Pokalbių garsiakalbis</string>
+    <string name="status_mini_active">Pokalbių garsiakalbis</string>
+    <string name="status_main_error">Klaida</string>
+    <string name="status_mini_error">Klaida</string>
 </resources>

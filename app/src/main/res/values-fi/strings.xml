@@ -2,8 +2,6 @@
 <resources>
     <string name="app_name">Puzru</string>
     <string name="routing_notification_channel">Puzru</string>
-    <string name="routing_notification_title">Puzru on käytössä</string>
-    <string name="routing_notification_text">Odottaa äänen ohjaamista</string>
     <string name="product_title">Puzru</string>
     <string name="product_subtitle">Puhu AI:n kanssa yksityisesti, aivan kuin puhelussa.</string>
     <string name="state_ready">Valmis</string>
@@ -76,4 +74,20 @@
     <string name="diagnostics_error_audio_preparation">Puzru ei voinut valmistella viestintä-ääntä.</string>
     <string name="diagnostics_error_request_rejected">Pyyntöä reitittää ääni kuulokkeeseen ei hyväksytty.</string>
     <string name="diagnostics_error_not_completed">Äänen reititystä ei voitu suorittaa loppuun.</string>
+    <string name="power_turn_on">Puzru — Käytössä</string>
+    <string name="power_turn_off">Puzru — Pois käytöstä</string>
+    <string name="routing_notification_waiting_title">Puzru on käytössä</string>
+    <string name="routing_notification_waiting_text">Odottaa äänen ohjaamista</string>
+    <string name="routing_notification_active_title">Kuuloke</string>
+    <string name="routing_notification_active_text">Kuuloke</string>
+    <string name="routing_notification_error_title">Virhe</string>
+    <string name="routing_notification_error_text">Virhe</string>
+    <string name="status_main_ready">Pois käytöstä</string>
+    <string name="status_mini_ready">Pois käytöstä</string>
+    <string name="status_main_waiting">Odottaa</string>
+    <string name="status_mini_waiting">Odottaa</string>
+    <string name="status_main_active">Kuuloke</string>
+    <string name="status_mini_active">Kuuloke</string>
+    <string name="status_main_error">Virhe</string>
+    <string name="status_mini_error">Virhe</string>
 </resources>

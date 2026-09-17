@@ -2,8 +2,6 @@
 <resources>
     <string name="app_name">Puzru</string>
     <string name="routing_notification_channel">Puzru</string>
-    <string name="routing_notification_title">Puzru 已開啟</string>
-    <string name="routing_notification_text">等緊進行音訊導向</string>
     <string name="product_title">Puzru</string>
     <string name="product_subtitle">好似打電話咁，私下同 AI 傾偈。</string>
     <string name="state_ready">準備好</string>
@@ -75,4 +73,20 @@
     <string name="diagnostics_error_audio_preparation">Puzru 無法準備通訊音訊。</string>
     <string name="diagnostics_error_request_rejected">聽筒音訊導向要求未獲接受。</string>
     <string name="diagnostics_error_not_completed">無法完成音訊導向。</string>
+    <string name="power_turn_on">Puzru — 開啟</string>
+    <string name="power_turn_off">Puzru — 關閉</string>
+    <string name="routing_notification_waiting_title">Puzru 已開啟</string>
+    <string name="routing_notification_waiting_text">等緊進行音訊導向</string>
+    <string name="routing_notification_active_title">聽筒</string>
+    <string name="routing_notification_active_text">聽筒</string>
+    <string name="routing_notification_error_title">錯誤</string>
+    <string name="routing_notification_error_text">錯誤</string>
+    <string name="status_main_ready">關閉</string>
+    <string name="status_mini_ready">關閉</string>
+    <string name="status_main_waiting">等緊</string>
+    <string name="status_mini_waiting">等緊</string>
+    <string name="status_main_active">聽筒</string>
+    <string name="status_mini_active">聽筒</string>
+    <string name="status_main_error">錯誤</string>
+    <string name="status_mini_error">錯誤</string>
 </resources>

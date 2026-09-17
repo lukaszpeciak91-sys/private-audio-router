@@ -2,8 +2,6 @@
 <resources>
     <string name="app_name">Puzru</string>
     <string name="routing_notification_channel">Puzru</string>
-    <string name="routing_notification_title">Puzru je zapnuté</string>
-    <string name="routing_notification_text">Čaká na presmerovanie zvuku</string>
     <string name="product_title">Puzru</string>
     <string name="product_subtitle">Hovorte s AI súkromne, ako pri telefonickom hovore.</string>
     <string name="state_ready">Pripravené</string>
@@ -76,4 +74,20 @@
     <string name="diagnostics_error_audio_preparation">Puzru nemohlo pripraviť zvuk pre komunikáciu.</string>
     <string name="diagnostics_error_request_rejected">Požiadavka na smerovanie zvuku do slúchadla nebola prijatá.</string>
     <string name="diagnostics_error_not_completed">Smerovanie sa nepodarilo dokončiť.</string>
+    <string name="power_turn_on">Puzru — Zapnuté</string>
+    <string name="power_turn_off">Puzru — Vypnuté</string>
+    <string name="routing_notification_waiting_title">Puzru je zapnuté</string>
+    <string name="routing_notification_waiting_text">Čaká na presmerovanie zvuku</string>
+    <string name="routing_notification_active_title">Slúchadlo telefónu</string>
+    <string name="routing_notification_active_text">Slúchadlo telefónu</string>
+    <string name="routing_notification_error_title">Chyba</string>
+    <string name="routing_notification_error_text">Chyba</string>
+    <string name="status_main_ready">Vypnuté</string>
+    <string name="status_mini_ready">Vypnuté</string>
+    <string name="status_main_waiting">Čaká</string>
+    <string name="status_mini_waiting">Čaká</string>
+    <string name="status_main_active">Slúchadlo telefónu</string>
+    <string name="status_mini_active">Slúchadlo telefónu</string>
+    <string name="status_main_error">Chyba</string>
+    <string name="status_mini_error">Chyba</string>
 </resources>

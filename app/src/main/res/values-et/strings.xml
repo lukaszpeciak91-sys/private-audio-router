@@ -2,8 +2,6 @@
 <resources>
     <string name="app_name">Puzru</string>
     <string name="routing_notification_channel">Puzru</string>
-    <string name="routing_notification_title">Puzru on sisse lülitatud</string>
-    <string name="routing_notification_text">Ootab heli suunamist</string>
     <string name="product_title">Puzru</string>
     <string name="product_subtitle">Räägi AI-ga privaatselt, nagu telefonikõnes.</string>
     <string name="state_ready">Valmis</string>
@@ -76,4 +74,20 @@
     <string name="diagnostics_error_audio_preparation">Puzru ei saanud sideheli ette valmistada.</string>
     <string name="diagnostics_error_request_rejected">Kuularisse suunamise taotlust ei võetud vastu.</string>
     <string name="diagnostics_error_not_completed">Heli suunamist ei saanud lõpule viia.</string>
+    <string name="power_turn_on">Puzru — Sees</string>
+    <string name="power_turn_off">Puzru — Väljas</string>
+    <string name="routing_notification_waiting_title">Puzru on sisse lülitatud</string>
+    <string name="routing_notification_waiting_text">Ootab heli suunamist</string>
+    <string name="routing_notification_active_title">Kuular</string>
+    <string name="routing_notification_active_text">Kuular</string>
+    <string name="routing_notification_error_title">Viga</string>
+    <string name="routing_notification_error_text">Viga</string>
+    <string name="status_main_ready">Väljas</string>
+    <string name="status_mini_ready">Väljas</string>
+    <string name="status_main_waiting">Ootab</string>
+    <string name="status_mini_waiting">Ootab</string>
+    <string name="status_main_active">Kuular</string>
+    <string name="status_mini_active">Kuular</string>
+    <string name="status_main_error">Viga</string>
+    <string name="status_mini_error">Viga</string>
 </resources>

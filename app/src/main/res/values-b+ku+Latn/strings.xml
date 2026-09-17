@@ -2,8 +2,6 @@
 <resources>
     <string name="app_name">Puzru</string>
     <string name="routing_notification_channel">Puzru</string>
-    <string name="routing_notification_title">Puzru vekirî ye</string>
-    <string name="routing_notification_text">Li benda rêkirina deng e</string>
     <string name="product_title">Puzru</string>
     <string name="product_subtitle">Bi AI re bi nepenî, wek bangeke telefonê biaxive.</string>
     <string name="state_ready">Amade</string>
@@ -75,4 +73,20 @@
     <string name="diagnostics_error_audio_preparation">Puzru nikarî dengê ragihandinê amade bike.</string>
     <string name="diagnostics_error_request_rejected">Daxwaza rêkirinê ya wergira bangê nehat pejirandin.</string>
     <string name="diagnostics_error_not_completed">Rêkirina deng nekarî bê qedandin.</string>
+    <string name="power_turn_on">Puzru — Vekirî</string>
+    <string name="power_turn_off">Puzru — Girtî</string>
+    <string name="routing_notification_waiting_title">Puzru vekirî ye</string>
+    <string name="routing_notification_waiting_text">Li benda rêkirina deng e</string>
+    <string name="routing_notification_active_title">Wergira bangê</string>
+    <string name="routing_notification_active_text">Wergira bangê</string>
+    <string name="routing_notification_error_title">Çewtî</string>
+    <string name="routing_notification_error_text">Çewtî</string>
+    <string name="status_main_ready">Girtî</string>
+    <string name="status_mini_ready">Girtî</string>
+    <string name="status_main_waiting">Li bendê</string>
+    <string name="status_mini_waiting">Li bendê</string>
+    <string name="status_main_active">Wergira bangê</string>
+    <string name="status_mini_active">Wergira bangê</string>
+    <string name="status_main_error">Çewtî</string>
+    <string name="status_mini_error">Çewtî</string>
 </resources>

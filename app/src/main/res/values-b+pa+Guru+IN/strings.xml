@@ -2,8 +2,6 @@
 <resources>
     <string name="app_name">Puzru</string>
     <string name="routing_notification_channel">Puzru</string>
-    <string name="routing_notification_title">Puzru ਚਾਲੂ ਹੈ</string>
-    <string name="routing_notification_text">ਆਡੀਓ ਬਦਲਣ ਦੀ ਉਡੀਕ</string>
     <string name="product_title">Puzru</string>
     <string name="product_subtitle">AI ਨਾਲ ਨਿੱਜੀ ਤੌਰ ’ਤੇ ਗੱਲ ਕਰੋ, ਬਿਲਕੁਲ ਫ਼ੋਨ ਕਾਲ ਵਾਂਗ।</string>
     <string name="state_ready">ਤਿਆਰ</string>
@@ -76,4 +74,20 @@
     <string name="diagnostics_error_audio_preparation">Puzru ਸੰਚਾਰ ਆਡੀਓ ਤਿਆਰ ਨਹੀਂ ਕਰ ਸਕਿਆ।</string>
     <string name="diagnostics_error_request_rejected">ਈਅਰਪੀਸ ’ਤੇ ਆਡੀਓ ਰੂਟ ਕਰਨ ਦੀ ਬੇਨਤੀ ਸਵੀਕਾਰ ਨਹੀਂ ਕੀਤੀ ਗਈ।</string>
     <string name="diagnostics_error_not_completed">ਆਡੀਓ ਰੂਟਿੰਗ ਪੂਰੀ ਨਹੀਂ ਕੀਤੀ ਜਾ ਸਕੀ।</string>
+    <string name="power_turn_on">Puzru — ਚਾਲੂ</string>
+    <string name="power_turn_off">Puzru — ਬੰਦ</string>
+    <string name="routing_notification_waiting_title">Puzru ਚਾਲੂ ਹੈ</string>
+    <string name="routing_notification_waiting_text">ਆਡੀਓ ਬਦਲਣ ਦੀ ਉਡੀਕ</string>
+    <string name="routing_notification_active_title">ਈਅਰਪੀਸ</string>
+    <string name="routing_notification_active_text">ਈਅਰਪੀਸ</string>
+    <string name="routing_notification_error_title">ਤਰੁੱਟੀ</string>
+    <string name="routing_notification_error_text">ਤਰੁੱਟੀ</string>
+    <string name="status_main_ready">ਬੰਦ</string>
+    <string name="status_mini_ready">ਬੰਦ</string>
+    <string name="status_main_waiting">ਉਡੀਕ</string>
+    <string name="status_mini_waiting">ਉਡੀਕ</string>
+    <string name="status_main_active">ਈਅਰਪੀਸ</string>
+    <string name="status_mini_active">ਈਅਰਪੀਸ</string>
+    <string name="status_main_error">ਤਰੁੱਟੀ</string>
+    <string name="status_mini_error">ਤਰੁੱਟੀ</string>
 </resources>

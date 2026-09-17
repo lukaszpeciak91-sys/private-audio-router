@@ -2,8 +2,6 @@
 <resources>
     <string name="app_name">Puzru</string>
     <string name="routing_notification_channel">Puzru</string>
-    <string name="routing_notification_title">Puzru איז אנגעצונדן</string>
-    <string name="routing_notification_text">מען ווארט צו איבערשטעלן דעם אודיא</string>
     <string name="product_title">Puzru</string>
     <string name="product_subtitle">רעדט פריוואט מיט AI, אזוי ווי ביי א טעלעפאן שמועס.</string>
     <string name="state_ready">גרייט</string>
@@ -76,4 +74,20 @@
     <string name="diagnostics_error_audio_preparation">Puzru האט נישט געקענט צוגרייטן דעם קאמוניקאציע־אודיא.</string>
     <string name="diagnostics_error_request_rejected">די בקשה איבערצושטעלן דעם אודיא צום אויער־טרייבל איז נישט אנגענומען געווארן.</string>
     <string name="diagnostics_error_not_completed">די אודיא־איבערשטעלונג האט מען נישט געקענט פארענדיקן.</string>
+    <string name="power_turn_on">Puzru — איינגעשאלטן</string>
+    <string name="power_turn_off">Puzru — אויסגעשאלטן</string>
+    <string name="routing_notification_waiting_title">Puzru איז אנגעצונדן</string>
+    <string name="routing_notification_waiting_text">מען ווארט צו איבערשטעלן דעם אודיא</string>
+    <string name="routing_notification_active_title">אויער־טרייבל</string>
+    <string name="routing_notification_active_text">אויער־טרייבל</string>
+    <string name="routing_notification_error_title">פעלער</string>
+    <string name="routing_notification_error_text">פעלער</string>
+    <string name="status_main_ready">אויסגעשאלטן</string>
+    <string name="status_mini_ready">אויסגעשאלטן</string>
+    <string name="status_main_waiting">ווארטנדיג</string>
+    <string name="status_mini_waiting">ווארטנדיג</string>
+    <string name="status_main_active">אויער־טרייבל</string>
+    <string name="status_mini_active">אויער־טרייבל</string>
+    <string name="status_main_error">פעלער</string>
+    <string name="status_mini_error">פעלער</string>
 </resources>

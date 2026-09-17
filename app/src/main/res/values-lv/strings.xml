@@ -2,8 +2,6 @@
 <resources>
     <string name="app_name">Puzru</string>
     <string name="routing_notification_channel">Puzru</string>
-    <string name="routing_notification_title">Puzru ir ieslēgts</string>
-    <string name="routing_notification_text">Gaida audio pārslēgšanu</string>
     <string name="product_title">Puzru</string>
     <string name="product_subtitle">Runājiet ar MI privāti, gluži kā tālruņa sarunā.</string>
     <string name="state_ready">Gatavs</string>
@@ -76,4 +74,20 @@
     <string name="diagnostics_error_audio_preparation">Puzru neizdevās sagatavot saziņas audio.</string>
     <string name="diagnostics_error_request_rejected">Pieprasījums novirzīt audio uz tālruņa uztvērēju netika pieņemts.</string>
     <string name="diagnostics_error_not_completed">Audio novirzīšanu neizdevās pabeigt.</string>
+    <string name="power_turn_on">Puzru — Ieslēgts</string>
+    <string name="power_turn_off">Puzru — Izslēgts</string>
+    <string name="routing_notification_waiting_title">Puzru ir ieslēgts</string>
+    <string name="routing_notification_waiting_text">Gaida audio pārslēgšanu</string>
+    <string name="routing_notification_active_title">Tālruņa uztvērējs</string>
+    <string name="routing_notification_active_text">Tālruņa uztvērējs</string>
+    <string name="routing_notification_error_title">Kļūda</string>
+    <string name="routing_notification_error_text">Kļūda</string>
+    <string name="status_main_ready">Izslēgts</string>
+    <string name="status_mini_ready">Izslēgts</string>
+    <string name="status_main_waiting">Gaida</string>
+    <string name="status_mini_waiting">Gaida</string>
+    <string name="status_main_active">Tālruņa uztvērējs</string>
+    <string name="status_mini_active">Tālruņa uztvērējs</string>
+    <string name="status_main_error">Kļūda</string>
+    <string name="status_mini_error">Kļūda</string>
 </resources>

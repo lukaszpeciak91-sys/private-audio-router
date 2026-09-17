@@ -2,8 +2,6 @@
 <resources>
     <string name="app_name">Puzru</string>
     <string name="routing_notification_channel">Puzru</string>
-    <string name="routing_notification_title">Puzru кабызылган</string>
-    <string name="routing_notification_text">Тавышны юнәлтү көтелә</string>
     <string name="product_title">Puzru</string>
     <string name="product_subtitle">ЯИ белән телефоннан сөйләшкәндәй, хосусый сөйләшегез.</string>
     <string name="state_ready">Әзер</string>
@@ -75,4 +73,20 @@
     <string name="diagnostics_error_audio_preparation">Puzru элемтә тавышын әзерли алмады.</string>
     <string name="diagnostics_error_request_rejected">Сөйләшү динамигына юнәлтү соравы кабул ителмәде.</string>
     <string name="diagnostics_error_not_completed">Юнәлтүне тәмамлап булмады.</string>
+    <string name="power_turn_on">Puzru — Кабызылган</string>
+    <string name="power_turn_off">Puzru — Сүндерелгән</string>
+    <string name="routing_notification_waiting_title">Puzru кабызылган</string>
+    <string name="routing_notification_waiting_text">Тавышны юнәлтү көтелә</string>
+    <string name="routing_notification_active_title">Сөйләшү динамигы</string>
+    <string name="routing_notification_active_text">Сөйләшү динамигы</string>
+    <string name="routing_notification_error_title">Хата</string>
+    <string name="routing_notification_error_text">Хата</string>
+    <string name="status_main_ready">Сүндерелгән</string>
+    <string name="status_mini_ready">Сүндерелгән</string>
+    <string name="status_main_waiting">Көтә</string>
+    <string name="status_mini_waiting">Көтә</string>
+    <string name="status_main_active">Сөйләшү динамигы</string>
+    <string name="status_mini_active">Сөйләшү динамигы</string>
+    <string name="status_main_error">Хата</string>
+    <string name="status_mini_error">Хата</string>
 </resources>

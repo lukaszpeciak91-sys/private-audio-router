@@ -2,8 +2,6 @@
 <resources>
     <string name="app_name">Puzru</string>
     <string name="routing_notification_channel">Puzru</string>
-    <string name="routing_notification_title">Puzru huwa mixgħul</string>
-    <string name="routing_notification_text">Stennija biex jinbidel l-output tal-awdjo</string>
     <string name="product_title">Puzru</string>
     <string name="product_subtitle">Tkellem mal-AI fil-privat, bħal f\'telefonata.</string>
     <string name="state_ready">Lest</string>
@@ -76,4 +74,20 @@
     <string name="diagnostics_error_audio_preparation">Puzru ma setax iħejji l-awdjo tal-komunikazzjoni.</string>
     <string name="diagnostics_error_request_rejected">It-talba biex l-awdjo jiġi dirett lejn ir-riċevitur ma ġietx aċċettata.</string>
     <string name="diagnostics_error_not_completed">Ma setgħetx titlesta d-direzzjoni tal-awdjo.</string>
+    <string name="power_turn_on">Puzru — Mixgħul</string>
+    <string name="power_turn_off">Puzru — Mitfi</string>
+    <string name="routing_notification_waiting_title">Puzru huwa mixgħul</string>
+    <string name="routing_notification_waiting_text">Stennija biex jinbidel l-output tal-awdjo</string>
+    <string name="routing_notification_active_title">Riċevitur</string>
+    <string name="routing_notification_active_text">Riċevitur</string>
+    <string name="routing_notification_error_title">Żball</string>
+    <string name="routing_notification_error_text">Żball</string>
+    <string name="status_main_ready">Mitfi</string>
+    <string name="status_mini_ready">Mitfi</string>
+    <string name="status_main_waiting">Stennija</string>
+    <string name="status_mini_waiting">Stennija</string>
+    <string name="status_main_active">Riċevitur</string>
+    <string name="status_mini_active">Riċevitur</string>
+    <string name="status_main_error">Żball</string>
+    <string name="status_mini_error">Żball</string>
 </resources>

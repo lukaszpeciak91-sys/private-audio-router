@@ -2,8 +2,6 @@
 <resources>
     <string name="app_name">Puzru</string>
     <string name="routing_notification_channel">Puzru</string>
-    <string name="routing_notification_title">Puzru অন আছে</string>
-    <string name="routing_notification_text">অডিঅ’ আউটপুট সলনি কৰিবলৈ অপেক্ষা কৰি আছে</string>
     <string name="product_title">Puzru</string>
     <string name="product_subtitle">ফ’ন কলৰ দৰে AIৰ সৈতে ব্যক্তিগতভাৱে কথা পাতক।</string>
     <string name="state_ready">সাজু</string>
@@ -76,4 +74,20 @@
     <string name="diagnostics_error_audio_preparation">Puzruএ যোগাযোগৰ অডিঅ’ সাজু কৰিব নোৱাৰিলে।</string>
     <string name="diagnostics_error_request_rejected">ইয়েৰপিচলৈ অডিঅ’ ৰাউটিং কৰাৰ অনুৰোধ গ্ৰহণ কৰা নহ’ল।</string>
     <string name="diagnostics_error_not_completed">অডিঅ’ ৰাউটিং সম্পূৰ্ণ কৰিব পৰা নগ’ল।</string>
+    <string name="power_turn_on">Puzru — চালু</string>
+    <string name="power_turn_off">Puzru — বন্ধ</string>
+    <string name="routing_notification_waiting_title">Puzru অন আছে</string>
+    <string name="routing_notification_waiting_text">অডিঅ’ আউটপুট সলনি কৰিবলৈ অপেক্ষা কৰি আছে</string>
+    <string name="routing_notification_active_title">ইয়েৰপিচ</string>
+    <string name="routing_notification_active_text">ইয়েৰপিচ</string>
+    <string name="routing_notification_error_title">ত্ৰুটি</string>
+    <string name="routing_notification_error_text">ত্ৰুটি</string>
+    <string name="status_main_ready">বন্ধ</string>
+    <string name="status_mini_ready">বন্ধ</string>
+    <string name="status_main_waiting">অপেক্ষাৰত</string>
+    <string name="status_mini_waiting">অপেক্ষাৰত</string>
+    <string name="status_main_active">ইয়েৰপিচ</string>
+    <string name="status_mini_active">ইয়েৰপিচ</string>
+    <string name="status_main_error">ত্ৰুটি</string>
+    <string name="status_mini_error">ত্ৰুটি</string>
 </resources>

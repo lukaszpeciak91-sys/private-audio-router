@@ -2,8 +2,6 @@
 <resources>
     <string name="app_name">Puzru</string>
     <string name="routing_notification_channel">Puzru</string>
-    <string name="routing_notification_title">Puzru ti wa ni titan</string>
-    <string name="routing_notification_text">N dúró láti darí ohùn</string>
     <string name="product_title">Puzru</string>
     <string name="product_subtitle">Bá AI sọ̀rọ̀ ní ìkọ̀kọ̀, bí ìpè tẹlifóònù.</string>
     <string name="state_ready">Ṣetán</string>
@@ -75,4 +73,20 @@
     <string name="diagnostics_error_audio_preparation">Puzru kò lè pèsè ohùn ìbánisọ̀rọ̀.</string>
     <string name="diagnostics_error_request_rejected">A kò gba ìbéèrè láti darí ohùn sí agbohùnsókè etí inú foonu.</string>
     <string name="diagnostics_error_not_completed">A kò lè parí dídarí ohùn.</string>
+    <string name="power_turn_on">Puzru — Titan</string>
+    <string name="power_turn_off">Puzru — Pipa</string>
+    <string name="routing_notification_waiting_title">Puzru ti wa ni titan</string>
+    <string name="routing_notification_waiting_text">N dúró láti darí ohùn</string>
+    <string name="routing_notification_active_title">Agbohùnsókè etí inú foonu</string>
+    <string name="routing_notification_active_text">Agbohùnsókè etí inú foonu</string>
+    <string name="routing_notification_error_title">Àṣìṣe</string>
+    <string name="routing_notification_error_text">Àṣìṣe</string>
+    <string name="status_main_ready">Pipa</string>
+    <string name="status_mini_ready">Pipa</string>
+    <string name="status_main_waiting">N dúró</string>
+    <string name="status_mini_waiting">N dúró</string>
+    <string name="status_main_active">Agbohùnsókè etí inú foonu</string>
+    <string name="status_mini_active">Agbohùnsókè etí inú foonu</string>
+    <string name="status_main_error">Àṣìṣe</string>
+    <string name="status_mini_error">Àṣìṣe</string>
 </resources>

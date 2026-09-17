@@ -2,8 +2,6 @@
 <resources>
     <string name="app_name">Puzru</string>
     <string name="routing_notification_channel">Puzru</string>
-    <string name="routing_notification_title">Puzru قيد التشغيل</string>
-    <string name="routing_notification_text">في انتظار توجيه الصوت</string>
     <string name="product_title">Puzru</string>
     <string name="product_subtitle">تحدّث مع الذكاء الاصطناعي بخصوصية، كما في مكالمة هاتفية.</string>
     <string name="state_ready">جاهز</string>
@@ -76,4 +74,20 @@
     <string name="diagnostics_error_audio_preparation">تعذّر على Puzru إعداد صوت الاتصال.</string>
     <string name="diagnostics_error_request_rejected">لم يُقبل طلب توجيه الصوت إلى سماعة الأذن.</string>
     <string name="diagnostics_error_not_completed">تعذّر إكمال توجيه الصوت.</string>
+    <string name="power_turn_on">Puzru — مفعّل</string>
+    <string name="power_turn_off">Puzru — غير مفعّل</string>
+    <string name="routing_notification_waiting_title">Puzru قيد التشغيل</string>
+    <string name="routing_notification_waiting_text">في انتظار توجيه الصوت</string>
+    <string name="routing_notification_active_title">سماعة الأذن</string>
+    <string name="routing_notification_active_text">سماعة الأذن</string>
+    <string name="routing_notification_error_title">خطأ</string>
+    <string name="routing_notification_error_text">خطأ</string>
+    <string name="status_main_ready">غير مفعّل</string>
+    <string name="status_mini_ready">غير مفعّل</string>
+    <string name="status_main_waiting">في الانتظار</string>
+    <string name="status_mini_waiting">في الانتظار</string>
+    <string name="status_main_active">سماعة الأذن</string>
+    <string name="status_mini_active">سماعة الأذن</string>
+    <string name="status_main_error">خطأ</string>
+    <string name="status_mini_error">خطأ</string>
 </resources>

@@ -2,8 +2,6 @@
 <resources>
     <string name="app_name">Puzru</string>
     <string name="routing_notification_channel">Puzru</string>
-    <string name="routing_notification_title">Puzru अन छ</string>
-    <string name="routing_notification_text">अडियो आउटपुट बदल्न पर्खँदै</string>
     <string name="product_title">Puzru</string>
     <string name="product_subtitle">फोन कल गरेजस्तै, एआईसँग निजी रूपमा कुरा गर्नुहोस्।</string>
     <string name="state_ready">तयार</string>
@@ -76,4 +74,20 @@
     <string name="diagnostics_error_audio_preparation">Puzru ले सञ्चार अडियो तयार गर्न सकेन।</string>
     <string name="diagnostics_error_request_rejected">इयरपिस रुटिङको अनुरोध स्वीकार गरिएन।</string>
     <string name="diagnostics_error_not_completed">रुटिङ पूरा गर्न सकिएन।</string>
+    <string name="power_turn_on">Puzru — अन</string>
+    <string name="power_turn_off">Puzru — अफ</string>
+    <string name="routing_notification_waiting_title">Puzru अन छ</string>
+    <string name="routing_notification_waiting_text">अडियो आउटपुट बदल्न पर्खँदै</string>
+    <string name="routing_notification_active_title">इयरपिस</string>
+    <string name="routing_notification_active_text">इयरपिस</string>
+    <string name="routing_notification_error_title">त्रुटि</string>
+    <string name="routing_notification_error_text">त्रुटि</string>
+    <string name="status_main_ready">अफ</string>
+    <string name="status_mini_ready">अफ</string>
+    <string name="status_main_waiting">पर्खँदै</string>
+    <string name="status_mini_waiting">पर्खँदै</string>
+    <string name="status_main_active">इयरपिस</string>
+    <string name="status_mini_active">इयरपिस</string>
+    <string name="status_main_error">त्रुटि</string>
+    <string name="status_mini_error">त्रुटि</string>
 </resources>

@@ -2,8 +2,6 @@
 <resources>
     <string name="app_name">Puzru</string>
     <string name="routing_notification_channel">Puzru</string>
-    <string name="routing_notification_title">Puzru מופעל</string>
-    <string name="routing_notification_text">בהמתנה להחלפת פלט האודיו</string>
     <string name="product_title">Puzru</string>
     <string name="product_subtitle">דברו עם AI בפרטיות, כמו בשיחת טלפון.</string>
     <string name="state_ready">מוכן</string>
@@ -76,4 +74,20 @@
     <string name="diagnostics_error_audio_preparation">אפליקציית Puzru לא הצליחה להכין שמע לתקשורת.</string>
     <string name="diagnostics_error_request_rejected">הבקשה לניתוב השמע לאפרכסת לא התקבלה.</string>
     <string name="diagnostics_error_not_completed">לא ניתן היה להשלים את הניתוב.</string>
+    <string name="power_turn_on">Puzru — מופעל</string>
+    <string name="power_turn_off">Puzru — כבוי</string>
+    <string name="routing_notification_waiting_title">Puzru מופעל</string>
+    <string name="routing_notification_waiting_text">בהמתנה להחלפת פלט האודיו</string>
+    <string name="routing_notification_active_title">אפרכסת</string>
+    <string name="routing_notification_active_text">אפרכסת</string>
+    <string name="routing_notification_error_title">שגיאה</string>
+    <string name="routing_notification_error_text">שגיאה</string>
+    <string name="status_main_ready">כבוי</string>
+    <string name="status_mini_ready">כבוי</string>
+    <string name="status_main_waiting">בהמתנה</string>
+    <string name="status_mini_waiting">בהמתנה</string>
+    <string name="status_main_active">אפרכסת</string>
+    <string name="status_mini_active">אפרכסת</string>
+    <string name="status_main_error">שגיאה</string>
+    <string name="status_mini_error">שגיאה</string>
 </resources>

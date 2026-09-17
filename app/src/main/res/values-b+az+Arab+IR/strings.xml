@@ -2,8 +2,6 @@
 <resources>
     <string name="app_name">Puzru</string>
     <string name="routing_notification_channel">Puzru</string>
-    <string name="routing_notification_title">Puzru آچیقدیر</string>
-    <string name="routing_notification_text">آودیو چیخیشینی دَییشدیرمه‌یی گؤزله‌ییر</string>
     <string name="product_title">Puzru</string>
     <string name="product_subtitle">یاپای ذکاء ایله تلفون زنگی کیمی اؤزل شکیلده دانیشین.</string>
     <string name="state_ready">حاضیر</string>
@@ -76,4 +74,20 @@
     <string name="diagnostics_error_audio_preparation">Puzru رابطه آودیوسونو حاضیرلایا بیلمه‌دی.</string>
     <string name="diagnostics_error_request_rejected">داخیل قولاق دینامیکینه یؤنلندیرمه ایسته‌یی قبول ائدیلمه‌دی.</string>
     <string name="diagnostics_error_not_completed">سس یؤنلندیرمه‌سی تاماملانا بیلمه‌دی.</string>
+    <string name="power_turn_on">Puzru — آچیق</string>
+    <string name="power_turn_off">Puzru — سؤنلو</string>
+    <string name="routing_notification_waiting_title">Puzru آچیقدیر</string>
+    <string name="routing_notification_waiting_text">آودیو چیخیشینی دَییشدیرمه‌یی گؤزله‌ییر</string>
+    <string name="routing_notification_active_title">داخیل قولاق دینامیکی</string>
+    <string name="routing_notification_active_text">داخیل قولاق دینامیکی</string>
+    <string name="routing_notification_error_title">خطا</string>
+    <string name="routing_notification_error_text">خطا</string>
+    <string name="status_main_ready">سؤنلو</string>
+    <string name="status_mini_ready">سؤنلو</string>
+    <string name="status_main_waiting">گؤزله‌ییر</string>
+    <string name="status_mini_waiting">گؤزله‌ییر</string>
+    <string name="status_main_active">داخیل قولاق دینامیکی</string>
+    <string name="status_mini_active">داخیل قولاق دینامیکی</string>
+    <string name="status_main_error">خطا</string>
+    <string name="status_mini_error">خطا</string>
 </resources>

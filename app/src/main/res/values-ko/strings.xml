@@ -2,8 +2,6 @@
 <resources>
     <string name="app_name">Puzru</string>
     <string name="routing_notification_channel">Puzru</string>
-    <string name="routing_notification_title">Puzru가 켜져 있습니다</string>
-    <string name="routing_notification_text">오디오 전환 대기 중</string>
     <string name="product_title">Puzru</string>
     <string name="product_subtitle">전화 통화처럼 AI와 비공개로 대화하세요.</string>
     <string name="state_ready">준비됨</string>
@@ -76,4 +74,20 @@
     <string name="diagnostics_error_audio_preparation">Puzru에서 통신 오디오를 준비하지 못했습니다.</string>
     <string name="diagnostics_error_request_rejected">수화부로 전환 요청이 수락되지 않았습니다.</string>
     <string name="diagnostics_error_not_completed">오디오 전환을 완료하지 못했습니다.</string>
+    <string name="power_turn_on">Puzru — 켜짐</string>
+    <string name="power_turn_off">Puzru — 꺼짐</string>
+    <string name="routing_notification_waiting_title">Puzru가 켜져 있습니다</string>
+    <string name="routing_notification_waiting_text">오디오 전환 대기 중</string>
+    <string name="routing_notification_active_title">수화부</string>
+    <string name="routing_notification_active_text">수화부</string>
+    <string name="routing_notification_error_title">오류</string>
+    <string name="routing_notification_error_text">오류</string>
+    <string name="status_main_ready">꺼짐</string>
+    <string name="status_mini_ready">꺼짐</string>
+    <string name="status_main_waiting">대기 중</string>
+    <string name="status_mini_waiting">대기 중</string>
+    <string name="status_main_active">수화부</string>
+    <string name="status_mini_active">수화부</string>
+    <string name="status_main_error">오류</string>
+    <string name="status_mini_error">오류</string>
 </resources>

@@ -2,8 +2,6 @@
 <resources>
     <string name="app_name">Puzru</string>
     <string name="routing_notification_channel">Puzru</string>
-    <string name="routing_notification_title">Puzru இயக்கத்தில் உள்ளது</string>
-    <string name="routing_notification_text">ஆடியோவை மாற்றக் காத்திருக்கிறது</string>
     <string name="product_title">Puzru</string>
     <string name="product_subtitle">தொலைபேசி அழைப்பைப் போல, AI உடன் தனிப்பட்ட முறையில் பேசுங்கள்.</string>
     <string name="state_ready">தயார்</string>
@@ -76,4 +74,20 @@
     <string name="diagnostics_error_audio_preparation">Puzru-ஆல் தகவல் தொடர்பு ஆடியோவைத் தயாரிக்க முடியவில்லை.</string>
     <string name="diagnostics_error_request_rejected">இயர்பீஸுக்கு வழிமாற்றுவதற்கான கோரிக்கை ஏற்கப்படவில்லை.</string>
     <string name="diagnostics_error_not_completed">ஆடியோ வழிமாற்றத்தை நிறைவுசெய்ய முடியவில்லை.</string>
+    <string name="power_turn_on">Puzru — இயக்கப்பட்டது</string>
+    <string name="power_turn_off">Puzru — முடக்கப்பட்டது</string>
+    <string name="routing_notification_waiting_title">Puzru இயக்கத்தில் உள்ளது</string>
+    <string name="routing_notification_waiting_text">ஆடியோவை மாற்றக் காத்திருக்கிறது</string>
+    <string name="routing_notification_active_title">இயர்பீஸ்</string>
+    <string name="routing_notification_active_text">இயர்பீஸ்</string>
+    <string name="routing_notification_error_title">பிழை</string>
+    <string name="routing_notification_error_text">பிழை</string>
+    <string name="status_main_ready">முடக்கப்பட்டது</string>
+    <string name="status_mini_ready">முடக்கப்பட்டது</string>
+    <string name="status_main_waiting">காத்திருக்கிறது</string>
+    <string name="status_mini_waiting">காத்திருக்கிறது</string>
+    <string name="status_main_active">இயர்பீஸ்</string>
+    <string name="status_mini_active">இயர்பீஸ்</string>
+    <string name="status_main_error">பிழை</string>
+    <string name="status_mini_error">பிழை</string>
 </resources>

@@ -2,8 +2,6 @@
 <resources>
     <string name="app_name">Puzru</string>
     <string name="routing_notification_channel">Puzru</string>
-    <string name="routing_notification_title">Puzru ဖွင့်ထားသည်</string>
-    <string name="routing_notification_text">အသံအထွက် ပြောင်းရန် စောင့်နေသည်</string>
 
     <string name="product_title">Puzru</string>
     <string name="product_subtitle">ဖုန်းပြောသလို အေအိုင်နှင့် သီးသန့် စကားပြောပါ။</string>
@@ -87,4 +85,20 @@
     <string name="diagnostics_error_audio_preparation">Puzru သည် ဆက်သွယ်ရေးအသံကို အသင့်မပြင်ဆင်နိုင်ပါ။</string>
     <string name="diagnostics_error_request_rejected">တယ်လီဖုန်းနားခွက်သို့ အသံလမ်းကြောင်းပြောင်းရန် တောင်းဆိုချက်ကို လက်မခံခဲ့ပါ။</string>
     <string name="diagnostics_error_not_completed">အသံလမ်းကြောင်းပြောင်းခြင်းကို မပြီးဆုံးနိုင်ပါ။</string>
+    <string name="power_turn_on">Puzru — ဖွင့်ထားသည်</string>
+    <string name="power_turn_off">Puzru — ပိတ်ထားသည်</string>
+    <string name="routing_notification_waiting_title">Puzru ဖွင့်ထားသည်</string>
+    <string name="routing_notification_waiting_text">အသံအထွက် ပြောင်းရန် စောင့်နေသည်</string>
+    <string name="routing_notification_active_title">တယ်လီဖုန်းနားခွက်</string>
+    <string name="routing_notification_active_text">တယ်လီဖုန်းနားခွက်</string>
+    <string name="routing_notification_error_title">အမှား</string>
+    <string name="routing_notification_error_text">အမှား</string>
+    <string name="status_main_ready">ပိတ်ထားသည်</string>
+    <string name="status_mini_ready">ပိတ်ထားသည်</string>
+    <string name="status_main_waiting">စောင့်နေသည်</string>
+    <string name="status_mini_waiting">စောင့်နေသည်</string>
+    <string name="status_main_active">တယ်လီဖုန်းနားခွက်</string>
+    <string name="status_mini_active">တယ်လီဖုန်းနားခွက်</string>
+    <string name="status_main_error">အမှား</string>
+    <string name="status_mini_error">အမှား</string>
 </resources>

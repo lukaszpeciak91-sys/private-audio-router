@@ -2,8 +2,6 @@
 <resources>
     <string name="app_name">Puzru</string>
     <string name="routing_notification_channel">Puzru</string>
-    <string name="routing_notification_title">Puzru je vklopljen</string>
-    <string name="routing_notification_text">Čakanje na preklop zvoka</string>
     <string name="product_title">Puzru</string>
     <string name="product_subtitle">Z UI se pogovarjajte zasebno, kot po telefonu.</string>
     <string name="state_ready">Pripravljeno</string>
@@ -76,4 +74,20 @@
     <string name="diagnostics_error_audio_preparation">Aplikaciji Puzru ni uspelo pripraviti zvoka za komunikacijo.</string>
     <string name="diagnostics_error_request_rejected">Zahteva za usmerjanje zvoka v slušalko telefona ni bila sprejeta.</string>
     <string name="diagnostics_error_not_completed">Usmerjanja zvoka ni bilo mogoče dokončati.</string>
+    <string name="power_turn_on">Puzru — Vklopljeno</string>
+    <string name="power_turn_off">Puzru — Izklopljeno</string>
+    <string name="routing_notification_waiting_title">Puzru je vklopljen</string>
+    <string name="routing_notification_waiting_text">Čakanje na preklop zvoka</string>
+    <string name="routing_notification_active_title">Slušalka telefona</string>
+    <string name="routing_notification_active_text">Slušalka telefona</string>
+    <string name="routing_notification_error_title">Napaka</string>
+    <string name="routing_notification_error_text">Napaka</string>
+    <string name="status_main_ready">Izklopljeno</string>
+    <string name="status_mini_ready">Izklopljeno</string>
+    <string name="status_main_waiting">Čakanje</string>
+    <string name="status_mini_waiting">Čakanje</string>
+    <string name="status_main_active">Slušalka telefona</string>
+    <string name="status_mini_active">Slušalka telefona</string>
+    <string name="status_main_error">Napaka</string>
+    <string name="status_mini_error">Napaka</string>
 </resources>

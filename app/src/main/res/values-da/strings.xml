@@ -2,8 +2,6 @@
 <resources>
     <string name="app_name">Puzru</string>
     <string name="routing_notification_channel">Puzru</string>
-    <string name="routing_notification_title">Puzru er slået til</string>
-    <string name="routing_notification_text">Venter på at skifte lyd</string>
     <string name="product_title">Puzru</string>
     <string name="product_subtitle">Tal privat med AI, som i et telefonopkald.</string>
     <string name="state_ready">Klar</string>
@@ -76,4 +74,20 @@
     <string name="diagnostics_error_audio_preparation">Puzru kunne ikke forberede kommunikationslyd.</string>
     <string name="diagnostics_error_request_rejected">Anmodningen om routing til ørestykket blev ikke accepteret.</string>
     <string name="diagnostics_error_not_completed">Lydroutingen kunne ikke fuldføres.</string>
+    <string name="power_turn_on">Puzru — Til</string>
+    <string name="power_turn_off">Puzru — Fra</string>
+    <string name="routing_notification_waiting_title">Puzru er slået til</string>
+    <string name="routing_notification_waiting_text">Venter på at skifte lyd</string>
+    <string name="routing_notification_active_title">Ørestykke</string>
+    <string name="routing_notification_active_text">Ørestykke</string>
+    <string name="routing_notification_error_title">Fejl</string>
+    <string name="routing_notification_error_text">Fejl</string>
+    <string name="status_main_ready">Fra</string>
+    <string name="status_mini_ready">Fra</string>
+    <string name="status_main_waiting">Venter</string>
+    <string name="status_mini_waiting">Venter</string>
+    <string name="status_main_active">Ørestykke</string>
+    <string name="status_mini_active">Ørestykke</string>
+    <string name="status_main_error">Fejl</string>
+    <string name="status_mini_error">Fejl</string>
 </resources>

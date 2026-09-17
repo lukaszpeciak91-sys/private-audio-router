@@ -2,8 +2,6 @@
 <resources>
     <string name="app_name">Puzru</string>
     <string name="routing_notification_channel">Puzru</string>
-    <string name="routing_notification_title">Puzru diaktifkan</string>
-    <string name="routing_notification_text">Menunggu pengalihan audio</string>
     <string name="product_title">Puzru</string>
     <string name="product_subtitle">Bicara dengan AI secara pribadi, seperti saat menelepon.</string>
     <string name="state_ready">Siap</string>
@@ -76,4 +74,20 @@
     <string name="diagnostics_error_audio_preparation">Puzru tidak dapat menyiapkan audio komunikasi.</string>
     <string name="diagnostics_error_request_rejected">Permintaan pengalihan ke earpiece bawaan ponsel tidak diterima.</string>
     <string name="diagnostics_error_not_completed">Pengalihan audio tidak dapat diselesaikan.</string>
+    <string name="power_turn_on">Puzru — Nyala</string>
+    <string name="power_turn_off">Puzru — Mati</string>
+    <string name="routing_notification_waiting_title">Puzru diaktifkan</string>
+    <string name="routing_notification_waiting_text">Menunggu pengalihan audio</string>
+    <string name="routing_notification_active_title">Earpiece</string>
+    <string name="routing_notification_active_text">Earpiece</string>
+    <string name="routing_notification_error_title">Error</string>
+    <string name="routing_notification_error_text">Error</string>
+    <string name="status_main_ready">Mati</string>
+    <string name="status_mini_ready">Mati</string>
+    <string name="status_main_waiting">Menunggu</string>
+    <string name="status_mini_waiting">Menunggu</string>
+    <string name="status_main_active">Earpiece</string>
+    <string name="status_mini_active">Earpiece</string>
+    <string name="status_main_error">Error</string>
+    <string name="status_mini_error">Error</string>
 </resources>

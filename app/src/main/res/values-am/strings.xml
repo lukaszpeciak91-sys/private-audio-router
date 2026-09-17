@@ -2,8 +2,6 @@
 <resources>
     <string name="app_name">Puzru</string>
     <string name="routing_notification_channel">Puzru</string>
-    <string name="routing_notification_title">Puzru በርቷል</string>
-    <string name="routing_notification_text">የድምፅ ውጽዓትን ለመቀየር በመጠበቅ ላይ</string>
     <string name="product_title">Puzru</string>
     <string name="product_subtitle">ከAI ጋር በግል ይነጋገሩ፣ ልክ እንደ ስልክ ጥሪ።</string>
     <string name="state_ready">ዝግጁ</string>
@@ -76,4 +74,20 @@
     <string name="diagnostics_error_audio_preparation">Puzru የግንኙነት ድምፅን ማዘጋጀት አልቻለም።</string>
     <string name="diagnostics_error_request_rejected">ድምፁን ወደ ስልኩ አብሮገነብ መስሚያ ለማዘዋወር የቀረበው ጥያቄ ተቀባይነት አላገኘም።</string>
     <string name="diagnostics_error_not_completed">የድምፅ መውጫ ማዘዋወሩ ሊጠናቀቅ አልቻለም።</string>
+    <string name="power_turn_on">Puzru — በርቷል</string>
+    <string name="power_turn_off">Puzru — ጠፍቷል</string>
+    <string name="routing_notification_waiting_title">Puzru በርቷል</string>
+    <string name="routing_notification_waiting_text">የድምፅ ውጽዓትን ለመቀየር በመጠበቅ ላይ</string>
+    <string name="routing_notification_active_title">የስልኩ አብሮገነብ መስሚያ</string>
+    <string name="routing_notification_active_text">የስልኩ አብሮገነብ መስሚያ</string>
+    <string name="routing_notification_error_title">ስህተት</string>
+    <string name="routing_notification_error_text">ስህተት</string>
+    <string name="status_main_ready">ጠፍቷል</string>
+    <string name="status_mini_ready">ጠፍቷል</string>
+    <string name="status_main_waiting">በመጠበቅ ላይ</string>
+    <string name="status_mini_waiting">በመጠበቅ ላይ</string>
+    <string name="status_main_active">የስልኩ አብሮገነብ መስሚያ</string>
+    <string name="status_mini_active">የስልኩ አብሮገነብ መስሚያ</string>
+    <string name="status_main_error">ስህተት</string>
+    <string name="status_mini_error">ስህተት</string>
 </resources>

@@ -2,8 +2,6 @@
 <resources>
     <string name="app_name">Puzru</string>
     <string name="routing_notification_channel">Puzru</string>
-    <string name="routing_notification_title">Tha Puzru air</string>
-    <string name="routing_notification_text">A’ feitheamh gus an fhuaim a stiùireadh</string>
     <string name="product_title">Puzru</string>
     <string name="product_subtitle">Bruidhinn ri IF gu prìobhaideach, mar ghairm fòn.</string>
     <string name="state_ready">Deiseil</string>
@@ -75,4 +73,20 @@
     <string name="diagnostics_error_audio_preparation">Cha b’ urrainn do Puzru fuaim conaltraidh ullachadh.</string>
     <string name="diagnostics_error_request_rejected">Cha deach gabhail ris an iarrtas stiùiridh chun a’ ghlacadair gairm.</string>
     <string name="diagnostics_error_not_completed">Cha b’ urrainn an stiùireadh a choileanadh.</string>
+    <string name="power_turn_on">Puzru — Air</string>
+    <string name="power_turn_off">Puzru — Dheth</string>
+    <string name="routing_notification_waiting_title">Tha Puzru air</string>
+    <string name="routing_notification_waiting_text">A’ feitheamh gus an fhuaim a stiùireadh</string>
+    <string name="routing_notification_active_title">Glacadair gairm</string>
+    <string name="routing_notification_active_text">Glacadair gairm</string>
+    <string name="routing_notification_error_title">Mearachd</string>
+    <string name="routing_notification_error_text">Mearachd</string>
+    <string name="status_main_ready">Dheth</string>
+    <string name="status_mini_ready">Dheth</string>
+    <string name="status_main_waiting">A’ feitheamh</string>
+    <string name="status_mini_waiting">A’ feitheamh</string>
+    <string name="status_main_active">Glacadair gairm</string>
+    <string name="status_mini_active">Glacadair gairm</string>
+    <string name="status_main_error">Mearachd</string>
+    <string name="status_mini_error">Mearachd</string>
 </resources>

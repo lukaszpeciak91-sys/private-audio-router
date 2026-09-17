@@ -2,8 +2,6 @@
 <resources>
     <string name="app_name">Puzru</string>
     <string name="routing_notification_channel">Puzru</string>
-    <string name="routing_notification_title">Puzru er på</string>
-    <string name="routing_notification_text">Venter på å bytte lyd</string>
     <string name="product_title">Puzru</string>
     <string name="product_subtitle">Snakk privat med AI, som i en telefonsamtale.</string>
     <string name="state_ready">Klar</string>
@@ -76,4 +74,20 @@
     <string name="diagnostics_error_audio_preparation">Puzru kunne ikke klargjøre kommunikasjonslyd.</string>
     <string name="diagnostics_error_request_rejected">Forespørselen om ruting til ørehøyttaleren ble ikke godtatt.</string>
     <string name="diagnostics_error_not_completed">Lydrutingen kunne ikke fullføres.</string>
+    <string name="power_turn_on">Puzru — På</string>
+    <string name="power_turn_off">Puzru — Av</string>
+    <string name="routing_notification_waiting_title">Puzru er på</string>
+    <string name="routing_notification_waiting_text">Venter på å bytte lyd</string>
+    <string name="routing_notification_active_title">Ørehøyttaler</string>
+    <string name="routing_notification_active_text">Ørehøyttaler</string>
+    <string name="routing_notification_error_title">Feil</string>
+    <string name="routing_notification_error_text">Feil</string>
+    <string name="status_main_ready">Av</string>
+    <string name="status_mini_ready">Av</string>
+    <string name="status_main_waiting">Venter</string>
+    <string name="status_mini_waiting">Venter</string>
+    <string name="status_main_active">Ørehøyttaler</string>
+    <string name="status_mini_active">Ørehøyttaler</string>
+    <string name="status_main_error">Feil</string>
+    <string name="status_mini_error">Feil</string>
 </resources>

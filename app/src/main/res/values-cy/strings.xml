@@ -2,8 +2,6 @@
 <resources>
     <string name="app_name">Puzru</string>
     <string name="routing_notification_channel">Puzru</string>
-    <string name="routing_notification_title">Mae Puzru ymlaen</string>
-    <string name="routing_notification_text">Yn aros i lwybro sain</string>
     <string name="product_title">Puzru</string>
     <string name="product_subtitle">Siaradwch ag AI yn breifat, fel galwad ffôn.</string>
     <string name="state_ready">Parod</string>
@@ -75,4 +73,20 @@
     <string name="diagnostics_error_audio_preparation">Ni allai Puzru baratoi sain cyfathrebu.</string>
     <string name="diagnostics_error_request_rejected">Ni dderbyniwyd y cais i lwybro i’r clustffôn.</string>
     <string name="diagnostics_error_not_completed">Ni ellid cwblhau’r llwybro.</string>
+    <string name="power_turn_on">Puzru — Ymlaen</string>
+    <string name="power_turn_off">Puzru — I ffwrdd</string>
+    <string name="routing_notification_waiting_title">Mae Puzru ymlaen</string>
+    <string name="routing_notification_waiting_text">Yn aros i lwybro sain</string>
+    <string name="routing_notification_active_title">Clustffôn</string>
+    <string name="routing_notification_active_text">Clustffôn</string>
+    <string name="routing_notification_error_title">Gwall</string>
+    <string name="routing_notification_error_text">Gwall</string>
+    <string name="status_main_ready">I ffwrdd</string>
+    <string name="status_mini_ready">I ffwrdd</string>
+    <string name="status_main_waiting">Yn aros</string>
+    <string name="status_mini_waiting">Yn aros</string>
+    <string name="status_main_active">Clustffôn</string>
+    <string name="status_mini_active">Clustffôn</string>
+    <string name="status_main_error">Gwall</string>
+    <string name="status_mini_error">Gwall</string>
 </resources>

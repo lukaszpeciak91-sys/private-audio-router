@@ -2,8 +2,6 @@
 <resources>
     <string name="app_name">Puzru</string>
     <string name="routing_notification_channel">Puzru</string>
-    <string name="routing_notification_title">Puzru yoniq</string>
-    <string name="routing_notification_text">Audio chiqishini almashtirish kutilmoqda</string>
 
     <string name="product_title">Puzru</string>
     <string name="product_subtitle">AI bilan xuddi telefon qo‘ng‘irog‘idek, boshqalarga eshittirmay gaplashing.</string>
@@ -87,4 +85,20 @@
     <string name="diagnostics_error_audio_preparation">Puzru aloqa audiosini tayyorlay olmadi.</string>
     <string name="diagnostics_error_request_rejected">Quloq karnaychasiga yo‘naltirish so‘rovi qabul qilinmadi.</string>
     <string name="diagnostics_error_not_completed">Audio yo‘naltirishni yakunlab bo‘lmadi.</string>
+    <string name="power_turn_on">Puzru — Yoqilgan</string>
+    <string name="power_turn_off">Puzru — O‘chirilgan</string>
+    <string name="routing_notification_waiting_title">Puzru yoniq</string>
+    <string name="routing_notification_waiting_text">Audio chiqishini almashtirish kutilmoqda</string>
+    <string name="routing_notification_active_title">Quloq karnaychasi</string>
+    <string name="routing_notification_active_text">Quloq karnaychasi</string>
+    <string name="routing_notification_error_title">Xatolik</string>
+    <string name="routing_notification_error_text">Xatolik</string>
+    <string name="status_main_ready">O‘chirilgan</string>
+    <string name="status_mini_ready">O‘chirilgan</string>
+    <string name="status_main_waiting">Kutilmoqda</string>
+    <string name="status_mini_waiting">Kutilmoqda</string>
+    <string name="status_main_active">Quloq karnaychasi</string>
+    <string name="status_mini_active">Quloq karnaychasi</string>
+    <string name="status_main_error">Xatolik</string>
+    <string name="status_mini_error">Xatolik</string>
 </resources>

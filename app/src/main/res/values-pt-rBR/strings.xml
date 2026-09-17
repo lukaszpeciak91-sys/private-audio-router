@@ -2,8 +2,6 @@
 <resources>
     <string name="app_name">Puzru</string>
     <string name="routing_notification_channel">Puzru</string>
-    <string name="routing_notification_title">Puzru está ativado</string>
-    <string name="routing_notification_text">Aguardando para redirecionar o áudio</string>
     <string name="product_title">Puzru</string>
     <string name="product_subtitle">Converse com a IA em particular, como em uma ligação.</string>
     <string name="state_ready">Pronto</string>
@@ -76,4 +74,20 @@
     <string name="diagnostics_error_audio_preparation">O Puzru não conseguiu preparar o áudio de comunicação.</string>
     <string name="diagnostics_error_request_rejected">A solicitação de direcionamento para o alto-falante de chamadas não foi aceita.</string>
     <string name="diagnostics_error_not_completed">Não foi possível concluir o direcionamento de áudio.</string>
+    <string name="power_turn_on">Puzru — Ativado</string>
+    <string name="power_turn_off">Puzru — Desativado</string>
+    <string name="routing_notification_waiting_title">Puzru está ativado</string>
+    <string name="routing_notification_waiting_text">Aguardando para redirecionar o áudio</string>
+    <string name="routing_notification_active_title">Alto-falante de chamadas</string>
+    <string name="routing_notification_active_text">Alto-falante de chamadas</string>
+    <string name="routing_notification_error_title">Erro</string>
+    <string name="routing_notification_error_text">Erro</string>
+    <string name="status_main_ready">Desativado</string>
+    <string name="status_mini_ready">Desativado</string>
+    <string name="status_main_waiting">Aguardando</string>
+    <string name="status_mini_waiting">Aguardando</string>
+    <string name="status_main_active">Alto-falante de chamadas</string>
+    <string name="status_mini_active">Alto-falante de chamadas</string>
+    <string name="status_main_error">Erro</string>
+    <string name="status_mini_error">Erro</string>
 </resources>

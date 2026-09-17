@@ -2,8 +2,6 @@
 <resources>
     <string name="app_name">Puzru</string>
     <string name="routing_notification_channel">Puzru</string>
-    <string name="routing_notification_title">Puzru ass un</string>
-    <string name="routing_notification_text">Waart drop, den Audio ëmzeschalten</string>
     <string name="product_title">Puzru</string>
     <string name="product_subtitle">Schwätz privat mat der KI, wéi bei engem Telefonsgespréich.</string>
     <string name="state_ready">Prett</string>
@@ -76,4 +74,20 @@
     <string name="diagnostics_error_audio_preparation">Puzru konnt de Kommunikatiounsaudio net virbereeden.</string>
     <string name="diagnostics_error_request_rejected">D’Ufro fir d’Audioausgab iwwer den Ouer-Lautsprecher gouf net ugeholl.</string>
     <string name="diagnostics_error_not_completed">D’Audioleedung konnt net ofgeschloss ginn.</string>
+    <string name="power_turn_on">Puzru — Ugeschalt</string>
+    <string name="power_turn_off">Puzru — Ausgeschalt</string>
+    <string name="routing_notification_waiting_title">Puzru ass un</string>
+    <string name="routing_notification_waiting_text">Waart drop, den Audio ëmzeschalten</string>
+    <string name="routing_notification_active_title">Ouer-Lautsprecher</string>
+    <string name="routing_notification_active_text">Ouer-Lautsprecher</string>
+    <string name="routing_notification_error_title">Feeler</string>
+    <string name="routing_notification_error_text">Feeler</string>
+    <string name="status_main_ready">Ausgeschalt</string>
+    <string name="status_mini_ready">Ausgeschalt</string>
+    <string name="status_main_waiting">Waart</string>
+    <string name="status_mini_waiting">Waart</string>
+    <string name="status_main_active">Ouer-Lautsprecher</string>
+    <string name="status_mini_active">Ouer-Lautsprecher</string>
+    <string name="status_main_error">Feeler</string>
+    <string name="status_mini_error">Feeler</string>
 </resources>

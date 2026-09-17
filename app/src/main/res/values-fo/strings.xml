@@ -2,8 +2,6 @@
 <resources>
     <string name="app_name">Puzru</string>
     <string name="routing_notification_channel">Puzru</string>
-    <string name="routing_notification_title">Puzru er tendrað</string>
-    <string name="routing_notification_text">Bíðar eftir at skifta ljóðið</string>
     <string name="product_title">Puzru</string>
     <string name="product_subtitle">Tosa einsliga við AI, sum í einari telefonsamrøðu.</string>
     <string name="state_ready">Klárt</string>
@@ -76,4 +74,20 @@
     <string name="diagnostics_error_audio_preparation">Puzru fekk ikki fyrireikað samskiftisljóð.</string>
     <string name="diagnostics_error_request_rejected">Umbønin um at beina ljóðið til oyrahátalaran varð ikki góðtikin.</string>
     <string name="diagnostics_error_not_completed">Tað bar ikki til at fullføra ljóðbeiningina.</string>
+    <string name="power_turn_on">Puzru — Tendrað</string>
+    <string name="power_turn_off">Puzru — Sløkt</string>
+    <string name="routing_notification_waiting_title">Puzru er tendrað</string>
+    <string name="routing_notification_waiting_text">Bíðar eftir at skifta ljóðið</string>
+    <string name="routing_notification_active_title">Oyrahátalari</string>
+    <string name="routing_notification_active_text">Oyrahátalari</string>
+    <string name="routing_notification_error_title">Villa</string>
+    <string name="routing_notification_error_text">Villa</string>
+    <string name="status_main_ready">Sløkt</string>
+    <string name="status_mini_ready">Sløkt</string>
+    <string name="status_main_waiting">Bíðar</string>
+    <string name="status_mini_waiting">Bíðar</string>
+    <string name="status_main_active">Oyrahátalari</string>
+    <string name="status_mini_active">Oyrahátalari</string>
+    <string name="status_main_error">Villa</string>
+    <string name="status_mini_error">Villa</string>
 </resources>

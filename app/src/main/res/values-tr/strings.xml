@@ -2,8 +2,6 @@
 <resources>
     <string name="app_name">Puzru</string>
     <string name="routing_notification_channel">Puzru</string>
-    <string name="routing_notification_title">Puzru açık</string>
-    <string name="routing_notification_text">Ses geçişi bekleniyor</string>
     <string name="product_title">Puzru</string>
     <string name="product_subtitle">AI ile telefon görüşmesi gibi, özel olarak konuşun.</string>
     <string name="state_ready">Hazır</string>
@@ -76,4 +74,20 @@
     <string name="diagnostics_error_audio_preparation">Puzru iletişim sesini hazırlayamadı.</string>
     <string name="diagnostics_error_request_rejected">Ahizeye yönlendirme isteği kabul edilmedi.</string>
     <string name="diagnostics_error_not_completed">Yönlendirme tamamlanamadı.</string>
+    <string name="power_turn_on">Puzru — Açık</string>
+    <string name="power_turn_off">Puzru — Kapalı</string>
+    <string name="routing_notification_waiting_title">Puzru açık</string>
+    <string name="routing_notification_waiting_text">Ses geçişi bekleniyor</string>
+    <string name="routing_notification_active_title">Ahize</string>
+    <string name="routing_notification_active_text">Ahize</string>
+    <string name="routing_notification_error_title">Hata</string>
+    <string name="routing_notification_error_text">Hata</string>
+    <string name="status_main_ready">Kapalı</string>
+    <string name="status_mini_ready">Kapalı</string>
+    <string name="status_main_waiting">Bekleniyor</string>
+    <string name="status_mini_waiting">Bekleniyor</string>
+    <string name="status_main_active">Ahize</string>
+    <string name="status_mini_active">Ahize</string>
+    <string name="status_main_error">Hata</string>
+    <string name="status_mini_error">Hata</string>
 </resources>

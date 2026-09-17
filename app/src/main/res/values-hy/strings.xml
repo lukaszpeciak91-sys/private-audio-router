@@ -2,8 +2,6 @@
 <resources>
     <string name="app_name">Puzru</string>
     <string name="routing_notification_channel">Puzru</string>
-    <string name="routing_notification_title">Puzru-ն միացված է</string>
-    <string name="routing_notification_text">Սպասում է աուդիո ելքի փոխարկման</string>
     <string name="product_title">Puzru</string>
     <string name="product_subtitle">ԱԲ-ի հետ խոսեք մասնավոր կերպով՝ ինչպես հեռախոսազանգի ժամանակ։</string>
     <string name="state_ready">Պատրաստ է</string>
@@ -76,4 +74,20 @@
     <string name="diagnostics_error_audio_preparation">Puzru-ին չհաջողվեց նախապատրաստել հաղորդակցության աուդիոն։</string>
     <string name="diagnostics_error_request_rejected">Ներկառուցված լսափողին ուղղորդելու հարցումը չընդունվեց։</string>
     <string name="diagnostics_error_not_completed">Չհաջողվեց ավարտել ձայնի ուղղորդումը։</string>
+    <string name="power_turn_on">Puzru — Միացված է</string>
+    <string name="power_turn_off">Puzru — Անջատված է</string>
+    <string name="routing_notification_waiting_title">Puzru-ն միացված է</string>
+    <string name="routing_notification_waiting_text">Սպասում է աուդիո ելքի փոխարկման</string>
+    <string name="routing_notification_active_title">Ներկառուցված լսափող</string>
+    <string name="routing_notification_active_text">Ներկառուցված լսափող</string>
+    <string name="routing_notification_error_title">Սխալ</string>
+    <string name="routing_notification_error_text">Սխալ</string>
+    <string name="status_main_ready">Անջատված է</string>
+    <string name="status_mini_ready">Անջատված է</string>
+    <string name="status_main_waiting">Սպասում է</string>
+    <string name="status_mini_waiting">Սպասում է</string>
+    <string name="status_main_active">Ներկառուցված լսափող</string>
+    <string name="status_mini_active">Ներկառուցված լսափող</string>
+    <string name="status_main_error">Սխալ</string>
+    <string name="status_mini_error">Սխալ</string>
 </resources>

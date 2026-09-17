@@ -2,8 +2,6 @@
 <resources>
     <string name="app_name">Puzru</string>
     <string name="routing_notification_channel">Puzru</string>
-    <string name="routing_notification_title">Puzru चालू है</string>
-    <string name="routing_notification_text">ऑडियो भेजे जाने का इंतज़ार है</string>
     <string name="product_title">Puzru</string>
     <string name="product_subtitle">फ़ोन कॉल की तरह, एआई से निजी तौर पर बात करें।</string>
     <string name="state_ready">तैयार</string>
@@ -76,4 +74,20 @@
     <string name="diagnostics_error_audio_preparation">Puzru कम्यूनिकेशन ऑडियो तैयार नहीं कर सका।</string>
     <string name="diagnostics_error_request_rejected">ईयरपीस पर ऑडियो भेजने का अनुरोध स्वीकार नहीं किया गया।</string>
     <string name="diagnostics_error_not_completed">ऑडियो रूटिंग पूरी नहीं की जा सकी।</string>
+    <string name="power_turn_on">Puzru — चालू</string>
+    <string name="power_turn_off">Puzru — बंद</string>
+    <string name="routing_notification_waiting_title">Puzru चालू है</string>
+    <string name="routing_notification_waiting_text">ऑडियो भेजे जाने का इंतज़ार है</string>
+    <string name="routing_notification_active_title">ईयरपीस</string>
+    <string name="routing_notification_active_text">ईयरपीस</string>
+    <string name="routing_notification_error_title">गड़बड़ी</string>
+    <string name="routing_notification_error_text">गड़बड़ी</string>
+    <string name="status_main_ready">बंद</string>
+    <string name="status_mini_ready">बंद</string>
+    <string name="status_main_waiting">इंतज़ार में</string>
+    <string name="status_mini_waiting">इंतज़ार में</string>
+    <string name="status_main_active">ईयरपीस</string>
+    <string name="status_mini_active">ईयरपीस</string>
+    <string name="status_main_error">गड़बड़ी</string>
+    <string name="status_mini_error">गड़बड़ी</string>
 </resources>

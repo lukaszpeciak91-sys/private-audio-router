@@ -2,8 +2,6 @@
 <resources>
     <string name="app_name">Puzru</string>
     <string name="routing_notification_channel">Puzru</string>
-    <string name="routing_notification_title">Puzru je uključen</string>
-    <string name="routing_notification_text">Čekanje na prebacivanje zvuka</string>
     <string name="product_title">Puzru</string>
     <string name="product_subtitle">Razgovarajte privatno s AI-jem, kao tokom telefonskog poziva.</string>
     <string name="state_ready">Spremno</string>
@@ -76,4 +74,20 @@
     <string name="diagnostics_error_audio_preparation">Puzru nije mogao pripremiti zvuk za komunikaciju.</string>
     <string name="diagnostics_error_request_rejected">Zahtjev za usmjeravanje zvuka na slušalicu nije prihvaćen.</string>
     <string name="diagnostics_error_not_completed">Usmjeravanje zvuka nije se moglo dovršiti.</string>
+    <string name="power_turn_on">Puzru — Uključeno</string>
+    <string name="power_turn_off">Puzru — Isključeno</string>
+    <string name="routing_notification_waiting_title">Puzru je uključen</string>
+    <string name="routing_notification_waiting_text">Čekanje na prebacivanje zvuka</string>
+    <string name="routing_notification_active_title">Slušalica</string>
+    <string name="routing_notification_active_text">Slušalica</string>
+    <string name="routing_notification_error_title">Greška</string>
+    <string name="routing_notification_error_text">Greška</string>
+    <string name="status_main_ready">Isključeno</string>
+    <string name="status_mini_ready">Isključeno</string>
+    <string name="status_main_waiting">Čekanje</string>
+    <string name="status_mini_waiting">Čekanje</string>
+    <string name="status_main_active">Slušalica</string>
+    <string name="status_mini_active">Slušalica</string>
+    <string name="status_main_error">Greška</string>
+    <string name="status_mini_error">Greška</string>
 </resources>
