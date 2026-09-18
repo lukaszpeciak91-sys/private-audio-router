@@ -59,7 +59,7 @@ class LocaleVariantReadinessContractTest {
             assertEquals("Puzru", value(target, "app_name"))
             assertEquals("PUZRU", value(target, "diagnostics_private_audio"))
             assertEquals(mini, value(target, "floating"))
-            assertNotEquals(value(target, "routing_notification_title"), value(target, "state_active"))
+            assertNotEquals(value(target, "routing_notification_waiting_title"), value(target, "state_active"))
             assertNotEquals(value(target, "state_ready"), value(target, "state_waiting"))
             assertNotEquals(value(target, "diagnostics_route_earpiece"), value(target, "diagnostics_route_speaker"))
             assertEquals(3, value(target, "settings_privacy_summary_body").split("\\n\\n").size)

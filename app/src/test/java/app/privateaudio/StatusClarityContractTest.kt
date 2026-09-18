@@ -1,8 +1,12 @@
 package app.privateaudio
 
 import app.privateaudio.overlay.MINI_ERROR_STATUS_COLOR
+import app.privateaudio.overlay.MINI_ACTIVE_STATUS_COLOR
+import app.privateaudio.overlay.MINI_BORDER_COLOR
 import app.privateaudio.overlay.MINI_READY_STATUS_COLOR
-import app.privateaudio.overlay.MINI_STATUS_SURFACE_COLOR
+import app.privateaudio.overlay.MINI_SURFACE_COLOR
+import app.privateaudio.overlay.MINI_WAITING_STATUS_COLOR
+import app.privateaudio.overlay.miniStatusColor
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue
@@ -42,7 +46,6 @@ class StatusClarityContractTest {
         assertTrue(screen.contains("ProductNeutral"))
         assertFalse(screen.substringAfter("PrivateAudioState.READY -> StateVisuals").substringBefore('\n').contains("ProductGreen"))
         StatusSymbol.entries.forEach { assertTrue(overlay.contains("StatusSymbol.${it.name}")) }
-        assertTrue(overlay.contains("PrivateAudioState.READY -> miniColor(MINI_READY_STATUS_COLOR)"))
         assertTrue(overlay.contains("statePresentation(value).miniLabel"))
         assertTrue(overlay.contains("fullStateLabel(value)"))
     }
@@ -54,17 +57,29 @@ class StatusClarityContractTest {
         assertTrue(service.contains("privateAudioState == PrivateAudioState.READY"))
         assertFalse(service.method("private fun updateForegroundNotification").contains("postDelayed"))
         assertTrue(service.method("private fun updateForegroundNotification").contains("privateAudioState == PrivateAudioState.READY) return"))
-        assertTrue(service.method("private fun buildForegroundNotification").contains("presentation.notificationTitle ?: return null"))
-        assertTrue(service.method("private fun buildForegroundNotification").contains("presentation.notificationText ?: return null"))
+        assertTrue(service.method("private fun buildForegroundNotification").contains("foregroundNotificationPresentation(privateAudioState) ?: return null"))
         assertTrue(service.method("fun disarmAndStopStartedLifetime").contains("stopForeground(STOP_FOREGROUND_REMOVE)"))
         assertTrue(service.method("fun disarmAndStopStartedLifetime").contains("stopSelf()"))
     }
 
-    @Test fun miniReadyAndErrorTokensMeetNonTextContrastMinimum() {
+    @Test fun miniTokensAndStateMappingsAreExact() {
+        assertEquals(0x0F0F10, MINI_SURFACE_COLOR)
+        assertEquals(0x5B5B5E, MINI_BORDER_COLOR)
         assertEquals(0xB3B3B3, MINI_READY_STATUS_COLOR)
+        assertEquals(0xEEAC36, MINI_WAITING_STATUS_COLOR)
+        assertEquals(0x22DA70, MINI_ACTIVE_STATUS_COLOR)
         assertEquals(0xFF8C8C, MINI_ERROR_STATUS_COLOR)
-        assertTrue(contrast(MINI_READY_STATUS_COLOR, MINI_STATUS_SURFACE_COLOR) >= 3.0)
-        assertTrue(contrast(MINI_ERROR_STATUS_COLOR, MINI_STATUS_SURFACE_COLOR) >= 3.0)
+        assertEquals(MINI_READY_STATUS_COLOR, miniStatusColor(PrivateAudioState.READY))
+        assertEquals(MINI_WAITING_STATUS_COLOR, miniStatusColor(PrivateAudioState.WAITING))
+        assertEquals(MINI_ACTIVE_STATUS_COLOR, miniStatusColor(PrivateAudioState.ACTIVE))
+        assertEquals(MINI_ERROR_STATUS_COLOR, miniStatusColor(PrivateAudioState.ERROR))
+        assertTrue(overlay.contains("paint.color = miniColor(MINI_SURFACE_COLOR)"))
+        assertTrue(overlay.contains("paint.color = miniColor(MINI_BORDER_COLOR)"))
+    }
+
+    @Test fun miniReadyAndErrorMeetNonTextContrastAgainstActualSurface() {
+        assertTrue(contrast(MINI_READY_STATUS_COLOR, MINI_SURFACE_COLOR) >= 3.0)
+        assertTrue(contrast(MINI_ERROR_STATUS_COLOR, MINI_SURFACE_COLOR) >= 3.0)
     }
 
     private fun contrast(first: Int, second: Int): Double {

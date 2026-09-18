@@ -278,9 +278,9 @@ class PrivateAudioService : Service() {
     }
 
     private fun buildForegroundNotification(): Notification? {
-        val presentation = statePresentation(privateAudioState)
-        val title = presentation.notificationTitle ?: return null
-        val text = presentation.notificationText ?: return null
+        val presentation = foregroundNotificationPresentation(privateAudioState) ?: return null
+        val title = checkNotNull(presentation.notificationTitle)
+        val text = checkNotNull(presentation.notificationText)
         val openMain = PendingIntent.getActivity(
             this,
             0,

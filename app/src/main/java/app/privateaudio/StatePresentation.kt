@@ -42,3 +42,6 @@ internal fun statePresentation(state: PrivateAudioState): StatePresentation = wh
         R.string.routing_notification_error_text,
     )
 }
+
+internal fun foregroundNotificationPresentation(state: PrivateAudioState): StatePresentation? =
+    statePresentation(state).takeIf { it.notificationTitle != null && it.notificationText != null }

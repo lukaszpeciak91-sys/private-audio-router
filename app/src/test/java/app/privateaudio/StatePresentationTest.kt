@@ -21,6 +21,7 @@ class StatePresentationTest {
         val ready = statePresentation(PrivateAudioState.READY)
         assertNull(ready.notificationTitle)
         assertNull(ready.notificationText)
+        assertNull(foregroundNotificationPresentation(PrivateAudioState.READY))
 
         assertNotification(
             PrivateAudioState.WAITING,
@@ -43,5 +44,6 @@ class StatePresentationTest {
         val presentation = statePresentation(state)
         assertEquals(title, presentation.notificationTitle)
         assertEquals(text, presentation.notificationText)
+        assertEquals(presentation, foregroundNotificationPresentation(state))
     }
 }

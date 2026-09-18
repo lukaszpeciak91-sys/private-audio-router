@@ -1,7 +1,12 @@
 package app.privateaudio
 
 import app.privateaudio.overlay.MiniControl
+import app.privateaudio.overlay.MINI_ACTIVE_STATUS_COLOR
+import app.privateaudio.overlay.MINI_ERROR_STATUS_COLOR
+import app.privateaudio.overlay.MINI_READY_STATUS_COLOR
+import app.privateaudio.overlay.MINI_WAITING_STATUS_COLOR
 import app.privateaudio.overlay.miniControlAt
+import app.privateaudio.overlay.miniStatusColor
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue
@@ -27,9 +32,10 @@ class Layer6FloatingControllerContractTest {
     @Test fun allFourAuthoritativeStatesHaveApprovedTreatment() {
         PrivateAudioState.entries.forEach { assertTrue(it.name, overlay.contains("PrivateAudioState.${it.name}")) }
         assertTrue(overlay.contains("privateAudioService?.privateAudioState"))
-        assertTrue(overlay.contains("PrivateAudioState.READY -> miniColor(MINI_READY_STATUS_COLOR)"))
-        assertTrue(overlay.contains("PrivateAudioState.ACTIVE -> Color.rgb(34, 218, 112)"))
-        assertTrue(overlay.contains("WAITING -> Color.rgb(238, 172, 54)")); assertTrue(overlay.contains("ERROR -> Color.rgb(238, 75, 75)"))
+        assertEquals(MINI_READY_STATUS_COLOR, miniStatusColor(PrivateAudioState.READY))
+        assertEquals(MINI_WAITING_STATUS_COLOR, miniStatusColor(PrivateAudioState.WAITING))
+        assertEquals(MINI_ACTIVE_STATUS_COLOR, miniStatusColor(PrivateAudioState.ACTIVE))
+        assertEquals(MINI_ERROR_STATUS_COLOR, miniStatusColor(PrivateAudioState.ERROR))
         assertTrue(overlay.contains("READY -> Color.rgb(184, 184, 188)")); assertFalse(overlay.contains("projectPrivateAudioState("))
     }
 

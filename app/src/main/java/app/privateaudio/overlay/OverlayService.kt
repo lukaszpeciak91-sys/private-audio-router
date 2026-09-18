@@ -301,11 +301,11 @@ class OverlayService : Service() {
             canvas.scale(scale, scale)
 
             paint.style = Paint.Style.FILL
-            paint.color = Color.rgb(15, 15, 16)
+            paint.color = miniColor(MINI_SURFACE_COLOR)
             canvas.drawRoundRect(controllerSurface, 13f, 13f, paint)
             paint.style = Paint.Style.STROKE
             paint.strokeWidth = 1f
-            paint.color = miniColor(MINI_STATUS_SURFACE_COLOR)
+            paint.color = miniColor(MINI_BORDER_COLOR)
             canvas.drawRoundRect(controllerSurface, 13f, 13f, paint)
 
             paint.color = statusColor(state)
@@ -516,12 +516,7 @@ class OverlayService : Service() {
             fullStateLabel(value),
         )
 
-        private fun statusColor(value: PrivateAudioState) = when (value) {
-            PrivateAudioState.READY -> miniColor(MINI_READY_STATUS_COLOR)
-            PrivateAudioState.ACTIVE -> Color.rgb(34, 218, 112)
-            PrivateAudioState.WAITING -> Color.rgb(238, 172, 54)
-            PrivateAudioState.ERROR -> miniColor(MINI_ERROR_STATUS_COLOR)
-        }
+        private fun statusColor(value: PrivateAudioState) = miniColor(miniStatusColor(value))
 
         private fun miniColor(rgb: Int) = Color.rgb(rgb shr 16 and 0xFF, rgb shr 8 and 0xFF, rgb and 0xFF)
 
@@ -556,6 +551,16 @@ class OverlayService : Service() {
     }
 }
 
-internal const val MINI_STATUS_SURFACE_COLOR = 0x5B5B5E
+internal const val MINI_SURFACE_COLOR = 0x0F0F10
+internal const val MINI_BORDER_COLOR = 0x5B5B5E
 internal const val MINI_READY_STATUS_COLOR = 0xB3B3B3
+internal const val MINI_WAITING_STATUS_COLOR = 0xEEAC36
+internal const val MINI_ACTIVE_STATUS_COLOR = 0x22DA70
 internal const val MINI_ERROR_STATUS_COLOR = 0xFF8C8C
+
+internal fun miniStatusColor(state: PrivateAudioState): Int = when (state) {
+    PrivateAudioState.READY -> MINI_READY_STATUS_COLOR
+    PrivateAudioState.WAITING -> MINI_WAITING_STATUS_COLOR
+    PrivateAudioState.ACTIVE -> MINI_ACTIVE_STATUS_COLOR
+    PrivateAudioState.ERROR -> MINI_ERROR_STATUS_COLOR
+}
