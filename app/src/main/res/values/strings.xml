@@ -82,8 +82,8 @@
     <string name="diagnostics_error_audio_preparation">Puzru could not prepare communication audio.</string>
     <string name="diagnostics_error_request_rejected">The earpiece routing request was not accepted.</string>
     <string name="diagnostics_error_not_completed">Routing could not be completed.</string>
-    <string name="power_turn_on">Turn on Puzru</string>
-    <string name="power_turn_off">Turn off Puzru</string>
+    <string name="power_turn_on">Turn on</string>
+    <string name="power_turn_off">Turn off</string>
     <string name="routing_notification_waiting_title">Puzru is on</string>
     <string name="routing_notification_waiting_text">Waiting for supported voice audio.</string>
     <string name="routing_notification_active_title">Earpiece routing active</string>

@@ -227,14 +227,15 @@ Only after measured fitting demonstrates layout pressure:
 
 Accessibility text may be fuller than a compact visible label when their semantics remain aligned. Detailed layout refinement belongs to the localization UI-polishing workflow and must preserve the accepted component-local fitting rules in D-024.
 
-Compact state variants require demonstrated measured failure at 14f and must be reviewed as a complete locale-specific Ready / Waiting / Active / Error status-label system, never as one shortened label in isolation. Exact part-of-speech equality is not required, but the four labels must form one natural grammatical and stylistic paradigm without collapsing their distinct meanings. Tamil currently retains its explicitly reviewed compact paradigm. Gujarati uses its natural full state copy through the default Mini aliases and shared measured-fit path after targeted review found that its former compact override was no longer preferable or necessary.
-
-The default `state_*_mini` resources are localization-indirect aliases to the full
-localized state resources, not independent translation units. Locale-specific Mini
-resources may replace an alias only after explicit compact-copy review; the existing
-Tamil paradigm and Malayalam Waiting override remain the current exceptions.
-
-Malayalam records the concrete threshold example: full `കാത്തിരിക്കുന്നു` still failed at 14f on the physical Mini, so the complete paradigm was reviewed and only visible Mini Waiting received the compact status noun `കാത്തിരിപ്പ്`. The full state remains the accessibility and Main wording. This is evidence for that override, not permission to shorten another locale before measurement.
+The current state-presentation contract uses separate localized `status_main_*` and
+`status_mini_*` resources. Main copy may be fuller because it prioritizes explicit
+state meaning; Mini copy may be shorter because it is a constrained visible surface.
+Both must preserve the same underlying READY / WAITING / ACTIVE / ERROR semantics,
+including OFF versus enabled-and-waiting and ACTIVE earpiece routing versus a routing
+problem. Mini accessibility speech continues to use the fuller Main presentation.
+Do not reintroduce the retired `state_*_mini` alias or locale-override layer merely
+to preserve historical compact wording. Any future compact-copy exception requires
+fresh measured evidence and targeted linguistic review.
 
 The experimental Assistant early-route and Assistant session-continuity labels and
 descriptions currently use their default English copy in every locale and are
