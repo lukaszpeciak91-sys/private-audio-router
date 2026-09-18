@@ -198,7 +198,7 @@ class PrivateAudioScreenTest {
         PrivateAudioState.entries.forEach { state ->
             composeRule.setContent { PrivateAudioTheme { PrivateAudioScreen(state = state, onPowerClick = {}, onCloseClick = {}) } }
             composeRule.onNodeWithTag("private_audio_power").assertContentDescriptionEquals(
-                if (state == PrivateAudioState.READY) "Turn on Puzru" else "Turn off Puzru",
+                if (state == PrivateAudioState.READY) "Turn on" else "Turn off",
             )
         }
     }
