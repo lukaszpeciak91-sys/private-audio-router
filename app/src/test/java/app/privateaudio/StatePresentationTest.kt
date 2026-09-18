@@ -13,8 +13,15 @@ class StatePresentationTest {
         assertEquals(R.string.status_main_waiting, presentations.getValue(PrivateAudioState.WAITING).mainLabel)
         assertEquals(R.string.status_main_active, presentations.getValue(PrivateAudioState.ACTIVE).mainLabel)
         assertEquals(R.string.status_main_error, presentations.getValue(PrivateAudioState.ERROR).mainLabel)
+        assertEquals(R.string.status_mini_ready, presentations.getValue(PrivateAudioState.READY).miniLabel)
+        assertEquals(R.string.status_mini_waiting, presentations.getValue(PrivateAudioState.WAITING).miniLabel)
+        assertEquals(R.string.status_mini_active, presentations.getValue(PrivateAudioState.ACTIVE).miniLabel)
+        assertEquals(R.string.status_mini_error, presentations.getValue(PrivateAudioState.ERROR).miniLabel)
         assertEquals(StatusSymbol.entries.toSet(), presentations.values.map { it.symbol }.toSet())
-        presentations.values.forEach { assertNotEquals(it.mainLabel, 0) }
+        presentations.values.forEach {
+            assertNotEquals(it.mainLabel, 0)
+            assertNotEquals(it.miniLabel, 0)
+        }
     }
 
     @Test fun readyHasNoNotificationAndEnabledStatesHaveCompleteNotificationCopy() {
