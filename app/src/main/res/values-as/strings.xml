@@ -8,7 +8,6 @@
     <string name="state_waiting">অপেক্ষাৰত</string>
     <string name="state_active">সক্ৰিয়</string>
     <string name="state_error">ত্ৰুটি</string>
-    <string name="power_control">পাৱাৰ</string>
     <string name="floating">মিনি</string>
     <string name="permission_notification_title">Puzru অন থাকিলে দেখুৱাওক</string>
     <string name="permission_notification_body">Puzru অন আছে আৰু অডিঅ’ সলনি কৰিবলৈ সাজু আছে বুলি দেখুৱাবলৈ এটা নীৰৱ জাননী ব্যৱহাৰ কৰে, আনকি এপটো পটভূমিত থাকিলেও। জাননী ঐচ্ছিক; সেইবোৰ অবিহনেও Puzru-এ কাম কৰে।</string>

@@ -8,7 +8,6 @@
     <string name="state_waiting">Dey wait</string>
     <string name="state_active">Active</string>
     <string name="state_error">Error</string>
-    <string name="power_control">Turn am on</string>
     <string name="floating">Mini</string>
     <string name="permission_notification_title">Show am when Puzru dey on</string>
     <string name="permission_notification_body">Puzru dey use notification wey no get sound to show say e dey on and ready to route audio, even when di app dey background. Notifications na choice; Puzru still dey work without dem.</string>

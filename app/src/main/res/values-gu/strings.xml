@@ -8,7 +8,6 @@
     <string name="state_waiting">રાહ જોઈ રહ્યું છે</string>
     <string name="state_active">સક્રિય</string>
     <string name="state_error">ભૂલ</string>
-    <string name="power_control">ચાલુ કરો</string>
     <string name="floating">મિની</string>
     <string name="permission_notification_title">Puzru ચાલુ હોય ત્યારે બતાવો</string>
     <string name="permission_notification_body">Puzru ચાલુ છે અને ઑડિયો સ્વિચ કરવા માટે તૈયાર છે તે બતાવવા માટે શાંત સૂચનાનો ઉપયોગ કરે છે, ભલે ઍપ બૅકગ્રાઉન્ડમાં હોય. સૂચનાઓ વૈકલ્પિક છે; તેમના વિના પણ Puzru કામ કરે છે.</string>

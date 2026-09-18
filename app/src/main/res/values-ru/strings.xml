@@ -8,7 +8,6 @@
     <string name="state_waiting">Ожидание</string>
     <string name="state_active">Активно</string>
     <string name="state_error">Ошибка</string>
-    <string name="power_control">Включить</string>
     <string name="floating">Мини</string>
     <string name="permission_notification_title">Показывать, когда Puzru включено</string>
     <string name="permission_notification_body">Puzru использует тихое уведомление, чтобы показывать, что приложение включено и готово перенаправлять звук, в том числе когда оно работает в фоновом режиме. Уведомления необязательны; Puzru работает и без них.</string>

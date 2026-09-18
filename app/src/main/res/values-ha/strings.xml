@@ -8,7 +8,6 @@
     <string name="state_waiting">Ana jira</string>
     <string name="state_active">Ana aiki</string>
     <string name="state_error">Kuskure</string>
-    <string name="power_control">Kunna/Kashe</string>
     <string name="floating">Ƙarami</string>
     <string name="permission_notification_title">Nuna lokacin da aka kunna Puzru</string>
     <string name="permission_notification_body">Puzru yana amfani da sanarwa marar sauti don nuna cewa an kunna shi kuma yana shirye don sauya inda sauti zai fito, har ma lokacin da manhajar take aiki a bango. Sanarwa na da zaɓi; Puzru yana aiki ko ba tare da su ba.</string>

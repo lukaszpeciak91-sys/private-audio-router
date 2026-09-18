@@ -8,7 +8,6 @@
     <string name="state_waiting">इंतजार में</string>
     <string name="state_active">सक्रिय बा</string>
     <string name="state_error">गड़बड़ी</string>
-    <string name="power_control">पावर</string>
     <string name="floating">छोट</string>
     <string name="permission_notification_title">Puzru चालू होखे पर देखाईं</string>
     <string name="permission_notification_body">Puzru एगो चुप सूचना से देखावेला कि ऊ चालू बा आ ऑडियो रूट करे खातिर तइयार बा, ऐप के बैकग्राउंड में रहे पर भी। सूचना वैकल्पिक बा; सूचना के बिना भी Puzru काम करेला।</string>

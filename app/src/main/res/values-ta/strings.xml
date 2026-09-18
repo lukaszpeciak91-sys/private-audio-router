@@ -8,7 +8,6 @@
     <string name="state_waiting">காத்திருக்கிறது</string>
     <string name="state_active">செயலில் உள்ளது</string>
     <string name="state_error">பிழை</string>
-    <string name="power_control">இயக்கு</string>
     <string name="floating">மினி</string>
     <string name="permission_notification_title">Puzru இயக்கத்தில் இருக்கும்போது காட்டு</string>
     <string name="permission_notification_body">Puzru இயக்கத்தில் உள்ளது மற்றும் ஆடியோவை மாற்றத் தயாராக உள்ளது என்பதைக் காட்ட, செயலி பின்னணியில் இருக்கும்போதும் அமைதியான அறிவிப்பைப் பயன்படுத்துகிறது. அறிவிப்புகள் விருப்பத்திற்குரியவை; அவை இல்லாமலும் Puzru செயல்படும்.</string>

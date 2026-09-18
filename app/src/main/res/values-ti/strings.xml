@@ -8,7 +8,6 @@
     <string name="state_waiting">ይጽበ ኣሎ</string>
     <string name="state_active">ንጡፍ</string>
     <string name="state_error">ጌጋ</string>
-    <string name="power_control">ምውላዕ/ምጥፋእ</string>
     <string name="floating">ሚኒ</string>
     <string name="permission_notification_title">Puzru ክውላዕ ከሎ ኣርኢ</string>
     <string name="permission_notification_body">Puzru ተወሊዑን ድምጺ ንምምራሕ ድሉው ምዃኑን፣ እቲ መተግበሪ ኣብ ድሕረ ባይታ እንከሎ እውን፣ ስቕ ዝበለ መፍለጢ ይጥቀም። መፍለጢታት ኣማራጺ እዮም፤ Puzru ብዘይኦም እውን ይሰርሕ።</string>

@@ -8,7 +8,6 @@
     <string name="state_waiting">Nagpaabot</string>
     <string name="state_active">Aktibo</string>
     <string name="state_error">Sayop</string>
-    <string name="power_control">Power</string>
     <string name="floating">Mini</string>
     <string name="permission_notification_title">Ipakita kon naka-on ang Puzru</string>
     <string name="permission_notification_body">Gigamit sa Puzru ang hilom nga pahibalo aron ipakita nga naka-on ug andam kini sa pag-route sa audio, bisan kon naa sa background ang app. Opsyonal ang mga pahibalo; molihok gihapon ang Puzru bisan wala kini.</string>

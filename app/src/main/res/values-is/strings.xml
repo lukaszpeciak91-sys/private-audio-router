@@ -8,7 +8,6 @@
     <string name="state_waiting">Bíður</string>
     <string name="state_active">Virkt</string>
     <string name="state_error">Villa</string>
-    <string name="power_control">Afl</string>
     <string name="floating">Mini</string>
     <string name="permission_notification_title">Sýna þegar kveikt er á Puzru</string>
     <string name="permission_notification_body">Puzru notar hljóðlausa tilkynningu til að sýna að kveikt sé á því og það sé tilbúið að skipta um hljóðúttak, einnig þegar forritið er í bakgrunni. Tilkynningar eru valfrjálsar; Puzru virkar áfram án þeirra.</string>

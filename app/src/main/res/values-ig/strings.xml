@@ -8,7 +8,6 @@
     <string name="state_waiting">Na-eche</string>
     <string name="state_active">Na-arụ ọrụ</string>
     <string name="state_error">Njehie</string>
-    <string name="power_control">Ike</string>
     <string name="floating">Obere</string>
     <string name="permission_notification_title">Gosi mgbe agbanyere Puzru</string>
     <string name="permission_notification_body">Puzru na-eji ọkwa na-enweghị ụda egosi na agbanyere ya nakwa na ọ dị njikere ibugharị ọdịyo, ọbụlagodi mgbe ngwa ahụ nọ n’azụ. Ọkwa bụ nhọrọ; Puzru ka na-arụ ọrụ na-enweghị ha.</string>

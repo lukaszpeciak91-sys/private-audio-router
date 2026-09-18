@@ -10,8 +10,6 @@
     <string name="state_waiting">کوتیلماغده</string>
     <string name="state_active">فعال</string>
     <string name="state_error">خطا</string>
-
-    <string name="power_control">یاقیش/اۉچیریش</string>
     <string name="floating">مینی</string>
     <string name="permission_notification_title">Puzru یاقیق بولگنده کۉرسات</string>
     <string name="permission_notification_body">Puzru یاقیق و آدیونی یۉنلتیرشگه تیار ایکنینی، ایلوا پس‌منظرده بولگنده هم، جیم بیلدیریش بیلن کۉرساتدی. بیلدیریشلر اختیاری؛ Puzru اولرسز هم ایشلیدی.</string>

@@ -8,7 +8,6 @@
     <string name="state_waiting">Miandry</string>
     <string name="state_active">Mavitrika</string>
     <string name="state_error">Hadisoana</string>
-    <string name="power_control">Fampandehanana</string>
     <string name="floating">Kely</string>
     <string name="permission_notification_title">Asehoy rehefa mandeha ny Puzru</string>
     <string name="permission_notification_body">Mampiasa fampandrenesana mangina ny Puzru mba hampisehoana fa mandeha sy vonona hampitodika ny feo izy, na dia mandeha any ambadika aza ny rindranasa. Tsy voatery ny fampandrenesana; mbola mandeha tsy misy azy ireo ny Puzru.</string>

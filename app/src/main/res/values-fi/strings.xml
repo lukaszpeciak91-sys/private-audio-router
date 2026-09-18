@@ -8,7 +8,6 @@
     <string name="state_waiting">Odottaa</string>
     <string name="state_active">Aktiivinen</string>
     <string name="state_error">Virhe</string>
-    <string name="power_control">Virta</string>
     <string name="floating">Mini</string>
     <string name="permission_notification_title">Näytä, kun Puzru on käytössä</string>
     <string name="permission_notification_body">Puzru ilmaisee hiljaisella ilmoituksella olevansa käytössä ja valmis ohjaamaan ääntä myös silloin, kun sovellus toimii taustalla. Ilmoitukset ovat valinnaisia; Puzru toimii myös ilman niitä.</string>

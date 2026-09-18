@@ -8,7 +8,6 @@
     <string name="state_waiting">Várakozik</string>
     <string name="state_active">Aktív</string>
     <string name="state_error">Hiba</string>
-    <string name="power_control">Bekapcsolás</string>
     <string name="floating">Mini</string>
     <string name="permission_notification_title">Megjelenítés, amikor a Puzru be van kapcsolva</string>
     <string name="permission_notification_body">A Puzru egy csendes értesítéssel jelzi, hogy be van kapcsolva és készen áll a hang átirányítására, akkor is, amikor az alkalmazás a háttérben fut. Az értesítések nem kötelezők; a Puzru nélkülük is működik.</string>

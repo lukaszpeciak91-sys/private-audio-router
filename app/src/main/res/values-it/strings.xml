@@ -8,7 +8,6 @@
     <string name="state_waiting">In attesa</string>
     <string name="state_active">Attivo</string>
     <string name="state_error">Errore</string>
-    <string name="power_control">Attiva</string>
     <string name="floating">Mini</string>
     <string name="permission_notification_title">Mostra quando Puzru è attivato</string>
     <string name="permission_notification_body">Puzru usa una notifica silenziosa per indicare che è attivato e pronto a reindirizzare l’audio, anche quando l’app è in background. Le notifiche sono facoltative; Puzru funziona anche senza.</string>

@@ -8,7 +8,6 @@
     <string name="state_waiting">Garaşylýar</string>
     <string name="state_active">Işjeň</string>
     <string name="state_error">Säwlik</string>
-    <string name="power_control">Açmak/öçürmek</string>
     <string name="floating">Mini</string>
     <string name="permission_notification_title">Puzru açyk wagty görkez</string>
     <string name="permission_notification_body">Puzru açyk we sesi ugrukdyrmaga taýýar wagty, şol sanda programma yzky planda işleýän wagty hem, sessiz bildiriş görkezýär. Bildirişler islege bagly; Puzru olarsyz hem işleýär.</string>

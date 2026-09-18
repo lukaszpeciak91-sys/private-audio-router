@@ -8,7 +8,6 @@
     <string name="state_waiting">Laukia</string>
     <string name="state_active">Aktyvu</string>
     <string name="state_error">Klaida</string>
-    <string name="power_control">Įjungti</string>
     <string name="floating">Mini</string>
     <string name="permission_notification_title">Rodyti, kai „Puzru“ įjungta</string>
     <string name="permission_notification_body">„Puzru“ tyliuoju pranešimu rodo, kad yra įjungta ir pasirengusi nukreipti garsą, taip pat kai programa veikia fone. Pranešimai neprivalomi; „Puzru“ veikia ir be jų.</string>

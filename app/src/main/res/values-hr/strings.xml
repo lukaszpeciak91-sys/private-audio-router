@@ -8,7 +8,6 @@
     <string name="state_waiting">Čekanje</string>
     <string name="state_active">Aktivno</string>
     <string name="state_error">Pogreška</string>
-    <string name="power_control">Uključivanje/isključivanje</string>
     <string name="floating">Mini</string>
     <string name="permission_notification_title">Prikaži kada je Puzru uključen</string>
     <string name="permission_notification_body">Puzru koristi tihu obavijest kako bi pokazao da je uključen i spreman za prebacivanje zvuka, čak i kada je aplikacija u pozadini. Obavijesti su opcionalne; Puzru radi i bez njih.</string>

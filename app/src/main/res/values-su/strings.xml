@@ -8,7 +8,6 @@
     <string name="state_waiting">Ngadagoan</string>
     <string name="state_active">Aktip</string>
     <string name="state_error">Kasalahan</string>
-    <string name="power_control">Hurung/pareum</string>
     <string name="floating">Mini</string>
     <string name="permission_notification_title">Témbongkeun nalika Puzru hurung</string>
     <string name="permission_notification_body">Puzru maké béwara jempling pikeun némbongkeun yén éta hurung tur siap ngarahkeun audio, kaasup nalika aplikasi jalan di latar tukang. Béwara sipatna pilihan; Puzru tetep jalan tanpa béwara.</string>

@@ -10,8 +10,6 @@
     <string name="state_waiting">Kutilmoqda</string>
     <string name="state_active">Faol</string>
     <string name="state_error">Xatolik</string>
-
-    <string name="power_control">Yoqish/O‘chirish</string>
     <string name="floating">Mini</string>
     <string name="permission_notification_title">Puzru yoniq bo‘lganda ko‘rsatish</string>
     <string name="permission_notification_body">Puzru yoniq va audioni yo‘naltirishga tayyor ekanini, ilova fonda ishlayotganida ham, ovozsiz bildirishnoma orqali ko‘rsatadi. Bildirishnomalar ixtiyoriy; Puzru ularsiz ham ishlaydi.</string>

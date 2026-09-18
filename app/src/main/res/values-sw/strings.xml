@@ -8,7 +8,6 @@
     <string name="state_waiting">Inasubiri</string>
     <string name="state_active">Inatumika</string>
     <string name="state_error">Hitilafu</string>
-    <string name="power_control">Washa</string>
     <string name="floating">Mini</string>
     <string name="permission_notification_title">Onyesha Puzru ikiwa imewashwa</string>
     <string name="permission_notification_body">Puzru hutumia arifa tulivu kuonyesha kuwa imewashwa na iko tayari kuelekeza sauti, hata wakati programu iko chinichini. Arifa ni za hiari; Puzru bado hufanya kazi bila arifa hizo.</string>

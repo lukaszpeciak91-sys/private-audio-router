@@ -8,7 +8,6 @@
     <string name="state_waiting">انتظار میں</string>
     <string name="state_active">فعال</string>
     <string name="state_error">خرابی</string>
-    <string name="power_control">چالو کریں</string>
     <string name="floating">کمپیکٹ</string>
     <string name="permission_notification_title">Puzru کے آن ہونے پر دکھائیں</string>
     <string name="permission_notification_body">Puzru ایک خاموش اطلاع کے ذریعے دکھاتا ہے کہ وہ آن ہے اور آڈیو روٹ کرنے کے لیے تیار ہے، چاہے ایپ پس منظر میں ہو۔ اطلاعات اختیاری ہیں؛ Puzru ان کے بغیر بھی کام کرتا ہے۔</string>

@@ -8,7 +8,6 @@
     <string name="state_waiting">Đang chờ</string>
     <string name="state_active">Đang hoạt động</string>
     <string name="state_error">Lỗi</string>
-    <string name="power_control">Bật</string>
     <string name="floating">Mini</string>
     <string name="permission_notification_title">Hiển thị khi Puzru đang bật</string>
     <string name="permission_notification_body">Puzru dùng một thông báo im lặng để cho biết ứng dụng đang bật và sẵn sàng định tuyến âm thanh, kể cả khi ứng dụng chạy trong nền. Thông báo là tùy chọn; Puzru vẫn hoạt động khi không có thông báo.</string>

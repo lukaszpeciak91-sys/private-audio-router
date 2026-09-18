@@ -8,7 +8,6 @@
     <string name="state_waiting">მოლოდინშია</string>
     <string name="state_active">აქტიურია</string>
     <string name="state_error">შეცდომა</string>
-    <string name="power_control">ჩართვა/გამორთვა</string>
     <string name="floating">მინი</string>
     <string name="permission_notification_title">ჩვენება, როცა Puzru ჩართულია</string>
     <string name="permission_notification_body">Puzru უხმო შეტყობინებით აჩვენებს, რომ ჩართულია და მზადაა აუდიოს გადასართავად, მათ შორის, როცა აპი ფონურ რეჟიმშია. შეტყობინებები არასავალდებულოა; Puzru მათ გარეშეც მუშაობს.</string>

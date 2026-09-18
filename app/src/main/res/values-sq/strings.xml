@@ -8,7 +8,6 @@
     <string name="state_waiting">Në pritje</string>
     <string name="state_active">Aktiv</string>
     <string name="state_error">Gabim</string>
-    <string name="power_control">Ndezja</string>
     <string name="floating">Mini</string>
     <string name="permission_notification_title">Shfaq kur Puzru është ndezur</string>
     <string name="permission_notification_body">Puzru përdor një njoftim pa zë për të treguar se është ndezur dhe gati për të ridrejtuar audion, edhe kur aplikacioni është në sfond. Njoftimet janë opsionale; Puzru funksionon edhe pa to.</string>

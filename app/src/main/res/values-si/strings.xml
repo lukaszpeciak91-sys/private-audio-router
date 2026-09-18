@@ -8,7 +8,6 @@
     <string name="state_waiting">රැඳී සිටී</string>
     <string name="state_active">සක්‍රිය</string>
     <string name="state_error">දෝෂය</string>
-    <string name="power_control">බලය</string>
     <string name="floating">කුඩා</string>
     <string name="permission_notification_title">Puzru ක්‍රියාත්මක විට පෙන්වන්න</string>
     <string name="permission_notification_body">Puzru ක්‍රියාත්මක බවත් ශ්‍රව්‍යය යොමු කිරීමට සූදානම් බවත් පෙන්වීමට නිහඬ දැනුම්දීමක් භාවිත කරයි, යෙදුම පසුබිමේ ඇති විටද ඇතුළුව. දැනුම්දීම් විකල්ප වේ; ඒවා නොමැතිවද Puzru ක්‍රියා කරයි.</string>

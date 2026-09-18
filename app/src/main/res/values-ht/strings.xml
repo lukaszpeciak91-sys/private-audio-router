@@ -8,7 +8,6 @@
     <string name="state_waiting">Ap tann</string>
     <string name="state_active">Aktif</string>
     <string name="state_error">Erè</string>
-    <string name="power_control">Limen/Etenn</string>
     <string name="floating">Mini</string>
     <string name="permission_notification_title">Montre lè Puzru limen</string>
     <string name="permission_notification_body">Puzru sèvi ak yon notifikasyon an silans pou montre lè li limen epi li pare pou dirije odyo, menm lè aplikasyon an ap fonksyone an aryè-plan. Notifikasyon yo opsyonèl; Puzru toujou fonksyone san yo.</string>

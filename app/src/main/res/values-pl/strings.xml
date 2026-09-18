@@ -8,7 +8,6 @@
     <string name="state_waiting">Czeka</string>
     <string name="state_active">Aktywne</string>
     <string name="state_error">Błąd</string>
-    <string name="power_control">Włącz</string>
     <string name="floating">Mini</string>
     <string name="permission_notification_title">Pokazuj, gdy Puzru jest włączone</string>
     <string name="permission_notification_body">Puzru używa cichego powiadomienia, aby pokazywać, że jest włączone i gotowe do przekierowania dźwięku, również gdy aplikacja działa w tle. Powiadomienia są opcjonalne; Puzru działa także bez nich.</string>

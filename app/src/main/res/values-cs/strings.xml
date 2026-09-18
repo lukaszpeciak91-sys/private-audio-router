@@ -8,7 +8,6 @@
     <string name="state_waiting">Čeká</string>
     <string name="state_active">Aktivní</string>
     <string name="state_error">Chyba</string>
-    <string name="power_control">Zapnout</string>
     <string name="floating">Mini</string>
     <string name="permission_notification_title">Zobrazit, když je Puzru zapnuté</string>
     <string name="permission_notification_body">Puzru pomocí tichého oznámení ukazuje, že je zapnuté a připravené přesměrovat zvuk, a to i když je aplikace na pozadí. Oznámení jsou volitelná; Puzru funguje i bez nich.</string>

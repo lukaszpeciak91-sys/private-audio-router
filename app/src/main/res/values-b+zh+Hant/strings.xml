@@ -8,7 +8,6 @@
     <string name="state_waiting">等待中</string>
     <string name="state_active">使用中</string>
     <string name="state_error">錯誤</string>
-    <string name="power_control">開啟</string>
     <string name="floating">迷你</string>
     <string name="permission_notification_title">在 Puzru 開啟時顯示</string>
     <string name="permission_notification_body">Puzru 會透過靜音通知表明它已開啟並準備好切換音訊，即使應用程式在背景執行時也是如此。通知為選用功能；沒有通知，Puzru 仍可正常運作。</string>

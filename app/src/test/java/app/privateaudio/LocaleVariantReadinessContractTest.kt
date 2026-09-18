@@ -68,11 +68,12 @@ class LocaleVariantReadinessContractTest {
             assertFalse(target.readText().contains("ПУЗРУ"))
         }
         mapOf(
-            "ky" to "Күйгүзүү/өчүрүү",
-            "tg" to "Фаъол/хомӯш кардан",
-            "tk" to "Açmak/öçürmek",
-        ).forEach { (configuration, control) ->
-            assertEquals(control, value(file(configuration), "power_control"))
+            "ky" to ("Puzru — Күйүк" to "Puzru — Өчүк"),
+            "tg" to ("Puzru — Фаъол" to "Puzru — Хомӯш"),
+            "tk" to ("Puzru — Açyk" to "Puzru — Öçük"),
+        ).forEach { (configuration, actions) ->
+            assertEquals(actions.first, value(file(configuration), "power_turn_on"))
+            assertEquals(actions.second, value(file(configuration), "power_turn_off"))
         }
     }
 

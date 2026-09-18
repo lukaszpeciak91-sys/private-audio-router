@@ -8,7 +8,6 @@
     <string name="state_waiting">กำลังรอ</string>
     <string name="state_active">กำลังใช้งาน</string>
     <string name="state_error">ข้อผิดพลาด</string>
-    <string name="power_control">เปิด</string>
     <string name="floating">มินิ</string>
     <string name="permission_notification_title">แสดงเมื่อเปิด Puzru อยู่</string>
     <string name="permission_notification_body">Puzru ใช้การแจ้งเตือนแบบไม่มีเสียงเพื่อแสดงว่าเปิดอยู่และพร้อมเปลี่ยนเส้นทางเสียง แม้ในขณะที่แอปทำงานอยู่เบื้องหลัง การแจ้งเตือนเป็นตัวเลือก โดย Puzru ยังคงทำงานได้หากไม่มีการแจ้งเตือน</string>

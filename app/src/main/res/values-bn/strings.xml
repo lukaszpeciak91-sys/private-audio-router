@@ -8,7 +8,6 @@
     <string name="state_waiting">অপেক্ষা</string>
     <string name="state_active">সক্রিয়</string>
     <string name="state_error">ত্রুটি</string>
-    <string name="power_control">চালু/বন্ধ</string>
     <string name="floating">মিনি</string>
     <string name="permission_notification_title">Puzru চালু থাকলে দেখান</string>
     <string name="permission_notification_body">Puzru চালু আছে এবং অডিও আউটপুট পাল্টানোর জন্য প্রস্তুত আছে—অ্যাপ ব্যাকগ্রাউন্ডে থাকলেও—তা দেখাতে Puzru একটি নীরব বিজ্ঞপ্তি ব্যবহার করে। বিজ্ঞপ্তি ঐচ্ছিক; সেগুলি ছাড়াও Puzru কাজ করে।</string>

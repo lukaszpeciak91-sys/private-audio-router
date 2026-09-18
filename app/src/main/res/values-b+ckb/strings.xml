@@ -8,7 +8,6 @@
     <string name="state_waiting">چاوەڕوان</string>
     <string name="state_active">کارا</string>
     <string name="state_error">هەڵە</string>
-    <string name="power_control">هێز</string>
     <string name="floating">مینی</string>
     <string name="permission_notification_title">کاتێک Puzru چالاکە پیشانی بدە</string>
     <string name="permission_notification_body">Puzru ئاگادارکردنەوەیەکی بێدەنگ بەکاردەهێنێت بۆ ئەوەی پیشان بدات چالاک و ئامادەی ئاراستەکردنی دەنگە، تەنانەت کاتێک ئەپەکە لە پاشبنەمایە. ئاگادارکردنەوەکان ئارەزوومەندانەن؛ Puzru بەبێ ئەوانیش کار دەکات.</string>

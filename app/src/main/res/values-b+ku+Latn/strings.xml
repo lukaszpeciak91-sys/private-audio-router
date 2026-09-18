@@ -8,7 +8,6 @@
     <string name="state_waiting">Li bendê</string>
     <string name="state_active">Niha di rêkirinê de</string>
     <string name="state_error">Çewtî</string>
-    <string name="power_control">Hêz</string>
     <string name="floating">Mini</string>
     <string name="permission_notification_title">Dema Puzru vekirî be nîşan bide</string>
     <string name="permission_notification_body">Puzru bi agahdariyek bêdeng nîşan dide ku vekirî ye û ji bo rêkirina deng amade ye, herwiha dema ku sepan li paşperdeyê be. Agahdarî vebijarkî ne; Puzru bêyî wan jî dixebite.</string>

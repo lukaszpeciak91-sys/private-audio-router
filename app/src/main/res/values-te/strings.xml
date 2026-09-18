@@ -8,7 +8,6 @@
     <string name="state_waiting">వేచి ఉంది</string>
     <string name="state_active">యాక్టివ్</string>
     <string name="state_error">ఎర్రర్</string>
-    <string name="power_control">ఆన్ చేయండి</string>
     <string name="floating">మినీ</string>
     <string name="permission_notification_title">Puzru ఆన్‌లో ఉన్నప్పుడు చూపండి</string>
     <string name="permission_notification_body">Puzru ఆన్‌లో ఉందని, ఆడియోను రూట్ చేయడానికి సిద్ధంగా ఉందని చూపడానికి నిశ్శబ్ద నోటిఫికేషన్‌ను ఉపయోగిస్తుంది, యాప్ బ్యాక్‌గ్రౌండ్‌లో ఉన్నప్పుడు కూడా. నోటిఫికేషన్‌లు ఐచ్ఛికం; అవి లేకుండానే Puzru పని చేస్తుంది.</string>

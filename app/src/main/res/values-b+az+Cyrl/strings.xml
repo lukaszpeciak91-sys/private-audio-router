@@ -8,7 +8,6 @@
     <string name="state_waiting">Гөзләјир</string>
     <string name="state_active">Актив</string>
     <string name="state_error">Хәта</string>
-    <string name="power_control">Јандырыб-сөндүрмә</string>
     <string name="floating">Мини</string>
     <string name="permission_notification_title">Puzru ачыҝ олдуҝда гөстәр</string>
     <string name="permission_notification_body">Puzru ачыҝ вә аудиону јөнләндирмәјә һазыр олдуғуну, тәтбиҝ арха планда олдуҝда белә, сәссиз билдиришлә гөстәрир. Билдиришләр истәјә бағлыдыр; Puzru онларсыз да ишләјир.</string>

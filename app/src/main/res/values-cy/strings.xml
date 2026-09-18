@@ -8,7 +8,6 @@
     <string name="state_waiting">Yn aros</string>
     <string name="state_active">Gweithredol</string>
     <string name="state_error">Gwall</string>
-    <string name="power_control">Pŵer</string>
     <string name="floating">Mini</string>
     <string name="permission_notification_title">Dangos pan fydd Puzru ymlaen</string>
     <string name="permission_notification_body">Mae Puzru yn defnyddio hysbysiad tawel i ddangos ei fod ymlaen ac yn barod i lwybro sain, gan gynnwys pan fydd yr ap yn y cefndir. Mae hysbysiadau’n ddewisol; mae Puzru yn dal i weithio hebddynt.</string>

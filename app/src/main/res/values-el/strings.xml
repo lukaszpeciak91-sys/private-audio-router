@@ -8,7 +8,6 @@
     <string name="state_waiting">Αναμονή</string>
     <string name="state_active">Ενεργό</string>
     <string name="state_error">Σφάλμα</string>
-    <string name="power_control">Ενεργοποίηση/απενεργοποίηση</string>
     <string name="floating">Μίνι</string>
     <string name="permission_notification_title">Εμφάνιση όταν το Puzru είναι ενεργοποιημένο</string>
     <string name="permission_notification_body">Το Puzru χρησιμοποιεί μια αθόρυβη ειδοποίηση για να δείχνει ότι είναι ενεργοποιημένο και έτοιμο να αλλάξει την έξοδο ήχου, ακόμη και όταν η εφαρμογή βρίσκεται στο παρασκήνιο. Οι ειδοποιήσεις είναι προαιρετικές· το Puzru λειτουργεί και χωρίς αυτές.</string>

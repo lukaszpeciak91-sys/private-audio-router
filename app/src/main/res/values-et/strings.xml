@@ -8,7 +8,6 @@
     <string name="state_waiting">Ootab</string>
     <string name="state_active">Aktiivne</string>
     <string name="state_error">Viga</string>
-    <string name="power_control">Toide</string>
     <string name="floating">Mini</string>
     <string name="permission_notification_title">Kuva, kui Puzru on sisse lülitatud</string>
     <string name="permission_notification_body">Puzru näitab vaikse märguandega, et see on sisse lülitatud ja valmis heli suunama, ka siis, kui rakendus töötab taustal. Märguanded on valikulised; Puzru töötab ka ilma nendeta.</string>

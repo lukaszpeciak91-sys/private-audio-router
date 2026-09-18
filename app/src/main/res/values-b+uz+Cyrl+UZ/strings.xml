@@ -10,8 +10,6 @@
     <string name="state_waiting">Кутилмоқда</string>
     <string name="state_active">Фаол</string>
     <string name="state_error">Хатолик</string>
-
-    <string name="power_control">Ёқиш/ўчириш</string>
     <string name="floating">Мини</string>
     <string name="permission_notification_title">Puzru ёниқ бўлганда кўрсат</string>
     <string name="permission_notification_body">Puzru ёниқ ва аудиони йўналтиришга тайёр эканини, илова фонда бўлганда ҳам, овозсиз билдиришнома орқали кўрсатади. Билдиришномалар ихтиёрий; Puzru уларсиз ҳам ишлайди.</string>

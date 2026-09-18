@@ -8,7 +8,6 @@
     <string name="state_waiting">Gaida</string>
     <string name="state_active">Aktīvs</string>
     <string name="state_error">Kļūda</string>
-    <string name="power_control">Ieslēgšana</string>
     <string name="floating">Mini</string>
     <string name="permission_notification_title">Rādīt, kad Puzru ir ieslēgts</string>
     <string name="permission_notification_body">Puzru izmanto klusu paziņojumu, lai parādītu, ka tas ir ieslēgts un gatavs novirzīt audio, arī tad, kad lietotne darbojas fonā. Paziņojumi nav obligāti; Puzru darbojas arī bez tiem.</string>

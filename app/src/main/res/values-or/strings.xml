@@ -10,8 +10,6 @@
     <string name="state_waiting">ଅପେକ୍ଷାରତ</string>
     <string name="state_active">ସକ୍ରିୟ</string>
     <string name="state_error">ତ୍ରୁଟି</string>
-
-    <string name="power_control">ପାୱାର</string>
     <string name="floating">ମିନି</string>
     <string name="permission_notification_title">Puzru ଚାଲୁ ଥିବାବେଳେ ଦେଖାନ୍ତୁ</string>
     <string name="permission_notification_body">Puzru ଚାଲୁ ଅଛି ଏବଂ ଅଡିଓକୁ ରୁଟ୍ କରିବାକୁ ପ୍ରସ୍ତୁତ ଅଛି ବୋଲି ଦେଖାଇବା ପାଇଁ ଏକ ନିରବ ବିଜ୍ଞପ୍ତି ବ୍ୟବହାର କରେ, ଆପ୍ ପୃଷ୍ଠଭୂମିରେ ଥିବାବେଳେ ମଧ୍ୟ। ବିଜ୍ଞପ୍ତିଗୁଡ଼ିକ ଇଚ୍ଛାଧୀନ; ସେଗୁଡ଼ିକ ବିନା ମଧ୍ୟ Puzru କାମ କରେ।</string>

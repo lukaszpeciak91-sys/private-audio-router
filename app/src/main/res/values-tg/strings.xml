@@ -8,7 +8,6 @@
     <string name="state_waiting">Дар интизорӣ</string>
     <string name="state_active">Фаъол</string>
     <string name="state_error">Хато</string>
-    <string name="power_control">Фаъол/хомӯш кардан</string>
     <string name="floating">Мини</string>
     <string name="permission_notification_title">Ҳангоми фаъол будани Puzru нишон додан</string>
     <string name="permission_notification_body">Puzru бо огоҳиномаи бесадо нишон медиҳад, ки фаъол ва барои масирдиҳии аудио омода аст, аз ҷумла ҳангоми дар замина будани барнома. Огоҳиномаҳо ихтиёрӣ мебошанд; Puzru бе онҳо ҳам кор мекунад.</string>

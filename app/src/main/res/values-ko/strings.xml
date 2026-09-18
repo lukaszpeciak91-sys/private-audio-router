@@ -8,7 +8,6 @@
     <string name="state_waiting">대기 중</string>
     <string name="state_active">사용 중</string>
     <string name="state_error">오류</string>
-    <string name="power_control">켜기</string>
     <string name="floating">미니</string>
     <string name="permission_notification_title">Puzru가 켜져 있을 때 표시</string>
     <string name="permission_notification_body">Puzru는 앱이 백그라운드에 있을 때를 포함하여, 켜져 있고 오디오를 전환할 준비가 되었음을 무음 알림으로 표시합니다. 알림은 선택 사항이며 알림이 없어도 Puzru는 작동합니다.</string>

@@ -8,7 +8,6 @@
     <string name="state_waiting">Күтуде</string>
     <string name="state_active">Белсенді</string>
     <string name="state_error">Қате</string>
-    <string name="power_control">Қуат</string>
     <string name="floating">Мини</string>
     <string name="permission_notification_title">Puzru қосулы кезде көрсету</string>
     <string name="permission_notification_body">Puzru қосулы және аудионы бағыттауға дайын екенін, соның ішінде қолданба фонда болғанда да, дыбыссыз хабарландыру арқылы көрсетеді. Хабарландырулар міндетті емес; Puzru оларсыз да жұмыс істейді.</string>

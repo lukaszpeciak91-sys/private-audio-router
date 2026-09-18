@@ -8,7 +8,6 @@
     <string name="state_waiting">Очікує</string>
     <string name="state_active">Активно</string>
     <string name="state_error">Помилка</string>
-    <string name="power_control">Увімкнути</string>
     <string name="floating">Міні</string>
     <string name="permission_notification_title">Показувати, коли Puzru увімкнено</string>
     <string name="permission_notification_body">Puzru використовує тихе сповіщення, щоб показувати, що застосунок увімкнено й він готовий перенаправляти звук, зокрема коли працює у фоновому режимі. Сповіщення необов’язкові; Puzru працює й без них.</string>

@@ -8,7 +8,6 @@
     <string name="state_waiting">Zain</string>
     <string name="state_active">Aktibo</string>
     <string name="state_error">Errorea</string>
-    <string name="power_control">Piztu</string>
     <string name="floating">Mini</string>
     <string name="permission_notification_title">Erakutsi Puzru aktibatuta dagoenean</string>
     <string name="permission_notification_body">Puzruk jakinarazpen isil bat erabiltzen du aktibatuta eta audioa bideratzeko prest dagoela erakusteko, baita aplikazioa atzeko planoan dagoenean ere. Jakinarazpenak aukerakoak dira; Puzruk haiek gabe ere funtzionatzen du.</string>

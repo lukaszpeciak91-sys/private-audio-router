@@ -8,7 +8,6 @@
     <string name="state_waiting">Wachten</string>
     <string name="state_active">Actief</string>
     <string name="state_error">Fout</string>
-    <string name="power_control">Aan/uit</string>
     <string name="floating">Mini</string>
     <string name="permission_notification_title">Weergeven wanneer Puzru aanstaat</string>
     <string name="permission_notification_body">Puzru gebruikt een stille melding om aan te geven dat het aanstaat en klaar is om audio om te leiden, ook wanneer de app op de achtergrond draait. Meldingen zijn optioneel; Puzru werkt ook zonder meldingen.</string>

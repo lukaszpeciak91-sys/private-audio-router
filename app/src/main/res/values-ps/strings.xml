@@ -8,7 +8,6 @@
     <string name="state_waiting">په تمه</string>
     <string name="state_active">فعال</string>
     <string name="state_error">تېروتنه</string>
-    <string name="power_control">پاور</string>
     <string name="floating">مینی</string>
     <string name="permission_notification_title">کله چې Puzru چالان وي، وښایئ</string>
     <string name="permission_notification_body">Puzru د غلي خبرتیا له لارې ښيي چې چالان دی او د آډیو د لارښوونې لپاره چمتو دی، ان کله چې اپ په شالید کې وي. خبرتیاوې اختیاري دي؛ Puzru له هغو پرته هم کار کوي.</string>

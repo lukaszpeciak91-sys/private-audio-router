@@ -8,7 +8,6 @@
     <string name="state_waiting">Gözləyir</string>
     <string name="state_active">Aktiv</string>
     <string name="state_error">Xəta</string>
-    <string name="power_control">Yandırıb-söndürmə</string>
     <string name="floating">Mini</string>
     <string name="permission_notification_title">Puzru açıq olduqda göstər</string>
     <string name="permission_notification_body">Puzru açıq və audionu yönləndirməyə hazır olduğunu, tətbiq arxa planda olduqda belə, səssiz bildirişlə göstərir. Bildirişlər istəyə bağlıdır; Puzru onlarsız da işləyir.</string>

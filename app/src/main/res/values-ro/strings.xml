@@ -8,7 +8,6 @@
     <string name="state_waiting">În așteptare</string>
     <string name="state_active">Activ</string>
     <string name="state_error">Eroare</string>
-    <string name="power_control">Activează</string>
     <string name="floating">Mini</string>
     <string name="permission_notification_title">Afișează când Puzru este activat</string>
     <string name="permission_notification_body">Puzru folosește o notificare silențioasă pentru a arăta că este activat și pregătit să redirecționeze sunetul, inclusiv când aplicația rulează în fundal. Notificările sunt opționale; Puzru funcționează și fără ele.</string>

@@ -8,7 +8,6 @@
     <string name="state_waiting">Stennija</string>
     <string name="state_active">Attiv</string>
     <string name="state_error">Żball</string>
-    <string name="power_control">Ixgħel/itfi</string>
     <string name="floating">Mini</string>
     <string name="permission_notification_title">Uri meta Puzru jkun mixgħul</string>
     <string name="permission_notification_body">Puzru juża notifika siekta biex juri li huwa mixgħul u lest biex jidderieġi l-awdjo lejn l-output, anki meta l-app tkun fl-isfond. In-notifiki huma fakultattivi; Puzru jibqa’ jaħdem mingħajrhom.</string>

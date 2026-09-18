@@ -8,7 +8,6 @@
     <string name="state_waiting">ກຳລັງລໍຖ້າ</string>
     <string name="state_active">ກຳລັງໃຊ້ງານ</string>
     <string name="state_error">ຂໍ້ຜິດພາດ</string>
-    <string name="power_control">ເປີດ/ປິດ</string>
     <string name="floating">ມິນິ</string>
     <string name="permission_notification_title">ສະແດງເມື່ອ Puzru ເປີດຢູ່</string>
     <string name="permission_notification_body">Puzru ໃຊ້ການແຈ້ງເຕືອນແບບງຽບເພື່ອສະແດງວ່າເປີດຢູ່ ແລະພ້ອມກຳນົດເສັ້ນທາງສຽງ, ລວມທັງເມື່ອແອັບເຮັດວຽກຢູ່ເບື້ອງຫຼັງ. ການແຈ້ງເຕືອນເປັນທາງເລືອກ; Puzru ຍັງເຮັດວຽກໄດ້ໂດຍບໍ່ມີມັນ.</string>

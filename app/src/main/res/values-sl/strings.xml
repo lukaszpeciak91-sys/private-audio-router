@@ -8,7 +8,6 @@
     <string name="state_waiting">Čakanje</string>
     <string name="state_active">Aktivno</string>
     <string name="state_error">Napaka</string>
-    <string name="power_control">Vklop/izklop</string>
     <string name="floating">Mini</string>
     <string name="permission_notification_title">Prikaži, ko je Puzru vklopljen</string>
     <string name="permission_notification_body">Puzru s tihim obvestilom pokaže, da je vklopljen in pripravljen za preusmerjanje zvoka, tudi ko aplikacija deluje v ozadju. Obvestila so izbirna; Puzru deluje tudi brez njih.</string>

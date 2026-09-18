@@ -10,8 +10,6 @@
     <string name="state_waiting">စောင့်နေသည်</string>
     <string name="state_active">အသုံးပြုနေသည်</string>
     <string name="state_error">အမှား</string>
-
-    <string name="power_control">ဖွင့်/ပိတ်</string>
     <string name="floating">မီနီ</string>
     <string name="permission_notification_title">Puzru ဖွင့်ထားသည့်အခါ ပြရန်</string>
     <string name="permission_notification_body">Puzru ဖွင့်ထားပြီး အသံကို လမ်းကြောင်းပြောင်းရန် အသင့်ဖြစ်နေကြောင်းကို အက်ပ်နောက်ခံတွင်ရှိနေချိန်အပါအဝင် အသံတိတ် အသိပေးချက်ဖြင့် ပြသသည်။ အသိပေးချက်များသည် ရွေးချယ်စရာဖြစ်ပြီး ၎င်းတို့မရှိဘဲလည်း Puzru အလုပ်လုပ်သည်။</string>

@@ -8,7 +8,6 @@
     <string name="state_waiting">កំពុងរង់ចាំ</string>
     <string name="state_active">សកម្ម</string>
     <string name="state_error">កំហុស</string>
-    <string name="power_control">ថាមពល</string>
     <string name="floating">ខ្នាតតូច</string>
     <string name="permission_notification_title">បង្ហាញនៅពេល Puzru បានបើក</string>
     <string name="permission_notification_body">Puzru ប្រើការជូនដំណឹងស្ងាត់ ដើម្បីបង្ហាញថាវាបានបើក និងរួចរាល់ក្នុងការកំណត់ទិសដៅសំឡេង ទោះបីជាកម្មវិធីដំណើរការនៅផ្ទៃខាងក្រោយក៏ដោយ។ ការជូនដំណឹងជាជម្រើស ហើយ Puzru នៅតែដំណើរការដោយគ្មានវា។</string>

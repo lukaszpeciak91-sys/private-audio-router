@@ -8,7 +8,6 @@
     <string name="state_waiting">Bíðar</string>
     <string name="state_active">Virkið</string>
     <string name="state_error">Villa</string>
-    <string name="power_control">Streymur</string>
     <string name="floating">Mini</string>
     <string name="permission_notification_title">Vís, tá Puzru er tendrað</string>
     <string name="permission_notification_body">Puzru brúkar eina ljóðleysa fráboðan til at vísa, at tað er tendrað og klárt at skifta ljóðið, eisini tá appin koyrir í bakgrundini. Fráboðanir eru valfríar; Puzru virkar eisini uttan tær.</string>

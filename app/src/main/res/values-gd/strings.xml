@@ -8,7 +8,6 @@
     <string name="state_waiting">A’ feitheamh</string>
     <string name="state_active">Gnìomhach</string>
     <string name="state_error">Mearachd</string>
-    <string name="power_control">Cumhachd</string>
     <string name="floating">Mini</string>
     <string name="permission_notification_title">Seall nuair a tha Puzru air</string>
     <string name="permission_notification_body">Cleachdaidh Puzru brath sàmhach gus sealltainn nuair a tha e air agus deiseil gus fuaim a stiùireadh, fiù nuair a tha an aplacaid sa chùlaibh. Tha brathan roghainneil; obraichidh Puzru às an aonais fhathast.</string>

@@ -276,7 +276,8 @@ class Layer41LocalizationContractTest {
         assertTrue(persianStrings.contains("name=\"state_waiting\">در انتظار</string>"))
         assertTrue(persianStrings.contains("name=\"state_active\">فعال</string>"))
         assertTrue(persianStrings.contains("name=\"state_error\">خطا</string>"))
-        assertTrue(persianStrings.contains("name=\"power_control\">روشن کردن</string>"))
+        assertTrue(persianStrings.contains("name=\"power_turn_on\">Puzru — روشن</string>"))
+        assertTrue(persianStrings.contains("name=\"power_turn_off\">Puzru — خاموش</string>"))
         assertTrue(persianStrings.contains("گزارش عیب‌یابی"))
         assertFalse(persianStrings.contains('ي'))
         assertFalse(persianStrings.contains('ك'))
@@ -962,7 +963,8 @@ class Layer41LocalizationContractTest {
         assertTrue(somaliStrings.contains("name=\"floating\">Mini</string>"))
         assertTrue(somaliStrings.contains("name=\"settings_system_default\">Caadi</string>"))
         assertTrue(somaliStrings.contains("name=\"settings_advanced\">Dejinta horumarsan</string>"))
-        assertTrue(somaliStrings.contains("name=\"power_control\">Daar/Dami</string>"))
+        assertTrue(somaliStrings.contains("name=\"power_turn_on\">Puzru — Daaran</string>"))
+        assertTrue(somaliStrings.contains("name=\"power_turn_off\">Puzru — Dansan</string>"))
         assertTrue(
             resourceValue(somaliStrings, "settings_about_body")
                 .contains("sameecadda wicitaanka ee ku dhex jirta taleefankaaga"),
@@ -1760,7 +1762,8 @@ class Layer41LocalizationContractTest {
         listOf("values-jw", "values-jv-rID", "values-b+jv+Latn", "values-b+jv+Latn+ID", "values-b+jv+Java")
             .forEach { assertFalse(projectFile("app/src/main/res/$it").exists()) }
         assertTrue(javaneseStrings.contains("name=\"routing_notification_waiting_title\">Puzru urip</string>"))
-        assertTrue(javaneseStrings.contains("name=\"power_control\">Urip/mati</string>"))
+        assertTrue(javaneseStrings.contains("name=\"power_turn_on\">Puzru — Diuripake</string>"))
+        assertTrue(javaneseStrings.contains("name=\"power_turn_off\">Puzru — Dipatheni</string>"))
         assertTrue(javaneseStrings.contains("name=\"state_active\">Aktif</string>"))
         assertFalse(javaneseStrings.contains("name=\"state_active\">Urip</string>"))
         assertEquals(mapOf("state_ready" to "Siyap", "state_waiting" to "Ngenteni", "state_active" to "Aktif", "state_error" to "Kesalahan"), frozenStates(javaneseStrings))

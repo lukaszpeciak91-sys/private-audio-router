@@ -8,7 +8,6 @@
     <string name="state_waiting">इंतज़ार में</string>
     <string name="state_active">सक्रिय</string>
     <string name="state_error">गड़बड़ी</string>
-    <string name="power_control">चालू करें</string>
     <string name="floating">मिनी</string>
     <string name="permission_notification_title">Puzru के चालू होने पर दिखाएं</string>
     <string name="permission_notification_body">Puzru एक शांत नोटिफ़िकेशन से दिखाता है कि वह चालू है और ऑडियो को रूट करने के लिए तैयार है, भले ही ऐप बैकग्राउंड में हो। नोटिफ़िकेशन वैकल्पिक हैं; उनके बिना भी Puzru काम करता है।</string>

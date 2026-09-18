@@ -8,7 +8,6 @@
     <string name="state_waiting">Venter</string>
     <string name="state_active">Aktiv</string>
     <string name="state_error">Fejl</string>
-    <string name="power_control">Strøm</string>
     <string name="floating">Mini</string>
     <string name="permission_notification_title">Vis, når Puzru er slået til</string>
     <string name="permission_notification_body">Puzru bruger en lydløs notifikation til at vise, at den er slået til og klar til at skifte lyd, også når appen er i baggrunden. Notifikationer er valgfrie; Puzru fungerer stadig uden dem.</string>

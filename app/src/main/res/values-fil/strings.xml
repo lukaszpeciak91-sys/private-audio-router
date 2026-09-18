@@ -8,7 +8,6 @@
     <string name="state_waiting">Naghihintay</string>
     <string name="state_active">Aktibo</string>
     <string name="state_error">Error</string>
-    <string name="power_control">I-on</string>
     <string name="floating">Mini</string>
     <string name="permission_notification_title">Ipakita kapag naka-on ang Puzru</string>
     <string name="permission_notification_body">Gumagamit ang Puzru ng tahimik na notification upang ipakitang naka-on ito at handang ilipat ang audio, kahit nasa background ang app. Opsyonal ang mga notification; gumagana pa rin ang Puzru kahit wala ang mga ito.</string>

@@ -8,7 +8,6 @@
     <string name="state_waiting">Ilindile</string>
     <string name="state_active">Iyasebenza</string>
     <string name="state_error">Impazamo</string>
-    <string name="power_control">Amandla</string>
     <string name="floating">Encinci</string>
     <string name="permission_notification_title">Bonisa xa i-Puzru ivuliwe</string>
     <string name="permission_notification_body">I-Puzru isebenzisa isaziso esingenasandi ukubonisa ukuba ivuliwe kwaye ilungele ukuhambisa iaudio, naxa i-app isebenza ngasemva. Izaziso azinyanzelekanga; i-Puzru isebenza ngaphandle kwazo.</string>

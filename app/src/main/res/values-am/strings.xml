@@ -8,7 +8,6 @@
     <string name="state_waiting">በመጠበቅ ላይ</string>
     <string name="state_active">ገባሪ</string>
     <string name="state_error">ስህተት</string>
-    <string name="power_control">ኃይል</string>
     <string name="floating">ሚኒ</string>
     <string name="permission_notification_title">Puzru በርቶ ሲሆን አሳይ</string>
     <string name="permission_notification_body">Puzru በርቶ ድምፅን ለመቀየር ዝግጁ መሆኑን፣ መተግበሪያው ከበስተጀርባ በሚሰራበት ጊዜም ጭምር፣ ጸጥ ባለ ማሳወቂያ ያሳያል። ማሳወቂያዎች አማራጭ ናቸው፤ Puzru ያለእነሱም ይሰራል።</string>

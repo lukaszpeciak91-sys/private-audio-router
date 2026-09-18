@@ -8,7 +8,6 @@
     <string name="state_waiting">בהמתנה</string>
     <string name="state_active">פעיל</string>
     <string name="state_error">שגיאה</string>
-    <string name="power_control">הפעלה/כיבוי</string>
     <string name="floating">מיני</string>
     <string name="permission_notification_title">הצגה כש-Puzru מופעל</string>
     <string name="permission_notification_body">Puzru משתמש בהתראה שקטה כדי לציין שהוא מופעל ומוכן להחליף את פלט האודיו, גם כשהאפליקציה פועלת ברקע. ההתראות הן אופציונליות; Puzru פועל גם בלעדיהן.</string>

@@ -8,7 +8,6 @@
     <string name="state_waiting">Սպասում է</string>
     <string name="state_active">Ակտիվ</string>
     <string name="state_error">Սխալ</string>
-    <string name="power_control">Միացնել/անջատել</string>
     <string name="floating">Մինի</string>
     <string name="permission_notification_title">Ցուցադրել, երբ Puzru-ն միացված է</string>
     <string name="permission_notification_body">Puzru-ն անձայն ծանուցմամբ ցույց է տալիս, որ միացված է և պատրաստ է փոխարկել աուդիո ելքը, նույնիսկ երբ հավելվածն աշխատում է հետին պլանում։ Ծանուցումները պարտադիր չեն․ Puzru-ն աշխատում է նաև առանց դրանց։</string>

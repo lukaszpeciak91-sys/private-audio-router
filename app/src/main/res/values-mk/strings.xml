@@ -8,7 +8,6 @@
     <string name="state_waiting">Чекање</string>
     <string name="state_active">Активно</string>
     <string name="state_error">Грешка</string>
-    <string name="power_control">Вклучување/исклучување</string>
     <string name="floating">Мини</string>
     <string name="permission_notification_title">Прикажи кога Puzru е вклучено</string>
     <string name="permission_notification_body">Puzru користи тивко известување за да покаже дека е вклучено и подготвено за пренасочување на звукот, дури и кога апликацијата е во заднина. Известувањата се изборни; Puzru работи и без нив.</string>

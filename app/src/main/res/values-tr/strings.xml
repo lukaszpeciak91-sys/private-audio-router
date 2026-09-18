@@ -8,7 +8,6 @@
     <string name="state_waiting">Bekleniyor</string>
     <string name="state_active">Etkin</string>
     <string name="state_error">Hata</string>
-    <string name="power_control">Aç</string>
     <string name="floating">Mini</string>
     <string name="permission_notification_title">Puzru açıkken göster</string>
     <string name="permission_notification_body">Puzru, uygulama arka plandayken de açık ve sesi yönlendirmeye hazır olduğunu sessiz bir bildirimle gösterir. Bildirimler isteğe bağlıdır; Puzru bildirimler olmadan da çalışır.</string>

@@ -8,7 +8,6 @@
     <string name="state_waiting">Ngenteni</string>
     <string name="state_active">Aktif</string>
     <string name="state_error">Kesalahan</string>
-    <string name="power_control">Urip/mati</string>
     <string name="floating">Mini</string>
     <string name="permission_notification_title">Tampilake nalika Puzru urip</string>
     <string name="permission_notification_body">Puzru nggunakake notifikasi meneng kanggo nuduhake yen urip lan siap ngalihake audio, kalebu nalika aplikasi ana ing latar mburi. Notifikasi iku opsional; Puzru tetep bisa digunakake tanpa notifikasi.</string>

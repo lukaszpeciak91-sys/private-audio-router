@@ -8,7 +8,6 @@
     <string name="state_waiting">Чакае</string>
     <string name="state_active">Актыўна</string>
     <string name="state_error">Памылка</string>
-    <string name="power_control">Уключыць</string>
     <string name="floating">Міні</string>
     <string name="permission_notification_title">Паказваць, калі Puzru ўключана</string>
     <string name="permission_notification_body">Puzru выкарыстоўвае ціхае апавяшчэнне, каб паказваць, што праграма ўключана і гатова перанакіроўваць гук, у тым ліку калі яна працуе ў фонавым рэжыме. Апавяшчэнні неабавязковыя; Puzru працуе і без іх.</string>

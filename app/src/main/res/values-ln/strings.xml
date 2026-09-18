@@ -8,7 +8,6 @@
     <string name="state_waiting">Ezali kozela</string>
     <string name="state_active">Ezali kotambwisa</string>
     <string name="state_error">Libunga</string>
-    <string name="power_control">Kopelisa</string>
     <string name="floating">Ya moke</string>
     <string name="permission_notification_title">Lakisa ntango Puzru epeli</string>
     <string name="permission_notification_body">Puzru esalelaka liyebisi ya kimya mpo na kolakisa ete epeli mpe ebongami mpo na kotambwisa mongongo, ata ntango programɛ ezali kosala na nsima. Mayebisi ezali ya kopona; Puzru esalaka mpe soki ezali te.</string>

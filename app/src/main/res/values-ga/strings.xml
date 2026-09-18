@@ -8,7 +8,6 @@
     <string name="state_waiting">Ag fanacht</string>
     <string name="state_active">Gníomhach</string>
     <string name="state_error">Earráid</string>
-    <string name="power_control">Cumhacht</string>
     <string name="floating">Mini</string>
     <string name="permission_notification_title">Taispeáin nuair atá Puzru ar siúl</string>
     <string name="permission_notification_body">Úsáideann Puzru fógra ciúin chun a thaispeáint nuair atá sé ar siúl agus réidh chun fuaim a atreorú, fiú nuair atá an aip sa chúlra. Tá fógraí roghnach; oibríonn Puzru gan iad fós.</string>

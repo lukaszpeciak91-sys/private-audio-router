@@ -8,7 +8,6 @@
     <string name="state_waiting">पर्खँदै</string>
     <string name="state_active">सक्रिय</string>
     <string name="state_error">त्रुटि</string>
-    <string name="power_control">पावर</string>
     <string name="floating">मिनी</string>
     <string name="permission_notification_title">Puzru अन हुँदा देखाउनुहोस्</string>
     <string name="permission_notification_body">Puzru अन छ र अडियोलाई रुट गर्न तयार छ भनेर देखाउन मौन सूचना प्रयोग गर्छ, एप ब्याकग्राउन्डमा हुँदा समेत। सूचनाहरू वैकल्पिक हुन्; तिनीहरूबिना पनि Puzru ले काम गर्छ।</string>

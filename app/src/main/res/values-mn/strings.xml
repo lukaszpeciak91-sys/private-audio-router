@@ -8,7 +8,6 @@
     <string name="state_waiting">Хүлээж байна</string>
     <string name="state_active">Идэвхтэй</string>
     <string name="state_error">Алдаа</string>
-    <string name="power_control">Асаах/унтраах</string>
     <string name="floating">Мини</string>
     <string name="permission_notification_title">Puzru асаалттай үед харуулах</string>
     <string name="permission_notification_body">Puzru асаалттай бөгөөд аудиог чиглүүлэхэд бэлэн байгааг, апп ард ажиллаж байх үед ч, чимээгүй мэдэгдлээр харуулна. Мэдэгдэл сонголттой; Puzru мэдэгдэлгүйгээр ч ажиллана.</string>

@@ -8,7 +8,6 @@
     <string name="state_waiting">Menunggu</string>
     <string name="state_active">Aktif</string>
     <string name="state_error">Error</string>
-    <string name="power_control">Aktifkan</string>
     <string name="floating">Mini</string>
     <string name="permission_notification_title">Tampilkan saat Puzru diaktifkan</string>
     <string name="permission_notification_body">Puzru menggunakan notifikasi senyap untuk menunjukkan bahwa Puzru diaktifkan dan siap mengalihkan audio, termasuk saat aplikasi berjalan di latar belakang. Notifikasi bersifat opsional; Puzru tetap berfungsi tanpanya.</string>

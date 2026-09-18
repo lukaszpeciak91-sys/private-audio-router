@@ -8,7 +8,6 @@
     <string name="state_waiting">Eegaa jira</string>
     <string name="state_active">Hojii irra jira</string>
     <string name="state_error">Dogoggora</string>
-    <string name="power_control">Bani/Dhaamsi</string>
     <string name="floating">Xiqqaa</string>
     <string name="permission_notification_title">Yeroo Puzru banaa ta’e agarsiisi</string>
     <string name="permission_notification_body">Puzru banaa fi sagalee qajeelchuuf qophaa’aa ta’uu isaa, yeroo appiin duubbee irratti hojjetus dabalatee, beeksisa sagalee hin qabneen agarsiisa. Beeksisawwan filannoo dha; Puzru isaan malee illee ni hojjeta.</string>
