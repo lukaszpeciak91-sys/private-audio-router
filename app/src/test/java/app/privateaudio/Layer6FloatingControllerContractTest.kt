@@ -1,7 +1,12 @@
 package app.privateaudio
 
 import app.privateaudio.overlay.MiniControl
+import app.privateaudio.overlay.MINI_ACTIVE_STATUS_COLOR
+import app.privateaudio.overlay.MINI_ERROR_STATUS_COLOR
+import app.privateaudio.overlay.MINI_READY_STATUS_COLOR
+import app.privateaudio.overlay.MINI_WAITING_STATUS_COLOR
 import app.privateaudio.overlay.miniControlAt
+import app.privateaudio.overlay.miniStatusColor
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue
@@ -11,7 +16,7 @@ import java.io.File
 class Layer6FloatingControllerContractTest {
     @Test fun finalSurfaceHasApprovedDimensionsOrderAndNoHideControl() {
         assertTrue(overlay.contains("(300 * density).toInt()")); assertTrue(overlay.contains("(62 * density).toInt()"))
-        assertTrue(overlay.indexOf("canvas.drawCircle(directionalX(STATUS_DOT_X)") < overlay.indexOf("drawPower(canvas"))
+        assertTrue(overlay.indexOf("drawStatusSymbol(canvas, statePresentation(state).symbol)") < overlay.indexOf("drawPower(canvas"))
         assertTrue(overlay.indexOf("drawExpand(canvas)") < overlay.indexOf("drawClose(canvas)"))
         assertTrue(overlay.contains("RectF(134f, 15f, 166f, 47f)"))
         assertFalse(overlay.contains("canvas.drawRect(170f"))
@@ -27,8 +32,10 @@ class Layer6FloatingControllerContractTest {
     @Test fun allFourAuthoritativeStatesHaveApprovedTreatment() {
         PrivateAudioState.entries.forEach { assertTrue(it.name, overlay.contains("PrivateAudioState.${it.name}")) }
         assertTrue(overlay.contains("privateAudioService?.privateAudioState"))
-        assertTrue(overlay.contains("READY, PrivateAudioState.ACTIVE -> Color.rgb(34, 218, 112)"))
-        assertTrue(overlay.contains("WAITING -> Color.rgb(238, 172, 54)")); assertTrue(overlay.contains("ERROR -> Color.rgb(238, 75, 75)"))
+        assertEquals(MINI_READY_STATUS_COLOR, miniStatusColor(PrivateAudioState.READY))
+        assertEquals(MINI_WAITING_STATUS_COLOR, miniStatusColor(PrivateAudioState.WAITING))
+        assertEquals(MINI_ACTIVE_STATUS_COLOR, miniStatusColor(PrivateAudioState.ACTIVE))
+        assertEquals(MINI_ERROR_STATUS_COLOR, miniStatusColor(PrivateAudioState.ERROR))
         assertTrue(overlay.contains("READY -> Color.rgb(184, 184, 188)")); assertFalse(overlay.contains("projectPrivateAudioState("))
     }
 
@@ -73,8 +80,8 @@ class Layer6FloatingControllerContractTest {
             productionSources.kotlinMemberCallSites("setCommunicationDevice").map(KotlinCallSite::file),
         )
         listOf("state_ready", "state_waiting", "state_active", "state_error", "overlay_controller_description").forEach { assertTrue(it, strings.contains("name=\"$it\"")) }
-        listOf("state_ready_mini", "state_waiting_mini", "state_active_mini", "state_error_mini").forEach {
-            assertTrue(it, miniAliases.contains("name=\"$it\""))
+        listOf("status_mini_ready", "status_mini_waiting", "status_mini_active", "status_mini_error").forEach {
+            assertTrue(it, strings.contains("name=\"$it\""))
         }
         assertTrue(overlay.contains("drawStatusLabel(canvas, miniStateLabel(state))"))
         assertTrue(overlay.contains("stateDescription(value)") || overlay.contains("contentDescription = stateDescription"))
@@ -88,7 +95,6 @@ class Layer6FloatingControllerContractTest {
         val overlay = File(root, "app/src/main/java/app/privateaudio/overlay/OverlayService.kt").readText()
         val main = File(root, "app/src/main/java/app/privateaudio/MainActivity.kt").readText()
         val strings = File(root, "app/src/main/res/values/strings.xml").readText()
-        val miniAliases = File(root, "app/src/main/res/values/mini_state_aliases.xml").readText()
         val observerSourceFile = File(root, "app/src/main/java/app/privateaudio/diagnostic/AudioDiagnosticObserver.kt")
         val productionSources = File(root, "app/src/main/java").walkTopDown().filter { it.isFile && it.extension == "kt" }.toList()
     }

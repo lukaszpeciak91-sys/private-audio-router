@@ -2,15 +2,12 @@
 <resources>
     <string name="app_name">Puzru</string>
     <string name="routing_notification_channel">Puzru</string>
-    <string name="routing_notification_title">Puzru je vklopljen</string>
-    <string name="routing_notification_text">Čakanje na preklop zvoka</string>
     <string name="product_title">Puzru</string>
     <string name="product_subtitle">Z UI se pogovarjajte zasebno, kot po telefonu.</string>
     <string name="state_ready">Pripravljeno</string>
     <string name="state_waiting">Čakanje</string>
     <string name="state_active">Aktivno</string>
     <string name="state_error">Napaka</string>
-    <string name="power_control">Vklop/izklop</string>
     <string name="floating">Mini</string>
     <string name="permission_notification_title">Prikaži, ko je Puzru vklopljen</string>
     <string name="permission_notification_body">Puzru s tihim obvestilom pokaže, da je vklopljen in pripravljen za preusmerjanje zvoka, tudi ko aplikacija deluje v ozadju. Obvestila so izbirna; Puzru deluje tudi brez njih.</string>
@@ -76,4 +73,20 @@
     <string name="diagnostics_error_audio_preparation">Aplikaciji Puzru ni uspelo pripraviti zvoka za komunikacijo.</string>
     <string name="diagnostics_error_request_rejected">Zahteva za usmerjanje zvoka v slušalko telefona ni bila sprejeta.</string>
     <string name="diagnostics_error_not_completed">Usmerjanja zvoka ni bilo mogoče dokončati.</string>
+    <string name="power_turn_on">Vklopi</string>
+    <string name="power_turn_off">Izklopi</string>
+    <string name="routing_notification_waiting_title">Puzru je vklopljen</string>
+    <string name="routing_notification_waiting_text">Čakanje na preklop zvoka</string>
+    <string name="routing_notification_active_title">Preusmerjanje na slušalko je aktivno</string>
+    <string name="routing_notification_active_text">Podprti glasovni zvok se preusmerja na slušalko telefona.</string>
+    <string name="routing_notification_error_title">Težava s preusmerjanjem zvoka</string>
+    <string name="routing_notification_error_text">Odprite Puzru, izklopite ga in poskusite znova.</string>
+    <string name="status_main_ready">Izklopljeno</string>
+    <string name="status_mini_ready">Izklopljeno</string>
+    <string name="status_main_waiting">Čaka na glas</string>
+    <string name="status_mini_waiting">Čakanje</string>
+    <string name="status_main_active">Preko slušalke telefona</string>
+    <string name="status_mini_active">Slušalka telefona</string>
+    <string name="status_main_error">Težava s preusmerjanjem zvoka</string>
+    <string name="status_mini_error">Napaka</string>
 </resources>

@@ -1,5 +1,24 @@
 # Progress
 
+## Main, Mini, and foreground-notification status clarity
+
+- **FACT:** Technical review correction makes the Compose earpiece arc pass its
+  `Stroke` through the drawing API's `style` parameter, removes the obsolete dot
+  import, and raises only Mini's `READY` and `ERROR` symbol tokens to `#B3B3B3`
+  and `#FF8C8C`. Against Mini's actual `#0F0F10` surface they measure 9.14:1
+  and 8.56:1 respectively; `#5B5B5E` is separately identified as the border,
+  not the adjacent surface. Focused contracts now cover the rendered
+  `status_mini_*` resources, exact notification resources for all enabled states,
+  the READY no-notification guard, foreground removal, and the Mini token contrast.
+  Existing localization contracts now reference the renamed waiting-notification
+  resources instead of asserting the removed generic resource names; resource copy
+  itself is unchanged by this technical correction.
+- **FACT:** The unchanged service states now have one presentation mapping shared by Main, Mini, and the foreground notification. Controller-off `READY` is neutral grey and labelled Off; `WAITING` is amber and identifies waiting for voice; `ACTIVE` is green and identifies the earpiece route; and `ERROR` is red and identifies a routing problem. Four distinct Canvas symbols supplement the color and motion treatments.
+- **FACT:** Main Power now speaks the pending action (Turn on while off and Turn off otherwise). Mini retains its dimensions, control order, direction-aware Canvas geometry, shared measured 16f/15f/14f fitting path, and full-state spoken controller description while displaying compact state labels.
+- **FACT:** Enabled-state notification copy now follows service-owned state transitions through the existing evidence-change callback. `WAITING`, `ACTIVE`, and `ERROR` have distinct content; `READY` preserves the existing foreground removal and stopped started-service lifetime. No polling or additional product-state projection was introduced.
+- **FACT:** All complete locale resource trees contain the expanded Main/Mini, Power-action, and notification-state key set. The status-copy refinement was translated and self-checked from the current default English source while preserving each locale's established earpiece, waiting, routing, error, and ON/OFF terminology where semantically appropriate; this is translation-production evidence, not independent or human/native validation. Default English contains the approved exact copy. Automated contracts cover mapping completeness, distinct symbols, neutral `READY`, Main/Mini usage, Power descriptions, notification refresh wiring, localization key coverage, measured Mini fitting, and RTL geometry.
+- **UNKNOWN:** Emulator visual review remains required for portrait/landscape Main, Mini at the 16f/15f/14f thresholds, representative RTL locales, notification transitions, and TalkBack wording. Physical-device review remains required for foreground-notification updates across real sessions and OEM rendering. These presentation changes provide no new evidence about physical audio routing.
+
 ## Release crash-diagnostics metadata
 
 - **FACT:** Release builds now use the Android Gradle Plugin 9.3 `optimization`

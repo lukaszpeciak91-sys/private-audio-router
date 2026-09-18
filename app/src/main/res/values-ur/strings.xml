@@ -2,15 +2,12 @@
 <resources>
     <string name="app_name">Puzru</string>
     <string name="routing_notification_channel">Puzru</string>
-    <string name="routing_notification_title">Puzru چل رہا ہے</string>
-    <string name="routing_notification_text">آڈیو منتقل ہونے کا انتظار ہے</string>
     <string name="product_title">Puzru</string>
     <string name="product_subtitle">فون کال کی طرح AI سے نجی طور پر بات کریں۔</string>
     <string name="state_ready">تیار</string>
     <string name="state_waiting">انتظار میں</string>
     <string name="state_active">فعال</string>
     <string name="state_error">خرابی</string>
-    <string name="power_control">چالو کریں</string>
     <string name="floating">کمپیکٹ</string>
     <string name="permission_notification_title">Puzru کے آن ہونے پر دکھائیں</string>
     <string name="permission_notification_body">Puzru ایک خاموش اطلاع کے ذریعے دکھاتا ہے کہ وہ آن ہے اور آڈیو روٹ کرنے کے لیے تیار ہے، چاہے ایپ پس منظر میں ہو۔ اطلاعات اختیاری ہیں؛ Puzru ان کے بغیر بھی کام کرتا ہے۔</string>
@@ -76,4 +73,20 @@
     <string name="diagnostics_error_audio_preparation">Puzru مواصلاتی آڈیو تیار نہیں کر سکا۔</string>
     <string name="diagnostics_error_request_rejected">ایئر پیس پر آڈیو روٹنگ کی درخواست قبول نہیں کی گئی۔</string>
     <string name="diagnostics_error_not_completed">آڈیو روٹنگ مکمل نہیں کی جا سکی۔</string>
+    <string name="power_turn_on">چالو کریں</string>
+    <string name="power_turn_off">بند کریں</string>
+    <string name="routing_notification_waiting_title">Puzru چل رہا ہے</string>
+    <string name="routing_notification_waiting_text">آڈیو منتقل ہونے کا انتظار ہے</string>
+    <string name="routing_notification_active_title">ایئر پیس روٹنگ فعال ہے</string>
+    <string name="routing_notification_active_text">سپورٹڈ وائس آڈیو ایئر پیس کی طرف روٹ ہو رہا ہے۔</string>
+    <string name="routing_notification_error_title">آڈیو روٹنگ میں مسئلہ</string>
+    <string name="routing_notification_error_text">Puzru کھولیں، اسے بند کریں اور دوبارہ کوشش کریں۔</string>
+    <string name="status_main_ready">آف</string>
+    <string name="status_mini_ready">آف</string>
+    <string name="status_main_waiting">آواز کا انتظار</string>
+    <string name="status_mini_waiting">انتظار میں</string>
+    <string name="status_main_active">ایئر پیس کے ذریعے</string>
+    <string name="status_mini_active">ایئر پیس</string>
+    <string name="status_main_error">آڈیو روٹنگ میں مسئلہ</string>
+    <string name="status_mini_error">خرابی</string>
 </resources>

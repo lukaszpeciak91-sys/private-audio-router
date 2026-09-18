@@ -2,15 +2,12 @@
 <resources>
     <string name="app_name">Puzru</string>
     <string name="routing_notification_channel">Puzru</string>
-    <string name="routing_notification_title">Puzru đang bật</string>
-    <string name="routing_notification_text">Đang chờ chuyển đổi âm thanh</string>
     <string name="product_title">Puzru</string>
     <string name="product_subtitle">Trò chuyện riêng tư với AI, như một cuộc gọi điện thoại.</string>
     <string name="state_ready">Sẵn sàng</string>
     <string name="state_waiting">Đang chờ</string>
     <string name="state_active">Đang hoạt động</string>
     <string name="state_error">Lỗi</string>
-    <string name="power_control">Bật</string>
     <string name="floating">Mini</string>
     <string name="permission_notification_title">Hiển thị khi Puzru đang bật</string>
     <string name="permission_notification_body">Puzru dùng một thông báo im lặng để cho biết ứng dụng đang bật và sẵn sàng định tuyến âm thanh, kể cả khi ứng dụng chạy trong nền. Thông báo là tùy chọn; Puzru vẫn hoạt động khi không có thông báo.</string>
@@ -76,4 +73,20 @@
     <string name="diagnostics_error_audio_preparation">Puzru không thể chuẩn bị âm thanh liên lạc.</string>
     <string name="diagnostics_error_request_rejected">Yêu cầu định tuyến đến loa thoại không được chấp nhận.</string>
     <string name="diagnostics_error_not_completed">Không thể hoàn tất định tuyến âm thanh.</string>
+    <string name="power_turn_on">Bật</string>
+    <string name="power_turn_off">Tắt</string>
+    <string name="routing_notification_waiting_title">Puzru đang bật</string>
+    <string name="routing_notification_waiting_text">Đang chờ chuyển đổi âm thanh</string>
+    <string name="routing_notification_active_title">Định tuyến đến loa thoại đang hoạt động</string>
+    <string name="routing_notification_active_text">Âm thanh giọng nói được hỗ trợ đang được định tuyến đến loa thoại.</string>
+    <string name="routing_notification_error_title">Sự cố định tuyến âm thanh</string>
+    <string name="routing_notification_error_text">Mở Puzru, tắt ứng dụng rồi thử lại.</string>
+    <string name="status_main_ready">Tắt</string>
+    <string name="status_mini_ready">Tắt</string>
+    <string name="status_main_waiting">Đang chờ giọng nói</string>
+    <string name="status_mini_waiting">Đang chờ</string>
+    <string name="status_main_active">Qua loa thoại</string>
+    <string name="status_mini_active">Loa thoại</string>
+    <string name="status_main_error">Sự cố định tuyến âm thanh</string>
+    <string name="status_mini_error">Lỗi</string>
 </resources>

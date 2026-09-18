@@ -2,15 +2,12 @@
 <resources>
     <string name="app_name">Puzru</string>
     <string name="routing_notification_channel">Puzru</string>
-    <string name="routing_notification_title">Tá Puzru ar siúl</string>
-    <string name="routing_notification_text">Ag fanacht leis an bhfuaim a atreorú</string>
     <string name="product_title">Puzru</string>
     <string name="product_subtitle">Labhair le IS go príobháideach, ar nós glao gutháin.</string>
     <string name="state_ready">Réidh</string>
     <string name="state_waiting">Ag fanacht</string>
     <string name="state_active">Gníomhach</string>
     <string name="state_error">Earráid</string>
-    <string name="power_control">Cumhacht</string>
     <string name="floating">Mini</string>
     <string name="permission_notification_title">Taispeáin nuair atá Puzru ar siúl</string>
     <string name="permission_notification_body">Úsáideann Puzru fógra ciúin chun a thaispeáint nuair atá sé ar siúl agus réidh chun fuaim a atreorú, fiú nuair atá an aip sa chúlra. Tá fógraí roghnach; oibríonn Puzru gan iad fós.</string>
@@ -75,4 +72,20 @@
     <string name="diagnostics_error_audio_preparation">Níorbh fhéidir le Puzru fuaim chumarsáide a ullmhú.</string>
     <string name="diagnostics_error_request_rejected">Níor glacadh leis an iarratas atreoraithe chuig an ngléas cluaise glaonna.</string>
     <string name="diagnostics_error_not_completed">Níorbh fhéidir an t-atreorú a chríochnú.</string>
+    <string name="power_turn_on">Cuir ar siúl</string>
+    <string name="power_turn_off">Múch</string>
+    <string name="routing_notification_waiting_title">Tá Puzru ar siúl</string>
+    <string name="routing_notification_waiting_text">Ag fanacht leis an bhfuaim a atreorú</string>
+    <string name="routing_notification_active_title">Tá atreorú chuig gléas cluaise glaonna gníomhach</string>
+    <string name="routing_notification_active_text">Tá fuaim ghutha tacaithe á hatreorú chuig gléas cluaise glaonna.</string>
+    <string name="routing_notification_error_title">Fadhb le hatreorú fuaime</string>
+    <string name="routing_notification_error_text">Oscail Puzru, múch é agus bain triail eile as.</string>
+    <string name="status_main_ready">As</string>
+    <string name="status_mini_ready">As</string>
+    <string name="status_main_waiting">Ag fanacht le guth</string>
+    <string name="status_mini_waiting">Ag fanacht</string>
+    <string name="status_main_active">Tríd an ngléas cluaise glaonna</string>
+    <string name="status_mini_active">Gléas cluaise glaonna</string>
+    <string name="status_main_error">Fadhb le hatreorú fuaime</string>
+    <string name="status_mini_error">Earráid</string>
 </resources>

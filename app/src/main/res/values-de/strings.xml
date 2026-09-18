@@ -2,15 +2,12 @@
 <resources>
     <string name="app_name">Puzru</string>
     <string name="routing_notification_channel">Puzru</string>
-    <string name="routing_notification_title">Puzru ist eingeschaltet</string>
-    <string name="routing_notification_text">Wartet auf Audio zum Weiterleiten</string>
     <string name="product_title">Puzru</string>
     <string name="product_subtitle">Sprich privat mit KI, wie bei einem Telefonat.</string>
     <string name="state_ready">Bereit</string>
     <string name="state_waiting">Wartet</string>
     <string name="state_active">Aktiv</string>
     <string name="state_error">Fehler</string>
-    <string name="power_control">Einschalten</string>
     <string name="floating">Mini</string>
     <string name="permission_notification_title">Anzeigen, wenn Puzru eingeschaltet ist</string>
     <string name="permission_notification_body">Puzru zeigt mit einer lautlosen Benachrichtigung an, dass es eingeschaltet und zum Weiterleiten von Audio bereit ist – auch wenn die App im Hintergrund läuft. Benachrichtigungen sind optional; Puzru funktioniert auch ohne sie.</string>
@@ -76,4 +73,20 @@
     <string name="diagnostics_error_audio_preparation">Puzru konnte Audio für die Kommunikation nicht vorbereiten.</string>
     <string name="diagnostics_error_request_rejected">Die Anfrage zur Weiterleitung an die Hörmuschel wurde nicht angenommen.</string>
     <string name="diagnostics_error_not_completed">Die Weiterleitung konnte nicht abgeschlossen werden.</string>
+    <string name="power_turn_on">Einschalten</string>
+    <string name="power_turn_off">Ausschalten</string>
+    <string name="routing_notification_waiting_title">Puzru ist eingeschaltet</string>
+    <string name="routing_notification_waiting_text">Wartet auf Audio zum Weiterleiten</string>
+    <string name="routing_notification_active_title">Weiterleitung zur Hörmuschel aktiv</string>
+    <string name="routing_notification_active_text">Unterstütztes Sprachaudio wird an die Hörmuschel weitergeleitet.</string>
+    <string name="routing_notification_error_title">Problem bei der Audioweiterleitung</string>
+    <string name="routing_notification_error_text">Öffne Puzru, schalte es aus und versuche es erneut.</string>
+    <string name="status_main_ready">Aus</string>
+    <string name="status_mini_ready">Aus</string>
+    <string name="status_main_waiting">Wartet auf Sprache</string>
+    <string name="status_mini_waiting">Wartet</string>
+    <string name="status_main_active">Über die Hörmuschel</string>
+    <string name="status_mini_active">Hörmuschel</string>
+    <string name="status_main_error">Problem bei der Audioweiterleitung</string>
+    <string name="status_mini_error">Fehler</string>
 </resources>

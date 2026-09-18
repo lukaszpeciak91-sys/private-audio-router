@@ -2,15 +2,12 @@
 <resources>
     <string name="app_name">Puzru</string>
     <string name="routing_notification_channel">Puzru</string>
-    <string name="routing_notification_title">Puzru açık</string>
-    <string name="routing_notification_text">Ses geçişi bekleniyor</string>
     <string name="product_title">Puzru</string>
     <string name="product_subtitle">AI ile telefon görüşmesi gibi, özel olarak konuşun.</string>
     <string name="state_ready">Hazır</string>
     <string name="state_waiting">Bekleniyor</string>
     <string name="state_active">Etkin</string>
     <string name="state_error">Hata</string>
-    <string name="power_control">Aç</string>
     <string name="floating">Mini</string>
     <string name="permission_notification_title">Puzru açıkken göster</string>
     <string name="permission_notification_body">Puzru, uygulama arka plandayken de açık ve sesi yönlendirmeye hazır olduğunu sessiz bir bildirimle gösterir. Bildirimler isteğe bağlıdır; Puzru bildirimler olmadan da çalışır.</string>
@@ -76,4 +73,20 @@
     <string name="diagnostics_error_audio_preparation">Puzru iletişim sesini hazırlayamadı.</string>
     <string name="diagnostics_error_request_rejected">Ahizeye yönlendirme isteği kabul edilmedi.</string>
     <string name="diagnostics_error_not_completed">Yönlendirme tamamlanamadı.</string>
+    <string name="power_turn_on">Aç</string>
+    <string name="power_turn_off">Kapat</string>
+    <string name="routing_notification_waiting_title">Puzru açık</string>
+    <string name="routing_notification_waiting_text">Ses geçişi bekleniyor</string>
+    <string name="routing_notification_active_title">Ahizeye yönlendirme etkin</string>
+    <string name="routing_notification_active_text">Desteklenen konuşma sesi ahizeye yönlendiriliyor.</string>
+    <string name="routing_notification_error_title">Ses yönlendirme sorunu</string>
+    <string name="routing_notification_error_text">Puzru\'yu açın, kapatın ve tekrar deneyin.</string>
+    <string name="status_main_ready">Kapalı</string>
+    <string name="status_mini_ready">Kapalı</string>
+    <string name="status_main_waiting">Ses bekleniyor</string>
+    <string name="status_mini_waiting">Bekleniyor</string>
+    <string name="status_main_active">Ahize üzerinden</string>
+    <string name="status_mini_active">Ahize</string>
+    <string name="status_main_error">Ses yönlendirme sorunu</string>
+    <string name="status_mini_error">Hata</string>
 </resources>

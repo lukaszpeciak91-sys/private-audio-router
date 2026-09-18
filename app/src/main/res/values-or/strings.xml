@@ -2,8 +2,6 @@
 <resources>
     <string name="app_name">Puzru</string>
     <string name="routing_notification_channel">Puzru</string>
-    <string name="routing_notification_title">Puzru ଚାଲୁ ଅଛି</string>
-    <string name="routing_notification_text">ଅଡିଓ ଆଉଟପୁଟ ସ୍ୱିଚ୍ କରିବାକୁ ଅପେକ୍ଷା କରାଯାଉଛି</string>
 
     <string name="product_title">Puzru</string>
     <string name="product_subtitle">ଫୋନ୍ କଲ୍ ପରି, ଏଆଇ ସହିତ ବ୍ୟକ୍ତିଗତ ଭାବେ କଥା ହୁଅନ୍ତୁ।</string>
@@ -12,8 +10,6 @@
     <string name="state_waiting">ଅପେକ୍ଷାରତ</string>
     <string name="state_active">ସକ୍ରିୟ</string>
     <string name="state_error">ତ୍ରୁଟି</string>
-
-    <string name="power_control">ପାୱାର</string>
     <string name="floating">ମିନି</string>
     <string name="permission_notification_title">Puzru ଚାଲୁ ଥିବାବେଳେ ଦେଖାନ୍ତୁ</string>
     <string name="permission_notification_body">Puzru ଚାଲୁ ଅଛି ଏବଂ ଅଡିଓକୁ ରୁଟ୍ କରିବାକୁ ପ୍ରସ୍ତୁତ ଅଛି ବୋଲି ଦେଖାଇବା ପାଇଁ ଏକ ନିରବ ବିଜ୍ଞପ୍ତି ବ୍ୟବହାର କରେ, ଆପ୍ ପୃଷ୍ଠଭୂମିରେ ଥିବାବେଳେ ମଧ୍ୟ। ବିଜ୍ଞପ୍ତିଗୁଡ଼ିକ ଇଚ୍ଛାଧୀନ; ସେଗୁଡ଼ିକ ବିନା ମଧ୍ୟ Puzru କାମ କରେ।</string>
@@ -87,4 +83,20 @@
     <string name="diagnostics_error_audio_preparation">Puzru ଯୋଗାଯୋଗ ଅଡିଓ ପ୍ରସ୍ତୁତ କରିପାରିଲା ନାହିଁ।</string>
     <string name="diagnostics_error_request_rejected">ଇୟରପିସ୍‌କୁ ରୂଟିଂ କରିବାର ଅନୁରୋଧ ଗ୍ରହଣ କରାଯାଇନଥିଲା।</string>
     <string name="diagnostics_error_not_completed">ରୂଟିଂ ସମ୍ପୂର୍ଣ୍ଣ କରାଯାଇପାରିଲା ନାହିଁ।</string>
+    <string name="power_turn_on">ଚାଲୁ କରନ୍ତୁ</string>
+    <string name="power_turn_off">ବନ୍ଦ କରନ୍ତୁ</string>
+    <string name="routing_notification_waiting_title">Puzru ଚାଲୁ ଅଛି</string>
+    <string name="routing_notification_waiting_text">ଅଡିଓ ଆଉଟପୁଟ ସ୍ୱିଚ୍ କରିବାକୁ ଅପେକ୍ଷା କରାଯାଉଛି</string>
+    <string name="routing_notification_active_title">ଇୟରପିସ୍ ରାଉଟିଂ ସକ୍ରିୟ</string>
+    <string name="routing_notification_active_text">ସମର୍ଥିତ ଭଏସ୍ ଅଡିଓ ଇୟରପିସ୍‌କୁ ରାଉଟ୍ କରାଯାଉଛି।</string>
+    <string name="routing_notification_error_title">ଅଡିଓ ରାଉଟିଂରେ ସମସ୍ୟା</string>
+    <string name="routing_notification_error_text">Puzru ଖୋଲନ୍ତୁ, ଏହାକୁ ବନ୍ଦ କରନ୍ତୁ ଏବଂ ପୁଣି ଚେଷ୍ଟା କରନ୍ତୁ।</string>
+    <string name="status_main_ready">ବନ୍ଦ</string>
+    <string name="status_mini_ready">ବନ୍ଦ</string>
+    <string name="status_main_waiting">ଭଏସ୍ ପାଇଁ ଅପେକ୍ଷାରତ</string>
+    <string name="status_mini_waiting">ଅପେକ୍ଷାରତ</string>
+    <string name="status_main_active">ଇୟରପିସ୍ ମାଧ୍ୟମରେ</string>
+    <string name="status_mini_active">ଇୟରପିସ୍</string>
+    <string name="status_main_error">ଅଡିଓ ରାଉଟିଂରେ ସମସ୍ୟା</string>
+    <string name="status_mini_error">ତ୍ରୁଟି</string>
 </resources>

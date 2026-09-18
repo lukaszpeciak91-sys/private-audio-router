@@ -2,15 +2,12 @@
 <resources>
     <string name="app_name">Puzru</string>
     <string name="routing_notification_channel">Puzru</string>
-    <string name="routing_notification_title">An kunna Puzru</string>
-    <string name="routing_notification_text">Ana jiran sauya inda sauti zai fito</string>
     <string name="product_title">Puzru</string>
     <string name="product_subtitle">Yi magana da AI cikin sirri, kamar kiran waya.</string>
     <string name="state_ready">A shirye</string>
     <string name="state_waiting">Ana jira</string>
     <string name="state_active">Ana aiki</string>
     <string name="state_error">Kuskure</string>
-    <string name="power_control">Kunna/Kashe</string>
     <string name="floating">Ƙarami</string>
     <string name="permission_notification_title">Nuna lokacin da aka kunna Puzru</string>
     <string name="permission_notification_body">Puzru yana amfani da sanarwa marar sauti don nuna cewa an kunna shi kuma yana shirye don sauya inda sauti zai fito, har ma lokacin da manhajar take aiki a bango. Sanarwa na da zaɓi; Puzru yana aiki ko ba tare da su ba.</string>
@@ -76,4 +73,20 @@
     <string name="diagnostics_error_audio_preparation">Puzru bai iya shirya sautin sadarwa ba.</string>
     <string name="diagnostics_error_request_rejected">Ba a amince da buƙatar tura sauti zuwa lasifikar kunne ba.</string>
     <string name="diagnostics_error_not_completed">Ba a iya kammala tura sauti ba.</string>
+    <string name="power_turn_on">Kunna</string>
+    <string name="power_turn_off">Kashe</string>
+    <string name="routing_notification_waiting_title">An kunna Puzru</string>
+    <string name="routing_notification_waiting_text">Ana jiran sauya inda sauti zai fito</string>
+    <string name="routing_notification_active_title">Tura sauti zuwa lasifikar kunne yana aiki</string>
+    <string name="routing_notification_active_text">Ana tura sautin murya mai goyon baya zuwa lasifikar kunne.</string>
+    <string name="routing_notification_error_title">Matsala wajen tura sauti</string>
+    <string name="routing_notification_error_text">Buɗe Puzru, kashe shi sannan a sake gwadawa.</string>
+    <string name="status_main_ready">A kashe</string>
+    <string name="status_mini_ready">A kashe</string>
+    <string name="status_main_waiting">Ana jiran murya</string>
+    <string name="status_mini_waiting">Ana jira</string>
+    <string name="status_main_active">Ta lasifikar kunne</string>
+    <string name="status_mini_active">Lasifikar kunne</string>
+    <string name="status_main_error">Matsala wajen tura sauti</string>
+    <string name="status_mini_error">Kuskure</string>
 </resources>

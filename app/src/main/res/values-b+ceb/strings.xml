@@ -2,15 +2,12 @@
 <resources>
     <string name="app_name">Puzru</string>
     <string name="routing_notification_channel">Puzru</string>
-    <string name="routing_notification_title">Naka-on ang Puzru</string>
-    <string name="routing_notification_text">Nagpaabot sa pag-route sa audio</string>
     <string name="product_title">Puzru</string>
     <string name="product_subtitle">Pakigsulti sa AI nga pribado, sama sa tawag sa telepono.</string>
     <string name="state_ready">Andam</string>
     <string name="state_waiting">Nagpaabot</string>
     <string name="state_active">Aktibo</string>
     <string name="state_error">Sayop</string>
-    <string name="power_control">Power</string>
     <string name="floating">Mini</string>
     <string name="permission_notification_title">Ipakita kon naka-on ang Puzru</string>
     <string name="permission_notification_body">Gigamit sa Puzru ang hilom nga pahibalo aron ipakita nga naka-on ug andam kini sa pag-route sa audio, bisan kon naa sa background ang app. Opsyonal ang mga pahibalo; molihok gihapon ang Puzru bisan wala kini.</string>
@@ -75,4 +72,20 @@
     <string name="diagnostics_error_audio_preparation">Dili maandam sa Puzru ang communication audio.</string>
     <string name="diagnostics_error_request_rejected">Wala dawata ang hangyo sa pag-route ngadto sa earpiece.</string>
     <string name="diagnostics_error_not_completed">Dili makompleto ang pag-route sa audio.</string>
+    <string name="power_turn_on">I-on</string>
+    <string name="power_turn_off">I-off</string>
+    <string name="routing_notification_waiting_title">Naka-on ang Puzru</string>
+    <string name="routing_notification_waiting_text">Nagpaabot sa pag-route sa audio</string>
+    <string name="routing_notification_active_title">Aktibo ang routing sa earpiece</string>
+    <string name="routing_notification_active_text">Ang suportadong voice audio gi-route ngadto sa built-in nga earpiece.</string>
+    <string name="routing_notification_error_title">Problema sa pag-route sa audio</string>
+    <string name="routing_notification_error_text">Ablihi ang Puzru, i-off kini, ug sulayi pag-usab.</string>
+    <string name="status_main_ready">Naka-off</string>
+    <string name="status_mini_ready">Naka-off</string>
+    <string name="status_main_waiting">Nagpaabot sa tingog</string>
+    <string name="status_mini_waiting">Nagpaabot</string>
+    <string name="status_main_active">Pinaagi sa built-in nga earpiece</string>
+    <string name="status_mini_active">Built-in nga earpiece</string>
+    <string name="status_main_error">Problema sa pag-route sa audio</string>
+    <string name="status_mini_error">Sayop</string>
 </resources>

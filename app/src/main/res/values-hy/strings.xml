@@ -2,15 +2,12 @@
 <resources>
     <string name="app_name">Puzru</string>
     <string name="routing_notification_channel">Puzru</string>
-    <string name="routing_notification_title">Puzru-ն միացված է</string>
-    <string name="routing_notification_text">Սպասում է աուդիո ելքի փոխարկման</string>
     <string name="product_title">Puzru</string>
     <string name="product_subtitle">ԱԲ-ի հետ խոսեք մասնավոր կերպով՝ ինչպես հեռախոսազանգի ժամանակ։</string>
     <string name="state_ready">Պատրաստ է</string>
     <string name="state_waiting">Սպասում է</string>
     <string name="state_active">Ակտիվ</string>
     <string name="state_error">Սխալ</string>
-    <string name="power_control">Միացնել/անջատել</string>
     <string name="floating">Մինի</string>
     <string name="permission_notification_title">Ցուցադրել, երբ Puzru-ն միացված է</string>
     <string name="permission_notification_body">Puzru-ն անձայն ծանուցմամբ ցույց է տալիս, որ միացված է և պատրաստ է փոխարկել աուդիո ելքը, նույնիսկ երբ հավելվածն աշխատում է հետին պլանում։ Ծանուցումները պարտադիր չեն․ Puzru-ն աշխատում է նաև առանց դրանց։</string>
@@ -76,4 +73,20 @@
     <string name="diagnostics_error_audio_preparation">Puzru-ին չհաջողվեց նախապատրաստել հաղորդակցության աուդիոն։</string>
     <string name="diagnostics_error_request_rejected">Ներկառուցված լսափողին ուղղորդելու հարցումը չընդունվեց։</string>
     <string name="diagnostics_error_not_completed">Չհաջողվեց ավարտել ձայնի ուղղորդումը։</string>
+    <string name="power_turn_on">Միացնել</string>
+    <string name="power_turn_off">Անջատել</string>
+    <string name="routing_notification_waiting_title">Puzru-ն միացված է</string>
+    <string name="routing_notification_waiting_text">Սպասում է աուդիո ելքի փոխարկման</string>
+    <string name="routing_notification_active_title">Դեպի ներկառուցված լսափող ուղղորդումն ակտիվ է</string>
+    <string name="routing_notification_active_text">Աջակցվող ձայնային աուդիոն ուղղորդվում է դեպի ներկառուցված լսափող։</string>
+    <string name="routing_notification_error_title">Աուդիոյի ուղղորդման խնդիր</string>
+    <string name="routing_notification_error_text">Բացեք Puzru-ն, անջատեք այն և նորից փորձեք։</string>
+    <string name="status_main_ready">Անջատված է</string>
+    <string name="status_mini_ready">Անջատված է</string>
+    <string name="status_main_waiting">Սպասում է ձայնին</string>
+    <string name="status_mini_waiting">Սպասում է</string>
+    <string name="status_main_active">Ներկառուցված լսափողի միջոցով</string>
+    <string name="status_mini_active">Ներկառուցված լսափող</string>
+    <string name="status_main_error">Աուդիոյի ուղղորդման խնդիր</string>
+    <string name="status_mini_error">Սխալ</string>
 </resources>

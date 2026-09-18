@@ -2,15 +2,12 @@
 <resources>
     <string name="app_name">Puzru</string>
     <string name="routing_notification_channel">Puzru</string>
-    <string name="routing_notification_title">Puzru включено</string>
-    <string name="routing_notification_text">Ожидание перенаправления звука</string>
     <string name="product_title">Puzru</string>
     <string name="product_subtitle">Общайтесь с ИИ конфиденциально, как по телефону.</string>
     <string name="state_ready">Готово</string>
     <string name="state_waiting">Ожидание</string>
     <string name="state_active">Активно</string>
     <string name="state_error">Ошибка</string>
-    <string name="power_control">Включить</string>
     <string name="floating">Мини</string>
     <string name="permission_notification_title">Показывать, когда Puzru включено</string>
     <string name="permission_notification_body">Puzru использует тихое уведомление, чтобы показывать, что приложение включено и готово перенаправлять звук, в том числе когда оно работает в фоновом режиме. Уведомления необязательны; Puzru работает и без них.</string>
@@ -76,4 +73,20 @@
     <string name="diagnostics_error_audio_preparation">Приложению Puzru не удалось подготовить звук для связи.</string>
     <string name="diagnostics_error_request_rejected">Запрос на маршрутизацию звука на разговорный динамик не был принят.</string>
     <string name="diagnostics_error_not_completed">Не удалось завершить маршрутизацию.</string>
+    <string name="power_turn_on">Включить</string>
+    <string name="power_turn_off">Выключить</string>
+    <string name="routing_notification_waiting_title">Puzru включено</string>
+    <string name="routing_notification_waiting_text">Ожидание перенаправления звука</string>
+    <string name="routing_notification_active_title">Перенаправление на разговорный динамик активно</string>
+    <string name="routing_notification_active_text">Поддерживаемый голосовой звук перенаправляется на разговорный динамик.</string>
+    <string name="routing_notification_error_title">Проблема с перенаправлением звука</string>
+    <string name="routing_notification_error_text">Откройте Puzru, выключите его и попробуйте снова.</string>
+    <string name="status_main_ready">Выключено</string>
+    <string name="status_mini_ready">Выключено</string>
+    <string name="status_main_waiting">Ожидание голоса</string>
+    <string name="status_mini_waiting">Ожидание</string>
+    <string name="status_main_active">Через разговорный динамик</string>
+    <string name="status_mini_active">Разговорный динамик</string>
+    <string name="status_main_error">Проблема с перенаправлением звука</string>
+    <string name="status_mini_error">Ошибка</string>
 </resources>

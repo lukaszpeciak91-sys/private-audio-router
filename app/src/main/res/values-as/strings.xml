@@ -2,15 +2,12 @@
 <resources>
     <string name="app_name">Puzru</string>
     <string name="routing_notification_channel">Puzru</string>
-    <string name="routing_notification_title">Puzru অন আছে</string>
-    <string name="routing_notification_text">অডিঅ’ আউটপুট সলনি কৰিবলৈ অপেক্ষা কৰি আছে</string>
     <string name="product_title">Puzru</string>
     <string name="product_subtitle">ফ’ন কলৰ দৰে AIৰ সৈতে ব্যক্তিগতভাৱে কথা পাতক।</string>
     <string name="state_ready">সাজু</string>
     <string name="state_waiting">অপেক্ষাৰত</string>
     <string name="state_active">সক্ৰিয়</string>
     <string name="state_error">ত্ৰুটি</string>
-    <string name="power_control">পাৱাৰ</string>
     <string name="floating">মিনি</string>
     <string name="permission_notification_title">Puzru অন থাকিলে দেখুৱাওক</string>
     <string name="permission_notification_body">Puzru অন আছে আৰু অডিঅ’ সলনি কৰিবলৈ সাজু আছে বুলি দেখুৱাবলৈ এটা নীৰৱ জাননী ব্যৱহাৰ কৰে, আনকি এপটো পটভূমিত থাকিলেও। জাননী ঐচ্ছিক; সেইবোৰ অবিহনেও Puzru-এ কাম কৰে।</string>
@@ -76,4 +73,20 @@
     <string name="diagnostics_error_audio_preparation">Puzruএ যোগাযোগৰ অডিঅ’ সাজু কৰিব নোৱাৰিলে।</string>
     <string name="diagnostics_error_request_rejected">ইয়েৰপিচলৈ অডিঅ’ ৰাউটিং কৰাৰ অনুৰোধ গ্ৰহণ কৰা নহ’ল।</string>
     <string name="diagnostics_error_not_completed">অডিঅ’ ৰাউটিং সম্পূৰ্ণ কৰিব পৰা নগ’ল।</string>
+    <string name="power_turn_on">চালু কৰক</string>
+    <string name="power_turn_off">বন্ধ কৰক</string>
+    <string name="routing_notification_waiting_title">Puzru অন আছে</string>
+    <string name="routing_notification_waiting_text">অডিঅ’ আউটপুট সলনি কৰিবলৈ অপেক্ষা কৰি আছে</string>
+    <string name="routing_notification_active_title">ইয়েৰপিচ ৰাউটিং সক্ৰিয়</string>
+    <string name="routing_notification_active_text">সমৰ্থিত ভইচ অডিঅ’ ইয়েৰপিচলৈ ৰাউট কৰা হৈছে।</string>
+    <string name="routing_notification_error_title">অডিঅ’ ৰাউটিঙৰ সমস্যা</string>
+    <string name="routing_notification_error_text">Puzru খোলক, ইয়াক বন্ধ কৰক আৰু পুনৰায় চেষ্টা কৰক।</string>
+    <string name="status_main_ready">বন্ধ</string>
+    <string name="status_mini_ready">বন্ধ</string>
+    <string name="status_main_waiting">কণ্ঠস্বৰৰ বাবে অপেক্ষা কৰি আছে</string>
+    <string name="status_mini_waiting">অপেক্ষাৰত</string>
+    <string name="status_main_active">ইয়েৰপিচৰ জৰিয়তে</string>
+    <string name="status_mini_active">ইয়েৰপিচ</string>
+    <string name="status_main_error">অডিঅ’ ৰাউটিঙৰ সমস্যা</string>
+    <string name="status_mini_error">ত্ৰুটি</string>
 </resources>

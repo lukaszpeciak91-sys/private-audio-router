@@ -2,15 +2,12 @@
 <resources>
     <string name="app_name">Puzru</string>
     <string name="routing_notification_channel">Puzru</string>
-    <string name="routing_notification_title">Puzru është ndezur</string>
-    <string name="routing_notification_text">Në pritje për ndërrimin e audios</string>
     <string name="product_title">Puzru</string>
     <string name="product_subtitle">Fol privatisht me AI, si në një telefonatë.</string>
     <string name="state_ready">Gati</string>
     <string name="state_waiting">Në pritje</string>
     <string name="state_active">Aktiv</string>
     <string name="state_error">Gabim</string>
-    <string name="power_control">Ndezja</string>
     <string name="floating">Mini</string>
     <string name="permission_notification_title">Shfaq kur Puzru është ndezur</string>
     <string name="permission_notification_body">Puzru përdor një njoftim pa zë për të treguar se është ndezur dhe gati për të ridrejtuar audion, edhe kur aplikacioni është në sfond. Njoftimet janë opsionale; Puzru funksionon edhe pa to.</string>
@@ -76,4 +73,20 @@
     <string name="diagnostics_error_audio_preparation">Puzru nuk mundi të përgatiste audion e komunikimit.</string>
     <string name="diagnostics_error_request_rejected">Kërkesa për drejtimin e audios te marrësi nuk u pranua.</string>
     <string name="diagnostics_error_not_completed">Drejtimi i audios nuk mund të përfundonte.</string>
+    <string name="power_turn_on">Aktivizo</string>
+    <string name="power_turn_off">Çaktivizo</string>
+    <string name="routing_notification_waiting_title">Puzru është ndezur</string>
+    <string name="routing_notification_waiting_text">Në pritje për ndërrimin e audios</string>
+    <string name="routing_notification_active_title">Ridrejtimi te marrësi është aktiv</string>
+    <string name="routing_notification_active_text">Audioja zanore e mbështetur po ridrejtohet te marrësi.</string>
+    <string name="routing_notification_error_title">Problem me ridrejtimin e audios</string>
+    <string name="routing_notification_error_text">Hap Puzru, çaktivizoje dhe provo përsëri.</string>
+    <string name="status_main_ready">Çaktivizuar</string>
+    <string name="status_mini_ready">Çaktivizuar</string>
+    <string name="status_main_waiting">Në pritje të zërit</string>
+    <string name="status_mini_waiting">Në pritje</string>
+    <string name="status_main_active">Përmes marrësit</string>
+    <string name="status_mini_active">Marrësi</string>
+    <string name="status_main_error">Problem me ridrejtimin e audios</string>
+    <string name="status_mini_error">Gabim</string>
 </resources>

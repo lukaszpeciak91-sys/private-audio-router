@@ -2,15 +2,12 @@
 <resources>
     <string name="app_name">Puzru</string>
     <string name="routing_notification_channel">Puzru</string>
-    <string name="routing_notification_title">Puzru кабызылган</string>
-    <string name="routing_notification_text">Тавышны юнәлтү көтелә</string>
     <string name="product_title">Puzru</string>
     <string name="product_subtitle">ЯИ белән телефоннан сөйләшкәндәй, хосусый сөйләшегез.</string>
     <string name="state_ready">Әзер</string>
     <string name="state_waiting">Көтә</string>
     <string name="state_active">Актив</string>
     <string name="state_error">Хата</string>
-    <string name="power_control">Кабызу/сүндерү</string>
     <string name="floating">Мини</string>
     <string name="permission_notification_title">Puzru кабызылганда күрсәтү</string>
     <string name="permission_notification_body">Puzru кабызылганын һәм тавышны юнәлтергә әзер булуын, шул исәптән кушымта фонда эшләгәндә дә, тавышсыз белдерү аша күрсәтә. Белдерүләр мәҗбүри түгел; Puzru аларсыз да эшли.</string>
@@ -75,4 +72,20 @@
     <string name="diagnostics_error_audio_preparation">Puzru элемтә тавышын әзерли алмады.</string>
     <string name="diagnostics_error_request_rejected">Сөйләшү динамигына юнәлтү соравы кабул ителмәде.</string>
     <string name="diagnostics_error_not_completed">Юнәлтүне тәмамлап булмады.</string>
+    <string name="power_turn_on">Кабыз</string>
+    <string name="power_turn_off">Сүндер</string>
+    <string name="routing_notification_waiting_title">Puzru кабызылган</string>
+    <string name="routing_notification_waiting_text">Тавышны юнәлтү көтелә</string>
+    <string name="routing_notification_active_title">Сөйләшү динамигына юнәлтү актив</string>
+    <string name="routing_notification_active_text">Хупланган тавыш аудиосы сөйләшү динамигына юнәлтелә.</string>
+    <string name="routing_notification_error_title">Тавышны юнәлтү проблемасы</string>
+    <string name="routing_notification_error_text">Puzru-ны ачыгыз, сүндерегез һәм кабатлап карагыз.</string>
+    <string name="status_main_ready">Сүндерелгән</string>
+    <string name="status_mini_ready">Сүндерелгән</string>
+    <string name="status_main_waiting">Тавыш көтелә</string>
+    <string name="status_mini_waiting">Көтә</string>
+    <string name="status_main_active">Сөйләшү динамигы аша</string>
+    <string name="status_mini_active">Сөйләшү динамигы</string>
+    <string name="status_main_error">Тавышны юнәлтү проблемасы</string>
+    <string name="status_mini_error">Хата</string>
 </resources>

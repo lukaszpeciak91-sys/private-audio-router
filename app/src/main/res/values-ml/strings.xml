@@ -2,15 +2,12 @@
 <resources>
     <string name="app_name">Puzru</string>
     <string name="routing_notification_channel">Puzru</string>
-    <string name="routing_notification_title">Puzru ഓണാണ്</string>
-    <string name="routing_notification_text">ഓഡിയോ ഔട്ട്‌പുട്ട് മാറ്റാൻ കാത്തിരിക്കുന്നു</string>
     <string name="product_title">Puzru</string>
     <string name="product_subtitle">ഒരു ഫോൺ കോൾ പോലെ AI-യുമായി സ്വകാര്യമായി സംസാരിക്കൂ.</string>
     <string name="state_ready">തയ്യാറാണ്</string>
     <string name="state_waiting">കാത്തിരിക്കുന്നു</string>
     <string name="state_active">സജീവം</string>
     <string name="state_error">പിശക്</string>
-    <string name="power_control">പവർ</string>
     <string name="floating">മിനി</string>
     <string name="permission_notification_title">Puzru ഓണായിരിക്കുമ്പോൾ കാണിക്കുക</string>
     <string name="permission_notification_body">Puzru ഓണാണെന്നും ഓഡിയോ റൂട്ട് ചെയ്യാൻ തയ്യാറാണെന്നും കാണിക്കാൻ നിശ്ശബ്ദ അറിയിപ്പ് ഉപയോഗിക്കുന്നു, ആപ്പ് പശ്ചാത്തലത്തിലായിരിക്കുമ്പോഴും. അറിയിപ്പുകൾ ഐച്ഛികമാണ്; അവയില്ലാതെയും Puzru പ്രവർത്തിക്കും.</string>
@@ -76,4 +73,20 @@
     <string name="diagnostics_error_audio_preparation">Puzru-യ്ക്ക് ആശയവിനിമയ ഓഡിയോ തയ്യാറാക്കാനായില്ല.</string>
     <string name="diagnostics_error_request_rejected">ഇയർപീസിലേക്കുള്ള ഓഡിയോ റൂട്ടിംഗ് അഭ്യർത്ഥന സ്വീകരിക്കപ്പെട്ടില്ല.</string>
     <string name="diagnostics_error_not_completed">ഓഡിയോ റൂട്ടിംഗ് പൂർത്തിയാക്കാനായില്ല.</string>
+    <string name="power_turn_on">ഓൺ ചെയ്യുക</string>
+    <string name="power_turn_off">ഓഫ് ചെയ്യുക</string>
+    <string name="routing_notification_waiting_title">Puzru ഓണാണ്</string>
+    <string name="routing_notification_waiting_text">ഓഡിയോ ഔട്ട്‌പുട്ട് മാറ്റാൻ കാത്തിരിക്കുന്നു</string>
+    <string name="routing_notification_active_title">ഇയർപീസ് റൂട്ടിംഗ് സജീവമാണ്</string>
+    <string name="routing_notification_active_text">പിന്തുണയ്ക്കുന്ന വോയിസ് ഓഡിയോ ഇയർപീസിലേക്ക് റൂട്ട് ചെയ്യുന്നു.</string>
+    <string name="routing_notification_error_title">ഓഡിയോ റൂട്ടിംഗ് പ്രശ്നം</string>
+    <string name="routing_notification_error_text">Puzru തുറക്കുക, അത് ഓഫ് ചെയ്യുക, വീണ്ടും ശ്രമിക്കുക.</string>
+    <string name="status_main_ready">ഓഫ്</string>
+    <string name="status_mini_ready">ഓഫ്</string>
+    <string name="status_main_waiting">വോയിസിനായി കാത്തിരിക്കുന്നു</string>
+    <string name="status_mini_waiting">കാത്തിരിക്കുന്നു</string>
+    <string name="status_main_active">ഇയർപീസിലൂടെ</string>
+    <string name="status_mini_active">ഇയർപീസ്</string>
+    <string name="status_main_error">ഓഡിയോ റൂട്ടിംഗ് പ്രശ്നം</string>
+    <string name="status_mini_error">പിശക്</string>
 </resources>

@@ -2,15 +2,12 @@
 <resources>
     <string name="app_name">Puzru</string>
     <string name="routing_notification_channel">Puzru</string>
-    <string name="routing_notification_title">Puzru on sisse lülitatud</string>
-    <string name="routing_notification_text">Ootab heli suunamist</string>
     <string name="product_title">Puzru</string>
     <string name="product_subtitle">Räägi AI-ga privaatselt, nagu telefonikõnes.</string>
     <string name="state_ready">Valmis</string>
     <string name="state_waiting">Ootab</string>
     <string name="state_active">Aktiivne</string>
     <string name="state_error">Viga</string>
-    <string name="power_control">Toide</string>
     <string name="floating">Mini</string>
     <string name="permission_notification_title">Kuva, kui Puzru on sisse lülitatud</string>
     <string name="permission_notification_body">Puzru näitab vaikse märguandega, et see on sisse lülitatud ja valmis heli suunama, ka siis, kui rakendus töötab taustal. Märguanded on valikulised; Puzru töötab ka ilma nendeta.</string>
@@ -76,4 +73,20 @@
     <string name="diagnostics_error_audio_preparation">Puzru ei saanud sideheli ette valmistada.</string>
     <string name="diagnostics_error_request_rejected">Kuularisse suunamise taotlust ei võetud vastu.</string>
     <string name="diagnostics_error_not_completed">Heli suunamist ei saanud lõpule viia.</string>
+    <string name="power_turn_on">Lülita sisse</string>
+    <string name="power_turn_off">Lülita välja</string>
+    <string name="routing_notification_waiting_title">Puzru on sisse lülitatud</string>
+    <string name="routing_notification_waiting_text">Ootab heli suunamist</string>
+    <string name="routing_notification_active_title">Heli suunamine kuularisse on aktiivne</string>
+    <string name="routing_notification_active_text">Toetatud häälheli suunatakse kuularisse.</string>
+    <string name="routing_notification_error_title">Heli suunamise probleem</string>
+    <string name="routing_notification_error_text">Ava Puzru, lülita see välja ja proovi uuesti.</string>
+    <string name="status_main_ready">Väljas</string>
+    <string name="status_mini_ready">Väljas</string>
+    <string name="status_main_waiting">Ootab häält</string>
+    <string name="status_mini_waiting">Ootab</string>
+    <string name="status_main_active">Kuulari kaudu</string>
+    <string name="status_mini_active">Kuular</string>
+    <string name="status_main_error">Heli suunamise probleem</string>
+    <string name="status_mini_error">Viga</string>
 </resources>

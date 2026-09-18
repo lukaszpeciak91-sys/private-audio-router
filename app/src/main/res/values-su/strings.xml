@@ -2,15 +2,12 @@
 <resources>
     <string name="app_name">Puzru</string>
     <string name="routing_notification_channel">Puzru</string>
-    <string name="routing_notification_title">Puzru hurung</string>
-    <string name="routing_notification_text">Ngadagoan pikeun ngarahkeun audio</string>
     <string name="product_title">Puzru</string>
     <string name="product_subtitle">Ngobrol jeung AI sacara pribadi, kawas nelepon.</string>
     <string name="state_ready">Siap</string>
     <string name="state_waiting">Ngadagoan</string>
     <string name="state_active">Aktip</string>
     <string name="state_error">Kasalahan</string>
-    <string name="power_control">Hurung/pareum</string>
     <string name="floating">Mini</string>
     <string name="permission_notification_title">Témbongkeun nalika Puzru hurung</string>
     <string name="permission_notification_body">Puzru maké béwara jempling pikeun némbongkeun yén éta hurung tur siap ngarahkeun audio, kaasup nalika aplikasi jalan di latar tukang. Béwara sipatna pilihan; Puzru tetep jalan tanpa béwara.</string>
@@ -75,4 +72,20 @@
     <string name="diagnostics_error_audio_preparation">Puzru teu bisa nyiapkeun audio komunikasi.</string>
     <string name="diagnostics_error_request_rejected">Paménta pikeun ngarahkeun audio ka speaker ceuli bawaan telepon teu ditarima.</string>
     <string name="diagnostics_error_not_completed">Pangarahan audio teu bisa diréngsékeun.</string>
+    <string name="power_turn_on">Hurungkeun</string>
+    <string name="power_turn_off">Pareuman</string>
+    <string name="routing_notification_waiting_title">Puzru hurung</string>
+    <string name="routing_notification_waiting_text">Ngadagoan pikeun ngarahkeun audio</string>
+    <string name="routing_notification_active_title">Ngarahkeun ka spéker ceuli aktip</string>
+    <string name="routing_notification_active_text">Audio sora anu dirojong keur diarahkeun ka spéker ceuli bawaan telepon.</string>
+    <string name="routing_notification_error_title">Masalah ngarahkeun audio</string>
+    <string name="routing_notification_error_text">Buka Puzru, pareuman, tuluy cobian deui.</string>
+    <string name="status_main_ready">Pareum</string>
+    <string name="status_mini_ready">Pareum</string>
+    <string name="status_main_waiting">Ngadagoan sora</string>
+    <string name="status_mini_waiting">Ngadagoan</string>
+    <string name="status_main_active">Ngaliwatan spéker ceuli bawaan telepon</string>
+    <string name="status_mini_active">Spéker ceuli bawaan telepon</string>
+    <string name="status_main_error">Masalah ngarahkeun audio</string>
+    <string name="status_mini_error">Kasalahan</string>
 </resources>

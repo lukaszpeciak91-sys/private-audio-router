@@ -2,8 +2,6 @@
 <resources>
     <string name="app_name">Puzru</string>
     <string name="routing_notification_channel">Puzru</string>
-    <string name="routing_notification_title">Puzru yoniq</string>
-    <string name="routing_notification_text">Audio chiqishini almashtirish kutilmoqda</string>
 
     <string name="product_title">Puzru</string>
     <string name="product_subtitle">AI bilan xuddi telefon qo‘ng‘irog‘idek, boshqalarga eshittirmay gaplashing.</string>
@@ -12,8 +10,6 @@
     <string name="state_waiting">Kutilmoqda</string>
     <string name="state_active">Faol</string>
     <string name="state_error">Xatolik</string>
-
-    <string name="power_control">Yoqish/O‘chirish</string>
     <string name="floating">Mini</string>
     <string name="permission_notification_title">Puzru yoniq bo‘lganda ko‘rsatish</string>
     <string name="permission_notification_body">Puzru yoniq va audioni yo‘naltirishga tayyor ekanini, ilova fonda ishlayotganida ham, ovozsiz bildirishnoma orqali ko‘rsatadi. Bildirishnomalar ixtiyoriy; Puzru ularsiz ham ishlaydi.</string>
@@ -87,4 +83,20 @@
     <string name="diagnostics_error_audio_preparation">Puzru aloqa audiosini tayyorlay olmadi.</string>
     <string name="diagnostics_error_request_rejected">Quloq karnaychasiga yo‘naltirish so‘rovi qabul qilinmadi.</string>
     <string name="diagnostics_error_not_completed">Audio yo‘naltirishni yakunlab bo‘lmadi.</string>
+    <string name="power_turn_on">Yoqing</string>
+    <string name="power_turn_off">O‘chiring</string>
+    <string name="routing_notification_waiting_title">Puzru yoniq</string>
+    <string name="routing_notification_waiting_text">Audio chiqishini almashtirish kutilmoqda</string>
+    <string name="routing_notification_active_title">Quloq karnaychasiga yo‘naltirish faol</string>
+    <string name="routing_notification_active_text">Qo‘llab-quvvatlanadigan ovoz audiosi quloq karnaychasiga yo‘naltirilmoqda.</string>
+    <string name="routing_notification_error_title">Audioni yo‘naltirish muammosi</string>
+    <string name="routing_notification_error_text">Puzru’ni oching, uni o‘chiring va qayta urinib ko‘ring.</string>
+    <string name="status_main_ready">O‘chirilgan</string>
+    <string name="status_mini_ready">O‘chirilgan</string>
+    <string name="status_main_waiting">Ovoz kutilmoqda</string>
+    <string name="status_mini_waiting">Kutilmoqda</string>
+    <string name="status_main_active">Quloq karnaychasi orqali</string>
+    <string name="status_mini_active">Quloq karnaychasi</string>
+    <string name="status_main_error">Audioni yo‘naltirish muammosi</string>
+    <string name="status_mini_error">Xatolik</string>
 </resources>

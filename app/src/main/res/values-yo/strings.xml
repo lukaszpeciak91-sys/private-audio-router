@@ -2,15 +2,12 @@
 <resources>
     <string name="app_name">Puzru</string>
     <string name="routing_notification_channel">Puzru</string>
-    <string name="routing_notification_title">Puzru ti wa ni titan</string>
-    <string name="routing_notification_text">N dúró láti darí ohùn</string>
     <string name="product_title">Puzru</string>
     <string name="product_subtitle">Bá AI sọ̀rọ̀ ní ìkọ̀kọ̀, bí ìpè tẹlifóònù.</string>
     <string name="state_ready">Ṣetán</string>
     <string name="state_waiting">N dúró</string>
     <string name="state_active">N ṣiṣẹ́ lọ́wọ́</string>
     <string name="state_error">Àṣìṣe</string>
-    <string name="power_control">Agbára</string>
     <string name="floating">Kékeré</string>
     <string name="permission_notification_title">Fihàn nígbà tí Puzru bá wà ní titan</string>
     <string name="permission_notification_body">Puzru ń lo ìfitónilétí tí kò ní ohùn láti fi hàn pé ó wà ní titan, ó sì ti ṣetán láti darí ohùn, títí kan ìgbà tí ètò náà bá ń ṣiṣẹ́ lẹ́yìn. Ìfitónilétí jẹ́ àṣàyàn; Puzru ṣì ń ṣiṣẹ́ láìsí wọn.</string>
@@ -75,4 +72,20 @@
     <string name="diagnostics_error_audio_preparation">Puzru kò lè pèsè ohùn ìbánisọ̀rọ̀.</string>
     <string name="diagnostics_error_request_rejected">A kò gba ìbéèrè láti darí ohùn sí agbohùnsókè etí inú foonu.</string>
     <string name="diagnostics_error_not_completed">A kò lè parí dídarí ohùn.</string>
+    <string name="power_turn_on">Tan</string>
+    <string name="power_turn_off">Pa</string>
+    <string name="routing_notification_waiting_title">Puzru ti wa ni titan</string>
+    <string name="routing_notification_waiting_text">N dúró láti darí ohùn</string>
+    <string name="routing_notification_active_title">Ìdarí sí agbohùnsókè etí inú foonu ń ṣiṣẹ́</string>
+    <string name="routing_notification_active_text">Ohùn tó jẹ́ àtìlẹ́yìn ń lọ sí agbohùnsókè etí inú foonu.</string>
+    <string name="routing_notification_error_title">Ìṣòro ìdarí ohùn</string>
+    <string name="routing_notification_error_text">Ṣí Puzru, pa á, kí o sì tún gbìyànjú.</string>
+    <string name="status_main_ready">Pipa</string>
+    <string name="status_mini_ready">Pipa</string>
+    <string name="status_main_waiting">N dúró de ohùn</string>
+    <string name="status_mini_waiting">N dúró</string>
+    <string name="status_main_active">Nípasẹ̀ agbohùnsókè etí inú foonu</string>
+    <string name="status_mini_active">Agbohùnsókè etí inú foonu</string>
+    <string name="status_main_error">Ìṣòro ìdarí ohùn</string>
+    <string name="status_mini_error">Àṣìṣe</string>
 </resources>

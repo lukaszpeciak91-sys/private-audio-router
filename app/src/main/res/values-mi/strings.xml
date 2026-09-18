@@ -2,15 +2,12 @@
 <resources>
     <string name="app_name">Puzru</string>
     <string name="routing_notification_channel">Puzru</string>
-    <string name="routing_notification_title">Kei te kā a Puzru</string>
-    <string name="routing_notification_text">E tatari ana ki te ararere ororongo</string>
     <string name="product_title">Puzru</string>
     <string name="product_subtitle">Kōrero takitahi ki te AI, anō nei he waea.</string>
     <string name="state_ready">Kua rite</string>
     <string name="state_waiting">E tatari ana</string>
     <string name="state_active">E hohe ana</string>
     <string name="state_error">Hapa</string>
-    <string name="power_control">Whakakā/whakaweto</string>
     <string name="floating">Mini</string>
     <string name="permission_notification_title">Whakaaturia ina kā a Puzru</string>
     <string name="permission_notification_body">Ka whakamahi a Puzru i tētahi whakamōhiotanga ngū hei whakaatu kei te kā, ā, kua rite ki te ararere ororongo, tae atu ki te wā kei muri te taupānga. He mea kōwhiri ngā whakamōhiotanga; ka mahi tonu a Puzru me te kore aua whakamōhiotanga.</string>
@@ -75,4 +72,20 @@
     <string name="diagnostics_error_audio_preparation">Kāore i taea e Puzru te whakarite ororongo whakawhitiwhiti.</string>
     <string name="diagnostics_error_request_rejected">Kāore i whakaaetia te tono ararere ki te kaikorero-taringa.</string>
     <string name="diagnostics_error_not_completed">Kāore i taea te whakaoti te ararere.</string>
+    <string name="power_turn_on">Whakakā</string>
+    <string name="power_turn_off">Whakaweto</string>
+    <string name="routing_notification_waiting_title">Kei te kā a Puzru</string>
+    <string name="routing_notification_waiting_text">E tatari ana ki te ararere ororongo</string>
+    <string name="routing_notification_active_title">Kei te hohe te ararere ki te kaikorero-taringa</string>
+    <string name="routing_notification_active_text">Kei te ararerehia te ororongo reo tautoko ki te kaikorero-taringa.</string>
+    <string name="routing_notification_error_title">He raruraru ki te ararere ororongo</string>
+    <string name="routing_notification_error_text">Whakatuwheratia a Puzru, whakawetohia, ka ngana anō.</string>
+    <string name="status_main_ready">Weto</string>
+    <string name="status_mini_ready">Weto</string>
+    <string name="status_main_waiting">E tatari ana ki te reo</string>
+    <string name="status_mini_waiting">E tatari ana</string>
+    <string name="status_main_active">Mā te kaikorero-taringa</string>
+    <string name="status_mini_active">Kaikorero-taringa</string>
+    <string name="status_main_error">He raruraru ki te ararere ororongo</string>
+    <string name="status_mini_error">Hapa</string>
 </resources>

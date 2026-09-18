@@ -2,15 +2,12 @@
 <resources>
     <string name="app_name">Puzru</string>
     <string name="routing_notification_channel">Puzru</string>
-    <string name="routing_notification_title">Puzru е включено</string>
-    <string name="routing_notification_text">Изчакване за превключване на звука</string>
     <string name="product_title">Puzru</string>
     <string name="product_subtitle">Разговаряйте насаме с ИИ, както по телефона.</string>
     <string name="state_ready">Готово</string>
     <string name="state_waiting">Изчакване</string>
     <string name="state_active">Активно</string>
     <string name="state_error">Грешка</string>
-    <string name="power_control">Включване/изключване</string>
     <string name="floating">Мини</string>
     <string name="permission_notification_title">Показване, когато Puzru е включено</string>
     <string name="permission_notification_body">Puzru използва тихо известие, за да показва, че е включено и готово да превключва звука, включително когато приложението е във фонов режим. Известията са по избор; Puzru работи и без тях.</string>
@@ -76,4 +73,20 @@
     <string name="diagnostics_error_audio_preparation">Puzru не можа да подготви аудиото за комуникация.</string>
     <string name="diagnostics_error_request_rejected">Заявката за насочване към телефонната слушалка не беше приета.</string>
     <string name="diagnostics_error_not_completed">Насочването не можа да бъде завършено.</string>
+    <string name="power_turn_on">Включи</string>
+    <string name="power_turn_off">Изключи</string>
+    <string name="routing_notification_waiting_title">Puzru е включено</string>
+    <string name="routing_notification_waiting_text">Изчакване за превключване на звука</string>
+    <string name="routing_notification_active_title">Пренасочването към слушалката е активно</string>
+    <string name="routing_notification_active_text">Поддържаният гласов звук се пренасочва към телефонната слушалка.</string>
+    <string name="routing_notification_error_title">Проблем с пренасочването на звука</string>
+    <string name="routing_notification_error_text">Отворете Puzru, изключете го и опитайте отново.</string>
+    <string name="status_main_ready">Изключено</string>
+    <string name="status_mini_ready">Изключено</string>
+    <string name="status_main_waiting">Изчаква глас</string>
+    <string name="status_mini_waiting">Изчакване</string>
+    <string name="status_main_active">През телефонната слушалка</string>
+    <string name="status_mini_active">Телефонна слушалка</string>
+    <string name="status_main_error">Проблем с пренасочването на звука</string>
+    <string name="status_mini_error">Грешка</string>
 </resources>

@@ -2,15 +2,12 @@
 <resources>
     <string name="app_name">Puzru</string>
     <string name="routing_notification_channel">Puzru</string>
-    <string name="routing_notification_title">Puzru er tendrað</string>
-    <string name="routing_notification_text">Bíðar eftir at skifta ljóðið</string>
     <string name="product_title">Puzru</string>
     <string name="product_subtitle">Tosa einsliga við AI, sum í einari telefonsamrøðu.</string>
     <string name="state_ready">Klárt</string>
     <string name="state_waiting">Bíðar</string>
     <string name="state_active">Virkið</string>
     <string name="state_error">Villa</string>
-    <string name="power_control">Streymur</string>
     <string name="floating">Mini</string>
     <string name="permission_notification_title">Vís, tá Puzru er tendrað</string>
     <string name="permission_notification_body">Puzru brúkar eina ljóðleysa fráboðan til at vísa, at tað er tendrað og klárt at skifta ljóðið, eisini tá appin koyrir í bakgrundini. Fráboðanir eru valfríar; Puzru virkar eisini uttan tær.</string>
@@ -76,4 +73,20 @@
     <string name="diagnostics_error_audio_preparation">Puzru fekk ikki fyrireikað samskiftisljóð.</string>
     <string name="diagnostics_error_request_rejected">Umbønin um at beina ljóðið til oyrahátalaran varð ikki góðtikin.</string>
     <string name="diagnostics_error_not_completed">Tað bar ikki til at fullføra ljóðbeiningina.</string>
+    <string name="power_turn_on">Tendra</string>
+    <string name="power_turn_off">Sløkk</string>
+    <string name="routing_notification_waiting_title">Puzru er tendrað</string>
+    <string name="routing_notification_waiting_text">Bíðar eftir at skifta ljóðið</string>
+    <string name="routing_notification_active_title">Leiðing til oyrahátalarans er virkin</string>
+    <string name="routing_notification_active_text">Stuðlað taluljóð verður leitt til oyrahátalarans.</string>
+    <string name="routing_notification_error_title">Trupulleiki við ljóðleiðing</string>
+    <string name="routing_notification_error_text">Opna Puzru, sløkk tað og royn aftur.</string>
+    <string name="status_main_ready">Sløkt</string>
+    <string name="status_mini_ready">Sløkt</string>
+    <string name="status_main_waiting">Bíðar eftir talu</string>
+    <string name="status_mini_waiting">Bíðar</string>
+    <string name="status_main_active">Um oyrahátalaran</string>
+    <string name="status_mini_active">Oyrahátalari</string>
+    <string name="status_main_error">Trupulleiki við ljóðleiðing</string>
+    <string name="status_mini_error">Villa</string>
 </resources>

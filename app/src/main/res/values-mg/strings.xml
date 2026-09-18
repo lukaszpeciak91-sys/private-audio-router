@@ -2,15 +2,12 @@
 <resources>
     <string name="app_name">Puzru</string>
     <string name="routing_notification_channel">Puzru</string>
-    <string name="routing_notification_title">Mandeha ny Puzru</string>
-    <string name="routing_notification_text">Miandry ny fampitodihana ny feo</string>
     <string name="product_title">Puzru</string>
     <string name="product_subtitle">Miresaha mitokana amin’ny AI, toy ny antso an-telefaonina.</string>
     <string name="state_ready">Vonona</string>
     <string name="state_waiting">Miandry</string>
     <string name="state_active">Mavitrika</string>
     <string name="state_error">Hadisoana</string>
-    <string name="power_control">Fampandehanana</string>
     <string name="floating">Kely</string>
     <string name="permission_notification_title">Asehoy rehefa mandeha ny Puzru</string>
     <string name="permission_notification_body">Mampiasa fampandrenesana mangina ny Puzru mba hampisehoana fa mandeha sy vonona hampitodika ny feo izy, na dia mandeha any ambadika aza ny rindranasa. Tsy voatery ny fampandrenesana; mbola mandeha tsy misy azy ireo ny Puzru.</string>
@@ -75,4 +72,20 @@
     <string name="diagnostics_error_audio_preparation">Tsy afaka nanomana ny feon’ny fifandraisana ny Puzru.</string>
     <string name="diagnostics_error_request_rejected">Tsy nekena ny fangatahana hampitodika ny feo mankany amin’ny fanamafisam-peo anatiny eo amin’ny sofina.</string>
     <string name="diagnostics_error_not_completed">Tsy vita ny fampitodihana feo.</string>
+    <string name="power_turn_on">Alefaso</string>
+    <string name="power_turn_off">Vonoy</string>
+    <string name="routing_notification_waiting_title">Mandeha ny Puzru</string>
+    <string name="routing_notification_waiting_text">Miandry ny fampitodihana ny feo</string>
+    <string name="routing_notification_active_title">Mandeha ny fampitodihana ny feo any amin’ny fanamafisam-peo anatiny eo amin’ny sofina</string>
+    <string name="routing_notification_active_text">Atodika any amin’ny fanamafisam-peo anatiny eo amin’ny sofina ny feo tohanana.</string>
+    <string name="routing_notification_error_title">Olana amin’ny fampitodihana ny feo</string>
+    <string name="routing_notification_error_text">Sokafy Puzru, vonoy ary andramo indray.</string>
+    <string name="status_main_ready">Tsy mandeha</string>
+    <string name="status_mini_ready">Tsy mandeha</string>
+    <string name="status_main_waiting">Miandry feo</string>
+    <string name="status_mini_waiting">Miandry</string>
+    <string name="status_main_active">Amin’ny fanamafisam-peo anatiny eo amin’ny sofina</string>
+    <string name="status_mini_active">Fanamafisam-peo anatiny eo amin’ny sofina</string>
+    <string name="status_main_error">Olana amin’ny fampitodihana ny feo</string>
+    <string name="status_mini_error">Hadisoana</string>
 </resources>

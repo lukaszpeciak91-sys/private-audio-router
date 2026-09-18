@@ -2,15 +2,12 @@
 <resources>
     <string name="app_name">Puzru</string>
     <string name="routing_notification_channel">Puzru</string>
-    <string name="routing_notification_title">Puzru асаалттай</string>
-    <string name="routing_notification_text">Аудио гаралтыг солихыг хүлээж байна</string>
     <string name="product_title">Puzru</string>
     <string name="product_subtitle">ХОУ-тай утсаар ярьж байгаа мэт хувийн байдлаар ярилцаарай.</string>
     <string name="state_ready">Бэлэн</string>
     <string name="state_waiting">Хүлээж байна</string>
     <string name="state_active">Идэвхтэй</string>
     <string name="state_error">Алдаа</string>
-    <string name="power_control">Асаах/унтраах</string>
     <string name="floating">Мини</string>
     <string name="permission_notification_title">Puzru асаалттай үед харуулах</string>
     <string name="permission_notification_body">Puzru асаалттай бөгөөд аудиог чиглүүлэхэд бэлэн байгааг, апп ард ажиллаж байх үед ч, чимээгүй мэдэгдлээр харуулна. Мэдэгдэл сонголттой; Puzru мэдэгдэлгүйгээр ч ажиллана.</string>
@@ -76,4 +73,20 @@
     <string name="diagnostics_error_audio_preparation">Puzru харилцаа холбооны аудиог бэлтгэж чадсангүй.</string>
     <string name="diagnostics_error_request_rejected">Чихний чанга яригч руу чиглүүлэх хүсэлтийг хүлээн зөвшөөрөөгүй.</string>
     <string name="diagnostics_error_not_completed">Аудио чиглүүлэлтийг дуусгаж чадсангүй.</string>
+    <string name="power_turn_on">Асаах</string>
+    <string name="power_turn_off">Унтраах</string>
+    <string name="routing_notification_waiting_title">Puzru асаалттай</string>
+    <string name="routing_notification_waiting_text">Аудио гаралтыг солихыг хүлээж байна</string>
+    <string name="routing_notification_active_title">Чихний чанга яригч руу чиглүүлэх идэвхтэй</string>
+    <string name="routing_notification_active_text">Дэмжигдсэн дуут аудио чихний чанга яригч руу чиглүүлэгдэж байна.</string>
+    <string name="routing_notification_error_title">Аудио чиглүүлэлтийн асуудал</string>
+    <string name="routing_notification_error_text">Puzru-г нээгээд, унтраагаад дахин оролдоно уу.</string>
+    <string name="status_main_ready">Унтраалттай</string>
+    <string name="status_mini_ready">Унтраалттай</string>
+    <string name="status_main_waiting">Дуу хоолойг хүлээж байна</string>
+    <string name="status_mini_waiting">Хүлээж байна</string>
+    <string name="status_main_active">Чихний чанга яригчаар</string>
+    <string name="status_mini_active">Чихний чанга яригч</string>
+    <string name="status_main_error">Аудио чиглүүлэлтийн асуудал</string>
+    <string name="status_mini_error">Алдаа</string>
 </resources>

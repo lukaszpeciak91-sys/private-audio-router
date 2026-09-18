@@ -2,15 +2,12 @@
 <resources>
     <string name="app_name">Puzru</string>
     <string name="routing_notification_channel">Puzru</string>
-    <string name="routing_notification_title">Puzru är på</string>
-    <string name="routing_notification_text">Väntar på att växla ljud</string>
     <string name="product_title">Puzru</string>
     <string name="product_subtitle">Prata privat med AI, som i ett telefonsamtal.</string>
     <string name="state_ready">Redo</string>
     <string name="state_waiting">Väntar</string>
     <string name="state_active">Aktiv</string>
     <string name="state_error">Fel</string>
-    <string name="power_control">Ström</string>
     <string name="floating">Mini</string>
     <string name="permission_notification_title">Visa när Puzru är på</string>
     <string name="permission_notification_body">Puzru använder en tyst avisering för att visa att det är på och redo att dirigera om ljud, även när appen körs i bakgrunden. Aviseringar är valfria; Puzru fungerar även utan dem.</string>
@@ -76,4 +73,20 @@
     <string name="diagnostics_error_audio_preparation">Puzru kunde inte förbereda kommunikationsljud.</string>
     <string name="diagnostics_error_request_rejected">Begäran om ljuddirigering till samtalsluren godkändes inte.</string>
     <string name="diagnostics_error_not_completed">Ljuddirigeringen kunde inte slutföras.</string>
+    <string name="power_turn_on">Slå på</string>
+    <string name="power_turn_off">Slå av</string>
+    <string name="routing_notification_waiting_title">Puzru är på</string>
+    <string name="routing_notification_waiting_text">Väntar på att växla ljud</string>
+    <string name="routing_notification_active_title">Dirigering till samtalsluren är aktiv</string>
+    <string name="routing_notification_active_text">Ljud för tal som stöds dirigeras till samtalsluren.</string>
+    <string name="routing_notification_error_title">Problem med ljuddirigering</string>
+    <string name="routing_notification_error_text">Öppna Puzru, slå av det och försök igen.</string>
+    <string name="status_main_ready">Av</string>
+    <string name="status_mini_ready">Av</string>
+    <string name="status_main_waiting">Väntar på tal</string>
+    <string name="status_mini_waiting">Väntar</string>
+    <string name="status_main_active">Via samtalsluren</string>
+    <string name="status_mini_active">Samtalslur</string>
+    <string name="status_main_error">Problem med ljuddirigering</string>
+    <string name="status_mini_error">Fel</string>
 </resources>

@@ -2,8 +2,6 @@
 <resources>
     <string name="app_name">Puzru</string>
     <string name="routing_notification_channel">Puzru</string>
-    <string name="routing_notification_title">Puzru ёниқ</string>
-    <string name="routing_notification_text">Аудио чиқишини йўналтириш кутилмоқда</string>
 
     <string name="product_title">Puzru</string>
     <string name="product_subtitle">Сунъий интеллект билан худди телефон қўнғироғидек, бошқаларга эшиттирмай гаплашинг.</string>
@@ -12,8 +10,6 @@
     <string name="state_waiting">Кутилмоқда</string>
     <string name="state_active">Фаол</string>
     <string name="state_error">Хатолик</string>
-
-    <string name="power_control">Ёқиш/ўчириш</string>
     <string name="floating">Мини</string>
     <string name="permission_notification_title">Puzru ёниқ бўлганда кўрсат</string>
     <string name="permission_notification_body">Puzru ёниқ ва аудиони йўналтиришга тайёр эканини, илова фонда бўлганда ҳам, овозсиз билдиришнома орқали кўрсатади. Билдиришномалар ихтиёрий; Puzru уларсиз ҳам ишлайди.</string>
@@ -81,4 +77,20 @@
     <string name="diagnostics_error_audio_preparation">Puzru алоқа аудиосини тайёрлай олмади.</string>
     <string name="diagnostics_error_request_rejected">Қулоқ динамигига йўналтириш сўрови қабул қилинмади.</string>
     <string name="diagnostics_error_not_completed">Аудиони йўналтиришни тугаллаб бўлмади.</string>
+    <string name="power_turn_on">Ёқинг</string>
+    <string name="power_turn_off">Ўчиринг</string>
+    <string name="routing_notification_waiting_title">Puzru ёниқ</string>
+    <string name="routing_notification_waiting_text">Аудио чиқишини йўналтириш кутилмоқда</string>
+    <string name="routing_notification_active_title">Қулоқ динамигига йўналтириш фаол</string>
+    <string name="routing_notification_active_text">Қўллаб-қувватланадиган овоз аудиоси қулоқ динамигига йўналтирилмоқда.</string>
+    <string name="routing_notification_error_title">Аудиони йўналтириш муаммоси</string>
+    <string name="routing_notification_error_text">Puzruни очинг, уни ўчиринг ва қайта уриниб кўринг.</string>
+    <string name="status_main_ready">Ўчирилган</string>
+    <string name="status_mini_ready">Ўчирилган</string>
+    <string name="status_main_waiting">Овоз кутилмоқда</string>
+    <string name="status_mini_waiting">Кутилмоқда</string>
+    <string name="status_main_active">Қулоқ динамиги орқали</string>
+    <string name="status_mini_active">Қулоқ динамиги</string>
+    <string name="status_main_error">Аудиони йўналтириш муаммоси</string>
+    <string name="status_mini_error">Хатолик</string>
 </resources>

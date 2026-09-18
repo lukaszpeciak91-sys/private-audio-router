@@ -2,15 +2,12 @@
 <resources>
     <string name="app_name">Puzru</string>
     <string name="routing_notification_channel">Puzru</string>
-    <string name="routing_notification_title">Puzru je zapnuté</string>
-    <string name="routing_notification_text">Čaká na presmerovanie zvuku</string>
     <string name="product_title">Puzru</string>
     <string name="product_subtitle">Hovorte s AI súkromne, ako pri telefonickom hovore.</string>
     <string name="state_ready">Pripravené</string>
     <string name="state_waiting">Čaká</string>
     <string name="state_active">Aktívne</string>
     <string name="state_error">Chyba</string>
-    <string name="power_control">Zapnúť</string>
     <string name="floating">Mini</string>
     <string name="permission_notification_title">Zobraziť, keď je Puzru zapnuté</string>
     <string name="permission_notification_body">Puzru pomocou tichého upozornenia ukazuje, že je zapnuté a pripravené presmerovať zvuk, a to aj keď je aplikácia na pozadí. Upozornenia sú voliteľné; Puzru funguje aj bez nich.</string>
@@ -76,4 +73,20 @@
     <string name="diagnostics_error_audio_preparation">Puzru nemohlo pripraviť zvuk pre komunikáciu.</string>
     <string name="diagnostics_error_request_rejected">Požiadavka na smerovanie zvuku do slúchadla nebola prijatá.</string>
     <string name="diagnostics_error_not_completed">Smerovanie sa nepodarilo dokončiť.</string>
+    <string name="power_turn_on">Zapnúť</string>
+    <string name="power_turn_off">Vypnúť</string>
+    <string name="routing_notification_waiting_title">Puzru je zapnuté</string>
+    <string name="routing_notification_waiting_text">Čaká na presmerovanie zvuku</string>
+    <string name="routing_notification_active_title">Presmerovanie do slúchadla je aktívne</string>
+    <string name="routing_notification_active_text">Podporovaný hlasový zvuk sa presmerúva do slúchadla telefónu.</string>
+    <string name="routing_notification_error_title">Problém s presmerovaním zvuku</string>
+    <string name="routing_notification_error_text">Otvorte Puzru, vypnite ho a skúste to znova.</string>
+    <string name="status_main_ready">Vypnuté</string>
+    <string name="status_mini_ready">Vypnuté</string>
+    <string name="status_main_waiting">Čaká na hlas</string>
+    <string name="status_mini_waiting">Čaká</string>
+    <string name="status_main_active">Cez slúchadlo telefónu</string>
+    <string name="status_mini_active">Slúchadlo telefónu</string>
+    <string name="status_main_error">Problém s presmerovaním zvuku</string>
+    <string name="status_mini_error">Chyba</string>
 </resources>

@@ -2,15 +2,12 @@
 <resources>
     <string name="app_name">Puzru</string>
     <string name="routing_notification_channel">Puzru</string>
-    <string name="routing_notification_title">Puzru diaktifkan</string>
-    <string name="routing_notification_text">Menunggu pengalihan audio</string>
     <string name="product_title">Puzru</string>
     <string name="product_subtitle">Bicara dengan AI secara pribadi, seperti saat menelepon.</string>
     <string name="state_ready">Siap</string>
     <string name="state_waiting">Menunggu</string>
     <string name="state_active">Aktif</string>
     <string name="state_error">Error</string>
-    <string name="power_control">Aktifkan</string>
     <string name="floating">Mini</string>
     <string name="permission_notification_title">Tampilkan saat Puzru diaktifkan</string>
     <string name="permission_notification_body">Puzru menggunakan notifikasi senyap untuk menunjukkan bahwa Puzru diaktifkan dan siap mengalihkan audio, termasuk saat aplikasi berjalan di latar belakang. Notifikasi bersifat opsional; Puzru tetap berfungsi tanpanya.</string>
@@ -76,4 +73,20 @@
     <string name="diagnostics_error_audio_preparation">Puzru tidak dapat menyiapkan audio komunikasi.</string>
     <string name="diagnostics_error_request_rejected">Permintaan pengalihan ke earpiece bawaan ponsel tidak diterima.</string>
     <string name="diagnostics_error_not_completed">Pengalihan audio tidak dapat diselesaikan.</string>
+    <string name="power_turn_on">Nyalakan</string>
+    <string name="power_turn_off">Matikan</string>
+    <string name="routing_notification_waiting_title">Puzru diaktifkan</string>
+    <string name="routing_notification_waiting_text">Menunggu pengalihan audio</string>
+    <string name="routing_notification_active_title">Pengalihan ke earpiece aktif</string>
+    <string name="routing_notification_active_text">Audio suara yang didukung sedang dialihkan ke earpiece.</string>
+    <string name="routing_notification_error_title">Masalah pengalihan audio</string>
+    <string name="routing_notification_error_text">Buka Puzru, matikan, lalu coba lagi.</string>
+    <string name="status_main_ready">Mati</string>
+    <string name="status_mini_ready">Mati</string>
+    <string name="status_main_waiting">Menunggu suara</string>
+    <string name="status_mini_waiting">Menunggu</string>
+    <string name="status_main_active">Melalui earpiece</string>
+    <string name="status_mini_active">Earpiece</string>
+    <string name="status_main_error">Masalah pengalihan audio</string>
+    <string name="status_mini_error">Error</string>
 </resources>

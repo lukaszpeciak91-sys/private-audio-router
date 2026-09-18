@@ -2,15 +2,12 @@
 <resources>
     <string name="app_name">Puzru</string>
     <string name="routing_notification_channel">Puzru</string>
-    <string name="routing_notification_title">Puzru ເປີດຢູ່</string>
-    <string name="routing_notification_text">ກຳລັງລໍຖ້າປ່ຽນອຸປະກອນສຽງອອກ</string>
     <string name="product_title">Puzru</string>
     <string name="product_subtitle">ສົນທະນາກັບ AI ແບບສ່ວນຕົວ ຄືກັບການໂທລະສັບ.</string>
     <string name="state_ready">ພ້ອມ</string>
     <string name="state_waiting">ກຳລັງລໍຖ້າ</string>
     <string name="state_active">ກຳລັງໃຊ້ງານ</string>
     <string name="state_error">ຂໍ້ຜິດພາດ</string>
-    <string name="power_control">ເປີດ/ປິດ</string>
     <string name="floating">ມິນິ</string>
     <string name="permission_notification_title">ສະແດງເມື່ອ Puzru ເປີດຢູ່</string>
     <string name="permission_notification_body">Puzru ໃຊ້ການແຈ້ງເຕືອນແບບງຽບເພື່ອສະແດງວ່າເປີດຢູ່ ແລະພ້ອມກຳນົດເສັ້ນທາງສຽງ, ລວມທັງເມື່ອແອັບເຮັດວຽກຢູ່ເບື້ອງຫຼັງ. ການແຈ້ງເຕືອນເປັນທາງເລືອກ; Puzru ຍັງເຮັດວຽກໄດ້ໂດຍບໍ່ມີມັນ.</string>
@@ -76,4 +73,20 @@
     <string name="diagnostics_error_audio_preparation">Puzru ບໍ່ສາມາດກຽມສຽງສື່ສານໄດ້.</string>
     <string name="diagnostics_error_request_rejected">ຄຳຂໍກຳນົດເສັ້ນທາງສຽງໄປຫາຫູຟັງໃນຕົວໂທລະສັບບໍ່ໄດ້ຮັບການຍອມຮັບ.</string>
     <string name="diagnostics_error_not_completed">ບໍ່ສາມາດກຳນົດເສັ້ນທາງສຽງໃຫ້ສຳເລັດໄດ້.</string>
+    <string name="power_turn_on">ເປີດ</string>
+    <string name="power_turn_off">ປິດ</string>
+    <string name="routing_notification_waiting_title">Puzru ເປີດຢູ່</string>
+    <string name="routing_notification_waiting_text">ກຳລັງລໍຖ້າປ່ຽນອຸປະກອນສຽງອອກ</string>
+    <string name="routing_notification_active_title">ການສົ່ງຕໍ່ໄປຫາຫູຟັງກຳລັງເຮັດວຽກ</string>
+    <string name="routing_notification_active_text">ສຽງສົນທະນາທີ່ຮອງຮັບກຳລັງຖືກສົ່ງຕໍ່ໄປຫາຫູຟັງໃນຕົວໂທລະສັບ.</string>
+    <string name="routing_notification_error_title">ບັນຫາການສົ່ງຕໍ່ສຽງ</string>
+    <string name="routing_notification_error_text">ເປີດ Puzru, ປິດມັນ ແລ້ວລອງໃໝ່.</string>
+    <string name="status_main_ready">ປິດ</string>
+    <string name="status_mini_ready">ປິດ</string>
+    <string name="status_main_waiting">ກຳລັງລໍຖ້າສຽງ</string>
+    <string name="status_mini_waiting">ກຳລັງລໍຖ້າ</string>
+    <string name="status_main_active">ຜ່ານຫູຟັງໃນຕົວໂທລະສັບ</string>
+    <string name="status_mini_active">ຫູຟັງໃນຕົວໂທລະສັບ</string>
+    <string name="status_main_error">ບັນຫາການສົ່ງຕໍ່ສຽງ</string>
+    <string name="status_mini_error">ຂໍ້ຜິດພາດ</string>
 </resources>

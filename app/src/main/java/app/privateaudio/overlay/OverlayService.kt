@@ -32,6 +32,8 @@ import app.privateaudio.MainActivity
 import app.privateaudio.PrivateAudioService
 import app.privateaudio.PrivateAudioState
 import app.privateaudio.R
+import app.privateaudio.StatusSymbol
+import app.privateaudio.statePresentation
 import kotlin.math.hypot
 import kotlin.math.min
 
@@ -299,17 +301,16 @@ class OverlayService : Service() {
             canvas.scale(scale, scale)
 
             paint.style = Paint.Style.FILL
-            paint.color = Color.rgb(15, 15, 16)
+            paint.color = miniColor(MINI_SURFACE_COLOR)
             canvas.drawRoundRect(controllerSurface, 13f, 13f, paint)
             paint.style = Paint.Style.STROKE
             paint.strokeWidth = 1f
-            paint.color = Color.rgb(91, 91, 94)
+            paint.color = miniColor(MINI_BORDER_COLOR)
             canvas.drawRoundRect(controllerSurface, 13f, 13f, paint)
 
-            paint.style = Paint.Style.FILL
             paint.color = statusColor(state)
             paint.alpha = (statusDotAlpha * 255).toInt()
-            canvas.drawCircle(directionalX(STATUS_DOT_X), 31f, 5.5f, paint)
+            drawStatusSymbol(canvas, statePresentation(state).symbol)
             paint.alpha = 255
             drawStatusLabel(canvas, miniStateLabel(state))
 
@@ -364,6 +365,37 @@ class OverlayService : Service() {
             canvas.translate(textLeft, STATUS_TEXT_BASELINE + statusTextPaint.fontMetrics.ascent)
             layout.draw(canvas)
             canvas.restore()
+        }
+
+        private fun drawStatusSymbol(canvas: Canvas, symbol: StatusSymbol) {
+            val x = directionalX(STATUS_DOT_X)
+            paint.style = Paint.Style.STROKE
+            paint.strokeWidth = 1.8f
+            when (symbol) {
+                StatusSymbol.OFF -> canvas.drawCircle(x, 31f, 5f, paint)
+                StatusSymbol.WAITING -> {
+                    canvas.drawCircle(x, 31f, 5.5f, paint)
+                    canvas.drawLine(x, 31f, x, 27.5f, paint)
+                    canvas.drawLine(x, 31f, directionalX(23f), 33f, paint)
+                }
+                StatusSymbol.EARPIECE -> {
+                    canvas.drawArc(RectF(x - 4.5f, 24f, x + 4.5f, 38f), 120f, 220f, false, paint)
+                    paint.style = Paint.Style.FILL
+                    canvas.drawCircle(directionalX(22f), 33f, 1.3f, paint)
+                }
+                StatusSymbol.WARNING -> {
+                    val warning = Path().apply {
+                        moveTo(x, 24f)
+                        lineTo(directionalX(27f), 38f)
+                        lineTo(directionalX(13f), 38f)
+                        close()
+                    }
+                    canvas.drawPath(warning, paint)
+                    canvas.drawLine(x, 28.5f, x, 33f, paint)
+                    paint.style = Paint.Style.FILL
+                    canvas.drawCircle(x, 35.5f, 1f, paint)
+                }
+            }
         }
 
         private fun drawPower(canvas: Canvas, color: Int) {
@@ -472,21 +504,11 @@ class OverlayService : Service() {
         }
 
         private fun miniStateLabel(value: PrivateAudioState) = getString(
-            when (value) {
-                PrivateAudioState.READY -> R.string.state_ready_mini
-                PrivateAudioState.WAITING -> R.string.state_waiting_mini
-                PrivateAudioState.ACTIVE -> R.string.state_active_mini
-                PrivateAudioState.ERROR -> R.string.state_error_mini
-            },
+            statePresentation(value).miniLabel,
         )
 
         private fun fullStateLabel(value: PrivateAudioState) = getString(
-            when (value) {
-                PrivateAudioState.READY -> R.string.state_ready
-                PrivateAudioState.WAITING -> R.string.state_waiting
-                PrivateAudioState.ACTIVE -> R.string.state_active
-                PrivateAudioState.ERROR -> R.string.state_error
-            },
+            statePresentation(value).mainLabel,
         )
 
         private fun stateDescription(value: PrivateAudioState) = getString(
@@ -494,11 +516,9 @@ class OverlayService : Service() {
             fullStateLabel(value),
         )
 
-        private fun statusColor(value: PrivateAudioState) = when (value) {
-            PrivateAudioState.READY, PrivateAudioState.ACTIVE -> Color.rgb(34, 218, 112)
-            PrivateAudioState.WAITING -> Color.rgb(238, 172, 54)
-            PrivateAudioState.ERROR -> Color.rgb(238, 75, 75)
-        }
+        private fun statusColor(value: PrivateAudioState) = miniColor(miniStatusColor(value))
+
+        private fun miniColor(rgb: Int) = Color.rgb(rgb shr 16 and 0xFF, rgb shr 8 and 0xFF, rgb and 0xFF)
 
         private fun powerColor(value: PrivateAudioState) = when (value) {
             PrivateAudioState.READY -> Color.rgb(184, 184, 188)
@@ -529,4 +549,18 @@ class OverlayService : Service() {
             }
         fun hideIntent(context: Context) = Intent(context, OverlayService::class.java).setAction(ACTION_HIDE)
     }
+}
+
+internal const val MINI_SURFACE_COLOR = 0x0F0F10
+internal const val MINI_BORDER_COLOR = 0x5B5B5E
+internal const val MINI_READY_STATUS_COLOR = 0xB3B3B3
+internal const val MINI_WAITING_STATUS_COLOR = 0xEEAC36
+internal const val MINI_ACTIVE_STATUS_COLOR = 0x22DA70
+internal const val MINI_ERROR_STATUS_COLOR = 0xFF8C8C
+
+internal fun miniStatusColor(state: PrivateAudioState): Int = when (state) {
+    PrivateAudioState.READY -> MINI_READY_STATUS_COLOR
+    PrivateAudioState.WAITING -> MINI_WAITING_STATUS_COLOR
+    PrivateAudioState.ACTIVE -> MINI_ACTIVE_STATUS_COLOR
+    PrivateAudioState.ERROR -> MINI_ERROR_STATUS_COLOR
 }

@@ -2,15 +2,12 @@
 <resources>
     <string name="app_name">Puzru</string>
     <string name="routing_notification_channel">Puzru</string>
-    <string name="routing_notification_title">Puzru ir ieslēgts</string>
-    <string name="routing_notification_text">Gaida audio pārslēgšanu</string>
     <string name="product_title">Puzru</string>
     <string name="product_subtitle">Runājiet ar MI privāti, gluži kā tālruņa sarunā.</string>
     <string name="state_ready">Gatavs</string>
     <string name="state_waiting">Gaida</string>
     <string name="state_active">Aktīvs</string>
     <string name="state_error">Kļūda</string>
-    <string name="power_control">Ieslēgšana</string>
     <string name="floating">Mini</string>
     <string name="permission_notification_title">Rādīt, kad Puzru ir ieslēgts</string>
     <string name="permission_notification_body">Puzru izmanto klusu paziņojumu, lai parādītu, ka tas ir ieslēgts un gatavs novirzīt audio, arī tad, kad lietotne darbojas fonā. Paziņojumi nav obligāti; Puzru darbojas arī bez tiem.</string>
@@ -76,4 +73,20 @@
     <string name="diagnostics_error_audio_preparation">Puzru neizdevās sagatavot saziņas audio.</string>
     <string name="diagnostics_error_request_rejected">Pieprasījums novirzīt audio uz tālruņa uztvērēju netika pieņemts.</string>
     <string name="diagnostics_error_not_completed">Audio novirzīšanu neizdevās pabeigt.</string>
+    <string name="power_turn_on">Ieslēgt</string>
+    <string name="power_turn_off">Izslēgt</string>
+    <string name="routing_notification_waiting_title">Puzru ir ieslēgts</string>
+    <string name="routing_notification_waiting_text">Gaida audio pārslēgšanu</string>
+    <string name="routing_notification_active_title">Novirzīšana uz tālruņa uztvērēju ir aktīva</string>
+    <string name="routing_notification_active_text">Atbalstītais balss audio tiek novirzīts uz tālruņa uztvērēju.</string>
+    <string name="routing_notification_error_title">Audio novirzīšanas problēma</string>
+    <string name="routing_notification_error_text">Atveriet Puzru, izslēdziet to un mēģiniet vēlreiz.</string>
+    <string name="status_main_ready">Izslēgts</string>
+    <string name="status_mini_ready">Izslēgts</string>
+    <string name="status_main_waiting">Gaida balsi</string>
+    <string name="status_mini_waiting">Gaida</string>
+    <string name="status_main_active">Caur tālruņa uztvērēju</string>
+    <string name="status_mini_active">Tālruņa uztvērējs</string>
+    <string name="status_main_error">Audio novirzīšanas problēma</string>
+    <string name="status_mini_error">Kļūda</string>
 </resources>

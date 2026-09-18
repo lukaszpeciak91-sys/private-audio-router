@@ -2,15 +2,12 @@
 <resources>
     <string name="app_name">Puzru</string>
     <string name="routing_notification_channel">Puzru</string>
-    <string name="routing_notification_title">Puzru はオンです</string>
-    <string name="routing_notification_text">音声の切り替えを待機中</string>
     <string name="product_title">Puzru</string>
     <string name="product_subtitle">電話のように、AIとプライベートに話せます。</string>
     <string name="state_ready">準備完了</string>
     <string name="state_waiting">待機中</string>
     <string name="state_active">使用中</string>
     <string name="state_error">エラー</string>
-    <string name="power_control">オンにする</string>
     <string name="floating">ミニ</string>
     <string name="permission_notification_title">Puzru がオンのときに表示</string>
     <string name="permission_notification_body">Puzru は、オンになっていて音声の切り替え準備ができていることを、アプリがバックグラウンドにあるときも静かな通知で示します。通知は任意です。通知がなくても Puzru は動作します。</string>
@@ -76,4 +73,20 @@
     <string name="diagnostics_error_audio_preparation">Puzru は通信用音声を準備できませんでした。</string>
     <string name="diagnostics_error_request_rejected">受話口スピーカーへの音声出力切り替えリクエストが受け付けられませんでした。</string>
     <string name="diagnostics_error_not_completed">音声出力先の切り替えを完了できませんでした。</string>
+    <string name="power_turn_on">オンにする</string>
+    <string name="power_turn_off">オフにする</string>
+    <string name="routing_notification_waiting_title">Puzru はオンです</string>
+    <string name="routing_notification_waiting_text">音声の切り替えを待機中</string>
+    <string name="routing_notification_active_title">受話口へのルーティングが有効です</string>
+    <string name="routing_notification_active_text">対応している音声を受話口スピーカーにルーティングしています。</string>
+    <string name="routing_notification_error_title">音声ルーティングの問題</string>
+    <string name="routing_notification_error_text">Puzru を開き、オフにしてからもう一度お試しください。</string>
+    <string name="status_main_ready">オフ</string>
+    <string name="status_mini_ready">オフ</string>
+    <string name="status_main_waiting">音声を待機中</string>
+    <string name="status_mini_waiting">待機中</string>
+    <string name="status_main_active">受話口スピーカー経由</string>
+    <string name="status_mini_active">受話口スピーカー</string>
+    <string name="status_main_error">音声ルーティングの問題</string>
+    <string name="status_mini_error">エラー</string>
 </resources>

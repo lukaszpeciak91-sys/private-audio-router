@@ -2,15 +2,12 @@
 <resources>
     <string name="app_name">Puzru</string>
     <string name="routing_notification_channel">Puzru</string>
-    <string name="routing_notification_title">Puzru huwa mixgħul</string>
-    <string name="routing_notification_text">Stennija biex jinbidel l-output tal-awdjo</string>
     <string name="product_title">Puzru</string>
     <string name="product_subtitle">Tkellem mal-AI fil-privat, bħal f\'telefonata.</string>
     <string name="state_ready">Lest</string>
     <string name="state_waiting">Stennija</string>
     <string name="state_active">Attiv</string>
     <string name="state_error">Żball</string>
-    <string name="power_control">Ixgħel/itfi</string>
     <string name="floating">Mini</string>
     <string name="permission_notification_title">Uri meta Puzru jkun mixgħul</string>
     <string name="permission_notification_body">Puzru juża notifika siekta biex juri li huwa mixgħul u lest biex jidderieġi l-awdjo lejn l-output, anki meta l-app tkun fl-isfond. In-notifiki huma fakultattivi; Puzru jibqa’ jaħdem mingħajrhom.</string>
@@ -76,4 +73,20 @@
     <string name="diagnostics_error_audio_preparation">Puzru ma setax iħejji l-awdjo tal-komunikazzjoni.</string>
     <string name="diagnostics_error_request_rejected">It-talba biex l-awdjo jiġi dirett lejn ir-riċevitur ma ġietx aċċettata.</string>
     <string name="diagnostics_error_not_completed">Ma setgħetx titlesta d-direzzjoni tal-awdjo.</string>
+    <string name="power_turn_on">Ixgħel</string>
+    <string name="power_turn_off">Itfi</string>
+    <string name="routing_notification_waiting_title">Puzru huwa mixgħul</string>
+    <string name="routing_notification_waiting_text">Stennija biex jinbidel l-output tal-awdjo</string>
+    <string name="routing_notification_active_title">Ir-rotta lejn ir-riċevitur hija attiva</string>
+    <string name="routing_notification_active_text">L-awdjo tal-vuċi appoġġjat qed jiġi mmexxi lejn ir-riċevitur.</string>
+    <string name="routing_notification_error_title">Problema fir-rotta tal-awdjo</string>
+    <string name="routing_notification_error_text">Iftaħ Puzru, itfih u erġa’ pprova.</string>
+    <string name="status_main_ready">Mitfi</string>
+    <string name="status_mini_ready">Mitfi</string>
+    <string name="status_main_waiting">Qed jistenna l-vuċi</string>
+    <string name="status_mini_waiting">Stennija</string>
+    <string name="status_main_active">Permezz tar-riċevitur</string>
+    <string name="status_mini_active">Riċevitur</string>
+    <string name="status_main_error">Problema fir-rotta tal-awdjo</string>
+    <string name="status_mini_error">Żball</string>
 </resources>

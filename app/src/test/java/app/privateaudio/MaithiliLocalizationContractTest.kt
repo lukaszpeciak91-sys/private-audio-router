@@ -62,7 +62,7 @@ class MaithiliLocalizationContractTest {
         assertTrue(loudspeaker.contains("लाउडस्पीकर"))
         assertFalse(earpiece == loudspeaker)
         val routingCopy = listOf(
-            "routing_notification_text", "diagnostics_routing", "diagnostics_last_routing",
+            "routing_notification_waiting_text", "diagnostics_routing", "diagnostics_last_routing",
             "diagnostics_error_blocked_by_system", "diagnostics_error_session_ended",
             "diagnostics_error_audio_start", "diagnostics_error_request_rejected",
             "diagnostics_error_not_completed",

@@ -2,15 +2,12 @@
 <resources>
     <string name="app_name">Puzru</string>
     <string name="routing_notification_channel">Puzru</string>
-    <string name="routing_notification_title">Puzru 已開啟</string>
-    <string name="routing_notification_text">正在等待重新導向音訊</string>
     <string name="product_title">Puzru</string>
     <string name="product_subtitle">像打電話一樣私密地與 AI 對話。</string>
     <string name="state_ready">就緒</string>
     <string name="state_waiting">等待中</string>
     <string name="state_active">使用中</string>
     <string name="state_error">錯誤</string>
-    <string name="power_control">開啟</string>
     <string name="floating">迷你</string>
     <string name="permission_notification_title">在 Puzru 開啟時顯示</string>
     <string name="permission_notification_body">Puzru 會透過靜音通知表明它已開啟並準備好切換音訊，即使應用程式在背景執行時也是如此。通知為選用功能；沒有通知，Puzru 仍可正常運作。</string>
@@ -76,4 +73,20 @@
     <string name="diagnostics_error_audio_preparation">Puzru 無法準備通訊音訊。</string>
     <string name="diagnostics_error_request_rejected">聽筒音訊導向要求未獲接受。</string>
     <string name="diagnostics_error_not_completed">無法完成音訊導向。</string>
+    <string name="power_turn_on">開啟</string>
+    <string name="power_turn_off">關閉</string>
+    <string name="routing_notification_waiting_title">Puzru 已開啟</string>
+    <string name="routing_notification_waiting_text">正在等待重新導向音訊</string>
+    <string name="routing_notification_active_title">聽筒音訊重新導向已啟用</string>
+    <string name="routing_notification_active_text">支援的語音音訊正在重新導向至聽筒。</string>
+    <string name="routing_notification_error_title">音訊重新導向問題</string>
+    <string name="routing_notification_error_text">開啟 Puzru，將它關閉後再試一次。</string>
+    <string name="status_main_ready">關閉</string>
+    <string name="status_mini_ready">關閉</string>
+    <string name="status_main_waiting">等待語音</string>
+    <string name="status_mini_waiting">等待中</string>
+    <string name="status_main_active">透過聽筒</string>
+    <string name="status_mini_active">聽筒</string>
+    <string name="status_main_error">音訊重新導向問題</string>
+    <string name="status_mini_error">錯誤</string>
 </resources>

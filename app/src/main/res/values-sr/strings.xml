@@ -2,15 +2,12 @@
 <resources>
     <string name="app_name">Puzru</string>
     <string name="routing_notification_channel">Puzru</string>
-    <string name="routing_notification_title">Puzru је укључен</string>
-    <string name="routing_notification_text">Чекање на пребацивање звука</string>
     <string name="product_title">Puzru</string>
     <string name="product_subtitle">Разговарајте приватно са ВИ, као током телефонског позива.</string>
     <string name="state_ready">Спремно</string>
     <string name="state_waiting">Чекање</string>
     <string name="state_active">Активно</string>
     <string name="state_error">Грешка</string>
-    <string name="power_control">Укључивање/искључивање</string>
     <string name="floating">Мини</string>
     <string name="permission_notification_title">Прикажи када је Puzru укључен</string>
     <string name="permission_notification_body">Puzru користи тихо обавештење да покаже да је укључен и спреман за преусмеравање звука, чак и када је апликација у позадини. Обавештења су опционална; Puzru ради и без њих.</string>
@@ -76,4 +73,20 @@
     <string name="diagnostics_error_audio_preparation">Puzru није могао да припреми звук за комуникацију.</string>
     <string name="diagnostics_error_request_rejected">Захтев за усмеравање звука на слушалицу није прихваћен.</string>
     <string name="diagnostics_error_not_completed">Усмеравање звука није могло да се заврши.</string>
+    <string name="power_turn_on">Укључи</string>
+    <string name="power_turn_off">Искључи</string>
+    <string name="routing_notification_waiting_title">Puzru је укључен</string>
+    <string name="routing_notification_waiting_text">Чекање на пребацивање звука</string>
+    <string name="routing_notification_active_title">Преусмеравање на слушалицу је активно</string>
+    <string name="routing_notification_active_text">Подржани гласовни звук се преусмерава на слушалицу.</string>
+    <string name="routing_notification_error_title">Проблем са преусмеравањем звука</string>
+    <string name="routing_notification_error_text">Отворите Puzru, искључите га и покушајте поново.</string>
+    <string name="status_main_ready">Искључено</string>
+    <string name="status_mini_ready">Искључено</string>
+    <string name="status_main_waiting">Чека глас</string>
+    <string name="status_mini_waiting">Чекање</string>
+    <string name="status_main_active">Преко слушалице</string>
+    <string name="status_mini_active">Слушалица</string>
+    <string name="status_main_error">Проблем са преусмеравањем звука</string>
+    <string name="status_mini_error">Грешка</string>
 </resources>

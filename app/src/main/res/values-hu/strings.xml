@@ -2,15 +2,12 @@
 <resources>
     <string name="app_name">Puzru</string>
     <string name="routing_notification_channel">Puzru</string>
-    <string name="routing_notification_title">A Puzru be van kapcsolva</string>
-    <string name="routing_notification_text">Várakozás a hang átirányítására</string>
     <string name="product_title">Puzru</string>
     <string name="product_subtitle">Beszélgess privát módon az AI-jal, akár egy telefonhívásban.</string>
     <string name="state_ready">Kész</string>
     <string name="state_waiting">Várakozik</string>
     <string name="state_active">Aktív</string>
     <string name="state_error">Hiba</string>
-    <string name="power_control">Bekapcsolás</string>
     <string name="floating">Mini</string>
     <string name="permission_notification_title">Megjelenítés, amikor a Puzru be van kapcsolva</string>
     <string name="permission_notification_body">A Puzru egy csendes értesítéssel jelzi, hogy be van kapcsolva és készen áll a hang átirányítására, akkor is, amikor az alkalmazás a háttérben fut. Az értesítések nem kötelezők; a Puzru nélkülük is működik.</string>
@@ -76,4 +73,20 @@
     <string name="diagnostics_error_audio_preparation">A Puzru nem tudta előkészíteni a kommunikációs hangot.</string>
     <string name="diagnostics_error_request_rejected">A rendszer nem fogadta el a beépített fülhallgatóra való átirányítási kérelmet.</string>
     <string name="diagnostics_error_not_completed">A hang átirányítását nem sikerült befejezni.</string>
+    <string name="power_turn_on">Bekapcsolás</string>
+    <string name="power_turn_off">Kikapcsolás</string>
+    <string name="routing_notification_waiting_title">A Puzru be van kapcsolva</string>
+    <string name="routing_notification_waiting_text">Várakozás a hang átirányítására</string>
+    <string name="routing_notification_active_title">A fülhallgatóra irányítás aktív</string>
+    <string name="routing_notification_active_text">A támogatott hangalapú audió a beépített fülhallgatóra van átirányítva.</string>
+    <string name="routing_notification_error_title">Hangátirányítási probléma</string>
+    <string name="routing_notification_error_text">Nyissa meg a Puzru alkalmazást, kapcsolja ki, majd próbálja újra.</string>
+    <string name="status_main_ready">Ki</string>
+    <string name="status_mini_ready">Ki</string>
+    <string name="status_main_waiting">Hangra vár</string>
+    <string name="status_mini_waiting">Várakozik</string>
+    <string name="status_main_active">A beépített fülhallgatón keresztül</string>
+    <string name="status_mini_active">Beépített fülhallgató</string>
+    <string name="status_main_error">Hangátirányítási probléma</string>
+    <string name="status_mini_error">Hiba</string>
 </resources>

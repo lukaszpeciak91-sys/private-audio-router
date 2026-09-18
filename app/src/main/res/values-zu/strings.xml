@@ -2,15 +2,12 @@
 <resources>
     <string name="app_name">Puzru</string>
     <string name="routing_notification_channel">Puzru</string>
-    <string name="routing_notification_title">I-Puzru ivuliwe</string>
-    <string name="routing_notification_text">Iyalinda ukushintsha okukhiphayo komsindo</string>
     <string name="product_title">Puzru</string>
     <string name="product_subtitle">Khuluma ne-AI ngasese, njengokungathi usocingweni.</string>
     <string name="state_ready">Ilungile</string>
     <string name="state_waiting">Iyalinda</string>
     <string name="state_active">Iyasebenza</string>
     <string name="state_error">Iphutha</string>
-    <string name="power_control">Vula/Cisha</string>
     <string name="floating">Mini</string>
     <string name="permission_notification_title">Bonisa uma i-Puzru ivuliwe</string>
     <string name="permission_notification_body">I-Puzru isebenzisa isaziso esithulile ukuze ibonise ukuthi ivuliwe futhi isilungele ukuqondisa umsindo, ngisho nalapho i-app isebenza ngemuva. Izaziso ziyazikhethela; i-Puzru isebenza ngaphandle kwazo.</string>
@@ -76,4 +73,20 @@
     <string name="diagnostics_error_audio_preparation">I-Puzru ayikwazanga ukulungiselela umsindo wokuxhumana.</string>
     <string name="diagnostics_error_request_rejected">Isicelo sokuqondisa umsindo esipikheni sendlebe asamukelwanga.</string>
     <string name="diagnostics_error_not_completed">Ukuqondiswa komsindo akukwazanga ukuqedwa.</string>
+    <string name="power_turn_on">Vula</string>
+    <string name="power_turn_off">Cisha</string>
+    <string name="routing_notification_waiting_title">I-Puzru ivuliwe</string>
+    <string name="routing_notification_waiting_text">Iyalinda ukushintsha okukhiphayo komsindo</string>
+    <string name="routing_notification_active_title">Ukuqondisa esipikheni sendlebe kuyasebenza</string>
+    <string name="routing_notification_active_text">Umsindo wezwi osekelwayo uqondiswa esipikheni sendlebe.</string>
+    <string name="routing_notification_error_title">Inkinga yokuqondisa umsindo</string>
+    <string name="routing_notification_error_text">Vula i-Puzru, yicishe bese uzama futhi.</string>
+    <string name="status_main_ready">Kuvaliwe</string>
+    <string name="status_mini_ready">Kuvaliwe</string>
+    <string name="status_main_waiting">Ilinde umsindo wezwi</string>
+    <string name="status_mini_waiting">Iyalinda</string>
+    <string name="status_main_active">Ngesipikha sendlebe</string>
+    <string name="status_mini_active">Isipikha sendlebe</string>
+    <string name="status_main_error">Inkinga yokuqondisa umsindo</string>
+    <string name="status_mini_error">Iphutha</string>
 </resources>

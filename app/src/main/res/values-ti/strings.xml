@@ -2,15 +2,12 @@
 <resources>
     <string name="app_name">Puzru</string>
     <string name="routing_notification_channel">Puzru</string>
-    <string name="routing_notification_title">Puzru ተወሊዑ ኣሎ</string>
-    <string name="routing_notification_text">ድምጺ ንምምራሕ ይጽበ ኣሎ</string>
     <string name="product_title">Puzru</string>
     <string name="product_subtitle">ምስ AI ብሕታዊ ከም ናይ ተሌፎን ጻውዒት ተዛረብ።</string>
     <string name="state_ready">ድሉው</string>
     <string name="state_waiting">ይጽበ ኣሎ</string>
     <string name="state_active">ንጡፍ</string>
     <string name="state_error">ጌጋ</string>
-    <string name="power_control">ምውላዕ/ምጥፋእ</string>
     <string name="floating">ሚኒ</string>
     <string name="permission_notification_title">Puzru ክውላዕ ከሎ ኣርኢ</string>
     <string name="permission_notification_body">Puzru ተወሊዑን ድምጺ ንምምራሕ ድሉው ምዃኑን፣ እቲ መተግበሪ ኣብ ድሕረ ባይታ እንከሎ እውን፣ ስቕ ዝበለ መፍለጢ ይጥቀም። መፍለጢታት ኣማራጺ እዮም፤ Puzru ብዘይኦም እውን ይሰርሕ።</string>
@@ -75,4 +72,20 @@
     <string name="diagnostics_error_audio_preparation">Puzru ናይ ርክብ ድምጺ ከዳሉ ኣይከኣለን።</string>
     <string name="diagnostics_error_request_rejected">ናብ ናይ ጻውዒት መስምዒ ድምጺ ናይ ምምራሕ ሕቶ ኣይተቐበለን።</string>
     <string name="diagnostics_error_not_completed">ምምራሕ ድምጺ ክዛዘም ኣይከኣለን።</string>
+    <string name="power_turn_on">ኣውልዕ</string>
+    <string name="power_turn_off">ኣጥፍእ</string>
+    <string name="routing_notification_waiting_title">Puzru ተወሊዑ ኣሎ</string>
+    <string name="routing_notification_waiting_text">ድምጺ ንምምራሕ ይጽበ ኣሎ</string>
+    <string name="routing_notification_active_title">ምምራሕ ናብ ናይ ጻውዒት መስምዒ ንጡፍ እዩ</string>
+    <string name="routing_notification_active_text">ዝድገፍ ናይ ድምጺ ኦድዮ ናብ ናይ ጻውዒት መስምዒ ይምራሕ ኣሎ።</string>
+    <string name="routing_notification_error_title">ናይ ድምጺ ምምራሕ ጸገም</string>
+    <string name="routing_notification_error_text">Puzru ክፈት፣ ኣጥፍኦ እሞ እንደገና ፈትን።</string>
+    <string name="status_main_ready">ጠፊኡ</string>
+    <string name="status_mini_ready">ጠፊኡ</string>
+    <string name="status_main_waiting">ድምጺ ይጽበ ኣሎ</string>
+    <string name="status_mini_waiting">ይጽበ ኣሎ</string>
+    <string name="status_main_active">ብናይ ጻውዒት መስምዒ</string>
+    <string name="status_mini_active">ናይ ጻውዒት መስምዒ</string>
+    <string name="status_main_error">ናይ ድምጺ ምምራሕ ጸገም</string>
+    <string name="status_mini_error">ጌጋ</string>
 </resources>

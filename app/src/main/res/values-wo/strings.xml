@@ -2,15 +2,12 @@
 <resources>
     <string name="app_name">Puzru</string>
     <string name="routing_notification_channel">Puzru</string>
-    <string name="routing_notification_title">Puzru taal na</string>
-    <string name="routing_notification_text">Mungi xaar ngir jubluwaat baat bi</string>
     <string name="product_title">Puzru</string>
     <string name="product_subtitle">Wax ak AI ci sutura, ni waxtaanu telefon.</string>
     <string name="state_ready">Pare</string>
     <string name="state_waiting">Mungi xaar</string>
     <string name="state_active">Mungi dox</string>
     <string name="state_error">Njuumte</string>
-    <string name="power_control">Tàkk/Fey</string>
     <string name="floating">Mini</string>
     <string name="permission_notification_title">Wone bu Puzru taalée</string>
     <string name="permission_notification_body">Puzru dafay jëfandikoo yëgle gu noppi ngir wone ne taal na te pare na ngir jubluwaat baat bi, ba ci bi aplikasioŋ bi nekk ci ginaaw. Yëgle yi dañuy tànn; Puzru dina dox ba tey bu ñu amul.</string>
@@ -75,4 +72,20 @@
     <string name="diagnostics_error_audio_preparation">Puzru mënu koo waajal baatu jokkoo bi.</string>
     <string name="diagnostics_error_request_rejected">Nanguñu laajub jubluwaat ci dégtukaayu waxtaan bi.</string>
     <string name="diagnostics_error_not_completed">Mënuñu matal jubluwaat bi.</string>
+    <string name="power_turn_on">Taal</string>
+    <string name="power_turn_off">Fey</string>
+    <string name="routing_notification_waiting_title">Puzru taal na</string>
+    <string name="routing_notification_waiting_text">Mungi xaar ngir jubluwaat baat bi</string>
+    <string name="routing_notification_active_title">Jubluwaat baat bi ci dégtukaayu waxtaan dafa dox</string>
+    <string name="routing_notification_active_text">Baat bi ñu nangu dafay jubluwaat ci dégtukaayu waxtaan.</string>
+    <string name="routing_notification_error_title">Jafe-jafe ci jubluwaat baat bi</string>
+    <string name="routing_notification_error_text">Ubbi Puzru, fey ko, nga jéemaat.</string>
+    <string name="status_main_ready">Fey</string>
+    <string name="status_mini_ready">Fey</string>
+    <string name="status_main_waiting">Mungi xaar baat</string>
+    <string name="status_mini_waiting">Mungi xaar</string>
+    <string name="status_main_active">Jaare ci dégtukaayu waxtaan</string>
+    <string name="status_mini_active">Dégtukaayu waxtaan</string>
+    <string name="status_main_error">Jafe-jafe ci jubluwaat baat bi</string>
+    <string name="status_mini_error">Njuumte</string>
 </resources>

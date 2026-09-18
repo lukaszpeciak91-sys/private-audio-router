@@ -2,15 +2,12 @@
 <resources>
     <string name="app_name">Puzru</string>
     <string name="routing_notification_channel">Puzru</string>
-    <string name="routing_notification_title">Puzru aktibatuta dago</string>
-    <string name="routing_notification_text">Audioa bideratzeko zain</string>
     <string name="product_title">Puzru</string>
     <string name="product_subtitle">Hitz egin AArekin modu pribatuan, telefono-dei batean bezala.</string>
     <string name="state_ready">Prest</string>
     <string name="state_waiting">Zain</string>
     <string name="state_active">Aktibo</string>
     <string name="state_error">Errorea</string>
-    <string name="power_control">Piztu</string>
     <string name="floating">Mini</string>
     <string name="permission_notification_title">Erakutsi Puzru aktibatuta dagoenean</string>
     <string name="permission_notification_body">Puzruk jakinarazpen isil bat erabiltzen du aktibatuta eta audioa bideratzeko prest dagoela erakusteko, baita aplikazioa atzeko planoan dagoenean ere. Jakinarazpenak aukerakoak dira; Puzruk haiek gabe ere funtzionatzen du.</string>
@@ -76,4 +73,20 @@
     <string name="diagnostics_error_audio_preparation">Puzruk ezin izan du komunikazio-audioa prestatu.</string>
     <string name="diagnostics_error_request_rejected">Aurikularrera bideratzeko eskaera ez da onartu.</string>
     <string name="diagnostics_error_not_completed">Ezin izan da audioaren bideratzea osatu.</string>
+    <string name="power_turn_on">Aktibatu</string>
+    <string name="power_turn_off">Desaktibatu</string>
+    <string name="routing_notification_waiting_title">Puzru aktibatuta dago</string>
+    <string name="routing_notification_waiting_text">Audioa bideratzeko zain</string>
+    <string name="routing_notification_active_title">Aurikularrera bideratzea aktibo dago</string>
+    <string name="routing_notification_active_text">Onartutako ahots-audioa aurikularrera bideratzen ari da.</string>
+    <string name="routing_notification_error_title">Audioa bideratzeko arazoa</string>
+    <string name="routing_notification_error_text">Ireki Puzru, desaktibatu eta saiatu berriro.</string>
+    <string name="status_main_ready">Desaktibatuta</string>
+    <string name="status_mini_ready">Desaktibatuta</string>
+    <string name="status_main_waiting">Ahotsaren zain</string>
+    <string name="status_mini_waiting">Zain</string>
+    <string name="status_main_active">Aurikularraren bidez</string>
+    <string name="status_mini_active">Aurikularra</string>
+    <string name="status_main_error">Audioa bideratzeko arazoa</string>
+    <string name="status_mini_error">Errorea</string>
 </resources>

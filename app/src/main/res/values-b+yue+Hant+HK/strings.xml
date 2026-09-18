@@ -2,15 +2,12 @@
 <resources>
     <string name="app_name">Puzru</string>
     <string name="routing_notification_channel">Puzru</string>
-    <string name="routing_notification_title">Puzru 已開啟</string>
-    <string name="routing_notification_text">等緊進行音訊導向</string>
     <string name="product_title">Puzru</string>
     <string name="product_subtitle">好似打電話咁，私下同 AI 傾偈。</string>
     <string name="state_ready">準備好</string>
     <string name="state_waiting">等緊</string>
     <string name="state_active">使用中</string>
     <string name="state_error">錯誤</string>
-    <string name="power_control">電源</string>
     <string name="floating">迷你</string>
     <string name="permission_notification_title">Puzru 開咗時顯示</string>
     <string name="permission_notification_body">Puzru 會用靜音通知顯示佢已經開咗，並準備好導向音訊，就算應用程式喺背景執行時都一樣。通知係可選嘅；冇通知，Puzru 都照樣運作。</string>
@@ -75,4 +72,20 @@
     <string name="diagnostics_error_audio_preparation">Puzru 無法準備通訊音訊。</string>
     <string name="diagnostics_error_request_rejected">聽筒音訊導向要求未獲接受。</string>
     <string name="diagnostics_error_not_completed">無法完成音訊導向。</string>
+    <string name="power_turn_on">開啟</string>
+    <string name="power_turn_off">關閉</string>
+    <string name="routing_notification_waiting_title">Puzru 已開啟</string>
+    <string name="routing_notification_waiting_text">等緊進行音訊導向</string>
+    <string name="routing_notification_active_title">聽筒導向已啟用</string>
+    <string name="routing_notification_active_text">支援嘅語音音訊正導向聽筒。</string>
+    <string name="routing_notification_error_title">音訊導向有問題</string>
+    <string name="routing_notification_error_text">打開 Puzru，將佢關閉後再試一次。</string>
+    <string name="status_main_ready">關閉</string>
+    <string name="status_mini_ready">關閉</string>
+    <string name="status_main_waiting">等緊語音</string>
+    <string name="status_mini_waiting">等緊</string>
+    <string name="status_main_active">經聽筒</string>
+    <string name="status_mini_active">聽筒</string>
+    <string name="status_main_error">音訊導向有問題</string>
+    <string name="status_mini_error">錯誤</string>
 </resources>

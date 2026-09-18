@@ -2,15 +2,12 @@
 <resources>
     <string name="app_name">Puzru</string>
     <string name="routing_notification_channel">Puzru</string>
-    <string name="routing_notification_title">Puzru limen</string>
-    <string name="routing_notification_text">Ap tann pou dirije odyo a</string>
     <string name="product_title">Puzru</string>
     <string name="product_subtitle">Pale ak IA an prive, tankou yon apèl nan telefòn.</string>
     <string name="state_ready">Pare</string>
     <string name="state_waiting">Ap tann</string>
     <string name="state_active">Aktif</string>
     <string name="state_error">Erè</string>
-    <string name="power_control">Limen/Etenn</string>
     <string name="floating">Mini</string>
     <string name="permission_notification_title">Montre lè Puzru limen</string>
     <string name="permission_notification_body">Puzru sèvi ak yon notifikasyon an silans pou montre lè li limen epi li pare pou dirije odyo, menm lè aplikasyon an ap fonksyone an aryè-plan. Notifikasyon yo opsyonèl; Puzru toujou fonksyone san yo.</string>
@@ -75,4 +72,20 @@
     <string name="diagnostics_error_audio_preparation">Puzru pa t kapab prepare odyo kominikasyon an.</string>
     <string name="diagnostics_error_request_rejected">Demann pou dirije odyo nan ekoutè apèl la pa t aksepte.</string>
     <string name="diagnostics_error_not_completed">Direksyon odyo a pa t kapab konplete.</string>
+    <string name="power_turn_on">Limen</string>
+    <string name="power_turn_off">Etenn</string>
+    <string name="routing_notification_waiting_title">Puzru limen</string>
+    <string name="routing_notification_waiting_text">Ap tann pou dirije odyo a</string>
+    <string name="routing_notification_active_title">Dirije odyo a nan ekoutè apèl la aktif</string>
+    <string name="routing_notification_active_text">Odyo vwa ki sipòte a ap dirije nan ekoutè apèl la.</string>
+    <string name="routing_notification_error_title">Pwoblèm nan dirije odyo a</string>
+    <string name="routing_notification_error_text">Louvri Puzru, etenn li epi eseye ankò.</string>
+    <string name="status_main_ready">Etenn</string>
+    <string name="status_mini_ready">Etenn</string>
+    <string name="status_main_waiting">Ap tann vwa</string>
+    <string name="status_mini_waiting">Ap tann</string>
+    <string name="status_main_active">Atravè ekoutè apèl la</string>
+    <string name="status_mini_active">Ekoutè apèl</string>
+    <string name="status_main_error">Pwoblèm nan dirije odyo a</string>
+    <string name="status_mini_error">Erè</string>
 </resources>

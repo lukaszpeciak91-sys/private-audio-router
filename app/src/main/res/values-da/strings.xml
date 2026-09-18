@@ -2,15 +2,12 @@
 <resources>
     <string name="app_name">Puzru</string>
     <string name="routing_notification_channel">Puzru</string>
-    <string name="routing_notification_title">Puzru er slået til</string>
-    <string name="routing_notification_text">Venter på at skifte lyd</string>
     <string name="product_title">Puzru</string>
     <string name="product_subtitle">Tal privat med AI, som i et telefonopkald.</string>
     <string name="state_ready">Klar</string>
     <string name="state_waiting">Venter</string>
     <string name="state_active">Aktiv</string>
     <string name="state_error">Fejl</string>
-    <string name="power_control">Strøm</string>
     <string name="floating">Mini</string>
     <string name="permission_notification_title">Vis, når Puzru er slået til</string>
     <string name="permission_notification_body">Puzru bruger en lydløs notifikation til at vise, at den er slået til og klar til at skifte lyd, også når appen er i baggrunden. Notifikationer er valgfrie; Puzru fungerer stadig uden dem.</string>
@@ -76,4 +73,20 @@
     <string name="diagnostics_error_audio_preparation">Puzru kunne ikke forberede kommunikationslyd.</string>
     <string name="diagnostics_error_request_rejected">Anmodningen om routing til ørestykket blev ikke accepteret.</string>
     <string name="diagnostics_error_not_completed">Lydroutingen kunne ikke fuldføres.</string>
+    <string name="power_turn_on">Slå til</string>
+    <string name="power_turn_off">Slå fra</string>
+    <string name="routing_notification_waiting_title">Puzru er slået til</string>
+    <string name="routing_notification_waiting_text">Venter på at skifte lyd</string>
+    <string name="routing_notification_active_title">Routing til ørestykket er aktiv</string>
+    <string name="routing_notification_active_text">Understøttet talelyd dirigeres til ørestykket.</string>
+    <string name="routing_notification_error_title">Problem med lydrouting</string>
+    <string name="routing_notification_error_text">Åbn Puzru, slå det fra, og prøv igen.</string>
+    <string name="status_main_ready">Fra</string>
+    <string name="status_mini_ready">Fra</string>
+    <string name="status_main_waiting">Venter på tale</string>
+    <string name="status_mini_waiting">Venter</string>
+    <string name="status_main_active">Via ørestykket</string>
+    <string name="status_mini_active">Ørestykke</string>
+    <string name="status_main_error">Problem med lydrouting</string>
+    <string name="status_mini_error">Fejl</string>
 </resources>

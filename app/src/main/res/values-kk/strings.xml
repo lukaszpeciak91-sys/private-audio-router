@@ -2,15 +2,12 @@
 <resources>
     <string name="app_name">Puzru</string>
     <string name="routing_notification_channel">Puzru</string>
-    <string name="routing_notification_title">Puzru қосулы</string>
-    <string name="routing_notification_text">Аудио шығысын ауыстыруды күтуде</string>
     <string name="product_title">Puzru</string>
     <string name="product_subtitle">ЖИ-мен телефон қоңырауындағыдай жеке сөйлесіңіз.</string>
     <string name="state_ready">Дайын</string>
     <string name="state_waiting">Күтуде</string>
     <string name="state_active">Белсенді</string>
     <string name="state_error">Қате</string>
-    <string name="power_control">Қуат</string>
     <string name="floating">Мини</string>
     <string name="permission_notification_title">Puzru қосулы кезде көрсету</string>
     <string name="permission_notification_body">Puzru қосулы және аудионы бағыттауға дайын екенін, соның ішінде қолданба фонда болғанда да, дыбыссыз хабарландыру арқылы көрсетеді. Хабарландырулар міндетті емес; Puzru оларсыз да жұмыс істейді.</string>
@@ -76,4 +73,20 @@
     <string name="diagnostics_error_audio_preparation">Puzru байланыс аудиосын дайындай алмады.</string>
     <string name="diagnostics_error_request_rejected">Аудионы құлақ динамигіне бағыттау сұрауы қабылданбады.</string>
     <string name="diagnostics_error_not_completed">Аудионы бағыттауды аяқтау мүмкін болмады.</string>
+    <string name="power_turn_on">Қосу</string>
+    <string name="power_turn_off">Өшіру</string>
+    <string name="routing_notification_waiting_title">Puzru қосулы</string>
+    <string name="routing_notification_waiting_text">Аудио шығысын ауыстыруды күтуде</string>
+    <string name="routing_notification_active_title">Құлақ динамигіне бағыттау белсенді</string>
+    <string name="routing_notification_active_text">Қолдау көрсетілетін дауыстық аудио құлақ динамигіне бағытталуда.</string>
+    <string name="routing_notification_error_title">Аудионы бағыттау мәселесі</string>
+    <string name="routing_notification_error_text">Puzru қолданбасын ашып, оны өшіріп, қайтадан көріңіз.</string>
+    <string name="status_main_ready">Өшірулі</string>
+    <string name="status_mini_ready">Өшірулі</string>
+    <string name="status_main_waiting">Дауысты күтуде</string>
+    <string name="status_mini_waiting">Күтуде</string>
+    <string name="status_main_active">Құлақ динамигі арқылы</string>
+    <string name="status_mini_active">Құлақ динамигі</string>
+    <string name="status_main_error">Аудионы бағыттау мәселесі</string>
+    <string name="status_mini_error">Қате</string>
 </resources>

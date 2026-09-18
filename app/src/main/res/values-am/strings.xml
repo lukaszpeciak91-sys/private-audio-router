@@ -2,15 +2,12 @@
 <resources>
     <string name="app_name">Puzru</string>
     <string name="routing_notification_channel">Puzru</string>
-    <string name="routing_notification_title">Puzru በርቷል</string>
-    <string name="routing_notification_text">የድምፅ ውጽዓትን ለመቀየር በመጠበቅ ላይ</string>
     <string name="product_title">Puzru</string>
     <string name="product_subtitle">ከAI ጋር በግል ይነጋገሩ፣ ልክ እንደ ስልክ ጥሪ።</string>
     <string name="state_ready">ዝግጁ</string>
     <string name="state_waiting">በመጠበቅ ላይ</string>
     <string name="state_active">ገባሪ</string>
     <string name="state_error">ስህተት</string>
-    <string name="power_control">ኃይል</string>
     <string name="floating">ሚኒ</string>
     <string name="permission_notification_title">Puzru በርቶ ሲሆን አሳይ</string>
     <string name="permission_notification_body">Puzru በርቶ ድምፅን ለመቀየር ዝግጁ መሆኑን፣ መተግበሪያው ከበስተጀርባ በሚሰራበት ጊዜም ጭምር፣ ጸጥ ባለ ማሳወቂያ ያሳያል። ማሳወቂያዎች አማራጭ ናቸው፤ Puzru ያለእነሱም ይሰራል።</string>
@@ -76,4 +73,20 @@
     <string name="diagnostics_error_audio_preparation">Puzru የግንኙነት ድምፅን ማዘጋጀት አልቻለም።</string>
     <string name="diagnostics_error_request_rejected">ድምፁን ወደ ስልኩ አብሮገነብ መስሚያ ለማዘዋወር የቀረበው ጥያቄ ተቀባይነት አላገኘም።</string>
     <string name="diagnostics_error_not_completed">የድምፅ መውጫ ማዘዋወሩ ሊጠናቀቅ አልቻለም።</string>
+    <string name="power_turn_on">አብራ</string>
+    <string name="power_turn_off">አጥፋ</string>
+    <string name="routing_notification_waiting_title">Puzru በርቷል</string>
+    <string name="routing_notification_waiting_text">የድምፅ ውጽዓትን ለመቀየር በመጠበቅ ላይ</string>
+    <string name="routing_notification_active_title">ወደ መስሚያ ማስተላለፍ ንቁ ነው</string>
+    <string name="routing_notification_active_text">የሚደገፍ የድምፅ ኦዲዮ ወደ ስልኩ አብሮገነብ መስሚያ እየተላለፈ ነው።</string>
+    <string name="routing_notification_error_title">የድምፅ ማስተላለፊያ ችግር</string>
+    <string name="routing_notification_error_text">Puzruን ክፈት፣ አጥፋው እና እንደገና ሞክር።</string>
+    <string name="status_main_ready">ጠፍቷል</string>
+    <string name="status_mini_ready">ጠፍቷል</string>
+    <string name="status_main_waiting">ድምፅን በመጠበቅ ላይ</string>
+    <string name="status_mini_waiting">በመጠበቅ ላይ</string>
+    <string name="status_main_active">በስልኩ አብሮገነብ መስሚያ</string>
+    <string name="status_mini_active">የስልኩ አብሮገነብ መስሚያ</string>
+    <string name="status_main_error">የድምፅ ማስተላለፊያ ችግር</string>
+    <string name="status_mini_error">ስህተት</string>
 </resources>

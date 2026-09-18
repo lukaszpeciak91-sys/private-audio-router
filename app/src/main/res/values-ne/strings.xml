@@ -2,15 +2,12 @@
 <resources>
     <string name="app_name">Puzru</string>
     <string name="routing_notification_channel">Puzru</string>
-    <string name="routing_notification_title">Puzru अन छ</string>
-    <string name="routing_notification_text">अडियो आउटपुट बदल्न पर्खँदै</string>
     <string name="product_title">Puzru</string>
     <string name="product_subtitle">फोन कल गरेजस्तै, एआईसँग निजी रूपमा कुरा गर्नुहोस्।</string>
     <string name="state_ready">तयार</string>
     <string name="state_waiting">पर्खँदै</string>
     <string name="state_active">सक्रिय</string>
     <string name="state_error">त्रुटि</string>
-    <string name="power_control">पावर</string>
     <string name="floating">मिनी</string>
     <string name="permission_notification_title">Puzru अन हुँदा देखाउनुहोस्</string>
     <string name="permission_notification_body">Puzru अन छ र अडियोलाई रुट गर्न तयार छ भनेर देखाउन मौन सूचना प्रयोग गर्छ, एप ब्याकग्राउन्डमा हुँदा समेत। सूचनाहरू वैकल्पिक हुन्; तिनीहरूबिना पनि Puzru ले काम गर्छ।</string>
@@ -76,4 +73,20 @@
     <string name="diagnostics_error_audio_preparation">Puzru ले सञ्चार अडियो तयार गर्न सकेन।</string>
     <string name="diagnostics_error_request_rejected">इयरपिस रुटिङको अनुरोध स्वीकार गरिएन।</string>
     <string name="diagnostics_error_not_completed">रुटिङ पूरा गर्न सकिएन।</string>
+    <string name="power_turn_on">चालु गर्नु</string>
+    <string name="power_turn_off">बन्द गर्नु</string>
+    <string name="routing_notification_waiting_title">Puzru अन छ</string>
+    <string name="routing_notification_waiting_text">अडियो आउटपुट बदल्न पर्खँदै</string>
+    <string name="routing_notification_active_title">इयरपिस राउटिङ सक्रिय छ</string>
+    <string name="routing_notification_active_text">समर्थित भ्वाइस अडियो इयरपिसमा राउट भइरहेको छ।</string>
+    <string name="routing_notification_error_title">अडियो राउटिङमा समस्या</string>
+    <string name="routing_notification_error_text">Puzru खोल्नुहोस्, यसलाई बन्द गर्नुहोस् र फेरि प्रयास गर्नुहोस्।</string>
+    <string name="status_main_ready">अफ</string>
+    <string name="status_mini_ready">अफ</string>
+    <string name="status_main_waiting">आवाजको प्रतीक्षा</string>
+    <string name="status_mini_waiting">पर्खँदै</string>
+    <string name="status_main_active">इयरपिसमार्फत</string>
+    <string name="status_mini_active">इयरपिस</string>
+    <string name="status_main_error">अडियो राउटिङमा समस्या</string>
+    <string name="status_mini_error">त्रुटि</string>
 </resources>

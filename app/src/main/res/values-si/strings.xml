@@ -2,15 +2,12 @@
 <resources>
     <string name="app_name">Puzru</string>
     <string name="routing_notification_channel">Puzru</string>
-    <string name="routing_notification_title">Puzru ක්‍රියාත්මකයි</string>
-    <string name="routing_notification_text">ශ්‍රව්‍යය යොමු කිරීමට රැඳී සිටී</string>
     <string name="product_title">Puzru</string>
     <string name="product_subtitle">දුරකථන ඇමතුමක් මෙන්, AI සමඟ පෞද්ගලිකව කතා කරන්න.</string>
     <string name="state_ready">සූදානම්</string>
     <string name="state_waiting">රැඳී සිටී</string>
     <string name="state_active">සක්‍රිය</string>
     <string name="state_error">දෝෂය</string>
-    <string name="power_control">බලය</string>
     <string name="floating">කුඩා</string>
     <string name="permission_notification_title">Puzru ක්‍රියාත්මක විට පෙන්වන්න</string>
     <string name="permission_notification_body">Puzru ක්‍රියාත්මක බවත් ශ්‍රව්‍යය යොමු කිරීමට සූදානම් බවත් පෙන්වීමට නිහඬ දැනුම්දීමක් භාවිත කරයි, යෙදුම පසුබිමේ ඇති විටද ඇතුළුව. දැනුම්දීම් විකල්ප වේ; ඒවා නොමැතිවද Puzru ක්‍රියා කරයි.</string>
@@ -75,4 +72,20 @@
     <string name="diagnostics_error_audio_preparation">Puzru හට සන්නිවේදන ශ්‍රව්‍යය සූදානම් කිරීමට නොහැකි විය.</string>
     <string name="diagnostics_error_request_rejected">කන් රිසීවරය වෙත යොමු කිරීමේ ඉල්ලීම පිළිගනු නොලැබිණි.</string>
     <string name="diagnostics_error_not_completed">යොමු කිරීම සම්පූර්ණ කිරීමට නොහැකි විය.</string>
+    <string name="power_turn_on">ක්‍රියාත්මක කරන්න</string>
+    <string name="power_turn_off">අක්‍රිය කරන්න</string>
+    <string name="routing_notification_waiting_title">Puzru ක්‍රියාත්මකයි</string>
+    <string name="routing_notification_waiting_text">ශ්‍රව්‍යය යොමු කිරීමට රැඳී සිටී</string>
+    <string name="routing_notification_active_title">කන් රිසීවරයට යොමු කිරීම සක්‍රියයි</string>
+    <string name="routing_notification_active_text">සහාය දක්වන හඬ ශ්‍රව්‍ය කන් රිසීවරයට යොමු කෙරෙමින් පවතී.</string>
+    <string name="routing_notification_error_title">ශ්‍රව්‍ය යොමු කිරීමේ ගැටලුව</string>
+    <string name="routing_notification_error_text">Puzru විවෘත කර, එය අක්‍රිය කර නැවත උත්සාහ කරන්න.</string>
+    <string name="status_main_ready">ක්‍රියාවිරහිතයි</string>
+    <string name="status_mini_ready">ක්‍රියාවිරහිතයි</string>
+    <string name="status_main_waiting">හඬ සඳහා රැඳී සිටී</string>
+    <string name="status_mini_waiting">රැඳී සිටී</string>
+    <string name="status_main_active">කන් රිසීවරය හරහා</string>
+    <string name="status_mini_active">කන් රිසීවරය</string>
+    <string name="status_main_error">ශ්‍රව්‍ය යොමු කිරීමේ ගැටලුව</string>
+    <string name="status_mini_error">දෝෂය</string>
 </resources>

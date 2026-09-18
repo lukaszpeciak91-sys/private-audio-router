@@ -2,15 +2,12 @@
 <resources>
     <string name="app_name">Puzru</string>
     <string name="routing_notification_channel">Puzru</string>
-    <string name="routing_notification_title">Puzru įjungta</string>
-    <string name="routing_notification_text">Laukia garso nukreipimo</string>
     <string name="product_title">Puzru</string>
     <string name="product_subtitle">Kalbėkitės su DI privačiai, kaip telefonu.</string>
     <string name="state_ready">Paruošta</string>
     <string name="state_waiting">Laukia</string>
     <string name="state_active">Aktyvu</string>
     <string name="state_error">Klaida</string>
-    <string name="power_control">Įjungti</string>
     <string name="floating">Mini</string>
     <string name="permission_notification_title">Rodyti, kai „Puzru“ įjungta</string>
     <string name="permission_notification_body">„Puzru“ tyliuoju pranešimu rodo, kad yra įjungta ir pasirengusi nukreipti garsą, taip pat kai programa veikia fone. Pranešimai neprivalomi; „Puzru“ veikia ir be jų.</string>
@@ -76,4 +73,20 @@
     <string name="diagnostics_error_audio_preparation">Puzru nepavyko paruošti pokalbio garso.</string>
     <string name="diagnostics_error_request_rejected">Prašymas nukreipti garsą į pokalbių garsiakalbį nebuvo priimtas.</string>
     <string name="diagnostics_error_not_completed">Nepavyko užbaigti garso nukreipimo.</string>
+    <string name="power_turn_on">Įjungti</string>
+    <string name="power_turn_off">Išjungti</string>
+    <string name="routing_notification_waiting_title">Puzru įjungta</string>
+    <string name="routing_notification_waiting_text">Laukia garso nukreipimo</string>
+    <string name="routing_notification_active_title">Nukreipimas į pokalbių garsiakalbį aktyvus</string>
+    <string name="routing_notification_active_text">Palaikomas balso garsas nukreipiamas į pokalbių garsiakalbį.</string>
+    <string name="routing_notification_error_title">Garso nukreipimo problema</string>
+    <string name="routing_notification_error_text">Atidarykite Puzru, išjunkite jį ir bandykite dar kartą.</string>
+    <string name="status_main_ready">Išjungta</string>
+    <string name="status_mini_ready">Išjungta</string>
+    <string name="status_main_waiting">Laukia balso</string>
+    <string name="status_mini_waiting">Laukia</string>
+    <string name="status_main_active">Per pokalbių garsiakalbį</string>
+    <string name="status_mini_active">Pokalbių garsiakalbis</string>
+    <string name="status_main_error">Garso nukreipimo problema</string>
+    <string name="status_mini_error">Klaida</string>
 </resources>

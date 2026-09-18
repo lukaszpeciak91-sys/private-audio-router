@@ -2,15 +2,12 @@
 <resources>
     <string name="app_name">Puzru</string>
     <string name="routing_notification_channel">Puzru</string>
-    <string name="routing_notification_title">Puzru уключана</string>
-    <string name="routing_notification_text">Чакае на перанакіраванне гуку</string>
     <string name="product_title">Puzru</string>
     <string name="product_subtitle">Размаўляйце з AI прыватна, як падчас тэлефоннай размовы.</string>
     <string name="state_ready">Гатова</string>
     <string name="state_waiting">Чакае</string>
     <string name="state_active">Актыўна</string>
     <string name="state_error">Памылка</string>
-    <string name="power_control">Уключыць</string>
     <string name="floating">Міні</string>
     <string name="permission_notification_title">Паказваць, калі Puzru ўключана</string>
     <string name="permission_notification_body">Puzru выкарыстоўвае ціхае апавяшчэнне, каб паказваць, што праграма ўключана і гатова перанакіроўваць гук, у тым ліку калі яна працуе ў фонавым рэжыме. Апавяшчэнні неабавязковыя; Puzru працуе і без іх.</string>
@@ -76,4 +73,20 @@
     <string name="diagnostics_error_audio_preparation">Праграме Puzru не ўдалося падрыхтаваць аўдыя для сувязі.</string>
     <string name="diagnostics_error_request_rejected">Запыт на перанакіраванне гуку на размоўны дынамік не быў прыняты.</string>
     <string name="diagnostics_error_not_completed">Не ўдалося завяршыць перанакіраванне гуку.</string>
+    <string name="power_turn_on">Уключыць</string>
+    <string name="power_turn_off">Выключыць</string>
+    <string name="routing_notification_waiting_title">Puzru уключана</string>
+    <string name="routing_notification_waiting_text">Чакае на перанакіраванне гуку</string>
+    <string name="routing_notification_active_title">Перанакіраванне на размоўны дынамік актыўнае</string>
+    <string name="routing_notification_active_text">Падтрыманы галасавы гук перанакіроўваецца на размоўны дынамік.</string>
+    <string name="routing_notification_error_title">Праблема з перанакіраваннем гуку</string>
+    <string name="routing_notification_error_text">Адкрыйце Puzru, выключыце яго і паспрабуйце яшчэ раз.</string>
+    <string name="status_main_ready">Выключана</string>
+    <string name="status_mini_ready">Выключана</string>
+    <string name="status_main_waiting">Чакае голас</string>
+    <string name="status_mini_waiting">Чакае</string>
+    <string name="status_main_active">Праз размоўны дынамік</string>
+    <string name="status_mini_active">Размоўны дынамік</string>
+    <string name="status_main_error">Праблема з перанакіраваннем гуку</string>
+    <string name="status_mini_error">Памылка</string>
 </resources>

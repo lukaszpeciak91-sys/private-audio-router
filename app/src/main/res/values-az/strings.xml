@@ -2,15 +2,12 @@
 <resources>
     <string name="app_name">Puzru</string>
     <string name="routing_notification_channel">Puzru</string>
-    <string name="routing_notification_title">Puzru açıqdır</string>
-    <string name="routing_notification_text">Audio çıxışını dəyişməyi gözləyir</string>
     <string name="product_title">Puzru</string>
     <string name="product_subtitle">Sİ ilə telefon zəngi kimi özəl şəkildə danışın.</string>
     <string name="state_ready">Hazır</string>
     <string name="state_waiting">Gözləyir</string>
     <string name="state_active">Aktiv</string>
     <string name="state_error">Xəta</string>
-    <string name="power_control">Yandırıb-söndürmə</string>
     <string name="floating">Mini</string>
     <string name="permission_notification_title">Puzru açıq olduqda göstər</string>
     <string name="permission_notification_body">Puzru açıq və audionu yönləndirməyə hazır olduğunu, tətbiq arxa planda olduqda belə, səssiz bildirişlə göstərir. Bildirişlər istəyə bağlıdır; Puzru onlarsız da işləyir.</string>
@@ -76,4 +73,20 @@
     <string name="diagnostics_error_audio_preparation">Puzru rabitə audiosunu hazırlaya bilmədi.</string>
     <string name="diagnostics_error_request_rejected">Səsi qulaq dinamikinə yönləndirmə sorğusu qəbul edilmədi.</string>
     <string name="diagnostics_error_not_completed">Yönləndirmə tamamlana bilmədi.</string>
+    <string name="power_turn_on">Yandır</string>
+    <string name="power_turn_off">Söndür</string>
+    <string name="routing_notification_waiting_title">Puzru açıqdır</string>
+    <string name="routing_notification_waiting_text">Audio çıxışını dəyişməyi gözləyir</string>
+    <string name="routing_notification_active_title">Qulaq dinamikinə yönləndirmə aktivdir</string>
+    <string name="routing_notification_active_text">Dəstəklənən səs audiosu qulaq dinamikinə yönləndirilir.</string>
+    <string name="routing_notification_error_title">Audio yönləndirmə problemi</string>
+    <string name="routing_notification_error_text">Puzru-nu açın, söndürün və yenidən cəhd edin.</string>
+    <string name="status_main_ready">Söndürülüb</string>
+    <string name="status_mini_ready">Söndürülüb</string>
+    <string name="status_main_waiting">Səs gözlənilir</string>
+    <string name="status_mini_waiting">Gözləyir</string>
+    <string name="status_main_active">Qulaq dinamiki vasitəsilə</string>
+    <string name="status_mini_active">Qulaq dinamiki</string>
+    <string name="status_main_error">Audio yönləndirmə problemi</string>
+    <string name="status_mini_error">Xəta</string>
 </resources>

@@ -2,15 +2,12 @@
 <resources>
     <string name="app_name">Puzru</string>
     <string name="routing_notification_channel">Puzru</string>
-    <string name="routing_notification_title">Puzru est activé</string>
-    <string name="routing_notification_text">En attente du routage audio</string>
     <string name="product_title">Puzru</string>
     <string name="product_subtitle">Parlez avec une IA en privé, comme au téléphone.</string>
     <string name="state_ready">Prêt</string>
     <string name="state_waiting">En attente</string>
     <string name="state_active">Actif</string>
     <string name="state_error">Erreur</string>
-    <string name="power_control">Activer</string>
     <string name="floating">Mini</string>
     <string name="permission_notification_title">Afficher lorsque Puzru est activé</string>
     <string name="permission_notification_body">Puzru utilise une notification silencieuse pour indiquer qu’il est activé et prêt à acheminer le son, y compris lorsque l’application est en arrière-plan. Les notifications sont facultatives ; Puzru fonctionne toujours sans elles.</string>
@@ -76,4 +73,20 @@
     <string name="diagnostics_error_audio_preparation">Puzru n’a pas pu préparer l’audio de communication.</string>
     <string name="diagnostics_error_request_rejected">La demande de routage vers l’écouteur n’a pas été acceptée.</string>
     <string name="diagnostics_error_not_completed">Le routage n’a pas pu être effectué.</string>
+    <string name="power_turn_on">Activer</string>
+    <string name="power_turn_off">Désactiver</string>
+    <string name="routing_notification_waiting_title">Puzru est activé</string>
+    <string name="routing_notification_waiting_text">En attente du routage audio</string>
+    <string name="routing_notification_active_title">Routage vers l\'écouteur actif</string>
+    <string name="routing_notification_active_text">L\'audio vocal pris en charge est acheminé vers l\'écouteur.</string>
+    <string name="routing_notification_error_title">Problème de routage audio</string>
+    <string name="routing_notification_error_text">Ouvrez Puzru, désactivez-le et réessayez.</string>
+    <string name="status_main_ready">Désactivé</string>
+    <string name="status_mini_ready">Désactivé</string>
+    <string name="status_main_waiting">En attente de la voix</string>
+    <string name="status_mini_waiting">En attente</string>
+    <string name="status_main_active">Via l\'écouteur</string>
+    <string name="status_mini_active">Écouteur</string>
+    <string name="status_main_error">Problème de routage audio</string>
+    <string name="status_mini_error">Erreur</string>
 </resources>

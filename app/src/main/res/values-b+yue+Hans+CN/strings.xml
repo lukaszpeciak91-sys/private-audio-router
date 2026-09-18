@@ -2,15 +2,12 @@
 <resources>
     <string name="app_name">Puzru</string>
     <string name="routing_notification_channel">Puzru</string>
-    <string name="routing_notification_title">Puzru 开咗</string>
-    <string name="routing_notification_text">等紧进行音频路由</string>
     <string name="product_title">Puzru</string>
     <string name="product_subtitle">好似打电话咁，私下同人工智能倾偈。</string>
     <string name="state_ready">准备好</string>
     <string name="state_waiting">等紧</string>
     <string name="state_active">使用紧</string>
     <string name="state_error">出错</string>
-    <string name="power_control">电源</string>
     <string name="floating">迷你</string>
     <string name="permission_notification_title">Puzru 开咗时显示</string>
     <string name="permission_notification_body">Puzru 会用静音通知显示佢经已开咗，并准备好路由音频，就算应用喺后台运行时都一样。通知系可选嘅；冇通知，Puzru 都照样运作。</string>
@@ -75,4 +72,20 @@
     <string name="diagnostics_error_audio_preparation">Puzru 无法准备通信音频。</string>
     <string name="diagnostics_error_request_rejected">听筒音频路由请求未获接受。</string>
     <string name="diagnostics_error_not_completed">无法完成音频路由。</string>
+    <string name="power_turn_on">开启</string>
+    <string name="power_turn_off">关闭</string>
+    <string name="routing_notification_waiting_title">Puzru 开咗</string>
+    <string name="routing_notification_waiting_text">等紧进行音频路由</string>
+    <string name="routing_notification_active_title">听筒导向已启用</string>
+    <string name="routing_notification_active_text">支持嘅语音音频正导向听筒。</string>
+    <string name="routing_notification_error_title">音频导向有问题</string>
+    <string name="routing_notification_error_text">打开 Puzru，将佢关闭后再试一次。</string>
+    <string name="status_main_ready">关闭</string>
+    <string name="status_mini_ready">关闭</string>
+    <string name="status_main_waiting">等紧语音</string>
+    <string name="status_mini_waiting">等紧</string>
+    <string name="status_main_active">经听筒</string>
+    <string name="status_mini_active">听筒</string>
+    <string name="status_main_error">音频导向有问题</string>
+    <string name="status_mini_error">出错</string>
 </resources>

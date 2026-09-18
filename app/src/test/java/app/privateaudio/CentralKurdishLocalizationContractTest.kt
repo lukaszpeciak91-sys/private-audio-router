@@ -28,9 +28,9 @@ class CentralKurdishLocalizationContractTest {
 
     @Test
     fun centralKurdishPreservesCoreStateAndRoutingDistinctions() {
-        assertTrue(strings.contains("name=\"routing_notification_title\">Puzru چالاکە</string>"))
+        assertTrue(strings.contains("name=\"routing_notification_waiting_title\">Puzru چالاکە</string>"))
         assertTrue(strings.contains("name=\"state_active\">کارا</string>"))
-        assertNotEquals(value("routing_notification_title"), value("state_active"))
+        assertNotEquals(value("routing_notification_waiting_title"), value("state_active"))
         assertEquals("گوێگرە ناوخۆییەکەی پەیوەندی", value("diagnostics_route_earpiece"))
         assertEquals("بڵندگۆ", value("diagnostics_route_speaker"))
         assertNotEquals(value("diagnostics_route_earpiece"), value("diagnostics_route_speaker"))

@@ -2,15 +2,12 @@
 <resources>
     <string name="app_name">Puzru</string>
     <string name="routing_notification_channel">Puzru</string>
-    <string name="routing_notification_title">Puzru روشن است</string>
-    <string name="routing_notification_text">در انتظار هدایت صدا</string>
     <string name="product_title">Puzru</string>
     <string name="product_subtitle">مثل تماس تلفنی، خصوصی با هوش مصنوعی صحبت کنید.</string>
     <string name="state_ready">آماده</string>
     <string name="state_waiting">در انتظار</string>
     <string name="state_active">فعال</string>
     <string name="state_error">خطا</string>
-    <string name="power_control">روشن کردن</string>
     <string name="floating">مینی</string>
     <string name="permission_notification_title">نمایش هنگام روشن بودن Puzru</string>
     <string name="permission_notification_body">Puzru با یک اعلان بی‌صدا نشان می‌دهد که روشن و آمادهٔ هدایت صدا است، حتی وقتی برنامه در پس‌زمینه است. اعلان‌ها اختیاری هستند؛ Puzru بدون آن‌ها هم کار می‌کند.</string>
@@ -76,4 +73,20 @@
     <string name="diagnostics_error_audio_preparation">Puzru نتوانست صدای ارتباطی را آماده کند.</string>
     <string name="diagnostics_error_request_rejected">درخواست هدایت صدا به بلندگوی مکالمه پذیرفته نشد.</string>
     <string name="diagnostics_error_not_completed">هدایت صدا تکمیل نشد.</string>
+    <string name="power_turn_on">روشن کردن</string>
+    <string name="power_turn_off">خاموش کردن</string>
+    <string name="routing_notification_waiting_title">Puzru روشن است</string>
+    <string name="routing_notification_waiting_text">در انتظار هدایت صدا</string>
+    <string name="routing_notification_active_title">هدایت صدا به بلندگوی مکالمه فعال است</string>
+    <string name="routing_notification_active_text">صدای گفتاری پشتیبانی‌شده به بلندگوی مکالمه هدایت می‌شود.</string>
+    <string name="routing_notification_error_title">مشکل در هدایت صدا</string>
+    <string name="routing_notification_error_text">Puzru را باز کنید، آن را خاموش کنید و دوباره تلاش کنید.</string>
+    <string name="status_main_ready">خاموش</string>
+    <string name="status_mini_ready">خاموش</string>
+    <string name="status_main_waiting">در انتظار صدا</string>
+    <string name="status_mini_waiting">در انتظار</string>
+    <string name="status_main_active">از طریق بلندگوی مکالمه</string>
+    <string name="status_mini_active">بلندگوی مکالمه</string>
+    <string name="status_main_error">مشکل در هدایت صدا</string>
+    <string name="status_mini_error">خطا</string>
 </resources>

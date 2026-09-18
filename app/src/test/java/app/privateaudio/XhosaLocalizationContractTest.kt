@@ -30,7 +30,7 @@ class XhosaLocalizationContractTest {
         assertEquals("Ilindile", resourceValue("state_waiting"))
         assertEquals("Iyasebenza", resourceValue("state_active"))
         assertEquals("Impazamo", resourceValue("state_error"))
-        assertEquals("Ilindile ukuhambisa iaudio", resourceValue("routing_notification_text"))
+        assertEquals("Ilindile ukuhambisa iaudio", resourceValue("routing_notification_waiting_text"))
         assertFalse(resourceValue("state_active") == resourceValue("diagnostics_on"))
 
         assertEquals("Puzru", resourceValue("app_name"))

@@ -2,15 +2,12 @@
 <resources>
     <string name="app_name">Puzru</string>
     <string name="routing_notification_channel">Puzru</string>
-    <string name="routing_notification_title">Puzru está ativado</string>
-    <string name="routing_notification_text">Aguardando para redirecionar o áudio</string>
     <string name="product_title">Puzru</string>
     <string name="product_subtitle">Converse com a IA em particular, como em uma ligação.</string>
     <string name="state_ready">Pronto</string>
     <string name="state_waiting">Aguardando</string>
     <string name="state_active">Ativo</string>
     <string name="state_error">Erro</string>
-    <string name="power_control">Ativar</string>
     <string name="floating">Mini</string>
     <string name="permission_notification_title">Mostrar quando o Puzru estiver ligado</string>
     <string name="permission_notification_body">O Puzru usa uma notificação silenciosa para mostrar que está ligado e pronto para rotear o áudio, mesmo quando o app está em segundo plano. As notificações são opcionais; o Puzru continua funcionando sem elas.</string>
@@ -76,4 +73,20 @@
     <string name="diagnostics_error_audio_preparation">O Puzru não conseguiu preparar o áudio de comunicação.</string>
     <string name="diagnostics_error_request_rejected">A solicitação de direcionamento para o alto-falante de chamadas não foi aceita.</string>
     <string name="diagnostics_error_not_completed">Não foi possível concluir o direcionamento de áudio.</string>
+    <string name="power_turn_on">Ativar</string>
+    <string name="power_turn_off">Desativar</string>
+    <string name="routing_notification_waiting_title">Puzru está ativado</string>
+    <string name="routing_notification_waiting_text">Aguardando para redirecionar o áudio</string>
+    <string name="routing_notification_active_title">Redirecionamento para o alto-falante de chamadas ativo</string>
+    <string name="routing_notification_active_text">O áudio de voz compatível está sendo redirecionado para o alto-falante de chamadas.</string>
+    <string name="routing_notification_error_title">Problema ao redirecionar o áudio</string>
+    <string name="routing_notification_error_text">Abra o Puzru, desative-o e tente novamente.</string>
+    <string name="status_main_ready">Desativado</string>
+    <string name="status_mini_ready">Desativado</string>
+    <string name="status_main_waiting">Aguardando voz</string>
+    <string name="status_mini_waiting">Aguardando</string>
+    <string name="status_main_active">Pelo alto-falante de chamadas</string>
+    <string name="status_mini_active">Alto-falante de chamadas</string>
+    <string name="status_main_error">Problema ao redirecionar o áudio</string>
+    <string name="status_mini_error">Erro</string>
 </resources>

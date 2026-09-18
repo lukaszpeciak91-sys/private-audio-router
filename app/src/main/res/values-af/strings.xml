@@ -2,15 +2,12 @@
 <resources>
     <string name="app_name">Puzru</string>
     <string name="routing_notification_channel">Puzru</string>
-    <string name="routing_notification_title">Puzru is aan</string>
-    <string name="routing_notification_text">Wag om oudio oor te skakel</string>
     <string name="product_title">Puzru</string>
     <string name="product_subtitle">Praat privaat met KI, soos tydens \'n telefoonoproep.</string>
     <string name="state_ready">Gereed</string>
     <string name="state_waiting">Wag</string>
     <string name="state_active">Aktief</string>
     <string name="state_error">Fout</string>
-    <string name="power_control">Aan/af</string>
     <string name="floating">Mini</string>
     <string name="permission_notification_title">Wys wanneer Puzru aan is</string>
     <string name="permission_notification_body">Puzru gebruik ’n stil kennisgewing om te wys wanneer dit aan en gereed is om oudio oor te skakel, ook wanneer die app in die agtergrond is. Kennisgewings is opsioneel; Puzru werk steeds daarsonder.</string>
@@ -76,4 +73,20 @@
     <string name="diagnostics_error_audio_preparation">Puzru kon nie kommunikasieoudio voorberei nie.</string>
     <string name="diagnostics_error_request_rejected">Die versoek om oudio na die oorstuk oor te skakel, is nie aanvaar nie.</string>
     <string name="diagnostics_error_not_completed">Roetering kon nie voltooi word nie.</string>
+    <string name="power_turn_on">Skakel aan</string>
+    <string name="power_turn_off">Skakel af</string>
+    <string name="routing_notification_waiting_title">Puzru is aan</string>
+    <string name="routing_notification_waiting_text">Wag om oudio oor te skakel</string>
+    <string name="routing_notification_active_title">Oorstukroetering aktief</string>
+    <string name="routing_notification_active_text">Ondersteunde stemoudio word na die oorstuk herlei.</string>
+    <string name="routing_notification_error_title">Probleem met klankroetering</string>
+    <string name="routing_notification_error_text">Maak Puzru oop, skakel dit af en probeer weer.</string>
+    <string name="status_main_ready">Af</string>
+    <string name="status_mini_ready">Af</string>
+    <string name="status_main_waiting">Wag vir stem</string>
+    <string name="status_mini_waiting">Wag</string>
+    <string name="status_main_active">Via die oorstuk</string>
+    <string name="status_mini_active">Oorstuk</string>
+    <string name="status_main_error">Probleem met klankroetering</string>
+    <string name="status_mini_error">Fout</string>
 </resources>

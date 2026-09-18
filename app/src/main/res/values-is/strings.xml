@@ -2,15 +2,12 @@
 <resources>
     <string name="app_name">Puzru</string>
     <string name="routing_notification_channel">Puzru</string>
-    <string name="routing_notification_title">Kveikt er á Puzru</string>
-    <string name="routing_notification_text">Bíður eftir að skipta um hljóðúttak</string>
     <string name="product_title">Puzru</string>
     <string name="product_subtitle">Talaðu einslega við AI, eins og í símtali.</string>
     <string name="state_ready">Tilbúið</string>
     <string name="state_waiting">Bíður</string>
     <string name="state_active">Virkt</string>
     <string name="state_error">Villa</string>
-    <string name="power_control">Afl</string>
     <string name="floating">Mini</string>
     <string name="permission_notification_title">Sýna þegar kveikt er á Puzru</string>
     <string name="permission_notification_body">Puzru notar hljóðlausa tilkynningu til að sýna að kveikt sé á því og það sé tilbúið að skipta um hljóðúttak, einnig þegar forritið er í bakgrunni. Tilkynningar eru valfrjálsar; Puzru virkar áfram án þeirra.</string>
@@ -76,4 +73,20 @@
     <string name="diagnostics_error_audio_preparation">Puzru tókst ekki að undirbúa samskiptahljóð.</string>
     <string name="diagnostics_error_request_rejected">Beiðni um hljóðbeiningu í eyrnarhátalara var ekki samþykkt.</string>
     <string name="diagnostics_error_not_completed">Ekki tókst að ljúka hljóðbeiningu.</string>
+    <string name="power_turn_on">Kveikja</string>
+    <string name="power_turn_off">Slökkva</string>
+    <string name="routing_notification_waiting_title">Kveikt er á Puzru</string>
+    <string name="routing_notification_waiting_text">Bíður eftir að skipta um hljóðúttak</string>
+    <string name="routing_notification_active_title">Leiðing í eyrnarhátalarann virk</string>
+    <string name="routing_notification_active_text">Studd raddhljóð er leitt í eyrnarhátalarann.</string>
+    <string name="routing_notification_error_title">Vandamál við hljóðleiðingu</string>
+    <string name="routing_notification_error_text">Opnaðu Puzru, slökktu á því og reyndu aftur.</string>
+    <string name="status_main_ready">Slökkt</string>
+    <string name="status_mini_ready">Slökkt</string>
+    <string name="status_main_waiting">Bíður eftir rödd</string>
+    <string name="status_mini_waiting">Bíður</string>
+    <string name="status_main_active">Í gegnum eyrnarhátalarann</string>
+    <string name="status_mini_active">Eyrnarhátalari</string>
+    <string name="status_main_error">Vandamál við hljóðleiðingu</string>
+    <string name="status_mini_error">Villa</string>
 </resources>

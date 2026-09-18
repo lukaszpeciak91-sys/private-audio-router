@@ -2,15 +2,12 @@
 <resources>
     <string name="app_name">Puzru</string>
     <string name="routing_notification_channel">Puzru</string>
-    <string name="routing_notification_title">Puzru фаъол аст</string>
-    <string name="routing_notification_text">Интизори масирдиҳии аудио</string>
     <string name="product_title">Puzru</string>
     <string name="product_subtitle">Бо зеҳни сунъӣ мисли занги телефонӣ махфӣ суҳбат кунед.</string>
     <string name="state_ready">Омода</string>
     <string name="state_waiting">Дар интизорӣ</string>
     <string name="state_active">Фаъол</string>
     <string name="state_error">Хато</string>
-    <string name="power_control">Фаъол/хомӯш кардан</string>
     <string name="floating">Мини</string>
     <string name="permission_notification_title">Ҳангоми фаъол будани Puzru нишон додан</string>
     <string name="permission_notification_body">Puzru бо огоҳиномаи бесадо нишон медиҳад, ки фаъол ва барои масирдиҳии аудио омода аст, аз ҷумла ҳангоми дар замина будани барнома. Огоҳиномаҳо ихтиёрӣ мебошанд; Puzru бе онҳо ҳам кор мекунад.</string>
@@ -75,4 +72,20 @@
     <string name="diagnostics_error_audio_preparation">Puzru аудиои иртиботиро омода карда натавонист.</string>
     <string name="diagnostics_error_request_rejected">Дархости масирдиҳӣ ба гӯшии занг қабул нашуд.</string>
     <string name="diagnostics_error_not_completed">Масирдиҳӣ анҷом дода нашуд.</string>
+    <string name="power_turn_on">Фаъол кардан</string>
+    <string name="power_turn_off">Хомӯш кардан</string>
+    <string name="routing_notification_waiting_title">Puzru фаъол аст</string>
+    <string name="routing_notification_waiting_text">Интизори масирдиҳии аудио</string>
+    <string name="routing_notification_active_title">Масирдиҳӣ ба гӯшии занг фаъол аст</string>
+    <string name="routing_notification_active_text">Аудиои овозии дастгиришаванда ба гӯшии занг масир дода мешавад.</string>
+    <string name="routing_notification_error_title">Мушкилоти масирдиҳии аудио</string>
+    <string name="routing_notification_error_text">Puzru-ро кушоед, онро хомӯш кунед ва боз кӯшиш кунед.</string>
+    <string name="status_main_ready">Хомӯш</string>
+    <string name="status_mini_ready">Хомӯш</string>
+    <string name="status_main_waiting">Интизори овоз</string>
+    <string name="status_mini_waiting">Дар интизорӣ</string>
+    <string name="status_main_active">Тавассути гӯшии занг</string>
+    <string name="status_mini_active">Гӯшии занг</string>
+    <string name="status_main_error">Мушкилоти масирдиҳии аудио</string>
+    <string name="status_mini_error">Хато</string>
 </resources>

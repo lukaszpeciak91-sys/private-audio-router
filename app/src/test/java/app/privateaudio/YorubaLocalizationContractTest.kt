@@ -30,7 +30,7 @@ class YorubaLocalizationContractTest {
         assertEquals("N dúró", resourceValue("state_waiting"))
         assertEquals("N ṣiṣẹ́ lọ́wọ́", resourceValue("state_active"))
         assertEquals("Àṣìṣe", resourceValue("state_error"))
-        assertEquals("Puzru ti wa ni titan", resourceValue("routing_notification_title"))
+        assertEquals("Puzru ti wa ni titan", resourceValue("routing_notification_waiting_title"))
         assertFalse(resourceValue("state_active") == resourceValue("diagnostics_on"))
 
         assertEquals("Puzru", resourceValue("app_name"))

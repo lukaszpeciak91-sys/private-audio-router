@@ -2,15 +2,12 @@
 <resources>
     <string name="app_name">Puzru</string>
     <string name="routing_notification_channel">Puzru</string>
-    <string name="routing_notification_title">Puzru ჩართულია</string>
-    <string name="routing_notification_text">ელოდება გამომავალი აუდიოს გადართვას</string>
     <string name="product_title">Puzru</string>
     <string name="product_subtitle">AI-სთან პირადად ისაუბრეთ, როგორც სატელეფონო ზარის დროს.</string>
     <string name="state_ready">მზადაა</string>
     <string name="state_waiting">მოლოდინშია</string>
     <string name="state_active">აქტიურია</string>
     <string name="state_error">შეცდომა</string>
-    <string name="power_control">ჩართვა/გამორთვა</string>
     <string name="floating">მინი</string>
     <string name="permission_notification_title">ჩვენება, როცა Puzru ჩართულია</string>
     <string name="permission_notification_body">Puzru უხმო შეტყობინებით აჩვენებს, რომ ჩართულია და მზადაა აუდიოს გადასართავად, მათ შორის, როცა აპი ფონურ რეჟიმშია. შეტყობინებები არასავალდებულოა; Puzru მათ გარეშეც მუშაობს.</string>
@@ -76,4 +73,20 @@
     <string name="diagnostics_error_audio_preparation">Puzru-მ საკომუნიკაციო აუდიო ვერ მოამზადა.</string>
     <string name="diagnostics_error_request_rejected">სისტემამ ყურმილზე გადართვის მოთხოვნა არ მიიღო.</string>
     <string name="diagnostics_error_not_completed">აუდიოს გადართვა ვერ დასრულდა.</string>
+    <string name="power_turn_on">ჩართვა</string>
+    <string name="power_turn_off">გამორთვა</string>
+    <string name="routing_notification_waiting_title">Puzru ჩართულია</string>
+    <string name="routing_notification_waiting_text">ელოდება გამომავალი აუდიოს გადართვას</string>
+    <string name="routing_notification_active_title">ყურმილზე გადამისამართება აქტიურია</string>
+    <string name="routing_notification_active_text">მხარდაჭერილი ხმოვანი აუდიო ყურმილზე გადამისამართდება.</string>
+    <string name="routing_notification_error_title">აუდიოს გადამისამართების პრობლემა</string>
+    <string name="routing_notification_error_text">გახსენით Puzru, გამორთეთ და სცადეთ თავიდან.</string>
+    <string name="status_main_ready">გამორთულია</string>
+    <string name="status_mini_ready">გამორთულია</string>
+    <string name="status_main_waiting">ელოდება ხმას</string>
+    <string name="status_mini_waiting">მოლოდინშია</string>
+    <string name="status_main_active">ყურმილის მეშვეობით</string>
+    <string name="status_mini_active">ყურმილი</string>
+    <string name="status_main_error">აუდიოს გადამისამართების პრობლემა</string>
+    <string name="status_mini_error">შეცდომა</string>
 </resources>

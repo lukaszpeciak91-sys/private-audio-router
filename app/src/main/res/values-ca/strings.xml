@@ -2,15 +2,12 @@
 <resources>
     <string name="app_name">Puzru</string>
     <string name="routing_notification_channel">Puzru</string>
-    <string name="routing_notification_title">Puzru està activat</string>
-    <string name="routing_notification_text">En espera de canviar la sortida d\'àudio</string>
     <string name="product_title">Puzru</string>
     <string name="product_subtitle">Parla amb la IA en privat, com si fos una trucada telefònica.</string>
     <string name="state_ready">A punt</string>
     <string name="state_waiting">En espera</string>
     <string name="state_active">Actiu</string>
     <string name="state_error">Error</string>
-    <string name="power_control">Activar/desactivar</string>
     <string name="floating">Mini</string>
     <string name="permission_notification_title">Mostra quan Puzru està activat</string>
     <string name="permission_notification_body">Puzru utilitza una notificació silenciosa per mostrar que està activat i a punt per redirigir l’àudio, fins i tot quan l’aplicació és en segon pla. Les notificacions són opcionals; Puzru continua funcionant sense aquestes.</string>
@@ -76,4 +73,20 @@
     <string name="diagnostics_error_audio_preparation">Puzru no ha pogut preparar l’àudio de comunicació.</string>
     <string name="diagnostics_error_request_rejected">No s’ha acceptat la sol·licitud d’encaminar l’àudio a l’auricular integrat.</string>
     <string name="diagnostics_error_not_completed">No s’ha pogut completar l’encaminament de l’àudio.</string>
+    <string name="power_turn_on">Activa</string>
+    <string name="power_turn_off">Desactiva</string>
+    <string name="routing_notification_waiting_title">Puzru està activat</string>
+    <string name="routing_notification_waiting_text">En espera de canviar la sortida d\'àudio</string>
+    <string name="routing_notification_active_title">Encaminament a l\'auricular actiu</string>
+    <string name="routing_notification_active_text">L\'àudio de veu compatible s\'encamina a l\'auricular integrat.</string>
+    <string name="routing_notification_error_title">Problema d\'encaminament de l\'àudio</string>
+    <string name="routing_notification_error_text">Obre Puzru, desactiva\'l i torna-ho a provar.</string>
+    <string name="status_main_ready">Desactivat</string>
+    <string name="status_mini_ready">Desactivat</string>
+    <string name="status_main_waiting">Esperant veu</string>
+    <string name="status_mini_waiting">En espera</string>
+    <string name="status_main_active">A través de l\'auricular integrat</string>
+    <string name="status_mini_active">Auricular integrat</string>
+    <string name="status_main_error">Problema d\'encaminament de l\'àudio</string>
+    <string name="status_mini_error">Error</string>
 </resources>

@@ -2,15 +2,12 @@
 <resources>
     <string name="app_name">Puzru</string>
     <string name="routing_notification_channel">Puzru</string>
-    <string name="routing_notification_title">Puzru מופעל</string>
-    <string name="routing_notification_text">בהמתנה להחלפת פלט האודיו</string>
     <string name="product_title">Puzru</string>
     <string name="product_subtitle">דברו עם AI בפרטיות, כמו בשיחת טלפון.</string>
     <string name="state_ready">מוכן</string>
     <string name="state_waiting">בהמתנה</string>
     <string name="state_active">פעיל</string>
     <string name="state_error">שגיאה</string>
-    <string name="power_control">הפעלה/כיבוי</string>
     <string name="floating">מיני</string>
     <string name="permission_notification_title">הצגה כש-Puzru מופעל</string>
     <string name="permission_notification_body">Puzru משתמש בהתראה שקטה כדי לציין שהוא מופעל ומוכן להחליף את פלט האודיו, גם כשהאפליקציה פועלת ברקע. ההתראות הן אופציונליות; Puzru פועל גם בלעדיהן.</string>
@@ -76,4 +73,20 @@
     <string name="diagnostics_error_audio_preparation">אפליקציית Puzru לא הצליחה להכין שמע לתקשורת.</string>
     <string name="diagnostics_error_request_rejected">הבקשה לניתוב השמע לאפרכסת לא התקבלה.</string>
     <string name="diagnostics_error_not_completed">לא ניתן היה להשלים את הניתוב.</string>
+    <string name="power_turn_on">הפעל</string>
+    <string name="power_turn_off">כבה</string>
+    <string name="routing_notification_waiting_title">Puzru מופעל</string>
+    <string name="routing_notification_waiting_text">בהמתנה להחלפת פלט האודיו</string>
+    <string name="routing_notification_active_title">הניתוב לאפרכסת פעיל</string>
+    <string name="routing_notification_active_text">שמע קולי נתמך מנותב לאפרכסת.</string>
+    <string name="routing_notification_error_title">בעיה בניתוב השמע</string>
+    <string name="routing_notification_error_text">פתח את Puzru, כבה אותו ונסה שוב.</string>
+    <string name="status_main_ready">כבוי</string>
+    <string name="status_mini_ready">כבוי</string>
+    <string name="status_main_waiting">ממתין לקול</string>
+    <string name="status_mini_waiting">בהמתנה</string>
+    <string name="status_main_active">דרך האפרכסת</string>
+    <string name="status_mini_active">אפרכסת</string>
+    <string name="status_main_error">בעיה בניתוב השמע</string>
+    <string name="status_mini_error">שגיאה</string>
 </resources>

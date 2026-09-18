@@ -2,15 +2,12 @@
 <resources>
     <string name="app_name">Puzru</string>
     <string name="routing_notification_channel">Puzru</string>
-    <string name="routing_notification_title">Puzru چالاکە</string>
-    <string name="routing_notification_text">چاوەڕوانی ئاراستەکردنی دەنگە</string>
     <string name="product_title">Puzru</string>
     <string name="product_subtitle">بە نهێنی لەگەڵ زیرەکی دەستکرد قسە بکە، وەک پەیوەندییەکی تەلەفۆنی.</string>
     <string name="state_ready">ئامادە</string>
     <string name="state_waiting">چاوەڕوان</string>
     <string name="state_active">کارا</string>
     <string name="state_error">هەڵە</string>
-    <string name="power_control">هێز</string>
     <string name="floating">مینی</string>
     <string name="permission_notification_title">کاتێک Puzru چالاکە پیشانی بدە</string>
     <string name="permission_notification_body">Puzru ئاگادارکردنەوەیەکی بێدەنگ بەکاردەهێنێت بۆ ئەوەی پیشان بدات چالاک و ئامادەی ئاراستەکردنی دەنگە، تەنانەت کاتێک ئەپەکە لە پاشبنەمایە. ئاگادارکردنەوەکان ئارەزوومەندانەن؛ Puzru بەبێ ئەوانیش کار دەکات.</string>
@@ -76,4 +73,20 @@
     <string name="diagnostics_error_audio_preparation">Puzru نەیتوانی دەنگی پەیوەندی ئامادە بکات.</string>
     <string name="diagnostics_error_request_rejected">داواکاریی ئاراستەکردنی دەنگ بۆ گوێگرە ناوخۆییەکەی پەیوەندی پەسەند نەکرا.</string>
     <string name="diagnostics_error_not_completed">ئاراستەکردنی دەنگ تەواو نەکرا.</string>
+    <string name="power_turn_on">چالاک بکە</string>
+    <string name="power_turn_off">ناچالاک بکە</string>
+    <string name="routing_notification_waiting_title">Puzru چالاکە</string>
+    <string name="routing_notification_waiting_text">چاوەڕوانی ئاراستەکردنی دەنگە</string>
+    <string name="routing_notification_active_title">ئاراستەکردن بۆ گوێگرەکە چالاکە</string>
+    <string name="routing_notification_active_text">دەنگی پشتیوانیکراو بۆ گوێگرە ناوخۆییەکەی پەیوەندی ئاراستە دەکرێت.</string>
+    <string name="routing_notification_error_title">کێشەی ئاراستەکردنی دەنگ</string>
+    <string name="routing_notification_error_text">Puzru بکەرەوە، ناچالاکی بکە و دووبارە هەوڵ بدە.</string>
+    <string name="status_main_ready">ناچالاکە</string>
+    <string name="status_mini_ready">ناچالاکە</string>
+    <string name="status_main_waiting">چاوەڕوانی دەنگە</string>
+    <string name="status_mini_waiting">چاوەڕوان</string>
+    <string name="status_main_active">لە ڕێگەی گوێگرە ناوخۆییەکەی پەیوەندی</string>
+    <string name="status_mini_active">گوێگرە ناوخۆییەکەی پەیوەندی</string>
+    <string name="status_main_error">کێشەی ئاراستەکردنی دەنگ</string>
+    <string name="status_mini_error">هەڵە</string>
 </resources>

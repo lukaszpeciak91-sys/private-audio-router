@@ -2,15 +2,12 @@
 <resources>
     <string name="app_name">Puzru</string>
     <string name="routing_notification_channel">Puzru</string>
-    <string name="routing_notification_title">Puzru jest włączone</string>
-    <string name="routing_notification_text">Czeka na przekierowanie dźwięku</string>
     <string name="product_title">Puzru</string>
     <string name="product_subtitle">Rozmawiaj z AI prywatnie, jak podczas rozmowy telefonicznej.</string>
     <string name="state_ready">Gotowe</string>
     <string name="state_waiting">Czeka</string>
     <string name="state_active">Aktywne</string>
     <string name="state_error">Błąd</string>
-    <string name="power_control">Włącz</string>
     <string name="floating">Mini</string>
     <string name="permission_notification_title">Pokazuj, gdy Puzru jest włączone</string>
     <string name="permission_notification_body">Puzru używa cichego powiadomienia, aby pokazywać, że jest włączone i gotowe do przekierowania dźwięku, również gdy aplikacja działa w tle. Powiadomienia są opcjonalne; Puzru działa także bez nich.</string>
@@ -76,4 +73,20 @@
     <string name="diagnostics_error_audio_preparation">Aplikacja Puzru nie mogła przygotować dźwięku do komunikacji.</string>
     <string name="diagnostics_error_request_rejected">Żądanie przekierowania dźwięku do słuchawki nie zostało zaakceptowane.</string>
     <string name="diagnostics_error_not_completed">Nie udało się ukończyć przekierowania dźwięku.</string>
+    <string name="power_turn_on">Włącz</string>
+    <string name="power_turn_off">Wyłącz</string>
+    <string name="routing_notification_waiting_title">Puzru jest włączone</string>
+    <string name="routing_notification_waiting_text">Czeka na przekierowanie dźwięku</string>
+    <string name="routing_notification_active_title">Przekierowanie do słuchawki aktywne</string>
+    <string name="routing_notification_active_text">Obsługiwany dźwięk głosowy jest przekierowywany do słuchawki.</string>
+    <string name="routing_notification_error_title">Problem z przekierowaniem</string>
+    <string name="routing_notification_error_text">Otwórz Puzru, wyłącz je i spróbuj ponownie.</string>
+    <string name="status_main_ready">Wyłączone</string>
+    <string name="status_mini_ready">Wyłączone</string>
+    <string name="status_main_waiting">Czeka na głos</string>
+    <string name="status_mini_waiting">Czeka</string>
+    <string name="status_main_active">Przez słuchawkę</string>
+    <string name="status_mini_active">Słuchawka</string>
+    <string name="status_main_error">Problem z przekierowaniem</string>
+    <string name="status_mini_error">Błąd</string>
 </resources>

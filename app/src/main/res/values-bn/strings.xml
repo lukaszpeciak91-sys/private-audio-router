@@ -2,15 +2,12 @@
 <resources>
     <string name="app_name">Puzru</string>
     <string name="routing_notification_channel">Puzru</string>
-    <string name="routing_notification_title">Puzru চালু আছে</string>
-    <string name="routing_notification_text">অডিও আউটপুট পাল্টানোর জন্য অপেক্ষা করা হচ্ছে</string>
     <string name="product_title">Puzru</string>
     <string name="product_subtitle">AI-এর সঙ্গে ব্যক্তিগতভাবে কথা বলুন, ঠিক যেন ফোনে কথা বলছেন।</string>
     <string name="state_ready">প্রস্তুত</string>
     <string name="state_waiting">অপেক্ষা</string>
     <string name="state_active">সক্রিয়</string>
     <string name="state_error">ত্রুটি</string>
-    <string name="power_control">চালু/বন্ধ</string>
     <string name="floating">মিনি</string>
     <string name="permission_notification_title">Puzru চালু থাকলে দেখান</string>
     <string name="permission_notification_body">Puzru চালু আছে এবং অডিও আউটপুট পাল্টানোর জন্য প্রস্তুত আছে—অ্যাপ ব্যাকগ্রাউন্ডে থাকলেও—তা দেখাতে Puzru একটি নীরব বিজ্ঞপ্তি ব্যবহার করে। বিজ্ঞপ্তি ঐচ্ছিক; সেগুলি ছাড়াও Puzru কাজ করে।</string>
@@ -76,4 +73,20 @@
     <string name="diagnostics_error_audio_preparation">Puzru যোগাযোগের অডিও প্রস্তুত করতে পারেনি।</string>
     <string name="diagnostics_error_request_rejected">ইয়ারপিসে রাউটিংয়ের অনুরোধ গ্রহণ করা হয়নি।</string>
     <string name="diagnostics_error_not_completed">রাউটিং সম্পূর্ণ করা যায়নি।</string>
+    <string name="power_turn_on">চালু করুন</string>
+    <string name="power_turn_off">বন্ধ করুন</string>
+    <string name="routing_notification_waiting_title">Puzru চালু আছে</string>
+    <string name="routing_notification_waiting_text">অডিও আউটপুট পাল্টানোর জন্য অপেক্ষা করা হচ্ছে</string>
+    <string name="routing_notification_active_title">ইয়ারপিস রাউটিং সক্রিয়</string>
+    <string name="routing_notification_active_text">সমর্থিত ভয়েস অডিও ইয়ারপিসে রাউট করা হচ্ছে।</string>
+    <string name="routing_notification_error_title">অডিও রাউটিংয়ে সমস্যা</string>
+    <string name="routing_notification_error_text">Puzru খুলুন, এটি বন্ধ করুন এবং আবার চেষ্টা করুন।</string>
+    <string name="status_main_ready">বন্ধ</string>
+    <string name="status_mini_ready">বন্ধ</string>
+    <string name="status_main_waiting">ভয়েসের জন্য অপেক্ষা</string>
+    <string name="status_mini_waiting">অপেক্ষা</string>
+    <string name="status_main_active">ইয়ারপিসের মাধ্যমে</string>
+    <string name="status_mini_active">ইয়ারপিস</string>
+    <string name="status_main_error">অডিও রাউটিংয়ে সমস্যা</string>
+    <string name="status_mini_error">ত্রুটি</string>
 </resources>

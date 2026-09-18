@@ -2,15 +2,12 @@
 <resources>
     <string name="app_name">Puzru</string>
     <string name="routing_notification_channel">Puzru</string>
-    <string name="routing_notification_title">Puzru epeli</string>
-    <string name="routing_notification_text">Ezali kozela kotambwisa mongongo</string>
     <string name="product_title">Puzru</string>
     <string name="product_subtitle">Sololá na AI na nkuku, lokola na telefone.</string>
     <string name="state_ready">Ebongami</string>
     <string name="state_waiting">Ezali kozela</string>
     <string name="state_active">Ezali kotambwisa</string>
     <string name="state_error">Libunga</string>
-    <string name="power_control">Kopelisa</string>
     <string name="floating">Ya moke</string>
     <string name="permission_notification_title">Lakisa ntango Puzru epeli</string>
     <string name="permission_notification_body">Puzru esalelaka liyebisi ya kimya mpo na kolakisa ete epeli mpe ebongami mpo na kotambwisa mongongo, ata ntango programɛ ezali kosala na nsima. Mayebisi ezali ya kopona; Puzru esalaka mpe soki ezali te.</string>
@@ -75,4 +72,20 @@
     <string name="diagnostics_error_audio_preparation">Puzru ekokaki kobongisa audio ya communication te.</string>
     <string name="diagnostics_error_request_rejected">Bosɛngi ya kotambwisa mongongo na écouteur endimamaki te.</string>
     <string name="diagnostics_error_not_completed">Kotambwisama ya mongongo ekokaki kosila te.</string>
+    <string name="power_turn_on">Pelisa</string>
+    <string name="power_turn_off">Boma</string>
+    <string name="routing_notification_waiting_title">Puzru epeli</string>
+    <string name="routing_notification_waiting_text">Ezali kozela kotambwisa mongongo</string>
+    <string name="routing_notification_active_title">Kotambwisa mongongo na écouteur ezali kosala</string>
+    <string name="routing_notification_active_text">Mongongo oyo esungami ezali kotambwisama na écouteur ya kati ya telefone.</string>
+    <string name="routing_notification_error_title">Mokakatano ya kotambwisa mongongo</string>
+    <string name="routing_notification_error_text">Fungola Puzru, boma yango mpe meka lisusu.</string>
+    <string name="status_main_ready">Ekufi</string>
+    <string name="status_mini_ready">Ekufi</string>
+    <string name="status_main_waiting">Ezali kozela mongongo</string>
+    <string name="status_mini_waiting">Ezali kozela</string>
+    <string name="status_main_active">Na écouteur ya kati ya telefone</string>
+    <string name="status_mini_active">Écouteur ya kati ya telefone</string>
+    <string name="status_main_error">Mokakatano ya kotambwisa mongongo</string>
+    <string name="status_mini_error">Libunga</string>
 </resources>

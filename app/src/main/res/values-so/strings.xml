@@ -2,15 +2,12 @@
 <resources>
     <string name="app_name">Puzru</string>
     <string name="routing_notification_channel">Puzru</string>
-    <string name="routing_notification_title">Puzru waa daaran yahay</string>
-    <string name="routing_notification_text">Sugaya in la beddelo halka codku ka soo baxayo</string>
     <string name="product_title">Puzru</string>
     <string name="product_subtitle">AI si gaar ah ula hadal, sida adigoo taleefan ku hadlaya.</string>
     <string name="state_ready">Diyaar</string>
     <string name="state_waiting">Sugaya</string>
     <string name="state_active">Firfircoon</string>
     <string name="state_error">Khalad</string>
-    <string name="power_control">Daar/Dami</string>
     <string name="floating">Mini</string>
     <string name="permission_notification_title">Muuji marka Puzru daaran yahay</string>
     <string name="permission_notification_body">Puzru wuxuu adeegsadaa ogeysiis aamusan si uu u muujiyo inuu daaran yahay oo diyaar u yahay inuu codka jiheeyo, xataa marka abku gadaal ka socdo. Ogeysiisyadu waa ikhtiyaari; Puzru wuu shaqeeyaa la’aantood.</string>
@@ -76,4 +73,20 @@
     <string name="diagnostics_error_audio_preparation">Puzru ma diyaarin karin codka isgaarsiinta.</string>
     <string name="diagnostics_error_request_rejected">Codsigii ahaa in codka loo wareejiyo sameecadda sare lama aqbalin.</string>
     <string name="diagnostics_error_not_completed">Wareejinta codka lama dhammaystiri karin.</string>
+    <string name="power_turn_on">Daar</string>
+    <string name="power_turn_off">Dami</string>
+    <string name="routing_notification_waiting_title">Puzru waa daaran yahay</string>
+    <string name="routing_notification_waiting_text">Sugaya in la beddelo halka codku ka soo baxayo</string>
+    <string name="routing_notification_active_title">Hagidda codka ee sameecadda sare waa shaqaynaysaa</string>
+    <string name="routing_notification_active_text">Codka hadalka ee la taageero waxaa loo hagayaa sameecadda sare.</string>
+    <string name="routing_notification_error_title">Dhibaatada hagidda codka</string>
+    <string name="routing_notification_error_text">Fur Puzru, dami, dabadeed mar kale isku day.</string>
+    <string name="status_main_ready">Dansan</string>
+    <string name="status_mini_ready">Dansan</string>
+    <string name="status_main_waiting">Sugaya cod</string>
+    <string name="status_mini_waiting">Sugaya</string>
+    <string name="status_main_active">Iyada oo loo marayo sameecadda sare</string>
+    <string name="status_mini_active">Sameecadda sare</string>
+    <string name="status_main_error">Dhibaatada hagidda codka</string>
+    <string name="status_mini_error">Khalad</string>
 </resources>

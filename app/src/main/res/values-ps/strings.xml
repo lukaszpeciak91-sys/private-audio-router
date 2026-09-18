@@ -2,15 +2,12 @@
 <resources>
     <string name="app_name">Puzru</string>
     <string name="routing_notification_channel">Puzru</string>
-    <string name="routing_notification_title">Puzru چالان دی</string>
-    <string name="routing_notification_text">د آډیو بدلولو په تمه</string>
     <string name="product_title">Puzru</string>
     <string name="product_subtitle">له AI سره په شخصي ډول خبرې وکړئ، لکه په تلیفون کې.</string>
     <string name="state_ready">چمتو</string>
     <string name="state_waiting">په تمه</string>
     <string name="state_active">فعال</string>
     <string name="state_error">تېروتنه</string>
-    <string name="power_control">پاور</string>
     <string name="floating">مینی</string>
     <string name="permission_notification_title">کله چې Puzru چالان وي، وښایئ</string>
     <string name="permission_notification_body">Puzru د غلي خبرتیا له لارې ښيي چې چالان دی او د آډیو د لارښوونې لپاره چمتو دی، ان کله چې اپ په شالید کې وي. خبرتیاوې اختیاري دي؛ Puzru له هغو پرته هم کار کوي.</string>
@@ -76,4 +73,20 @@
     <string name="diagnostics_error_audio_preparation">Puzru ونه شو کړای چې د اړیکې آډیو چمتو کړي.</string>
     <string name="diagnostics_error_request_rejected">د تلیفون رسیدونکي ته د غږ لېږد غوښتنه ونه منل شوه.</string>
     <string name="diagnostics_error_not_completed">د غږ لېږد بشپړ نه شو.</string>
+    <string name="power_turn_on">چالان کړه</string>
+    <string name="power_turn_off">بند کړه</string>
+    <string name="routing_notification_waiting_title">Puzru چالان دی</string>
+    <string name="routing_notification_waiting_text">د آډیو بدلولو په تمه</string>
+    <string name="routing_notification_active_title">د تلیفون رسیدونکي ته لېږد فعال دی</string>
+    <string name="routing_notification_active_text">ملاتړ شوی غږیز آډیو د تلیفون رسیدونکي ته لېږدول کېږي.</string>
+    <string name="routing_notification_error_title">د آډیو د لېږد ستونزه</string>
+    <string name="routing_notification_error_text">Puzru پرانیزه، بند یې کړه او بیا هڅه وکړه.</string>
+    <string name="status_main_ready">بند</string>
+    <string name="status_mini_ready">بند</string>
+    <string name="status_main_waiting">د غږ په تمه</string>
+    <string name="status_mini_waiting">په تمه</string>
+    <string name="status_main_active">د تلیفون د رسیدونکي له لارې</string>
+    <string name="status_mini_active">د تلیفون رسیدونکی</string>
+    <string name="status_main_error">د آډیو د لېږد ستونزه</string>
+    <string name="status_mini_error">تېروتنه</string>
 </resources>

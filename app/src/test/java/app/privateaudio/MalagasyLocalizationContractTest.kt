@@ -30,7 +30,7 @@ class MalagasyLocalizationContractTest {
         assertEquals("Miandry", resourceValue("state_waiting"))
         assertEquals("Mavitrika", resourceValue("state_active"))
         assertEquals("Hadisoana", resourceValue("state_error"))
-        assertEquals("Mandeha ny Puzru", resourceValue("routing_notification_title"))
+        assertEquals("Mandeha ny Puzru", resourceValue("routing_notification_waiting_title"))
         assertFalse(resourceValue("state_active") == "Mandeha")
 
         assertEquals("Politika momba ny fiainana manokana", resourceValue("settings_privacy_policy"))

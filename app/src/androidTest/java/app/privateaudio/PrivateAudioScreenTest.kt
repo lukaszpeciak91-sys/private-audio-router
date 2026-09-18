@@ -11,6 +11,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.test.assertDoesNotExist
+import androidx.compose.ui.test.assertContentDescriptionEquals
 import androidx.compose.ui.test.assertExists
 import androidx.compose.ui.test.assertIsDisplayed
 import androidx.compose.ui.test.junit4.createComposeRule
@@ -176,10 +177,10 @@ class PrivateAudioScreenTest {
     @Test
     fun allProductStatesRenderTheirAuthoritativeLabel() {
         listOf(
-            PrivateAudioState.READY to "Ready",
-            PrivateAudioState.WAITING to "Waiting",
-            PrivateAudioState.ACTIVE to "Active",
-            PrivateAudioState.ERROR to "Error",
+            PrivateAudioState.READY to "Off",
+            PrivateAudioState.WAITING to "Waiting for voice",
+            PrivateAudioState.ACTIVE to "Through earpiece",
+            PrivateAudioState.ERROR to "Routing problem",
         ).forEach { (state, label) ->
             composeRule.setContent {
                 PrivateAudioTheme {
@@ -189,6 +190,16 @@ class PrivateAudioScreenTest {
 
             composeRule.onNodeWithText(label).assertIsDisplayed()
             composeRule.onNodeWithTag("private_audio_power").assertIsDisplayed()
+        }
+    }
+
+    @Test
+    fun powerDescriptionNamesTheActionForTheCurrentState() {
+        PrivateAudioState.entries.forEach { state ->
+            composeRule.setContent { PrivateAudioTheme { PrivateAudioScreen(state = state, onPowerClick = {}, onCloseClick = {}) } }
+            composeRule.onNodeWithTag("private_audio_power").assertContentDescriptionEquals(
+                if (state == PrivateAudioState.READY) "Turn on" else "Turn off",
+            )
         }
     }
 

@@ -2,15 +2,12 @@
 <resources>
     <string name="app_name">Puzru</string>
     <string name="routing_notification_channel">Puzru</string>
-    <string name="routing_notification_title">Puzru चालू है</string>
-    <string name="routing_notification_text">ऑडियो भेजे जाने का इंतज़ार है</string>
     <string name="product_title">Puzru</string>
     <string name="product_subtitle">फ़ोन कॉल की तरह, एआई से निजी तौर पर बात करें।</string>
     <string name="state_ready">तैयार</string>
     <string name="state_waiting">इंतज़ार में</string>
     <string name="state_active">सक्रिय</string>
     <string name="state_error">गड़बड़ी</string>
-    <string name="power_control">चालू करें</string>
     <string name="floating">मिनी</string>
     <string name="permission_notification_title">Puzru के चालू होने पर दिखाएं</string>
     <string name="permission_notification_body">Puzru एक शांत नोटिफ़िकेशन से दिखाता है कि वह चालू है और ऑडियो को रूट करने के लिए तैयार है, भले ही ऐप बैकग्राउंड में हो। नोटिफ़िकेशन वैकल्पिक हैं; उनके बिना भी Puzru काम करता है।</string>
@@ -76,4 +73,20 @@
     <string name="diagnostics_error_audio_preparation">Puzru कम्यूनिकेशन ऑडियो तैयार नहीं कर सका।</string>
     <string name="diagnostics_error_request_rejected">ईयरपीस पर ऑडियो भेजने का अनुरोध स्वीकार नहीं किया गया।</string>
     <string name="diagnostics_error_not_completed">ऑडियो रूटिंग पूरी नहीं की जा सकी।</string>
+    <string name="power_turn_on">चालू करें</string>
+    <string name="power_turn_off">बंद करें</string>
+    <string name="routing_notification_waiting_title">Puzru चालू है</string>
+    <string name="routing_notification_waiting_text">ऑडियो भेजे जाने का इंतज़ार है</string>
+    <string name="routing_notification_active_title">ईयरपीस रूटिंग सक्रिय है</string>
+    <string name="routing_notification_active_text">समर्थित वॉइस ऑडियो ईयरपीस पर रूट किया जा रहा है।</string>
+    <string name="routing_notification_error_title">ऑडियो रूटिंग में समस्या</string>
+    <string name="routing_notification_error_text">Puzru खोलें, इसे बंद करें और फिर से कोशिश करें।</string>
+    <string name="status_main_ready">बंद</string>
+    <string name="status_mini_ready">बंद</string>
+    <string name="status_main_waiting">आवाज़ का इंतज़ार</string>
+    <string name="status_mini_waiting">इंतज़ार में</string>
+    <string name="status_main_active">ईयरपीस के ज़रिए</string>
+    <string name="status_mini_active">ईयरपीस</string>
+    <string name="status_main_error">ऑडियो रूटिंग में समस्या</string>
+    <string name="status_mini_error">गड़बड़ी</string>
 </resources>

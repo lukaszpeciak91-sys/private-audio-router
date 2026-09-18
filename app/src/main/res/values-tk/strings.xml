@@ -2,15 +2,12 @@
 <resources>
     <string name="app_name">Puzru</string>
     <string name="routing_notification_channel">Puzru</string>
-    <string name="routing_notification_title">Puzru açyk</string>
-    <string name="routing_notification_text">Ses ugrukdyrylmagyna garaşylýar</string>
     <string name="product_title">Puzru</string>
     <string name="product_subtitle">Emeli aň bilen telefon jaňy ýaly gizlin gürleşiň.</string>
     <string name="state_ready">Taýýar</string>
     <string name="state_waiting">Garaşylýar</string>
     <string name="state_active">Işjeň</string>
     <string name="state_error">Säwlik</string>
-    <string name="power_control">Açmak/öçürmek</string>
     <string name="floating">Mini</string>
     <string name="permission_notification_title">Puzru açyk wagty görkez</string>
     <string name="permission_notification_body">Puzru açyk we sesi ugrukdyrmaga taýýar wagty, şol sanda programma yzky planda işleýän wagty hem, sessiz bildiriş görkezýär. Bildirişler islege bagly; Puzru olarsyz hem işleýär.</string>
@@ -75,4 +72,20 @@
     <string name="diagnostics_error_audio_preparation">Puzru aragatnaşyk sesini taýýarlap bilmedi.</string>
     <string name="diagnostics_error_request_rejected">Gepleşik dinamigine ugrukdyrma haýyşy kabul edilmedi.</string>
     <string name="diagnostics_error_not_completed">Ugrukdyrmany tamamlamak başartmady.</string>
+    <string name="power_turn_on">Aç</string>
+    <string name="power_turn_off">Öçür</string>
+    <string name="routing_notification_waiting_title">Puzru açyk</string>
+    <string name="routing_notification_waiting_text">Ses ugrukdyrylmagyna garaşylýar</string>
+    <string name="routing_notification_active_title">Gepleşik dinamikine ugrukdyrmak işjeň</string>
+    <string name="routing_notification_active_text">Goldanylýan ses audiosy gepleşik dinamikine ugrukdyrylýar.</string>
+    <string name="routing_notification_error_title">Sesi ugrukdyrmak meselesi</string>
+    <string name="routing_notification_error_text">Puzru-ny açyň, öçüriň we gaýtadan synanyşyň.</string>
+    <string name="status_main_ready">Öçük</string>
+    <string name="status_mini_ready">Öçük</string>
+    <string name="status_main_waiting">Sese garaşylýar</string>
+    <string name="status_mini_waiting">Garaşylýar</string>
+    <string name="status_main_active">Gepleşik dinamigi arkaly</string>
+    <string name="status_mini_active">Gepleşik dinamigi</string>
+    <string name="status_main_error">Sesi ugrukdyrmak meselesi</string>
+    <string name="status_mini_error">Säwlik</string>
 </resources>

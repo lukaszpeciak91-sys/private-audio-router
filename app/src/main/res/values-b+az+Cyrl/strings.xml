@@ -2,15 +2,12 @@
 <resources>
     <string name="app_name">Puzru</string>
     <string name="routing_notification_channel">Puzru</string>
-    <string name="routing_notification_title">Puzru ачыҝдыр</string>
-    <string name="routing_notification_text">Аудионун јөнләндирилмәсини гөзләјир</string>
     <string name="product_title">Puzru</string>
     <string name="product_subtitle">СИ илә телефон зәнги кими өзәл шәкилдә данышын.</string>
     <string name="state_ready">Һазыр</string>
     <string name="state_waiting">Гөзләјир</string>
     <string name="state_active">Актив</string>
     <string name="state_error">Хәта</string>
-    <string name="power_control">Јандырыб-сөндүрмә</string>
     <string name="floating">Мини</string>
     <string name="permission_notification_title">Puzru ачыҝ олдуҝда гөстәр</string>
     <string name="permission_notification_body">Puzru ачыҝ вә аудиону јөнләндирмәјә һазыр олдуғуну, тәтбиҝ арха планда олдуҝда белә, сәссиз билдиришлә гөстәрир. Билдиришләр истәјә бағлыдыр; Puzru онларсыз да ишләјир.</string>
@@ -76,4 +73,20 @@
     <string name="diagnostics_error_audio_preparation">Puzru рабитә аудиосуну һазырлаја билмәди.</string>
     <string name="diagnostics_error_request_rejected">Сәси ҝулаҝ динамикинә јөнләндирмә сорғусу ҝәбул едилмәди.</string>
     <string name="diagnostics_error_not_completed">Јөнләндирмә тамамлана билмәди.</string>
+    <string name="power_turn_on">Јандыр</string>
+    <string name="power_turn_off">Сөндүр</string>
+    <string name="routing_notification_waiting_title">Puzru ачыҝдыр</string>
+    <string name="routing_notification_waiting_text">Аудионун јөнләндирилмәсини гөзләјир</string>
+    <string name="routing_notification_active_title">Ҝулаҝ динамикинә јөнләндирмә активдир</string>
+    <string name="routing_notification_active_text">Дәстәкләнән сәс аудиосу ҝулаҝ динамикинә јөнләндирилир.</string>
+    <string name="routing_notification_error_title">Аудио јөнләндирмә проблеми</string>
+    <string name="routing_notification_error_text">Puzru-ну ачын, сөндүрүн вә јенидән чәһд един.</string>
+    <string name="status_main_ready">Сөндүрүлүб</string>
+    <string name="status_mini_ready">Сөндүрүлүб</string>
+    <string name="status_main_waiting">Сәс гөзләнир</string>
+    <string name="status_mini_waiting">Гөзләјир</string>
+    <string name="status_main_active">Ҝулаҝ динамики васитәсилә</string>
+    <string name="status_mini_active">Ҝулаҝ динамики</string>
+    <string name="status_main_error">Аудио јөнләндирмә проблеми</string>
+    <string name="status_mini_error">Хәта</string>
 </resources>

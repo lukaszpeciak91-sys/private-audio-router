@@ -2,15 +2,12 @@
 <resources>
     <string name="app_name">Puzru</string>
     <string name="routing_notification_channel">Puzru</string>
-    <string name="routing_notification_title">Puzru urip</string>
-    <string name="routing_notification_text">Ngenteni ngalihake audio</string>
     <string name="product_title">Puzru</string>
     <string name="product_subtitle">Ngobrol karo AI kanthi pribadi, kaya nalika nelpon.</string>
     <string name="state_ready">Siyap</string>
     <string name="state_waiting">Ngenteni</string>
     <string name="state_active">Aktif</string>
     <string name="state_error">Kesalahan</string>
-    <string name="power_control">Urip/mati</string>
     <string name="floating">Mini</string>
     <string name="permission_notification_title">Tampilake nalika Puzru urip</string>
     <string name="permission_notification_body">Puzru nggunakake notifikasi meneng kanggo nuduhake yen urip lan siap ngalihake audio, kalebu nalika aplikasi ana ing latar mburi. Notifikasi iku opsional; Puzru tetep bisa digunakake tanpa notifikasi.</string>
@@ -76,4 +73,20 @@
     <string name="diagnostics_error_audio_preparation">Puzru ora bisa nyiyapake audio komunikasi.</string>
     <string name="diagnostics_error_request_rejected">Panjaluk pangalihan menyang earpiece gawan telpon ora ditampa.</string>
     <string name="diagnostics_error_not_completed">Pangalihan audio ora bisa dirampungake.</string>
+    <string name="power_turn_on">Uripake</string>
+    <string name="power_turn_off">Pateni</string>
+    <string name="routing_notification_waiting_title">Puzru urip</string>
+    <string name="routing_notification_waiting_text">Ngenteni ngalihake audio</string>
+    <string name="routing_notification_active_title">Pangalihan menyang earpiece aktif</string>
+    <string name="routing_notification_active_text">Audio swara sing didhukung dialihake menyang earpiece gawan telpon.</string>
+    <string name="routing_notification_error_title">Masalah pangalihan audio</string>
+    <string name="routing_notification_error_text">Bukak Puzru, pateni, banjur coba maneh.</string>
+    <string name="status_main_ready">Dipatheni</string>
+    <string name="status_mini_ready">Dipatheni</string>
+    <string name="status_main_waiting">Ngenteni swara</string>
+    <string name="status_mini_waiting">Ngenteni</string>
+    <string name="status_main_active">Liwat earpiece gawan telpon</string>
+    <string name="status_mini_active">Earpiece gawan telpon</string>
+    <string name="status_main_error">Masalah pangalihan audio</string>
+    <string name="status_mini_error">Kesalahan</string>
 </resources>
