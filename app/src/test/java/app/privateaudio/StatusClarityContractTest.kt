@@ -53,7 +53,7 @@ class StatusClarityContractTest {
     @Test fun notificationRefreshUsesCurrentServiceOwnedStateWithoutPolling() {
         assertTrue(service.contains("onEvidenceChanged = ::syncStateOwnedBehavior"))
         assertTrue(service.method("private fun syncStateOwnedBehavior").contains("updateForegroundNotification()"))
-        assertTrue(service.contains("statePresentation(privateAudioState)"))
+        assertTrue(service.contains("foregroundNotificationPresentation(privateAudioState)"))
         assertTrue(service.contains("privateAudioState == PrivateAudioState.READY"))
         assertFalse(service.method("private fun updateForegroundNotification").contains("postDelayed"))
         assertTrue(service.method("private fun updateForegroundNotification").contains("privateAudioState == PrivateAudioState.READY) return"))
