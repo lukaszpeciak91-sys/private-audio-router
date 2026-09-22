@@ -50,7 +50,14 @@ class Layer6FloatingControllerContractTest {
         assertTrue(animation.contains("ValueAnimator.ofFloat(1f, 0.65f)"))
         assertTrue(overlay.contains("WAITING_HALF_CYCLE_MILLIS = 900L"))
         assertTrue(overlay.contains("ACTIVE_HALF_CYCLE_MILLIS = 700L"))
-        assertTrue(overlay.contains("paint.alpha = (statusSymbolAlpha * 255).toInt()"))
+        assertTrue(overlay.contains("drawStatusSymbol(canvas, statusVisualStyle(state), statusSymbolAlpha)"))
+        val symbolDrawing = overlay.substringAfter("private fun drawStatusSymbol(")
+            .substringBefore("private fun drawStatusLabel(")
+        assertTrue(symbolDrawing.contains("paint.alpha = (symbolAlpha * 255).toInt()"))
+        assertTrue(
+            symbolDrawing.indexOf("paint.color = style.colorArgb.toInt()") <
+                symbolDrawing.indexOf("paint.alpha = (symbolAlpha * 255).toInt()"),
+        )
         assertTrue(overlay.contains("paint.alpha = 255"))
         assertTrue(overlay.contains("state = latest\n                    contentDescription = stateDescription(latest)\n                    updateStatusSymbolAnimation()"))
         val stopObservation = overlay.substringAfter("fun stopStateObservation()")
