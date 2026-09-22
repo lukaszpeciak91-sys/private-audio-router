@@ -32,6 +32,9 @@ import app.privateaudio.MainActivity
 import app.privateaudio.PrivateAudioService
 import app.privateaudio.PrivateAudioState
 import app.privateaudio.R
+import app.privateaudio.ui.StatusSymbol
+import app.privateaudio.ui.StatusVisualStyle
+import app.privateaudio.ui.statusVisualStyle
 import kotlin.math.hypot
 import kotlin.math.min
 
@@ -244,15 +247,15 @@ class OverlayService : Service() {
         private val expandPath = Path()
         private var rtlLayout = miniLayoutDirection(context) == View.LAYOUT_DIRECTION_RTL
         private var state = PrivateAudioState.READY
-        private var statusDotAlpha = 1f
-        private var statusDotAnimator: ValueAnimator? = null
+        private var statusSymbolAlpha = 1f
+        private var statusSymbolAnimator: ValueAnimator? = null
         private val refreshState = object : Runnable {
             override fun run() {
                 val latest = privateAudioService?.privateAudioState ?: PrivateAudioState.READY
                 if (latest != state) {
                     state = latest
                     contentDescription = stateDescription(latest)
-                    updateStatusDotAnimation()
+                    updateStatusSymbolAnimation()
                     invalidate()
                 }
                 postDelayed(this, STATE_REFRESH_MILLIS)
@@ -272,7 +275,7 @@ class OverlayService : Service() {
 
         fun stopStateObservation() {
             removeCallbacks(refreshState)
-            stopStatusDotAnimation()
+            stopStatusSymbolAnimation()
         }
 
         fun refreshLocalizedPresentation() {
@@ -306,10 +309,8 @@ class OverlayService : Service() {
             paint.color = Color.rgb(91, 91, 94)
             canvas.drawRoundRect(controllerSurface, 13f, 13f, paint)
 
-            paint.style = Paint.Style.FILL
-            paint.color = statusColor(state)
-            paint.alpha = (statusDotAlpha * 255).toInt()
-            canvas.drawCircle(directionalX(STATUS_DOT_X), 31f, 5.5f, paint)
+            paint.alpha = (statusSymbolAlpha * 255).toInt()
+            drawStatusSymbol(canvas, statusVisualStyle(state))
             paint.alpha = 255
             drawStatusLabel(canvas, miniStateLabel(state))
 
@@ -319,31 +320,66 @@ class OverlayService : Service() {
             canvas.restore()
         }
 
-        private fun updateStatusDotAnimation() {
-            stopStatusDotAnimation()
+        private fun updateStatusSymbolAnimation() {
+            stopStatusSymbolAnimation()
             val halfCycleMillis = when (state) {
                 PrivateAudioState.WAITING -> WAITING_HALF_CYCLE_MILLIS
                 PrivateAudioState.ACTIVE -> ACTIVE_HALF_CYCLE_MILLIS
                 PrivateAudioState.READY, PrivateAudioState.ERROR -> return
             }
-            statusDotAnimator = ValueAnimator.ofFloat(1f, 0.65f).apply {
+            statusSymbolAnimator = ValueAnimator.ofFloat(1f, 0.65f).apply {
                 duration = halfCycleMillis
                 interpolator = AccelerateDecelerateInterpolator()
                 repeatCount = ValueAnimator.INFINITE
                 repeatMode = ValueAnimator.REVERSE
                 addUpdateListener {
-                    statusDotAlpha = it.animatedValue as Float
+                    statusSymbolAlpha = it.animatedValue as Float
                     invalidate()
                 }
                 start()
             }
         }
 
-        private fun stopStatusDotAnimation() {
-            statusDotAnimator?.cancel()
-            statusDotAnimator?.removeAllUpdateListeners()
-            statusDotAnimator = null
-            statusDotAlpha = 1f
+        private fun stopStatusSymbolAnimation() {
+            statusSymbolAnimator?.cancel()
+            statusSymbolAnimator?.removeAllUpdateListeners()
+            statusSymbolAnimator = null
+            statusSymbolAlpha = 1f
+        }
+
+        private fun drawStatusSymbol(canvas: Canvas, style: StatusVisualStyle) {
+            val x = directionalX(STATUS_SYMBOL_X)
+            paint.color = style.colorArgb.toInt()
+            paint.style = Paint.Style.STROKE
+            paint.strokeWidth = 1.8f
+            when (style.symbol) {
+                StatusSymbol.OFF -> {
+                    canvas.drawArc(RectF(x - 6f, 25f, x + 6f, 37f), -48f, 276f, false, paint)
+                    canvas.drawLine(x, 23.5f, x, 30.5f, paint)
+                }
+                StatusSymbol.WAITING_CLOCK -> {
+                    canvas.drawCircle(x, 31f, 6f, paint)
+                    canvas.drawLine(x, 31f, x, 27f, paint)
+                    canvas.drawLine(x, 31f, directionalX(23f), 33f, paint)
+                }
+                StatusSymbol.EARPIECE -> {
+                    canvas.drawRoundRect(RectF(x - 4f, 23.5f, x + 4f, 38.5f), 4f, 4f, paint)
+                    paint.strokeWidth = 1.2f
+                    listOf(29f, 31f, 33f).forEach { y -> canvas.drawLine(directionalX(18.5f), y, directionalX(21.5f), y, paint) }
+                }
+                StatusSymbol.WARNING -> {
+                    val warning = Path().apply {
+                        moveTo(x, 23.5f)
+                        lineTo(directionalX(27f), 37.5f)
+                        lineTo(directionalX(13f), 37.5f)
+                        close()
+                    }
+                    canvas.drawPath(warning, paint)
+                    canvas.drawLine(x, 28f, x, 33f, paint)
+                    paint.style = Paint.Style.FILL
+                    canvas.drawCircle(x, 35.5f, 1f, paint)
+                }
+            }
         }
 
         private fun drawStatusLabel(canvas: Canvas, label: String) {
@@ -494,12 +530,6 @@ class OverlayService : Service() {
             fullStateLabel(value),
         )
 
-        private fun statusColor(value: PrivateAudioState) = when (value) {
-            PrivateAudioState.READY, PrivateAudioState.ACTIVE -> Color.rgb(34, 218, 112)
-            PrivateAudioState.WAITING -> Color.rgb(238, 172, 54)
-            PrivateAudioState.ERROR -> Color.rgb(238, 75, 75)
-        }
-
         private fun powerColor(value: PrivateAudioState) = when (value) {
             PrivateAudioState.READY -> Color.rgb(184, 184, 188)
             PrivateAudioState.WAITING -> Color.rgb(238, 172, 54)
@@ -517,7 +547,7 @@ class OverlayService : Service() {
         private const val WAITING_HALF_CYCLE_MILLIS = 900L
         private const val ACTIVE_HALF_CYCLE_MILLIS = 700L
         private const val DESIGN_WIDTH = 300f
-        private const val STATUS_DOT_X = 20f
+        private const val STATUS_SYMBOL_X = 20f
         private const val STATUS_TEXT_LEFT = 34f
         private const val STATUS_TEXT_RIGHT = 134f
         private const val STATUS_TEXT_WIDTH = 100

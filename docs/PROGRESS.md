@@ -882,6 +882,15 @@ this summary intentionally does not duplicate its test matrix.
 
 ## Recently completed significant changes
 
+- Main and Mini now present the existing `READY`, `WAITING`, `ACTIVE`, and `ERROR`
+  projection with distinct OFF, clock, earpiece, and warning symbols. `READY` uses a
+  neutral grey rather than the active green; the existing waiting and active motion
+  remains. Both surfaces retain their established localized state labels, including
+  Mini aliases and measured compact overrides. Notification copy and behavior,
+  localization resources, routing logic, and service-state derivation are unchanged.
+  Automated source and mapping contracts cover these boundaries; emulator and
+  physical-device visual review remains pending.
+
 - Implemented the complete text-based adaptive launcher-icon contract. The manifest's
   standard and round icon entries now share `@mipmap/ic_launcher`; the API 26 resource
   composes the approved `#11162F` background with separate adaptive foreground and

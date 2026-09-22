@@ -28,7 +28,6 @@ import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.layout.wrapContentWidth
-import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
@@ -111,7 +110,7 @@ private const val ActiveHalfCycleMillis = 700
 
 private data class StateVisuals(
     @StringRes val label: Int,
-    val dotColor: Color,
+    val statusStyle: StatusVisualStyle,
     val powerColor: Color,
     val glow: Boolean,
     val pulse: Boolean = false,
@@ -228,7 +227,7 @@ private fun PrivateAudioScreenContent(
             if (compactLandscape) {
                 LandscapeMainContent(
                     visuals = visuals,
-                    dotAlpha = statusDotAlpha(state, motionPhase),
+                    symbolAlpha = statusSymbolAlpha(state, motionPhase),
                     glowAlpha = if (visuals.pulse) 0.55f + 0.35f * motionPhase else 0.78f,
                     powerEnabled = powerEnabled,
                     onPowerClick = onPowerClick,
@@ -246,7 +245,7 @@ private fun PrivateAudioScreenContent(
                 Box(Modifier.fillMaxSize(), contentAlignment = Alignment.TopCenter) {
                     PortraitMainContent(
                         visuals = visuals,
-                        dotAlpha = statusDotAlpha(state, motionPhase),
+                        symbolAlpha = statusSymbolAlpha(state, motionPhase),
                         glowAlpha = if (visuals.pulse) 0.55f + 0.35f * motionPhase else 0.78f,
                         powerEnabled = powerEnabled,
                         onPowerClick = onPowerClick,
@@ -287,7 +286,7 @@ private fun PrivateAudioScreenContent(
     }
 }
 
-private fun statusDotAlpha(state: PrivateAudioState, motionPhase: Float): Float = when (state) {
+private fun statusSymbolAlpha(state: PrivateAudioState, motionPhase: Float): Float = when (state) {
     PrivateAudioState.WAITING, PrivateAudioState.ACTIVE -> 0.65f + 0.35f * motionPhase
     PrivateAudioState.READY, PrivateAudioState.ERROR -> 1f
 }
@@ -295,7 +294,7 @@ private fun statusDotAlpha(state: PrivateAudioState, motionPhase: Float): Float 
 @Composable
 private fun PortraitMainContent(
     visuals: StateVisuals,
-    dotAlpha: Float,
+    symbolAlpha: Float,
     glowAlpha: Float,
     powerEnabled: Boolean,
     onPowerClick: () -> Unit,
@@ -316,7 +315,7 @@ private fun PortraitMainContent(
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
         Spacer(Modifier.height(ProductLayout.titleTopSpacing))
-        ProductInformation(visuals, dotAlpha)
+        ProductInformation(visuals, symbolAlpha)
         Spacer(Modifier.height(ProductLayout.statusPowerSpacing))
         PowerControl(visuals.powerColor, visuals.glow, glowAlpha, powerEnabled, powerDiameter, onPowerClick)
         Spacer(Modifier.weight(1f))
@@ -328,7 +327,7 @@ private fun PortraitMainContent(
 @Composable
 private fun LandscapeMainContent(
     visuals: StateVisuals,
-    dotAlpha: Float,
+    symbolAlpha: Float,
     glowAlpha: Float,
     powerEnabled: Boolean,
     onPowerClick: () -> Unit,
@@ -359,7 +358,7 @@ private fun LandscapeMainContent(
         ) {
             ProductInformation(
                 visuals = visuals,
-                dotAlpha = dotAlpha,
+                symbolAlpha = symbolAlpha,
                 modifier = Modifier.widthIn(max = LandscapeProductLayout.informationWidth),
                 statusSpacing = LandscapeProductLayout.informationStatusSpacing,
             )
@@ -386,7 +385,7 @@ private fun LandscapeMainContent(
 @Composable
 private fun ProductInformation(
     visuals: StateVisuals,
-    dotAlpha: Float,
+    symbolAlpha: Float,
     modifier: Modifier = Modifier,
     statusSpacing: Dp = ProductLayout.headerStatusSpacing,
 ) {
@@ -403,12 +402,12 @@ private fun ProductInformation(
             textAlign = TextAlign.Center, modifier = Modifier.fillMaxWidth(),
         )
         Spacer(Modifier.height(statusSpacing))
-        StatusIndicator(visuals, dotAlpha)
+        StatusIndicator(visuals, symbolAlpha)
     }
 }
 
 @Composable
-private fun StatusIndicator(visuals: StateVisuals, dotAlpha: Float) {
+private fun StatusIndicator(visuals: StateVisuals, symbolAlpha: Float) {
     Row(
         modifier = Modifier
             .height(32.dp)
@@ -416,13 +415,8 @@ private fun StatusIndicator(visuals: StateVisuals, dotAlpha: Float) {
             .testTag("private_audio_status"),
         verticalAlignment = Alignment.CenterVertically,
     ) {
-        Box(
-            Modifier
-                .size(10.dp)
-                .alpha(dotAlpha)
-                .background(visuals.dotColor, CircleShape),
-        )
-        Spacer(Modifier.width(12.dp))
+        StatusSymbolIcon(visuals.statusStyle, symbolAlpha)
+        Spacer(Modifier.width(8.dp))
         Text(
             text = stringResource(visuals.label),
             color = ProductWhite,
@@ -430,6 +424,48 @@ private fun StatusIndicator(visuals: StateVisuals, dotAlpha: Float) {
             lineHeight = 26.sp,
             fontWeight = FontWeight.Normal,
         )
+    }
+}
+
+@Composable
+private fun StatusSymbolIcon(style: StatusVisualStyle, symbolAlpha: Float) {
+    Canvas(Modifier.size(18.dp).alpha(symbolAlpha)) {
+        val color = Color(style.colorArgb)
+        val stroke = Stroke(width = 1.8.dp.toPx(), cap = StrokeCap.Round, join = StrokeJoin.Round)
+        when (style.symbol) {
+            StatusSymbol.OFF -> {
+                drawArc(color, -48f, 276f, false, style = stroke)
+                drawLine(color, Offset(center.x, size.height * 0.08f), Offset(center.x, size.height * 0.48f), stroke.width, StrokeCap.Round)
+            }
+            StatusSymbol.WAITING_CLOCK -> {
+                drawCircle(color, size.minDimension * 0.42f, style = stroke)
+                drawLine(color, center, Offset(center.x, size.height * 0.27f), stroke.width, StrokeCap.Round)
+                drawLine(color, center, Offset(size.width * 0.69f, size.height * 0.58f), stroke.width, StrokeCap.Round)
+            }
+            StatusSymbol.EARPIECE -> {
+                drawRoundRect(
+                    color,
+                    topLeft = Offset(size.width * 0.27f, size.height * 0.08f),
+                    size = Size(size.width * 0.46f, size.height * 0.84f),
+                    cornerRadius = androidx.compose.ui.geometry.CornerRadius(size.width * 0.23f),
+                    style = stroke,
+                )
+                listOf(0.38f, 0.50f, 0.62f).forEach { y ->
+                    drawLine(color, Offset(size.width * 0.41f, size.height * y), Offset(size.width * 0.59f, size.height * y), stroke.width * 0.7f, StrokeCap.Round)
+                }
+            }
+            StatusSymbol.WARNING -> {
+                val triangle = Path().apply {
+                    moveTo(center.x, size.height * 0.08f)
+                    lineTo(size.width * 0.94f, size.height * 0.88f)
+                    lineTo(size.width * 0.06f, size.height * 0.88f)
+                    close()
+                }
+                drawPath(triangle, color, style = stroke)
+                drawLine(color, Offset(center.x, size.height * 0.36f), Offset(center.x, size.height * 0.62f), stroke.width, StrokeCap.Round)
+                drawCircle(color, stroke.width * 0.55f, Offset(center.x, size.height * 0.75f))
+            }
+        }
     }
 }
 
@@ -764,10 +800,10 @@ private fun CloseIcon() {
 }
 
 private fun stateVisuals(state: PrivateAudioState): StateVisuals = when (state) {
-    PrivateAudioState.READY -> StateVisuals(R.string.state_ready, ProductGreen, ReadyPower, glow = false)
-    PrivateAudioState.WAITING -> StateVisuals(R.string.state_waiting, ProductAmber, ProductAmber, glow = true, pulse = true)
-    PrivateAudioState.ACTIVE -> StateVisuals(R.string.state_active, ProductGreen, ProductGreen, glow = true)
-    PrivateAudioState.ERROR -> StateVisuals(R.string.state_error, ProductRed, ProductRed, glow = true)
+    PrivateAudioState.READY -> StateVisuals(R.string.state_ready, statusVisualStyle(state), ReadyPower, glow = false)
+    PrivateAudioState.WAITING -> StateVisuals(R.string.state_waiting, statusVisualStyle(state), ProductAmber, glow = true, pulse = true)
+    PrivateAudioState.ACTIVE -> StateVisuals(R.string.state_active, statusVisualStyle(state), ProductGreen, glow = true)
+    PrivateAudioState.ERROR -> StateVisuals(R.string.state_error, statusVisualStyle(state), ProductRed, glow = true)
 }
 
 @Preview(name = "Ready", showBackground = true, backgroundColor = 0xFF000000, widthDp = 393, heightDp = 852)
