@@ -309,8 +309,7 @@ class OverlayService : Service() {
             paint.color = Color.rgb(91, 91, 94)
             canvas.drawRoundRect(controllerSurface, 13f, 13f, paint)
 
-            paint.alpha = (statusSymbolAlpha * 255).toInt()
-            drawStatusSymbol(canvas, statusVisualStyle(state))
+            drawStatusSymbol(canvas, statusVisualStyle(state), statusSymbolAlpha)
             paint.alpha = 255
             drawStatusLabel(canvas, miniStateLabel(state))
 
@@ -347,9 +346,14 @@ class OverlayService : Service() {
             statusSymbolAlpha = 1f
         }
 
-        private fun drawStatusSymbol(canvas: Canvas, style: StatusVisualStyle) {
+        private fun drawStatusSymbol(
+            canvas: Canvas,
+            style: StatusVisualStyle,
+            symbolAlpha: Float,
+        ) {
             val x = directionalX(STATUS_SYMBOL_X)
             paint.color = style.colorArgb.toInt()
+            paint.alpha = (symbolAlpha * 255).toInt()
             paint.style = Paint.Style.STROKE
             paint.strokeWidth = 1.8f
             when (style.symbol) {
