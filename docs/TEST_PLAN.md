@@ -108,7 +108,7 @@ Allowed status values are **NOT TESTED**, **PASS**, **FAIL**, and **BLOCKED**. R
 
 ## Current compatibility and remaining validation
 
-Unless a row says otherwise, current PASS evidence is supplied physical testing on the primary Xiaomi product `2201117TY`, Android 13/API 33. It must not be generalized to another device, OEM, Android release, browser engine, or application version. Historical POC-1/2/3/4 failures below remain valid evidence; the later POC-5 PASS and automatic three-class controller supersede those experiments only for the current tested configuration.
+The primary full-scope PASS baseline remains physical testing on Xiaomi product `2201117TY`, Android 13/API 33. Additional limited cross-device evidence is recorded below for OUKITEL Android 12/API 31 and Samsung Android 16/API 36. No result may be generalized beyond its explicitly recorded device, evidence type, trigger/application scope, Android release, or lifecycle coverage. Historical POC-1/2/3/4 failures below remain valid evidence; the later POC-5 PASS and automatic three-class controller supersede those experiments only for the scopes explicitly recorded here.
 
 ### Confirmed compatibility matrix
 
@@ -123,6 +123,11 @@ Unless a row says otherwise, current PASS evidence is supplied physical testing 
 | ChatGPT Web in Mi Browser | Browser communication; exact metadata not supplied | **PASS** | Tester confirmed normal Private Audio behavior and audible earpiece routing. This does not prove all Chromium browsers. |
 | Perplexity Web | No realtime Voice mode on the tested web surface | **BLOCKED** | Not applicable to routing: no routable realtime voice surface was available; this is not a Private Audio failure. |
 | ChatGPT Web Voice in Opera | Realtime Voice session could not be started | **BLOCKED** | Voice could not be loaded during the attempted check, so Private Audio was not exercised and did not fail. Retry only if the surface becomes available. |
+
+### Additional cross-device evidence
+
+- **2026-09-17 — OUKITEL WP21 Ultra, Android 12/API 31, Puzru `0.1.0 (1)`: PASS for the recorded Android-reported ASSISTANT lifecycle.** Supplied format-3 diagnostics show protected Assistant cycles with exactly one accepted earpiece request, Android reporting the built-in earpiece, no later speaker reclaim or route loss, proximity acquisition/release, continuity reuse without another routing or mode request, and an ordered 20-second continuity-timeout cleanup back to `MODE_NORMAL` / `WAITING`. The same report also exercised Assistant early pre-arm: the prepared silent track and communication mode were established before later Assistant/speech promotion. The report does not independently establish audible output, and public Android metadata does not identify the third-party provider.
+- **2026-09-23 — Samsung `SM-S936B`, Android 16/API 36, Puzru `0.1.0 (1)`: PASS for a human functional smoke test only.** The tester reported that Puzru worked without observed problems with ChatGPT Voice and Gemini. The supplied saved report was captured with Puzru disabled in `READY`, contained no qualifying playback, routing request, completed cycle, or proximity acquisition, and therefore does not provide mechanism-level evidence for routing, cleanup, proximity, trigger family, or provider ownership. Treat ChatGPT/Gemini names as human test correlation, not API attribution.
 
 The 2026-09-08 physical session also established a distinct, shared compatibility
 scenario for ChatGPT Android, Gemini Live, Grok Android, and Perplexity Android:
@@ -146,9 +151,9 @@ Every confirmed routing cycle retains one `setCommunicationDevice(earpiece)` req
 
 **HIGH — device and release safety**
 
-1. Samsung/One UI: routing, cleanup, proximity, and all three trigger families.
-2. Pixel or another AOSP-like device: separate framework behavior from Xiaomi-specific behavior.
-3. A newer Android release than Android 13, preferably Android 15/16 when available.
+1. Samsung/One UI: complete mechanism-level diagnostics for routing, cleanup, proximity, and all three trigger families. The Android 16 `SM-S936B` ChatGPT/Gemini human smoke test above reduces compatibility uncertainty but does not close this gate.
+2. Pixel or another AOSP-like device: separate framework behavior from Xiaomi- and vendor-specific behavior.
+3. Newer-Android mechanism-level coverage: Android 16 now has a human smoke PASS on Samsung, but diagnostic routing/cleanup/proximity evidence on Android 15/16 remains incomplete.
 4. Incoming real phone call while armed but not Active, and during assistant linger:
    telephony must win immediately. The Active incoming-call case is recorded in T-009.
 5. Outgoing real phone call while armed and while Active: telephony must win immediately;
@@ -670,7 +675,8 @@ The following checks validate lifecycle ownership without claiming routing succe
 
 ## Assistant session continuity physical gate
 
-- **Status:** NOT TESTED / UNKNOWN
+- **Status:** **PASS** for the supplied OUKITEL resume/timeout execution; remaining control and abort-matrix cases are **NOT TESTED**.
+- **Observed evidence (2026-09-17, OUKITEL WP21 Ultra, Android 12/API 31, Puzru `0.1.0 (1)`):** After the unchanged 7-second linger, continuity entered with the same unsilenced public `VOICE_RECOGNITION` baseline. Assistant/speech resumed inside the window and reused the same protected context without another routing or mode request. A later continuity window ran the full 20 seconds, expired with the recording still matching, then performed ordered cleanup, released proximity, returned Android mode to `MODE_NORMAL`, and re-armed clean `WAITING`. A later cycle also declined continuity after the recording configuration/session changed during linger and cleaned normally. This is mechanism-level physical-device evidence; the report does not independently establish audible output or provider ownership.
 - **Control:** On Xiaomi Android 13, leave **Assistant session continuity** OFF. Confirm the established Assistant cycle still cleans once after the 1.5-second end confirmation and unchanged 7-second linger. Confirm communication and browser-communication retain their existing end timing.
 - **Experiment:** Enable continuity before an Assistant cycle. After assistant/speech disappears, verify the 7-second linger remains unchanged and only then begins one 20-second window when the exact public unsilenced `VOICE_RECOGNITION` configuration is unchanged. Confirm the cycle ID, playing silent track, `MODE_IN_COMMUNICATION`, built-in earpiece, `ACTIVE`, proximity behavior, and routing-attempt count remain unchanged, with no second mode or communication-device request.
 - **Resume and timeout:** Resume assistant/speech within continuity and verify the timeout is cancelled and the same context serves the reply. In a separate run, allow expiry and verify one ordered cleanup and `WAITING` re-arm, with no later stale callback effect.
