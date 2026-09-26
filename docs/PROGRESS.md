@@ -139,8 +139,8 @@
 
 - The service-owned, persisted Advanced preference now defaults ON when its key is absent and can retain an established `ASSISTANT` protected cycle for one additional fixed 20-second window after the unchanged 7-second linger. An explicitly stored OFF remains OFF. Entry requires the same public unsilenced `VOICE_RECOGNITION` configuration plus a healthy silent track, owned communication mode, current built-in earpiece, and no telephony/system-priority condition.
 - Continuity keeps the existing cycle `ACTIVE`, so the established proximity projection remains downstream without another state machine. Assistant/speech resumption cancels the timeout and reuses the same resources; no new track, mode request, communication-device request, routing attempt, retry, polling, or reassertion is added. Recording loss/change/silencing or preference OFF performs reversible cleanup and returns the enabled controller to clean `WAITING`; genuine protected mode, route, earpiece, or silent-track failures retain existing `BLOCKED`/`ERROR` semantics. Lifecycle shutdown, safety-context loss, and expiry remain generation-safe.
-- Diagnostics record enablement, activity, timing, the public recording baseline and match result, resume/timeout/abort outcome, and same-context reuse. Deterministic JVM contracts cover default/persistence, OFF behavior, Assistant-only extension, resource reuse, one-request invariants, aborts, stale work, unchanged other origins, and unchanged proximity ownership. Physical validation of the new experiment remains **NOT TESTED / UNKNOWN**.
-- The 2026-09-10 Xiaomi evidence associates the observed healthy public recording configuration with Gemini only through the controlled human test. Public Android metadata itself exposes no provider ownership, and implementation and diagnostics remain provider-independent.
+- Diagnostics record enablement, activity, timing, the public recording baseline and match result, resume/timeout/abort outcome, and same-context reuse. Deterministic JVM contracts cover default/persistence, OFF behavior, Assistant-only extension, resource reuse, one-request invariants, aborts, stale work, unchanged other origins, and unchanged proximity ownership. Supplied 2026-09-17 format-3 diagnostics from OUKITEL WP21 Ultra, Android 12/API 31, now physically exercise eligible continuity entry, same-context resume without another routing or mode request, a full 20-second timeout with ordered cleanup/re-arm, and a recording configuration/session-change guard. This is a PASS for those recorded lifecycle paths only; the remaining control/abort matrix, human-audible result, accessories, telephony, and broader OEM coverage remain unverified.
+- The 2026-09-10 Xiaomi evidence associates the observed healthy public recording configuration with Gemini only through the controlled human test. The later Samsung `SM-S936B` Android 16 smoke test likewise names ChatGPT Voice and Gemini only from the tester's controlled use. Public Android metadata itself exposes no provider ownership, and implementation and diagnostics remain provider-independent.
 
 ## Privacy Summary migration
 
@@ -805,18 +805,24 @@ this summary intentionally does not duplicate its test matrix.
 
 ## Validation status
 
-- Physical evidence establishes the three routing classes only on the tested Xiaomi
-  configuration and applications listed above. It also establishes core proximity
-  near/off and far/on behavior. On 2026-09-08, the same Xiaomi `2201117TY`, Android
-  13/API 33 scope also passed preservation of already-active Bluetooth routing across
-  ChatGPT, Gemini, Grok, and Perplexity, Active incoming-call telephony priority, and
-  physical orientation/layout stability. Emulator, JVM, static, and instrumentation
-  contracts are not treated as physical routing evidence.
-- High-priority release-safety gaps are outgoing real-call priority and incoming-call
-  boundaries outside the recorded Active case, plus routing/cleanup/proximity coverage
-  on Samsung, an AOSP-like device, and a newer Android release. Bluetooth lifecycle
-  cases beyond preservation of an already-active route, other accessories,
-  service/process loss, reboot, and remaining UI lifecycle cases are also pending.
+- The full three-trigger, human-audible physical baseline remains the tested Xiaomi
+  `2201117TY`, Android 13/API 33 scope. It establishes core proximity near/off and
+  far/on behavior and, on 2026-09-08, preservation of already-active Bluetooth routing
+  across human-correlated ChatGPT, Gemini, Grok, and Perplexity sessions, Active
+  incoming-call telephony priority, and physical orientation/layout stability. New
+  cross-device evidence is narrower: OUKITEL WP21 Ultra, Android 12/API 31 format-3
+  diagnostics establish the recorded ASSISTANT routing lifecycle, early pre-arm,
+  continuity reuse, timeout cleanup, and proximity transitions at the Android-reported
+  mechanism level; Samsung `SM-S936B`, Android 16/API 36 has a human functional smoke
+  PASS for ChatGPT Voice and Gemini, but its supplied report was captured in disabled
+  `READY` and contains no routing-cycle evidence. Emulator, JVM, static, and
+  instrumentation contracts are not treated as physical routing evidence.
+- High-priority release-safety gaps remain outgoing real-call priority and incoming-call
+  boundaries outside the recorded Active case, detailed Samsung/One UI routing,
+  cleanup/proximity and three-trigger diagnostics, an AOSP-like device, and
+  mechanism-level Android 15/16 coverage. Bluetooth lifecycle cases beyond preservation
+  of an already-active route, other accessories, service/process loss, reboot, and
+  remaining UI lifecycle cases are also pending.
 - Runtime checks remain pending for compact-height Settings/Privacy scrolling,
   diagnostic report saving, overlay permission and recreation, Mini drag/bounds and
   task reuse, Close boundaries, and process death. See
@@ -854,9 +860,14 @@ this summary intentionally does not duplicate its test matrix.
   and runtime evidence on Xiaomi `2201117TY`, Android 13/API 33, exercised stable
   unsilenced recognition, early track `PLAYING`, early mode, speech promotion, one
   post-speech device request, and `ACTIVE`; human listening reported that the response
-  beginning was no longer clipped. **UNKNOWN:** cross-device, OEM, Android-release,
-  accessory, and telephony compatibility. **PRODUCT STATUS:** the feature remains
-  experimental, defaults ON when no preference is stored, and preserves explicit OFF.
+  beginning was no longer clipped. **FACT:** supplied OUKITEL WP21 Ultra, Android
+  12/API 31 diagnostics independently exercised early pre-arm, with the silent track
+  `PLAYING` 7561 ms and `MODE_IN_COMMUNICATION` confirmed 7331 ms before later
+  Assistant/speech promotion, followed by one accepted earpiece request and `ACTIVE`.
+  **UNKNOWN:** the OUKITEL human-audible benefit, Samsung mechanism-level early-route
+  behavior, broader OEM/Android coverage, accessories, and telephony compatibility.
+  **PRODUCT STATUS:** the feature remains experimental, defaults ON when no preference
+  is stored, and preserves explicit OFF.
 - The ChatGPT startup-sound signature and route remain unresolved. Diagnostics can
   record bounded playback metadata, but the trace neither classifies nor reroutes
   the sound by itself.
