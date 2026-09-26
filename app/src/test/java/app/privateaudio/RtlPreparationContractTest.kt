@@ -43,11 +43,11 @@ class RtlPreparationContractTest {
         assertFalse(overlay.contains("canvas.drawText(stateLabel(state)"))
         assertTrue(overlay.contains("STATUS_TEXT_LEFT = 34f"))
         assertTrue(overlay.contains("STATUS_TEXT_RIGHT = 134f"))
-        assertTrue(overlay.contains("STATUS_DOT_X = 20f"))
+        assertTrue(overlay.contains("STATUS_SYMBOL_X = 20f"))
         assertTrue(overlay.contains("miniDirectionalX(ltrX, DESIGN_WIDTH, isRtlLayout())"))
         assertEquals(34f, miniDirectionalX(34f, 300f, rtl = false))
         assertEquals(266f, miniDirectionalX(34f, 300f, rtl = true))
-        assertTrue(overlay.contains("directionalX(STATUS_DOT_X)"))
+        assertTrue(overlay.contains("directionalX(STATUS_SYMBOL_X)"))
         assertTrue(overlay.contains("directionalX(STATUS_TEXT_RIGHT)"))
         assertTrue(overlay.contains("RectF(134f, 15f, 166f, 47f)"))
     }

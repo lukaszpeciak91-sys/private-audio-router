@@ -11,7 +11,7 @@ import java.io.File
 class Layer6FloatingControllerContractTest {
     @Test fun finalSurfaceHasApprovedDimensionsOrderAndNoHideControl() {
         assertTrue(overlay.contains("(300 * density).toInt()")); assertTrue(overlay.contains("(62 * density).toInt()"))
-        assertTrue(overlay.indexOf("canvas.drawCircle(directionalX(STATUS_DOT_X)") < overlay.indexOf("drawPower(canvas"))
+        assertTrue(overlay.indexOf("drawStatusSymbol(canvas") < overlay.indexOf("drawPower(canvas"))
         assertTrue(overlay.indexOf("drawExpand(canvas)") < overlay.indexOf("drawClose(canvas)"))
         assertTrue(overlay.contains("RectF(134f, 15f, 166f, 47f)"))
         assertFalse(overlay.contains("canvas.drawRect(170f"))
@@ -27,8 +27,7 @@ class Layer6FloatingControllerContractTest {
     @Test fun allFourAuthoritativeStatesHaveApprovedTreatment() {
         PrivateAudioState.entries.forEach { assertTrue(it.name, overlay.contains("PrivateAudioState.${it.name}")) }
         assertTrue(overlay.contains("privateAudioService?.privateAudioState"))
-        assertTrue(overlay.contains("READY, PrivateAudioState.ACTIVE -> Color.rgb(34, 218, 112)"))
-        assertTrue(overlay.contains("WAITING -> Color.rgb(238, 172, 54)")); assertTrue(overlay.contains("ERROR -> Color.rgb(238, 75, 75)"))
+        assertTrue(overlay.contains("drawStatusSymbol(canvas, statusVisualStyle(state), statusSymbolAlpha)"))
         assertTrue(overlay.contains("READY -> Color.rgb(184, 184, 188)")); assertFalse(overlay.contains("projectPrivateAudioState("))
     }
 
@@ -42,22 +41,29 @@ class Layer6FloatingControllerContractTest {
         assertTrue(close.contains("hideOverlay()")); assertTrue(close.contains("stopSelf()")); assertFalse(close.contains("disarm")); assertFalse(close.contains("finish"))
     }
 
-    @Test fun statusDotAloneAnimatesForWaitingAndActiveAndStopsWithObservation() {
-        val animation = overlay.substringAfter("private fun updateStatusDotAnimation()")
-            .substringBefore("private fun stopStatusDotAnimation()")
+    @Test fun statusSymbolAloneAnimatesForWaitingAndActiveAndStopsWithObservation() {
+        val animation = overlay.substringAfter("private fun updateStatusSymbolAnimation()")
+            .substringBefore("private fun stopStatusSymbolAnimation()")
         assertTrue(animation.contains("PrivateAudioState.WAITING -> WAITING_HALF_CYCLE_MILLIS"))
         assertTrue(animation.contains("PrivateAudioState.ACTIVE -> ACTIVE_HALF_CYCLE_MILLIS"))
         assertTrue(animation.contains("PrivateAudioState.READY, PrivateAudioState.ERROR -> return"))
         assertTrue(animation.contains("ValueAnimator.ofFloat(1f, 0.65f)"))
         assertTrue(overlay.contains("WAITING_HALF_CYCLE_MILLIS = 900L"))
         assertTrue(overlay.contains("ACTIVE_HALF_CYCLE_MILLIS = 700L"))
-        assertTrue(overlay.contains("paint.alpha = (statusDotAlpha * 255).toInt()"))
+        assertTrue(overlay.contains("drawStatusSymbol(canvas, statusVisualStyle(state), statusSymbolAlpha)"))
+        val symbolDrawing = overlay.substringAfter("private fun drawStatusSymbol(")
+            .substringBefore("private fun drawStatusLabel(")
+        assertTrue(symbolDrawing.contains("paint.alpha = (symbolAlpha * 255).toInt()"))
+        assertTrue(
+            symbolDrawing.indexOf("paint.color = style.colorArgb.toInt()") <
+                symbolDrawing.indexOf("paint.alpha = (symbolAlpha * 255).toInt()"),
+        )
         assertTrue(overlay.contains("paint.alpha = 255"))
-        assertTrue(overlay.contains("state = latest\n                    contentDescription = stateDescription(latest)\n                    updateStatusDotAnimation()"))
+        assertTrue(overlay.contains("state = latest\n                    contentDescription = stateDescription(latest)\n                    updateStatusSymbolAnimation()"))
         val stopObservation = overlay.substringAfter("fun stopStateObservation()")
             .substringBefore("fun refreshLocalizedPresentation()")
         assertTrue(stopObservation.contains("removeCallbacks(refreshState)"))
-        assertTrue(stopObservation.contains("stopStatusDotAnimation()"))
+        assertTrue(stopObservation.contains("stopStatusSymbolAnimation()"))
         assertFalse(animation.contains("drawPower"))
         assertFalse(animation.contains("drawExpand"))
         assertFalse(animation.contains("drawClose"))
