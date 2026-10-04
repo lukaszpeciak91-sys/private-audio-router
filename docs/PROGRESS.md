@@ -1,5 +1,15 @@
 # Progress
 
+## Android lint Gradle-freshness advisory refresh
+
+- **FACT:** Android lint on current `main` still reports the three intentionally
+  visible toolchain-freshness advisories accepted by the repository lint policy, but
+  the Gradle advisory now names stable Gradle `9.8.0` instead of `9.7.1`.
+- Refreshed only the exact accepted `AndroidGradlePluginVersion` warning signature
+  in canonical CI. Gradle remains pinned to `9.5.0`; no Android toolchain, runtime,
+  routing, service lifecycle, Assistant, proximity, localization, UI, or release
+  behavior changed.
+
 ## Release crash-diagnostics metadata
 
 - **FACT:** Release builds now use the Android Gradle Plugin 9.3 `optimization`
