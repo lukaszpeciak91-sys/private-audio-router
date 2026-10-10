@@ -1,5 +1,18 @@
 # Progress
 
+## Assistant early-route diagnostic generation isolation
+
+- **FACT:** Assistant early-route promotion diagnostics are now bound to the exact
+  protected routing generation that consumed the early pre-arm. Device-request,
+  first-earpiece, and protected-cycle cleanup evidence update the retained early-route
+  history only while that same routing generation is current.
+- Later unrelated `COMMUNICATION` or `BROWSER_COMMUNICATION` cycles can no longer
+  overwrite a completed Assistant early-route run. A genuinely new early-route run
+  still replaces the previous status through the existing pre-arm initialization.
+- This is diagnostics-only isolation. Routing qualification, timing, mode/device
+  requests, retry behavior, lifecycle, proximity, telephony priority, Assistant
+  linger, and session continuity behavior are unchanged.
+
 ## Android lint Gradle-freshness advisory refresh
 
 - **FACT:** Android lint on current `main` still reports the three intentionally
