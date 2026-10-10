@@ -612,6 +612,91 @@ class AudioDiagnosticObserverTest {
     }
 
     @Test
+    fun promotedAssistantEarlyRouteHistoryIgnoresLaterUnrelatedRoutingGenerations() {
+        val assistantGeneration = 41L
+        var history = AssistantEarlyRouteStatus(
+            featureEnabled = true,
+            phase = AssistantEarlyRoutePhase.PROMOTED,
+            promoted = true,
+            promotionAt = "assistant-promotion",
+            promotedRoutingGeneration = assistantGeneration,
+        )
+
+        history = history.updateForPromotedRoutingGeneration(assistantGeneration) {
+            it.copy(
+                promotionDeviceRequestAt = "assistant-device-request",
+                promotionDeviceRequestReturn = true,
+            )
+        }
+        history = history.updateForPromotedRoutingGeneration(assistantGeneration) {
+            it.copy(firstEarpieceObservationAt = "assistant-earpiece")
+        }
+        history = history.updateForPromotedRoutingGeneration(assistantGeneration) {
+            it.copy(
+                cleanupCompleted = true,
+                cleanupReason = "assistant-cleanup",
+            )
+        }
+        val completedAssistantHistory = history
+
+        history = history.updateForPromotedRoutingGeneration(assistantGeneration + 1) {
+            it.copy(
+                promotionDeviceRequestAt = "communication-device-request",
+                promotionDeviceRequestReturn = false,
+                firstEarpieceObservationAt = "communication-earpiece",
+                cleanupCompleted = false,
+                cleanupReason = "communication-cleanup",
+            )
+        }
+        history = history.updateForPromotedRoutingGeneration(assistantGeneration + 2) {
+            it.copy(
+                firstEarpieceObservationAt = "browser-earpiece",
+                cleanupReason = "browser-cleanup",
+            )
+        }
+
+        assertEquals(completedAssistantHistory, history)
+    }
+
+    @Test
+    fun aNewPromotedAssistantRunCanOwnItsOwnRoutingGeneration() {
+        val newAssistantGeneration = 52L
+        val newRun = AssistantEarlyRouteStatus(
+            phase = AssistantEarlyRoutePhase.PROMOTED,
+            promoted = true,
+            promotedRoutingGeneration = newAssistantGeneration,
+        ).updateForPromotedRoutingGeneration(newAssistantGeneration) {
+            it.copy(
+                promotionDeviceRequestAt = "new-assistant-request",
+                promotionDeviceRequestReturn = true,
+                firstEarpieceObservationAt = "new-assistant-earpiece",
+                cleanupCompleted = true,
+                cleanupReason = "new-assistant-cleanup",
+            )
+        }
+
+        assertEquals("new-assistant-request", newRun.promotionDeviceRequestAt)
+        assertEquals(true, newRun.promotionDeviceRequestReturn)
+        assertEquals("new-assistant-earpiece", newRun.firstEarpieceObservationAt)
+        assertTrue(newRun.cleanupCompleted)
+        assertEquals("new-assistant-cleanup", newRun.cleanupReason)
+    }
+
+    @Test
+    fun postPromotionDiagnosticMutationSitesUseThePromotedRoutingGenerationGuard() {
+        val promotion = observerSource.method("private fun promoteAssistantEarlyPreArm()")
+        assertTrue(promotion.contains("promotedRoutingGeneration = cycleGeneration"))
+        assertEquals(3, observerSource.occurrences("updateForPromotedRoutingGeneration(cycleGeneration)"))
+
+        val routingAttempt = observerSource.method("private fun performRoutingAttempt(")
+        val outcome = observerSource.method("private fun observeExperimentOutcome(")
+        val cleanup = observerSource.method("private fun clearExperiment(")
+        assertTrue(routingAttempt.contains("updateForPromotedRoutingGeneration(cycleGeneration)"))
+        assertTrue(outcome.contains("updateForPromotedRoutingGeneration(cycleGeneration)"))
+        assertTrue(cleanup.contains("updateForPromotedRoutingGeneration(cycleGeneration)"))
+    }
+
+    @Test
     fun reportCopyStillUsesSingleFormatter() {
         assertEquals(1, observerSource.occurrences("internal fun buildDiagnosticReport("))
         assertEquals(0, mainActivitySource.occurrences("buildDiagnosticReport("))
