@@ -121,8 +121,7 @@ class MiniCompactStateContractTest {
     private fun String.method(signature: String) = kotlinDeclaration(signature)
 
     private companion object {
-        val root = generateSequence(File(System.getProperty("user.dir")).absoluteFile) { it.parentFile }
-            .first { File(it, "app/src/main").isDirectory }
+        val root = testProjectRoot
         val res = File(root, "app/src/main/res")
         val productionKotlinFiles = File(root, "app/src/main/java").walkTopDown().filter { it.extension == "kt" }.toList()
         val productionKotlin = productionKotlinFiles.joinToString("\n") { it.readText() }
