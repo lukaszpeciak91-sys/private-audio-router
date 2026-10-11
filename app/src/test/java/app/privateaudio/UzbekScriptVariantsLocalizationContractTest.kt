@@ -11,8 +11,7 @@ import java.util.Locale
 import javax.xml.parsers.DocumentBuilderFactory
 
 class UzbekScriptVariantsLocalizationContractTest {
-    private val projectRoot = generateSequence(File(System.getProperty("user.dir")).absoluteFile) { it.parentFile }
-        .first { File(it, "app/src/main/res").isDirectory }
+    private val projectRoot = testProjectRoot
     private val latinFile = projectFile("app/src/main/res/values-uz/strings.xml")
     private val cyrillicFile = projectFile("app/src/main/res/values-b+uz+Cyrl+UZ/strings.xml")
     private val arabicFile = projectFile("app/src/main/res/values-b+uz+Arab+AF/strings.xml")
