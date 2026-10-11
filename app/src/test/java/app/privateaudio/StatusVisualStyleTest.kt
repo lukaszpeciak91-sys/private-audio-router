@@ -54,8 +54,7 @@ class StatusVisualStyleTest {
     }
 
     private companion object {
-        val root = generateSequence(File(System.getProperty("user.dir")).absoluteFile) { it.parentFile }
-            .first { File(it, "app/src/main").isDirectory }
+        val root = testProjectRoot
         val res = File(root, "app/src/main/res")
         val mainScreen = File(root, "app/src/main/java/app/privateaudio/ui/PrivateAudioScreen.kt").readText()
         val overlay = File(root, "app/src/main/java/app/privateaudio/overlay/OverlayService.kt").readText()
