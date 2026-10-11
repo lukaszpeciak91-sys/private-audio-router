@@ -8,8 +8,7 @@ import java.io.File
 import java.util.Locale
 
 class IgboLocalizationContractTest {
-    private val projectRoot = generateSequence(File(System.getProperty("user.dir")).absoluteFile) { it.parentFile }
-        .first { File(it, "app/src/main").isDirectory }
+    private val projectRoot = testProjectRoot
     private val strings = projectFile("app/src/main/res/values-ig/strings.xml").readText()
 
     @Test
