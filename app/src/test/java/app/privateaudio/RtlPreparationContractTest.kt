@@ -100,8 +100,7 @@ class RtlPreparationContractTest {
         substring(indexOf(signature)).substringBefore("\n    }")
 
     private companion object {
-        val root = generateSequence(File(System.getProperty("user.dir")).absoluteFile) { it.parentFile }
-            .first { File(it, "app/src/main").isDirectory }
+        val root = testProjectRoot
         val settings = projectFile("app/src/main/java/app/privateaudio/ui/SettingsSheet.kt").readText()
         val productScreen = projectFile("app/src/main/java/app/privateaudio/ui/PrivateAudioScreen.kt").readText()
         val overlay = projectFile("app/src/main/java/app/privateaudio/overlay/OverlayService.kt").readText()
