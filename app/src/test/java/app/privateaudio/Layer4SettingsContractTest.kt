@@ -419,8 +419,7 @@ class Layer4SettingsContractTest {
     }
 
     private companion object {
-        val projectRoot = generateSequence(File(System.getProperty("user.dir")).absoluteFile) { it.parentFile }
-            .first { File(it, "app/src/main").isDirectory }
+        val projectRoot = testProjectRoot
         fun projectFile(relativePath: String) = File(projectRoot, relativePath)
         val mainSource = projectFile("app/src/main/java/app/privateaudio/MainActivity.kt").readText()
         val screenSource = projectFile("app/src/main/java/app/privateaudio/ui/PrivateAudioScreen.kt").readText()
