@@ -109,7 +109,7 @@ private const val WaitingHalfCycleMillis = 900
 private const val ActiveHalfCycleMillis = 700
 
 private data class StateVisuals(
-    @StringRes val label: Int,
+    @param:StringRes val label: Int,
     val statusStyle: StatusVisualStyle,
     val powerColor: Color,
     val glow: Boolean,
