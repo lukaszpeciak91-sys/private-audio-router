@@ -1,5 +1,27 @@
 # Progress
 
+## Final release-freeze compiler warning hygiene
+
+- **FACT:** The production-source compiler warning pass removed three mechanical
+  warning classes without changing product behavior: Overlay `ResultReceiver`
+  extraction now uses the typed `Intent.getParcelableExtra(name, Class)` API on
+  API 33+ with the legacy public overload retained only for supported API 31–32;
+  `StateVisuals.label` now declares the existing `@StringRes` constructor-parameter
+  target explicitly; and diagnostic thread descriptions use `Thread.threadId()` on
+  API 36+ while preserving the legacy public thread ID read on API 31–35.
+- **FACT:** `AudioPlaybackConfiguration.audioDeviceInfo` remains an intentional
+  diagnostics-only compatibility read. Android deprecated it in API 36 without an
+  equivalent public per-playback-device replacement. Removing it would change the
+  established report/evidence contract, so the deprecation is narrowly suppressed at
+  the single accessor rather than mechanically modernized or deleted.
+- The existing test-source Kotlin/Java nullability warnings remain non-release-blocking
+  test-harness noise and were not mass-edited in this focused production-warning pass.
+- No routing qualification, playback classification, provider independence, mode or
+  communication-device request behavior, Assistant timing, proximity, telephony,
+  localization, release workflow, version, or runtime UI behavior was intentionally
+  changed.
+
+
 ## Assistant early-route diagnostic generation isolation
 
 - **FACT:** Assistant early-route promotion diagnostics are now bound to the stable
