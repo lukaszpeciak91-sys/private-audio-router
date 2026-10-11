@@ -95,9 +95,12 @@
   retain the existing unsigned `bundleRelease` behavior. Focused JVM contracts protect
   both paths and the workflow's trigger, ref, secret, cleanup, verification, artifact,
   retention, and fixed-version requirements.
-- The first signed internal-test AAB remains pending a separate explicit owner request
-  to dispatch the workflow from `main`. A later Google Play upload requires another
-  explicit owner request; signed artifact creation alone does not authorize it.
+- **FACT:** The owner-controlled **Build signed Puzru release AAB** workflow was
+  dispatched from `main` and completed successfully in run `34893755816` at head
+  `fcbdf0e08d5f327816f2916902c3f552beb630cf`. This establishes successful signed
+  artifact creation and workflow verification for that run only. It does not itself
+  authorize or prove a Google Play upload, distribution track, or publication state;
+  those remain separate owner-controlled actions and external evidence.
 
 ## Ten-locale localization batch and PR #259 CI repair
 
@@ -459,10 +462,12 @@
 - These automated checks establish source/build health only. They do not run
   instrumentation or device tests and do not establish physical routing, audible
   output, OEM, accessory, telephony, or lifecycle evidence.
-- Repository ignore rules now protect common local Android keystores and signing
-  property files. Real release signing, signed AAB generation/upload, and publishing
-  remain unconfigured; branch protection remains a separate repository setting after
-  the new check has run successfully.
+- Repository ignore rules protect common local Android keystores and signing
+  property files. Owner-controlled release signing and signed AAB generation are now
+  configured and have been exercised successfully by the dedicated manual workflow.
+  Version changes, GitHub Releases, Google Play upload/distribution, and publishing
+  remain separate owner-controlled actions; branch protection remains a repository
+  setting outside this document.
 - This completes the initial CI/release-engineering-foundation stage of the current
   release-readiness sequence without changing the V1/public-beta product baseline.
 
@@ -575,38 +580,49 @@ The public publisher/developer and privacy/support contact is Napahu Studios —
 This is a **CURRENT PLAN**, not a promise or irreversible ordering. Evidence may
 reorder, split, remove, or add work:
 
-1. Reconcile the release baseline and current documentation.
-2. Establish the CI and release-engineering foundation.
-3. Complete the privacy policy and release disclosures.
-4. Complete launcher and remaining release branding.
-5. Polish permission and foreground-notification transparency.
-6. Pass the current-device release-safety physical gates.
-7. Prepare a release-candidate build and signed Android App Bundle.
-8. Use Google Play Internal Testing as an evidence-gathering stage.
-9. Run a cross-device Closed Beta.
-10. Consider Production only after sufficient beta evidence.
+1. Keep the reconciled release baseline, CI/release-engineering foundation,
+   repository-side Privacy Policy/disclosure alignment, launcher branding, and
+   permission/notification transparency current. The canonical Privacy Policy,
+   in-app/public policy alignment, and diagnostic Send/Save disclosure alignment are
+   implemented; Google Play data-disclosure review / Data Safety submission and other
+   submission-time Play Console declarations remain external release work.
+2. Continue closing the release-safety physical gates that remain **NOT TESTED** or
+   only partially evidenced in `TEST_PLAN.md`.
+3. Treat signed-artifact generation as established infrastructure: owner-controlled
+   run `34893755816` successfully built and verified a signed AAB. A fresh release
+   candidate still requires an explicit owner decision for the relevant version/head.
+4. Use owner-controlled Google Play testing only as an evidence-gathering stage.
+   D-050 establishes that Google Play accepted version code 1, but repository evidence
+   does not establish a current testing track, tester distribution state, or later
+   upload beyond that historical acceptance.
+5. Move to cross-device **Closed Testing** only with the intended evidence scope and
+   continue collecting device/OEM/Android-version results.
+6. Consider **Production** only after sufficient closed-test and release-safety
+   evidence, including the required pre-Production review of the D-049 Assistant early
+   route and Assistant session continuity default-ON baseline.
 
-Before release-candidate freeze, review the remaining Kotlin compiler warnings as a
+Before a release-candidate freeze, review remaining Kotlin compiler warnings as a
 small engineering-cleanup gate. Resolve low-risk deprecations, annotation-target, and
 test-nullability warnings where safe; explicitly classify any behavior-sensitive
 Android diagnostics/routing deprecations rather than modernizing them mechanically.
-A zero-warning compiler log is not itself a publication requirement, and this review
-does not block the current Privacy work merely because warnings remain.
+A zero-warning compiler log is not itself a publication requirement.
 
-Internal Testing may begin before every cross-device gate is `PASS` because it is
-part of evidence gathering, not a Production-readiness claim. Submission-time Play
-Console procedures and changing external requirements must be verified when used
-rather than frozen here.
+Internal or Closed Testing does not by itself establish Production readiness.
+Submission-time Play Console procedures and changing external requirements must be
+verified when used rather than frozen here.
 
 ### Release-evidence boundary
 
 Puzru is not currently ready for Production. High-priority open evidence
-includes outgoing real-call safety and incoming-call boundaries outside the recorded
-Active case; Samsung, AOSP-like/Pixel, and newer Android-release coverage; accessory
-behavior beyond the recorded already-active Bluetooth preservation scenario;
-service/process-loss and reboot behavior; remaining overlay/Mini lifecycle checks;
-diagnostic-report save-picker runtime validation; and the unrecorded portions of the
-physical portrait/landscape gates for Main and Settings.
+includes outgoing real-call priority; incoming-call behavior while `WAITING` and
+while Assistant context is retained; Samsung mechanism-level routing,
+cleanup/proximity, and trigger diagnostics; an AOSP-like/Pixel device; and
+mechanism-level newer-Android coverage. Accessory behavior beyond the recorded
+already-active Bluetooth preservation scenario, service/process-loss and reboot
+behavior, remaining overlay/Mini lifecycle checks, diagnostic-report save-picker
+runtime validation, and unrecorded physical UI gates also remain open. D-049's
+Assistant early-route and session-continuity defaults remain ON for the current
+testing baseline and must be reviewed again before a Production release decision.
 [`TEST_PLAN.md`](TEST_PLAN.md) is authoritative for the exact gates and statuses;
 this summary intentionally does not duplicate its test matrix.
 
