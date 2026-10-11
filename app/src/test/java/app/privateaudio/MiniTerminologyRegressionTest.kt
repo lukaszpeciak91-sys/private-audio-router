@@ -22,6 +22,5 @@ class MiniTerminologyRegressionTest {
 
     private fun projectFile(relativePath: String): File = File(projectRoot, relativePath)
 
-    private val projectRoot: File = generateSequence(File(System.getProperty("user.dir"))) { it.parentFile }
-        .first { File(it, "settings.gradle.kts").isFile }
+    private val projectRoot: File = testProjectRoot
 }
