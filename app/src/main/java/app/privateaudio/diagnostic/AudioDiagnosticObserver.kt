@@ -845,7 +845,7 @@ class AudioDiagnosticObserver(
             val modeRequestTimestamp = OffsetDateTime.now().format(DateTimeFormatter.ISO_OFFSET_DATE_TIME)
             matchingStartupTiming()?.modeRequestStartedNanos = SystemClock.elapsedRealtimeNanos()
             val modeBeforeRequest = audioManager.mode
-            val requestThread = "${Thread.currentThread().name} (id=${Thread.currentThread().id})"
+            val requestThread = currentThreadDiagnosticDescription()
             modeParticipationActive = true
             experiment = experiment.copy(
                 silentTrackActiveBeforeModeRequest = trackActiveBeforeModeRequest,
@@ -1126,7 +1126,7 @@ class AudioDiagnosticObserver(
         }
         val requestAt = OffsetDateTime.now().format(DateTimeFormatter.ISO_OFFSET_DATE_TIME)
         val requestStartedNanos = SystemClock.elapsedRealtimeNanos()
-        val requestThread = "${Thread.currentThread().name} (id=${Thread.currentThread().id})"
+        val requestThread = currentThreadDiagnosticDescription()
         assistantEarlyRoute = assistantEarlyRoute.copy(
             phase = AssistantEarlyRoutePhase.MODE_REQUEST_IN_FLIGHT,
             earlyModeRequestAttempted = true,
@@ -2423,12 +2423,27 @@ internal fun describeChanges(previous: DiagnosticSnapshot, current: DiagnosticSn
     return changes.joinToString().ifEmpty { "no observable change" }
 }
 
+private fun currentThreadDiagnosticDescription(): String {
+    val thread = Thread.currentThread()
+    return "${thread.name} (id=${thread.diagnosticThreadId()})"
+}
+
+private fun Thread.diagnosticThreadId(): Long =
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.BAKLAVA) {
+        threadId()
+    } else {
+        legacyThreadId()
+    }
+
+@Suppress("DEPRECATION")
+private fun Thread.legacyThreadId(): Long = id
 private fun AudioDeviceInfo.toObservedDevice() = ObservedDevice(
     id = id,
     type = audioDeviceTypeName(type),
     productName = productName.toString().ifBlank { "Unavailable" },
 )
 
+@Suppress("DEPRECATION")
 private fun AudioPlaybackConfiguration.toObservedPlayback() = ObservedPlayback(
     usage = audioUsageName(audioAttributes.usage),
     contentType = audioContentTypeName(audioAttributes.contentType),
