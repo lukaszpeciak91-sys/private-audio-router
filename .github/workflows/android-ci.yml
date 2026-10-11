@@ -66,9 +66,43 @@ jobs:
 
           accepted = {
               ("app/build.gradle.kts", "OldTargetApi", "Not targeting the latest versions of Android; compatibility modes apply. Consider testing and updating this version. Consult the android.os.Build.VERSION_CODES javadoc for details."),
-              ("gradle/wrapper/gradle-wrapper.properties", "AndroidGradlePluginVersion", "A newer version of Gradle than 9.5.0 is available: 9.8.0"),
               ("app/build.gradle.kts", "GradleDependency", "A newer version of compileSdk than 36 is available: 37"),
           }
+          gradle_advisory_path = "gradle/wrapper/gradle-wrapper.properties"
+          gradle_advisory_issue = "AndroidGradlePluginVersion"
+          gradle_advisory_prefix = "A newer version of Gradle than 9.5.0 is available: "
+          pinned_gradle_version = (9, 5, 0)
+          version_shape = re.compile(r"^[0-9]+\.[0-9]+\.[0-9]+$")
+
+          def is_accepted(finding):
+              path, issue, message = finding
+              if finding in accepted:
+                  return True
+              if path != gradle_advisory_path or issue != gradle_advisory_issue:
+                  return False
+              if not message.startswith(gradle_advisory_prefix):
+                  return False
+              suggested = message[len(gradle_advisory_prefix):]
+              if version_shape.fullmatch(suggested) is None:
+                  return False
+              suggested_version = tuple(int(part) for part in suggested.split("."))
+              return suggested_version > pinned_gradle_version
+
+          policy_contract_cases = [
+              ((gradle_advisory_path, gradle_advisory_issue, gradle_advisory_prefix + "9.8.1"), True),
+              (("app/build.gradle.kts", gradle_advisory_issue, gradle_advisory_prefix + "9.8.1"), False),
+              ((gradle_advisory_path, "GradleDependency", gradle_advisory_prefix + "9.8.1"), False),
+              ((gradle_advisory_path, gradle_advisory_issue, "A newer version of Gradle than 9.4.0 is available: 9.8.1"), False),
+              ((gradle_advisory_path, gradle_advisory_issue, gradle_advisory_prefix + "9.8"), False),
+              ((gradle_advisory_path, gradle_advisory_issue, gradle_advisory_prefix + "9.8.1-preview"), False),
+              ((gradle_advisory_path, gradle_advisory_issue, gradle_advisory_prefix + "9.5.0"), False),
+          ]
+          for finding, expected in policy_contract_cases:
+              actual = is_accepted(finding)
+              if actual != expected:
+                  print(f"Lint warning policy contract failed for {finding}: expected {expected}, got {actual}", file=sys.stderr)
+                  sys.exit(1)
+
           header = re.compile(r"^(.*?):\d+: Warning: (.*) \[([^]]+)]$")
           findings = []
           for line in report.read_text(encoding="utf-8").splitlines():
@@ -85,7 +119,7 @@ jobs:
                   normalized_path = finding_path.resolve().as_posix()
               findings.append((normalized_path, issue, message))
 
-          unexpected = [finding for finding in findings if finding not in accepted]
+          unexpected = [finding for finding in findings if not is_accepted(finding)]
           if unexpected:
               print("Unexpected Android lint warning(s):", file=sys.stderr)
               for path, issue, message in unexpected:
