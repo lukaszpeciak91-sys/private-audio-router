@@ -103,12 +103,12 @@ jobs:
                   print(f"Lint warning policy contract failed for {finding}: expected {expected}, got {actual}", file=sys.stderr)
                   sys.exit(1)
 
-          header = re.compile(r"^(.*?):\d+: Warning: (.*) \[([^]]+)]$")
-          findings = []
-          for line in report.read_text(encoding="utf-8").splitlines():
-              match = header.match(line)
-              if not match:
-                  continue
+          header = re.compile(r"^(.*?)(?::\d+)?: Warning: (.*) \[([^]]+)]$")
+
+          def parse_warning_header(line):
+              match = header.fullmatch(line)
+              if match is None:
+                  return None
               path, message, issue = match.groups()
               finding_path = pathlib.Path(path)
               if not finding_path.is_absolute():
@@ -117,7 +117,25 @@ jobs:
                   normalized_path = finding_path.resolve().relative_to(repository_root).as_posix()
               except ValueError:
                   normalized_path = finding_path.resolve().as_posix()
-              findings.append((normalized_path, issue, message))
+              return (normalized_path, issue, message)
+
+          parser_contract_cases = [
+              ("app/build.gradle.kts:123: Warning: Example file warning [ExampleIssue]", ("app/build.gradle.kts", "ExampleIssue", "Example file warning")),
+              ("app/src/main/res/mipmap-anydpi: Warning: Example path warning [ExampleIssue]", ("app/src/main/res/mipmap-anydpi", "ExampleIssue", "Example path warning")),
+              ("app/build.gradle.kts:123: Error: Not a warning [ExampleIssue]", None),
+              ("not a lint header", None),
+          ]
+          for line, expected in parser_contract_cases:
+              actual = parse_warning_header(line)
+              if actual != expected:
+                  print(f"Lint warning parser contract failed for {line!r}: expected {expected}, got {actual}", file=sys.stderr)
+                  sys.exit(1)
+
+          findings = []
+          for line in report.read_text(encoding="utf-8").splitlines():
+              finding = parse_warning_header(line)
+              if finding is not None:
+                  findings.append(finding)
 
           unexpected = [finding for finding in findings if not is_accepted(finding)]
           if unexpected:
