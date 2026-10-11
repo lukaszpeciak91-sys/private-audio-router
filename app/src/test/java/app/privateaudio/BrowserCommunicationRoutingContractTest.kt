@@ -76,8 +76,7 @@ class BrowserCommunicationRoutingContractTest {
         }
     }
     private companion object {
-        val root = generateSequence(File(System.getProperty("user.dir")).absoluteFile) { it.parentFile }
-            .first { File(it, "app/src/main").isDirectory }
+        val root = testProjectRoot
         fun source(path: String) = File(root, path).readText()
         val observerFile = File(root, "app/src/main/java/app/privateaudio/diagnostic/AudioDiagnosticObserver.kt")
         val observer = observerFile.readText()
