@@ -1841,8 +1841,7 @@ class Layer41LocalizationContractTest {
     }
 
     private companion object {
-        val projectRoot = generateSequence(File(System.getProperty("user.dir")).absoluteFile) { it.parentFile }
-            .first { File(it, "app/src/main").isDirectory }
+        val projectRoot = testProjectRoot
         val appBuildSource = projectFile("app/build.gradle.kts").readText()
         val resourcesProperties = projectFile("app/src/main/res/resources.properties").readText()
         val defaultStrings = projectFile("app/src/main/res/values/strings.xml").readText()
