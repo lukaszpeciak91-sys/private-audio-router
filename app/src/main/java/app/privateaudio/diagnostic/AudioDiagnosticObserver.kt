@@ -845,7 +845,7 @@ class AudioDiagnosticObserver(
             val modeRequestTimestamp = OffsetDateTime.now().format(DateTimeFormatter.ISO_OFFSET_DATE_TIME)
             matchingStartupTiming()?.modeRequestStartedNanos = SystemClock.elapsedRealtimeNanos()
             val modeBeforeRequest = audioManager.mode
-            val requestThread = "${Thread.currentThread().name} (id=${Thread.currentThread().id})"
+            val requestThread = currentThreadDiagnosticDescription()
             modeParticipationActive = true
             experiment = experiment.copy(
                 silentTrackActiveBeforeModeRequest = trackActiveBeforeModeRequest,
@@ -1126,7 +1126,7 @@ class AudioDiagnosticObserver(
         }
         val requestAt = OffsetDateTime.now().format(DateTimeFormatter.ISO_OFFSET_DATE_TIME)
         val requestStartedNanos = SystemClock.elapsedRealtimeNanos()
-        val requestThread = "${Thread.currentThread().name} (id=${Thread.currentThread().id})"
+        val requestThread = currentThreadDiagnosticDescription()
         assistantEarlyRoute = assistantEarlyRoute.copy(
             phase = AssistantEarlyRoutePhase.MODE_REQUEST_IN_FLIGHT,
             earlyModeRequestAttempted = true,
@@ -2423,6 +2423,20 @@ internal fun describeChanges(previous: DiagnosticSnapshot, current: DiagnosticSn
     return changes.joinToString().ifEmpty { "no observable change" }
 }
 
+private fun currentThreadDiagnosticDescription(): String {
+    val thread = Thread.currentThread()
+    return "${thread.name} (id=${thread.diagnosticThreadId()})"
+}
+
+private fun Thread.diagnosticThreadId(): Long =
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.BAKLAVA) {
+        threadId()
+    } else {
+        legacyThreadId()
+    }
+
+@Suppress("DEPRECATION")
+private fun Thread.legacyThreadId(): Long = id
 private fun AudioDeviceInfo.toObservedDevice() = ObservedDevice(
     id = id,
     type = audioDeviceTypeName(type),
@@ -2434,8 +2448,13 @@ private fun AudioPlaybackConfiguration.toObservedPlayback() = ObservedPlayback(
     contentType = audioContentTypeName(audioAttributes.contentType),
     flags = audioFlagsName(audioAttributes.flags),
     allowedCapturePolicy = capturePolicyName(audioAttributes.allowedCapturePolicy),
-    device = audioDeviceInfo?.toObservedDevice(),
+    device = observedPlaybackDevice()?.toObservedDevice(),
 )
+
+// API 36 deprecated this read without providing an equivalent per-playback device API.
+// Keep the established diagnostic field unchanged across the supported API 31+ range.
+@Suppress("DEPRECATION")
+private fun AudioPlaybackConfiguration.observedPlaybackDevice(): AudioDeviceInfo? = audioDeviceInfo
 
 private fun AudioRecordingConfiguration.toObservedRecording() = ObservedRecording(
     audioSource = audioSourceName(clientAudioSource),

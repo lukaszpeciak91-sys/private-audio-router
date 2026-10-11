@@ -110,8 +110,11 @@ class AssistantEarlyRouteContractTest {
     @Test fun promotedEarlyModePropagatesItsActualRequestThreadWithoutAnotherRequest() {
         val start = observer.method("private fun startAssistantEarlyPreArm(")
         assertInOrder(start, "val requestThread =", "earlyModeRequestThread = requestThread", "requestCommunicationMode()")
-        assertTrue(start.contains("Thread.currentThread().name"))
-        assertTrue(start.contains("Thread.currentThread().id"))
+        assertTrue(start.contains("currentThreadDiagnosticDescription()"))
+        assertTrue(observer.contains("val thread = Thread.currentThread()"))
+        assertTrue(observer.contains("thread.diagnosticThreadId()"))
+        assertTrue(observer.contains("threadId()"))
+        assertTrue(observer.contains("legacyThreadId()"))
 
         val probe = observer.method("private fun startProtectedPoc5Probe(")
         assertTrue(probe.contains("modeRequestThread = if (reuseEarlyTrack) assistantEarlyRoute.earlyModeRequestThread else null"))
