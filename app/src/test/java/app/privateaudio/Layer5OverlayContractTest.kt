@@ -71,8 +71,7 @@ class Layer5OverlayContractTest {
     private fun String.occurrences(needle: String): Int = windowed(needle.length).count { it == needle }
 
     private companion object {
-        val projectRoot = generateSequence(File(System.getProperty("user.dir")).absoluteFile) { it.parentFile }
-            .first { File(it, "app/src/main").isDirectory }
+        val projectRoot = testProjectRoot
         fun projectFile(relativePath: String) = File(projectRoot, relativePath)
         val observerFile = projectFile("app/src/main/java/app/privateaudio/diagnostic/AudioDiagnosticObserver.kt")
         val manifest = projectFile("app/src/main/AndroidManifest.xml").readText()
