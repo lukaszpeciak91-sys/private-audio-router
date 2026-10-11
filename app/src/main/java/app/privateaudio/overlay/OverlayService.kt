@@ -14,6 +14,7 @@ import android.graphics.Paint
 import android.graphics.Path
 import android.graphics.PixelFormat
 import android.graphics.RectF
+import android.os.Build
 import android.os.IBinder
 import android.os.ResultReceiver
 import android.provider.Settings
@@ -99,11 +100,22 @@ class OverlayService : Service() {
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
         when (intent?.action) {
-            ACTION_SHOW -> showOverlay(intent.getParcelableExtra(EXTRA_SHOW_RESULT))
+            ACTION_SHOW -> showOverlay(intent.showResultReceiver())
             ACTION_HIDE -> closeOverlay()
         }
         return START_NOT_STICKY
     }
+
+    private fun Intent.showResultReceiver(): ResultReceiver? =
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            getParcelableExtra(EXTRA_SHOW_RESULT, ResultReceiver::class.java)
+        } else {
+            legacyShowResultReceiver()
+        }
+
+    @Suppress("DEPRECATION")
+    private fun Intent.legacyShowResultReceiver(): ResultReceiver? =
+        getParcelableExtra(EXTRA_SHOW_RESULT)
 
     override fun onDestroy() {
         hideOverlay()
