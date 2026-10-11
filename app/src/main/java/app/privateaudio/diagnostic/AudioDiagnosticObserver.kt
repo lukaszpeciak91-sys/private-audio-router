@@ -349,10 +349,10 @@ data class AssistantEarlyRouteStatus(
 )
 
 internal fun AssistantEarlyRouteStatus.updateForPromotedRoutingGeneration(
-    routingGeneration: Long,
+    routingGeneration: Long?,
     update: (AssistantEarlyRouteStatus) -> AssistantEarlyRouteStatus,
 ): AssistantEarlyRouteStatus =
-    if (promoted && promotedRoutingGeneration == routingGeneration) update(this) else this
+    if (routingGeneration != null && promoted && promotedRoutingGeneration == routingGeneration) update(this) else this
 
 data class AssistantSessionContinuityStatus(
     val featureEnabled: Boolean = false,
@@ -1209,7 +1209,7 @@ class AudioDiagnosticObserver(
             modeAlreadyEstablishedBeforeSpeech = audioManager.mode == AudioManager.MODE_IN_COMMUNICATION,
             promoted = true,
             promotionAt = arrivalAt,
-            promotedRoutingGeneration = cycleGeneration,
+            promotedRoutingGeneration = experiment.routingGeneration,
             recordingAtAssistantSpeech = assistantEarlyRoute.recordingAtAssistantSpeech ?: currentRecordingConfigurations,
         )
         addEvent("ASSISTANT/SPEECH arrived with early track already PLAYING")
@@ -1395,7 +1395,7 @@ class AudioDiagnosticObserver(
                 matchingStartupTiming()?.deviceRequestReturnedNanos,
             ),
         )
-        assistantEarlyRoute = assistantEarlyRoute.updateForPromotedRoutingGeneration(cycleGeneration) {
+        assistantEarlyRoute = assistantEarlyRoute.updateForPromotedRoutingGeneration(experiment.routingGeneration) {
             it.copy(
                 promotionDeviceRequestAt = deviceRequestStartedTimestamp,
                 promotionDeviceRequestReturn = accepted,
@@ -1800,7 +1800,7 @@ class AudioDiagnosticObserver(
                         timing?.earpieceObservedNanos,
                     ),
                 )
-                assistantEarlyRoute = assistantEarlyRoute.updateForPromotedRoutingGeneration(cycleGeneration) {
+                assistantEarlyRoute = assistantEarlyRoute.updateForPromotedRoutingGeneration(experiment.routingGeneration) {
                     it.copy(firstEarpieceObservationAt = experiment.earpieceFirstObservedTimestamp)
                 }
                 recordingStartupObservation?.takeIf { it.generation == cycleGeneration }?.atFirstEarpiece =
@@ -1852,7 +1852,7 @@ class AudioDiagnosticObserver(
             silentTrackCleanupCompleted = experiment.silentTrackCreated && trackCleanupCompleted,
             silentTrackPlayState = if (experiment.silentTrackCreated && trackCleanupCompleted) "Released" else experiment.silentTrackPlayState,
         )
-        assistantEarlyRoute = assistantEarlyRoute.updateForPromotedRoutingGeneration(cycleGeneration) {
+        assistantEarlyRoute = assistantEarlyRoute.updateForPromotedRoutingGeneration(experiment.routingGeneration) {
             it.copy(
                 active = false,
                 cleanupCompleted = trackCleanupCompleted,
