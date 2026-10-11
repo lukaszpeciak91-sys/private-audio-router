@@ -7,8 +7,7 @@ import org.junit.Test
 import java.io.File
 
 class LocaleInventoryContractTest {
-    private val projectRoot = generateSequence(File(System.getProperty("user.dir")).absoluteFile) { it.parentFile }
-        .first { File(it, "app/src/main/res").isDirectory }
+    private val projectRoot = testProjectRoot
     private val resourceRoot = File(projectRoot, "app/src/main/res")
     private val localeResourceConfigurationPattern = Regex(
         "^(?:[a-z]{2,3}(?:-r(?:[A-Z]{2}|[0-9]{3}))?|b\\+[A-Za-z]{2,8}(?:\\+[A-Za-z0-9]{2,8})*)$",

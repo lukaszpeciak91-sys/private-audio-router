@@ -105,11 +105,8 @@ class PreparedSilentTrackContractTest {
 
     private fun String.occurrences(needle: String) = windowed(needle.length).count { it == needle }
 
-    private fun projectFile(path: String): File {
-        var directory = File(System.getProperty("user.dir")).absoluteFile
-        while (true) {
-            File(directory, path).takeIf(File::isFile)?.let { return it }
-            directory = directory.parentFile ?: error("Cannot find $path")
+    private fun projectFile(path: String): File =
+        File(testProjectRoot, path).also {
+            check(it.isFile) { "Cannot find $path" }
         }
-    }
 }

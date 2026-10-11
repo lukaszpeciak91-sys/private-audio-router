@@ -113,8 +113,7 @@ class Layer3UiContractTest {
     private fun String.occurrences(needle: String): Int = windowed(needle.length).count { it == needle }
 
     private companion object {
-        val projectRoot = generateSequence(File(System.getProperty("user.dir")).absoluteFile) { it.parentFile }
-            .first { File(it, "app/src/main").isDirectory }
+        val projectRoot = testProjectRoot
         val mainSource = projectFile("app/src/main/java/app/privateaudio/MainActivity.kt").readText()
         val screenSource = projectFile("app/src/main/java/app/privateaudio/ui/PrivateAudioScreen.kt").readText()
         val serviceSource = projectFile("app/src/main/java/app/privateaudio/PrivateAudioService.kt").readText()

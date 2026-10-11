@@ -136,8 +136,7 @@ class LauncherIconContractTest {
     private data class PngContract(val alpha: IntArray)
 
     private companion object {
-        val projectRoot = generateSequence(File(System.getProperty("user.dir")).absoluteFile) { it.parentFile }
-            .first { File(it, "app/src/main").isDirectory }
+        val projectRoot = testProjectRoot
         val PNG_SIGNATURE = byteArrayOf(
             0x89.toByte(), 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a,
         )

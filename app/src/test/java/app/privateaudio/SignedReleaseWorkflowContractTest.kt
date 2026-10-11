@@ -86,8 +86,7 @@ class SignedReleaseWorkflowContractTest {
     }
 
     private companion object {
-        val root = generateSequence(File(System.getProperty("user.dir")).absoluteFile) { it.parentFile }
-            .first { File(it, "app/src/main").isDirectory }
+        val root = testProjectRoot
         fun source(path: String) = File(root, path).readText()
         val workflow = source(".github/workflows/signed-release-aab.yml")
         val androidCi = source(".github/workflows/android-ci.yml")

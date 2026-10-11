@@ -185,7 +185,7 @@ class AssistantEarlyRouteContractTest {
         fragments.forEach { fragment -> previous = source.indexOf(fragment).also { assertTrue("Missing/out of order: $fragment", it > previous) } }
     }
     private companion object {
-        val root = generateSequence(File(System.getProperty("user.dir")).absoluteFile) { it.parentFile }.first { File(it, "app/src/main").isDirectory }
+        val root = testProjectRoot
         fun source(path: String) = File(root, path).readText()
         val service = source("app/src/main/java/app/privateaudio/PrivateAudioService.kt")
         val observer = source("app/src/main/java/app/privateaudio/diagnostic/AudioDiagnosticObserver.kt")

@@ -10,8 +10,7 @@ import java.util.Locale
 import javax.xml.parsers.DocumentBuilderFactory
 
 class LocaleVariantReadinessContractTest {
-    private val root = generateSequence(File(System.getProperty("user.dir")).absoluteFile) { it.parentFile }
-        .first { File(it, "app/src/main/res").isDirectory }
+    private val root = testProjectRoot
     private fun file(configuration: String) = File(root, "app/src/main/res/values-$configuration/strings.xml")
 
     @Test

@@ -11,8 +11,7 @@ import java.util.Locale
 import javax.xml.parsers.DocumentBuilderFactory
 
 class UzbekScriptVariantsLocalizationContractTest {
-    private val projectRoot = generateSequence(File(System.getProperty("user.dir")).absoluteFile) { it.parentFile }
-        .first { File(it, "app/src/main/res").isDirectory }
+    private val projectRoot = testProjectRoot
     private val latinFile = projectFile("app/src/main/res/values-uz/strings.xml")
     private val cyrillicFile = projectFile("app/src/main/res/values-b+uz+Cyrl+UZ/strings.xml")
     private val arabicFile = projectFile("app/src/main/res/values-b+uz+Arab+AF/strings.xml")
@@ -39,15 +38,15 @@ class UzbekScriptVariantsLocalizationContractTest {
         val expectedKeys = latinValues.keys
         listOf(cyrillicFile, arabicFile).forEach { file ->
             val candidate = values(file)
-            assertEquals("${file.parentFile.name} keys", expectedKeys, candidate.keys)
+            assertEquals("${file.requireParentDirectory().name} keys", expectedKeys, candidate.keys)
             expectedKeys.forEach { key ->
                 assertEquals(
-                    "${file.parentFile.name}/$key placeholders",
+                    "${file.requireParentDirectory().name}/$key placeholders",
                     placeholders(latinValues.getValue(key)),
                     placeholders(candidate.getValue(key)),
                 )
             }
-            assertTrue("${file.parentFile.name} must be NFC", Normalizer.isNormalized(file.readText(), Normalizer.Form.NFC))
+            assertTrue("${file.requireParentDirectory().name} must be NFC", Normalizer.isNormalized(file.readText(), Normalizer.Form.NFC))
         }
     }
 

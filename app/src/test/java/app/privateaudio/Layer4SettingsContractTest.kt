@@ -228,8 +228,8 @@ class Layer4SettingsContractTest {
         assertEquals("View Privacy Policy online", defaultValue)
         localizedFiles.forEach { stringsFile ->
             val localizedValue = resourceValue(stringsFile, "settings_privacy_policy_online")
-            assertTrue("${stringsFile.parentFile.name}: action is missing", localizedValue.isNotBlank())
-            assertFalse("${stringsFile.parentFile.name}: English fallback", localizedValue == defaultValue)
+            assertTrue("${stringsFile.requireParentDirectory().name}: action is missing", localizedValue.isNotBlank())
+            assertFalse("${stringsFile.requireParentDirectory().name}: English fallback", localizedValue == defaultValue)
         }
     }
 
@@ -305,7 +305,7 @@ class Layer4SettingsContractTest {
 
         localizedFiles
             .forEach { stringsFile ->
-                val resourceDirectory = stringsFile.parentFile.name
+                val resourceDirectory = stringsFile.requireParentDirectory().name
                 val about = resourceValue(stringsFile, "settings_about_body")
 
                 assertTrue("$resourceDirectory: translated About is missing", about.isNotBlank())
@@ -419,8 +419,7 @@ class Layer4SettingsContractTest {
     }
 
     private companion object {
-        val projectRoot = generateSequence(File(System.getProperty("user.dir")).absoluteFile) { it.parentFile }
-            .first { File(it, "app/src/main").isDirectory }
+        val projectRoot = testProjectRoot
         fun projectFile(relativePath: String) = File(projectRoot, relativePath)
         val mainSource = projectFile("app/src/main/java/app/privateaudio/MainActivity.kt").readText()
         val screenSource = projectFile("app/src/main/java/app/privateaudio/ui/PrivateAudioScreen.kt").readText()

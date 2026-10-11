@@ -10,8 +10,7 @@ import java.nio.file.Files
 import java.time.LocalDateTime
 
 class DiagnosticEmailContractTest {
-    private val root = generateSequence(File(System.getProperty("user.dir")).absoluteFile) { it.parentFile }
-        .first { File(it, "app/src/main").isDirectory }
+    private val root = testProjectRoot
     private val main = File(root, "app/src/main/java/app/privateaudio/MainActivity.kt").readText()
     private val manifest = File(root, "app/src/main/AndroidManifest.xml").readText()
     private val paths = File(root, "app/src/main/res/xml/diagnostic_share_paths.xml").readText()
@@ -35,7 +34,7 @@ class DiagnosticEmailContractTest {
 
         assertTrue(result is DiagnosticShareFileResult.Success)
         val file = (result as DiagnosticShareFileResult.Success).file
-        assertEquals(shareDirectory.canonicalFile, file.parentFile.canonicalFile)
+        assertEquals(shareDirectory.canonicalFile, file.requireParentDirectory().canonicalFile)
         assertEquals(listOf("current.txt"), shareDirectory.listFiles().orEmpty().map { it.name })
         assertArrayEquals(report.toByteArray(Charsets.UTF_8), file.readBytes())
         cache.deleteRecursively()
