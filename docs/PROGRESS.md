@@ -1,5 +1,19 @@
 # Progress
 
+## Final test-harness compiler warning cleanup
+
+- **FACT:** The remaining JVM test-source compiler warnings were all Java-interoperability
+  nullability noise: 42 nullable `System.getProperty("user.dir")` values passed to
+  `File(String)`, plus 11 direct dereferences of nullable `File.parentFile`.
+  Test source contracts now share one explicit repository-root helper that requires
+  `user.dir` with a clear JVM-test failure, and parent-directory reads use an
+  explicit non-null contract instead of platform-type assumptions.
+- No warning suppression, compiler filter, assertion weakening, production source,
+  localization resource, build configuration, release workflow, or runtime behavior
+  changed. Production-source Kotlin compiler warnings were already zero after the
+  preceding release-freeze warning hygiene pass.
+
+
 ## Final release-freeze compiler warning hygiene
 
 - **FACT:** The production-source compiler warning pass removed three mechanical
