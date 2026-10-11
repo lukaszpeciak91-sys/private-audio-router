@@ -131,8 +131,7 @@ class Layer61FloatingInteractionTest {
     }
 
     private companion object {
-        val root = generateSequence(File(System.getProperty("user.dir")).absoluteFile) { it.parentFile }
-            .first { File(it, "app/src/main").isDirectory }
+        val root = testProjectRoot
         val overlay = File(root, "app/src/main/java/app/privateaudio/overlay/OverlayService.kt").readText()
         val main = File(root, "app/src/main/java/app/privateaudio/MainActivity.kt").readText()
     }
