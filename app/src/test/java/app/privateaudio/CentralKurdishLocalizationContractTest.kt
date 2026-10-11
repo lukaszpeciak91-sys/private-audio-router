@@ -42,8 +42,7 @@ class CentralKurdishLocalizationContractTest {
             ?: error("Missing $key")
 
     private companion object {
-        val root = generateSequence(File(System.getProperty("user.dir")).absoluteFile) { it.parentFile }
-            .first { File(it, "app/src/main/res").isDirectory }
+        val root = testProjectRoot
 
         fun projectFile(relativePath: String) = File(root, relativePath)
     }
