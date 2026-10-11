@@ -2,6 +2,18 @@
 
 ## Stable Gradle freshness advisory lint gate
 
+- **FACT:** The lint warning parser now recognizes both file warnings with a
+  source line (`path:123: Warning: ... [Issue]`) and path/directory warnings without
+  one (`path: Warning: ... [Issue]`). Focused parser contracts reject malformed and
+  non-warning lines.
+- **FACT:** The previously hidden `ObsoleteSdkInt` warning came from the
+  `mipmap-anydpi-v26` launcher resource directory. With `minSdk = 31`, the
+  version qualifier is unnecessary, so the existing adaptive-icon XML now lives in
+  `mipmap-anydpi`. The launcher artwork, foreground/background/monochrome layers,
+  and manifest entry point are unchanged; the obsolete warning is fixed rather than
+  accepted.
+
+
 - **FACT:** The canonical Android lint gate still requires exact warning ownership by
   repository path and lint issue. The intentionally accepted
   `AndroidGradlePluginVersion` advisory is now matched narrowly against
