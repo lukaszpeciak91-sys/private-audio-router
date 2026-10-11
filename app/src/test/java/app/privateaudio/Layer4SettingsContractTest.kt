@@ -228,8 +228,8 @@ class Layer4SettingsContractTest {
         assertEquals("View Privacy Policy online", defaultValue)
         localizedFiles.forEach { stringsFile ->
             val localizedValue = resourceValue(stringsFile, "settings_privacy_policy_online")
-            assertTrue("${stringsFile.parentFile.name}: action is missing", localizedValue.isNotBlank())
-            assertFalse("${stringsFile.parentFile.name}: English fallback", localizedValue == defaultValue)
+            assertTrue("${stringsFile.requireParentDirectory().name}: action is missing", localizedValue.isNotBlank())
+            assertFalse("${stringsFile.requireParentDirectory().name}: English fallback", localizedValue == defaultValue)
         }
     }
 
@@ -305,7 +305,7 @@ class Layer4SettingsContractTest {
 
         localizedFiles
             .forEach { stringsFile ->
-                val resourceDirectory = stringsFile.parentFile.name
+                val resourceDirectory = stringsFile.requireParentDirectory().name
                 val about = resourceValue(stringsFile, "settings_about_body")
 
                 assertTrue("$resourceDirectory: translated About is missing", about.isNotBlank())
