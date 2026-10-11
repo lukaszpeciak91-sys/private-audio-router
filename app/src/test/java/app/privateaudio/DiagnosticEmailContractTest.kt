@@ -34,7 +34,7 @@ class DiagnosticEmailContractTest {
 
         assertTrue(result is DiagnosticShareFileResult.Success)
         val file = (result as DiagnosticShareFileResult.Success).file
-        assertEquals(shareDirectory.canonicalFile, file.parentFile.canonicalFile)
+        assertEquals(shareDirectory.canonicalFile, file.requireParentDirectory().canonicalFile)
         assertEquals(listOf("current.txt"), shareDirectory.listFiles().orEmpty().map { it.name })
         assertArrayEquals(report.toByteArray(Charsets.UTF_8), file.readBytes())
         cache.deleteRecursively()
