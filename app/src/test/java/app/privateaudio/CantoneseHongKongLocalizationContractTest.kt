@@ -11,8 +11,7 @@ import java.util.Locale
 import javax.xml.parsers.DocumentBuilderFactory
 
 class CantoneseHongKongLocalizationContractTest {
-    private val projectRoot = generateSequence(File(System.getProperty("user.dir")).absoluteFile) { it.parentFile }
-        .first { File(it, "app/src/main").isDirectory }
+    private val projectRoot = testProjectRoot
     private val resourcePath = "app/src/main/res/values-b+yue+Hant+HK/strings.xml"
     private val simplifiedResourcePath = "app/src/main/res/values-b+yue+Hans+CN/strings.xml"
     private val strings = projectFile(resourcePath).readText()
