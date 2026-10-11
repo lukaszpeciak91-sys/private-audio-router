@@ -8,6 +8,8 @@ import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue
 import org.junit.Test
+import app.privateaudio.requireParentDirectory
+import app.privateaudio.testProjectRoot
 import java.io.File
 
 class AudioDiagnosticObserverTest {
@@ -747,7 +749,7 @@ class AudioDiagnosticObserverTest {
         val observerSourceFile = projectFile(
             "app/src/main/java/app/privateaudio/diagnostic/AudioDiagnosticObserver.kt",
         )
-        val productionSources = observerSourceFile.parentFile.parentFile.parentFile.walkTopDown()
+        val productionSources = observerSourceFile.requireParentDirectory().requireParentDirectory().requireParentDirectory().walkTopDown()
             .filter { it.isFile && it.extension == "kt" }.toList()
         val mainActivitySource = projectFile(
             "app/src/main/java/app/privateaudio/MainActivity.kt",
@@ -756,13 +758,9 @@ class AudioDiagnosticObserverTest {
             "app/src/main/java/app/privateaudio/PrivateAudioService.kt",
         ).readText()
 
-        fun projectFile(relativePath: String): File {
-            var directory = File(System.getProperty("user.dir")).absoluteFile
-            while (true) {
-                val candidate = File(directory, relativePath)
-                if (candidate.isFile) return candidate
-                directory = directory.parentFile ?: error("Could not locate repository file: $relativePath")
+        fun projectFile(relativePath: String): File =
+            File(testProjectRoot, relativePath).also {
+                check(it.isFile) { "Could not locate repository file: $relativePath" }
             }
-        }
     }
 }
