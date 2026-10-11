@@ -21,7 +21,9 @@ class ReleaseFreezeWarningHygieneContractTest {
     }
 
     private companion object {
-        val projectRoot = generateSequence(File(System.getProperty("user.dir")).absoluteFile) { it.parentFile }
+        val projectRoot = generateSequence(
+            File(requireNotNull(System.getProperty("user.dir"))).absoluteFile,
+        ) { it.parentFile }
             .first { File(it, "app/src/main").isDirectory }
         fun source(relativePath: String) = File(projectRoot, relativePath).readText()
 
