@@ -2443,14 +2443,18 @@ private fun AudioDeviceInfo.toObservedDevice() = ObservedDevice(
     productName = productName.toString().ifBlank { "Unavailable" },
 )
 
-@Suppress("DEPRECATION")
 private fun AudioPlaybackConfiguration.toObservedPlayback() = ObservedPlayback(
     usage = audioUsageName(audioAttributes.usage),
     contentType = audioContentTypeName(audioAttributes.contentType),
     flags = audioFlagsName(audioAttributes.flags),
     allowedCapturePolicy = capturePolicyName(audioAttributes.allowedCapturePolicy),
-    device = audioDeviceInfo?.toObservedDevice(),
+    device = observedPlaybackDevice()?.toObservedDevice(),
 )
+
+// API 36 deprecated this read without providing an equivalent per-playback device API.
+// Keep the established diagnostic field unchanged across the supported API 31+ range.
+@Suppress("DEPRECATION")
+private fun AudioPlaybackConfiguration.observedPlaybackDevice(): AudioDeviceInfo? = audioDeviceInfo
 
 private fun AudioRecordingConfiguration.toObservedRecording() = ObservedRecording(
     audioSource = audioSourceName(clientAudioSource),
