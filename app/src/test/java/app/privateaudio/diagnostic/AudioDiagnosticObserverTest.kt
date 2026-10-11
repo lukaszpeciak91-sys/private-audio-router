@@ -612,34 +612,41 @@ class AudioDiagnosticObserverTest {
     }
 
     @Test
-    fun promotedAssistantEarlyRouteHistoryIgnoresLaterUnrelatedRoutingGenerations() {
+    fun promotedAssistantCleanupUsesProtectedExperimentGenerationAfterGlobalInvalidation() {
         val assistantGeneration = 41L
+        val protectedAssistantExperiment = EarpieceExperiment(routingGeneration = assistantGeneration)
+        var mutableCycleGeneration = assistantGeneration
         var history = AssistantEarlyRouteStatus(
             featureEnabled = true,
             phase = AssistantEarlyRoutePhase.PROMOTED,
             promoted = true,
             promotionAt = "assistant-promotion",
-            promotedRoutingGeneration = assistantGeneration,
+            promotedRoutingGeneration = protectedAssistantExperiment.routingGeneration,
         )
 
-        history = history.updateForPromotedRoutingGeneration(assistantGeneration) {
+        history = history.updateForPromotedRoutingGeneration(protectedAssistantExperiment.routingGeneration) {
             it.copy(
                 promotionDeviceRequestAt = "assistant-device-request",
                 promotionDeviceRequestReturn = true,
+                firstEarpieceObservationAt = "assistant-earpiece",
             )
         }
-        history = history.updateForPromotedRoutingGeneration(assistantGeneration) {
-            it.copy(firstEarpieceObservationAt = "assistant-earpiece")
-        }
-        history = history.updateForPromotedRoutingGeneration(assistantGeneration) {
+
+        mutableCycleGeneration++
+        assertEquals(assistantGeneration + 1, mutableCycleGeneration)
+        history = history.updateForPromotedRoutingGeneration(protectedAssistantExperiment.routingGeneration) {
             it.copy(
                 cleanupCompleted = true,
-                cleanupReason = "assistant-cleanup",
+                cleanupReason = "Power OFF",
             )
         }
+
+        assertTrue(history.cleanupCompleted)
+        assertEquals("Power OFF", history.cleanupReason)
         val completedAssistantHistory = history
 
-        history = history.updateForPromotedRoutingGeneration(assistantGeneration + 1) {
+        val laterCommunicationExperiment = EarpieceExperiment(routingGeneration = mutableCycleGeneration)
+        history = history.updateForPromotedRoutingGeneration(laterCommunicationExperiment.routingGeneration) {
             it.copy(
                 promotionDeviceRequestAt = "communication-device-request",
                 promotionDeviceRequestReturn = false,
@@ -648,7 +655,8 @@ class AudioDiagnosticObserverTest {
                 cleanupReason = "communication-cleanup",
             )
         }
-        history = history.updateForPromotedRoutingGeneration(assistantGeneration + 2) {
+        val laterBrowserExperiment = EarpieceExperiment(routingGeneration = mutableCycleGeneration + 1)
+        history = history.updateForPromotedRoutingGeneration(laterBrowserExperiment.routingGeneration) {
             it.copy(
                 firstEarpieceObservationAt = "browser-earpiece",
                 cleanupReason = "browser-cleanup",
@@ -683,17 +691,21 @@ class AudioDiagnosticObserverTest {
     }
 
     @Test
-    fun postPromotionDiagnosticMutationSitesUseThePromotedRoutingGenerationGuard() {
+    fun postPromotionDiagnosticMutationSitesUseTheProtectedExperimentRoutingGeneration() {
         val promotion = observerSource.method("private fun promoteAssistantEarlyPreArm()")
-        assertTrue(promotion.contains("promotedRoutingGeneration = cycleGeneration"))
-        assertEquals(3, observerSource.occurrences("updateForPromotedRoutingGeneration(cycleGeneration)"))
+        assertTrue(promotion.contains("promotedRoutingGeneration = experiment.routingGeneration"))
+        assertEquals(
+            3,
+            observerSource.occurrences("updateForPromotedRoutingGeneration(experiment.routingGeneration)"),
+        )
+        assertEquals(0, observerSource.occurrences("updateForPromotedRoutingGeneration(cycleGeneration)"))
 
         val routingAttempt = observerSource.method("private fun performRoutingAttempt(")
         val outcome = observerSource.method("private fun observeExperimentOutcome(")
         val cleanup = observerSource.method("private fun clearExperiment(")
-        assertTrue(routingAttempt.contains("updateForPromotedRoutingGeneration(cycleGeneration)"))
-        assertTrue(outcome.contains("updateForPromotedRoutingGeneration(cycleGeneration)"))
-        assertTrue(cleanup.contains("updateForPromotedRoutingGeneration(cycleGeneration)"))
+        assertTrue(routingAttempt.contains("updateForPromotedRoutingGeneration(experiment.routingGeneration)"))
+        assertTrue(outcome.contains("updateForPromotedRoutingGeneration(experiment.routingGeneration)"))
+        assertTrue(cleanup.contains("updateForPromotedRoutingGeneration(experiment.routingGeneration)"))
     }
 
     @Test
