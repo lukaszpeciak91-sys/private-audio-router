@@ -42,7 +42,7 @@ class MiniCompactStateContractTest {
         localeStringFiles.forEach { locale ->
             val localized = strings(locale)
             aliases.values.forEach { target ->
-                assertTrue("${locale.parentFile.name} lacks localized $target", localized.containsKey(target.removePrefix("@string/")))
+                assertTrue("${locale.requireParentDirectory().name} lacks localized $target", localized.containsKey(target.removePrefix("@string/")))
             }
         }
     }
