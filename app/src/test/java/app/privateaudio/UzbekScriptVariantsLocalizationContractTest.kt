@@ -38,15 +38,15 @@ class UzbekScriptVariantsLocalizationContractTest {
         val expectedKeys = latinValues.keys
         listOf(cyrillicFile, arabicFile).forEach { file ->
             val candidate = values(file)
-            assertEquals("${file.parentFile.name} keys", expectedKeys, candidate.keys)
+            assertEquals("${file.requireParentDirectory().name} keys", expectedKeys, candidate.keys)
             expectedKeys.forEach { key ->
                 assertEquals(
-                    "${file.parentFile.name}/$key placeholders",
+                    "${file.requireParentDirectory().name}/$key placeholders",
                     placeholders(latinValues.getValue(key)),
                     placeholders(candidate.getValue(key)),
                 )
             }
-            assertTrue("${file.parentFile.name} must be NFC", Normalizer.isNormalized(file.readText(), Normalizer.Form.NFC))
+            assertTrue("${file.requireParentDirectory().name} must be NFC", Normalizer.isNormalized(file.readText(), Normalizer.Form.NFC))
         }
     }
 
