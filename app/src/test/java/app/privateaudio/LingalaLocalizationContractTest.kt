@@ -9,8 +9,7 @@ import java.text.Normalizer
 import java.util.Locale
 
 class LingalaLocalizationContractTest {
-    private val projectRoot = generateSequence(File(System.getProperty("user.dir")).absoluteFile) { it.parentFile }
-        .first { File(it, "app/src/main").isDirectory }
+    private val projectRoot = testProjectRoot
     private val resourceDirectory = projectFile("app/src/main/res/values-ln")
     private val stringsFile = File(resourceDirectory, "strings.xml")
     private val strings = stringsFile.readText()
