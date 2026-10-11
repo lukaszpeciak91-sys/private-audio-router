@@ -55,8 +55,12 @@ The project must never knowingly implement uncertain Android behavior blindly. S
   correctness rule. Code may still use KTX when it naturally improves an
   implementation.
 - Only explicitly accepted toolchain-freshness advisories may remain visible. CI
-  compares each warning's path, issue ID, and exact message with that accepted set;
-  every unexpected warning blocks the build.
+  parses lint warning headers both with and without source line numbers, keeps warning
+  path and issue ownership strict, and normalizes repository-relative paths before
+  policy matching. Accepted messages remain exact except for the Gradle wrapper
+  freshness advisory, which must still name the repository's pinned Gradle 9.5.0 and
+  may vary only in a three-part, numerically newer suggested Gradle version. Every
+  other unexpected warning blocks the build.
 
 ## Audits
 

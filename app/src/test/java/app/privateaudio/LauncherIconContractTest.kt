@@ -33,12 +33,18 @@ class LauncherIconContractTest {
 
     @Test
     fun api26LauncherDefinesAdaptiveForegroundBackgroundAndMonochromeLayers() {
-        val launcher = xml("app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml").documentElement
+        val launcher = xml("app/src/main/res/mipmap-anydpi/ic_launcher.xml").documentElement
 
         assertEquals("adaptive-icon", launcher.tagName)
         assertEquals("@color/launcher_background", launcher.singleDrawable("background"))
         assertEquals("@drawable/puzru_adaptive_foreground", launcher.singleDrawable("foreground"))
         assertEquals("@drawable/puzru_adaptive_monochrome", launcher.singleDrawable("monochrome"))
+    }
+
+    @Test
+    fun adaptiveLauncherUsesUnqualifiedAnydpiForCurrentMinSdk() {
+        assertTrue(File(projectRoot, "app/src/main/res/mipmap-anydpi/ic_launcher.xml").isFile)
+        assertFalse(File(projectRoot, "app/src/main/res/mipmap-anydpi-v26").exists())
     }
 
     @Test
@@ -57,7 +63,7 @@ class LauncherIconContractTest {
             "app/src/main/AndroidManifest.xml",
             "app/src/main/java/app/privateaudio/PrivateAudioService.kt",
             "app/src/main/res/mipmap/ic_launcher.xml",
-            "app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml",
+            "app/src/main/res/mipmap-anydpi/ic_launcher.xml",
         )
         assertFalse(inspectedFiles.any { source(it).contains("puzru_launcher") })
         assertFalse(File(projectRoot, "app/src/main/res/drawable/ic_launcher.xml").exists())
