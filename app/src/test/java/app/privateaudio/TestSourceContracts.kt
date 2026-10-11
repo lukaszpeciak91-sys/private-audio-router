@@ -2,6 +2,18 @@ package app.privateaudio
 
 import java.io.File
 
+internal val testProjectRoot: File by lazy {
+    val userDir = requireNotNull(System.getProperty("user.dir")) {
+        "JVM test environment must define user.dir"
+    }
+    generateSequence(File(userDir).absoluteFile) { it.parentFile }
+        .firstOrNull { File(it, "app/src/main").isDirectory }
+        ?: error("Could not locate repository root from user.dir=$userDir")
+}
+
+internal fun File.requireParentDirectory(): File =
+    requireNotNull(parentFile) { "Expected parent directory for $path" }
+
 internal data class KotlinCallSite(val file: File, val offset: Int)
 
 /** Finds member-call expressions without confusing string literals or comments with executable calls. */
