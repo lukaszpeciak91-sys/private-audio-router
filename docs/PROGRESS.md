@@ -580,10 +580,12 @@ The public publisher/developer and privacy/support contact is Napahu Studios —
 This is a **CURRENT PLAN**, not a promise or irreversible ordering. Evidence may
 reorder, split, remove, or add work:
 
-1. Keep the reconciled release baseline, CI/release-engineering foundation, privacy
-   disclosures, launcher branding, and permission/notification transparency current.
-   Those repository-side foundations are already implemented rather than future
-   release steps.
+1. Keep the reconciled release baseline, CI/release-engineering foundation,
+   repository-side Privacy Policy/disclosure alignment, launcher branding, and
+   permission/notification transparency current. The canonical Privacy Policy,
+   in-app/public policy alignment, and diagnostic Send/Save disclosure alignment are
+   implemented; Google Play data-disclosure review / Data Safety submission and other
+   submission-time Play Console declarations remain external release work.
 2. Continue closing the release-safety physical gates that remain **NOT TESTED** or
    only partially evidenced in `TEST_PLAN.md`.
 3. Treat signed-artifact generation as established infrastructure: owner-controlled
